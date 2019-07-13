@@ -46,7 +46,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Bree Serif", serif;
+    font-family: "Bree Serif", "M PLUS Rounded 1c", serif;
 	font-weight: 500;
 	margin-bottom: 0;
 }
@@ -102,7 +102,7 @@ pre code {
 
 blockquote {
 	margin: 0 2em;
-	color: #9EABB3;
+	color: #92a1b7;
 }
 
 blockquote p {
@@ -119,26 +119,27 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: #9EABB3 1px solid;
+    border-top: #92a1b7 1px solid;
 }
 
 /* Links */
 .post a {
-    color: #FC7E0F;
+    color: #354a7b;
     text-decoration: none;
 }
 
 .post a:hover {
     text-decoration: underline;
+    color: #354a7b;
 }
 
 .post a:visited {
-    color: #9EABB3;
+    color: #354a7b;
     text-decoration: none;
 }
 
 a.read-more, a.read-more:hover, a.read-more:visited {
-    color: #FC7E0F;	/* #DA1F15, #F17F33 */
+    color: #354a7b;	/* #DA1F15, #F17F33 */
     text-decoration: none;
 }
 
@@ -249,7 +250,7 @@ dl dd {
     font-family: "Lato", sans-serif;
     text-transform: uppercase;
     letter-spacing: 0;
-    color: #9EABB3;
+    color: #92a1b7;
     font-weight: 300;
 }
 
@@ -268,20 +269,20 @@ dl dd {
 
 .nav a {
 	margin: 0 0.5rem;
-	color: #9EABB3;
+	color: #354a7b;
 	text-decoration: none;
 }
 
 .nav a:hover {
-	color: #FC7E0F;
+	color: #354a7b;
 }
 
 a.nav-current {
-	color: #FC7E0F;
+	color: #354a7b;
 }
 
 a.nav-home, a.nav-blog {
-	color: #9EABB3;
+	color: #354a7b;
 }
 
 /*	==========================================================================
@@ -300,12 +301,12 @@ a.nav-home, a.nav-blog {
 }
 
 .site-footer a {
-	color: #FC7E0F;
-	text-decoration: none;
+	color: #354a7b;
+    text-decoration: none;
 }
 
 .site-footer a:hover {
-	color: #9EABB3;
+	color: #354a7b;
 }
 
 
@@ -358,7 +359,8 @@ a.nav-home, a.nav-blog {
 
 .post-meta {
 	text-transform: uppercase;
-	font-size: .79rem;
+    font-size: .79rem;
+    margin-top: 1em;
 }
 
 .post-footer {
@@ -366,12 +368,12 @@ a.nav-home, a.nav-blog {
 }
 
 .post-footer .tags a {
-	color: #9EABB3;
+	color: #354a7b;
 	text-decoration: none;
 }
 
 .post-footer .tags a:hover {
-	color: #FC7E0F;
+	color: #354a7b;
 }
 
 .post-footer h4 {
@@ -386,12 +388,12 @@ a.nav-home, a.nav-blog {
     font-size: 1.8rem;
     display: inline-block;
     margin: 1rem 1.6rem 1.6rem 0;
-    color: #BBC7CC;
+    color: #354a7b;
     text-decoration: none;
 }
 
 .post-footer .share a:hover {
-    color: #50585D;
+    color: #354a7b;
 }
 
 .post img {
@@ -486,7 +488,7 @@ a.nav-home, a.nav-blog {
 }
 
 .tag-description {
-	color: #9EABB3;
+	color: #92a1b7;
 }
 
 /* ==========================================================================
@@ -498,12 +500,12 @@ a.nav-home, a.nav-blog {
     position: relative;
     margin: 2rem auto;
     font-size: .79rem;
-    color: #9EABB3;
+    color: #92a1b7;
     text-align: center;
 }
 
 .pagination a {
-    color: #9EABB3;
+    color:#92a1b7;
 }
 
 /* Push the previous/next links out to the left/right */
@@ -530,7 +532,7 @@ a.nav-home, a.nav-blog {
 
 .older-posts:hover,
 .newer-posts:hover {
-    color: #FC7E0F;
+    color: #354a7b;
 }
 
 .extra-pagination {

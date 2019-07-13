@@ -8,14 +8,16 @@
     
     <title>
       
-      My New Hugo Site
+      Coda
       
 		</title>
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="alternate" type="application/rss&#43;xml" href="http://example.org/index.xml">
+    <link rel="alternate" type="application/rss&#43;xml" href="https://nryotaro.github.io/index.xml">
     
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
@@ -30,6 +32,7 @@
     <script type="text/javascript">
         $.bigfoot();
     </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
     
     
 </head>
@@ -40,7 +43,7 @@
 		<h1 class="blog-title">
 			<a href="/">
 				
-           My New Hugo Site
+           Coda
 				
 			</a>
 		</h1>
@@ -70,15 +73,18 @@
       <article class="post">
 	<header class="post-header">
     
-		<h2 class="post-title"><a href="/post/my-first-post/">My First Post</a></h2>
+		<h2 class="post-title"><a href="/post/text_cls_from_lbl_and_unlbl_doc_em/">概要 Text Classification from Labeled and Unlabeled Documents using EM</a></h2>
 	</header>
 	<section class="post-excerpt">
     <p>
-      doge &hellip; <a class="read-more" href="/post/my-first-post/">&raquo;</a>
+      <h3 id="アルゴリズム">アルゴリズム</h3>
+
+<p>提案手法は、Naive BayesとEMアルゴリズムを組み合わせたもの。
+ラベル付きデータが\(D^l\)でラベルなしデータが\(D^u\)で表されるとき、対数尤度\(\log P(D^l)P(D^u)\)を最大化する問題を解く。</p> &hellip; <a class="read-more" href="/post/text_cls_from_lbl_and_unlbl_doc_em/">&raquo;</a>
     </p>
 	</section>
 	<footer class="post-meta">
-    <time class="post-date">July 08, 2019</time>
+    <time class="post-date">July 08, 2018</time>
 	</footer>
 </article>
 
@@ -97,8 +103,12 @@
   <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
   
   
-  <section class="copyright">&copy; 2019 My New Hugo Site</section>
-  <section class="poweredby"><a href="http://thedarkroast.com/arabica">Arabica</a> theme by Sean Lunsford. Published with <a href="https://gohugo.io">Hugo</a>.</section>
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
 </footer>
 
 
