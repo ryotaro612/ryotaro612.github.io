@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      概要 Neural Machine Trasnslation of Rare Words with Subword Units - Coda
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Coda
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">概要 Neural Machine Trasnslation of Rare Words with Subword Units</h2>
+      <section class="post-meta">
+        <time class="post-date">July 13, 2019</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <h3 id="概要">概要</h3>
+
+<p>内容は、ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザのトークナイズで使われるアルゴリズムになっている。単語をサブワード（単語の部分文字列）に分割し、サブワードを組み合わせて珍しい単語や未知語を表現することで、これらの出現頻度の低い単語の翻訳上げるというもの。</p>
+
+<p>ニューラルネットワークを用いた翻訳では、あらかじめ扱う語彙の集合が限定されることが多い。
+しかし、翻訳すべき文章には語彙にはない単語が含まれることがあり、これを訳すために何を情報源とするかが問題になる。
+既存研究では、訳すべき単語が語彙にない場合、辞書を参照するアプローチが取られていた。しかし、辞書の単語と文中の単語の間で常に1対1の意味上の関係が成り立つとは限らないため、精度に限界がある。この問題に対して、本稿では、音素や形態素をヒントに未知の単語を翻訳できることに着目し、サブワードの組み合わせで単語を表現し、出現頻度の低い単語の翻訳精度をあげることができた。以上をもとに、辞書を参照する手法と比べて単純かつ効率的であり、また、ネットワークのアーキテクチャに関係なく応用できる点に手法の貢献があると主張されている。</p>
+
+<p>語彙となるサブワードの集合は、翻訳元、翻訳先双方ともに、バイト対符号化、Byte Pair Encoding(BPE)(Gage, 1994)で作成する。BPEでは、はじめに、文章を文字の列に分解する。次に最も出現回数の高い隣接文字をペアとしてマージする。これを期待する語彙集合の要素数に到達するまで繰り返す。BPEが採用されている理由として、ハフマン符号と比べた上で、サブワードに分割後の文章を解釈することできることや、サブワードの組み合せで未知語の翻訳や新しい単語の生成が可能になることを挙げている。</p>
+
+<h3 id="所感">所感</h3>
+
+<p>未知語に対する精度をあげるために部分文字列を使う着想は、fastTextにもとになった<a href="https://aclweb.org/anthology/Q17-1010">Enriching Word Vectors with Subword Information</a>と似ている。こちらでは、サブワードの分散表現の和を単語の分散表現のベクトルの値とすることによって、未知語の妥当な分散表現を求めている。</p>
+
+<p>論文は<a href="https://www.aclweb.org/anthology/P16-1162">こちら</a></p>
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
+</footer>
+
+
+
+    </body>
+</html>
