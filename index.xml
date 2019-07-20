@@ -35,6 +35,15 @@
     </item>
     
     <item>
+      <title>要約 Applying Conditional Random Fields to Japanese Morphological Analysis</title>
+      <link>https://nryotaro.github.io/post/applying_crf_to_japanese_morph_analysis/</link>
+      <pubDate>Tue, 17 Jul 2018 12:51:29 +0900</pubDate>
+      
+      <guid>https://nryotaro.github.io/post/applying_crf_to_japanese_morph_analysis/</guid>
+      <description>&lt;p&gt;Mecabの中の人の&lt;a href=&#34;http://chasen.naist.jp/chaki/t/2009-09-30/doc/mecab-cabocha-nlp-seminar-2009.pdf&#34;&gt;資料&lt;/a&gt;で紹介でされている、Mecabのアルゴリズムを提案・評価した論文。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>概要 Text Classification from Labeled and Unlabeled Documents using EM</title>
       <link>https://nryotaro.github.io/post/text_cls_from_lbl_and_unlbl_doc_em/</link>
       <pubDate>Sun, 08 Jul 2018 01:23:49 +0900</pubDate>

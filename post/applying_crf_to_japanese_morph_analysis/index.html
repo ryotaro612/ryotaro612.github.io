@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      要約 Applying Conditional Random Fields to Japanese Morphological Analysis - Coda
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Coda
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">要約 Applying Conditional Random Fields to Japanese Morphological Analysis</h2>
+      <section class="post-meta">
+        <time class="post-date">July 17, 2018</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <p>Mecabの中の人の<a href="http://chasen.naist.jp/chaki/t/2009-09-30/doc/mecab-cabocha-nlp-seminar-2009.pdf">資料</a>で紹介でされている、Mecabのアルゴリズムを提案・評価した論文。</p>
+
+<p>CRF（の一種）を使った形態素解析を提案し、提案手法の方がHMMベースの従来手法よりも高い精度で解析できることを実験で示した。</p>
+
+<p>品詞の間には名詞と固有名詞のように階層関係があり、特定の階層の品詞だけを学習データに使うとスパースなデータになったり逆に品詞の粒度が荒すぎたりしてしまう。
+そこで、提案手法では階層を問わず品詞を素性関数に与えて品詞の粒度を調整している。</p>
+
+<p>また、HMMだと遷移先が少ない状態（形態素の候補）が多い系列や遷移する状態が少ない系列に高い確率になりやすい問題を取り上げ、
+提案手法ではそのような偏りの影響を抑えられると説明されている。</p>
+
+<p>パラメタ推定にある数式の展開を詳しく知りたければ、<a href="http://www.coronasha.co.jp/np/isbn/9784339027518/">自然言語処理シリーズ 言語処理のための機械学習入門</a>の5章により詳しく書かれている。</p>
+
+<p>論文は<a href="http://acl-arc.comp.nus.edu.sg/archives/acl-arc-090501d4/data/pdf/anthology-PDF/W/W04/W04-3230.pdf">こちら</a></p>
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
+</footer>
+
+
+
+    </body>
+</html>
