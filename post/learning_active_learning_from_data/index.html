@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      概要 Learning Active Learning from Data - Coda
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Coda
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">概要 Learning Active Learning from Data</h2>
+      <section class="post-meta">
+        <time class="post-date">July 27, 2019</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <h3 id="概要">概要</h3>
+
+<p>表題にある論文は、次にラベルを与えるべきデータが何かという能動学習における問題を、
+あるサンプルを教師データに追加したときの損失関数の減少値を予測する回帰の問題としてとらえる。
+能動学習の目的は最小限データで最大の予測性能をもつモデルを構築することであり、次にアノテーションすべきデータが何かを正しく予測することが課題になる。
+論文は、アノテーションすべきサンプルを予測する回帰モデルを学習するアルゴリズムを提案、評価する。アルゴリズムは2値分類の分類器を対象としている。</p>
+
+<p>回帰モデルは、分類器にラベルなしのサンプルの与えたときの出力と学習済み分類器のパラメタを入力として、サンプルを教師データに加えたときの汎化誤差の減少値を予測する。
+論文では、この回帰モデルを学習するための2通りのアルゴリズムが提案されている。本稿では、そのうちの1つである <em>BUILDLALINDEPENDENT</em> についてまとめる。</p>
+
+<p>回帰モデルの教師データの作成するために、訓練データ\(\mathcal{D}\)、テストデータ\(\mathcal{D}&rsquo;\)、分類器のアルゴリズム\(f\)を入力として、\(2\leq\tau\leq T+1\)について\(Q\)回以下のステップを実行し、\(QMT\)件の教師データを作成する。</p>
+
+<ol>
+<li>\(D\)を、\(\tau\)件の訓練データ\(\mathcal{L_{\tau}}\)とラベルなしデータに\(\mathcal{U}_{\tau}\)に分ける。</li>
+<li>\(\mathcal{L_{\tau}}\)で\(f_{\tau}\)を学習する。</li>
+<li>\(D&rsquo;\)で汎化誤差\(\ell_{\tau}\)を計算する。</li>
+<li>\(f\)の状態を\(\{\phi^1_\tau, \dots,\phi^K_\tau\}\)を記録する。\(\phi\)には、分類器固有の値や訓練データに影響される値などの値がいる。例えば、木の深さやカーネル関数の種類が値になりえる。</li>
+<li>\(1\leq m\leq M\)の範囲で以降のステップを繰り返す。</li>
+<li>無作為に\(x\in\mathcal{U}_\tau\)を選び、\(\mathcal{L}_\tau\cup\{x\}\)を\(\mathcal{L}_x\)として新たな訓練データを作成する。</li>
+<li>\(x\)があるクラスに属する確信度や、\(x\)から最も近いラベル付きデータからの距離など、\(f\)に入力される特徴以外の\(x\)の要素を、\(\{\psi^1_x,\dots,\psi^R_x\}\)として記録する。</li>
+<li>\(\mathcal{L}_x\)で\(f_x\)を学習し、\(D&rsquo;\)をもとに汎化誤差\(\ell_x\)を求める。</li>
+<li>\([\phi^1_\tau\ \dots\ \phi^K_\tau\ \psi^1_x\ \dots\ \psi^R_x]\)を\(\xi_m\)、\(x\)を訓練データに加えたことで減少した汎化誤差\(\ell_\tau - \ell_x\)を\(\delta_m\)として、回帰モデルの訓練データの一つとして記録する。</li>
+</ol>
+
+<p>収集した教師データで学習した回帰モデルを\(g\)とすると、以下の\(x^*\)が最も汎化誤差を小さくするためにアノテーションすべきサンプルの推定値となる。</p>
+
+<p>$$
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+x^{*} = \argmax_{x\in\mathcal{U}_t} g(\phi_t,\psi_x).
+$$</p>
+
+<h3 id="感想">感想</h3>
+
+<p>データの分布が及ぼす性能への影響を分析に人工データを使うところが参考になる。
+分類器の状態\(\phi\)を特徴に含めているので、評価において様々な分類器やハイパーパラメタのモデルの評価をしてほしかった。</p>
+
+<hr />
+
+<p>論文は<a href="https://papers.nips.cc/paper/7010-learning-active-learning-from-data.pdf">こちら</a>から
+ダウンロードできます。</p>
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
+</footer>
+
+
+
+    </body>
+</html>

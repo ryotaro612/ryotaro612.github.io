@@ -6,10 +6,24 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 20 Jul 2019 17:49:36 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jul 2019 16:40:43 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>概要 Learning Active Learning from Data</title>
+      <link>https://nryotaro.github.io/post/learning_active_learning_from_data/</link>
+      <pubDate>Sat, 27 Jul 2019 16:40:43 +0900</pubDate>
+      
+      <guid>https://nryotaro.github.io/post/learning_active_learning_from_data/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+
+&lt;p&gt;表題にある論文は、次にラベルを与えるべきデータが何かという能動学習における問題を、
+あるサンプルを教師データに追加したときの損失関数の減少値を予測する回帰の問題としてとらえる。
+能動学習の目的は最小限データで最大の予測性能をもつモデルを構築することであり、次にアノテーションすべきデータが何かを正しく予測することが課題になる。
+論文は、アノテーションすべきサンプルを予測する回帰モデルを学習するアルゴリズムを提案、評価する。アルゴリズムは2値分類の分類器を対象としている。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>概要 TextRank: Bringing Order into Texts</title>
