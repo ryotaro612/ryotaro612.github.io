@@ -61,6 +61,18 @@ TextRankは、名前から推測できるようにPageRankを応用した手法�
     </item>
     
     <item>
+      <title>要約 A Simple Semi-supervised Algorithm For Named Entity Recognition</title>
+      <link>https://nryotaro.github.io/post/a_simple_semi_supervised_for_ner/</link>
+      <pubDate>Tue, 17 Jul 2018 12:51:29 +0900</pubDate>
+      
+      <guid>https://nryotaro.github.io/post/a_simple_semi_supervised_for_ner/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+
+&lt;p&gt;CRFに入力する学習データを集めるための半教師学習の手法を提案と評価した論文。
+本手法はCRFに与える学習データを集めるための手法であり、CRFのアルゴリズム自体に変更を加えることはない。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>要約 Applying Conditional Random Fields to Japanese Morphological Analysis</title>
       <link>https://nryotaro.github.io/post/applying_crf_to_japanese_morph_analysis/</link>
       <pubDate>Tue, 17 Jul 2018 12:51:29 +0900</pubDate>
