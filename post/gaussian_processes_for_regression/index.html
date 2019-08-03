@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      メモ Gaussian Processes for Regression - Coda
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Coda
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">メモ Gaussian Processes for Regression</h2>
+      <section class="post-meta">
+        <time class="post-date">August 03, 2019</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <p>表題はガウス過程の回帰問題への応用を提案した論文。著者らは、scikit-learnの<a href="https://scikit-learn.org/stable/modules/gaussian_process.html#gaussian-process">ガウス過程回帰</a>の
+元になっている<a href="http://www.gaussianprocess.org/gpml/chapters/RW.pdf">Gaussian Processes for Machine Learning</a>の著者と同じ。
+論文の構成は、ガウス過程回帰の予測分布の式、ハイパーパラメタ推定方法、実験による評価からなる。</p>
+
+<p>論文の発表が1996年と20年以上経過しており、内容に古いところがある点に注意する必要がある。
+たとえば、ガウス過程分布の平均\(\boldsymbol{ k }^T(\boldsymbol{x})K^{-1}\boldsymbol{t}\)、分散\(C(\boldsymbol{x}, \boldsymbol{x})-\boldsymbol{k}^T(\boldsymbol{x})K^{-1}\boldsymbol{k}(\boldsymbol{x})\)における共分散行列\(K\)の逆関数\(K^{-1}\)の計算に\(\mathcal{O}(n^3)\)かかるため、訓練データの数が多い場合になんらかの近似が必要とあるが、具体的な手法についての言及がない。<a href="http://chasen.org/~daiti-m/gpbook/">ガウス過程と機械学習</a>によれば、今では補助変数法で計算量で大きく削減することができるとある。また論文ではハイパーパラメタ推定にマルコフ連鎖モンテカルロ法を利用しているが、同書ではより効率的な方法として勾配法による解説がされている。</p>
+
+<hr />
+
+<p>論文は<a href="http://mlg.eng.cam.ac.uk/pub/pdf/WilRas96.pdf">こちら</a>からダウンロードできます。</p>
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
+</footer>
+
+
+
+    </body>
+</html>
