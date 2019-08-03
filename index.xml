@@ -73,6 +73,18 @@ TextRankは、名前から推測できるようにPageRankを応用した手法�
     </item>
     
     <item>
+      <title>概要 When Do Chagnes Induce Fixes?</title>
+      <link>https://nryotaro.github.io/post/when_do_changes_induce_fixes/</link>
+      <pubDate>Fri, 03 Aug 2018 21:47:03 +0900</pubDate>
+      
+      <guid>https://nryotaro.github.io/post/when_do_changes_induce_fixes/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+
+&lt;p&gt;ざっくり言うと、バージョン管理ツールとバグチケット管理ツールを導入しているプロジェクトにおいて、
+バージョン管理ツールで追跡されている変更とバグチケット管理ツールで追跡されているバグを紐付ける手法を提案した。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>要約 A Simple Semi-supervised Algorithm For Named Entity Recognition</title>
       <link>https://nryotaro.github.io/post/a_simple_semi_supervised_for_ner/</link>
       <pubDate>Tue, 17 Jul 2018 12:51:29 +0900</pubDate>
