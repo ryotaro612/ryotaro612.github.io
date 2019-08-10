@@ -6,10 +6,27 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 03 Aug 2019 21:54:03 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 10 Aug 2019 14:39:11 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>メモ Are We Really Making Much Progress? A Worring Analysis of Recent Neural Recomendation Approaches</title>
+      <link>https://nryotaro.github.io/post/are_we_really_making_much_progress/</link>
+      <pubDate>Sat, 10 Aug 2019 14:39:11 +0900</pubDate>
+      
+      <guid>https://nryotaro.github.io/post/are_we_really_making_much_progress/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+
+&lt;p&gt;表題は、ニューラルネットワークを用いた推薦システムを提案、評価した論文における実験の再現性と予測性能の再評価した論文のタイトルにあたる。
+発表学会は、2019年のRecSys。著者らは、以下の2つのRQに回答するためにトップ会議で発表された18の論文を調査した。その結果、実験を再現できた論文は7稿であり、その中でも単純な手法を上回る性能が認められたのは1稿だけだった。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;RQ1: ニューラルネットワークを用いた推薦システムの研究の再現性はどの程度か&lt;/li&gt;
+&lt;li&gt;RQ2: 最近発表されたアルゴリズムは、ハイパーパラメタチューニングされた単純な手法と比べてどの程度性能がいいか&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
     
     <item>
       <title>メモ Gaussian Processes for Regression</title>

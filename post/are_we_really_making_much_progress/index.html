@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      メモ Are We Really Making Much Progress? A Worring Analysis of Recent Neural Recomendation Approaches - Coda
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Coda
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">メモ Are We Really Making Much Progress? A Worring Analysis of Recent Neural Recomendation Approaches</h2>
+      <section class="post-meta">
+        <time class="post-date">August 10, 2019</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <h3 id="概要">概要</h3>
+
+<p>表題は、ニューラルネットワークを用いた推薦システムを提案、評価した論文における実験の再現性と予測性能の再評価した論文のタイトルにあたる。
+発表学会は、2019年のRecSys。著者らは、以下の2つのRQに回答するためにトップ会議で発表された18の論文を調査した。その結果、実験を再現できた論文は7稿であり、その中でも単純な手法を上回る性能が認められたのは1稿だけだった。</p>
+
+<ul>
+<li>RQ1: ニューラルネットワークを用いた推薦システムの研究の再現性はどの程度か</li>
+<li>RQ2: 最近発表されたアルゴリズムは、ハイパーパラメタチューニングされた単純な手法と比べてどの程度性能がいいか</li>
+</ul>
+
+<p>18の論文の発表学会の内訳は、KDDが4稿、RecSysが7稿、SIGIRが3稿、WWWが4稿。そのうち再現できたのは、順に3, 1, 1, 2稿だった。
+これらの手法との比較に使われたのは、大別して、単に最も人気のアイテムを推薦する方法、KNNを用いた強調フィルタリング、\(\textbf{P}^3\alpha\)というグラフアルゴリズムの3つがある。</p>
+
+<p>考察では、再現性の低さや性能の過大評価の原因について議論されている。
+再現性の低さはハイパーパラメタの最適化、評価、前処理、ベースラインのコードが公開されていないことに由来し、
+性能の過大評価は不適切なベースラインの選択や十分な最適化がされていないことに起因すると考えられている。</p>
+
+<h3 id="感想">感想</h3>
+
+<p>ベースラインの最適化に使われた<a href="https://scikit-optimize.github.io/">Scikit-Optimize</a>とベースラインのアルゴリズム\(\textbf{P}^3\alpha\)が気になった。</p>
+
+<hr />
+
+<p>論文は<a href="https://arxiv.org/pdf/1907.06902.pdf">こちら</a>からダウンロードできます。</p>
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
+</footer>
+
+
+
+    </body>
+</html>
