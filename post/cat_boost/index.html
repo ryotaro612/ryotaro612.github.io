@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      メモ CatBoost: unbaiased boosting with categorical features - Coda
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Coda
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">メモ CatBoost: unbaiased boosting with categorical features</h2>
+      <section class="post-meta">
+        <time class="post-date">August 10, 2019</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <h3 id="概要">概要</h3>
+
+<p>表題はNeurIPS 2018で発表されたCatBoostという勾配ブースティングの手法を論文にちなむ。
+Target Statisticsというカテゴリカル特徴量の前処理と勾配ブースティングの学習時に生じる一種のleakageが起きることを示し、leakageをさけて前処理と学習をする手法を示した。
+CatBoostは二進木の決定木を弱識別器に用いる。</p>
+
+<p>Target Statisticsは、濃度が大きい特徴量の値から目的変数の推定値への関数を求め、推定値を学習に使うことで濃度の大きさに対処する手法をさす。
+データセットを\(\mathcal{D}=\{({\bf x}_k, y_k)\}_{k=1\dots n}\)、\({\bf x_k}\)は\(m\)次元のベクトル\((x_k^1, \dots ,x_k^m)\)、
+対応する正解を\(y_k\in\mathbb{R}\)とするとTarget Statistics \(\hat{x}_k^i\)は\(\hat{x}_k^i\approx\mathbb{E}(y \mid x^i=x^i_k)\)となる。
+推定時には\(y\)は与えられないため、\(\hat{x}^i_k\)を計算するときに\(y_k\)を含めるとleakageが生じる。
+そこで、\(\sigma\)を訓練データの無作為な順列の順序の関数、\(\mathcal{D}_k=\{{\bf x}_j:\sigma(j)&lt;\sigma(k)\}\)、\(a&gt;0\)をパラメタ、\(p\)を教師データにおける\(y\)の平均値とすると</p>
+
+<p>$$
+\newcommand{\1}{\mbox{1}\hspace{-0.25em}\mbox{l}}
+\hat{x}^i_k = \frac{\sum_{{\bf x}_j\in\mathcal{D}_k}\1_{\{x_j^i=x_k^i\}}y_j+ap}{\sum_{{\bf x}_j\in\mathcal{D}_k}\1_{\{x^i_j=x^i_k\}}+a}
+$$
+とすることで、leakageを避けて濃度の高いカテゴリカル特徴量の濃度を下げることができる。</p>
+
+<p>学習においても、leakageを避けるために訓練データに順序を与える。例えば、損失関数を\(\frac{1}{2}[y_i-f(x_i)]^2\)とすると、勾配\(-\partial L(y_i,f(x_i))/\partial f(x_i)\)は\(y_i - f(x_i)\)となる。このとき、\(m\)ステップで勾配を計算するときに使われる弱識別器\(f_{m-1}\)の学習に\((x_i, y_i)\)が訓練データに含まれているとleakageが生じる。そこで、<em>Algorithm 1</em> では、訓練データに順列を設定し、leakageが生じないようにしている。なお、\(I\)は決定木の数をさす。
+<em>ALgorithm 1</em> は訓練データの数以上のモデルを学習する必要があるのでスケールしない。論文中ではこれを近似するアルゴリズムも提案されており、実験や評価ではそちらが使われている。</p>
+
+<figure class="center">
+    <img src="/catboost.png" width="320"/> 
+</figure>
+
+
+<h3 id="感想">感想</h3>
+
+<p>訓点データ数が少ないほどleakageの影響が大きいことが解析的にも実験においても示されてるので、訓練データ数が少なく、濃度が大きいカテゴリカル特徴量がある問題で使ってみたいと思う。</p>
+
+<hr />
+
+<p>論文は<a href="https://arxiv.org/abs/1706.09516">こちら</a>からダウンロードできます。</p>
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
+</footer>
+
+
+
+    </body>
+</html>
