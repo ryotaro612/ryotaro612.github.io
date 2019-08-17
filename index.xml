@@ -6,10 +6,24 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 10 Aug 2019 23:27:29 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 17 Aug 2019 14:49:48 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>メモ Advantages and Disadvantages of a Monolithic Repository</title>
+      <link>https://nryotaro.github.io/post/advantages_and_disadvantages_of_a_monolithic_repository/</link>
+      <pubDate>Sat, 17 Aug 2019 14:49:48 +0900</pubDate>
+      
+      <guid>https://nryotaro.github.io/post/advantages_and_disadvantages_of_a_monolithic_repository/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+
+&lt;p&gt;表題は、マルチリポジトリと比べたときのモノリシックリポジトリの長所と短所の調べた論文のタイトルである。
+論文は2018年のICSEでGoogleから発表された。
+調査方法はGoogle社のエンジニアへのアンケートとエンジニアの行動ログの分析が採用されている。
+Googleではモノリシックリポジトリが採用されており、エンジニアがこれまで経験したマルチリポジトリが比較対象となっている。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>メモ CatBoost: unbaiased boosting with categorical features</title>

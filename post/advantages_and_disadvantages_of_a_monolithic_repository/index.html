@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      メモ Advantages and Disadvantages of a Monolithic Repository - Coda
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Coda
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">メモ Advantages and Disadvantages of a Monolithic Repository</h2>
+      <section class="post-meta">
+        <time class="post-date">August 17, 2019</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <h3 id="概要">概要</h3>
+
+<p>表題は、マルチリポジトリと比べたときのモノリシックリポジトリの長所と短所の調べた論文のタイトルである。
+論文は2018年のICSEでGoogleから発表された。
+調査方法はGoogle社のエンジニアへのアンケートとエンジニアの行動ログの分析が採用されている。
+Googleではモノリシックリポジトリが採用されており、エンジニアがこれまで経験したマルチリポジトリが比較対象となっている。</p>
+
+<p>論文の主たる貢献は、マルチリポジトリとモノリシックリポジトリどちらも使って開発したことのあるエンジニアに対して調査したこととある。
+調査によって分かった長所は、ソースコードの見通しの良さであり、見通しの良さが再利用可能なAPIと使い方が見つけやすさにつながっている。
+他方で、短所は、プログラムが依存するライブラリのバージョンを固定できないこと、開発ツールの選択の自由の少なさの2点にあった。
+中立的な表題だが、調査の結果は、モノリシックリポジトリの方が明確にマルチリポジトリよりも支持されている内容だった。</p>
+
+<p>短所であげたライブラリのバージョンの問題について補足する。論文で定義されているモノリシックリポジトリの定義によれば、
+モリシックリポジトリで管理さているプログラムにはバージョンの概念がなく、プログラムは同じリビジョンにある依存するプログラムを利用することになる。
+したがって、モノリシックリポジトリでは、依存するプログラムが更新されることでビルドに失敗するおそれがある。
+しかし、同じリビジョンにあるプログラムを参照することで、Diamond dependencyのようなプログラムのバージョンにかかわる問題を解消でき、コードの一貫性や品質の向上できるとあり、モノリシックリポジトリがマルチリポジトリと比べて依存関係の問題において劣るという結論にはなっていない。</p>
+
+<h3 id="感想">感想</h3>
+
+<p>調査結果からモノリシックリポジトリを検討する場合、妥当性への脅威で述べられているGoogleの社内ツールが評価に及した影響を気にしたほうがいいと感じた。
+妥当性への脅威として、高評価の社内用のコードブラウズとレビューツールがあり、これらがモノリシックリポジトリへの高評価につながった懸念がある。
+脅威への対策として、同じツールを使えるとしらどちらのリポジトリ形態がいいかという質問が追加されている。
+しかし、Google社以外の人にはこれらのツールが使えないので、巨大なモノリシックリポジトリを扱うとき、私たちがツールの支援なしでモノリシックリポジトリを有効に使えるかどうかは分からないと思う。</p>
+
+<hr />
+
+<p>論文は<a href="https://people.engr.ncsu.edu/ermurph3/papers/seip18.pdf">こちら</a>からダウンロードできます。</p>
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
+</footer>
+
+
+
+    </body>
+</html>
