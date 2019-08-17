@@ -254,21 +254,17 @@ TextRankは、名前から推測できるようにPageRankを応用した手法�
       <article class="post">
 	<header class="post-header">
     
-		<h2 class="post-title"><a href="/post/enriching_word_vectors_with_subword_information/">メモ Enriching Word Vectors with Subword Information</a></h2>
+		<h2 class="post-title"><a href="/post/embedding_logical_queries_on_knowledge_graphs/">メモ Embedding Logical Queries on Knowledge Graphs</a></h2>
 	</header>
 	<section class="post-excerpt">
     <p>
-      <h3 id="概要">概要</h3>
-
-<p>Fasttextを提案、評価した論文。
-Character n-gramsを入力としてskip-gramのモデルを作る方法を提案、評価している。
-単語の部分文字列（subword）を使わない手法や形態素解析に頼る手法よりも提案手法が優れていることを実験で示した。
-部分文字列のベクトルの和が単語のベクトルとなる。
-実験の考察では、そのために、未知語の部分文字列が学習データにあれば、未知語に対しても妥当な分散表現を与えることができるとあった。</p> &hellip; <a class="read-more" href="/post/enriching_word_vectors_with_subword_information/">&raquo;</a>
+      概要 一階述語論理式で表現されたクエリを満たすノードを、分散表現に変換し、ナレッジグラフの中から計算時間上効率よく見つけるアルゴリズムを提案した。 クエリに現れるエッジの数に対して計算時間が線形であることが特徴。 ただし、クエリには、存在量化と連接を使えるが、全称量化、選択、否定を使うことができない制約がある。
+感想 全称量化を使えないなら、これをベースにする検索では検索結果を2つ以上は出せないのでしょうか？
+論文はこちら。 &hellip; <a class="read-more" href="/post/embedding_logical_queries_on_knowledge_graphs/">&raquo;</a>
     </p>
 	</section>
 	<footer class="post-meta">
-    <time class="post-date">August 10, 2018</time>
+    <time class="post-date">February 17, 2019</time>
 	</footer>
 </article>
 
