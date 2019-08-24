@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      メモ FastXML: A Fast, Accurate and Stable Tree-classifier for eXtreme Multi-label Learning - Coda
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Coda
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">メモ FastXML: A Fast, Accurate and Stable Tree-classifier for eXtreme Multi-label Learning</h2>
+      <section class="post-meta">
+        <time class="post-date">August 24, 2019</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <p>表題にあるExtreme multi-label classificationの手法を紹介する。
+Extreme multi-label classificationの目的は、大量のラベルの候補から与えられたデータに関連する複数のラベルを推定する学習器を構築することにある。
+FastXMLは、弱学習器に決定木を使うアンサンブル学習であり、ノードの分割の評価関数にnDCGを採用することで、学習にかかる時間と予測精度の向上を意図している。</p>
+
+<p>Extreme classificationの難しさは、言うまでもなくラベルの候補数が多いことにある。
+Extreme classificationにおけるベースラインとして多クラス分類の1-vs-Allがあるが、1-vs-Allはラベルの数だけ学習器が必要であり、
+ラベルの数が多くなるとそれだけ学習と予測に計算コストが線形に増えてしまう。</p>
+
+<p>ラベル数に対する計算コストの増加に対して、木構造でコストを削減する手法が既に確立さている。
+葉に近いノードほどラベルが少ない木構造にすることで、計算コストの増加を劣線形や対数にできる。
+それでも、依然として計算コストは高く、ランダムフォレストをもちいる<a href="manikvarma.org/pubs/agrawal13.pdf">MLRF</a>だと何千ものノードをつかうクラスタが必要になる。</p>
+
+<p>本論文では、決定木のノードの分割の代表的な評価関数に、よく使われるジニ係数や交差エントロピーなどではなく、nDCGを使い、訓練にかかる時間と予測性能の向上を達成した。
+計算コストについていえば、先述のMLRFだとクラスタが必要になるような学習データであっても、一台のデスクトップPCで一日かければ学習できるまで計算コストが下がっている。
+提案したnDCGを用いた評価関数は、学習する重みについて連続ではなく勾配法では解けず、最適化が難しい。
+そこで、本論文は、最適化のためのアルゴリズムを提案し、アルゴリズムが収束することを示している。
+精度におけるnDCDGを採用した理由は、正のラベルは負のラベルよりも少量かつ重要になるという非対称性をランキングとして評価に含めることができることにある。</p>
+
+<hr />
+
+<p>論文は<a href="http://manikvarma.org/pubs/prabhu14.pdf">こちら</a>からダウンロードできます。</p>
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
+</footer>
+
+
+
+    </body>
+</html>

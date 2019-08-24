@@ -6,10 +6,21 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 17 Aug 2019 14:49:48 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 24 Aug 2019 15:45:40 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>メモ FastXML: A Fast, Accurate and Stable Tree-classifier for eXtreme Multi-label Learning</title>
+      <link>https://nryotaro.github.io/post/fastxml/</link>
+      <pubDate>Sat, 24 Aug 2019 15:45:40 +0900</pubDate>
+      
+      <guid>https://nryotaro.github.io/post/fastxml/</guid>
+      <description>&lt;p&gt;表題にあるExtreme multi-label classificationの手法を紹介する。
+Extreme multi-label classificationの目的は、大量のラベルの候補から与えられたデータに関連する複数のラベルを推定する学習器を構築することにある。
+FastXMLは、弱学習器に決定木を使うアンサンブル学習であり、ノードの分割の評価関数にnDCGを採用することで、学習にかかる時間と予測精度の向上を意図している。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>メモ Advantages and Disadvantages of a Monolithic Repository</title>
