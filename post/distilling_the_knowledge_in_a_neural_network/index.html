@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      メモ Distilling the Knowledge in a Neural Network - Coda
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Coda
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">メモ Distilling the Knowledge in a Neural Network</h2>
+      <section class="post-meta">
+        <time class="post-date">August 24, 2019</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <h3 id="概要">概要</h3>
+
+<p>表題にあるニューラルネットワークの蒸留についての論文を紹介する。
+蒸留は、既存のモデルを使い、できるだけ予測性能を落とさずに、より小さいモデルを作るための学習手法である。
+既存のモデルとして想定されているのは、複数のモデルからなるモデルや正則化された大きなモデルのように予測性能は高いが計算コストが高いものであり、
+蒸留の目的は本番の運用に耐えられるデプロイ可能なモデル作ることにある。
+本論文は、出力層の活性化関数に温度つきソフトマックスを使った多クラス分類のモデルを蒸留する手法を提案し、実験により手法を評価している。</p>
+
+<p>蒸留に必要な訓練データには、ラベルなしのデータか蒸留するモデルと同じ訓練データのどちらかを使う。
+次の説明では、ラベルなしのデータを使うことを前提に説明する。</p>
+
+<p>はじめに、ラベルなしのデータに対して蒸留するモデルを活性化関数を温度つきソフトマックスとして確信度を割り当て、教師データを用意する。
+温度\(T\)の温度つきソフトマックスは次の式で与えられる。</p>
+
+<p>$$
+q_i = \frac{\exp(z_i/T)}{\sum_{j}\exp(z_j/T)}
+$$</p>
+
+<p>次に、温度つきソフトマックスを出力層の活性化関数に設定した小さいモデルに対して、用意した教師データを学習させる。
+このときの温度は、確信度を求めたときの温度と同じ値にする。
+損失関数を交差エントロピー、ラベルである確信度を\(q_i\)とすると交差エントロピーの勾配は</p>
+
+<p>$$
+\frac{\sigma C}{\sigma z_i} = \frac{1}{T}(q_i - p_i)=\frac{1}{T}\left(\frac{e^{z_i/T}}{\sum_j e^{z_j/T}}-\frac{e^{v_i/T}}{\sum_j e^{v_j/T}}\right)
+$$</p>
+
+<p>となる。\(T\)が大きいとき、マクローリン展開より\(e^x \approx 1+x\)であるから、</p>
+
+<p>$$
+\frac{\sigma C}{\sigma z_i}\approx \frac{1}{T}\left(\frac{1+z_i/T}{N+\sum_jz_j/T} - \frac{1+v_i/T}{N+\sum_jv_j/T}\right)
+$$</p>
+
+<p>であり、さらに、\(\sum_j z_j = \sum_j v_j =0\)であれば、勾配は</p>
+
+<p>$$
+\frac{\sigma C}{\sigma z_i} \approx \frac{1}{NT^2}(z_i - v_i)
+$$</p>
+
+<p>のように単純化できる。</p>
+
+<p>蒸留された小さいモデルで学習するときは\(T=1\)で確信度を求める。</p>
+
+<p>なお、蒸留するモデルと同じ訓練データで小さいモデルを学習するときは、蒸留するモデルの出力に対する交差エントロピーと訓練データのラベルの分布に対する交差エントロピーの重みつき平均を損失関数に設定する。ただし、上の式より、モデルの出力に対応する交差エントロピーの勾配は\(\frac{1}{T^2}\)だけ訓練データのラベルの方とスケールが異なるので、勾配に対して\(T^2\)をかけて訓練データのラベルに対応する勾配とスケールを等しくする必要がある。</p>
+
+<h3 id="感想">感想</h3>
+
+<p>論文ではもう一つの貢献として、上でまとめた蒸留に加え、特定のクラスの分類に特化した複数のモデルからなるモデルの学習方法の導入がある。
+クラス数が多い分類のタスクを解くときの参考にしたい。</p>
+
+<hr />
+
+<p>論文は<a href="https://arxiv.org/pdf/1503.02531.pdf">こちら</a>からダウンロードできます。</p>
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
+</footer>
+
+
+
+    </body>
+</html>

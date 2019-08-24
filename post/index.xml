@@ -6,10 +6,25 @@
     <description>Recent content in Posts on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 24 Aug 2019 15:45:40 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 24 Aug 2019 23:04:39 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>メモ Distilling the Knowledge in a Neural Network</title>
+      <link>https://nryotaro.github.io/post/distilling_the_knowledge_in_a_neural_network/</link>
+      <pubDate>Sat, 24 Aug 2019 23:04:39 +0900</pubDate>
+      
+      <guid>https://nryotaro.github.io/post/distilling_the_knowledge_in_a_neural_network/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+
+&lt;p&gt;表題にあるニューラルネットワークの蒸留についての論文を紹介する。
+蒸留は、既存のモデルを使い、できるだけ予測性能を落とさずに、より小さいモデルを作るための学習手法である。
+既存のモデルとして想定されているのは、複数のモデルからなるモデルや正則化された大きなモデルのように予測性能は高いが計算コストが高いものであり、
+蒸留の目的は本番の運用に耐えられるデプロイ可能なモデル作ることにある。
+本論文は、出力層の活性化関数に温度つきソフトマックスを使った多クラス分類のモデルを蒸留する手法を提案し、実験により手法を評価している。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>メモ FastXML: A Fast, Accurate and Stable Tree-classifier for eXtreme Multi-label Learning</title>
