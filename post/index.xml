@@ -181,6 +181,20 @@ TextRankは、名前から推測できるようにPageRankを応用した手法�
     </item>
     
     <item>
+      <title>Applying Deep Learning To Airbnb Search</title>
+      <link>https://nryotaro.github.io/post/applying_deep_learning_to_airbnb_search/</link>
+      <pubDate>Fri, 31 Aug 2018 19:21:10 +0900</pubDate>
+      
+      <guid>https://nryotaro.github.io/post/applying_deep_learning_to_airbnb_search/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+
+&lt;p&gt;論文では、Airbnbが深層学習を宿泊先検索に適用した時の試行錯誤と結果を紹介している。
+採用したモデルのアルゴリズムと特徴量エンジニアリングの説明が本稿の大部分を占める。
+深層学習を試す以前はGBDTを採用おり、以下の順にアルゴリズムを変えていった。
+当初は、アルゴリズムを段階的に高度にしていくつもりはなく、1.以前には複雑なアルゴリズムをいきなり試したが、失敗に終わっている。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>メモ The Relationship Between Precision-Recall and ROC Curve</title>
       <link>https://nryotaro.github.io/post/the_relationship_between_precision_recall_and_roc_curve/</link>
       <pubDate>Sat, 25 Aug 2018 00:56:13 +0900</pubDate>
