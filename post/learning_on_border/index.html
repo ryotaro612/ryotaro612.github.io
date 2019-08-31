@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      メモ Learning on the Border: Active Learning in Imbalanced Data Classification - Coda
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Coda
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">メモ Learning on the Border: Active Learning in Imbalanced Data Classification</h2>
+      <section class="post-meta">
+        <time class="post-date">August 31, 2019</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <h3 id="概要">概要</h3>
+
+<p>表題にある論文は、不均衡データの二値分類についての予測性能を能動学習で改善する手法を提案している。
+着想は、学習器のマージン付近では正例と負例がよりバランスしていると仮定し、
+マージン付近にあるデータを集めることで、均衡のとれたデータセットを用意することにある。
+具体的には、ラベルづけしたデータでSVMをオンライン学習し、無作為に抽出されたラベルのないデータの中で最も超平面に近いデータにラベルをつける手順をマージンの中にあるデータ数が変わらなくなるまで繰り返す。</p>
+
+<p>SVMの超平面はマージン内にあるサンプルによって定められるので、当論文ではマージン内にあるサンプルは外にあるサンプルよりも貢献するという立場をとる。</p>
+
+<p>超平面は次の目的関数を最小化することで求まる。</p>
+
+<p>$$
+\min_{{\bf w},\boldsymbol{b}, \xi_i}\frac{1}{2}{\bf w}\cdot{\bf w}^{T}+C\sum^{N}_{i=1}\xi_i
+$$
+$$
+\begin{cases}
+\forall i\ y_i ({\bf w}^T\phi(x_i)-b) \ge 1 -\xi_i \\<br />
+\forall i \ x_i \ge 0
+\end{cases}
+$$</p>
+
+<p>ただし、\({\bf w}\)は超平面のノルム、\(b\)はオフセット、\(y_i\)はラベル、\(\phi(\cdot)\)は入力を対応する特徴空間上のベクトルへの写像を示す。</p>
+
+<p>以上の目的関数の最小化の双対問題に、次の\(W(\alpha)\)の最大化がある。</p>
+
+<p>$$
+\max W(\alpha) \equiv \sum^N_{i=1}\alpha_i - \frac{1}{2}\sum_{j,j}\alpha_i\alpha_jy_iy_jK({\bf x_i}, {\bf x_j})
+$$
+$$
+\begin{cases}
+\forall i\ 0 \le \alpha_i \le C \\<br />
+\sum^N_{i=1}\alpha_iy_i = 0
+\end{cases}
+$$
+ただし、\(K({\bf x_i}, {\bf x_j})=\langle\phi({\bf x_i}),\phi({\bf x_j})\rangle\)はカーネル行列を示す。
+このとき超平面\({\bf w}\)は
+$$
+w = \sum^n_{i=1}\alpha_i\phi(x_i)
+$$
+であり、\(x_i\)がマージンの外にある場合は\(\alpha_i=0\)となり、超平面の位置に影響しない。以上から、すべてのサンプルが等しく学習に貢献するわけではないことを導いている。</p>
+
+<p>論文中の実験では、59件のサンプルを一度に無作為に選び、最も超平面に近いサンプルを探す。
+無作為に選んだ\(L\)件のサンプルの中に母集団内で超平面に近い上位\(p\%\)にあるサンプルが含まれる確率が\(1-\eta\)であるとき、
+$$
+1-(1-p\%)^{L} = 1 -\eta
+$$
+より
+$$
+L=\frac{\log \eta}{\log (1-p\%)}
+$$
+となり母集団の大きさによらず\(L=59\)のとき95%の確率で超平面に近い上位5%のサンプルを抽出することができる。</p>
+
+<h3 id="感想">感想</h3>
+
+<p>提案手法で集めたデータセットでSVM以外の学習器を訓練した場合にも、不均衡なデータに対して高い予測性能をだすことができるのか気になる。</p>
+
+<hr />
+
+<p>論文は<a href="http://web.mit.edu/seyda/www/Papers/CIKM07_LearningontheBorder.pdf">こちら</a>からダウンロードできます。</p>
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
+</footer>
+
+
+
+    </body>
+</html>
