@@ -197,6 +197,17 @@ TextRankは、名前から推測できるようにPageRankを応用した手法�
     </item>
     
     <item>
+      <title>メモ metapath2vec: Scalable Representation Learning for Heterogeneous Networks</title>
+      <link>https://nryotaro.github.io/post/metapath2vec/</link>
+      <pubDate>Fri, 07 Sep 2018 18:31:47 +0900</pubDate>
+      
+      <guid>https://nryotaro.github.io/post/metapath2vec/</guid>
+      <description>&lt;p&gt;異種混合ネットワークから、ノード数x次元数の分散表現を獲得するための手法。
+異種混合とは、企業、業界、ニュースなど複数の種類の概念がグラフのノードとして扱われていることを意味する。
+獲得した分散表現を訓練データとして分類、クラスタリング、検索に応用し、既存手法と比較している。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Applying Deep Learning To Airbnb Search</title>
       <link>https://nryotaro.github.io/post/applying_deep_learning_to_airbnb_search/</link>
       <pubDate>Fri, 31 Aug 2018 19:21:10 +0900</pubDate>

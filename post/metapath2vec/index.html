@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      メモ metapath2vec: Scalable Representation Learning for Heterogeneous Networks - Coda
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Coda
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">メモ metapath2vec: Scalable Representation Learning for Heterogeneous Networks</h2>
+      <section class="post-meta">
+        <time class="post-date">September 07, 2018</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <p>異種混合ネットワークから、ノード数x次元数の分散表現を獲得するための手法。
+異種混合とは、企業、業界、ニュースなど複数の種類の概念がグラフのノードとして扱われていることを意味する。
+獲得した分散表現を訓練データとして分類、クラスタリング、検索に応用し、既存手法と比較している。</p>
+
+<p>ベースにあるアイデアは、skip-gramにおける単語とその文脈(context)を、ノードと周辺のノードに対応させ、
+skip-gramのアルゴリズムをネットワークに応用するというもの。
+ノードの周辺の情報は、対象のノードからのランダムウォークで遷移する確率によって表現され、skip-gramに与えられる。
+ノードの型を分散表現へ反映するにはノードの型情報も与える必要があり、遷移確率を隣接するノードの型によって決めることで型情報を与えている。
+論文の表題にあるmetapathは、「企業-&gt;業界-&gt;企業」のように状態が型で表される遷移列であり、ランダムウォークの経路を制限する。</p>
+
+<hr />
+
+<p>論文は<a href="https://ericdongyx.github.io/papers/KDD17-dong-chawla-swami-metapath2vec.pdf">こちら</a>からダウンロードできます。</p>
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
+</footer>
+
+
+
+    </body>
+</html>
