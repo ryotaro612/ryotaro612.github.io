@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      メモ Software Engineerng for Machine Learning: A Case Study - Coda
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Coda
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">メモ Software Engineerng for Machine Learning: A Case Study</h2>
+      <section class="post-meta">
+        <time class="post-date">September 14, 2019</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <h3 id="概要">概要</h3>
+
+<p>表題の論文は、マイクロソフトでのAIを応用したアプリケーションの開発についての調査結果をまとている。
+著者らは、9人中の8名がMicrosoft Researchに所属し、本論文で2019年のICSEのSoftware Engineering in Practiceの分野でBest Paper Awardを受賞した。
+主な貢献は、各チームにおける開発フローを9のステージに分けて解説したこと、機械学習を応用するアプリケーションやプラットフォームの開発におけるベストプラクティスを示したこと、機械学習を応用するアプリケーションの開発に固有の課題にまつわる論考の3つである。</p>
+
+<p>調査方法は雪だるま式標本法による開発者へのアンケートであり、質問内容は14名の管理職のエンジニアへのヒアリングに基づいて設計された。作成した質問は、リッカート法形式での内容であり、4195名に配布された後、551名のエンジニアが質問に回答した。</p>
+
+<p>ステージに分解した開発のスコープは、機械学習で実装する要件を決める要件定義の段階から、本番環境での予測性能の監視である運用段階にまで及ぶ。次の図は、開発段階を9のステージに分割した様子を表す。
+<img src="/software_engineering_for_machine_learning/9stages.png" alt="9stages" />
+細い矢印は前のステージに戻る可能性があることを示し、太い矢印は以前のどんなステージにも戻ることがある可能性があることを意味する。</p>
+
+<p>ベストプラクティスの内容は多岐にわたり、End-to-endのパイプラインの構築をはじめとして全部で7つの観点について考えられている。その中で最も詳細に分析されていた観点は、機械学習の経験の長さ次第で困難と考える領域が変わることを指摘したものである。以下の図は、機械学習の経験の長さによってエンジニアを長い順にHigh, Midum, Lowの集団に分け、各集団が機械学習のどの領域に困難を抱えているかを示す。
+Rankは、どの課題に感じる領域のランキングを示し、1は集団が最も困難に感じていることを示す。
+図より、経験の長さによらずデータの収集・クレンジング・管理を最も課題に感じていることが読みとれる。
+他方、経験を重ねるにつれ、AI Tools, Scale, Model Evolution, Evaluation, and Deploymentに対する関心が集めることもわかる。
+<img src="/software_engineering_for_machine_learning/table2.png" alt="table2" /></p>
+
+<p>機械学習を応用するアプリケーションの開発に固有の課題として、データの収集・処理・版管理の扱いが難しいこと、モデルを開発するにはソフトウェアエンジニアリング以外の知識が必要になること、機械学習関連のコンポーネントは密結合になりやすいことが列挙されている。</p>
+
+<h3 id="感想">感想</h3>
+
+<p>論文ではCMMやSix Sigmaを参照して機械学習開発プロセスの成熟度を評価するメトリクスを提案していた。論文中でも今後の展望の扱いになっていたように、そのメトリクス自体が本当に開発プロセスを評価するものとして妥当なのか、なぜCMMやSix Sigmaを参照したかなどの考察が薄かったように感じる。
+アジャイル関係の興味深い論文の引用がいくつかあった。</p>
+
+<hr />
+
+<ul>
+<li>論文は<a href="https://www.microsoft.com/en-us/research/uploads/prod/2019/03/amershi-icse-2019_Software_Engineering_for_Machine_Learning.pdf">こちら</a>からダウンロードできます。</li>
+<li>当ページの画像は全て論文から引用しています。</li>
+</ul>
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
+</footer>
+
+
+
+    </body>
+</html>

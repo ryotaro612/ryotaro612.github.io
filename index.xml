@@ -6,10 +6,23 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 07 Sep 2019 15:34:06 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 14 Sep 2019 11:26:41 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>メモ Software Engineerng for Machine Learning: A Case Study</title>
+      <link>https://nryotaro.github.io/post/software_engineering_for_machine_learning/</link>
+      <pubDate>Sat, 14 Sep 2019 11:26:41 +0900</pubDate>
+      
+      <guid>https://nryotaro.github.io/post/software_engineering_for_machine_learning/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+
+&lt;p&gt;表題の論文は、マイクロソフトでのAIを応用したアプリケーションの開発についての調査結果をまとている。
+著者らは、9人中の8名がMicrosoft Researchに所属し、本論文で2019年のICSEのSoftware Engineering in Practiceの分野でBest Paper Awardを受賞した。
+主な貢献は、各チームにおける開発フローを9のステージに分けて解説したこと、機械学習を応用するアプリケーションやプラットフォームの開発におけるベストプラクティスを示したこと、機械学習を応用するアプリケーションの開発に固有の課題にまつわる論考の3つである。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>メモ Class Imbalance, Redux</title>
