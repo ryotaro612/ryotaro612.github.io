@@ -206,6 +206,19 @@ TextRankは、名前から推測できるようにPageRankを応用した手法�
     </item>
     
     <item>
+      <title>メモ Universal Language Model Fine-tuning for Text Classification</title>
+      <link>https://nryotaro.github.io/post/universal_language_model_fine_tuning_for_text_classification/</link>
+      <pubDate>Fri, 14 Sep 2018 16:33:43 +0900</pubDate>
+      
+      <guid>https://nryotaro.github.io/post/universal_language_model_fine_tuning_for_text_classification/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+
+&lt;p&gt;UMLFiTという、様々なNLPの問題に適用可能なファインチューニングの手法を提案、評価した。
+評価手段として、6種のテキスト分類のタスクにおける既存手法とのエラー率の比較が採られている。
+主要な評価として、100件のラベル付きデータだけでその100倍のデータを要した事前学習を用いない手法と同等の予測性能が出たことを報告している。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>メモ metapath2vec: Scalable Representation Learning for Heterogeneous Networks</title>
       <link>https://nryotaro.github.io/post/metapath2vec/</link>
       <pubDate>Fri, 07 Sep 2018 18:31:47 +0900</pubDate>
