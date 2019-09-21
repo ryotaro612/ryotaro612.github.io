@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      メモ Snorkel: Rapid Traning Data Creation with Weak Supervision - Coda
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Coda
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">メモ Snorkel: Rapid Traning Data Creation with Weak Supervision</h2>
+      <section class="post-meta">
+        <time class="post-date">September 21, 2019</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <h3 id="概要">概要</h3>
+
+<p>表題の論文は、Weak supervisionの一種であるSnorkelを学習データの収集効率と予測性能についての既存手法や教師あり学習と比べた評価をまとめてる。</p>
+
+<p>Weak supervisionは、不正確なラベルを許容した上で半手動で大量の教師データを生成する手法をさす。
+Snorkelは、データを受け取りラベルの予測値か予測不可能であることを示す値を返す関数を使って、データにラベルを与えてゆく。
+このラベル付けする関数は、ラベリング関数と呼ばれ、データとともにSnorkelに与えられる。
+Snorkelは、入力された複数のラベリング関数をデータに適用し、データ件数xラベリング関数の個数をサイズとするラベルの予測値の行列を作る。その後、真のラベルを予測するモデルを行列にあてはめ、サンプルにラベルごとの真のラベルについての確信度を出力する。
+出力された確信度つきのデータを教師データとしたモデルと教師ありデータで学習したモデルの予測性能を比較する実験を4件実施したところ、Snorkelによるラベルは全実験において教師ありデータの指標との差が4%以内であった。教師データとして使われたデータは人手で収集すると数週間から数ヶ月かかる量であるとあった。</p>
+
+<p>ラベリング関数は、引数にデータとり、返り値に予測不可能であることを示す値かラベルのいずれかを返せばよく、予測の判断材料に制限はない。論文では、判断材料としてテキストのパターンマッチや弱い学習器、外部の知識データベースが例示されている。</p>
+
+<p>SnorkelのAPIは、インターネット上に<a href="https://www.snorkel.org/">公開</a>されている。
+ただし、予測ラベルを要素とする行列から真のラベルを予測する手法は、本論文とは異なる。
+本論文ではラベルを予測するモデルには、ギブスサンプリングとSGDを組み合わせた手法を採用しているとあるが、
+<a href="https://www.snorkel.org/blog/hello-world-v-0-9#upgraded-labeling-pipeline">こちら</a>にあるように、
+Snorkel 0.9では行列補完を応用した手法が採用されている。</p>
+
+<p>最後に、Snorkelと教師あり学習を比較した実験の情報を以下にまとめる。</p>
+
+<ul>
+<li>CDR
+
+<ul>
+<li>PubMedの一文に含まれる化学物質と病気に因果関係があるか判定する。</li>
+</ul></li>
+<li>Spouses
+
+<ul>
+<li>ニュースの一文に含まれるエンティティが婚姻関係であるかを判定する。</li>
+</ul></li>
+<li>Rad
+
+<ul>
+<li>医療画像の説明文からラベリング関数が出力した画像のラベルと医療画像から肺のレントゲン写真から異常を推定する。</li>
+</ul></li>
+<li>Crowd
+
+<ul>
+<li>ツイートを5つのカテゴリに分ける感情分析のために、クラウドソーシングを利用した。20名のクラウドワーカの回答をラベリング関数とみなす。</li>
+</ul></li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th align="left">Task</th>
+<th align="right"># LFs</th>
+<th align="right">% Pos.</th>
+<th align="right"># Candidates</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">CDR</td>
+<td align="right">33</td>
+<td align="right">24.6</td>
+<td align="right">8272</td>
+</tr>
+
+<tr>
+<td align="left">Spouses</td>
+<td align="right">11</td>
+<td align="right">8.3</td>
+<td align="right">22,195</td>
+</tr>
+
+<tr>
+<td align="left">Radiology</td>
+<td align="right">18</td>
+<td align="right">36.0</td>
+<td align="right">3,851</td>
+</tr>
+
+<tr>
+<td align="left">Crowd</td>
+<td align="right">102</td>
+<td align="right">36.0</td>
+<td align="right">505</td>
+</tr>
+</tbody>
+</table>
+
+<p>Posは正例の割合を示す。</p>
+
+<table>
+  <tr>
+    <th>Task</th><th colspan="5">Snorkel</th><th colspan="5">Hand Supervision</th>
+  </tr>
+  <tr>
+      <th></th><th>P</th><th>R</th><th>F1</th><th>AUC</th><th>ACC</th><th>P</th><th>R</th><th>F1</th><th>AUC</th><th>ACC</t>
+  </tr>
+  <tr>
+    <td>CDR</td>
+    <td align="right">38.8</td><td align="right">54.3</td><td align="right">45.3</td><td align="center">-</td><td align="center">-</td><td align="right">39.9</td><td align="right">58.1</td><td align="right">47.3</td><td align="center">-</td><td align="center">-</td>
+  </tr>
+  <tr>
+  <td>Spouses</td><td align="right">48.4</td><td align="right">61.6</td><td align="right">54.2</td><td align="center">-</td><td align="center">-</td><td align="right">47.8</td><td align="right">62.5</td><td align="right">54.2</td><td align="center">-</td><td align="center">-</td>
+  </tr>
+  <tr>
+  <td>Radiology</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="right">72.0</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="right">76.2</td><td align="center">-</td>
+  </tr>
+  <tr>
+  <td>Crowd</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="right">65.6</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="right">68.8</td>
+  </tr>
+</table>
+
+<table>
+<thead>
+<tr>
+<th align="left">Task</th>
+<th align="right"># Train.</th>
+<th align="right">% Dev.</th>
+<th align="right"># Test</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">CDR</td>
+<td align="right">8,272</td>
+<td align="right">888</td>
+<td align="right">4,620</td>
+</tr>
+
+<tr>
+<td align="left">Spouses</td>
+<td align="right">22,195</td>
+<td align="right">2,796</td>
+<td align="right">2,697</td>
+</tr>
+
+<tr>
+<td align="left">Radiology</td>
+<td align="right">3,851</td>
+<td align="right">38 5</td>
+<td align="right">385</td>
+</tr>
+
+<tr>
+<td align="left">Crowd</td>
+<td align="right">505</td>
+<td align="right">63</td>
+<td align="right">64</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="感想">感想</h3>
+
+<ul>
+<li>理論、実験について両方しっかり議論されていると感じた。</li>
+<li>APIのドキュメントや実装が整っているので、試しやすいと思う。</li>
+<li>実験ごとに評価指標を変えているのが気になる。</li>
+</ul>
+
+<hr />
+
+<ul>
+<li>論文は<a href="http://www.vldb.org/pvldb/vol11/p269-ratner.pdf">こちら</a>からダウンロードできます。</li>
+<li>Snorkelを見つけたのは、データ収集についての<a href="https://arxiv.org/pdf/1811.03402.pdf">サーベイ論文</a>を読んでいたときである。</li>
+</ul>
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
+</footer>
+
+
+
+    </body>
+</html>

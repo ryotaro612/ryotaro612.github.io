@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 14 Sep 2019 11:26:41 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 21 Sep 2019 12:01:51 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>メモ Snorkel: Rapid Traning Data Creation with Weak Supervision</title>
+      <link>https://nryotaro.github.io/post/snorkel_rapid_training_data_creation_with_weak_supervision/</link>
+      <pubDate>Sat, 21 Sep 2019 12:01:51 +0900</pubDate>
+      
+      <guid>https://nryotaro.github.io/post/snorkel_rapid_training_data_creation_with_weak_supervision/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+
+&lt;p&gt;表題の論文は、Weak supervisionの一種であるSnorkelを学習データの収集効率と予測性能についての既存手法や教師あり学習と比べた評価をまとめてる。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>メモ Software Engineerng for Machine Learning: A Case Study</title>
