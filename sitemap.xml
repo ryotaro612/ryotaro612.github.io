@@ -4,14 +4,19 @@
   
   <url>
     <loc>https://nryotaro.github.io/</loc>
-    <lastmod>2019-09-21T12:01:51+09:00</lastmod>
+    <lastmod>2019-09-28T14:53:47+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://nryotaro.github.io/post/</loc>
-    <lastmod>2019-09-21T12:01:51+09:00</lastmod>
+    <lastmod>2019-09-28T14:53:47+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.github.io/post/training_complex_models_with_multi_task_weak_supervision/</loc>
+    <lastmod>2019-09-28T14:53:47+09:00</lastmod>
   </url>
   
   <url>

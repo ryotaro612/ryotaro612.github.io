@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 21 Sep 2019 12:01:51 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 28 Sep 2019 14:53:47 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>メモ Training Complex Models with Multi-Task Weak Supervision</title>
+      <link>https://nryotaro.github.io/post/training_complex_models_with_multi_task_weak_supervision/</link>
+      <pubDate>Sat, 28 Sep 2019 14:53:47 +0900</pubDate>
+      
+      <guid>https://nryotaro.github.io/post/training_complex_models_with_multi_task_weak_supervision/</guid>
+      <description>&lt;p&gt;論文の表題は、ソース間の粒度や精度が揃っていることを前提とせず、&lt;a href=&#34;https://arxiv.org/pdf/1212.0478.pdf&#34;&gt;LohとWainwrightらの手法&lt;/a&gt;でソースの精度を推定し、ソースのラベルよりも精度が高いラベルをデータに与えるWeak supervsionの手法である。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>メモ Snorkel: Rapid Traning Data Creation with Weak Supervision</title>
