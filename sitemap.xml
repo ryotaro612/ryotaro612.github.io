@@ -100,6 +100,11 @@
   </url>
   
   <url>
+    <loc>https://nryotaro.github.io/post/context_string_embeddings_for_sequence_labeling/</loc>
+    <lastmod>2018-09-28T16:29:46+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nryotaro.github.io/post/universal_language_model_fine_tuning_for_text_classification/</loc>
     <lastmod>2018-09-14T16:33:43+09:00</lastmod>
   </url>
