@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      メモ Snorkel DryBell: A Case Study in Deploying Weak Supervision at Industrial Scale - Coda
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Coda
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">メモ Snorkel DryBell: A Case Study in Deploying Weak Supervision at Industrial Scale</h2>
+      <section class="post-meta">
+        <time class="post-date">October 05, 2019</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <h3 id="概要">概要</h3>
+
+<p>表題の論文では、<a href="https://www.snorkel.org">Snorkel</a>というWeak Supervisionの手法をGoogleで適用した結果の考察と評価がなされている。
+Weak Supervisionは、人手よりも効率良くノイズ交じりの教師データを生成する手法である。
+Snorkelは、引数にサンプルを返り値にラベルを返す複数の関数をラベルなしデータに適用し、結果から関数の精度を予測し、個々の関数よりも高い精度でデータにラベルを与える。この関数をラベリング関数という。Snorkel DryBellは、Snorkelのアルゴリズムをスケールさせるために、MapReduceに適用できるように修正されたものをさす。</p>
+
+<p>Snorkelを拡張することで実現できたものは、
+様々なリソースを教師データに利用できることと、素速くラベリング関数を作り適用できることである。
+ラベルづけに役立つリソースは、モデルやナレッジベース、ヒューリスティックなど様々であり、また、処理の遅さやコストなどで本番運用できないものもある。しかし、ラベリング関数にこれらのリソースを使うことで、様々なリソースを本番運用できるモデルに転用することができる。
+また、ラベリング関数同士は、疎結合で、同じデータに異なるラベルを割り当てることが許されており、さらにMapReduceによりデータへ高速に適用される。なお、評価として、3種の分類問題への適用事例が紹介されている。ラベリング関数の数は、それぞれ、10, 8, 140である。</p>
+
+<h3 id="感想">感想</h3>
+
+<p>論文が発表された時点では、Snorkelはラベリング関数の精度推定にギブスサンプリングを用いており、MapReduceを利用することでSnrokel DryBellは約2倍の高速化を達成できているとある。しかし、Snorkelv0.9では、推定にMatrix Completion-styleのアプローチを<a href="https://www.snorkel.org/blog/hello-world-v-0-9#new-matrix-completion-style-modeling-approach">採用</a>したことで、ギブスサンプリングと比べて推定が<a href="https://arxiv.org/pdf/1810.02840.pdf">100倍</a>速くなっている。そのため、高速化の観点では、今ではMapReduceで再実装する意味はなくなっているように思える。</p>
+
+<hr />
+
+<p>論文は<a href="https://arxiv.org/pdf/1812.00417.pdf">こちら</a>からダウンロードできます。</p>
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
+</footer>
+
+
+
+    </body>
+</html>
