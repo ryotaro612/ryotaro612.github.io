@@ -239,6 +239,18 @@ TextRankは、名前から推測できるようにPageRankを応用した手法�
     </item>
     
     <item>
+      <title>メモ Bidirectional LSTM-CRF Models for Sequence Tagging</title>
+      <link>https://nryotaro.github.io/post/bidirectional_lstm_crf_models_for_sequence_tagging/</link>
+      <pubDate>Fri, 05 Oct 2018 18:46:36 +0900</pubDate>
+      
+      <guid>https://nryotaro.github.io/post/bidirectional_lstm_crf_models_for_sequence_tagging/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+
+&lt;p&gt;本稿では、NLPにおける系列ラベリングためのニューラルネットワークアーキテクチャの提案と評価がなされている。
+このアーキテクチャは、当ページで以前紹介した&lt;a href=&#34;https://aclweb.org/anthology/papers/C/C18/C18-1139/&#34;&gt;Contextual String Embeddings for Sequence Labeling&lt;/a&gt;で応用されている。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>メモ Contextual String Embeddings for Sequence Labeling</title>
       <link>https://nryotaro.github.io/post/context_string_embeddings_for_sequence_labeling/</link>
       <pubDate>Fri, 28 Sep 2018 16:29:46 +0900</pubDate>

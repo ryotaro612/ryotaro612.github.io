@@ -105,6 +105,11 @@
   </url>
   
   <url>
+    <loc>https://nryotaro.github.io/post/bidirectional_lstm_crf_models_for_sequence_tagging/</loc>
+    <lastmod>2018-10-05T18:46:36+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nryotaro.github.io/post/context_string_embeddings_for_sequence_labeling/</loc>
     <lastmod>2018-09-28T16:29:46+09:00</lastmod>
   </url>
