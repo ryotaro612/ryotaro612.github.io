@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      メモ Conditional Random Fields: Probabilistic Models for Segmenting and Labeling Sequence Data - Coda
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Coda
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">メモ Conditional Random Fields: Probabilistic Models for Segmenting and Labeling Sequence Data</h2>
+      <section class="post-meta">
+        <time class="post-date">October 12, 2018</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <h3 id="概要">概要</h3>
+
+<p>本稿は、条件付き確率場（Conditional Random Fields, CRF）を提案し、品詞タグづけにおけるerror rateをもとに評価した。
+評価の比較対象には、Maximum entropy Markov models(MEMMs)が採用されている。</p>
+
+<p>本稿の構成は、MEMMsにおける”The Label Bias Problem”を既存手法の問題として取り上げ、問題に対する分析、提案、評価となっている。
+MEMMsは、ある状態に遷移する確率を遷移元の状態と入力値によって決める。このとき、状態間の遷移確率は、系列上の他の位置での遷移によらず決まる。
+すると、特定の状態への遷移確率が他の状態への遷移確率よりも顕著に高くて遷移先の候補が数ない場合、入力系列によらず遷移先候補が少ない経路が選ばれやすくなる。
+これを”The Label Bias Problem”という。</p>
+
+<p>CRFでは、この問題に対応するにあたり、出力系列の入力系列に対する条件付き確率をモデルする。
+これにより、系列上の他の位置における遷移が別の状態間の遷移に影響を与えるようになり、局所的に遷移先の候補が限られた経路に対する偏りを抑えることができる。</p>
+
+<h3 id="備考">備考</h3>
+
+<p>本稿を読んだ動機は、<a href="https://arxiv.org/abs/1508.01991">Bidirectional LSTM-CRF</a>の論文におけるCRFを用いた箇所の理解のため。
+以前「言語処理のための機械学習入門」という書籍でCRFの解説を読んでいた。
+ところが、Bidiretional LSTM-CRFではラベル間の遷移を行列で扱っており、行列による表現は書籍になかったので読解に苦労した。
+そこで理解の助けになるかと考えて本稿にあたった。</p>
+
+<p>CRFを学ぶのであれば、書籍の方がわかりやすいので書籍をはじめに読むことをすすめる。
+CRFの実装方法や<a href="https://python-crfsuite.readthedocs.io/en/latest/pycrfsuite.html">python-crfsuite</a>のようなライブラリにおける特徴の扱われ方を知りたいのであれば、論文を読む必要がある。</p>
+
+<hr />
+
+<p>論文は<a href="https://repository.upenn.edu/cgi/viewcontent.cgi?article=1162&amp;context=cis_papers">こちら</a>からダウンロードできます。</p>
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
+</footer>
+
+
+
+    </body>
+</html>
