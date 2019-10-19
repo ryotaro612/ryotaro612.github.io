@@ -6,10 +6,22 @@
     <description>Recent content in Posts on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Oct 2019 15:59:09 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 19 Oct 2019 16:21:31 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>メモ Structure estimation for discrete graphical models: Generalized covariance matrices and their inverses</title>
+      <link>https://nryotaro.github.io/post/structure_estimation_for_dscrete_graphical_models/</link>
+      <pubDate>Sat, 19 Oct 2019 16:21:31 +0900</pubDate>
+      
+      <guid>https://nryotaro.github.io/post/structure_estimation_for_dscrete_graphical_models/</guid>
+      <description>&lt;p&gt;表題の論文は、マルコフ確率場をなす無向グラフとグラフの構造を反映した逆共分散行列の間の対応関係を証明し、
+観測した確率変数の値からグラフの構造を復元する実験を通じて、対応関係を確認した。
+この手法は&lt;a href=&#34;https://arxiv.org/pdf/1810.02840.pdf&#34;&gt;Snorkel&lt;/a&gt;というWeak supervisionの手法において、
+正解データのない環境で、ノイズつきの教師データを生成する異なるソース間の相関関係を推定するために応用された。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>メモ Feature Selection for Text Categorization on Imbalanced Data</title>
