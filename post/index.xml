@@ -274,6 +274,15 @@ TextRankは、名前から推測できるようにPageRankを応用した手法�
     </item>
     
     <item>
+      <title>DeepType: Multilingual Entity Linking by Neural Type System Evolution(2018)</title>
+      <link>https://nryotaro.github.io/post/deeptype/</link>
+      <pubDate>Fri, 26 Oct 2018 20:53:08 +0900</pubDate>
+      
+      <guid>https://nryotaro.github.io/post/deeptype/</guid>
+      <description>&lt;p&gt;本稿は、既存のオントロジから型システムを構築するアルゴリズムと型システムによるEntity Linking(EL)を提案した。実験を通じて既存手法と比較し、精度の向上を確認した。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>メモ Conditional Random Fields: Probabilistic Models for Segmenting and Labeling Sequence Data</title>
       <link>https://nryotaro.github.io/post/conditional_random_fields_probabilistic_models_for_segmenting_and_labeling_sequence/</link>
       <pubDate>Fri, 12 Oct 2018 18:39:08 +0900</pubDate>

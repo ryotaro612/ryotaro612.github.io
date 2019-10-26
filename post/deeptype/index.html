@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      DeepType: Multilingual Entity Linking by Neural Type System Evolution(2018) - Coda
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Coda
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">DeepType: Multilingual Entity Linking by Neural Type System Evolution(2018)</h2>
+      <section class="post-meta">
+        <time class="post-date">October 26, 2018</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <p>本稿は、既存のオントロジから型システムを構築するアルゴリズムと型システムによるEntity Linking(EL)を提案した。実験を通じて既存手法と比較し、精度の向上を確認した。</p>
+
+<p>本稿における型は、Wikipediaのようなオントロジにおける関係を指す。例えば、オントロジに<code>Human</code>という根から<code>instance of</code>で結ばれる子ノードがあれば、<code>IsHuman</code>が型として扱えられる。
+文中の語句(mention)のエンティティは、候補となるエンティティの条件付き確率P(entity|meition)と型に関する条件付き確率をもとに推定される。表題におけるMultilingualは、構築する型システムが特定の言語に依存しないことに由来する。ある言語のテキストに対するELで構築した型システムを、別の言語で書かた当該テキストのELに利用することができる。</p>
+
+<p>アルゴリズムの要諦は、オントロジにおける関係から型システムに組み込むべき型を選ぶ方法と、mentionの選ばれた型（厳密にはType Axis)を予測するモデルを作る方法に分解している点にある。後者には既存手法(bidirectional-LSTM)が用いられる。
+型システムに組み込むべき型は、mentionの周辺の単語を入力とするニューラルネットワークで候補の型がどれくらい推定しやすいか、
+mentionの候補のエンティティが候補の型によってどれだけ限定できるかを指標として選ばれる。</p>
+
+<hr />
+
+<p>論文は<a href="https://arxiv.org/abs/1802.01021">こちら</a>からダウンロードできます。</p>
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
+</footer>
+
+
+
+    </body>
+</html>
