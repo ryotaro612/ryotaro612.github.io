@@ -6,10 +6,21 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 19 Oct 2019 16:21:31 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 26 Oct 2019 14:27:10 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>メモ A Survey on Data Collection for Machine Learning</title>
+      <link>https://nryotaro.github.io/post/a_survey_on_data_collection_for_machine_learning/</link>
+      <pubDate>Sat, 26 Oct 2019 14:27:10 +0900</pubDate>
+      
+      <guid>https://nryotaro.github.io/post/a_survey_on_data_collection_for_machine_learning/</guid>
+      <description>&lt;p&gt;表題の論文は、文字通り、機械学習に使う教師データに関するサーベイ論文であり、
+機械学習や自然言語処理などのデータの応用分野だけでなく、データの管理にまつわる分野の調査も含まれているところに特徴がある。
+データの管理に着目している理由は、深層学習の発展によって必要な教師データが増えたことで、データの管理の課題が顕在化してきたことである。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>メモ Structure estimation for discrete graphical models: Generalized covariance matrices and their inverses</title>
