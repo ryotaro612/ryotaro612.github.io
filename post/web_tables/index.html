@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      メモ WebTables: Exploring the Power of Tables on the Web - Coda
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Coda
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">メモ WebTables: Exploring the Power of Tables on the Web</h2>
+      <section class="post-meta">
+        <time class="post-date">October 31, 2019</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <h3 id="概要">概要</h3>
+
+<p>表題の論文は、Web上の表から抽出した大量の関係モデルを対象にした検索を提案・評価した
+。検索の他にも、一部の属性を入力とするスキーマの補完、入力した属性ないしスキーマに類似のものを推定するアルゴリズムの議論もある。
+ここのスキーマは属性のリストである。論文の著者らは研究時にGoogleに在籍しており、論文で使われたコーパスはグーグルの汎用ウェブクローラで集めた141億のHTMLの表から抽出した高精度な154百万の関係モデルである。
+コーパスに使うものはHTML形式の表から抽出した関係モデルのみである。
+手法の新規性は、1億以上もの大量のテーブルを対象にしていることにある。</p>
+
+<h3 id="準備">準備</h3>
+
+<p>アルゴリズムの説明の準備のために、<strong>ASCDb</strong> (attribute correlation astatistics database)というスキーマの出現回数の統計情報を紹介する。これらは、\(\mathcal{R}\)関係モデル\(R\)の集合、\(R.u\)を\(R\)のあるURL、\(R.S\)をRのスキーマとすると、次のアルゴリズムで<strong>ASCDb</strong>を求めることができる。また、属性の生起確率\(p\)は、<strong>ASCDb</strong>で集計した出現回数をもとに、属性を含むスキーマの数をスキーマの総数で割った値で定義される。
+<img src="/webtables/ascdb.png" alt="ascdb" /></p>
+
+<h3 id="ランキング">ランキング</h3>
+
+<p>本論文におけるランキングは、クエリ\(q\)と出力数\(k\)を入力として、関連する関係モデルを順序つき\(k\)関係モデルを順序付きで出力する。
+ここでの\(q\)は、私たちが普段検索エンジンに入力するような検索キーワードをさし、実際にアルゴリズムの中で検索エンジンに入力される。</p>
+
+<p>提案されているランキングのうち最も検索性能のよいアルゴリズムは<strong>schemaRank</strong>といい、以下に示すベースラインのアルゴリズムのひとつ<strong>featureRank</strong>との違いは\(\mathcal{score}\)の計算方法のみである。
+なお、最も単純なベースラインは、\(q\)を検索エンジンにかけて得られたURLにある表を返す。</p>
+
+<p><img src="/webtables/feature_rank.png" alt="feature_rank" />
+<strong>featureRank</strong>のアルゴリズムにおける\(\mathcal{score}\)の計算には、以下の特徴量を使う。各特徴には重みが与えられ、重みの値は人が作成した正解データと線形回帰を使って決められている。
+<img src="/webtables/table2.png" alt="feature_rank" />
+<strong>schemaRank</strong>の\(\mathcal{score}\)の計算には、これらの特徴量に加えて次の\(\mathcal{cohere}\)も使用する。
+<img src="/webtables/cohere.png" alt="cohere" /></p>
+
+<p>アルゴリズムの評価には、クエリと関係モデルの組に対して人手でつけられた5段階評価が使われた。
+実験は、\(k\)の値が大きくなるほど<strong>schemaRank</strong>とベースラインとの検索性能の差が広がることを示していた。</p>
+
+<h3 id="感想">感想</h3>
+
+<p>提案手法はWebサイトにある表から関係モデルを抽出する手段を研究のスコープに含めていないので、大量の関係モデルを検索するための手法として考えられる余地があるように感じる。
+ただし、ランキングの基準になる特徴量はWeb上の表の観察によって選ばれたものなので、Web上の表以外に由来する関係モデルに適用する場合は、特徴量を再考する必要があるかもしれない。</p>
+
+<hr />
+
+<ul>
+<li>論文は<a href="https://sirrice.github.io/files/papers/webtables-vldb08.pdf">こちら</a>で公開されています。</li>
+<li>当ページのすべての図は、もとの論文から引用されています。</li>
+</ul>
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
+</footer>
+
+
+
+    </body>
+</html>
