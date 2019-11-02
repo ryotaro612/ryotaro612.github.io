@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      メモ End-to-end Neural Entity Linking - Coda
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Coda
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">メモ End-to-end Neural Entity Linking</h2>
+      <section class="post-meta">
+        <time class="post-date">November 02, 2018</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <h3 id="背景">背景</h3>
+
+<p>本稿は、End to EndなEntity Linkingモデルのアーキテクチャを提案し、予測性能の評価実験で有用性を評価した。
+実験のデータセットには、Entity annotationの評価に使える様々なデータセットを集めた<a href="https://github.com/dice-group/gerbil/wiki">Gerbil Platform</a>が使われている。そのうちの<a href="https://natural-language-understanding.fandom.com/wiki/AIDA-CoNLL">AIDA/CoNLL</a>データセットにおいて、提案手法は既存手法を超える予測性能を発揮した。</p>
+
+<p>表題にあるEnd to Endは、固有表現抽出(Mention Detection, MD)とエンティティの曖昧性解消(Entity Disambiguation, ED)の両方を実現するアーキテクチャを提案していることに由来する。例えば以前紹介した<a href="https://arxiv.org/abs/1802.01021">DeepType</a>のように、Entity Linkingにおける研究には、MDとEDの一方のみに焦点を絞ったものが多い。これに対して、本稿は、MDで抽出した情報がEDでの予測性能に役立ちうると主張し、MDとEDの両方を単一のアーキテクチャで対処する立場をとる。</p>
+
+<h3 id="貢献">貢献</h3>
+
+<ul>
+<li>End to Endなモデルを構築したこと。教師データのテキストに対して必要な注釈は固有表現であること示すものだけがあればよいため、教師データの負担が少ない。</li>
+<li>ニューラルネットワークにより、共参照解析をのぞいて特徴量エンジニアリングが不要なこと</li>
+<li>実験で、教師データと訓練データが同じドメインのテキストである場合に特に予測性能を発揮できることを示した。両者が異なるドメインに属する場合、既存のNERシステムと組み合わせると予測性能が上がること示した。</li>
+</ul>
+
+<h3 id="アーキテクチャ">アーキテクチャ</h3>
+
+<p>提案されたアーキテクチャは、テキストを受け取り、文中の参照表現(Mention)とエンティティの組み合わせに対する確信度を出力する。
+以下の図は、本稿にあるアーキテクチャ図を示す。
+アルゴリズムの要諦は、テキストから参照表現の候補を抽出し、各参照表現の候補と各エンティティ間の文脈上の類似度を学習する点にある。
+類似度の学習は、図中のFFNN2が示すネットワークが行う。類似度の学習において文脈の情報を参照するために、FFNN2に与える参照表現の候補の分散表現(FFNN1の出力)に文脈の情報を含めている。文脈の情報を含んだ分散表現を作るために、Bidirectional LSTMが使われる。
+図中のyxは、エンティティの学習する分散表現を示す。アーキテクチャが出力する最終的なmentionとentity間のペアは、FFNN2が出力する参照表現の候補とエンティティの文における局所的な類似度をFFNN3によって互いに比較した結果となっている。</p>
+
+<p><img src="/end-to-end/arch.png" alt="end-to-end" /></p>
+
+<hr />
+
+<p>論文は<a href="https://aclweb.org/anthology/K18-1050">こちら</a>からダウンロードできます。</p>
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
+</footer>
+
+
+
+    </body>
+</html>
