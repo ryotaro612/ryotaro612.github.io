@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      メモ Deep Joint Entity Disambiguation with Local Neural Attention - Coda
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Coda
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">メモ Deep Joint Entity Disambiguation with Local Neural Attention</h2>
+      <section class="post-meta">
+        <time class="post-date">November 09, 2018</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <p>本稿は、当ページで紹介した<a href="https://aclweb.org/anthology/K18-1050">End-to-End Neural Entity Linking</a>(End-to-End) の著者らの先行研究にあたる。
+End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)の両方をアプローチの対象にしているのに対し、本稿ではEDのみが対象となっている。
+したがって、文章からmention（参照表現）が抽出されていることが前提にあり、提案の中心は、参照表現に対応するエンティティを候補の中から正しく求める手法にある。</p>
+
+<p>提案手法は、参照表現の抽出元周辺にある単語という局所的な情報、局所的な情報をもとに抽出したエンティティ候補同士の一貫性という大域的な情報、この二つをもとにエンティティを推定する。
+局所的な情報を利用するために、エンティティと参照表現周辺の単語の分散表現を入力としエンティティと文脈の関係の深さを示すスコアを出力するモデルを学習する。
+一方、大域的な情報を利用するために、先のモデルが出力するスコアを入力とするCRFの一種(fully-connected pairwise conditional random field)を学習し、他のエンティティとの共起関係をふまえて候補の中からエンティティを選ぶ。</p>
+
+<p>局所的な情報からスコアを計算するには、エンティティと単語の分散表現が必要になる。単語の分散表現にはword2vecを利用し、エンティティの分散表現は単語の分散表現を元に学習し獲得される。
+まず、コーパスにおけるエンティティと単語のペアの数を算出し、その値を元にエンティティを事前条件とする単語の条件付き確率を計算する。同様に、単語の出現確率もコーパスにおける出現頻度から算出する。そして、ネガティブサンプリングと同様の考え方で、エンティティにまつわる単語が条件付き確率と単語の出現確率のどちらから生成されたか推定するモデルを学習することで、エンティティの分散表現を獲得する。単語の分散表現を学習に使うことで、エンティティの分散表現は単語と同じベクトル空間上に配置される。</p>
+
+<p>本稿はEnd-to-Endで何度も参照されており、そん参照部分の理解を進めるために本稿を確認した。
+エンティティの分散表現の作り方が参考になった。</p>
+
+<hr />
+
+<p>論文は<a href="https://arxiv.org/abs/1704.04920">こちら</a></p>
+
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
+</footer>
+
+
+
+    </body>
+</html>
