@@ -6,10 +6,19 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 31 Oct 2019 21:09:38 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 09 Nov 2019 15:37:31 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ActiveClean: Interactive Data Cleaning For Statistical Modeling</title>
+      <link>https://nryotaro.github.io/post/active_clean/</link>
+      <pubDate>Sat, 09 Nov 2019 15:37:31 +0900</pubDate>
+      
+      <guid>https://nryotaro.github.io/post/active_clean/</guid>
+      <description>論文はこちらからダウンロードできます。</description>
+    </item>
     
     <item>
       <title>メモ WebTables: Exploring the Power of Tables on the Web</title>
