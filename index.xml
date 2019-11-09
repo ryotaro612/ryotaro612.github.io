@@ -12,12 +12,15 @@
     
     
     <item>
-      <title>ActiveClean: Interactive Data Cleaning For Statistical Modeling</title>
+      <title>メモ ActiveClean: Interactive Data Cleaning For Statistical Modeling</title>
       <link>https://nryotaro.github.io/post/active_clean/</link>
       <pubDate>Sat, 09 Nov 2019 15:37:31 +0900</pubDate>
       
       <guid>https://nryotaro.github.io/post/active_clean/</guid>
-      <description>論文はこちらからダウンロードできます。</description>
+      <description>&lt;p&gt;ActiveCleanは、教師データの誤りを修正し、モデルの精度を改善する手法である。
+優先して修正すべきデータを推定し、データが修正されたら修正後のデータでモデルを学習し、再び推定する工程を反復する。
+反復的な学習により大域的最適解に到達できるモデルであれば、ActiveCleanの推定は最適解への収束を保証される。
+データの修正件数が等しい条件のもとで、先行研究と比べて最大2.5倍の精度改善を達成した。&lt;/p&gt;</description>
     </item>
     
     <item>

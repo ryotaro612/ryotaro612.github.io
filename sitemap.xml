@@ -3,17 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://nryotaro.github.io/post/active_clean/</loc>
-    <lastmod>2019-11-09T15:37:31+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://nryotaro.github.io/</loc>
     <lastmod>2019-11-09T15:37:31+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://nryotaro.github.io/post/</loc>
+    <lastmod>2019-11-09T15:37:31+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.github.io/post/active_clean/</loc>
     <lastmod>2019-11-09T15:37:31+09:00</lastmod>
   </url>
   
