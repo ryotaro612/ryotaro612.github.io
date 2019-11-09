@@ -139,11 +139,9 @@
 	</header>
 	<section class="post-excerpt">
     <p>
-      本稿は、当ページで紹介したEnd-to-End Neural Entity Linking(End-to-End) の著者らの先行研究にあたる。 End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)の両方をアプローチの対象にしているのに対し、本稿ではEDのみが対象となっている。 したがって、文章からmention（参照表現）が抽出されていることが前提にあり、提案の中心は、参照表現に対応するエンティティを候補の中から正しく求める手法にある。
-提案手法は、参照表現の抽出元周辺にある単語という局所的な情報、局所的な情報をもとに抽出したエンティティ候補同士の一貫性という大域的な情報、この二つをもとにエンティティを推定する。 局所的な情報を利用するために、エンティティと参照表現周辺の単語の分散表現を入力としエンティティと文脈の関係の深さを示すスコアを出力するモデルを学習する。 一方、大域的な情報を利用するために、先のモデルが出力するスコアを入力とするCRFの一種(fully-connected pairwise conditional random field)を学習し、他のエンティティとの共起関係をふまえて候補の中からエンティティを選ぶ。
-局所的な情報からスコアを計算するには、エンティティと単語の分散表現が必要になる。単語の分散表現にはword2vecを利用し、エンティティの分散表現は単語の分散表現を元に学習し獲得される。 まず、コーパスにおけるエンティティと単語のペアの数を算出し、その値を元にエンティティを事前条件とする単語の条件付き確率を計算する。同様に、単語の出現確率もコーパスにおける出現頻度から算出する。そして、ネガティブサンプリングと同様の考え方で、エンティティにまつわる単語が条件付き確率と単語の出現確率のどちらから生成されたか推定するモデルを学習することで、エンティティの分散表現を獲得する。単語の分散表現を学習に使うことで、エンティティの分散表現は単語と同じベクトル空間上に配置される。
-本稿はEnd-to-Endで何度も参照されており、そん参照部分の理解を進めるために本稿を確認した。 エンティティの分散表現の作り方が参考になった。
-論文はこちら &hellip; <a class="read-more" href="/post/deep_joint_entity_disambiguation/">&raquo;</a>
+      <p>本稿は、当ページで紹介した<a href="https://aclweb.org/anthology/K18-1050">End-to-End Neural Entity Linking</a>(End-to-End) の著者らの先行研究にあたる。
+End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)の両方をアプローチの対象にしているのに対し、本稿ではEDのみが対象となっている。
+したがって、文章からmention（参照表現）が抽出されていることが前提にあり、提案の中心は、参照表現に対応するエンティティを候補の中から正しく求める手法にある。</p> &hellip; <a class="read-more" href="/post/deep_joint_entity_disambiguation/">&raquo;</a>
     </p>
 	</section>
 	<footer class="post-meta">
