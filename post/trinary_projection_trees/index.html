@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      論文要約 Trinary-Projection Trees for Approximate Nerest Neighbor Search - Coda
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Coda
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">論文要約 Trinary-Projection Trees for Approximate Nerest Neighbor Search</h2>
+      <section class="post-meta">
+        <time class="post-date">November 16, 2019</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <p>Trinary-Projection Trees(TP trees)は、kd木のように、ユークリッド空間の分割を二分木で表現できるデータ構造である。
+超平面は1または-1の重みのついた少数の座標軸で定義される。
+これにより、探索時の分岐にかかる計算が、加算と減算だけからなる\(O(1)\)となる。
+また、射影されたデータの分散の大きい超平面を探し、同じ分割にある点同士の距離を小さくすることで、精度を向上させている。</p>
+
+<p>超平面は、データの次元を\(d\)とすると\(f({\rm x};\theta)=f({{\rm x};{\rm w}, b}) = {\rm w}^{T}{\rm x} - b, {\rm w} = [w_1,\cdots w_i\cdots \cdots w_d]^{T}\)で表わされる。
+\(b\)は射影された値の平均か中央値のいずれかであり、\(w_i \in\{1, 0, -1\}\)である。
+\(f\)によって分割された二次元空間を以下に例示する。
+左図は、kd木による分割を示す。
+kd木は\(\mid\mid{\rm w}\mid\mid_0=1\)のTP Treeとみなせる。
+右図は、\(\mid\mid{\rm w}\mid\mid_0&gt;0\)のTP Treeである。
+\(\mid\mid{\rm x}\mid\mid_0\)の制約のないため、右図の空間はより柔軟に分割されている。</p>
+
+<p><img src="/tptree1.png" alt="tp木" /></p>
+
+<p>空間を分割するときの、\({\rm w}\)の最適解は以下で定義される。
+\(\tau\)の要素数は、\(\frac{3^d-1}{2}\)であり、次元\(d\)に対して指数関数的に大きくなる。そのため、近似解を求める手法が提案されている。</p>
+
+<p>$$
+    \underset{{\rm w}\in \tau}{\operatorname{argmax}}\ {\rm Var}_{{\rm x} \in \widetilde{\chi}}[{\mid\mid{\rm w}\mid\mid}_2^{-1}{\rm w}^T{\rm x}]
+$$</p>
+
+<hr />
+
+<ul>
+<li><a href="https://jingdongwang2017.github.io/Pubs/TPAMI-TPTree.pdf">こちら</a>から論文を参照できます。</li>
+<li>文中の図は論文から引用されています。</li>
+</ul>
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
+</footer>
+
+
+
+    </body>
+</html>
