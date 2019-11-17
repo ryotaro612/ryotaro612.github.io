@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      論文メモ Get Another Label? Improving Data Quality and Data Mining Using Multiple, Noisy Labelers - Coda
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Coda
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">論文メモ Get Another Label? Improving Data Quality and Data Mining Using Multiple, Noisy Labelers</h2>
+      <section class="post-meta">
+        <time class="post-date">November 09, 2019</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <p>ある確率でデータに誤ったラベルをふるlabelerでデータにラベルをふるときに、
+既にラベルのあるデータに重ねてラベルをふるべきか調査した。
+12種類のラベルつきデータセットを使い、
+正解ラベルを誤ったラベルに置換する割合や同一のデータのもつラベルの数を変化させ、モデルの精度の違いを観察した。
+加えて、ラベルをふるべきデータを推定する手法も提案している。</p>
+
+<p>同じデータに重ねてラベルをふることで教師データの質やモデルを改善できることが分かった。
+labelerが正しいラベルを与える確率が\(p\)のときの精度を比較した実験結果を以下に示す。
+SL(Single Label)はラベルを重複して与えない場合を、
+MV(Majority Vote)はデータに与えられた複数のラベルのうち最も数の多いラベルを採用する場合を示す。
+MVの場合、ラベルの数が増えてもデータの数は固定される。
+また、データごとのラベルの数が均等になるよう順番にラベルが与えられる。
+\(p\)が0.8と場合はSLのAccuracyが高く\(p\)が低い場合はMVの方が高く、
+ノイズが高いほどラベルを重ねる効果が発揮されてる。</p>
+
+<p><img src="/get_another_label.png" alt="get_another_label" /></p>
+
+<p>ラベルをふるべきデータの推定は、不確かさを基準にする。
+ここでの不確かさはモデルの推定の不確かさ\(S_{MU}\)とデータにふられたラベルの不確かさ\(S_{LU}\)の幾何平均\(S_{LMU}=\sqrt{S_{MU}\cdot S_{LU}}\)である。
+モデルの数を\(m\), \(P(+\mid x,H_i)\)を\(H_i\)が出力する\(x\)が\(+\)である確信度とすると\(S_{MU}\)は次の式で表わされる。
+$$
+S_{MU} = 0.5 - \mathrel{\bigg|} \frac{1}{m} \sum_{i=1}^{m}Pr(+\mid x, H_i) - 0.5 \mathrel{\bigg|}
+$$
+データにふられたラベルの中で最大数のラベルを\(y_m\)とすると、\(L_{LU}\)は\(y_m\)が正しいラベルであることの不確かさである。
+この不確かさをベイズ推定で求める。
+\(L_{pos}\)と\(L_{neg}\)を正のラベルと負のラベルの数、事前分布を一様分布、事後分布を\(B(L_{pos}+1, L_{neg}+1)\)とすると、累積分布関数\(I_x\)で閾値を\(x\)とする不確かさを定義できる。
+$$
+I_{x}(\alpha, \beta)\sum_{j=a}^{\alpha +\beta -1}\frac{(\alpha + \beta - 1)!}{j!(\alpha + \beta - 1 -j)!}x^j(1-x)^{\alpha + \beta -1 -j}
+$$
+論文では、\(x=0.5, \alpha = L_{pos}+1, \beta=L_{neg}+1\)として
+$$
+L_{LU} = min\{I_{0.5}(L_{pos}, L_{neg}), 1 - I_{0.5}(L_{pos}, L_{neg}) \}
+$$
+としている。</p>
+
+<hr />
+
+<ul>
+<li>論文は<a href="http://crowdsourcing-class.org/readings/downloads/econ/get-another-label.pdf">こちら</a>からダウンロードできます。</li>
+</ul>
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
+</footer>
+
+
+
+    </body>
+</html>

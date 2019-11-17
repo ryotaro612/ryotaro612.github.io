@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>論文要約 Trinary-Projection Trees for Approximate Nerest Neighbor Search</title>
+      <title>論文メモ Trinary-Projection Trees for Approximate Nerest Neighbor Search</title>
       <link>https://nryotaro.github.io/post/trinary_projection_trees/</link>
       <pubDate>Sat, 16 Nov 2019 13:12:52 +0900</pubDate>
       
@@ -21,6 +21,19 @@
 超平面は1または-1の重みのついた少数の座標軸で定義される。
 これにより、探索時の分岐にかかる計算が、加算と減算だけからなる\(O(1)\)となる。
 また、射影されたデータの分散の大きい超平面を探し、同じ分割にある点同士の距離を小さくすることで、精度を向上させている。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>論文メモ Get Another Label? Improving Data Quality and Data Mining Using Multiple, Noisy Labelers</title>
+      <link>https://nryotaro.github.io/post/get_another_label/</link>
+      <pubDate>Sat, 09 Nov 2019 21:46:12 +0900</pubDate>
+      
+      <guid>https://nryotaro.github.io/post/get_another_label/</guid>
+      <description>&lt;p&gt;ある確率でデータに誤ったラベルをふるlabelerでデータにラベルをふるときに、
+既にラベルのあるデータに重ねてラベルをふるべきか調査した。
+12種類のラベルつきデータセットを使い、
+正解ラベルを誤ったラベルに置換する割合や同一のデータのもつラベルの数を変化させ、モデルの精度の違いを観察した。
+加えて、ラベルをふるべきデータを推定する手法も提案している。&lt;/p&gt;</description>
     </item>
     
     <item>
