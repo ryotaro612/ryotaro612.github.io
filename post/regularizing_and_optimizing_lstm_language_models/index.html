@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      Regularizing and Optimizing LSTM Language Models - Coda
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Coda
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">Regularizing and Optimizing LSTM Language Models</h2>
+      <section class="post-meta">
+        <time class="post-date">November 23, 2018</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <p>本稿は、LSTMを用いた言語モデルに対して正規化と最適化を適用し、実験を通して既存の先行研究とperplexityの観点で予測性能を評価した。本稿の手法の利点は、LSTMの実装に変更を加えずに適用できるために、NVIDIA cuDNNなどの高速でブラックボックスなライブラリで実装できることにある。</p>
+
+<h4 id="最適化">最適化</h4>
+
+<p>モメンタムに頼らない方が予測性能をあげられるという立場をとり、学習率が一定のNon-monotonically Triggered ASGD(NT-ASGD)を提案した。
+NT-ASGDのベースにはAveraged SGD(ASGD)がある。
+ASGDとSGDの違いは、SGDが最後に更新された重みの値を返すのに対し、ASGDでは一定回数反復した以降の各時点での重みの平均値を採用する点にある。
+ASGDを採用するには、平均の対象にするべき繰り返しの期間を設定する必要があり、チューニングを要する。
+NT-ASGDでは、モデルの性能を測るメトリクスの値を都度計測し、メトリクスの向上具合をもとに平均の算出対象の範囲を決めることで、自動でチューニングを図っている。</p>
+
+<h3 id="正則化">正則化</h3>
+
+<p>本稿における正則化は、<a href="https://www.deeplearningbook.org/">Deep Learning</a>と同様に、「訓練誤差ではなく、汎化誤差の削除を意図した、学習アルゴリズムに対するあらゆる改良」という意味で、複数のアプローチが採用されている。その中で予測性能の向上に最も貢献したのは、LSTMの隠れ層導入された<a href="http://proceedings.mlr.press/v28/wan13.pdf">DropConnect</a>（ドロップアウトを一般化したもの。ドロップアウトが活性化関数の出力のうち無作為に選ばれたものを0にするのに対して、DropConnectは無作為に選ばれた重みの一部を0にする。一つのスカラー重みと1つの隠れユニットの状態の席をドロップするユニット）であった。</p>
+
+<h3 id="感想">感想</h3>
+
+<p>関連研究の節がなく評価の節で先行研究を紹介していた点が珍しいと感じた。
+本研究は以前に本ページで紹介した<a href="https://arxiv.org/abs/1801.06146">Universal Language Model Fine-tuning for Text Classification</a>のベースになっており、これに対する理解を深めるために本稿を確認した。
+本稿の利点として、既存の高速なライブラリを利用できることを主張しているので、処理時間の評価があってもいいと感じた。</p>
+
+<h3 id="参考情報">参考情報</h3>
+
+<ul>
+<li>論文は<a href="https://arxiv.org/abs/1708.02182">こちら</a>からダウンロードできます。</li>
+</ul>
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
+</footer>
+
+
+
+    </body>
+</html>

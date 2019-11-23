@@ -327,6 +327,15 @@ TextRankは、名前から推測できるようにPageRankを応用した手法�
     </item>
     
     <item>
+      <title>Regularizing and Optimizing LSTM Language Models</title>
+      <link>https://nryotaro.github.io/post/regularizing_and_optimizing_lstm_language_models/</link>
+      <pubDate>Fri, 23 Nov 2018 19:27:00 +0900</pubDate>
+      
+      <guid>https://nryotaro.github.io/post/regularizing_and_optimizing_lstm_language_models/</guid>
+      <description>&lt;p&gt;本稿は、LSTMを用いた言語モデルに対して正規化と最適化を適用し、実験を通して既存の先行研究とperplexityの観点で予測性能を評価した。本稿の手法の利点は、LSTMの実装に変更を加えずに適用できるために、NVIDIA cuDNNなどの高速でブラックボックスなライブラリで実装できることにある。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>メモ Deep Joint Entity Disambiguation with Local Neural Attention</title>
       <link>https://nryotaro.github.io/post/deep_joint_entity_disambiguation/</link>
       <pubDate>Fri, 09 Nov 2018 21:11:50 +0900</pubDate>
