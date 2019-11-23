@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      論文メモ On Calibration of Modern Neural Networks - Coda
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Coda
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">論文メモ On Calibration of Modern Neural Networks</h2>
+      <section class="post-meta">
+        <time class="post-date">November 23, 2019</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <p>ネットワークの複雑化、バッチ正則化、重み減衰を使わない、負の対数尤度の過学習が汎化精度を上げるが、予測確率と精度のズレを大きくすることを実験的に示した。
+予測確率を補正する6つの手法を19種類のクラス分類のデータセットに適用した結果、
+最も補正できたものは、温度つきソフトマックスの出力を予測確率にする場合であった。</p>
+
+<p>ネットワークの複雑化とズレの関係を調べる実験では、<a href="http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf">LeNet</a>(1998)と<a href="https://arxiv.org/abs/1512.03385">ResNet</a>(2016)の<a href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFER-100</a>への適用結果を比較している。
+下の左右の図は、それぞれLesNetとResNetの精度と予測確率のズレを示す。
+<img src="/on_calibration_of_modern_neural_networks/accuracy_vs_confidence.png" alt="accuracy vs confidence" />
+青いヒストグラムは、一定区間内にある予測確率で推定されたサンプルについての精度を示す。
+Gapが小さいほどズレがないことを意味する。
+LesNetと比べ、ResNetはエラー率が低くてGapが大きく、ズレの拡大を許して精度を上げている。</p>
+
+<p>ズレ幅と補正は、Expected Calibration Error(ECE)で評価される。
+クラスを\(Y\in\mathcal{Y}=\{1,\dots ,K\}\)、予測されたクラスを\(\hat{Y}\)、予測確率を\(\hat{P}\)とおくと、ズレのない状態は以下のように定義される。
+$$
+ \mathbb{P}\left(\hat{Y}=Y\mid \hat{P} = p\right) = p, \forall p\in [0, 1]
+$$
+ECEは、\(p\)からの左辺と右辺の差の期待値を意味する。
+$$
+\mathbb{E}\left[\big|\mathbb{P}\left(\hat{Y}=Y\mid\hat{P}=p\right)-p\big|\right]
+$$
+\(p\)は連続量なので、ECEは次のように有限のデータで差を求めるために近似する。</p>
+
+<p>$$
+ECE =\sum^{M}_{m=1}\frac{\mid B_m \mid}{n}\big|acc (B_m) - conf (B_m)\big|
+$$
+ただし
+$$
+acc(B_m) =\frac{1}{\mid B_m\mid}\sum_{i\in B_m}\boldsymbol{1}(\hat{y}_i - y_i)
+$$
+$$
+conf(B_m) = \frac{1}{\mid B_m \mid}\sum_{i\in B_m}\hat{p_i}
+$$
+である。
+補正は、補正の前後でのECEの差で評価できる。</p>
+
+<p>実験された補正方法の中で最もECEを小さくできたのは、温度つきソフトマックスであった。
+温度つきソフトマックスによる補正では、
+ソフトマックスへの入力を\(\boldsymbol{z}_i\)とすると、
+次のように温度\(T\)によって補正された\(\hat{q}_i\)を予測確率とみなす。
+$$
+\hat{q}_i=\max_{k} \frac{\exp(z_i/T^{(k)})}{\sum_{j=1}^{K}\exp({z_i/T}^{(j)})}
+$$
+温度\(T\)は、検証データを使い、負の対数尤度を誤差関数とする学習で求められる。</p>
+
+<hr />
+
+<ul>
+<li>論文は<a href="https://arxiv.org/pdf/1706.04599.pdf">こちら</a>からダウンロードできます。</li>
+<li>画像は論文から引用されています。</li>
+</ul>
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
+</footer>
+
+
+
+    </body>
+</html>
