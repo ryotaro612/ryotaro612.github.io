@@ -78,6 +78,25 @@
   <article class="post">
 	<header class="post-header">
     
+		<h2 class="post-title"><a href="/post/snorkel_drybell_case_study/">メモ Snorkel DryBell: A Case Study in Deploying Weak Supervision at Industrial Scale</a></h2>
+	</header>
+	<section class="post-excerpt">
+    <p>
+      <h3 id="heading">概要</h3>
+<p>表題の論文では、<a href="https://www.snorkel.org">Snorkel</a>というWeak Supervisionの手法をGoogleで適用した結果の考察と評価がなされている。
+Weak Supervisionは、人手よりも効率良くノイズ交じりの教師データを生成する手法である。
+Snorkelは、引数にサンプルを返り値にラベルを返す複数の関数をラベルなしデータに適用し、結果から関数の精度を予測し、個々の関数よりも高い精度でデータにラベルを与える。この関数をラベリング関数という。Snorkel DryBellは、Snorkelのアルゴリズムをスケールさせるために、MapReduceに適用できるように修正されたものをさす。</p> &hellip; <a class="read-more" href="/post/snorkel_drybell_case_study/">&raquo;</a>
+    </p>
+	</section>
+	<footer class="post-meta">
+    <time class="post-date">October 05, 2019</time>
+	</footer>
+</article>
+
+  
+  <article class="post">
+	<header class="post-header">
+    
 		<h2 class="post-title"><a href="/post/training_complex_models_with_multi_task_weak_supervision/">メモ Training Complex Models with Multi-Task Weak Supervision</a></h2>
 	</header>
 	<section class="post-excerpt">
@@ -98,8 +117,7 @@
 	</header>
 	<section class="post-excerpt">
     <p>
-      <h3 id="概要">概要</h3>
-
+      <h3 id="heading">概要</h3>
 <p>表題の論文は、Weak supervisionの一種であるSnorkelを学習データの収集効率と予測性能についての既存手法や教師あり学習と比べた評価をまとめてる。</p> &hellip; <a class="read-more" href="/post/snorkel_rapid_training_data_creation_with_weak_supervision/">&raquo;</a>
     </p>
 	</section>
@@ -116,8 +134,7 @@
 	</header>
 	<section class="post-excerpt">
     <p>
-      <h3 id="概要">概要</h3>
-
+      <h3 id="heading">概要</h3>
 <p>表題の論文は、マイクロソフトでのAIを応用したアプリケーションの開発についての調査結果をまとている。
 著者らは、9人中の8名がMicrosoft Researchに所属し、本論文で2019年のICSEのSoftware Engineering in Practiceの分野でBest Paper Awardを受賞した。
 主な貢献は、各チームにおける開発フローを9のステージに分けて解説したこと、機械学習を応用するアプリケーションやプラットフォームの開発におけるベストプラクティスを示したこと、機械学習を応用するアプリケーションの開発に固有の課題にまつわる論考の3つである。</p> &hellip; <a class="read-more" href="/post/software_engineering_for_machine_learning/">&raquo;</a>
@@ -155,8 +172,7 @@
 	</header>
 	<section class="post-excerpt">
     <p>
-      <h3 id="概要">概要</h3>
-
+      <h3 id="heading">概要</h3>
 <p>表題にある論文は、不均衡データの二値分類についての予測性能を能動学習で改善する手法を提案している。
 着想は、学習器のマージン付近では正例と負例がよりバランスしていると仮定し、
 マージン付近にあるデータを集めることで、均衡のとれたデータセットを用意することにある。
@@ -176,8 +192,7 @@
 	</header>
 	<section class="post-excerpt">
     <p>
-      <h3 id="概要">概要</h3>
-
+      <h3 id="heading">概要</h3>
 <p>表題にあるニューラルネットワークの蒸留についての論文を紹介する。
 蒸留は、既存のモデルを使い、できるだけ予測性能を落とさずに、より小さいモデルを作るための学習手法である。
 既存のモデルとして想定されているのは、複数のモデルからなるモデルや正則化された大きなモデルのように予測性能は高いが計算コストが高いものであり、
@@ -216,8 +231,7 @@ FastXMLは、弱学習器に決定木を使うアンサンブル学習であり�
 	</header>
 	<section class="post-excerpt">
     <p>
-      <h3 id="概要">概要</h3>
-
+      <h3 id="heading">概要</h3>
 <p>表題は、マルチリポジトリと比べたときのモノリシックリポジトリの長所と短所の調べた論文のタイトルである。
 論文は2018年のICSEでGoogleから発表された。
 調査方法はGoogle社のエンジニアへのアンケートとエンジニアの行動ログの分析が採用されている。
@@ -237,35 +251,10 @@ Googleではモノリシックリポジトリが採用されており、エン�
 	</header>
 	<section class="post-excerpt">
     <p>
-      <h3 id="概要">概要</h3>
-
+      <h3 id="heading">概要</h3>
 <p>表題はNeurIPS 2018で発表されたCatBoostという勾配ブースティングの手法を論文にちなむ。
 Target Statisticsというカテゴリカル特徴量の前処理と勾配ブースティングの学習時に生じる一種のleakageが起きることを示し、leakageをさけて前処理と学習をする手法を示した。
 CatBoostは二進木の決定木を弱識別器に用いる。</p> &hellip; <a class="read-more" href="/post/cat_boost/">&raquo;</a>
-    </p>
-	</section>
-	<footer class="post-meta">
-    <time class="post-date">August 10, 2019</time>
-	</footer>
-</article>
-
-  
-  <article class="post">
-	<header class="post-header">
-    
-		<h2 class="post-title"><a href="/post/are_we_really_making_much_progress/">メモ Are We Really Making Much Progress? A Worring Analysis of Recent Neural Recomendation Approaches</a></h2>
-	</header>
-	<section class="post-excerpt">
-    <p>
-      <h3 id="概要">概要</h3>
-
-<p>表題は、ニューラルネットワークを用いた推薦システムを提案、評価した論文における実験の再現性と予測性能の再評価した論文のタイトルにあたる。
-発表学会は、2019年のRecSys。著者らは、以下の2つのRQに回答するためにトップ会議で発表された18の論文を調査した。その結果、実験を再現できた論文は7稿であり、その中でも単純な手法を上回る性能が認められたのは1稿だけだった。</p>
-
-<ul>
-<li>RQ1: ニューラルネットワークを用いた推薦システムの研究の再現性はどの程度か</li>
-<li>RQ2: 最近発表されたアルゴリズムは、ハイパーパラメタチューニングされた単純な手法と比べてどの程度性能がいいか</li>
-</ul> &hellip; <a class="read-more" href="/post/are_we_really_making_much_progress/">&raquo;</a>
     </p>
 	</section>
 	<footer class="post-meta">

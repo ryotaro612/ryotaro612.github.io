@@ -68,52 +68,45 @@
       <p>表題の論文は、文字通り、機械学習に使う教師データに関するサーベイ論文であり、
 機械学習や自然言語処理などのデータの応用分野だけでなく、データの管理にまつわる分野の調査も含まれているところに特徴がある。
 データの管理に着目している理由は、深層学習の発展によって必要な教師データが増えたことで、データの管理の課題が顕在化してきたことである。</p>
-
 <p>調査範囲は、次の図が示すように、大きく3つに別れる。それぞれは、データの取得、データへのラベル付け、既存のデータやモデルの改善に分類される。青色の単語はデータ管理の分野である。さらに下の流れ図は、これらの分野の技術を適用すべき状況を整理している。ただし、6節の今後の課題にあるように、流れ図は不完全なものであり、今後洗練される必要があるとされている。</p>
-
-<p><img src="/a_survey_on_data_collection_for_machine_learning/fig_1.png" alt="fig1" /></p>
-
-<p><img src="/a_survey_on_data_collection_for_machine_learning/fig_2.png" alt="fig2" /></p>
-
+<p><img src="/a_survey_on_data_collection_for_machine_learning/fig_1.png" alt="fig1"></p>
+<p><img src="/a_survey_on_data_collection_for_machine_learning/fig_2.png" alt="fig2"></p>
 <p>取りあげられた論文の中で気になったものを以下にとりあげる。</p>
-
 <ul>
 <li>Searching
-
 <ul>
 <li><a href="https://sirrice.github.io/files/papers/webtables-vldb08.pdf">WebTables</a>: Webクローリングで収集した大量のHTML形式の表をもとに、属性を入力として共起する属性や類義語を推定する、入力したスキーマから類似の存在するスキーマを提示する、といった検索機能を構築する。ここでのスキーマは表の順序つきのヘッダのリストをさす。</li>
-</ul></li>
+</ul>
+</li>
 <li>Entity
-
 <ul>
 <li><a href="http://disi.unitn.it/~p2p/RelatedWork/Matching/modf256-yakout.pdf">InfoGather</a>: データが欠落しているテーブルを与えると、Web上に存在するテーブルとスキーマ同士を比べることで、欠落を補完する。</li>
-</ul></li>
+</ul>
+</li>
 <li>Data Integration
-
 <ul>
 <li><a href="https://adalabucsd.github.io/papers/2016_Hamlet_SIGMOD.pdf">Hamlet system</a>: 関係データベースに格納されたデータを特徴に使うことを前提として、特徴選択においてテーブルを外部キーで結合し特徴を増やすべきか否かを判定するルールを提案した。実験を通して、多くの場合においてテーブル結合が精度に寄与しないことを示した。</li>
-</ul></li>
+</ul>
+</li>
 <li>Data specific
-
 <ul>
 <li><a href="https://www.aclweb.org/anthology/N18-1170.pdf">SCPNs</a>: 文章のパラフレーズを生成する手法。文章と構文を与えることで、与えられた構文の同じ意味の文章を生成する。</li>
 <li><a href="https://www.aclweb.org/anthology/P18-1079.pdf">SEARs</a>: モデルのデバッグのために、元のテキストと同じ意味でモデルが間違えそうなテキストを生成する。</li>
-</ul></li>
+</ul>
+</li>
 <li>Data cleaning
-
 <ul>
 <li><a href="http://www.vldb.org/pvldb/vol10/p1190-rekatsinas.pdf">HoloClean</a>:データの制約や外部のデータソースを使い、不整合のあるデータが生成される確率を予測し、そのデータを復元するプログラムを生成する。</li>
 <li><a href="http://www.vldb.org/pvldb/vol9/p948-krishnan.pdf">ActiveClean</a>: データをきれいにすることでモデルの精度がどれだけ改善するか、及び、データが汚れているかについての尤度を推測し、きれいにすべき標本を反復的に推薦する。</li>
-</ul></li>
+</ul>
+</li>
 <li>Re-labeling
-
 <ul>
 <li><a href="http://crowdsourcing-class.org/readings/downloads/econ/get-another-label.pdf">Sheng et al.</a>: 既存の教師データにノイズがあるとデータを増やしても精度が上らない場合があることを示し、既存のデータの品質を上げる必要性を訴えた。</li>
-</ul></li>
 </ul>
-
-<hr />
-
+</li>
+</ul>
+<hr>
 <ul>
 <li>論文は<a href="https://arxiv.org/abs/1811.03402">こちら</a>からダウンロードできます。</li>
 <li>図は全て論文中からの引用です。</li>

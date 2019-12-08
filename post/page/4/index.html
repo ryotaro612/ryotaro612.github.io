@@ -78,6 +78,24 @@
   <article class="post">
 	<header class="post-header">
     
+		<h2 class="post-title"><a href="/post/end_to_end_neural_entity_linking/">メモ End-to-end Neural Entity Linking</a></h2>
+	</header>
+	<section class="post-excerpt">
+    <p>
+      <h3 id="heading">背景</h3>
+<p>本稿は、End to EndなEntity Linkingモデルのアーキテクチャを提案し、予測性能の評価実験で有用性を評価した。
+実験のデータセットには、Entity annotationの評価に使える様々なデータセットを集めた<a href="https://github.com/dice-group/gerbil/wiki">Gerbil Platform</a>が使われている。そのうちの<a href="https://natural-language-understanding.fandom.com/wiki/AIDA-CoNLL">AIDA/CoNLL</a>データセットにおいて、提案手法は既存手法を超える予測性能を発揮した。</p> &hellip; <a class="read-more" href="/post/end_to_end_neural_entity_linking/">&raquo;</a>
+    </p>
+	</section>
+	<footer class="post-meta">
+    <time class="post-date">November 02, 2018</time>
+	</footer>
+</article>
+
+  
+  <article class="post">
+	<header class="post-header">
+    
 		<h2 class="post-title"><a href="/post/deeptype/">DeepType: Multilingual Entity Linking by Neural Type System Evolution(2018)</a></h2>
 	</header>
 	<section class="post-excerpt">
@@ -98,8 +116,7 @@
 	</header>
 	<section class="post-excerpt">
     <p>
-      <h3 id="概要">概要</h3>
-
+      <h3 id="heading">概要</h3>
 <p>本稿は、条件付き確率場（Conditional Random Fields, CRF）を提案し、品詞タグづけにおけるerror rateをもとに評価した。
 評価の比較対象には、Maximum entropy Markov models(MEMMs)が採用されている。</p> &hellip; <a class="read-more" href="/post/conditional_random_fields_probabilistic_models_for_segmenting_and_labeling_sequence/">&raquo;</a>
     </p>
@@ -117,8 +134,7 @@
 	</header>
 	<section class="post-excerpt">
     <p>
-      <h3 id="概要">概要</h3>
-
+      <h3 id="heading">概要</h3>
 <p>本稿では、NLPにおける系列ラベリングためのニューラルネットワークアーキテクチャの提案と評価がなされている。
 このアーキテクチャは、当ページで以前紹介した<a href="https://aclweb.org/anthology/papers/C/C18/C18-1139/">Contextual String Embeddings for Sequence Labeling</a>で応用されている。</p> &hellip; <a class="read-more" href="/post/bidirectional_lstm_crf_models_for_sequence_tagging/">&raquo;</a>
     </p>
@@ -136,10 +152,8 @@
 	</header>
 	<section class="post-excerpt">
     <p>
-      <h3 id="概要">概要</h3>
-
+      <h3 id="heading">概要</h3>
 <p>表題の論文は、ライブラリflairのアルゴリズムを提案、評価したもの。</p>
-
 <p>論文は、テキストの系列ラベリングに向いた単語の分散表現モデルを提案し、
 提案手法が予測性能において既存手法より優れいたことを実験的に示した。
 本手法における単語の分散表現は、単語の字面だけでなく、文中における単語の出現位置によって決まる。
@@ -160,8 +174,7 @@
 	</header>
 	<section class="post-excerpt">
     <p>
-      <h3 id="概要">概要</h3>
-
+      <h3 id="heading">概要</h3>
 <p>UMLFiTという、様々なNLPの問題に適用可能なファインチューニングの手法を提案、評価した。
 評価手段として、6種のテキスト分類のタスクにおける既存手法とのエラー率の比較が採られている。
 主要な評価として、100件のラベル付きデータだけでその100倍のデータを要した事前学習を用いない手法と同等の予測性能が出たことを報告している。</p> &hellip; <a class="read-more" href="/post/universal_language_model_fine_tuning_for_text_classification/">&raquo;</a>
@@ -198,8 +211,7 @@
 	</header>
 	<section class="post-excerpt">
     <p>
-      <h3 id="概要">概要</h3>
-
+      <h3 id="heading">概要</h3>
 <p>論文では、Airbnbが深層学習を宿泊先検索に適用した時の試行錯誤と結果を紹介している。
 採用したモデルのアルゴリズムと特徴量エンジニアリングの説明が本稿の大部分を占める。
 深層学習を試す以前はGBDTを採用おり、以下の順にアルゴリズムを変えていった。
@@ -220,7 +232,7 @@
 	<section class="post-excerpt">
     <p>
       ROCとPrecision Recallの関係を示した論文。
- 1 Recallが0でなければ、ROC曲線には一対一に対応するPR曲線がある。 2 PR曲線AがPR曲線Bに対して常に優位であることとは、ROC曲線においてAがBより常に優位であることの必要十分条件。 3 1,2よりROC空間上の凸包に対応するPR曲線は、他の妥当なPR曲線よりも優位な曲線になる。 4 線形補間でROC曲線を描くことは妥当。一方で、Recallの分母は固定値であるが、Precisionの分母の値はRecallが上がると増える。そのため、PR曲線を線形補間でプロットすると、評価の甘い曲線になる。  論文はこちらからダウンロードできます。 &hellip; <a class="read-more" href="/post/the_relationship_between_precision_recall_and_roc_curve/">&raquo;</a>
+ 1 Recallが0でなければ、ROC曲線には一対一に対応するPR曲線がある。 2 PR曲線AがPR曲線Bに対して常に優位であることとは、ROC曲線においてAがBより常に優位であることの必要十分条件。 3 1,2よりROC空間上の凸包に対応するPR曲線は、他の妥当なPR曲線よりも優位な曲線になる。 4 線形補間でROC曲線を描くことは妥当。一方で、Recallの分母は固定値であるが、Precisionの分母の値はRecallが上がると増える。そのため、PR曲線を線形補間でプロットすると、評価の甘い曲線になる。   論文はこちらからダウンロードできます。 &hellip; <a class="read-more" href="/post/the_relationship_between_precision_recall_and_roc_curve/">&raquo;</a>
     </p>
 	</section>
 	<footer class="post-meta">
@@ -236,8 +248,7 @@
 	</header>
 	<section class="post-excerpt">
     <p>
-      <h3 id="概要">概要</h3>
-
+      <h3 id="heading">概要</h3>
 <p>Fasttextを提案、評価した論文。
 Character n-gramsを入力としてskip-gramのモデルを作る方法を提案、評価している。
 単語の部分文字列（subword）を使わない手法や形態素解析に頼る手法よりも提案手法が優れていることを実験で示した。
@@ -247,25 +258,6 @@ Character n-gramsを入力としてskip-gramのモデルを作る方法を提案
 	</section>
 	<footer class="post-meta">
     <time class="post-date">August 10, 2018</time>
-	</footer>
-</article>
-
-  
-  <article class="post">
-	<header class="post-header">
-    
-		<h2 class="post-title"><a href="/post/when_do_changes_induce_fixes/">概要 When Do Chagnes Induce Fixes?</a></h2>
-	</header>
-	<section class="post-excerpt">
-    <p>
-      <h3 id="概要">概要</h3>
-
-<p>ざっくり言うと、バージョン管理ツールとバグチケット管理ツールを導入しているプロジェクトにおいて、
-バージョン管理ツールで追跡されている変更とバグチケット管理ツールで追跡されているバグを紐付ける手法を提案した。</p> &hellip; <a class="read-more" href="/post/when_do_changes_induce_fixes/">&raquo;</a>
-    </p>
-	</section>
-	<footer class="post-meta">
-    <time class="post-date">August 03, 2018</time>
 	</footer>
 </article>
 

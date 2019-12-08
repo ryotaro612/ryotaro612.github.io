@@ -68,25 +68,22 @@
       <p>ネットワークの複雑化、バッチ正則化、重み減衰を使わない、負の対数尤度の過学習が汎化精度を上げるが、予測確率と精度のズレを大きくすることを実験的に示した。
 予測確率を補正する6つの手法を19種類のクラス分類のデータセットに適用した結果、
 最も補正できたものは、温度つきソフトマックスの出力を予測確率にする場合であった。</p>
-
 <p>ネットワークの複雑化とズレの関係を調べる実験では、<a href="http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf">LeNet</a>(1998)と<a href="https://arxiv.org/abs/1512.03385">ResNet</a>(2016)の<a href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFER-100</a>への適用結果を比較している。
 下の左右の図は、それぞれLesNetとResNetの精度と予測確率のズレを示す。
-<img src="/on_calibration_of_modern_neural_networks/accuracy_vs_confidence.png" alt="accuracy vs confidence" />
+<img src="/on_calibration_of_modern_neural_networks/accuracy_vs_confidence.png" alt="accuracy vs confidence">
 青いヒストグラムは、一定区間内にある予測確率で推定されたサンプルについての精度を示す。
 Gapが小さいほどズレがないことを意味する。
 LesNetと比べ、ResNetはエラー率が低くてGapが大きく、ズレの拡大を許して精度を上げている。</p>
-
 <p>ズレ幅と補正は、Expected Calibration Error(ECE)で評価される。
 クラスを\(Y\in\mathcal{Y}=\{1,\dots ,K\}\)、予測されたクラスを\(\hat{Y}\)、予測確率を\(\hat{P}\)とおくと、ズレのない状態は以下のように定義される。
 $$
- \mathbb{P}\left(\hat{Y}=Y\mid \hat{P} = p\right) = p, \forall p\in [0, 1]
+\mathbb{P}\left(\hat{Y}=Y\mid \hat{P} = p\right) = p, \forall p\in [0, 1]
 $$
 ECEは、\(p\)からの左辺と右辺の差の期待値を意味する。
 $$
 \mathbb{E}\left[\big|\mathbb{P}\left(\hat{Y}=Y\mid\hat{P}=p\right)-p\big|\right]
 $$
 \(p\)は連続量なので、ECEは次のように有限のデータで差を求めるために近似する。</p>
-
 <p>$$
 ECE =\sum^{M}_{m=1}\frac{\mid B_m \mid}{n}\big|acc (B_m) - conf (B_m)\big|
 $$
@@ -99,7 +96,6 @@ conf(B_m) = \frac{1}{\mid B_m \mid}\sum_{i\in B_m}\hat{p_i}
 $$
 である。
 補正は、補正の前後でのECEの差で評価できる。</p>
-
 <p>実験された補正方法の中で最もECEを小さくできたのは、温度つきソフトマックスであった。
 温度つきソフトマックスによる補正では、
 ソフトマックスへの入力を\(\boldsymbol{z}_i\)とすると、
@@ -108,9 +104,7 @@ $$
 \hat{q}_i=\max_{k} \frac{\exp(z_i/T^{(k)})}{\sum_{j=1}^{K}\exp({z_i/T}^{(j)})}
 $$
 温度\(T\)は、検証データを使い、負の対数尤度を誤差関数とする学習で求められる。</p>
-
-<hr />
-
+<hr>
 <ul>
 <li>論文は<a href="https://arxiv.org/pdf/1706.04599.pdf">こちら</a>からダウンロードできます。</li>
 <li>画像は論文から引用されています。</li>

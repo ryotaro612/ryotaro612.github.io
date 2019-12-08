@@ -65,50 +65,42 @@
       </section>
     </header>
     <section class="post-content">
-      <h3 id="概要">概要</h3>
-
+      <h3 id="heading">概要</h3>
 <p>表題の論文は、Weak supervisionの一種であるSnorkelを学習データの収集効率と予測性能についての既存手法や教師あり学習と比べた評価をまとめてる。</p>
-
 <p>Weak supervisionは、不正確なラベルを許容した上で半手動で大量の教師データを生成する手法をさす。
 Snorkelは、データを受け取りラベルの予測値か予測不可能であることを示す値を返す関数を使って、データにラベルを与えてゆく。
 このラベル付けする関数は、ラベリング関数と呼ばれ、データとともにSnorkelに与えられる。
 Snorkelは、入力された複数のラベリング関数をデータに適用し、データ件数xラベリング関数の個数をサイズとするラベルの予測値の行列を作る。その後、真のラベルを予測するモデルを行列にあてはめ、サンプルにラベルごとの真のラベルについての確信度を出力する。
 出力された確信度つきのデータを教師データとしたモデルと教師ありデータで学習したモデルの予測性能を比較する実験を4件実施したところ、Snorkelによるラベルは全実験において教師ありデータの指標との差が4%以内であった。教師データとして使われたデータは人手で収集すると数週間から数ヶ月かかる量であるとあった。</p>
-
 <p>ラベリング関数は、引数にデータとり、返り値に予測不可能であることを示す値かラベルのいずれかを返せばよく、予測の判断材料に制限はない。論文では、判断材料としてテキストのパターンマッチや弱い学習器、外部の知識データベースが例示されている。</p>
-
 <p>SnorkelのAPIは、インターネット上に<a href="https://www.snorkel.org/">公開</a>されている。
 ただし、予測ラベルを要素とする行列から真のラベルを予測する手法は、本論文とは異なる。
 本論文ではラベルを予測するモデルには、ギブスサンプリングとSGDを組み合わせた手法を採用しているとあるが、
 <a href="https://www.snorkel.org/blog/hello-world-v-0-9#upgraded-labeling-pipeline">こちら</a>にあるように、
 Snorkel 0.9では行列補完を応用した手法が採用されている。</p>
-
 <p>最後に、Snorkelと教師あり学習を比較した実験の情報を以下にまとめる。</p>
-
 <ul>
 <li>CDR
-
 <ul>
 <li>PubMedの一文に含まれる化学物質と病気に因果関係があるか判定する。</li>
-</ul></li>
+</ul>
+</li>
 <li>Spouses
-
 <ul>
 <li>ニュースの一文に含まれるエンティティが婚姻関係であるかを判定する。</li>
-</ul></li>
+</ul>
+</li>
 <li>Rad
-
 <ul>
 <li>医療画像の説明文からラベリング関数が出力した画像のラベルと医療画像から肺のレントゲン写真から異常を推定する。</li>
-</ul></li>
-<li>Crowd
-
-<ul>
-<li>ツイートを5つのカテゴリに分ける感情分析のために、クラウドソーシングを利用した。20名のクラウドワーカの回答をラベリング関数とみなす。
-<br /></li>
-</ul></li>
 </ul>
-
+</li>
+<li>Crowd
+<ul>
+<li>ツイートを5つのカテゴリに分ける感情分析のために、クラウドソーシングを利用した。20名のクラウドワーカの回答をラベリング関数とみなす。</li>
+</ul>
+</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -118,7 +110,6 @@ Snorkel 0.9では行列補完を応用した手法が採用されている。</p
 <th align="right"># Candidates</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">CDR</td>
@@ -126,32 +117,32 @@ Snorkel 0.9では行列補完を応用した手法が採用されている。</p
 <td align="right">24.6</td>
 <td align="right">8272</td>
 </tr>
-
 <tr>
 <td align="left">Spouses</td>
 <td align="right">11</td>
 <td align="right">8.3</td>
 <td align="right">22,195</td>
 </tr>
-
 <tr>
 <td align="left">Radiology</td>
 <td align="right">18</td>
 <td align="right">36.0</td>
 <td align="right">3,851</td>
 </tr>
-
 <tr>
 <td align="left">Crowd</td>
 <td align="right">102</td>
 <td align="right">36.0</td>
 <td align="right">505</td>
 </tr>
+<tr>
+<td align="left">Posは正例の割合を示す。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
-
-<p>Posは正例の割合を示す。</p>
-
 <table>
 <thead>
 <tr>
@@ -161,7 +152,6 @@ Snorkel 0.9では行列補完を応用した手法が採用されている。</p
 <th align="right"># Test</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">CDR</td>
@@ -169,21 +159,18 @@ Snorkel 0.9では行列補完を応用した手法が採用されている。</p
 <td align="right">888</td>
 <td align="right">4,620</td>
 </tr>
-
 <tr>
 <td align="left">Spouses</td>
 <td align="right">22,195</td>
 <td align="right">2,796</td>
 <td align="right">2,697</td>
 </tr>
-
 <tr>
 <td align="left">Radiology</td>
 <td align="right">3,851</td>
 <td align="right">38 5</td>
 <td align="right">385</td>
 </tr>
-
 <tr>
 <td align="left">Crowd</td>
 <td align="right">505</td>
@@ -192,9 +179,7 @@ Snorkel 0.9では行列補完を応用した手法が採用されている。</p
 </tr>
 </tbody>
 </table>
-
 <p>Snorkelの評価結果</p>
-
 <table>
 <thead>
 <tr>
@@ -206,7 +191,6 @@ Snorkel 0.9では行列補完を応用した手法が採用されている。</p
 <th align="right">ACC</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">CDR</td>
@@ -216,7 +200,6 @@ Snorkel 0.9では行列補完を応用した手法が採用されている。</p
 <td align="right">N/A</td>
 <td align="right">N/A</td>
 </tr>
-
 <tr>
 <td align="left">Spouses</td>
 <td align="right">48.4</td>
@@ -225,7 +208,6 @@ Snorkel 0.9では行列補完を応用した手法が採用されている。</p
 <td align="right">N/A</td>
 <td align="right">N/A</td>
 </tr>
-
 <tr>
 <td align="left">Radiology</td>
 <td align="right">N/A</td>
@@ -234,7 +216,6 @@ Snorkel 0.9では行列補完を応用した手法が採用されている。</p
 <td align="right">72.0</td>
 <td align="right">N/A</td>
 </tr>
-
 <tr>
 <td align="left">Crowd</td>
 <td align="right">N/A</td>
@@ -245,9 +226,7 @@ Snorkel 0.9では行列補完を応用した手法が採用されている。</p
 </tr>
 </tbody>
 </table>
-
 <p>Hand supervisionの評価結果</p>
-
 <table>
 <thead>
 <tr>
@@ -259,7 +238,6 @@ Snorkel 0.9では行列補完を応用した手法が採用されている。</p
 <th align="right">ACC</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">CDR</td>
@@ -269,7 +247,6 @@ Snorkel 0.9では行列補完を応用した手法が採用されている。</p
 <td align="right">N/A</td>
 <td align="right">N/A</td>
 </tr>
-
 <tr>
 <td align="left">Spouses</td>
 <td align="right">47.8</td>
@@ -278,7 +255,6 @@ Snorkel 0.9では行列補完を応用した手法が採用されている。</p
 <td align="right">N/A</td>
 <td align="right">N/A</td>
 </tr>
-
 <tr>
 <td align="left">Radiology</td>
 <td align="right">N/A</td>
@@ -287,7 +263,6 @@ Snorkel 0.9では行列補完を応用した手法が採用されている。</p
 <td align="right">76.2</td>
 <td align="right">N/A</td>
 </tr>
-
 <tr>
 <td align="left">Crowd</td>
 <td align="right">N/A</td>
@@ -298,17 +273,13 @@ Snorkel 0.9では行列補完を応用した手法が採用されている。</p
 </tr>
 </tbody>
 </table>
-
-<h3 id="感想">感想</h3>
-
+<h3 id="heading1">感想</h3>
 <ul>
 <li>理論、実験について両方しっかり議論されていると感じた。</li>
 <li>APIのドキュメントや実装が整っているので、試しやすいと思う。</li>
 <li>実験ごとに評価指標を変えているのが気になる。</li>
 </ul>
-
-<hr />
-
+<hr>
 <ul>
 <li>論文は<a href="http://www.vldb.org/pvldb/vol11/p269-ratner.pdf">こちら</a>からダウンロードできます。</li>
 <li>Snorkelを見つけたのは、データ収集についての<a href="https://arxiv.org/pdf/1811.03402.pdf">サーベイ論文</a>を読んでいたときである。</li>
