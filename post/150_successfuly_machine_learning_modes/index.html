@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <title>
+      
+      論文メモ 150 Successful Machine Learning Models: 6 Lessons Learned at Booking.com - Coda
+      
+		</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lato:100,100i,300,300i,400,400i,700,700i|Source+Code+Pro:300,400,500,700" rel="stylesheet">
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/bigfoot/dist/bigfoot.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/bigfoot/dist/bigfoot-number.css" />
+    <script type="text/javascript">
+        $.bigfoot();
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    
+    
+</head>
+
+    <body class="post-template">
+        <header class="main-header">
+	<div class="main-header-content">
+		<h1 class="blog-title">
+			<a href="/">
+				
+           Coda
+				
+			</a>
+		</h1>
+		<h2 class="blog-description"></h2>
+	</div>
+
+	<div class="nav">
+    
+		
+	</div>
+</header>
+
+        
+<main class="content" role="main">
+  <article class="post">
+    <header class="post-header">
+      
+      <h2 class="post-title">論文メモ 150 Successful Machine Learning Models: 6 Lessons Learned at Booking.com</h2>
+      <section class="post-meta">
+        <time class="post-date">December 14, 2019</time>
+      </section>
+    </header>
+    <section class="post-content">
+      <h3 id="heading">概要</h3>
+<p>宿泊予約サービス<a href="http://booking.com/">Booking.com</a>におけるモデルの開発運用でえられた教訓を6つにまとめたKDD2019の論文である。
+教訓の主眼を収益におき、6つの教訓を通して、実運用環境における仮説と実験を反復する重要性を強調する。</p>
+<h3 id="machine-learning-as-a-swiss-knife-for-production-development">Machine learning as a swiss knife for production development</h3>
+<p>はじめに、機械学習によって収益をあげられることを確認している。
+次のグラフは、収益性を測る指標の中央値を示す。
+<img src="/150_successful_machine_learning_models/fig2.png" alt="fig2">
+Benchmarkは機械学習と無関係なものを含む成功した全プロジェクトの中央値である。
+Content Augumentation以下は、個別の機械学習のプロジェクトの中央値を示す。
+機械学習をつかうプロジェクトはつかわないプロジェクトよりも全般的に収益をあげている。</p>
+<h3 id="offline-model-performance-is-just-a-health-check">Offline model performance is just a health check</h3>
+<p>モデルの予測性能を上げても、収益につながらないこともある。
+次の散布図は、コンバージョン率とモデルの相関関係を示す。
+最もコンバージョン率の低いモデルは、右下の最も予測性能の高いモデルである。
+<img src="/150_successful_machine_learning_models/fig4.png" alt="fig4"></p>
+<h3 id="befere-solving-a-problem-design-it">Befere solving a problem, design it</h3>
+<p>上のグラフが示唆するように、テストデータで測れる予測性能だけはモデルの収益への貢献を保証できない。
+適切な問題設計でなくして、予測性能と収益は連動しない。
+ここでの設計は、ビジネスケースを教師あり学習をはじめとする機械学習の問題にとらえなおす作業である。</p>
+<h3 id="time-is-money">Time is Money</h3>
+<p>コンバージョン率とレイテンシには負の相関がある。
+次の散布図は、コンバージョン率とレイテンシの関係を示す。
+30%のレイテンシの増加が0.5%のコンバージョン率を低下を招いている。
+<img src="/150_successful_machine_learning_models/fig6.png" alt="fig6">
+予測時の処理性能をあげるために、モデルのインスタンスを増やす、内製のアルゴリズムをつかう、モデルのパラメタ数を減らす、事前計算やキャッシュ、リクエストのバルク処理、データの変換処理を減らす、という一連の対策がとられている。</p>
+<h3 id="unsupervised-red-flags">Unsupervised red flags</h3>
+<p>一般に、予測データの正解をすぐに手にいれることはできないので、正解データによらない運用中のモデルの監視を考える必要がある。
+Booking.comでは、Response Distribution Chart(RDC)が使われている。
+RDCは、モデルの予測結果のヒストグラムであり、形状によってモデルの予測性能を示す。
+以下にRDCの一例を示す。左上の単峰形はモデルの偏りを、右上は特徴のスケールの誤りや訓練データにある外れ値、左下はモデルがスパースであることを示唆する。
+右下の滑らかな二つの山は、二値分類モデルの予測結果のよい状態を示す。
+<img src="/150_successful_machine_learning_models/fig7.png" alt="fig7"></p>
+<h3 id="experiment-design-sophistication-pays-off">Experiment design sophistication pays off</h3>
+<p>Booking.comでは、ランダム化比較試験(Randomized Controlled Trials, RCT)でモデルを評価する。
+モデルを適用できないデータを使わず、適用できるデータの集合を2群に分け、モデルの影響を評価することをすすめている。</p>
+<hr>
+<ul>
+<li><a href="https://www.kdd.org/kdd2019/accepted-papers/view/150-successful-machine-learning-models-6-lessons-learned-at-booking.com">150 Successful Machine Lerning</a></li>
+<li>図はすべて論文から引用さています。</li>
+</ul>
+    </section>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+</main>
+
+        <footer class="site-footer">
+  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
+  
+  
+  <section>
+    <a class="fas fa-rss" href="/index.xml"></a>
+    <a class="fab fa-github" href="https://github.com/nryotaro"></a>
+    <a class="fab fa-linkedin" href="https://www.linkedin.com/in/nakamura-ryotaro"></a>
+  </section>
+  <section class="copyright">&copy; 2019 Nakamura, Ryotaro</section>
+</footer>
+
+
+
+    </body>
+</html>
