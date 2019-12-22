@@ -6,10 +6,21 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 14 Dec 2019 17:39:09 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 21 Dec 2019 23:53:36 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ GloVe: Global Vectors for Word Representation</title>
+      <link>https://nryotaro.github.io/post/glove_vectors_for_word_representation/</link>
+      <pubDate>Sat, 21 Dec 2019 23:53:36 +0900</pubDate>
+      
+      <guid>https://nryotaro.github.io/post/glove_vectors_for_word_representation/</guid>
+      <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.aclweb.org/anthology/D14-1162.pdf&#34;&gt;GloVe&lt;/a&gt;は,コーパスに出現する単語の共起回数を学習するニューラル言語モデルである。
+既存手法を単語の出現頻度の統計値つかう手法と対数双線形モデルに分類し、両者の長所を備え短所を補う手法として、GloVeを提案する。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ BERT: Pre-training of Deep Bidirectional Transformers for Lnaguages Understaing</title>
@@ -87,7 +98,8 @@ DESMは、クエリの単語に関係する単語をもとに判断する。
       <pubDate>Sat, 09 Nov 2019 21:46:12 +0900</pubDate>
       
       <guid>https://nryotaro.github.io/post/get_another_label/</guid>
-      <description>&lt;p&gt;ある確率でデータに誤ったラベルをふるlabelerでデータにラベルをふるときに、
+      <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
+&lt;p&gt;ある確率でデータに誤ったラベルをふるlabelerでデータにラベルをふるときに、
 既にラベルのあるデータに重ねてラベルをふるべきか調査した。
 12種類のラベルつきデータセットを使い、
 正解ラベルを誤ったラベルに置換する割合や同一のデータのもつラベルの数を変化させ、モデルの精度の違いを観察した。
