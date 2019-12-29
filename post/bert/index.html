@@ -68,11 +68,11 @@
       <h3 id="heading">概要</h3>
 <p>BERTは<a href="https://arxiv.org/pdf/1706.03762.pdf">Attention Is All You Need</a>にあるTransformerをアーキテクチャに導入した分散表現のモデルであり、本稿は、事前学習済みのBERTにファインチューニングを適用しQAタスクや自然言語推論のベンチマークにおいて既存研究を上回る結果を示している。
 なお、アーキテクチャに関する説明は少なく、子細に知りたい場合は<a href="https://arxiv.org/pdf/1706.03762.pdf">Attention Is All You Need</a>や<a href="http://nlp.seas.harvard.edu/2018/04/03/attention.html">The Annotated Transformer</a>を参照するように案内されている。</p>
-<h3 id="heading1">事前学習</h3>
+<h3 id="heading-1">事前学習</h3>
 <p>事前学習では、単語をトークンとし、単語の前後の文脈を反映した分散表現を双方向のモデルを学習する。
 双方向性を与えるために、無作為に選んだトークンをマスクし、周辺のトークンからマスクされたトークンを当てるというタスクを解く。論文にある事前学習の様子を示した図を以下に示す。様々なタスクに応用できるように、文の組みを示すトークンを導入するこで、文のペアも単一の文も入力として扱えるようになっている。図は対になる文の入力の様子を示しており、<code>[CLS]</code>はペアの始まりを、<code>[SEP]</code>はペアの要素間の区切りを、それぞれ表している。</p>
 <p><img src="/bert/bert.png" alt="bert"></p>
-<h3 id="heading2">ファインチューニング</h3>
+<h3 id="heading-2">ファインチューニング</h3>
 <p>BERTの出力を入力とする一層の出力層を追加するだけで、既存研究を上回る予測性能をあげることができたと報告されている。</p>
 <hr>
 <ul>

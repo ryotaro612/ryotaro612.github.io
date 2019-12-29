@@ -71,7 +71,7 @@ Character n-gramsを入力としてskip-gramのモデルを作る方法を提案
 単語の部分文字列（subword）を使わない手法や形態素解析に頼る手法よりも提案手法が優れていることを実験で示した。
 部分文字列のベクトルの和が単語のベクトルとなる。
 実験の考察では、そのために、未知語の部分文字列が学習データにあれば、未知語に対しても妥当な分散表現を与えることができるとあった。</p>
-<h3 id="heading1">感想</h3>
+<h3 id="heading-1">感想</h3>
 <ul>
 <li>Fasttextが土台にあるStarSpaceの<a href="https://trello.com/c/QvfUy0xp/14-pre-trained-embeddings%E3%82%92%E8%A9%A6%E3%81%97%E3%81%A6%E3%81%BF%E3%82%8B">Pre-trained embeddingsの実験結果</a>において同じ文字列を含む単語同士が近くに配置されたのは、上にある分散表現の作り方に由来する気がしました。</li>
 <li>Fastの由来は、skip-gramでは（非疎）行列の乗算がなく高速に処理できる<a href="https://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf">*</a>ことにあるように読めました。</li>

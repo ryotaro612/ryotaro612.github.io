@@ -6,10 +6,23 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 21 Dec 2019 23:53:36 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 28 Dec 2019 00:56:36 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Distributed Representations of Sentences and Documents</title>
+      <link>https://nryotaro.github.io/post/distributed_representations_of_sentences_and_documents/</link>
+      <pubDate>Sat, 28 Dec 2019 00:56:36 +0900</pubDate>
+      
+      <guid>https://nryotaro.github.io/post/distributed_representations_of_sentences_and_documents/</guid>
+      <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://radimrehurek.com/gensim/models/doc2vec.html&#34;&gt;Doc2Vec&lt;/a&gt;のアルゴリズムとして採用されたニューラル言語モデルParagraph Vectorを提案した論文である。
+bag of wordsは、文書の単語順を記憶せず、また、似た意味の単語ベクトルと無関係なベクトルを単語にわりあてる。
+Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文脈の中心の単語をあてられるように学習することで、可変長文字列から固定長の文書埋め込みベクトルを生成できるようになる。
+これにより、単語順と単語の意味を記憶したベクトルの生成を実現する。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ GloVe: Global Vectors for Word Representation</title>
