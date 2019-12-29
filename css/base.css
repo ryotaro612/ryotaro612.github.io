@@ -1,0 +1,89 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  color: #555;
+  font-size: 1.8rem;
+}
+body a {
+  color: #555;
+  text-decoration: unset;
+}
+
+body a:hover {
+  color: unset;
+}
+
+.container > header {
+  border-bottom: 1px solid #E1E1E1;
+  margin-top: 2.0rem;
+}
+.container > header h1 {
+  text-align: center;
+}
+.container > header ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+nav li {
+  border-left: 1px solid #e1e1e1;
+  font-size: 2.0rem;
+  padding: 0 1.0rem;
+}
+nav li:nth-child(1) {
+  border-left: unset;
+}
+
+main {
+  padding: 2.5rem 0;
+}
+
+article a {
+  color: #005c92;
+  text-decoration: none;
+}
+article a:hover {
+  color: #005c92;
+}
+
+img {
+  width: 100%;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination a {
+  border: 1px solid;
+  border-color: #555;
+  border-radius: 50%;
+  padding: 0.5rem;
+  margin: 0 1.0rem;
+}
+.pagination a[href]:hover {
+  color: #FFFFFF;
+  background: #555;
+}
+
+body > footer {
+  padding: 2.0rem 0;
+  border-top: 1px solid #e1e1e1;
+}
+body > footer ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+body > footer li {
+  margin: 0 1.0rem;
+  font-size: 2.4rem;
+}
+
+body > footer small {
+  display: flex;
+  justify-content: center;
+}

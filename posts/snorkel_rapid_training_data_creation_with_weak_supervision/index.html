@@ -1,0 +1,271 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>メモ Snorkel: Rapid Traning Data Creation with Weak Supervision</h2>
+    <p>September 21, 2019</p>
+  </header>
+  <h3 id="heading">概要</h3>
+<p>表題の論文は、Weak supervisionの一種であるSnorkelを学習データの収集効率と予測性能についての既存手法や教師あり学習と比べた評価をまとめてる。</p>
+<p>Weak supervisionは、不正確なラベルを許容した上で半手動で大量の教師データを生成する手法をさす。
+Snorkelは、データを受け取りラベルの予測値か予測不可能であることを示す値を返す関数を使って、データにラベルを与えてゆく。
+このラベル付けする関数は、ラベリング関数と呼ばれ、データとともにSnorkelに与えられる。
+Snorkelは、入力された複数のラベリング関数をデータに適用し、データ件数xラベリング関数の個数をサイズとするラベルの予測値の行列を作る。その後、真のラベルを予測するモデルを行列にあてはめ、サンプルにラベルごとの真のラベルについての確信度を出力する。
+出力された確信度つきのデータを教師データとしたモデルと教師ありデータで学習したモデルの予測性能を比較する実験を4件実施したところ、Snorkelによるラベルは全実験において教師ありデータの指標との差が4%以内であった。教師データとして使われたデータは人手で収集すると数週間から数ヶ月かかる量であるとあった。</p>
+<p>ラベリング関数は、引数にデータとり、返り値に予測不可能であることを示す値かラベルのいずれかを返せばよく、予測の判断材料に制限はない。論文では、判断材料としてテキストのパターンマッチや弱い学習器、外部の知識データベースが例示されている。</p>
+<p>SnorkelのAPIは、インターネット上に<a href="https://www.snorkel.org/">公開</a>されている。
+ただし、予測ラベルを要素とする行列から真のラベルを予測する手法は、本論文とは異なる。
+本論文ではラベルを予測するモデルには、ギブスサンプリングとSGDを組み合わせた手法を採用しているとあるが、
+<a href="https://www.snorkel.org/blog/hello-world-v-0-9#upgraded-labeling-pipeline">こちら</a>にあるように、
+Snorkel 0.9では行列補完を応用した手法が採用されている。</p>
+<p>最後に、Snorkelと教師あり学習を比較した実験の情報を以下にまとめる。</p>
+<ul>
+<li>CDR
+<ul>
+<li>PubMedの一文に含まれる化学物質と病気に因果関係があるか判定する。</li>
+</ul>
+</li>
+<li>Spouses
+<ul>
+<li>ニュースの一文に含まれるエンティティが婚姻関係であるかを判定する。</li>
+</ul>
+</li>
+<li>Rad
+<ul>
+<li>医療画像の説明文からラベリング関数が出力した画像のラベルと医療画像から肺のレントゲン写真から異常を推定する。</li>
+</ul>
+</li>
+<li>Crowd
+<ul>
+<li>ツイートを5つのカテゴリに分ける感情分析のために、クラウドソーシングを利用した。20名のクラウドワーカの回答をラベリング関数とみなす。</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Task</th>
+<th align="right"># LFs</th>
+<th align="right">% Pos.</th>
+<th align="right"># Candidates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CDR</td>
+<td align="right">33</td>
+<td align="right">24.6</td>
+<td align="right">8272</td>
+</tr>
+<tr>
+<td align="left">Spouses</td>
+<td align="right">11</td>
+<td align="right">8.3</td>
+<td align="right">22,195</td>
+</tr>
+<tr>
+<td align="left">Radiology</td>
+<td align="right">18</td>
+<td align="right">36.0</td>
+<td align="right">3,851</td>
+</tr>
+<tr>
+<td align="left">Crowd</td>
+<td align="right">102</td>
+<td align="right">36.0</td>
+<td align="right">505</td>
+</tr>
+<tr>
+<td align="left">Posは正例の割合を示す。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="left">Task</th>
+<th align="right"># Train.</th>
+<th align="right">% Dev.</th>
+<th align="right"># Test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CDR</td>
+<td align="right">8,272</td>
+<td align="right">888</td>
+<td align="right">4,620</td>
+</tr>
+<tr>
+<td align="left">Spouses</td>
+<td align="right">22,195</td>
+<td align="right">2,796</td>
+<td align="right">2,697</td>
+</tr>
+<tr>
+<td align="left">Radiology</td>
+<td align="right">3,851</td>
+<td align="right">38 5</td>
+<td align="right">385</td>
+</tr>
+<tr>
+<td align="left">Crowd</td>
+<td align="right">505</td>
+<td align="right">63</td>
+<td align="right">64</td>
+</tr>
+</tbody>
+</table>
+<p>Snorkelの評価結果</p>
+<table>
+<thead>
+<tr>
+<th align="left">Task</th>
+<th align="right">Precision</th>
+<th align="right">Recall</th>
+<th align="right">F1</th>
+<th align="right">AUC</th>
+<th align="right">ACC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CDR</td>
+<td align="right">38.8</td>
+<td align="right">54.3</td>
+<td align="right">45.3</td>
+<td align="right">N/A</td>
+<td align="right">N/A</td>
+</tr>
+<tr>
+<td align="left">Spouses</td>
+<td align="right">48.4</td>
+<td align="right">61.6</td>
+<td align="right">54.2</td>
+<td align="right">N/A</td>
+<td align="right">N/A</td>
+</tr>
+<tr>
+<td align="left">Radiology</td>
+<td align="right">N/A</td>
+<td align="right">N/A</td>
+<td align="right">N/A</td>
+<td align="right">72.0</td>
+<td align="right">N/A</td>
+</tr>
+<tr>
+<td align="left">Crowd</td>
+<td align="right">N/A</td>
+<td align="right">N/A</td>
+<td align="right">N/A</td>
+<td align="right">N/A</td>
+<td align="right">65.6</td>
+</tr>
+</tbody>
+</table>
+<p>Hand supervisionの評価結果</p>
+<table>
+<thead>
+<tr>
+<th align="left">Task</th>
+<th align="right">Precision</th>
+<th align="right">Recall</th>
+<th align="right">F1</th>
+<th align="right">AUC</th>
+<th align="right">ACC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CDR</td>
+<td align="right">39.9</td>
+<td align="right">58.1</td>
+<td align="right">47.3</td>
+<td align="right">N/A</td>
+<td align="right">N/A</td>
+</tr>
+<tr>
+<td align="left">Spouses</td>
+<td align="right">47.8</td>
+<td align="right">62.5</td>
+<td align="right">54.2</td>
+<td align="right">N/A</td>
+<td align="right">N/A</td>
+</tr>
+<tr>
+<td align="left">Radiology</td>
+<td align="right">N/A</td>
+<td align="right">N/A</td>
+<td align="right">N/A</td>
+<td align="right">76.2</td>
+<td align="right">N/A</td>
+</tr>
+<tr>
+<td align="left">Crowd</td>
+<td align="right">N/A</td>
+<td align="right">N/A</td>
+<td align="right">N/A</td>
+<td align="right">N/A</td>
+<td align="right">68.8</td>
+</tr>
+</tbody>
+</table>
+<h3 id="heading-1">感想</h3>
+<ul>
+<li>理論、実験について両方しっかり議論されていると感じた。</li>
+<li>APIのドキュメントや実装が整っているので、試しやすいと思う。</li>
+<li>実験ごとに評価指標を変えているのが気になる。</li>
+</ul>
+<hr>
+<ul>
+<li>論文は<a href="http://www.vldb.org/pvldb/vol11/p269-ratner.pdf">こちら</a>からダウンロードできます。</li>
+<li>Snorkelを見つけたのは、データ収集についての<a href="https://arxiv.org/pdf/1811.03402.pdf">サーベイ論文</a>を読んでいたときである。</li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

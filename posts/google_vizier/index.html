@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>概要 Google Vizier: A Service for Black-Box Optimization</h2>
+    <p>August 3, 2019</p>
+  </header>
+  <h3 id="heading">概要</h3>
+<p>表題にあるVizierはGoogleにおいてデファクトになっているブラックボックス最適化のためのサービスであり、
+論文は、Vizierのシステムアーキテクチャの構成とアルゴリズムの説明とその評価からなる。</p>
+<p>Vizierが複数の最適化アルゴリズムをサポートしている中、デフォルトでは<a href="http://jmlr.org/papers/v15/desautels14a.html">Batched Gaussian Process Bandits</a>が採用されている。
+ほかにも、類似する最適化の履歴から結果が予測可能な探索を省く機能や早期終了の自動化を備えている。
+論文中で紹介されている機能の多くにガウス過程回帰が採用されている。</p>
+<h3 id="heading-1">感想</h3>
+<p>アーキテクチャの説明が多く、アルゴリズムの説明を別の論文にゆずる箇所が多かったため、ガウス過程や多腕バンディット問題など応用されているアルゴリズムに詳しくないと読解が難しいと思う。Vizierを、クラウドサービスではなく、好きな環境で運用したい場合はVizierに影響を受けて開発された<a href="https://github.com/kubeflow/katib">Katib</a>をみてみるといいかもしれない。VizierはKubeflowのサブシステムなので、KubeflowをKubernetesにインストールすれば利用できる。</p>
+<hr>
+<p>論文は<a href="https://static.googleusercontent.com/media/research.google.com/ja//pubs/archive/46180.pdf">こちら</a>からダウンロードできます。</p>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

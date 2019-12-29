@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>メモ Structure estimation for discrete graphical models: Generalized covariance matrices and their inverses</h2>
+    <p>October 19, 2019</p>
+  </header>
+  <p>表題の論文は、マルコフ確率場をなす無向グラフとグラフの構造を反映した逆共分散行列の間の対応関係を証明し、
+観測した確率変数の値からグラフの構造を復元する実験を通じて、対応関係を確認した。
+この手法は<a href="https://arxiv.org/pdf/1810.02840.pdf">Snorkel</a>というWeak supervisionの手法において、
+正解データのない環境で、ノイズつきの教師データを生成する異なるソース間の相関関係を推定するために応用された。</p>
+<p>逆共分散行列が\(J\)の多変量ガウス分布をガウス型のマルコフ確率場としてみると、\(J_{i,j}=0\)がグラフにおいて辺\((i,j)\)が存在しないことに対応することが知られている。平均ベクトルを\(\mu\)とすれば確率密度関数を次のように定義できる。</p>
+<p>$$
+p(x) = \sqrt{\frac{\text{det} J}{(2\pi)^{n}}}\exp\left(-\frac{1}{2}(x-\mu)^{T}J(x-\mu)\right)
+$$</p>
+<p>\(p(x)\)は指数関数の肩に\(x\)の3次式を含まないため、\(i, j\in V\)に対して、</p>
+<p>$$
+p(x_i, x_j\mid x_{V\setminus \{i,j\}})\propto \exp(\frac{1}{2}(J_{ii}x^2_{i}+J_{ij}x_ix_j+J_{jj}x_j^2)+Ax_i + B_j + C)
+$$
+と書くことができ、\(A, B, C\)は\(x_i, x_j\)によらない定数である。マルコフ確率場が積への分解で特徴づけられることを考えると\(J_{ij}=0\)となる必要十分条件は\(X_{V\setminus \{i,j\}}\)の元で\(X_i\)と\(X_j\)が条件付き独立であることである。</p>
+<p>しかし、分布を仮定しないとき、すなはち一般に、条件付き独立である確率変数同士と逆共分散行列の間にどのような対応関係があるのかは分かっていない。
+論文は、同じクリークに属する頂点の値で要素が決まる特別な共分散行列(Generalized convariance matrice)を定義し、2つのクリークが異なる極大クリークに位置するとき2つのクリークの関係を示す共分散行列の要素が\(0\)になることを示した。
+特にグラフ\(G=(V, E), (V=\{0, 1, \cdots, p\}, E\subseteq V\times V)\)が木であり、多変量確率変数を\(X\in\chi^{p}\), \(\chi=\{0, 1, \cdots, m-1\}\)
+とすれば、頂点が隣接していないとき、</p>
+<p>$$
+\mathbb{I}_{s;j}(x_s)=
+\begin{cases}
+1, &amp; \text{if}\ x_s = j, x_s\in V, j\in \chi_0 := \chi \setminus \{0\}\\\<br>
+0, &amp; \text{otherwise.}
+\end{cases}
+$$
+を要素とする次元が\(p(m-1)\times p(m-1)\)の共分散行列の対応する要素が\(0\)になることを示した。</p>
+<hr>
+<p>論文は<a href="https://people.eecs.berkeley.edu/~wainwrig/BibPapers/LohWai_NIPS12.pdf">こちら</a>からダウンロードできます。
+より細く追いたい場合は<a href="https://arxiv.org/pdf/1212.0478.pdf">こちら</a>が参考になります。</p>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

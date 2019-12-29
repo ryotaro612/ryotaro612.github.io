@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ Ranking Relevance In Yahoo Search</h2>
+    <p>December 7, 2019</p>
+  </header>
+  <h3 id="heading">概要</h3>
+<p>Yahooの検索エンジンを解説するKDD16の論文である。
+論文におけるランキングの課題は、クエリと文書の語彙がことなること、ほとんどのクエリは滅多に入力されないこと、クエリの意味の解釈が難しいことである。
+これらの課題に対する手法として、ランキングのモデル、特徴のつくりかた、クエリを文書によせる翻訳モデルを解説する。</p>
+<h3 id="heading-1">アーキテクチャ</h3>
+<p>数十億の文書を検索するために、シャード化されたインデックスサーバで文書は管理される。
+エンジンがクエリを受けとると、はじめに計算量の少ないランキング関数を実行する。
+次に、求めたスコアの高い文書に対して後述するLogisticRankを適用する。
+論文で解説される特徴はLogicticRankで使われる。
+LogisticRankのスコアが高い文書は、一つのノードに集られ、集められた文書の特徴の平均、分散、トピックなどの傾向をもとに並びかれられた出力される。</p>
+<h3 id="heading-2">ランキングのモデル</h3>
+<p>LogisticRankは、GDBTをベースにしたランキングのモデルである。
+順序関係のあるラベルを文書にあたえ、疑似的な残差をラベルごとに異なる値でスケールすることで、
+クエリと文書の適合度合いを出力できるようにモデルを学習する。
+論文におけるラベルの種類は、&ldquo;Perfect&rdquo;, &ldquo;Excellent&rdquo;, &ldquo;Good&rdquo;, &ldquo;Positive&rdquo;, &ldquo;Fair&rdquo;, &ldquo;Bad&rdquo;, &ldquo;Negative&quot;の7つで、はじめの4つを\(+1\), 残りを\(-1\)として、目的関数に\(L(y, F)\)をつかう。
+$$
+L(y, F) = \log (1+\exp((-yF)), y \in \{1, -1\}
+$$
+疑似的な残差pseudo_response\((x)\)はラベルの種類によってスケールされる。
+$$
+\begin{align}
+-g_m(\rm{x}_i) &amp;= - \big[\frac{\partial L(y_i,F(\rm{x}_i))}{\partial F(\rm{x}_i)}\big]_{F(\rm{x})=F_{m-1}(\rm{x})} \\<br>
+&amp;= y_i/(1+\exp(y_iF_{m-1}(\rm{x}_i))
+\end{align}
+$$
+$$
+\text{pseudo_response}(x) = -g_m(\rm{x}_i) \times \text{scale}(\mathcal{label})
+$$
+各スケールは、
+\(\mathcal{scale}(Perfect)=3\), \(\mathcal{scale}(Excellent)=2\), \(\mathcal{scale}(Good/Fair/Bad)=1\)である。</p>
+<h3 id="heading-3">特徴</h3>
+<p>LogisticRankにあたえる特徴は、ユーザの行動ログからつくられる。
+そのう<a href="http://www.yichang-cs.com/yahoo/SIGIR16_clickgraph.pdf">S.Jiangら</a>によるグラフベースの手法で生成される。
+この手法は、はじめにクリック回数を辺の重みとするクエリと文書の2部グラフをつくる。その後、文書とクエリを単語埋め込みベクトルに変換するモデルを学習する。ベクトルの次元は、両者の総数を次元になる。</p>
+<p>S.Jiangらのような単語の出現頻度を利用する手法のほか、<a href="https://www.microsoft.com/en-us/research/publication/learning-deep-structured-semantic-models-for-web-search-using-clickthrough-data/">DSSM</a>とよばれる深層学習による手法もつかわれる。
+DSSMは、ランキングのための順伝播ネットワークで、クリックスルーログからクエリと文書の関連度を学習する。
+モデルからえられるクエリとURLの埋め込みベクトルの内積をLogisticRankの特徴につかう。</p>
+<h3 id="heading-4">クエリの翻訳</h3>
+<p>クエリを文書によせるために、クエリを文書の表題に翻訳するモデルをもちいる。
+ただし、翻訳されたクエリだけでは検索結果が悪いため、もとのクエリもエンジンに入力される。</p>
+<hr>
+<p>論文は<a href="https://www.kdd.org/kdd2016/papers/files/adf0361-yinA.pdf">こちら</a>からダウンロードできます。</p>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

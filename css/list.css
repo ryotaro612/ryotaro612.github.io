@@ -1,0 +1,7 @@
+.listTable td {
+  border-bottom: none;
+}
+table {
+  margin-bottom: unset;
+}
+

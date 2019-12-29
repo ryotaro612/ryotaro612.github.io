@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>概要 When Do Chagnes Induce Fixes?</h2>
+    <p>August 3, 2018</p>
+  </header>
+  <h3 id="heading">概要</h3>
+<p>ざっくり言うと、バージョン管理ツールとバグチケット管理ツールを導入しているプロジェクトにおいて、
+バージョン管理ツールで追跡されている変更とバグチケット管理ツールで追跡されているバグを紐付ける手法を提案した。</p>
+<p>MOZILLA, ECLIPSEプロジェクトのプロジェクトに提案手法を適用して、バグが混入する時や量について分析した。
+その結果、両方のプロジェクトで金曜日に最もバグが生まれることがわかった。</p>
+<h3 id="heading-1">提案手法の一例</h3>
+<p>コミットメッセージでバグチケット番号のような文字列が含まれており、そのチケットのステータスがFIXEDになったことがある場合、
+そのコミットで修正したコードが追加された変更をバグを入れたコミットと判定する。</p>
+<hr>
+<p><a href="https://www.st.cs.uni-saarland.de/papers/msr2005/msr2005.pdf">論文</a>はこちらからダウンロードできます。</p>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

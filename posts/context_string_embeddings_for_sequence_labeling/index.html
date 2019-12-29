@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>メモ Contextual String Embeddings for Sequence Labeling</h2>
+    <p>September 28, 2018</p>
+  </header>
+  <h3 id="heading">概要</h3>
+<p>表題の論文は、ライブラリflairのアルゴリズムを提案、評価したもの。</p>
+<p>論文は、テキストの系列ラベリングに向いた単語の分散表現モデルを提案し、
+提案手法が予測性能において既存手法より優れいたことを実験的に示した。
+本手法における単語の分散表現は、単語の字面だけでなく、文中における単語の出現位置によって決まる。
+いいかえると、同じ単語であっても、文中における出現位置が異なれば、単語は異なる分散表現に変換される。
+著者らは、分散表現に文脈の情報を含められることを強調して、提案手法をContextual String Embeddingsと名付けた。</p>
+<p>分散表現には、LSTMを使った文字ベースの言語モデルの隠れ状態が使われる。
+テキストを順に受けた場合に次の文字を予測するモデルFとテキストを逆から受けた場合に次の文字を予測するモデルBを訓練する。
+単語の次にある文字に対応するモデルFの隠れ状態と単語の手前にある文字に対応するモデルBの隠れ状態を連結してできたベクトルを単語の分散表現として扱う。
+獲得した分散表現は、BiLSTM-CRFの入力となり、各種の系列ラベリングのタスクに利用される。</p>
+<p>英語とドイツ語を対象にNER, チャンキング、品詞タグづけの3タスクにおおける予測性能を評価し、NERで顕著な結果が出ていた。
+他方、チャンキングや品詞タグづけは既存ん手法で既に優れた結果が得られていることもあり、NERと比べて大幅な向上はなかった。</p>
+<h3 id="heading-1">感想</h3>
+<p>本稿は、色々な既存研究を組み合わせて良い実験結果を得たことを報告するタイプだったように感じる。
+オリジナルのアイデアは、2つの言語モデルの隠れ状態を組み合わせて分散表現をつくることがほとんど全てであり、
+言語モデルや系列ラベリングのアーキテクチャは既存研究のものを使っている様子だった。</p>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

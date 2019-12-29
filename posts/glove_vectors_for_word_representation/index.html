@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ GloVe: Global Vectors for Word Representation</h2>
+    <p>December 21, 2019</p>
+  </header>
+  <h3 id="heading">概要</h3>
+<p><a href="https://www.aclweb.org/anthology/D14-1162.pdf">GloVe</a>は,コーパスに出現する単語の共起回数を学習するニューラル言語モデルである。
+既存手法を単語の出現頻度の統計値つかう手法と対数双線形モデルに分類し、両者の長所を備え短所を補う手法として、GloVeを提案する。</p>
+<p>既存研究の代表的な例をあげると、潜在意味解析における特異値分解が前者にあたり、word2vecは後者に該当する。
+統計値をつかう手法は、統計値を反映したベクトルを生成できる。
+しかし、word2vecのように加算減算によって単語の意味を類推することはできない。
+逆に、対数双線形モデルは、類推可能だが統計値を反映しないベクトルを生成する。
+GloVeは、コーパスにある共起した単語の組の共起回数を学習し、類推可能な分散表現を獲得する。</p>
+<h3 id="heading-1">目的関数</h3>
+<p>\(X_{ij}\)のi行j列の要素を、単語iの文脈における単語jの出現回数とすると、目的関数を\(J\)で表せる。
+\(w\)はパラメタ、\(b\)はバイアスである。
+n
+$$
+J = \sum^{V}_{i,j=1}f\left(X_{ij}\right)\left(w^{T}_{i}\tilde{w}_j+b_i + \tilde{b}_j-\log X_{ij}\right)^2
+$$</p>
+<p>$$
+f(x) = \begin{cases}
+(x/x_{max})^{\alpha} &amp; \text{if}\ x &lt; x_{max} \\<br>
+1 &amp; \text{otherwise}
+\end{cases}
+$$
+\(x_{max}\)と\(\alpha\)は、ハイパーパラメタで、実験では\(100\)と\(3/4\)に設定されている。
+\(w\)と\(\tilde{w}\)の和が単語埋め込みベクトルとなる。</p>
+<h3 id="heading-2">学習の計算量</h3>
+<p>コーパスにある単語の集合が\(V\)であれば、学習の最悪計算量は\(\mathcal{O}(V^2)\)になるが、実際の計算量ははるかに少ない。
+\(r_{ij}\)を出現頻度の順位として\(X_{ij}\)を以下の式で仮定する。
+$$
+X_{ij}=\frac{k}{{(r_{ij})}^{\alpha}}
+$$
+このとき、0以外の値である要素の数\(\mid X\mid\)は
+$$
+\mid X\mid = \begin{cases}
+\mathcal{O}(\mid C\mid) &amp; \text{if}\ \alpha &lt; 1 \\<br>
+\mathcal{O}(\mid C\mid^{1/\alpha}) &amp;\text{if}\ \alpha &gt; 1
+\end{cases}
+$$
+となる。実験データの場合、\(\mid X\mid\)を\(\alpha=1.25\)で近似でき、このとき\(\mid X\mid = \mathcal{O}(\mid C \mid^{0.8})\)となる。
+以上より、GloVeは\(\mathcal{O}(\mid C\mid)\)でスケールするウィンドウベースの手法よりも高速とみなすことができる。</p>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

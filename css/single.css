@@ -1,0 +1,17 @@
+article header h2 {
+  font-size: 3.6rem;
+}
+article h3 {
+  font-size: 3.0rem;
+}
+article h4 {
+  font-size: 2.4rem;
+}
+
+article h5 {
+  font-size: 1.5rem;
+}
+
+article hr {
+  border-top:1px dashed #e1e1e1;
+}

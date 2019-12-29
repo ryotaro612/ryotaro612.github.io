@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>メモ Are We Really Making Much Progress? A Worring Analysis of Recent Neural Recomendation Approaches</h2>
+    <p>August 10, 2019</p>
+  </header>
+  <h3 id="heading">概要</h3>
+<p>表題は、ニューラルネットワークを用いた推薦システムを提案、評価した論文における実験の再現性と予測性能の再評価した論文のタイトルにあたる。
+発表学会は、2019年のRecSys。著者らは、以下の2つのRQに回答するためにトップ会議で発表された18の論文を調査した。その結果、実験を再現できた論文は7稿であり、その中でも単純な手法を上回る性能が認められたのは1稿だけだった。</p>
+<ul>
+<li>RQ1: ニューラルネットワークを用いた推薦システムの研究の再現性はどの程度か</li>
+<li>RQ2: 最近発表されたアルゴリズムは、ハイパーパラメタチューニングされた単純な手法と比べてどの程度性能がいいか</li>
+</ul>
+<p>18の論文の発表学会の内訳は、KDDが4稿、RecSysが7稿、SIGIRが3稿、WWWが4稿。そのうち再現できたのは、順に3, 1, 1, 2稿だった。
+これらの手法との比較に使われたのは、大別して、単に最も人気のアイテムを推薦する方法、KNNを用いた強調フィルタリング、\(\textbf{P}^3\alpha\)というグラフアルゴリズムの3つがある。</p>
+<p>考察では、再現性の低さや性能の過大評価の原因について議論されている。
+再現性の低さはハイパーパラメタの最適化、評価、前処理、ベースラインのコードが公開されていないことに由来し、
+性能の過大評価は不適切なベースラインの選択や十分な最適化がされていないことに起因すると考えられている。</p>
+<h3 id="heading-1">感想</h3>
+<p>ベースラインの最適化に使われた<a href="https://scikit-optimize.github.io/">Scikit-Optimize</a>とベースラインのアルゴリズム\(\textbf{P}^3\alpha\)が気になった。</p>
+<hr>
+<p>論文は<a href="https://arxiv.org/pdf/1907.06902.pdf">こちら</a>からダウンロードできます。</p>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

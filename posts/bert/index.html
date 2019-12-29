@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ BERT: Pre-training of Deep Bidirectional Transformers for Lnaguages Understaing</h2>
+    <p>December 14, 2019</p>
+  </header>
+  <h3 id="heading">概要</h3>
+<p>BERTは<a href="https://arxiv.org/pdf/1706.03762.pdf">Attention Is All You Need</a>にあるTransformerをアーキテクチャに導入した分散表現のモデルであり、本稿は、事前学習済みのBERTにファインチューニングを適用しQAタスクや自然言語推論のベンチマークにおいて既存研究を上回る結果を示している。
+なお、アーキテクチャに関する説明は少なく、子細に知りたい場合は<a href="https://arxiv.org/pdf/1706.03762.pdf">Attention Is All You Need</a>や<a href="http://nlp.seas.harvard.edu/2018/04/03/attention.html">The Annotated Transformer</a>を参照するように案内されている。</p>
+<h3 id="heading-1">事前学習</h3>
+<p>事前学習では、単語をトークンとし、単語の前後の文脈を反映した分散表現を双方向のモデルを学習する。
+双方向性を与えるために、無作為に選んだトークンをマスクし、周辺のトークンからマスクされたトークンを当てるというタスクを解く。論文にある事前学習の様子を示した図を以下に示す。様々なタスクに応用できるように、文の組みを示すトークンを導入するこで、文のペアも単一の文も入力として扱えるようになっている。図は対になる文の入力の様子を示しており、<code>[CLS]</code>はペアの始まりを、<code>[SEP]</code>はペアの要素間の区切りを、それぞれ表している。</p>
+<p><img src="/bert/bert.png" alt="bert"></p>
+<h3 id="heading-2">ファインチューニング</h3>
+<p>BERTの出力を入力とする一層の出力層を追加するだけで、既存研究を上回る予測性能をあげることができたと報告されている。</p>
+<hr>
+<ul>
+<li><a href="https://arxiv.org/abs/1810.04805">pdf</a></li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

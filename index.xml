@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Coda</title>
-    <link>https://nryotaro.github.io/</link>
+    <link>https://nryotaro.dev/</link>
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 28 Dec 2019 00:56:36 +0900</lastBuildDate>
     
-	<atom:link href="https://nryotaro.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>論文メモ Distributed Representations of Sentences and Documents</title>
-      <link>https://nryotaro.github.io/post/distributed_representations_of_sentences_and_documents/</link>
+      <link>https://nryotaro.dev/posts/distributed_representations_of_sentences_and_documents/</link>
       <pubDate>Sat, 28 Dec 2019 00:56:36 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/distributed_representations_of_sentences_and_documents/</guid>
+      <guid>https://nryotaro.dev/posts/distributed_representations_of_sentences_and_documents/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://radimrehurek.com/gensim/models/doc2vec.html&#34;&gt;Doc2Vec&lt;/a&gt;のアルゴリズムとして採用されたニューラル言語モデルParagraph Vectorを提案した論文である。
 bag of wordsは、文書の単語順を記憶せず、また、似た意味の単語ベクトルと無関係なベクトルを単語にわりあてる。
@@ -26,10 +26,10 @@ Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文�
     
     <item>
       <title>論文メモ GloVe: Global Vectors for Word Representation</title>
-      <link>https://nryotaro.github.io/post/glove_vectors_for_word_representation/</link>
+      <link>https://nryotaro.dev/posts/glove_vectors_for_word_representation/</link>
       <pubDate>Sat, 21 Dec 2019 23:53:36 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/glove_vectors_for_word_representation/</guid>
+      <guid>https://nryotaro.dev/posts/glove_vectors_for_word_representation/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.aclweb.org/anthology/D14-1162.pdf&#34;&gt;GloVe&lt;/a&gt;は,コーパスに出現する単語の共起回数を学習するニューラル言語モデルである。
 既存手法を単語の出現頻度の統計値つかう手法と対数双線形モデルに分類し、両者の長所を備え短所を補う手法として、GloVeを提案する。&lt;/p&gt;</description>
@@ -37,10 +37,10 @@ Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文�
     
     <item>
       <title>論文メモ BERT: Pre-training of Deep Bidirectional Transformers for Lnaguages Understaing</title>
-      <link>https://nryotaro.github.io/post/bert/</link>
+      <link>https://nryotaro.dev/posts/bert/</link>
       <pubDate>Sat, 14 Dec 2019 17:39:09 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/bert/</guid>
+      <guid>https://nryotaro.dev/posts/bert/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;BERTは&lt;a href=&#34;https://arxiv.org/pdf/1706.03762.pdf&#34;&gt;Attention Is All You Need&lt;/a&gt;にあるTransformerをアーキテクチャに導入した分散表現のモデルであり、本稿は、事前学習済みのBERTにファインチューニングを適用しQAタスクや自然言語推論のベンチマークにおいて既存研究を上回る結果を示している。
 なお、アーキテクチャに関する説明は少なく、子細に知りたい場合は&lt;a href=&#34;https://arxiv.org/pdf/1706.03762.pdf&#34;&gt;Attention Is All You Need&lt;/a&gt;や&lt;a href=&#34;http://nlp.seas.harvard.edu/2018/04/03/attention.html&#34;&gt;The Annotated Transformer&lt;/a&gt;を参照するように案内されている。&lt;/p&gt;</description>
@@ -48,10 +48,10 @@ Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文�
     
     <item>
       <title>論文メモ 150 Successful Machine Learning Models: 6 Lessons Learned at Booking.com</title>
-      <link>https://nryotaro.github.io/post/150_successfuly_machine_learning_modes/</link>
+      <link>https://nryotaro.dev/posts/150_successfuly_machine_learning_modes/</link>
       <pubDate>Sat, 14 Dec 2019 13:25:04 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/150_successfuly_machine_learning_modes/</guid>
+      <guid>https://nryotaro.dev/posts/150_successfuly_machine_learning_modes/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;宿泊予約サービス&lt;a href=&#34;http://booking.com/&#34;&gt;Booking.com&lt;/a&gt;におけるモデルの開発運用でえられた教訓を6つにまとめたKDD2019の論文である。
 教訓の主眼を収益におき、6つの教訓を通して、実運用環境における仮説と実験を反復する重要性を強調する。&lt;/p&gt;</description>
@@ -59,10 +59,10 @@ Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文�
     
     <item>
       <title>論文メモ Ranking Relevance In Yahoo Search</title>
-      <link>https://nryotaro.github.io/post/ranking_relevance_in_yahoo_search/</link>
+      <link>https://nryotaro.dev/posts/ranking_relevance_in_yahoo_search/</link>
       <pubDate>Sat, 07 Dec 2019 15:10:51 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/ranking_relevance_in_yahoo_search/</guid>
+      <guid>https://nryotaro.dev/posts/ranking_relevance_in_yahoo_search/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;Yahooの検索エンジンを解説するKDD16の論文である。
 論文におけるランキングの課題は、クエリと文書の語彙がことなること、ほとんどのクエリは滅多に入力されないこと、クエリの意味の解釈が難しいことである。
@@ -71,10 +71,10 @@ Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文�
     
     <item>
       <title>論文メモ A Dual Embedding Space Model for Document Ranking</title>
-      <link>https://nryotaro.github.io/post/a_dual_embedding_space_model_for_document_ranking/</link>
+      <link>https://nryotaro.dev/posts/a_dual_embedding_space_model_for_document_ranking/</link>
       <pubDate>Sat, 30 Nov 2019 08:18:06 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/a_dual_embedding_space_model_for_document_ranking/</guid>
+      <guid>https://nryotaro.dev/posts/a_dual_embedding_space_model_for_document_ranking/</guid>
       <description>&lt;p&gt;Dual Embedding Space Model(DESM)は、word2vecで単語埋め込みベクトルにしたクエリと文書のランキング関数である。
 実験における比較対象のBM25は、クエリの単語の文書での出現頻度をもとに順序をつける。
 DESMは、クエリの単語に関係する単語をもとに判断する。
@@ -84,10 +84,10 @@ DESMは、クエリの単語に関係する単語をもとに判断する。
     
     <item>
       <title>論文メモ On Calibration of Modern Neural Networks</title>
-      <link>https://nryotaro.github.io/post/on_calibration_of_modern_neural_networks/</link>
+      <link>https://nryotaro.dev/posts/on_calibration_of_modern_neural_networks/</link>
       <pubDate>Sat, 23 Nov 2019 14:37:30 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/on_calibration_of_modern_neural_networks/</guid>
+      <guid>https://nryotaro.dev/posts/on_calibration_of_modern_neural_networks/</guid>
       <description>&lt;p&gt;ネットワークの複雑化、バッチ正則化、重み減衰を使わない、負の対数尤度の過学習が汎化精度を上げるが、予測確率と精度のズレを大きくすることを実験的に示した。
 予測確率を補正する6つの手法を19種類のクラス分類のデータセットに適用した結果、
 最も補正できたものは、温度つきソフトマックスの出力を予測確率にする場合であった。&lt;/p&gt;</description>
@@ -95,10 +95,10 @@ DESMは、クエリの単語に関係する単語をもとに判断する。
     
     <item>
       <title>論文メモ Trinary-Projection Trees for Approximate Nerest Neighbor Search</title>
-      <link>https://nryotaro.github.io/post/trinary_projection_trees/</link>
+      <link>https://nryotaro.dev/posts/trinary_projection_trees/</link>
       <pubDate>Sat, 16 Nov 2019 13:12:52 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/trinary_projection_trees/</guid>
+      <guid>https://nryotaro.dev/posts/trinary_projection_trees/</guid>
       <description>&lt;p&gt;Trinary-Projection Trees(TP trees)は、kd木のように、ユークリッド空間の分割を二分木で表現できるデータ構造である。
 超平面は1または-1の重みのついた少数の座標軸で定義される。
 これにより、探索時の分岐にかかる計算が、加算と減算だけからなる\(O(1)\)となる。
@@ -107,10 +107,10 @@ DESMは、クエリの単語に関係する単語をもとに判断する。
     
     <item>
       <title>論文メモ Get Another Label? Improving Data Quality and Data Mining Using Multiple, Noisy Labelers</title>
-      <link>https://nryotaro.github.io/post/get_another_label/</link>
+      <link>https://nryotaro.dev/posts/get_another_label/</link>
       <pubDate>Sat, 09 Nov 2019 21:46:12 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/get_another_label/</guid>
+      <guid>https://nryotaro.dev/posts/get_another_label/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;ある確率でデータに誤ったラベルをふるlabelerでデータにラベルをふるときに、
 既にラベルのあるデータに重ねてラベルをふるべきか調査した。
@@ -121,10 +121,10 @@ DESMは、クエリの単語に関係する単語をもとに判断する。
     
     <item>
       <title>メモ ActiveClean: Interactive Data Cleaning For Statistical Modeling</title>
-      <link>https://nryotaro.github.io/post/active_clean/</link>
+      <link>https://nryotaro.dev/posts/active_clean/</link>
       <pubDate>Sat, 09 Nov 2019 15:37:31 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/active_clean/</guid>
+      <guid>https://nryotaro.dev/posts/active_clean/</guid>
       <description>&lt;p&gt;ActiveCleanは、教師データの誤りを修正し、モデルの精度を改善する手法である。
 優先して修正すべきデータを推定し、データが修正されたら修正されたデータでモデルを学習する。
 この修正と学習を条件を満たすまでくりかえす。
@@ -134,10 +134,10 @@ DESMは、クエリの単語に関係する単語をもとに判断する。
     
     <item>
       <title>メモ WebTables: Exploring the Power of Tables on the Web</title>
-      <link>https://nryotaro.github.io/post/web_tables/</link>
+      <link>https://nryotaro.dev/posts/web_tables/</link>
       <pubDate>Thu, 31 Oct 2019 21:09:38 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/web_tables/</guid>
+      <guid>https://nryotaro.dev/posts/web_tables/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;表題の論文は、Web上の表から抽出した大量の関係モデルを対象にした検索を提案・評価した
 。検索の他にも、一部の属性を入力とするスキーマの補完、入力した属性ないしスキーマに類似のものを推定するアルゴリズムの議論もある。
@@ -148,10 +148,10 @@ DESMは、クエリの単語に関係する単語をもとに判断する。
     
     <item>
       <title>メモ A Survey on Data Collection for Machine Learning</title>
-      <link>https://nryotaro.github.io/post/a_survey_on_data_collection_for_machine_learning/</link>
+      <link>https://nryotaro.dev/posts/a_survey_on_data_collection_for_machine_learning/</link>
       <pubDate>Sat, 26 Oct 2019 14:27:10 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/a_survey_on_data_collection_for_machine_learning/</guid>
+      <guid>https://nryotaro.dev/posts/a_survey_on_data_collection_for_machine_learning/</guid>
       <description>&lt;p&gt;表題の論文は、文字通り、機械学習に使う教師データに関するサーベイ論文であり、
 機械学習や自然言語処理などのデータの応用分野だけでなく、データの管理にまつわる分野の調査も含まれているところに特徴がある。
 データの管理に着目している理由は、深層学習の発展によって必要な教師データが増えたことで、データの管理の課題が顕在化してきたことである。&lt;/p&gt;</description>
@@ -159,10 +159,10 @@ DESMは、クエリの単語に関係する単語をもとに判断する。
     
     <item>
       <title>メモ Structure estimation for discrete graphical models: Generalized covariance matrices and their inverses</title>
-      <link>https://nryotaro.github.io/post/structure_estimation_for_dscrete_graphical_models/</link>
+      <link>https://nryotaro.dev/posts/structure_estimation_for_dscrete_graphical_models/</link>
       <pubDate>Sat, 19 Oct 2019 16:21:31 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/structure_estimation_for_dscrete_graphical_models/</guid>
+      <guid>https://nryotaro.dev/posts/structure_estimation_for_dscrete_graphical_models/</guid>
       <description>&lt;p&gt;表題の論文は、マルコフ確率場をなす無向グラフとグラフの構造を反映した逆共分散行列の間の対応関係を証明し、
 観測した確率変数の値からグラフの構造を復元する実験を通じて、対応関係を確認した。
 この手法は&lt;a href=&#34;https://arxiv.org/pdf/1810.02840.pdf&#34;&gt;Snorkel&lt;/a&gt;というWeak supervisionの手法において、
@@ -171,10 +171,10 @@ DESMは、クエリの単語に関係する単語をもとに判断する。
     
     <item>
       <title>メモ Feature Selection for Text Categorization on Imbalanced Data</title>
-      <link>https://nryotaro.github.io/post/feature_selection_for_text_categorization_on_imbalance_data/</link>
+      <link>https://nryotaro.dev/posts/feature_selection_for_text_categorization_on_imbalance_data/</link>
       <pubDate>Sat, 12 Oct 2019 15:59:09 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/feature_selection_for_text_categorization_on_imbalance_data/</guid>
+      <guid>https://nryotaro.dev/posts/feature_selection_for_text_categorization_on_imbalance_data/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;表題の論文は、特徴選択において、正例に顕著な特徴から選ぶ割合を明示的に決めることで、正例と負例それぞれに顕著な特徴の割合を調整することが、不均衡な文書分類における予測性能の向上に役立つことを示した。
 情報利得やオッズ比など単変量統計にもとづく特徴選択において、統計量の値によって暗黙的に決められた割合と異なる割合の場合の方が予測性能が高いことを実験的に示した。&lt;/p&gt;</description>
@@ -182,10 +182,10 @@ DESMは、クエリの単語に関係する単語をもとに判断する。
     
     <item>
       <title>メモ Snorkel DryBell: A Case Study in Deploying Weak Supervision at Industrial Scale</title>
-      <link>https://nryotaro.github.io/post/snorkel_drybell_case_study/</link>
+      <link>https://nryotaro.dev/posts/snorkel_drybell_case_study/</link>
       <pubDate>Sat, 05 Oct 2019 00:45:00 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/snorkel_drybell_case_study/</guid>
+      <guid>https://nryotaro.dev/posts/snorkel_drybell_case_study/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;表題の論文では、&lt;a href=&#34;https://www.snorkel.org&#34;&gt;Snorkel&lt;/a&gt;というWeak Supervisionの手法をGoogleで適用した結果の考察と評価がなされている。
 Weak Supervisionは、人手よりも効率良くノイズ交じりの教師データを生成する手法である。
@@ -194,29 +194,29 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
     
     <item>
       <title>メモ Training Complex Models with Multi-Task Weak Supervision</title>
-      <link>https://nryotaro.github.io/post/training_complex_models_with_multi_task_weak_supervision/</link>
+      <link>https://nryotaro.dev/posts/training_complex_models_with_multi_task_weak_supervision/</link>
       <pubDate>Sat, 28 Sep 2019 14:53:47 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/training_complex_models_with_multi_task_weak_supervision/</guid>
+      <guid>https://nryotaro.dev/posts/training_complex_models_with_multi_task_weak_supervision/</guid>
       <description>&lt;p&gt;論文の表題は、ソース間の粒度や精度が揃っていることを前提とせず、&lt;a href=&#34;https://arxiv.org/pdf/1212.0478.pdf&#34;&gt;LohとWainwrightらの手法&lt;/a&gt;でソースの精度を推定し、ソースのラベルよりも精度が高いラベルをデータに与えるWeak supervsionの手法である。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>メモ Snorkel: Rapid Traning Data Creation with Weak Supervision</title>
-      <link>https://nryotaro.github.io/post/snorkel_rapid_training_data_creation_with_weak_supervision/</link>
+      <link>https://nryotaro.dev/posts/snorkel_rapid_training_data_creation_with_weak_supervision/</link>
       <pubDate>Sat, 21 Sep 2019 12:01:51 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/snorkel_rapid_training_data_creation_with_weak_supervision/</guid>
+      <guid>https://nryotaro.dev/posts/snorkel_rapid_training_data_creation_with_weak_supervision/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;表題の論文は、Weak supervisionの一種であるSnorkelを学習データの収集効率と予測性能についての既存手法や教師あり学習と比べた評価をまとめてる。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>メモ Software Engineerng for Machine Learning: A Case Study</title>
-      <link>https://nryotaro.github.io/post/software_engineering_for_machine_learning/</link>
+      <link>https://nryotaro.dev/posts/software_engineering_for_machine_learning/</link>
       <pubDate>Sat, 14 Sep 2019 11:26:41 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/software_engineering_for_machine_learning/</guid>
+      <guid>https://nryotaro.dev/posts/software_engineering_for_machine_learning/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;表題の論文は、マイクロソフトでのAIを応用したアプリケーションの開発についての調査結果をまとている。
 著者らは、9人中の8名がMicrosoft Researchに所属し、本論文で2019年のICSEのSoftware Engineering in Practiceの分野でBest Paper Awardを受賞した。
@@ -225,10 +225,10 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
     
     <item>
       <title>メモ Class Imbalance, Redux</title>
-      <link>https://nryotaro.github.io/post/class_imbalance_redux/</link>
+      <link>https://nryotaro.dev/posts/class_imbalance_redux/</link>
       <pubDate>Sat, 07 Sep 2019 15:34:06 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/class_imbalance_redux/</guid>
+      <guid>https://nryotaro.dev/posts/class_imbalance_redux/</guid>
       <description>&lt;p&gt;表題の論文は、不均衡データの特徴が二値分類の予測性能に及ぼす影響を理論づける論文である。
 理論と実験を通じて、多くのケースにおいて、アンダーサンプリングによる均衡データのバギングで予測性能があがったことを示している。
 バギングは、アンダーサンプリングによる偏りを抑えて予測性能を安定させるために使われる。
@@ -237,10 +237,10 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
     
     <item>
       <title>メモ Learning on the Border: Active Learning in Imbalanced Data Classification</title>
-      <link>https://nryotaro.github.io/post/learning_on_border/</link>
+      <link>https://nryotaro.dev/posts/learning_on_border/</link>
       <pubDate>Sat, 31 Aug 2019 02:05:53 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/learning_on_border/</guid>
+      <guid>https://nryotaro.dev/posts/learning_on_border/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;表題にある論文は、不均衡データの二値分類についての予測性能を能動学習で改善する手法を提案している。
 着想は、学習器のマージン付近では正例と負例がよりバランスしていると仮定し、
@@ -250,10 +250,10 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
     
     <item>
       <title>メモ Distilling the Knowledge in a Neural Network</title>
-      <link>https://nryotaro.github.io/post/distilling_the_knowledge_in_a_neural_network/</link>
+      <link>https://nryotaro.dev/posts/distilling_the_knowledge_in_a_neural_network/</link>
       <pubDate>Sat, 24 Aug 2019 23:04:39 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/distilling_the_knowledge_in_a_neural_network/</guid>
+      <guid>https://nryotaro.dev/posts/distilling_the_knowledge_in_a_neural_network/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;表題にあるニューラルネットワークの蒸留についての論文を紹介する。
 蒸留は、既存のモデルを使い、できるだけ予測性能を落とさずに、より小さいモデルを作るための学習手法である。
@@ -264,10 +264,10 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
     
     <item>
       <title>メモ FastXML: A Fast, Accurate and Stable Tree-classifier for eXtreme Multi-label Learning</title>
-      <link>https://nryotaro.github.io/post/fastxml/</link>
+      <link>https://nryotaro.dev/posts/fastxml/</link>
       <pubDate>Sat, 24 Aug 2019 15:45:40 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/fastxml/</guid>
+      <guid>https://nryotaro.dev/posts/fastxml/</guid>
       <description>&lt;p&gt;表題にあるExtreme multi-label classificationの手法を紹介する。
 Extreme multi-label classificationの目的は、大量のラベルの候補から与えられたデータに関連する複数のラベルを推定する学習器を構築することにある。
 FastXMLは、弱学習器に決定木を使うアンサンブル学習であり、ノードの分割の評価関数にnDCGを採用することで、学習にかかる時間と予測精度の向上を意図している。&lt;/p&gt;</description>
@@ -275,10 +275,10 @@ FastXMLは、弱学習器に決定木を使うアンサンブル学習であり�
     
     <item>
       <title>メモ Advantages and Disadvantages of a Monolithic Repository</title>
-      <link>https://nryotaro.github.io/post/advantages_and_disadvantages_of_a_monolithic_repository/</link>
+      <link>https://nryotaro.dev/posts/advantages_and_disadvantages_of_a_monolithic_repository/</link>
       <pubDate>Sat, 17 Aug 2019 14:49:48 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/advantages_and_disadvantages_of_a_monolithic_repository/</guid>
+      <guid>https://nryotaro.dev/posts/advantages_and_disadvantages_of_a_monolithic_repository/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;表題は、マルチリポジトリと比べたときのモノリシックリポジトリの長所と短所の調べた論文のタイトルである。
 論文は2018年のICSEでGoogleから発表された。
@@ -288,10 +288,10 @@ Googleではモノリシックリポジトリが採用されており、エン�
     
     <item>
       <title>メモ CatBoost: unbaiased boosting with categorical features</title>
-      <link>https://nryotaro.github.io/post/cat_boost/</link>
+      <link>https://nryotaro.dev/posts/cat_boost/</link>
       <pubDate>Sat, 10 Aug 2019 23:27:29 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/cat_boost/</guid>
+      <guid>https://nryotaro.dev/posts/cat_boost/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;表題はNeurIPS 2018で発表されたCatBoostという勾配ブースティングの手法を論文にちなむ。
 Target Statisticsというカテゴリカル特徴量の前処理と勾配ブースティングの学習時に生じる一種のleakageが起きることを示し、leakageをさけて前処理と学習をする手法を示した。
@@ -300,10 +300,10 @@ CatBoostは二進木の決定木を弱識別器に用いる。&lt;/p&gt;</descri
     
     <item>
       <title>メモ Are We Really Making Much Progress? A Worring Analysis of Recent Neural Recomendation Approaches</title>
-      <link>https://nryotaro.github.io/post/are_we_really_making_much_progress/</link>
+      <link>https://nryotaro.dev/posts/are_we_really_making_much_progress/</link>
       <pubDate>Sat, 10 Aug 2019 14:39:11 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/are_we_really_making_much_progress/</guid>
+      <guid>https://nryotaro.dev/posts/are_we_really_making_much_progress/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;表題は、ニューラルネットワークを用いた推薦システムを提案、評価した論文における実験の再現性と予測性能の再評価した論文のタイトルにあたる。
 発表学会は、2019年のRecSys。著者らは、以下の2つのRQに回答するためにトップ会議で発表された18の論文を調査した。その結果、実験を再現できた論文は7稿であり、その中でも単純な手法を上回る性能が認められたのは1稿だけだった。&lt;/p&gt;
@@ -315,10 +315,10 @@ CatBoostは二進木の決定木を弱識別器に用いる。&lt;/p&gt;</descri
     
     <item>
       <title>メモ Gaussian Processes for Regression</title>
-      <link>https://nryotaro.github.io/post/gaussian_processes_for_regression/</link>
+      <link>https://nryotaro.dev/posts/gaussian_processes_for_regression/</link>
       <pubDate>Sat, 03 Aug 2019 21:54:03 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/gaussian_processes_for_regression/</guid>
+      <guid>https://nryotaro.dev/posts/gaussian_processes_for_regression/</guid>
       <description>&lt;p&gt;表題はガウス過程の回帰問題への応用を提案した論文。著者らは、scikit-learnの&lt;a href=&#34;https://scikit-learn.org/stable/modules/gaussian_process.html#gaussian-process&#34;&gt;ガウス過程回帰&lt;/a&gt;の
 元になっている&lt;a href=&#34;http://www.gaussianprocess.org/gpml/chapters/RW.pdf&#34;&gt;Gaussian Processes for Machine Learning&lt;/a&gt;の著者と同じ。
 論文の構成は、ガウス過程回帰の予測分布の式、ハイパーパラメタ推定方法、実験による評価からなる。&lt;/p&gt;</description>
@@ -326,10 +326,10 @@ CatBoostは二進木の決定木を弱識別器に用いる。&lt;/p&gt;</descri
     
     <item>
       <title>概要 Google Vizier: A Service for Black-Box Optimization</title>
-      <link>https://nryotaro.github.io/post/google_vizier/</link>
+      <link>https://nryotaro.dev/posts/google_vizier/</link>
       <pubDate>Sat, 03 Aug 2019 17:18:36 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/google_vizier/</guid>
+      <guid>https://nryotaro.dev/posts/google_vizier/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;表題にあるVizierはGoogleにおいてデファクトになっているブラックボックス最適化のためのサービスであり、
 論文は、Vizierのシステムアーキテクチャの構成とアルゴリズムの説明とその評価からなる。&lt;/p&gt;</description>
@@ -337,10 +337,10 @@ CatBoostは二進木の決定木を弱識別器に用いる。&lt;/p&gt;</descri
     
     <item>
       <title>概要 Learning Active Learning from Data</title>
-      <link>https://nryotaro.github.io/post/learning_active_learning_from_data/</link>
+      <link>https://nryotaro.dev/posts/learning_active_learning_from_data/</link>
       <pubDate>Sat, 27 Jul 2019 16:40:43 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/learning_active_learning_from_data/</guid>
+      <guid>https://nryotaro.dev/posts/learning_active_learning_from_data/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;表題にある論文は、次にラベルを与えるべきデータが何かという能動学習における問題を、
 あるサンプルを教師データに追加したときの損失関数の減少値を予測する回帰の問題としてとらえる。
@@ -350,10 +350,10 @@ CatBoostは二進木の決定木を弱識別器に用いる。&lt;/p&gt;</descri
     
     <item>
       <title>概要 TextRank: Bringing Order into Texts</title>
-      <link>https://nryotaro.github.io/post/textrank/</link>
+      <link>https://nryotaro.dev/posts/textrank/</link>
       <pubDate>Sat, 20 Jul 2019 17:49:36 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/textrank/</guid>
+      <guid>https://nryotaro.dev/posts/textrank/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;表題にある論文は、ドキュメントからキーワードとキーセンテンスを抽出するためのグラフベースのアルゴリズムTextRankを提案、評価した。
 TextRankは、名前から推測できるようにPageRankを応用した手法であり、頂点の重要度を、頂点の内容のような局所的な情報ではなく、他の頂点との辺の接続関係を含むグラフ全体の大域的な情報から決定する。PageRankとTextRankのアルゴリズムの違いは、TextRankの場合は辺ごとに重みが設定できるところにある。&lt;/p&gt;</description>
@@ -361,10 +361,10 @@ TextRankは、名前から推測できるようにPageRankを応用した手法�
     
     <item>
       <title>概要 Subword Regularization: Improving Neural Network Translation Models with Multiple Subword Candidates</title>
-      <link>https://nryotaro.github.io/post/subword_regularization/</link>
+      <link>https://nryotaro.dev/posts/subword_regularization/</link>
       <pubDate>Wed, 17 Jul 2019 12:51:29 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/subword_regularization/</guid>
+      <guid>https://nryotaro.dev/posts/subword_regularization/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;表題は、過去に&lt;a href=&#34;../neural_machine_translation_of_rate_words/&#34;&gt;紹介&lt;/a&gt;した&lt;a href=&#34;https://www.aclweb.org/anthology/P16-1162&#34;&gt;論文&lt;/a&gt;と同様、sentencepiece（ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザ）の元になった論文にあたる。
 ノイズに対する頑強さのために、単語のサブワード（部分文字列）を生成するユニグラム言語モデルの学習方法と、モデルから生成されたサブワード列を入力とする機械翻訳モデルの学習方法を提案した。&lt;/p&gt;</description>
@@ -372,20 +372,20 @@ TextRankは、名前から推測できるようにPageRankを応用した手法�
     
     <item>
       <title>概要 Neural Machine Trasnslation of Rare Words with Subword Units</title>
-      <link>https://nryotaro.github.io/post/neural_machine_translation_of_rate_words/</link>
+      <link>https://nryotaro.dev/posts/neural_machine_translation_of_rate_words/</link>
       <pubDate>Sat, 13 Jul 2019 17:19:10 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/neural_machine_translation_of_rate_words/</guid>
+      <guid>https://nryotaro.dev/posts/neural_machine_translation_of_rate_words/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;内容は、sentencepiece（ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザ）のトークナイズで使われるアルゴリズムになっている。単語をサブワード（単語の部分文字列）に分割し、サブワードを組み合わせて珍しい単語や未知語を表現することで、これらの出現頻度の低い単語の翻訳上げるというもの。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>メモ Embedding Logical Queries on Knowledge Graphs</title>
-      <link>https://nryotaro.github.io/post/embedding_logical_queries_on_knowledge_graphs/</link>
+      <link>https://nryotaro.dev/posts/embedding_logical_queries_on_knowledge_graphs/</link>
       <pubDate>Sun, 17 Feb 2019 17:03:49 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/embedding_logical_queries_on_knowledge_graphs/</guid>
+      <guid>https://nryotaro.dev/posts/embedding_logical_queries_on_knowledge_graphs/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;一階述語論理式で表現されたクエリを満たすノードを、分散表現に変換し、ナレッジグラフの中から計算時間上効率よく見つけるアルゴリズムを提案した。
 クエリに現れるエッジの数に対して計算時間が線形であることが特徴。
@@ -394,19 +394,19 @@ TextRankは、名前から推測できるようにPageRankを応用した手法�
     
     <item>
       <title>Regularizing and Optimizing LSTM Language Models</title>
-      <link>https://nryotaro.github.io/post/regularizing_and_optimizing_lstm_language_models/</link>
+      <link>https://nryotaro.dev/posts/regularizing_and_optimizing_lstm_language_models/</link>
       <pubDate>Fri, 23 Nov 2018 19:27:00 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/regularizing_and_optimizing_lstm_language_models/</guid>
+      <guid>https://nryotaro.dev/posts/regularizing_and_optimizing_lstm_language_models/</guid>
       <description>&lt;p&gt;本稿は、LSTMを用いた言語モデルに対して正規化と最適化を適用し、実験を通して既存の先行研究とperplexityの観点で予測性能を評価した。本稿の手法の利点は、LSTMの実装に変更を加えずに適用できるために、NVIDIA cuDNNなどの高速でブラックボックスなライブラリで実装できることにある。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>メモ Deep Joint Entity Disambiguation with Local Neural Attention</title>
-      <link>https://nryotaro.github.io/post/deep_joint_entity_disambiguation/</link>
+      <link>https://nryotaro.dev/posts/deep_joint_entity_disambiguation/</link>
       <pubDate>Fri, 09 Nov 2018 21:11:50 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/deep_joint_entity_disambiguation/</guid>
+      <guid>https://nryotaro.dev/posts/deep_joint_entity_disambiguation/</guid>
       <description>&lt;p&gt;本稿は、当ページで紹介した&lt;a href=&#34;https://aclweb.org/anthology/K18-1050&#34;&gt;End-to-End Neural Entity Linking&lt;/a&gt;(End-to-End) の著者らの先行研究にあたる。
 End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)の両方をアプローチの対象にしているのに対し、本稿ではEDのみが対象となっている。
 したがって、文章からmention（参照表現）が抽出されていることが前提にあり、提案の中心は、参照表現に対応するエンティティを候補の中から正しく求める手法にある。&lt;/p&gt;</description>
@@ -414,10 +414,10 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
     
     <item>
       <title>メモ End-to-end Neural Entity Linking</title>
-      <link>https://nryotaro.github.io/post/end_to_end_neural_entity_linking/</link>
+      <link>https://nryotaro.dev/posts/end_to_end_neural_entity_linking/</link>
       <pubDate>Fri, 02 Nov 2018 16:59:14 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/end_to_end_neural_entity_linking/</guid>
+      <guid>https://nryotaro.dev/posts/end_to_end_neural_entity_linking/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;背景&lt;/h3&gt;
 &lt;p&gt;本稿は、End to EndなEntity Linkingモデルのアーキテクチャを提案し、予測性能の評価実験で有用性を評価した。
 実験のデータセットには、Entity annotationの評価に使える様々なデータセットを集めた&lt;a href=&#34;https://github.com/dice-group/gerbil/wiki&#34;&gt;Gerbil Platform&lt;/a&gt;が使われている。そのうちの&lt;a href=&#34;https://natural-language-understanding.fandom.com/wiki/AIDA-CoNLL&#34;&gt;AIDA/CoNLL&lt;/a&gt;データセットにおいて、提案手法は既存手法を超える予測性能を発揮した。&lt;/p&gt;</description>
@@ -425,19 +425,19 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
     
     <item>
       <title>DeepType: Multilingual Entity Linking by Neural Type System Evolution(2018)</title>
-      <link>https://nryotaro.github.io/post/deeptype/</link>
+      <link>https://nryotaro.dev/posts/deeptype/</link>
       <pubDate>Fri, 26 Oct 2018 20:53:08 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/deeptype/</guid>
+      <guid>https://nryotaro.dev/posts/deeptype/</guid>
       <description>&lt;p&gt;本稿は、既存のオントロジから型システムを構築するアルゴリズムと型システムによるEntity Linking(EL)を提案した。実験を通じて既存手法と比較し、精度の向上を確認した。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>メモ Conditional Random Fields: Probabilistic Models for Segmenting and Labeling Sequence Data</title>
-      <link>https://nryotaro.github.io/post/conditional_random_fields_probabilistic_models_for_segmenting_and_labeling_sequence/</link>
+      <link>https://nryotaro.dev/posts/conditional_random_fields_probabilistic_models_for_segmenting_and_labeling_sequence/</link>
       <pubDate>Fri, 12 Oct 2018 18:39:08 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/conditional_random_fields_probabilistic_models_for_segmenting_and_labeling_sequence/</guid>
+      <guid>https://nryotaro.dev/posts/conditional_random_fields_probabilistic_models_for_segmenting_and_labeling_sequence/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;本稿は、条件付き確率場（Conditional Random Fields, CRF）を提案し、品詞タグづけにおけるerror rateをもとに評価した。
 評価の比較対象には、Maximum entropy Markov models(MEMMs)が採用されている。&lt;/p&gt;</description>
@@ -445,10 +445,10 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
     
     <item>
       <title>メモ Bidirectional LSTM-CRF Models for Sequence Tagging</title>
-      <link>https://nryotaro.github.io/post/bidirectional_lstm_crf_models_for_sequence_tagging/</link>
+      <link>https://nryotaro.dev/posts/bidirectional_lstm_crf_models_for_sequence_tagging/</link>
       <pubDate>Fri, 05 Oct 2018 18:46:36 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/bidirectional_lstm_crf_models_for_sequence_tagging/</guid>
+      <guid>https://nryotaro.dev/posts/bidirectional_lstm_crf_models_for_sequence_tagging/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;本稿では、NLPにおける系列ラベリングためのニューラルネットワークアーキテクチャの提案と評価がなされている。
 このアーキテクチャは、当ページで以前紹介した&lt;a href=&#34;https://aclweb.org/anthology/papers/C/C18/C18-1139/&#34;&gt;Contextual String Embeddings for Sequence Labeling&lt;/a&gt;で応用されている。&lt;/p&gt;</description>
@@ -456,10 +456,10 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
     
     <item>
       <title>メモ Contextual String Embeddings for Sequence Labeling</title>
-      <link>https://nryotaro.github.io/post/context_string_embeddings_for_sequence_labeling/</link>
+      <link>https://nryotaro.dev/posts/context_string_embeddings_for_sequence_labeling/</link>
       <pubDate>Fri, 28 Sep 2018 16:29:46 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/context_string_embeddings_for_sequence_labeling/</guid>
+      <guid>https://nryotaro.dev/posts/context_string_embeddings_for_sequence_labeling/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;表題の論文は、ライブラリflairのアルゴリズムを提案、評価したもの。&lt;/p&gt;
 &lt;p&gt;論文は、テキストの系列ラベリングに向いた単語の分散表現モデルを提案し、
@@ -471,10 +471,10 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
     
     <item>
       <title>メモ Universal Language Model Fine-tuning for Text Classification</title>
-      <link>https://nryotaro.github.io/post/universal_language_model_fine_tuning_for_text_classification/</link>
+      <link>https://nryotaro.dev/posts/universal_language_model_fine_tuning_for_text_classification/</link>
       <pubDate>Fri, 14 Sep 2018 16:33:43 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/universal_language_model_fine_tuning_for_text_classification/</guid>
+      <guid>https://nryotaro.dev/posts/universal_language_model_fine_tuning_for_text_classification/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;UMLFiTという、様々なNLPの問題に適用可能なファインチューニングの手法を提案、評価した。
 評価手段として、6種のテキスト分類のタスクにおける既存手法とのエラー率の比較が採られている。
@@ -483,10 +483,10 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
     
     <item>
       <title>メモ metapath2vec: Scalable Representation Learning for Heterogeneous Networks</title>
-      <link>https://nryotaro.github.io/post/metapath2vec/</link>
+      <link>https://nryotaro.dev/posts/metapath2vec/</link>
       <pubDate>Fri, 07 Sep 2018 18:31:47 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/metapath2vec/</guid>
+      <guid>https://nryotaro.dev/posts/metapath2vec/</guid>
       <description>&lt;p&gt;異種混合ネットワークから、ノード数x次元数の分散表現を獲得するための手法。
 異種混合とは、企業、業界、ニュースなど複数の種類の概念がグラフのノードとして扱われていることを意味する。
 獲得した分散表現を訓練データとして分類、クラスタリング、検索に応用し、既存手法と比較している。&lt;/p&gt;</description>
@@ -494,10 +494,10 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
     
     <item>
       <title>Applying Deep Learning To Airbnb Search</title>
-      <link>https://nryotaro.github.io/post/applying_deep_learning_to_airbnb_search/</link>
+      <link>https://nryotaro.dev/posts/applying_deep_learning_to_airbnb_search/</link>
       <pubDate>Fri, 31 Aug 2018 19:21:10 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/applying_deep_learning_to_airbnb_search/</guid>
+      <guid>https://nryotaro.dev/posts/applying_deep_learning_to_airbnb_search/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;論文では、Airbnbが深層学習を宿泊先検索に適用した時の試行錯誤と結果を紹介している。
 採用したモデルのアルゴリズムと特徴量エンジニアリングの説明が本稿の大部分を占める。
@@ -507,20 +507,20 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
     
     <item>
       <title>メモ The Relationship Between Precision-Recall and ROC Curve</title>
-      <link>https://nryotaro.github.io/post/the_relationship_between_precision_recall_and_roc_curve/</link>
+      <link>https://nryotaro.dev/posts/the_relationship_between_precision_recall_and_roc_curve/</link>
       <pubDate>Sat, 25 Aug 2018 00:56:13 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/the_relationship_between_precision_recall_and_roc_curve/</guid>
+      <guid>https://nryotaro.dev/posts/the_relationship_between_precision_recall_and_roc_curve/</guid>
       <description>ROCとPrecision Recallの関係を示した論文。
  1 Recallが0でなければ、ROC曲線には一対一に対応するPR曲線がある。 2 PR曲線AがPR曲線Bに対して常に優位であることとは、ROC曲線においてAがBより常に優位であることの必要十分条件。 3 1,2よりROC空間上の凸包に対応するPR曲線は、他の妥当なPR曲線よりも優位な曲線になる。 4 線形補間でROC曲線を描くことは妥当。一方で、Recallの分母は固定値であるが、Precisionの分母の値はRecallが上がると増える。そのため、PR曲線を線形補間でプロットすると、評価の甘い曲線になる。   論文はこちらからダウンロードできます。</description>
     </item>
     
     <item>
       <title>メモ Enriching Word Vectors with Subword Information</title>
-      <link>https://nryotaro.github.io/post/enriching_word_vectors_with_subword_information/</link>
+      <link>https://nryotaro.dev/posts/enriching_word_vectors_with_subword_information/</link>
       <pubDate>Fri, 10 Aug 2018 17:29:44 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/enriching_word_vectors_with_subword_information/</guid>
+      <guid>https://nryotaro.dev/posts/enriching_word_vectors_with_subword_information/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;Fasttextを提案、評価した論文。
 Character n-gramsを入力としてskip-gramのモデルを作る方法を提案、評価している。
@@ -531,10 +531,10 @@ Character n-gramsを入力としてskip-gramのモデルを作る方法を提案
     
     <item>
       <title>概要 When Do Chagnes Induce Fixes?</title>
-      <link>https://nryotaro.github.io/post/when_do_changes_induce_fixes/</link>
+      <link>https://nryotaro.dev/posts/when_do_changes_induce_fixes/</link>
       <pubDate>Fri, 03 Aug 2018 21:47:03 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/when_do_changes_induce_fixes/</guid>
+      <guid>https://nryotaro.dev/posts/when_do_changes_induce_fixes/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;ざっくり言うと、バージョン管理ツールとバグチケット管理ツールを導入しているプロジェクトにおいて、
 バージョン管理ツールで追跡されている変更とバグチケット管理ツールで追跡されているバグを紐付ける手法を提案した。&lt;/p&gt;</description>
@@ -542,10 +542,10 @@ Character n-gramsを入力としてskip-gramのモデルを作る方法を提案
     
     <item>
       <title>要約 A Simple Semi-supervised Algorithm For Named Entity Recognition</title>
-      <link>https://nryotaro.github.io/post/a_simple_semi_supervised_for_ner/</link>
+      <link>https://nryotaro.dev/posts/a_simple_semi_supervised_for_ner/</link>
       <pubDate>Tue, 17 Jul 2018 12:51:29 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/a_simple_semi_supervised_for_ner/</guid>
+      <guid>https://nryotaro.dev/posts/a_simple_semi_supervised_for_ner/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;CRFに入力する学習データを集めるための半教師学習の手法を提案と評価した論文。
 本手法はCRFに与える学習データを集めるための手法であり、CRFのアルゴリズム自体に変更を加えることはない。&lt;/p&gt;</description>
@@ -553,19 +553,19 @@ Character n-gramsを入力としてskip-gramのモデルを作る方法を提案
     
     <item>
       <title>要約 Applying Conditional Random Fields to Japanese Morphological Analysis</title>
-      <link>https://nryotaro.github.io/post/applying_crf_to_japanese_morph_analysis/</link>
+      <link>https://nryotaro.dev/posts/applying_crf_to_japanese_morph_analysis/</link>
       <pubDate>Tue, 17 Jul 2018 12:51:29 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/applying_crf_to_japanese_morph_analysis/</guid>
+      <guid>https://nryotaro.dev/posts/applying_crf_to_japanese_morph_analysis/</guid>
       <description>&lt;p&gt;Mecabの中の人の&lt;a href=&#34;http://chasen.naist.jp/chaki/t/2009-09-30/doc/mecab-cabocha-nlp-seminar-2009.pdf&#34;&gt;資料&lt;/a&gt;で紹介でされている、Mecabのアルゴリズムを提案・評価した論文。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>概要 Text Classification from Labeled and Unlabeled Documents using EM</title>
-      <link>https://nryotaro.github.io/post/text_cls_from_lbl_and_unlbl_doc_em/</link>
+      <link>https://nryotaro.dev/posts/text_cls_from_lbl_and_unlbl_doc_em/</link>
       <pubDate>Sun, 08 Jul 2018 01:23:49 +0900</pubDate>
       
-      <guid>https://nryotaro.github.io/post/text_cls_from_lbl_and_unlbl_doc_em/</guid>
+      <guid>https://nryotaro.dev/posts/text_cls_from_lbl_and_unlbl_doc_em/</guid>
       <description>&lt;h3 id=&#34;heading&#34;&gt;アルゴリズム&lt;/h3&gt;
 &lt;p&gt;提案手法は、Naive BayesとEMアルゴリズムを組み合わせたもの。
 ラベル付きデータが\(D^l\)でラベルなしデータが\(D^u\)で表されるとき、対数尤度\(\log P(D^l)P(D^u)\)を最大化する問題を解く。&lt;/p&gt;</description>

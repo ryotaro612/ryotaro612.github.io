@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>メモ Snorkel DryBell: A Case Study in Deploying Weak Supervision at Industrial Scale</h2>
+    <p>October 5, 2019</p>
+  </header>
+  <h3 id="heading">概要</h3>
+<p>表題の論文では、<a href="https://www.snorkel.org">Snorkel</a>というWeak Supervisionの手法をGoogleで適用した結果の考察と評価がなされている。
+Weak Supervisionは、人手よりも効率良くノイズ交じりの教師データを生成する手法である。
+Snorkelは、引数にサンプルを返り値にラベルを返す複数の関数をラベルなしデータに適用し、結果から関数の精度を予測し、個々の関数よりも高い精度でデータにラベルを与える。この関数をラベリング関数という。Snorkel DryBellは、Snorkelのアルゴリズムをスケールさせるために、MapReduceに適用できるように修正されたものをさす。</p>
+<p>Snorkelを拡張することで実現できたものは、
+様々なリソースを教師データに利用できることと、素速くラベリング関数を作り適用できることである。
+ラベルづけに役立つリソースは、モデルやナレッジベース、ヒューリスティックなど様々であり、また、処理の遅さやコストなどで本番運用できないものもある。しかし、ラベリング関数にこれらのリソースを使うことで、様々なリソースを本番運用できるモデルに転用することができる。
+また、ラベリング関数同士は、疎結合で、同じデータに異なるラベルを割り当てることが許されており、さらにMapReduceによりデータへ高速に適用される。なお、評価として、3種の分類問題への適用事例が紹介されている。ラベリング関数の数は、それぞれ、10, 8, 140である。</p>
+<h3 id="heading-1">感想</h3>
+<p>論文が発表された時点では、Snorkelはラベリング関数の精度推定にギブスサンプリングを用いており、MapReduceを利用することでSnrokel DryBellは約2倍の高速化を達成できているとある。しかし、Snorkelv0.9では、推定にMatrix Completion-styleのアプローチを<a href="https://www.snorkel.org/blog/hello-world-v-0-9#new-matrix-completion-style-modeling-approach">採用</a>したことで、ギブスサンプリングと比べて推定が<a href="https://arxiv.org/pdf/1810.02840.pdf">100倍</a>速くなっている。そのため、高速化の観点では、今ではMapReduceで再実装する意味はなくなっているように思える。</p>
+<hr>
+<p>論文は<a href="https://arxiv.org/pdf/1812.00417.pdf">こちら</a>からダウンロードできます。</p>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

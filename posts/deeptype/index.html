@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>DeepType: Multilingual Entity Linking by Neural Type System Evolution(2018)</h2>
+    <p>October 26, 2018</p>
+  </header>
+  <p>本稿は、既存のオントロジから型システムを構築するアルゴリズムと型システムによるEntity Linking(EL)を提案した。実験を通じて既存手法と比較し、精度の向上を確認した。</p>
+<p>本稿における型は、Wikipediaのようなオントロジにおける関係を指す。例えば、オントロジに<code>Human</code>という根から<code>instance of</code>で結ばれる子ノードがあれば、<code>IsHuman</code>が型として扱えられる。
+文中の語句(mention)のエンティティは、候補となるエンティティの条件付き確率P(entity|meition)と型に関する条件付き確率をもとに推定される。表題におけるMultilingualは、構築する型システムが特定の言語に依存しないことに由来する。ある言語のテキストに対するELで構築した型システムを、別の言語で書かた当該テキストのELに利用することができる。</p>
+<p>アルゴリズムの要諦は、オントロジにおける関係から型システムに組み込むべき型を選ぶ方法と、mentionの選ばれた型（厳密にはType Axis)を予測するモデルを作る方法に分解している点にある。後者には既存手法(bidirectional-LSTM)が用いられる。
+型システムに組み込むべき型は、mentionの周辺の単語を入力とするニューラルネットワークで候補の型がどれくらい推定しやすいか、
+mentionの候補のエンティティが候補の型によってどれだけ限定できるかを指標として選ばれる。</p>
+<hr>
+<p>論文は<a href="https://arxiv.org/abs/1802.01021">こちら</a>からダウンロードできます。</p>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>
