@@ -1,11 +1,8 @@
 main article {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.0em;
 }
-article header a {
+article header a, article header a:hover {
   color: #555;
-}
-article header a:hover {
-  color: unset;
 }
 
 .summary h2 {
@@ -18,9 +15,6 @@ article header a:hover {
   color: #999;
 }
 
-.readmore {
-  color: unset;
-}
-.readmore:hover {
+.readmore, .readmore:hover {
   color: unset;
 }
