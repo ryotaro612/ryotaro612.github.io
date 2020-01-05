@@ -3,19 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://nryotaro.dev/about/</loc>
-    <lastmod>2019-12-30T01:13:33+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2019-12-28T00:56:36+09:00</lastmod>
+    <lastmod>2019-12-30T16:07:40+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2019-12-28T00:56:36+09:00</lastmod>
+    <lastmod>2019-12-30T16:07:40+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/classification_in_the_presence_of_label_noise/</loc>
+    <lastmod>2019-12-30T16:07:40+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/about/</loc>
+    <lastmod>2019-12-30T01:13:33+09:00</lastmod>
   </url>
   
   <url>
