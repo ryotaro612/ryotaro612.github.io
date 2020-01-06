@@ -4,13 +4,18 @@
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2019-12-30T16:07:40+09:00</lastmod>
+    <lastmod>2020-01-04T23:25:20+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2019-12-30T16:07:40+09:00</lastmod>
+    <lastmod>2020-01-04T23:25:20+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/</loc>
+    <lastmod>2020-01-04T23:25:20+09:00</lastmod>
   </url>
   
   <url>
