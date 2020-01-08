@@ -6,10 +6,22 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 04 Jan 2020 23:25:20 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jan 2020 22:27:05 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Multilabel Classification with Label Correlations and Missing Labels</title>
+      <link>https://nryotaro.dev/posts/multilabel_classification_with_label_correlations_and_missing_labels/</link>
+      <pubDate>Mon, 06 Jan 2020 22:27:05 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/multilabel_classification_with_label_correlations_and_missing_labels/</guid>
+      <description>&lt;h3 id=&#34;heading&#34;&gt;概要&lt;/h3&gt;
+&lt;p&gt;ラベルの相関関係を学習し推論に利用するマルチラベルの線形モデルを提案した論文である。
+相関関係のあるラベル集合を相関関係のないラベル集合に変換し、ラベルごとに分けて学習する手法、Label transformationを応用する。
+分類器は、相関関係だけなく、学習データに与えられていないラベルを推定するように拡張できる。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ Learning Deep Structured Semantic Models for Web Search using Clickthrough Data</title>

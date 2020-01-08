@@ -1,0 +1,104 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ Multilabel Classification with Label Correlations and Missing Labels</h2>
+    <p>January 6, 2020</p>
+  </header>
+  <h3 id="heading">概要</h3>
+<p>ラベルの相関関係を学習し推論に利用するマルチラベルの線形モデルを提案した論文である。
+相関関係のあるラベル集合を相関関係のないラベル集合に変換し、ラベルごとに分けて学習する手法、Label transformationを応用する。
+分類器は、相関関係だけなく、学習データに与えられていないラベルを推定するように拡張できる。</p>
+<h3 id="label-transformation">Label Transformation</h3>
+<p>Tai and Lin 2012らの<a href="http://ntur.lib.ntu.edu.tw/retrieve/188514/18.pdf">label transformation</a>は、相関のあるラベル集合を相関のないラベル集合に変換し、ラベル別の学習を可能にする。
+学習データを\(\{(\mathrm{x}, \mathrm{y})\}\), \(\mathrm{x}\in \mathbb{R}^d\), 出力を\(\mathrm{y} \in\{0, 1\}^m\), 重みを\(\tilde{W}\), バイアスを\(\tilde{b}\)とすると、\(\mathrm{P}\in \mathbb{R}^{\tilde{m}\times m}\)で変換したラベル\(\tilde{\mathrm{y}}=\mathrm{P}\mathrm{y}\)
+は次の正規分布にしたがう。</p>
+<!-- raw HTML omitted -->
+<p>$$
+\tilde{\mathrm{y}}\mid\mathrm{x}, \tilde{W}, \tilde{\mathrm{b}},\tilde{\Omega}\sim \mathcal{N}(\tilde{\mathrm{W}}^T\mathrm{x}+\tilde{\mathrm{b}},\tilde{\Omega})
+$$
+また、正則化のために\(\tilde{\mathrm{W}}=[\tilde{\mathrm{w}}_1, \dots , \tilde{\mathrm{w}}_{\tilde{m}}]\)についてもまた
+$$
+\tilde{\mathrm{w}_i} \mid \tilde{\small{\sum}}_i\sim \mathcal{N}(\mathrm{0}, \tilde{\small{\sum}}_i)
+$$</p>
+<p>とする。
+\(\tilde{\sum}_i = \mathrm{diag}(\frac{1}{\alpha_{i,1}},\dots , \frac{1}{\alpha_{i, d}})\)である。
+変換前のラベルをえるには、\(\mathrm{P}\)の疑似逆行列\(\mathrm{P}^{\dagger}\)をかけて推定値を変換する。
+$$
+\mathrm{z} = \mathrm{P}^{\dagger}\tilde{\mathrm{y}}
+$$</p>
+<h3 id="heading-1">モデル</h3>
+<p>前述のLabel Transformationでは\(\mathrm{P}^{\dagger}\)を求める必要がある。
+これに対し、提案されたモデルは、<code>missing</code>ラベルを扱いやすく、また、ラベルの相関関係の事前知識を取入れやすくするために、\(\mathrm{z}\)を直接推定する。
+$$
+\mathrm{z}\mid \mathrm{x}, \mathrm{W}, \mathrm{b}, \mathrm{\Omega} \sim \mathcal{N}(\mathrm{W}^{T}\mathrm{x}+\mathrm{b}, \Omega)
+$$
+\(\mathrm{W}=\tilde{\mathrm{W}}{\mathrm{P}^{\dagger}}^{T}\), \(\mathrm{b}=\mathrm{P}^{\dagger}\tilde{\mathrm{b}}\), \(\Omega =\mathrm{P}^{\dagger}\tilde{\Omega}{\mathrm{P}^{\dagger}}^{T}\)と対応する。また、\(\mathrm{W}\)の分布は\(\tilde{\mathrm{W}}\)の分布と
+$$
+\mathrm{W}_{(j,:)} \mid \small{\sum}_j \sim \mathcal{N}(\mathrm{0}, \sim \small{\sum}_j), j=1, 2, \dots, d
+$$
+と対応する。ただし\(\sum_j = \mathrm{P}^{\dagger} \mathrm{diag}(\boldsymbol{\alpha}_j){\mathrm{P}^{\dagger}}^T\), \(\boldsymbol{\alpha}_j=[\alpha_{1,j},\dots ,\alpha_{m,j}]^{T}\)である。
+ラベルの相関関係の事前知識は、例えば、次のように与えられる。
+$$
+p(\Omega) \propto \exp \left( -\frac{1}{\lambda_1}\mid\mid \Omega^{-\frac{1}{2}}\mid\mid^{2}_{F} - \frac{1}{\lambda_2}\mid\mid \Omega^{-1}\mid\mid_1 \right), \lambda_1, \lambda_2 &gt; 0
+$$</p>
+<h3 id="heading-2">感想</h3>
+<p>提案手法は線形モデルを前提にしており、他種類のモデルに応用できないところに使いにくさを感じる。
+また、実験での比較対象として、リッジ回帰やラベルの相関関係を使う手法だけが選ばれており、これら以外のモデルと比べて高い予測性能をだせるか気にかかる。</p>
+<hr>
+<ul>
+<li>論文へのリンクは<a href="https://www.aaai.org/ocs/index.php/AAAI/AAAI14/paper/viewFile/8385/8794">こちら</a>。</li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>
