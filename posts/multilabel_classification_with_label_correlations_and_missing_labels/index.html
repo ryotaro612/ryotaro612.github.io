@@ -42,9 +42,8 @@
 <h3 id="label-transformation">Label Transformation</h3>
 <p>Tai and Lin 2012らの<a href="http://ntur.lib.ntu.edu.tw/retrieve/188514/18.pdf">label transformation</a>は、相関のあるラベル集合を相関のないラベル集合に変換し、ラベル別の学習を可能にする。
 学習データを\(\{(\mathrm{x}, \mathrm{y})\}\), \(\mathrm{x}\in \mathbb{R}^d\), 出力を\(\mathrm{y} \in\{0, 1\}^m\), 重みを\(\tilde{W}\), バイアスを\(\tilde{b}\)とすると、\(\mathrm{P}\in \mathbb{R}^{\tilde{m}\times m}\)で変換したラベル\(\tilde{\mathrm{y}}=\mathrm{P}\mathrm{y}\)
-は次の正規分布にしたがう。</p>
-<!-- raw HTML omitted -->
-<p>$$
+は次の正規分布にしたがう。
+$$
 \tilde{\mathrm{y}}\mid\mathrm{x}, \tilde{W}, \tilde{\mathrm{b}},\tilde{\Omega}\sim \mathcal{N}(\tilde{\mathrm{W}}^T\mathrm{x}+\tilde{\mathrm{b}},\tilde{\Omega})
 $$
 また、正則化のために\(\tilde{\mathrm{W}}=[\tilde{\mathrm{w}}_1, \dots , \tilde{\mathrm{w}}_{\tilde{m}}]\)についてもまた
