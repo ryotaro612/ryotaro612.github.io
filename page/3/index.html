@@ -1,6 +1,6 @@
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.62.0" />
+	<meta name="generator" content="Hugo 0.62.2" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -36,10 +36,23 @@
     
       <article class="summary">
 	<header>
+	  <h2><a href="/posts/feature_selection_for_text_categorization_on_imbalance_data/">メモ Feature Selection for Text Categorization on Imbalanced Data</a></h2>
+	  <p>October 12, 2019</p>
+	</header>
+	<div class="excerpt"><h3 id="概要">概要</h3>
+<p>表題の論文は、特徴選択において、正例に顕著な特徴から選ぶ割合を明示的に決めることで、正例と負例それぞれに顕著な特徴の割合を調整することが、不均衡な文書分類における予測性能の向上に役立つことを示した。
+情報利得やオッズ比など単変量統計にもとづく特徴選択において、統計量の値によって暗黙的に決められた割合と異なる割合の場合の方が予測性能が高いことを実験的に示した。</p></div>
+	<a class="readmore" href="/posts/feature_selection_for_text_categorization_on_imbalance_data/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
 	  <h2><a href="/posts/snorkel_drybell_case_study/">メモ Snorkel DryBell: A Case Study in Deploying Weak Supervision at Industrial Scale</a></h2>
 	  <p>October 5, 2019</p>
 	</header>
-	<div class="excerpt"><h3 id="heading">概要</h3>
+	<div class="excerpt"><h3 id="概要">概要</h3>
 <p>表題の論文では、<a href="https://www.snorkel.org">Snorkel</a>というWeak Supervisionの手法をGoogleで適用した結果の考察と評価がなされている。
 Weak Supervisionは、人手よりも効率良くノイズ交じりの教師データを生成する手法である。
 Snorkelは、引数にサンプルを返り値にラベルを返す複数の関数をラベルなしデータに適用し、結果から関数の精度を予測し、個々の関数よりも高い精度でデータにラベルを与える。この関数をラベリング関数という。Snorkel DryBellは、Snorkelのアルゴリズムをスケールさせるために、MapReduceに適用できるように修正されたものをさす。</p></div>
@@ -64,7 +77,7 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
 	  <h2><a href="/posts/snorkel_rapid_training_data_creation_with_weak_supervision/">メモ Snorkel: Rapid Traning Data Creation with Weak Supervision</a></h2>
 	  <p>September 21, 2019</p>
 	</header>
-	<div class="excerpt"><h3 id="heading">概要</h3>
+	<div class="excerpt"><h3 id="概要">概要</h3>
 <p>表題の論文は、Weak supervisionの一種であるSnorkelを学習データの収集効率と予測性能についての既存手法や教師あり学習と比べた評価をまとめてる。</p></div>
 	<a class="readmore" href="/posts/snorkel_rapid_training_data_creation_with_weak_supervision/">Read more</a>
       </article>
@@ -76,7 +89,7 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
 	  <h2><a href="/posts/software_engineering_for_machine_learning/">メモ Software Engineerng for Machine Learning: A Case Study</a></h2>
 	  <p>September 14, 2019</p>
 	</header>
-	<div class="excerpt"><h3 id="heading">概要</h3>
+	<div class="excerpt"><h3 id="概要">概要</h3>
 <p>表題の論文は、マイクロソフトでのAIを応用したアプリケーションの開発についての調査結果をまとている。
 著者らは、9人中の8名がMicrosoft Researchに所属し、本論文で2019年のICSEのSoftware Engineering in Practiceの分野でBest Paper Awardを受賞した。
 主な貢献は、各チームにおける開発フローを9のステージに分けて解説したこと、機械学習を応用するアプリケーションやプラットフォームの開発におけるベストプラクティスを示したこと、機械学習を応用するアプリケーションの開発に固有の課題にまつわる論考の3つである。</p></div>
@@ -104,7 +117,7 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
 	  <h2><a href="/posts/learning_on_border/">メモ Learning on the Border: Active Learning in Imbalanced Data Classification</a></h2>
 	  <p>August 31, 2019</p>
 	</header>
-	<div class="excerpt"><h3 id="heading">概要</h3>
+	<div class="excerpt"><h3 id="概要">概要</h3>
 <p>表題にある論文は、不均衡データの二値分類についての予測性能を能動学習で改善する手法を提案している。
 着想は、学習器のマージン付近では正例と負例がよりバランスしていると仮定し、
 マージン付近にあるデータを集めることで、均衡のとれたデータセットを用意することにある。
@@ -119,7 +132,7 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
 	  <h2><a href="/posts/distilling_the_knowledge_in_a_neural_network/">メモ Distilling the Knowledge in a Neural Network</a></h2>
 	  <p>August 24, 2019</p>
 	</header>
-	<div class="excerpt"><h3 id="heading">概要</h3>
+	<div class="excerpt"><h3 id="概要">概要</h3>
 <p>表題にあるニューラルネットワークの蒸留についての論文を紹介する。
 蒸留は、既存のモデルを使い、できるだけ予測性能を落とさずに、より小さいモデルを作るための学習手法である。
 既存のモデルとして想定されているのは、複数のモデルからなるモデルや正則化された大きなモデルのように予測性能は高いが計算コストが高いものであり、
@@ -148,26 +161,12 @@ FastXMLは、弱学習器に決定木を使うアンサンブル学習であり�
 	  <h2><a href="/posts/advantages_and_disadvantages_of_a_monolithic_repository/">メモ Advantages and Disadvantages of a Monolithic Repository</a></h2>
 	  <p>August 17, 2019</p>
 	</header>
-	<div class="excerpt"><h3 id="heading">概要</h3>
+	<div class="excerpt"><h3 id="概要">概要</h3>
 <p>表題は、マルチリポジトリと比べたときのモノリシックリポジトリの長所と短所の調べた論文のタイトルである。
 論文は2018年のICSEでGoogleから発表された。
 調査方法はGoogle社のエンジニアへのアンケートとエンジニアの行動ログの分析が採用されている。
 Googleではモノリシックリポジトリが採用されており、エンジニアがこれまで経験したマルチリポジトリが比較対象となっている。</p></div>
 	<a class="readmore" href="/posts/advantages_and_disadvantages_of_a_monolithic_repository/">Read more</a>
-      </article>
-    
-  
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/cat_boost/">メモ CatBoost: unbaiased boosting with categorical features</a></h2>
-	  <p>August 10, 2019</p>
-	</header>
-	<div class="excerpt"><h3 id="heading">概要</h3>
-<p>表題はNeurIPS 2018で発表されたCatBoostという勾配ブースティングの手法を論文にちなむ。
-Target Statisticsというカテゴリカル特徴量の前処理と勾配ブースティングの学習時に生じる一種のleakageが起きることを示し、leakageをさけて前処理と学習をする手法を示した。
-CatBoostは二進木の決定木を弱識別器に用いる。</p></div>
-	<a class="readmore" href="/posts/cat_boost/">Read more</a>
       </article>
     
   

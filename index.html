@@ -1,6 +1,6 @@
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.62.0" />
+	<meta name="generator" content="Hugo 0.62.2" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -38,6 +38,21 @@
     
       <article class="summary">
 	<header>
+	  <h2><a href="/posts/active_learning_for_ranking_through_expected_loss_optimization/">Active Learning for Ranking through Expected Loss Optimization</a></h2>
+	  <p>January 19, 2020</p>
+	</header>
+	<div class="excerpt"><h3 id="概要">概要</h3>
+<p>Yahoo! Labsで開発されたランキングのための能動学習の論文である。
+提案手法は、Yahoo!検索エンジンでの<a href="https://www.kdd.org/kdd2016/papers/files/adf0361-yinA.pdf">採用実績</a>がある。
+手法は、Expected Loss Optimization(ELO)とよばれ、ベイズ決定則によって識別したときの損失の期待値が最大になるデータを選ぶ。
+ELOに用いる損失関数にDCGを採用したExpected DCG Loss Optimization(ELO-DCG)を提案し、実験で評価した。</p></div>
+	<a class="readmore" href="/posts/active_learning_for_ranking_through_expected_loss_optimization/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
 	  <h2><a href="/posts/docker-cmake-clang/">AtCoderに提出したコードをテストするためのDockerイメージ</a></h2>
 	  <p>January 14, 2020</p>
 	</header>
@@ -52,7 +67,7 @@
 	  <h2><a href="/posts/unsupervised_models_for_named_entity_classification/">論文メモ Unsupervised Models for Named Entity Classification</a></h2>
 	  <p>January 13, 2020</p>
 	</header>
-	<div class="excerpt"><h3 id="heading">概要</h3>
+	<div class="excerpt"><h3 id="概要">概要</h3>
 <p>1999年に発表された教師なしの固有表現抽出の手法である。
 発表時期が古いことに注意してほしい。
 2つの手法が提案されている。
@@ -69,7 +84,7 @@
 	  <h2><a href="/posts/multilabel_classification_with_label_correlations_and_missing_labels/">論文メモ Multilabel Classification with Label Correlations and Missing Labels</a></h2>
 	  <p>January 6, 2020</p>
 	</header>
-	<div class="excerpt"><h3 id="heading">概要</h3>
+	<div class="excerpt"><h3 id="概要">概要</h3>
 <p>ラベルの相関関係を学習し推論に利用するマルチラベルの線形モデルを提案した論文である。
 相関関係のあるラベル集合を相関関係のないラベル集合に変換し、ラベルごとに分けて学習する手法、Label transformationを応用する。
 分類器は、相関関係だけなく、学習データに与えられていないラベルを推定するように拡張できる。</p></div>
@@ -83,7 +98,7 @@
 	  <h2><a href="/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/">論文メモ Learning Deep Structured Semantic Models for Web Search using Clickthrough Data</a></h2>
 	  <p>January 4, 2020</p>
 	</header>
-	<div class="excerpt"><h3 id="heading">概要</h3>
+	<div class="excerpt"><h3 id="概要">概要</h3>
 <p>クエリと文書を同じ低次元の空間に射影する深層学習のモデルを提案した論文である。
 クエリと文書は、適合度合いが高いほど、近くに配置される。
 教師データは、クエリと文書の組からなる教師データである。
@@ -99,7 +114,7 @@ Web文書の大量の語彙をあつかうために、語彙の増加に対し�
 	  <h2><a href="/posts/classification_in_the_presence_of_label_noise/">論文メモ Classification in the Presence of Label Noise: a Survey</a></h2>
 	  <p>December 30, 2019</p>
 	</header>
-	<div class="excerpt"><h3 id="heading">概要</h3>
+	<div class="excerpt"><h3 id="概要">概要</h3>
 <p>ノイズのある教師データによるクラス分類の<a href="https://romisatriawahono.net/lecture/rm/survey/machine%20learning/Frenay%20-%20Classification%20in%20the%20Presence%20of%20Label%20Noise%20-%202014.pdf">サーベイ論文</a>である。発表時期は、<a href="https://ieeexplore.ieee.org/document/6685834">2013年の12月</a>である。
 主な内容は、ノイズの分類、ノイズが分類に及ぼす影響、ノイズへの対策である。</p></div>
 	<a class="readmore" href="/posts/classification_in_the_presence_of_label_noise/">Read more</a>
@@ -112,7 +127,7 @@ Web文書の大量の語彙をあつかうために、語彙の増加に対し�
 	  <h2><a href="/posts/distributed_representations_of_sentences_and_documents/">論文メモ Distributed Representations of Sentences and Documents</a></h2>
 	  <p>December 28, 2019</p>
 	</header>
-	<div class="excerpt"><h3 id="heading">概要</h3>
+	<div class="excerpt"><h3 id="概要">概要</h3>
 <p><a href="https://radimrehurek.com/gensim/models/doc2vec.html">Doc2Vec</a>のアルゴリズムとして採用されたニューラル言語モデルParagraph Vectorを提案した論文である。
 bag of wordsは、文書の単語順を記憶せず、また、似た意味の単語ベクトルと無関係なベクトルを単語にわりあてる。
 Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文脈の中心の単語をあてられるように学習することで、可変長文字列から固定長の文書埋め込みベクトルを生成できるようになる。
@@ -127,7 +142,7 @@ Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文�
 	  <h2><a href="/posts/glove_vectors_for_word_representation/">論文メモ GloVe: Global Vectors for Word Representation</a></h2>
 	  <p>December 21, 2019</p>
 	</header>
-	<div class="excerpt"><h3 id="heading">概要</h3>
+	<div class="excerpt"><h3 id="概要">概要</h3>
 <p><a href="https://www.aclweb.org/anthology/D14-1162.pdf">GloVe</a>は,コーパスに出現する単語の共起回数を学習するニューラル言語モデルである。
 既存手法を単語の出現頻度の統計値つかう手法と対数双線形モデルに分類し、両者の長所を備え短所を補う手法として、GloVeを提案する。</p></div>
 	<a class="readmore" href="/posts/glove_vectors_for_word_representation/">Read more</a>
@@ -140,23 +155,10 @@ Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文�
 	  <h2><a href="/posts/bert/">論文メモ BERT: Pre-training of Deep Bidirectional Transformers for Lnaguages Understaing</a></h2>
 	  <p>December 14, 2019</p>
 	</header>
-	<div class="excerpt"><h3 id="heading">概要</h3>
+	<div class="excerpt"><h3 id="概要">概要</h3>
 <p>BERTは<a href="https://arxiv.org/pdf/1706.03762.pdf">Attention Is All You Need</a>にあるTransformerをアーキテクチャに導入した分散表現のモデルであり、本稿は、事前学習済みのBERTにファインチューニングを適用しQAタスクや自然言語推論のベンチマークにおいて既存研究を上回る結果を示している。
 なお、アーキテクチャに関する説明は少なく、子細に知りたい場合は<a href="https://arxiv.org/pdf/1706.03762.pdf">Attention Is All You Need</a>や<a href="http://nlp.seas.harvard.edu/2018/04/03/attention.html">The Annotated Transformer</a>を参照するように案内されている。</p></div>
 	<a class="readmore" href="/posts/bert/">Read more</a>
-      </article>
-    
-  
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/150_successfuly_machine_learning_modes/">論文メモ 150 Successful Machine Learning Models: 6 Lessons Learned at Booking.com</a></h2>
-	  <p>December 14, 2019</p>
-	</header>
-	<div class="excerpt"><h3 id="heading">概要</h3>
-<p>宿泊予約サービス<a href="http://booking.com/">Booking.com</a>におけるモデルの開発運用でえられた教訓を6つにまとめたKDD2019の論文である。
-教訓の主眼を収益におき、6つの教訓を通して、実運用環境における仮説と実験を反復する重要性を強調する。</p></div>
-	<a class="readmore" href="/posts/150_successfuly_machine_learning_modes/">Read more</a>
       </article>
     
   

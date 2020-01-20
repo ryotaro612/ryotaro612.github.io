@@ -35,7 +35,7 @@
     <h2>概要 Subword Regularization: Improving Neural Network Translation Models with Multiple Subword Candidates</h2>
     <p>July 17, 2019</p>
   </header>
-  <h3 id="heading">概要</h3>
+  <h3 id="概要">概要</h3>
 <p>表題は、過去に<a href="../neural_machine_translation_of_rate_words/">紹介</a>した<a href="https://www.aclweb.org/anthology/P16-1162">論文</a>と同様、sentencepiece（ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザ）の元になった論文にあたる。
 ノイズに対する頑強さのために、単語のサブワード（部分文字列）を生成するユニグラム言語モデルの学習方法と、モデルから生成されたサブワード列を入力とする機械翻訳モデルの学習方法を提案した。</p>
 <p>ニューラルネットワークに基づく機械翻訳モデルでは、学習によって翻訳可能になる語彙に上限がある一方で、翻訳すべき文には語彙にない単語が含まれることがある。
@@ -53,7 +53,7 @@ $$</p>
 P({\bf x}) = \prod_{i=1}^{M}p(x_i), \forall i\ x_i\in \mathcal{V}, \sum_{x\in\mathcal{V}}p(x) =1
 $$</p>
 <p>ただし、\(\mathcal{V}\)は未知なので、十分大きな要素数の\(\mathcal{V}\)を設定し、その後、\(p(x_i)\)を求め、\(x_i\)の有無における\(\mathcal{L}\)への差分が小さい\(x_i\)を\(\mathcal{V}\)から除外するというステップを繰り返し、期待する要素数の\(\mathcal{V}\)を求める。</p>
-<h3 id="heading-1">感想</h3>
+<h3 id="感想">感想</h3>
 <p>EMアルゴリズムにおける\(p(x_i)\)の更新する値は、\(\mathcal{L}\)を偏微分して求めるのだと思う。
 BPEと比べて計算時間がどれくらいかかるか気になる。</p>
 <p>英語の論文は<a href="https://arxiv.org/abs/1804.10959">こちら</a>から、日本語の論文は<a href="https://www.anlp.jp/proceedings/annual_meeting/2018/pdf_dir/B1-5.pdf">こちら</a>から参照できる。</p>

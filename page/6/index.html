@@ -1,6 +1,6 @@
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.62.0" />
+	<meta name="generator" content="Hugo 0.62.2" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -36,10 +36,26 @@
     
       <article class="summary">
 	<header>
+	  <h2><a href="/posts/enriching_word_vectors_with_subword_information/">メモ Enriching Word Vectors with Subword Information</a></h2>
+	  <p>August 10, 2018</p>
+	</header>
+	<div class="excerpt"><h3 id="概要">概要</h3>
+<p>Fasttextを提案、評価した論文。
+Character n-gramsを入力としてskip-gramのモデルを作る方法を提案、評価している。
+単語の部分文字列（subword）を使わない手法や形態素解析に頼る手法よりも提案手法が優れていることを実験で示した。
+部分文字列のベクトルの和が単語のベクトルとなる。
+実験の考察では、そのために、未知語の部分文字列が学習データにあれば、未知語に対しても妥当な分散表現を与えることができるとあった。</p></div>
+	<a class="readmore" href="/posts/enriching_word_vectors_with_subword_information/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
 	  <h2><a href="/posts/when_do_changes_induce_fixes/">概要 When Do Chagnes Induce Fixes?</a></h2>
 	  <p>August 3, 2018</p>
 	</header>
-	<div class="excerpt"><h3 id="heading">概要</h3>
+	<div class="excerpt"><h3 id="概要">概要</h3>
 <p>ざっくり言うと、バージョン管理ツールとバグチケット管理ツールを導入しているプロジェクトにおいて、
 バージョン管理ツールで追跡されている変更とバグチケット管理ツールで追跡されているバグを紐付ける手法を提案した。</p></div>
 	<a class="readmore" href="/posts/when_do_changes_induce_fixes/">Read more</a>
@@ -52,7 +68,7 @@
 	  <h2><a href="/posts/a_simple_semi_supervised_for_ner/">要約 A Simple Semi-supervised Algorithm For Named Entity Recognition</a></h2>
 	  <p>July 17, 2018</p>
 	</header>
-	<div class="excerpt"><h3 id="heading">概要</h3>
+	<div class="excerpt"><h3 id="概要">概要</h3>
 <p>CRFに入力する学習データを集めるための半教師学習の手法を提案と評価した論文。
 本手法はCRFに与える学習データを集めるための手法であり、CRFのアルゴリズム自体に変更を加えることはない。</p></div>
 	<a class="readmore" href="/posts/a_simple_semi_supervised_for_ner/">Read more</a>
@@ -76,7 +92,7 @@
 	  <h2><a href="/posts/text_cls_from_lbl_and_unlbl_doc_em/">概要 Text Classification from Labeled and Unlabeled Documents using EM</a></h2>
 	  <p>July 8, 2018</p>
 	</header>
-	<div class="excerpt"><h3 id="heading">アルゴリズム</h3>
+	<div class="excerpt"><h3 id="アルゴリズム">アルゴリズム</h3>
 <p>提案手法は、Naive BayesとEMアルゴリズムを組み合わせたもの。
 ラベル付きデータが\(D^l\)でラベルなしデータが\(D^u\)で表されるとき、対数尤度\(\log P(D^l)P(D^u)\)を最大化する問題を解く。</p></div>
 	<a class="readmore" href="/posts/text_cls_from_lbl_and_unlbl_doc_em/">Read more</a>

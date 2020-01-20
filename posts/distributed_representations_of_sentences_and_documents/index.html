@@ -35,12 +35,12 @@
     <h2>論文メモ Distributed Representations of Sentences and Documents</h2>
     <p>December 28, 2019</p>
   </header>
-  <h3 id="heading">概要</h3>
+  <h3 id="概要">概要</h3>
 <p><a href="https://radimrehurek.com/gensim/models/doc2vec.html">Doc2Vec</a>のアルゴリズムとして採用されたニューラル言語モデルParagraph Vectorを提案した論文である。
 bag of wordsは、文書の単語順を記憶せず、また、似た意味の単語ベクトルと無関係なベクトルを単語にわりあてる。
 Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文脈の中心の単語をあてられるように学習することで、可変長文字列から固定長の文書埋め込みベクトルを生成できるようになる。
 これにより、単語順と単語の意味を記憶したベクトルの生成を実現する。</p>
-<h3 id="heading-1">モデルの種類</h3>
+<h3 id="モデルの種類">モデルの種類</h3>
 <p>Paragraph Vectorには、2種類のアーキテクチャがあり、それぞれ、Distributed memory Model of Paragraph Vectors(PV-DM)とDistributed Bag of Words version of Paragraph Vector(PV-DBOW)という。
 PV-DMだけでも期待できる予測性能をだせるが、両者のモデルで生成したベクトルを連結するほうが結果が安定する。</p>
 <h3 id="pv-dm">PV-DM</h3>

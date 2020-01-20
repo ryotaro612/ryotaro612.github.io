@@ -1,6 +1,6 @@
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.62.0" />
+	<meta name="generator" content="Hugo 0.62.2" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -36,10 +36,23 @@
     
       <article class="summary">
 	<header>
+	  <h2><a href="/posts/deep_joint_entity_disambiguation/">メモ Deep Joint Entity Disambiguation with Local Neural Attention</a></h2>
+	  <p>November 9, 2018</p>
+	</header>
+	<div class="excerpt"><p>本稿は、当ページで紹介した<a href="https://aclweb.org/anthology/K18-1050">End-to-End Neural Entity Linking</a>(End-to-End) の著者らの先行研究にあたる。
+End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)の両方をアプローチの対象にしているのに対し、本稿ではEDのみが対象となっている。
+したがって、文章からmention（参照表現）が抽出されていることが前提にあり、提案の中心は、参照表現に対応するエンティティを候補の中から正しく求める手法にある。</p></div>
+	<a class="readmore" href="/posts/deep_joint_entity_disambiguation/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
 	  <h2><a href="/posts/end_to_end_neural_entity_linking/">メモ End-to-end Neural Entity Linking</a></h2>
 	  <p>November 2, 2018</p>
 	</header>
-	<div class="excerpt"><h3 id="heading">背景</h3>
+	<div class="excerpt"><h3 id="背景">背景</h3>
 <p>本稿は、End to EndなEntity Linkingモデルのアーキテクチャを提案し、予測性能の評価実験で有用性を評価した。
 実験のデータセットには、Entity annotationの評価に使える様々なデータセットを集めた<a href="https://github.com/dice-group/gerbil/wiki">Gerbil Platform</a>が使われている。そのうちの<a href="https://natural-language-understanding.fandom.com/wiki/AIDA-CoNLL">AIDA/CoNLL</a>データセットにおいて、提案手法は既存手法を超える予測性能を発揮した。</p></div>
 	<a class="readmore" href="/posts/end_to_end_neural_entity_linking/">Read more</a>
@@ -63,7 +76,7 @@
 	  <h2><a href="/posts/conditional_random_fields_probabilistic_models_for_segmenting_and_labeling_sequence/">メモ Conditional Random Fields: Probabilistic Models for Segmenting and Labeling Sequence Data</a></h2>
 	  <p>October 12, 2018</p>
 	</header>
-	<div class="excerpt"><h3 id="heading">概要</h3>
+	<div class="excerpt"><h3 id="概要">概要</h3>
 <p>本稿は、条件付き確率場（Conditional Random Fields, CRF）を提案し、品詞タグづけにおけるerror rateをもとに評価した。
 評価の比較対象には、Maximum entropy Markov models(MEMMs)が採用されている。</p></div>
 	<a class="readmore" href="/posts/conditional_random_fields_probabilistic_models_for_segmenting_and_labeling_sequence/">Read more</a>
@@ -76,7 +89,7 @@
 	  <h2><a href="/posts/bidirectional_lstm_crf_models_for_sequence_tagging/">メモ Bidirectional LSTM-CRF Models for Sequence Tagging</a></h2>
 	  <p>October 5, 2018</p>
 	</header>
-	<div class="excerpt"><h3 id="heading">概要</h3>
+	<div class="excerpt"><h3 id="概要">概要</h3>
 <p>本稿では、NLPにおける系列ラベリングためのニューラルネットワークアーキテクチャの提案と評価がなされている。
 このアーキテクチャは、当ページで以前紹介した<a href="https://aclweb.org/anthology/papers/C/C18/C18-1139/">Contextual String Embeddings for Sequence Labeling</a>で応用されている。</p></div>
 	<a class="readmore" href="/posts/bidirectional_lstm_crf_models_for_sequence_tagging/">Read more</a>
@@ -89,7 +102,7 @@
 	  <h2><a href="/posts/context_string_embeddings_for_sequence_labeling/">メモ Contextual String Embeddings for Sequence Labeling</a></h2>
 	  <p>September 28, 2018</p>
 	</header>
-	<div class="excerpt"><h3 id="heading">概要</h3>
+	<div class="excerpt"><h3 id="概要">概要</h3>
 <p>表題の論文は、ライブラリflairのアルゴリズムを提案、評価したもの。</p>
 <p>論文は、テキストの系列ラベリングに向いた単語の分散表現モデルを提案し、
 提案手法が予測性能において既存手法より優れいたことを実験的に示した。
@@ -106,7 +119,7 @@
 	  <h2><a href="/posts/universal_language_model_fine_tuning_for_text_classification/">メモ Universal Language Model Fine-tuning for Text Classification</a></h2>
 	  <p>September 14, 2018</p>
 	</header>
-	<div class="excerpt"><h3 id="heading">概要</h3>
+	<div class="excerpt"><h3 id="概要">概要</h3>
 <p>UMLFiTという、様々なNLPの問題に適用可能なファインチューニングの手法を提案、評価した。
 評価手段として、6種のテキスト分類のタスクにおける既存手法とのエラー率の比較が採られている。
 主要な評価として、100件のラベル付きデータだけでその100倍のデータを要した事前学習を用いない手法と同等の予測性能が出たことを報告している。</p></div>
@@ -133,7 +146,7 @@
 	  <h2><a href="/posts/applying_deep_learning_to_airbnb_search/">Applying Deep Learning To Airbnb Search</a></h2>
 	  <p>August 31, 2018</p>
 	</header>
-	<div class="excerpt"><h3 id="heading">概要</h3>
+	<div class="excerpt"><h3 id="概要">概要</h3>
 <p>論文では、Airbnbが深層学習を宿泊先検索に適用した時の試行錯誤と結果を紹介している。
 採用したモデルのアルゴリズムと特徴量エンジニアリングの説明が本稿の大部分を占める。
 深層学習を試す以前はGBDTを採用おり、以下の順にアルゴリズムを変えていった。
@@ -151,22 +164,6 @@
 	<div class="excerpt">ROCとPrecision Recallの関係を示した論文。
  1 Recallが0でなければ、ROC曲線には一対一に対応するPR曲線がある。 2 PR曲線AがPR曲線Bに対して常に優位であることとは、ROC曲線においてAがBより常に優位であることの必要十分条件。 3 1,2よりROC空間上の凸包に対応するPR曲線は、他の妥当なPR曲線よりも優位な曲線になる。 4 線形補間でROC曲線を描くことは妥当。一方で、Recallの分母は固定値であるが、Precisionの分母の値はRecallが上がると増える。そのため、PR曲線を線形補間でプロットすると、評価の甘い曲線になる。   論文はこちらからダウンロードできます。</div>
 	<a class="readmore" href="/posts/the_relationship_between_precision_recall_and_roc_curve/">Read more</a>
-      </article>
-    
-  
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/enriching_word_vectors_with_subword_information/">メモ Enriching Word Vectors with Subword Information</a></h2>
-	  <p>August 10, 2018</p>
-	</header>
-	<div class="excerpt"><h3 id="heading">概要</h3>
-<p>Fasttextを提案、評価した論文。
-Character n-gramsを入力としてskip-gramのモデルを作る方法を提案、評価している。
-単語の部分文字列（subword）を使わない手法や形態素解析に頼る手法よりも提案手法が優れていることを実験で示した。
-部分文字列のベクトルの和が単語のベクトルとなる。
-実験の考察では、そのために、未知語の部分文字列が学習データにあれば、未知語に対しても妥当な分散表現を与えることができるとあった。</p></div>
-	<a class="readmore" href="/posts/enriching_word_vectors_with_subword_information/">Read more</a>
       </article>
     
   

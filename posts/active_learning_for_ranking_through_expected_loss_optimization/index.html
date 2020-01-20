@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>Active Learning for Ranking through Expected Loss Optimization</h2>
+    <p>January 19, 2020</p>
+  </header>
+  <h3 id="概要">概要</h3>
+<p>Yahoo! Labsで開発されたランキングのための能動学習の論文である。
+提案手法は、Yahoo!検索エンジンでの<a href="https://www.kdd.org/kdd2016/papers/files/adf0361-yinA.pdf">採用実績</a>がある。
+手法は、Expected Loss Optimization(ELO)とよばれ、ベイズ決定則によって識別したときの損失の期待値が最大になるデータを選ぶ。
+ELOに用いる損失関数にDCGを採用したExpected DCG Loss Optimization(ELO-DCG)を提案し、実験で評価した。</p>
+<h3 id="query-level-active-learning">Query level Active Learning</h3>
+<p>集める対象がクエリか文書かによって損失関数がことなるので、集める対象によってアルゴリズムがかわる。
+ベイズ決定則は、誤って識別したときの損失を最小にするよう識別する。
+\(D\)を学習データ、クエリ\(q\)に対応する\(n\)件の文書の特徴ベクトルを\(\mathrm{X}_q:=(x_1,\dots x_n)\), そのラベルを\(Y:=(y_1,\dots ,y_n)\), \(\pi\)を長さ\(n\)の順列、\(l(\pi, Y)\)を損失とすると、損失の期待値は
+$$
+\text{EL}(q):=\underset{\pi}{\operatorname{min}}\int_Y l(\pi, Y)P(Y\mid X_q , D)dY
+$$
+であり、\(\text{EL}(q)\)が最大となる\(q\)をラベルを与えるべきクエリと判定される。
+ELO-DCGの場合、DCGにもとづく損失関数は
+$$
+l(\pi, Y) = \underset{\pi &lsquo;}{\operatorname{max}}\text{DCG}(\pi &lsquo;, Y) - \text{DCG}(\pi, Y)
+$$
+となる。このとき
+$$
+\text{EL}(q)=\int_Y \underset{\pi}{\operatorname{max}}\text{DCG}(\pi, Y)P(Y\mid X_q , D)dY -  \underset{\pi}{\operatorname{max}}\int_Y\text{DCG}(\pi, Y)P(Y\mid X_q , D)dY
+$$
+となる。\(\pi(i)\)を\(i\)番目の文書における順位、利得関数\(G\)を\(G(s)=2^s-1\), \(&lt;\cdot&gt;\)を平均、\(\text{BDCG}\)を利得の集合\(\{g_j\}\)でつくれる最も高いDCGの値を返す関数とすると、Query level ELO-DCGを次のアルゴリズムで実装できる。
+<img src="/active_learning_for_ranking_through_expected_loss_optimization/algo1.png" alt="algo1"></p>
+<h3 id="document-level-active-learning">Document level Active Learning</h3>
+<p>学習すべき文書を選ぶ場合、クエリ\(q\)に関連する\(i\)番目の文書を選んだときの損失の期待値\(\text{EL}(q,i)\)を
+$$
+\begin{align}
+\text{EL}(q, i)&amp;=\int_{Y^i}\underset{\pi}{\operatorname{min}}\int_{y_i}l(\pi, Y)P(Y\mid X_q , D)dy_idY^i\\<br>
+&amp;=\int_{Y^i}\left(\int_{y^i}\underset{\pi}{\operatorname{max}}\text{DCG}(\pi, Y)P(Y\mid X_q, D)dy_i - \underset{\pi}{\operatorname{max}}\int_{y^i}\text{DCG}(\pi, Y)P(Y\mid X_q, D)dy_i\right)dY^i
+\end{align}
+$$
+とする。ただし、\(Y^i\)は\(Y\)から\(y^i\)を除いたベクトルである。
+このとき、Document Level ELO-DCGを次のアルゴリズムで実装できる。
+<img src="/active_learning_for_ranking_through_expected_loss_optimization/algo2.png" alt="algo2"></p>
+<h3 id="備考">備考</h3>
+<p>Uncertaintyによる能動学習をはじめて提案した<a href="https://www.semanticscholar.org/paper/Training-text-classifiers-by-uncertainty-sampling-Lewis-Gale/d9d4c586b985af2ec42e4fec24cd1806d9aefaff">論文</a>と能動学習の<a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.167.4245">サーベイ論文</a>が参考文献にある。</p>
+<hr>
+<ul>
+<li>論文への<a href="https://ieeexplore.ieee.org/document/6940296">リンク</a></li>
+<li>画像の引用元はすべて上の論文です。</li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

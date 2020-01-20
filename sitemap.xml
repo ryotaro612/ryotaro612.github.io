@@ -4,17 +4,22 @@
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2020-01-14T00:29:43+09:00</lastmod>
+    <lastmod>2020-01-19T18:23:41+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nryotaro.dev/posts/docker-cmake-clang/</loc>
-    <lastmod>2020-01-14T00:29:43+09:00</lastmod>
+    <loc>https://nryotaro.dev/posts/active_learning_for_ranking_through_expected_loss_optimization/</loc>
+    <lastmod>2020-01-19T18:23:41+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://nryotaro.dev/</loc>
+    <lastmod>2020-01-19T18:23:41+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/docker-cmake-clang/</loc>
     <lastmod>2020-01-14T00:29:43+09:00</lastmod>
   </url>
   

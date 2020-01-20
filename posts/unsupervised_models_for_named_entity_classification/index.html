@@ -35,7 +35,7 @@
     <h2>論文メモ Unsupervised Models for Named Entity Classification</h2>
     <p>January 13, 2020</p>
   </header>
-  <h3 id="heading">概要</h3>
+  <h3 id="概要">概要</h3>
 <p>1999年に発表された教師なしの固有表現抽出の手法である。
 発表時期が古いことに注意してほしい。
 2つの手法が提案されている。
@@ -43,7 +43,7 @@
 もう一方は、AdaBoostを応用したCoBoostとよばれる手法である。
 ルールベースの手法のほうがCoBoostよりもよい実験結果であったので、前者のみを説明する。</p>
 <h3 id="dl-cotrain">DL-CoTrain</h3>
-<h4 id="heading-1">ルール</h4>
+<h4 id="ルール">ルール</h4>
 <p>ルールは、特徴とラベルの組であり、<em>spelling</em>と<em>contextual</em>に大別できる。
 <em>spelling</em>はラベルの文字列についてのルールで、<em>contextual</em>は文字列を囲む単語についてのルールである。
 <em>spelling</em>のルールは5種類あり、一例をあげると、<code>full-string(x) -&gt; Location</code>、は文字列が<code>x</code>のとき<code>x</code>が<code>Location</code>とみなす。
@@ -55,7 +55,7 @@
 <p>&hellip;, says Maury Cooper, a vice president at S.&amp;P.</p>
 </blockquote>
 <p>であれば、<code>context=president -&gt; PERSON</code>となり、<code>Maury Cooper</code>を<code>PERSON</code>とみなす。</p>
-<h4 id="heading-2">教師なし学習</h4>
+<h4 id="教師なし学習">教師なし学習</h4>
 <p>はじめに、7つの<em>spelling</em>のルールを与え、以降、<em>spelling</em>と<em>contextual</em>ルールを交互に導出する。
 アルゴリズムを以下に示す。</p>
 <ol>
@@ -73,13 +73,13 @@ $$</li>
 <li>4.の手順で<em>spelling</em>ルールを導出する。</li>
 <li>\(n&lt;2500\)であれば\(n=n+5\)を計算し、手順3に戻る。</li>
 </ol>
-<h4 id="heading-3">推定</h4>
+<h4 id="推定">推定</h4>
 <p>学習で導出したルールをもとにタグを推定する。
 推定対象のもつ特徴の集合が\(\mathrm{x}\)であり、 タグの集合が\(\mathcal{Y}\)とすると、タグを次の\(f(\mathrm{x})\)で推定する。
 $$
 f(\mathrm{x}) = \underset{x\in \mathrm{x}, y\in \mathcal{Y}}{\operatorname{argmax}} h(x, y)
 $$</p>
-<h3 id="heading-4">感想</h3>
+<h3 id="感想">感想</h3>
 <p><em>context</em>のルールは英語を前提にしているので、他言語に応用するときは、別の規則を考える必要がある。</p>
 <hr>
 <ul>

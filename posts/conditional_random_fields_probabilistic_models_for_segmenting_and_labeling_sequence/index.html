@@ -35,7 +35,7 @@
     <h2>メモ Conditional Random Fields: Probabilistic Models for Segmenting and Labeling Sequence Data</h2>
     <p>October 12, 2018</p>
   </header>
-  <h3 id="heading">概要</h3>
+  <h3 id="概要">概要</h3>
 <p>本稿は、条件付き確率場（Conditional Random Fields, CRF）を提案し、品詞タグづけにおけるerror rateをもとに評価した。
 評価の比較対象には、Maximum entropy Markov models(MEMMs)が採用されている。</p>
 <p>本稿の構成は、MEMMsにおける”The Label Bias Problem”を既存手法の問題として取り上げ、問題に対する分析、提案、評価となっている。
@@ -44,7 +44,7 @@ MEMMsは、ある状態に遷移する確率を遷移元の状態と入力値に
 これを”The Label Bias Problem”という。</p>
 <p>CRFでは、この問題に対応するにあたり、出力系列の入力系列に対する条件付き確率をモデルする。
 これにより、系列上の他の位置における遷移が別の状態間の遷移に影響を与えるようになり、局所的に遷移先の候補が限られた経路に対する偏りを抑えることができる。</p>
-<h3 id="heading-1">備考</h3>
+<h3 id="備考">備考</h3>
 <p>本稿を読んだ動機は、<a href="https://arxiv.org/abs/1508.01991">Bidirectional LSTM-CRF</a>の論文におけるCRFを用いた箇所の理解のため。
 以前「言語処理のための機械学習入門」という書籍でCRFの解説を読んでいた。
 ところが、Bidiretional LSTM-CRFではラベル間の遷移を行列で扱っており、行列による表現は書籍になかったので読解に苦労した。

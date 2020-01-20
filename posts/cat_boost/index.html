@@ -35,7 +35,7 @@
     <h2>メモ CatBoost: unbaiased boosting with categorical features</h2>
     <p>August 10, 2019</p>
   </header>
-  <h3 id="heading">概要</h3>
+  <h3 id="概要">概要</h3>
 <p>表題はNeurIPS 2018で発表されたCatBoostという勾配ブースティングの手法を論文にちなむ。
 Target Statisticsというカテゴリカル特徴量の前処理と勾配ブースティングの学習時に生じる一種のleakageが起きることを示し、leakageをさけて前処理と学習をする手法を示した。
 CatBoostは二進木の決定木を弱識別器に用いる。</p>
@@ -55,7 +55,7 @@ $$
     <img src="/catboost.png" width="320"/> 
 </figure>
 
-<h3 id="heading-1">感想</h3>
+<h3 id="感想">感想</h3>
 <p>訓点データ数が少ないほどleakageの影響が大きいことが解析的にも実験においても示されてるので、訓練データ数が少なく、濃度が大きいカテゴリカル特徴量がある問題で使ってみたいと思う。</p>
 <hr>
 <p>論文は<a href="https://arxiv.org/abs/1706.09516">こちら</a>からダウンロードできます。</p>

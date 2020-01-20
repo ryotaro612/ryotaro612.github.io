@@ -35,7 +35,7 @@
     <h2>メモ Bidirectional LSTM-CRF Models for Sequence Tagging</h2>
     <p>October 5, 2018</p>
   </header>
-  <h3 id="heading">概要</h3>
+  <h3 id="概要">概要</h3>
 <p>本稿では、NLPにおける系列ラベリングためのニューラルネットワークアーキテクチャの提案と評価がなされている。
 このアーキテクチャは、当ページで以前紹介した<a href="https://aclweb.org/anthology/papers/C/C18/C18-1139/">Contextual String Embeddings for Sequence Labeling</a>で応用されている。</p>
 <p>評価に用いられたタスクはPOS, chunking, NERの３つであり、実験では2015年時点で既存手法と比較して最高のaccuracyが得られた。
@@ -50,7 +50,7 @@ Bidirectional LSTMは、先頭から入力される系列に加え、後方か�
 <p><img src="/bidirectional_lstm/1.png" alt="1">
 <img src="/bidirectional_lstm/2.png" alt="2">
 <img src="/bidirectional_lstm/3.png" alt="3"></p>
-<h3 id="heading-1">感想</h3>
+<h3 id="感想">感想</h3>
 <p>意外だったのは、評価で比較されたアーキテクチャにBLSTM-CRF, LSTMなど深層学習に属するものが含まれる中で最も精度の高いベースラインとなったのはCRFだったこと。
 ただし、単語のみを入力した場合、CRFは他のアーキテクチャと比べて大幅に精度が落ちており、著者らはCRFの精度は特徴量エンジニアリングによるものだと評価している。
 これを省みるに、実プロジェクトにおいて特徴量エンジニアリングが大変でなければCRFだけでも高い精度を出せるのか興味がある。</p>

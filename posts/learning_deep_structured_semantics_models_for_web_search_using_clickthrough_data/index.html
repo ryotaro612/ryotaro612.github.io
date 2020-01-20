@@ -35,13 +35,13 @@
     <h2>論文メモ Learning Deep Structured Semantic Models for Web Search using Clickthrough Data</h2>
     <p>January 4, 2020</p>
   </header>
-  <h3 id="heading">概要</h3>
+  <h3 id="概要">概要</h3>
 <p>クエリと文書を同じ低次元の空間に射影する深層学習のモデルを提案した論文である。
 クエリと文書は、適合度合いが高いほど、近くに配置される。
 教師データは、クエリと文書の組からなる教師データである。
 実験では、商用検索エンジンから抽出した16510件のクエリと対応するWeサイトのタイトルがつかわれる。
 Web文書の大量の語彙をあつかうために、語彙の増加に対して次元数を抑えるbag-of-wordsの手法、word hasingも提案した。</p>
-<h3 id="heading-1">モデルのアーキテクチャ</h3>
+<h3 id="モデルのアーキテクチャ">モデルのアーキテクチャ</h3>
 <p>word hasingの後に全結合層をつなげた順伝播ネットワークである。
 以下の図は、アーキテクチャの全体像である。\(Q\)はクエリ、\(D_{i}\)は文書、四角の中の数値はユニット数、\(R\)はコサイン類似度、\(P\)は温度付きソフトマックスを示す。
 <img src="/learning_deep_structured_semantic_models_for_web_search_using_clickthrough_data/fig1.png" alt="fig1">
@@ -76,7 +76,7 @@ $$</p>
 つぎに、記号つきの単語をnグラムに分解する。
 <code>#good#</code>であれば、<code>#go</code>, <code>goo</code>, <code>ood</code>, <code>od#</code>に分解される。
 さいごに、n-gramでベクトルをつくる。</p>
-<h3 id="heading-2">感想</h3>
+<h3 id="感想">感想</h3>
 <p>実験には、クエリとタイトルをデータとして、NDCGが採用された。
 TF-IDFとBM25の単語マッチングよりも提案手法のほうが0.04ポイント程度上まわった。
 これはクエリやタイトルが短いからなのかが気になる。</p>
