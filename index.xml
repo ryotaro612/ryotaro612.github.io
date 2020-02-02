@@ -6,10 +6,27 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 26 Jan 2020 01:38:57 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 01 Feb 2020 17:21:41 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE</title>
+      <link>https://nryotaro.dev/posts/neural_machine_translation_by_jointly_learning_to_align_and_translate/</link>
+      <pubDate>Sat, 01 Feb 2020 17:21:41 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/neural_machine_translation_by_jointly_learning_to_align_and_translate/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+&lt;p&gt;Decoderに注意機構を採用したencoder-decoderモデルを提案した論文である。
+ICLR2015で発表された。
+論文の発表当時、encoder-decoderモデルによる翻訳の多くは、encoderが入力文を固定長ベクトルに変換し、固定長ベクトルから翻訳された文を出力していた。
+著者らは、固定長ベクトルへの変換が長い文の翻訳性能を下げていると考え、固定長ベクトルを注意機構におきかえたencoder-decoderモデルを提案する。
+モデルは、翻訳に加え、生成する単語と入力文の箇所の関係を学習する。
+推定時には、まず、次に生成する単語に関係する入力文の箇所を推定する。
+次に、推定された箇所と生成済の単語列をもとに、単語を生成する。
+特に長い文書の翻訳において、固定長ベクトルをつかうモデルよりも、提案手法が優れていることを実験的に示した。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ &#34;Why Should I Trust You?&#34; Explaining the Predictions of Any Classifier</title>
