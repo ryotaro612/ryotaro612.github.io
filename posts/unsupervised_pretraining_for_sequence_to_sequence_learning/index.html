@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ Unsupervised Pretraining for Sequence to Sequence Learning</h2>
+    <p>February 16, 2020</p>
+  </header>
+  <h3 id="概要">概要</h3>
+<p>事前学習とファインチューニングにより<a href="https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf">seq2seq</a>の汎化性能を改善する手法を提案した論文である。
+encoderの重みを学習済み言語モデルの重みで初期化する。
+decoderについても、encoderと別の言語モデルを用意し、その重みで初期化する。
+ただし、工夫のないファインチューニングをすると<a href="https://arxiv.org/pdf/1312.6211.pdf">破滅的忘却</a>が生じてしまう。
+そこで、ファインチューニングでは言語モデルとseq2seqの目的関数の両方を学習につかうことで、過学習をさけ、汎化性能を確保する。</p>
+<h3 id="アーキテクチャ">アーキテクチャ</h3>
+<p>言語モデルで重みを初期化する着想は、encoderのないdecoderや出力層のないencoderが言語モデルに似ているという観察に由来する。
+実験では、言語モデルに1層のLSTMが採用されている。
+encoderとdecoderのembedding層と1層目のLSTMを各言語モデルの重みで初期化する。
+seq2seqには3層のLSTMが使われる。
+事前学習のほか、後述のresidual connectionsと注意機構を導入することで、わずかであるが一貫した改善がみられた。</p>
+<h4 id="residual-connections">Residual connections</h4>
+<p>decoderの2層目以降は無作為に初期化されるため、ソフトマックス層へ入力されるベクトルは無作為になる。
+これを避けるために、以下の図(a)のように、1層目のLSTMの出力からソウトマックス層へのresidual connectionを設ける。
+青の背景は、事前学習でえられた重みで初期化された範囲を示す。
+<img src="/unsupervised_pretraining_for_sequence_to_sequence_learning/fig1.png" alt="fig1"></p>
+<h4 id="multi-layer-attention">Multi-layer attention</h4>
+<p>図の(b)のように、encoderにおけるLSTMの最初と最後の層の状態とdecoderのソフトマックスへの入力ベクトル\(q_t\)から文脈ベクトルをつくる。
+encoderの1層目の状態を\(h^{1}_1 , \dots , h^1_{T}\), 最後の層の状態を\(h^{L}_1 , \dots , h^L_{T}\)とすると文脈ベクトル\(c_t\)を次のように算出する。
+$$
+\alpha_i = \frac{\exp (q_t \cdot h^{L}_i)}{\sum^T_{j=1}\exp (q_t \cdot h^L_j)}
+$$
+$$
+c^1_{t}=\sum^{T}_{i=1}\alpha_ih^1_{i}
+$$
+$$
+c^L_{t}=\sum^T_{i=1}\alpha_ih^L_{i}
+$$
+$$
+c_t=[c^1_{t};c^L_t]
+$$</p>
+<hr>
+<ul>
+<li>論文は<a href="https://www.aclweb.org/anthology/D17-1039.pdf">こちら</a>からダウンロードできます。</li>
+<li>図はすべて論文から引用されています。</li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

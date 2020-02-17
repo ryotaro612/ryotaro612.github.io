@@ -38,6 +38,22 @@
     
       <article class="summary">
 	<header>
+	  <h2><a href="/posts/unsupervised_pretraining_for_sequence_to_sequence_learning/">論文メモ Unsupervised Pretraining for Sequence to Sequence Learning</a></h2>
+	  <p>February 16, 2020</p>
+	</header>
+	<div class="excerpt"><h3 id="概要">概要</h3>
+<p>事前学習とファインチューニングにより<a href="https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf">seq2seq</a>の汎化性能を改善する手法を提案した論文である。
+encoderの重みを学習済み言語モデルの重みで初期化する。
+decoderについても、encoderと別の言語モデルを用意し、その重みで初期化する。
+ただし、工夫のないファインチューニングをすると<a href="https://arxiv.org/pdf/1312.6211.pdf">破滅的忘却</a>が生じてしまう。
+そこで、ファインチューニングでは言語モデルとseq2seqの目的関数の両方を学習につかうことで、過学習をさけ、汎化性能を確保する。</p></div>
+	<a class="readmore" href="/posts/unsupervised_pretraining_for_sequence_to_sequence_learning/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
 	  <h2><a href="/posts/playing_atari_with_deep_reinforcement_learning/">論文メモ Playing Atari with Deep Reinforcement Learning</a></h2>
 	  <p>February 9, 2020</p>
 	</header>
@@ -153,22 +169,6 @@ ELOに用いる損失関数にDCGを採用したExpected DCG Loss Optimization(E
 相関関係のあるラベル集合を相関関係のないラベル集合に変換し、ラベルごとに分けて学習する手法、Label transformationを応用する。
 分類器は、相関関係だけなく、学習データに与えられていないラベルを推定するように拡張できる。</p></div>
 	<a class="readmore" href="/posts/multilabel_classification_with_label_correlations_and_missing_labels/">Read more</a>
-      </article>
-    
-  
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/">論文メモ Learning Deep Structured Semantic Models for Web Search using Clickthrough Data</a></h2>
-	  <p>January 4, 2020</p>
-	</header>
-	<div class="excerpt"><h3 id="概要">概要</h3>
-<p>クエリと文書を同じ低次元の空間に射影する深層学習のモデルを提案した論文である。
-クエリと文書は、適合度合いが高いほど、近くに配置される。
-教師データは、クエリと文書の組からなる教師データである。
-実験では、商用検索エンジンから抽出した16510件のクエリと対応するWeサイトのタイトルがつかわれる。
-Web文書の大量の語彙をあつかうために、語彙の増加に対して次元数を抑えるbag-of-wordsの手法、word hasingも提案した。</p></div>
-	<a class="readmore" href="/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/">Read more</a>
       </article>
     
   
