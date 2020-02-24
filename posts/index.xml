@@ -6,10 +6,26 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 16 Feb 2020 14:21:55 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 23 Feb 2020 21:54:59 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Latent Dirichlet Allocation</title>
+      <link>https://nryotaro.dev/posts/latent_dirichlet_allocation/</link>
+      <pubDate>Sun, 23 Feb 2020 21:54:59 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/latent_dirichlet_allocation/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+&lt;p&gt;トピックモデルの潜在的ディリクレ配分法(LDA)の原論文である。
+LDAは、テキストコーパスのような離散データの確率的生成モデルである。
+意味のあるデータのまとまりに対する端的な説明を与える情報を見つけることを目的としている。
+3つの階層からなる階層ベイズモデルである。
+、データの要素は、各トピックを表すモデルの混合モデルから生成される。
+トピックもまた混合モデルから確率的に生成される。
+推論にはベイズ変分法を、パラメタの推定にはEMアルゴリズムをもちいらる。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ Unsupervised Pretraining for Sequence to Sequence Learning</title>
