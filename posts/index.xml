@@ -6,10 +6,23 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 23 Feb 2020 21:54:59 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 29 Feb 2020 21:15:17 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ SentencePiece: A simple and language independent subword tokenizer and detokenizer for Neural Text Processing</title>
+      <link>https://nryotaro.dev/posts/sentence_piece/</link>
+      <pubDate>Sat, 29 Feb 2020 21:15:17 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/sentence_piece/</guid>
+      <description>&lt;p&gt;SentencePieceは、深層学習向けのトークナイザ・脱トークナイザである。
+特定の言語を意識した処理がないため、あらゆるテキストに利用できる。
+本論文では、C++やPythonによる&lt;a href=&#34;https://github.com/google/sentencepiece&#34;&gt;実装&lt;/a&gt;と翻訳への適用実験について書かれている。
+アルゴリズムの解説は、&lt;a href=&#34;https://www.aclweb.org/anthology/P16-1162.pdf&#34;&gt;Sennrich et al.&lt;/a&gt;や&lt;a href=&#34;https://arxiv.org/pdf/1804.10959.pdf&#34;&gt;Kudo.&lt;/a&gt;にゆずられている。
+これらの論文について2019年7月13日の&lt;a href=&#34;../neural_machine_translation_of_rate_words/&#34;&gt;記事&lt;/a&gt;と2019年7月17日の&lt;a href=&#34;./subword_regularization/&#34;&gt;記事&lt;/a&gt;で解説している。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ Latent Dirichlet Allocation</title>
