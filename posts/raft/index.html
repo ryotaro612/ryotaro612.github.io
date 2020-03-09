@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ In Search of an Understandable Consensus Algorithm</h2>
+    <p>March 9, 2020</p>
+  </header>
+  <p>Raftとよばれるコンセンサスアルゴリズムを提案した論文である。
+Raftは、Multi Paxosと同様の実行結果をもたらす。
+実行するコマンドのログをサーバ間で交換することで、状態を同期し、サーバの一部が落ちてもシステムを継続することができる。</p>
+<p>サーバは、Leader, Follwer, Candidateの3つの状態をとりえる。
+Leaderだけが、クライアントからのリクエストに応え、ログのエントリをFollowerのサーバに配信する。
+FollowerはCandidateを経てLeaderになる。
+Leaderは、Followerに、死活監視として空のエントリを定期的に配信する。
+Followerはheatbeatが途絶えるとCandidate状態になり、他のサーバに投票を要求し、票を過半数獲得できたらLeaderになる。
+サーバは、単調増加する数値で管理される論理的な時刻を管理している。
+Candidateは新しいLeaderの時刻が自分のものよりも古くなければ、Leaderを認めてFollowerに戻る。</p>
+<p>論文で強調されているのは、分かりやすさである。
+Paxosは難解で、また、Multi Paxosの詳細な説明はないため、実装がむずかしい。
+分かりやすくするために、Raftでは、コンセンサスの鍵になる要素が分けて扱われている。
+例えば、論文ではLeaderの選出方法、ログの複製、アルゴリズムで保証される安全性、クラスタに参加するサーバの変更、ログの圧縮が、それぞれ別の節に分けられ説明されている。
+ほかにも、クラスタのとりえる状態数を減らしたり、heatbeatのタイムアウト時間をランダムにしたりすることで、アルゴリズムを単純にしている。
+例えば、上のLeader選出では投票が割れるとLeaderの選出が繰り返されてしまう。
+サーバは最初に投票をリクエストしたサーバに一度だけ票を投じる。
+そのため、サーバーごとに異なるタイムアウト時間を設定し、先にタイムアウトしたサーバがLeaderになりやすくすることで、複雑な仕組みを導入することなく選出が繰り返されにくくされている。</p>
+<hr>
+<ul>
+<li>論文は<a href="https://raft.github.io/raft.pdf">こちら</a>からダウンロードできます。</li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>
