@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ The Seven Sins: Security Smells in Infrastructure as Code Scripts</h2>
+    <p>March 20, 2020</p>
+  </header>
+  <h3 id="概要">概要</h3>
+<p>OSSの調査にもとづき、Infrastrucure as Code(IaC)スクリプトに潜む主要なセキュリティ上の不吉な匂い(Security Smells)を7つ列挙し、これらを検出するツールを実装した論文である。
+論文のねらいは、開発者がIaCスクリプトに不吉な匂いを混ぜないようにすることにある。
+著者らは、本論文で、ICSE2019のDistinguished Paper Awardを受賞した。</p>
+<h3 id="調査方法">調査方法</h3>
+<p>第一著者が、Mozilla, Openstack, Wikimedia Commonsの<a href="https://puppet.com/">Puppet</a>スクリプトから不吉な匂いにあたる箇所をみつけ、分類した。
+分類は共通脆弱性一覧(<a href="http://cwe.mitre.org/index.html">CWE</a>)の項目と対応関係をとるように配慮されている。
+調査したスクリプトは、これらの組織が管理する74のリポジトリの2017年7月30日時点のmasterブランチのものである。
+分類は、著者ら以外の2人の評価者によって、CWEとの対応関係があるか確認されている。</p>
+<h3 id="the-seven-sins">The Seven Sins</h3>
+<p>分類した項目と対応するCWEを表で示す。</p>
+<table>
+<thead>
+<tr>
+<th>The Seven Sins</th>
+<th>CWE</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Admin by default</td>
+<td>250</td>
+<td>デフォルトユーザが管理者権限をもつ</td>
+</tr>
+<tr>
+<td>Empty pasword</td>
+<td>258</td>
+<td>パスワードが空文字</td>
+</tr>
+<tr>
+<td>hard-coded secret</td>
+<td>798</td>
+<td>機密情報がハードコードされている</td>
+</tr>
+<tr>
+<td>Invalid IP address binding</td>
+<td>284</td>
+<td><code>0.0.0.0</code>をクラウドサービスやDBに割り当てている</td>
+</tr>
+<tr>
+<td>Suspicious comment</td>
+<td>546</td>
+<td>システムに不足する機能や脆弱性へのコメントがある</td>
+</tr>
+<tr>
+<td>Use of HTTP without TLS</td>
+<td>319</td>
+<td>TLSを通さずHTTPを使用している</td>
+</tr>
+<tr>
+<td>Use of weak cryptography algorithms</td>
+<td>327, 326</td>
+<td>脆弱な暗号化アルゴリズムを使用している</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ツールによる検出調査">ツールによる検出調査</h3>
+<p>著者らは分類した不吉な匂いを検出するツールを実装し、ツールにより、Mozilla, Openstack, Wikimedia Commons, GitHub上の293のリポジトリにある15232個のIaCスクリプトに対して、不吉な匂いがないか調査した。
+オラクルデータセットによるツールの性能評価では、全ての匂いについてPrecision, recallともに0.95を超えている。
+調査結果を次に示す。</p>
+<p><img src="/the_seven_sins.png" alt="table8"></p>
+<h3 id="感想">感想</h3>
+<p>ルールベースは比較的単純であり、また、The Seven Sinsは意外性のあるものではないので、多くのリポジトリを調査したことことが受賞につながったように感じた。</p>
+<hr>
+<ul>
+<li>論文は<a href="https://2019.icse-conferences.org/details/icse-2019-Technical-Papers/103/The-Seven-Sins-Security-Smells-in-Infrastructure-as-Code-Scripts">こちら</a>からダウンロードできます。</li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

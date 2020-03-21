@@ -6,10 +6,22 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 14 Mar 2020 23:46:31 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2020 15:14:44 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ The Seven Sins: Security Smells in Infrastructure as Code Scripts</title>
+      <link>https://nryotaro.dev/posts/the_seven_sins/</link>
+      <pubDate>Fri, 20 Mar 2020 15:14:44 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/the_seven_sins/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+&lt;p&gt;OSSの調査にもとづき、Infrastrucure as Code(IaC)スクリプトに潜む主要なセキュリティ上の不吉な匂い(Security Smells)を7つ列挙し、これらを検出するツールを実装した論文である。
+論文のねらいは、開発者がIaCスクリプトに不吉な匂いを混ぜないようにすることにある。
+著者らは、本論文で、ICSE2019のDistinguished Paper Awardを受賞した。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ Semi-supervised Sequence Learning</title>
