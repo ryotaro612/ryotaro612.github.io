@@ -6,10 +6,23 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 20 Mar 2020 15:14:44 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2020 01:59:00 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Deep contextualized word representations</title>
+      <link>https://nryotaro.dev/posts/deep_contextualized_word_representations/</link>
+      <pubDate>Tue, 24 Mar 2020 01:59:00 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/deep_contextualized_word_representations/</guid>
+      <description>&lt;p&gt;文脈をふまえた単語の分散表現を生成する手法を提案し、教師あり学習に応用することで評価した論文である。
+文字単位の学習済み双方向LSTM言語モデルへの入力と各層の出力から分散表現をつくる。
+言語モデルの入力やどの層をどれだけ重視するかは、教師あり学習のときに更新するパラメタのひとつになる。
+実験では、構文にかかわるタスクであれば入力層に近い層が、意味にかかわるものであれば出力層に近い層が、重視された。
+モデルは、Embeddings from Language Modelsにちなみ、ELMoと名付けられた。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ The Seven Sins: Security Smells in Infrastructure as Code Scripts</title>
