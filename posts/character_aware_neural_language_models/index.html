@@ -1,0 +1,132 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ Character-Aware Neural Language Models</h2>
+    <p>April 4, 2020</p>
+  </header>
+  <h3 id="概要">概要</h3>
+<p>文字単位の入力から次に出現する単語を予測するニューラル言語モデルの論文である。
+アーキテクチャは入力から近い順にCNN, highway network, LSTMからなる。
+実験データにPenn Treebankを、評価指標にPerplexityを採用してモデルを評価したところ、
+論文が発表された2016年時点での<a href="https://arxiv.org/abs/1409.2329">SOTA</a>の60%程度のパラメタしかないモデルでありながら、これに匹敵する性能を発揮した。</p>
+<h3 id="アーキテクチャ">アーキテクチャ</h3>
+<p>モデルは、文字列を単位とする入力をうけつける。
+モデルのアーキテクチャを図に示す。
+入力に近い層から順にCNN, highway network, LSTMの順に説明していく。
+<img src="/character_aware_neural_language_models.png" alt="img"></p>
+<h4 id="cnn">CNN</h4>
+<p>\(d\)を文字の分散表現の次元として、長さ\(l\)の単語\(k\)は\({\rm C}^{d\times l}\in \mathbb{R}^{d \times l}\)の分散表現としてモデルに入力される。
+入力された分散表現に幅\(w\)のフィルタ\(\boldsymbol{\rm H}\in \mathbb{R}^{d \times w}\)を適用しnarrow conlovutionによって、特徴マップ\(\boldsymbol{\rm f}^k\in \mathbb{R}^{l-w+1}\)を求める。
+\(\boldsymbol{\rm C}^k[*, i:i+w-1]\)を単語\(k\)の分散表現\(\boldsymbol{\rm C}^k\)の\(i\)から\(i+w-1\)までの列とすると、\(i\)番目の要素は次の式で計算される。</p>
+<p>$$
+\boldsymbol{\rm f}^k[i] = \tanh (\text{Tr}(\boldsymbol{\rm C}^k[*, i:i+w-1] \boldsymbol{\rm H}^T) + b)
+$$</p>
+<p>MAXプーリングにより各フィルタからスカラー値\(y^k\)を求める。アーキテクチャ全体ではフィルタを\([100, 1000]\)の範囲の複数のフィルタ\(\boldsymbol{\rm H}_1 ,\dots \boldsymbol{\rm H}_h\)をつかう。
+このとき、単語\(k\)に対して\(\boldsymbol{y}^k=[y_1^k , \dots y_h^k]\)がhighway networkにわたされる。</p>
+<p>$$
+y^k=\max_i \boldsymbol{\rm f}^k[i]
+$$</p>
+<h4 id="highway-network">Highway Network</h4>
+<p>CNNの出力をhighway networkに入力し、次の\(\boldsymbol{\rm z}\)を計算する。
+$$
+\boldsymbol{\rm z}=\boldsymbol{\rm t}\odot g(\boldsymbol{\rm W}_H \boldsymbol{\rm y} + \boldsymbol{\rm b}_H) + (\boldsymbol{1} - \boldsymbol{\rm t}\odot \boldsymbol{\rm y})
+$$
+ただし、\(\boldsymbol{\rm t}=\sigma (\boldsymbol{\rm W}_T\boldsymbol{\rm y} + \boldsymbol{\rm b}_T)\)であり、これをtransform gateという。
+\(\boldsymbol{1}-\boldsymbol{\rm t}\)はcarry gateとよばれ、LSTMのメモリセルと同じく、入力を適応的にそのまま出力するはたらきがある。</p>
+<h4 id="lstm">LSTM</h4>
+<p>時刻\(t\)のhighway networkの出力\(\boldsymbol{\rm z}_t\in \mathbb{R}^n\)はLSTMに入力され、LSTMは次の計算により\(\boldsymbol{\rm h}_t\in \mathbb{R}^m\)を出力する。
+複数のLSTMを重ねるときは、\(\boldsymbol{\rm h}_t\)を次のLSTMにわたす。</p>
+<p>$$
+\begin{align}
+\boldsymbol{\rm i}_t &amp;= \sigma(\boldsymbol{\rm W}^i\boldsymbol{\rm z}_t + \boldsymbol{\rm U}^i\boldsymbol{\rm h}_{t-1}+\boldsymbol{\rm b}^i)\\<br>
+\boldsymbol{\rm f}_t &amp;= \sigma(\boldsymbol{\rm W}^f\boldsymbol{\rm z}_t + \boldsymbol{\rm U}^f\boldsymbol{\rm h}_{t-1}+\boldsymbol{\rm b}^f)\\<br>
+\boldsymbol{\rm o}_t &amp;= \sigma(\boldsymbol{\rm W}^o\boldsymbol{\rm z}_t + \boldsymbol{\rm U}^o\boldsymbol{\rm h}_{t-1}+\boldsymbol{\rm b}^o)\\<br>
+\boldsymbol{\rm g}_t &amp;= \tanh(\boldsymbol{\rm W}^g\boldsymbol{\rm z}_t + \boldsymbol{\rm U}^g\boldsymbol{\rm h}_{t-1}+\boldsymbol{\rm b}^g)\\<br>
+\boldsymbol{\rm c}_t &amp;= \boldsymbol{\rm f}_t \odot \boldsymbol{\rm c}_{t-1} + \boldsymbol{\rm i}_t \odot \boldsymbol{\rm g}_t \\<br>
+\boldsymbol{\rm h}_t &amp;= \boldsymbol{\rm o}_t \odot \tanh (\boldsymbol{\rm c}_t)
+\end{align}
+$$</p>
+<h4 id="出力層">出力層</h4>
+<p>LSTMの出力\(\boldsymbol{\rm h}_t\)を全結合層とソフトマックス関数に入力し、単語列\(w_{1:t}=[w_1, \dots w_t]\)から次の単語\(w_{t+1}\)を予測する。</p>
+<p>$$
+\text{Pr}(w_{t+1}=j\mid w_{1:t}) = \frac{\exp (\boldsymbol{\rm h}_t \cdot \boldsymbol{\rm p}^j + q^j)}{\sum_{j&rsquo;\in \mathcal{V}}\exp (\boldsymbol{\rm h}_t \cdot \boldsymbol{\rm p}^{j&rsquo;}+ q^{j&rsquo;})}
+$$</p>
+<p>\(\mathcal{V}\)は単語の集合をさす。
+単語数\(\mid\mathcal{V}\mid\)が多い場合、階層的ソフトマックスをもちいる。
+\(\mathcal{V}\)を\(c=\lceil\sqrt{\mid\mathcal{V}\mid} \rceil\)として\(\mathcal{V}_1,\dots \mathcal{V}_c\)に分割し、次のように予測する。</p>
+<p>$$
+\begin{align}
+\text{Pr}(w_{t+1} = j\mid w_{1:t}) &amp;= \frac{\exp (\boldsymbol{\rm h}_t\cdot \boldsymbol{\rm s}^r + t^r)}{\sum^c_{r'=1}\exp (\boldsymbol{\rm h}_t \cdot \boldsymbol{\rm s}^{r&rsquo;}+ t^{r&rsquo;})} \\<br>
+&amp;\times \frac{\exp (\boldsymbol{\rm h}_t\cdot \boldsymbol{\rm p}_r^j + q_r^j)}{\sum_{j&rsquo;\in\mathcal{V}_r}\exp (\boldsymbol{\rm h}_t \cdot \boldsymbol{\rm p}_r^{j&rsquo;}+ q_r^{j&rsquo;})}
+\end{align}
+$$</p>
+<h4 id="損失関数">損失関数</h4>
+<p>損失関数にはnegative log-likelihood(NLL)をもちいる。</p>
+<p>$$
+NLL = - \sum_{t=1}^T \log \text{Pr}(w_t\mid w_{1:t-1})
+$$</p>
+<h3 id="備考">備考</h3>
+<p>提案された言語モデルは、<a href="https://arxiv.org/abs/1802.05365">ELMo</a>で応用された。
+以前、<a href="./deep_contextualized_word_representations/">こちら</a>にELMoの内容をまとめた。</p>
+<h3 id="感想">感想</h3>
+<p>初学者が勉強のために読むにはいい論文だと思った。
+LSTM, CNN, 階層的ソフトマックス, Perplexityなどの広く応用されている手法を多く導入しているだけでなく、数式を含めた説明が十分にある。</p>
+<hr>
+<ul>
+<li>論文は<a href="https://arxiv.org/abs/1508.06615">こちら</a>からダウンロードできます。</li>
+<li>画像はすべて論文から引用されています。</li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

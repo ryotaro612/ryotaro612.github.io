@@ -54,7 +54,10 @@ $$
 と計算する。
 この2つの言語モデルを重ねた双方向LSTMの目的関数は、入力のパラメタ\({\rm \Theta}_{x}\)とソフトマックス層\({\rm \Theta}_s\)のパラメタを共有した次の式となる。
 $$
-\sum^{N}_{k=1}(\log p(t_k\mid t_1, \dots , t_{k-1};{\rm \Theta}_x, \overrightarrow{\Theta}_{LSTM}, {\rm \Theta}_s) + (\log p(t_k\mid t_1, \dots , t_{k-1};{\rm \Theta}_x, \overleftarrow{\Theta}_{LSTM}, {\rm \Theta}_s))
+\begin{align}
+\sum^{N}_{k=1}(\log p(t_k\mid t_1, \dots , t_{k-1};{\rm \Theta}_x, \overrightarrow{\Theta}_{LSTM}, {\rm \Theta}_s) + \\<br>
+(\log p(t_k\mid t_1, \dots , t_{k-1};{\rm \Theta}_x, \overleftarrow{\Theta}_{LSTM}, {\rm \Theta}_s))
+\end{align}
 $$</p>
 <h3 id="分散表現の計算">分散表現の計算</h3>
 <p>\(k\)に対する順方向LSTMによる\(j\)番目の層の出力を\(\overrightarrow{\boldsymbol{\rm h}}^{LM}_{k, j}\), 逆方向LSTMの出力を\(\overleftarrow{\boldsymbol{\rm h}}^{LM}_{k, j}\)として</p>

@@ -6,10 +6,23 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 24 Mar 2020 01:59:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 04 Apr 2020 16:46:56 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Character-Aware Neural Language Models</title>
+      <link>https://nryotaro.dev/posts/character_aware_neural_language_models/</link>
+      <pubDate>Sat, 04 Apr 2020 16:46:56 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/character_aware_neural_language_models/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+&lt;p&gt;文字単位の入力から次に出現する単語を予測するニューラル言語モデルの論文である。
+アーキテクチャは入力から近い順にCNN, highway network, LSTMからなる。
+実験データにPenn Treebankを、評価指標にPerplexityを採用してモデルを評価したところ、
+論文が発表された2016年時点での&lt;a href=&#34;https://arxiv.org/abs/1409.2329&#34;&gt;SOTA&lt;/a&gt;の60%程度のパラメタしかないモデルでありながら、これに匹敵する性能を発揮した。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ Deep contextualized word representations</title>

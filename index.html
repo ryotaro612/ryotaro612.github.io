@@ -38,6 +38,21 @@
     
       <article class="summary">
 	<header>
+	  <h2><a href="/posts/character_aware_neural_language_models/">論文メモ Character-Aware Neural Language Models</a></h2>
+	  <p>April 4, 2020</p>
+	</header>
+	<div class="excerpt"><h3 id="概要">概要</h3>
+<p>文字単位の入力から次に出現する単語を予測するニューラル言語モデルの論文である。
+アーキテクチャは入力から近い順にCNN, highway network, LSTMからなる。
+実験データにPenn Treebankを、評価指標にPerplexityを採用してモデルを評価したところ、
+論文が発表された2016年時点での<a href="https://arxiv.org/abs/1409.2329">SOTA</a>の60%程度のパラメタしかないモデルでありながら、これに匹敵する性能を発揮した。</p></div>
+	<a class="readmore" href="/posts/character_aware_neural_language_models/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
 	  <h2><a href="/posts/deep_contextualized_word_representations/">論文メモ Deep contextualized word representations</a></h2>
 	  <p>March 24, 2020</p>
 	</header>
@@ -147,23 +162,6 @@ decoderについても、encoderと別の言語モデルを用意し、その重
 <p>深層強化学習をAtari2600の7つのゲームに応用し、うち6つについて先行手法の性能を超えたDeep Q-Networks(DQN)を提案した論文である。
 ピクセルデータを直接入力として与え、深層学習で方策を学習する手法としては初めて提案された。</p></div>
 	<a class="readmore" href="/posts/playing_atari_with_deep_reinforcement_learning/">Read more</a>
-      </article>
-    
-  
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/context2vec/">論文メモ context2vec: Learning Generic Context Embedding with Bidirectional LSTM</a></h2>
-	  <p>February 2, 2020</p>
-	</header>
-	<div class="excerpt"><h3 id="概要">概要</h3>
-<p>文書の文脈の分散表現を獲得するニューラルネットワークのアーキテクチャ<em>context2vec</em>を提案、評価した論文である。
-アーキテクチャの基本構造は<a href="https://arxiv.org/pdf/1301.3781.pdf">CBOW</a>と同様で、周辺の単語から中心の単語を当てられるようにコーパスをもとにモデルを訓練する。
-CBOWとの違いは、文脈の算出方法にある。
-CBOWは、ウィンドウ内のベクトルの平均値で文脈の分散表現を求める。
-一方、<em>context2vec</em>では、双方向LSTMの出力をもとに算出する。</p>
-<!-- raw HTML omitted --></div>
-	<a class="readmore" href="/posts/context2vec/">Read more</a>
       </article>
     
   
