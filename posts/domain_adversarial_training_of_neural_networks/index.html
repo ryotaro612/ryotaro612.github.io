@@ -1,0 +1,123 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ Domain Adversarial Training of Neural Networks</h2>
+    <p>April 11, 2020</p>
+  </header>
+  <h3 id="概要">概要</h3>
+<p>ニューラルネットワークをもちいたドメイン適用の論文である。
+ソースドメインのラベルつきデータと目標ドメインのラベルのないデータでモデルを訓練し、目標ドメインに対する分類性能を引きあげる。
+目的関数は、ソースドメインの分類器の目的関数とデータのドメインを判定する識別器の目的関数からなる。
+後者は、前者の正則化項としてはたらく。
+これにより、ドメイン間に共通する特徴からソースドメインのデータのラベルを高い性能で予測できるようになる。
+目標関数から、ドメイン間のデータの分布が近いほど、目標ドメインのデータでも高い分類性能を発揮する。
+先行研究との違いは、できるだけ共通するする特徴で分類するという着想を、通常の分類と同じく、確率的勾配降下法で実現したところにある。</p>
+<h3 id="アーキテクチャ">アーキテクチャ</h3>
+<p>手法の着想は、できるだけドメイン間で共通する特徴を使うことで目標ドメインのデータに対する分類性能を確保することにある。
+入力がとりえる値の範囲\(X\)とラベルの種類\(Y=\{0, 1, \dots , L-1\}\)はソースドメイン\(\mathcal{D}_S\)と目標ドメイン\(\mathcal{D}_T\)間で等しい。
+異なるのは、その分布\((X \times Y)\)である。
+これを次の式で表すと、</p>
+<p>$$
+S=\{(\boldsymbol{\rm x}_i, y_i)\}_{i=1}^n \sim (\mathcal{D}_S)^n; T=\{\mathcal{x}_i\}_{i=n+1}^N \sim (\mathcal{D}_{T}^X)^{n&rsquo;}
+$$
+となる。</p>
+<p>アーキテクチャは、\(D\)次元の特徴を抽出するfeature extractor \(G_f: X\rightarrow \mathbb{R}^D\), label predictor \(G_y: \mathbb{R}^D \rightarrow [0, 1]^L\), 隠れ層の出力からドメインを識別するdomain classifier \(G_d: \mathbb{R}^D \rightarrow [0, 1]\)から構成される。
+アーキテクチャの全体像を次の図に示す。
+<img src="/domain_adversarial_training_of_neural_networks.png" alt="architecture"></p>
+<p>パラメタを\(\theta\), label predictorとdomain classifierの損失関数を\(\mathcal{L}_y, \mathcal{L}_d\), ハイパーパラメタを\(\lambda\)とすると、目的関数は次のようになる。\(d_i\)は\(i\)番目の標本のドメインを示す。</p>
+<p>$$
+\begin{align}
+E(\theta_f, \theta_y, \theta_d) &amp;= \frac{1}{n}\sum^n_{i=1}\mathcal{L}_y(G_y(G_f(\boldsymbol{\rm x}_i;\theta_f);\theta_y), y_i) \\<br>
+&amp;-\lambda\left(\frac{1}{n}\sum_{i=1}^n\mathcal{L}_d(G_d(G_f(\boldsymbol{\rm x}_i;\theta_f);\theta_d), d_i) + \frac{1}{n&rsquo;}\sum_{i=n+1}^N\mathcal{L}_d(G_d(G_f(\boldsymbol{\rm x}_i;\theta_f);\theta_d), d_i)\right)
+\end{align}
+$$</p>
+<p>学習では次の\(\hat{\theta_f}, \hat{\theta_y}, \hat{\theta_d}\)からなる鞍点を探す。
+$$
+\begin{align}
+(\hat{\theta_f}, \hat{\theta}_y)&amp;=\underset{\theta_f, \theta_y}{\operatorname{argmin}}E(\theta_f, \theta_y, \hat{\theta}_d)\\<br>
+\hat{\theta_d}&amp;=\underset{\theta_d}{\operatorname{argmax}}E(\hat{\theta}_f, \hat{\theta}_y, \theta_d)\\<br>
+\end{align}
+$$
+鞍点に近づけるために、学習率\(\mu\)でパラメタを更新する。
+$$
+\begin{align}
+\theta_f &amp;\leftarrow \theta_f - \mu \left(\frac{\partial\mathcal{L}_y^i}{\partial\theta_f}-\lambda \frac{\partial \mathcal{L}_d^i}{\partial \theta_f}\right)\\<br>
+\theta_y &amp;\leftarrow \theta_y - \mu\frac{\partial\mathcal{L}_y^i}{\partial\theta_y} \\<br>
+\theta_d &amp;\leftarrow \theta_d - \mu\frac{\partial\mathcal{L}_d^i}{\partial\theta_d} \\<br>
+\end{align}
+$$</p>
+<p>\(\theta_f\)については、括弧中の符号がマイナスであるため、他のパラメタと異なり、そのままでは確率的勾配降下法を使うことができない。
+そこで、feature extractorとdomain classifierの間にgradient reversal layerを挿入する。
+これは、パラメタのない恒等写像の層\(\mathcal{R}\)であり、予測時には、恒等写像としてはららき、学習時には出力からの勾配の符号を反転させて、入力層に流す。
+$$
+\begin{align}
+\mathcal{R}(\boldsymbol{\rm x})&amp;=\boldsymbol{\rm x}\\<br>
+\frac{d\mathcal{R}}{d\boldsymbol{\rm x}}&amp;=-\boldsymbol{\rm I}
+\end{align}
+$$</p>
+<p>この層をもちいると、確率的勾配降下法で学習できる目的関数\(\tilde{E}\)の学習で\(E\)の鞍点を求めることができる。
+$$
+\begin{align}
+\tilde{E}(\theta_f, \theta_y, \theta_d) &amp;= \frac{1}{n}\sum^n_{i=1}\mathcal{L}_y(G_y(G_f(\boldsymbol{\rm x}_i;\theta_f);\theta_y), y_i) \\<br>
+&amp;-\lambda\left(\frac{1}{n}\sum_{i=1}^n\mathcal{L}_d(G_d(\mathcal{R}(G_f(\boldsymbol{\rm x}_i;\theta_f));\theta_d), d_i) + \frac{1}{n&rsquo;}\sum_{i=n+1}^N\mathcal{L}_d(G_d(\mathcal{R}(G_f(\boldsymbol{\rm x}_i;\theta_f));\theta_d), d_i)\right)
+\end{align}
+$$</p>
+<hr>
+<ul>
+<li>論文は<a href="https://arxiv.org/pdf/1505.07818.pdf">こちら</a>からダウンロードできます。</li>
+<li>画像は論文から引用されています。</li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>
