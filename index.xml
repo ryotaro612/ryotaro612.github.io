@@ -6,10 +6,23 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 11 Apr 2020 15:07:47 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 18 Apr 2020 01:25:10 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Random Walks in recommender Systems: Exact Computation and Simulations</title>
+      <link>https://nryotaro.dev/posts/random_walks_in_recommender_systems/</link>
+      <pubDate>Sat, 18 Apr 2020 01:25:10 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/random_walks_in_recommender_systems/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://ieeexplore.ieee.org/document/4072747&#34;&gt;F. Foussら&lt;/a&gt;や&lt;a href=&#34;https://www.aaai.org/Papers/IJCAI/2007/IJCAI07-444.pdf&#34;&gt;M. Goriら&lt;/a&gt;のランダムウォークによる推薦システムの先行研究を、質や計算量について比較した論文である。
+比較対象には、著者らの用意したも含まれる。
+実験には、MovieLensのデータセットが使われた。
+F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒット数で評価したところ、著者らの用意した単純な手法\(P^s\)やその拡張\(P_\alpha^s\)が質と計算量の両方で最も優れた結果を残した。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ Domain Adversarial Training of Neural Networks</title>
