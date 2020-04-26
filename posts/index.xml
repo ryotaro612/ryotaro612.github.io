@@ -6,10 +6,22 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 18 Apr 2020 01:25:10 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 25 Apr 2020 13:12:05 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ ALBERT: A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS</title>
+      <link>https://nryotaro.dev/posts/albert/</link>
+      <pubDate>Sat, 25 Apr 2020 13:12:05 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/albert/</guid>
+      <description>&lt;p&gt;BERTのパラメタ数を削減し、学習時間の短縮と正則化による予測性能の向上を両立したモデルALBERTを提案し、GLUE, RACE, SQuADでSoTAを実現した。
+BERT-largeと比べると、ALBERT-largeのパラメタ数は約5.3%の18Mであり、学習時間は1.7倍速い。
+パラメタを削減するために、単語のOne-hotベクトルをあたえられる単語埋め込み行列の次元を減らし、隠れ層の順伝播ネットワークや注意機構のパラメタを層の間で共有した。
+また、Next Sentence Prediction(NSP)による学習を、与えられた2文の前後関係を判定する学習Sentence Order Prediction(SOP)におきかえ、主タスクの予測性能を向上をはかった。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ Random Walks in recommender Systems: Exact Computation and Simulations</title>
