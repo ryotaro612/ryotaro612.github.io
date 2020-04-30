@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文 メモ Learning Joint Multilingual Sentence Representations with Neural Machine Translation</h2>
+    <p>April 29, 2020</p>
+  </header>
+  <h3 id="概要">概要</h3>
+<p>多言語の文をあつかう分散表現モデルを発表した論文である。
+異なる言語の文であっても、意味が同じであれば、同様の分散表現に変換される。
+モデルのアーキテクチャにはseq2seqを、入力と出力には対訳コーパスをつかう。
+ミニバッチごとに、入力または出力の言語をいれかえ、言語に依存しない文の意味の分散表現への変換方法を学習する。
+本論文の成果は多言語に対応する分散表現のモデルのライブラリ<a href="https://github.com/facebookresearch/LASER">LASER</a>に応用されている。</p>
+<h3 id="アーキテクチャ">アーキテクチャ</h3>
+<p>seq2seqを使う点は同じであるものの、ミニバッチごとの言語の入れ換え方や、一度に入力する言語の数の違いによって、複数のパターンがある。
+パターンの違いを以下に図示する。
+<img src="/learning_joint_multilingual_sentence_representations_with_nmt/patterns.png" alt="fig"></p>
+<p>入力と出力の数によって、大きく1:1, M:1, 1:N, M:Nの4パターンに分かれる。
+1:1では、ミニバッチごとに入力と出力の言語のペアをいれかえる。
+M:1では、複数の言語の文をencoderに入力し、平均などで、その各言語の出力から計算した値をdecoderに入力し、1種類の言語の文への変換を試みる。
+1:Nは、1:1の亜種で、1つの言語の入力を同時に複数の言語に変換する。
+N:Mは、以上3つを組み合わせたものである。</p>
+<h3 id="実験">実験</h3>
+<p>encoderとdecoderにLSTMをもちいたseq2seqをもちい、学習に適したパターンやLSTMを評価した。
+評価指標には、著者らが提案したものを使用した。
+これは、同じ意味で言語の異なる文における分散表現間の距離の近さで、性能を評価する。
+<img src="/learning_joint_multilingual_sentence_representations_with_nmt/algorithm.png" alt="fig">
+実験では、<a href="https://conferences.unite.un.org/uncorpus/">UN Corpus</a>をもちいて、英語、フランス語、スペイン語、ロシア語、アラビア語、中国語での性能を評価した。
+隠れ層のサイズが512次元の双方向のLSTMと、その後の層にmax-pool層を採用した1:Nパターンが最も良い結果となり、上のアルゴリズムでのエラー値は1.20%であった。</p>
+<hr>
+<ul>
+<li>論文は<a href="https://arxiv.org/pdf/1704.04154.pdf">こちら</a>からダウンロードできます。</li>
+<li>図はすべて論文から引用されています。</li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>
