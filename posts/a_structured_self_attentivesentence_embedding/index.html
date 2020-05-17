@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ A STRUCTURED SELF-ATTENTIVE SENTENCE EMBEDDING</h2>
+    <p>May 16, 2020</p>
+  </header>
+  <h3 id="概要">概要</h3>
+<p>自己注意機構をもちいて、可変長の文を埋め込み行列に変換するアーキテクチャを発表した論文である。
+埋め込み行列の各行は、それぞれ文中の異なる箇所の意味を反映する。
+アーキテクチャは2つの構成からなり、入力から出力にむかい双方向LSTMを、次に自己注意機構をもつ。
+自己注意機構を導入した背景は、回帰結合型のネットワークでは、全ての時刻わたって入力の意味を保持することは難しく、また不要であるという著者らの仮説である。
+3つの実験により、文の分散表現を獲得する先行研究と比較し、自己注意機構の効果が確認された。
+注意機構は複数のベクトルのどれを重視するかを学習できるため、埋め込まれた文の箇所を可視化できることも示した。</p>
+<h3 id="アーキテクチャ">アーキテクチャ</h3>
+<h4 id="概要-1">概要</h4>
+<p>アーキテクチャは、双方向LSTMと自己注意機構の2つのパートからなる。
+感情分析の実験のアーキテクチャを以下に図示する。
+<img src="/a_structured_self_attentive_sentence_embedding/arch.png" alt="architecture">
+左図は、単語の分散表現の行列となった文を入力し、埋め込み行列に変換し、全結合層を、最後にソフトマックス関数を適用する様子を示す。
+行列\(M\)が文の埋め込み行列を表す。
+右の図は、自己注意機構であり、双方向LSTMの出力\(H\)からannotation matrixと呼ばれる行列\(A\)を学習する。
+埋め込み行列\(M\)は、\(M=AH\)によって求められる。</p>
+<h4 id="双方向lstm">双方向LSTM</h4>
+<p>双方向LSTMは、単語のベクトル列で示された文をうけとり、その出力を自己注意機構に渡す。
+以降の説明では、入力される文を、\(n\)個の次元数\(d\)の単語のベクトルからなる\(n\times d\)の行列\(S\)と表記する。
+$$
+S=(\boldsymbol{\rm w_1}, \boldsymbol{\rm w_2}, \cdots \boldsymbol{\rm w_n})
+$$
+\(\boldsymbol{\rm w_i}\)は文の\(i\)番目の単語の埋め込みベクトルを示す。
+双方向LSTMによって、文脈依存の情報をもとめる。
+隠れ状態のユニット数を\(u\)とする単方向のLSTMをもちいると、時刻\(t\)の順方向、逆方向のLSTMの隠れ状態、\(\overrightarrow{h_t}, \overleftarrow{h_t}\)を連結させた\(h_t\)を行とする\(n\times 2u\)の行列\(H\)をえる。
+$$
+H=(\boldsymbol{\rm h_1}, \boldsymbol{\rm h_2}, \cdots \boldsymbol{\rm h_n})
+$$</p>
+<h4 id="自己注意機構">自己注意機構</h4>
+<p>annotation matrixは、バイアス項のない2層の多層パーセプトロンであり、次の式であわらされる。
+$$
+A=\text{softmax}(W_{s2}\tanh(W_{s1}H^{T}))
+$$
+\(d_a\)と\(r\)をハイパーパラメタとして、\(W_{s1}\)は\(d_a\times 2u\)の、\(W_{s2}\)は\(r\times d_a\)の行列のパラメタである。
+\(r\)は、注意したい文中の箇所数に対応する。
+最終的に、埋め込み行列\(M\)は、\(M=AH\)により、\(r\times 2u\)の行列になる。</p>
+<h4 id="埋め込み行列に反映された文の位置の可視化">埋め込み行列に反映された文の位置の可視化</h4>
+<p>\(A\)は\(r\times n\)の行列であり、列は各単語がどれだけ埋め込みベクトルに反映されたかを示す。
+例えば、行ベクトルを足し合わせ、ノルムを1で正則化したうえで、タスクにおける単語の重要度合いをヒートマップで示すことができる。</p>
+<h4 id="正則化">正則化</h4>
+<p>埋め込みベクトルが特定の箇所に注意しすぎないように、正則化を適用することもできる。
+その場合、\(P\)をもとのロスに加算して学習する。
+$$
+P=\mid\mid (AA^T-I)\mid\mid_{F}^2
+$$</p>
+<hr>
+<ul>
+<li>論文を<a href="https://arxiv.org/abs/1703.03130">こちら</a>からダウンロードできます。</li>
+<li>画像は論文から引用されています。</li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>
