@@ -6,10 +6,22 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 16 May 2020 14:05:38 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 23 May 2020 14:04:24 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Zero-Shot Learning with Semantic Output Codes</title>
+      <link>https://nryotaro.dev/posts/zero_shot_learning_with_semantic_output_codes/</link>
+      <pubDate>Sat, 23 May 2020 14:04:24 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/zero_shot_learning_with_semantic_output_codes/</guid>
+      <description>&lt;p&gt;学習データにないラベルを推定できるようにモデルを学習する問題に対してzero-shot leanringという名をあたえ、ラベルを推定できる確率と条件を形式化した論文である。
+形式化するモデルは、複数の二値分類器と1つの最近傍探索器からなる。
+最近傍探索は、2値分類器の出力を要素とするベクトルをうけとり、最近傍のラベルに対応するベクトルを探す。
+PACフレームワークにもとづく必要な学習データの件数を示し、そのデータで訓練されたモデルが学習データにないラベルを推定できる確率を示した。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ A STRUCTURED SELF-ATTENTIVE SENTENCE EMBEDDING</title>
