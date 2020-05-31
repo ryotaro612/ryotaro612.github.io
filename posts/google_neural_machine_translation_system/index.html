@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ Google&#39;s Neural Machine Transltation System: Bridging the Gap between Human and Machine Translation</h2>
+    <p>May 30, 2020</p>
+  </header>
+  <h3 id="概要">概要</h3>
+<p>ニューラルネットワークをもちいた機械翻訳システムの論文である。
+解決したい問題として、学習と推論時の処理時間の長さ、低頻出の単語を翻訳する難しさ、入力文の一部が翻訳されないことをあげ、注意機構でつながれたEncoderとDecoderからなるアーキテクチャを提案した。
+学習時間を短縮するために、Decoderの最初の層とEncodeerの出力層から注意をつくる注意機構を採用し、Decoderを並列に学習できるようにしている。
+また、量子化によって推論時間を短縮をしている。
+低頻出の単語でも翻訳できるようにwordpieceでエンコードされた入力をうけとる。
+入力文の一部が翻訳されない問題に対しては、短い出力文に罰則を課すビームサーチで出力文の候補を探索する仕組みが導入されている。</p>
+<h3 id="アーキテクチャ">アーキテクチャ</h3>
+<p>アーキテクチャのEncoderとDecoderは、それぞれ8層のLSTMからなり、アーキテクチの様子を以下の図のとおりである。
+Encoderの1層目のみが双方向LSTMであり、ほかは単方向のLSTMがもちいられてる。
+また、勾配爆発、消失問題を防ぐために、Residual connectionを導入し、前の層の入力と出力をたした値が次の層に渡している。
+<img src="/gnmt/gnmt.png" alt="architecture"></p>
+<hr>
+<ul>
+<li>論文は<a href="https://arxiv.org/abs/1609.08144">こちら</a>からダウンロードできます。</li>
+<li>図はすべて論文から引用されています。</li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

@@ -6,10 +6,25 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 23 May 2020 14:04:24 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 30 May 2020 16:09:32 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Google&#39;s Neural Machine Transltation System: Bridging the Gap between Human and Machine Translation</title>
+      <link>https://nryotaro.dev/posts/google_neural_machine_translation_system/</link>
+      <pubDate>Sat, 30 May 2020 16:09:32 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/google_neural_machine_translation_system/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+&lt;p&gt;ニューラルネットワークをもちいた機械翻訳システムの論文である。
+解決したい問題として、学習と推論時の処理時間の長さ、低頻出の単語を翻訳する難しさ、入力文の一部が翻訳されないことをあげ、注意機構でつながれたEncoderとDecoderからなるアーキテクチャを提案した。
+学習時間を短縮するために、Decoderの最初の層とEncodeerの出力層から注意をつくる注意機構を採用し、Decoderを並列に学習できるようにしている。
+また、量子化によって推論時間を短縮をしている。
+低頻出の単語でも翻訳できるようにwordpieceでエンコードされた入力をうけとる。
+入力文の一部が翻訳されない問題に対しては、短い出力文に罰則を課すビームサーチで出力文の候補を探索する仕組みが導入されている。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ Zero-Shot Learning with Semantic Output Codes</title>
