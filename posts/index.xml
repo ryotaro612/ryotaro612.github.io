@@ -6,10 +6,25 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 30 May 2020 16:09:32 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jun 2020 00:18:16 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Sequence to Sequence Learning with Nueral Networks</title>
+      <link>https://nryotaro.dev/posts/sequence_to_sequence_learning_with_neural_networks/</link>
+      <pubDate>Sat, 06 Jun 2020 00:18:16 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/sequence_to_sequence_learning_with_neural_networks/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+&lt;p&gt;Sequence to Sequenceを発表した論文である。
+RNNによって、入力と出力が系列のデータを学習する場合、入力と出力の長さが等しく、対応関係にある箇所が系列の方向に単調でなければならない。
+この制約に対処するため、Sequence to Sequenceは入力全体を固定長のベクトルに一度変換し、そのベクトルをもとに出力を予測する。
+Sequence to Sequenceは、2種類のLSTMをつかい、入力を与えたLSTMの最終層の隠れ状態からなる固定長ベクトルをつくる。
+そして、このベクトルを、もう一方のLSTMに与え、最終的な出力を求める。
+実験により、反転された入力系列をあとえると、入力と出力の対応関係にある箇所の距離が短くなり、予測性能が上がることが確認された。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ Google&#39;s Neural Machine Transltation System: Bridging the Gap between Human and Machine Translation</title>

@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ Sequence to Sequence Learning with Nueral Networks</h2>
+    <p>June 6, 2020</p>
+  </header>
+  <h3 id="概要">概要</h3>
+<p>Sequence to Sequenceを発表した論文である。
+RNNによって、入力と出力が系列のデータを学習する場合、入力と出力の長さが等しく、対応関係にある箇所が系列の方向に単調でなければならない。
+この制約に対処するため、Sequence to Sequenceは入力全体を固定長のベクトルに一度変換し、そのベクトルをもとに出力を予測する。
+Sequence to Sequenceは、2種類のLSTMをつかい、入力を与えたLSTMの最終層の隠れ状態からなる固定長ベクトルをつくる。
+そして、このベクトルを、もう一方のLSTMに与え、最終的な出力を求める。
+実験により、反転された入力系列をあとえると、入力と出力の対応関係にある箇所の距離が短くなり、予測性能が上がることが確認された。</p>
+<h3 id="アーキテクチャ">アーキテクチャ</h3>
+<p>モデルの目標は、長さ\(T\)の入力系列\(x_1, \cdots , x_T\)から長さ\(T&rsquo;\)の系列\(y_1, \cdots , y_{T&rsquo;}\)の条件付き確率を出力することである。
+入力と出力で長さの違う系列でも学習するため、入力から分散表現\(v\)をつくり、\(v\)をもとに系列を予測する。
+\(v\)にはLSTMの最終層の状態がもちいられる。
+これを式で示すと次のようになる。</p>
+<p>$$
+p(y_1 , \cdots , y_{T&rsquo;}\mid x_1 , \cdots , x_T) = \prod_{t=1}^{T&rsquo;}p(y_t\mid v, y_1 , \cdots , y_{t-1})
+$$
+\(p(y_t\mid v, y_1,\cdots , y_{t-1})\)の計算には、語彙にある単語についてのソフトマックス関数をもちいる。
+また、出力系列の長さを有限にするために、系列の最後には終端を示す記号<code>&quot;&lt;EOS&gt;&quot;</code>を追加し、系列に終端を予測できるようにする。</p>
+<p>学習では、入力系列\(S\)と出力系列\(T\)を含む学習データセットを\(\mathcal{S}\)として、次の目的関数をもちいる。
+$$
+1/\mid \mathcal{S}\mid \sum_{(T, S)\in \mathcal{S}} \log p(T\mid S)
+$$</p>
+<p>予測時には、条件付き確率の最も高い\(T\)を出力する。
+$$
+\hat{T} = \underset{T}{\operatorname{argmax}} p(T\mid S)
+$$</p>
+<h3 id="入力系列の反転">入力系列の反転</h3>
+<p>入力系列を反転することで予測性能が向上する理由について完全な説明はなされていない。
+次の図は、モデルによって入力系列から出力系列を予測する様子を示している。
+入力と出力系列に単調な対応関係があれば、入力系列を反転すると、対応関係にある記号間の距離の平均値を変えずに、系列の先頭に近いほど記号間の距離が短くなり、後になるほど遠くにできる。
+論文では、一部の記号間の対応関係の距離を変えることが、予測性能の向上の理由と考えられている。
+<img src="/sequence_to_sequence/figure1.png" alt="figure1"></p>
+<hr>
+<ul>
+<li>論文は<a href="https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf">こちら</a>からダウンロードできます。</li>
+<li>画像はすべて論文から引用されています。</li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

@@ -38,6 +38,23 @@
     
       <article class="summary">
 	<header>
+	  <h2><a href="/posts/sequence_to_sequence_learning_with_neural_networks/">論文メモ Sequence to Sequence Learning with Nueral Networks</a></h2>
+	  <p>June 6, 2020</p>
+	</header>
+	<div class="excerpt"><h3 id="概要">概要</h3>
+<p>Sequence to Sequenceを発表した論文である。
+RNNによって、入力と出力が系列のデータを学習する場合、入力と出力の長さが等しく、対応関係にある箇所が系列の方向に単調でなければならない。
+この制約に対処するため、Sequence to Sequenceは入力全体を固定長のベクトルに一度変換し、そのベクトルをもとに出力を予測する。
+Sequence to Sequenceは、2種類のLSTMをつかい、入力を与えたLSTMの最終層の隠れ状態からなる固定長ベクトルをつくる。
+そして、このベクトルを、もう一方のLSTMに与え、最終的な出力を求める。
+実験により、反転された入力系列をあとえると、入力と出力の対応関係にある箇所の距離が短くなり、予測性能が上がることが確認された。</p></div>
+	<a class="readmore" href="/posts/sequence_to_sequence_learning_with_neural_networks/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
 	  <h2><a href="/posts/google_neural_machine_translation_system/">論文メモ Google&#39;s Neural Machine Transltation System: Bridging the Gap between Human and Machine Translation</a></h2>
 	  <p>May 30, 2020</p>
 	</header>
@@ -161,21 +178,6 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
 目標関数から、ドメイン間のデータの分布が近いほど、目標ドメインのデータでも高い分類性能を発揮する。
 先行研究との違いは、できるだけ共通するする特徴で分類するという着想を、通常の分類と同じく、確率的勾配降下法で実現したところにある。</p></div>
 	<a class="readmore" href="/posts/domain_adversarial_training_of_neural_networks/">Read more</a>
-      </article>
-    
-  
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/character_aware_neural_language_models/">論文メモ Character-Aware Neural Language Models</a></h2>
-	  <p>April 4, 2020</p>
-	</header>
-	<div class="excerpt"><h3 id="概要">概要</h3>
-<p>文字単位の入力から次に出現する単語を予測するニューラル言語モデルの論文である。
-アーキテクチャは入力から近い順にCNN, highway network, LSTMからなる。
-実験データにPenn Treebankを、評価指標にPerplexityを採用してモデルを評価したところ、
-論文が発表された2016年時点での<a href="https://arxiv.org/abs/1409.2329">SOTA</a>の60%程度のパラメタしかないモデルでありながら、これに匹敵する性能を発揮した。</p></div>
-	<a class="readmore" href="/posts/character_aware_neural_language_models/">Read more</a>
       </article>
     
   
