@@ -6,10 +6,24 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 06 Jun 2020 00:18:16 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jun 2020 13:48:07 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ BLEU: a Method for Automatic Evaluation of Machine Translation</title>
+      <link>https://nryotaro.dev/posts/bleu/</link>
+      <pubDate>Sat, 13 Jun 2020 13:48:07 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/bleu/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+&lt;p&gt;自動翻訳を定量的に評価するための指標BLEUを提案した論文である。
+指標は、専門家の翻訳に翻訳に高い評価をあたえるよう設計されている。
+BLEUは、ひとつの候補訳に対する1つ以上の参照訳をあたえ、0から1の値をとるスコアを出力する。
+スコアは高いほどよい。
+BLEUは、参照訳にある単語を過剰に含むことや文の短さにペナルティをあたえ、適合率で候補訳を評価する。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ Sequence to Sequence Learning with Nueral Networks</title>
