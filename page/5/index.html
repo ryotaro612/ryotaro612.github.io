@@ -1,6 +1,6 @@
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.66.0" />
+	<meta name="generator" content="Hugo 0.54.0" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -36,19 +36,6 @@
     
       <article class="summary">
 	<header>
-	  <h2><a href="/posts/a_survey_on_data_collection_for_machine_learning/">メモ A Survey on Data Collection for Machine Learning</a></h2>
-	  <p>October 26, 2019</p>
-	</header>
-	<div class="excerpt"><p>表題の論文は、文字通り、機械学習に使う教師データに関するサーベイ論文であり、
-機械学習や自然言語処理などのデータの応用分野だけでなく、データの管理にまつわる分野の調査も含まれているところに特徴がある。
-データの管理に着目している理由は、深層学習の発展によって必要な教師データが増えたことで、データの管理の課題が顕在化してきたことである。</p></div>
-	<a class="readmore" href="/posts/a_survey_on_data_collection_for_machine_learning/">Read more</a>
-      </article>
-    
-  
-    
-      <article class="summary">
-	<header>
 	  <h2><a href="/posts/structure_estimation_for_dscrete_graphical_models/">メモ Structure estimation for discrete graphical models: Generalized covariance matrices and their inverses</a></h2>
 	  <p>October 19, 2019</p>
 	</header>
@@ -67,6 +54,7 @@
 	  <p>October 12, 2019</p>
 	</header>
 	<div class="excerpt"><h3 id="概要">概要</h3>
+
 <p>表題の論文は、特徴選択において、正例に顕著な特徴から選ぶ割合を明示的に決めることで、正例と負例それぞれに顕著な特徴の割合を調整することが、不均衡な文書分類における予測性能の向上に役立つことを示した。
 情報利得やオッズ比など単変量統計にもとづく特徴選択において、統計量の値によって暗黙的に決められた割合と異なる割合の場合の方が予測性能が高いことを実験的に示した。</p></div>
 	<a class="readmore" href="/posts/feature_selection_for_text_categorization_on_imbalance_data/">Read more</a>
@@ -80,6 +68,7 @@
 	  <p>October 5, 2019</p>
 	</header>
 	<div class="excerpt"><h3 id="概要">概要</h3>
+
 <p>表題の論文では、<a href="https://www.snorkel.org">Snorkel</a>というWeak Supervisionの手法をGoogleで適用した結果の考察と評価がなされている。
 Weak Supervisionは、人手よりも効率良くノイズ交じりの教師データを生成する手法である。
 Snorkelは、引数にサンプルを返り値にラベルを返す複数の関数をラベルなしデータに適用し、結果から関数の精度を予測し、個々の関数よりも高い精度でデータにラベルを与える。この関数をラベリング関数という。Snorkel DryBellは、Snorkelのアルゴリズムをスケールさせるために、MapReduceに適用できるように修正されたものをさす。</p></div>
@@ -105,6 +94,7 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
 	  <p>September 21, 2019</p>
 	</header>
 	<div class="excerpt"><h3 id="概要">概要</h3>
+
 <p>表題の論文は、Weak supervisionの一種であるSnorkelを学習データの収集効率と予測性能についての既存手法や教師あり学習と比べた評価をまとめてる。</p></div>
 	<a class="readmore" href="/posts/snorkel_rapid_training_data_creation_with_weak_supervision/">Read more</a>
       </article>
@@ -117,6 +107,7 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
 	  <p>September 14, 2019</p>
 	</header>
 	<div class="excerpt"><h3 id="概要">概要</h3>
+
 <p>表題の論文は、マイクロソフトでのAIを応用したアプリケーションの開発についての調査結果をまとている。
 著者らは、9人中の8名がMicrosoft Researchに所属し、本論文で2019年のICSEのSoftware Engineering in Practiceの分野でBest Paper Awardを受賞した。
 主な貢献は、各チームにおける開発フローを9のステージに分けて解説したこと、機械学習を応用するアプリケーションやプラットフォームの開発におけるベストプラクティスを示したこと、機械学習を応用するアプリケーションの開発に固有の課題にまつわる論考の3つである。</p></div>
@@ -145,6 +136,7 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
 	  <p>August 31, 2019</p>
 	</header>
 	<div class="excerpt"><h3 id="概要">概要</h3>
+
 <p>表題にある論文は、不均衡データの二値分類についての予測性能を能動学習で改善する手法を提案している。
 着想は、学習器のマージン付近では正例と負例がよりバランスしていると仮定し、
 マージン付近にあるデータを集めることで、均衡のとれたデータセットを用意することにある。
@@ -160,12 +152,26 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
 	  <p>August 24, 2019</p>
 	</header>
 	<div class="excerpt"><h3 id="概要">概要</h3>
+
 <p>表題にあるニューラルネットワークの蒸留についての論文を紹介する。
 蒸留は、既存のモデルを使い、できるだけ予測性能を落とさずに、より小さいモデルを作るための学習手法である。
 既存のモデルとして想定されているのは、複数のモデルからなるモデルや正則化された大きなモデルのように予測性能は高いが計算コストが高いものであり、
 蒸留の目的は本番の運用に耐えられるデプロイ可能なモデル作ることにある。
 本論文は、出力層の活性化関数に温度つきソフトマックスを使った多クラス分類のモデルを蒸留する手法を提案し、実験により手法を評価している。</p></div>
 	<a class="readmore" href="/posts/distilling_the_knowledge_in_a_neural_network/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
+	  <h2><a href="/posts/fastxml/">メモ FastXML: A Fast, Accurate and Stable Tree-classifier for eXtreme Multi-label Learning</a></h2>
+	  <p>August 24, 2019</p>
+	</header>
+	<div class="excerpt"><p>表題にあるExtreme multi-label classificationの手法を紹介する。
+Extreme multi-label classificationの目的は、大量のラベルの候補から与えられたデータに関連する複数のラベルを推定する学習器を構築することにある。
+FastXMLは、弱学習器に決定木を使うアンサンブル学習であり、ノードの分割の評価関数にnDCGを採用することで、学習にかかる時間と予測精度の向上を意図している。</p></div>
+	<a class="readmore" href="/posts/fastxml/">Read more</a>
       </article>
     
   

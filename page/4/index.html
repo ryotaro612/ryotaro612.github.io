@@ -1,6 +1,6 @@
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.66.0" />
+	<meta name="generator" content="Hugo 0.54.0" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -36,23 +36,11 @@
     
       <article class="summary">
 	<header>
-	  <h2><a href="/posts/glove_vectors_for_word_representation/">論文メモ GloVe: Global Vectors for Word Representation</a></h2>
-	  <p>December 21, 2019</p>
-	</header>
-	<div class="excerpt"><h3 id="概要">概要</h3>
-<p><a href="https://www.aclweb.org/anthology/D14-1162.pdf">GloVe</a>は,コーパスに出現する単語の共起回数を学習するニューラル言語モデルである。
-既存手法を単語の出現頻度の統計値つかう手法と対数双線形モデルに分類し、両者の長所を備え短所を補う手法として、GloVeを提案する。</p></div>
-	<a class="readmore" href="/posts/glove_vectors_for_word_representation/">Read more</a>
-      </article>
-    
-  
-    
-      <article class="summary">
-	<header>
 	  <h2><a href="/posts/bert/">論文メモ BERT: Pre-training of Deep Bidirectional Transformers for Lnaguages Understaing</a></h2>
 	  <p>December 14, 2019</p>
 	</header>
 	<div class="excerpt"><h3 id="概要">概要</h3>
+
 <p>BERTは<a href="https://arxiv.org/pdf/1706.03762.pdf">Attention Is All You Need</a>にあるTransformerをアーキテクチャに導入した分散表現のモデルであり、本稿は、事前学習済みのBERTにファインチューニングを適用しQAタスクや自然言語推論のベンチマークにおいて既存研究を上回る結果を示している。
 なお、アーキテクチャに関する説明は少なく、子細に知りたい場合は<a href="https://arxiv.org/pdf/1706.03762.pdf">Attention Is All You Need</a>や<a href="http://nlp.seas.harvard.edu/2018/04/03/attention.html">The Annotated Transformer</a>を参照するように案内されている。</p></div>
 	<a class="readmore" href="/posts/bert/">Read more</a>
@@ -66,6 +54,7 @@
 	  <p>December 14, 2019</p>
 	</header>
 	<div class="excerpt"><h3 id="概要">概要</h3>
+
 <p>宿泊予約サービス<a href="http://booking.com/">Booking.com</a>におけるモデルの開発運用でえられた教訓を6つにまとめたKDD2019の論文である。
 教訓の主眼を収益におき、6つの教訓を通して、実運用環境における仮説と実験を反復する重要性を強調する。</p></div>
 	<a class="readmore" href="/posts/150_successfuly_machine_learning_modes/">Read more</a>
@@ -79,6 +68,7 @@
 	  <p>December 7, 2019</p>
 	</header>
 	<div class="excerpt"><h3 id="概要">概要</h3>
+
 <p>Yahooの検索エンジンを解説するKDD16の論文である。
 論文におけるランキングの課題は、クエリと文書の語彙がことなること、ほとんどのクエリは滅多に入力されないこと、クエリの意味の解釈が難しいことである。
 これらの課題に対する手法として、ランキングのモデル、特徴のつくりかた、クエリを文書によせる翻訳モデルを解説する。</p></div>
@@ -136,6 +126,7 @@ DESMは、クエリの単語に関係する単語をもとに判断する。
 	  <p>November 9, 2019</p>
 	</header>
 	<div class="excerpt"><h3 id="概要">概要</h3>
+
 <p>ある確率でデータに誤ったラベルをふるlabelerでデータにラベルをふるときに、
 既にラベルのあるデータに重ねてラベルをふるべきか調査した。
 12種類のラベルつきデータセットを使い、
@@ -167,12 +158,26 @@ DESMは、クエリの単語に関係する単語をもとに判断する。
 	  <p>October 31, 2019</p>
 	</header>
 	<div class="excerpt"><h3 id="概要">概要</h3>
+
 <p>表題の論文は、Web上の表から抽出した大量の関係モデルを対象にした検索を提案・評価した
 。検索の他にも、一部の属性を入力とするスキーマの補完、入力した属性ないしスキーマに類似のものを推定するアルゴリズムの議論もある。
 ここのスキーマは属性のリストである。論文の著者らは研究時にGoogleに在籍しており、論文で使われたコーパスはグーグルの汎用ウェブクローラで集めた141億のHTMLの表から抽出した高精度な154百万の関係モデルである。
 コーパスに使うものはHTML形式の表から抽出した関係モデルのみである。
 手法の新規性は、1億以上もの大量のテーブルを対象にしていることにある。</p></div>
 	<a class="readmore" href="/posts/web_tables/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
+	  <h2><a href="/posts/a_survey_on_data_collection_for_machine_learning/">メモ A Survey on Data Collection for Machine Learning</a></h2>
+	  <p>October 26, 2019</p>
+	</header>
+	<div class="excerpt"><p>表題の論文は、文字通り、機械学習に使う教師データに関するサーベイ論文であり、
+機械学習や自然言語処理などのデータの応用分野だけでなく、データの管理にまつわる分野の調査も含まれているところに特徴がある。
+データの管理に着目している理由は、深層学習の発展によって必要な教師データが増えたことで、データの管理の課題が顕在化してきたことである。</p></div>
+	<a class="readmore" href="/posts/a_survey_on_data_collection_for_machine_learning/">Read more</a>
       </article>
     
   

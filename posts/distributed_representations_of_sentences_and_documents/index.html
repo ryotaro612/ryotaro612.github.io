@@ -36,19 +36,25 @@
     <p>December 28, 2019</p>
   </header>
   <h3 id="概要">概要</h3>
+
 <p><a href="https://radimrehurek.com/gensim/models/doc2vec.html">Doc2Vec</a>のアルゴリズムとして採用されたニューラル言語モデルParagraph Vectorを提案した論文である。
 bag of wordsは、文書の単語順を記憶せず、また、似た意味の単語ベクトルと無関係なベクトルを単語にわりあてる。
 Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文脈の中心の単語をあてられるように学習することで、可変長文字列から固定長の文書埋め込みベクトルを生成できるようになる。
 これにより、単語順と単語の意味を記憶したベクトルの生成を実現する。</p>
+
 <h3 id="モデルの種類">モデルの種類</h3>
+
 <p>Paragraph Vectorには、2種類のアーキテクチャがあり、それぞれ、Distributed memory Model of Paragraph Vectors(PV-DM)とDistributed Bag of Words version of Paragraph Vector(PV-DBOW)という。
 PV-DMだけでも期待できる予測性能をだせるが、両者のモデルで生成したベクトルを連結するほうが結果が安定する。</p>
+
 <h3 id="pv-dm">PV-DM</h3>
+
 <p>PV-DMは、パラグラフとパラグラフ内の文脈から文脈の中心にある単語を予測できるように学習する。
 学習の様子を以下の図に示す。
-<img src="/distributed_representations_of_sentences_and_documents/pvdm.png" alt="pvdm">
+<img src="/distributed_representations_of_sentences_and_documents/pvdm.png" alt="pvdm" />
 \(D\)と\(W\)は、それぞれ、パラグラフや単語と1対1に対応する。
 \(T_i\)をパラグラフ\(d_i\)の単語数、\(N\)をパラグラフの総数、\(w_{i,t}\)を\(d_i\)の\(t\)番目に出現する単語とおくと、最大化すべき目的関数を次の式で表せる。</p>
+
 <p>$$
 \sum_{i=1}^{N}\sum_{t=k}^{T_i-k}\log p(w_{i,t} \mid d_i, w_{i, t-k}, \dots , w_{i, t+k})
 $$
@@ -60,17 +66,24 @@ y = b + Uh(d_i, w_{i, t-k}, \dots , w_{i, t+k}; D, W)
 $$
 \(U\)と\(b\)はソフトマックスのパラメタ、\(h\)はベクトルを連結または平均する関数である。
 論文の実験では連結が採用されている。</p>
+
 <p>ソフトマックスの計算量を減らすために、word2vecのように、階層的ソフトマックスを利用できる。
 <a href="https://radimrehurek.com/gensim/models/doc2vec.html">gensim</a>の実装では負例サンプリングのオプションが提供されている。</p>
+
 <p>パラメータの更新にはSGDを使う。
 各ステップでは、無作為にパラグラフを選び、その中の文脈について勾配を計算する。</p>
+
 <p>パラグラフの埋め込みベクトルを計算するときは、\(D\)に列を追加しパラグラフのベクトルを学習する。
 ベクトルを求めるパラグラフに対応する列を\(D\)に追加し、\(W\), \(U\), \(b\)を固定した状態で学習する。</p>
+
 <h3 id="pv-dbow">PV-DBOW</h3>
+
 <p>PV-DBOWは、パラグラフから無作為に選ばれた単語を、パラグラフだけから推定できるよう学習する。
 アーキテクチャを次の図に示す。SGDの各ステップでは、文脈を選び、その中から無作為に選んだ単語を推定し、勾配を計算する。
-<img src="/distributed_representations_of_sentences_and_documents/pv-dbow.png" alt="pv-dbow"></p>
-<hr>
+<img src="/distributed_representations_of_sentences_and_documents/pv-dbow.png" alt="pv-dbow" /></p>
+
+<hr />
+
 <ul>
 <li>論文への<a href="https://arxiv.org/pdf/1405.4053v2.pdf">リンク</a></li>
 <li>画像は論文から引用されています。</li>

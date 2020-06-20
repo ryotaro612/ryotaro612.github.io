@@ -36,23 +36,30 @@
     <p>February 16, 2020</p>
   </header>
   <h3 id="概要">概要</h3>
+
 <p>事前学習とファインチューニングにより<a href="https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf">seq2seq</a>の汎化性能を改善する手法を提案した論文である。
 encoderの重みを学習済み言語モデルの重みで初期化する。
 decoderについても、encoderと別の言語モデルを用意し、その重みで初期化する。
 ただし、工夫のないファインチューニングをすると<a href="https://arxiv.org/pdf/1312.6211.pdf">破滅的忘却</a>が生じてしまう。
 そこで、ファインチューニングでは言語モデルとseq2seqの目的関数の両方を学習につかうことで、過学習をさけ、汎化性能を確保する。</p>
+
 <h3 id="アーキテクチャ">アーキテクチャ</h3>
+
 <p>言語モデルで重みを初期化する着想は、encoderのないdecoderや出力層のないencoderが言語モデルに似ているという観察に由来する。
 実験では、言語モデルに1層のLSTMが採用されている。
 encoderとdecoderのembedding層と1層目のLSTMを各言語モデルの重みで初期化する。
 seq2seqには3層のLSTMが使われる。
 事前学習のほか、後述のresidual connectionsと注意機構を導入することで、わずかであるが一貫した改善がみられた。</p>
+
 <h4 id="residual-connections">Residual connections</h4>
+
 <p>decoderの2層目以降は無作為に初期化されるため、ソフトマックス層へ入力されるベクトルは無作為になる。
 これを避けるために、以下の図(a)のように、1層目のLSTMの出力からソウトマックス層へのresidual connectionを設ける。
 青の背景は、事前学習でえられた重みで初期化された範囲を示す。
-<img src="/unsupervised_pretraining_for_sequence_to_sequence_learning/fig1.png" alt="fig1"></p>
+<img src="/unsupervised_pretraining_for_sequence_to_sequence_learning/fig1.png" alt="fig1" /></p>
+
 <h4 id="multi-layer-attention">Multi-layer attention</h4>
+
 <p>図の(b)のように、encoderにおけるLSTMの最初と最後の層の状態とdecoderのソフトマックスへの入力ベクトル\(q_t\)から文脈ベクトルをつくる。
 encoderの1層目の状態を\(h^{1}_1 , \dots , h^1_{T}\), 最後の層の状態を\(h^{L}_1 , \dots , h^L_{T}\)とすると文脈ベクトル\(c_t\)を次のように算出する。
 $$
@@ -67,7 +74,9 @@ $$
 $$
 c_t=[c^1_{t};c^L_t]
 $$</p>
-<hr>
+
+<hr />
+
 <ul>
 <li>論文は<a href="https://www.aclweb.org/anthology/D17-1039.pdf">こちら</a>からダウンロードできます。</li>
 <li>図はすべて論文から引用されています。</li>

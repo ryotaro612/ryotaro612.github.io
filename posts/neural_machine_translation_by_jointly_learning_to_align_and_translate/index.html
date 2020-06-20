@@ -36,6 +36,7 @@
     <p>February 1, 2020</p>
   </header>
   <h3 id="概要">概要</h3>
+
 <p>Decoderに注意機構を採用したencoder-decoderモデルを提案した論文である。
 ICLR2015で発表された。
 論文の発表当時、encoder-decoderモデルによる翻訳の多くは、encoderが入力文を固定長ベクトルに変換し、固定長ベクトルから翻訳された文を出力していた。
@@ -44,7 +45,9 @@ ICLR2015で発表された。
 推定時には、まず、次に生成する単語に関係する入力文の箇所を推定する。
 次に、推定された箇所と生成済の単語列をもとに、単語を生成する。
 特に長い文書の翻訳において、固定長ベクトルをつかうモデルよりも、提案手法が優れていることを実験的に示した。</p>
+
 <h3 id="decoder">Decoder</h3>
+
 <p>長さ\(T_{T_x}\)のone-hotベクトルのシーケンス\({\rm \boldsymbol{x}}\)を入力文、長さ\(T_{T_y}\)のシーケンス\({\rm \boldsymbol{y}}\)を出力文とする。
 \({\rm \boldsymbol{x}}\)と\({\rm \boldsymbol{y}}\)の間には次の関係が成り立つ。
 $$
@@ -53,7 +56,7 @@ $$
 \(p({\rm \boldsymbol{y}})\)を次のように条件付き確率に分解する。
 $$
 \begin{align}
-p({\rm \boldsymbol{y}})&amp;=\prod_{t=1}^{T_{y}}p(y_i\mid y_1 , \dots ,y_{i-1}, {\rm \boldsymbol{x}}) \\<br>
+p({\rm \boldsymbol{y}})&amp;=\prod_{t=1}^{T_{y}}p(y_i\mid y_1 , \dots ,y_{i-1}, {\rm \boldsymbol{x}}) \<br />
 &amp;=\prod_{t=1}^{T_{y}} g(y_{i-1}, s_i, c_i)
 \end{align}
 $$
@@ -75,11 +78,15 @@ $$
 e_{ij}=a(s_{i-1},h_j)
 $$
 であり、\(a\)は論文中でalignment modelと呼ばれる、順伝播ネットワークである。</p>
+
 <h3 id="encoder">Encoder</h3>
+
 <p>decoderの入力にある\(h_j\)は、\(j\)番目の単語周辺に注目した入力文全体の情報を含むベクトルである。
 Encoderには、bidirectional RNNが使われる。
 \(h_j\)は、j番目の単語に対応する順方向と逆方向の内部状態を連結したベクトルである。</p>
-<hr>
+
+<hr />
+
 <p>論文を<a href="https://arxiv.org/abs/1409.0473">こちら</a>からダウンロードできます。</p>
 </article>
 

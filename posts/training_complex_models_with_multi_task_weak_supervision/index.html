@@ -36,13 +36,17 @@
     <p>September 28, 2019</p>
   </header>
   <p>論文の表題は、ソース間の粒度や精度が揃っていることを前提とせず、<a href="https://arxiv.org/pdf/1212.0478.pdf">LohとWainwrightらの手法</a>でソースの精度を推定し、ソースのラベルよりも精度が高いラベルをデータに与えるWeak supervsionの手法である。</p>
+
 <p>論文で紹介される手法は、<a href="https://github.com/HazyResearch/metal"><em>MeTaL</em></a>という名のフレームワークとして実装され、公開されている。
 ただし、<a href="https://github.com/HazyResearch/metal#project-status">Projectの状況</a>にあるように、MeTaLプロジェクトは、<a href="https://www.snorkel.org/">Snorkel</a>に吸収されることになり、今はメンテナンスモードにある。</p>
+
 <p>ソースとは、データに対して必ずしも正しいとは限らないラベルを付与するための知識源を示す。
 MeTaLが対象にする状況は、ソース同士が粒度の異なるラベルを割りあてる場合である。
 固有表現抽出の例をあげれば、作りたいラベルが医者や弁護士のような職業や組織のとき、あるソースは参照表現が人か組織を判別する一方で、別のソースが職業を判別する場合がある。
 MetTaLは、各ソースのラベル付けをサブタスクとみなし、ソースがつけるラベルの種類のグラフ構造とソースがつけるラベルからソースの精度を予測し、ソースよりも高い精度でデータにラベルを与える。</p>
-<hr>
+
+<hr />
+
 <p>論文は<a href="https://arxiv.org/pdf/1810.02840.pdf">こちら</a>からダウンロードできます。</p>
 </article>
 

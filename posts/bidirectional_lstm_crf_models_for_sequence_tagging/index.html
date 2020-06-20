@@ -36,25 +36,33 @@
     <p>October 5, 2018</p>
   </header>
   <h3 id="概要">概要</h3>
+
 <p>本稿では、NLPにおける系列ラベリングためのニューラルネットワークアーキテクチャの提案と評価がなされている。
 このアーキテクチャは、当ページで以前紹介した<a href="https://aclweb.org/anthology/papers/C/C18/C18-1139/">Contextual String Embeddings for Sequence Labeling</a>で応用されている。</p>
+
 <p>評価に用いられたタスクはPOS, chunking, NERの３つであり、実験では2015年時点で既存手法と比較して最高のaccuracyが得られた。
 実験で使用された入力には3種類あり、小文字に変換された単語、表記関わる情報、n-gramになった隣接する小文字になった単語と表記情報がある。
 表記に関わる情報とは、単語が大文字から始まるか、単語に数字が含まれる化などの特徴量エンジニアリングで抽出される情報をさす。</p>
+
 <p>ネットワークのアーキテクチャは、<a href="https://arxiv.org/abs/1303.5778">Bidirectional LSTM</a>の後にCRFが繋がった構成をなす。
 Bidirectional LSTMは、先頭から入力される系列に加え、後方から入力される系列をもとに系列のタグを予測する。
 これに対して、CRFは入力に加えて以前のタグもタグの予測に使われる。
 本手法の着想は、Bidirectional LSTMとCRFではタグの予測に使う情報が異なることに注目したことにある。
 2つを組み合わせて双方が予測に使う情報を全て使うことに著者らの狙いがある。
 理解のために、論文中で示されているCRF, LSTM, Bidirectional LSTMの図を以下に示す。</p>
-<p><img src="/bidirectional_lstm/1.png" alt="1">
-<img src="/bidirectional_lstm/2.png" alt="2">
-<img src="/bidirectional_lstm/3.png" alt="3"></p>
+
+<p><img src="/bidirectional_lstm/1.png" alt="1" />
+<img src="/bidirectional_lstm/2.png" alt="2" />
+<img src="/bidirectional_lstm/3.png" alt="3" /></p>
+
 <h3 id="感想">感想</h3>
+
 <p>意外だったのは、評価で比較されたアーキテクチャにBLSTM-CRF, LSTMなど深層学習に属するものが含まれる中で最も精度の高いベースラインとなったのはCRFだったこと。
 ただし、単語のみを入力した場合、CRFは他のアーキテクチャと比べて大幅に精度が落ちており、著者らはCRFの精度は特徴量エンジニアリングによるものだと評価している。
 これを省みるに、実プロジェクトにおいて特徴量エンジニアリングが大変でなければCRFだけでも高い精度を出せるのか興味がある。</p>
-<hr>
+
+<hr />
+
 <p>論文は<a href="https://arxiv.org/abs/1508.01991">こちら</a>からダウンロードできます。</p>
 </article>
 

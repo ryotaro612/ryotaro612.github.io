@@ -39,6 +39,7 @@
 超平面は1または-1の重みのついた少数の座標軸で定義される。
 これにより、探索時の分岐にかかる計算が、加算と減算だけからなる\(O(1)\)となる。
 また、射影されたデータの分散の大きい超平面を探し、同じ分割にある点同士の距離を小さくすることで、精度を向上させている。</p>
+
 <p>超平面は、データの次元を\(d\)とすると\(f({\rm x};\theta)=f({{\rm x};{\rm w}, b}) = {\rm w}^{T}{\rm x} - b, {\rm w} = [w_1,\cdots w_i\cdots \cdots w_d]^{T}\)で表わされる。
 \(b\)は射影された値の平均か中央値のいずれかであり、\(w_i \in\{1, 0, -1\}\)である。
 \(f\)によって分割された二次元空間を以下に例示する。
@@ -46,13 +47,18 @@
 kd木は\(\mid\mid{\rm w}\mid\mid_0=1\)のTP Treeとみなせる。
 右図は、\(\mid\mid{\rm w}\mid\mid_0&gt;0\)のTP Treeである。
 \(\mid\mid{\rm x}\mid\mid_0\)の制約のないため、右図の空間はより柔軟に分割されている。</p>
-<p><img src="/tptree1.png" alt="tp木"></p>
+
+<p><img src="/tptree1.png" alt="tp木" /></p>
+
 <p>空間を分割するときの、\({\rm w}\)の最適解は以下で定義される。
 \(\tau\)の要素数は、\(\frac{3^d-1}{2}\)であり、次元\(d\)に対して指数関数的に大きくなる。そのため、近似解を求める手法が提案されている。</p>
+
 <p>$$
-\underset{{\rm w}\in \tau}{\operatorname{argmax}}\ {\rm Var}_{{\rm x} \in \widetilde{\chi}}[{\mid\mid{\rm w}\mid\mid}_2^{-1}{\rm w}^T{\rm x}]
+    \underset{{\rm w}\in \tau}{\operatorname{argmax}}\ {\rm Var}_{{\rm x} \in \widetilde{\chi}}[{\mid\mid{\rm w}\mid\mid}_2^{-1}{\rm w}^T{\rm x}]
 $$</p>
-<hr>
+
+<hr />
+
 <ul>
 <li><a href="https://jingdongwang2017.github.io/Pubs/TPAMI-TPTree.pdf">こちら</a>から論文を参照できます。</li>
 <li>文中の図は論文から引用されています。</li>

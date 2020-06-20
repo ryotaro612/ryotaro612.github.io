@@ -36,47 +36,63 @@
     <p>June 13, 2020</p>
   </header>
   <h3 id="概要">概要</h3>
+
 <p>自動翻訳を定量的に評価するための指標BLEUを提案した論文である。
 指標は、専門家の翻訳に翻訳に高い評価をあたえるよう設計されている。
 BLEUは、ひとつの候補訳に対する1つ以上の参照訳をあたえ、0から1の値をとるスコアを出力する。
 スコアは高いほどよい。
 BLEUは、参照訳にある単語を過剰に含むことや文の短さにペナルティをあたえ、適合率で候補訳を評価する。</p>
+
 <h3 id="modified-n-gram-precision">Modified n-gram precision</h3>
+
 <p>BLEUにおける適合率は、参照訳にある単語を過剰に含む候補訳にペナルティを課す。
 算出するには、まず、候補訳と参照訳の各ngramトークンについて、出現回数を数える。
 あるngramトークンの候補文における出現回数を\(Count\), 参照訳ごとの出現回数のうち最大値を\(Max\_Ref\_Count\), \(Count_{clip}=\min(Count, max\_Ref\_Count)\)とする。
 このとき、候補訳のngramの集合を\(C\)とすると、候補訳の適合率を次の式で算出する。</p>
+
 <p>$$
 \frac{\sum_{\text{n-gram}\in C}Count_{clip}(\text{n-gram})}{\sum_{\text{n-gram}\in C}Count(\text{n-gram})}
 $$</p>
+
 <p>例えば、上の計算式にもとづく場合、以下の候補訳の適合率は、\(\min(2, 7)/7\)となる。
 theは、参照訳に含まれるものの、過剰に生成された単語theについてペナルティが課されている。</p>
+
 <ul>
 <li>候補訳: the the the the the the the.</li>
 <li>参照訳1: The cat is on the mat.</li>
 <li>参照訳2: There is a cat on the mat.</li>
 </ul>
+
 <p>翻訳された文書全体のnグラムの適合率\(p_n\)を計算する場合、文書に含まれる候補訳の集合を\(Candidates\)として次の計算で\(P_n\)を計算する。</p>
+
 <p>$$
-p_n=\frac{\sum_{C\in\{Candidates\}}\sum_{\text{n-gram}\in C}Count_{clip}(\text{n-gram})}{\sum_{C&rsquo;\in \{Candidates\}}\sum_{\text{n-gram}'\in C&rsquo;}Count(\text{n-gram}')}
+p_n=\frac{\sum_{C\in\{Candidates\}}\sum_{\text{n-gram}\in C}Count_{clip}(\text{n-gram})}{\sum_{C&rsquo;\in \{Candidates\}}\sum_{\text{n-gram}&rsquo;\in C&rsquo;}Count(\text{n-gram}&lsquo;)}
 $$</p>
+
 <h3 id="短い候補訳へのペナルティ">短い候補訳へのペナルティ</h3>
+
 <p>Medified n-gram precisionは短い候補訳に高いスコアを与えるため、文の短さについてもペナルティを課す必要がある。
 各候補訳について、その長さに最も近い参照訳を求め、その長さの合計値を\(r\), 候補訳の文書の長さを\(c\)として、\(c\le r\)のとき、長さの違いにしたがって、次のようにペナルティを課す。</p>
+
 <p>$$
 \text{BP}=
 \begin{cases}
-1&amp;\text{if}\ c&gt;r \\<br>
+1&amp;\text{if}\ c&gt;r \<br />
 e^{(1-r/c)}&amp;\text{if}\ c\le r
 \end{cases}
 $$</p>
+
 <h3 id="bleuスコア">BLEUスコア</h3>
+
 <p>以上の適合率とペナルティから次の計算でBLEUを算出する。</p>
+
 <p>$$
 \text{BLEU} = \text{BP}\cdot \exp\left(\sum^N_{n=1}w_n\log p_n\right)
 $$
 ベースラインでは、\(N=4\), \(w_n=\frac{1}{N}\)をもちいる。</p>
-<hr>
+
+<hr />
+
 <ul>
 <li>論文は<a href="https://www.aclweb.org/anthology/P02-1040/">こちら</a>からダウンロードできます。</li>
 <li>BLEUは、複数の参照訳をもちいるため、再現率をもちいることは難しい。</li>

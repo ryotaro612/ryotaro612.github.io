@@ -36,11 +36,14 @@
     <p>January 26, 2020</p>
   </header>
   <h3 id="概要">概要</h3>
+
 <p>モデルの予測に説明をあたえる手法、Local Interpretable Model-agnostic Explanations (LIME)を提案する。
 モデルが回帰や分類器であれば、アルゴリズムによらずLIMEを適用できる。
 説明を与えたい事例近くにある事例を解釈可能なモデルに学習させ、解釈可能なモデルで予測を説明する。
 また、個別の予測ではなく、モデル自体をよく説明する事例を集める手法Submodullar Pick (SP)-LIMEを提案する。</p>
+
 <h3 id="lime">LIME</h3>
+
 <p>説明を与えたいモデルを\(f\)、解釈可能なモデルを\(g\in G\), \(\pi_x(z)\)を\(z\)の\(x\)への近さ、\(\Omega (g)\)を解釈可能なモデルの複雑さ、
 \(\mathcal{L}\)を\(f\)の予測を\(g\)でどれだけ近似できていないか測る指標とすると、
 LIMEは事例\(x\)の説明を与える解釈可能なモデル\(\xi(x)\)を求める。
@@ -53,18 +56,22 @@ $$
 $$
 \mathcal{L}(f, g,\pi_x)=\sum_{z,z&rsquo;\in\mathcal{Z}}\pi_x (z)(f(z)-g(z&rsquo;))^2
 $$
-<img src="/why_should_i_trust_you/lime.png" alt="lime">
+<img src="/why_should_i_trust_you/lime.png" alt="lime" />
 \(g\)は解釈可能なければならないため、\(x&rsquo;\)もまた解釈できるものでなければならない。
 例えばテキスト分類であればbag-of-wordsをもちいる。</p>
+
 <h3 id="sp-lime">SP-LIME</h3>
+
 <p>SP-LIMEはモデルをよく説明する事例の集合を見つけだす。\(B\)を求める集合の要素数の上限、\(c(V, \mathcal{W}, I)\)を
 $$
 \newcommand{\1}{\mbox{1}\hspace{-0.25em}\mbox{l}}
 c(V, \mathcal{W}, I)=\sum^{d&rsquo;}_{j=1}\1_{\exists i\in V:\mathcal{W}_{i,j&gt;0}}I_j
 $$
 として、次のアルゴリズムにより、既に集められた事例にみられない重要な特徴をもつ事例を探索する。
-<img src="/why_should_i_trust_you/sp-lime.png" alt="sp-lime"></p>
-<hr>
+<img src="/why_should_i_trust_you/sp-lime.png" alt="sp-lime" /></p>
+
+<hr />
+
 <ul>
 <li>論文を<a href="https://arxiv.org/abs/1602.04938">こちら</a>からダウンロードできます。</li>
 <li>画像はすべて論文から引用されています。</li>

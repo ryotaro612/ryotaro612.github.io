@@ -40,26 +40,32 @@
 この修正と学習を条件を満たすまでくりかえす。
 反復的な学習で大域的最適解をえられるモデルであれば、最適解への収束が保証される。
 データの修正件数が等しい場合に、先行研究と比べて最大2.5倍の精度改善を達成した。</p>
+
 <p>ActiveCleanの全体像を以下の図に示す。外側の実線がActiveCleanの範囲であり、六角形はモデルを示す。
-<img src="/active_clean/architecture.png" alt="Architecture">
+<img src="/active_clean/architecture.png" alt="Architecture" />
 Samplerは汚れのあるデータを推定する。Cleanerはデータの修復を示す。Updaterは汚れのないデータでモデルのパラメタを更新する。</p>
+
 <p>大域的最適解への収束と汚れたデータの推定の最適化は、SGDの性質によって、担保される。
 通常のSGDによる学習との違いは、汚れのある教師データで、汚れのないデータで求まる損失関数\(\phi\)の勾配を推定することである。
 以下の図はパラメタの更新の様子を表す。縦軸と横軸は、それぞれ損失関数とパラメタの値に対応する。
 赤線と青線は損失関数のグラフであり、両者はデータの汚れの有無がことなる。
-<img src="/active_clean/fig3.png" alt="fig3">
+<img src="/active_clean/fig3.png" alt="fig3" />
 左図のように、汚れのあるデータで求める最適なパラメタは、汚れのないデータのそれとは異なる。
 そこで、これまでにえられた汚れのないデータで、全ての教師データが汚れていない場合の損失関数の勾配を推定する。
 パラメタを\(\theta\)とすると、勾配の推定値は\(g(\theta)\)である。</p>
+
 <p>$$
 g (\theta) = \frac{\mid R_\mathcal{clean}\mid}{\mid R\mid}\cdot g_{C}(\theta)+\frac{\mid R_\mathcal{dirty}\mid}{\mid R\mid}\cdot g_S(\theta)
 $$</p>
+
 <p>$$
 g_C (\theta) = \frac{1}{\mid R_\mathcal{clean}\mid}\sum_{i\in R_\mathcal{clean}} \nabla\phi(x_i^{( c )}, y_i^{( c )}, \theta)
 $$</p>
+
 <p>$$
 g_S (\theta) = \frac{1}{\mid S\mid}\sum_{i\in S}\frac{1}{p(i)}\nabla\phi(x_i^{( c )}, y_i^{( c )}, \theta)
 $$</p>
+
 <p>\((x_i^{( c )}, y_i^{( c )})\)は修正後のデータとラベルの組、
 \(R\)は\(x\)のと1対1の関係にあるレコード\(r\)の集合であり、修正とはレコード\(r\)をレコード\(r&rsquo;\)ないしは\(\emptyset\)に変換する操作をいう。
 \(R_\mathcal{clean}\)は修正後のレコードの集合, \(R_\mathcal{dirty}\)は確率\(p\)で推定されていないレコードの集合を示す。
@@ -68,31 +74,39 @@ $$</p>
 $$
 \theta^{(t+1)} \leftarrow \theta^{(t)} - \gamma\cdot g(\theta^{(t)})
 $$</p>
+
 <p>勾配を推定ために、汚れのあるレコードの推定方法\(p(i)\)を定める。
 バッチサイズと反復回数が定数の場合、\(g^*\)を汚れのない教師データで計算した勾配と仮定すると、収束率の上界は\(\mathcal{O}(\sigma^2)\)である。ただし、\(\sigma^2\)を</p>
+
 <p>$$
 \sigma^{2} = \mathbb{E}(\mid\mid g- g^{*}\mid\mid^{2})
 $$</p>
+
 <p>とする。そこで</p>
+
 <p>$$
-\underset{p}{\operatorname{argmin}}\ \mathbb{E}(\mid\mid g_S - g^* \mid\mid^{2})
+    \underset{p}{\operatorname{argmin}}\ \mathbb{E}(\mid\mid g_S - g^* \mid\mid^{2})
 $$
 が成り立つように\(p\)を定める。
 <a href="http://tongzhang-ml.org/papers/icml15-sois.pdf">[1]</a>より
 \(p_i \propto\mid\mid\nabla\phi(x_i^{( c )}, y_i^{( c )}, \theta^{(t)})\mid\mid\)であり、
 また、学習と同様に、汚れのないデータを推定する方針で\(p\)を、</p>
+
 <p>$$
 \begin{aligned}
-\nabla\phi(x_i^{( c )}, y_i^{( c )}, \theta^{(t)}) &amp;\approx \nabla\phi(x_i^{(d)}, y_i^{(d)}, \theta^{(t)})\\<br>
-&amp; + \frac{\partial}{\partial X}\nabla\phi(x_i^{(d)}, y_i^{(d)}, \theta^{(t)})\cdot (x^{(d)} - x^{( c)}) \\<br>
+\nabla\phi(x_i^{( c )}, y_i^{( c )}, \theta^{(t)}) &amp;\approx \nabla\phi(x_i^{(d)}, y_i^{(d)}, \theta^{(t)})\\<br />
+&amp; + \frac{\partial}{\partial X}\nabla\phi(x_i^{(d)}, y_i^{(d)}, \theta^{(t)})\cdot (x^{(d)} - x^{( c)}) \\<br />
 &amp; + \frac{\partial}{\partial Y}\nabla\phi(x_i^{(d)}, y_i^{(d)}, \theta^{(t)})\cdot (x^{(d)} - x^{( c)})
 \end{aligned}
 $$
 と近似する。\( (x_i^{(d)}, y_i^{(d)}) \)は修正前のデータを示す。</p>
+
 <p>論文では、大域的最適解が保証されるモデルはconvex loss modelsとよばれている。
 SVMや線形回帰、ロジスティック回帰などがconvex loss modelsにあたる。
 Convex loss modelsでない場合、初期状態のデータで学習したパラメタに最も近い局所最適解に収束するので、ActiveCleanでえられる精度はモデルの初期状態に依存する。</p>
-<hr>
+
+<hr />
+
 <p>論文は<a href="http://www.vldb.org/pvldb/vol9/p948-krishnan.pdf">こちら</a>からダウンロードできます。
 文章にある論文はすべて論文から引用されています。</p>
 </article>
