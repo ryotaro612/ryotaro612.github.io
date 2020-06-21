@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ A Neural Attention Model for Sentence Summarization</h2>
+    <p>June 20, 2020</p>
+  </header>
+  <p>注意機構による深層学習で文を要約する手法である。
+もとの文にない単語を含む要約文を生成できるが、生成前に文の長さを決めておかなければならない。</p>
+
+<p>モデルへの入力文を\(\boldsymbol{\rm x}\), 出力文を\(\boldsymbol{\rm y}\)とすると、スコア関数\(s\)を含む次の式が最適な要約文になるようモデルを学習する。
+$$
+\underset{\boldsymbol{\rm y}\in \mathcal{Y}}{\operatorname{argmax}} s(\boldsymbol{\rm x}, \boldsymbol{\rm y})
+$$
+入力文\(\boldsymbol{\rm x}_1, \dots , \boldsymbol{\rm x}_M\)や出力文\(\boldsymbol{\rm y}_1, \dots , \boldsymbol{\rm y}_N\)のトークンは、要素数\(\mid V\mid\)の語彙\(\mathcal{V}\)のOne-hotベクトルで表される。
+要約であるため、\(N &lt; M\)になる。</p>
+
+<p>ウインドウサイズを\(C\)とする\(\boldsymbol{\rm y}_c\triangleq \boldsymbol{\rm y}_{[i-C+1,\dots , i]}\)によるマルコフ性を仮定し、スコア関数を次の式で近似する。
+$$
+\begin{align}
+s(\boldsymbol{\rm x}, \boldsymbol{\rm y})&amp;\approx \sum^{N-1}_{i=0}\log p(\boldsymbol{\rm y}_{i+1}\mid \boldsymbol{\rm x}, \boldsymbol{\rm y}_c;\theta)\\<br />
+p(\boldsymbol{\rm y}_{i+1}\mid \boldsymbol{\rm x}, \boldsymbol{\rm y}_c;\theta)&amp;\propto \exp (\boldsymbol{\rm Vh}+\boldsymbol{\rm W}\text{enc}(\boldsymbol{\rm x,y_c}))\\<br />
+\tilde{\boldsymbol{\rm y}}_c&amp;=[\boldsymbol{\rm E}\boldsymbol{\rm y}_{i-C+1},\dots , \boldsymbol{\rm E}\boldsymbol{\rm y}_i]\\<br />
+\boldsymbol{\rm h}&amp;=\tanh (\boldsymbol{\rm U}\tilde{\boldsymbol{\rm y}}_c)
+\end{align}
+$$
+パラメタは\(\theta = (\boldsymbol{\rm E},\boldsymbol{\rm U}, \boldsymbol{\rm V}, \boldsymbol{\rm W})\)である。
+\(\boldsymbol{\rm E}\in \mathbb{R}^{D\times V}\)は分散表現の行列であり、\(\boldsymbol{\rm U}\in \mathbb{R}^{(CD)\times H}, \boldsymbol{\rm V}\in \mathbb{R}^{V\times H}, \boldsymbol{\rm W}\in \mathbb{R}^{V\times H}\)は重み行列である。
+\(\boldsymbol{\rm h}\)はサイズ\(H\)の隠れ層である。</p>
+
+<p>\(\text{enc}\)は文脈と入力を表すサイズ\(H\)のベクタを返すエンコーダであり、注意機構がつかわれる。
+$$
+\begin{align}
+\text{enc}(\boldsymbol{\rm x}, \boldsymbol{y}_c)&amp;=\boldsymbol{\rm p}^{T}\boldsymbol{\rm \bar{x}},\\<br />
+\boldsymbol{\rm p}&amp;\propto \exp(\tilde{\boldsymbol{\rm x}}\boldsymbol{\rm P}\tilde{\boldsymbol{\rm y}}&rsquo;_c),\\<br />
+\tilde{\boldsymbol{\rm x}}&amp;=[\boldsymbol{\rm F}\boldsymbol{\rm x}_1,\dots , \boldsymbol{\rm F}\boldsymbol{\rm x}_M],\\<br />
+\tilde{\boldsymbol{\rm y}}&rsquo;_c&amp;=[\boldsymbol{\rm G}\boldsymbol{\rm y}_{i-C+1}, \dots , \boldsymbol{\rm G}\boldsymbol{\rm y}_i],\\<br />
+\forall i\ \bar{\boldsymbol{\rm x}}_i &amp;=\sum^{i+Q}_{q=i-Q}\tilde{\boldsymbol{\rm x}}_i/Q
+\end{align}
+$$
+\(\boldsymbol{\rm G}\in \mathbb{R}^{D\times V}\)は文脈を示す分散表現で、\(\boldsymbol{\rm P}\in \mathbb{R}^{H\times (CD)}\)は重み行列である。
+\(Q\)は平準化のためのウィンドウのサイズに対応する。</p>
+
+<p>学習では負の対数尤度関数を損失関数にもちいる。\(J\)件の学習データのうち\(j\)番目のデータを\((\boldsymbol{\rm x}^{(j)}, \boldsymbol{\rm y}^{(j)})\)とすると、損失関数は次の式になる。
+$$
+\begin{align}
+\text{NNL}(\theta)&amp;=-\sum^J_{j=1}\log p(\boldsymbol{\rm y}^{(j)}\mid \boldsymbol{\rm x}^{(j)};\theta)\\<br />
+&amp;=-\sum^J_{j=1}\sum^{N-1}_{i=1}\log p (\boldsymbol{\rm y}^{(j)}_{i+1}\mid \boldsymbol{\rm x}^{(j)},\boldsymbol{\rm y}_c;\theta)
+\end{align}
+$$</p>
+
+<p>推定時は、次の\(\boldsymbol{\rm y}^*\)をBeam searchにより近似的に求める。</p>
+
+<p>$$
+\boldsymbol{\rm y}^* = \underset{\boldsymbol{\rm y}\in \mathcal{Y}}{\operatorname{argmax}}\sum^{N-1}_{i=0}g(\boldsymbol{\rm y}_{i+1},\boldsymbol{\rm x}, \boldsymbol{\rm y}_c)
+$$</p>
+
+<p><img src="/a_neural_attention_model_for_sentence_summarization.png" alt="fig" /></p>
+
+<hr />
+
+<ul>
+<li>論文は<a href="https://www.aclweb.org/anthology/D15-1044.pdf">こちら</a>からダウンロードできます。</li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

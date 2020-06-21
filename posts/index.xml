@@ -6,10 +6,29 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 13 Jun 2020 13:48:07 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 22:33:10 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Do Developers Discover New Tools On The Toilet?</title>
+      <link>https://nryotaro.dev/posts/do_developers_discover_new_tools_on_the_toilet/</link>
+      <pubDate>Sat, 20 Jun 2020 22:33:10 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/do_developers_discover_new_tools_on_the_toilet/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://mike-bland.com/2011/10/25/testing-on-the-toilet.html&#34;&gt;Testing on the Toilet&lt;/a&gt;の効果を&lt;a href=&#34;https://research.google/pubs/pub41854/&#34;&gt;CausalImpact&lt;/a&gt;で示した。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>論文メモ A Neural Attention Model for Sentence Summarization</title>
+      <link>https://nryotaro.dev/posts/a_neural_attention_model_for_sentence_summarization/</link>
+      <pubDate>Sat, 20 Jun 2020 16:23:49 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/a_neural_attention_model_for_sentence_summarization/</guid>
+      <description>&lt;p&gt;注意機構による深層学習で文を要約する手法である。
+もとの文にない単語を含む要約文を生成できるが、生成前に文の長さを決めておかなければならない。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ BLEU: a Method for Automatic Evaluation of Machine Translation</title>
