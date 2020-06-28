@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nryotaro.dev/posts/rouge/</loc>
+    <lastmod>2020-06-27T12:55:45+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nryotaro.dev/posts/do_developers_discover_new_tools_on_the_toilet/</loc>
     <lastmod>2020-06-20T22:33:10+09:00</lastmod>
   </url>
@@ -399,7 +404,7 @@
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2020-06-20T22:33:10+09:00</lastmod>
+    <lastmod>2020-06-27T12:55:45+09:00</lastmod>
   </url>
   
   <url>
@@ -409,7 +414,7 @@
   
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2020-06-20T22:33:10+09:00</lastmod>
+    <lastmod>2020-06-27T12:55:45+09:00</lastmod>
     <priority>0</priority>
   </url>
   
