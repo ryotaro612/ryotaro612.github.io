@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ Automatic differentiation in Pytorch</h2>
+    <p>July 4, 2020</p>
+  </header>
+  <p>Pytorchの自動微分を解説したプレプリントのショートペーパである。
+Pytorchの自動微分特徴として、in-placeアルゴリズム、微分の導出に不要な計算を省く仕組みのあるテープ、C++による実装をあげている。
+<a href="https://pytorch.org/blog/pytorch-0_4_0-migration-guide/">0.4.0での仕様変更</a>によってTensors<code>と</code>Variables<code>がマージされたことや</code>volatile`が非推奨になったことをふまえていない。
+読むときは、以上の点をはじめとする現在のAPIとの差異に注意する必要がある。</p>
+
+<p>in-placeアルゴリズムは、データ変換のアルゴリズムで、入力データの記憶領域以外の領域をほとんど使わないものをさす。
+例えば、副作用をゆるし、出力を入力の記憶領域に格納する手法はこれに該当する。
+in-placeアルゴリズムは記憶領域を節約できるが、自動微分の計算が不可能になる。
+そこで、in-placeアルゴリムで微分計算ができない場合は、例外を発生させるように作られている。
+例えば、\(\tanh&rsquo;(x)=1-\tanh&rsquo;(x)\)であるため、次の計算は失敗する。</p>
+
+<pre><code>import torch
+x = torch.randn(1, required_grad=True)
+y = x.tanh()
+y.add_(3)
+y.backward()
+</code></pre>
+
+<hr />
+
+<ul>
+<li>論文は<a href="https://openreview.net/pdf?id=BJJsrmfCZ">こちら</a>からダウンロードできます。</li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

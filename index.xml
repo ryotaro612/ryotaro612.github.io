@@ -6,10 +6,32 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 27 Jun 2020 12:55:45 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jul 2020 13:55:02 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Here We Go Again: Why Is It Difficult for Developers to Learn Another Programming Language?</title>
+      <link>https://nryotaro.dev/posts/here_we_go_again/</link>
+      <pubDate>Sat, 04 Jul 2020 13:55:02 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/here_we_go_again/</guid>
+      <description>&lt;p&gt;既知のプログラミング言語の知識は、新しい言語を覚える役に立つ。
+一方で、時として既知の言語の知識が新しい言語を覚える妨げにもなることをStack Overflowの質問とプログラマのインタビューで明らかにした。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>論文メモ Automatic differentiation in Pytorch</title>
+      <link>https://nryotaro.dev/posts/automatic_differentiation_in_pytorch/</link>
+      <pubDate>Sat, 04 Jul 2020 12:06:25 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/automatic_differentiation_in_pytorch/</guid>
+      <description>&lt;p&gt;Pytorchの自動微分を解説したプレプリントのショートペーパである。
+Pytorchの自動微分特徴として、in-placeアルゴリズム、微分の導出に不要な計算を省く仕組みのあるテープ、C++による実装をあげている。
+&lt;a href=&#34;https://pytorch.org/blog/pytorch-0_4_0-migration-guide/&#34;&gt;0.4.0での仕様変更&lt;/a&gt;によってTensors&lt;code&gt;と&lt;/code&gt;Variables&lt;code&gt;がマージされたことや&lt;/code&gt;volatile`が非推奨になったことをふまえていない。
+読むときは、以上の点をはじめとする現在のAPIとの差異に注意する必要がある。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ ROUGE: A Package for Automatic Evaluation of Summaries</title>
