@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ Pytorch: An Imperative Style, High-Performane Deep Learning Library</h2>
+    <p>July 11, 2020</p>
+  </header>
+  <p>Pytorchの使い勝手と実行速度について解説した論文である。
+ここでの使い勝手は、命令型かつPythonらしいコードでPytorchのAPIを呼びだせることを意味する。
+Pytorchは、4つの設計原則として、PythonらしいAPI、機械学習の複雑な処理をPytorch内に隠蔽する、使い勝手のために過度にパフォーマンスを犠牲にしない、完璧な解決策よりも実装の単純さを重視する、をかかげる。</p>
+
+<p>使い勝手の要点として、命令型かつPythonicなコードでネットワークを実装でき、numpyなど他のライブラリのデータ形式と相互変換可能なAPIがあり、自動微分があることをあげている。
+一方、処理速度については、C++による内部実装、GPU上での計算の高速化、multiprocessingパッケージの再実装、GCの最適化がある。
+CUDAストリームによって、CPUとGPUの計算は非同期に協調する。
+また、<code>cudaFree</code>によるメモリ解放時のブロックを避けるために、独自のメモリーアロケータでメモリを確保する仕組みがある。
+また、Pythonの<a href="https://docs.python.org/ja/3/library/multiprocessing.html">multiprocessing</a>パッケージと完全な互換性のある<a href="https://pytorch.org/docs/stable/multiprocessing.html">再実装</a>もある。
+これは、テンソルを共有メモリに格納するこで、標準の<code>multiprocessing</code>で起きるプロセス間でのデータの受け渡しにかかるオーバーヘッドを抑える。
+テンソルへの参照カウントは、Pytorch側で管理され、テンソルへの参照が0になった時点で即座にメモリが解放される。</p>
+
+<hr />
+
+<ul>
+<li>論文を<a href="https://papers.nips.cc/paper/9015-pytorch-an-imperative-style-high-performance-deep-learning-library.pdf">こちら</a>からダウンロードできます。</li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

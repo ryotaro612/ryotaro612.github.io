@@ -36,6 +36,24 @@
     
       <article class="summary">
 	<header>
+	  <h2><a href="/posts/a_structured_self_attentivesentence_embedding/">論文メモ A STRUCTURED SELF-ATTENTIVE SENTENCE EMBEDDING</a></h2>
+	  <p>May 16, 2020</p>
+	</header>
+	<div class="excerpt"><h3 id="概要">概要</h3>
+
+<p>自己注意機構をもちいて、可変長の文を埋め込み行列に変換するアーキテクチャを発表した論文である。
+埋め込み行列の各行は、それぞれ文中の異なる箇所の意味を反映する。
+アーキテクチャは2つの構成からなり、入力から出力にむかい双方向LSTMを、次に自己注意機構をもつ。
+自己注意機構を導入した背景は、回帰結合型のネットワークでは、全ての時刻わたって入力の意味を保持することは難しく、また不要であるという著者らの仮説である。
+3つの実験により、文の分散表現を獲得する先行研究と比較し、自己注意機構の効果が確認された。
+注意機構は複数のベクトルのどれを重視するかを学習できるため、埋め込まれた文の箇所を可視化できることも示した。</p></div>
+	<a class="readmore" href="/posts/a_structured_self_attentivesentence_embedding/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
 	  <h2><a href="/posts/poincare_embeddings/">論文メモ Poincaré Embeddings for Learning Hierarchical Representations</a></h2>
 	  <p>May 9, 2020</p>
 	</header>
@@ -171,19 +189,6 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
 	</header>
 	<div class="excerpt"><p>系列データの教師あり学習において、ラベルのないデータを学習した言語モデルやオートエンコーダーの重みでLSTMを初期化することの有用性を実験的に示した。</p></div>
 	<a class="readmore" href="/posts/semi_supervised_sequence_learning/">Read more</a>
-      </article>
-    
-  
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/raft/">論文メモ In Search of an Understandable Consensus Algorithm</a></h2>
-	  <p>March 9, 2020</p>
-	</header>
-	<div class="excerpt"><p>Raftとよばれるコンセンサスアルゴリズムを提案した論文である。
-Raftは、Multi Paxosと同様の実行結果をもたらす。
-実行するコマンドのログをサーバ間で交換することで、状態を同期し、サーバの一部が落ちてもシステムを継続することができる。</p></div>
-	<a class="readmore" href="/posts/raft/">Read more</a>
       </article>
     
   

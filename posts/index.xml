@@ -6,10 +6,21 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 04 Jul 2020 13:55:02 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jul 2020 01:47:32 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Pytorch: An Imperative Style, High-Performane Deep Learning Library</title>
+      <link>https://nryotaro.dev/posts/pytorch_an_imperative_style_high_performance_deep_learning_library/</link>
+      <pubDate>Sat, 11 Jul 2020 01:47:32 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/pytorch_an_imperative_style_high_performance_deep_learning_library/</guid>
+      <description>&lt;p&gt;Pytorchの使い勝手と実行速度について解説した論文である。
+ここでの使い勝手は、命令型かつPythonらしいコードでPytorchのAPIを呼びだせることを意味する。
+Pytorchは、4つの設計原則として、PythonらしいAPI、機械学習の複雑な処理をPytorch内に隠蔽する、使い勝手のために過度にパフォーマンスを犠牲にしない、完璧な解決策よりも実装の単純さを重視する、をかかげる。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ Here We Go Again: Why Is It Difficult for Developers to Learn Another Programming Language?</title>
