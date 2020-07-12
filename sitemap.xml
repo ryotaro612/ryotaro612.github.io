@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nryotaro.dev/posts/recognizing_developers_emotions_while_programming/</loc>
+    <lastmod>2020-07-11T12:45:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nryotaro.dev/posts/pytorch_an_imperative_style_high_performance_deep_learning_library/</loc>
     <lastmod>2020-07-11T01:47:32+09:00</lastmod>
   </url>
@@ -419,7 +424,7 @@
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2020-07-11T01:47:32+09:00</lastmod>
+    <lastmod>2020-07-11T12:45:00+09:00</lastmod>
   </url>
   
   <url>
@@ -429,7 +434,7 @@
   
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2020-07-11T01:47:32+09:00</lastmod>
+    <lastmod>2020-07-11T12:45:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
