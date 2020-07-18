@@ -36,6 +36,35 @@
     
       <article class="summary">
 	<header>
+	  <h2><a href="/posts/feature_selection_for_text_categorization_on_imbalance_data/">メモ Feature Selection for Text Categorization on Imbalanced Data</a></h2>
+	  <p>October 12, 2019</p>
+	</header>
+	<div class="excerpt"><h3 id="概要">概要</h3>
+
+<p>表題の論文は、特徴選択において、正例に顕著な特徴から選ぶ割合を明示的に決めることで、正例と負例それぞれに顕著な特徴の割合を調整することが、不均衡な文書分類における予測性能の向上に役立つことを示した。
+情報利得やオッズ比など単変量統計にもとづく特徴選択において、統計量の値によって暗黙的に決められた割合と異なる割合の場合の方が予測性能が高いことを実験的に示した。</p></div>
+	<a class="readmore" href="/posts/feature_selection_for_text_categorization_on_imbalance_data/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
+	  <h2><a href="/posts/snorkel_drybell_case_study/">メモ Snorkel DryBell: A Case Study in Deploying Weak Supervision at Industrial Scale</a></h2>
+	  <p>October 5, 2019</p>
+	</header>
+	<div class="excerpt"><h3 id="概要">概要</h3>
+
+<p>表題の論文では、<a href="https://www.snorkel.org">Snorkel</a>というWeak Supervisionの手法をGoogleで適用した結果の考察と評価がなされている。
+Weak Supervisionは、人手よりも効率良くノイズ交じりの教師データを生成する手法である。
+Snorkelは、引数にサンプルを返り値にラベルを返す複数の関数をラベルなしデータに適用し、結果から関数の精度を予測し、個々の関数よりも高い精度でデータにラベルを与える。この関数をラベリング関数という。Snorkel DryBellは、Snorkelのアルゴリズムをスケールさせるために、MapReduceに適用できるように修正されたものをさす。</p></div>
+	<a class="readmore" href="/posts/snorkel_drybell_case_study/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
 	  <h2><a href="/posts/training_complex_models_with_multi_task_weak_supervision/">メモ Training Complex Models with Multi-Task Weak Supervision</a></h2>
 	  <p>September 28, 2019</p>
 	</header>
@@ -145,40 +174,6 @@ FastXMLは、弱学習器に決定木を使うアンサンブル学習であり�
 調査方法はGoogle社のエンジニアへのアンケートとエンジニアの行動ログの分析が採用されている。
 Googleではモノリシックリポジトリが採用されており、エンジニアがこれまで経験したマルチリポジトリが比較対象となっている。</p></div>
 	<a class="readmore" href="/posts/advantages_and_disadvantages_of_a_monolithic_repository/">Read more</a>
-      </article>
-    
-  
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/cat_boost/">メモ CatBoost: unbaiased boosting with categorical features</a></h2>
-	  <p>August 10, 2019</p>
-	</header>
-	<div class="excerpt"><h3 id="概要">概要</h3>
-
-<p>表題はNeurIPS 2018で発表されたCatBoostという勾配ブースティングの手法を論文にちなむ。
-Target Statisticsというカテゴリカル特徴量の前処理と勾配ブースティングの学習時に生じる一種のleakageが起きることを示し、leakageをさけて前処理と学習をする手法を示した。
-CatBoostは二進木の決定木を弱識別器に用いる。</p></div>
-	<a class="readmore" href="/posts/cat_boost/">Read more</a>
-      </article>
-    
-  
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/are_we_really_making_much_progress/">メモ Are We Really Making Much Progress? A Worring Analysis of Recent Neural Recomendation Approaches</a></h2>
-	  <p>August 10, 2019</p>
-	</header>
-	<div class="excerpt"><h3 id="概要">概要</h3>
-
-<p>表題は、ニューラルネットワークを用いた推薦システムを提案、評価した論文における実験の再現性と予測性能の再評価した論文のタイトルにあたる。
-発表学会は、2019年のRecSys。著者らは、以下の2つのRQに回答するためにトップ会議で発表された18の論文を調査した。その結果、実験を再現できた論文は7稿であり、その中でも単純な手法を上回る性能が認められたのは1稿だけだった。</p>
-
-<ul>
-<li>RQ1: ニューラルネットワークを用いた推薦システムの研究の再現性はどの程度か</li>
-<li>RQ2: 最近発表されたアルゴリズムは、ハイパーパラメタチューニングされた単純な手法と比べてどの程度性能がいいか</li>
-</ul></div>
-	<a class="readmore" href="/posts/are_we_really_making_much_progress/">Read more</a>
       </article>
     
   

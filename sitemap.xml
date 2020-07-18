@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nryotaro.dev/posts/explaining_pair_programming_session_dynamics_from_knowledge_gaps/</loc>
+    <lastmod>2020-07-17T19:20:38+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/bag_of_trics_for_efficient_text_classification/</loc>
+    <lastmod>2020-07-17T17:09:26+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nryotaro.dev/posts/recognizing_developers_emotions_while_programming/</loc>
     <lastmod>2020-07-11T12:45:00+09:00</lastmod>
   </url>
@@ -424,7 +434,7 @@
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2020-07-11T12:45:00+09:00</lastmod>
+    <lastmod>2020-07-17T19:20:38+09:00</lastmod>
   </url>
   
   <url>
@@ -434,7 +444,7 @@
   
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2020-07-11T12:45:00+09:00</lastmod>
+    <lastmod>2020-07-17T19:20:38+09:00</lastmod>
     <priority>0</priority>
   </url>
   

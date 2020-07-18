@@ -36,6 +36,42 @@
     
       <article class="summary">
 	<header>
+	  <h2><a href="/posts/sequence_to_sequence_learning_with_neural_networks/">論文メモ Sequence to Sequence Learning with Nueral Networks</a></h2>
+	  <p>June 6, 2020</p>
+	</header>
+	<div class="excerpt"><h3 id="概要">概要</h3>
+
+<p>Sequence to Sequenceを発表した論文である。
+RNNによって、入力と出力が系列のデータを学習する場合、入力と出力の長さが等しく、対応関係にある箇所が系列の方向に単調でなければならない。
+この制約に対処するため、Sequence to Sequenceは入力全体を固定長のベクトルに一度変換し、そのベクトルをもとに出力を予測する。
+Sequence to Sequenceは、2種類のLSTMをつかい、入力を与えたLSTMの最終層の隠れ状態からなる固定長ベクトルをつくる。
+そして、このベクトルを、もう一方のLSTMに与え、最終的な出力を求める。
+実験により、反転された入力系列をあとえると、入力と出力の対応関係にある箇所の距離が短くなり、予測性能が上がることが確認された。</p></div>
+	<a class="readmore" href="/posts/sequence_to_sequence_learning_with_neural_networks/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
+	  <h2><a href="/posts/google_neural_machine_translation_system/">論文メモ Google&#39;s Neural Machine Transltation System: Bridging the Gap between Human and Machine Translation</a></h2>
+	  <p>May 30, 2020</p>
+	</header>
+	<div class="excerpt"><h3 id="概要">概要</h3>
+
+<p>ニューラルネットワークをもちいた機械翻訳システムの論文である。
+解決したい問題として、学習と推論時の処理時間の長さ、低頻出の単語を翻訳する難しさ、入力文の一部が翻訳されないことをあげ、注意機構でつながれたEncoderとDecoderからなるアーキテクチャを提案した。
+学習時間を短縮するために、Decoderの最初の層とEncodeerの出力層から注意をつくる注意機構を採用し、Decoderを並列に学習できるようにしている。
+また、量子化によって推論時間を短縮をしている。
+低頻出の単語でも翻訳できるようにwordpieceでエンコードされた入力をうけとる。
+入力文の一部が翻訳されない問題に対しては、短い出力文に罰則を課すビームサーチで出力文の候補を探索する仕組みが導入されている。</p></div>
+	<a class="readmore" href="/posts/google_neural_machine_translation_system/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
 	  <h2><a href="/posts/zero_shot_learning_with_semantic_output_codes/">論文メモ Zero-Shot Learning with Semantic Output Codes</a></h2>
 	  <p>May 23, 2020</p>
 	</header>
@@ -162,36 +198,6 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
 実験データにPenn Treebankを、評価指標にPerplexityを採用してモデルを評価したところ、
 論文が発表された2016年時点での<a href="https://arxiv.org/abs/1409.2329">SOTA</a>の60%程度のパラメタしかないモデルでありながら、これに匹敵する性能を発揮した。</p></div>
 	<a class="readmore" href="/posts/character_aware_neural_language_models/">Read more</a>
-      </article>
-    
-  
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/deep_contextualized_word_representations/">論文メモ Deep contextualized word representations</a></h2>
-	  <p>March 24, 2020</p>
-	</header>
-	<div class="excerpt"><p>文脈をふまえた単語の分散表現を生成する手法を提案し、教師あり学習に応用することで評価した論文である。
-文字単位の学習済み双方向LSTM言語モデルへの入力と各層の出力から分散表現をつくる。
-言語モデルの入力やどの層をどれだけ重視するかは、教師あり学習のときに更新するパラメタのひとつになる。
-実験では、構文にかかわるタスクであれば入力層に近い層が、意味にかかわるものであれば出力層に近い層が、重視された。
-モデルは、Embeddings from Language Modelsにちなみ、ELMoと名付けられた。</p></div>
-	<a class="readmore" href="/posts/deep_contextualized_word_representations/">Read more</a>
-      </article>
-    
-  
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/the_seven_sins/">論文メモ The Seven Sins: Security Smells in Infrastructure as Code Scripts</a></h2>
-	  <p>March 20, 2020</p>
-	</header>
-	<div class="excerpt"><h3 id="概要">概要</h3>
-
-<p>OSSの調査にもとづき、Infrastrucure as Code(IaC)スクリプトに潜む主要なセキュリティ上の不吉な匂い(Security Smells)を7つ列挙し、これらを検出するツールを実装した論文である。
-論文のねらいは、開発者がIaCスクリプトに不吉な匂いを混ぜないようにすることにある。
-著者らは、本論文で、ICSE2019のDistinguished Paper Awardを受賞した。</p></div>
-	<a class="readmore" href="/posts/the_seven_sins/">Read more</a>
       </article>
     
   
