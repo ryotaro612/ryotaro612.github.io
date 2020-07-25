@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nryotaro.dev/posts/exploration_of_technical_debt_in_start_ups/</loc>
+    <lastmod>2020-07-24T15:26:42+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nryotaro.dev/posts/deep_learning_recommendation_model_for_personalization_and_recommendation_systems/</loc>
     <lastmod>2020-07-24T13:53:05+09:00</lastmod>
   </url>
@@ -439,7 +444,7 @@
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2020-07-24T13:53:05+09:00</lastmod>
+    <lastmod>2020-07-24T15:26:42+09:00</lastmod>
   </url>
   
   <url>
@@ -449,7 +454,7 @@
   
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2020-07-24T13:53:05+09:00</lastmod>
+    <lastmod>2020-07-24T15:26:42+09:00</lastmod>
     <priority>0</priority>
   </url>
   
