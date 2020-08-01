@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nryotaro.dev/posts/a_tale_from_the_trenches/</loc>
+    <lastmod>2020-07-31T18:55:54+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/factorization_machines/</loc>
+    <lastmod>2020-07-31T16:50:25+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nryotaro.dev/posts/exploration_of_technical_debt_in_start_ups/</loc>
     <lastmod>2020-07-24T15:26:42+09:00</lastmod>
   </url>
@@ -444,7 +454,7 @@
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2020-07-24T15:26:42+09:00</lastmod>
+    <lastmod>2020-07-31T18:55:54+09:00</lastmod>
   </url>
   
   <url>
@@ -454,7 +464,7 @@
   
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2020-07-24T15:26:42+09:00</lastmod>
+    <lastmod>2020-07-31T18:55:54+09:00</lastmod>
     <priority>0</priority>
   </url>
   

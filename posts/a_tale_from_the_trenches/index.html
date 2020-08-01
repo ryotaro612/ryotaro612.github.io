@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ A Tale from the Trenches: Cognitive Biases and Software Development</h2>
+    <p>July 31, 2020</p>
+  </header>
+  <p>エンジニア10人の普段の開発状況をもとに、認知バイアスが開発者にあたえる影響やバイアスの頻度、対策方法について調査した。</p>
+
+<p>被検者に最大で1時間の間考えていることを口に出して日常業務の開発をしてもらい、音声、スクリーン、作業環境を記録した。
+被検者は、ある米国のスタートアップに所属する10人の開発者であり、新規性は、日常の開発における認知バイアスを調査するところにある。
+従来のソフトウェア開発における認知バイアスの先行研究は、馴染みのない作業や学生の被検者実験を採用しており、現実の開発と実験の設定に乖離があった。</p>
+
+<p>認知バイアスによる影響の善し悪しを区別するために、無駄になった作業をReversal Actionと呼び、意味のあった作業(Action)と区別し、それぞれの作業時間を計測した。
+被検者全員の作業時間を合計した結果は、以下の四象限の図の通りになった。
+全体の作業時間の34.51%(<sup>7839</sup>&frasl;<sub>21407</sub>)をReversal Actionが占めていた。
+Reversal Actionのうち70%(<sup>7839</sup>&frasl;<sub>11187</sub>)は、認知バイアスによるものだった。
+<img src="/a_tale_from_the_trenches/distribution_of_time.png" alt="dist" /></p>
+
+<p>認知バイアスは、<a href="https://ieeexplore.ieee.org/document/8506423">先行研究</a>にしたがって10のカテゴリ(CB1-10)に分類される。
+認知バイアスの影響とみられた作業の回数で個々の影響度合いを測定した。
+次のツリーマップは、バイアスごとの影響度合いを表す。
+<img src="/a_tale_from_the_trenches/treemap.png" alt="dist" />
+CB3(Fixation), CB6(Convenience)が特に顕著にみられ、この2つで全体の半分以上を占める。
+Fixationは、エラーや警告など、試している解決策と矛盾することが起きていても、その解決策を試しつづけることを示す。
+リロードすればよいだけなのに、関数の定義を修正しつづけるような行為が該当する。
+Convenienceは、最適でないと分かっていながら簡単なやり方で進め、後で立ちいかなくなることを意味する。
+単純で冗長な実装によってコードがスパゲッティコード化することは、これに該当する。</p>
+
+<p>実験の後に、被検者を含めた16人に、カテゴリーに分類された認知バイアスに対してどれだけ自覚的かアンケートをとると、次の結果になった。
+実験ではほとんど観測されなかったCB10が上位にきていた。
+ツリーマップと順位が異なるところに、認知バイアスへの自覚の難しさがあらわれている。</p>
+
+<p><img src="/a_tale_from_the_trenches/frequency.png" alt="dist" /></p>
+
+<hr />
+
+<ul>
+<li>論文を<a href="https://nomatic.dev/docs/icse20-chattopadhyay.pdf">こちら</a>からダウンロードできます。</li>
+<li>画像はすべて論文から引用されています。</li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>
