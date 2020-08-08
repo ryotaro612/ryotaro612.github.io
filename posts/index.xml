@@ -6,10 +6,25 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 31 Jul 2020 18:55:54 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 07 Aug 2020 16:45:55 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Improving Language Understanding by Generative Pre-Training</title>
+      <link>https://nryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/</link>
+      <pubDate>Fri, 07 Aug 2020 16:45:55 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+
+&lt;p&gt;GPTの略称で知られる教師なしの事前学習である。
+評価実験では、12の自然言語処理タスクのうち9つで、当時のSoTAを上まわる性能を発揮した。
+ネットワークはTransformerであり、事前学習では言語モデルを学習する。
+手法の独自性は、ファインチューニングでの入力データの作り方にある。
+入力形式を工夫し、事前学習時のネットワーク構成を維持することで、効率的な転移学習を実現する。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ A Tale from the Trenches: Cognitive Biases and Software Development</title>

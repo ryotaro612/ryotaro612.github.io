@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/</loc>
+    <lastmod>2020-08-07T16:45:55+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nryotaro.dev/posts/a_tale_from_the_trenches/</loc>
     <lastmod>2020-07-31T18:55:54+09:00</lastmod>
   </url>
@@ -454,7 +459,7 @@
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2020-07-31T18:55:54+09:00</lastmod>
+    <lastmod>2020-08-07T16:45:55+09:00</lastmod>
   </url>
   
   <url>
@@ -464,7 +469,7 @@
   
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2020-07-31T18:55:54+09:00</lastmod>
+    <lastmod>2020-08-07T16:45:55+09:00</lastmod>
     <priority>0</priority>
   </url>
   

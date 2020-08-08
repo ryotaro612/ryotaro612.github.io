@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ Improving Language Understanding by Generative Pre-Training</h2>
+    <p>August 7, 2020</p>
+  </header>
+  <h3 id="概要">概要</h3>
+
+<p>GPTの略称で知られる教師なしの事前学習である。
+評価実験では、12の自然言語処理タスクのうち9つで、当時のSoTAを上まわる性能を発揮した。
+ネットワークはTransformerであり、事前学習では言語モデルを学習する。
+手法の独自性は、ファインチューニングでの入力データの作り方にある。
+入力形式を工夫し、事前学習時のネットワーク構成を維持することで、効率的な転移学習を実現する。</p>
+
+<h3 id="事前学習">事前学習</h3>
+
+<p>事前学習では、次の目的関数でトークン列\(\mathcal{U}=\{u_1,\dots , u_n\}\)で言語モデルをつくる。
+$$
+L_1(\mathcal{U})=\sum_i\log P(u_i\mid u_{i-k},\dots , u_{i-1};\Theta)
+$$
+\(k\)はウィンドウサイズを示す。
+モデルに使われるmulti-layer <a href="https://openreview.net/pdf?id=Hyg0vbWC-">Trasformer decoder</a>は、条件付き確率\(P\)にあてはまるようにパラメタ\(\Theta\)を学習する。</p>
+
+<p>\(n\)層のTransformer decoderは、トークンの埋込み行列\(W_e\)とトークンの位置の埋込み行列\(W_p\)を受け取り、次の式になる。
+$$
+\begin{align}
+h_0&amp;=UW_e+W_p\\<br />
+h_l&amp;=\texttt{transformer_block}(h_{l-1})\forall i \in[1,n]\\<br />
+P(u)&amp;=\texttt{softmax}(h_nW^{T}_{e})
+\end{align}
+$$</p>
+
+<h3 id="ファインチューニング">ファインチューニング</h3>
+
+<p>transfomerの最終層の出力をうけとる1層の全結合層をアーキテクチャにつなげ、主タスクの学習データ\(\mathcal{C}\)で学習する。
+学習時のアーキテクチャは次の図のようになる。
+<img src="/gpt/arch.png" alt="gpt" /></p>
+
+<p>教師データの事例のトークン列を\(x^1,\dots , x^m\)、最終層の出力を\(h_l^m\), 全結合層のパラメタを\(W_y\)とおくと、学習時には次の\(L_3(\mathcal{C})\)を最大化する。
+$$
+\begin{align}
+P(y\mid x^1 , \dots , x^m) &amp;= \texttt{softmax}(h^m_lW_y) \\<br />
+L_2(\mathcal{C})&amp;=\sum_{(x,y)}\log P(y\mid x^1\dots , x^m)\\<br />
+L_3(\mathcal{C})&amp;=L(\mathcal{C})+\lambda * L_1(\mathcal{C})
+\end{align}
+$$</p>
+
+<p>事前学習時のアーキクチャを変えないようにするために、タスクに合わせて入力形式を工夫する。
+上の図の右部は、分類、含意関係認識、類似度、Q&amp;Aのタスクにおける入力を示す。
+分類以外は全て、事例の要素をデリメタを挟んで隣接させ、モデルにあたえている。</p>
+
+<hr />
+
+<ul>
+<li>論文を<a href="https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf">こちら</a>からダウンロードできます。</li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>
