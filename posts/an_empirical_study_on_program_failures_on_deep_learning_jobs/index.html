@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ An Empirical Study On Program Failures On Deep Learning Jobs</h2>
+    <p>August 7, 2020</p>
+  </header>
+  <p>Microsoftの社内では深層学習のプラットフォームPhillyが運用されており、そこで起きた4960件のジョブの失敗原因を調査した。
+調査では、失敗の原因を20のカテゴリに分類し、カテゴリごとに失敗の件数を集計した。</p>
+
+<p>20のカテゴリは、さらに大きく4つのカテゴリに分けられる。
+この4つのカテゴリでの失敗件数の内訳は、下の円グラフで描かれる。
+失敗の約半分(48%)を占めるExecution Environmentは、プログラムを実装する環境とPhillyの環境差分によるエラーであり、ファイルやディレクトリ、ライブラリ、権限が無いことによる失敗が該当する。
+<img src="/an_empirical_study_on_program_failures_of_deep_learning_jobs/distribution_job_failures.png" alt="failures" /></p>
+
+<p>さらに400件については、ヒアリングなどを通して根本の原因をつきとめ、その原因を次の5つに分類し、さらに集計を進めた。</p>
+
+<ul>
+<li>Differences in Environment(DE)</li>
+<li>Inappropriate Model Parameters/Structures(IPS)</li>
+<li>API Misunderstanding (APIM)</li>
+<li>Common Programming Errors(CPE)</li>
+<li>Exceptional Data (ED)</li>
+</ul>
+
+<p><img src="/an_empirical_study_on_program_failures_of_deep_learning_jobs/failure_categories.png" alt="failures" /></p>
+
+<p>深層学習に特有のエラーでは、GPU Out of Memoryが目立つ。
+上の4960件の分類でも深層学習固有のエラー13.5%のうち、65.0%はGPU Out of Memoryによるものであった。</p>
+
+<hr />
+
+<ul>
+<li>論文を<a href="http://hongyujohn.github.io/icse20-main-199.pdf">こちら</a>からダウンロードできます。</li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

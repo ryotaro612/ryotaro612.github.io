@@ -6,10 +6,20 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 07 Aug 2020 16:45:55 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 07 Aug 2020 18:50:12 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ An Empirical Study On Program Failures On Deep Learning Jobs</title>
+      <link>https://nryotaro.dev/posts/an_empirical_study_on_program_failures_on_deep_learning_jobs/</link>
+      <pubDate>Fri, 07 Aug 2020 18:50:12 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/an_empirical_study_on_program_failures_on_deep_learning_jobs/</guid>
+      <description>&lt;p&gt;Microsoftの社内では深層学習のプラットフォームPhillyが運用されており、そこで起きた4960件のジョブの失敗原因を調査した。
+調査では、失敗の原因を20のカテゴリに分類し、カテゴリごとに失敗の件数を集計した。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ Improving Language Understanding by Generative Pre-Training</title>
