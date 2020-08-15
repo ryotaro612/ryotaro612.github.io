@@ -1,6 +1,5 @@
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.54.0" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -14,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
     
-  <link rel="stylesheet" type="text/css" href="/css/index.css"></link>
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -31,50 +30,28 @@
     </header>
     <main>
       
-  
-  
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/applying_crf_to_japanese_morph_analysis/">要約 Applying Conditional Random Fields to Japanese Morphological Analysis</a></h2>
-	  <p>July 17, 2018</p>
-	</header>
-	<div class="excerpt"><p>Mecabの中の人の<a href="http://chasen.naist.jp/chaki/t/2009-09-30/doc/mecab-cabocha-nlp-seminar-2009.pdf">資料</a>で紹介でされている、Mecabのアルゴリズムを提案・評価した論文。</p></div>
-	<a class="readmore" href="/posts/applying_crf_to_japanese_morph_analysis/">Read more</a>
-      </article>
-    
-  
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/text_cls_from_lbl_and_unlbl_doc_em/">概要 Text Classification from Labeled and Unlabeled Documents using EM</a></h2>
-	  <p>July 8, 2018</p>
-	</header>
-	<div class="excerpt"><h3 id="アルゴリズム">アルゴリズム</h3>
+<article>
+  <header>
+    <h2>論文メモ Semi Supervised Learning with Ladder Networks</h2>
+    <p>August 14, 2020</p>
+  </header>
+  <p>Ladder Networkを半教師あり学習に応用する。
+Ladder Networkは、2015年に、著者の一人Valpolaによって教師なし学習のためのネットワークとして発表されている<a href="https://arxiv.org/abs/1411.7783">*</a>。</p>
 
-<p>提案手法は、Naive BayesとEMアルゴリズムを組み合わせたもの。
-ラベル付きデータが\(D^l\)でラベルなしデータが\(D^u\)で表されるとき、対数尤度\(\log P(D^l)P(D^u)\)を最大化する問題を解く。</p></div>
-	<a class="readmore" href="/posts/text_cls_from_lbl_and_unlbl_doc_em/">Read more</a>
-      </article>
-    
-  
-    
-  
-  <div class="pagination">
-  
-    <a href="/"><i class="material-icons">first_page</i></a>
-  
-  
-    <a href="/page/9/"><i class="material-icons">chevron_left</i></a>
-  
-  
-    <a><i class="material-icons">chevron_right</i></a>
-  
-  
-    <a><i class="material-icons">last_page</i></a>
-  
-</div>
+<p>ネットワークアーキテクチャは、エンコーダ、デコーダ、順伝播ネットワークの3つからなる。
+アーキテクチャの全体は、以下の図が示すように、左の列から、エンコーダ、デコーダ、順伝播ネットワークに対応する。
+エンコーダと順伝播ネットワークは重みを共有する。
+ただし、エンコーダでは、各中間層の出力に正規分布にしたがうノイズを混ぜる。
+デコーダの各層は、対応するエンコーダの中間層と前の層の出力から、ノイズが入る前の中間層の出力、つまり、順伝播ネットワークの中間層の出力を復元できるように学習する。
+ラベルのある事例では、中間層の復元の誤差に加え、エンコーダの出力と正解ラベルの交差エントロピーも損失関数に含まれる。</p>
 
+<h2 id="architecture-ladder-networks-png"><img src="/ladder_networks.png" alt="architecture" /></h2>
+
+<ul>
+<li>論文を<a href="https://arxiv.org/abs/1507.02672">こちら</a>からダウンロードできます。</li>
+<li>画像はすべて論文から引用されています。</li>
+</ul>
+</article>
 
     </main>
     <footer>
