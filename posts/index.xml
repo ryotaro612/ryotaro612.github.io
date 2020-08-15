@@ -6,10 +6,22 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 14 Aug 2020 17:01:02 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2020 18:39:35 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Statistical Errors in Softare Engineering Experiments: A Preliminary Literature Review</title>
+      <link>https://nryotaro.dev/posts/statistical_errors_in_software_engineering_experiments/</link>
+      <pubDate>Fri, 14 Aug 2020 18:39:35 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/statistical_errors_in_software_engineering_experiments/</guid>
+      <description>&lt;p&gt;ソフトウェア工学の実験において、統計をもちいた手法がどれだけ誤用されているかを調査した。
+薬学や心理学の実験では、統計による手法が時に誤って使われていることが知られている。
+一方で、ソフトウェア工学では、どの程度誤用がみられるのかは分かっていない。
+著者らは、2006から2015年のソフトウェア工学のトップ会議ICSEで発表された論文770件から、実験や評価に統計的手法をもちいたものを選び、10の観点からなる判断基準で、手法の妥当性を評価した。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ Semi Supervised Learning with Ladder Networks</title>
