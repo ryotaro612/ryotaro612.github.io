@@ -6,10 +6,20 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 21 Aug 2020 17:04:31 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 21 Aug 2020 18:03:14 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ When and Why Your Code Starts to Smell Bad</title>
+      <link>https://nryotaro.dev/posts/when_and_why_your_code_starts_to_smell_bad/</link>
+      <pubDate>Fri, 21 Aug 2020 18:03:14 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/when_and_why_your_code_starts_to_smell_bad/</guid>
+      <description>&lt;p&gt;200件のAndroid, Apache, EclipseのOSSプロジェクトのコミット履歴を調査し、不吉な匂いが生じる原因と理由を調査した。
+常識では、改修の繰返しによって匂いのない既存のコードに匂いが生じると考えられているが、これに反して、不吉な匂いのするコードのほとんどが作成時点で不吉な匂いを出していたことを明らかにした。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ Extracting and Composing Robust Features with Denoising Autoencoders</title>

@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ When and Why Your Code Starts to Smell Bad</h2>
+    <p>August 21, 2020</p>
+  </header>
+  <p>200件のAndroid, Apache, EclipseのOSSプロジェクトのコミット履歴を調査し、不吉な匂いが生じる原因と理由を調査した。
+常識では、改修の繰返しによって匂いのない既存のコードに匂いが生じると考えられているが、これに反して、不吉な匂いのするコードのほとんどが作成時点で不吉な匂いを出していたことを明らかにした。</p>
+
+<p><a href="http://www.irisa.fr/triskell/publis/2009/Moha09d.pdf">先行研究</a>を実装したツールで半自動的に不吉な匂いを特定した。
+次の5つの不吉な匂いが調査対象にされた。
+調査したコミット数は50万件であり、そのうちの9164件が不吉な匂いを含むと判定された。</p>
+
+<ul>
+<li>Blob Class: 複数の責務を抱えた大きすぎるクラス</li>
+<li>Class Data Should be Private: 修飾子による公開範囲が大きい</li>
+<li>Complex Class: 循環的複雑度が大きい</li>
+<li>Functional Decomposition: 継承をうまく使えておらず、フィールドが多くメソッドが少ない</li>
+<li>Spaghetti Code: パラメタのない長いメソッドがある</li>
+</ul>
+
+<p>コミットごとに不吉な匂いに関連する表2のメトリクスを測定し、メトリクスを予測よりも悪化させたコミットを不吉な匂いと判定した。
+予測には回帰モデルを使用した。
+図1は不吉な匂いを特定する例であり、コミットとLOCの変遷を示す。
+黒丸は実際の変化を示し、黒の直線は予測に対応する。
+この場合は、予測を越えるC3, C5, C7が不吉な匂いを含むコミットと判定される。
+<img src="/when_and_why_your_code_starts_to_smell_bad/table2.png" alt="table2" />
+<img src="/when_and_why_your_code_starts_to_smell_bad/indentification.png" alt="identification" /></p>
+
+<p>不吉な匂いを生む理由を調べるために、不吉な匂いを含むコミットの目的、プロジェクトと開発者の状況について調査した。
+次の表3は、これらの目的と状況の区分を示す。
+JIRAやBUGZILLAで管理されているタグやコミットメッセージを解析してコミットの目的を調査した。
+開発者の仕事量(workload)は、コミット量で推定された。
+<img src="/when_and_why_your_code_starts_to_smell_bad/table3.png" alt="table3" /></p>
+
+<p>以上の調査をもとに分かったことをまとめると次の4つになる。</p>
+
+<ul>
+<li>ほとんどの不吉な匂いのあるコードは生成時点から問題がある。</li>
+<li>コードの改修で不吉な匂いを生じるようになるコードは、問題のないコードとは異なるメトリクスのトレンドを描く。</li>
+<li>特定された不吉な匂いの9164件のうちの400件は、リファクタリングによって混入されたものだった。リファクタリングでも不吉な匂いを混ぜることがある。</li>
+<li>新参の開発者よりも、仕事量が多かったりリリースの直前だったりする開発者のほうが不吉な匂いのあるコードを実装しがちである。</li>
+</ul>
+
+<hr />
+
+<ul>
+<li>論文を<a href="https://fpalomba.github.io/pdf/Conferencs/C4.pdf">こちら</a>からダウンロードできます。</li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>
