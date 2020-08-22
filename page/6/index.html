@@ -36,6 +36,21 @@
     
       <article class="summary">
 	<header>
+	  <h2><a href="/posts/ranking_relevance_in_yahoo_search/">論文メモ Ranking Relevance In Yahoo Search</a></h2>
+	  <p>December 7, 2019</p>
+	</header>
+	<div class="excerpt"><h3 id="概要">概要</h3>
+
+<p>Yahooの検索エンジンを解説するKDD16の論文である。
+論文におけるランキングの課題は、クエリと文書の語彙がことなること、ほとんどのクエリは滅多に入力されないこと、クエリの意味の解釈が難しいことである。
+これらの課題に対する手法として、ランキングのモデル、特徴のつくりかた、クエリを文書によせる翻訳モデルを解説する。</p></div>
+	<a class="readmore" href="/posts/ranking_relevance_in_yahoo_search/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
 	  <h2><a href="/posts/a_dual_embedding_space_model_for_document_ranking/">論文メモ A Dual Embedding Space Model for Document Ranking</a></h2>
 	  <p>November 30, 2019</p>
 	</header>
@@ -163,21 +178,6 @@ DESMは、クエリの単語に関係する単語をもとに判断する。
 <p>表題の論文は、特徴選択において、正例に顕著な特徴から選ぶ割合を明示的に決めることで、正例と負例それぞれに顕著な特徴の割合を調整することが、不均衡な文書分類における予測性能の向上に役立つことを示した。
 情報利得やオッズ比など単変量統計にもとづく特徴選択において、統計量の値によって暗黙的に決められた割合と異なる割合の場合の方が予測性能が高いことを実験的に示した。</p></div>
 	<a class="readmore" href="/posts/feature_selection_for_text_categorization_on_imbalance_data/">Read more</a>
-      </article>
-    
-  
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/snorkel_drybell_case_study/">メモ Snorkel DryBell: A Case Study in Deploying Weak Supervision at Industrial Scale</a></h2>
-	  <p>October 5, 2019</p>
-	</header>
-	<div class="excerpt"><h3 id="概要">概要</h3>
-
-<p>表題の論文では、<a href="https://www.snorkel.org">Snorkel</a>というWeak Supervisionの手法をGoogleで適用した結果の考察と評価がなされている。
-Weak Supervisionは、人手よりも効率良くノイズ交じりの教師データを生成する手法である。
-Snorkelは、引数にサンプルを返り値にラベルを返す複数の関数をラベルなしデータに適用し、結果から関数の精度を予測し、個々の関数よりも高い精度でデータにラベルを与える。この関数をラベリング関数という。Snorkel DryBellは、Snorkelのアルゴリズムをスケールさせるために、MapReduceに適用できるように修正されたものをさす。</p></div>
-	<a class="readmore" href="/posts/snorkel_drybell_case_study/">Read more</a>
       </article>
     
   

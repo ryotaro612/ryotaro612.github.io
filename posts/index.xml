@@ -6,10 +6,24 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 14 Aug 2020 18:39:35 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 21 Aug 2020 17:04:31 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Extracting and Composing Robust Features with Denoising Autoencoders</title>
+      <link>https://nryotaro.dev/posts/extracting_and_composing_robust_features_with_denoising_autoencoders/</link>
+      <pubDate>Fri, 21 Aug 2020 17:04:31 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/extracting_and_composing_robust_features_with_denoising_autoencoders/</guid>
+      <description>&lt;p&gt;ノイズを含む入力からノイズのない入力を復元するように学習すると、次元圧縮の性能を向上できることを示した。
+層の深いautoencoderを学習するには、良い初期値を与えなければらないことが知られていた。
+&lt;a href=&#34;https://www.cs.toronto.edu/~hinton/science.pdf&#34;&gt;先行研究&lt;/a&gt;は、各中間層を個別に学習することで、良い初期値を求められることを示した。
+具体的には、各中間層について、前の層の入力から次の層の出力を推定できるよう個別に学習させる。
+一方で、何が良い初期値をなすのかは知られていなかった。
+表題の論文は、その条件は入力に含まれるノイズに対して頑強であると仮説をおき、ノイズを除去できるように目的関数を設定することで、次元圧縮の性能が上がることを示し、仮説の正しさを確かめた。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ Statistical Errors in Software Engineering Experiments: A Preliminary Literature Review</title>

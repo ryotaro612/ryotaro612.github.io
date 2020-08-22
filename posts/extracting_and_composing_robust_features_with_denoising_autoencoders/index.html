@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ Extracting and Composing Robust Features with Denoising Autoencoders</h2>
+    <p>August 21, 2020</p>
+  </header>
+  <p>ノイズを含む入力からノイズのない入力を復元するように学習すると、次元圧縮の性能を向上できることを示した。
+層の深いautoencoderを学習するには、良い初期値を与えなければらないことが知られていた。
+<a href="https://www.cs.toronto.edu/~hinton/science.pdf">先行研究</a>は、各中間層を個別に学習することで、良い初期値を求められることを示した。
+具体的には、各中間層について、前の層の入力から次の層の出力を推定できるよう個別に学習させる。
+一方で、何が良い初期値をなすのかは知られていなかった。
+表題の論文は、その条件は入力に含まれるノイズに対して頑強であると仮説をおき、ノイズを除去できるように目的関数を設定することで、次元圧縮の性能が上がることを示し、仮説の正しさを確かめた。</p>
+
+<p>目的関数を説明するにあたり、ノイズのない入力\(\mathrm{\boldsymbol{x}}\in [0, 1]^d\)からノイズのある入力\(\tilde{\mathrm{\boldsymbol{x}}}\)をつくるために、確率\(\nu\)で\(\nu d\)個の要素を0に変える場合を考える。
+ネットワークが1つの中間層だけをもち、\(s(\mathrm{\boldsymbol{x}})\)をシグモイド関数として、中間層の表現を\(f_{\theta}(\mathrm{\boldsymbol{x}})=s(\mathrm{\boldsymbol{Wx+b}})\), 出力を\(g_{\theta&rsquo;}(\mathrm{\boldsymbol{y}})=s(\boldsymbol{\mathrm{W&rsquo;y+b&rsquo;}})\)とするとき、目的関数は次の式になる。</p>
+
+<p>$$
+\underset{\theta, \theta&rsquo;}{\operatorname{argmin}}\mathbb{E}_{q^0(X, \tilde{X})}\left[L_{\mathbb{H}}\left(X,g_{\theta&rsquo;}(f_{\theta}(\tilde{X}))\right)\right]
+$$</p>
+
+<p>\(q^0(X, \tilde{X})\)は、学習データにおける\(X\)と\(\tilde{X}\)の同時確率分布, \(L_{\mathbb{H}}\)は交差エントロピーを示す。
+$$
+L_{\mathbb{H}}(\mathrm{\boldsymbol{x}}, \mathrm{\boldsymbol{z}})=-\sum^d_{k=1}\left[\boldsymbol{\mathrm{x}}_k\log\mathrm{\boldsymbol{z}}_k+(1-\mathrm{\boldsymbol{x}}_k)\log(1-\mathrm{\boldsymbol{z}}_k)\right]
+$$</p>
+
+<hr />
+
+<p>論文を<a href="https://www.cs.toronto.edu/~larocheh/publications/icml-2008-denoising-autoencoders.pdf">こちら</a>からダウンロードできます。</p>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>
