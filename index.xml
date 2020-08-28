@@ -6,10 +6,19 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 21 Aug 2020 18:03:14 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 23 Aug 2020 13:34:09 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Extensible Effects An Alternative to Monad Transformers</title>
+      <link>https://nryotaro.dev/posts/extensible_effects/</link>
+      <pubDate>Sun, 23 Aug 2020 13:34:09 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/extensible_effects/</guid>
+      <description>&lt;p&gt;モナド変換子にかわるモナドの合成方法Extensible Effectsの実装を示す。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ When and Why Your Code Starts to Smell Bad</title>

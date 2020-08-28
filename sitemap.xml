@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nryotaro.dev/posts/extensible_effects/</loc>
+    <lastmod>2020-08-23T13:34:09+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nryotaro.dev/posts/when_and_why_your_code_starts_to_smell_bad/</loc>
     <lastmod>2020-08-21T18:03:14+09:00</lastmod>
   </url>
@@ -484,7 +489,7 @@
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2020-08-21T18:03:14+09:00</lastmod>
+    <lastmod>2020-08-23T13:34:09+09:00</lastmod>
   </url>
   
   <url>
@@ -494,7 +499,7 @@
   
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2020-08-21T18:03:14+09:00</lastmod>
+    <lastmod>2020-08-23T13:34:09+09:00</lastmod>
     <priority>0</priority>
   </url>
   

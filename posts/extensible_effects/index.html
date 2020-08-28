@@ -1,0 +1,252 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ Extensible Effects An Alternative to Monad Transformers</h2>
+    <p>August 23, 2020</p>
+  </header>
+  <p>モナド変換子にかわるモナドの合成方法Extensible Effectsの実装を示す。</p>
+
+<p>モナド変換子を使えば、<code>do</code>のコードブロックの中で複数のモナドをあつかえる。
+モナド変換子で合成されるモナドには上下関係があり、合成されたモナドの意味は、同じモナドでも位置によって変化する。
+例えば、<code>MaybeT (State Int)</code>と<code>StateT Int Maybe</code>では、モナドを解いたときの型が異なる。
+モナドであつかわれるEffectが互いに干渉している。</p>
+
+<p>モナド変換子には、合成するモナドの数が増えるたびに、オーバーヘッドがかかる問題もある。
+<code>ReaderT Int (StateT Float) Identity</code>の糖衣構文をもどすと、<code>Int -&gt; (Float -&gt; (Identity a Float))</code>になる。
+このとき、<code>return</code>では2つの閉包が作成され、<code>bind</code>ではこれらを適用しなければならない。</p>
+
+<p>Extensible Effectsは、合成したいモナドをopen-unionという集合に近いデータ型で管理する。
+モナド間の上下関係がなくなり、集合の要素が同じであれば、同じ処理結果をえられるようになる。
+計算量は、合成されたモナドの総数ではなく、各モナドを処理するハンドラの順序で決まる。
+実行順序の工夫によって、オーバーヘッドを抑えることができる。</p>
+
+<p>Web上に公開されたコードは現在のHaskellのbaseライブラリと互換性がないため、現在のbaseでコンパイルできるExtensible Effectsの実装例を以下に示す。</p>
+
+<!--
+論文前半にある実装には省略があり、また、Web上に公開されたコードは現在のHaskellのbaseライブラリと互換性がないため、以下に論文前半の実装例と、現在のbaseでコンパイルできるExtensible Effectsの実装例を示す。
+-->
+
+<!--
+また、合成するモナドの数が増えても
+
+
+Extensible Effectsは、 Effectをopen-unionという直和型の値の要素に加え、単一の直和型のモナドでモナド変換子を置きかえる。
+open-unionによって、モナドの上下関係でコードブロックの意味が変わることを避けたり、また、open-unionには動的に要素内容を変換できたりする。
+同時に、モナドの数が1つになるため、オーバヘッドを抑えることができる。
+
+論文の前半部分の完全な実装がなく、Web上に公開された付録のコードは現在のHaskellと互換性がないため、Extensible Effectsの実装例を以下に示す。
+-->
+
+<pre><code>{-# LANGUAGE FlexibleContexts #-}
+{-# LANGUAGE FlexibleInstances #-}
+{-# LANGUAGE GADTs #-}
+{-# LANGUAGE DeriveDataTypeable, GeneralizedNewtypeDeriving, DeriveFunctor #-}
+{-# LANGUAGE KindSignatures #-}
+{-# LANGUAGE MultiParamTypeClasses #-}
+{-# LANGUAGE RankNTypes #-}
+{-# LANGUAGE TypeOperators #-}
+
+
+module Lib3 () where
+
+import Data.Functor
+
+import Data.Typeable (Typeable, gcast1)
+newtype Id x = Id x
+
+data Union r v where
+  Union :: (Functor t, Typeable t) =&gt; Id (t v) -&gt; Union r v
+
+instance Functor (Union r) where
+  fmap ab (Union (Id x)) = Union (Id (fmap ab x))
+
+data VE w r = Val w | E (Union r (VE w r))
+
+newtype Eff r a = Eff {runEff :: forall w. (a -&gt; VE w r) -&gt; VE w r}
+
+instance Functor (Eff r) where
+  fmap f (Eff c) = Eff $ \k -&gt; c (\a -&gt; k (f a))
+
+instance Applicative (Eff r) where
+  pure x = Eff $ \k -&gt; k x
+  (Eff a) &lt;*&gt; (Eff b) = Eff $ \k -&gt; (a (\ab -&gt; (b (\c -&gt; k (ab c)))))
+
+instance Monad (Eff r) where
+  return = pure
+  m &gt;&gt;= f = Eff $ \k -&gt; runEff m (\v -&gt; runEff (f v) k)
+
+admin :: Eff r w -&gt; VE w r
+admin (Eff m) = m Val
+
+send :: (forall w. (a -&gt; VE w r) -&gt; Union r (VE w r)) -&gt; Eff r a
+send f = Eff $ \k -&gt; E (f k)
+
+data Void -- no constructors
+
+run :: Eff Void w -&gt; w
+run m = case admin m of Val x -&gt; x
+
+infixr 1 |&gt;
+
+data (a :: * -&gt; *) |&gt; b
+
+decomp :: Typeable t =&gt; Union (t |&gt; r) v -&gt; Either (Union r v) (t v)
+decomp (Union v) | Just (Id x) &lt;- gcast1 v = Right x
+decomp (Union v) = Left (Union v)
+
+handle_relay :: Typeable t =&gt; Union (t |&gt; r) v -&gt; (v -&gt; Eff r a) -&gt; (t v -&gt; Eff r a) -&gt; Eff r a
+handle_relay u loop h = case decomp u of
+  Right x -&gt; h x
+  Left u -&gt; send (\k -&gt; fmap k u) &gt;&gt;= loop
+
+class Member (t :: * -&gt; *) r
+
+instance Member t (t |&gt; r)
+
+instance {-# overlaps #-} Member t r =&gt; Member t (t' |&gt; r)
+
+inj :: (Functor t, Typeable t, Member t r) =&gt; t v -&gt; Union r v
+inj x = Union (Id x)
+
+prj :: (Functor t, Typeable t, Member t r) =&gt; Union r v -&gt; Maybe (t v)
+prj (Union v) | Just (Id x) &lt;- gcast1 v = Just x
+prj _ = Nothing
+
+interpose :: (Typeable t, Functor t, Member t r) =&gt; Union r v -&gt; (v -&gt; Eff r a) -&gt; (t v -&gt; Eff r a) -&gt; Eff r a
+interpose u loop h = case prj u of
+  Just x -&gt; h x
+  _ -&gt; send (\k -&gt; fmap k u) &gt;&gt;= loop
+
+newtype Reader e v = Reader (e -&gt; v) deriving (Typeable, Functor)
+
+ask :: (Typeable e, Member (Reader e) r) =&gt; Eff r e
+ask = send (inj . Reader)
+
+runReader :: Typeable e =&gt; Eff (Reader e |&gt; r) w -&gt; e -&gt; Eff r w
+runReader m e = loop (admin m)
+  where
+    loop (Val x) = return x
+    loop (E u) = handle_relay u loop (\(Reader k) -&gt; loop (k e))
+
+local :: (Typeable e, Member (Reader e) r) =&gt; (e -&gt; e) -&gt; Eff r a -&gt; Eff r a
+local f m = do
+  e0 &lt;- ask
+  let e = f e0
+  let loop (Val x) = return x
+      -- data VE w r = Val w | E (Union r (VE w r))
+      loop (E u) = interpose u loop (\(Reader k) -&gt; loop (k e))
+  loop (admin m)
+
+newtype Exc e v = Exc e deriving (Typeable, Functor)
+
+throwError :: (Typeable e, Member (Exc e) r) =&gt; e -&gt; Eff r a
+throwError e = send (\_ -&gt; inj $ Exc e)
+
+runError :: Typeable e =&gt; Eff (Exc e |&gt; r) a -&gt; Eff r (Either e a)
+runError m = loop (admin m)
+  where
+    loop (Val x) = return (Right x)
+    loop (E u) = handle_relay u loop (\(Exc e) -&gt; return (Left e))
+
+catchError ::
+  (Typeable e, Member (Exc e) r) =&gt;
+  Eff r a -&gt;
+  (e -&gt; Eff r a) -&gt;
+  Eff r a
+catchError m handle = loop (admin m)
+  where
+    loop (Val x) = return x
+    loop (E u) = interpose u loop (\(Exc e) -&gt; handle e)
+
+data Choose v = forall a. Choose [a] (a -&gt; v)
+
+instance Functor Choose where
+  fmap f (Choose lst k) = Choose lst (f . k)
+
+choose :: Member Choose r =&gt; [a] -&gt; Eff r a
+choose lst = send $ (\k -&gt; inj $  Choose lst k)
+
+makeChoice :: forall a r. Eff (Choose |&gt; r) a -&gt; Eff r [a]
+makeChoice m = loop (admin m)
+  where
+    loop (Val x) = return [x]
+    loop (E u) = handle_relay u loop (\(Choose lst k) -&gt; handle lst k)
+    handle :: [t] -&gt; (t -&gt; VE a (Choose |&gt; r)) -&gt; Eff r [a]
+    handle [] _ = return []
+    handle [x] k = loop (k x)
+    handle lst k = fmap concat $ mapM (loop . k) lst
+
+
+data Trace v = Trace String (() -&gt; v)
+    deriving (Typeable, Functor)
+
+trace :: Member Trace r =&gt; String -&gt; Eff r ()
+trace x = send (inj . Trace x)
+
+runTrace :: Eff (Trace |&gt; Void) w -&gt; IO w
+runTrace m = loop (admin m)
+  where
+    loop (Val x) = return x
+    loop (E u) = case prj u of
+      Just (Trace s k) -&gt; putStrLn s &gt;&gt; loop (k ())
+</code></pre>
+
+<hr />
+
+<ul>
+<li>論文を<a href="http://okmij.org/ftp/Haskell/extensible/exteff.pdf">ここ</a>からダウンロードできます。</li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>
