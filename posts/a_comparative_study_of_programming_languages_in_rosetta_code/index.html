@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ A Comparative Study of Programming Lanugages in Rosetta Code</h2>
+    <p>August 28, 2020</p>
+  </header>
+  <p><a href="http://rosettacode.org/wiki/Rosetta_Code">Rosetta Code</a>に投稿された実装で言語の性能を比較した。
+比較した言語は、Ruby, F#, Java, C#, Go, C, Python, Haskellの8つである。</p>
+
+<p>Rosetta Codeは、同じタスクを解く異なる言語の実装例を集めたWebサイトである。
+745件のタスクに対する7,087件の実装をもちいて、コードの短さ、実行ファイルの小ささ、処理性能の高さ、メモリの最大使用量やエラーの少なさを評価した。
+ウィルコクソンの符号順位検定で測定結果の有意性と効果量を求めた。</p>
+
+<p>結果をまとめると次のようになる。</p>
+
+<ul>
+<li>関数型やスクリプト言語は、手続型やオブジェクト指向よりも短い行数で実装できる</li>
+<li>バイトコードが生成される言語のコンパイラは、ネイティブコードを出力する言語のものよりも小さい実行ファイルを生成する</li>
+<li>計算量の大きい入力を与えると、Cは他の言語を引きはなす性能とメモリ効率を発揮する。GoはCの次点に位置する。bbただし、計算量が少ない入力だと、言語間の差は縮み、インタプリタ言語でも他言語と変わらない処理性能やメモリ効率を発揮する。</li>
+<li>強い静的型付け言語は、インタプリタや弱い型付け言語よりもランタイムエラーが少ない。</li>
+</ul>
+
+<p>以下に、評価観点ごとの言語間の比較を図示する。
+水平上の距離は、おそよの測定値の比例関係を示す。
+矢印の矢と根は2言語の優劣関係を示し、太さは効果量の大きさを表す。</p>
+
+<p><img src="/rosetta/fig6.png" alt="6" /></p>
+
+<p><img src="/rosetta/fig8.png" alt="6" /></p>
+
+<p><img src="/rosetta/fig11.png" alt="6" /></p>
+
+<p><img src="/rosetta/fig13.png" alt="6" /></p>
+
+<p><img src="/rosetta/fig16.png" alt="6" /></p>
+
+<hr />
+
+<ul>
+<li>論文を<a href="https://arxiv.org/pdf/1409.0252.pdf">こちら</a>からダウンロードできます。</li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

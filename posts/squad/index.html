@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ SQuAD: 100,000&#43; Questions for Machine Comprehension of Text</h2>
+    <p>August 28, 2020</p>
+  </header>
+  <p>読解タスクのテストデータセットSQuADをつくり、ロジスティック回帰で難易度を評価した。
+難易度は、ベースラインのF1スコアが20%, 強いモデルで51.0%, 人間で86.8%程度である。</p>
+
+<p>既存の読解タスクのデータセットには質と量のどちらかに問題があり、読解タスクを適切に評価するためのデータセットがなかった。
+Richardsonらの<a href="https://www.aclweb.org/anthology/D13-1020/">MCTest</a>は質はよいがデータ件数が少ない。
+一方、<a href="https://papers.nips.cc/paper/5945-teaching-machines-to-read-and-comprehend.pdf">Haermann et alらのデータ</a>は、半合成的であり、読解能力を問う質問に適していない。</p>
+
+<p>SQuADは、<a href="https://www.nayuki.io">Project Nayuki</a>のWikipediaの記事上位10000件から無作為に選ばれた536件の記事から作られている。
+抽出された記事から500文字以下の23,215個のパラグラフを集め、質問は各パラグラフの読解能力を測る。
+質問と解答の組は、Mechanical Turkをバックエンドにした<a href="https://github.com/crowdresearch/daemo">Daemo platform</a>でクラウドワーカーに作成してもらった。
+パラグラフを読んだクラウドワーカーは、作成した質問をテキストフィールドに入力し、パラグラフ上にある解答をハイライトすることでサンプルを作った。
+問題の一例を以下に図示する。</p>
+
+<p><img src="/squad.png" alt="qa" /></p>
+
+<hr />
+
+<ul>
+<li>論文を<a href="https://arxiv.org/pdf/1606.05250.pdf">こちら</a>からダウンロードできます。</li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

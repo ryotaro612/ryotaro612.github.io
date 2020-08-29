@@ -6,10 +6,30 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 23 Aug 2020 13:34:09 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2020 20:19:47 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ A Comparative Study of Programming Lanugages in Rosetta Code</title>
+      <link>https://nryotaro.dev/posts/a_comparative_study_of_programming_languages_in_rosetta_code/</link>
+      <pubDate>Fri, 28 Aug 2020 20:19:47 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/a_comparative_study_of_programming_languages_in_rosetta_code/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://rosettacode.org/wiki/Rosetta_Code&#34;&gt;Rosetta Code&lt;/a&gt;に投稿された実装で言語の性能を比較した。
+比較した言語は、Ruby, F#, Java, C#, Go, C, Python, Haskellの8つである。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>論文メモ SQuAD: 100,000&#43; Questions for Machine Comprehension of Text</title>
+      <link>https://nryotaro.dev/posts/squad/</link>
+      <pubDate>Fri, 28 Aug 2020 19:36:42 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/squad/</guid>
+      <description>&lt;p&gt;読解タスクのテストデータセットSQuADをつくり、ロジスティック回帰で難易度を評価した。
+難易度は、ベースラインのF1スコアが20%, 強いモデルで51.0%, 人間で86.8%程度である。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ Extensible Effects An Alternative to Monad Transformers</title>
