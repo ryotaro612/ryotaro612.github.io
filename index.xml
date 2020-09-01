@@ -218,7 +218,7 @@ Pytorchは、4つの設計原則として、PythonらしいAPI、機械学習の
       <guid>https://nryotaro.dev/posts/automatic_differentiation_in_pytorch/</guid>
       <description>&lt;p&gt;Pytorchの自動微分を解説したプレプリントのショートペーパである。
 Pytorchの自動微分特徴として、in-placeアルゴリズム、微分の導出に不要な計算を省く仕組みのあるテープ、C++による実装をあげている。
-&lt;a href=&#34;https://pytorch.org/blog/pytorch-0_4_0-migration-guide/&#34;&gt;0.4.0での仕様変更&lt;/a&gt;によってTensors&lt;code&gt;と&lt;/code&gt;Variables&lt;code&gt;がマージされたことや&lt;/code&gt;volatile`が非推奨になったことをふまえていない。
+&lt;a href=&#34;https://pytorch.org/blog/pytorch-0_4_0-migration-guide/&#34;&gt;0.4.0での仕様変更&lt;/a&gt;によって&lt;code&gt;Tensors&lt;/code&gt;と&lt;code&gt;Variables&lt;/code&gt;がマージされたことや&lt;code&gt;volatile&lt;/code&gt;が非推奨になったことをふまえていない。
 読むときは、以上の点をはじめとする現在のAPIとの差異に注意する必要がある。&lt;/p&gt;</description>
     </item>
     

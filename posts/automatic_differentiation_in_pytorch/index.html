@@ -37,7 +37,7 @@
   </header>
   <p>Pytorchの自動微分を解説したプレプリントのショートペーパである。
 Pytorchの自動微分特徴として、in-placeアルゴリズム、微分の導出に不要な計算を省く仕組みのあるテープ、C++による実装をあげている。
-<a href="https://pytorch.org/blog/pytorch-0_4_0-migration-guide/">0.4.0での仕様変更</a>によってTensors<code>と</code>Variables<code>がマージされたことや</code>volatile`が非推奨になったことをふまえていない。
+<a href="https://pytorch.org/blog/pytorch-0_4_0-migration-guide/">0.4.0での仕様変更</a>によって<code>Tensors</code>と<code>Variables</code>がマージされたことや<code>volatile</code>が非推奨になったことをふまえていない。
 読むときは、以上の点をはじめとする現在のAPIとの差異に注意する必要がある。</p>
 
 <p>in-placeアルゴリズムは、データ変換のアルゴリズムで、入力データの記憶領域以外の領域をほとんど使わないものをさす。
