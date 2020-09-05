@@ -36,6 +36,38 @@
     
       <article class="summary">
 	<header>
+	  <h2><a href="/posts/get_another_label/">論文メモ Get Another Label? Improving Data Quality and Data Mining Using Multiple, Noisy Labelers</a></h2>
+	  <p>November 9, 2019</p>
+	</header>
+	<div class="excerpt"><h3 id="概要">概要</h3>
+
+<p>ある確率でデータに誤ったラベルをふるlabelerでデータにラベルをふるときに、
+既にラベルのあるデータに重ねてラベルをふるべきか調査した。
+12種類のラベルつきデータセットを使い、
+正解ラベルを誤ったラベルに置換する割合や同一のデータのもつラベルの数を変化させ、モデルの精度の違いを観察した。
+加えて、ラベルをふるべきデータを推定する手法も提案している。</p></div>
+	<a class="readmore" href="/posts/get_another_label/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
+	  <h2><a href="/posts/active_clean/">メモ ActiveClean: Interactive Data Cleaning For Statistical Modeling</a></h2>
+	  <p>November 9, 2019</p>
+	</header>
+	<div class="excerpt"><p>ActiveCleanは、教師データの誤りを修正し、モデルの精度を改善する手法である。
+優先して修正すべきデータを推定し、データが修正されたら修正されたデータでモデルを学習する。
+この修正と学習を条件を満たすまでくりかえす。
+反復的な学習で大域的最適解をえられるモデルであれば、最適解への収束が保証される。
+データの修正件数が等しい場合に、先行研究と比べて最大2.5倍の精度改善を達成した。</p></div>
+	<a class="readmore" href="/posts/active_clean/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
 	  <h2><a href="/posts/web_tables/">メモ WebTables: Exploring the Power of Tables on the Web</a></h2>
 	  <p>October 31, 2019</p>
 	</header>
@@ -145,36 +177,6 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
       </article>
     
   
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/class_imbalance_redux/">メモ Class Imbalance, Redux</a></h2>
-	  <p>September 7, 2019</p>
-	</header>
-	<div class="excerpt"><p>表題の論文は、不均衡データの特徴が二値分類の予測性能に及ぼす影響を理論づける論文である。
-理論と実験を通じて、多くのケースにおいて、アンダーサンプリングによる均衡データのバギングで予測性能があがったことを示している。
-バギングは、アンダーサンプリングによる偏りを抑えて予測性能を安定させるために使われる。
-論文で扱うモデルは、SVMなどの学習で経験損失を最小化するモデルに限定されている。発表学会は2011年のICDMである。</p></div>
-	<a class="readmore" href="/posts/class_imbalance_redux/">Read more</a>
-      </article>
-    
-  
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/learning_on_border/">メモ Learning on the Border: Active Learning in Imbalanced Data Classification</a></h2>
-	  <p>August 31, 2019</p>
-	</header>
-	<div class="excerpt"><h3 id="概要">概要</h3>
-
-<p>表題にある論文は、不均衡データの二値分類についての予測性能を能動学習で改善する手法を提案している。
-着想は、学習器のマージン付近では正例と負例がよりバランスしていると仮定し、
-マージン付近にあるデータを集めることで、均衡のとれたデータセットを用意することにある。
-具体的には、ラベルづけしたデータでSVMをオンライン学習し、無作為に抽出されたラベルのないデータの中で最も超平面に近いデータにラベルをつける手順をマージンの中にあるデータ数が変わらなくなるまで繰り返す。</p></div>
-	<a class="readmore" href="/posts/learning_on_border/">Read more</a>
-      </article>
-    
-  
   <div class="pagination">
   
     <a href="/"><i class="material-icons">first_page</i></a>
@@ -186,7 +188,7 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
     <a href="/page/8/"><i class="material-icons">chevron_right</i></a>
   
   
-    <a href="/page/10/"><i class="material-icons">last_page</i></a>
+    <a href="/page/11/"><i class="material-icons">last_page</i></a>
   
 </div>
 

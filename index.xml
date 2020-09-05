@@ -6,10 +6,35 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 28 Aug 2020 20:19:47 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2020 21:54:22 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Beyond Accuracy: Behavioral Testing of NLP Models with CHECKLIST</title>
+      <link>https://nryotaro.dev/posts/beyond_accuracy/</link>
+      <pubDate>Fri, 04 Sep 2020 21:54:22 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/beyond_accuracy/</guid>
+      <description>&lt;p&gt;ホールドアウト法にかわる自然言語処理モデルの汎化性能を評価するための手法CHECKLISTを提案した。
+テストデータと訓練データが同じ方法で集められたときなど、ホールドアウト法はモデルを過大評価することがある。
+CHECKLISTは、ソフトウェア開発のブラックボックステストにならい、半自動生成したテストデータで汎化性能を評価する。
+CHECKLISTの汎用性と性能を評価するために、感情分析、Quoraの重複質問検出、読解の3タスクについて、商用やSoTAに近いモデルを学習させ、CHECKLISTでモデルがあつかえない入力パターンをどれだけ生成できるか実験した。
+感情分析の評価には、Microsoft, Google, AmazonのAPIとBERT, RoBERTaを使い、重複検出にはBERTとRoBERTa, 読解にはBERTを使用した。
+CHECKLISTはOSSとして&lt;a href=&#34;https://github.com/marcotcr/checklist&#34;&gt;公開&lt;/a&gt;されている。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Why Good Developers Write Bad Code: An Observational Case Study of the Impacts of Organizational Factors on Software Quality</title>
+      <link>https://nryotaro.dev/posts/why_good_developers_write_bad_code/</link>
+      <pubDate>Fri, 04 Sep 2020 20:54:26 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/why_good_developers_write_bad_code/</guid>
+      <description>&lt;p&gt;創立40年以上の電気通信系企業での内製システムをリプレースするプロジェクトを観察し、コードに悪影響をおよぼす10の組織的な要因をまとめた。
+表題には、&amp;rdquo;Good Developers&amp;rdquo;とあるが、開発者のスキルの高さは議論されてはいない。
+列挙された要因は、包括的ではなく、また、あくまでコードの品質を悪化させるものであり、プロジェクトの失敗に直結するわけではない。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ A Comparative Study of Programming Lanugages in Rosetta Code</title>

@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nryotaro.dev/posts/beyond_accuracy/</loc>
+    <lastmod>2020-09-04T21:54:22+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/why_good_developers_write_bad_code/</loc>
+    <lastmod>2020-09-04T20:54:26+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nryotaro.dev/posts/a_comparative_study_of_programming_languages_in_rosetta_code/</loc>
     <lastmod>2020-08-28T20:19:47+09:00</lastmod>
   </url>
@@ -499,7 +509,7 @@
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2020-08-28T20:19:47+09:00</lastmod>
+    <lastmod>2020-09-04T21:54:22+09:00</lastmod>
   </url>
   
   <url>
@@ -509,7 +519,7 @@
   
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2020-08-28T20:19:47+09:00</lastmod>
+    <lastmod>2020-09-04T21:54:22+09:00</lastmod>
     <priority>0</priority>
   </url>
   
