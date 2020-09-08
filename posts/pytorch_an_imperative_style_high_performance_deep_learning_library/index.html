@@ -44,7 +44,7 @@ Pytorchは、4つの設計原則として、PythonらしいAPI、機械学習の
 CUDAストリームによって、CPUとGPUの計算は非同期に協調する。
 また、<code>cudaFree</code>によるメモリ解放時のブロックを避けるために、独自のメモリーアロケータでメモリを確保する仕組みがある。
 また、Pythonの<a href="https://docs.python.org/ja/3/library/multiprocessing.html">multiprocessing</a>パッケージと完全な互換性のある<a href="https://pytorch.org/docs/stable/multiprocessing.html">再実装</a>もある。
-これは、テンソルを共有メモリに格納するこで、標準の<code>multiprocessing</code>で起きるプロセス間でのデータの受け渡しにかかるオーバーヘッドを抑える。
+これは、テンソルを共有メモリに格納することで、標準の<code>multiprocessing</code>で起きるプロセス間でのデータの受け渡しにかかるオーバーヘッドを抑える。
 テンソルへの参照カウントは、Pytorch側で管理され、テンソルへの参照が0になった時点で即座にメモリが解放される。</p>
 
 <hr />
