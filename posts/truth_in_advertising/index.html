@@ -1,6 +1,5 @@
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.54.0" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -14,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
     
-  <link rel="stylesheet" type="text/css" href="/css/index.css"></link>
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -31,39 +30,25 @@
     </header>
     <main>
       
-  
-  
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/text_cls_from_lbl_and_unlbl_doc_em/">概要 Text Classification from Labeled and Unlabeled Documents using EM</a></h2>
-	  <p>July 8, 2018</p>
-	</header>
-	<div class="excerpt"><h3 id="アルゴリズム">アルゴリズム</h3>
+<article>
+  <header>
+    <h2>論文メモ Truth in Advertising: The Hidden Cost of Mobile Ads for Software Developers</h2>
+    <p>September 11, 2020</p>
+  </header>
+  <p>モバイルアプリを無料で提供し、アプリ内の広告で収益をえるビジネスが普及している。
+このビジネスモデルでは、一見、ユーザには、画面に広告を表示されること以外のコストがないように思える。
+表題の論文は、それ以外のコストを確かめるために、CPU, 電力, ネットワーク, 広告関連のためのリリース, アプリケーションへのユーザからの評価へ広告が及ぼす影響を調査した。</p>
 
-<p>提案手法は、Naive BayesとEMアルゴリズムを組み合わせたもの。
-ラベル付きデータが\(D^l\)でラベルなしデータが\(D^u\)で表されるとき、対数尤度\(\log P(D^l)P(D^u)\)を最大化する問題を解く。</p></div>
-	<a class="readmore" href="/posts/text_cls_from_lbl_and_unlbl_doc_em/">Read more</a>
-      </article>
-    
-  
-    
-  
-  <div class="pagination">
-  
-    <a href="/"><i class="material-icons">first_page</i></a>
-  
-  
-    <a href="/page/10/"><i class="material-icons">chevron_left</i></a>
-  
-  
-    <a><i class="material-icons">chevron_right</i></a>
-  
-  
-    <a><i class="material-icons">last_page</i></a>
-  
-</div>
+<p>21のアンドロイドアプリを対象に、<a href="https://sourceforge.net/projects/dex2jar/">dex2jar</a>と<a href="https://asm.ow2.io/">asm</a>で逆コンパイルしたバイトコードから広告関連の実装を除去して広告のないアプリを用意し、広告のあるアプリと比較した。
+結果、広告があるアプリでは、平均して、CPU時間が48%, 電力消費が16%, 通信データ量が79%多かった。
+また、リリースに占める広告に関する変更の割合は23%であり、Google Play app storeのレビューにある批判の4%が広告に関するものだった。</p>
 
+<hr />
+
+<ul>
+<li>論文を<a href="https://ieeexplore.ieee.org/abstract/document/7194565/">こちら</a>からダウンロードできます。</li>
+</ul>
+</article>
 
     </main>
     <footer>

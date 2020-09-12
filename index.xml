@@ -6,10 +6,21 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 04 Sep 2020 21:54:22 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2020 20:01:30 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Truth in Advertising: The Hidden Cost of Mobile Ads for Software Developers</title>
+      <link>https://nryotaro.dev/posts/truth_in_advertising/</link>
+      <pubDate>Fri, 11 Sep 2020 20:01:30 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/truth_in_advertising/</guid>
+      <description>&lt;p&gt;モバイルアプリを無料で提供し、アプリ内の広告で収益をえるビジネスが普及している。
+このビジネスモデルでは、一見、ユーザには、画面に広告を表示されること以外のコストがないように思える。
+表題の論文は、それ以外のコストを確かめるために、CPU, 電力, ネットワーク, 広告関連のためのリリース, アプリケーションへのユーザからの評価へ広告が及ぼす影響を調査した。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Beyond Accuracy: Behavioral Testing of NLP Models with CHECKLIST</title>
