@@ -56,8 +56,8 @@ CHECKLISTはOSSとして&lt;a href=&#34;https://github.com/marcotcr/checklist&#3
       <pubDate>Fri, 04 Sep 2020 20:54:26 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/why_good_developers_write_bad_code/</guid>
-      <description>&lt;p&gt;創立40年以上の電気通信系企業での内製システムをリプレースするプロジェクトを観察し、コードに悪影響をおよぼす10の組織的な要因をまとめた。
-表題には、&amp;rdquo;Good Developers&amp;rdquo;とあるが、開発者のスキルの高さは議論されてはいない。
+      <description>&lt;p&gt;創立40年以上の電気通信系企業における内製システムのリプレースプロジェクトを観察し、コードに悪影響をおよぼす10の組織的な要因をまとめた。
+表題には、&amp;rdquo;Good Developers&amp;rdquo;とあるが、開発者のスキルの高さは議論されていない。
 列挙された要因は、包括的ではなく、また、あくまでコードの品質を悪化させるものであり、プロジェクトの失敗に直結するわけではない。&lt;/p&gt;</description>
     </item>
     
