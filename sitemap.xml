@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nryotaro.dev/posts/what_makes_a_greate_software_engineer/</loc>
+    <lastmod>2020-09-18T20:19:31+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/maml/</loc>
+    <lastmod>2020-09-18T17:54:38+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nryotaro.dev/posts/truth_in_advertising/</loc>
     <lastmod>2020-09-11T20:01:30+09:00</lastmod>
   </url>
@@ -519,7 +529,7 @@
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2020-09-11T20:01:30+09:00</lastmod>
+    <lastmod>2020-09-18T20:19:31+09:00</lastmod>
   </url>
   
   <url>
@@ -529,7 +539,7 @@
   
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2020-09-11T20:01:30+09:00</lastmod>
+    <lastmod>2020-09-18T20:19:31+09:00</lastmod>
     <priority>0</priority>
   </url>
   
