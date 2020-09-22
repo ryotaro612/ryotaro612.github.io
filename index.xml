@@ -218,14 +218,14 @@ Factorizatiom Machineは、両者の利点をそなえており、疎な任意�
     </item>
     
     <item>
-      <title>Deep Learning Recommendation Model for Personalization and Recoomendation Systems</title>
+      <title>論文メモ Deep Learning Recommendation Model for Personalization and Recoomendation Systems</title>
       <link>https://nryotaro.dev/posts/deep_learning_recommendation_model_for_personalization_and_recommendation_systems/</link>
       <pubDate>Fri, 24 Jul 2020 13:53:05 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/deep_learning_recommendation_model_for_personalization_and_recommendation_systems/</guid>
       <description>&lt;p&gt;協調フィルタリングのような推薦システムのためのネットワークアーキテクチャを提案した。
 特徴の疎・密にかかわらず入力として与えることができる。
-例えば、論文の例題では、個人の選好をしめすアイテムとユーザからなる疎な行列を受け取り、ユーザがアイテムをクリックする確率を推定するタスクが使われている。&lt;/p&gt;</description>
+論文の例題では、個人の選好を示すアイテムとユーザからなる疎な行列を受け取り、ユーザがアイテムをクリックする確率を推定するタスクが使われている。&lt;/p&gt;</description>
     </item>
     
     <item>

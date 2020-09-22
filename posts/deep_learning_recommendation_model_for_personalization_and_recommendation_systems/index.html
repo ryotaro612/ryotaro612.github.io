@@ -32,17 +32,17 @@
       
 <article>
   <header>
-    <h2>Deep Learning Recommendation Model for Personalization and Recoomendation Systems</h2>
+    <h2>論文メモ Deep Learning Recommendation Model for Personalization and Recoomendation Systems</h2>
     <p>July 24, 2020</p>
   </header>
   <p>協調フィルタリングのような推薦システムのためのネットワークアーキテクチャを提案した。
 特徴の疎・密にかかわらず入力として与えることができる。
-例えば、論文の例題では、個人の選好をしめすアイテムとユーザからなる疎な行列を受け取り、ユーザがアイテムをクリックする確率を推定するタスクが使われている。</p>
+論文の例題では、個人の選好を示すアイテムとユーザからなる疎な行列を受け取り、ユーザがアイテムをクリックする確率を推定するタスクが使われている。</p>
 
 <p>アーキテクチャは、次の図が示すように、Matrix Factorization, 多層パーセプトロン(MLP)、Factorization Machinesからなる。
 最初に、疎な特徴をMatrix Factorizationで密に変換する。
-疎な特徴だけでなく密な特徴も与えられるは、これを下部のMLPに与え、両者のベクトルの長さを同じにする。
-その後、Factorization Machinesで交互作用を求め、それを上部のMLP、その後にシグモイド渡すと最終的な出力がえられる。</p>
+疎な特徴だけでなく密な特徴も与えられると、これを下部のMLPに与え、両者のベクトルの長さを同じにする。
+その後、Factorization Machinesで交互作用を求め、それを上部のMLP、その後にシグモイド渡すと最終的な出力をえられる。</p>
 
 <p><img src="/dlrm.png" alt="dlrm" /></p>
 
