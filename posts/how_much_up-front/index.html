@@ -1,0 +1,99 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ How much Up-Front? A Grounded Theory of Agile Architecture</h2>
+    <p>September 25, 2020</p>
+  </header>
+  <p>「アジャイル開発においては、実装前のアーキテクチャ設計にどれだけ工数を割くべきか？」という問いの回答指針を、44名のソフトウェア開発者に面接し、その結果からグラウンデッド・セオリーで提案した。</p>
+
+<p>面接に参加した開発者には、最低でも6年以上の開発経験があり、11名は20年以上の経験がある。
+面接の長さは平均で70分であり、面接では、経験したプロジェクトを開発者に説明してもらう。
+また、アーキテクチャを説明する文書も提供してもらった。
+文書には設計の意思決定の理由も書かれている。</p>
+
+<p>提案手法では、5つパターンに分類でき、チームをとりまく6つの観点から最適なパターンを選ぶことをすすめてる。
+パターンは、strategiesといい、観点はforcesといわれている。
+strategiesとforcesは、相互に影響し、その関係は以下の図で描かれる。</p>
+
+<p><img src="/upfront.png" alt="img" /></p>
+
+<p>四角の枠はforceを、丸枠はstrategyを示す。
+矢印は依存や因果関係を表し、実線は正の、点線は負の影響を与えることを意味する。
+矢印のない点線はトリガーであり、\(\oplus\)は排他関係を示す。
+forcesとstrategiesの意味は次のとおり。</p>
+
+<ul>
+<li>F1 要件が変りやすい</li>
+<li>F2 アーキテクチャの複雑さが及ぼす負のリスク</li>
+<li>F3 システムの機能がすべて実装される前の不完全なシステムに対する顧客のニーズ</li>
+<li>F4 チームの機敏さや実装前の設計に対する姿勢</li>
+<li>F5 顧客がどれだけ事前の設計や手続を重んじるか</li>
+<li>F6 開発者のシステム開発の技量と意思決定の能力</li>
+<li>S1 要件や環境の変化に即応する。S2の指針とは対立する。</li>
+<li>S2 問題が生じないように、事前にリスクを減らす</li>
+<li>S3 設計を最小限にとどめる</li>
+<li>S4 開発前に、全ての要件を洗い出し、完全な設計を済ませる</li>
+<li>S5 フレームワークやテンプレートをもちいて実装する</li>
+</ul>
+
+<hr />
+
+<ul>
+<li><a href="https://ieeexplore.ieee.org/document/7194587">論文</a>をこちらからダウンロードできます。</li>
+<li>図は論文から引用されています。
+f</li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

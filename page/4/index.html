@@ -36,6 +36,42 @@
     
       <article class="summary">
 	<header>
+	  <h2><a href="/posts/bleu/">論文メモ BLEU: a Method for Automatic Evaluation of Machine Translation</a></h2>
+	  <p>June 13, 2020</p>
+	</header>
+	<div class="excerpt"><h3 id="概要">概要</h3>
+
+<p>自動翻訳を定量的に評価するための指標BLEUを提案した論文である。
+指標は、専門家の翻訳に翻訳に高い評価をあたえるよう設計されている。
+BLEUは、ひとつの候補訳に対する1つ以上の参照訳をあたえ、0から1の値をとるスコアを出力する。
+スコアは高いほどよい。
+BLEUは、参照訳にある単語を過剰に含むことや文の短さにペナルティをあたえ、適合率で候補訳を評価する。</p></div>
+	<a class="readmore" href="/posts/bleu/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
+	  <h2><a href="/posts/sequence_to_sequence_learning_with_neural_networks/">論文メモ Sequence to Sequence Learning with Nueral Networks</a></h2>
+	  <p>June 6, 2020</p>
+	</header>
+	<div class="excerpt"><h3 id="概要">概要</h3>
+
+<p>Sequence to Sequenceの論文。
+入出力が系列データを学習する場合、入力と出力の長さが等しかったり対応関係にある箇所が系列の方向に単調でなければならなかったりする。
+これらの制約に対処するために、Sequence to Sequenceでは、入力全体を固定長のベクトルに一度変換し、そのベクトルをもとに出力を予測する。
+2種類のLSTMをもち、入力を与えるLSTMの最終層の隠れ状態で、固定長ベクトルをつくる。
+固定長のベクトルは、単調の制約を緩めるはたらきをする。
+このベクトルは、もう一方のLSTMにあたえられ、その主力が最終的な出力になる。
+実験では、入力系列を反転してあたえると、入力と出力の対応関係にある箇所の距離が近づき、予測性能が上がることが確認された。</p></div>
+	<a class="readmore" href="/posts/sequence_to_sequence_learning_with_neural_networks/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
 	  <h2><a href="/posts/google_neural_machine_translation_system/">論文メモ Google&#39;s Neural Machine Transltation System: Bridging the Gap between Human and Machine Translation</a></h2>
 	  <p>May 30, 2020</p>
 	</header>
@@ -164,37 +200,6 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
 目標関数から、ドメイン間のデータの分布が近いほど、目標ドメインのデータでも高い分類性能を発揮する。
 先行研究との違いは、できるだけ共通するする特徴で分類するという着想を、通常の分類と同じく、確率的勾配降下法で実現したところにある。</p></div>
 	<a class="readmore" href="/posts/domain_adversarial_training_of_neural_networks/">Read more</a>
-      </article>
-    
-  
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/character_aware_neural_language_models/">論文メモ Character-Aware Neural Language Models</a></h2>
-	  <p>April 4, 2020</p>
-	</header>
-	<div class="excerpt"><h3 id="概要">概要</h3>
-
-<p>文字単位の入力から次に出現する単語を予測するニューラル言語モデルの論文である。
-アーキテクチャは入力から近い順にCNN, highway network, LSTMからなる。
-実験データにPenn Treebankを、評価指標にPerplexityを採用してモデルを評価したところ、
-論文が発表された2016年時点での<a href="https://arxiv.org/abs/1409.2329">SOTA</a>の60%程度のパラメタしかないモデルでありながら、これに匹敵する性能を発揮した。</p></div>
-	<a class="readmore" href="/posts/character_aware_neural_language_models/">Read more</a>
-      </article>
-    
-  
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/deep_contextualized_word_representations/">論文メモ Deep contextualized word representations</a></h2>
-	  <p>March 24, 2020</p>
-	</header>
-	<div class="excerpt"><p>文脈をふまえた単語の分散表現を生成する手法を提案し、教師あり学習に応用することで評価した論文である。
-文字単位の学習済み双方向LSTM言語モデルへの入力と各層の出力から分散表現をつくる。
-言語モデルの入力やどの層をどれだけ重視するかは、教師あり学習のときに更新するパラメタのひとつになる。
-実験では、構文にかかわるタスクであれば入力層に近い層が、意味にかかわるものであれば出力層に近い層が、重視された。
-モデルは、Embeddings from Language Modelsにちなみ、ELMoと名付けられた。</p></div>
-	<a class="readmore" href="/posts/deep_contextualized_word_representations/">Read more</a>
       </article>
     
   

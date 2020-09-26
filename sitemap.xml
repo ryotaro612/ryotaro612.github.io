@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nryotaro.dev/posts/how_much_up-front/</loc>
+    <lastmod>2020-09-25T20:40:50+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/character_level_convolutional_networks_for_text_classification/</loc>
+    <lastmod>2020-09-25T18:10:08+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nryotaro.dev/posts/what_makes_a_greate_software_engineer/</loc>
     <lastmod>2020-09-18T20:19:31+09:00</lastmod>
   </url>
@@ -529,7 +539,7 @@
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2020-09-18T20:19:31+09:00</lastmod>
+    <lastmod>2020-09-25T20:40:50+09:00</lastmod>
   </url>
   
   <url>
@@ -539,7 +549,7 @@
   
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2020-09-18T20:19:31+09:00</lastmod>
+    <lastmod>2020-09-25T20:40:50+09:00</lastmod>
     <priority>0</priority>
   </url>
   
