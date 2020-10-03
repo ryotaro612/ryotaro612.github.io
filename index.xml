@@ -6,10 +6,31 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 25 Sep 2020 20:40:50 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2020 20:22:20 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Build it yourself! Homegrown Tools in a Large Software Company</title>
+      <link>https://nryotaro.dev/posts/build_it_yourself/</link>
+      <pubDate>Fri, 02 Oct 2020 20:22:20 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/build_it_yourself/</guid>
+      <description>&lt;p&gt;マイクロソフトにおいて、誰が(RQ1)、どんな(RQ2)自作ツールを、どのような動機(RQ3)で、いつ(RQ3)開発し、どのように普及するのか(RQ4)を調査した。
+調査結果では、大多数の開発者はツールを自作し、そのほとんどは所属するチームの外までは普及せす、ツールの使用者と共同開発者は一人以上いることが多かった。
+受容的な組織文化はツールの自作を促進し、また、自作ツールは組織に大きな影響をあたえる可能性があることを示唆している。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>論文メモ Universal Sentence Encoder</title>
+      <link>https://nryotaro.dev/posts/universal_sentence_encoder/</link>
+      <pubDate>Fri, 02 Oct 2020 18:20:29 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/universal_sentence_encoder/</guid>
+      <description>&lt;p&gt;転移学習のための文の分散表現を獲得するモデルを提案した。
+提案されたモデルは2つで、両者には精度と計算量の間にトレードオフがある。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ How much Up-Front? A Grounded Theory of Agile Architecture</title>
@@ -33,11 +54,11 @@
     </item>
     
     <item>
-      <title>論文メモ What Makes A Greate Software Engineer?</title>
-      <link>https://nryotaro.dev/posts/what_makes_a_greate_software_engineer/</link>
+      <title>論文メモ What Makes A Great Software Engineer?</title>
+      <link>https://nryotaro.dev/posts/what_makes_a_great_software_engineer/</link>
       <pubDate>Fri, 18 Sep 2020 20:19:31 +0900</pubDate>
       
-      <guid>https://nryotaro.dev/posts/what_makes_a_greate_software_engineer/</guid>
+      <guid>https://nryotaro.dev/posts/what_makes_a_great_software_engineer/</guid>
       <description>&lt;p&gt;優れたエンジニアの特徴を知るために、マイクロソフト社のアーキテクト59名と半構造化された面接をし、グラウンデッドセオリーで内容から特徴を抽出した。&lt;/p&gt;</description>
     </item>
     
