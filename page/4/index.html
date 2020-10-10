@@ -36,6 +36,23 @@
     
       <article class="summary">
 	<header>
+	  <h2><a href="/posts/rouge/">論文メモ ROUGE: A Package for Automatic Evaluation of Summaries</a></h2>
+	  <p>June 27, 2020</p>
+	</header>
+	<div class="excerpt"><h3 id="概要">概要</h3>
+
+<p>生成された要約を機械的に評価するための指標, Recall-Oriented Understudy for Gisting Evaluation(ROUGE)を提案した論文である。
+人が作成した複数の要約文書との再現率で要約文書を評価する。
+ROUGEは、ROUGE-N, ROUGE-L, ROUGE-W, ROUGE-S, ROUGE-SUの5つの指標の総称である。
+同じ要約へのROUGEスコアと人の評価の相関によって、ROUGEの指標としての有用性を評価した。
+その結果、ROUGE-2, ROUGE-L, ROUGE-W, ROUGE-Sは、文書の要約の評価に向き、ROUGE-1, ROUGE-L, ROUGE-W, ROUGE-SU4, ROUGE-SU9はヘッドラインほどの短い要約文の評価に向いていることがわかった。</p></div>
+	<a class="readmore" href="/posts/rouge/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
 	  <h2><a href="/posts/do_developers_discover_new_tools_on_the_toilet/">論文メモ Do Developers Discover New Tools On The Toilet?</a></h2>
 	  <p>June 20, 2020</p>
 	</header>
@@ -174,20 +191,6 @@ $$ \mathrm{proj}(\boldsymbol{\theta})= \begin{cases} \boldsymbol{\theta}/||\bold
 ミニバッチごとに、入力または出力の言語をいれかえ、言語に依存しない文の意味の分散表現への変換方法を学習する。
 本論文の成果は多言語に対応する分散表現のモデルのライブラリ<a href="https://github.com/facebookresearch/LASER">LASER</a>に応用されている。</p></div>
 	<a class="readmore" href="/posts/learning_joint_multilingual_sentence_representations_with_neural_machine_translation/">Read more</a>
-      </article>
-    
-  
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/albert/">論文メモ ALBERT: A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS</a></h2>
-	  <p>April 25, 2020</p>
-	</header>
-	<div class="excerpt"><p>BERTのパラメタ数を削減し、学習時間の短縮と正則化による予測性能の向上を両立したモデルALBERTを提案し、GLUE, RACE, SQuADでSoTAを実現した。
-BERT-largeと比べると、ALBERT-largeのパラメタ数は約5.3%の18Mであり、学習時間は1.7倍速い。
-パラメタを削減するために、単語のOne-hotベクトルをあたえられる単語埋め込み行列の次元を減らし、隠れ層の順伝播ネットワークや注意機構のパラメタを層の間で共有した。
-また、Next Sentence Prediction(NSP)による学習を、与えられた2文の前後関係を判定する学習Sentence Order Prediction(SOP)におきかえ、主タスクの予測性能を向上をはかった。</p></div>
-	<a class="readmore" href="/posts/albert/">Read more</a>
       </article>
     
   

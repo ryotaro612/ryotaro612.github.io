@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nryotaro.dev/posts/end_to_end_neural_coreference_resolution/</loc>
+    <lastmod>2020-10-10T00:12:47+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nryotaro.dev/posts/build_it_yourself/</loc>
     <lastmod>2020-10-02T20:22:20+09:00</lastmod>
   </url>
@@ -549,7 +554,7 @@
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2020-10-02T20:22:20+09:00</lastmod>
+    <lastmod>2020-10-10T00:12:47+09:00</lastmod>
   </url>
   
   <url>
@@ -559,7 +564,7 @@
   
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2020-10-02T20:22:20+09:00</lastmod>
+    <lastmod>2020-10-10T00:12:47+09:00</lastmod>
     <priority>0</priority>
   </url>
   
