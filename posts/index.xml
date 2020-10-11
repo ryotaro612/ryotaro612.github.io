@@ -6,10 +6,22 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 10 Oct 2020 00:12:47 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2020 15:02:49 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Software Development Waste</title>
+      <link>https://nryotaro.dev/posts/software_development_waste/</link>
+      <pubDate>Sun, 11 Oct 2020 15:02:49 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/software_development_waste/</guid>
+      <description>&lt;p&gt;Pivotal Labs(Pivoital社の一部門、PivotalはSpring Frameworkを開発している会社。昨年VM Wareに買収された？)における8プロジェクトを、グラウンデットセオリーにしたがって参与観察し、ソフトウェア開発においる無駄を特定し、無駄を9つの区分に分類した。
+論文では、無駄は「リソースを使っのに顧客にとっての価値を生みださなかった活動」と定義されている。
+調査期間は2年5ヶ月で、調査結果は、ソフトウェア開発者、インタラクションデザイナ、プロダクトマネジャーからなる33名のステークホルダに面接した結果もふまえてある。
+分類のほかに、無駄を生みだす二項対立や原因にも言及されている。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ End-to-end Neural Coreference Resolution</title>
