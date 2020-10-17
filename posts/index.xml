@@ -6,10 +6,21 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 11 Oct 2020 15:02:49 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2020 17:34:32 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Becoming Agile: A Grounded Theory of Agile Transitions in Practice</title>
+      <link>https://nryotaro.dev/posts/becoming_agile/</link>
+      <pubDate>Fri, 16 Oct 2020 17:34:32 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/becoming_agile/</guid>
+      <description>&lt;p&gt;アジャイル開発に熟練する過程でチームに生じる変化をグラウンデッドセオリーで調査した。
+調査のために、ニュージーランド、オーストラリア、アメリカ、インド、ポルトガルの5カ国から18のチームを選び、その中の31名に半構造化された約1時間の面接を実施した。
+面接では、職歴、自己組織化の実践、仕事のわりあて方の3つを話してもらった。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ Software Development Waste</title>
