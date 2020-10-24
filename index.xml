@@ -6,10 +6,20 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 16 Oct 2020 22:17:56 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2020 23:58:44 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ From Diversity by Numbers to Diversity as Process</title>
+      <link>https://nryotaro.dev/posts/from_diversity_by_numbers_to_diversity_as_process/</link>
+      <pubDate>Fri, 16 Oct 2020 23:58:44 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/from_diversity_by_numbers_to_diversity_as_process/</guid>
+      <description>開発におけるブレーンストーミングが、マイノリティに属する開発者の満足度の向上に貢献することを実験的に示した。 ここでの開発は、ハッカソンのような短時間かつ集中が求められるものが想定されている。 満足度は、開発プロセスと成果物に対するもので分けて扱われ、どちらの観点でもブレーンストーミングは満足度に対してよい効果をもたらした。
+ 論文をこちらからダウンロードできます。  </description>
+    </item>
     
     <item>
       <title>論文メモ End-to-end Sequence Labeling via Bi-directional LSTM-CNNs-CRF</title>
