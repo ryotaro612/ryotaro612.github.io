@@ -6,7 +6,7 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 30 Oct 2020 20:53:06 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2020 20:53:06 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>論文メモ Simple Testing Can Prevent Most Critical Failures</title>
       <link>https://nryotaro.dev/posts/simple_testing_can_prevent_most_critical_failures/</link>
-      <pubDate>Fri, 30 Oct 2020 20:53:06 +0900</pubDate>
+      <pubDate>Thu, 29 Oct 2020 20:53:06 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/simple_testing_can_prevent_most_critical_failures/</guid>
       <description>&lt;p&gt;5つの分散システムのバグのうち198件を無作為に抽出、調査したところ、エラーハンドリングに対する単純なテストが有効であることが分かった。
