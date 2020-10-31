@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nryotaro.dev/posts/simple_testing_can_prevent_most_critical_failures/</loc>
+    <lastmod>2020-10-30T20:53:06+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nryotaro.dev/posts/from_diversity_by_numbers_to_diversity_as_process/</loc>
     <lastmod>2020-10-16T23:58:44+09:00</lastmod>
   </url>
@@ -574,7 +579,7 @@
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2020-10-16T23:58:44+09:00</lastmod>
+    <lastmod>2020-10-30T20:53:06+09:00</lastmod>
   </url>
   
   <url>
@@ -584,7 +589,7 @@
   
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2020-10-16T23:58:44+09:00</lastmod>
+    <lastmod>2020-10-30T20:53:06+09:00</lastmod>
     <priority>0</priority>
   </url>
   
