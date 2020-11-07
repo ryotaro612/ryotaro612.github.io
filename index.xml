@@ -6,10 +6,35 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 29 Oct 2020 20:53:06 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2020 17:06:40 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Dynamo: Amazon&#39;s Highly Available Key-value Store</title>
+      <link>https://nryotaro.dev/posts/dynamo_amazons_highly_available_key_value_store/</link>
+      <pubDate>Fri, 06 Nov 2020 17:06:40 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/dynamo_amazons_highly_available_key_value_store/</guid>
+      <description>&lt;p&gt;Amazonで社内運用されている高可用性のKVS, Dynamoのアーキテクチャを解説している。
+まぎらわしいが、Dynamoは、AWSサービスのDynamo DBとは違う&lt;a href=&#34;https://www.oreilly.co.jp/books/9784873118703/&#34;&gt;*&lt;/a&gt;。
+Dynamoは、リーダーレスレプリケーションモデルで、Dynamo DBはシングルリーダレプリケーションモデルを採用している。
+Dynamoは、高信頼性が必要なシステムの状態管理に使用される。
+その用途から、トランザクション分離レベルのサポートは不要で、可用性を優先するために結果整合性を許容する。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>論文メモ Zero-shot Word Sense Disambiguation using Sense Definition Embeddings</title>
+      <link>https://nryotaro.dev/posts/zero_shot_word_sense_disambiguation_using_sense_definition_embeddings/</link>
+      <pubDate>Fri, 30 Oct 2020 18:58:39 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/zero_shot_word_sense_disambiguation_using_sense_definition_embeddings/</guid>
+      <description>&lt;p&gt;語義曖昧性解消のためのアーキテクチャ, Extended WSD Incorporating Sense Embeddings(EWISE)を発表した。
+EWISEは単語の意味をアノテーションしあテキストと辞書を教師データにもちいる。
+実験では、辞書にWordNetをつかい、概念同士の上下関係や関係を示す分散表現を獲得する。
+学習であたえられていない意味を推定するために、離散値ではなく分散表現でラベルの意味を表現する。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ Simple Testing Can Prevent Most Critical Failures</title>
