@@ -36,6 +36,22 @@
     
       <article class="summary">
 	<header>
+	  <h2><a href="/posts/amazon_aurora/">論文メモ Amazon Aurora: Design Considerations for High Throughput Cloud-Native Relational Databases</a></h2>
+	  <p>November 13, 2020</p>
+	</header>
+	<div class="excerpt"><p>AWSで提供されるRDBM, Amazon Auroraのアーキテクチャを解説した論文。
+分散システムをクラウドにおく場合、計算やIOはノードに分散され、ボトルネックではなくなる。
+そして、ボトルネックは、DBインスタンスとストレージ間のネットワークになる。
+この仮説もと、プライマリインスタンスが、別テナントのストレージに直接Redoログを送ることで、レプリカインスタンスとストレージ間の負荷を減らし、処理性能の向上をはかる。
+また、レプリケーションのために、MySQLがRedoログだけでなくバイナリログなど複数種類のログをスレーブに送るのに対し、AuroraはRedoログだけを転送する。
+これにより、リカバリや縮退、フェールオーバの性能も向上している。</p></div>
+	<a class="readmore" href="/posts/amazon_aurora/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
 	  <h2><a href="/posts/one_size_fit_all/">論文メモ &#34;One Size Fits All&#34;: An Idea Whose Time Has Come and Gone</a></h2>
 	  <p>November 13, 2020</p>
 	</header>
@@ -150,19 +166,6 @@ Javaのバイトコードから以上の3パターンを検出するツールを
 	<div class="excerpt"><p>ニューラルネットワークによる共参照解析の手法で、End-to-Endとあるように、構文解析やルールベースの参照表現に頼らず、先行研究を上回る性能を発揮した。
 文書中の全ての単語系列を参照表現の候補とみなし、ある単語系列の組が照応関係にある確率の分布を学習する。</p></div>
 	<a class="readmore" href="/posts/end_to_end_neural_coreference_resolution/">Read more</a>
-      </article>
-    
-  
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/build_it_yourself/">論文メモ Build it yourself! Homegrown Tools in a Large Software Company</a></h2>
-	  <p>October 2, 2020</p>
-	</header>
-	<div class="excerpt"><p>マイクロソフトにおいて、誰が(RQ1)、どんな(RQ2)自作ツールを、どのような動機(RQ3)で、いつ(RQ3)開発し、どのように普及するのか(RQ4)を調査した。
-調査結果では、大多数の開発者はツールを自作し、そのほとんどは所属するチームの外までは普及せす、ツールの使用者と共同開発者は一人以上いることが多かった。
-受容的な組織文化はツールの自作を促進し、また、自作ツールは組織に大きな影響をあたえる可能性があることを示唆している。</p></div>
-	<a class="readmore" href="/posts/build_it_yourself/">Read more</a>
       </article>
     
   
