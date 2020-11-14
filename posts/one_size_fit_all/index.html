@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ &#34;One Size Fits All&#34;: An Idea Whose Time Has Come and Gone</h2>
+    <p>November 13, 2020</p>
+  </header>
+  <p>2011年に発表された論文で、これまでのようにDBMSを様々なデータ中心のアプリケーションに利用することがデータベース市場で受け入れられなくなったと主張する。
+データウェアハウスとストリーミング処理を例にとり、これらに特化したデータベースをDBMSで代用することの限界が説明されている。
+表題の&rdquo;One Size Fits All&rdquo;はフリーサイズ、転じて、万能、汎用的を意味する。</p>
+
+<p>関係データベースは、70年代に初めてSQLを実装したSystem Rをもって、市場に登場した。
+80年代は、保守コスト、製品間でのアプリケーションの互換性、セールス上の理由から&rdquo;One Size Fits All&rdquo;の時代だった。
+各社は開発するDBMSの種類を絞り、様々なデータ中心のアプリケーションにDBMSを活用できると信じた。</p>
+
+<p>90年代になると、ビジネスインテリジェンス(BI)がうまれ、社内データを集約し分析するデータウェアハウスが求められるようになった。
+データウェアハウスでは、複雑かつアドホックなクエリへの処理性能が求められ、スキーマは星型であり、bitmapインデックスが有効であるのに対し、DBMSでは、更新に特化され、星型スキーマはみられず、B-treeインデックスが効力を発揮する。データウェアハウスをDBMSで代用する難しさがここにある。</p>
+
+<p>交通量や株価などのストリーミング処理では、それに特化したデータベースと比べると、DBMSは処理性能で遅れをとる。
+DBMSだと、データを処理するためにはDBにデータを格納する必要がある。
+一方、ストリーミングに特化したデータベースでは、受信するデータを永続化する前にメモリー上で処理し、また非同期に永続化できることが処理性能の差を生みだしている。</p>
+
+<hr />
+
+<p>論文を<a href="https://cs.brown.edu/~ugur/fits_all.pdf">こちら</a>からダウンロードできます。</p>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

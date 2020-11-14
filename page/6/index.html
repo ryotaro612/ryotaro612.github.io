@@ -36,6 +36,25 @@
     
       <article class="summary">
 	<header>
+	  <h2><a href="/posts/domain_adversarial_training_of_neural_networks/">論文メモ Domain Adversarial Training of Neural Networks</a></h2>
+	  <p>April 11, 2020</p>
+	</header>
+	<div class="excerpt"><h3 id="概要">概要</h3>
+
+<p>ニューラルネットワークをもちいたドメイン適用の論文である。
+ソースドメインのラベルつきデータと目標ドメインのラベルのないデータでモデルを訓練し、目標ドメインに対する分類性能を引きあげる。
+目的関数は、ソースドメインの分類器の目的関数とデータのドメインを判定する識別器の目的関数からなる。
+後者は、前者の正則化項としてはたらく。
+これにより、ドメイン間に共通する特徴からソースドメインのデータのラベルを高い性能で予測できるようになる。
+目標関数から、ドメイン間のデータの分布が近いほど、目標ドメインのデータでも高い分類性能を発揮する。
+先行研究との違いは、できるだけ共通するする特徴で分類するという着想を、通常の分類と同じく、確率的勾配降下法で実現したところにある。</p></div>
+	<a class="readmore" href="/posts/domain_adversarial_training_of_neural_networks/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
 	  <h2><a href="/posts/character_aware_neural_language_models/">論文メモ Character-Aware Neural Language Models</a></h2>
 	  <p>April 4, 2020</p>
 	</header>
@@ -165,24 +184,6 @@ decoderについても、encoderと別の言語モデルを用意し、その重
 <p>深層強化学習をAtari2600の7つのゲームに応用し、うち6つについて先行手法の性能を超えたDeep Q-Networks(DQN)を提案した論文である。
 ピクセルデータを直接入力として与え、深層学習で方策を学習する手法としては初めて提案された。</p></div>
 	<a class="readmore" href="/posts/playing_atari_with_deep_reinforcement_learning/">Read more</a>
-      </article>
-    
-  
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/context2vec/">論文メモ context2vec: Learning Generic Context Embedding with Bidirectional LSTM</a></h2>
-	  <p>February 2, 2020</p>
-	</header>
-	<div class="excerpt"><h3 id="概要">概要</h3>
-
-<p>文書の文脈の分散表現を獲得するニューラルネットワークのアーキテクチャ*context2vec*を提案、評価した論文である。
-アーキテクチャの基本構造は<a href="https://arxiv.org/pdf/1301.3781.pdf">CBOW</a>と同様で、周辺の単語から中心の単語を当てられるようにコーパスをもとにモデルを訓練する。
-CBOWとの違いは、文脈の算出方法にある。
-CBOWは、ウィンドウ内のベクトルの平均値で文脈の分散表現を求める。
-一方、*context2vec*では、双方向LSTMの出力をもとに算出する。
-<!-- 分散表現を汎用的に利用できることを想定しており、獲得した分散表現をsentence comp --></p></div>
-	<a class="readmore" href="/posts/context2vec/">Read more</a>
       </article>
     
   
