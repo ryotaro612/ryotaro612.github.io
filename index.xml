@@ -6,10 +6,21 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 13 Nov 2020 17:51:53 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2020 21:21:33 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Weighted Voting for Replicated Data</title>
+      <link>https://nryotaro.dev/posts/weighted_voting_for_replicated_data/</link>
+      <pubDate>Thu, 19 Nov 2020 21:21:33 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/weighted_voting_for_replicated_data/</guid>
+      <description>&lt;p&gt;1979年に発表されたレプリケーション管理のクオーラムモデルのアルゴリズムの論文で、以前紹介したように&lt;a href=&#34;https://awsmedia.awsstatic-china.com/blog/2017/aurora-design-considerations-paper.pdf&#34;&gt;Amazon Aurora&lt;/a&gt;や&lt;a href=&#34;https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf&#34;&gt;Dynamo&lt;/a&gt;で採用されている。
+ファイルの読み込みや書き込みのトランザクションは、複製されたファイルのもつ票を集め、所定の数、クオーラムを越えたときのみ実行される。
+これにより、読み込み、書き込みの線形の一貫性が保証され、実行中のトランザクションが高々一つであるかのように見せかけられる。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ Amazon Aurora: Design Considerations for High Throughput Cloud-Native Relational Databases</title>

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nryotaro.dev/posts/weighted_voting_for_replicated_data/</loc>
+    <lastmod>2020-11-19T21:21:33+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nryotaro.dev/posts/amazon_aurora/</loc>
     <lastmod>2020-11-13T17:51:53+09:00</lastmod>
   </url>
@@ -599,7 +604,7 @@
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2020-11-13T17:51:53+09:00</lastmod>
+    <lastmod>2020-11-19T21:21:33+09:00</lastmod>
   </url>
   
   <url>
@@ -609,7 +614,7 @@
   
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2020-11-13T17:51:53+09:00</lastmod>
+    <lastmod>2020-11-19T21:21:33+09:00</lastmod>
     <priority>0</priority>
   </url>
   
