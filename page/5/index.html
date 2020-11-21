@@ -36,6 +36,20 @@
     
       <article class="summary">
 	<header>
+	  <h2><a href="/posts/automatic_differentiation_in_pytorch/">論文メモ Automatic differentiation in Pytorch</a></h2>
+	  <p>July 4, 2020</p>
+	</header>
+	<div class="excerpt"><p>Pytorchの自動微分を解説したプレプリントのショートペーパである。
+Pytorchの自動微分特徴として、in-placeアルゴリズム、微分の導出に不要な計算を省く仕組みのあるテープ、C++による実装をあげている。
+<a href="https://pytorch.org/blog/pytorch-0_4_0-migration-guide/">0.4.0での仕様変更</a>によって<code>Tensors</code>と<code>Variables</code>がマージされたことや<code>volatile</code>が非推奨になったことをふまえていない。
+読むときは、以上の点をはじめとする現在のAPIとの差異に注意する必要がある。</p></div>
+	<a class="readmore" href="/posts/automatic_differentiation_in_pytorch/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
 	  <h2><a href="/posts/rouge/">論文メモ ROUGE: A Package for Automatic Evaluation of Summaries</a></h2>
 	  <p>June 27, 2020</p>
 	</header>
@@ -177,23 +191,6 @@ $$ \mathrm{proj}(\boldsymbol{\theta})= \begin{cases} \boldsymbol{\theta}/||\bold
       </article>
     
   
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/learning_joint_multilingual_sentence_representations_with_neural_machine_translation/">論文 メモ Learning Joint Multilingual Sentence Representations with Neural Machine Translation</a></h2>
-	  <p>April 29, 2020</p>
-	</header>
-	<div class="excerpt"><h3 id="概要">概要</h3>
-
-<p>多言語の文をあつかう分散表現モデルを発表した論文である。
-異なる言語の文であっても、意味が同じであれば、同様の分散表現に変換される。
-モデルのアーキテクチャにはseq2seqを、入力と出力には対訳コーパスをつかう。
-ミニバッチごとに、入力または出力の言語をいれかえ、言語に依存しない文の意味の分散表現への変換方法を学習する。
-本論文の成果は多言語に対応する分散表現のモデルのライブラリ<a href="https://github.com/facebookresearch/LASER">LASER</a>に応用されている。</p></div>
-	<a class="readmore" href="/posts/learning_joint_multilingual_sentence_representations_with_neural_machine_translation/">Read more</a>
-      </article>
-    
-  
   <div class="pagination">
   
     <a href="/"><i class="material-icons">first_page</i></a>
@@ -205,7 +202,7 @@ $$ \mathrm{proj}(\boldsymbol{\theta})= \begin{cases} \boldsymbol{\theta}/||\bold
     <a href="/page/6/"><i class="material-icons">chevron_right</i></a>
   
   
-    <a href="/page/12/"><i class="material-icons">last_page</i></a>
+    <a href="/page/13/"><i class="material-icons">last_page</i></a>
   
 </div>
 
