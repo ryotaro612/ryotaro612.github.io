@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ A Relational Model of Data for Large Shared Data Banks</h2>
+    <p>November 21, 2020</p>
+  </header>
+  <p>Coddがリレーショナルデータモデルを提唱した70年の論文。
+データをリレーション(SQLでのテーブル)として束ね、リレーションを順序なしのタプル(SQLの行)で構成する。</p>
+
+<p>論文の問題意識は、データの種類の増加や内部表現の変更からアプリケーションを守り、影響を抑えることにある。
+データとアプリケーションの依存関係を順序、インデックス、参照経路に分類し、これらを抑制する表現としてリレーションナルモデルを提唱した。
+ここでの順序は、例えば、ID順にレコードがファイルに格納されているような、データが存在する場所の前提を意味する。
+ここでのインデックスは、RDBMSのインデックスと同じもので、パフォーマンスのために用意された冗長なデータをさす。
+インデックスの依存は、インデックスが修正されたときに、アプリケーションに与える影響をさす。
+参照経路は、当時データベースモデルとして考えられていた階層型やネットワークデータモデル上の木やネットワークのパスを意味する。
+これらのデータモデルだと、アプリケーションが目的のデータを参照するには、パスを把握しておく必要があり、パスが変わるとアプリケーションに影響する。</p>
+
+<p>Coddの提唱するリレーションは次の4つの性質を備える。論文の後半は、リレーションに対する並び変え、射影、結合などの演算の定義や演算で上3つの依存性を排除するための手続きを説明している。</p>
+
+<ul>
+<li>各行は\(n\)組のタプルを表現する。</li>
+<li>行の順序は無関係である</li>
+<li>すべての行は異なるタプルである</li>
+<li>列の順序に意味がある。意味は列名によって与えられる。</li>
+</ul>
+
+<hr />
+
+<ul>
+<li>論文を<a href="https://www.seas.upenn.edu/~zives/03f/cis550/codd.pdf">こちら</a>からダウンロードできます。</li>
+</ul>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

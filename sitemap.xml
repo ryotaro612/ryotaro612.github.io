@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nryotaro.dev/posts/a_relational_model_of_data_for_large_shared_data_banks/</loc>
+    <lastmod>2020-11-21T13:51:57+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nryotaro.dev/posts/on_designing_and_deploying_internet-scale_services/</loc>
     <lastmod>2020-11-20T18:55:51+09:00</lastmod>
   </url>
@@ -609,7 +614,7 @@
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2020-11-20T18:55:51+09:00</lastmod>
+    <lastmod>2020-11-21T13:51:57+09:00</lastmod>
   </url>
   
   <url>
@@ -619,7 +624,7 @@
   
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2020-11-20T18:55:51+09:00</lastmod>
+    <lastmod>2020-11-21T13:51:57+09:00</lastmod>
     <priority>0</priority>
   </url>
   
