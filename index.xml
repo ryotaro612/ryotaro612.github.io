@@ -6,10 +6,21 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 21 Nov 2020 13:51:57 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2020 16:56:57 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Spanner: Google&#39;s Globally Distributed Database</title>
+      <link>https://nryotaro.dev/posts/spanner/</link>
+      <pubDate>Fri, 27 Nov 2020 16:56:57 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/spanner/</guid>
+      <description>&lt;p&gt;Spannerは、世界中のデータセンタにデータを複製する高可用な分散データベースで、&lt;a href=&#34;http://bitsavers.trailing-edge.com/pdf/xerox/parc/techReports/CSL-81-8_Information_Storage_in_a_Decentralized_Computer_System.pdf&#34;&gt;外部整合性&lt;/a&gt;のある分散トランザクションを保証する。
+ユーザからみると半リレーショナルなデータモデルのデータベースであり、各テーブルに一つ以上の順序つき主キーが必要なところがリレーショナルデータモデルと違う。
+一方、内部は文字列とタイムスタンプの組をキーにしたキーバリューストアであり、Single Paxos状態機械でデータの一貫性を守りながら複数のデータセンタにデータを複製する。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ A Relational Model of Data for Large Shared Data Banks</title>
