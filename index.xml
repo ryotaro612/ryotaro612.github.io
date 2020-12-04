@@ -6,10 +6,22 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 27 Nov 2020 16:56:57 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2020 21:22:34 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Aerospike: Architecture of a Real-Time Operational Database</title>
+      <link>https://nryotaro.dev/posts/aerospike/</link>
+      <pubDate>Sat, 28 Nov 2020 21:22:34 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/aerospike/</guid>
+      <description>&lt;p&gt;Aerospikeは、高い対障害性をもった分散データベースで、正式にはCitrusleafという。
+CPU, DRAM, HDDやSSDを搭載したコモディティなサーバでクラスタを組める。
+ノード同士はTCP/IPで通信し、シェアードナッシングなクラスタを構成する。
+処理性能の向上のために、スケールアウトだけでなく、スケールアップも重視しており、ハードウェアを意識した実装で高速化をはかっている。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ Spanner: Google&#39;s Globally Distributed Database</title>

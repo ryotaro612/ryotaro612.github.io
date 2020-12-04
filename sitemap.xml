@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nryotaro.dev/posts/aerospike/</loc>
+    <lastmod>2020-11-28T21:22:34+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nryotaro.dev/posts/spanner/</loc>
     <lastmod>2020-11-27T16:56:57+09:00</lastmod>
   </url>
@@ -619,7 +624,7 @@
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2020-11-27T16:56:57+09:00</lastmod>
+    <lastmod>2020-11-28T21:22:34+09:00</lastmod>
   </url>
   
   <url>
@@ -629,7 +634,7 @@
   
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2020-11-27T16:56:57+09:00</lastmod>
+    <lastmod>2020-11-28T21:22:34+09:00</lastmod>
     <priority>0</priority>
   </url>
   
