@@ -36,6 +36,21 @@
     
       <article class="summary">
 	<header>
+	  <h2><a href="/posts/deep_contextualized_word_representations/">論文メモ Deep contextualized word representations</a></h2>
+	  <p>March 24, 2020</p>
+	</header>
+	<div class="excerpt"><p>文脈をふまえた単語の分散表現を生成する手法を提案し、教師あり学習に応用することで評価した論文である。
+文字単位の学習済み双方向LSTM言語モデルへの入力と各層の出力から分散表現をつくる。
+言語モデルの入力やどの層をどれだけ重視するかは、教師あり学習のときに更新するパラメタのひとつになる。
+実験では、構文にかかわるタスクであれば入力層に近い層が、意味にかかわるものであれば出力層に近い層が、重視された。
+モデルは、Embeddings from Language Modelsにちなみ、ELMoと名付けられた。</p></div>
+	<a class="readmore" href="/posts/deep_contextualized_word_representations/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
 	  <h2><a href="/posts/the_seven_sins/">論文メモ The Seven Sins: Security Smells in Infrastructure as Code Scripts</a></h2>
 	  <p>March 20, 2020</p>
 	</header>
@@ -172,22 +187,6 @@ ICLR2015で発表された。
 次に、推定された箇所と生成済の単語列をもとに、単語を生成する。
 特に長い文書の翻訳において、固定長ベクトルをつかうモデルよりも、提案手法が優れていることを実験的に示した。</p></div>
 	<a class="readmore" href="/posts/neural_machine_translation_by_jointly_learning_to_align_and_translate/">Read more</a>
-      </article>
-    
-  
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/why_should_i_trust_you/">論文メモ &#34;Why Should I Trust You?&#34; Explaining the Predictions of Any Classifier</a></h2>
-	  <p>January 26, 2020</p>
-	</header>
-	<div class="excerpt"><h3 id="概要">概要</h3>
-
-<p>モデルの予測に説明をあたえる手法、Local Interpretable Model-agnostic Explanations (LIME)を提案する。
-モデルが回帰や分類器であれば、アルゴリズムによらずLIMEを適用できる。
-説明を与えたい事例近くにある事例を解釈可能なモデルに学習させ、解釈可能なモデルで予測を説明する。
-また、個別の予測ではなく、モデル自体をよく説明する事例を集める手法Submodullar Pick (SP)-LIMEを提案する。</p></div>
-	<a class="readmore" href="/posts/why_should_i_trust_you/">Read more</a>
       </article>
     
   

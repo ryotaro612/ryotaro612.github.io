@@ -36,6 +36,19 @@
     
       <article class="summary">
 	<header>
+	  <h2><a href="/posts/deep_joint_entity_disambiguation/">メモ Deep Joint Entity Disambiguation with Local Neural Attention</a></h2>
+	  <p>November 9, 2018</p>
+	</header>
+	<div class="excerpt"><p>本稿は、当ページで紹介した<a href="https://aclweb.org/anthology/K18-1050">End-to-End Neural Entity Linking</a>(End-to-End) の著者らの先行研究にあたる。
+End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)の両方をアプローチの対象にしているのに対し、本稿ではEDのみが対象となっている。
+したがって、文章からmention（参照表現）が抽出されていることが前提にあり、提案の中心は、参照表現に対応するエンティティを候補の中から正しく求める手法にある。</p></div>
+	<a class="readmore" href="/posts/deep_joint_entity_disambiguation/">Read more</a>
+      </article>
+    
+  
+    
+      <article class="summary">
+	<header>
 	  <h2><a href="/posts/end_to_end_neural_entity_linking/">メモ End-to-end Neural Entity Linking</a></h2>
 	  <p>November 2, 2018</p>
 	</header>
@@ -158,23 +171,6 @@
 	<div class="excerpt">ROCとPrecision Recallの関係を示した論文。
  1 Recallが0でなければ、ROC曲線には一対一に対応するPR曲線がある。 2 PR曲線AがPR曲線Bに対して常に優位であることとは、ROC曲線においてAがBより常に優位であることの必要十分条件。 3 1,2よりROC空間上の凸包に対応するPR曲線は、他の妥当なPR曲線よりも優位な曲線になる。 4 線形補間でROC曲線を描くことは妥当。一方で、Recallの分母は固定値であるが、Precisionの分母の値はRecallが上がると増える。そのため、PR曲線を線形補間でプロットすると、評価の甘い曲線になる。  論文はこちらからダウンロードできます。</div>
 	<a class="readmore" href="/posts/the_relationship_between_precision_recall_and_roc_curve/">Read more</a>
-      </article>
-    
-  
-    
-      <article class="summary">
-	<header>
-	  <h2><a href="/posts/enriching_word_vectors_with_subword_information/">メモ Enriching Word Vectors with Subword Information</a></h2>
-	  <p>August 10, 2018</p>
-	</header>
-	<div class="excerpt"><h3 id="概要">概要</h3>
-
-<p>Fasttextを提案、評価した論文。
-Character n-gramsを入力としてskip-gramのモデルを作る方法を提案、評価している。
-単語の部分文字列（subword）を使わない手法や形態素解析に頼る手法よりも提案手法が優れていることを実験で示した。
-部分文字列のベクトルの和が単語のベクトルとなる。
-実験の考察では、そのために、未知語の部分文字列が学習データにあれば、未知語に対しても妥当な分散表現を与えることができるとあった。</p></div>
-	<a class="readmore" href="/posts/enriching_word_vectors_with_subword_information/">Read more</a>
       </article>
     
   
