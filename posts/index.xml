@@ -22,6 +22,17 @@
     </item>
     
     <item>
+      <title>論文メモ The Declarative Imperative</title>
+      <link>https://nryotaro.dev/posts/the_declarative_imperative/</link>
+      <pubDate>Sat, 05 Dec 2020 16:19:30 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/the_declarative_imperative/</guid>
+      <description>&lt;p&gt;宣言型言語Datalogを拡張した言語でネットワークプロトコルと分散システムを開発した7年間の経験から、次世代の並列分散プログラミング言語の基礎になる理論上の予想を4つ提唱した。
+Datalogは、論理プログラミング言語Prologのサブセットの構文をもった言語である。
+予想の説明に使われるDatalogの拡張言語&lt;a href=&#34;https://www2.eecs.berkeley.edu/Pubs/TechRpts/2009/EECS-2009-173.pdf&#34;&gt;Dedalus&lt;/a&gt;は、分散システムのノードが互いの時刻を直接的に推論できない性質を、送受信するデータから離れたノードの時刻を推論する問題に帰着する。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>論文メモ Bigtable: A Distributed Storage System for Structured Data</title>
       <link>https://nryotaro.dev/posts/bigtable/</link>
       <pubDate>Mon, 30 Nov 2020 20:18:18 +0900</pubDate>
