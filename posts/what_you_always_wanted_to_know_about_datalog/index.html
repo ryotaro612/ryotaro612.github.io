@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ What You Always Wanted to Know Abount Datalog</h2>
+    <p>December 12, 2020</p>
+  </header>
+  <p>論理型のデータベースのクエリ言語Datalogの構文、意味論、最適化が解説されている。
+最適化の節はサーベイ論文の形式で、最適化を分類し、各種類の先行研究に案内がある。</p>
+
+<p>Datalogの構文はPrologの構文のサブセットである一方で、両者の意味論は異なる。
+Prologは、操作的意味論で定義され、深さ優先探索で節とリテラルを探索し、プログラムが停止することを保証しない。
+例えば、次の左再帰を含むホーン節の場合、Prologだと<code>sgc</code>の位置を変えないと評価できないが、Datalogであれば位置に関係なく評価できる。</p>
+
+<pre><code>r1 sgc(X, Y) :- sgc(X1, Y1), par(X, X1), par(Y, Y1)
+r2 sgc(X, X) :- person(X)
+</code></pre>
+
+<p>最適化については、次の図のCRITERIONの通り6項目に分類され、先行研究の案内がある。</p>
+
+<p><img src="/datalog.png" alt="opt" /></p>
+
+<hr />
+
+<p>論文を<a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.210.1118">こちら</a>からダウンロードできます。</p>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

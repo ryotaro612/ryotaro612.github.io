@@ -6,10 +6,20 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 05 Dec 2020 20:21:25 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 12 Dec 2020 18:02:01 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ What You Always Wanted to Know Abount Datalog</title>
+      <link>https://nryotaro.dev/posts/what_you_always_wanted_to_know_about_datalog/</link>
+      <pubDate>Sat, 12 Dec 2020 18:02:01 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/what_you_always_wanted_to_know_about_datalog/</guid>
+      <description>&lt;p&gt;論理型のデータベースのクエリ言語Datalogの構文、意味論、最適化が解説されている。
+最適化の節はサーベイ論文の形式で、最適化を分類し、各種類の先行研究に案内がある。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ Translating Embeddings for Modeling Multi-relational Data</title>
