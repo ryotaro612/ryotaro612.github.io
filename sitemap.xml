@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nryotaro.dev/posts/impossibility_of_distributed_consensus_with_one_faulty_process/</loc>
+    <lastmod>2020-12-18T22:18:59+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nryotaro.dev/posts/what_you_always_wanted_to_know_about_datalog/</loc>
     <lastmod>2020-12-12T18:02:01+09:00</lastmod>
   </url>
@@ -644,7 +649,7 @@
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2020-12-12T18:02:01+09:00</lastmod>
+    <lastmod>2020-12-18T22:18:59+09:00</lastmod>
   </url>
   
   <url>
@@ -654,7 +659,7 @@
   
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2020-12-12T18:02:01+09:00</lastmod>
+    <lastmod>2020-12-18T22:18:59+09:00</lastmod>
     <priority>0</priority>
   </url>
   
