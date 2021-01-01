@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    
+  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body class="container">
+    <header>
+      <h1><a href="/">Coda</a></h1>
+      <nav>
+	<ul>
+	  <li><a href="/posts/">Posts</a></li>
+	  <li><a href="/about/">About</a></li>
+	</ul>
+      </nav>
+    </header>
+    <main>
+      
+<article>
+  <header>
+    <h2>論文メモ Paxos Made Simple</h2>
+    <p>December 31, 2020</p>
+  </header>
+  <p><a href="https://lamport.azurewebsites.net/pubs/lamport-paxos.pdf">The Part-Time Parliament</a>で提唱された分散含意アルゴリズムPaxosをLamport自身が平易に解説したもの。
+エージェントの処理速度やメッセージが配信されるまでの長さに仮定はない。
+メッセージは複製、喪失する可能性がある。
+ただし、ビザンチン将軍問題は扱わず、メッセージが壊れることは考えない。</p>
+
+<p>Paxosにはproposer, acceptor, learnerの3種類のエージェントがあり、proposerに提案された値からただ一つの値が選ばれることを保証する。
+プロセスは複数のエージェントの役割を兼ねてもいい。
+proposalには全順序の番号proposal number \(n\)が与えられ、任意のproposalに順序をつけることができる。
+値の選出のためにproposerからacceptorに送るリクエストはprepare request, accept requestの2種類で、それぞれ第1, 第2フェーズで送られる。</p>
+
+<p>第1フェーズでは、はじめに、proposerはproposal number \(n\)を選び、\(n\)つきのprepare requestを過半数のacceptorに送る。
+acceptorは、これまでに応答したどんなproposal numberよりも大きな\(n\)のprepare requestを受信したら、以降は\(n\)未満のproposalをacceptするのを止め、また、もしあるならacceptずみのproposalで最大の番号のproposalをproposerに返す。</p>
+
+<p>第2フェーズでは、proposerが過半数のacceptorから\(n\)のprepare requestの応答を受信したら、\(n\)のproposalに対するaccept reqestを値\(v\)をつけてacceptorに送る。
+\(v\)は第1フェーズでacceptorから返されたresponseの中で最大の番号の値、ただし、responseがないときは任意の値でいい。
+もしacceptorが\(n\)のaccept requstを受信したら、\(n\)より大きなprepareリクエストに応答していない限り、requestを受理する。</p>
+
+<p>複数のproposerによるフェーズ1が重なると、フェーズ2に進まず、含意に到達できないことがある。
+Paxosの進行を保証するには、proposerの数を制限したり、タイムアウトやランダム性でproposerのふるまいを制限したりする必要がある。</p>
+
+<p>acceptorは値を受理したことをlearnerに伝達する。
+acceptorはdistinguish learnerに受理したproposalを伝達し、distinguish leanerは他のlearnerにproposalを伝達する。
+distinguish learnerを増やすほど伝達の計算量は増えるが、信頼性を上げることができる。</p>
+
+<hr />
+
+<p>論文を<a href="https://lamport.azurewebsites.net/pubs/paxos-simple.pdf">こちら</a>からダウンロードできます。</p>
+</article>
+
+    </main>
+    <footer>
+      <ul>
+       
+       <li>
+	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
+       </li>
+       
+       
+       <li>
+	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
+	   <i class="fab fa-linkedin"></i>
+	 </a>
+       
+       </li>
+	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+      </ul>
+      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+</html>

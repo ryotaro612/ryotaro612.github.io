@@ -6,10 +6,22 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 18 Dec 2020 22:18:59 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 31 Dec 2020 19:17:13 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>論文メモ Paxos Made Simple</title>
+      <link>https://nryotaro.dev/posts/paxos_made_simple/</link>
+      <pubDate>Thu, 31 Dec 2020 19:17:13 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/paxos_made_simple/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://lamport.azurewebsites.net/pubs/lamport-paxos.pdf&#34;&gt;The Part-Time Parliament&lt;/a&gt;で提唱された分散含意アルゴリズムPaxosをLamport自身が平易に解説したもの。
+エージェントの処理速度やメッセージが配信されるまでの長さに仮定はない。
+メッセージは複製、喪失する可能性がある。
+ただし、ビザンチン将軍問題は扱わず、メッセージが壊れることは考えない。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>論文メモ Impossibility of Distributed Consensus with One Faulty Process</title>
