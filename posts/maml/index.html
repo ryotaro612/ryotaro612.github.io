@@ -1,82 +1,89 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks</h2>
-    <p>September 18, 2020</p>
-  </header>
-  <p>表題の略称MAMLで知られるメタ学習であり、少ない教師データで新しいタスクに対応することを目的としている。
+    
+<main>
+    <h1>論文メモ Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks</h1>
+    <span class="date">September 18, 2020</span>
+    <div>
+        <p>表題の略称MAMLで知られるメタ学習であり、少ない教師データで新しいタスクに対応することを目的としている。
 Model-Agnosticとあるように、MAMLの汎用性は高く、勾配法をもちいるモデルであえば適用可能である。
 論文には、教師あり学習だけでなく強化学習の事例もある。
 さまざまなタスクに適した初期パラメタを見つけ、データ件数の削減をねらう。
 目的のパラメタを求めるためには、複数のタスクを用意し、これらの損失関数の合計値を最小にするように勾配法でパラメタの更新を繰り返す。
 最後に更新されたパラメタをモデルの初期値に設定する。</p>
-
 <p>以下に示したMAMLのアルゴリズムは、入力に、学習率\(\alpha\), \(\beta\)とタスクの分布\(p(\tau)\)を求める。
 タスク\(\tau\)は、\(\mathcal{L}\)を損失関数、\(\mathrm{\boldsymbol{x}}\)を観測値、\(\mathrm{\boldsymbol{a}}\)をラベルとして次の式で表される。
 \(\mathrm{\boldsymbol{x}}\)が独立同一分布に従わなくてもよい。
 教師あり学習で、独立同一分布に従うならば、\(H=1\)となる。
 適用例としては、主クラス数\(N\)の多クラス分類について、各クラスごとに\(K\)件の事例を用意し、MAMLを適用することで、未知のクラスに少量の教師データで適用にできるように学習するケースが考えられる。</p>
-
 <p>$$
 \tau = \{\mathcal{L}(\mathrm{\boldsymbol{x}}_1,\mathrm{\boldsymbol{a}}_1, \dots ,\mathrm{\boldsymbol{x}}_{H},\mathrm{\boldsymbol{a}}_{H}),q(\mathrm{\boldsymbol{x}}_1),q(\mathrm{\boldsymbol{x}}_{t+1}\mid \boldsymbol{\mathrm{x}}_t,\boldsymbol{\mathrm{a}}_t),H\}
 $$</p>
-
-<p><img src="/maml.png" alt="maml" /></p>
-
-<hr />
-
+<p><img src="/maml.png" alt="maml"></p>
+<hr>
 <p>論文を<a href="https://arxiv.org/pdf/1703.03400.pdf">こちら</a>からダウンロードできます。</p>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/truth_in_advertising/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/what_makes_a_great_software_engineer/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

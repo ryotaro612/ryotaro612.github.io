@@ -1,114 +1,115 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ Impossibility of Distributed Consensus with One Faulty Process</h2>
-    <p>December 18, 2020</p>
-  </header>
-  <p>プロセスが1つでもクラッシュしうる場合には常に含意を保証できる完全な非同期アルゴリズムは存在しないことを示した。
+    
+<main>
+    <h1>論文メモ Impossibility of Distributed Consensus with One Faulty Process</h1>
+    <span class="date">December 18, 2020</span>
+    <div>
+        <p>プロセスが1つでもクラッシュしうる場合には常に含意を保証できる完全な非同期アルゴリズムは存在しないことを示した。
 この定理はFLP帰結とよばれている。
 FLPは、著者Fischer, Lynch, Patersonの頭文字に由来する。
 ここでの完全は、プロセスの処理速度やメッセージの配信遅延に仮定をおかず、同期クロックがないためにタイムアウトを使えず、ほかのプロセスが別のプロセスの障害を検知できないことを意味する。
 いいかえると、含意アルゴリズムを実装するには上のいずれかを仮定しなければないことを示した。</p>
-
 <p>証明には、背理法をつかう。
 \(N(\ge 2)\)個のプロセスが\(0\)か\(1\)いずれかに含意する問題で、1つのプロセスに障害があっても含意アルゴリズム\(P\)が常に含意形成できると仮定する。</p>
-
 <p>各プロセス\(p\)は、決定的にふるまい、\(b, 0, 1\)いずれかをとりえる1ビットの入力、出力レジスタをもつ。
 出力レジスタの初期値は\(b\)であり、一度だけ\(0\)か\(1\)を書き込める。
 出力レジスタが書き込まれた後の状態をdecision stateとよぶ。</p>
-
 <p>プロセス\(p\)に送られたメッセージ\(m\)は、\(p\)に届くまでの間、メッセージバッファにイベント\((p, m)\)として保存される。
 各ステップでは、バッファ内のイベントを選び、メッセージを配信する。
 配信の成否は非決定的で、メッセージ\(m\)が\(p\)に届いたら\((p, m)\)をバッファから削除され、届かない場合はバッファの状態は変わらない。</p>
-
 <p>\(N\)個のプロセスとメッセージバッファの状態はあわせてconfigurationとよぶ。
 特に、全プロセスが初期状態でメッセージバッファが空の状態をinitial configurationとよぶ。
 また、Configuration \(C\)に適用可能なイベント系列\(\sigma\)をスケジュールといい、実際に実行されたスケジュールをrunという。
 decision stateにあるプロセスの存在するrunはdeciding runとして区別される。
 障害のために受信可能なメッセージ数が有限のプロセスが高々1つ存在しても、ほかのプロセスには全てのメッセージがいずれ届くなら、このようなrunは許容可能と呼ばれる。</p>
-
 <p>常に含意できることを、以上の状況にあわせて言いかえる。
 Initial configurationから到達できるConfigurationには高々1つのdecision valueしか存在しない。
 \(0\)と\(1\)どちらもdecision valueになりえるinitial configurationから到達可能なConfigurationが存在する。
 この2つの条件を満たす含意アルゴリズム\(P\)をpartical correctであるという。
 partial correctであり、すべての許容可能なrunがdeciding runであれば、\(P\)はtotally correctであるという。
 FLPの帰結のいうところは、totally correctな\(P\)は存在しないことである。</p>
-
 <p>以上の状況では、次の3つの補題が成立する。</p>
-
 <ul>
 <li>補題1. Configuration \(C\)からスケジュール\(\sigma_1, \sigma_2\)でそれぞれ\(C_1, C_2\)に遷移できる。ここで、\(\sigma_1\)と\(\sigma_2\)のステップに含まれるプロセスの集合が互いに素であれば、\(\sigma_2\)を\(C_1\)に、\(\sigma_1\)を\(C_2\)に適用でき、両者は最終的に同じ状態\(C_3\)に到達する。</li>
 <li>補題2. Configuration \(C\)から到達可能なConfigurationのdecision valueが\(0\)と\(1\)どちらもありえるなら、\(C\)はbivalentといい、\(P\)にはbivalentなinitial configurationがある。</li>
 <li>補題3. \(C\)をbivalentなconfiguration, \(e=(p, m)\)を\(C\)に適用可能なイベント、\(\mathcal{F}\)を\(e\)を適用せずに\(C\)から到達可能なconfigurationの集合、\(\mathcal{D}\)を</li>
 </ul>
-
 <p>$$
 \mathcal{D}=e(\mathcal{F})=\{e(E)\mid E \in \mathcal{F}\text{かつ}e\text{は}E\text{に適用可能}\}
 $$
 とすると\(\mathcal{D}\)はbivalentなconfigurationを含む。</p>
-
 <p>ここで、\(C_0\)をbivalentなinitial configurationとする。
 \(C_0\)は補題2より存在する。
 \(C\)をbivalentなconfiguration、\(m\)を\(C\)のメッセージバッファにある最も早く\(p\)に送られるメッセージとする。
-補題3より\((p, m)\)を最後に適用するイベントとして\(C\)から到達可能でbivalentな\(C&rsquo;\)が存在する。
+補題3より\((p, m)\)を最後に適用するイベントとして\(C\)から到達可能でbivalentな\(C'\)が存在する。
 このとき、常にbivalentなconfigurationが無限に続くスケジュールになるため、runが許容可能であることと矛盾があらわれ、\(P\)がtotally correctでないことががわかる。</p>
-
-<hr />
-
+<hr>
 <ul>
 <li>論文を<a href="http://groups.csail.mit.edu/tds/papers/Lynch/jacm85.pdf">こちら</a>からダウンロードできます。</li>
 </ul>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/what_you_always_wanted_to_know_about_datalog/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/paxos_made_simple/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

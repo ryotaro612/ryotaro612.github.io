@@ -1,62 +1,60 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ On Calibration of Modern Neural Networks</h2>
-    <p>November 23, 2019</p>
-  </header>
-  <p>ネットワークの複雑化、バッチ正則化、重み減衰を使わない、負の対数尤度の過学習が汎化精度を上げるが、予測確率と精度のズレを大きくすることを実験的に示した。
+    
+<main>
+    <h1>論文メモ On Calibration of Modern Neural Networks</h1>
+    <span class="date">November 23, 2019</span>
+    <div>
+        <p>ネットワークの複雑化、バッチ正則化、重み減衰を使わない、負の対数尤度の過学習が汎化精度を上げるが、予測確率と精度のズレを大きくすることを実験的に示した。
 予測確率を補正する6つの手法を19種類のクラス分類のデータセットに適用した結果、
 最も補正できたものは、温度つきソフトマックスの出力を予測確率にする場合であった。</p>
-
 <p>ネットワークの複雑化とズレの関係を調べる実験では、<a href="http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf">LeNet</a>(1998)と<a href="https://arxiv.org/abs/1512.03385">ResNet</a>(2016)の<a href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFER-100</a>への適用結果を比較している。
 下の左右の図は、それぞれLesNetとResNetの精度と予測確率のズレを示す。
-<img src="/on_calibration_of_modern_neural_networks/accuracy_vs_confidence.png" alt="accuracy vs confidence" />
+<img src="/on_calibration_of_modern_neural_networks/accuracy_vs_confidence.png" alt="accuracy vs confidence">
 青いヒストグラムは、一定区間内にある予測確率で推定されたサンプルについての精度を示す。
 Gapが小さいほどズレがないことを意味する。
 LesNetと比べ、ResNetはエラー率が低くてGapが大きく、ズレの拡大を許して精度を上げている。</p>
-
 <p>ズレ幅と補正は、Expected Calibration Error(ECE)で評価される。
 クラスを\(Y\in\mathcal{Y}=\{1,\dots ,K\}\)、予測されたクラスを\(\hat{Y}\)、予測確率を\(\hat{P}\)とおくと、ズレのない状態は以下のように定義される。
 $$
- \mathbb{P}\left(\hat{Y}=Y\mid \hat{P} = p\right) = p, \forall p\in [0, 1]
+\mathbb{P}\left(\hat{Y}=Y\mid \hat{P} = p\right) = p, \forall p\in [0, 1]
 $$
 ECEは、\(p\)からの左辺と右辺の差の期待値を意味する。
 $$
 \mathbb{E}\left[\big|\mathbb{P}\left(\hat{Y}=Y\mid\hat{P}=p\right)-p\big|\right]
 $$
 \(p\)は連続量なので、ECEは次のように有限のデータで差を求めるために近似する。</p>
-
 <p>$$
 ECE =\sum^{M}_{m=1}\frac{\mid B_m \mid}{n}\big|acc (B_m) - conf (B_m)\big|
 $$
@@ -69,7 +67,6 @@ conf(B_m) = \frac{1}{\mid B_m \mid}\sum_{i\in B_m}\hat{p_i}
 $$
 である。
 補正は、補正の前後でのECEの差で評価できる。</p>
-
 <p>実験された補正方法の中で最もECEを小さくできたのは、温度つきソフトマックスであった。
 温度つきソフトマックスによる補正では、
 ソフトマックスへの入力を\(\boldsymbol{z}_i\)とすると、
@@ -78,33 +75,42 @@ $$
 \hat{q}_i=\max_{k} \frac{\exp(z_i/T^{(k)})}{\sum_{j=1}^{K}\exp({z_i/T}^{(j)})}
 $$
 温度\(T\)は、検証データを使い、負の対数尤度を誤差関数とする学習で求められる。</p>
-
-<hr />
-
+<hr>
 <ul>
 <li>論文は<a href="https://arxiv.org/pdf/1706.04599.pdf">こちら</a>からダウンロードできます。</li>
 <li>画像は論文から引用されています。</li>
 </ul>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/trinary_projection_trees/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/a_dual_embedding_space_model_for_document_ranking/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

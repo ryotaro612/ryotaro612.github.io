@@ -1,108 +1,111 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
-    </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ Semi-supervised Sequence Learning</h2>
-    <p>March 14, 2020</p>
-  </header>
-  <p>系列データの教師あり学習において、ラベルのないデータを学習した言語モデルやオートエンコーダーの重みでLSTMを初期化することの有用性を実験的に示した。</p>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
 
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>論文メモ Semi-supervised Sequence Learning</h1>
+    <span class="date">March 14, 2020</span>
+    <div>
+        <p>系列データの教師あり学習において、ラベルのないデータを学習した言語モデルやオートエンコーダーの重みでLSTMを初期化することの有用性を実験的に示した。</p>
 <p>本論文は、<a href="https://arxiv.org/pdf/1810.04805.pdf">BERT</a>にいたる<a href="https://github.com/thunlp/PLMpapers">系統</a>につらなる。
 系列データとして想定されているのはテキストであり、実験では4種類のデータセットがもちいられた。
 オートエンコーダーで事前学習したLSTM(SA-LSTM)と発表当時における最高の性能をもつモデルで比較した結果を次に示す。</p>
-
 <table>
 <thead>
 <tr>
 <th>データ</th>
-<th align="right">SA-LSTM</th>
-<th align="right">Previous best result</th>
+<th style="text-align:right">SA-LSTM</th>
+<th style="text-align:right">Previous best result</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>IMDB</td>
-<td align="right">7.24%</td>
-<td align="right">7.42%</td>
+<td style="text-align:right">7.24%</td>
+<td style="text-align:right">7.42%</td>
 </tr>
-
 <tr>
 <td>Rotten Tomatoes</td>
-<td align="right">16.7%</td>
-<td align="right">18.5%</td>
+<td style="text-align:right">16.7%</td>
+<td style="text-align:right">18.5%</td>
 </tr>
-
 <tr>
 <td>20 Newsgroups</td>
-<td align="right">15.6%</td>
-<td align="right">17.1%</td>
+<td style="text-align:right">15.6%</td>
+<td style="text-align:right">17.1%</td>
 </tr>
-
 <tr>
 <td>DBpedia</td>
-<td align="right">1.19%</td>
-<td align="right">1.74%</td>
+<td style="text-align:right">1.19%</td>
+<td style="text-align:right">1.74%</td>
 </tr>
 </tbody>
 </table>
-
 <p>LSTMは長い文書の扱うときにハイパーパラメタに性能が影響されやすいが、オートエンコーダーの重みで初期化すると安定することがIMDBの実験で分かった。
 IMDBの各テキストの平均の単語数は241である。</p>
-
-<hr />
-
+<hr>
 <p>論文は<a href="https://arxiv.org/pdf/1511.01432.pdf">こちら</a>からダウンロードできます。</p>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/raft/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/the_seven_sins/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

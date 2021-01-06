@@ -1,0 +1,50 @@
+.gallery {
+    column-count: 2;
+    column-gap: 2rem;
+}
+
+.picture {
+    position: relative;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    width: 100%;
+    cursor: pointer;
+}
+
+.picture:hover > .description {
+    top: 0;
+}
+
+.picture > .description {
+    position: absolute;
+    width: 100%;
+    height: 97%;
+    color: white;
+    opacity: 0.8;
+    top: 100%;
+    background-color: black;
+    transition: all 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.description .title {
+    font-size: 2.8rem;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 2rem;
+}
+
+.description .date {
+    font-size: 1.8rem;
+    font-weight: bolder;
+    text-align: center;
+    padding: 2rem;
+}
+
+@media screen and (max-width: 767.98px) { 
+    .gallery {
+        column-count: auto;
+    }
+}

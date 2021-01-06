@@ -1,960 +1,702 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/list.css"></link>
+<link rel="stylesheet" href="/css/posts/list.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
-    </header>
-    <main>
-      
-<table>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>December 31, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/paxos_made_simple/">論文メモ Paxos Made Simple</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>December 18, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/impossibility_of_distributed_consensus_with_one_faulty_process/">論文メモ Impossibility of Distributed Consensus with One Faulty Process</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>December 12, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/what_you_always_wanted_to_know_about_datalog/">論文メモ What You Always Wanted to Know Abount Datalog</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>December 5, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/translating_embeddings_for_modeling_multi_relational_data/">論文メモ Translating Embeddings for Modeling Multi-relational Data</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>December 5, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/the_declarative_imperative/">論文メモ The Declarative Imperative</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>November 30, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/bigtable/">論文メモ Bigtable: A Distributed Storage System for Structured Data</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>November 28, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/aerospike/">論文メモ Aerospike: Architecture of a Real-Time Operational Database</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>November 27, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/spanner/">論文メモ Spanner: Google&#39;s Globally Distributed Database</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>November 21, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/a_relational_model_of_data_for_large_shared_data_banks/">論文メモ A Relational Model of Data for Large Shared Data Banks</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>November 20, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/on_designing_and_deploying_internet-scale_services/">論文メモ On Designing and Deploying Internet-Scale Services</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>November 19, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/weighted_voting_for_replicated_data/">論文メモ Weighted Voting for Replicated Data</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>November 13, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/amazon_aurora/">論文メモ Amazon Aurora: Design Considerations for High Throughput Cloud-Native Relational Databases</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>November 13, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/one_size_fit_all/">論文メモ &#34;One Size Fits All&#34;: An Idea Whose Time Has Come and Gone</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>November 6, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/dynamo_amazons_highly_available_key_value_store/">論文メモ Dynamo: Amazon&#39;s Highly Available Key-value Store</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>October 30, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/zero_shot_word_sense_disambiguation_using_sense_definition_embeddings/">論文メモ Zero-shot Word Sense Disambiguation using Sense Definition Embeddings</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>October 29, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/simple_testing_can_prevent_most_critical_failures/">論文メモ Simple Testing Can Prevent Most Critical Failures</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>October 16, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/from_diversity_by_numbers_to_diversity_as_process/">論文メモ From Diversity by Numbers to Diversity as Process</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>October 16, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/end_to_end_sequence_labeling_via_bi_directional_lstm_cnns_crf/">論文メモ End-to-end Sequence Labeling via Bi-directional LSTM-CNNs-CRF</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>October 16, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/becoming_agile/">論文メモ Becoming Agile: A Grounded Theory of Agile Transitions in Practice</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>October 11, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/software_development_waste/">論文メモ Software Development Waste</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>October 10, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/end_to_end_neural_coreference_resolution/">論文メモ End-to-end Neural Coreference Resolution</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>October 2, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/build_it_yourself/">論文メモ Build it yourself! Homegrown Tools in a Large Software Company</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>October 2, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/universal_sentence_encoder/">論文メモ Universal Sentence Encoder</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>September 25, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/how_much_up-front/">論文メモ How much Up-Front? A Grounded Theory of Agile Architecture</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>September 25, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/character_level_convolutional_networks_for_text_classification/">論文メモ Character-level Convolutional Networks for Text Classification</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>September 18, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/what_makes_a_great_software_engineer/">論文メモ What Makes A Great Software Engineer?</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>September 18, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/maml/">論文メモ Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>September 11, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/truth_in_advertising/">論文メモ Truth in Advertising: The Hidden Cost of Mobile Ads for Software Developers</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>September 11, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/skip_thought_vectors/">論文メモ Skip-Thought Vectors</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>September 4, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/beyond_accuracy/">論文メモ Beyond Accuracy: Behavioral Testing of NLP Models with CHECKLIST</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>September 4, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/why_good_developers_write_bad_code/">Why Good Developers Write Bad Code: An Observational Case Study of the Impacts of Organizational Factors on Software Quality</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>August 28, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/a_comparative_study_of_programming_languages_in_rosetta_code/">論文メモ A Comparative Study of Programming Lanugages in Rosetta Code</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>August 28, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/squad/">論文メモ SQuAD: 100,000&#43; Questions for Machine Comprehension of Text</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>August 23, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/extensible_effects/">論文メモ Extensible Effects An Alternative to Monad Transformers</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>August 21, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/when_and_why_your_code_starts_to_smell_bad/">論文メモ When and Why Your Code Starts to Smell Bad</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>August 21, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/extracting_and_composing_robust_features_with_denoising_autoencoders/">論文メモ Extracting and Composing Robust Features with Denoising Autoencoders</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>August 14, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/statistical_errors_in_software_engineering_experiments/">論文メモ Statistical Errors in Software Engineering Experiments: A Preliminary Literature Review</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>August 14, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/semi-supervised_learning_with_ladder_networks/">論文メモ Semi Supervised Learning with Ladder Networks</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>August 7, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/an_empirical_study_on_program_failures_on_deep_learning_jobs/">論文メモ An Empirical Study On Program Failures On Deep Learning Jobs</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>August 7, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/">論文メモ Improving Language Understanding by Generative Pre-Training</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>July 31, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/a_tale_from_the_trenches/">論文メモ A Tale from the Trenches: Cognitive Biases and Software Development</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>July 31, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/factorization_machines/">論文メモ Factorization Machines</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>July 24, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/exploration_of_technical_debt_in_start_ups/">Exploration of Technical Debt in Start-ups</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>July 24, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/deep_learning_recommendation_model_for_personalization_and_recommendation_systems/">論文メモ Deep Learning Recommendation Model for Personalization and Recoomendation Systems</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>July 17, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/explaining_pair_programming_session_dynamics_from_knowledge_gaps/">論文メモ Explaining Pair Programming Session Dynamics from Knowledge Gaps</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>July 17, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/bag_of_trics_for_efficient_text_classification/">論文メモ Bag of Tricks for Efficient Text Classification</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>July 11, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/recognizing_developers_emotions_while_programming/">論文メモ Recognizing Developers&#39; Emotions while Programming</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>July 11, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/pytorch_an_imperative_style_high_performance_deep_learning_library/">論文メモ Pytorch: An Imperative Style, High-Performane Deep Learning Library</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>July 4, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/here_we_go_again/">論文メモ Here We Go Again: Why Is It Difficult for Developers to Learn Another Programming Language?</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>July 4, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/automatic_differentiation_in_pytorch/">論文メモ Automatic differentiation in Pytorch</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>June 27, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/rouge/">論文メモ ROUGE: A Package for Automatic Evaluation of Summaries</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>June 20, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/do_developers_discover_new_tools_on_the_toilet/">論文メモ Do Developers Discover New Tools On The Toilet?</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>June 20, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/a_neural_attention_model_for_sentence_summarization/">論文メモ A Neural Attention Model for Sentence Summarization</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>June 13, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/bleu/">論文メモ BLEU: a Method for Automatic Evaluation of Machine Translation</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>June 6, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/sequence_to_sequence_learning_with_neural_networks/">論文メモ Sequence to Sequence Learning with Nueral Networks</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>May 30, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/google_neural_machine_translation_system/">論文メモ Google&#39;s Neural Machine Transltation System: Bridging the Gap between Human and Machine Translation</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>May 23, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/zero_shot_learning_with_semantic_output_codes/">論文メモ Zero-Shot Learning with Semantic Output Codes</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>May 16, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/a_structured_self_attentivesentence_embedding/">論文メモ A STRUCTURED SELF-ATTENTIVE SENTENCE EMBEDDING</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>May 9, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/poincare_embeddings/">論文メモ Poincaré Embeddings for Learning Hierarchical Representations</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>April 29, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/learning_joint_multilingual_sentence_representations_with_neural_machine_translation/">論文 メモ Learning Joint Multilingual Sentence Representations with Neural Machine Translation</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>April 25, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/albert/">論文メモ ALBERT: A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>April 18, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/random_walks_in_recommender_systems/">論文メモ Random Walks in recommender Systems: Exact Computation and Simulations</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>April 11, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/domain_adversarial_training_of_neural_networks/">論文メモ Domain Adversarial Training of Neural Networks</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>April 4, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/character_aware_neural_language_models/">論文メモ Character-Aware Neural Language Models</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>March 24, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/deep_contextualized_word_representations/">論文メモ Deep contextualized word representations</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>March 20, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/the_seven_sins/">論文メモ The Seven Sins: Security Smells in Infrastructure as Code Scripts</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>March 14, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/semi_supervised_sequence_learning/">論文メモ Semi-supervised Sequence Learning</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>March 9, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/raft/">論文メモ In Search of an Understandable Consensus Algorithm</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>February 29, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/sentence_piece/">論文メモ SentencePiece: A simple and language independent subword tokenizer and detokenizer for Neural Text Processing</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>February 23, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/latent_dirichlet_allocation/">論文メモ Latent Dirichlet Allocation</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>February 16, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/unsupervised_pretraining_for_sequence_to_sequence_learning/">論文メモ Unsupervised Pretraining for Sequence to Sequence Learning</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>February 9, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/playing_atari_with_deep_reinforcement_learning/">論文メモ Playing Atari with Deep Reinforcement Learning</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>February 2, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/context2vec/">論文メモ context2vec: Learning Generic Context Embedding with Bidirectional LSTM</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>February 1, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/neural_machine_translation_by_jointly_learning_to_align_and_translate/">論文メモ NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>January 26, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/why_should_i_trust_you/">論文メモ &#34;Why Should I Trust You?&#34; Explaining the Predictions of Any Classifier</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>January 19, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/active_learning_for_ranking_through_expected_loss_optimization/">論文メモ Active Learning for Ranking through Expected Loss Optimization</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>January 14, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/docker-cmake-clang/">AtCoderに提出したコードをテストするためのDockerイメージ</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>January 13, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/unsupervised_models_for_named_entity_classification/">論文メモ Unsupervised Models for Named Entity Classification</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>January 6, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/multilabel_classification_with_label_correlations_and_missing_labels/">論文メモ Multilabel Classification with Label Correlations and Missing Labels</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>January 4, 2020</td>
-      <td><a href="https://nryotaro.dev/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/">論文メモ Learning Deep Structured Semantic Models for Web Search using Clickthrough Data</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>December 30, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/classification_in_the_presence_of_label_noise/">論文メモ Classification in the Presence of Label Noise: a Survey</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>December 28, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/distributed_representations_of_sentences_and_documents/">論文メモ Distributed Representations of Sentences and Documents</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>December 21, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/glove_vectors_for_word_representation/">論文メモ GloVe: Global Vectors for Word Representation</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>December 14, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/bert/">論文メモ BERT: Pre-training of Deep Bidirectional Transformers for Lnaguages Understaing</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>December 14, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/150_successfuly_machine_learning_modes/">論文メモ 150 Successful Machine Learning Models: 6 Lessons Learned at Booking.com</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>December 7, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/ranking_relevance_in_yahoo_search/">論文メモ Ranking Relevance In Yahoo Search</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>November 30, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/a_dual_embedding_space_model_for_document_ranking/">論文メモ A Dual Embedding Space Model for Document Ranking</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>November 23, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/on_calibration_of_modern_neural_networks/">論文メモ On Calibration of Modern Neural Networks</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>November 16, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/trinary_projection_trees/">論文メモ Trinary-Projection Trees for Approximate Nerest Neighbor Search</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>November 9, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/get_another_label/">論文メモ Get Another Label? Improving Data Quality and Data Mining Using Multiple, Noisy Labelers</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>November 9, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/active_clean/">メモ ActiveClean: Interactive Data Cleaning For Statistical Modeling</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>October 31, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/web_tables/">メモ WebTables: Exploring the Power of Tables on the Web</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>October 26, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/a_survey_on_data_collection_for_machine_learning/">メモ A Survey on Data Collection for Machine Learning</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>October 19, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/structure_estimation_for_dscrete_graphical_models/">メモ Structure estimation for discrete graphical models: Generalized covariance matrices and their inverses</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>October 12, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/feature_selection_for_text_categorization_on_imbalance_data/">メモ Feature Selection for Text Categorization on Imbalanced Data</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>October 5, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/snorkel_drybell_case_study/">メモ Snorkel DryBell: A Case Study in Deploying Weak Supervision at Industrial Scale</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>September 28, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/training_complex_models_with_multi_task_weak_supervision/">メモ Training Complex Models with Multi-Task Weak Supervision</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>September 21, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/snorkel_rapid_training_data_creation_with_weak_supervision/">メモ Snorkel: Rapid Traning Data Creation with Weak Supervision</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>September 14, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/software_engineering_for_machine_learning/">メモ Software Engineerng for Machine Learning: A Case Study</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>September 7, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/class_imbalance_redux/">メモ Class Imbalance, Redux</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>August 31, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/learning_on_border/">メモ Learning on the Border: Active Learning in Imbalanced Data Classification</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>August 24, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/distilling_the_knowledge_in_a_neural_network/">メモ Distilling the Knowledge in a Neural Network</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>August 24, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/fastxml/">メモ FastXML: A Fast, Accurate and Stable Tree-classifier for eXtreme Multi-label Learning</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>August 17, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/advantages_and_disadvantages_of_a_monolithic_repository/">メモ Advantages and Disadvantages of a Monolithic Repository</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>August 10, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/cat_boost/">メモ CatBoost: unbaiased boosting with categorical features</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>August 10, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/are_we_really_making_much_progress/">メモ Are We Really Making Much Progress? A Worring Analysis of Recent Neural Recomendation Approaches</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>August 3, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/gaussian_processes_for_regression/">メモ Gaussian Processes for Regression</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>August 3, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/google_vizier/">概要 Google Vizier: A Service for Black-Box Optimization</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>July 27, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/learning_active_learning_from_data/">概要 Learning Active Learning from Data</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>July 20, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/textrank/">概要 TextRank: Bringing Order into Texts</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>July 17, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/subword_regularization/">概要 Subword Regularization: Improving Neural Network Translation Models with Multiple Subword Candidates</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>July 13, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/neural_machine_translation_of_rate_words/">概要 Neural Machine Trasnslation of Rare Words with Subword Units</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>February 17, 2019</td>
-      <td><a href="https://nryotaro.dev/posts/embedding_logical_queries_on_knowledge_graphs/">メモ Embedding Logical Queries on Knowledge Graphs</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>November 23, 2018</td>
-      <td><a href="https://nryotaro.dev/posts/regularizing_and_optimizing_lstm_language_models/">Regularizing and Optimizing LSTM Language Models</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>November 9, 2018</td>
-      <td><a href="https://nryotaro.dev/posts/deep_joint_entity_disambiguation/">メモ Deep Joint Entity Disambiguation with Local Neural Attention</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>November 2, 2018</td>
-      <td><a href="https://nryotaro.dev/posts/end_to_end_neural_entity_linking/">メモ End-to-end Neural Entity Linking</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>October 26, 2018</td>
-      <td><a href="https://nryotaro.dev/posts/deeptype/">DeepType: Multilingual Entity Linking by Neural Type System Evolution(2018)</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>October 12, 2018</td>
-      <td><a href="https://nryotaro.dev/posts/conditional_random_fields_probabilistic_models_for_segmenting_and_labeling_sequence/">メモ Conditional Random Fields: Probabilistic Models for Segmenting and Labeling Sequence Data</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>October 5, 2018</td>
-      <td><a href="https://nryotaro.dev/posts/bidirectional_lstm_crf_models_for_sequence_tagging/">メモ Bidirectional LSTM-CRF Models for Sequence Tagging</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>September 28, 2018</td>
-      <td><a href="https://nryotaro.dev/posts/context_string_embeddings_for_sequence_labeling/">メモ Contextual String Embeddings for Sequence Labeling</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>September 14, 2018</td>
-      <td><a href="https://nryotaro.dev/posts/universal_language_model_fine_tuning_for_text_classification/">メモ Universal Language Model Fine-tuning for Text Classification</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>September 7, 2018</td>
-      <td><a href="https://nryotaro.dev/posts/metapath2vec/">メモ metapath2vec: Scalable Representation Learning for Heterogeneous Networks</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>August 31, 2018</td>
-      <td><a href="https://nryotaro.dev/posts/applying_deep_learning_to_airbnb_search/">Applying Deep Learning To Airbnb Search</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>August 25, 2018</td>
-      <td><a href="https://nryotaro.dev/posts/the_relationship_between_precision_recall_and_roc_curve/">メモ The Relationship Between Precision-Recall and ROC Curve</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>August 10, 2018</td>
-      <td><a href="https://nryotaro.dev/posts/enriching_word_vectors_with_subword_information/">メモ Enriching Word Vectors with Subword Information</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>August 3, 2018</td>
-      <td><a href="https://nryotaro.dev/posts/when_do_changes_induce_fixes/">概要 When Do Chagnes Induce Fixes?</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>July 17, 2018</td>
-      <td><a href="https://nryotaro.dev/posts/a_simple_semi_supervised_for_ner/">要約 A Simple Semi-supervised Algorithm For Named Entity Recognition</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>July 17, 2018</td>
-      <td><a href="https://nryotaro.dev/posts/applying_crf_to_japanese_morph_analysis/">要約 Applying Conditional Random Fields to Japanese Morphological Analysis</a></td>
-    </tr>
-  </tbody>
-  
-  <tbody>
-    <tr class="listTable">
-      <td>July 8, 2018</td>
-      <td><a href="https://nryotaro.dev/posts/text_cls_from_lbl_and_unlbl_doc_em/">概要 Text Classification from Labeled and Unlabeled Documents using EM</a></td>
-    </tr>
-  </tbody>
-  
-</table>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
 
-    </main>
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Posts</h1>
+    <div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/paxos_made_simple/">論文メモ Paxos Made Simple</a></h2>
+            <span class="date">December 31, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/impossibility_of_distributed_consensus_with_one_faulty_process/">論文メモ Impossibility of Distributed Consensus with One Faulty Process</a></h2>
+            <span class="date">December 18, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/what_you_always_wanted_to_know_about_datalog/">論文メモ What You Always Wanted to Know Abount Datalog</a></h2>
+            <span class="date">December 12, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/translating_embeddings_for_modeling_multi_relational_data/">論文メモ Translating Embeddings for Modeling Multi-relational Data</a></h2>
+            <span class="date">December 5, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/the_declarative_imperative/">論文メモ The Declarative Imperative</a></h2>
+            <span class="date">December 5, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/bigtable/">論文メモ Bigtable: A Distributed Storage System for Structured Data</a></h2>
+            <span class="date">November 30, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/aerospike/">論文メモ Aerospike: Architecture of a Real-Time Operational Database</a></h2>
+            <span class="date">November 28, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/spanner/">論文メモ Spanner: Google&#39;s Globally Distributed Database</a></h2>
+            <span class="date">November 27, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/a_relational_model_of_data_for_large_shared_data_banks/">論文メモ A Relational Model of Data for Large Shared Data Banks</a></h2>
+            <span class="date">November 21, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/on_designing_and_deploying_internet-scale_services/">論文メモ On Designing and Deploying Internet-Scale Services</a></h2>
+            <span class="date">November 20, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/weighted_voting_for_replicated_data/">論文メモ Weighted Voting for Replicated Data</a></h2>
+            <span class="date">November 19, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/amazon_aurora/">論文メモ Amazon Aurora: Design Considerations for High Throughput Cloud-Native Relational Databases</a></h2>
+            <span class="date">November 13, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/one_size_fit_all/">論文メモ &#34;One Size Fits All&#34;: An Idea Whose Time Has Come and Gone</a></h2>
+            <span class="date">November 13, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/dynamo_amazons_highly_available_key_value_store/">論文メモ Dynamo: Amazon&#39;s Highly Available Key-value Store</a></h2>
+            <span class="date">November 6, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/zero_shot_word_sense_disambiguation_using_sense_definition_embeddings/">論文メモ Zero-shot Word Sense Disambiguation using Sense Definition Embeddings</a></h2>
+            <span class="date">October 30, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/simple_testing_can_prevent_most_critical_failures/">論文メモ Simple Testing Can Prevent Most Critical Failures</a></h2>
+            <span class="date">October 29, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/from_diversity_by_numbers_to_diversity_as_process/">論文メモ From Diversity by Numbers to Diversity as Process</a></h2>
+            <span class="date">October 16, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/end_to_end_sequence_labeling_via_bi_directional_lstm_cnns_crf/">論文メモ End-to-end Sequence Labeling via Bi-directional LSTM-CNNs-CRF</a></h2>
+            <span class="date">October 16, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/becoming_agile/">論文メモ Becoming Agile: A Grounded Theory of Agile Transitions in Practice</a></h2>
+            <span class="date">October 16, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/software_development_waste/">論文メモ Software Development Waste</a></h2>
+            <span class="date">October 11, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/end_to_end_neural_coreference_resolution/">論文メモ End-to-end Neural Coreference Resolution</a></h2>
+            <span class="date">October 10, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/build_it_yourself/">論文メモ Build it yourself! Homegrown Tools in a Large Software Company</a></h2>
+            <span class="date">October 2, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/universal_sentence_encoder/">論文メモ Universal Sentence Encoder</a></h2>
+            <span class="date">October 2, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/how_much_up-front/">論文メモ How much Up-Front? A Grounded Theory of Agile Architecture</a></h2>
+            <span class="date">September 25, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/character_level_convolutional_networks_for_text_classification/">論文メモ Character-level Convolutional Networks for Text Classification</a></h2>
+            <span class="date">September 25, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/what_makes_a_great_software_engineer/">論文メモ What Makes A Great Software Engineer?</a></h2>
+            <span class="date">September 18, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/maml/">論文メモ Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks</a></h2>
+            <span class="date">September 18, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/truth_in_advertising/">論文メモ Truth in Advertising: The Hidden Cost of Mobile Ads for Software Developers</a></h2>
+            <span class="date">September 11, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/skip_thought_vectors/">論文メモ Skip-Thought Vectors</a></h2>
+            <span class="date">September 11, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/beyond_accuracy/">論文メモ Beyond Accuracy: Behavioral Testing of NLP Models with CHECKLIST</a></h2>
+            <span class="date">September 4, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/why_good_developers_write_bad_code/">Why Good Developers Write Bad Code: An Observational Case Study of the Impacts of Organizational Factors on Software Quality</a></h2>
+            <span class="date">September 4, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/a_comparative_study_of_programming_languages_in_rosetta_code/">論文メモ A Comparative Study of Programming Lanugages in Rosetta Code</a></h2>
+            <span class="date">August 28, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/squad/">論文メモ SQuAD: 100,000&#43; Questions for Machine Comprehension of Text</a></h2>
+            <span class="date">August 28, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/extensible_effects/">論文メモ Extensible Effects An Alternative to Monad Transformers</a></h2>
+            <span class="date">August 23, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/when_and_why_your_code_starts_to_smell_bad/">論文メモ When and Why Your Code Starts to Smell Bad</a></h2>
+            <span class="date">August 21, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/extracting_and_composing_robust_features_with_denoising_autoencoders/">論文メモ Extracting and Composing Robust Features with Denoising Autoencoders</a></h2>
+            <span class="date">August 21, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/statistical_errors_in_software_engineering_experiments/">論文メモ Statistical Errors in Software Engineering Experiments: A Preliminary Literature Review</a></h2>
+            <span class="date">August 14, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/semi-supervised_learning_with_ladder_networks/">論文メモ Semi Supervised Learning with Ladder Networks</a></h2>
+            <span class="date">August 14, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/an_empirical_study_on_program_failures_on_deep_learning_jobs/">論文メモ An Empirical Study On Program Failures On Deep Learning Jobs</a></h2>
+            <span class="date">August 7, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/">論文メモ Improving Language Understanding by Generative Pre-Training</a></h2>
+            <span class="date">August 7, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/a_tale_from_the_trenches/">論文メモ A Tale from the Trenches: Cognitive Biases and Software Development</a></h2>
+            <span class="date">July 31, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/factorization_machines/">論文メモ Factorization Machines</a></h2>
+            <span class="date">July 31, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/exploration_of_technical_debt_in_start_ups/">Exploration of Technical Debt in Start-ups</a></h2>
+            <span class="date">July 24, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/deep_learning_recommendation_model_for_personalization_and_recommendation_systems/">論文メモ Deep Learning Recommendation Model for Personalization and Recoomendation Systems</a></h2>
+            <span class="date">July 24, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/explaining_pair_programming_session_dynamics_from_knowledge_gaps/">論文メモ Explaining Pair Programming Session Dynamics from Knowledge Gaps</a></h2>
+            <span class="date">July 17, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/bag_of_trics_for_efficient_text_classification/">論文メモ Bag of Tricks for Efficient Text Classification</a></h2>
+            <span class="date">July 17, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/recognizing_developers_emotions_while_programming/">論文メモ Recognizing Developers&#39; Emotions while Programming</a></h2>
+            <span class="date">July 11, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/pytorch_an_imperative_style_high_performance_deep_learning_library/">論文メモ Pytorch: An Imperative Style, High-Performane Deep Learning Library</a></h2>
+            <span class="date">July 11, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/here_we_go_again/">論文メモ Here We Go Again: Why Is It Difficult for Developers to Learn Another Programming Language?</a></h2>
+            <span class="date">July 4, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/automatic_differentiation_in_pytorch/">論文メモ Automatic differentiation in Pytorch</a></h2>
+            <span class="date">July 4, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/rouge/">論文メモ ROUGE: A Package for Automatic Evaluation of Summaries</a></h2>
+            <span class="date">June 27, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/do_developers_discover_new_tools_on_the_toilet/">論文メモ Do Developers Discover New Tools On The Toilet?</a></h2>
+            <span class="date">June 20, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/a_neural_attention_model_for_sentence_summarization/">論文メモ A Neural Attention Model for Sentence Summarization</a></h2>
+            <span class="date">June 20, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/bleu/">論文メモ BLEU: a Method for Automatic Evaluation of Machine Translation</a></h2>
+            <span class="date">June 13, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/sequence_to_sequence_learning_with_neural_networks/">論文メモ Sequence to Sequence Learning with Nueral Networks</a></h2>
+            <span class="date">June 6, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/google_neural_machine_translation_system/">論文メモ Google&#39;s Neural Machine Transltation System: Bridging the Gap between Human and Machine Translation</a></h2>
+            <span class="date">May 30, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/zero_shot_learning_with_semantic_output_codes/">論文メモ Zero-Shot Learning with Semantic Output Codes</a></h2>
+            <span class="date">May 23, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/a_structured_self_attentivesentence_embedding/">論文メモ A STRUCTURED SELF-ATTENTIVE SENTENCE EMBEDDING</a></h2>
+            <span class="date">May 16, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/poincare_embeddings/">論文メモ Poincaré Embeddings for Learning Hierarchical Representations</a></h2>
+            <span class="date">May 9, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/learning_joint_multilingual_sentence_representations_with_neural_machine_translation/">論文 メモ Learning Joint Multilingual Sentence Representations with Neural Machine Translation</a></h2>
+            <span class="date">April 29, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/albert/">論文メモ ALBERT: A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS</a></h2>
+            <span class="date">April 25, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/random_walks_in_recommender_systems/">論文メモ Random Walks in recommender Systems: Exact Computation and Simulations</a></h2>
+            <span class="date">April 18, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/domain_adversarial_training_of_neural_networks/">論文メモ Domain Adversarial Training of Neural Networks</a></h2>
+            <span class="date">April 11, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/character_aware_neural_language_models/">論文メモ Character-Aware Neural Language Models</a></h2>
+            <span class="date">April 4, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/deep_contextualized_word_representations/">論文メモ Deep contextualized word representations</a></h2>
+            <span class="date">March 24, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/the_seven_sins/">論文メモ The Seven Sins: Security Smells in Infrastructure as Code Scripts</a></h2>
+            <span class="date">March 20, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/semi_supervised_sequence_learning/">論文メモ Semi-supervised Sequence Learning</a></h2>
+            <span class="date">March 14, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/raft/">論文メモ In Search of an Understandable Consensus Algorithm</a></h2>
+            <span class="date">March 9, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/sentence_piece/">論文メモ SentencePiece: A simple and language independent subword tokenizer and detokenizer for Neural Text Processing</a></h2>
+            <span class="date">February 29, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/latent_dirichlet_allocation/">論文メモ Latent Dirichlet Allocation</a></h2>
+            <span class="date">February 23, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/unsupervised_pretraining_for_sequence_to_sequence_learning/">論文メモ Unsupervised Pretraining for Sequence to Sequence Learning</a></h2>
+            <span class="date">February 16, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/playing_atari_with_deep_reinforcement_learning/">論文メモ Playing Atari with Deep Reinforcement Learning</a></h2>
+            <span class="date">February 9, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/context2vec/">論文メモ context2vec: Learning Generic Context Embedding with Bidirectional LSTM</a></h2>
+            <span class="date">February 2, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/neural_machine_translation_by_jointly_learning_to_align_and_translate/">論文メモ NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE</a></h2>
+            <span class="date">February 1, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/why_should_i_trust_you/">論文メモ &#34;Why Should I Trust You?&#34; Explaining the Predictions of Any Classifier</a></h2>
+            <span class="date">January 26, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/active_learning_for_ranking_through_expected_loss_optimization/">論文メモ Active Learning for Ranking through Expected Loss Optimization</a></h2>
+            <span class="date">January 19, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/docker-cmake-clang/">AtCoderに提出したコードをテストするためのDockerイメージ</a></h2>
+            <span class="date">January 14, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/unsupervised_models_for_named_entity_classification/">論文メモ Unsupervised Models for Named Entity Classification</a></h2>
+            <span class="date">January 13, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/multilabel_classification_with_label_correlations_and_missing_labels/">論文メモ Multilabel Classification with Label Correlations and Missing Labels</a></h2>
+            <span class="date">January 6, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/">論文メモ Learning Deep Structured Semantic Models for Web Search using Clickthrough Data</a></h2>
+            <span class="date">January 4, 2020</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/classification_in_the_presence_of_label_noise/">論文メモ Classification in the Presence of Label Noise: a Survey</a></h2>
+            <span class="date">December 30, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/distributed_representations_of_sentences_and_documents/">論文メモ Distributed Representations of Sentences and Documents</a></h2>
+            <span class="date">December 28, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/glove_vectors_for_word_representation/">論文メモ GloVe: Global Vectors for Word Representation</a></h2>
+            <span class="date">December 21, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/bert/">論文メモ BERT: Pre-training of Deep Bidirectional Transformers for Lnaguages Understaing</a></h2>
+            <span class="date">December 14, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/150_successfuly_machine_learning_modes/">論文メモ 150 Successful Machine Learning Models: 6 Lessons Learned at Booking.com</a></h2>
+            <span class="date">December 14, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/ranking_relevance_in_yahoo_search/">論文メモ Ranking Relevance In Yahoo Search</a></h2>
+            <span class="date">December 7, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/a_dual_embedding_space_model_for_document_ranking/">論文メモ A Dual Embedding Space Model for Document Ranking</a></h2>
+            <span class="date">November 30, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/on_calibration_of_modern_neural_networks/">論文メモ On Calibration of Modern Neural Networks</a></h2>
+            <span class="date">November 23, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/trinary_projection_trees/">論文メモ Trinary-Projection Trees for Approximate Nerest Neighbor Search</a></h2>
+            <span class="date">November 16, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/get_another_label/">論文メモ Get Another Label? Improving Data Quality and Data Mining Using Multiple, Noisy Labelers</a></h2>
+            <span class="date">November 9, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/active_clean/">メモ ActiveClean: Interactive Data Cleaning For Statistical Modeling</a></h2>
+            <span class="date">November 9, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/web_tables/">メモ WebTables: Exploring the Power of Tables on the Web</a></h2>
+            <span class="date">October 31, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/a_survey_on_data_collection_for_machine_learning/">メモ A Survey on Data Collection for Machine Learning</a></h2>
+            <span class="date">October 26, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/structure_estimation_for_dscrete_graphical_models/">メモ Structure estimation for discrete graphical models: Generalized covariance matrices and their inverses</a></h2>
+            <span class="date">October 19, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/feature_selection_for_text_categorization_on_imbalance_data/">メモ Feature Selection for Text Categorization on Imbalanced Data</a></h2>
+            <span class="date">October 12, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/snorkel_drybell_case_study/">メモ Snorkel DryBell: A Case Study in Deploying Weak Supervision at Industrial Scale</a></h2>
+            <span class="date">October 5, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/training_complex_models_with_multi_task_weak_supervision/">メモ Training Complex Models with Multi-Task Weak Supervision</a></h2>
+            <span class="date">September 28, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/snorkel_rapid_training_data_creation_with_weak_supervision/">メモ Snorkel: Rapid Traning Data Creation with Weak Supervision</a></h2>
+            <span class="date">September 21, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/software_engineering_for_machine_learning/">メモ Software Engineerng for Machine Learning: A Case Study</a></h2>
+            <span class="date">September 14, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/class_imbalance_redux/">メモ Class Imbalance, Redux</a></h2>
+            <span class="date">September 7, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/learning_on_border/">メモ Learning on the Border: Active Learning in Imbalanced Data Classification</a></h2>
+            <span class="date">August 31, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/distilling_the_knowledge_in_a_neural_network/">メモ Distilling the Knowledge in a Neural Network</a></h2>
+            <span class="date">August 24, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/fastxml/">メモ FastXML: A Fast, Accurate and Stable Tree-classifier for eXtreme Multi-label Learning</a></h2>
+            <span class="date">August 24, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/advantages_and_disadvantages_of_a_monolithic_repository/">メモ Advantages and Disadvantages of a Monolithic Repository</a></h2>
+            <span class="date">August 17, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/cat_boost/">メモ CatBoost: unbaiased boosting with categorical features</a></h2>
+            <span class="date">August 10, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/are_we_really_making_much_progress/">メモ Are We Really Making Much Progress? A Worring Analysis of Recent Neural Recomendation Approaches</a></h2>
+            <span class="date">August 10, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/gaussian_processes_for_regression/">メモ Gaussian Processes for Regression</a></h2>
+            <span class="date">August 3, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/google_vizier/">概要 Google Vizier: A Service for Black-Box Optimization</a></h2>
+            <span class="date">August 3, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/learning_active_learning_from_data/">概要 Learning Active Learning from Data</a></h2>
+            <span class="date">July 27, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/textrank/">概要 TextRank: Bringing Order into Texts</a></h2>
+            <span class="date">July 20, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/subword_regularization/">概要 Subword Regularization: Improving Neural Network Translation Models with Multiple Subword Candidates</a></h2>
+            <span class="date">July 17, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/neural_machine_translation_of_rate_words/">概要 Neural Machine Trasnslation of Rare Words with Subword Units</a></h2>
+            <span class="date">July 13, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/embedding_logical_queries_on_knowledge_graphs/">メモ Embedding Logical Queries on Knowledge Graphs</a></h2>
+            <span class="date">February 17, 2019</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/regularizing_and_optimizing_lstm_language_models/">Regularizing and Optimizing LSTM Language Models</a></h2>
+            <span class="date">November 23, 2018</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/deep_joint_entity_disambiguation/">メモ Deep Joint Entity Disambiguation with Local Neural Attention</a></h2>
+            <span class="date">November 9, 2018</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/end_to_end_neural_entity_linking/">メモ End-to-end Neural Entity Linking</a></h2>
+            <span class="date">November 2, 2018</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/deeptype/">DeepType: Multilingual Entity Linking by Neural Type System Evolution(2018)</a></h2>
+            <span class="date">October 26, 2018</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/conditional_random_fields_probabilistic_models_for_segmenting_and_labeling_sequence/">メモ Conditional Random Fields: Probabilistic Models for Segmenting and Labeling Sequence Data</a></h2>
+            <span class="date">October 12, 2018</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/bidirectional_lstm_crf_models_for_sequence_tagging/">メモ Bidirectional LSTM-CRF Models for Sequence Tagging</a></h2>
+            <span class="date">October 5, 2018</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/context_string_embeddings_for_sequence_labeling/">メモ Contextual String Embeddings for Sequence Labeling</a></h2>
+            <span class="date">September 28, 2018</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/universal_language_model_fine_tuning_for_text_classification/">メモ Universal Language Model Fine-tuning for Text Classification</a></h2>
+            <span class="date">September 14, 2018</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/metapath2vec/">メモ metapath2vec: Scalable Representation Learning for Heterogeneous Networks</a></h2>
+            <span class="date">September 7, 2018</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/applying_deep_learning_to_airbnb_search/">Applying Deep Learning To Airbnb Search</a></h2>
+            <span class="date">August 31, 2018</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/the_relationship_between_precision_recall_and_roc_curve/">メモ The Relationship Between Precision-Recall and ROC Curve</a></h2>
+            <span class="date">August 25, 2018</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/enriching_word_vectors_with_subword_information/">メモ Enriching Word Vectors with Subword Information</a></h2>
+            <span class="date">August 10, 2018</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/when_do_changes_induce_fixes/">概要 When Do Chagnes Induce Fixes?</a></h2>
+            <span class="date">August 3, 2018</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/a_simple_semi_supervised_for_ner/">要約 A Simple Semi-supervised Algorithm For Named Entity Recognition</a></h2>
+            <span class="date">July 17, 2018</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/applying_crf_to_japanese_morph_analysis/">要約 Applying Conditional Random Fields to Japanese Morphological Analysis</a></h2>
+            <span class="date">July 17, 2018</span>
+        </div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/text_cls_from_lbl_and_unlbl_doc_em/">概要 Text Classification from Labeled and Unlabeled Documents using EM</a></h2>
+            <span class="date">July 8, 2018</span>
+        </div>
+        
+    </div>
+</main>
+
+    
+    
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

@@ -1,6 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/</loc>
+    <lastmod>2020-12-31T19:17:13+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/</loc>
+    <lastmod>2020-12-31T19:17:13+09:00</lastmod>
+  </url>
   
   <url>
     <loc>https://nryotaro.dev/posts/paxos_made_simple/</loc>
@@ -398,6 +409,16 @@
   </url>
   
   <url>
+    <loc>https://nryotaro.dev/gallery/</loc>
+    <lastmod>2020-01-05T13:25:04+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/gallery/taihoh/</loc>
+    <lastmod>2020-01-05T13:25:04+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nryotaro.dev/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/</loc>
     <lastmod>2020-01-04T23:25:20+09:00</lastmod>
   </url>
@@ -405,11 +426,6 @@
   <url>
     <loc>https://nryotaro.dev/posts/classification_in_the_presence_of_label_noise/</loc>
     <lastmod>2019-12-30T16:07:40+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nryotaro.dev/about/</loc>
-    <lastmod>2019-12-30T01:13:33+09:00</lastmod>
   </url>
   
   <url>
@@ -653,24 +669,15 @@
   </url>
   
   <url>
-    <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2020-12-31T19:17:13+09:00</lastmod>
+    <loc>https://nryotaro.dev/about/</loc>
   </url>
   
   <url>
     <loc>https://nryotaro.dev/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://nryotaro.dev/</loc>
-    <lastmod>2020-12-31T19:17:13+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://nryotaro.dev/tags/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>

@@ -1,76 +1,85 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
-    </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ Semi Supervised Learning with Ladder Networks</h2>
-    <p>August 14, 2020</p>
-  </header>
-  <p>Ladder Networkを半教師あり学習に応用する。
-Ladder Networkは、2015年に、著者の一人Valpolaによって教師なし学習のためのネットワークとして発表されている<a href="https://arxiv.org/abs/1411.7783">*</a>。</p>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
 
-<p>ネットワークアーキテクチャは、エンコーダ、デコーダ、順伝播ネットワークの3つからなる。
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>論文メモ Semi Supervised Learning with Ladder Networks</h1>
+    <span class="date">August 14, 2020</span>
+    <div>
+        <p>Ladder Networkを半教師あり学習に応用する。
+Ladder Networkは、2015年に、著者の一人Valpolaによって教師なし学習のためのネットワークとして発表されている<a href="https://arxiv.org/abs/1411.7783">*</a>。</p>
+<h2 id="architectureladder_networkspng">ネットワークアーキテクチャは、エンコーダ、デコーダ、順伝播ネットワークの3つからなる。
 アーキテクチャの全体は、以下の図が示すように、左の列から、エンコーダ、デコーダ、順伝播ネットワークに対応する。
 エンコーダと順伝播ネットワークは重みを共有する。
 ただし、エンコーダでは、各中間層の出力に正規分布にしたがうノイズを混ぜる。
 デコーダの各層は、対応するエンコーダの中間層と前の層の出力から、ノイズが入る前の中間層の出力、つまり、順伝播ネットワークの中間層の出力を復元できるように学習する。
-ラベルのある事例では、中間層の復元の誤差に加え、エンコーダの出力と正解ラベルの交差エントロピーも損失関数に含まれる。</p>
-
-<h2 id="architecture-ladder-networks-png"><img src="/ladder_networks.png" alt="architecture" /></h2>
-
+ラベルのある事例では、中間層の復元の誤差に加え、エンコーダの出力と正解ラベルの交差エントロピーも損失関数に含まれる。
+<img src="/ladder_networks.png" alt="architecture"></h2>
 <ul>
 <li>論文を<a href="https://arxiv.org/abs/1507.02672">こちら</a>からダウンロードできます。</li>
 <li>画像はすべて論文から引用されています。</li>
 </ul>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/an_empirical_study_on_program_failures_on_deep_learning_jobs/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/statistical_errors_in_software_engineering_experiments/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

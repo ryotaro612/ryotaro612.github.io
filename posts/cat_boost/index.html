@@ -1,93 +1,96 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
-    </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>メモ CatBoost: unbaiased boosting with categorical features</h2>
-    <p>August 10, 2019</p>
-  </header>
-  <h3 id="概要">概要</h3>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
 
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>メモ CatBoost: unbaiased boosting with categorical features</h1>
+    <span class="date">August 10, 2019</span>
+    <div>
+        <h3 id="概要">概要</h3>
 <p>表題はNeurIPS 2018で発表されたCatBoostという勾配ブースティングの手法を論文にちなむ。
 Target Statisticsというカテゴリカル特徴量の前処理と勾配ブースティングの学習時に生じる一種のleakageが起きることを示し、leakageをさけて前処理と学習をする手法を示した。
 CatBoostは二進木の決定木を弱識別器に用いる。</p>
-
 <p>Target Statisticsは、濃度が大きい特徴量の値から目的変数の推定値への関数を求め、推定値を学習に使うことで濃度の大きさに対処する手法をさす。
 データセットを\(\mathcal{D}=\{({\bf x}_k, y_k)\}_{k=1\dots n}\)、\({\bf x_k}\)は\(m\)次元のベクトル\((x_k^1, \dots ,x_k^m)\)、
 対応する正解を\(y_k\in\mathbb{R}\)とするとTarget Statistics \(\hat{x}_k^i\)は\(\hat{x}_k^i\approx\mathbb{E}(y \mid x^i=x^i_k)\)となる。
 推定時には\(y\)は与えられないため、\(\hat{x}^i_k\)を計算するときに\(y_k\)を含めるとleakageが生じる。
 そこで、\(\sigma\)を訓練データの無作為な順列の順序の関数、\(\mathcal{D}_k=\{{\bf x}_j:\sigma(j)&lt;\sigma(k)\}\)、\(a&gt;0\)をパラメタ、\(p\)を教師データにおける\(y\)の平均値とすると</p>
-
 <p>$$
 \newcommand{\1}{\mbox{1}\hspace{-0.25em}\mbox{l}}
 \hat{x}^i_k = \frac{\sum_{{\bf x}_j\in\mathcal{D}_k}\1_{\{x_j^i=x_k^i\}}y_j+ap}{\sum_{{\bf x}_j\in\mathcal{D}_k}\1_{\{x^i_j=x^i_k\}}+a}
 $$
 とすることで、leakageを避けて濃度の高いカテゴリカル特徴量の濃度を下げることができる。</p>
-
 <p>学習においても、leakageを避けるために訓練データに順序を与える。例えば、損失関数を\(\frac{1}{2}[y_i-f(x_i)]^2\)とすると、勾配\(-\partial L(y_i,f(x_i))/\partial f(x_i)\)は\(y_i - f(x_i)\)となる。このとき、\(m\)ステップで勾配を計算するときに使われる弱識別器\(f_{m-1}\)の学習に\((x_i, y_i)\)が訓練データに含まれているとleakageが生じる。そこで、<em>Algorithm 1</em> では、訓練データに順列を設定し、leakageが生じないようにしている。なお、\(I\)は決定木の数をさす。
 <em>ALgorithm 1</em> は訓練データの数以上のモデルを学習する必要があるのでスケールしない。論文中ではこれを近似するアルゴリズムも提案されており、実験や評価ではそちらが使われている。</p>
-
 <figure class="center">
     <img src="/catboost.png" width="320"/> 
 </figure>
 
-
 <h3 id="感想">感想</h3>
-
 <p>訓点データ数が少ないほどleakageの影響が大きいことが解析的にも実験においても示されてるので、訓練データ数が少なく、濃度が大きいカテゴリカル特徴量がある問題で使ってみたいと思う。</p>
-
-<hr />
-
+<hr>
 <p>論文は<a href="https://arxiv.org/abs/1706.09516">こちら</a>からダウンロードできます。</p>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/are_we_really_making_much_progress/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/advantages_and_disadvantages_of_a_monolithic_repository/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

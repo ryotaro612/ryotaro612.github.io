@@ -1,43 +1,43 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
-    </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ End-to-end Neural Coreference Resolution</h2>
-    <p>October 10, 2020</p>
-  </header>
-  <p>ニューラルネットワークによる共参照解析の手法で、End-to-Endとあるように、構文解析やルールベースの参照表現に頼らず、先行研究を上回る性能を発揮した。
-文書中の全ての単語系列を参照表現の候補とみなし、ある単語系列の組が照応関係にある確率の分布を学習する。</p>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
 
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>論文メモ End-to-end Neural Coreference Resolution</h1>
+    <span class="date">October 10, 2020</span>
+    <div>
+        <p>ニューラルネットワークによる共参照解析の手法で、End-to-Endとあるように、構文解析やルールベースの参照表現に頼らず、先行研究を上回る性能を発揮した。
+文書中の全ての単語系列を参照表現の候補とみなし、ある単語系列の組が照応関係にある確率の分布を学習する。</p>
 <p>タスクは、\(T\)個の単語からなる文書\(D\)を入力として、各単語系列\(i\)の先行詞\(y_i\)を推定するものになる。
 実験のデータセットはCoNLL-2012 shared taskであり、単語のほか、データセットにある注釈のgenreとspeakerも特徴につかわれる。
 とりえる単語系列の数を\(N=\frac{T(T+1)}{2}\)とおく。
@@ -45,91 +45,87 @@
 \(\epsilon\)は、\(i\)が参照表現でないか、参照表現であっても既出のどの単語系列とも照応関係にないことを意味する。
 このとき、モデルは、次の確率分布\(P(y_1,\dots ,y_N\mid D)\)を学習する。
 これは、各単語系列の先行詞についての確率分布の積になっている。</p>
-
 <p>$$
 \begin{align}
-P(y_1, \dots y_N\mid D)&amp;=\prod_{i=1}^{N}P(y_i\mid D)\\<br />
-&amp;=\prod_{i}^{N}\frac{\exp (s(i, y_i))}{\sum_{y&rsquo;\in \mathcal{Y}(i)}\exp(s(i, y&rsquo;))}
+P(y_1, \dots y_N\mid D)&amp;=\prod_{i=1}^{N}P(y_i\mid D)\\<br>
+&amp;=\prod_{i}^{N}\frac{\exp (s(i, y_i))}{\sum_{y'\in \mathcal{Y}(i)}\exp(s(i, y'))}
 \end{align}
 $$</p>
-
 <p>\(s(i,j)\)は、単語系列\(i, j\)の照応関係のスコアを示す。
 \(s_m(x)\)は\(x\)が参照表現かを示し、\(s_a(i,j)\)は\(j\)が\(i\)の先行詞かを示すスコアである。
 計算量を削減する場合、\(s_m(x)\)に閾値をもうけて、候補とする単語系列の数を減らす。</p>
-
 <p>$$
 s(i,j)=
 \begin{cases}
-0&amp;j=\epsilon\\<br />
+0&amp;j=\epsilon\\<br>
 s_m(i)+s_m(j)+s_a(i,j)&amp;j\neq \epsilon
 \end{cases}
 $$</p>
-
 <p>次の2つの図は、ネットワークアーキテクチャ全体を示す。
 \(s_m(i)\)は、順伝播ネットワーク\(\text{FFNN}_m\)に単語系列の分散表現\(\boldsymbol{g}_i\)をあたえた出力とパラメタ重み\(\boldsymbol{w}_m\)の積である。</p>
-
 <p>$$
 s_m(i)=\boldsymbol{w}_m\cdot \text{FFNN}_m(\boldsymbol{g}_i)
 $$</p>
-
 <p>\(s_a(i,j)\)は、順伝播ネットワーク\(\text{FFNN}_a\)に2つの単語系列の分散表現とgenre, speakerの特徴ベクトル\(\phi (i, j)\)をあたえた出力とパラメタ\(\boldsymbol{w}_a\)からなる。
 \(\circ\)は要素同士の乗積をさす。</p>
-
 <p>$$
 s_a(i,j)=\boldsymbol{w}_a\cdot\text{FFNN}_a([\boldsymbol{g}_i,\boldsymbol{g}_j,\boldsymbol{g}_i\circ\boldsymbol{g}_j,\phi(i,j)])
 $$</p>
-
 <p>単語系列の分散表現\(\boldsymbol{g}_i\)は、双方向LSTMに単語の分散表現\(\{\boldsymbol{x}_1,\dots , \boldsymbol{x}_T\}\)からつくられる。
 \(\{\boldsymbol{x}_1,\dots , \boldsymbol{x}_T\}\)は、学習済みの単語の分散表現と文字単位の1次元CNNの出力からなる。
 このとき単語\(\boldsymbol{x}_t\)に対応する双方向LSTMによる分散表現を\(\boldsymbol{x}^{*}_t\)とおく。
 単語系列の始点をSTART(\(i\)), 終点をEND(\(i\))とすると、\(\boldsymbol{g}_i\)は、次の式で計算される。</p>
-
 <p>$$
 \begin{align}
-\alpha_t&amp;=\boldsymbol{w}_{\alpha}\cdot\text{FFNN}_{\alpha}(\boldsymbol{x}^{*}_{t})\\<br />
-\alpha_{i,t}&amp;=\frac{\exp(\alpha_t)}{\sum^{\text{END}(i)}_{k=\text{START}(i)}\exp(\alpha_k)}\\<br />
-\boldsymbol{\hat{x}}_i&amp;=\sum^{\text{END}(i)}_{t=\text{START}(i)}\alpha_{i,t}\cdot\boldsymbol{x}_t\\<br />
+\alpha_t&amp;=\boldsymbol{w}_{\alpha}\cdot\text{FFNN}_{\alpha}(\boldsymbol{x}^{*}_{t})\\<br>
+\alpha_{i,t}&amp;=\frac{\exp(\alpha_t)}{\sum^{\text{END}(i)}_{k=\text{START}(i)}\exp(\alpha_k)}\\<br>
+\boldsymbol{\hat{x}}_i&amp;=\sum^{\text{END}(i)}_{t=\text{START}(i)}\alpha_{i,t}\cdot\boldsymbol{x}_t\\<br>
 \boldsymbol{g}_i&amp;=[\boldsymbol{x}_{\text{START}(i)}^{\star},\boldsymbol{x}_{\text{END}(i)}^{\star},\boldsymbol{\hat{x}}_{i},\phi (i)]
 \end{align}
 $$</p>
-
-<p><img src="/e2e_ncr/1.png" alt="e2e_ncr/1.png" /></p>
-
-<p><img src="/e2e_ncr/2.png" alt="e2e_ncr/2.png" /></p>
-
+<p><img src="/e2e_ncr/1.png" alt="e2e_ncr/1.png"></p>
+<p><img src="/e2e_ncr/2.png" alt="e2e_ncr/2.png"></p>
 <p>教師データGOLDにある単語系列\(i\)を先行詞とする集合をGOLD(\(i\))とする。
 ただし、\(i\)が集合に所属していないか計算量の都合でGOLDにある先行詞が枝刈りされいれば、GOLD\((i)=\{\epsilon\}\)とする。
 このとき、目的関数は次の式になる。</p>
-
 <p>$$
 \log\prod^N_{i=1}\sum_{\hat{y}\in\mathcal{Y}(i)\cap\text{GOLD}(i)}P(\hat{y})
 $$</p>
-
-<hr />
-
+<hr>
 <ul>
 <li>論文を<a href="https://www.aclweb.org/anthology/D17-1018/">こちら</a>からダウンロードできます。</li>
 </ul>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/build_it_yourself/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/software_development_waste/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

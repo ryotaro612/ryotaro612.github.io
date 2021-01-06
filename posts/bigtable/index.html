@@ -1,93 +1,98 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
-    </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ Bigtable: A Distributed Storage System for Structured Data</h2>
-    <p>November 30, 2020</p>
-  </header>
-  <p>Bigtableは、数千のコモディティサーバ上でペタバイト級のデータをホスティングできる分散ストレージであり、行、列、タイムスタンプをキーとして値の文字列を保存する。
-論文の発表された2005年時点で、検索エンジンのインデックス, Google Earth, Google Financeなどの多様なアプリケーションの実装に使用されている。</p>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
 
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>論文メモ Bigtable: A Distributed Storage System for Structured Data</h1>
+    <span class="date">November 30, 2020</span>
+    <div>
+        <p>Bigtableは、数千のコモディティサーバ上でペタバイト級のデータをホスティングできる分散ストレージであり、行、列、タイムスタンプをキーとして値の文字列を保存する。
+論文の発表された2005年時点で、検索エンジンのインデックス, Google Earth, Google Financeなどの多様なアプリケーションの実装に使用されている。</p>
 <p>行にあたるキーは最大64KBの任意の文字列で、単一の行キーで指定した読み込み、書き込みはアトミックに処理できる。
 データは行キーの辞書順でtabletと呼ばれるパーティションを区切られて管理されている。
 Tabletの概念は、半リレーショナルデータモデルの大域分散データベース<a href="https://research.google/pubs/pub39966/">Spanner</a>に継承されている。</p>
-
 <p>列キーの構文は\(\texttt{family:qualifier}\)であり、ファミリーと呼ばれる単位でグループ化される。
 BigTableは、このColumn family単位にデータへのアクセスを制御する。
 また、キーのタイムスタンプは64-bitの整数値であり、タイムスタンプの異なるデータをもつことで、データの版を管理している。</p>
-
 <p>ログやデータは<a href="https://static.googleusercontent.com/media/research.google.com/ja//archive/gfs-sosp2003.pdf">Google File Sytem(GFS)</a>上に保存される。
 ファイル形式は、Google SSTableという順序つきのイミュータブルなマップである。
 SSTableは、デフォルトで64KBの複数の連続したブロックを含む。
 ファイルを開いたらブロックのインデックスをメモリに読み込み、二分探索で目的のブロックへのインデックスを探す。
 目的のインデックスを見つけたら、一度のシークでブロックを読み込むことができる。</p>
-
 <p>Bigtableは、アクセスするクライント、1台のマスターサーバ、多数のタブレットサーバからなる。
 タブレットサーバはtabletを管理するためのサーバであり、マスターサーバがtabletをタブレットサーバに配布する。
 ほかにもマスターサーバは、タブレットサーバへの負荷分散や、クラスタを構成するタブレットサーバの増加や消失の検知、GFSのガベージコレクション、スキーマの変更を担う。</p>
-
 <p>クラスタに参加するサーバを管理する実装には高可用性の分散ロックサービス<a href="https://static.googleusercontent.com/media/research.google.com/ja//archive/chubby-osdi06.pdf">Chubby</a>が使われている。
 Chubbyは、5つのレプリカからなり、そのうちの1つがマスターの役割をはたし、リクエストを処理する。
 レプリカの整合性の保証はPaxosによって実装されている。
 Chubbyは、ロックに使えるディレクトリと小さいファイルを提供する。
 また、ファイルへの読み書きはアトミックに処理できる。
 Bigtableは、マスターが高々1台しか存在しないことの保証やタブレットサーバの追加、消失の検知にChubbyを使用している。</p>
-
-<hr />
-
+<hr>
 <ul>
 <li>論文を<a href="https://research.google/pubs/pub27898/">こちら</a>からダウンロードできます。</li>
 </ul>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/aerospike/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/the_declarative_imperative/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

@@ -1,57 +1,170 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/list.css"></link>
+    <link rel="stylesheet" href="/css/articles.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
-    </header>
-    <main>
-      
-<table>
-  
-</table>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
 
-    </main>
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Posts</h1>
+
+    
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/paxos_made_simple/">論文メモ Paxos Made Simple</a></h3>
+        <div class="summary"><p><a href="https://lamport.azurewebsites.net/pubs/lamport-paxos.pdf">The Part-Time Parliament</a>で提唱された分散含意アルゴリズムPaxosをLamport自身が平易に解説したもの。
+エージェントの処理速度やメッセージが配信されるまでの長さに仮定はない。
+メッセージは複製、喪失する可能性がある。
+ただし、ビザンチン将軍問題は扱わず、メッセージが壊れることは考えない。</p></div>
+        <div class="article-footer">
+            <span class="date">December 31, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/impossibility_of_distributed_consensus_with_one_faulty_process/">論文メモ Impossibility of Distributed Consensus with One Faulty Process</a></h3>
+        <div class="summary"><p>プロセスが1つでもクラッシュしうる場合には常に含意を保証できる完全な非同期アルゴリズムは存在しないことを示した。
+この定理はFLP帰結とよばれている。
+FLPは、著者Fischer, Lynch, Patersonの頭文字に由来する。
+ここでの完全は、プロセスの処理速度やメッセージの配信遅延に仮定をおかず、同期クロックがないためにタイムアウトを使えず、ほかのプロセスが別のプロセスの障害を検知できないことを意味する。
+いいかえると、含意アルゴリズムを実装するには上のいずれかを仮定しなければないことを示した。</p></div>
+        <div class="article-footer">
+            <span class="date">December 18, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/what_you_always_wanted_to_know_about_datalog/">論文メモ What You Always Wanted to Know Abount Datalog</a></h3>
+        <div class="summary"><p>論理型のデータベースのクエリ言語Datalogの構文、意味論、最適化が解説されている。
+最適化の節はサーベイ論文の形式で、最適化を分類し、各種類の先行研究に案内がある。</p></div>
+        <div class="article-footer">
+            <span class="date">December 12, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/translating_embeddings_for_modeling_multi_relational_data/">論文メモ Translating Embeddings for Modeling Multi-relational Data</a></h3>
+        <div class="summary"><p>ナレッジグラフを低次元のベクトル空間に埋め込むアルゴリズムTransEを提案した。
+エンティティは複数種類のラベルをもってよく、埋め込まれたエンティティやラベルの距離を計算することで、入力されたグラフに欠けているリンクを推定できる。</p></div>
+        <div class="article-footer">
+            <span class="date">December 5, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/the_declarative_imperative/">論文メモ The Declarative Imperative</a></h3>
+        <div class="summary"><p>宣言型言語Datalogを拡張した言語でネットワークプロトコルと分散システムを開発した7年間の経験から、次世代の並列分散プログラミング言語の基礎になる理論上の予想を4つ提唱した。
+Datalogは、論理プログラミング言語Prologのサブセットの構文をもった言語である。
+予想の説明に使われるDatalogの拡張言語<a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2009/EECS-2009-173.pdf">Dedalus</a>は、分散システムのノードが互いの時刻を直接的に推論できない性質を、送受信するデータから離れたノードの時刻を推論する問題に帰着する。</p></div>
+        <div class="article-footer">
+            <span class="date">December 5, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/bigtable/">論文メモ Bigtable: A Distributed Storage System for Structured Data</a></h3>
+        <div class="summary"><p>Bigtableは、数千のコモディティサーバ上でペタバイト級のデータをホスティングできる分散ストレージであり、行、列、タイムスタンプをキーとして値の文字列を保存する。
+論文の発表された2005年時点で、検索エンジンのインデックス, Google Earth, Google Financeなどの多様なアプリケーションの実装に使用されている。</p></div>
+        <div class="article-footer">
+            <span class="date">November 30, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/aerospike/">論文メモ Aerospike: Architecture of a Real-Time Operational Database</a></h3>
+        <div class="summary"><p>Aerospikeは、高い対障害性をもった分散データベースで、正式にはCitrusleafという。
+CPU, DRAM, HDDやSSDを搭載したコモディティなサーバでクラスタを組める。
+ノード同士はTCP/IPで通信し、シェアードナッシングなクラスタを構成する。
+処理性能の向上のために、スケールアウトだけでなく、スケールアップも重視しており、ハードウェアを意識した実装で高速化をはかっている。</p></div>
+        <div class="article-footer">
+            <span class="date">November 28, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/spanner/">論文メモ Spanner: Google&#39;s Globally Distributed Database</a></h3>
+        <div class="summary"><p>Spannerは、世界中のデータセンタにデータを複製する高可用な分散データベースで、<a href="http://bitsavers.trailing-edge.com/pdf/xerox/parc/techReports/CSL-81-8_Information_Storage_in_a_Decentralized_Computer_System.pdf">外部整合性</a>のある分散トランザクションを保証する。
+ユーザからみると半リレーショナルなデータモデルのデータベースであり、各テーブルに一つ以上の順序つき主キーが必要なところがリレーショナルデータモデルと違う。
+一方、内部は文字列とタイムスタンプの組をキーにしたキーバリューストアであり、Single Paxos状態機械でデータの一貫性を守りながら複数のデータセンタにデータを複製する。</p></div>
+        <div class="article-footer">
+            <span class="date">November 27, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/a_relational_model_of_data_for_large_shared_data_banks/">論文メモ A Relational Model of Data for Large Shared Data Banks</a></h3>
+        <div class="summary"><p>Coddがリレーショナルデータモデルを提唱した70年の論文。
+データをリレーション(SQLでのテーブル)として束ね、リレーションを順序なしのタプル(SQLの行)で構成する。</p></div>
+        <div class="article-footer">
+            <span class="date">November 21, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/on_designing_and_deploying_internet-scale_services/">論文メモ On Designing and Deploying Internet-Scale Services</a></h3>
+        <div class="summary"><p>MSNとWindows Liveで培われたシステム管理者による運用負担を減らすためのベストプラクティス集。
+07年に発表された。
+プラクティス集は、10のグループに分かれ、それぞれ複数のアドバイスからなる。
+特徴的な内容に絞って以下に要約する。</p></div>
+        <div class="article-footer">
+            <span class="date">November 20, 2020</span>
+        </div>
+    </article>
+    
+</main>
+
+    
+
+<ul class="pagination">
+    
+    
+    <li>
+        <a href="/categories/page/2/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    <li>
+        <a href="/categories/page/13/"><span class="material-icons">last_page</span></a>
+    </li>
+    
+</ul>
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+    <link rel="stylesheet" href="/css/articles.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Posts</h1>
+
+    
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/albert/">論文メモ ALBERT: A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS</a></h3>
+        <div class="summary"><p>BERTのパラメタ数を削減し、学習時間の短縮と正則化による予測性能の向上を両立したモデルALBERTを提案し、GLUE, RACE, SQuADでSoTAを実現した。
+BERT-largeと比べると、ALBERT-largeのパラメタ数は約5.3%の18Mであり、学習時間は1.7倍速い。
+パラメタを削減するために、単語のOne-hotベクトルをあたえられる単語埋め込み行列の次元を減らし、隠れ層の順伝播ネットワークや注意機構のパラメタを層の間で共有した。
+また、Next Sentence Prediction(NSP)による学習を、与えられた2文の前後関係を判定する学習Sentence Order Prediction(SOP)におきかえ、主タスクの予測性能を向上をはかった。</p></div>
+        <div class="article-footer">
+            <span class="date">April 25, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/random_walks_in_recommender_systems/">論文メモ Random Walks in recommender Systems: Exact Computation and Simulations</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p><a href="https://ieeexplore.ieee.org/document/4072747">F. Foussら</a>や<a href="https://www.aaai.org/Papers/IJCAI/2007/IJCAI07-444.pdf">M. Goriら</a>のランダムウォークによる推薦システムの先行研究を、質や計算量について比較した論文である。
+比較対象には、著者らの用意したも含まれる。
+実験には、MovieLensのデータセットが使われた。
+F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒット数で評価したところ、著者らの用意した単純な手法\(P^s\)やその拡張\(P_\alpha^s\)が質と計算量の両方で最も優れた結果を残した。</p></div>
+        <div class="article-footer">
+            <span class="date">April 18, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/domain_adversarial_training_of_neural_networks/">論文メモ Domain Adversarial Training of Neural Networks</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>ニューラルネットワークをもちいたドメイン適用の論文である。
+ソースドメインのラベルつきデータと目標ドメインのラベルのないデータでモデルを訓練し、目標ドメインに対する分類性能を引きあげる。
+目的関数は、ソースドメインの分類器の目的関数とデータのドメインを判定する識別器の目的関数からなる。
+後者は、前者の正則化項としてはたらく。
+これにより、ドメイン間に共通する特徴からソースドメインのデータのラベルを高い性能で予測できるようになる。
+目標関数から、ドメイン間のデータの分布が近いほど、目標ドメインのデータでも高い分類性能を発揮する。
+先行研究との違いは、できるだけ共通するする特徴で分類するという着想を、通常の分類と同じく、確率的勾配降下法で実現したところにある。</p></div>
+        <div class="article-footer">
+            <span class="date">April 11, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/character_aware_neural_language_models/">論文メモ Character-Aware Neural Language Models</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>文字単位の入力から次に出現する単語を予測するニューラル言語モデルの論文である。
+アーキテクチャは入力から近い順にCNN, highway network, LSTMからなる。
+実験データにPenn Treebankを、評価指標にPerplexityを採用してモデルを評価したところ、
+論文が発表された2016年時点での<a href="https://arxiv.org/abs/1409.2329">SOTA</a>の60%程度のパラメタしかないモデルでありながら、これに匹敵する性能を発揮した。</p></div>
+        <div class="article-footer">
+            <span class="date">April 4, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/deep_contextualized_word_representations/">論文メモ Deep contextualized word representations</a></h3>
+        <div class="summary"><p>文脈をふまえた単語の分散表現を生成する手法を提案し、教師あり学習に応用することで評価した論文である。
+文字単位の学習済み双方向LSTM言語モデルへの入力と各層の出力から分散表現をつくる。
+言語モデルの入力やどの層をどれだけ重視するかは、教師あり学習のときに更新するパラメタのひとつになる。
+実験では、構文にかかわるタスクであれば入力層に近い層が、意味にかかわるものであれば出力層に近い層が、重視された。
+モデルは、Embeddings from Language Modelsにちなみ、ELMoと名付けられた。</p></div>
+        <div class="article-footer">
+            <span class="date">March 24, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/the_seven_sins/">論文メモ The Seven Sins: Security Smells in Infrastructure as Code Scripts</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>OSSの調査にもとづき、Infrastrucure as Code(IaC)スクリプトに潜む主要なセキュリティ上の不吉な匂い(Security Smells)を7つ列挙し、これらを検出するツールを実装した論文である。
+論文のねらいは、開発者がIaCスクリプトに不吉な匂いを混ぜないようにすることにある。
+著者らは、本論文で、ICSE2019のDistinguished Paper Awardを受賞した。</p></div>
+        <div class="article-footer">
+            <span class="date">March 20, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/semi_supervised_sequence_learning/">論文メモ Semi-supervised Sequence Learning</a></h3>
+        <div class="summary"><p>系列データの教師あり学習において、ラベルのないデータを学習した言語モデルやオートエンコーダーの重みでLSTMを初期化することの有用性を実験的に示した。</p></div>
+        <div class="article-footer">
+            <span class="date">March 14, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/raft/">論文メモ In Search of an Understandable Consensus Algorithm</a></h3>
+        <div class="summary"><p>Raftとよばれるコンセンサスアルゴリズムを提案した論文である。
+Raftは、Multi Paxosと同様の実行結果をもたらす。
+実行するコマンドのログをサーバ間で交換することで、状態を同期し、サーバの一部が落ちてもシステムを継続することができる。</p></div>
+        <div class="article-footer">
+            <span class="date">March 9, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/sentence_piece/">論文メモ SentencePiece: A simple and language independent subword tokenizer and detokenizer for Neural Text Processing</a></h3>
+        <div class="summary"><p>SentencePieceは、深層学習向けのトークナイザ・脱トークナイザである。
+特定の言語を意識した処理がないため、あらゆるテキストに利用できる。
+本論文では、C++やPythonによる<a href="https://github.com/google/sentencepiece">実装</a>と翻訳への適用実験について書かれている。
+アルゴリズムの解説は、<a href="https://www.aclweb.org/anthology/P16-1162.pdf">Sennrich et al.</a>や<a href="https://arxiv.org/pdf/1804.10959.pdf">Kudo.</a>にゆずられている。
+これらの論文について2019年7月13日の<a href="../neural_machine_translation_of_rate_words/">記事</a>と2019年7月17日の<a href="./subword_regularization/">記事</a>で解説している。</p></div>
+        <div class="article-footer">
+            <span class="date">February 29, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/latent_dirichlet_allocation/">論文メモ Latent Dirichlet Allocation</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>トピックモデルの潜在的ディリクレ配分法(LDA)の原論文である。
+LDAは、テキストコーパスのような離散データの確率的生成モデルである。
+意味のあるデータのまとまりに対する端的な説明を与える情報を見つけることを目的としている。
+3つの階層からなる階層ベイズモデルである。
+、データの要素は、各トピックを表すモデルの混合モデルから生成される。
+トピックもまた混合モデルから確率的に生成される。
+推論にはベイズ変分法を、パラメタの推定にはEMアルゴリズムをもちいらる。</p></div>
+        <div class="article-footer">
+            <span class="date">February 23, 2020</span>
+        </div>
+    </article>
+    
+</main>
+
+    
+
+<ul class="pagination">
+    
+    <li>
+        <a href="/tags/"><span class="material-icons">first_page</span></a>
+    </li>
+    <li>
+        <a href="/tags/page/6/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/tags/page/8/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    <li>
+        <a href="/tags/page/13/"><span class="material-icons">last_page</span></a>
+    </li>
+    
+</ul>
+
+    <footer>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

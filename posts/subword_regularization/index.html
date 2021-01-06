@@ -1,91 +1,94 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
-    </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>概要 Subword Regularization: Improving Neural Network Translation Models with Multiple Subword Candidates</h2>
-    <p>July 17, 2019</p>
-  </header>
-  <h3 id="概要">概要</h3>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
 
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>概要 Subword Regularization: Improving Neural Network Translation Models with Multiple Subword Candidates</h1>
+    <span class="date">July 17, 2019</span>
+    <div>
+        <h3 id="概要">概要</h3>
 <p>表題は、過去に<a href="../neural_machine_translation_of_rate_words/">紹介</a>した<a href="https://www.aclweb.org/anthology/P16-1162">論文</a>と同様、sentencepiece（ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザ）の元になった論文にあたる。
 ノイズに対する頑強さのために、単語のサブワード（部分文字列）を生成するユニグラム言語モデルの学習方法と、モデルから生成されたサブワード列を入力とする機械翻訳モデルの学習方法を提案した。</p>
-
 <p>ニューラルネットワークに基づく機械翻訳モデルでは、学習によって翻訳可能になる語彙に上限がある一方で、翻訳すべき文には語彙にない単語が含まれることがある。
 <a href="https://www.aclweb.org/anthology/P16-1162">既存研究</a>では、限られた語彙で、珍しい単語や語彙にない単語を表現するために、文をサブワードを単位とするシーケンスに変換し、
 これらの単語の翻訳精度を向上できたことを報告している。
 今回紹介する論文も、文をサブワードのシーケンスに変換するアプローチをとる。
 独自の着眼点は、単語をサブワードに分割するパターンには何通りかあるため、源言語文と目的言語文のペアに対して複数のサブワード列を用意できると考えたところにある。一つのペアについて複数のサブワード列で学習することで、一つのサブワード列で学習する<a href="https://www.aclweb.org/anthology/P16-1162">手法</a>よりも、翻訳性能の高いモデルを生成できたことを実験で示している。</p>
-
 <p>文に対応するサブワード列を生成するために、サブワードを生成するユニグラム言語モデルを源言語文や目的言語文から学習する。
 学習はEMアルゴリズムにより、\(\mathcal{L}\)を最大化するように、サブワード\(x_i\)の出現確率\(p(x_i)\)の更新を繰り返す。
 \(D\)は学習データにある文の集合、\({\bf x} = (x_1, \dots, x_M)\)は文\(X^{(s)}\)のサブワード列、\(S(X)\) はサブワードによるセグメンテーションの候補の集合を表す。</p>
-
 <p>$$
 \mathcal{L} = \sum_{ s = 1}^{ \mid D \mid } \log (P(X^{(s)})) = \sum_{s=1}^{\mid D \mid}\log \left( \sum_{{\bf x}\in S(X^{(s)})} P({\bf x}) \right)
 $$</p>
-
 <p>$$
 P({\bf x}) = \prod_{i=1}^{M}p(x_i), \forall i\ x_i\in \mathcal{V}, \sum_{x\in\mathcal{V}}p(x) =1
 $$</p>
-
 <p>ただし、\(\mathcal{V}\)は未知なので、十分大きな要素数の\(\mathcal{V}\)を設定し、その後、\(p(x_i)\)を求め、\(x_i\)の有無における\(\mathcal{L}\)への差分が小さい\(x_i\)を\(\mathcal{V}\)から除外するというステップを繰り返し、期待する要素数の\(\mathcal{V}\)を求める。</p>
-
 <h3 id="感想">感想</h3>
-
 <p>EMアルゴリズムにおける\(p(x_i)\)の更新する値は、\(\mathcal{L}\)を偏微分して求めるのだと思う。
 BPEと比べて計算時間がどれくらいかかるか気になる。</p>
-
 <p>英語の論文は<a href="https://arxiv.org/abs/1804.10959">こちら</a>から、日本語の論文は<a href="https://www.anlp.jp/proceedings/annual_meeting/2018/pdf_dir/B1-5.pdf">こちら</a>から参照できる。</p>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/neural_machine_translation_of_rate_words/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/textrank/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

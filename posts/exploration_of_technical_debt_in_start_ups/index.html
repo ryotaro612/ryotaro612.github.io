@@ -1,90 +1,94 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
-    </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>Exploration of Technical Debt in Start-ups</h2>
-    <p>July 24, 2020</p>
-  </header>
-  <p>スタートアップ86社を調査し、スタートアップにおける技術的負債を招く要因(precedents)、負債を抱える側面(dimentions)、その影響(outcomes)について調査した。
-チームの人数の多さと熟練度の低さが負債の要因を誘発し、負債はテストの不足によくみられた。</p>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
 
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Exploration of Technical Debt in Start-ups</h1>
+    <span class="date">July 24, 2020</span>
+    <div>
+        <p>スタートアップ86社を調査し、スタートアップにおける技術的負債を招く要因(precedents)、負債を抱える側面(dimentions)、その影響(outcomes)について調査した。
+チームの人数の多さと熟練度の低さが負債の要因を誘発し、負債はテストの不足によくみられた。</p>
 <p>調査内容は、10のセクションからなる85の質問からなる。各質問には4段階のリッカート尺度(全く同意できる、同意できる..など回答に程度が加味されている)で回答してもらった。
 質問のうちの45件は、技術的負債の要因、側面、影響に関するもので、それ以外は開発のプラクティスを含む開発環境についての質問だった。
 質問の一部は<a href="https://eriksklotins.lv/uploads/TD-in-start-ups-questions.pdf">公開</a>されている。</p>
-
 <p>調査対象のスタートアップは、操業状態、国、操業期間、プロダクトのフェーズについて様々であった。
 例えば、操業状態については、操業中の企業以外にも、買収、クローズ、操業停止状態の企業も含まれている。</p>
-
 <p>回答と負債との相関関係は検定によって確認されており、カイ二乗検定とモンテカルロ法による有意確率の推定が使われた。また、相関関係の大きさがクラメールのVテストで評価された。</p>
-
 <p>技術的負債の要因、箇所、影響は、あらじめ、<a href="https://ieeexplore.ieee.org/document/7360225">先行研究</a>のGreenfield start-up modelにしたがい、次の図のように区分されている。
 質問や分析は、このモデルをもとに設計されている。
-<img src="/exploration_of_td_in_startup.png" alt="debt" /></p>
-
+<img src="/exploration_of_td_in_startup.png" alt="debt"></p>
 <p>主要な調査結果は次の4つ。</p>
-
 <ul>
 <li>すべての側面について、操業状態のスタートアップは、買収、クローズ、操業停止した企業よりも、技術的負債を低く見積っていた。</li>
 <li>負債を抱える側面のうち、最も負債をかかえているという回答が目立ったのはテストであり、品質保証を手動テストに頼っている。</li>
 <li>10人以上のチームに所属する開発者や熟練度の高い開発者ほど、技術的負債をより大きく見積った。</li>
 <li>技術的負債は、生産性と品質のどちらにも影響を与えると考えられていた。</li>
 </ul>
-
-<hr />
-
+<hr>
 <ul>
 <li>論文を<a href="http://gorschek.com/wp-content/uploads/2019/12/exploring-TD-in-startups.pdf">こちら</a>からダウンロードできます。</li>
 </ul>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/deep_learning_recommendation_model_for_personalization_and_recommendation_systems/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/factorization_machines/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

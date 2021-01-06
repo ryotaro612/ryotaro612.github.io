@@ -1,92 +1,96 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
-    </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ Random Walks in recommender Systems: Exact Computation and Simulations</h2>
-    <p>April 18, 2020</p>
-  </header>
-  <h3 id="概要">概要</h3>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
 
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>論文メモ Random Walks in recommender Systems: Exact Computation and Simulations</h1>
+    <span class="date">April 18, 2020</span>
+    <div>
+        <h3 id="概要">概要</h3>
 <p><a href="https://ieeexplore.ieee.org/document/4072747">F. Foussら</a>や<a href="https://www.aaai.org/Papers/IJCAI/2007/IJCAI07-444.pdf">M. Goriら</a>のランダムウォークによる推薦システムの先行研究を、質や計算量について比較した論文である。
 比較対象には、著者らの用意したも含まれる。
 実験には、MovieLensのデータセットが使われた。
 F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒット数で評価したところ、著者らの用意した単純な手法\(P^s\)やその拡張\(P_\alpha^s\)が質と計算量の両方で最も優れた結果を残した。</p>
-
 <h3 id="実験の設定">実験の設定</h3>
-
 <p>いずれの手法も、ユーザとアイテムの2部グラフ上でのランダムウォークをもとに、ユーザの好むアイテムを推薦する。
-ユーザの集合を\(U\)、アイテムの集合を\(U\)とし、両者の要素間には\(<u, m>(u\in U, m \in I)\)で表記される関係\(R\)がある。
+ユーザの集合を\(U\)、アイテムの集合を\(U\)とし、両者の要素間には\(&lt;u, m&gt;(u\in U, m \in I)\)で表記される関係\(R\)がある。
 2部グラフ\(G\)は、\(U\)と\(I\)を頂点、\(R\)を辺としてユーザとアイテムの関係をモデル化する。</p>
-
-<h3 id="p-s">\(P^s\)</h3>
-
+<h3 id="ps">\(P^s\)</h3>
 <p>ユーザ\(u\)から\(s\)ステップのランダムウォークで到達するアイテムについての確率分布を\(P^s(u, .)\)とすると、\(P^s\)は\(P^s(u, .)\)の高さをもとにアイテムを推薦する。
 \(G\)は2部グラフであるため、\(s\)は3以上の奇数である。
 \(s=3,5\)で実験したところ、\(s=3\)のほうが優れていた。
 \(P^s\)は、\(G\)の隣接行列\(A\)と頂点の次数の対角行列\(D\)より</p>
-
 <p>$$
 P^s = (D^{-1}A)^s
 $$
 で求められる。
 \(P_s^\alpha\)は、\(P\)の正の要素を\(\alpha\)乗した値\(P_\alpha\)の\(s\)乗である。
 実験では、\(\alpha=1.9\)のときに最もよい結果となった。</p>
-
-<hr />
-
+<hr>
 <ul>
 <li>論文は<a href="http://wwwconference.org/proceedings/www2014/companion/p811.pdf">こちら</a>からダウンロードできます。</li>
 </ul>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/domain_adversarial_training_of_neural_networks/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/albert/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

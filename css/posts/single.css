@@ -1,0 +1,7 @@
+main > div {
+    margin-top: 2rem;
+}
+
+main .date {
+    color: var(--secondary);
+}

@@ -1,21 +1,99 @@
-article header h2 {
-  font-size: 3.6rem;
-}
-article h3 {
-  font-size: 3.0rem;
-}
-article h4 {
-  font-size: 2.4rem;
+main .highlight {
+    overflow-x: auto;
+    scrollbar-width: thin;
 }
 
-article h5 {
-  font-size: 2.0rem;
+main p {
+    margin: 2rem 0;
 }
 
-article h6 {
-  font-size: 1.8rem;
+main h2,h3,h4,h5,h6 {
+    font-weight: bold;
 }
 
-article hr {
-  border-top:1px dashed #e1e1e1;
+main h2 {
+    font-size: 3.6rem;
+    margin: 2.4rem auto;
+}
+
+main h3 {
+    font-size: 3.2rem;
+    margin: 2.0rem auto;
+}
+
+main h4 {
+    font-size: 2.8rem;
+    margin: 1.8rem auto;
+}
+
+main h5 {
+    font-size: 2.4rem;
+    margin: 1.6rem auto;
+}
+
+main h6 {
+    font-size: 2.0rem;
+    margin: 1.2rem auto;
+}
+
+main em, strong {
+    font-weight: bolder;
+}
+main a {
+    text-decoration: underline;
+}
+
+main img {
+    display: block;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    max-width: 86%;
+}
+
+main hr {
+    border: 0.1rem solid var(--secondary);
+    margin: 2rem auto;
+}
+
+main code {
+    font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+}
+
+main blockquote {
+    color: var(--secondary);
+    padding-left: 2rem;
+    margin: 2rem auto;
+    border-left: 0.4rem solid var(--tertiary);
+}
+main blockquote a {
+    color: var(--secondary);
+}
+
+main table {
+    margin: 0 auto;
+    overflow-x: auto;
+    border-top: 0.2rem solid var(--secondary);
+    border-bottom: 0.2rem solid var(--secondary);
+}
+
+main table thead {
+    border-bottom: 0.1rem solid var(--secondary);
+}
+
+main mjx-container {
+    padding-top: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+main ul {
+    list-style-type: circle;
+    padding-left: 2rem;
+}
+main ol {
+    list-style-type: decimal;
+    padding-left: 3.6rem;
+    counter-reset: item;
 }

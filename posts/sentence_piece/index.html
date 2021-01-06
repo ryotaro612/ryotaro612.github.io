@@ -1,46 +1,46 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ SentencePiece: A simple and language independent subword tokenizer and detokenizer for Neural Text Processing</h2>
-    <p>February 29, 2020</p>
-  </header>
-  <p>SentencePieceは、深層学習向けのトークナイザ・脱トークナイザである。
+    
+<main>
+    <h1>論文メモ SentencePiece: A simple and language independent subword tokenizer and detokenizer for Neural Text Processing</h1>
+    <span class="date">February 29, 2020</span>
+    <div>
+        <p>SentencePieceは、深層学習向けのトークナイザ・脱トークナイザである。
 特定の言語を意識した処理がないため、あらゆるテキストに利用できる。
 本論文では、C++やPythonによる<a href="https://github.com/google/sentencepiece">実装</a>と翻訳への適用実験について書かれている。
 アルゴリズムの解説は、<a href="https://www.aclweb.org/anthology/P16-1162.pdf">Sennrich et al.</a>や<a href="https://arxiv.org/pdf/1804.10959.pdf">Kudo.</a>にゆずられている。
 これらの論文について2019年7月13日の<a href="../neural_machine_translation_of_rate_words/">記事</a>と2019年7月17日の<a href="./subword_regularization/">記事</a>で解説している。</p>
-
 <p>SentencePieceは、テキストを、単語の部分文字列であるサブワードに分割する。
 実験では翻訳性能(BLEU)で評価されるように、翻訳への応用が意図されている。
 深層学習による翻訳では、扱える語彙数に上限がある。
@@ -48,44 +48,49 @@
 単語より粒度の小さいサブワードをトークンとして扱う。
 本論文における日英の翻訳性能評価では、ベースモデルにおけるワードモデルと比べ、ユニグラムのSentencePieceは一貫して高かった。
 ただし、事前にトークナイズした結果をSentencePieceに渡した場合と、SentencePieceだけでトークナイズした場合では明らかな性能の優劣がみられなかった。</p>
-
-<p>SentencePieceは、<em>Normalizer</em>, <em>Trainer</em>, <em>Encoder</em>, *Decoder*と呼ばれるコンポーネントからなる。
-*Normalizer*は、Unicode正規化のように役割が等しく文字コードが異なる文字を統一する。
-*Trainer*は、正規化されたコーパスから、サブワードにトークナイズするモデルを生成する。
-*Encoder*は、テキストを正規化した上でモデルでサブワード列に変換する。
-*Decoder*は、サブワード列を正規化されたテキストに変換する。</p>
-
-<p>*Decoder*によるテキストへの変換では、サブワード列を正規化される前のテキストに復元することができる。
+<p>SentencePieceは、<em>Normalizer</em>, <em>Trainer</em>, <em>Encoder</em>, <em>Decoder</em>と呼ばれるコンポーネントからなる。
+<em>Normalizer</em>は、Unicode正規化のように役割が等しく文字コードが異なる文字を統一する。
+<em>Trainer</em>は、正規化されたコーパスから、サブワードにトークナイズするモデルを生成する。
+<em>Encoder</em>は、テキストを正規化した上でモデルでサブワード列に変換する。
+<em>Decoder</em>は、サブワード列を正規化されたテキストに変換する。</p>
+<p><em>Decoder</em>によるテキストへの変換では、サブワード列を正規化される前のテキストに復元することができる。
 これはlossless tokenizationと呼ばれ、次のような性質がある。</p>
-
 <pre><code>Decode(Encode(Normalize(text))) = Normalize(text)
 </code></pre>
-
 <p>背景には、SentencePieceが、空白を<code>_</code>(U+2581)に置換したうえで、<code>_</code>を含めた全ての文字を等価に扱い、サブワードには空白<code>_</code>も含まれることがある。</p>
-
-<hr />
-
+<hr>
 <p>論文は<a href="https://arxiv.org/abs/1808.06226">こちら</a>からダウンロードできます。</p>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/latent_dirichlet_allocation/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/raft/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

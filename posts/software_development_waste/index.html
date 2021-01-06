@@ -1,75 +1,83 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ Software Development Waste</h2>
-    <p>October 11, 2020</p>
-  </header>
-  <p>Pivotal Labs(Pivoital社の一部門、PivotalはSpring Frameworkを開発している会社。昨年VM Wareに買収された？)における8プロジェクトを、グラウンデットセオリーにしたがって参与観察し、ソフトウェア開発においる無駄を特定し、無駄を9つの区分に分類した。
+    
+<main>
+    <h1>論文メモ Software Development Waste</h1>
+    <span class="date">October 11, 2020</span>
+    <div>
+        <p>Pivotal Labs(Pivoital社の一部門、PivotalはSpring Frameworkを開発している会社。昨年VM Wareに買収された？)における8プロジェクトを、グラウンデットセオリーにしたがって参与観察し、ソフトウェア開発においる無駄を特定し、無駄を9つの区分に分類した。
 論文では、無駄は「リソースを使っのに顧客にとっての価値を生みださなかった活動」と定義されている。
 調査期間は2年5ヶ月で、調査結果は、ソフトウェア開発者、インタラクションデザイナ、プロダクトマネジャーからなる33名のステークホルダに面接した結果もふまえてある。
 分類のほかに、無駄を生みだす二項対立や原因にも言及されている。</p>
-
 <p>Pivotal Labsは、他社にアジャイル開発者、プロダクトマネジャ、インタラクションデザイナを提供し、他社のソフトウェアを開発に協力するだけでなく、クライアントのエンジニアリング文化の変革もサービスとして提供している。
 Pivotalは、1990年代後半からエクストリームプログラミング(XP)を採用しており、ペアプログラミング、テスト駆動開発、リファクタリング、週次のふりかえり、日次のデイリースタンドアップ、バックログ、チームでのコードの共同保有といったXPのコアとなるプラクティスをほとんど採用している。
 顧客は、Pivotal社のオフィスに来て、Pivotalの社員とともにXPを体験する。
 観察対象の8つのプロジェクトは、以上の体制で実施されたもので、特定された無駄は次のとおり。</p>
-
-<p><img src="/software_development_waste.png" alt="waste" /></p>
-
-<hr />
-
+<p><img src="/software_development_waste.png" alt="waste"></p>
+<hr>
 <p>論文を<a href="https://ieeexplore.ieee.org/document/7985656">こちら</a>からダウンロードできます。</p>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/end_to_end_neural_coreference_resolution/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/becoming_agile/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

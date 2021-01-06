@@ -1,89 +1,94 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ Weighted Voting for Replicated Data</h2>
-    <p>November 19, 2020</p>
-  </header>
-  <p>1979年に発表されたレプリケーション管理のクオーラムモデルのアルゴリズムの論文で、以前紹介したように<a href="https://awsmedia.awsstatic-china.com/blog/2017/aurora-design-considerations-paper.pdf">Amazon Aurora</a>や<a href="https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf">Dynamo</a>で採用されている。
+    
+<main>
+    <h1>論文メモ Weighted Voting for Replicated Data</h1>
+    <span class="date">November 19, 2020</span>
+    <div>
+        <p>1979年に発表されたレプリケーション管理のクオーラムモデルのアルゴリズムの論文で、以前紹介したように<a href="https://awsmedia.awsstatic-china.com/blog/2017/aurora-design-considerations-paper.pdf">Amazon Aurora</a>や<a href="https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf">Dynamo</a>で採用されている。
 ファイルの読み込みや書き込みのトランザクションは、複製されたファイルのもつ票を集め、所定の数、クオーラムを越えたときのみ実行される。
 これにより、読み込み、書き込みの線形の一貫性が保証され、実行中のトランザクションが高々一つであるかのように見せかけられる。</p>
-
 <p>票の総数を\(v\), 読み込みと書き込みに必要な票をそれぞれ\(r, w\)とする。
 \(r+w&gt;v\)のとき、どの読み込みクオーラムと書き込みクオーラムの組み合わせにも空でない共通部分が存在し、任意の読み込みが最新の書き込みを参照することを保証する。
 複製された各ファイルは、ファイルのもつ票数のほかに版番号をもち、番号で最新状態か判断する。</p>
-
 <p>また、\(r&lt;w\)とすることで、最新のファイルに新しい書き込みが実行されるように保証できる。
 <a href="https://awsmedia.awsstatic-china.com/blog/2017/aurora-design-considerations-paper.pdf">文献</a>によっては、\(r&lt;w\)ではなく\(\frac{v}{2}&lt;w\) とされているものもある。これは</p>
-
 <p>$$
 \begin{align}
-r + w &amp;&gt; v\\<br />
-2w&amp;&gt; v\\<br />
-w&amp;&gt;\frac{v}{2}\\<br />
+r + w &amp;&gt; v\\<br>
+2w&amp;&gt; v\\<br>
+w&amp;&gt;\frac{v}{2}\\<br>
 \end{align}
 $$</p>
-
 <p>となるため最初の条件と一緒に考えると同じ意味になる。</p>
-
 <p>読み込みと書き込みの間には、信頼性と処理性能において、トレードオフがあり、\(r, w\)の値で調整することができる。
 \(w\)を減少させると書き込みの信頼性と処理性能が上がり、\(r\)を減少させると読込の信頼性と処理性能が上がる。</p>
-
-<hr />
-
+<hr>
 <ul>
 <li>論文を<a href="http://pages.cs.wisc.edu/~remzi/Classes/739/Fall2015/Papers/gifford79.pdf">こちら</a>からダウンロードできます。</li>
 </ul>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/amazon_aurora/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/on_designing_and_deploying_internet-scale_services/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

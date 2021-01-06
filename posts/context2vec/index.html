@@ -1,60 +1,56 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
-    </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ context2vec: Learning Generic Context Embedding with Bidirectional LSTM</h2>
-    <p>February 2, 2020</p>
-  </header>
-  <h3 id="概要">概要</h3>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
 
-<p>文書の文脈の分散表現を獲得するニューラルネットワークのアーキテクチャ*context2vec*を提案、評価した論文である。
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>論文メモ context2vec: Learning Generic Context Embedding with Bidirectional LSTM</h1>
+    <span class="date">February 2, 2020</span>
+    <div>
+        <h3 id="概要">概要</h3>
+<p>文書の文脈の分散表現を獲得するニューラルネットワークのアーキテクチャ<em>context2vec</em>を提案、評価した論文である。
 アーキテクチャの基本構造は<a href="https://arxiv.org/pdf/1301.3781.pdf">CBOW</a>と同様で、周辺の単語から中心の単語を当てられるようにコーパスをもとにモデルを訓練する。
 CBOWとの違いは、文脈の算出方法にある。
 CBOWは、ウィンドウ内のベクトルの平均値で文脈の分散表現を求める。
-一方、*context2vec*では、双方向LSTMの出力をもとに算出する。
-<!-- 分散表現を汎用的に利用できることを想定しており、獲得した分散表現をsentence comp --></p>
-
+一方、<em>context2vec</em>では、双方向LSTMの出力をもとに算出する。</p>
+<!-- raw HTML omitted -->
 <h3 id="アーキテクチャ">アーキテクチャ</h3>
-
-<p>*context2vec*は、CBOWのようなウィンドウ幅をきめず、文書全体から文脈の分散表現を算出する。
+<p><em>context2vec</em>は、CBOWのようなウィンドウ幅をきめず、文書全体から文脈の分散表現を算出する。
 context2vecのアーキテクチャを次に示す。
-<img src="/context2vec/fig2.png" alt="fig2" /></p>
-
+<img src="/context2vec/fig2.png" alt="fig2"></p>
 <p>\(n\)単語からなる文を\(w_{1:n}\)とおき、単語列を順方向に受理するLSTMをlLS, 逆方向のをrLSとすると、両LSTMの出力の連結ベクトルで単語\(w_i\)の「浅い」文脈の分散表現をつくる。
 $$
 \text{biLS}(w_{1:n}, i) = \text{lLS}(l_{1:i-1})\oplus\text{rLS}(r{n:i+1})
 $$</p>
-
 <p>この「浅い」文脈の分散表現は、多層パーセプロトロン(MLP)にわたり、求める「深い」分散表現\(\vec{c}\)に変換される。
 $$
 L_i(x)=W_ix+b_i
@@ -65,40 +61,48 @@ $$
 $$
 \vec{c}=\text{MLP}(\text{biLS}(w_{1:n},i))
 $$</p>
-
 <p>CBOWと同様に、目的関数には負例サンプリングを目的関数に用いる。
 \(\vec{t}\)を\(w_i\)に対応する単語の埋め込みベクトル、\(t_1,\dots t_k\)をランダムに選んだ負例とおくとき、目的関数\(S\)は
 $$
 S=\sum_{t,c}\left(\log\sigma(\vec{t}\cdot\vec{c})+\sum^{k}_{i=1}\log\sigma (-\vec{t}_{i}\cdot \vec{c})\right)
 $$
 である。</p>
-
-<hr />
-
+<hr>
 <ul>
 <li>論文を<a href="https://www.aclweb.org/anthology/K16-1006.pdf">こちら</a>からダウンロードできます。</li>
 <li>画像は、すべて論文から引用されています。</li>
 </ul>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/neural_machine_translation_by_jointly_learning_to_align_and_translate/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/playing_atari_with_deep_reinforcement_learning/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

@@ -1,140 +1,131 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ Zero-shot Word Sense Disambiguation using Sense Definition Embeddings</h2>
-    <p>October 30, 2020</p>
-  </header>
-  <p>語義曖昧性解消のためのアーキテクチャ, Extended WSD Incorporating Sense Embeddings(EWISE)を発表した。
+    
+<main>
+    <h1>論文メモ Zero-shot Word Sense Disambiguation using Sense Definition Embeddings</h1>
+    <span class="date">October 30, 2020</span>
+    <div>
+        <p>語義曖昧性解消のためのアーキテクチャ, Extended WSD Incorporating Sense Embeddings(EWISE)を発表した。
 EWISEは単語の意味をアノテーションしあテキストと辞書を教師データにもちいる。
 実験では、辞書にWordNetをつかい、概念同士の上下関係や関係を示す分散表現を獲得する。
 学習であたえられていない意味を推定するために、離散値ではなく分散表現でラベルの意味を表現する。</p>
-
 <h3 id="アーキテクチャ">アーキテクチャ</h3>
-
-<p><img src="/ewise.png" alt="img" /></p>
-
+<p><img src="/ewise.png" alt="img"></p>
 <h4 id="atentive-context-encoder">Atentive Context Encoder</h4>
-
 <p>Attentive Context Encoderは、入力文を、意味の分散表現のある空間のベクトルに写像する。
 はじめに、入力文\(&lt;x^1 \dots x^T&gt;\)を2層の双方向LSTMと注意機構にあたえて文脈依存の分散表現をつくる。
 双方向LSTMの順方向の出力を\(h^i_f\)逆方向の出力を\(h^i_b\)とすると注意機構を出力は次の\(r^i\)になる。
 \(d_k\)は\(W_qu^i\)や\(W_ku^t\)の次元数をしめす。</p>
-
 <p>$$
 u^i=[h^i_f,h^i_b]
 $$</p>
-
 <p>$$
 \begin{align}
-e^i_t&amp;=\text{dot}(W_qu^i,W_ku^t);t\in [1, T]\\<br />
-a^i&amp;=\text{softmax}\left(\frac{e^i}{\sqrt{d_k}}\right)\\<br />
-c^i&amp;=\sum_{t\in [1,T]}a^i_tW_vu^t\\<br />
+e^i_t&amp;=\text{dot}(W_qu^i,W_ku^t);t\in [1, T]\\<br>
+a^i&amp;=\text{softmax}\left(\frac{e^i}{\sqrt{d_k}}\right)\\<br>
+c^i&amp;=\sum_{t\in [1,T]}a^i_tW_vu^t\\<br>
 r^i&amp;=[u^i, c^i]
 \end{align}
 $$</p>
-
 <p>\(r^i\)を意味の分散表現に射影する全結合層にあたえ、意味の分散表現\(v^i\)をえる。</p>
-
 <p>$$
 v^i=W_lr^i
 $$</p>
-
 <h4 id="definition-encoder">Definition Encoder</h4>
-
 <p>単語の定義を2層の双方向LSTMにあたえ、その出力にMax Poolingを適用し、単語の定義をしめす固定長の分散表現を獲得する。
 Max PoolingではLSTMの出力について、各次元の最大値を選択する。
 以降、Encoderを\(q(\cdot)\)と表記する。</p>
-
 <h4 id="knowledge-graph-embedding">Knowledge Graph Embedding</h4>
-
 <p>ナレッジグラフは上位概念\(h\)と下位概念\(t\)の間に関係\(l\)を定義し、学習ではこの3つを示す分散表現\(e_h\), \(e_l\), \(e_t\)を獲得する。
 \(f(x)\)を正規化線形関数\(f(x)=\max (0, x)\)、\(\bar{q(h)}\), \(\bar{e_l}\)をそれぞれベクトルを行列に変換、\(\text{vec}\)を行列からベクトルに変換する操作として、次の損失関数\(L_C\)で\(e_{\{h,l,t\}}\)学習する。</p>
-
 <p>$$
 \begin{align}
-\psi_l(e_h, e_t)&amp;=f(\text{vec}(f([\bar{q(h)};\bar{e_l}]*w))W)e_t\\<br />
-p&amp;=\sigma(\psi_l(e_h,e_t))\\<br />
+\psi_l(e_h, e_t)&amp;=f(\text{vec}(f([\bar{q(h)};\bar{e_l}]*w))W)e_t\\<br>
+p&amp;=\sigma(\psi_l(e_h,e_t))\\<br>
 L_C&amp;=-\frac{1}{N}\sum_i(t_i\log(p_i) + (1-t_i)\log(1-p_i))
 \end{align}
 $$</p>
-
 <p>ただし、\(t_i\)は\(h, l, t\)が定義されているときのみ\(1\)、それ以外では\(0\)になる。</p>
-
 <h4 id="wsd">WSD</h4>
-
 <p>Knowledge graphの学習で獲得した概念の集合を\(S\), \(b\)をパラメタとして、単語の意味上の空間に写像された入力文に対して、ナレッジグラフ上の単語の概念を推定できるように学習する。
 ただし、\(z^i\)は\(S\)上の意味を示すone-hotベクトルである。</p>
-
 <p>$$
 \begin{align}
-\hat{p}_j^i&amp;=\text{softmax}(\text{dot}(v^i,\rho_j)+\text{dot}(b,\rho_j));\rho\in S\\<br />
+\hat{p}_j^i&amp;=\text{softmax}(\text{dot}(v^i,\rho_j)+\text{dot}(b,\rho_j));\rho\in S\\<br>
 L^i_{wsd}&amp;=-\sum_j(z^i_j\log(\hat{p}^i_j))
 \end{align}
 $$</p>
-
 <p>推定時は次の式をもちいる。
 推定する\(\hat{y}^i\)は\(S\)の要素である。</p>
-
 <p>$$
 \hat{y}^i=\underset{j}{\operatorname{argmax}}(\text{dot}(v^i, \rho_j)+\text{dot}(b,\rho_j)); \rho_j \in S_{x^i}
 $$</p>
-
-<hr />
-
+<hr>
 <ul>
 <li>論文を<a href="https://www.aclweb.org/anthology/P19-1568.pdf">こちら</a>からダウンロードできます。</li>
 </ul>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/simple_testing_can_prevent_most_critical_failures/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/dynamo_amazons_highly_available_key_value_store/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

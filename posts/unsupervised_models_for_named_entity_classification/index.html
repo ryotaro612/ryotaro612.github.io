@@ -1,123 +1,123 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
-    </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ Unsupervised Models for Named Entity Classification</h2>
-    <p>January 13, 2020</p>
-  </header>
-  <h3 id="概要">概要</h3>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
 
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>論文メモ Unsupervised Models for Named Entity Classification</h1>
+    <span class="date">January 13, 2020</span>
+    <div>
+        <h3 id="概要">概要</h3>
 <p>1999年に発表された教師なしの固有表現抽出の手法である。
 発表時期が古いことに注意してほしい。
 2つの手法が提案されている。
 ひとつは、DL-CoTrainと呼ばれるルールベースの手法であり、教師なしデータに既存のルールを適用、適用結果から導出したルールを既存のルールに追加、をくりかえしてルールを増やす。
 もう一方は、AdaBoostを応用したCoBoostとよばれる手法である。
 ルールベースの手法のほうがCoBoostよりもよい実験結果であったので、前者のみを説明する。</p>
-
 <h3 id="dl-cotrain">DL-CoTrain</h3>
-
 <h4 id="ルール">ルール</h4>
-
-<p>ルールは、特徴とラベルの組であり、*spelling*と*contextual*に大別できる。
-*spelling*はラベルの文字列についてのルールで、*contextual*は文字列を囲む単語についてのルールである。
-*spelling*のルールは5種類あり、一例をあげると、<code>full-string(x) -&gt; Location</code>、は文字列が<code>x</code>のとき<code>x</code>が<code>Location</code>とみなす。
-*contextual*のルールは2種類あり、それぞれ同格と前置詞に着目する。
+<p>ルールは、特徴とラベルの組であり、<em>spelling</em>と<em>contextual</em>に大別できる。
+<em>spelling</em>はラベルの文字列についてのルールで、<em>contextual</em>は文字列を囲む単語についてのルールである。
+<em>spelling</em>のルールは5種類あり、一例をあげると、<code>full-string(x) -&gt; Location</code>、は文字列が<code>x</code>のとき<code>x</code>が<code>Location</code>とみなす。
+<em>contextual</em>のルールは2種類あり、それぞれ同格と前置詞に着目する。
 いずれも、最後の単語を主要部とする名詞句があるとき、名詞句内の固有名詞を固有表現とみなす。
 同格のルールは、名詞句を修飾する同格の主要部にある単数形の単語によって、名詞句の固有名詞に特定のラベルをわりあてる。
-たとえば、
-&gt;  &hellip;, says Maury Cooper, a vice president at S.&amp;P.</p>
-
+たとえば、</p>
+<blockquote>
+<p>&hellip;, says Maury Cooper, a vice president at S.&amp;P.</p>
+</blockquote>
 <p>であれば、<code>context=president -&gt; PERSON</code>となり、<code>Maury Cooper</code>を<code>PERSON</code>とみなす。</p>
-
 <h4 id="教師なし学習">教師なし学習</h4>
-
-<p>はじめに、7つの*spelling*のルールを与え、以降、*spelling*と*contextual*ルールを交互に導出する。
+<p>はじめに、7つの<em>spelling</em>のルールを与え、以降、<em>spelling</em>と<em>contextual</em>ルールを交互に導出する。
 アルゴリズムを以下に示す。</p>
-
 <ol>
 <li>\(n=5\)に設定。\(n\)は1回の反復で追加するルールの最大数を意味する。</li>
-<li>*spelling*ルールを7つのルールで初期化する。例をあげると、<code>full-string(New York) -&gt; Location</code>がある。</li>
-<li>学習データに*spelling*ルールでラベルを与える。</li>
-<li>*contextual*ルールをラベルごとに導出する。
+<li><em>spelling</em>ルールを7つのルールで初期化する。例をあげると、<code>full-string(New York) -&gt; Location</code>がある。</li>
+<li>学習データに<em>spelling</em>ルールでラベルを与える。</li>
+<li><em>contextual</em>ルールをラベルごとに導出する。
 \(Count(x, y)\)を訓練データにおける特徴\(x\)とラベル\(y\)の組の数、\(Count(x)\)を\(x\)の数とすると、以下の\(h(x, y)\)が\(p_{\min}\)以上であるルールを最大\(n\)個選ぶ。
 \(k\)はラベルの数であり、実験で扱うラベルは<code>PERSON</code>, <code>LOCATION</code>, <code>ORGANIZATION</code>であるため\(k=3\)である。
 実験では\(p_{\min}\)は\(0.95\)に設定されている。
 $$
 h(x, y) = \frac{Count(x, y)}{Count(x) + k}
 $$</li>
-<li>*contextual*ルールで学習データにラベルを与える。</li>
-<li>4.の手順で*spelling*ルールを導出する。</li>
+<li><em>contextual</em>ルールで学習データにラベルを与える。</li>
+<li>4.の手順で<em>spelling</em>ルールを導出する。</li>
 <li>\(n&lt;2500\)であれば\(n=n+5\)を計算し、手順3に戻る。</li>
 </ol>
-
 <h4 id="推定">推定</h4>
-
 <p>学習で導出したルールをもとにタグを推定する。
 推定対象のもつ特徴の集合が\(\mathrm{x}\)であり、 タグの集合が\(\mathcal{Y}\)とすると、タグを次の\(f(\mathrm{x})\)で推定する。
 $$
 f(\mathrm{x}) = \underset{x\in \mathrm{x}, y\in \mathcal{Y}}{\operatorname{argmax}} h(x, y)
 $$</p>
-
 <h3 id="感想">感想</h3>
-
-<p>*context*のルールは英語を前提にしているので、他言語に応用するときは、別の規則を考える必要がある。</p>
-
-<hr />
-
+<p><em>context</em>のルールは英語を前提にしているので、他言語に応用するときは、別の規則を考える必要がある。</p>
+<hr>
 <ul>
 <li>論文への<a href="https://www.aclweb.org/anthology/W99-0613.pdf">リンク</a></li>
 <li>古い論文であるが、<a href="http://masatohagiwara.net/100-nlp-papers/">100 Must-Read NLP Papers</a>にあったので読んだ。</li>
 </ul>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/multilabel_classification_with_label_correlations_and_missing_labels/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/docker-cmake-clang/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

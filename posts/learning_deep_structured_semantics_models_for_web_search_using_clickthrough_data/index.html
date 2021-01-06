@@ -1,53 +1,51 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
-    </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ Learning Deep Structured Semantic Models for Web Search using Clickthrough Data</h2>
-    <p>January 4, 2020</p>
-  </header>
-  <h3 id="概要">概要</h3>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
 
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>論文メモ Learning Deep Structured Semantic Models for Web Search using Clickthrough Data</h1>
+    <span class="date">January 4, 2020</span>
+    <div>
+        <h3 id="概要">概要</h3>
 <p>クエリと文書を同じ低次元の空間に射影する深層学習のモデルを提案した論文である。
 クエリと文書は、適合度合いが高いほど、近くに配置される。
 教師データは、クエリと文書の組からなる教師データである。
 実験では、商用検索エンジンから抽出した16510件のクエリと対応するWeサイトのタイトルがつかわれる。
 Web文書の大量の語彙をあつかうために、語彙の増加に対して次元数を抑えるbag-of-wordsの手法、word hasingも提案した。</p>
-
 <h3 id="モデルのアーキテクチャ">モデルのアーキテクチャ</h3>
-
 <p>word hasingの後に全結合層をつなげた順伝播ネットワークである。
 以下の図は、アーキテクチャの全体像である。\(Q\)はクエリ、\(D_{i}\)は文書、四角の中の数値はユニット数、\(R\)はコサイン類似度、\(P\)は温度付きソフトマックスを示す。
-<img src="/learning_deep_structured_semantic_models_for_web_search_using_clickthrough_data/fig1.png" alt="fig1" />
+<img src="/learning_deep_structured_semantic_models_for_web_search_using_clickthrough_data/fig1.png" alt="fig1">
 \(W\)は重み、\(b\)はバイアス、活性化関数は\(tanh\)であるから
 $$
 l_1 = W_1 x
@@ -63,64 +61,64 @@ f(x) = \frac{1-e^{-2x}}{1+e^{-2x}}
 $$
 となる。
 温度はホールドアウトのデータで決められる。</p>
-
 <p>計算量の都合から、次の温度付きソフトマックスにある分母を近似する必要がある。</p>
-
 <p>$$
-P(D^{+}\mid Q) = \frac{\exp(\gamma R(Q, D^{+}))}{\sum_{D&rsquo;\in \boldsymbol{D}}\exp (\gamma R(Q, D&rsquo;))}
+P(D^{+}\mid Q) = \frac{\exp(\gamma R(Q, D^{+}))}{\sum_{D'\in \boldsymbol{D}}\exp (\gamma R(Q, D'))}
 $$
 そのため、\(\boldsymbol{D}\)は、無作為に抽出した負例\(\{D_j^-;j=1,\dots 4\}\)と正例\(D^{+}\)からなる集合で近似される。</p>
-
 <p>目的関数は、クエリが与えられたときの正例文書の尤度を最大化する次の式である。
 $$
 L(\Lambda)=-\log\prod_{(Q, D^+)}P(D^+\mid Q)
 $$</p>
-
 <h3 id="word-hasing">Word hasing</h3>
-
-<!-- 語彙数の増加に対して次元数を抑えるために、ネットワークの入力にbag-of-wordsの手法, word hasingをもちいる。-->
-
+<!-- raw HTML omitted -->
 <p>word-hasingは文字単位のnグラムである。
 はじめに、単語の始端と終端に記号をつけ、<code>good</code>を<code>#good#</code>のように、単語の始まりと終わりを明示する。
 つぎに、記号つきの単語をnグラムに分解する。
 <code>#good#</code>であれば、<code>#go</code>, <code>goo</code>, <code>ood</code>, <code>od#</code>に分解される。
 さいごに、n-gramでベクトルをつくる。</p>
-
 <h3 id="感想">感想</h3>
-
 <p>実験には、クエリとタイトルをデータとして、NDCGが採用された。
 TF-IDFとBM25の単語マッチングよりも提案手法のほうが0.04ポイント程度上まわった。
 これはクエリやタイトルが短いからなのかが気になる。</p>
-
 <p>ソフトマックスではなく温度付きソフトマックスを採用する理由は明示されてないが、温度付きソフトマックスがProbability calibrationにはたらく<a href="https://arxiv.org/pdf/1706.04599.pdf">研究</a>がある。
 当該研究の概要を<a href="../on_calibration_of_modern_neural_networks/">こちら</a>にまとめた。</p>
-
-<hr />
-
+<hr>
 <ul>
 <li>論文への<a href="https://posenhuang.github.io/papers/cikm2013_DSSM_fullversion.pdf">リンク</a></li>
 <li>図はすべて論文から引用さています。</li>
 </ul>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/classification_in_the_presence_of_label_noise/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/multilabel_classification_with_label_correlations_and_missing_labels/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

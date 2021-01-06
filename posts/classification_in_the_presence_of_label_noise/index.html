@@ -1,77 +1,69 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
-    </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ Classification in the Presence of Label Noise: a Survey</h2>
-    <p>December 30, 2019</p>
-  </header>
-  <h3 id="概要">概要</h3>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
 
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>論文メモ Classification in the Presence of Label Noise: a Survey</h1>
+    <span class="date">December 30, 2019</span>
+    <div>
+        <h3 id="概要">概要</h3>
 <p>ノイズのある教師データによるクラス分類の<a href="https://romisatriawahono.net/lecture/rm/survey/machine%20learning/Frenay%20-%20Classification%20in%20the%20Presence%20of%20Label%20Noise%20-%202014.pdf">サーベイ論文</a>である。発表時期は、<a href="https://ieeexplore.ieee.org/document/6685834">2013年の12月</a>である。
 主な内容は、ノイズの分類、ノイズが分類に及ぼす影響、ノイズへの対策である。</p>
-
-<h3 id="ノイズの前提-原因-分類">ノイズの前提・原因・分類</h3>
-
+<h3 id="ノイズの前提原因分類">ノイズの前提・原因・分類</h3>
 <h4 id="前提">前提</h4>
-
 <p>論文におけるノイズは、データのラベルが真のラベルと異なることを意味する。
 ノイズは、確率的に生じ、意図的ではない前提にある。
 また、サンプルごとのノイズは互いに独立である。</p>
-
 <h4 id="原因">原因</h4>
-
-<p>ノイズの原因を4つに分類されている。
-- 正しいラベルをつけるために必要な情報が専門家に与えられていない。
-- 必要な情報を知った上で専門家が誤ったラベルをつける。
-- 正しいラベルが主観的であり、専門家の間で正しいラベルの意見が分かれる。
-- クリックの操作ミスなどのデータの加工やコミュニケーションに誤りがあること。</p>
-
+<p>ノイズの原因を4つに分類されている。</p>
+<ul>
+<li>正しいラベルをつけるために必要な情報が専門家に与えられていない。</li>
+<li>必要な情報を知った上で専門家が誤ったラベルをつける。</li>
+<li>正しいラベルが主観的であり、専門家の間で正しいラベルの意見が分かれる。</li>
+<li>クリックの操作ミスなどのデータの加工やコミュニケーションに誤りがあること。</li>
+</ul>
 <h4 id="分類">分類</h4>
-
 <p>ノイズは、真のラベルや特徴との独立性により、3種類に分類される。
 各種類の依存関係を描いた図を次に示す。
-<img src="/classification_in_the_presence_of_label_noise/fig1.png" alt="fig1" />
+<img src="/classification_in_the_presence_of_label_noise/fig1.png" alt="fig1">
 \(X\)は特徴ベクトル、Yは真のラベル、\(\tilde{Y}\)は観測されたラベル、\(E\)は誤ったラベルがはられている(\(Y\neq\tilde{Y}\))を示す。
 (a)は、特徴や真のクラスと無関係にノイズが生じる状態である。
 この場合、各クラスにおけるノイズの発生確率は等しい。
 (b)は、ノイズが真のラベルに依存する状態であり、他のクラスよりもラベリングの誤りの生じやすいクラスがある。
-&copy;は、ノイズが特徴や真のラベルに依存し、ある特徴をもつ特定のクラスのデータでラベルの誤りが生じやすい。</p>
-
+(c)は、ノイズが特徴や真のラベルに依存し、ある特徴をもつ特定のクラスのデータでラベルの誤りが生じやすい。</p>
 <h3 id="ノイズによる影響">ノイズによる影響</h3>
-
 <p>ノイズがクラス分類に及ぼす影響は影響先により4つに整理されている。
 モデルの予測性能、学習に必要な教師データ数やモデルの複雑さ、観測されるクラスの頻度、特徴選択などの関連タスクである。</p>
-
 <p>モデルの予測性能と複雑さについては、アルゴリズムごとにノイズへの影響が調べられている。
 ZhangとYang<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.78.7449&amp;rep=rep1&amp;type=pdf">[97]</a>は、テキスト分類における線形分類器の正則化のノイズに対する頑強さを調べた。
 線形SVM、リッジ回帰、ロジスティック回帰では、いずれも5%のラベルを反転させると予測性能の大幅な低下がみられた。
@@ -79,32 +71,41 @@ AdaBoostは、ノイズのある教師データについて過学習する傾向
 また、ノイズはモデルを複雑にする。
 決定木のアルゴリズムでは枝の増加につながり<a href="https://arxiv.org/abs/1106.0219">[46]</a>。
 また、SVMではサポートベクタの数の増加につながる<a href="https://link.springer.com/article/10.1007/BF03192573">[113]</a>。</p>
-
 <h3 id="ノイズへの対処">ノイズへの対処</h3>
-
 <p>ノイズに対する手法は、ノイズに対して頑強なもの、学習前にノイズを除去するもの、ノイズの分布を仮定しノイズのモデルを使うもの、既存のモデルをノイズに耐性のあるモデルに改良されたものに大別される。
 次の表は、各手法の代表例をまとめている。
-<img src="/classification_in_the_presence_of_label_noise/tab1.png" alt="tab1" /></p>
-</article>
+<img src="/classification_in_the_presence_of_label_noise/tab1.png" alt="tab1"></p>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/distributed_representations_of_sentences_and_documents/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

@@ -1,135 +1,118 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ On Designing and Deploying Internet-Scale Services</h2>
-    <p>November 20, 2020</p>
-  </header>
-  <p>MSNとWindows Liveで培われたシステム管理者による運用負担を減らすためのベストプラクティス集。
+    
+<main>
+    <h1>論文メモ On Designing and Deploying Internet-Scale Services</h1>
+    <span class="date">November 20, 2020</span>
+    <div>
+        <p>MSNとWindows Liveで培われたシステム管理者による運用負担を減らすためのベストプラクティス集。
 07年に発表された。
 プラクティス集は、10のグループに分かれ、それぞれ複数のアドバイスからなる。
 特徴的な内容に絞って以下に要約する。</p>
-
 <h3 id="overrall-application-design">Overrall Application Design</h3>
-
 <h4 id="commodity-hardware-slice">Commodity hardware slice</h4>
-
 <p>コモディディ化されたハードウェアを採用する。
 高価でハイパフォーマンスな少数のハードウェアにシステムをのせるより、安くて大量のハードウェアを使うほうが安くすむ。
 サーバの処理性能はディスクの性能よりも向上するスピードが速く、また、電力消費量はサーバ台数と比べて線形だがクロック数に対しては3乗の関係にある。
 また、サーバの台数が少ないと、そのサーバが落ちたときの影響が大きくなる。</p>
-
 <h4 id="one-pod-or-cluster-should-not-affect-another-pod-or-cluster">One pod or cluster should not affect another pod or cluster</h4>
-
 <p>ポッド同士の独立性を高め、ポッド同士が影響して生じる障害をなくす。</p>
-
 <h4 id="allow-rare-emergency-human-intervention">Allow (rare) emergency human intervention</h4>
-
 <p>まれな障害には管理者による直接の対応を許容する。
 ただし、ミスのないよう対処方法を文書化するのではなく、スクリプトのような自動化された手段を用意し、それが機能することをあらかじめテストしておく。</p>
-
 <h3 id="automatic-managenment-and-provisioning">Automatic Managenment and Provisioning</h3>
-
 <h4 id="treat-operations-utilities-as-part-of-the-service">Treat operations utilities as part of the service</h4>
-
 <p>運用のためのツールをサービスのコードと同等にあつかうこと。
 コードレビュー、版管理、テストを実施すること。ツールがテストされていないことは多い。</p>
-
 <h4 id="multi-system-failures-are-common">Multi-system failures are common</h4>
-
 <p>多数のホストが同時に障害をおこすことを想定しておく。
 例えば、電力やスイッチの障害は、これらに依存する全てのホストに影響する。</p>
-
 <h3 id="dependency-management">Dependency Management</h3>
-
 <h4 id="expect-latency">Expect latency</h4>
-
 <p>外部のコンポートネントへのアクセスには、タイムアウトを設定する。
 また、タイムアウト時の再処理も設定しておく。
 再処理の実行を記録し、また上限を設定しておく。</p>
-
 <h3 id="release-cycle-and-testing">Release Cycle and Testing</h3>
-
 <p>ステージング環境と本番環境には差異があるため、リリース前最後のテストとして、カナリアリリースを実施する。
 また、人がすくなく、間違いも起きやすいため、深夜のリリースを避けて日中にリリースする。</p>
-
 <h3 id="operations-and-capacity-planning">Operations and Capacity Planning</h3>
-
 <p>リカバリのためのスクリプトは、本番環境でテストしておく。
 テストできる自信がないものは、障害時には役にたたない。</p>
-
 <h4 id="soft-delete-only">Soft delete only</h4>
-
 <p>物理削除をさけて論理削除にし、データを復元できる手段を確保する。</p>
-
 <h3 id="auditing-monitoring-and-alerting">Auditing, Monitoring and Alerting</h3>
-
 <p>開発者が大事な通知を無視しないように、あらゆるイベントを開発者に通知するのではなく、障害のみを通知するように設定する。</p>
-
 <h4 id="latencies-are-toughest-problem">Latencies are toughest problem</h4>
-
 <p>IOなどのレイテンシの検知は難しいので、注意して検知の仕組みを実装すること。</p>
-
 <h4 id="track-all-fault-tolerance-mechanisms">Track all fault tolerance mechanisms</h4>
-
 <p>フォールトトレランスが小さな障害を隠蔽しないようにする。
 フォールトトレランスで抑制した障害を検知する仕組みを用意する。</p>
-
-<hr />
-
+<hr>
 <ul>
 <li>論文を<a href="https://www.usenix.org/legacy/event/lisa07/tech/full_papers/hamilton/hamilton.pdf">こちら</a>からダウンロードできます。</li>
 </ul>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/weighted_voting_for_replicated_data/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/a_relational_model_of_data_for_large_shared_data_banks/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

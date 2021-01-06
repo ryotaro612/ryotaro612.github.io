@@ -1,56 +1,53 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ Spanner: Google&#39;s Globally Distributed Database</h2>
-    <p>November 27, 2020</p>
-  </header>
-  <p>Spannerは、世界中のデータセンタにデータを複製する高可用な分散データベースで、<a href="http://bitsavers.trailing-edge.com/pdf/xerox/parc/techReports/CSL-81-8_Information_Storage_in_a_Decentralized_Computer_System.pdf">外部整合性</a>のある分散トランザクションを保証する。
+    
+<main>
+    <h1>論文メモ Spanner: Google&#39;s Globally Distributed Database</h1>
+    <span class="date">November 27, 2020</span>
+    <div>
+        <p>Spannerは、世界中のデータセンタにデータを複製する高可用な分散データベースで、<a href="http://bitsavers.trailing-edge.com/pdf/xerox/parc/techReports/CSL-81-8_Information_Storage_in_a_Decentralized_Computer_System.pdf">外部整合性</a>のある分散トランザクションを保証する。
 ユーザからみると半リレーショナルなデータモデルのデータベースであり、各テーブルに一つ以上の順序つき主キーが必要なところがリレーショナルデータモデルと違う。
 一方、内部は文字列とタイムスタンプの組をキーにしたキーバリューストアであり、Single Paxos状態機械でデータの一貫性を守りながら複数のデータセンタにデータを複製する。</p>
-
 <p>Spannerは、並行制御のために、現在時刻を提供するTrueTime APIをつかう。
 APIは、次のインターフェースを備え、返す現在時刻の誤差が一定値以下であることを保証する。
 クラスタ内の正確な時刻が\(\texttt{TT.now()}\)の\(\texttt{earliest, latest}\)の範囲にあることを保証する。
 TrueTime APIは、GPSと原子時計によって時刻の精度を確保している。</p>
-
-<p><img src="/spanner/truetimeapi.png" alt="truetimeapi" /></p>
-
+<p><img src="/spanner/truetimeapi.png" alt="truetimeapi"></p>
 <p>Spannerは、スナップショットトランザクション、スナップショット読み込み、読み込み書き込みトランザクションを提供する。
 最初の2つは、読み込み専用のロックフリーなトランザクションであり、スナップショットトランザクションはスナップショット分離を実現し、Spannerが決めたある時点の状態のデータを読み込む。
 スナップショット読み込みは、ユーザの指定した時刻のデータを読み込むことができる。
 読み込み書き込みトランザクションは、悲観ロックであり、また、書き込みをサポートする唯一のトランザクションである。</p>
-
 <p>外部整合性は、複数のサーバでトランザクションが実行されても、トランザクションが現時点でコミット済みの情報を参照できることを保証する。
 いいかえると、トランザクションT1のコミット後にトランザクションT2が開始した場合、T2のコミットタイムスタンプはT1のコミットタイムスタンプよりも常に大きい。
 トランザクション\(T_i\)の開始とコミットのイベントを\(e^{\text{start}}_i, e^{\text{commit}}_i\), コミットタイムスタンプを\(s_i\)とおく。
@@ -60,46 +57,53 @@ $$
 tt=\texttt{TT.now()}, \texttt{tt.earlist}\le t_{\text{abs}}(e_{\text{now}})\le \texttt{tt.latest}
 $$
 とすると、外部整合性を\(t_{\text{abs}}(e^{\text{commit}}_1)&lt;t_{\text{abs}}(e^{\text{start}}_2)\Rightarrow s_1&lt;s_2\)と書ける。</p>
-
 <p>このとき、\(s_1&lt;t_{\text{abs}}(e^{\text{commit}}_1)\)が成立するようにロック期間を伸ばすと</p>
-
 <p>$$
 \begin{align}
-s_1&amp;&lt;t_{\text{abs}}(e^{\text{commit}}_1)\\<br />
-t_{\text{abs}}(e^{\text{commit}}_1)&amp;&lt;t_{\text{abs}}(e^{\text{start}}_2)\\<br />
-t_{\text{abs}}(e^{\text{start}}_2)&amp;\le t_{\text{abs}}(e^{\text{server}}_2)\\<br />
-t_{\text{abs}}(e^{\text{server}}_2)&amp;\le s_2\\<br />
+s_1&amp;&lt;t_{\text{abs}}(e^{\text{commit}}_1)\\<br>
+t_{\text{abs}}(e^{\text{commit}}_1)&amp;&lt;t_{\text{abs}}(e^{\text{start}}_2)\\<br>
+t_{\text{abs}}(e^{\text{start}}_2)&amp;\le t_{\text{abs}}(e^{\text{server}}_2)\\<br>
+t_{\text{abs}}(e^{\text{server}}_2)&amp;\le s_2\\<br>
 s_1&amp;&lt; s_2
 \end{align}
 $$
 となり、外部整合性が成立する。</p>
-
-<hr />
-
+<hr>
 <ul>
 <li>論文を<a href="https://www.usenix.org/system/files/conference/osdi12/osdi12-final-16.pdf">こちら</a>からダウンロードできます。</li>
 <li>画像は論文から引用されています。</li>
 </ul>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/a_relational_model_of_data_for_large_shared_data_banks/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/aerospike/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

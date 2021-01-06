@@ -1,111 +1,114 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ Skip-Thought Vectors</h2>
-    <p>September 11, 2020</p>
-  </header>
-  <p>様々なタスクで性能を発揮できる文の分散表現を生成するモデルSkip-Thougtを提案した。
+    
+<main>
+    <h1>論文メモ Skip-Thought Vectors</h1>
+    <span class="date">September 11, 2020</span>
+    <div>
+        <p>様々なタスクで性能を発揮できる文の分散表現を生成するモデルSkip-Thougtを提案した。
 表題のSkip-Tought Vectorsは、Skip-Toughtで生成されるベクトルである。
 Skip-Thoughtは、文書を入力とする教師なし学習であり、与えられた文から隣接する左右の文を推定できるようにパラメタを学習する。
 学習後は、語彙を増やすために、Word2Vecの単語のベクトルからSkip-Toughtのベクトルを推定するための正則化なしの回帰モデルを学習させる。
 学習データにない単語のベクトルを回帰モデルの推定結果で代用し、未知の単語を含む文の分散表現もつくれるようにする。
 Skip-Toughtを8タスクに適用し、汎用性を確かめた。</p>
-
 <p>モデルは、GRUつきのRNNをもちいたencoder-decoderである。
 \(i\)番目の文を\(s_i\)として、事例を\((s_{i-1}, s_i, s_{i+1})\)とおく。
 また、\(s_i\)の\(t\)番目の単語\(w_i^t\)の分散表現を\(\mathrm{x}^t_i\)とする。
 このとき、次のencoderの隠れ状態\(\mathrm{\boldsymbol{h}}_i^t\)が\(w_i^1, \dots w_i^t\)の分散表現となる。
 以下の式では添字\(i\)を省略している。</p>
-
 <p>$$
 \begin{align}
-\mathrm{\boldsymbol{r}}^t &amp;=\sigma (\boldsymbol{\mathrm{W}}_r\mathrm{\boldsymbol{x}}^t+\mathrm{\boldsymbol{U}}_r\mathrm{\boldsymbol{h}}^{t-1})\\<br />
-\mathrm{\boldsymbol{z}}^t&amp;=\sigma(\boldsymbol{\mathrm{W}}_z\boldsymbol{\mathrm{x}}^t + \mathrm{\boldsymbol{U}}_z\boldsymbol{\mathrm{h}}^{t-1})\\<br />
-\bar{\boldsymbol{\mathrm{h}}}^t&amp;=\tanh(\mathrm{\boldsymbol{W}}\boldsymbol{\mathrm{x}}^t+\boldsymbol{\mathrm{U}}(\mathrm{\boldsymbol{r}}^t\odot \mathrm{\boldsymbol{h}}^{t-1}))\\<br />
+\mathrm{\boldsymbol{r}}^t &amp;=\sigma (\boldsymbol{\mathrm{W}}_r\mathrm{\boldsymbol{x}}^t+\mathrm{\boldsymbol{U}}_r\mathrm{\boldsymbol{h}}^{t-1})\\<br>
+\mathrm{\boldsymbol{z}}^t&amp;=\sigma(\boldsymbol{\mathrm{W}}_z\boldsymbol{\mathrm{x}}^t + \mathrm{\boldsymbol{U}}_z\boldsymbol{\mathrm{h}}^{t-1})\\<br>
+\bar{\boldsymbol{\mathrm{h}}}^t&amp;=\tanh(\mathrm{\boldsymbol{W}}\boldsymbol{\mathrm{x}}^t+\boldsymbol{\mathrm{U}}(\mathrm{\boldsymbol{r}}^t\odot \mathrm{\boldsymbol{h}}^{t-1}))\\<br>
 \boldsymbol{\mathrm{h}}^t&amp;=(1-\mathrm{\boldsymbol{z}}^t)\odot \mathrm{\boldsymbol{h}}^{t-1}+\boldsymbol{\mathrm{z}}^t\odot\bar{\mathrm{\boldsymbol{h}}}^t
 \end{align}
 $$</p>
-
 <p>decoderは、encoderの出力\(\mathrm{\boldsymbol{h}}_i\)を条件とする条件付き確率に対応する言語モデルになっている。
 2つのdecoderが使われ、それぞれ入力文の前の文を推定するものと、後の文を推定するものに対応する。
 また、バイアス項として\(\mathrm{\boldsymbol{C}}_z, \mathrm{\boldsymbol{C}}_r, \mathrm{\boldsymbol{C}}\)がある点もencoderと異なる。
 後の文を推定するdecoderは次の式をとる。</p>
-
 <p>$$
 \begin{align}
-\mathrm{\boldsymbol{r}}^t &amp;=\sigma (\boldsymbol{\mathrm{W}}^d_r\mathrm{\boldsymbol{x}}^{t-1}+\mathrm{\boldsymbol{U}}^d_r\mathrm{\boldsymbol{h}}^{t-1}+\mathrm{\boldsymbol{C}}_r\mathrm{\boldsymbol{h}}_i)\\<br />
-\mathrm{\boldsymbol{z}}^t&amp;=\sigma(\boldsymbol{\mathrm{W}}^d_z\boldsymbol{\mathrm{x}}^{t-1} + \mathrm{\boldsymbol{U}}^d_z\boldsymbol{\mathrm{h}}^{t-1}+\mathrm{\boldsymbol{C}}_z\mathrm{\boldsymbol{h}}_i)\\<br />
-\bar{\boldsymbol{\mathrm{h}}}^t&amp;=\tanh(\mathrm{\boldsymbol{W}}^d\boldsymbol{\mathrm{x}}^{t-1}+\boldsymbol{\mathrm{U}}^d(\mathrm{\boldsymbol{r}}^t\odot \mathrm{\boldsymbol{h}}^{t-1})+\mathrm{\boldsymbol{C}}\mathrm{\boldsymbol{h}}_i)\\<br />
+\mathrm{\boldsymbol{r}}^t &amp;=\sigma (\boldsymbol{\mathrm{W}}^d_r\mathrm{\boldsymbol{x}}^{t-1}+\mathrm{\boldsymbol{U}}^d_r\mathrm{\boldsymbol{h}}^{t-1}+\mathrm{\boldsymbol{C}}_r\mathrm{\boldsymbol{h}}_i)\\<br>
+\mathrm{\boldsymbol{z}}^t&amp;=\sigma(\boldsymbol{\mathrm{W}}^d_z\boldsymbol{\mathrm{x}}^{t-1} + \mathrm{\boldsymbol{U}}^d_z\boldsymbol{\mathrm{h}}^{t-1}+\mathrm{\boldsymbol{C}}_z\mathrm{\boldsymbol{h}}_i)\\<br>
+\bar{\boldsymbol{\mathrm{h}}}^t&amp;=\tanh(\mathrm{\boldsymbol{W}}^d\boldsymbol{\mathrm{x}}^{t-1}+\boldsymbol{\mathrm{U}}^d(\mathrm{\boldsymbol{r}}^t\odot \mathrm{\boldsymbol{h}}^{t-1})+\mathrm{\boldsymbol{C}}\mathrm{\boldsymbol{h}}_i)\\<br>
 \boldsymbol{\mathrm{h}}^t_{i+1}&amp;=(1-\mathrm{\boldsymbol{z}}^t)\odot \mathrm{\boldsymbol{h}}^{t-1}+\boldsymbol{\mathrm{z}}^t\odot\bar{\mathrm{\boldsymbol{h}}}^t
 \end{align}
 $$</p>
-
 <p>\(\mathrm{\boldsymbol{V}}\)を\(w_{i+1}^t\)に対応する行ベクトル\(\mathrm{\boldsymbol{v}}_{w^t_{i+1}}\)をもつパラメタとすると、</p>
-
 <p>$$P(w^t_{i+1}\mid w^{&lt;t}_{i+1},\boldsymbol{\mathrm{h}}_i)\propto\exp (\mathrm{\boldsymbol{v}}_{w^t_{i-1}}\mathrm{\boldsymbol{h}}_{i+1}^t)
 $$
 となり、目的関数は次になる。</p>
-
 <p>$$
 \sum\log P(\mathrm{w}^t_{i+1}\mid w_{i+1}^{&lt;t},\mathrm{\boldsymbol{h}}_i)+\sum_t\log P(w_{i-1}^t\mid w_{i-1}^{&lt;t},\boldsymbol{\mathrm{h}}_i)
 $$</p>
-
-<hr />
-
+<hr>
 <ul>
 <li>論文を<a href="https://papers.nips.cc/paper/5950-skip-thought-vectors.pdf">こちら</a>からダウンロードできます。</li>
 </ul>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/beyond_accuracy/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/truth_in_advertising/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

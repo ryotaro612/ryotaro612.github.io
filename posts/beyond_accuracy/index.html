@@ -1,91 +1,96 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ Beyond Accuracy: Behavioral Testing of NLP Models with CHECKLIST</h2>
-    <p>September 4, 2020</p>
-  </header>
-  <p>ホールドアウト法にかわる自然言語処理モデルの汎化性能を評価するための手法CHECKLISTを提案した。
+    
+<main>
+    <h1>論文メモ Beyond Accuracy: Behavioral Testing of NLP Models with CHECKLIST</h1>
+    <span class="date">September 4, 2020</span>
+    <div>
+        <p>ホールドアウト法にかわる自然言語処理モデルの汎化性能を評価するための手法CHECKLISTを提案した。
 テストデータと訓練データが同じ方法で集められたときなど、ホールドアウト法はモデルを過大評価することがある。
 CHECKLISTは、ソフトウェア開発のブラックボックステストにならい、半自動生成したテストデータで汎化性能を評価する。
 CHECKLISTの汎用性と性能を評価するために、感情分析、Quoraの重複質問検出、読解の3タスクについて、商用やSoTAに近いモデルを学習させ、CHECKLISTでモデルがあつかえない入力パターンをどれだけ生成できるか実験した。
 感情分析の評価には、Microsoft, Google, AmazonのAPIとBERT, RoBERTaを使い、重複検出にはBERTとRoBERTa, 読解にはBERTを使用した。
 CHECKLISTはOSSとして<a href="https://github.com/marcotcr/checklist">公開</a>されている。</p>
-
 <p>CHECKLISTは汎化性能を複数の観点から評価する。
 観点は、Capabilityとよばれ、例えば、否定表現や固有表現の性能を測るNegationやNER,特定の語彙と品詞の組を含む文書を入力したときの性能を測るVocabulary+POSがある。
 著者らは、最低でも、以上3つに加えてTaxonomy, Robustness, Fairness, Temporal, Coreference, Semantic Role Labeling, Logicを評価することをすすめている。</p>
-
 <p>Capabilityの測定には、Test typesという3つの手法があり、それぞれ、Minimum Functionality test(MFT), Invariance test(INV), Directional Expectation test(DIR)とよばれる。
 MFTは、次のようなテンプレートで生成される文を与えたときの出力を確かめる。</p>
-
 <pre><code>I {NEGATION} {POS_VERB} the {THING}.
 </code></pre>
-
 <p>INVは、出力に影響すべきでない入力文の一部を変えたときに、出力が変わらないかを確かめる。
 DIRは、入力文の一部を変えたときに、出力が期待する方向と逆にスコアが変化しないかを確かめる。
 以下に、Negation, NER, Vocabulary+POSをMFT, iNV, DIRでテストする方法を例示する。
-<img src="/checklist.png" alt="checklist" /></p>
-
+<img src="/checklist.png" alt="checklist"></p>
 <p>Test Typesに必要な文は、先述のテンプレートで半自動的に生成される。
 自動生成には、RoBERTaのような文中のマスクされた単語を推定するタスクで学習した言語モデルを使う。</p>
-
-<hr />
-
+<hr>
 <ul>
 <li>論文を<a href="https://arxiv.org/pdf/2005.04118.pdf">こちら</a>からダウンロードできます。</li>
 <li>画像は論文から引用されています。</li>
 </ul>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/why_good_developers_write_bad_code/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/skip_thought_vectors/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

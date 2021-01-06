@@ -1,98 +1,103 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ Aerospike: Architecture of a Real-Time Operational Database</h2>
-    <p>November 28, 2020</p>
-  </header>
-  <p>Aerospikeは、高い対障害性をもった分散データベースで、正式にはCitrusleafという。
+    
+<main>
+    <h1>論文メモ Aerospike: Architecture of a Real-Time Operational Database</h1>
+    <span class="date">November 28, 2020</span>
+    <div>
+        <p>Aerospikeは、高い対障害性をもった分散データベースで、正式にはCitrusleafという。
 CPU, DRAM, HDDやSSDを搭載したコモディティなサーバでクラスタを組める。
 ノード同士はTCP/IPで通信し、シェアードナッシングなクラスタを構成する。
 処理性能の向上のために、スケールアウトだけでなく、スケールアップも重視しており、ハードウェアを意識した実装で高速化をはかっている。</p>
-
 <p>クラスタの状態は、クラスターのIDであるcluster keyとノードのIDのリストであるsuccession listのペアの値で管理され、これをCluster viewとよぶ。
 cluster keyは無作為に生成される8バイトの値で、ノードのIDはノードのMACアドレスとリスナーポートの値で決まる。
 各ノードは、ハートビートメッセージを送り合い、クラスタへの参加を維持しているか相互に確認する。
 ノードは、隣接リストをもち、ハートビートの送受信に成功したノードをリストで管理する。
 一定期間内に応答しなかったノードはリストから外される。
 応答のない状態が続けば、クラスタからも除外され、Cluster viewが変化する。</p>
-
 <p>あるノードから見たCluster viewが変わると、ほかのノードと新しいCluster viewについて含意をとる。
 そのための含意アルゴリズムにはPaxosが採用されており、隣接リストの先頭ノードがPaxosのProposerとしてはたらく。</p>
-
 <p>Aerospikeのレコードは、主キーをもち、複数のノードに複製される。
 下図は、レコードを保存するノードを決める様子を示す。
 保存先のノードは、衝突に強いハッシュ関数RipeMD160を主キーに適用して決まる。
 ハッシュ値の値域は4096個の区間に分かれ、該当する区間を担うノードにレコードが保存される。
 各区間は、succession listを並び変えたリストを管理している。
 リストの先頭をマスタとして、続く複数のノードにレコードの複製が保存される。</p>
-
-<p><img src="/aerospike/distribution.png" alt="distribution" /></p>
-
+<p><img src="/aerospike/distribution.png" alt="distribution"></p>
 <p>スケールアップの工夫はCPU, コンテキストスイッチ、フラグメンテーションにある。
 Non-Uniform Memory Access(NUMA)アーキテクチャは、コア数の増加で効率よく処理性能の上げるために、コアに個別のローカルメモリを持たせ、複数のコアが同時にメモリにアクセスできない問題を回避する。
 他のコアのメモリへのアクセスはローカルメモリへのアクセスよりも時間がかかる。
 Aerospikeは、スレッドをグループ化し特定のコアに割りあてることで、ローカルメモリへのアクセス頻度を上げている。
 また、コンテキストスイッチの頻度を下げるために、ネットワークリスナのスレッド上で処理を実行する実装になっている。
-さらに、生存期間の長いオブジェクトへの操作の最適化やメモリの断片化を最小限にするために<a href="https://github.com/jemalloc/jemalloc">jemalloc</a>に独自拡張を加えている。
-<!-- ![replica](/aerospike/replica.png) --></p>
-
-<hr />
-
+さらに、生存期間の長いオブジェクトへの操作の最適化やメモリの断片化を最小限にするために<a href="https://github.com/jemalloc/jemalloc">jemalloc</a>に独自拡張を加えている。</p>
+<!-- raw HTML omitted -->
+<hr>
 <ul>
 <li>論文を<a href="http://www.vldb.org/pvldb/vol9/p1389-srinivasan.pdf">こちら</a>からダウンロードできます。</li>
 <li>図は論文から引用されています。</li>
 </ul>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/spanner/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/bigtable/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

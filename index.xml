@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Coda</title>
@@ -6,11 +6,7 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 31 Dec 2020 19:17:13 +0900</lastBuildDate>
-    
-	<atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 31 Dec 2020 19:17:13 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>論文メモ Paxos Made Simple</title>
       <link>https://nryotaro.dev/posts/paxos_made_simple/</link>
@@ -155,7 +151,7 @@ CPU, DRAM, HDDやSSDを搭載したコモディティなサーバでクラスタ
       <guid>https://nryotaro.dev/posts/one_size_fit_all/</guid>
       <description>&lt;p&gt;2011年に発表された論文で、これまでのようにDBMSを様々なデータ中心のアプリケーションに利用することがデータベース市場で受け入れられなくなったと主張する。
 データウェアハウスとストリーミング処理を例にとり、これらに特化したデータベースをDBMSで代用することの限界が説明されている。
-表題の&amp;rdquo;One Size Fits All&amp;rdquo;はフリーサイズ、転じて、万能、汎用的を意味する。&lt;/p&gt;</description>
+表題の&amp;quot;One Size Fits All&amp;quot;はフリーサイズ、転じて、万能、汎用的を意味する。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -203,7 +199,7 @@ Javaのバイトコードから以上の3パターンを検出するツールを
       
       <guid>https://nryotaro.dev/posts/from_diversity_by_numbers_to_diversity_as_process/</guid>
       <description>開発におけるブレーンストーミングが、マイノリティに属する開発者の満足度の向上に貢献することを実験的に示した。 ここでの開発は、ハッカソンのような短時間かつ集中が求められるものが想定されている。 満足度は、開発プロセスと成果物に対するもので分けて扱われ、どちらの観点でもブレーンストーミングは満足度に対してよい効果をもたらした。
- 論文をこちらからダウンロードできます。  </description>
+  論文をこちらからダウンロードできます。  </description>
     </item>
     
     <item>
@@ -360,7 +356,7 @@ CHECKLISTはOSSとして&lt;a href=&#34;https://github.com/marcotcr/checklist&#3
       
       <guid>https://nryotaro.dev/posts/why_good_developers_write_bad_code/</guid>
       <description>&lt;p&gt;創立40年以上の電気通信系企業における内製システムのリプレースプロジェクトを観察し、コードに悪影響をおよぼす10の組織的な要因をまとめた。
-表題には、&amp;rdquo;Good Developers&amp;rdquo;とあるが、開発者のスキルの高さは議論されていない。
+表題には、&amp;ldquo;Good Developers&amp;quot;とあるが、開発者のスキルの高さは議論されていない。
 列挙された要因は、包括的ではなく、また、あくまでコードの品質を悪化させるものであり、プロジェクトの失敗に直結するわけではない。&lt;/p&gt;</description>
     </item>
     
@@ -456,7 +452,6 @@ Ladder Networkは、2015年に、著者の一人Valpolaによって教師なし�
       
       <guid>https://nryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;GPTの略称で知られる教師なしの事前学習である。
 評価実験では、12の自然言語処理タスクのうち9つで、当時のSoTAを上まわる性能を発揮した。
 ネットワークはTransformerであり、事前学習では言語モデルを学習する。
@@ -582,7 +577,6 @@ Pytorchの自動微分特徴として、in-placeアルゴリズム、微分の�
       
       <guid>https://nryotaro.dev/posts/rouge/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;生成された要約を機械的に評価するための指標, Recall-Oriented Understudy for Gisting Evaluation(ROUGE)を提案した論文である。
 人が作成した複数の要約文書との再現率で要約文書を評価する。
 ROUGEは、ROUGE-N, ROUGE-L, ROUGE-W, ROUGE-S, ROUGE-SUの5つの指標の総称である。
@@ -616,7 +610,6 @@ ROUGEは、ROUGE-N, ROUGE-L, ROUGE-W, ROUGE-S, ROUGE-SUの5つの指標の総称
       
       <guid>https://nryotaro.dev/posts/bleu/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;自動翻訳を定量的に評価するための指標BLEUを提案した論文である。
 指標は、専門家の翻訳に翻訳に高い評価をあたえるよう設計されている。
 BLEUは、ひとつの候補訳に対する1つ以上の参照訳をあたえ、0から1の値をとるスコアを出力する。
@@ -631,7 +624,6 @@ BLEUは、参照訳にある単語を過剰に含むことや文の短さにペ�
       
       <guid>https://nryotaro.dev/posts/sequence_to_sequence_learning_with_neural_networks/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;Sequence to Sequenceの論文。
 入出力が系列データを学習する場合、入力と出力の長さが等しかったり対応関係にある箇所が系列の方向に単調でなければならなかったりする。
 これらの制約に対処するために、Sequence to Sequenceでは、入力全体を固定長のベクトルに一度変換し、そのベクトルをもとに出力を予測する。
@@ -648,7 +640,6 @@ BLEUは、参照訳にある単語を過剰に含むことや文の短さにペ�
       
       <guid>https://nryotaro.dev/posts/google_neural_machine_translation_system/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;ニューラルネットワークをもちいた機械翻訳システムの論文である。
 解決したい問題として、学習と推論時の処理時間の長さ、低頻出の単語を翻訳する難しさ、入力文の一部が翻訳されないことをあげ、注意機構でつながれたEncoderとDecoderからなるアーキテクチャを提案した。
 学習時間を短縮するために、Decoderの最初の層とEncodeerの出力層から注意をつくる注意機構を採用し、Decoderを並列に学習できるようにしている。
@@ -676,7 +667,6 @@ PACフレームワークにもとづく必要な学習データの件数を示�
       
       <guid>https://nryotaro.dev/posts/a_structured_self_attentivesentence_embedding/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;自己注意機構をもちいて、可変長の文を埋め込み行列に変換するアーキテクチャを発表した論文である。
 埋め込み行列の各行は、それぞれ文中の異なる箇所の意味を反映する。
 アーキテクチャは2つの構成からなり、入力から出力にむかい双方向LSTMを、次に自己注意機構をもつ。
@@ -693,12 +683,12 @@ PACフレームワークにもとづく必要な学習データの件数を示�
       <guid>https://nryotaro.dev/posts/poincare_embeddings/</guid>
       <description>概要 単語のように上位下位関係のある記号を、ポアンカレ球体模型という双曲空間に埋め込む手法を発表した論文である。 ユークリッド空間よりも、記号間の類似度や上位下位関係が保たれていることを実験的に示した。 記号を木のノードとして配置し関係を表現するとき、ノード数は深さ\(l\)対して指数関数的に増加する。 双曲幾何学では、円板の面積や周は半径\(r\)に対して指数関数的に増大するため、木を2次元でモデル化できる。 たとえば、深さ\(l\)以下のノードを半径\(r \varpropto l \)の空間に配置することができる。 一方、2次元のユークリッド空間の場合、半径\(r\)に対する円周は線形、円の面積は2次関数的であるため、モデル化が難しい。 実験では、次元数が少ないほど、ポアンカレ球体模型とユークリッド空間の間で、上下関係や類似度の表現力に差があった。
 損失関数 埋め込みたい上下関係\(\mathcal{D}=\{(u, v)\}\)を記号の数を\(n\)として入力すると、アルゴリズムは、埋め込みベクトルの集合\({\rm \Theta}=\{\boldsymbol{\theta}_i\}^n_{i=1}\)を出力する。 ただし、\(\boldsymbol{\theta}\in \mathcal{B}^d\), \(\mathcal{B}^d=\{\boldsymbol{x}\in \mathbb{R}^d\mid ||\boldsymbol{x}||&amp;lt;1\}\)とする。 学習では、次の損失関数\(\mathcal{L}(\Theta)\)をもちいる。
-$$ \mathcal{L}(\Theta)=\sum_{(u, v)\in \mathcal{D}}\log\frac{e^{-d(\boldsymbol{u}, \boldsymbol{v})}}{\sum_{\boldsymbol{v}&amp;rsquo;\in \mathcal{N}(u)}e^{-d(\boldsymbol{u}, \boldsymbol{v}&amp;lsquo;)}} $$ \(\mathcal{N}(u)=\{v&amp;rsquo;\mid (u, v&amp;rsquo;)\notin \mathcal{D}\} \cup \{v\}\)は\(v\)を含んだ\(u\)に対する負例である。 実験では、正例に対して10の負例をサンプリングしていた。 \(d\)は、\(\boldsymbol{u}, \boldsymbol{v}\in \mathcal{B}^d\)の距離であり、次の式であたえらえる。
+$$ \mathcal{L}(\Theta)=\sum_{(u, v)\in \mathcal{D}}\log\frac{e^{-d(\boldsymbol{u}, \boldsymbol{v})}}{\sum_{\boldsymbol{v}&#39;\in \mathcal{N}(u)}e^{-d(\boldsymbol{u}, \boldsymbol{v}&#39;)}} $$ \(\mathcal{N}(u)=\{v&#39;\mid (u, v&#39;)\notin \mathcal{D}\} \cup \{v\}\)は\(v\)を含んだ\(u\)に対する負例である。 実験では、正例に対して10の負例をサンプリングしていた。 \(d\)は、\(\boldsymbol{u}, \boldsymbol{v}\in \mathcal{B}^d\)の距離であり、次の式であたえらえる。
 $$ d(\boldsymbol{u}, \boldsymbol{v}) = \mathrm{arccosh}\left(1+2\frac{||\boldsymbol{u}-\boldsymbol{v}||^2}{(1-||\boldsymbol{u}||^2)(1-||\boldsymbol{v}||^2)}\right) $$
 最適化 RSGDやRSVRGで損失関数の値を最小化する埋め込みベクトルを探す。 ここでは、RSGDについて説明する。 RSGDでは、次のパラメタの更新式をとる。
 $$ \boldsymbol{\theta}_{t+1} = \mathfrak{R}_{\theta_t}(-\eta_t\nabla_R\mathcal{L}(\boldsymbol{\theta}_t)) $$ \(\mathfrak{R}_{\theta_t}\)はレトラクションで、ここでは\(\mathfrak{R}_\theta(\boldsymbol{v})=\boldsymbol{\theta}+\boldsymbol{v}\)をもちいる。 \(\eta_t\)は時刻\(t\)の学習率をさす。 \(\nabla_R\)はリーマン多様体上の勾配であり、ユークリッド空間上の勾配\(\nabla_E\)とは
 $$ \nabla_R = \frac{(1-||\boldsymbol{\theta_t}||^2)^2}{4}\nabla_E $$ の関係がある。 以上より、更新式は
-$$ \mathrm{proj}(\boldsymbol{\theta})= \begin{cases} \boldsymbol{\theta}/||\boldsymbol{\theta}|| - \epsilon &amp;amp;\mathrm{if}\ ||\boldsymbol{\theta}||\ge 1 \</description>
+$$ \mathrm{proj}(\boldsymbol{\theta})= \begin{cases} \boldsymbol{\theta}/||\boldsymbol{\theta}|| - \epsilon &amp;amp;\mathrm{if}\ ||\boldsymbol{\theta}||\ge 1 \\</description>
     </item>
     
     <item>
@@ -708,7 +698,6 @@ $$ \mathrm{proj}(\boldsymbol{\theta})= \begin{cases} \boldsymbol{\theta}/||\bold
       
       <guid>https://nryotaro.dev/posts/learning_joint_multilingual_sentence_representations_with_neural_machine_translation/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;多言語の文をあつかう分散表現モデルを発表した論文である。
 異なる言語の文であっても、意味が同じであれば、同様の分散表現に変換される。
 モデルのアーキテクチャにはseq2seqを、入力と出力には対訳コーパスをつかう。
@@ -735,7 +724,6 @@ BERT-largeと比べると、ALBERT-largeのパラメタ数は約5.3%の18Mであ
       
       <guid>https://nryotaro.dev/posts/random_walks_in_recommender_systems/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;&lt;a href=&#34;https://ieeexplore.ieee.org/document/4072747&#34;&gt;F. Foussら&lt;/a&gt;や&lt;a href=&#34;https://www.aaai.org/Papers/IJCAI/2007/IJCAI07-444.pdf&#34;&gt;M. Goriら&lt;/a&gt;のランダムウォークによる推薦システムの先行研究を、質や計算量について比較した論文である。
 比較対象には、著者らの用意したも含まれる。
 実験には、MovieLensのデータセットが使われた。
@@ -749,7 +737,6 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
       
       <guid>https://nryotaro.dev/posts/domain_adversarial_training_of_neural_networks/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;ニューラルネットワークをもちいたドメイン適用の論文である。
 ソースドメインのラベルつきデータと目標ドメインのラベルのないデータでモデルを訓練し、目標ドメインに対する分類性能を引きあげる。
 目的関数は、ソースドメインの分類器の目的関数とデータのドメインを判定する識別器の目的関数からなる。
@@ -766,7 +753,6 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
       
       <guid>https://nryotaro.dev/posts/character_aware_neural_language_models/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;文字単位の入力から次に出現する単語を予測するニューラル言語モデルの論文である。
 アーキテクチャは入力から近い順にCNN, highway network, LSTMからなる。
 実験データにPenn Treebankを、評価指標にPerplexityを採用してモデルを評価したところ、
@@ -793,7 +779,6 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
       
       <guid>https://nryotaro.dev/posts/the_seven_sins/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;OSSの調査にもとづき、Infrastrucure as Code(IaC)スクリプトに潜む主要なセキュリティ上の不吉な匂い(Security Smells)を7つ列挙し、これらを検出するツールを実装した論文である。
 論文のねらいは、開発者がIaCスクリプトに不吉な匂いを混ぜないようにすることにある。
 著者らは、本論文で、ICSE2019のDistinguished Paper Awardを受賞した。&lt;/p&gt;</description>
@@ -839,7 +824,6 @@ Raftは、Multi Paxosと同様の実行結果をもたらす。
       
       <guid>https://nryotaro.dev/posts/latent_dirichlet_allocation/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;トピックモデルの潜在的ディリクレ配分法(LDA)の原論文である。
 LDAは、テキストコーパスのような離散データの確率的生成モデルである。
 意味のあるデータのまとまりに対する端的な説明を与える情報を見つけることを目的としている。
@@ -856,7 +840,6 @@ LDAは、テキストコーパスのような離散データの確率的生成�
       
       <guid>https://nryotaro.dev/posts/unsupervised_pretraining_for_sequence_to_sequence_learning/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;事前学習とファインチューニングにより&lt;a href=&#34;https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf&#34;&gt;seq2seq&lt;/a&gt;の汎化性能を改善する手法を提案した論文である。
 encoderの重みを学習済み言語モデルの重みで初期化する。
 decoderについても、encoderと別の言語モデルを用意し、その重みで初期化する。
@@ -871,7 +854,6 @@ decoderについても、encoderと別の言語モデルを用意し、その重
       
       <guid>https://nryotaro.dev/posts/playing_atari_with_deep_reinforcement_learning/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;深層強化学習をAtari2600の7つのゲームに応用し、うち6つについて先行手法の性能を超えたDeep Q-Networks(DQN)を提案した論文である。
 ピクセルデータを直接入力として与え、深層学習で方策を学習する手法としては初めて提案された。&lt;/p&gt;</description>
     </item>
@@ -883,13 +865,12 @@ decoderについても、encoderと別の言語モデルを用意し、その重
       
       <guid>https://nryotaro.dev/posts/context2vec/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
-&lt;p&gt;文書の文脈の分散表現を獲得するニューラルネットワークのアーキテクチャ*context2vec*を提案、評価した論文である。
+&lt;p&gt;文書の文脈の分散表現を獲得するニューラルネットワークのアーキテクチャ&lt;em&gt;context2vec&lt;/em&gt;を提案、評価した論文である。
 アーキテクチャの基本構造は&lt;a href=&#34;https://arxiv.org/pdf/1301.3781.pdf&#34;&gt;CBOW&lt;/a&gt;と同様で、周辺の単語から中心の単語を当てられるようにコーパスをもとにモデルを訓練する。
 CBOWとの違いは、文脈の算出方法にある。
 CBOWは、ウィンドウ内のベクトルの平均値で文脈の分散表現を求める。
-一方、*context2vec*では、双方向LSTMの出力をもとに算出する。
-&lt;!-- 分散表現を汎用的に利用できることを想定しており、獲得した分散表現をsentence comp --&gt;&lt;/p&gt;</description>
+一方、&lt;em&gt;context2vec&lt;/em&gt;では、双方向LSTMの出力をもとに算出する。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;</description>
     </item>
     
     <item>
@@ -899,7 +880,6 @@ CBOWは、ウィンドウ内のベクトルの平均値で文脈の分散表現�
       
       <guid>https://nryotaro.dev/posts/neural_machine_translation_by_jointly_learning_to_align_and_translate/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;Decoderに注意機構を採用したencoder-decoderモデルを提案した論文である。
 ICLR2015で発表された。
 論文の発表当時、encoder-decoderモデルによる翻訳の多くは、encoderが入力文を固定長ベクトルに変換し、固定長ベクトルから翻訳された文を出力していた。
@@ -917,7 +897,6 @@ ICLR2015で発表された。
       
       <guid>https://nryotaro.dev/posts/why_should_i_trust_you/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;モデルの予測に説明をあたえる手法、Local Interpretable Model-agnostic Explanations (LIME)を提案する。
 モデルが回帰や分類器であれば、アルゴリズムによらずLIMEを適用できる。
 説明を与えたい事例近くにある事例を解釈可能なモデルに学習させ、解釈可能なモデルで予測を説明する。
@@ -931,7 +910,6 @@ ICLR2015で発表された。
       
       <guid>https://nryotaro.dev/posts/active_learning_for_ranking_through_expected_loss_optimization/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;Yahoo! Labsで開発されたランキングのための能動学習の論文である。
 提案手法は、Yahoo!検索エンジンでの&lt;a href=&#34;https://www.kdd.org/kdd2016/papers/files/adf0361-yinA.pdf&#34;&gt;採用実績&lt;/a&gt;がある。
 手法は、Expected Loss Optimization(ELO)とよばれ、ベイズ決定則によって識別したときの損失の期待値が最大になるデータを選ぶ。
@@ -954,7 +932,6 @@ ELOに用いる損失関数にDCGを採用したExpected DCG Loss Optimization(E
       
       <guid>https://nryotaro.dev/posts/unsupervised_models_for_named_entity_classification/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;1999年に発表された教師なしの固有表現抽出の手法である。
 発表時期が古いことに注意してほしい。
 2つの手法が提案されている。
@@ -970,10 +947,18 @@ ELOに用いる損失関数にDCGを採用したExpected DCG Loss Optimization(E
       
       <guid>https://nryotaro.dev/posts/multilabel_classification_with_label_correlations_and_missing_labels/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;ラベルの相関関係を学習し推論に利用するマルチラベルの線形モデルを提案した論文である。
 相関関係のあるラベル集合を相関関係のないラベル集合に変換し、ラベルごとに分けて学習する手法、Label transformationを応用する。
 分類器は、相関関係だけなく、学習データに与えられていないラベルを推定するように拡張できる。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>大砲ラーメン</title>
+      <link>https://nryotaro.dev/gallery/taihoh/</link>
+      <pubDate>Sun, 05 Jan 2020 13:25:04 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/gallery/taihoh/</guid>
+      <description>帰省して食べに行きました。</description>
     </item>
     
     <item>
@@ -983,7 +968,6 @@ ELOに用いる損失関数にDCGを採用したExpected DCG Loss Optimization(E
       
       <guid>https://nryotaro.dev/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;クエリと文書を同じ低次元の空間に射影する深層学習のモデルを提案した論文である。
 クエリと文書は、適合度合いが高いほど、近くに配置される。
 教師データは、クエリと文書の組からなる教師データである。
@@ -998,7 +982,6 @@ Web文書の大量の語彙をあつかうために、語彙の増加に対し�
       
       <guid>https://nryotaro.dev/posts/classification_in_the_presence_of_label_noise/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;ノイズのある教師データによるクラス分類の&lt;a href=&#34;https://romisatriawahono.net/lecture/rm/survey/machine%20learning/Frenay%20-%20Classification%20in%20the%20Presence%20of%20Label%20Noise%20-%202014.pdf&#34;&gt;サーベイ論文&lt;/a&gt;である。発表時期は、&lt;a href=&#34;https://ieeexplore.ieee.org/document/6685834&#34;&gt;2013年の12月&lt;/a&gt;である。
 主な内容は、ノイズの分類、ノイズが分類に及ぼす影響、ノイズへの対策である。&lt;/p&gt;</description>
     </item>
@@ -1010,7 +993,6 @@ Web文書の大量の語彙をあつかうために、語彙の増加に対し�
       
       <guid>https://nryotaro.dev/posts/distributed_representations_of_sentences_and_documents/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;&lt;a href=&#34;https://radimrehurek.com/gensim/models/doc2vec.html&#34;&gt;Doc2Vec&lt;/a&gt;のアルゴリズムとして採用されたニューラル言語モデルParagraph Vectorを提案した論文である。
 bag of wordsは、文書の単語順を記憶せず、また、似た意味の単語ベクトルと無関係なベクトルを単語にわりあてる。
 Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文脈の中心の単語をあてられるように学習することで、可変長文字列から固定長の文書埋め込みベクトルを生成できるようになる。
@@ -1024,7 +1006,6 @@ Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文�
       
       <guid>https://nryotaro.dev/posts/glove_vectors_for_word_representation/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;&lt;a href=&#34;https://www.aclweb.org/anthology/D14-1162.pdf&#34;&gt;GloVe&lt;/a&gt;は,コーパスに出現する単語の共起回数を学習するニューラル言語モデルである。
 既存手法を単語の出現頻度の統計値つかう手法と対数双線形モデルに分類し、両者の長所を備え短所を補う手法として、GloVeを提案する。&lt;/p&gt;</description>
     </item>
@@ -1036,7 +1017,6 @@ Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文�
       
       <guid>https://nryotaro.dev/posts/bert/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;BERTは&lt;a href=&#34;https://arxiv.org/pdf/1706.03762.pdf&#34;&gt;Attention Is All You Need&lt;/a&gt;にあるTransformerをアーキテクチャに導入した分散表現のモデルであり、本稿は、事前学習済みのBERTにファインチューニングを適用しQAタスクや自然言語推論のベンチマークにおいて既存研究を上回る結果を示している。
 なお、アーキテクチャに関する説明は少なく、子細に知りたい場合は&lt;a href=&#34;https://arxiv.org/pdf/1706.03762.pdf&#34;&gt;Attention Is All You Need&lt;/a&gt;や&lt;a href=&#34;http://nlp.seas.harvard.edu/2018/04/03/attention.html&#34;&gt;The Annotated Transformer&lt;/a&gt;を参照するように案内されている。&lt;/p&gt;</description>
     </item>
@@ -1048,7 +1028,6 @@ Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文�
       
       <guid>https://nryotaro.dev/posts/150_successfuly_machine_learning_modes/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;宿泊予約サービス&lt;a href=&#34;http://booking.com/&#34;&gt;Booking.com&lt;/a&gt;におけるモデルの開発運用でえられた教訓を6つにまとめたKDD2019の論文である。
 教訓の主眼を収益におき、6つの教訓を通して、実運用環境における仮説と実験を反復する重要性を強調する。&lt;/p&gt;</description>
     </item>
@@ -1060,7 +1039,6 @@ Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文�
       
       <guid>https://nryotaro.dev/posts/ranking_relevance_in_yahoo_search/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;Yahooの検索エンジンを解説するKDD16の論文である。
 論文におけるランキングの課題は、クエリと文書の語彙がことなること、ほとんどのクエリは滅多に入力されないこと、クエリの意味の解釈が難しいことである。
 これらの課題に対する手法として、ランキングのモデル、特徴のつくりかた、クエリを文書によせる翻訳モデルを解説する。&lt;/p&gt;</description>
@@ -1110,7 +1088,6 @@ DESMは、クエリの単語に関係する単語をもとに判断する。
       
       <guid>https://nryotaro.dev/posts/get_another_label/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;ある確率でデータに誤ったラベルをふるlabelerでデータにラベルをふるときに、
 既にラベルのあるデータに重ねてラベルをふるべきか調査した。
 12種類のラベルつきデータセットを使い、
@@ -1138,7 +1115,6 @@ DESMは、クエリの単語に関係する単語をもとに判断する。
       
       <guid>https://nryotaro.dev/posts/web_tables/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;表題の論文は、Web上の表から抽出した大量の関係モデルを対象にした検索を提案・評価した
 。検索の他にも、一部の属性を入力とするスキーマの補完、入力した属性ないしスキーマに類似のものを推定するアルゴリズムの議論もある。
 ここのスキーマは属性のリストである。論文の著者らは研究時にGoogleに在籍しており、論文で使われたコーパスはグーグルの汎用ウェブクローラで集めた141億のHTMLの表から抽出した高精度な154百万の関係モデルである。
@@ -1176,7 +1152,6 @@ DESMは、クエリの単語に関係する単語をもとに判断する。
       
       <guid>https://nryotaro.dev/posts/feature_selection_for_text_categorization_on_imbalance_data/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;表題の論文は、特徴選択において、正例に顕著な特徴から選ぶ割合を明示的に決めることで、正例と負例それぞれに顕著な特徴の割合を調整することが、不均衡な文書分類における予測性能の向上に役立つことを示した。
 情報利得やオッズ比など単変量統計にもとづく特徴選択において、統計量の値によって暗黙的に決められた割合と異なる割合の場合の方が予測性能が高いことを実験的に示した。&lt;/p&gt;</description>
     </item>
@@ -1188,7 +1163,6 @@ DESMは、クエリの単語に関係する単語をもとに判断する。
       
       <guid>https://nryotaro.dev/posts/snorkel_drybell_case_study/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;表題の論文では、&lt;a href=&#34;https://www.snorkel.org&#34;&gt;Snorkel&lt;/a&gt;というWeak Supervisionの手法をGoogleで適用した結果の考察と評価がなされている。
 Weak Supervisionは、人手よりも効率良くノイズ交じりの教師データを生成する手法である。
 Snorkelは、引数にサンプルを返り値にラベルを返す複数の関数をラベルなしデータに適用し、結果から関数の精度を予測し、個々の関数よりも高い精度でデータにラベルを与える。この関数をラベリング関数という。Snorkel DryBellは、Snorkelのアルゴリズムをスケールさせるために、MapReduceに適用できるように修正されたものをさす。&lt;/p&gt;</description>
@@ -1210,7 +1184,6 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
       
       <guid>https://nryotaro.dev/posts/snorkel_rapid_training_data_creation_with_weak_supervision/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;表題の論文は、Weak supervisionの一種であるSnorkelを学習データの収集効率と予測性能についての既存手法や教師あり学習と比べた評価をまとめてる。&lt;/p&gt;</description>
     </item>
     
@@ -1221,7 +1194,6 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
       
       <guid>https://nryotaro.dev/posts/software_engineering_for_machine_learning/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;表題の論文は、マイクロソフトでのAIを応用したアプリケーションの開発についての調査結果をまとている。
 著者らは、9人中の8名がMicrosoft Researchに所属し、本論文で2019年のICSEのSoftware Engineering in Practiceの分野でBest Paper Awardを受賞した。
 主な貢献は、各チームにおける開発フローを9のステージに分けて解説したこと、機械学習を応用するアプリケーションやプラットフォームの開発におけるベストプラクティスを示したこと、機械学習を応用するアプリケーションの開発に固有の課題にまつわる論考の3つである。&lt;/p&gt;</description>
@@ -1246,7 +1218,6 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
       
       <guid>https://nryotaro.dev/posts/learning_on_border/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;表題にある論文は、不均衡データの二値分類についての予測性能を能動学習で改善する手法を提案している。
 着想は、学習器のマージン付近では正例と負例がよりバランスしていると仮定し、
 マージン付近にあるデータを集めることで、均衡のとれたデータセットを用意することにある。
@@ -1260,7 +1231,6 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
       
       <guid>https://nryotaro.dev/posts/distilling_the_knowledge_in_a_neural_network/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;表題にあるニューラルネットワークの蒸留についての論文を紹介する。
 蒸留は、既存のモデルを使い、できるだけ予測性能を落とさずに、より小さいモデルを作るための学習手法である。
 既存のモデルとして想定されているのは、複数のモデルからなるモデルや正則化された大きなモデルのように予測性能は高いが計算コストが高いものであり、
@@ -1286,7 +1256,6 @@ FastXMLは、弱学習器に決定木を使うアンサンブル学習であり�
       
       <guid>https://nryotaro.dev/posts/advantages_and_disadvantages_of_a_monolithic_repository/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;表題は、マルチリポジトリと比べたときのモノリシックリポジトリの長所と短所の調べた論文のタイトルである。
 論文は2018年のICSEでGoogleから発表された。
 調査方法はGoogle社のエンジニアへのアンケートとエンジニアの行動ログの分析が採用されている。
@@ -1300,7 +1269,6 @@ Googleではモノリシックリポジトリが採用されており、エン�
       
       <guid>https://nryotaro.dev/posts/cat_boost/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;表題はNeurIPS 2018で発表されたCatBoostという勾配ブースティングの手法を論文にちなむ。
 Target Statisticsというカテゴリカル特徴量の前処理と勾配ブースティングの学習時に生じる一種のleakageが起きることを示し、leakageをさけて前処理と学習をする手法を示した。
 CatBoostは二進木の決定木を弱識別器に用いる。&lt;/p&gt;</description>
@@ -1313,10 +1281,8 @@ CatBoostは二進木の決定木を弱識別器に用いる。&lt;/p&gt;</descri
       
       <guid>https://nryotaro.dev/posts/are_we_really_making_much_progress/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;表題は、ニューラルネットワークを用いた推薦システムを提案、評価した論文における実験の再現性と予測性能の再評価した論文のタイトルにあたる。
 発表学会は、2019年のRecSys。著者らは、以下の2つのRQに回答するためにトップ会議で発表された18の論文を調査した。その結果、実験を再現できた論文は7稿であり、その中でも単純な手法を上回る性能が認められたのは1稿だけだった。&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;RQ1: ニューラルネットワークを用いた推薦システムの研究の再現性はどの程度か&lt;/li&gt;
 &lt;li&gt;RQ2: 最近発表されたアルゴリズムは、ハイパーパラメタチューニングされた単純な手法と比べてどの程度性能がいいか&lt;/li&gt;
@@ -1341,7 +1307,6 @@ CatBoostは二進木の決定木を弱識別器に用いる。&lt;/p&gt;</descri
       
       <guid>https://nryotaro.dev/posts/google_vizier/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;表題にあるVizierはGoogleにおいてデファクトになっているブラックボックス最適化のためのサービスであり、
 論文は、Vizierのシステムアーキテクチャの構成とアルゴリズムの説明とその評価からなる。&lt;/p&gt;</description>
     </item>
@@ -1353,7 +1318,6 @@ CatBoostは二進木の決定木を弱識別器に用いる。&lt;/p&gt;</descri
       
       <guid>https://nryotaro.dev/posts/learning_active_learning_from_data/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;表題にある論文は、次にラベルを与えるべきデータが何かという能動学習における問題を、
 あるサンプルを教師データに追加したときの損失関数の減少値を予測する回帰の問題としてとらえる。
 能動学習の目的は最小限データで最大の予測性能をもつモデルを構築することであり、次にアノテーションすべきデータが何かを正しく予測することが課題になる。
@@ -1367,7 +1331,6 @@ CatBoostは二進木の決定木を弱識別器に用いる。&lt;/p&gt;</descri
       
       <guid>https://nryotaro.dev/posts/textrank/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;表題にある論文は、ドキュメントからキーワードとキーセンテンスを抽出するためのグラフベースのアルゴリズムTextRankを提案、評価した。
 TextRankは、名前から推測できるようにPageRankを応用した手法であり、頂点の重要度を、頂点の内容のような局所的な情報ではなく、他の頂点との辺の接続関係を含むグラフ全体の大域的な情報から決定する。PageRankとTextRankのアルゴリズムの違いは、TextRankの場合は辺ごとに重みが設定できるところにある。&lt;/p&gt;</description>
     </item>
@@ -1379,7 +1342,6 @@ TextRankは、名前から推測できるようにPageRankを応用した手法�
       
       <guid>https://nryotaro.dev/posts/subword_regularization/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;表題は、過去に&lt;a href=&#34;../neural_machine_translation_of_rate_words/&#34;&gt;紹介&lt;/a&gt;した&lt;a href=&#34;https://www.aclweb.org/anthology/P16-1162&#34;&gt;論文&lt;/a&gt;と同様、sentencepiece（ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザ）の元になった論文にあたる。
 ノイズに対する頑強さのために、単語のサブワード（部分文字列）を生成するユニグラム言語モデルの学習方法と、モデルから生成されたサブワード列を入力とする機械翻訳モデルの学習方法を提案した。&lt;/p&gt;</description>
     </item>
@@ -1391,7 +1353,6 @@ TextRankは、名前から推測できるようにPageRankを応用した手法�
       
       <guid>https://nryotaro.dev/posts/neural_machine_translation_of_rate_words/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;内容は、sentencepiece（ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザ）のトークナイズで使われるアルゴリズムになっている。単語をサブワード（単語の部分文字列）に分割し、サブワードを組み合わせて珍しい単語や未知語を表現することで、これらの出現頻度の低い単語の翻訳上げるというもの。&lt;/p&gt;</description>
     </item>
     
@@ -1402,7 +1363,6 @@ TextRankは、名前から推測できるようにPageRankを応用した手法�
       
       <guid>https://nryotaro.dev/posts/embedding_logical_queries_on_knowledge_graphs/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;一階述語論理式で表現されたクエリを満たすノードを、分散表現に変換し、ナレッジグラフの中から計算時間上効率よく見つけるアルゴリズムを提案した。
 クエリに現れるエッジの数に対して計算時間が線形であることが特徴。
 ただし、クエリには、存在量化と連接を使えるが、全称量化、選択、否定を使うことができない制約がある。&lt;/p&gt;</description>
@@ -1435,7 +1395,6 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
       
       <guid>https://nryotaro.dev/posts/end_to_end_neural_entity_linking/</guid>
       <description>&lt;h3 id=&#34;背景&#34;&gt;背景&lt;/h3&gt;
-
 &lt;p&gt;本稿は、End to EndなEntity Linkingモデルのアーキテクチャを提案し、予測性能の評価実験で有用性を評価した。
 実験のデータセットには、Entity annotationの評価に使える様々なデータセットを集めた&lt;a href=&#34;https://github.com/dice-group/gerbil/wiki&#34;&gt;Gerbil Platform&lt;/a&gt;が使われている。そのうちの&lt;a href=&#34;https://natural-language-understanding.fandom.com/wiki/AIDA-CoNLL&#34;&gt;AIDA/CoNLL&lt;/a&gt;データセットにおいて、提案手法は既存手法を超える予測性能を発揮した。&lt;/p&gt;</description>
     </item>
@@ -1456,7 +1415,6 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
       
       <guid>https://nryotaro.dev/posts/conditional_random_fields_probabilistic_models_for_segmenting_and_labeling_sequence/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;本稿は、条件付き確率場（Conditional Random Fields, CRF）を提案し、品詞タグづけにおけるerror rateをもとに評価した。
 評価の比較対象には、Maximum entropy Markov models(MEMMs)が採用されている。&lt;/p&gt;</description>
     </item>
@@ -1468,7 +1426,6 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
       
       <guid>https://nryotaro.dev/posts/bidirectional_lstm_crf_models_for_sequence_tagging/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;本稿では、NLPにおける系列ラベリングためのニューラルネットワークアーキテクチャの提案と評価がなされている。
 このアーキテクチャは、当ページで以前紹介した&lt;a href=&#34;https://aclweb.org/anthology/papers/C/C18/C18-1139/&#34;&gt;Contextual String Embeddings for Sequence Labeling&lt;/a&gt;で応用されている。&lt;/p&gt;</description>
     </item>
@@ -1480,9 +1437,7 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
       
       <guid>https://nryotaro.dev/posts/context_string_embeddings_for_sequence_labeling/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;表題の論文は、ライブラリflairのアルゴリズムを提案、評価したもの。&lt;/p&gt;
-
 &lt;p&gt;論文は、テキストの系列ラベリングに向いた単語の分散表現モデルを提案し、
 提案手法が予測性能において既存手法より優れいたことを実験的に示した。
 本手法における単語の分散表現は、単語の字面だけでなく、文中における単語の出現位置によって決まる。
@@ -1497,7 +1452,6 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
       
       <guid>https://nryotaro.dev/posts/universal_language_model_fine_tuning_for_text_classification/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;UMLFiTという、様々なNLPの問題に適用可能なファインチューニングの手法を提案、評価した。
 評価手段として、6種のテキスト分類のタスクにおける既存手法とのエラー率の比較が採られている。
 主要な評価として、100件のラベル付きデータだけでその100倍のデータを要した事前学習を用いない手法と同等の予測性能が出たことを報告している。&lt;/p&gt;</description>
@@ -1521,7 +1475,6 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
       
       <guid>https://nryotaro.dev/posts/applying_deep_learning_to_airbnb_search/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;論文では、Airbnbが深層学習を宿泊先検索に適用した時の試行錯誤と結果を紹介している。
 採用したモデルのアルゴリズムと特徴量エンジニアリングの説明が本稿の大部分を占める。
 深層学習を試す以前はGBDTを採用おり、以下の順にアルゴリズムを変えていった。
@@ -1535,7 +1488,7 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
       
       <guid>https://nryotaro.dev/posts/the_relationship_between_precision_recall_and_roc_curve/</guid>
       <description>ROCとPrecision Recallの関係を示した論文。
- 1 Recallが0でなければ、ROC曲線には一対一に対応するPR曲線がある。 2 PR曲線AがPR曲線Bに対して常に優位であることとは、ROC曲線においてAがBより常に優位であることの必要十分条件。 3 1,2よりROC空間上の凸包に対応するPR曲線は、他の妥当なPR曲線よりも優位な曲線になる。 4 線形補間でROC曲線を描くことは妥当。一方で、Recallの分母は固定値であるが、Precisionの分母の値はRecallが上がると増える。そのため、PR曲線を線形補間でプロットすると、評価の甘い曲線になる。  論文はこちらからダウンロードできます。</description>
+ 1 Recallが0でなければ、ROC曲線には一対一に対応するPR曲線がある。 2 PR曲線AがPR曲線Bに対して常に優位であることとは、ROC曲線においてAがBより常に優位であることの必要十分条件。 3 1,2よりROC空間上の凸包に対応するPR曲線は、他の妥当なPR曲線よりも優位な曲線になる。 4 線形補間でROC曲線を描くことは妥当。一方で、Recallの分母は固定値であるが、Precisionの分母の値はRecallが上がると増える。そのため、PR曲線を線形補間でプロットすると、評価の甘い曲線になる。   論文はこちらからダウンロードできます。</description>
     </item>
     
     <item>
@@ -1545,7 +1498,6 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
       
       <guid>https://nryotaro.dev/posts/enriching_word_vectors_with_subword_information/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;Fasttextを提案、評価した論文。
 Character n-gramsを入力としてskip-gramのモデルを作る方法を提案、評価している。
 単語の部分文字列（subword）を使わない手法や形態素解析に頼る手法よりも提案手法が優れていることを実験で示した。
@@ -1560,7 +1512,6 @@ Character n-gramsを入力としてskip-gramのモデルを作る方法を提案
       
       <guid>https://nryotaro.dev/posts/when_do_changes_induce_fixes/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;ざっくり言うと、バージョン管理ツールとバグチケット管理ツールを導入しているプロジェクトにおいて、
 バージョン管理ツールで追跡されている変更とバグチケット管理ツールで追跡されているバグを紐付ける手法を提案した。&lt;/p&gt;</description>
     </item>
@@ -1572,7 +1523,6 @@ Character n-gramsを入力としてskip-gramのモデルを作る方法を提案
       
       <guid>https://nryotaro.dev/posts/a_simple_semi_supervised_for_ner/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
 &lt;p&gt;CRFに入力する学習データを集めるための半教師学習の手法を提案と評価した論文。
 本手法はCRFに与える学習データを集めるための手法であり、CRFのアルゴリズム自体に変更を加えることはない。&lt;/p&gt;</description>
     </item>
@@ -1593,9 +1543,17 @@ Character n-gramsを入力としてskip-gramのモデルを作る方法を提案
       
       <guid>https://nryotaro.dev/posts/text_cls_from_lbl_and_unlbl_doc_em/</guid>
       <description>&lt;h3 id=&#34;アルゴリズム&#34;&gt;アルゴリズム&lt;/h3&gt;
-
 &lt;p&gt;提案手法は、Naive BayesとEMアルゴリズムを組み合わせたもの。
 ラベル付きデータが\(D^l\)でラベルなしデータが\(D^u\)で表されるとき、対数尤度\(\log P(D^l)P(D^u)\)を最大化する問題を解く。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://nryotaro.dev/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nryotaro.dev/about/</guid>
+      <description>Disclaimer 当ウェブサイトに掲載されている情報の正確性については万全を期していますが、当ウェブサイトの著者は利用者が当ホームページの情報を用いて行う一切の行為について、何らの責任を負うものではありません。</description>
     </item>
     
   </channel>

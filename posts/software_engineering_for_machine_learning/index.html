@@ -1,91 +1,94 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
-    </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>メモ Software Engineerng for Machine Learning: A Case Study</h2>
-    <p>September 14, 2019</p>
-  </header>
-  <h3 id="概要">概要</h3>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
 
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>メモ Software Engineerng for Machine Learning: A Case Study</h1>
+    <span class="date">September 14, 2019</span>
+    <div>
+        <h3 id="概要">概要</h3>
 <p>表題の論文は、マイクロソフトでのAIを応用したアプリケーションの開発についての調査結果をまとている。
 著者らは、9人中の8名がMicrosoft Researchに所属し、本論文で2019年のICSEのSoftware Engineering in Practiceの分野でBest Paper Awardを受賞した。
 主な貢献は、各チームにおける開発フローを9のステージに分けて解説したこと、機械学習を応用するアプリケーションやプラットフォームの開発におけるベストプラクティスを示したこと、機械学習を応用するアプリケーションの開発に固有の課題にまつわる論考の3つである。</p>
-
 <p>調査方法は雪だるま式標本法による開発者へのアンケートであり、質問内容は14名の管理職のエンジニアへのヒアリングに基づいて設計された。作成した質問は、リッカート法形式での内容であり、4195名に配布された後、551名のエンジニアが質問に回答した。</p>
-
 <p>ステージに分解した開発のスコープは、機械学習で実装する要件を決める要件定義の段階から、本番環境での予測性能の監視である運用段階にまで及ぶ。次の図は、開発段階を9のステージに分割した様子を表す。
-<img src="/software_engineering_for_machine_learning/9stages.png" alt="9stages" />
+<img src="/software_engineering_for_machine_learning/9stages.png" alt="9stages">
 細い矢印は前のステージに戻る可能性があることを示し、太い矢印は以前のどんなステージにも戻ることがある可能性があることを意味する。</p>
-
 <p>ベストプラクティスの内容は多岐にわたり、End-to-endのパイプラインの構築をはじめとして全部で7つの観点について考えられている。その中で最も詳細に分析されていた観点は、機械学習の経験の長さ次第で困難と考える領域が変わることを指摘したものである。以下の図は、機械学習の経験の長さによってエンジニアを長い順にHigh, Midum, Lowの集団に分け、各集団が機械学習のどの領域に困難を抱えているかを示す。
 Rankは、どの課題に感じる領域のランキングを示し、1は集団が最も困難に感じていることを示す。
 図より、経験の長さによらずデータの収集・クレンジング・管理を最も課題に感じていることが読みとれる。
 他方、経験を重ねるにつれ、AI Tools, Scale, Model Evolution, Evaluation, and Deploymentに対する関心が集めることもわかる。
-<img src="/software_engineering_for_machine_learning/table2.png" alt="table2" /></p>
-
+<img src="/software_engineering_for_machine_learning/table2.png" alt="table2"></p>
 <p>機械学習を応用するアプリケーションの開発に固有の課題として、データの収集・処理・版管理の扱いが難しいこと、モデルを開発するにはソフトウェアエンジニアリング以外の知識が必要になること、機械学習関連のコンポーネントは密結合になりやすいことが列挙されている。</p>
-
 <h3 id="感想">感想</h3>
-
 <p>論文ではCMMやSix Sigmaを参照して機械学習開発プロセスの成熟度を評価するメトリクスを提案していた。論文中でも今後の展望の扱いになっていたように、そのメトリクス自体が本当に開発プロセスを評価するものとして妥当なのか、なぜCMMやSix Sigmaを参照したかなどの考察が薄かったように感じる。
 アジャイル関係の興味深い論文の引用がいくつかあった。</p>
-
-<hr />
-
+<hr>
 <ul>
 <li>論文は<a href="https://www.microsoft.com/en-us/research/uploads/prod/2019/03/amershi-icse-2019_Software_Engineering_for_Machine_Learning.pdf">こちら</a>からダウンロードできます。</li>
 <li>当ページの画像は全て論文から引用しています。</li>
 </ul>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/class_imbalance_redux/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/snorkel_rapid_training_data_creation_with_weak_supervision/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

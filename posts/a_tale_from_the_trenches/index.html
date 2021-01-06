@@ -1,95 +1,100 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
-    </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ A Tale from the Trenches: Cognitive Biases and Software Development</h2>
-    <p>July 31, 2020</p>
-  </header>
-  <p>エンジニア10人の普段の開発状況から、認知バイアスが開発者にあたえる影響やバイアスの頻度、対策方法について調査した。</p>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
 
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>論文メモ A Tale from the Trenches: Cognitive Biases and Software Development</h1>
+    <span class="date">July 31, 2020</span>
+    <div>
+        <p>エンジニア10人の普段の開発状況から、認知バイアスが開発者にあたえる影響やバイアスの頻度、対策方法について調査した。</p>
 <p>最大で1時間の間、考えていることを口に出して日常業務の開発をしてもらい、音声、スクリーン、作業環境を記録した。
 被検者は、全員同じ米国のスタートアップに所属している。
 新規性は、日常の開発における認知バイアスを調査した点にある。
 従来のソフトウェア開発における認知バイアスの先行研究は、馴染みのない作業や学生の被検者実験を採用しており、現実の開発と実験の設定に乖離があった。</p>
-
 <p>認知バイアスによる影響の善し悪しを区別するために、無駄になった作業をReversal Actionと呼び、意味のあった作業(Action)と区別し、それぞれの作業時間を計測した。
 被検者全員の作業時間を合計した結果は、以下の四象限の図の通りになった。
-全体の作業時間の34.51%(<sup>7839</sup>&frasl;<sub>21407</sub>)をReversal Actionが占めていた。
-Reversal Actionのうち70%(<sup>7839</sup>&frasl;<sub>11187</sub>)は、認知バイアスによるものだった。
-<img src="/a_tale_from_the_trenches/distribution_of_time.png" alt="dist" /></p>
-
+全体の作業時間の34.51%(7839/21407)をReversal Actionが占めていた。
+Reversal Actionのうち70%(7839/11187)は、認知バイアスによるものだった。
+<img src="/a_tale_from_the_trenches/distribution_of_time.png" alt="dist"></p>
 <p>認知バイアスは、<a href="https://ieeexplore.ieee.org/document/8506423">先行研究</a>にしたがって10のカテゴリ(CB1-10)に分類される。
 次のツリーマップは、カテゴリごとの影響の大きさを示す。
 各カテゴリの影響度は、カテゴリに属する作業の回数で測定はされ、図中の数字はその回数を示す。
-<img src="/a_tale_from_the_trenches/treemap.png" alt="dist" />
+<img src="/a_tale_from_the_trenches/treemap.png" alt="dist">
 CB3(Fixation), CB6(Convenience)が特に顕著にみられ、この2つで全体の半分以上を占める。
 Fixationは、エラーや警告など、試している解決策と矛盾することが起きていても、その解決策を試しつづけることを示す。
 リロードすればよいだけなのに、関数の定義を修正しつづけるような行為が該当する。
 Convenienceは、最適でないと分かっていながら簡単なやり方で進め、後で立ちいかなくなることを意味する。
 単純で冗長な実装によってコードがスパゲッティコード化することは、これに該当する。</p>
-
 <p>実験の後に、被検者を含めた16人に、カテゴリーに分類された認知バイアスに対してどれだけ自覚的かアンケートをとると、次の結果になった。
 実験ではほとんど観測されなかったCB10が上位にきていた。
 ツリーマップと順位が異なるところに、認知バイアスへの自覚の難しさがあらわれている。</p>
-
-<p><img src="/a_tale_from_the_trenches/frequency.png" alt="dist" /></p>
-
-<hr />
-
+<p><img src="/a_tale_from_the_trenches/frequency.png" alt="dist"></p>
+<hr>
 <ul>
 <li>論文を<a href="https://nomatic.dev/docs/icse20-chattopadhyay.pdf">こちら</a>からダウンロードできます。</li>
 <li>画像はすべて論文から引用されています。</li>
 </ul>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/factorization_machines/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/improving_language_understanding_by_generative_pre_training/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

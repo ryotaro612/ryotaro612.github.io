@@ -1,85 +1,91 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
-    </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>Why Good Developers Write Bad Code: An Observational Case Study of the Impacts of Organizational Factors on Software Quality</h2>
-    <p>September 4, 2020</p>
-  </header>
-  <p>創立40年以上の電気通信系企業における内製システムのリプレースプロジェクトを観察し、コードに悪影響をおよぼす10の組織的な要因をまとめた。
-表題には、&rdquo;Good Developers&rdquo;とあるが、開発者のスキルの高さは議論されていない。
-列挙された要因は、包括的ではなく、また、あくまでコードの品質を悪化させるものであり、プロジェクトの失敗に直結するわけではない。</p>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
 
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Why Good Developers Write Bad Code: An Observational Case Study of the Impacts of Organizational Factors on Software Quality</h1>
+    <span class="date">September 4, 2020</span>
+    <div>
+        <p>創立40年以上の電気通信系企業における内製システムのリプレースプロジェクトを観察し、コードに悪影響をおよぼす10の組織的な要因をまとめた。
+表題には、&ldquo;Good Developers&quot;とあるが、開発者のスキルの高さは議論されていない。
+列挙された要因は、包括的ではなく、また、あくまでコードの品質を悪化させるものであり、プロジェクトの失敗に直結するわけではない。</p>
 <p>リプレース対象は、COBOLで書かれたレガシーシステム、Web UIからなり、 モバイル機器や複数のデータベースと通信する。
 2010から2012年にかけて同システムのリプレースが試みられたが、システム結合フェーズでプロジェクトが失敗した。
 観察である今回の案件は、2013年から2014年12月にかけて実施され、この失敗したプロジェクトの資料を再利用している。
 プロジェクトはウォーターフォールモデルですすめられた。</p>
-
 <p>著者らは、隔週のミーティングに参加し、議論には加わらない非参加観察法でコードに悪影響を要因を調べた。
 参加必須のメンバーは、フルタイムでプロジェクトに関わる8人の開発者と彼らを管理するプロダクトマネージャ1人である。
 会議では、メンバーが順番に先週の進捗と技術的ないし管理上を報告する。
 1回あたりの会議の時間は1時間である。
 議題によっては、テスターやデータベースの管理者などのプロジェクト関係者が最大で15人参加し、電話会議を通して最大で5人の利害関係者が参加した。</p>
-
 <p>著者らがまとめた要因は次の表のとおり。</p>
-
-<p><img src="/why_good_developers_write_bad_code.png" alt="results" /></p>
-
-<hr />
-
+<p><img src="/why_good_developers_write_bad_code.png" alt="results"></p>
+<hr>
 <ul>
 <li>論文を<a href="Why_good_developers_write_bad_code">こちら</a>からダウンロードできます。</li>
 <li>画像はすべて論文から引用されています。</li>
 </ul>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/a_comparative_study_of_programming_languages_in_rosetta_code/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/beyond_accuracy/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

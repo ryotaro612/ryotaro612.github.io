@@ -1,47 +1,45 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
-    </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ Playing Atari with Deep Reinforcement Learning</h2>
-    <p>February 9, 2020</p>
-  </header>
-  <h3 id="概要">概要</h3>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
 
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>論文メモ Playing Atari with Deep Reinforcement Learning</h1>
+    <span class="date">February 9, 2020</span>
+    <div>
+        <h3 id="概要">概要</h3>
 <p>深層強化学習をAtari2600の7つのゲームに応用し、うち6つについて先行手法の性能を超えたDeep Q-Networks(DQN)を提案した論文である。
 ピクセルデータを直接入力として与え、深層学習で方策を学習する手法としては初めて提案された。</p>
-
 <h3 id="アルゴリズム">アルゴリズム</h3>
-
 <p>DQNは、Q関数の関数近似噐に畳み込みニューラルネットワーク(CNN)を使う適合Q反復法である。
 環境\(\epsilon\)を推定しないモデルフリー型で、環境の相互作用から得た大量のデータから方策を学習するバッチ学習に分類される。
 確率的勾配降下法によりモデルの重みを更新する。
@@ -49,43 +47,52 @@
 そこで、経験データを一様に乱択する経験再生で選ばれた経験データで重みを更新する。
 DQNのアルゴリズムを以下に示す。方策モデルには、\(\epsilon\)貪欲方策が採用されている。
 ただし、\(x_i\)は画面のイメージ、CNNに入力するために可変長の履歴データを固定長に変換する関数を\(\phi\)とする。
-<img src="/playing_atari_with_deep_reinforcement_learning/algorithm.png" alt="algorithm" />
+<img src="/playing_atari_with_deep_reinforcement_learning/algorithm.png" alt="algorithm">
 図の方程式3は、ベルマン方程式のQ関数を重みを\(\theta\)とする関数近似噐\(Q(s,a;\theta_i)\)で近似したときの損失関数\(L_i(\theta_i)\)を
 $$
 L_i(\theta_i)=\mathbb{E}_{s,a\sim \rho (\cdot) }\big[(y_i - Q(s,a;\theta_i))^2\big]
 $$
 としたときの勾配\(\nabla_{\theta_i}L_i(\theta_i)\)
 $$
-\nabla_{\theta_i}L_i(\theta_i) = \mathbb{E}_{s,a\sim \rho(\cdot);s&rsquo;\sim\epsilon}[\left(r+\gamma\max_{a&rsquo;}Q(s&rsquo;, a&rsquo;;\theta_{i-1})-Q(s,a;\theta_i)\right)\nabla_{\theta}Q(s,a;\theta_i)]
+\nabla_{\theta_i}L_i(\theta_i) = \mathbb{E}_{s,a\sim \rho(\cdot);s'\sim\epsilon}[\left(r+\gamma\max_{a'}Q(s', a';\theta_{i-1})-Q(s,a;\theta_i)\right)\nabla_{\theta}Q(s,a;\theta_i)]
 $$
 である。\(\rho(s, a)\)は状態\(s\)と行動\(a\)の確率分布である。</p>
-
-<hr />
-
+<hr>
 <ul>
 <li>論文を<a href="https://www.cs.toronto.edu/~vmnih/docs/dqn.pdf">こちら</a>からダウンロードできます。</li>
 <li>画像はすべて論文から引用されています。</li>
 </ul>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/context2vec/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/unsupervised_pretraining_for_sequence_to_sequence_learning/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

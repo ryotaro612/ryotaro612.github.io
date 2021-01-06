@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+    <link rel="stylesheet" href="/css/articles.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Posts</h1>
+
+    
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/classification_in_the_presence_of_label_noise/">論文メモ Classification in the Presence of Label Noise: a Survey</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>ノイズのある教師データによるクラス分類の<a href="https://romisatriawahono.net/lecture/rm/survey/machine%20learning/Frenay%20-%20Classification%20in%20the%20Presence%20of%20Label%20Noise%20-%202014.pdf">サーベイ論文</a>である。発表時期は、<a href="https://ieeexplore.ieee.org/document/6685834">2013年の12月</a>である。
+主な内容は、ノイズの分類、ノイズが分類に及ぼす影響、ノイズへの対策である。</p></div>
+        <div class="article-footer">
+            <span class="date">December 30, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/distributed_representations_of_sentences_and_documents/">論文メモ Distributed Representations of Sentences and Documents</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p><a href="https://radimrehurek.com/gensim/models/doc2vec.html">Doc2Vec</a>のアルゴリズムとして採用されたニューラル言語モデルParagraph Vectorを提案した論文である。
+bag of wordsは、文書の単語順を記憶せず、また、似た意味の単語ベクトルと無関係なベクトルを単語にわりあてる。
+Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文脈の中心の単語をあてられるように学習することで、可変長文字列から固定長の文書埋め込みベクトルを生成できるようになる。
+これにより、単語順と単語の意味を記憶したベクトルの生成を実現する。</p></div>
+        <div class="article-footer">
+            <span class="date">December 28, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/glove_vectors_for_word_representation/">論文メモ GloVe: Global Vectors for Word Representation</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p><a href="https://www.aclweb.org/anthology/D14-1162.pdf">GloVe</a>は,コーパスに出現する単語の共起回数を学習するニューラル言語モデルである。
+既存手法を単語の出現頻度の統計値つかう手法と対数双線形モデルに分類し、両者の長所を備え短所を補う手法として、GloVeを提案する。</p></div>
+        <div class="article-footer">
+            <span class="date">December 21, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/bert/">論文メモ BERT: Pre-training of Deep Bidirectional Transformers for Lnaguages Understaing</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>BERTは<a href="https://arxiv.org/pdf/1706.03762.pdf">Attention Is All You Need</a>にあるTransformerをアーキテクチャに導入した分散表現のモデルであり、本稿は、事前学習済みのBERTにファインチューニングを適用しQAタスクや自然言語推論のベンチマークにおいて既存研究を上回る結果を示している。
+なお、アーキテクチャに関する説明は少なく、子細に知りたい場合は<a href="https://arxiv.org/pdf/1706.03762.pdf">Attention Is All You Need</a>や<a href="http://nlp.seas.harvard.edu/2018/04/03/attention.html">The Annotated Transformer</a>を参照するように案内されている。</p></div>
+        <div class="article-footer">
+            <span class="date">December 14, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/150_successfuly_machine_learning_modes/">論文メモ 150 Successful Machine Learning Models: 6 Lessons Learned at Booking.com</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>宿泊予約サービス<a href="http://booking.com/">Booking.com</a>におけるモデルの開発運用でえられた教訓を6つにまとめたKDD2019の論文である。
+教訓の主眼を収益におき、6つの教訓を通して、実運用環境における仮説と実験を反復する重要性を強調する。</p></div>
+        <div class="article-footer">
+            <span class="date">December 14, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/ranking_relevance_in_yahoo_search/">論文メモ Ranking Relevance In Yahoo Search</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>Yahooの検索エンジンを解説するKDD16の論文である。
+論文におけるランキングの課題は、クエリと文書の語彙がことなること、ほとんどのクエリは滅多に入力されないこと、クエリの意味の解釈が難しいことである。
+これらの課題に対する手法として、ランキングのモデル、特徴のつくりかた、クエリを文書によせる翻訳モデルを解説する。</p></div>
+        <div class="article-footer">
+            <span class="date">December 7, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/a_dual_embedding_space_model_for_document_ranking/">論文メモ A Dual Embedding Space Model for Document Ranking</a></h3>
+        <div class="summary"><p>Dual Embedding Space Model(DESM)は、word2vecで単語埋め込みベクトルにしたクエリと文書のランキング関数である。
+実験における比較対象のBM25は、クエリの単語の文書での出現頻度をもとに順序をつける。
+DESMは、クエリの単語に関係する単語をもとに判断する。
+単語埋め込みベクトルの作りに特徴があり、入力側のone-hotベクトル表現にわりあてる単語埋め込みベクトルでクエリを、出力側でベクトルで文書を分散表現にする。
+実験から、DESMだけで順位づけをすると偽陽性が高くなるが、DESMとBM25の加重平均をとるとBM25よりも高いNDCG値になることが分かった。
+アルゴリズムを実装したライブラリへのリンクは<a href="https://github.com/nryotaro/desm">こちら</a>。</p></div>
+        <div class="article-footer">
+            <span class="date">November 30, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/on_calibration_of_modern_neural_networks/">論文メモ On Calibration of Modern Neural Networks</a></h3>
+        <div class="summary"><p>ネットワークの複雑化、バッチ正則化、重み減衰を使わない、負の対数尤度の過学習が汎化精度を上げるが、予測確率と精度のズレを大きくすることを実験的に示した。
+予測確率を補正する6つの手法を19種類のクラス分類のデータセットに適用した結果、
+最も補正できたものは、温度つきソフトマックスの出力を予測確率にする場合であった。</p></div>
+        <div class="article-footer">
+            <span class="date">November 23, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/trinary_projection_trees/">論文メモ Trinary-Projection Trees for Approximate Nerest Neighbor Search</a></h3>
+        <div class="summary"><p>Trinary-Projection Trees(TP trees)は、kd木のように、ユークリッド空間の分割を二分木で表現できるデータ構造である。
+超平面は1または-1の重みのついた少数の座標軸で定義される。
+これにより、探索時の分岐にかかる計算が、加算と減算だけからなる\(O(1)\)となる。
+また、射影されたデータの分散の大きい超平面を探し、同じ分割にある点同士の距離を小さくすることで、精度を向上させている。</p></div>
+        <div class="article-footer">
+            <span class="date">November 16, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/get_another_label/">論文メモ Get Another Label? Improving Data Quality and Data Mining Using Multiple, Noisy Labelers</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>ある確率でデータに誤ったラベルをふるlabelerでデータにラベルをふるときに、
+既にラベルのあるデータに重ねてラベルをふるべきか調査した。
+12種類のラベルつきデータセットを使い、
+正解ラベルを誤ったラベルに置換する割合や同一のデータのもつラベルの数を変化させ、モデルの精度の違いを観察した。
+加えて、ラベルをふるべきデータを推定する手法も提案している。</p></div>
+        <div class="article-footer">
+            <span class="date">November 9, 2019</span>
+        </div>
+    </article>
+    
+</main>
+
+    
+
+<ul class="pagination">
+    
+    <li>
+        <a href="/categories/"><span class="material-icons">first_page</span></a>
+    </li>
+    <li>
+        <a href="/categories/page/8/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/categories/page/10/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    <li>
+        <a href="/categories/page/13/"><span class="material-icons">last_page</span></a>
+    </li>
+    
+</ul>
+
+    <footer>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

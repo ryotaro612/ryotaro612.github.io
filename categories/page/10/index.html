@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+    <link rel="stylesheet" href="/css/articles.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Posts</h1>
+
+    
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/active_clean/">メモ ActiveClean: Interactive Data Cleaning For Statistical Modeling</a></h3>
+        <div class="summary"><p>ActiveCleanは、教師データの誤りを修正し、モデルの精度を改善する手法である。
+優先して修正すべきデータを推定し、データが修正されたら修正されたデータでモデルを学習する。
+この修正と学習を条件を満たすまでくりかえす。
+反復的な学習で大域的最適解をえられるモデルであれば、最適解への収束が保証される。
+データの修正件数が等しい場合に、先行研究と比べて最大2.5倍の精度改善を達成した。</p></div>
+        <div class="article-footer">
+            <span class="date">November 9, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/web_tables/">メモ WebTables: Exploring the Power of Tables on the Web</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>表題の論文は、Web上の表から抽出した大量の関係モデルを対象にした検索を提案・評価した
+。検索の他にも、一部の属性を入力とするスキーマの補完、入力した属性ないしスキーマに類似のものを推定するアルゴリズムの議論もある。
+ここのスキーマは属性のリストである。論文の著者らは研究時にGoogleに在籍しており、論文で使われたコーパスはグーグルの汎用ウェブクローラで集めた141億のHTMLの表から抽出した高精度な154百万の関係モデルである。
+コーパスに使うものはHTML形式の表から抽出した関係モデルのみである。
+手法の新規性は、1億以上もの大量のテーブルを対象にしていることにある。</p></div>
+        <div class="article-footer">
+            <span class="date">October 31, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/a_survey_on_data_collection_for_machine_learning/">メモ A Survey on Data Collection for Machine Learning</a></h3>
+        <div class="summary"><p>表題の論文は、文字通り、機械学習に使う教師データに関するサーベイ論文であり、
+機械学習や自然言語処理などのデータの応用分野だけでなく、データの管理にまつわる分野の調査も含まれているところに特徴がある。
+データの管理に着目している理由は、深層学習の発展によって必要な教師データが増えたことで、データの管理の課題が顕在化してきたことである。</p></div>
+        <div class="article-footer">
+            <span class="date">October 26, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/structure_estimation_for_dscrete_graphical_models/">メモ Structure estimation for discrete graphical models: Generalized covariance matrices and their inverses</a></h3>
+        <div class="summary"><p>表題の論文は、マルコフ確率場をなす無向グラフとグラフの構造を反映した逆共分散行列の間の対応関係を証明し、
+観測した確率変数の値からグラフの構造を復元する実験を通じて、対応関係を確認した。
+この手法は<a href="https://arxiv.org/pdf/1810.02840.pdf">Snorkel</a>というWeak supervisionの手法において、
+正解データのない環境で、ノイズつきの教師データを生成する異なるソース間の相関関係を推定するために応用された。</p></div>
+        <div class="article-footer">
+            <span class="date">October 19, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/feature_selection_for_text_categorization_on_imbalance_data/">メモ Feature Selection for Text Categorization on Imbalanced Data</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>表題の論文は、特徴選択において、正例に顕著な特徴から選ぶ割合を明示的に決めることで、正例と負例それぞれに顕著な特徴の割合を調整することが、不均衡な文書分類における予測性能の向上に役立つことを示した。
+情報利得やオッズ比など単変量統計にもとづく特徴選択において、統計量の値によって暗黙的に決められた割合と異なる割合の場合の方が予測性能が高いことを実験的に示した。</p></div>
+        <div class="article-footer">
+            <span class="date">October 12, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/snorkel_drybell_case_study/">メモ Snorkel DryBell: A Case Study in Deploying Weak Supervision at Industrial Scale</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>表題の論文では、<a href="https://www.snorkel.org">Snorkel</a>というWeak Supervisionの手法をGoogleで適用した結果の考察と評価がなされている。
+Weak Supervisionは、人手よりも効率良くノイズ交じりの教師データを生成する手法である。
+Snorkelは、引数にサンプルを返り値にラベルを返す複数の関数をラベルなしデータに適用し、結果から関数の精度を予測し、個々の関数よりも高い精度でデータにラベルを与える。この関数をラベリング関数という。Snorkel DryBellは、Snorkelのアルゴリズムをスケールさせるために、MapReduceに適用できるように修正されたものをさす。</p></div>
+        <div class="article-footer">
+            <span class="date">October 5, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/training_complex_models_with_multi_task_weak_supervision/">メモ Training Complex Models with Multi-Task Weak Supervision</a></h3>
+        <div class="summary"><p>論文の表題は、ソース間の粒度や精度が揃っていることを前提とせず、<a href="https://arxiv.org/pdf/1212.0478.pdf">LohとWainwrightらの手法</a>でソースの精度を推定し、ソースのラベルよりも精度が高いラベルをデータに与えるWeak supervsionの手法である。</p></div>
+        <div class="article-footer">
+            <span class="date">September 28, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/snorkel_rapid_training_data_creation_with_weak_supervision/">メモ Snorkel: Rapid Traning Data Creation with Weak Supervision</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>表題の論文は、Weak supervisionの一種であるSnorkelを学習データの収集効率と予測性能についての既存手法や教師あり学習と比べた評価をまとめてる。</p></div>
+        <div class="article-footer">
+            <span class="date">September 21, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/software_engineering_for_machine_learning/">メモ Software Engineerng for Machine Learning: A Case Study</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>表題の論文は、マイクロソフトでのAIを応用したアプリケーションの開発についての調査結果をまとている。
+著者らは、9人中の8名がMicrosoft Researchに所属し、本論文で2019年のICSEのSoftware Engineering in Practiceの分野でBest Paper Awardを受賞した。
+主な貢献は、各チームにおける開発フローを9のステージに分けて解説したこと、機械学習を応用するアプリケーションやプラットフォームの開発におけるベストプラクティスを示したこと、機械学習を応用するアプリケーションの開発に固有の課題にまつわる論考の3つである。</p></div>
+        <div class="article-footer">
+            <span class="date">September 14, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/class_imbalance_redux/">メモ Class Imbalance, Redux</a></h3>
+        <div class="summary"><p>表題の論文は、不均衡データの特徴が二値分類の予測性能に及ぼす影響を理論づける論文である。
+理論と実験を通じて、多くのケースにおいて、アンダーサンプリングによる均衡データのバギングで予測性能があがったことを示している。
+バギングは、アンダーサンプリングによる偏りを抑えて予測性能を安定させるために使われる。
+論文で扱うモデルは、SVMなどの学習で経験損失を最小化するモデルに限定されている。発表学会は2011年のICDMである。</p></div>
+        <div class="article-footer">
+            <span class="date">September 7, 2019</span>
+        </div>
+    </article>
+    
+</main>
+
+    
+
+<ul class="pagination">
+    
+    <li>
+        <a href="/categories/"><span class="material-icons">first_page</span></a>
+    </li>
+    <li>
+        <a href="/categories/page/9/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/categories/page/11/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    <li>
+        <a href="/categories/page/13/"><span class="material-icons">last_page</span></a>
+    </li>
+    
+</ul>
+
+    <footer>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

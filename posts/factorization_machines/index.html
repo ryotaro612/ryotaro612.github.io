@@ -1,58 +1,55 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ Factorization Machines</h2>
-    <p>July 31, 2020</p>
-  </header>
-  <p>Factorization Machineは、Matrix factorizationのようなFactorization modelとSVMの両方の利点をもつ。
+    
+<main>
+    <h1>論文メモ Factorization Machines</h1>
+    <span class="date">July 31, 2020</span>
+    <div>
+        <p>Factorization Machineは、Matrix factorizationのようなFactorization modelとSVMの両方の利点をもつ。
 Matrix modelには疎な特徴を入力することができるが、予測のモデルに使うには汎用性に欠ける。
 一方、SVMは、汎用的であるが、推薦システムで使われるような疎な特徴を扱うことができない。
 Factorizatiom Machineは、両者の利点をそなえており、疎な任意の実数を要素にもつ特徴ベクトルを扱うことができる。
 また、予測の計算量が線形であり、必要なパラメタの数も線形であるため、SVMのサポートベクタのように訓練データをモデルに持たせる必要がない。
 そのために、大量の訓練データを使う学習も可能となる。</p>
-
 <p>\(\boldsymbol{\mathrm{x}}\)を特徴とすると、2元(degree\(d=2\))のFactorization Machineは次の式をとる。
 $$
 \hat{y}(\boldsymbol{\mathrm{x}}):= w_0 \sum^n_{i=1}w_ix_i+\sum^n_{i=1}\sum^n_{j=i+1}\langle\mathcal{\mathrm{\boldsymbol{v}}}_i, \mathcal{\mathrm{\boldsymbol{v}}}_j\rangle x_ix_j
 $$</p>
-
 <p>\(w_0 \in \mathbb{R}, \boldsymbol{\mathrm{w}} \in \mathbb{R}^n, \boldsymbol{\mathrm{V}}\in \mathbb{R}^{n\times k}\)はパラメタであり、\(\langle \cdot , \cdot \rangle\)はサイズ\(k\)のドット積を示す。</p>
-
 <p>$$
 \langle \mathcal{\boldsymbol{\mathrm{v}}}_i,\boldsymbol{\mathcal{\mathrm{v}}}_j \rangle :=\sum^k_{f=1}v_{i,f}\cdot v_{j, f}
 $$</p>
-
 <p>\(k\)はハイパーパラメタであり、値が多いほど複雑なデータを学習できるが、過学習におちいりやすくなる。
 \(\mathcal{\boldsymbol{\mathrm{v}}}_i\)は\(k\)個のfactorからなる\(i\)番目の変数を示す。
 \(w_0\)はバイアス項であり、\(w_i\)は\(i\)番目の変数のはたらきの強さを示す。
@@ -63,41 +60,49 @@ $$
 \sum^n_{i=1}\sum^n_{j=i+1}\langle \mathcal{\boldsymbol{\mathrm{v}}}_i,\mathcal{\boldsymbol{\mathrm{v}}}_j\rangle x_ix_j
 =\frac{1}{2}\sum^k_{f=1}\left({\left(\sum^n_{i=1}v_{i,f}x_i\right)}^2-\sum^n_{i=1}v^2_{i,f}x^2_i\right)
 $$</p>
-
 <p>計算量が線形であるため、勾配降下法でパラメタを学習できる。
 勾配は、\(w\)や\(v\)ごとに次の値をとる。
 $$
 \frac{\partial }{\partial \theta}\hat{y}(\mathcal{\mathrm{x}})=
 \begin{cases}
-1,&amp;\text{if}\ \theta = w_0\\<br />
-x_i,&amp;\text{if}\ \theta =w_i\\<br />
+1,&amp;\text{if}\ \theta = w_0\\<br>
+x_i,&amp;\text{if}\ \theta =w_i\\<br>
 x_i\sum^n_{j=1}v_{j,f}x_j-v_{i,f}x^2_i&amp;\text{if}\ \theta=v_{i,f}
 \end{cases}
 $$</p>
-
-<hr />
-
+<hr>
 <p>論文は<a href="https://www.csie.ntu.edu.tw/~b97053/paper/Rendle2010FM.pdf">こちら</a>からダウンロードできます。</p>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/exploration_of_technical_debt_in_start_ups/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/a_tale_from_the_trenches/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

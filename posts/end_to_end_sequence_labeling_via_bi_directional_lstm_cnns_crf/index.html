@@ -1,98 +1,98 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ End-to-end Sequence Labeling via Bi-directional LSTM-CNNs-CRF</h2>
-    <p>October 16, 2020</p>
-  </header>
-  <p>タスク固有の特徴を使わないEnd to Endの系列ラベリングのためのネットワークアーキテクチャを発表した。
+    
+<main>
+    <h1>論文メモ End-to-end Sequence Labeling via Bi-directional LSTM-CNNs-CRF</h1>
+    <span class="date">October 16, 2020</span>
+    <div>
+        <p>タスク固有の特徴を使わないEnd to Endの系列ラベリングのためのネットワークアーキテクチャを発表した。
 実験では、Penn Treebank WSJの品詞タグ付けで97.55%のaccuracy, CoNLL 2003の固有表現抽出で91.21%のF1値を発揮し、発表当時の先行研究を上まわる性能を示した。</p>
-
 <h3 id="アーキテクチャ">アーキテクチャ</h3>
-
 <p>アーキテクチャは、文字と単語をそれぞれ単位とする2種の分散表現を連結したベクトルを双方向LSTMにあたえ、LSTMの出力をさらにCRFに渡す。
 文字単位の分散表現はCNNで生成される。
 単語については、実験では、GloVeやWord2Vecが採用された。
 下図は、アーキテクチャの全体像をしめす。</p>
-
-<p><img src="/end_to_end_sequence_labeling_via_bi_directional_lstm_cnns_crf/arch.png" alt="arch" /></p>
-
+<p><img src="/end_to_end_sequence_labeling_via_bi_directional_lstm_cnns_crf/arch.png" alt="arch"></p>
 <h3 id="crf">CRF</h3>
-
 <p>双方向LSTMからの入力を\(\boldsymbol{\mathrm{z}}=\{\boldsymbol{\mathrm{z}}_1,\cdots ,\boldsymbol{\mathrm{z}}_n\}\), \(i\)番目の単語のラベルを\(y_i\)とする正解の系列を\(\boldsymbol{\mathrm{y}}=\{y_1,\cdots ,y_n\}\), \(\boldsymbol{\mathrm{z}}\)がとりえるラベルの系列の集合を\(\mathcal{Y}(\boldsymbol{\mathrm{z}})\)とすると、CRFは、次の条件付き確率分布で\(p(\boldsymbol{y}\mid\boldsymbol{\mathrm{z}};\boldsymbol{\mathrm{W}},\boldsymbol{\mathrm{b}})\)で系列を推定する。
-ただし、\(\psi_i(y&rsquo;,y,\boldsymbol{\mathrm{z}})=\exp (\boldsymbol{\mathrm{W}}^T_{y&rsquo;,y}\boldsymbol{\mathrm{z}}_i+\boldsymbol{\mathrm{b}}_{y&rsquo;,y})\)であり、\(\mathrm{\boldsymbol{W}}^T_{y&rsquo;,y}\)と\(\boldsymbol{\mathrm{b}}_{y&rsquo;,y}\)は\((y&rsquo;,y)\)に対応する重みとバイアスである。</p>
-
+ただし、\(\psi_i(y',y,\boldsymbol{\mathrm{z}})=\exp (\boldsymbol{\mathrm{W}}^T_{y',y}\boldsymbol{\mathrm{z}}_i+\boldsymbol{\mathrm{b}}_{y',y})\)であり、\(\mathrm{\boldsymbol{W}}^T_{y',y}\)と\(\boldsymbol{\mathrm{b}}_{y',y}\)は\((y',y)\)に対応する重みとバイアスである。</p>
 <p>$$
-p(\boldsymbol{y}\mid \boldsymbol{\mathrm{z}};\boldsymbol{\mathrm{W}},\boldsymbol{\mathrm{b}})=\frac{\prod^n_{i=1}\psi_i(y_{i-1},y_i,\boldsymbol{\mathrm{z}})}{\sum_{y&rsquo;\in\mathcal{Y}(\boldsymbol{\mathrm{z}})}\psi_i(y&rsquo;_{i-1},y&rsquo;_i,\mathrm{\boldsymbol{z}})}
+p(\boldsymbol{y}\mid \boldsymbol{\mathrm{z}};\boldsymbol{\mathrm{W}},\boldsymbol{\mathrm{b}})=\frac{\prod^n_{i=1}\psi_i(y_{i-1},y_i,\boldsymbol{\mathrm{z}})}{\sum_{y'\in\mathcal{Y}(\boldsymbol{\mathrm{z}})}\psi_i(y'_{i-1},y'_i,\mathrm{\boldsymbol{z}})}
 $$</p>
-
 <p>\(\{(\mathrm{\boldsymbol{z}}_i, \boldsymbol{\mathrm{y}}_i)\}\)を教師データとする学習では、次の尤度を最大化するパラメタ\(\mathrm{\boldsymbol{W}}, \mathrm{\boldsymbol{b}}\)を求める。</p>
-
 <p>$$
 \mathcal{\mathrm{L}}(\boldsymbol{\mathrm{W}},\boldsymbol{\mathrm{b}})=\sum_i\log p(\boldsymbol{y}\mid \boldsymbol{\mathrm{z}};\boldsymbol{\mathrm{W}},\boldsymbol{\mathrm{b}})
 $$</p>
-
 <p>以上のように学習したCRFは、\(\mathrm{\boldsymbol{z}}\)があたえられたとき、次の\(y^*\)をラベル系列として推定する。</p>
-
 <p>$$
 \boldsymbol{y}^* = \underset{y\in\mathcal{Y}(\boldsymbol{\mathrm{z}})}{\operatorname{argmax}} p(\boldsymbol{y}\mid \boldsymbol{\mathrm{z}};\boldsymbol{\mathrm{W}},\boldsymbol{\mathrm{b}})
 $$</p>
-
-<hr />
-
+<hr>
 <ul>
 <li>論文は<a href="https://www.aclweb.org/anthology/P16-1101/">こちら</a>からダウンロードできます。</li>
 </ul>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/becoming_agile/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/from_diversity_by_numbers_to_diversity_as_process/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

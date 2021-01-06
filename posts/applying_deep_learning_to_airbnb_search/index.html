@@ -1,101 +1,109 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
-    </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>Applying Deep Learning To Airbnb Search</h2>
-    <p>August 31, 2018</p>
-  </header>
-  <h3 id="概要">概要</h3>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
 
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Applying Deep Learning To Airbnb Search</h1>
+    <span class="date">August 31, 2018</span>
+    <div>
+        <h3 id="概要">概要</h3>
 <p>論文では、Airbnbが深層学習を宿泊先検索に適用した時の試行錯誤と結果を紹介している。
 採用したモデルのアルゴリズムと特徴量エンジニアリングの説明が本稿の大部分を占める。
 深層学習を試す以前はGBDTを採用おり、以下の順にアルゴリズムを変えていった。
 当初は、アルゴリズムを段階的に高度にしていくつもりはなく、1.以前には複雑なアルゴリズムをいきなり試したが、失敗に終わっている。</p>
-
 <ol>
-<li>隠れ層が1層のニューラルネットワーク
-
+<li>隠れ層が1層のニューラルネットワーク</li>
+</ol>
 <ul>
 <li>入力と学習するターゲットはGBDTと同様。</li>
-</ul></li>
-<li>Lambdarank + ニューラルネットワーク
-
+</ul>
+<ol start="2">
+<li>Lambdarank + ニューラルネットワーク</li>
+</ol>
 <ul>
 <li>Lambdarankを採用した理由は、Lambdarankを組み合わせれば、オフラインにおけるモデル評価指標に使われているNDCGの値で最適化することができるから。なお、オンラインでの評価にはA/Bテストが使われている。</li>
-</ul></li>
-<li>GBDT/ Factorization Machine + ニューラルネットワーク
-
+</ul>
+<ol start="3">
+<li>GBDT/ Factorization Machine + ニューラルネットワーク</li>
+</ol>
 <ul>
 <li>GBDTやFactorization Machineの出力を他の特徴量と共にニューラルネットワークに与える。</li>
 <li>オフラインでの評価では2に匹敵するようであったが、オンラインでは期待した検索結果が出てなかったため、実際には運用されなかった様子。</li>
-</ul></li>
-<li>2層の隠れ層からなるニューラルネットワーク
-
+</ul>
+<ol start="4">
+<li>2層の隠れ層からなるニューラルネットワーク</li>
+</ol>
 <ul>
 <li>この時点でオンラインで運用されているモデルのアーキテクチャが非常に複雑になっていた。</li>
 <li>教師データを10倍に増やし、隠れ層を2層にすることで、入力となる特徴量を複雑な計算なしに与えることができるようになった。</li>
 <li>特徴量には、2つの異なるモデルからの出力を使うものの、それ以外については、価格、アメニティ、過去の予約数などの単純な特徴量が使われている。</li>
-</ul></li>
-</ol>
-
+</ul>
 <h3 id="感想">感想</h3>
-
 <p>本稿を読んだ動機は、検索アルゴリズムの技術調査のため。
 うまく行かなかったアルゴリズムも紹介されており、アルゴリズムを提案評価する形式の論文にはない面白さがあった。</p>
-
-<hr />
-
+<hr>
 <p>論文は<a href="https://arxiv.org/pdf/1810.09591.pdf">こちら</a>からダウンロードできます。</p>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/the_relationship_between_precision_recall_and_roc_curve/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/metapath2vec/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

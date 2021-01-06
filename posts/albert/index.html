@@ -1,95 +1,99 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>論文メモ ALBERT: A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS</h2>
-    <p>April 25, 2020</p>
-  </header>
-  <p>BERTのパラメタ数を削減し、学習時間の短縮と正則化による予測性能の向上を両立したモデルALBERTを提案し、GLUE, RACE, SQuADでSoTAを実現した。
+    
+<main>
+    <h1>論文メモ ALBERT: A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS</h1>
+    <span class="date">April 25, 2020</span>
+    <div>
+        <p>BERTのパラメタ数を削減し、学習時間の短縮と正則化による予測性能の向上を両立したモデルALBERTを提案し、GLUE, RACE, SQuADでSoTAを実現した。
 BERT-largeと比べると、ALBERT-largeのパラメタ数は約5.3%の18Mであり、学習時間は1.7倍速い。
 パラメタを削減するために、単語のOne-hotベクトルをあたえられる単語埋め込み行列の次元を減らし、隠れ層の順伝播ネットワークや注意機構のパラメタを層の間で共有した。
 また、Next Sentence Prediction(NSP)による学習を、与えられた2文の前後関係を判定する学習Sentence Order Prediction(SOP)におきかえ、主タスクの予測性能を向上をはかった。</p>
-
 <h3 id="単語埋め込み行列の次元削減">単語埋め込み行列の次元削減</h3>
-
 <p>BERTでは、単語の埋め込み行列は文脈に依存しない分散表現を示し、隠れ層は文脈依存の分散表現を示す。
 両者の次元数は等しい。
 自然言語処理において、入力文の語彙数\(V\)は大きく、実験では30000におよぶ。
 そのため、One-hotベクトルの次元数が大きくなり、それにより埋め込み行列の次元数\(E\)が増え、結果として隠れ層の次元数\(H\)も大きくなる。
 一方、<a href="https://arxiv.org/pdf/1907.11692.pdf">Liuら</a>の実験から、隠れ層のほうが単語の埋め込み行列よりも予測性能に寄与することがわかっている。
 そこで、ALBERTでは、単語埋め込み行列の次元を減らし、\(H&gt; &gt; E\)とすることで、予測性能を維持しながらパラメタを削減をはかっている。</p>
-
 <h3 id="重み共有">重み共有</h3>
-
 <p>隠れ層にある層間でパラメタを共有し、パラメタ数を削減している。
 以下の図は、BERTとALBERTについて、層の出力の距離をL2ノルムやコサイン類似度で比較した結果を示す。
 パラメタを共有することで、BERTよりも層の出力を安定できていることがみてとれる。
-<img src="/albert_1.png" alt="albert" /></p>
-
-<h3 id="sentence-order-prediction-sop">Sentence order Prediction(SOP)</h3>
-
+<img src="/albert_1.png" alt="albert"></p>
+<h3 id="sentence-order-predictionsop">Sentence order Prediction(SOP)</h3>
 <p>パラメタの削減のほかに、主タスクでの性能向上のための改良も加えられている。
 BERTでは、事前学習において、next sentence prediction(NSP)をもちいる。
 これは、2文があたえられ、元の文書において隣接しているか、それぞれ別の文書にあったものかを判定する学習である。
 <a href="https://arxiv.org/abs/1904.00962">Yangら</a>の研究から、NSPの主タスクへの効果は疑しいみなされている。
 ALBERTでは、かわりに、与えられた2文の前後関係を判定する学習、Sentence Order Prediction(SOP)を採用している。</p>
-
-<hr />
-
+<hr>
 <ul>
 <li>論文は<a href="https://arxiv.org/pdf/1909.11942.pdf">こちら</a>からダウンロードできます。</li>
 <li>画像は論文から引用されています。</li>
 </ul>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/random_walks_in_recommender_systems/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/learning_joint_multilingual_sentence_representations_with_neural_machine_translation/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

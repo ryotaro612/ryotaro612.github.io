@@ -1,88 +1,91 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-155190626-1');
-    </script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"></link>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"></link>
-    <link href="https://fonts.googleapis.com/css?family=Lato|M+PLUS+1p|M+PLUS+Rounded+1c|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/base.css"></link>
+    <link rel="stylesheet" href="/css/base.css">
     
-  <link rel="stylesheet" type="text/css" href="/css/single.css"></link>
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  <body class="container">
-    <header>
-      <h1><a href="/">Coda</a></h1>
-      <nav>
-	<ul>
-	  <li><a href="/posts/">Posts</a></li>
-	  <li><a href="/about/">About</a></li>
-	</ul>
-      </nav>
-    </header>
-    <main>
-      
-<article>
-  <header>
-    <h2>メモ End-to-end Neural Entity Linking</h2>
-    <p>November 2, 2018</p>
-  </header>
-  <h3 id="背景">背景</h3>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
 
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>メモ End-to-end Neural Entity Linking</h1>
+    <span class="date">November 2, 2018</span>
+    <div>
+        <h3 id="背景">背景</h3>
 <p>本稿は、End to EndなEntity Linkingモデルのアーキテクチャを提案し、予測性能の評価実験で有用性を評価した。
 実験のデータセットには、Entity annotationの評価に使える様々なデータセットを集めた<a href="https://github.com/dice-group/gerbil/wiki">Gerbil Platform</a>が使われている。そのうちの<a href="https://natural-language-understanding.fandom.com/wiki/AIDA-CoNLL">AIDA/CoNLL</a>データセットにおいて、提案手法は既存手法を超える予測性能を発揮した。</p>
-
 <p>表題にあるEnd to Endは、固有表現抽出(Mention Detection, MD)とエンティティの曖昧性解消(Entity Disambiguation, ED)の両方を実現するアーキテクチャを提案していることに由来する。例えば以前紹介した<a href="https://arxiv.org/abs/1802.01021">DeepType</a>のように、Entity Linkingにおける研究には、MDとEDの一方のみに焦点を絞ったものが多い。これに対して、本稿は、MDで抽出した情報がEDでの予測性能に役立ちうると主張し、MDとEDの両方を単一のアーキテクチャで対処する立場をとる。</p>
-
 <h3 id="貢献">貢献</h3>
-
 <ul>
 <li>End to Endなモデルを構築したこと。教師データのテキストに対して必要な注釈は固有表現であること示すものだけがあればよいため、教師データの負担が少ない。</li>
 <li>ニューラルネットワークにより、共参照解析をのぞいて特徴量エンジニアリングが不要なこと</li>
 <li>実験で、教師データと訓練データが同じドメインのテキストである場合に特に予測性能を発揮できることを示した。両者が異なるドメインに属する場合、既存のNERシステムと組み合わせると予測性能が上がること示した。</li>
 </ul>
-
 <h3 id="アーキテクチャ">アーキテクチャ</h3>
-
 <p>提案されたアーキテクチャは、テキストを受け取り、文中の参照表現(Mention)とエンティティの組み合わせに対する確信度を出力する。
 以下の図は、本稿にあるアーキテクチャ図を示す。
 アルゴリズムの要諦は、テキストから参照表現の候補を抽出し、各参照表現の候補と各エンティティ間の文脈上の類似度を学習する点にある。
 類似度の学習は、図中のFFNN2が示すネットワークが行う。類似度の学習において文脈の情報を参照するために、FFNN2に与える参照表現の候補の分散表現(FFNN1の出力)に文脈の情報を含めている。文脈の情報を含んだ分散表現を作るために、Bidirectional LSTMが使われる。
 図中のyxは、エンティティの学習する分散表現を示す。アーキテクチャが出力する最終的なmentionとentity間のペアは、FFNN2が出力する参照表現の候補とエンティティの文における局所的な類似度をFFNN3によって互いに比較した結果となっている。</p>
-
-<p><img src="/end-to-end/arch.png" alt="end-to-end" /></p>
-
-<hr />
-
+<p><img src="/end-to-end/arch.png" alt="end-to-end"></p>
+<hr>
 <p>論文は<a href="https://aclweb.org/anthology/K18-1050">こちら</a>からダウンロードできます。</p>
-</article>
+    </div>
+</main>
 
-    </main>
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/deeptype/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/deep_joint_entity_disambiguation/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
     <footer>
-      <ul>
-       
-       <li>
-	 <a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a>
-       </li>
-       
-       
-       <li>
-	 <a href="https://www.linkedin.com/in/nakamura-ryotaro">
-	   <i class="fab fa-linkedin"></i>
-	 </a>
-       
-       </li>
-	<li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-      </ul>
-      <small>&copy; Nakamura, Ryotaro. All Rights Reserved.</small>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-  </body>
+</body>
+
 </html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+    <link rel="stylesheet" href="/css/articles.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Posts</h1>
+
+    
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/unsupervised_pretraining_for_sequence_to_sequence_learning/">論文メモ Unsupervised Pretraining for Sequence to Sequence Learning</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>事前学習とファインチューニングにより<a href="https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf">seq2seq</a>の汎化性能を改善する手法を提案した論文である。
+encoderの重みを学習済み言語モデルの重みで初期化する。
+decoderについても、encoderと別の言語モデルを用意し、その重みで初期化する。
+ただし、工夫のないファインチューニングをすると<a href="https://arxiv.org/pdf/1312.6211.pdf">破滅的忘却</a>が生じてしまう。
+そこで、ファインチューニングでは言語モデルとseq2seqの目的関数の両方を学習につかうことで、過学習をさけ、汎化性能を確保する。</p></div>
+        <div class="article-footer">
+            <span class="date">February 16, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/playing_atari_with_deep_reinforcement_learning/">論文メモ Playing Atari with Deep Reinforcement Learning</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>深層強化学習をAtari2600の7つのゲームに応用し、うち6つについて先行手法の性能を超えたDeep Q-Networks(DQN)を提案した論文である。
+ピクセルデータを直接入力として与え、深層学習で方策を学習する手法としては初めて提案された。</p></div>
+        <div class="article-footer">
+            <span class="date">February 9, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/context2vec/">論文メモ context2vec: Learning Generic Context Embedding with Bidirectional LSTM</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>文書の文脈の分散表現を獲得するニューラルネットワークのアーキテクチャ<em>context2vec</em>を提案、評価した論文である。
+アーキテクチャの基本構造は<a href="https://arxiv.org/pdf/1301.3781.pdf">CBOW</a>と同様で、周辺の単語から中心の単語を当てられるようにコーパスをもとにモデルを訓練する。
+CBOWとの違いは、文脈の算出方法にある。
+CBOWは、ウィンドウ内のベクトルの平均値で文脈の分散表現を求める。
+一方、<em>context2vec</em>では、双方向LSTMの出力をもとに算出する。</p>
+<!-- raw HTML omitted --></div>
+        <div class="article-footer">
+            <span class="date">February 2, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/neural_machine_translation_by_jointly_learning_to_align_and_translate/">論文メモ NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>Decoderに注意機構を採用したencoder-decoderモデルを提案した論文である。
+ICLR2015で発表された。
+論文の発表当時、encoder-decoderモデルによる翻訳の多くは、encoderが入力文を固定長ベクトルに変換し、固定長ベクトルから翻訳された文を出力していた。
+著者らは、固定長ベクトルへの変換が長い文の翻訳性能を下げていると考え、固定長ベクトルを注意機構におきかえたencoder-decoderモデルを提案する。
+モデルは、翻訳に加え、生成する単語と入力文の箇所の関係を学習する。
+推定時には、まず、次に生成する単語に関係する入力文の箇所を推定する。
+次に、推定された箇所と生成済の単語列をもとに、単語を生成する。
+特に長い文書の翻訳において、固定長ベクトルをつかうモデルよりも、提案手法が優れていることを実験的に示した。</p></div>
+        <div class="article-footer">
+            <span class="date">February 1, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/why_should_i_trust_you/">論文メモ &#34;Why Should I Trust You?&#34; Explaining the Predictions of Any Classifier</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>モデルの予測に説明をあたえる手法、Local Interpretable Model-agnostic Explanations (LIME)を提案する。
+モデルが回帰や分類器であれば、アルゴリズムによらずLIMEを適用できる。
+説明を与えたい事例近くにある事例を解釈可能なモデルに学習させ、解釈可能なモデルで予測を説明する。
+また、個別の予測ではなく、モデル自体をよく説明する事例を集める手法Submodullar Pick (SP)-LIMEを提案する。</p></div>
+        <div class="article-footer">
+            <span class="date">January 26, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/active_learning_for_ranking_through_expected_loss_optimization/">論文メモ Active Learning for Ranking through Expected Loss Optimization</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>Yahoo! Labsで開発されたランキングのための能動学習の論文である。
+提案手法は、Yahoo!検索エンジンでの<a href="https://www.kdd.org/kdd2016/papers/files/adf0361-yinA.pdf">採用実績</a>がある。
+手法は、Expected Loss Optimization(ELO)とよばれ、ベイズ決定則によって識別したときの損失の期待値が最大になるデータを選ぶ。
+ELOに用いる損失関数にDCGを採用したExpected DCG Loss Optimization(ELO-DCG)を提案し、実験で評価した。</p></div>
+        <div class="article-footer">
+            <span class="date">January 19, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/docker-cmake-clang/">AtCoderに提出したコードをテストするためのDockerイメージ</a></h3>
+        <div class="summary">AtCoderに提出したコードをテストするためのDockerイメージを実装した。 イメージのDockerfileはこちらにある。 AtCoderで提出したコードをgithubで管理していて、これをテストするために作った。</div>
+        <div class="article-footer">
+            <span class="date">January 14, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/unsupervised_models_for_named_entity_classification/">論文メモ Unsupervised Models for Named Entity Classification</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>1999年に発表された教師なしの固有表現抽出の手法である。
+発表時期が古いことに注意してほしい。
+2つの手法が提案されている。
+ひとつは、DL-CoTrainと呼ばれるルールベースの手法であり、教師なしデータに既存のルールを適用、適用結果から導出したルールを既存のルールに追加、をくりかえしてルールを増やす。
+もう一方は、AdaBoostを応用したCoBoostとよばれる手法である。
+ルールベースの手法のほうがCoBoostよりもよい実験結果であったので、前者のみを説明する。</p></div>
+        <div class="article-footer">
+            <span class="date">January 13, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/multilabel_classification_with_label_correlations_and_missing_labels/">論文メモ Multilabel Classification with Label Correlations and Missing Labels</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>ラベルの相関関係を学習し推論に利用するマルチラベルの線形モデルを提案した論文である。
+相関関係のあるラベル集合を相関関係のないラベル集合に変換し、ラベルごとに分けて学習する手法、Label transformationを応用する。
+分類器は、相関関係だけなく、学習データに与えられていないラベルを推定するように拡張できる。</p></div>
+        <div class="article-footer">
+            <span class="date">January 6, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/">論文メモ Learning Deep Structured Semantic Models for Web Search using Clickthrough Data</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>クエリと文書を同じ低次元の空間に射影する深層学習のモデルを提案した論文である。
+クエリと文書は、適合度合いが高いほど、近くに配置される。
+教師データは、クエリと文書の組からなる教師データである。
+実験では、商用検索エンジンから抽出した16510件のクエリと対応するWeサイトのタイトルがつかわれる。
+Web文書の大量の語彙をあつかうために、語彙の増加に対して次元数を抑えるbag-of-wordsの手法、word hasingも提案した。</p></div>
+        <div class="article-footer">
+            <span class="date">January 4, 2020</span>
+        </div>
+    </article>
+    
+</main>
+
+    
+
+<ul class="pagination">
+    
+    <li>
+        <a href="/categories/"><span class="material-icons">first_page</span></a>
+    </li>
+    <li>
+        <a href="/categories/page/7/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/categories/page/9/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    <li>
+        <a href="/categories/page/13/"><span class="material-icons">last_page</span></a>
+    </li>
+    
+</ul>
+
+    <footer>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
