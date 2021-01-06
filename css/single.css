@@ -3,6 +3,10 @@ main .highlight {
     scrollbar-width: thin;
 }
 
+main pre {
+    overflow-x: auto;
+}
+
 main p {
     margin: 2rem 0;
 }
