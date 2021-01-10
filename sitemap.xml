@@ -4,13 +4,18 @@
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2020-12-31T19:17:13+09:00</lastmod>
+    <lastmod>2021-01-06T16:02:37+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2020-12-31T19:17:13+09:00</lastmod>
+    <lastmod>2021-01-06T16:02:37+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/mvcc/</loc>
+    <lastmod>2021-01-06T16:02:37+09:00</lastmod>
   </url>
   
   <url>

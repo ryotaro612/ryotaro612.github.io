@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-155190626-1');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>論文メモ Multiversion Concurrency Control - Theory and Algorithms</h1>
+    <span class="date">January 6, 2021</span>
+    <div>
+        <p>データベースのトランザクション制御ultiversion Concurrency Control(MVCC, 多版型同時実行制御) 下のトランザクションが逐次実行と等価な結果になる条件を定義した。
+また、その定義を既存のMVCCのアルゴリズム3つに適用し、その正しさを確かめた。</p>
+<!-- raw HTML omitted -->
+<p>MVCCは、データを書き込むときに、もとのデータを上書きするのではなく、新しいバージョンを生成する。
+トランザクションは読み込むデータを複数のバージョンから選べるので、単一バージョンの実行制御よりも読み込みと書き込みの実行順序を柔軟に入れかえられる。</p>
+<p>一方、ユーザーは、データのバージョンが単一で、既存のデータがあれば書き込みが上書きになることを期待する。
+ところが、MVCC下で起こりえる実行系列のなかには、単一バージョンの実行制御ではありえないものがある。
+そのため、MVCC下のある実行系列が単一バージョンの実行制御でも起こえりる条件を求めなければならない。
+その上で、その実行系列が逐次実行と等価な結果になる条件も必要になる。</p>
+<p>まず、単一バージョンの並行制御における実行系列が逐次実行と等価になる条件を整理する。
+トランザクション\(T_i\)を1つ以上の読み込みか書き込みからなる半順序集合にとらえる。
+データ\(x\)への読み込みを\(r_1[x]\), 書き込みを\(w_1[x]\)であらわす。
+1つ以上のトランザクションの書き込み、読み込みの要素からなる半順序集合をログとよぶ。</p>
+<p>\(w_i[x]\)が\(r_j[x]\)に先行することを\(w_i[x]&lt;r_j[x]\)とあらわし、関係\(T_j \textit{ reads-x-from } T_i\)が\(w_i[x]&lt;r_j[x]\)かつ二つの操作の間に\(w_k[x]\)がないことを意味するとき、\(\{T_0, \dots T_n\}\)の2つのログが任意の\(i, j, x\)で\(T_j \textit{ reads-x-from } T_i\)が成立すれば、両者は等価とみなす。
+逐次実行のログは関係\(&lt;\)をみたすトランザクションの全順序集合になる。
+逐次実行のログと等価なログをserializableという。</p>
+<p>MVCC下のトランザクション\(T_i\)の書き込みで生成されるデータ\(x\)のバージョンを\(x_i\)とおく。
+このとき、単一バージョンの並行制御での関係\(T_j \textit{ reads-x-from } T_i\)は\(T_j\)が\(x_i\)を読み込むことであり、MVCCではこれを\(\textit{reads-from}\)と言いかえる。
+すると、2つのログが同じ\(\textit{reads-from}\)をもつとき、両者を等価とみなせる。</p>
+<p>MVCCのログのなかには単一バージョンの並行制御でおこりえないものがある。
+たとえば、次の逐次実行のログは単一バージョンではおこりえない。
+$$
+w_0[x_0]w_0[y_0]r_1[x_0]w_1[y_1]r_2[y_0]w_2[x_2]
+$$
+任意の\(i, j, x\)について\(T_j \textit{ reads-from } x_i\)であるとき\(i=j\)であるか\(T_i\)が任意のバージョンの\(x\)に書き込んだ\(T_j\)に先行する最後のトランザクションならば、MVCC下の逐次実行のログは単一バージョンの並行制御でも起こりえる実行結果をもたらす。
+このようなログをone-copy-serialとよぶ。
+そして、one-copy-serialと等価なログをone-copy serializableでといい、これが単一バージョンの並行実行でも起きえる逐次実行と等価な結果をもたらすログになる。</p>
+<p>トランザクションをノードとする有向非巡回グラフ(DAG)を描けるか調べることで、あるログがone-copy serializableであるかを確認できる。
+ログ\(L\)における\(k\neq i\)の各\(r_k[x_j]\)と\(w_[x_i]\)について、ある全順序関係 \(x_i&lt; &lt;x_j\) であるとき\(T_i\rightarrow T_j\)それ以外で\(T_j\rightarrow T_i\)を含むグラフを\(\text{MVSG}(L, &lt; &lt;)\)とする。
+このとき\(\text{MVSG}(L, &lt; &lt;)\)がDAGになる全順序関係\(&lt; &lt;\)があることが\(L\)がone-copy-serializableの条件になる。ただし、全順序関係は存在しないバージョンのデータを読み込む順序をつくってはならない。</p>
+<p>論文を<a href="https://sites.fas.harvard.edu/~cs265/papers/bernstein-1983.pdf">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/paxos_made_simple/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            <li><a href="https://github.com/nryotaro"><i class="fab fa-github"></i></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

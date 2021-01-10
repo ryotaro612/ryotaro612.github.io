@@ -6,7 +6,18 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 31 Dec 2020 19:17:13 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Jan 2021 16:02:37 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>論文メモ Multiversion Concurrency Control - Theory and Algorithms</title>
+      <link>https://nryotaro.dev/posts/mvcc/</link>
+      <pubDate>Wed, 06 Jan 2021 16:02:37 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/mvcc/</guid>
+      <description>&lt;p&gt;データベースのトランザクション制御ultiversion Concurrency Control(MVCC, 多版型同時実行制御) 下のトランザクションが逐次実行と等価な結果になる条件を定義した。
+また、その定義を既存のMVCCのアルゴリズム3つに適用し、その正しさを確かめた。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+    
     <item>
       <title>論文メモ Paxos Made Simple</title>
       <link>https://nryotaro.dev/posts/paxos_made_simple/</link>
