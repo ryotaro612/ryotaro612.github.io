@@ -68,7 +68,6 @@ Non-Uniform Memory Access(NUMA)アーキテクチャは、コア数の増加で�
 Aerospikeは、スレッドをグループ化し特定のコアに割りあてることで、ローカルメモリへのアクセス頻度を上げている。
 また、コンテキストスイッチの頻度を下げるために、ネットワークリスナのスレッド上で処理を実行する実装になっている。
 さらに、生存期間の長いオブジェクトへの操作の最適化やメモリの断片化を最小限にするために<a href="https://github.com/jemalloc/jemalloc">jemalloc</a>に独自拡張を加えている。</p>
-<!-- raw HTML omitted -->
 <hr>
 <ul>
 <li>論文を<a href="http://www.vldb.org/pvldb/vol9/p1389-srinivasan.pdf">こちら</a>からダウンロードできます。</li>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-155190626-1');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>論文メモ Dapper, a Large-Scale Distributed Systems Tracing Infrastructure</h1>
+    <span class="date">January 23, 2021</span>
+    <div>
+        <p>分散トレーシングシステムDapperをGoogle社内で開発、デプロイ、2年間の運用を経た知見をまとめている。
+Dapperをもとにして、TwitterはZipkinを、UberはJaegerを<a href="https://www.oreilly.co.jp/books/9784873119038/">開発した</a>。
+Dapper以前に開発された<a href="https://www.usenix.org/legacy/publications/library/proceedings/hotos03/tech/full_papers/barham/barham_html/paper.html">Magpie</a> <a href="https://www.usenix.org/conference/nsdi-07/x-trace-pervasive-network-tracing-framework">X-Trace</a>との違いは、サンプリングされたリクエストのみをトレースし負荷を低減する機能がある点や、少数の共通ライブラリだけを測定対象にするところにある。</p>
+<p>リクエストのトレーシングを実現する手段は、アプリケーションにアノテーションをつけるかどうかで分類できる。
+アノテーションをつけない場合、リクエストの相関関係を回帰分析で推定しトレースを見つける。
+期待するトレースの精度が高いほど、多くのリクエストが必要になる。
+アノテーションをつかう場合、アプリケーションを修正しなければならないが、トレースの精度は開発者によって保証される。</p>
+<p>Dapperは前者の手法をとり、アノテーションによるトレーシングの機能はオプションの位置づけであり、アプリケーションがDapperを意識する必要はない。
+トレーシング対象の分散システムでは、サブシステム間で共通のスレッドモデル、制御フロー、RPCライブラリが採用されている。
+Dapperは、このサブシステム間の共通性を仮定し、測定箇所をこれらのライブラリに限定している。
+これにより、アノテーションが不要になり、また、測定のオーバーヘッドの低減につながっている。</p>
+<p>スレッドがトレース対象のリクエストを処理するとき、Dapperは、スレッドのローカルストレージに、トレースやサブシステムでの経過時間に対するIDなどトレーシングの情報を保存する。
+この情報をtrace contextという。
+スレッドがリクエストを非同期処理するときは、Dapperがリクエストを受けたスレッドからコールバックのスレッドにtrace contextを伝達する。
+trace contextは、RPCを介してサブシステム間で伝達される。
+なお、W3CはHTTPによる分散トレーシングのためのtrace contextの規格のドラフトを<a href="https://w3c.github.io/trace-context/">発表</a>している。</p>
+<p>論文を<a href="https://research.google/pubs/pub36356/">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/convolutional_2d_knowledge_graph_embeddings/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

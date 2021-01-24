@@ -6,7 +6,18 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 11 Jan 2021 17:24:16 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Jan 2021 14:50:16 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>論文メモ Dapper, a Large-Scale Distributed Systems Tracing Infrastructure</title>
+      <link>https://nryotaro.dev/posts/dapper/</link>
+      <pubDate>Sat, 23 Jan 2021 14:50:16 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/dapper/</guid>
+      <description>&lt;p&gt;分散トレーシングシステムDapperをGoogle社内で開発、デプロイ、2年間の運用を経た知見をまとめている。
+Dapperをもとにして、TwitterはZipkinを、UberはJaegerを&lt;a href=&#34;https://www.oreilly.co.jp/books/9784873119038/&#34;&gt;開発した&lt;/a&gt;。
+Dapper以前に開発された&lt;a href=&#34;https://www.usenix.org/legacy/publications/library/proceedings/hotos03/tech/full_papers/barham/barham_html/paper.html&#34;&gt;Magpie&lt;/a&gt; &lt;a href=&#34;https://www.usenix.org/conference/nsdi-07/x-trace-pervasive-network-tracing-framework&#34;&gt;X-Trace&lt;/a&gt;との違いは、サンプリングされたリクエストのみをトレースし負荷を低減する機能がある点や、少数の共通ライブラリだけを測定対象にするところにある。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>論文メモ Convolutional 2D Knowledge Graph Embeddings</title>
       <link>https://nryotaro.dev/posts/convolutional_2d_knowledge_graph_embeddings/</link>
