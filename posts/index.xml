@@ -6,7 +6,20 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 23 Jan 2021 14:50:16 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 Jan 2021 13:19:49 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>論文メモ The Daily Life of Software Engineers during the COVID-19 Pandemic</title>
+      <link>https://nryotaro.dev/posts/the_daily_life_of_software_engineers_during_the_covid_19_pandemic/</link>
+      <pubDate>Sat, 30 Jan 2021 13:19:49 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/the_daily_life_of_software_engineers_during_the_covid_19_pandemic/</guid>
+      <description>&lt;p&gt;COVID19でソフトウェア開発者が在宅稼動(WFH)をはじめたことによる稼動時間の使い方、良好性(Well-being), 生産性の変化を調査した。
+ロックダウンを実施した国々のエンジニア500名の中から、2020年4月20日から26日の一波について192名、2020年5月4日から10日の二波について184名を選び、サンプルを集めた。
+結果、会社での勤務とWFHの間で、稼動時間の使い方はほぼ変わっていないかった。
+また、一波において休憩と生産性の間に負の相関がみられたが、それ以外では良好性、生産性、社会性、心理の4つと特定の業務内容の間に相関関係はみられなかった。
+結果、組織やエンジニアにとってWFHそれ自体が課題になるわけではないと結論づけている。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>論文メモ Dapper, a Large-Scale Distributed Systems Tracing Infrastructure</title>
       <link>https://nryotaro.dev/posts/dapper/</link>

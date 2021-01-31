@@ -18,14 +18,19 @@
   </url>
   
   <url>
-    <loc>https://nryotaro.dev/gallery/darkhorse/</loc>
-    <lastmod>2021-01-26T01:04:56+09:00</lastmod>
+    <loc>https://nryotaro.dev/posts/</loc>
+    <lastmod>2021-01-30T13:19:49+09:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2021-01-23T14:50:16+09:00</lastmod>
-    <priority>0</priority>
+    <loc>https://nryotaro.dev/posts/the_daily_life_of_software_engineers_during_the_covid_19_pandemic/</loc>
+    <lastmod>2021-01-30T13:19:49+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/gallery/darkhorse/</loc>
+    <lastmod>2021-01-26T01:04:56+09:00</lastmod>
   </url>
   
   <url>
