@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-155190626-1');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>論文メモ TAO: Facebook&#39;s Distributed Data Store for the Social Graph</h1>
+    <span class="date">February 4, 2021</span>
+    <div>
+        <p>TAOは、Facebookで開発されたソーシャルグラフのためのマルチリージョンの分散システムで、秒間で10億件の読み込みと数百万件の書き込みの性能を誇る。
+Facebookは、もともと、ソーシャルグラフをMySQLに保存し、memcacheをキャッシュにつかい、PHPで問いあわせるシステムを構成していた。
+TAOは、そのシステムの現状を引きつぎ、MySQLをストレージに採用している。</p>
+<p>TAOでは、ソーシャルグラフのノードをobject, 辺をassociationとよぶ。
+objectは、64ビットの整数値の<code>id</code>で一意に特定できる。
+associationは、値のほかに32ビットで時間をあらわす<code>time</code>をもつ。
+objectとassociationには連想配列でデータをもたせることができる。
+以下の<code>id1</code>, <code>id2</code>はオブジェクトのIDであり、<code>otype</code>, <code>atype</code>はobjectやassociationがあらわすソーシャルグラフ上の意味にあたる。</p>
+<pre><code>Object: (id) -&gt; (otype, (key -&gt; value)*)
+Assoc.: (id1, atype, id2) -&gt; (time, (key -&gt; value)*)
+</code></pre>
+<p>TAOは、associationのクエリAPIを提供する。
+ユーザは、例えば、<code>id1</code>, <code>atype</code>でassociationの件数をかぞえたり、associationを検索できたりする。
+ソーシャルグラフの多くのデータは古く、一方で、クエリの対象になるデータは新しいものが多い。
+この時間の局所性を活かすために、内部では、<code>id</code>と<code>atype</code>が同じassociationは時間順に並べて管理される。
+この配列はassociation listとよばれ、次の構造をとる。</p>
+<pre><code>Association List: (id1, atype) -&gt; [a_new ... a_old]
+</code></pre>
+<p>TAOは、永続層とキャッシュ層をもつ。
+永続層にシャーディングをもちいたMySQLがある。
+キャッシュ層にはLeader, Followerの2種類のキャッシュサーバがある。
+また、TAOは複数のデータセンタ上に展開されており、データセンタのまとまりをregionといい、regionはMasterとSlaveで区別される。
+以下の図は、TAOの全体像をしめす。
+<img src="/tao.png" alt="tao"></p>
+<p>objectを格納するシャードはobject <code>id</code>で、assiciationは<code>id1</code>できまる。
+これらのIDは、保存先のシャードを特定するID <code>shard_id</code>をふくむ。</p>
+<p>複数のキャッシュサーバのまとまりをtierという。
+全てのキャッシュサーバが互いに通信するとホットスポットができるため、キャッシュ層は、一つのleader tierと複数のfollower tierに分割されている。
+leader tierは、永続層への読み込み、書き込みを担当する。
+followerは読み込みミスや書き込みリクエストをleaderに送る。
+followerは、ほかのtierに問いあわせなくても、どんなリクエストであっても応答できる。
+クライアントは、follower tierと通信し、leaderには直接リクエストを送らない。</p>
+<p>各シャードはひとつのleaderに対応づけられ、書き込みは対応するleaderからしか送られない。
+leaderがobjectを更新すると、キャッシュを無効にするメッセージ(invalidation message)をfollwerに送る。
+メッセージにはバージョン番号がふくまれており、followerは、番号からメッセージの新しさを調べ、古いものを無視する。
+更新によって、followerにキャッシュされた大量のassociationが無効になることがある。
+そのため、leaderは、refillメッセージをfollowerにおくり、association listを再キャッシュするようfollowerに伝える。</p>
+<p>巨大なソーシャルグラフのホスティングするために、TAOは複数のデータセンタをまたいで展開されている。
+複数のデータセンタのまとまりをregionとよばれ、少数のregionが存在する。
+各regionは、ソーシャルグラフ全体の複製をホスティングしている。
+ネットワークのレイテンシを抑えるために、masterのregionとslaveのregionのmaster/slave構成をとり、どんな読み込みリクエストも単一のregion内で完結される。
+masterとslaveにあるfollowerはどちらも同じ動きをするが、slaveのleaderは、read missが生じても、ローカルのfollowerに古いデータを返す。
+データの新しさを犠牲にすることで、master regionへのリクエストにかかる時間を省いている。
+slaveのleaderは書き込みリクエストをmasterのleaderに伝達する。
+前述のinvalidationやrefillメッセージは、MySQLのレプリケーションストリームにふくまれ、トランザクションが複製された直後に伝達される。</p>
+<p>論文を<a href="https://www.usenix.org/system/files/conference/atc13/atc13-bronson.pdf">こちら</a>からダウンロードできます。
+また、図はすべて論文から引用されています。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/the_daily_life_of_software_engineers_during_the_covid_19_pandemic/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

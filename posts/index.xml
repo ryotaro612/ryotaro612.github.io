@@ -6,7 +6,18 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 30 Jan 2021 13:19:49 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Feb 2021 18:47:38 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>論文メモ TAO: Facebook&#39;s Distributed Data Store for the Social Graph</title>
+      <link>https://nryotaro.dev/posts/tao_facebooks_distributed_data_store_for_social_graph/</link>
+      <pubDate>Thu, 04 Feb 2021 18:47:38 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/tao_facebooks_distributed_data_store_for_social_graph/</guid>
+      <description>&lt;p&gt;TAOは、Facebookで開発されたソーシャルグラフのためのマルチリージョンの分散システムで、秒間で10億件の読み込みと数百万件の書き込みの性能を誇る。
+Facebookは、もともと、ソーシャルグラフをMySQLに保存し、memcacheをキャッシュにつかい、PHPで問いあわせるシステムを構成していた。
+TAOは、そのシステムの現状を引きつぎ、MySQLをストレージに採用している。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>論文メモ The Daily Life of Software Engineers during the COVID-19 Pandemic</title>
       <link>https://nryotaro.dev/posts/the_daily_life_of_software_engineers_during_the_covid_19_pandemic/</link>
