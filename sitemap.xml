@@ -3,24 +3,29 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nryotaro.dev/</loc>
+    <lastmod>2021-02-07T13:33:13+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/gallery/</loc>
+    <lastmod>2021-02-07T13:33:13+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/gallery/d_a_chardonnay/</loc>
+    <lastmod>2021-02-07T13:33:13+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nryotaro.dev/posts/</loc>
     <lastmod>2021-02-04T18:47:38+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nryotaro.dev/</loc>
-    <lastmod>2021-02-04T18:47:38+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://nryotaro.dev/posts/tao_facebooks_distributed_data_store_for_social_graph/</loc>
     <lastmod>2021-02-04T18:47:38+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nryotaro.dev/gallery/</loc>
-    <lastmod>2021-01-31T00:58:40+09:00</lastmod>
   </url>
   
   <url>
