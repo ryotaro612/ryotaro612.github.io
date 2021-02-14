@@ -6,7 +6,17 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 04 Feb 2021 18:47:38 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 Feb 2021 19:52:34 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>論文メモ Isolation Forest</title>
+      <link>https://nryotaro.dev/posts/isolation_forest/</link>
+      <pubDate>Sat, 13 Feb 2021 19:52:34 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/isolation_forest/</guid>
+      <description>&lt;p&gt;Isolation Forestは、iForestともいい、完全二分木による異常検知の手法であり、時間計算量が線形で、ハイパーパラメタがわずか2つで、メモリ効率がよいところに特徴がある。
+時間、空間計算量がすくないので高次元のデータに向いている。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>論文メモ TAO: Facebook&#39;s Distributed Data Store for the Social Graph</title>
       <link>https://nryotaro.dev/posts/tao_facebooks_distributed_data_store_for_social_graph/</link>

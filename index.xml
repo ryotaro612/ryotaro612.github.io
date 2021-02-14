@@ -6,7 +6,17 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 07 Feb 2021 13:33:13 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 Feb 2021 19:52:34 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>論文メモ Isolation Forest</title>
+      <link>https://nryotaro.dev/posts/isolation_forest/</link>
+      <pubDate>Sat, 13 Feb 2021 19:52:34 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/isolation_forest/</guid>
+      <description>&lt;p&gt;Isolation Forestは、iForestともいい、完全二分木による異常検知の手法であり、時間計算量が線形で、ハイパーパラメタがわずか2つで、メモリ効率がよいところに特徴がある。
+時間、空間計算量がすくないので高次元のデータに向いている。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>IGP ドック・dA・シャルドネ（白）[2018] </title>
       <link>https://nryotaro.dev/gallery/d_a_chardonnay/</link>

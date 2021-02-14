@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-155190626-1');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>論文メモ Isolation Forest</h1>
+    <span class="date">February 13, 2021</span>
+    <div>
+        <p>Isolation Forestは、iForestともいい、完全二分木による異常検知の手法であり、時間計算量が線形で、ハイパーパラメタがわずか2つで、メモリ効率がよいところに特徴がある。
+時間、空間計算量がすくないので高次元のデータに向いている。</p>
+<p>手法名のisolationは事例をほかの事例と分けることを意味し、iForestは、似た事例の少ないものを異常として、正常な事例と分けることを目的に学習される。
+iForestは、サブサンプリングされた事例を分ける完全二分木の集合で、根からのパスが短かい事例を異常と推定する。
+木のノードは、無作為に選ばれた特徴の同じく無作為に決めた境界値で事例を分離する。
+異常であれば簡単に分けられるので、異常な事例は木の根からのパスが短かい葉になりやすい。
+ハイパーパラメタは、木の数とサブンサンプリングのサイズの2つだけで、実験から木の数は100、サブサンプリングサイズは256が推奨されている。</p>
+<p>確信度のスコアは根からのパスの長さにもとづく。
+パスの長さは、事例数で変わり、また、0から1の間に収まらないので、パスの長さをそのまま確信度に使うことはできない。
+iForestの木を二分探索木とみなすと、事例数\(n\)の木で検索に失敗するときのパスの平均\(c(n)\)は
+$$
+c(n) = 2H(n-1)-(2(n-1)/n)
+$$
+になる。\(H(i)\)は調和数で、\(\ln(i)+0.5772156649\)に近似できる。
+\(E(h(x))\)を事例\(x\)のiForestのそれぞれの木におけるパスの長さの平均として
+$$
+s(x, n) =2^{-\frac{E(h(x))}{c(n)}}
+$$
+で算出される値をスコアとみなす。</p>
+<p>論文を<a href="https://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/icdm08b.pdf?q=isolation-forest">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/tao_facebooks_distributed_data_store_for_social_graph/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
