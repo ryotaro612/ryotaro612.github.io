@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-155190626-1');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>論文メモ Tree Indexing on Solid State Drives</h1>
+    <span class="date">February 15, 2021</span>
+    <div>
+        <p>SSDのランダムな書き込みを高速化するために、インデックスにつかうデータ構造FD-treeを提案した。
+FD-treeのエントリ数が\(n\)でページサイズが\(B\)のとき、ランダムな読み込みと書き込みの計算量はともに\(\mathcal{O}(\log_B(n))\)になる。</p>
+<p>SSDでは、書き込み前にデータを削除しなければならず、小さくランダムな書き込みはランダムな読み込みと比べてかなり遅くなる。
+論文以前にも<a href="https://dl.acm.org/doi/10.1145/1275986.1275991">BFTL</a>など書き込み速度を上げるためのインデックス構造が提案されていたが、これらは書き込み以外の性能とのトレードオフがある構造だった。
+FD-treeは読み込み性能を維持しつつ書き込み性能をめざす。</p>
+<p>FD-treeは検索、挿入、マージ、削除、更新の5つの操作に対応しており、そのアルゴリズムは3つの原則にしたがい、目標の書き込み性能を獲得する。
+原則は、
+\(\mathcal{P}1\) ランダムな書き込みリクエストをシーケンシャルな書き込みに変換し、ランダムな書き込みを減らす。
+\(\mathcal{P}2\) ランダムに書き込む箇所を限定し、局所化する。
+\(\mathcal{P}3\) 1度のI/O操作で複数のページにアクセスする。
+の3つで、そのために<a href="https://www.sciencedirect.com/science/article/abs/pii/0020019079901170">logarithmic method</a>と<a href="https://link.springer.com/article/10.1007/BF01840440">fractional cascading</a>をもちいる。</p>
+<p>FD-treeは、、大きく二種類のデータ構造からなる。最上位\(L_0\)がHead TreeとよばれるB+-treeで、以下の階層\(L_1, L_2, \dots\)は連続するページに格納されたsorted runとよばれる。
+runは、主記憶に収まるほど小さなファイルの一部を意味する。
+以下にFD-treeの例を図示する。
+<img src="/fd-tree.png" alt="fd-tree"></p>
+<p>ページの要素にはIndex EntryとFenceの2種類があり、どちらも図中の数字がしめすキーをもつ。
+Index EntryはレコードのIDをもち、さらに、Filter EntryとNormal Entryの2種類にわかれる。
+Filter Entryは、削除でFD-treeに挿入され、対応するレコードとIndex Entryが論理的に削除されたことをあらわす。
+論理的に削除されたが物理的に残るIndex EntryはPhantom Entryという。
+Filter Entryでないものは、Normal Entryとよばれる。
+Fenceはポインタであり、キーにはIndex entryから選ばれる。
+Fenceは、1つ下の階層にある次に探索すべきページID, pidをもつ。
+各ページの最初の要素はFenceであり、また、隣接するFence内のキーがとりえる値の範囲は、Fenceによって参照される下層のページにあるキーの範囲に収まる。</p>
+<p>FenceにはExternal FenceとInternal Fenceの2種類がある。
+図でいうと、71がExternal Fenceで、88がInternal Fenceに該当する。
+\(L_i\)のExternal Fenceのキーは\(L_{i+1}\)から選ばれる。
+\(L_{i+1}\)のページ\(P\)の最初要素のキーがExternal Fenceのpidになる。
+\(L_i\)のInternal Fenceは同じ階層\(L_i\)から選ばれる。
+もし、ページ\(P\)の最初の要素がExternal Fenceでなければ、\(P\)の先頭にInteral Fenceをつくる。
+Internal Fenceのキーは\(P\)の最初のIndex Entryのキーであり、pidは直下の層にあるキーを範囲にふくんだページのidになる。</p>
+<p>下層ほど容量が大きい。
+ランダムな書き込みはHead Treeに局所化される。
+上層の容量があふれると隣接する層同士のマージ処理が走り、その際、ランダムな書き込みはシーケンシャルにかわる。
+マージ時は、まず、2層をシーケンシャルに読み、結合して連続するページに1つのsorted runをつくる。
+作成された層を\(L_i\)は\(L_{i-1}\)のすべてのIndex Entryと旧\(L_i\)のIndex EntryとExternal Fenceを引き継ぐ。
+Internal Fenceはページの最初の要素がExternal Fenceでなければ\(L_i\)に作成される。
+同時に、作られた\(L_i\)のExternal Fenceと整合性をとるために、\(L_j(0\le j&lt; i)\)は再作成される。
+つまり、\(L_{i-1}\)と\(L_{i}\)をマージするとき、\(L_0\)から\(L_i\)までのすべての層を更新するために\(i+1\)個のsorted runsが作成される。
+もし新しい\(L_i\)が容量を超えていたら、マージ後に容量を超えることがなくなるまで、マージ処理が下層に伝播する。</p>
+<p>論文を<a href="https://www.comp.nus.edu.sg/~vldb2010/proceedings/files/papers/R106.pdf">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/isolation_forest/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+            <li class="atcoder"><a href="https://atcoder.jp/users/nryotaro">AtCoder</a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
