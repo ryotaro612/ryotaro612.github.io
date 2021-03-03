@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-155190626-1');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>論文メモ Availability in Globally Distributed Storage Systems</h1>
+    <span class="date">December 12, 2020</span>
+    <div>
+        <p>Googleの分散ストレージで生じた障害の統計をとり、ストレージの可用性の予測モデルを提唱した。
+ディスク、ノード、ラックなどハードウェアの粒度を変えて、粒度ごとの平均故障間隔を計測し、故障原因を分類した。
+2分のウィンドウで生じた障害をグループにまとめると、ほとんどの障害が同時多発的な障害の一部であった。
+20以上のノードを巻き込む大きな障害では、別々のラックにあるノードに障害が起きるよりも、特定のラックのノードに障害が起きることが多かった。</p>
+<p>誤り訂正機能をもつストレージの可用性をマルコフモデルで予測する。
+このストレージをストライプと呼び、チャンクというコードブロックを冗長にもつことで、誤りを訂正すると仮定する。
+ストライプに\(s\)個のチャンクがあり、ストライプの復元に必要な正常なチャンクの数が\(r\)のとき、\(s,s-1, \dots , r, r-1\)のように、復元可能なときのチャンク数と復元不能を示す記号で状態を作る。
+以下の図は、\(s=2, r=2\)のモデルを表す。</p>
+<p><img src="/availability_in_globally_distributed_storage_systems.png" alt="markov"></p>
+<p>チャンクが一度に一つしか壊れないとして、故障する確率を\(\lambda\)、復元する確率を\(\rho\)おくと、Gambler&rsquo;s Ruinより、\(s\)から\(s-r\)に遷移するまでの遷移回数は次の式になる。</p>
+<p>$$
+\frac{1}{\lambda}\left(\sum^{s-r}_{k=0}\sum^k_{i=0}\frac{\rho^i}{\lambda^i}\frac{1}{(s-k+i)_{(i+1)}}\right)
+$$</p>
+<p>ただし、\((a)_{(b)}\)は\((a)(a-1)(a-2)\dots (a-b+1)\)をしめす。
+このとき、さらに、\(\rho &raquo; \lambda\)とすると、ストライプの平均故障間隔(MTTF)は</p>
+<p>$$
+\frac{\rho^{s-r}}{\lambda^{s-r+1}}\frac{1}{(s)_{(s-r+1)}}+\mathcal{O}\left(\frac{\rho^{s-r-1}}{\lambda^{s-r}}\right)
+$$</p>
+<p>になる。</p>
+<hr>
+<p>論文を<a href="https://www.usenix.org/conference/osdi10/availability-globally-distributed-storage-systems">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/what_you_always_wanted_to_know_about_datalog/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/impossibility_of_distributed_consensus_with_one_faulty_process/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+            <li class="atcoder"><a href="https://kenkoooo.com/atcoder/#/user/nryotaro">AtCoder</a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
