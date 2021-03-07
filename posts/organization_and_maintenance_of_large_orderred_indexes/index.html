@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-155190626-1');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>論文メモ Organization and Maintenance of Large Orderred indexes</h1>
+    <span class="date">February 27, 2021</span>
+    <div>
+        <p>1972年に発表されたB木のオリジナルの論文。
+\(I\)をインデックスの大きさ、\(k\)をハードウェア依存の値とすると、検索、挿入、削除の時間計算量は\(\log_kI\)になる。
+ここでのインデックスは、固定長の\((x, \alpha)\)を要素とする連想配列で、最大\(2k\)個のキーを格納できる連続するページ上にある。
+\(\alpha\)には、たいてい1つ以上のレコードへのポインタが格納される。</p>
+<p>\(h\)を非負の整数、\(k\)を自然数とすると、空の木や次の3つの条件をみたす木をB木としてあつかえる。</p>
+<ul>
+<li>ルートから任意の葉までの長さが\(h\)であり、ルートから葉までの経路のノード数が\(h\)になる。</li>
+<li>ルートと葉以外は少なくとも\(k+1\)個の子をもつ。ルートは葉であるか、少なくとも2つの子をもつ。</li>
+<li>各ノードがもつ子の数は高々\(2k+1\)個。</li>
+</ul>
+<p>冒頭の時間計算量で検索、挿入、削除を実現するため、ページが次の3条件をまもるようにインデックスを配置する。</p>
+<ul>
+<li>ルートページは1以上\(2k\)以下のキーを、それ以外のページは\(k\)以上\(2k\)以下のキーをもつ。</li>
+<li>葉以外のページにあるキーの数が\(l\)であれば、そのページは\(l+1\)個の子ページをもつ。</li>
+<li>各ページの\(l\)個のキーは昇順に並び、ページは子ページへのポインタ\(p_0, p_1, \dots p_l\)をもつ。
+葉ページでは子ページのポインタは未定義になる。</li>
+</ul>
+<p>以下に性質をみたすページを図示する。
+<img src="/btree/page.png" alt="page"></p>
+<p>\(P(p_i)\)をポインタ\(p_i\)がさすページ、\(K(p_i)\)を\(P(p_i)\)をルートとする最大の部分木にふくまれるキーの集合とする。
+このとき、ここでのB木は次の3つの性質をみたす。
+$$
+\begin{align}
+(\forall y\in K(p_0))(y&lt;x_1)&amp;\\<br>
+(\forall y\in K(p_i))(x_i&lt;y&lt;x_{i+1});&amp;\ \ i=1, 2, \dots , l-1\\<br>
+(\forall y\in K(p_l))(x_l&lt;y).&amp;
+\end{align}
+$$
+以下に、これらの性質をみたすB木を例示する。
+<img src="/btree/tree.png" alt="tree"></p>
+<p>キーを挿入するとき、挿入先のページ\(P\)が満杯であればページを分割する。
+はじめに、キーとポインタからなる次の配列をつくる。
+$$
+p_0, (x_1, p_1), (x_2, p_2),\dots ,(x_{2k+1}, p_{2k+1})
+$$
+次に、この配列の一部
+$$
+p_0, (x_1, p_1),\dots ,(x_{k}, p_{k})
+$$
+で\(P\)をおきかえ、新しいページ\(P'\)に
+$$
+p_{k+1}, (x_{k+2}, p_{k+2}), (x_{k+3}, p_{k+3}),\dots ,(x_{2k+1}, p_{2k+1})
+$$
+を代入する。
+その後、\(Q\)を\(P\)の親ページとして\(Q\)に\((x_{k+1}, p')\)を挿入し、\(P'\)を\(P\)の兄弟にする。
+なお、ポインタ\(p'\)は\(P'\)をさす。</p>
+<p>\(Q\)が満杯であれば、\(Q\)も分割する。
+これをくりかえし、分割がルートまでにのぼる場合、\(p\)と\((x_{k+1}, p')\)をふくむルートページ\(Q\)をつくる。
+\(p\)と\(p'\)は、ページ\(P, P'\)をさす。
+例えば、\(k=2\)とすると、以下のB木にキー9を挿入すると、上のB木になる。
+<img src="/btree/tree2.png" alt="tree2"></p>
+<p>キーを削除するとき、そのキーが葉になければ、単に削除するだけでなく、\(P(p_i)\)をルートページとする木の中の最小のキーと置きかえなければならない。
+この最小のキー\(x_1\)が存在するページを\(L\)とすると、\(x_1\)を消すことで\(L\)にあるキーの数が\(k\)より少くなりうる。
+その場合、ページ\(L\)をさすポインタと隣接するポインタによって参照される兄弟ページと\(L\)の間でcatenationまたはunderflowという操作をおこなう。</p>
+<p>catenationは、隣接するポインタで参照された兄弟ページの合計キー数が\(2k\)以下のときに兄弟ページを結合する操作をいう。
+このとき、親ページのエントリが削除されるので、挿入時と同様、catenationはルートページまで伝搬することがある。</p>
+<p>合計キー数が\(2k\)より大きいときは、catenationを実施し、結合されたページを真ん中で分割する。この操作をunderflowという。
+上にある2つ目のB木からキー9を削除すると、1つめのB木にもどる。</p>
+<p>論文を<a href="http://www.inf.fu-berlin.de/lehre/SS10/DBS-Intro/Reader/BayerBTree-72.pdf">こちら</a>からダウンロードできます。
+図は、論文から引用しました。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/space_time_trade-offs_in_hash_coding_with_allowable_errors/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+            <li class="atcoder"><a href="https://kenkoooo.com/atcoder/#/user/nryotaro">AtCoder</a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

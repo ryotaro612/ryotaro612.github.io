@@ -44,6 +44,17 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/organization_and_maintenance_of_large_orderred_indexes/">論文メモ Organization and Maintenance of Large Orderred indexes</a></h3>
+        <div class="summary"><p>1972年に発表されたB木のオリジナルの論文。
+\(I\)をインデックスの大きさ、\(k\)をハードウェア依存の値とすると、検索、挿入、削除の時間計算量は\(\log_kI\)になる。
+ここでのインデックスは、固定長の\((x, \alpha)\)を要素とする連想配列で、最大\(2k\)個のキーを格納できる連続するページ上にある。
+\(\alpha\)には、たいてい1つ以上のレコードへのポインタが格納される。</p></div>
+        <div class="article-footer">
+            <span class="date">February 27, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/space_time_trade-offs_in_hash_coding_with_allowable_errors/">論文メモ Space/Time Trade-offs in Hash Coding with Allowable Errors</a></h3>
         <div class="summary"><p>ハッシュコーディングで要素がハッシュエリアにあるかを高速に調べる手法で、ブルームフィルタの名で知られる。
 偽陽性を認めることで、ハッシュ値の保持に必要なハッシュエリアを小さくしているため、ハッシュエリアが大きくなるデータでも利用することができる。
@@ -132,18 +143,6 @@ Dapper以前に開発された<a href="https://www.usenix.org/legacy/publication
 ただし、ビザンチン将軍問題は扱わず、メッセージが壊れることは考えない。</p></div>
         <div class="article-footer">
             <span class="date">December 31, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/impossibility_of_distributed_consensus_with_one_faulty_process/">論文メモ Impossibility of Distributed Consensus with One Faulty Process</a></h3>
-        <div class="summary"><p>プロセスが1つでもクラッシュしうる場合には常に含意を保証できる完全な非同期アルゴリズムは存在しないことを示した。
-この定理はFLP帰結とよばれている。
-FLPは、著者Fischer, Lynch, Patersonの頭文字に由来する。
-ここでの完全は、プロセスの処理速度やメッセージの配信遅延に仮定をおかず、同期クロックがないためにタイムアウトを使えず、ほかのプロセスが別のプロセスの障害を検知できないことを意味する。
-いいかえると、含意アルゴリズムを実装するには上のいずれかを仮定しなければないことを示した。</p></div>
-        <div class="article-footer">
-            <span class="date">December 18, 2020</span>
         </div>
     </article>
     

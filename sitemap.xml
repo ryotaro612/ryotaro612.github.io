@@ -19,8 +19,13 @@
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2021-02-20T16:46:44+09:00</lastmod>
+    <lastmod>2021-02-27T19:54:56+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/organization_and_maintenance_of_large_orderred_indexes/</loc>
+    <lastmod>2021-02-27T19:54:56+09:00</lastmod>
   </url>
   
   <url>
