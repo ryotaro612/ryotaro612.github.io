@@ -208,7 +208,7 @@ Dapper以前に開発された&lt;a href=&#34;https://www.usenix.org/legacy/publ
       
       <guid>https://nryotaro.dev/posts/impossibility_of_distributed_consensus_with_one_faulty_process/</guid>
       <description>&lt;p&gt;プロセスが1つでもクラッシュしうる場合には常に含意を保証できる完全な非同期アルゴリズムは存在しないことを示した。
-この定理はFLP帰結とよばれている。
+この定理はFLP帰結とよばれる。
 FLPは、著者Fischer, Lynch, Patersonの頭文字に由来する。
 ここでの完全は、プロセスの処理速度やメッセージの配信遅延に仮定をおかず、同期クロックがないためにタイムアウトを使えず、ほかのプロセスが別のプロセスの障害を検知できないことを意味する。
 いいかえると、含意アルゴリズムを実装するには上のいずれかを仮定しなければないことを示した。&lt;/p&gt;</description>

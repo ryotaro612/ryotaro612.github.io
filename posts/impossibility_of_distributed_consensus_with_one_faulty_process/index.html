@@ -44,33 +44,35 @@
     <span class="date">December 18, 2020</span>
     <div>
         <p>プロセスが1つでもクラッシュしうる場合には常に含意を保証できる完全な非同期アルゴリズムは存在しないことを示した。
-この定理はFLP帰結とよばれている。
+この定理はFLP帰結とよばれる。
 FLPは、著者Fischer, Lynch, Patersonの頭文字に由来する。
 ここでの完全は、プロセスの処理速度やメッセージの配信遅延に仮定をおかず、同期クロックがないためにタイムアウトを使えず、ほかのプロセスが別のプロセスの障害を検知できないことを意味する。
 いいかえると、含意アルゴリズムを実装するには上のいずれかを仮定しなければないことを示した。</p>
-<p>証明には、背理法をつかう。
+<p>証明には背理法をつかう。
 \(N(\ge 2)\)個のプロセスが\(0\)か\(1\)いずれかに含意する問題で、1つのプロセスに障害があっても含意アルゴリズム\(P\)が常に含意形成できると仮定する。</p>
-<p>各プロセス\(p\)は、決定的にふるまい、\(b, 0, 1\)いずれかをとりえる1ビットの入力、出力レジスタをもつ。
-出力レジスタの初期値は\(b\)であり、一度だけ\(0\)か\(1\)を書き込める。
+<p>各プロセス\(p\)は、決定的にふるまい、\(b, 0, 1\)のいずれかをとる1ビットの入力と出力レジスタをもつ。
+出力レジスタは、初期値として\(b\)をもち、一度だけ\(0\)か\(1\)を書き込める。
 出力レジスタが書き込まれた後の状態をdecision stateとよぶ。</p>
-<p>プロセス\(p\)に送られたメッセージ\(m\)は、\(p\)に届くまでの間、メッセージバッファにイベント\((p, m)\)として保存される。
+<p>プロセス\(p\)に送られたメッセージ\(m\)は、\(p\)に届くまでメッセージバッファにイベント\((p, m)\)として保存される。
 各ステップでは、バッファ内のイベントを選び、メッセージを配信する。
-配信の成否は非決定的で、メッセージ\(m\)が\(p\)に届いたら\((p, m)\)をバッファから削除され、届かない場合はバッファの状態は変わらない。</p>
-<p>\(N\)個のプロセスとメッセージバッファの状態はあわせてconfigurationとよぶ。
+配信の成否は非決定的で、\(m\)が\(p\)に届いたら\((p, m)\)をバッファから削除され、届かない場合はバッファの状態は変わらない。</p>
+<p>\(N\)個のプロセスとメッセージバッファの状態をあわせてconfigurationとよぶ。
 特に、全プロセスが初期状態でメッセージバッファが空の状態をinitial configurationとよぶ。
-また、Configuration \(C\)に適用可能なイベント系列\(\sigma\)をスケジュールといい、実際に実行されたスケジュールをrunという。
-decision stateにあるプロセスの存在するrunはdeciding runとして区別される。
-障害のために受信可能なメッセージ数が有限のプロセスが高々1つ存在しても、ほかのプロセスには全てのメッセージがいずれ届くなら、このようなrunは許容可能と呼ばれる。</p>
-<p>常に含意できることを、以上の状況にあわせて言いかえる。
-Initial configurationから到達できるConfigurationには高々1つのdecision valueしか存在しない。
-\(0\)と\(1\)どちらもdecision valueになりえるinitial configurationから到達可能なConfigurationが存在する。
-この2つの条件を満たす含意アルゴリズム\(P\)をpartical correctであるという。
-partial correctであり、すべての許容可能なrunがdeciding runであれば、\(P\)はtotally correctであるという。
+また、configuration \(C\)に適用可能なイベント系列\(\sigma\)をスケジュールといい、実際に実行されたスケジュールをrunという。
+decision stateにあるプロセスの存在するrunはdeciding runとしてほかのrunと区別される。
+高々1つの障害のあるプロセスがあり、ほかの正常なプロセスには全てのメッセージがいずれ届くなら、このようなrunは許容可能とよばれる。</p>
+<p>以上の設定にもとづいて、常に含意できることを言いかえる。
+次の2条件をみたす含意アルゴリズム\(P\)をpartial correctであるという。</p>
+<ul>
+<li>initial configurationから到達できるconfigurationには高々1つのdecision valueしか存在しない。</li>
+<li>\(0\)と\(1\)どちらもdecision valueになりえるinitial configurationから到達可能なconfigurationが存在する。</li>
+</ul>
+<p>partial correctであり、すべての許容可能なrunがdeciding runであれば、\(P\)はtotally correctであるという。
 FLPの帰結のいうところは、totally correctな\(P\)は存在しないことである。</p>
 <p>以上の状況では、次の3つの補題が成立する。</p>
 <ul>
-<li>補題1. Configuration \(C\)からスケジュール\(\sigma_1, \sigma_2\)でそれぞれ\(C_1, C_2\)に遷移できる。ここで、\(\sigma_1\)と\(\sigma_2\)のステップに含まれるプロセスの集合が互いに素であれば、\(\sigma_2\)を\(C_1\)に、\(\sigma_1\)を\(C_2\)に適用でき、両者は最終的に同じ状態\(C_3\)に到達する。</li>
-<li>補題2. Configuration \(C\)から到達可能なConfigurationのdecision valueが\(0\)と\(1\)どちらもありえるなら、\(C\)はbivalentといい、\(P\)にはbivalentなinitial configurationがある。</li>
+<li>補題1. configuration \(C\)からスケジュール\(\sigma_1, \sigma_2\)でそれぞれ\(C_1, C_2\)に遷移できる。ここで、\(\sigma_1\)と\(\sigma_2\)のステップに含まれるプロセスの集合が互いに素であれば、\(\sigma_2\)を\(C_1\)に、\(\sigma_1\)を\(C_2\)に適用でき、両者は最終的に同じ状態\(C_3\)に到達する。</li>
+<li>補題2. configuration \(C\)から到達可能なconfigurationのdecision valueが\(0\)と\(1\)どちらもありえるなら、\(C\)はbivalentといい、\(P\)にはbivalentなinitial configurationがある。</li>
 <li>補題3. \(C\)をbivalentなconfiguration, \(e=(p, m)\)を\(C\)に適用可能なイベント、\(\mathcal{F}\)を\(e\)を適用せずに\(C\)から到達可能なconfigurationの集合、\(\mathcal{D}\)を</li>
 </ul>
 <p>$$
@@ -81,7 +83,7 @@ $$
 \(C_0\)は補題2より存在する。
 \(C\)をbivalentなconfiguration、\(m\)を\(C\)のメッセージバッファにある最も早く\(p\)に送られるメッセージとする。
 補題3より\((p, m)\)を最後に適用するイベントとして\(C\)から到達可能でbivalentな\(C'\)が存在する。
-このとき、常にbivalentなconfigurationが無限に続くスケジュールになるため、runが許容可能であることと矛盾があらわれ、\(P\)がtotally correctでないことががわかる。</p>
+このとき、常にbivalentなconfigurationが無限に続くスケジュールになるため、runが許容可能であることと矛盾し、\(P\)がtotally correctでないことががわかる。</p>
 <hr>
 <ul>
 <li>論文を<a href="http://groups.csail.mit.edu/tds/papers/Lynch/jacm85.pdf">こちら</a>からダウンロードできます。</li>
