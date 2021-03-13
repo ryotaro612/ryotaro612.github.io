@@ -43,6 +43,16 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/robust_random_cut_forest_based_anomaly_detection_on_streams/">論文メモ Robust Random Cut Forest Based Anomaly Detection On Streams</a></h3>
+        <div class="summary"><p>ストリームデータ向けの異常検知の手法、Robust Random Cut Forestを提唱した。
+ストリームデータをあつかうには、バッチデータと違い、データが随時追加、修正されることに対応できなければならない。
+Robust Random Cut Forestは、特徴の値でデータを2分するノードをもつ木の集合であり、データを追加したときに木の集合たるモデルを著しく複雑するデータを異常と判定する。</p></div>
+        <div class="article-footer">
+            <span class="date">March 12, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/organization_and_maintenance_of_large_orderred_indexes/">論文メモ Organization and Maintenance of Large Orderred indexes</a></h3>
         <div class="summary"><p>1972年に発表されたB木のオリジナルの論文。
 \(I\)をインデックスの大きさ、\(k\)をハードウェア依存の値とすると、検索、挿入、削除の時間計算量は\(\log_kI\)になる。
@@ -131,17 +141,6 @@ Dapper以前に開発された<a href="https://www.usenix.org/legacy/publication
 <!-- raw HTML omitted --></div>
         <div class="article-footer">
             <span class="date">January 6, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/paxos_made_simple/">論文メモ Paxos Made Simple</a></h3>
-        <div class="summary"><p><a href="https://lamport.azurewebsites.net/pubs/lamport-paxos.pdf">The Part-Time Parliament</a>で提唱された分散含意アルゴリズムPaxosをLamport自身が平易に解説したもの。
-エージェントの処理速度やメッセージが配信されるまでの長さに仮定はない。
-メッセージは複製、喪失する可能性がある。
-ただし、ビザンチン将軍問題は扱わず、メッセージが壊れることは考えない。</p></div>
-        <div class="article-footer">
-            <span class="date">December 31, 2020</span>
         </div>
     </article>
     

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-155190626-1');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>論文メモ Robust Random Cut Forest Based Anomaly Detection On Streams</h1>
+    <span class="date">March 12, 2021</span>
+    <div>
+        <p>ストリームデータ向けの異常検知の手法、Robust Random Cut Forestを提唱した。
+ストリームデータをあつかうには、バッチデータと違い、データが随時追加、修正されることに対応できなければならない。
+Robust Random Cut Forestは、特徴の値でデータを2分するノードをもつ木の集合であり、データを追加したときに木の集合たるモデルを著しく複雑するデータを異常と判定する。</p>
+<p>Robust Random Cut Forest(RRCT)は、ランダムに選ばれた特徴がとりえる値をランダムに選び、その大小でデータを二分する木の集合からなる。
+データセット\(S\)から次の手順でRRCTを構築できる。</p>
+<ol>
+<li>\(l_i=\max_{x\in S}x_i-\min_{x\in S}x_i\)として\(\frac{l_i}{\sum_jl_j}\)にしたがう確率でランダムに特徴を選ぶ。</li>
+<li>一様分布\([\min_{x\in S}x_i,\max_{x\in S}x_i]\)にしたがい二分する境界値\(X_i\)を選ぶ。</li>
+<li>\(S_1=\{x\mid x\in S,x_i\le X_i\}\)と\(S_2=S\backslash S_1\)で分割し、再帰的に\(S_1\), \(S_2\)に本手順を適用する。</li>
+</ol>
+<p>RRCTは、データの有無によるモデルの複雑さの変化で、データが異常値か推定する。
+複雑さの指標には、以下の図のように、根から各葉に到達するための分岐方向をビット列で表したときのビット数の総和をつかう。
+<img src="/random_cut_forest/fig2.png" alt="fig2">
+\(T\)を木、\(Z\)をデータ集合、\(y\)を\(Z\)の要素、\(f(y, Z, T)\)を根から\(y\)に到達するまでの経路を表すために必要なビット数とする。
+このとき、\(x\)を\(Z\)から除いたときのモデルの複雑さ\(\mid M(T') \mid\)を次の式で評価する。
+$$
+\mid  M(T')\mid =\sum_{y\in Z-\{x\}}f(y, Z-\{x\}, T')
+$$
+\(x\)の有無によるモデルの複雑さの変化の期待値を以下の式で算出する。
+$$
+\begin{align}
+&amp;\mathbb{E}_{T(Z)}[\mid M(T)\mid ]-\mathbb{E}_{T(Z-\{x\})}[\mid M(T(Z-\{x\})\mid]\\<br>
+&amp;=\sum_T\sum_{y\in Z-\{x\}}\mathbb{P}_r[T]\left(f(y,Z,T)-f(y,Z-\{x\},T')\right)\\<br>
+&amp;+\sum_T\mathbb{P}_r[T]f(x,Z,T)
+\end{align}
+$$
+ところが、上の式で外れ値を算出しても手法名のロバスト性はえられない。
+外れ値\(p\)の近くに正常なデータがあれば、差異が小さくなり、\(p\)を異常値として判定されない。
+そのため、以下の式で、推定対象の\(x\)を含めた\(x\)近辺の部分集合の有無によるモデルの複雑さの変化で、異常値かどうかを推定する。
+$$
+\mathbb{E}_{T(Z)}[\mid M(T)\mid ]-\mathbb{E}_{T(Z-C)}[\mid M(T(Z-C)\mid ]
+$$
+最終的には、次の値が高いほど\(x\)が異常であると推定する。
+$$
+\mathbb{E}_{S\subseteq Z, T}\left[\max_{x\in C\subseteq S}\frac{1}{\mid C\mid}\sum_{y\in S-C}\left(f(y, S, T)-f(y,S-C,T'')\right)\right]
+$$</p>
+<p>論文を<a href="https://d1.awsstatic.com/whitepapers/kinesis-anomaly-detection-on-streaming-data.pdf">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/organization_and_maintenance_of_large_orderred_indexes/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+            <li class="atcoder"><a href="https://kenkoooo.com/atcoder/#/user/nryotaro">AtCoder</a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

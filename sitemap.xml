@@ -18,6 +18,17 @@
   </url>
   
   <url>
+    <loc>https://nryotaro.dev/posts/</loc>
+    <lastmod>2021-03-12T20:30:31+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/robust_random_cut_forest_based_anomaly_detection_on_streams/</loc>
+    <lastmod>2021-03-12T20:30:31+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nryotaro.dev/gallery/coteaux_du_pont_du_gard_cuvee_des_galets/</loc>
     <lastmod>2021-03-07T13:04:28+09:00</lastmod>
   </url>
@@ -30,12 +41,6 @@
   <url>
     <loc>https://nryotaro.dev/gallery/feudo_arancio_inzolia/</loc>
     <lastmod>2021-02-28T12:16:50+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2021-02-27T19:54:56+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
