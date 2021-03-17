@@ -43,15 +43,15 @@
     <h1>論文メモ Paxos Made Simple</h1>
     <span class="date">December 31, 2020</span>
     <div>
-        <p><a href="https://lamport.azurewebsites.net/pubs/lamport-paxos.pdf">The Part-Time Parliament</a>で提唱された分散含意アルゴリズムPaxosをLamport自身が平易に解説したもの。
+        <p><a href="https://lamport.azurewebsites.net/pubs/lamport-paxos.pdf">The Part-Time Parliament</a>で提唱された分散含意アルゴリズムPaxosをLamport自身が平易に解説した。
 エージェントの処理速度やメッセージが配信されるまでの長さに仮定はない。
-メッセージは複製、喪失する可能性がある。
-ただし、ビザンチン将軍問題は扱わず、メッセージが壊れることは考えない。</p>
-<p>Paxosにはproposer, acceptor, learnerの3種類のエージェントがあり、proposerに提案された値からただ一つの値が選ばれることを保証する。
+メッセージは複製、喪失してもよい。
+他方で、ビザンチン将軍問題は扱わず、メッセージが壊れることは考えない。</p>
+<p>proposer, acceptor, learnerの3種類のエージェントがあり、proposerに提案された値の中から、ただ一つの値が選ばれることが保証される。
 プロセスは複数のエージェントの役割を兼ねてもいい。
 proposalには全順序の番号proposal number \(n\)が与えられ、任意のproposalに順序をつけることができる。
 値の選出のためにproposerからacceptorに送るリクエストはprepare request, accept requestの2種類で、それぞれ第1, 第2フェーズで送られる。</p>
-<p>第1フェーズでは、はじめに、proposerはproposal number \(n\)を選び、\(n\)つきのprepare requestを過半数のacceptorに送る。
+<p>第1フェーズでは、はじめに、proposerはproposal number \(n\)を選び、\(n\)のついたprepare requestを過半数のacceptorに送る。
 acceptorは、これまでに応答したどんなproposal numberよりも大きな\(n\)のprepare requestを受信したら、以降は\(n\)未満のproposalをacceptするのを止め、また、もしあるならacceptずみのproposalで最大の番号のproposalをproposerに返す。</p>
 <p>第2フェーズでは、proposerが過半数のacceptorから\(n\)のprepare requestの応答を受信したら、\(n\)のproposalに対するaccept reqestを値\(v\)をつけてacceptorに送る。
 \(v\)は第1フェーズでacceptorから返されたresponseの中で最大の番号の値、ただし、responseがないときは任意の値でいい。

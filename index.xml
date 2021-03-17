@@ -215,10 +215,10 @@ Dapper以前に開発された&lt;a href=&#34;https://www.usenix.org/legacy/publ
       <pubDate>Thu, 31 Dec 2020 19:17:13 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/paxos_made_simple/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://lamport.azurewebsites.net/pubs/lamport-paxos.pdf&#34;&gt;The Part-Time Parliament&lt;/a&gt;で提唱された分散含意アルゴリズムPaxosをLamport自身が平易に解説したもの。
+      <description>&lt;p&gt;&lt;a href=&#34;https://lamport.azurewebsites.net/pubs/lamport-paxos.pdf&#34;&gt;The Part-Time Parliament&lt;/a&gt;で提唱された分散含意アルゴリズムPaxosをLamport自身が平易に解説した。
 エージェントの処理速度やメッセージが配信されるまでの長さに仮定はない。
-メッセージは複製、喪失する可能性がある。
-ただし、ビザンチン将軍問題は扱わず、メッセージが壊れることは考えない。&lt;/p&gt;</description>
+メッセージは複製、喪失してもよい。
+他方で、ビザンチン将軍問題は扱わず、メッセージが壊れることは考えない。&lt;/p&gt;</description>
     </item>
     
     <item>
