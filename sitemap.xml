@@ -18,14 +18,19 @@
   </url>
   
   <url>
-    <loc>https://nryotaro.dev/gallery/herisson_malin/</loc>
-    <lastmod>2021-03-13T02:40:32+09:00</lastmod>
+    <loc>https://nryotaro.dev/posts/</loc>
+    <lastmod>2021-03-19T19:17:56+09:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2021-03-12T20:30:31+09:00</lastmod>
-    <priority>0</priority>
+    <loc>https://nryotaro.dev/posts/the_ubiquitous_b_tree/</loc>
+    <lastmod>2021-03-19T19:17:56+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/gallery/herisson_malin/</loc>
+    <lastmod>2021-03-13T02:40:32+09:00</lastmod>
   </url>
   
   <url>
