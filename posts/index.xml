@@ -127,9 +127,8 @@ Dapper以前に開発された&lt;a href=&#34;https://www.usenix.org/legacy/publ
       <pubDate>Wed, 06 Jan 2021 16:02:37 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/mvcc/</guid>
-      <description>&lt;p&gt;データベースのトランザクション制御ultiversion Concurrency Control(MVCC, 多版型同時実行制御) 下のトランザクションが逐次実行と等価な結果になる条件を定義した。
-また、その定義を既存のMVCCのアルゴリズム3つに適用し、その正しさを確かめた。&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;</description>
+      <description>&lt;p&gt;データベースのトランザクション制御Multiversion Concurrency Control(MVCC, 多版型同時実行制御) 下のトランザクションが逐次実行と等価な結果になる条件を定義した。
+また、その定義を既存のMVCCのアルゴリズム3つにあてはめ、アルゴリズムの正しさを確かめた。&lt;/p&gt;</description>
     </item>
     
     <item>
