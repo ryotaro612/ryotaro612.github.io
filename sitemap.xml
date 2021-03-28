@@ -3,8 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://nryotaro.dev/posts/</loc>
+    <lastmod>2021-03-21T12:08:11+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2021-03-19T19:22:31+09:00</lastmod>
+    <lastmod>2021-03-21T12:08:11+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/ariesim/</loc>
+    <lastmod>2021-03-21T12:08:11+09:00</lastmod>
   </url>
   
   <url>
@@ -15,12 +26,6 @@
   <url>
     <loc>https://nryotaro.dev/gallery/bellefontaine_rouge/</loc>
     <lastmod>2021-03-19T19:22:31+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2021-03-19T19:17:56+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
