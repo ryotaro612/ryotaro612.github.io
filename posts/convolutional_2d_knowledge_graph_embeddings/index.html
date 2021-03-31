@@ -43,27 +43,28 @@
     <h1>論文メモ Convolutional 2D Knowledge Graph Embeddings</h1>
     <span class="date">January 11, 2021</span>
     <div>
-        <p>ナレッジグラフに欠けたリンクを予測するモデルは、一般に大きなグラフをあつかうために浅く高速なネットワークをもち、層の深いモデルと比べて表現力に欠ける。
+        <p>ナレッジグラフの未知のリンクを予測するモデルは、一般に大きなグラフをあつかえるようにネットワークを浅くし、処理性能の高速化をはかる。一方、代償として層の深いモデルと比べて表現力を欠く。
 提唱されるネットワークConvEは、畳み込み層をつかった深めのネットワークで予測性能の向上をはかる。
-層が深くなると計算コストの増加や過学習が課題になるが、先行研究の<a href="https://arxiv.org/abs/1412.6575">DistMult</a>や<a href="https://arxiv.org/abs/1703.06103">R-GCN</a>と比べたConvEのパラメタ数は1/8や1/17であり、パラメタ効率が高い。</p>
+層が深くなると計算コストの増加や過学習が課題になるが、先行研究の<a href="https://arxiv.org/abs/1412.6575">DistMult</a>や<a href="https://arxiv.org/abs/1703.06103">R-GCN</a>と比べたConvEのパラメタ数は1/8や1/17であり、パラメタ効率がよい。</p>
 <p>アーキテクチャは、畳み込み層、全結合層、ドロップアウト層からなる。
-下の図はアーキテクチャの全体像をしめす。
+下図はアーキテクチャの全体像をあらわす。
 <img src="/conve.png" alt="convE"></p>
-<p>エンティティと関係を集合をそれぞれ\(\varepsilon\), \(\mathcal{R}\)として、関係グラフを\(\mathcal{G}=\{(s, r, o)\}\subseteq\varepsilon\times \mathcal{R}\times \varepsilon\)とかく。
-なお、以下の説明ではドロップアウト層を数式にふくめない。
-エンティティと関係があたえられると、パラメタ\(k, k'\)の行列\(\boldsymbol{\rm E}^{\mid \varepsilon\mid \times k},\boldsymbol{\rm R}^{\mid\mathcal{R}\mid \times k'}\)の中から、対応する埋め込みベクトル\(\boldsymbol{\rm e}_s, \boldsymbol{\rm r}_r\)をさがす。
+<p>エンティティと関係を集合をそれぞれ\(\varepsilon\), \(\mathcal{R}\)として、関係グラフを\(\mathcal{G}=\{(s, r, o)\}\subseteq\varepsilon\times \mathcal{R}\times \varepsilon\)と記す。
+なお、以下の数式ではドロップアウト層を省く。
+エンティティと関係をあたえ、適当な各エンティティと関係のベクトルからなるパラメタ\(k, k'\)の行列\(\boldsymbol{\rm E}^{\mid \varepsilon\mid \times k},\boldsymbol{\rm R}^{\mid\mathcal{R}\mid \times k'}\)を学習する。
+以下のスコア関数にある\(\boldsymbol{\rm e}_s, \boldsymbol{\rm r}_r\)は、これらの行列の行ベクトルに該当する。
 \(\boldsymbol{\rm e}_s, \boldsymbol{\rm r}_r\)を2次元行列に\(\bar{\boldsymbol{\rm e}}_s, \bar{\boldsymbol{\rm r}}_r\)変形し、次の式を適用することでスコアを計算する。
 $$
-\sigma(\psi_r(\boldsymbol{\rm e}_s, \boldsymbol{\rm e}_o))=f(\text{vec}([\bar{\boldsymbol{\rm e}}_s;\bar{\boldsymbol{\rm e}}_r]*\omega))\boldsymbol{\rm W})\boldsymbol{\rm e}_o
+\sigma(\psi_r(\boldsymbol{\rm e}_s, \boldsymbol{\rm e}_o))=\sigma \left (f(\text{vec}([\bar{\boldsymbol{\rm e}}_s;\bar{\boldsymbol{\rm e}}_r]*\omega))\boldsymbol{\rm W})\boldsymbol{\rm e}_o\right)
 $$
-フィルタ\(\omega\)の畳み込み層が\(\mathcal{T}\in\mathbb{R}^{c\times m \times n}\)の特徴マップのテンソルを返すとき\(\text{vec}\)は\(\text{vec}(\mathcal{T})\in\mathbb{R}^{cmn}\)としてテンソルをベクトルに戻す。
-\(f\)は活性化関数であり、正規化線形ユニットを使う。</p>
-<p>損失関数は交差エントロピーが使われる。
+\(\text{vec}\)はテンソルをベクトルに変換する関数であり、フィルタ\(\omega\)の畳み込み層が\(\mathcal{T}\in\mathbb{R}^{c\times m \times n}\)の特徴マップのテンソルを返すとき、\(\text{vec}(\mathcal{T})\in\mathbb{R}^{cmn}\)となる。
+活性化関数\(f\)には正規化線形ユニットを使う。</p>
+<p>損失関数には交差エントロピーを使う。
 \(p\)を上の式で導出されたスコアとすると、損失関数は次の式をとる。
 $$
 \mathcal{L}(p, t)=\frac{1}{N}\sum_i(t_i\cdot \log(p_i)+(1-t_i)\cdot\log(1-p_i))
 $$
-計算するときは、あるエンティティと関係\(s, r\)の組について、対向エンティティ\(o\)の候補のスコアを並行して計算することで計算時間を短縮できる。</p>
+あるエンティティと関係\(s, r\)の組について、対向エンティティ\(o\)の候補のスコアを並行計算することで計算時間を短縮できる。</p>
 <p><a href="https://arxiv.org/abs/1707.01476">こちら</a>からダウンロードできます。
 文中の図は論文から引用されています。</p>
     </div>
