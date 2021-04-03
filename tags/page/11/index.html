@@ -43,6 +43,19 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/a_dual_embedding_space_model_for_document_ranking/">論文メモ A Dual Embedding Space Model for Document Ranking</a></h3>
+        <div class="summary"><p>Dual Embedding Space Model(DESM)は、word2vecで単語埋め込みベクトルにしたクエリと文書のランキング関数である。
+実験における比較対象のBM25は、クエリの単語の文書での出現頻度をもとに順序をつける。
+DESMは、クエリの単語に関係する単語をもとに判断する。
+単語埋め込みベクトルの作りに特徴があり、入力側のone-hotベクトル表現にわりあてる単語埋め込みベクトルでクエリを、出力側でベクトルで文書を分散表現にする。
+実験から、DESMだけで順位づけをすると偽陽性が高くなるが、DESMとBM25の加重平均をとるとBM25よりも高いNDCG値になることが分かった。
+アルゴリズムを実装したライブラリへのリンクは<a href="https://github.com/nryotaro/desm">こちら</a>。</p></div>
+        <div class="article-footer">
+            <span class="date">November 30, 2019</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/on_calibration_of_modern_neural_networks/">論文メモ On Calibration of Modern Neural Networks</a></h3>
         <div class="summary"><p>ネットワークの複雑化、バッチ正則化、重み減衰を使わない、負の対数尤度の過学習が汎化精度を上げるが、予測確率と精度のズレを大きくすることを実験的に示した。
 予測確率を補正する6つの手法を19種類のクラス分類のデータセットに適用した結果、
@@ -140,14 +153,6 @@ Weak Supervisionは、人手よりも効率良くノイズ交じりの教師デ�
 Snorkelは、引数にサンプルを返り値にラベルを返す複数の関数をラベルなしデータに適用し、結果から関数の精度を予測し、個々の関数よりも高い精度でデータにラベルを与える。この関数をラベリング関数という。Snorkel DryBellは、Snorkelのアルゴリズムをスケールさせるために、MapReduceに適用できるように修正されたものをさす。</p></div>
         <div class="article-footer">
             <span class="date">October 5, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/training_complex_models_with_multi_task_weak_supervision/">メモ Training Complex Models with Multi-Task Weak Supervision</a></h3>
-        <div class="summary"><p>論文の表題は、ソース間の粒度や精度が揃っていることを前提とせず、<a href="https://arxiv.org/pdf/1212.0478.pdf">LohとWainwrightらの手法</a>でソースの精度を推定し、ソースのラベルよりも精度が高いラベルをデータに与えるWeak supervsionの手法である。</p></div>
-        <div class="article-footer">
-            <span class="date">September 28, 2019</span>
         </div>
     </article>
     

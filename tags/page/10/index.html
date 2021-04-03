@@ -43,6 +43,14 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/docker-cmake-clang/">AtCoderに提出したコードをテストするためのDockerイメージ</a></h3>
+        <div class="summary">AtCoderに提出したコードをテストするためのDockerイメージを実装した。 イメージのDockerfileはこちらにある。 AtCoderで提出したコードをgithubで管理していて、これをテストするために作った。</div>
+        <div class="article-footer">
+            <span class="date">January 14, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/unsupervised_models_for_named_entity_classification/">論文メモ Unsupervised Models for Named Entity Classification</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>1999年に発表された教師なしの固有表現抽出の手法である。
@@ -140,19 +148,6 @@ Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文�
 これらの課題に対する手法として、ランキングのモデル、特徴のつくりかた、クエリを文書によせる翻訳モデルを解説する。</p></div>
         <div class="article-footer">
             <span class="date">December 7, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/a_dual_embedding_space_model_for_document_ranking/">論文メモ A Dual Embedding Space Model for Document Ranking</a></h3>
-        <div class="summary"><p>Dual Embedding Space Model(DESM)は、word2vecで単語埋め込みベクトルにしたクエリと文書のランキング関数である。
-実験における比較対象のBM25は、クエリの単語の文書での出現頻度をもとに順序をつける。
-DESMは、クエリの単語に関係する単語をもとに判断する。
-単語埋め込みベクトルの作りに特徴があり、入力側のone-hotベクトル表現にわりあてる単語埋め込みベクトルでクエリを、出力側でベクトルで文書を分散表現にする。
-実験から、DESMだけで順位づけをすると偽陽性が高くなるが、DESMとBM25の加重平均をとるとBM25よりも高いNDCG値になることが分かった。
-アルゴリズムを実装したライブラリへのリンクは<a href="https://github.com/nryotaro/desm">こちら</a>。</p></div>
-        <div class="article-footer">
-            <span class="date">November 30, 2019</span>
         </div>
     </article>
     
