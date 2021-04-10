@@ -127,9 +127,10 @@ TAOは、そのシステムの現状を引きつぎ、MySQLをストレージに
       <pubDate>Sat, 23 Jan 2021 14:50:16 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/dapper/</guid>
-      <description>&lt;p&gt;分散トレーシングシステムDapperをGoogle社内で開発、デプロイ、2年間の運用を経た知見をまとめている。
-Dapperをもとにして、TwitterはZipkinを、UberはJaegerを&lt;a href=&#34;https://www.oreilly.co.jp/books/9784873119038/&#34;&gt;開発した&lt;/a&gt;。
-Dapper以前に開発された&lt;a href=&#34;https://www.usenix.org/legacy/publications/library/proceedings/hotos03/tech/full_papers/barham/barham_html/paper.html&#34;&gt;Magpie&lt;/a&gt; &lt;a href=&#34;https://www.usenix.org/conference/nsdi-07/x-trace-pervasive-network-tracing-framework&#34;&gt;X-Trace&lt;/a&gt;との違いは、サンプリングされたリクエストのみをトレースし負荷を低減する機能がある点や、少数の共通ライブラリだけを測定対象にするところにある。&lt;/p&gt;</description>
+      <description>&lt;p&gt;分散トレーシングシステムDapperをGoogle社内で開発、デプロイ、運用した知見がまとめられている。
+運用期間は2年にわたる。
+Dapperをもとに、TwitterはZipkinを、UberはJaegerを&lt;a href=&#34;https://www.oreilly.co.jp/books/9784873119038/&#34;&gt;開発した&lt;/a&gt;。
+Dapper以前に開発された&lt;a href=&#34;https://www.usenix.org/legacy/publications/library/proceedings/hotos03/tech/full_papers/barham/barham_html/paper.html&#34;&gt;Magpie&lt;/a&gt;や&lt;a href=&#34;https://www.usenix.org/conference/nsdi-07/x-trace-pervasive-network-tracing-framework&#34;&gt;X-Trace&lt;/a&gt;との違いは、サンプリングされたリクエストのみをトレースし負荷を下げるられたり、少数の共通ライブラリだけを測定対象したりする点にある。&lt;/p&gt;</description>
     </item>
     
     <item>
