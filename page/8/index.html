@@ -44,6 +44,20 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/google_neural_machine_translation_system/">論文メモ Google&#39;s Neural Machine Transltation System: Bridging the Gap between Human and Machine Translation</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>ニューラルネットワークをもちいた機械翻訳システムの論文である。
+解決したい問題として、学習と推論時の処理時間の長さ、低頻出の単語を翻訳する難しさ、入力文の一部が翻訳されないことをあげ、注意機構でつながれたEncoderとDecoderからなるアーキテクチャを提案した。
+学習時間を短縮するために、Decoderの最初の層とEncodeerの出力層から注意をつくる注意機構を採用し、Decoderを並列に学習できるようにしている。
+また、量子化によって推論時間を短縮をしている。
+低頻出の単語でも翻訳できるようにwordpieceでエンコードされた入力をうけとる。
+入力文の一部が翻訳されない問題に対しては、短い出力文に罰則を課すビームサーチで出力文の候補を探索する仕組みが導入されている。</p></div>
+        <div class="article-footer">
+            <span class="date">May 30, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/zero_shot_learning_with_semantic_output_codes/">論文メモ Zero-Shot Learning with Semantic Output Codes</a></h3>
         <div class="summary"><p>学習データにないラベルを推定する問題に対してzero-shot leanringと名づけ、ラベルを推定できる確率と条件を形式化した論文である。
 形式化するモデルは、複数の二値分類器と1つの最近傍探索器からなる。
@@ -155,17 +169,6 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
 モデルは、Embeddings from Language Modelsにちなみ、ELMoと名付けられた。</p></div>
         <div class="article-footer">
             <span class="date">March 24, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/the_seven_sins/">論文メモ The Seven Sins: Security Smells in Infrastructure as Code Scripts</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>OSSの調査にもとづき、Infrastrucure as Code(IaC)スクリプトに潜む主要なセキュリティ上の不吉な匂い(Security Smells)を7つ列挙し、これらを検出するツールを実装した論文である。
-論文のねらいは、開発者がIaCスクリプトに不吉な匂いを混ぜないようにすることにある。
-著者らは、本論文で、ICSE2019のDistinguished Paper Awardを受賞した。</p></div>
-        <div class="article-footer">
-            <span class="date">March 20, 2020</span>
         </div>
     </article>
     

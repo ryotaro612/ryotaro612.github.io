@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-155190626-1');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>論文メモ The Log-Structured Merge-Tree (LSM-Tree)</h1>
+    <span class="date">April 3, 2021</span>
+    <div>
+        <p>LSM-Treeは、検索よりも挿入や削除が多い用途むけのインデックス構造であり、例えば履歴テーブルやログの保存につかえる。
+メモリにある1つ木とディスク上の1つ以上の木からなり、直近の挿入や削除をメモリの木で管理する。
+メモリの木の大きさがしきい値を超えたとき、メモリの木の葉をディスクの木に移す。
+移動時は、ディスク上の木の葉とメモリの葉をマージソートの要領でソートし、ソートした葉をディスクの新しい連続領域に書き込む。
+連続領域に書き込み、アームの移動やディスクの回転を減らすことで、高速に挿入や削除ができる。
+一方、検索速度は、複数の木を探索しなければならず、1本の木でインデックスを構成するB木に劣る。</p>
+<p>メモリにある木は\(C_0\)、ディスクにある木は\(C_i(i&gt; 0)\)という。
+\(C_{i-1}\)の大きさがしきい値をこえると、\(C_{i-1}\)の葉を\(C_{i}\)に移し、木のサイズを小さくする。
+\(i\)が大きいほどしきい値のサイズが大きい。
+\(C_0\)には、任意の木構造を採用でき、(2-3)木やAVL-treeが使われることがある。
+\(C_i\)はB木に似た木構造であり、マージ時に連続領域に新しい葉ページが書き込まれるので、同じ階層のページが連続領域にできる。
+これにより、シーケンシャルなアクセスが高速になる。</p>
+<p>１回マージで1つの葉ページができる。
+図はマージの様子をあらわす。
+\(C_1\)左端の葉ページを含むブロックをメモリ上に読み込み、\(C_1\)の一つの葉ページと\(C_0\)の葉のエントリをマージソードの要領でマージし、1つの葉ページを新しい連続領域に書き込む。
+古いページを上書きしないので、マージ時にクラッシュしても、古いページをつかってリカバリできる。
+マージが正常終了したら、マージ元の古いページを削除する。
+\(C_i\)から\(C_{i+1}\)へのマージも同様の手続きであり、それぞれ非同期に実行できる。
+<img src="/lsmtree.png" alt="tree"></p>
+<p>削除も挿入と同じように、\(C_0\)にバッファし、複数の削除をディスクに一度に反映できる。
+削除のリクエストが発生すると、\(C_0\)に削除したいレコードのIDをもったエントリ(delete node entry)を挿入する。
+実際のレコードの削除は、マージ対象のエントリの中にdelete node entryを見つけたときに実行する。
+検索時には複数の木が探索され、削除したレコードのキーをみつけてもdelete node entryが見つかれば、レコードの情報を返さない。
+これにより、ユーザにはレコードを実際に削除したかのようにみせられる。</p>
+<p>論文を<a href="https://www.cs.umb.edu/~poneil/lsmtree.pdf">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/the_design_and_implementation_of_a_log_structured_file_system/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+            <li class="atcoder"><a href="https://kenkoooo.com/atcoder/#/user/nryotaro">AtCoder</a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
