@@ -43,27 +43,26 @@
     <h1>論文メモ TAO: Facebook&#39;s Distributed Data Store for the Social Graph</h1>
     <span class="date">February 4, 2021</span>
     <div>
-        <p>TAOは、Facebookで開発されたソーシャルグラフのためのマルチリージョンの分散システムで、秒間で10億件の読み込みと数百万件の書き込みの性能を誇る。
-Facebookは、もともと、ソーシャルグラフをMySQLに保存し、memcacheをキャッシュにつかい、PHPで問いあわせるシステムを構成していた。
+        <p>TAOは、Facebookで開発されたソーシャルグラフのためのマルチリージョンの分散システムで、秒間10億件の読み込みと数百万件の書き込みの性能を発揮する。
+Facebookは、もともとソーシャルグラフを、MySQLに保存し、memcacheでキャッシュし、PHPで問いあわせるシステムで構成していた。
 TAOは、そのシステムの現状を引きつぎ、MySQLをストレージに採用している。</p>
-<p>TAOでは、ソーシャルグラフのノードをobject, 辺をassociationとよぶ。
+<p>ソーシャルグラフのノードをobject, 辺をassociationとよぶ。
 objectは、64ビットの整数値の<code>id</code>で一意に特定できる。
-associationは、値のほかに32ビットで時間をあらわす<code>time</code>をもつ。
-objectとassociationには連想配列でデータをもたせることができる。
-以下の<code>id1</code>, <code>id2</code>はオブジェクトのIDであり、<code>otype</code>, <code>atype</code>はobjectやassociationがあらわすソーシャルグラフ上の意味にあたる。</p>
+associationは、32ビットで時間をあらわす<code>time</code>と値をもつ。
+objectとassociationには連想配列をもたせることができる。
+以下の<code>id1</code>, <code>id2</code>はobjectのIDであり、<code>otype</code>, <code>atype</code>は、ユーザやフォローなど、objectやassociationがあらわすソーシャルグラフ上の意味にあたる。</p>
 <pre><code>Object: (id) -&gt; (otype, (key -&gt; value)*)
 Assoc.: (id1, atype, id2) -&gt; (time, (key -&gt; value)*)
 </code></pre>
 <p>TAOは、associationのクエリAPIを提供する。
-ユーザは、例えば、<code>id1</code>, <code>atype</code>でassociationの件数をかぞえたり、associationを検索できたりする。
+ユーザは、たとえば、<code>id1</code>, <code>atype</code>でassociationの件数をかぞえたり、associationを検索できたりする。
 ソーシャルグラフの多くのデータは古く、一方で、クエリの対象になるデータは新しいものが多い。
-この時間の局所性を活かすために、内部では、<code>id</code>と<code>atype</code>が同じassociationは時間順に並べて管理される。
+この時間の局所性をいかすために、内部では、<code>id</code>と<code>atype</code>が同じassociationは時間順に並べて管理される。
 この配列はassociation listとよばれ、次の構造をとる。</p>
 <pre><code>Association List: (id1, atype) -&gt; [a_new ... a_old]
 </code></pre>
-<p>TAOは、永続層とキャッシュ層をもつ。
-永続層にシャーディングをもちいたMySQLがある。
-キャッシュ層にはLeader, Followerの2種類のキャッシュサーバがある。
+<p>TAOには永続層とキャッシュ層がある。
+永続層にシャーディング化されたMySQLがあり、キャッシュ層にはLeader, Followerの2種類のキャッシュサーバがある。
 また、TAOは複数のデータセンタ上に展開されており、データセンタのまとまりをregionといい、regionはMasterとSlaveで区別される。
 以下の図は、TAOの全体像をしめす。
 <img src="/tao.png" alt="tao"></p>
@@ -75,7 +74,7 @@ leader tierは、永続層への読み込み、書き込みを担当する。
 followerは読み込みミスや書き込みリクエストをleaderに送る。
 followerは、ほかのtierに問いあわせなくても、どんなリクエストであっても応答できる。
 クライアントは、follower tierと通信し、leaderには直接リクエストを送らない。</p>
-<p>各シャードはひとつのleaderに対応づけられ、書き込みは対応するleaderからしか送られない。
+<p>各シャードはひとつのleaderに対応し、書き込みは対応するleaderからしか送られない。
 leaderがobjectを更新すると、キャッシュを無効にするメッセージ(invalidation message)をfollwerに送る。
 メッセージにはバージョン番号がふくまれており、followerは、番号からメッセージの新しさを調べ、古いものを無視する。
 更新によって、followerにキャッシュされた大量のassociationが無効になることがある。
