@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-155190626-1');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>論文メモ Fast Intersection Algorithms for Sorted Sequences</h1>
+    <span class="date">April 12, 2021</span>
+    <div>
+        <p>ソートされたシーケンスの直積を高速に求めるアルゴリズム Double Binary Searchを示した。
+2つのシーケンス\(D\), \(Q\)があり、\(\mid D\mid=n\), \(\mid Q\mid=m\), \(n &gt;= m\)であれば、平均と最悪時間計算量が、それぞれ、\(\mathcal{O}(m\log(n/m))\), \(m\)になる。
+本アルゴリズムは、Web検索エンジンで大きなシーケンスの直積を高速に求めるために開発された。</p>
+<p>Double Binary Searchは、\(Q\)の中央値を\(D\)から再帰的に探索する。
+Web検索エンジンのために開発された背景から、\(Q\)をクエリ、\(D\)をドキュメントととらえると考えやすくなるだろう。
+次の図は再帰的な探索の様子を示す。
+中央値があれば返り値に加える。
+次に中央値を境に\(Q\)を2つのシーケンスに分割する。
+おなじく\(D\)も、\(Q\)の中央値と比べた大小で2つのシーケンスに分割する。
+そして、大小関係がおなじ\(D\)と\(Q\)の部分シーケンス2組について再帰的に中央値の探索を繰り返す。
+<img src="/double_binary_search/divide.png" alt="algorithm.png"></p>
+<p>図のDouble Binary Searchのアルゴリズムは、ソートされた直積のシーケンスを返す。</p>
+<p><img src="/double_binary_search/algorithm.png" alt="algorithm.png"></p>
+<p>論文を<a href="https://www.researchgate.net/publication/221349779_Fast_Intersection_Algorithms_for_Sorted_Sequences">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/lsmtree/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+            <li class="atcoder"><a href="https://kenkoooo.com/atcoder/#/user/nryotaro">AtCoder</a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

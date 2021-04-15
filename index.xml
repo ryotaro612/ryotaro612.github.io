@@ -6,7 +6,18 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 10 Apr 2021 16:41:50 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Apr 2021 13:27:26 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>論文メモ Fast Intersection Algorithms for Sorted Sequences</title>
+      <link>https://nryotaro.dev/posts/fast_intersection_algorithms_for_sorted_sequences/</link>
+      <pubDate>Mon, 12 Apr 2021 13:27:26 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/fast_intersection_algorithms_for_sorted_sequences/</guid>
+      <description>&lt;p&gt;ソートされたシーケンスの直積を高速に求めるアルゴリズム Double Binary Searchを示した。
+2つのシーケンス\(D\), \(Q\)があり、\(\mid D\mid=n\), \(\mid Q\mid=m\), \(n &amp;gt;= m\)であれば、平均と最悪時間計算量が、それぞれ、\(\mathcal{O}(m\log(n/m))\), \(m\)になる。
+本アルゴリズムは、Web検索エンジンで大きなシーケンスの直積を高速に求めるために開発された。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>ドメーヌ・ポール・マス・シェ・マス・赤[2019]</title>
       <link>https://nryotaro.dev/gallery/domaine_paul_mas_chai_mas_rouge2019/</link>
