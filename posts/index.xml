@@ -118,8 +118,8 @@ FD-treeのエントリ数が\(n\)でページサイズが\(B\)のとき、ラン
       <pubDate>Sat, 13 Feb 2021 19:52:34 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/isolation_forest/</guid>
-      <description>&lt;p&gt;Isolation Forestは、iForestともいい、完全二分木による異常検知の手法であり、時間計算量が線形で、ハイパーパラメタがわずか2つで、メモリ効率がよいところに特徴がある。
-時間、空間計算量がすくないので高次元のデータに向いている。&lt;/p&gt;</description>
+      <description>&lt;p&gt;Isolation Forestは、完全二分木による異常検知の手法で、iForestともよばれる。時間計算量が線形で、ハイパーパラメタがわずか2つで、メモリ効率がよい。
+時間、空間計算量が少なく高次元のデータに向く。&lt;/p&gt;</description>
     </item>
     
     <item>
