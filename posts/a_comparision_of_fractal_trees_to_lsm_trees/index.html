@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155190626-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-155190626-1');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>論文メモ A comparison of Fractal Trees to Log-Structured Merge (LSM) Trees</h1>
+    <span class="date">April 19, 2021</span>
+    <div>
+        <p>Fractal TreeのamplificationをB+木やLSM Treeと比べて整理した。
+Fractal Treeは、B+木のルートと節にバッファをもたせるデータ構造にあたる。
+議論になるamplificationはwrite, read, spaceの3つで、write amplificationはアプリケーションの書き込むデータ量に対する実際にストレージに書き込まれたデータ量をさす。
+read amplificationはクエリの実行に必要なI/Oの回数、space amplificationは仕組み上避けられない断片化や一時的なデータのコピーをさす。</p>
+<p>Fractal Treeは、ルートと節のバッファに挿入、削除、更新内容を保留し、バッファが一杯になると子の節のバッファに内容を移動する。
+葉ノードはバッファをもたず、内容が降りてきたらB+木同様に更新する。</p>
+<p>論文では、amplificationの比較対象やFractal Treeの基礎をB木と呼んでいるが、3節 &ldquo;B Trees&quot;のアルゴリズムの解説はB+木のもので、データが節になく葉に集約されている。
+B木とB+木の違いはB木の<a href="http://www.inf.fu-berlin.de/lehre/SS10/DBS-Intro/Reader/BayerBTree-72.pdf">オリジナル論文</a>とB木の<a href="http://carlosproal.com/ir/papers/p121-comer.pdf">サーベイ論文</a>を比較すると分かりやすい。</p>
+<p>LSM Treeは、Leveled LSM TreesとSize-tiered LSM Treesに分けて考えられている。
+Leveled TreesとSize-tiered LSM Treesの違いは、マージするrunの数が2つかそれ以上かにある。
+Leveled LSM TreeはLSM Treeの<a href="https://www.cs.umb.edu/~poneil/lsmtree.pdf">オリジナル論文</a>で提唱されたもので、1レベル1runの対応があり、隣接するレベル同士の2つのrunをマージする。
+Sized-tiered LSM Treesは1つのrunを1つのファイルに保存する。
+本来runの長さは不揃いでよいが、計算量のオーダーを算出する都合で、各レベルに複数のrunがあり、同レベルのrunの長さは等しいものとしている。
+同じレベルにある複数のrunを一度にマージし、1つの大きなrunをつくる。</p>
+<p>write, read, spaceで総合的に評価するとFractal Treeは理論でも実験でもバランスよく優れているとあった。
+ただ、LSM Treeが得意なアームのあるHDDについての考察がなく、結論には疑問が残った。
+Leveled LSM Treeは、runを複数のファイルに保存するほうが、単一のファイルに保存するよりもspace amplificationが小さい。
+Sized-tiered LSM Treeは、Leveled LSM TreeやFractal Treeよりも、write amplificationがはるかに小さい。
+他方で、range queryやspace amplificationのコストがはるかに大きい。</p>
+<p>論文を<a href="http://www.pandademo.com/wp-content/uploads/2017/12/A-Comparison-of-Fractal-Trees-to-Log-Structured-Merge-LSM-Trees.pdf">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/fast_intersection_algorithms_for_sorted_sequences/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+            <li class="atcoder"><a href="https://kenkoooo.com/atcoder/#/user/nryotaro">AtCoder</a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
