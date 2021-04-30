@@ -46,6 +46,23 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/do_developers_discover_new_tools_on_the_toilet/">論文メモ Do Developers Discover New Tools On The Toilet?</a></h3>
+        <div class="summary"><p><a href="https://mike-bland.com/2011/10/25/testing-on-the-toilet.html">Testing on the Toilet</a>の効果を<a href="https://research.google/pubs/pub41854/">CausalImpact</a>で示した。</p></div>
+        <div class="article-footer">
+            <span class="date">June 20, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/a_neural_attention_model_for_sentence_summarization/">論文メモ A Neural Attention Model for Sentence Summarization</a></h3>
+        <div class="summary"><p>注意機構による深層学習で文を要約する手法である。
+もとの文にない単語を含む要約文を生成できるが、生成前に文の長さを決めておかなければならない。</p></div>
+        <div class="article-footer">
+            <span class="date">June 20, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/bleu/">論文メモ BLEU: a Method for Automatic Evaluation of Machine Translation</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>自動翻訳を定量的に評価するための指標BLEUを提案した論文である。
@@ -148,33 +165,6 @@ BERT-largeと比べると、ALBERT-largeのパラメタ数は約5.3%の18Mであ
 また、Next Sentence Prediction(NSP)による学習を、与えられた2文の前後関係を判定する学習Sentence Order Prediction(SOP)におきかえ、主タスクの予測性能を向上をはかった。</p></div>
         <div class="article-footer">
             <span class="date">April 25, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/random_walks_in_recommender_systems/">論文メモ Random Walks in recommender Systems: Exact Computation and Simulations</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p><a href="https://ieeexplore.ieee.org/document/4072747">F. Foussら</a>や<a href="https://www.aaai.org/Papers/IJCAI/2007/IJCAI07-444.pdf">M. Goriら</a>のランダムウォークによる推薦システムの先行研究を、質や計算量について比較した論文である。
-比較対象には、著者らの用意したも含まれる。
-実験には、MovieLensのデータセットが使われた。
-F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒット数で評価したところ、著者らの用意した単純な手法\(P^s\)やその拡張\(P_\alpha^s\)が質と計算量の両方で最も優れた結果を残した。</p></div>
-        <div class="article-footer">
-            <span class="date">April 18, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/domain_adversarial_training_of_neural_networks/">論文メモ Domain Adversarial Training of Neural Networks</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>ニューラルネットワークをもちいたドメイン適用の論文である。
-ソースドメインのラベルつきデータと目標ドメインのラベルのないデータでモデルを訓練し、目標ドメインに対する分類性能を引きあげる。
-目的関数は、ソースドメインの分類器の目的関数とデータのドメインを判定する識別器の目的関数からなる。
-後者は、前者の正則化項としてはたらく。
-これにより、ドメイン間に共通する特徴からソースドメインのデータのラベルを高い性能で予測できるようになる。
-目標関数から、ドメイン間のデータの分布が近いほど、目標ドメインのデータでも高い分類性能を発揮する。
-先行研究との違いは、できるだけ共通するする特徴で分類するという着想を、通常の分類と同じく、確率的勾配降下法で実現したところにある。</p></div>
-        <div class="article-footer">
-            <span class="date">April 11, 2020</span>
         </div>
     </article>
     

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-64L0YEFRY5"></script>
+    <script>
+        if (location.hostname != 'localhost') {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-64L0YEFRY5');
+        }
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>論文メモ Designing Access Methods: The RUM Conjecture</h1>
+    <span class="date">April 26, 2021</span>
+    <div>
+        <p>データ構造は読み込み(Read, R), 更新(Update, U), 所要メモリ容量(Memory, M)にトリレンマを抱え、いかなるデータ構造でも、2つを最適化すると残る1つのオーバヘッドが悪化すると予想した。
+Read, Update, Memoryの頭文字から、これをRUM Conjectureと名付けた。</p>
+<p>予想の前提には、主記憶と補助記憶間の容量とIO速度のトレードオフがある。
+以下の図は、前提にある記憶装置の階層構造を示す。
+上層ほど、各オーバヘッドは小さいが、同時に容量も小さい。
+<img src="/rum/hierarchies.png" alt="hierarchies">
+論文におけるオーバーヘッドはamplificationの意味に近い。
+読み込みのオーバーヘッドは、読み込まれた主記憶と補助記憶のデータ量を実際に取得したデータ容量で割った値にあたる。
+更新のオーバヘッドは物理的に更新されたデータサイズを論理的に更新されたデータサイズで割った値であり、メモリのオーバーヘッドは消費される主記憶と補助記憶の消費データサイズの和を補助記憶のサイズで割った値に該当する。
+主要なデータ構造を最適化対象をもとにマッピングすると、次の図の位置関係になる。
+<img src="/rum/popular_data_structures.png" alt="data_structures"></p>
+<p>論文を<a href="https://stratos.seas.harvard.edu/files/stratos/files/rum.pdf">こちら</a>からダウンロードできます。
+画像は論文から引用されています。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/a_comparision_of_fractal_trees_to_lsm_trees/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/integrating_the_ub_tree_into_a_database_system_kernel/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+            <li class="atcoder"><a href="https://kenkoooo.com/atcoder/#/user/nryotaro">AtCoder</a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
