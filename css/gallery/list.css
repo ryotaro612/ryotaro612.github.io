@@ -9,6 +9,10 @@
     overflow: hidden;
     width: 100%;
     cursor: pointer;
+    display: flex;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
 }
 
 .picture:hover > .description {
@@ -18,7 +22,7 @@
 .picture > .description {
     position: absolute;
     width: 100%;
-    height: 98%;
+    height: 100%;
     color: white;
     opacity: 0.8;
     top: 100%;
