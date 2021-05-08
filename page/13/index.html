@@ -47,6 +47,18 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/learning_on_border/">メモ Learning on the Border: Active Learning in Imbalanced Data Classification</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>表題にある論文は、不均衡データの二値分類についての予測性能を能動学習で改善する手法を提案している。
+着想は、学習器のマージン付近では正例と負例がよりバランスしていると仮定し、
+マージン付近にあるデータを集めることで、均衡のとれたデータセットを用意することにある。
+具体的には、ラベルづけしたデータでSVMをオンライン学習し、無作為に抽出されたラベルのないデータの中で最も超平面に近いデータにラベルをつける手順をマージンの中にあるデータ数が変わらなくなるまで繰り返す。</p></div>
+        <div class="article-footer">
+            <span class="date">August 31, 2019</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/distilling_the_knowledge_in_a_neural_network/">メモ Distilling the Knowledge in a Neural Network</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>表題にあるニューラルネットワークの蒸留についての論文を紹介する。
@@ -145,16 +157,6 @@ CatBoostは二進木の決定木を弱識別器に用いる。</p></div>
 TextRankは、名前から推測できるようにPageRankを応用した手法であり、頂点の重要度を、頂点の内容のような局所的な情報ではなく、他の頂点との辺の接続関係を含むグラフ全体の大域的な情報から決定する。PageRankとTextRankのアルゴリズムの違いは、TextRankの場合は辺ごとに重みが設定できるところにある。</p></div>
         <div class="article-footer">
             <span class="date">July 20, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/subword_regularization/">概要 Subword Regularization: Improving Neural Network Translation Models with Multiple Subword Candidates</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>表題は、過去に<a href="../neural_machine_translation_of_rate_words/">紹介</a>した<a href="https://www.aclweb.org/anthology/P16-1162">論文</a>と同様、sentencepiece（ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザ）の元になった論文にあたる。
-ノイズに対する頑強さのために、単語のサブワード（部分文字列）を生成するユニグラム言語モデルの学習方法と、モデルから生成されたサブワード列を入力とする機械翻訳モデルの学習方法を提案した。</p></div>
-        <div class="article-footer">
-            <span class="date">July 17, 2019</span>
         </div>
     </article>
     
