@@ -6,7 +6,16 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 07 May 2021 18:10:27 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 May 2021 11:09:09 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>リトル　ジェームズ　バスケット　プレス　ホワイト</title>
+      <link>https://nryotaro.dev/gallery/little_james_basket_press_white/</link>
+      <pubDate>Sun, 09 May 2021 11:09:09 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/gallery/little_james_basket_press_white/</guid>
+      <description>辛口の白。変な樽香のない感じでおいしい。 ただ辛口の白で香りのないものはみんな同じ味に感じる。 そうなると値段で選んだほうがいいのかな。</description>
+    </item>
+    
     <item>
       <title>論文メモ HyperDex: A Distribute, searchable Key-Value Store</title>
       <link>https://nryotaro.dev/posts/hyperdex/</link>
@@ -234,15 +243,15 @@ Robust Random Cut Forestは、特徴の値でデータを2分するノードを�
     </item>
     
     <item>
-      <title>論文メモ Organization and Maintenance of Large Orderred indexes</title>
+      <title>論文メモ Organization and Maintenance of Large Ordered indexes</title>
       <link>https://nryotaro.dev/posts/organization_and_maintenance_of_large_orderred_indexes/</link>
       <pubDate>Sat, 27 Feb 2021 19:54:56 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/organization_and_maintenance_of_large_orderred_indexes/</guid>
       <description>&lt;p&gt;1972年に発表されたB木のオリジナルの論文。
 \(I\)をインデックスの大きさ、\(k\)をハードウェア依存の値とすると、検索、挿入、削除の時間計算量は\(\log_kI\)になる。
-ここでのインデックスは、固定長の\((x, \alpha)\)を要素とする連想配列で、最大\(2k\)個のキーを格納できる連続するページ上にある。
-\(\alpha\)には、たいてい1つ以上のレコードへのポインタが格納される。&lt;/p&gt;</description>
+ここでのインデックスは、固定長の\((x, \alpha)\)を要素とする連想配列で、最大\(2k\)個のキーを格納できる連続したページ上にある。
+\(\alpha\)には、データを保存した1つ以上のレコードへのポインタが格納される。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1747,6 +1756,15 @@ TextRankは、名前から推測できるようにPageRankを応用した手法�
       <guid>https://nryotaro.dev/posts/neural_machine_translation_of_rate_words/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;内容は、sentencepiece（ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザ）のトークナイズで使われるアルゴリズムになっている。単語をサブワード（単語の部分文字列）に分割し、サブワードを組み合わせて珍しい単語や未知語を表現することで、これらの出現頻度の低い単語の翻訳上げるというもの。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>論文メモ The Annotated Transformer</title>
+      <link>https://nryotaro.dev/posts/the_annotated_transformer/</link>
+      <pubDate>Mon, 01 Jul 2019 12:57:09 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/the_annotated_transformer/</guid>
+      <description>&lt;p&gt;論文は、当サイトで紹介した&lt;a href=&#34;https://arxiv.org/abs/1706.03762&#34;&gt;Attention Is All You Need&lt;/a&gt;で提案されたTransformerのアーキテクチャを、サンプルコードとオリジナルの論文の引用を交えて解説している。 実装にはPyTorchを使用している。&lt;/p&gt;</description>
     </item>
     
     <item>
