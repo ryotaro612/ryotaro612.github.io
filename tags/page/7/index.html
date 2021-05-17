@@ -46,6 +46,19 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/">論文メモ Improving Language Understanding by Generative Pre-Training</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>GPTの略称で知られる教師なしの事前学習である。
+評価実験では、12の自然言語処理タスクのうち9つで、当時のSoTAを上まわる性能を発揮した。
+ネットワークはTransformerであり、事前学習では言語モデルを学習する。
+手法の独自性は、ファインチューニングでの入力データの作り方にある。
+入力形式を工夫し、事前学習時のネットワーク構成を維持することで、効率的な転移学習を実現する。</p></div>
+        <div class="article-footer">
+            <span class="date">August 7, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/a_tale_from_the_trenches/">論文メモ A Tale from the Trenches: Cognitive Biases and Software Development</a></h3>
         <div class="summary"><p>エンジニア10人の普段の開発状況から、認知バイアスが開発者にあたえる影響やバイアスの頻度、対策方法について調査した。</p></div>
         <div class="article-footer">
@@ -135,17 +148,6 @@ Pytorchは、4つの設計原則として、PythonらしいAPI、機械学習の
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/automatic_differentiation_in_pytorch/">論文メモ Automatic differentiation in Pytorch</a></h3>
-        <div class="summary"><p>Pytorchの自動微分を解説したプレプリントのショートペーパである。
-Pytorchの自動微分特徴として、in-placeアルゴリズム、微分の導出に不要な計算を省く仕組みのあるテープ、C++による実装をあげている。
-<a href="https://pytorch.org/blog/pytorch-0_4_0-migration-guide/">0.4.0での仕様変更</a>によって<code>Tensors</code>と<code>Variables</code>がマージされたことや<code>volatile</code>が非推奨になったことをふまえていない。
-読むときは、以上の点をはじめとする現在のAPIとの差異に注意する必要がある。</p></div>
-        <div class="article-footer">
-            <span class="date">July 4, 2020</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -164,7 +166,7 @@ Pytorchの自動微分特徴として、in-placeアルゴリズム、微分の�
         <a href="/tags/page/8/"><span class="material-icons">chevron_right</span></a>
     </li>
     <li>
-        <a href="/tags/page/15/"><span class="material-icons">last_page</span></a>
+        <a href="/tags/page/16/"><span class="material-icons">last_page</span></a>
     </li>
     
 </ul>

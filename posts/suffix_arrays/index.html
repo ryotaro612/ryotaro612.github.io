@@ -43,24 +43,32 @@
     </header>
     
 <main>
-    <h1>論文メモ HyperDex: A Distribute, searchable Key-Value Store</h1>
-    <span class="date">May 7, 2021</span>
+    <h1>Suffix Arrays: A New Method for On-Line String Searches</h1>
+    <span class="date">May 16, 2021</span>
     <div>
-        <p><a href="https://dbdb.io/db/hyperdex">HyperDex</a>はキー以外の要素で値を検索できるキーバリューストアで、このキー以外の要素による検索速度がCassandraやMongoDBと比べて12-13倍速い。
-キーバリューストアは、RDBMSと比べると、処理速度は速いが、検索条件の機能に乏しい。
-HyperDexは、要素数と同数の次元からなるユークリッド空間を構成し、要素のハッシュ値で決まる座標に値をおくことで、キー以外でも高速に検索することを可能にする。
-もとのドメインの順序関係を保持するハッシュ関数を使うため、範囲検索もあつかえる。</p>
-<p>一方、単純に要素数と次元数を対応させると、指数関数的にユークリッド空間が大きくなってしまう。
-たとえば、キーを除いた\(D\)個の要素からなる値をAND条件で検索させるなら、\(2^D\)の領域が必要になる。</p>
-<p>そのため、Hyperdexは、ユークリッド空間を一部の要素からなる超直方体に分割して管理する。
-具体的には、要素の部分集合からなるsubspaceをつくり、必要な領域数を減らす。
-以下の図は、\(D\)次元の空間を\(S\)個の超直方体に分割する様子をあらわす。
-\(D=9\)かつ3要素で1つのsubspaceをつくる場合、subspaceは3つになる。
-また、3要素を条件として検索する場合、検索対象のsubspaceは、全ての要素が同じsubspaceにあれば1つであり、異なるsubspaceであれば3つになる。
-検索条件における要素の共起頻度をもとにsubspaceを決めることで、検索対象のsubspaceの数を減らすことができる。
-<img src="/hyperdex/partitions.png" alt="partitions"></p>
-<p>論文を<a href="https://www.cs.cornell.edu/people/egs/papers/hyperdex-sigcomm.pdf">こちら</a>からダウンロードできます。
-図は論文から引用されています。</p>
+        <p>接尾辞配列 Suffix Arraysは、長さ\(P\)の文字列が長さ\(W\)の文字列のどこに出現するかを時間計算量\(\mathcal{O}(P + \log N)\)で判定できるデータ構造で、接尾辞木 suffix treeよりもメモリ効率が3-5倍よい。
+一方で、検索の準備にかかる最悪時間計算量はsuffix treeよりも大きい。
+suffix arrayの構築にかかる最悪時間計算量が\(\mathcal{O}(N\log N)\)に対して、suffix treeは\(\mathcal{O}(N)\)しかかからない。</p>
+<p>Suffix Arrayは文字列のすべてのsuffixを辞書順にソートした配列であり、配列には、suffixそのものではなく、その開始位置を格納する。
+長さ\(N\)の文字列を\(A=a_0a_1\cdots a_{N-1}\), \(i\)番目から始まる\(A\)のsuffixを\(A_i\), suffixを辞書順にソートしたときの開始位置の配列を\(\textit{POS}\), \(\le\)を辞書順の記号とすると、
+$$
+A_{\text{POS}[0]} \le \dots \le A_{\text{POS}[N-1]}
+$$
+がなりたつ。
+ここで\(\le_p\)を長さ\(p\)のprefixでくらべた辞書順の関係とすると
+$$
+A_{\text{POS}[0]} \le_p \dots \le_p A_{\text{POS}[N-1]}
+$$
+も同時に成立する。ただし、長さが\(u(&lt;p)\)のときは先頭\(u\)文字でくらべる。
+このとき、長さ\(p\)の文字列の\(A\)における全ての開始位置を二分探索で検索できる。</p>
+<p>単純に長さ\(n\)の文字列\(n\)個をソートしてsuffix arrayをつくると、\(\mathcal{O}(n^2\log n)\)時間かかってしまう。
+論文の後半は、ダブリングと呼ばれる手法で\(\mathcal{O}(n\log_2 n)\)時間でソートする手法が説明されている。
+なお、suffix arrayを構築するアルゴリズムはいくつかあり、例えばSA-ISだと線形時間で構築することができる。</p>
+<hr>
+<ul>
+<li>論文を<a href="https://courses.cs.washington.edu/courses/cse590q/00au/papers/manber-myers_soda90.pdf">こちら</a>からダウンロードできます。</li>
+<li>論文のほかに<a href="https://book.mynavi.jp/ec/products/detail/id=22672">プログラミングコンテストチャレンジブック 第二版</a>を参考にしました。</li>
+</ul>
     </div>
 </main>
 
@@ -68,13 +76,9 @@ HyperDexは、要素数と同数の次元からなるユークリッド空間を
 <ul class="pagination">
     
     <li>
-        <a href="/posts/integrating_the_ub_tree_into_a_database_system_kernel/"><span class="material-icons">chevron_left</span></a>
+        <a href="/posts/hyperdex/"><span class="material-icons">chevron_left</span></a>
     </li>
     
-    
-    <li>
-        <a href="/posts/suffix_arrays/"><span class="material-icons">chevron_right</span></a>
-    </li>
     
 </ul>
 
