@@ -47,9 +47,9 @@
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/robust_random_cut_forest_based_anomaly_detection_on_streams/">論文メモ Robust Random Cut Forest Based Anomaly Detection On Streams</a></h3>
-        <div class="summary"><p>ストリームデータ向けの異常検知の手法、Robust Random Cut Forestを提唱した。
-ストリームデータをあつかうには、バッチデータと違い、データが随時追加、修正されることに対応できなければならない。
-Robust Random Cut Forestは、特徴の値でデータを2分するノードをもつ木の集合であり、データを追加したときに木の集合たるモデルを著しく複雑するデータを異常と判定する。</p></div>
+        <div class="summary"><p>Robust Random Cut Forest(RRCT)はストリームデータ向きの異常検知の手法で、<a href="https://www.aclweb.org/anthology/P16-1162/">Amazon SageMaker</a>から提供されている。
+バッチデータと違い、ストリームデータは新たなデータが随時追加、修正される。
+RRCTは、特徴の値でデータを2分するノードからなる木の集合であり、データを追加したときに木の集合であるモデルを大きく複雑するものを異常と判定する。</p></div>
         <div class="article-footer">
             <span class="date">March 12, 2021</span>
         </div>
