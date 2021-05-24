@@ -17,6 +17,22 @@
     </item>
     
     <item>
+      <title>Burst Tries: A Fast, Efficient Data Structure for String Keys</title>
+      <link>https://nryotaro.dev/posts/burst_tries/</link>
+      <pubDate>Sat, 22 May 2021 02:32:18 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/burst_tries/</guid>
+      <description>&lt;p&gt;Burst trieは、trie木の一種で、2分木よりもメモリ効率がよく、trie木と同じくらい速い。
+2種類のデータ構造からなり、trie木に加えて別のデータ構造も使う。
+どのデータ構造を使うかは要件次第で、論文では、連結リスト、二分探索木、スプレー木を使った場合の実験がなされた。
+Burst trie内の別のデータ構造の箇所はcontainerと呼ばれる。
+初期状態のBurst trieは、1つのcontainerからなり、別のデータ構造そのものに等しい。
+その後、コンテナ内の要素のアクセス頻度やヒット率にもとづくヒューリスティックな基準が満たされると、containerの要素をtrie木のノードにおきかえ、ノードに下に新しいcontainerをつくる。
+新しくできたcontainerにも基準を適用し、適宜おきかえる。
+これにより、与えられる文字列の頻度に合わせてtrie木と別のデータ構造を使い分けることができると同時に、性能はデータの歪度に依存する。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Suffix Arrays: A New Method for On-Line String Searches</title>
       <link>https://nryotaro.dev/posts/suffix_arrays/</link>
       <pubDate>Sun, 16 May 2021 01:45:32 +0900</pubDate>

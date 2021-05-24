@@ -19,8 +19,13 @@
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2021-05-16T01:45:32+09:00</lastmod>
+    <lastmod>2021-05-22T02:32:18+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/burst_tries/</loc>
+    <lastmod>2021-05-22T02:32:18+09:00</lastmod>
   </url>
   
   <url>

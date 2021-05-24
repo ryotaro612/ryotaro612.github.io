@@ -43,32 +43,27 @@
     </header>
     
 <main>
-    <h1>Suffix Arrays: A New Method for On-Line String Searches</h1>
-    <span class="date">May 16, 2021</span>
+    <h1>Burst Tries: A Fast, Efficient Data Structure for String Keys</h1>
+    <span class="date">May 22, 2021</span>
     <div>
-        <p>接尾辞配列 Suffix Arraysは、長さ\(P\)の文字列が長さ\(W\)の文字列のどこに出現するかを時間計算量\(\mathcal{O}(P + \log N)\)で判定できるデータ構造で、接尾辞木 suffix treeよりもメモリ効率が3-5倍よい。
-一方で、検索の準備にかかる最悪時間計算量はsuffix treeよりも大きい。
-suffix arrayの構築にかかる最悪時間計算量が\(\mathcal{O}(N\log N)\)に対して、suffix treeは\(\mathcal{O}(N)\)しかかからない。</p>
-<p>Suffix Arrayは文字列のすべてのsuffixを辞書順にソートした配列であり、配列には、suffixそのものではなく、その開始位置を格納する。
-長さ\(N\)の文字列を\(A=a_0a_1\cdots a_{N-1}\), \(i\)番目から始まる\(A\)のsuffixを\(A_i\), suffixを辞書順にソートしたときの開始位置の配列を\(\textit{POS}\), \(\le\)を辞書順の記号とすると、
-$$
-A_{\text{POS}[0]} \le \dots \le A_{\text{POS}[N-1]}
-$$
-がなりたつ。
-ここで\(\le_p\)を長さ\(p\)のprefixでくらべた辞書順の関係とすると
-$$
-A_{\text{POS}[0]} \le_p \dots \le_p A_{\text{POS}[N-1]}
-$$
-も同時に成立する。ただし、長さが\(u(&lt;p)\)のときは先頭\(u\)文字でくらべる。
-このとき、長さ\(p\)の文字列の\(A\)における全ての開始位置を二分探索で検索できる。</p>
-<p>単純に長さ\(n\)の文字列\(n\)個をソートしてsuffix arrayをつくると、\(\mathcal{O}(n^2\log n)\)時間かかってしまう。
-論文の後半は、ダブリングと呼ばれる手法で\(\mathcal{O}(n\log_2 n)\)時間でソートする手法が説明されている。
-なお、suffix arrayを構築するアルゴリズムはいくつかあり、例えばSA-ISだと線形時間で構築することができる。</p>
-<hr>
-<ul>
-<li>論文を<a href="https://courses.cs.washington.edu/courses/cse590q/00au/papers/manber-myers_soda90.pdf">こちら</a>からダウンロードできます。</li>
-<li>論文のほかに<a href="https://book.mynavi.jp/ec/products/detail/id=22672">プログラミングコンテストチャレンジブック 第二版</a>を参考にしました。</li>
-</ul>
+        <p>Burst trieは、trie木の一種で、2分木よりもメモリ効率がよく、trie木と同じくらい速い。
+2種類のデータ構造からなり、trie木に加えて別のデータ構造も使う。
+どのデータ構造を使うかは要件次第で、論文では、連結リスト、二分探索木、スプレー木を使った場合の実験がなされた。
+Burst trie内の別のデータ構造の箇所はcontainerと呼ばれる。
+初期状態のBurst trieは、1つのcontainerからなり、別のデータ構造そのものに等しい。
+その後、コンテナ内の要素のアクセス頻度やヒット率にもとづくヒューリスティックな基準が満たされると、containerの要素をtrie木のノードにおきかえ、ノードに下に新しいcontainerをつくる。
+新しくできたcontainerにも基準を適用し、適宜おきかえる。
+これにより、与えられる文字列の頻度に合わせてtrie木と別のデータ構造を使い分けることができると同時に、性能はデータの歪度に依存する。</p>
+<p>データ構造に2分探索木を使う場合で、containerの一部がtrieノードに変わるburstの様子を例示する。
+下の2つの図は、右下のcontainerがbusrtする様子を示し、containerの各要素の先頭文字がtrie木のノードにおきかえられている。
+新しくできるcontainerの各要素は、前のcontainerにあった先頭文字を含まない。</p>
+<p><img src="/burst_trie/before_burst.png" alt="before">
+<img src="/burst_trie/after_burst.png" alt="after"></p>
+<p>要素を削除するときは、containerのデータ構造の削除アルゴリズムに通りに要素を削除する。
+このとき、containerが空になり、親のtrie木のノードが子containerを持たないならばburst trie木からノードを削除する。
+trie木のノードの削除は、空でない親ノードかルートに到達するまで再帰的に繰り返される。</p>
+<p>論文を<a href="http://www.lindstaedt.com.br/estruturas/bursttries.pdf">こちら</a>からダウンロードできます。
+画像は論文から引用されています。</p>
     </div>
 </main>
 
@@ -76,13 +71,9 @@ $$
 <ul class="pagination">
     
     <li>
-        <a href="/posts/hyperdex/"><span class="material-icons">chevron_left</span></a>
+        <a href="/posts/suffix_arrays/"><span class="material-icons">chevron_left</span></a>
     </li>
     
-    
-    <li>
-        <a href="/posts/burst_tries/"><span class="material-icons">chevron_right</span></a>
-    </li>
     
 </ul>
 
