@@ -20,7 +20,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/base.css">
     
-    <link rel="stylesheet" href="/css/articles.css">
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -41,53 +43,32 @@
     </header>
     
 <main>
-    <h1>Posts</h1>
-
-    
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/a_simple_semi_supervised_for_ner/">要約 A Simple Semi-supervised Algorithm For Named Entity Recognition</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>CRFに入力する学習データを集めるための半教師学習の手法を提案と評価した論文。
-本手法はCRFに与える学習データを集めるための手法であり、CRFのアルゴリズム自体に変更を加えることはない。</p></div>
-        <div class="article-footer">
-            <span class="date">July 17, 2018</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/applying_crf_to_japanese_morph_analysis/">要約 Applying Conditional Random Fields to Japanese Morphological Analysis</a></h3>
-        <div class="summary"><p>Mecabの中の人の<a href="http://chasen.naist.jp/chaki/t/2009-09-30/doc/mecab-cabocha-nlp-seminar-2009.pdf">資料</a>で紹介でされている、Mecabのアルゴリズムを提案・評価した論文。</p></div>
-        <div class="article-footer">
-            <span class="date">July 17, 2018</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/text_cls_from_lbl_and_unlbl_doc_em/">概要 Text Classification from Labeled and Unlabeled Documents using EM</a></h3>
-        <div class="summary"><h3 id="アルゴリズム">アルゴリズム</h3>
-<p>提案手法は、Naive BayesとEMアルゴリズムを組み合わせたもの。
-ラベル付きデータが\(D^l\)でラベルなしデータが\(D^u\)で表されるとき、対数尤度\(\log P(D^l)P(D^u)\)を最大化する問題を解く。</p></div>
-        <div class="article-footer">
-            <span class="date">July 8, 2018</span>
-        </div>
-    </article>
-    
+    <h1>The End of an Architectural Era (It&#39;s Time for a complete Rewrite)</h1>
+    <span class="date">May 29, 2021</span>
+    <div>
+        <p>発表時期は2007年で、RDBMSの源流のSystem Rが開発された70年代と今日ではハードウェアの性能や価格が変わったことを背景に、RDMSの延長ではなく抜本から刷新し、いわゆるNoSQLを開発する必要性を主張している。
+第一著者のMichael Stonebrakerは、後の2011年に今日全てのデータベースの要件をRDMSだけではまかなえないという旨の論文<a href="https://cs.brown.edu/~ugur/fits_all.pdf">&ldquo;One Size Fits All&rdquo;</a>を出している。
+One Size Fits Allは以前本ページで<a href="/posts/one_size_fit_all/">紹介</a>したことがある。
+表題の論文では、OLTPに特化したデータベースH-Storeを実装し、TPC-Cをベンチマークとして商用データベースと比較したところ、H-Storeの方が82倍高速だった。</p>
+<p>OLTPの分野でRDBMSの処理性能を大きく超えるための要件が5つあげられている。
+うち2つはメモリとスレッドについてで、OLTPのデータベースに格納されるデータ量の少なさとトランザクションの処理の短さに着目している。
+メモリにレコードのデータを載せきり、トランザクションをシングルスレッドで実行することが提案されている。
+トランザクションの時間が短いため、マルチスレッドで並行実行するオーバーヘッドがかえって処理時間を長くすると考えられている。
+また、シェアードナッシングや、ダウンタイムなしのアップグレードだけでなく災害復旧も考えられた高可用性や、自動でパラメタを調整しチューニングする機能を求められている。</p>
+<p>論文を<a href="http://nms.csail.mit.edu/~stavros/pubs/hstore.pdf">こちら</a>からダウンロードできます。</p>
+    </div>
 </main>
 
     
-
 <ul class="pagination">
     
     <li>
-        <a href="/tags/"><span class="material-icons">first_page</span></a>
-    </li>
-    <li>
-        <a href="/tags/page/15/"><span class="material-icons">chevron_left</span></a>
+        <a href="/posts/burst_tries/"><span class="material-icons">chevron_left</span></a>
     </li>
     
     
 </ul>
+
 
     <footer>
         <ul>
