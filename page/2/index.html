@@ -47,10 +47,10 @@
     
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/ariesim/">論文メモ ARIES/IM: An Efficient and High Concurrency Index Management Method Using Write-Aherad Logging</a></h3>
+        <h3><a href="https://nryotaro.dev/posts/ariesim/">論文メモ ARIES/IM: An Efficient and High Concurrency Index Management Method Using Write-Ahead Logging</a></h3>
         <div class="summary"><p>ARIES/IMは、B+木への直列化可能性のある並行処理とログ先行書き込み(Write-Ahead Logging, WAL)による復元を実現する。
 ARIES/IMのベースには、先行研究の<a href="https://web.stanford.edu/class/cs345d-01/rl/aries.pdf">ARIES</a>がある。
-復元手順は、平行処理の違いによる差異はあるものの、ARIESと大きく変わらない。
+復元手順はARIESとほとんど変わらない。
 キーの参照先にあるデータのレコードとキーを同じロックで保護したり、ロックの代わりにラッチを使ったりすることで、ロックの頻度を下げ、B+木の高速化を実現する。</p></div>
         <div class="article-footer">
             <span class="date">March 21, 2021</span>

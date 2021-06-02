@@ -43,14 +43,15 @@
     </header>
     
 <main>
-    <h1>論文メモ ARIES/IM: An Efficient and High Concurrency Index Management Method Using Write-Aherad Logging</h1>
+    <h1>論文メモ ARIES/IM: An Efficient and High Concurrency Index Management Method Using Write-Ahead Logging</h1>
     <span class="date">March 21, 2021</span>
     <div>
         <p>ARIES/IMは、B+木への直列化可能性のある並行処理とログ先行書き込み(Write-Ahead Logging, WAL)による復元を実現する。
 ARIES/IMのベースには、先行研究の<a href="https://web.stanford.edu/class/cs345d-01/rl/aries.pdf">ARIES</a>がある。
-復元手順は、平行処理の違いによる差異はあるものの、ARIESと大きく変わらない。
+復元手順はARIESとほとんど変わらない。
 キーの参照先にあるデータのレコードとキーを同じロックで保護したり、ロックの代わりにラッチを使ったりすることで、ロックの頻度を下げ、B+木の高速化を実現する。</p>
-<p>B+木のキーは、データのレコードを特定するレコードIDとkey valueのペアを意味する。
+<p>葉ページのキーは、key valueとレコードIDのペアであり、レコードIDはkey valueが格納されたレコードを特定する。
+レコード本体はインデックス木の外にある。
 キーにロックをかけるときは、キーそのものではなくレコードIDの指すレコードをロックをかけ、前段落で述べた通り、同じロックでデータレコードとキーを保護する。
 ページの保護には、ロックの代わりにラッチを使う。
 3つ以上のインデックスのページが同時にラッチを獲得することはない。

@@ -228,14 +228,14 @@ read amplificationはクエリの実行に必要なI/Oの回数、space amplific
     </item>
     
     <item>
-      <title>論文メモ ARIES/IM: An Efficient and High Concurrency Index Management Method Using Write-Aherad Logging</title>
+      <title>論文メモ ARIES/IM: An Efficient and High Concurrency Index Management Method Using Write-Ahead Logging</title>
       <link>https://nryotaro.dev/posts/ariesim/</link>
       <pubDate>Sun, 21 Mar 2021 12:08:11 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/ariesim/</guid>
       <description>&lt;p&gt;ARIES/IMは、B+木への直列化可能性のある並行処理とログ先行書き込み(Write-Ahead Logging, WAL)による復元を実現する。
 ARIES/IMのベースには、先行研究の&lt;a href=&#34;https://web.stanford.edu/class/cs345d-01/rl/aries.pdf&#34;&gt;ARIES&lt;/a&gt;がある。
-復元手順は、平行処理の違いによる差異はあるものの、ARIESと大きく変わらない。
+復元手順はARIESとほとんど変わらない。
 キーの参照先にあるデータのレコードとキーを同じロックで保護したり、ロックの代わりにラッチを使ったりすることで、ロックの頻度を下げ、B+木の高速化を実現する。&lt;/p&gt;</description>
     </item>
     
