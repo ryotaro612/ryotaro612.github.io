@@ -224,8 +224,8 @@ read amplificationはクエリの実行に必要なI/Oの回数、space amplific
       <pubDate>Mon, 29 Mar 2021 16:18:21 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/the_design_and_implementation_of_a_log_structured_file_system/</guid>
-      <description>&lt;p&gt;91年に提唱されたLog-structured file system(LFS)は、バッファリングした変更を、ディスクの連続領域に一度に書き込むことで、小さなファイルの大量の書き込みを高速に処理できる。
-また、クラッシュ時のリカバリも、チェックポイント以降に追記された箇所だけを検査すればよく、ディスク全体を参照する必要がないので、高速になる。&lt;/p&gt;</description>
+      <description>&lt;p&gt;Log-structured file system(LFS)は、91年に提唱されたHDD向けのファイルシステムであり、バッファリングした変更をディスクの連続領域に一度に書き込むことで、小さなファイルを大量に高速で書き込める。
+また、クラッシュからのリカバリも、ディスク全体ではなくチェックポイント以降に追記された箇所だけを検査すればよいので、高速になる。&lt;/p&gt;</description>
     </item>
     
     <item>
