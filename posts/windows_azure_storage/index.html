@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-64L0YEFRY5"></script>
+    <script>
+        if (location.hostname != 'localhost') {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-64L0YEFRY5');
+        }
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Windows Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency</h1>
+    <span class="date">June 12, 2021</span>
+    <div>
+        <p>AzureのクラウドストレージサービスであるWindows Azure Storage(WAS) は、2008年の11月から本番運用されている。
+保存できるデータの形式には、単なるファイル(Blob)のほかにも、テーブルのレコードとキューのメッセージがある。
+ハードウェアの故障に備えたローカルでのレプリケーションだけでなく、地理的に離れたデータセンタにもレプリケーションを分散し、災害復旧にも備えがある。</p>
+<p>WASは、大きくstroage stampとlocation serviceからなる。
+以下にstorage stampとlocation serviceのアーキテクチャを図示する。
+storage stampはストレージノードを積んだラックからなるクラスタであり、典型的なクラスタは18のノードを搭載した10から20個のラックからなる。
+location serivceは、アカウントのデータがどのstorage stampに保存されているかを管理する。
+新しいアカウントを作成するとき、アカウントのIDを含んだURLからstorage stampのVIPを解決するようにDNSを更新する。
+<img src="/was/high_level_arch.png" alt="high level architecture"></p>
+<p>storage stampはstream Layer, partition layer, front-endsの3層からなる。
+stream Layerは、storage stamp内でファイルを分散、複製するための分散ファイルシステムとみなすことができる。
+stream Layerは、高可用性を担う層であり、データの種類がオブジェクト、テーブル、キューのいずれであるかを意識せずにデータを保存、提供する。
+partition layerは、stream layerと同じノードにあり、stream layerに保存されたデータの種類を解釈できる。また、トランザクションの順序を管理し、データの一貫性を守る。
+front-endsはステートレスなサーバからなり、リクエストの認証と認可を担う。
+Stream layerがリクエストの処理中に同期的にstorage stamp内部にレプリケーションを作成し、ハードウェアの耐障害性を高める。
+Parition Layerは、リクエストの処理とは非同期に、storage stamp横断のレプリケーションを作成し、災害復旧に備える。</p>
+<p>Stream Layerのstreamは、extentとよばれる大きなデータの順序つきリストを意味する。
+extentへの書き込みは追記しかできず、更新はできない。
+以下に、4つのextentからなるstreamを例示する。
+<img src="/was/stream.png" alt="stream">
+図中の<code>B</code>はblockとよばれる読み込みと追記の最小単位であり、サイズは4MB程度である。extentは連結したblockからなる。
+blockのサイズはblockごとに違ってよい。
+Extentはレプリケーションの単位であり、デフォルトでは1つのstorage stampの中に3つのレプリカを作る。
+extentの大きさは1GBであり、それより大きなデータを保存するときは、データを分割して、複数のextentにデータを保存する。
+streamはextentを参照するポインタの順序付きリストであり、既存のstreamを連結することで新しいstreamが作られる。
+追記ができるextentはstreamの末尾のものに限られる。</p>
+<p>Stream Layerはstream manager(SM)とextent node(EN)からなる。
+Stream layerのアーキテクチャを以下に図示する。
+<img src="/was/stream_layer.png" alt="stream_layer">
+SMは、新しいextentを作り、ENに割りあてる。
+割り当てた後も、アクティブなextentやstreamを管理し、どのstreamからも参照されていないextentを回収する。
+SMの処理は、クライアントのリクエストの処理とは非同期であり、クリティカルパス上にはない。
+一方、ENは複数のディスクをもち、extentの別々のディスクにレプリカを保存する。
+ENはextentとblockを管理し、これらがどのstreamに属するかを知ることはない。</p>
+<p>Stream Layerがレプリケーションで高可用性を支えるのに対し、parititon layerは一貫性を支える。
+Partiton layerは下図のようにpartition manager(PM)とpartition server(PS)からなる。
+<img src="/was/partition_layer.png" alt="partition_layer">
+Partiton layerはobject table(OT)というデータ構造を構成し、streamに保存された単なるデータを、ユーザからはBlobやテーブル、キューのように見えるようにする。
+OTは、ペタバイト級のサイズであるため、OTの連続するレコードの集合であるRangePartitionに分割して管理される。
+PMはOTをRange Partitionとよばれる単位に分割し、各Range Partitionが常に1つのアクティブなPSに割り当てられ、Range Partitionが重複しないことを保証する。
+保証にはLock Serivceを使い、Paxosによって合意されたPMのリーダが選出される。</p>
+<p>論文を<a href="https://www.semanticscholar.org/paper/Windows-Azure-Storage%3A-a-highly-available-cloud-Calder-Wang/4582416a108d1a916b6c00e9ae4e763d15f8d4e0">こちら</a>からダウンロードできます。
+図は論文から引用されています。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/thrift/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+            <li class="atcoder"><a href="https://kenkoooo.com/atcoder/#/user/nryotaro">AtCoder</a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
