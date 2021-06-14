@@ -6,7 +6,16 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 14 Jun 2021 10:56:35 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Jun 2021 11:04:07 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AtCoder Begineer Contest 051 D - Candidates of No Shortest Paths</title>
+      <link>https://nryotaro.dev/posts/abc051d/</link>
+      <pubDate>Mon, 14 Jun 2021 11:04:07 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/abc051d/</guid>
+      <description>&lt;p&gt;ワーシャルフロイト法で全ての2頂点間の最短距離を求めた後、隣接する2頂点の辺のうち、2頂点の最短距離が辺の重みと異なる辺を数えれば通る。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>AtCoder Beginner Contest 205 D - Kth Excluded</title>
       <link>https://nryotaro.dev/posts/abc205d/</link>
