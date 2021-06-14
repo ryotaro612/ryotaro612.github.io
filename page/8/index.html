@@ -47,6 +47,17 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/explaining_pair_programming_session_dynamics_from_knowledge_gaps/">論文メモ Explaining Pair Programming Session Dynamics from Knowledge Gaps</a></h3>
+        <div class="summary"><p>ペアプログラミングによる知識移転の効果を知るために、9社の社員からなる26組のペアプログラミングを、グラウンデッド・セオリーで調査した。
+従来は、熟練度合いで開発者を分けて、ペアプログラミングを分析・評価することが多い。
+今回の調査では、システムの要件・仕様のようなシステム固有の知識と、言語、デザインパターン、開発ツールなどの開発全般の知識の2軸で、開発者と知識を分ける重要性を定性的に示した。
+一方がシステム固有の知識に欠け、他方が開発全般の知識に欠けるときに、最も知識の伝達が活発だった。</p></div>
+        <div class="article-footer">
+            <span class="date">July 17, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/bag_of_trics_for_efficient_text_classification/">論文メモ Bag of Tricks for Efficient Text Classification</a></h3>
         <div class="summary"><p>2016年における分類のSOTAと互角の精度でありながら、格段に高速に学習、推定可能なモデルを<code>fastText</code>で構築できることを示した。
 評価実験には、<a href="http://projects.dfki.uni-kl.de/yfcc100m/">YFCC100M</a>のキャプションとタイトルからタグを予測するタスク、8つのデータセットによる感情分析が採用された。
@@ -136,21 +147,6 @@ BLEUは、ひとつの候補訳に対する1つ以上の参照訳をあたえ、
 BLEUは、参照訳にある単語を過剰に含むことや文の短さにペナルティをあたえ、適合率で候補訳を評価する。</p></div>
         <div class="article-footer">
             <span class="date">June 13, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/sequence_to_sequence_learning_with_neural_networks/">論文メモ Sequence to Sequence Learning with Nueral Networks</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>Sequence to Sequenceの論文。
-入出力が系列データを学習する場合、入力と出力の長さが等しかったり対応関係にある箇所が系列の方向に単調でなければならなかったりする。
-これらの制約に対処するために、Sequence to Sequenceでは、入力全体を固定長のベクトルに一度変換し、そのベクトルをもとに出力を予測する。
-2種類のLSTMをもち、入力を与えるLSTMの最終層の隠れ状態で、固定長ベクトルをつくる。
-固定長のベクトルは、単調の制約を緩めるはたらきをする。
-このベクトルは、もう一方のLSTMにあたえられ、その主力が最終的な出力になる。
-実験では、入力系列を反転してあたえると、入力と出力の対応関係にある箇所の距離が近づき、予測性能が上がることが確認された。</p></div>
-        <div class="article-footer">
-            <span class="date">June 6, 2020</span>
         </div>
     </article>
     

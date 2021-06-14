@@ -6,7 +6,16 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Jun 2021 17:21:52 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Jun 2021 10:56:35 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AtCoder Beginner Contest 205 D - Kth Excluded</title>
+      <link>https://nryotaro.dev/posts/abc205d/</link>
+      <pubDate>Mon, 14 Jun 2021 10:56:35 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/abc205d/</guid>
+      <description>&lt;p&gt;\(K_q\)ごとに二部探索で答えを直接検索しても通すことができる。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Windows Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency</title>
       <link>https://nryotaro.dev/posts/windows_azure_storage/</link>
