@@ -47,6 +47,18 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/integrating_the_ub_tree_into_a_database_system_kernel/">論文メモ Integrating the UB-Tree into a Database System Kernel</a></h3>
+        <div class="summary"><p>商用DBMS TransBaseのインデックスをB木から<a href="https://link.springer.com/chapter/10.1007/3-540-63343-X_48">UB木</a>に変え、複数の範囲クエリからなる多次元アクセスを高速化した。
+高速な多次元アクセスの拡張を商用DBMSのインデックスに導入することは複雑かつ高コストのように思える。
+UB木は、B木をベースにしたインデックスであり、B木のキーの生成とページ分割方法を工夫し、範囲クエリを高速化する。
+範囲クエリに向きB木に似たインデックスを使うことで、既存のDBMSの範囲クエリを人々の想定よりも簡単に高速化できることを例示した。
+また、既存のインデックスのインターフェースを呼び出す変更ではなく、もとのインデックス自体を変更する当手法には、クエリのオプティマイザを継続して利用できる利点もある。</p></div>
+        <div class="article-footer">
+            <span class="date">April 29, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/designing_access_methods/">論文メモ Designing Access Methods: The RUM Conjecture</a></h3>
         <div class="summary"><p>データ構造は読み込み(Read, R), 更新(Update, U), 所要メモリ容量(Memory, M)にトリレンマを抱え、いかなるデータ構造でも、2つを最適化すると残る1つのオーバヘッドが悪化すると予想した。
 Read, Update, Memoryの頭文字から、これをRUM Conjectureと名付けた。</p></div>
@@ -139,17 +151,6 @@ RRCTは、特徴の値でデータを2分するノードからなる木の集合
 \(\alpha\)には、データを保存した1つ以上のレコードへのポインタが格納される。</p></div>
         <div class="article-footer">
             <span class="date">February 27, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/space_time_trade-offs_in_hash_coding_with_allowable_errors/">論文メモ Space/Time Trade-offs in Hash Coding with Allowable Errors</a></h3>
-        <div class="summary"><p>要素がハッシュ空間にあるかを高速に調べる手法で、ブルームフィルタの名で知られる。
-偽陽性を許容し、ハッシュ値の保持に必要な空間を小さすることで、管理できるデータ件数を増やす。
-例えば、<a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/">データベースのストレージで使われており</a>、検索するキーがデータベースに存在するか事前に確かめ、存在しないキーのための不要なディスクの読み取りを省いている。
-偽陰性の誤りはない。</p></div>
-        <div class="article-footer">
-            <span class="date">February 20, 2021</span>
         </div>
     </article>
     

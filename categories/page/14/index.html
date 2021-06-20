@@ -46,6 +46,19 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/distilling_the_knowledge_in_a_neural_network/">メモ Distilling the Knowledge in a Neural Network</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>表題にあるニューラルネットワークの蒸留についての論文を紹介する。
+蒸留は、既存のモデルを使い、できるだけ予測性能を落とさずに、より小さいモデルを作るための学習手法である。
+既存のモデルとして想定されているのは、複数のモデルからなるモデルや正則化された大きなモデルのように予測性能は高いが計算コストが高いものであり、
+蒸留の目的は本番の運用に耐えられるデプロイ可能なモデル作ることにある。
+本論文は、出力層の活性化関数に温度つきソフトマックスを使った多クラス分類のモデルを蒸留する手法を提案し、実験により手法を評価している。</p></div>
+        <div class="article-footer">
+            <span class="date">August 24, 2019</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/fastxml/">メモ FastXML: A Fast, Accurate and Stable Tree-classifier for eXtreme Multi-label Learning</a></h3>
         <div class="summary"><p>表題にあるExtreme multi-label classificationの手法を紹介する。
 Extreme multi-label classificationの目的は、大量のラベルの候補から与えられたデータに関連する複数のラベルを推定する学習器を構築することにある。
@@ -141,15 +154,6 @@ TextRankは、名前から推測できるようにPageRankを応用した手法�
 ノイズに対する頑強さのために、単語のサブワード（部分文字列）を生成するユニグラム言語モデルの学習方法と、モデルから生成されたサブワード列を入力とする機械翻訳モデルの学習方法を提案した。</p></div>
         <div class="article-footer">
             <span class="date">July 17, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/neural_machine_translation_of_rate_words/">概要 Neural Machine Trasnslation of Rare Words with Subword Units</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>内容は、sentencepiece（ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザ）のトークナイズで使われるアルゴリズムになっている。単語をサブワード（単語の部分文字列）に分割し、サブワードを組み合わせて珍しい単語や未知語を表現することで、これらの出現頻度の低い単語の翻訳上げるというもの。</p></div>
-        <div class="article-footer">
-            <span class="date">July 13, 2019</span>
         </div>
     </article>
     

@@ -46,6 +46,17 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/space_time_trade-offs_in_hash_coding_with_allowable_errors/">論文メモ Space/Time Trade-offs in Hash Coding with Allowable Errors</a></h3>
+        <div class="summary"><p>要素がハッシュ空間にあるかを高速に調べる手法で、ブルームフィルタの名で知られる。
+偽陽性を許容し、ハッシュ値の保持に必要な空間を小さすることで、管理できるデータ件数を増やす。
+例えば、<a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/">データベースのストレージで使われており</a>、検索するキーがデータベースに存在するか事前に確かめ、存在しないキーのための不要なディスクの読み取りを省いている。
+偽陰性の誤りはない。</p></div>
+        <div class="article-footer">
+            <span class="date">February 20, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/tree_index_on_solid_state_drives/">論文メモ Tree Indexing on Solid State Drives</a></h3>
         <div class="summary"><p>SSDのランダムな書き込みを高速化するために、インデックスのためのデータ構造FD-treeを提案した。
 FD-treeのエントリ数が\(n\), ページサイズが\(B\)であれば、ランダムな読み込みと書き込みの計算量はともに\(\mathcal{O}(\log_B(n))\)になる。</p></div>
@@ -135,17 +146,6 @@ FLPは、著者Fischer, Lynch, Patersonの頭文字に由来する。
 いいかえると、含意アルゴリズムを実装するには上のいずれかを仮定しなければないことを示した。</p></div>
         <div class="article-footer">
             <span class="date">December 18, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/availability_in_globally_distributed_storage_systems/">論文メモ Availability in Globally Distributed Storage Systems</a></h3>
-        <div class="summary"><p>Googleの分散ストレージで生じた障害の統計をとり、ストレージの可用性の予測モデルを提唱した。
-ディスク、ノード、ラックなどハードウェアの粒度を変えて、粒度ごとの平均故障間隔を計測し、故障原因を分類した。
-2分のウィンドウで生じた障害をグループにまとめると、ほとんどの障害が同時多発的な障害の一部であった。
-20以上のノードを巻き込む大きな障害では、別々のラックにあるノードに障害が起きるよりも、特定のラックのノードに障害が起きることが多かった。</p></div>
-        <div class="article-footer">
-            <span class="date">December 12, 2020</span>
         </div>
     </article>
     

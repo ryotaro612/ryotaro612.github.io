@@ -6,7 +6,16 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 19 Jun 2021 14:41:22 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Jun 2021 12:59:08 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AtCoder Beginner Contest 206 D KAIBUNsyo</title>
+      <link>https://nryotaro.dev/posts/atcoder_abc206d/</link>
+      <pubDate>Sun, 20 Jun 2021 12:59:08 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/atcoder_abc206d/</guid>
+      <description>&lt;p&gt;Union Findを使うと通せる。すべての\(A_i\)と\(A_{N+1-i}\)が同じグループに所属するために必要なunionの回数を答えればいい。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Consistent Hashing and Random Trees: Distributed Chaching Protocols for Relieving Hot Spots on the World Wide Web</title>
       <link>https://nryotaro.dev/posts/consistent_hashing_and_random_trees/</link>
