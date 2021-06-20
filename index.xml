@@ -6,7 +6,18 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 19 Jun 2021 14:39:38 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Jun 2021 14:41:22 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Consistent Hashing and Random Trees: Distributed Chaching Protocols for Relieving Hot Spots on the World Wide Web</title>
+      <link>https://nryotaro.dev/posts/consistent_hashing_and_random_trees/</link>
+      <pubDate>Sat, 19 Jun 2021 14:41:22 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/consistent_hashing_and_random_trees/</guid>
+      <description>&lt;p&gt;各サーバーがネットワーク全体の情報を保持できない分散キャッシュネットワークにホットスポットを作らせないためのキャッシュプロトコルを開発した。
+表題のconsistent hashingは、プロトコルの基礎になるハッシュ関数で、値域の違いに関数の写像が影響されにくい。
+また、クライアントは一部のキャッシュサーバーにアクセスできればよく、クライアントごとにアクセス可能なキャッシュサーバーの集合は違ってよい。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Navaelus Bodega Inurrieta</title>
       <link>https://nryotaro.dev/gallery/navaelus_bodega_inurrieta/</link>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-64L0YEFRY5"></script>
+    <script>
+        if (location.hostname != 'localhost') {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-64L0YEFRY5');
+        }
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Consistent Hashing and Random Trees: Distributed Chaching Protocols for Relieving Hot Spots on the World Wide Web</h1>
+    <span class="date">June 19, 2021</span>
+    <div>
+        <p>各サーバーがネットワーク全体の情報を保持できない分散キャッシュネットワークにホットスポットを作らせないためのキャッシュプロトコルを開発した。
+表題のconsistent hashingは、プロトコルの基礎になるハッシュ関数で、値域の違いに関数の写像が影響されにくい。
+また、クライアントは一部のキャッシュサーバーにアクセスできればよく、クライアントごとにアクセス可能なキャッシュサーバーの集合は違ってよい。</p>
+<p>キャッシュサーバーが複数ある場合、クライアントは、オブジェクトのキャッシュをホストするサーバを特定しなければならない。
+サーバーとクライントでハッシュ関数を共有し、オブジェクトをキャッシュすべきサーバーをハッシュ値で決めれば、クライアントはサーバーに問い合わせることなく対象のサーバーを特定できる。
+ただし、ネットワークの状況やキャッシュサーバーの動的な入れ替え次第で、クライアントから見えるキャッシュサーバーの集合は変わる。
+クライアントから見えるサーバーの集合に特定方法が依存するほど、集合が変化したときに無効になるキャッシュデータの数が増える。
+consistent hashingは、クライアントから見えるキャッシュサーバーの集合をviewと称し、viewに一貫性がなくても、オブジェクトできるかぎり同じキャッシュサーバーにキャッシュできるように、値域の変化に写像が影響されにくように設計されている。</p>
+<p>一貫性を定義するために、balance, monotonicity, spread, loadの4つの指標を導入する。
+\(\mathcal{I}\)をキャッシュするオブジェクトの集合、\(\mathcal{B}\)をキャッシュサーバーの集合とする。
+このときview \(\mathcal{V}\)は\(\mathcal{B}\)の部分集合にあたる。
+求めるハッシュ関数は\(f: 2^{\mathcal{B}}\times\mathcal{I}\rightarrow \mathcal{B}\)の形で、ranged hash functionという。
+各\(\mathcal{V}\)について\(f_{\mathcal{V}}(\mathcal{I}) \subseteq \mathcal{V}\)でなければならない。
+\(f\)の集合をranged hash familyといい、\(\mathcal{F}\)と略記する。</p>
+<p>balanceは、キャッシュサーバーにオブジェクトが均等に分配される程度を意味する。
+あるview \(\mathcal{V}\)が与えられたとき、\(\mathcal{F}\)から無作為に\(f\)を選んでも、どんなキャッシューサーバについてもオブジェクトが写像される確率がある確信度以上で\(O(1/\mid V \mid)\)になるとき、\(\mathcal{F}\)はbalancedであるという。
+確信度は、ユーザーがパラメタ\(N\)で\(1-1/N\)と定義できる。</p>
+<p>monotonicityは、viewに新しいキャッシュサーバーを追加したときに、オブジェクトが新しいキャッシュサーバーに移ることはあっても、昔からある別のキャッシュサーバーに移らないことを保証する。
+すべてのviewについて、\(\mathcal{V}_1 \subseteq \mathcal{V}_2 \subseteq \mathcal{B}, f_{\mathcal{V}_2}(i)\in \mathcal{V}_1\)であれば\(f_{\mathcal{V}_1(i)}=f_{\mathcal{V}_2(i)}\)であれば、\(f\)はmonotoneであるという。
+すべての\(f\)がmonotoneであれば、\(\mathcal{F}\)はmonotoneである。</p>
+<p>viewの集合があり、各viewについて\(f_{\mathcal{V}}(\mathcal{I}) \subseteq \mathcal{V}\)になる割り当て方であれば、あるオブジェクトを格納しているキャッシュサーバーの数が少ないほうがサーバーの使用効率がよい。この指標をspreadという。
+\(\mathcal{V}_1\dots \mathcal{V}_V\)をviewの集合、各viewは少なくとも\(C/t\)のキャッシュサーバーをもち、集合全体で\(C\)個の個別のキャッシュサーバーがあるとする。
+このとき、オブジェクト\(i\)のspread \(\sigma(i)\)を\(\mid \{f_{\mathcal{V}_j}(i)\}^{V}_{j=1}\mid\)と定義し、 \(\sigma(f)\)を\(\sigma(i)\)の最大値とする。
+ある確信度以上でランダムに選んだ\(f\)のspreadが\(\sigma\)になるとき、\(\mathcal{F}\)のspreadを\(\sigma\)とする。</p>
+<p>loadは、spreadと同様にキャッシュサーバーの負荷の指標であり、キャッシュサーバーがホストするオブジェクトの数を評価する。
+キャッシュサーバー\(b\)のload \(\lambda(b)\)を\(\mid\cup_{\mathcal{V}}f^{-1}_{\mathcal{V}}(b)\mid\)と定義する。
+ただし、\(f^{-1}_{\mathcal{V}}(b)\)はview \(\mathcal{V}\)にあるキャッシュサーバー\(b\)に割り当てられたオブジェクトの集合を示す。
+loadが最大のキャッシュサーバーのloadを\(f\)のloadとする。
+また、ランダムに選んだ\(f\)がある確信度以上でloadの値が\(\lambda\)であれば、その値を\(\mathcal{F}\)のloadとする。</p>
+<p>キャッシューサーバを単位区間のある値にランダムに写像する関数を\(r_{\mathcal{B}}\), オブジェクトを同区間にランダムに写像する関数を\(r_{\mathcal{I}}\)とおく。
+このとき、\(f_\mathcal{V}(i)\)を\(\mid r_{\mathcal{B}}-r_{\mathcal{I}}(i)\mid\)を最小にする\(\mathcal{b}\in \mathcal{V}\)とする。
+いいかえると、\(f\)は\(i\)を最も近い\(b\)に割りあてる。
+当該範囲のキャッシュサーバーの数が常に\(C\)より少ないとすると、\(\kappa\)を定数として、各キャッシュサーバーごとに\(\kappa\log(C)\)個のコピーをつくり、コピーを無作為に写像するように\(r_{\mathcal{B}}\)を定義する。
+以上の\(f\)の\(\mathcal{F}\)は次の性質を満たす。</p>
+<ul>
+<li>\(\mathcal{F}\)はmonotone.</li>
+<li>Balance: ある固定した\(\mathcal{V}\)について、\(i\in \mathcal{I}\), \(b\in \mathcal{V}\)とすると\(r_{\mathcal{B}}\)によらず\(\text{Pr}[f_{\mathcal{V}}(i)= b]\le \frac{\mathcal{O}(1)}{\mid\mathcal{V}\mid}\)</li>
+<li>Spread: \(\rho\)を定数、viewの数を\(V=\rho C\), オブジェクトの数を\(I=C\)とすると、\(i\in \mathcal{I}\)について、\(1-1/C^{\Omega(1)}\)より大きい確率で\(\sigma(i)\)は\(O(t\log(C))\)になる。</li>
+<li>load: \(b\in\mathcal{B}\)について、\(1-1/C^{\Omega(1)}\)より大きい確率で\(\lambda(b)\)は\(O(t\log(C))\)になる。</li>
+</ul>
+<p>論文を<a href="https://www.akamai.com/uk/en/multimedia/documents/technical-publication/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web-technical-publication.pdf">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/abc051d/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+            <li class="atcoder"><a href="https://kenkoooo.com/atcoder/#/user/nryotaro">AtCoder</a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
