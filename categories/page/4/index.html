@@ -46,6 +46,18 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/impossibility_of_distributed_consensus_with_one_faulty_process/">論文メモ Impossibility of Distributed Consensus with One Faulty Process</a></h3>
+        <div class="summary"><p>プロセスが1つでもクラッシュしうる場合には常に含意を保証できる完全な非同期アルゴリズムは存在しないことを示した。
+この定理はFLP帰結とよばれる。
+FLPは、著者Fischer, Lynch, Patersonの頭文字に由来する。
+ここでの完全は、プロセスの処理速度やメッセージの配信遅延に仮定をおかず、同期クロックがないためにタイムアウトを使えず、ほかのプロセスが別のプロセスの障害を検知できないことを意味する。
+いいかえると、含意アルゴリズムを実装するには上のいずれかを仮定しなければないことを示した。</p></div>
+        <div class="article-footer">
+            <span class="date">December 18, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/availability_in_globally_distributed_storage_systems/">論文メモ Availability in Globally Distributed Storage Systems</a></h3>
         <div class="summary"><p>Googleの分散ストレージで生じた障害の統計をとり、ストレージの可用性の予測モデルを提唱した。
 ディスク、ノード、ラックなどハードウェアの粒度を変えて、粒度ごとの平均故障間隔を計測し、故障原因を分類した。
@@ -131,16 +143,6 @@ CPU, DRAM, HDDやSSDを搭載したコモディティなサーバでクラスタ
 特徴的な内容に絞って以下に要約する。</p></div>
         <div class="article-footer">
             <span class="date">November 20, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/weighted_voting_for_replicated_data/">論文メモ Weighted Voting for Replicated Data</a></h3>
-        <div class="summary"><p>1979年に発表されたレプリケーション管理のクオーラムモデルのアルゴリズムの論文で、以前紹介したように<a href="https://awsmedia.awsstatic-china.com/blog/2017/aurora-design-considerations-paper.pdf">Amazon Aurora</a>や<a href="https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf">Dynamo</a>で採用されている。
-ファイルの読み込みや書き込みのトランザクションは、複製されたファイルのもつ票を集め、所定の数、クオーラムを越えたときのみ実行される。
-これにより、読み込み、書き込みの線形の一貫性が保証され、実行中のトランザクションが高々一つであるかのように見せかけられる。</p></div>
-        <div class="article-footer">
-            <span class="date">November 19, 2020</span>
         </div>
     </article>
     
