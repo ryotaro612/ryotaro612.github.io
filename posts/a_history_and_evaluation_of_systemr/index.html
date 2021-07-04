@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-64L0YEFRY5"></script>
+    <script>
+        if (location.hostname != 'localhost') {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-64L0YEFRY5');
+        }
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>A History and Evaluation of System R</h1>
+    <span class="date">July 3, 2021</span>
+    <div>
+        <p>System Rは、1970年にE.F. Coddが発表したリレーショナルモデルを実装した初めてのリレーショナルデータベースである。
+1981年に発表された表題の論文は、System Rの開発プロジェクトを3つのフェーズに分け、各フェーズの知見をまとめている。
+Phase 0は、1974年から1975年にかけて、シングルユーザ向けにSQLサブセットと対話的なインターフェースを開発した期間にあたる。
+Phase 1は、1976年から1977年の、Phase 0のコードを破棄し、マルチユーザに対応しSystem Rの機能を完全に実装するまでの期間にあたる。
+Phase 2は、1978年から1979年にSan Jose Research Laboratoryなどでの実用にもとづく評価期間にあたる。</p>
+<p>Phase 0で開発されたインターフェースは、スタンドアローン環境のシングルユーザ向け対話型ターミナルである。
+実行できるSQLは限定的で、例えばJOINはサポートされていない。
+リレーショナルデータへのアクセス方法には、レコードをドメインごとに離れた領域に保存するXRMを採用した。
+XRMの構造を以下に図示する。
+XRMは、リレーションを32ビットのID(TID)をもつタプルで保存する。
+TIDはページ番号を含み、タプルにはドメインへのポインタを保存する。
+<img src="/history_of_systemr/xrm.png" alt="xrm"></p>
+<p>Phase 1では、アクセス方法がXRMからRSS(Research Storage System)に変わった。
+XRMの問題は、処理性能や最適化の複雑さにあり、例えば、TIDのリスト操作が高コストであり、取得するタプル数よりもI/O数の方がコスト予測材料に適し、CPUネックのタスクもあることからCPUとI/Oの加重合計によるコスト予測が望ましい、などであった。</p>
+<p>アクセス方法を変える一方で、アクセス方法(XRM, RSS)とSQLのオプティマイザ(RDS, Relational Data System)を別のモジュールにし、2つの機能を疎にリレーショナルデーターベースを実装することは変わらない。
+RSSとRDSの内部に新しく追加した機能もまた、モジュールとして別モジュールと密結合しないように実装された。
+マルチユーザに対応したことで実装されたロックとリカバリのためのロギングはどちらもRSS内で分離されている。
+同じく認証機能とアクセス経路を選択するモジュールもRDS内で独立したモジュールからなる。</p>
+<p>XRMではレコードをドメインで分解して保存したのに対し、RSSはレコードのままデータベースに保存する。
+レコードごとの物理的な位置が局所化し、リレーションの取得に必要なI/O回数を削減できる。
+レコードへのアクセス手段は3つあり、B-treeをもちいたindex scan, indexを使わず物理的なテーブルの配置に沿った走査、レコードに保存されたポインタで別のレコードを参照する方法がある。</p>
+<p>オプティマイザはI/O回数とRSSの呼び出しを最小化する。
+最適化のために、XRMがTIDのリストの操作を最適化するのに対して、RSSはインデックスでアクセスパスを最適化する。
+RSSは存在するならインデックスを一つ選び、インデックスによるテーブル検索の高速化をはかる。
+Phase2から実装されたJOINの手段は2通りある。
+一つは、一方のテーブルの行を特定した後で他方のテーブルの行を特定する。
+他方は、JOINのフィールドで両テーブルをソートし順にレコードを比較してマージする。
+オプティマイザは、この2つの方法から最適な方選ぶ。インデックスがあるときは前者を、ないときは後者を選びやすい。</p>
+<p>ロック機構は、Phase 1の当初、レコードの値を条件にロックするレコードを指定する仕組みだった。
+しかし、条件の充足判定の難しさと処理時間の長さから、粒度の異なるロックを使う<a href="https://web.stanford.edu/class/cs245/readings/granularity-of-locks.pdf">手法</a>に変わった。
+新しいロック機構は、レコードに対する複数のロックをテーブルのロックと交換することができ、粒度の大きいロックへの交換をブロックすることで、トランザクションを別のトランザクションから保護する。</p>
+<p>論文を<a href="https://people.eecs.berkeley.edu/~brewer/cs262/SystemR.pdf">こちら</a>からダウンロードできます。
+画像を論文から引用しました。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/rei/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+            <li class="atcoder"><a href="https://kenkoooo.com/atcoder/#/user/nryotaro">AtCoder</a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

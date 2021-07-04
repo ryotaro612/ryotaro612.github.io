@@ -17,6 +17,19 @@
     </item>
     
     <item>
+      <title>A History and Evaluation of System R</title>
+      <link>https://nryotaro.dev/posts/a_history_and_evaluation_of_systemr/</link>
+      <pubDate>Sat, 03 Jul 2021 15:02:21 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/a_history_and_evaluation_of_systemr/</guid>
+      <description>&lt;p&gt;System Rは、1970年にE.F. Coddが発表したリレーショナルモデルを実装した初めてのリレーショナルデータベースである。
+1981年に発表された表題の論文は、System Rの開発プロジェクトを3つのフェーズに分け、各フェーズの知見をまとめている。
+Phase 0は、1974年から1975年にかけて、シングルユーザ向けにSQLサブセットと対話的なインターフェースを開発した期間にあたる。
+Phase 1は、1976年から1977年の、Phase 0のコードを破棄し、マルチユーザに対応しSystem Rの機能を完全に実装するまでの期間にあたる。
+Phase 2は、1978年から1979年にSan Jose Research Laboratoryなどでの実用にもとづく評価期間にあたる。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>beamerのスタイルファイル rei.sty</title>
       <link>https://nryotaro.dev/posts/rei/</link>
       <pubDate>Sat, 26 Jun 2021 17:15:24 +0900</pubDate>
