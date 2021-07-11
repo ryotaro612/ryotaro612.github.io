@@ -6,7 +6,30 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 03 Jul 2021 23:43:55 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Jul 2021 15:15:39 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>END-TO-END ARGUMENTS IN SYSTEM DESIGN</title>
+      <link>https://nryotaro.dev/posts/end_to_end_arguments_in_system_design/</link>
+      <pubDate>Sat, 10 Jul 2021 15:15:39 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/end_to_end_arguments_in_system_design/</guid>
+      <description>&lt;p&gt;分散システムにおける通信は、あるシステムから送られると、システムより低いレイヤーのネットワークを通り、ほかのシステムに到達する。
+論文の発表当時から、分散システムの信頼性にかかわる機能には、途中の低レイヤーではなく高レイヤーの終端におくべきものがあると知られていた。
+表題の論文は、それらを列挙し、END-TO-END ARGUMENTSと名付け、原則として提示する。
+例えば、データの完全性の保証、メッセージの重複対応、メッセージの到達の保証が原則にあてはまる。
+これらの機能を低レイヤーにおくと、完全性を検証後の経路でメッセージが壊れた場合、送信元が重複メッセージをおくる場合、対向システムが受信したメッセージを処理できない場合に対処できない。
+したがって、分散システム全体の信頼性をあげるのであれば、信頼性を上げる機能を低レイヤーではなく終端の高レイヤーにおくほうが効率がよい。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Goose Bump</title>
+      <link>https://nryotaro.dev/gallery/goose_bump/</link>
+      <pubDate>Sat, 10 Jul 2021 15:02:05 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/gallery/goose_bump/</guid>
+      <description>甘い。この一言につきる。こんなに甘い赤ワインがあるんだって驚き。</description>
+    </item>
+    
     <item>
       <title>Chateau La Croix Blanche</title>
       <link>https://nryotaro.dev/gallery/chateau_la_croix_blanche/</link>

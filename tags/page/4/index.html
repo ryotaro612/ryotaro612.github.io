@@ -46,6 +46,15 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/mvcc/">論文メモ Multiversion Concurrency Control - Theory and Algorithms</a></h3>
+        <div class="summary"><p>データベースのトランザクション制御Multiversion Concurrency Control(MVCC, 多版型同時実行制御) 下のトランザクションが逐次実行と等価な結果になる条件を定義した。
+また、その定義を既存のMVCCのアルゴリズム3つにあてはめ、アルゴリズムの正しさを確かめた。</p></div>
+        <div class="article-footer">
+            <span class="date">January 6, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/paxos_made_simple/">論文メモ Paxos Made Simple</a></h3>
         <div class="summary"><p><a href="https://lamport.azurewebsites.net/pubs/lamport-paxos.pdf">The Part-Time Parliament</a>で提唱された分散含意アルゴリズムPaxosをLamport自身が平易に解説した。
 エージェントの処理速度やメッセージが配信されるまでの長さに仮定はない。
@@ -134,15 +143,6 @@ CPU, DRAM, HDDやSSDを搭載したコモディティなサーバでクラスタ
 一方、内部は文字列とタイムスタンプの組をキーにしたキーバリューストアであり、Single Paxos状態機械でデータの一貫性を守りながら複数のデータセンタにデータを複製する。</p></div>
         <div class="article-footer">
             <span class="date">November 27, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/a_relational_model_of_data_for_large_shared_data_banks/">論文メモ A Relational Model of Data for Large Shared Data Banks</a></h3>
-        <div class="summary"><p>Coddがリレーショナルデータモデルを提唱した70年の論文。
-データをリレーション(SQLでのテーブル)として束ね、リレーションを順序なしのタプル(SQLの行)で構成する。</p></div>
-        <div class="article-footer">
-            <span class="date">November 21, 2020</span>
         </div>
     </article>
     

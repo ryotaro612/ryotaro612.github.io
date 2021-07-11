@@ -20,7 +20,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/base.css">
     
-<link rel="stylesheet" href="/css/gallery/single.css">
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -41,16 +43,19 @@
     </header>
     
 <main>
-    <div class="frame">
-        <img class="image" src="/Chateau_la_croix_blanche.jpg" width="100%" height="auto">
-    </div>
-    <div class="caption">
-        <h1>Chateau La Croix Blanche</h1>
-        <div class="date">July 3, 2021</div>
-        <div class="content"><p>なぜかまとめて２つ買ってしまったやつ。酸味と渋みのどちらにも偏りがなくて飲みやすい。
-飲みやすくておいしいのは分かるけど、あまりに個性がなくて「これを飲みたい」みたいな気にならないのが残念。
-ただ、美味しいのは確か。</p>
-</div>
+    <h1>END-TO-END ARGUMENTS IN SYSTEM DESIGN</h1>
+    <span class="date">July 10, 2021</span>
+    <div>
+        <p>分散システムにおける通信は、あるシステムから送られると、システムより低いレイヤーのネットワークを通り、ほかのシステムに到達する。
+論文の発表当時から、分散システムの信頼性にかかわる機能には、途中の低レイヤーではなく高レイヤーの終端におくべきものがあると知られていた。
+表題の論文は、それらを列挙し、END-TO-END ARGUMENTSと名付け、原則として提示する。
+例えば、データの完全性の保証、メッセージの重複対応、メッセージの到達の保証が原則にあてはまる。
+これらの機能を低レイヤーにおくと、完全性を検証後の経路でメッセージが壊れた場合、送信元が重複メッセージをおくる場合、対向システムが受信したメッセージを処理できない場合に対処できない。
+したがって、分散システム全体の信頼性をあげるのであれば、信頼性を上げる機能を低レイヤーではなく終端の高レイヤーにおくほうが効率がよい。</p>
+<p>ネットワークに信頼性を上げる機能をおく妥当な理由は、むしろ処理性能にある。
+ネットワークの信頼性を改善し、再送回数を減らせれば、通信や再送を含めた対向システムとのメッセージの往復時間を短くできる。
+ただし、メッセージの内容や到達を確認するオーバーヘッドが増える、複数のシステムがネットワークを利用する、ネットワークは高レイヤーほど信頼性にかかわる情報をもたないことから、性能のためにネットワークの信頼性を上げることには慎重を要する。</p>
+<p>論文を<a href="http://web.mit.edu/saltzer/www/publications/endtoend/endtoend.pdf">こちら</a>からダウンロードできます。</p>
     </div>
 </main>
 
@@ -58,13 +63,9 @@
 <ul class="pagination">
     
     <li>
-        <a href="/gallery/navaelus_bodega_inurrieta/"><span class="material-icons">chevron_left</span></a>
+        <a href="/posts/a_history_and_evaluation_of_systemr/"><span class="material-icons">chevron_left</span></a>
     </li>
     
-    
-    <li>
-        <a href="/gallery/goose_bump/"><span class="material-icons">chevron_right</span></a>
-    </li>
     
 </ul>
 

@@ -3,24 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://nryotaro.dev/gallery/chateau_la_croix_blanche/</loc>
-    <lastmod>2021-07-03T23:43:55+09:00</lastmod>
+    <loc>https://nryotaro.dev/posts/</loc>
+    <lastmod>2021-07-10T15:15:39+09:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2021-07-03T23:43:55+09:00</lastmod>
+    <lastmod>2021-07-10T15:15:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/end_to_end_arguments_in_system_design/</loc>
+    <lastmod>2021-07-10T15:15:39+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://nryotaro.dev/gallery/</loc>
-    <lastmod>2021-07-03T23:43:55+09:00</lastmod>
+    <lastmod>2021-07-10T15:02:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2021-07-03T15:02:21+09:00</lastmod>
-    <priority>0</priority>
+    <loc>https://nryotaro.dev/gallery/goose_bump/</loc>
+    <lastmod>2021-07-10T15:02:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/gallery/chateau_la_croix_blanche/</loc>
+    <lastmod>2021-07-03T23:43:55+09:00</lastmod>
   </url>
   
   <url>
