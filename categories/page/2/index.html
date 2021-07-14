@@ -94,11 +94,11 @@ HyperDexは、要素数と同数の次元からなるユークリッド空間を
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/integrating_the_ub_tree_into_a_database_system_kernel/">論文メモ Integrating the UB-Tree into a Database System Kernel</a></h3>
-        <div class="summary"><p>商用DBMS TransBaseのインデックスをB木から<a href="https://link.springer.com/chapter/10.1007/3-540-63343-X_48">UB木</a>に変え、複数の範囲クエリからなる多次元アクセスを高速化した。
-高速な多次元アクセスの拡張を商用DBMSのインデックスに導入することは複雑かつ高コストのように思える。
-UB木は、B木をベースにしたインデックスであり、B木のキーの生成とページ分割方法を工夫し、範囲クエリを高速化する。
-範囲クエリに向きB木に似たインデックスを使うことで、既存のDBMSの範囲クエリを人々の想定よりも簡単に高速化できることを例示した。
-また、既存のインデックスのインターフェースを呼び出す変更ではなく、もとのインデックス自体を変更する当手法には、クエリのオプティマイザを継続して利用できる利点もある。</p></div>
+        <div class="summary"><p>商用DBMS TransBaseのインデックスをB木から<a href="https://link.springer.com/chapter/10.1007/3-540-63343-X_48">UB木</a>に変え、 多次元アクセス（複数の列の範囲を指定するクエリ）を高速化した。
+一見、商用DBMSのインデックスの拡張は複雑かつ高コストのように思える。
+UB木は、B木をベースにしたインデックスで、B木のキーの生成とページ分割方法を細工し、範囲クエリを高速化できる。
+範囲クエリに向きB木に似たUB木を使うことで、既存のDBMSの範囲クエリを人々の想定よりも簡単に高速化できることを例示した。
+また、既存のインデックスの拡張用に提供されたインターフェースを使わず、インデックスを置き換えカーネルにUB木を密結合することで、クエリのオプティマイザを継続して利用できた。</p></div>
         <div class="article-footer">
             <span class="date">April 29, 2021</span>
         </div>
