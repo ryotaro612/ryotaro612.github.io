@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-64L0YEFRY5"></script>
+    <script>
+        if (location.hostname != 'localhost') {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-64L0YEFRY5');
+        }
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Linearizability: A Correctness Condition for Concurrent Objects</h1>
+    <span class="date">July 17, 2021</span>
+    <div>
+        <p>オブジェクトを読み書きする並行プロセスの実行系列があるとき、操作がアトミックであるように観測でき、かつ、プロセスの実行を仮に直列化したときと同じ実行結果をえられる条件を示し、これを線形化可能性と呼んだ。
+線形化可能性は、直列化可能性と同様に安全性の条件だが、直列化可能性にはないローカル性がある。
+つまり、各オブジェクトが線形化可能かつそのとき限り、システム全体が線形化可能になる。
+また、ローカル性だけでなく、ノンブロッキング性もあり、受信したリクエストの操作を保留しているオブジェクトは別オブジェクトの保留した操作の完了を待たずに自分の操作を実行できる。
+ただし、そのためには、オブジェクトの任意の状態における操作の振る舞いが定義されていなければならない。</p>
+<p>線形化可能性で発生しないことを保証できる実行系列を例示する。
+下図の2つの実行系列は、並行プロセスA, B, Cがあり、オブジェクトに0か1を書き込み(W), 読み込み(R)をする。
+直線は、操作の呼び出しから応答までの期間を表す。
+(a)は、Aが1を読み取ったので、Bは、Aの書き込み後、Aの読み取り前に1を書き込んだという順序に整理できる。
+一方、(b)は、R(1) AをみるとW(1) Bが先行するように解釈できるが、W(0) CとR(1) とをみると、その中間にあるように解釈しなければならない。
+線形化可能性は、このような直列化された実行系列ではみなれない事態が起きない条件を提供する。
+<img src="/linearizability/fig2.png" alt="fig2"></p>
+<p>線形化可能性の定義に必要な用語を定義する。
+システム全体の実行をhistoryとよぶ。
+historyは、操作のinvocationとresponseの2種類のイベントの有限な系列からなる。
+invocationを、オブジェクト\(x\), 操作名と引数\(\textit{op}(\textit{args*})\), プロセスAの組で\(&lt;x,\textit{op}(\textit{args}^*)A&gt;\)と書く。
+responseを、終了条件を\(\textit{term}\)、結果を\(res*\)として、\(&lt;x, \textit{term}(\textit{res*})A)&gt;\)と書く。
+responseに、オブジェクトとプロセスが同じinvocationがあるとき、responseはそのinvocationとmatchする。
+Hをhistoryとして、complete(H)は、invocationとmatchするresponseからなるHの最大の部分系列をあらわす。
+このとき以下の2つが成り立てば、Hはsequentialであるといい、成り立たなければconcurrentである。</p>
+<ul>
+<li>Hの最初のイベントがinvocationである。</li>
+<li>各invocationの直後のイベントはmatchするresponseである。ただし、最後のinvocationにmatchするresponseがなければ、そのinvocationの直後のイベントは問わない。</li>
+</ul>
+<p>H中の、プロセスPやオブジェクトxだけについての系列を、\(H\mid P\), \(H\mid x\)と書く。
+あるH, H&rsquo;があり、全プロセスPについて\(H\mid P = H'\mid P\)であれば、HとH&rsquo;は等価である。
+また、各Pについて\(H\mid P\)がsequentialであれば、Hはwell-formedである。</p>
+<p>Historyの集合Sがあり、HがSの要素であるときHのprefixもSの要素であれば、Sはprefix-closedであるという。
+あるオブジェクトのsequential historyだけからなるprefix-closed集合をオブジェクトのsequential specificationという。
+各\(H\mid x\)がsequential specificationの要素であるとき、Hはsequentialかつlegalである。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>\(e\)をinvocationとresponseのペアとして、Hの中で\(e_0\)のresponseが\(e_1\)のinvocationに先行する関係を、\(e_0 &lt;_H e_1\)と書く。
+\(&lt;_H\)は反射律の成立しない半順序関係である。
+Hに0以上のresponseを追加したhistoryをH&rsquo;とすると、次の2つが成立するとき、Hは線形化可能である。</p>
+<ul>
+<li>complete(H')と等価なlegal sequential history Sが存在する。</li>
+<li>\(&lt;_H\subseteq &lt;_S\)</li>
+</ul>
+<p>論文を<a href="https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf">こちら</a>からダウンロードできます。
+論文から文中の画像を引用しました。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/note/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+            <li class="atcoder"><a href="https://kenkoooo.com/atcoder/#/user/nryotaro">AtCoder</a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
