@@ -44,16 +44,23 @@
     
 <main>
     <h1>論文小メモ</h1>
-    <span class="date">July 11, 2021</span>
+    <span class="date">July 18, 2021</span>
     <div>
         <p>気になったものの備忘録</p>
-<h1 id="a-case-study-of-onboarding-in-software-teams-tasks-and-strategieshttpsarxivorgabs210305055"><a href="https://arxiv.org/abs/2103.05055">A Case Study of Onboarding in Software Teams: Tasks and Strategies</a></h1>
+<h2 id="an-empirical-analysis-of-ui-based-flaky-testshttpsarxivorgpdf210302669pdf"><a href="https://arxiv.org/pdf/2103.02669.pdf">An Empirical Analysis of UI-based Flaky Tests</a></h2>
+<p>GitHub上の25個のWebアプリケーションと37個のAndroidアプリケーションから235個のUIのFlaky Tests(何度も実行すると成功する不安定なテスト)を調査し、原因と修正のパターンを求めた。</p>
+<p>大きく原因を、非同期処理の不適切な待機、環境依存の動作、DOMのセレクタやテストライブラリの誤用、テスト対象の事前条件を準備できないテストスクリプトの4つに大別した。
+例えば、環境依存の動作には、IE固有のバグや予期していないレイアウトで画面が表示されることがある。
+テストの事前条件については、テストの実行順序次第で誤ったテストデータになる場合がある。</p>
+<p>非同期処理の不適切な待機に該当するFlaky testが最も多く全体の45%に及ぶ。</p>
+<p>修正のパターンは、待機時間の追加、テスト用APIの誤用の修正やAPIのアップグレード、テストスクリプトのリファクタリング、アニメーションの削除、テストの削除がある。</p>
+<h2 id="a-case-study-of-onboarding-in-software-teams-tasks-and-strategieshttpsarxivorgabs210305055"><a href="https://arxiv.org/abs/2103.05055">A Case Study of Onboarding in Software Teams: Tasks and Strategies</a></h2>
 <p>マイクロソフトのエンジニアとマネージャへのインタビューを通じて、オンボーディングのためのタスクの選び方とタスクの効果を調査した。
 まず、新しいチームに入った32人のエンジニアとエンジニアを迎えた15人のマネージャにインタビューし、特に、チームについての学習、担当する役割を果たせる自信、メンバーとの交流の3つを重視し、これらに対するタスクの影響を調査した。
 タスクの選び方は、大きく3つ、少しずつ割り当てるタスクを複雑にする、優先度の高いものを選ぶ、曖昧なタスクを選ぶ、があった。
 オンボーディングするエンジニアがジュニアであれば最初の選び方、シニアであれば最後の選び方がよく、アジャイルを採用するチーム、新しいチーム、納期の厳しいチームは優先度でタスクが選ばえる。
 以上の調査結果を189名のエンジニアと37名のマネージャに評価してもらい、妥当性を確認した。</p>
-<h1 id="a-differential-testing-approach-for-evaluating-abstract-syntax-tree-mapping-algorithmshttpsxin-xiagithubiopublicationicse212pdf"><a href="https://xin-xia.github.io/publication/icse212.pdf">A Differential Testing Approach for Evaluating Abstract Syntax Tree Mapping Algorithms</a></h1>
+<h2 id="a-differential-testing-approach-for-evaluating-abstract-syntax-tree-mapping-algorithmshttpsxin-xiagithubiopublicationicse212pdf"><a href="https://xin-xia.github.io/publication/icse212.pdf">A Differential Testing Approach for Evaluating Abstract Syntax Tree Mapping Algorithms</a></h2>
 <p>AST mappingは、コードの変更前後のASTを比較しノードの対応関係を見つけることで、コードの変更差分を検出できる。
 現状、対応関係の精度を評価する有効な方法はなく、評価には人手による手間がかかる。
 多くのノードには1対1の対応関係があることに着目し、異なる2つのAST mappingが出した対応関係を比べ、個別の文やトークンごとに、より正確な方を推定するアルゴリズムを提案した。
@@ -70,13 +77,9 @@
 <ul class="pagination">
     
     <li>
-        <a href="/posts/end_to_end_arguments_in_system_design/"><span class="material-icons">chevron_left</span></a>
+        <a href="/posts/linearizability/"><span class="material-icons">chevron_left</span></a>
     </li>
     
-    
-    <li>
-        <a href="/posts/linearizability/"><span class="material-icons">chevron_right</span></a>
-    </li>
     
 </ul>
 
