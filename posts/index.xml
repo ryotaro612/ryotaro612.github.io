@@ -172,7 +172,7 @@ suffix arrayの構築にかかる最悪時間計算量が\(\mathcal{O}(N\log N)\
       
       <guid>https://nryotaro.dev/posts/hyperdex/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://dbdb.io/db/hyperdex&#34;&gt;HyperDex&lt;/a&gt;はキー以外の要素で値を検索できるキーバリューストアで、このキー以外の要素による検索速度がCassandraやMongoDBと比べて12-13倍速い。
-キーバリューストアは、RDBMSと比べると、処理速度は速いが、検索条件の機能に乏しい。
+キーバリューストアは、RDBMSとくらべて、処理速度は速く、検索条件の機能に乏しい。
 HyperDexは、要素数と同数の次元からなるユークリッド空間を構成し、要素のハッシュ値で決まる座標に値をおくことで、キー以外でも高速に検索することを可能にする。
 もとのドメインの順序関係を保持するハッシュ関数を使うため、範囲検索もあつかえる。&lt;/p&gt;</description>
     </item>
