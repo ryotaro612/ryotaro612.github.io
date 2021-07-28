@@ -47,6 +47,17 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/snorkel_drybell_case_study/">メモ Snorkel DryBell: A Case Study in Deploying Weak Supervision at Industrial Scale</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>表題の論文では、<a href="https://www.snorkel.org">Snorkel</a>というWeak Supervisionの手法をGoogleで適用した結果の考察と評価がなされている。
+Weak Supervisionは、人手よりも効率良くノイズ交じりの教師データを生成する手法である。
+Snorkelは、引数にサンプルを返り値にラベルを返す複数の関数をラベルなしデータに適用し、結果から関数の精度を予測し、個々の関数よりも高い精度でデータにラベルを与える。この関数をラベリング関数という。Snorkel DryBellは、Snorkelのアルゴリズムをスケールさせるために、MapReduceに適用できるように修正されたものをさす。</p></div>
+        <div class="article-footer">
+            <span class="date">October 5, 2019</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/training_complex_models_with_multi_task_weak_supervision/">メモ Training Complex Models with Multi-Task Weak Supervision</a></h3>
         <div class="summary"><p>論文の表題は、ソース間の粒度や精度が揃っていることを前提とせず、<a href="https://arxiv.org/pdf/1212.0478.pdf">LohとWainwrightらの手法</a>でソースの精度を推定し、ソースのラベルよりも精度が高いラベルをデータに与えるWeak supervsionの手法である。</p></div>
         <div class="article-footer">
@@ -138,20 +149,6 @@ Googleではモノリシックリポジトリが採用されており、エン�
 <p>表題はNeurIPS 2018で発表されたCatBoostという勾配ブースティングの手法を論文にちなむ。
 Target Statisticsというカテゴリカル特徴量の前処理と勾配ブースティングの学習時に生じる一種のleakageが起きることを示し、leakageをさけて前処理と学習をする手法を示した。
 CatBoostは二進木の決定木を弱識別器に用いる。</p></div>
-        <div class="article-footer">
-            <span class="date">August 10, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/are_we_really_making_much_progress/">メモ Are We Really Making Much Progress? A Worrying Analysis of Recent Neural Recommendation Approaches</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>表題は、ニューラルネットワークを用いた推薦システムを提案、評価した論文における実験の再現性と予測性能の再評価した論文のタイトルにあたる。
-発表学会は、2019年のRecSys。著者らは、以下の2つのRQに回答するためにトップ会議で発表された18の論文を調査した。その結果、実験を再現できた論文は7稿であり、その中でも単純な手法を上回る性能が認められたのは1稿だけだった。</p>
-<ul>
-<li>RQ1: ニューラルネットワークを用いた推薦システムの研究の再現性はどの程度か</li>
-<li>RQ2: 最近発表されたアルゴリズムは、ハイパーパラメタチューニングされた単純な手法と比べてどの程度性能がいいか</li>
-</ul></div>
         <div class="article-footer">
             <span class="date">August 10, 2019</span>
         </div>

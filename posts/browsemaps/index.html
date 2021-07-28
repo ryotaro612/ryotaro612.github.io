@@ -20,7 +20,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/base.css">
     
-    <link rel="stylesheet" href="/css/gallery/list.css">
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -41,42 +43,33 @@
     </header>
     
 <main>
-    <h1>Gallery</h1>
-    <div class="gallery">
-    
-    
-        <div class="picture">
-            <img src="/dark_horse_chardonnay_2018.jpg" style="max-width: 100%; max-height: 100%;"/>
-            <div class="description" onclick="location.href='https:\/\/nryotaro.dev\/gallery\/darkhorse\/';">
-                <div class="title">DARK HORSE CHARDONNAY 2018</div>
-                <div class="date">January 26, 2021</div>
-            </div>
-        </div>
-    
-        <div class="picture">
-            <img src="/taihoh.jpg" style="max-width: 100%; max-height: 100%;"/>
-            <div class="description" onclick="location.href='https:\/\/nryotaro.dev\/gallery\/taihoh\/';">
-                <div class="title">大砲ラーメン</div>
-                <div class="date">January 5, 2020</div>
-            </div>
-        </div>
-    
+    <h1>The Browsemaps: Collaborative Filtering at LinkedIn</h1>
+    <span class="date">July 22, 2021</span>
+    <div>
+        <p>Browsemapsは、LinkedInのアイテムベースで水平型の協調フィルタリングである。
+Browsemapは、LinkedInの画面上にある推薦するコンテンツを並べたコンポーネントをさす。
+Browsemapsにおける水平型は特徴の種類の違いによらず異なるエンティティを統一的に扱えることであり、実際に、人、仕事、会社など複数のエンティティをBrowsemapsでユーザに推薦している。</p>
+<p>Browsemapsは、協調フィルタリングの計算を非同期に実行し、結果をKVSに保存する。
+フロントエンドは、ユーザのリクエストに応じて、API経由でKVSに推薦内容をといあわせる。
+アーキテクチャ以下の図のとおりで、協調フィルタリングの計算にはHadoopをつかう。
+アルゴリズムの具体的な解説はなく、論文から知れるのは、<a href="https://www.researchgate.net/publication/200043124_Mining_Association_Rules_Between_Sets_of_Items_in_Large_Databases_SIGMOD_Conference">典型的な手法</a>
+を使い、前回の計算以降に蓄積されたユーザの行動情報をもとにした差分計算で推薦結果を更新することぐらいだった。
+<img src="/browsemaps.png" alt="browsemaps"></p>
+<p>論文を<a href="http://ceur-ws.org/Vol-1271/Paper3.pdf">こちら</a>からダウンロードできます。
+画像は論文から引用しました。</p>
     </div>
 </main>
 
     
-
 <ul class="pagination">
     
     <li>
-        <a href="/gallery/"><span class="material-icons">first_page</span></a>
-    </li>
-    <li>
-        <a href="/gallery/"><span class="material-icons">chevron_left</span></a>
+        <a href="/posts/note/"><span class="material-icons">chevron_left</span></a>
     </li>
     
     
 </ul>
+
 
     <footer>
         <ul>

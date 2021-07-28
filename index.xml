@@ -6,7 +6,27 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 19 Jul 2021 23:19:41 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Jul 2021 10:04:27 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chateau La Croix Blanche</title>
+      <link>https://nryotaro.dev/gallery/chateau_la_croix_blanche2/</link>
+      <pubDate>Mon, 26 Jul 2021 10:04:27 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/gallery/chateau_la_croix_blanche2/</guid>
+      <description>酸味はあまりない。少し渋い。</description>
+    </item>
+    
+    <item>
+      <title>The Browsemaps: Collaborative Filtering at LinkedIn</title>
+      <link>https://nryotaro.dev/posts/browsemaps/</link>
+      <pubDate>Thu, 22 Jul 2021 13:01:15 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/browsemaps/</guid>
+      <description>&lt;p&gt;Browsemapsは、LinkedInのアイテムベースで水平型の協調フィルタリングである。
+Browsemapは、LinkedInの画面上にある推薦するコンテンツを並べたコンポーネントをさす。
+Browsemapsにおける水平型は特徴の種類の違いによらず異なるエンティティを統一的に扱えることであり、実際に、人、仕事、会社など複数のエンティティをBrowsemapsでユーザに推薦している。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Casal di Serra</title>
       <link>https://nryotaro.dev/gallery/casal_di_serra2/</link>
