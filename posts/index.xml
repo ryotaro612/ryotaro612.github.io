@@ -6,7 +6,16 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 22 Jul 2021 13:01:15 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Jul 2021 13:44:03 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Note</title>
+      <link>https://nryotaro.dev/posts/note/</link>
+      <pubDate>Sun, 25 Jul 2021 13:44:03 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/note/</guid>
+      <description>&lt;p&gt;気になったものの備忘録&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>The Browsemaps: Collaborative Filtering at LinkedIn</title>
       <link>https://nryotaro.dev/posts/browsemaps/</link>
@@ -16,15 +25,6 @@
       <description>&lt;p&gt;Browsemapsは、LinkedInのアイテムベースで水平型の協調フィルタリングである。
 Browsemapは、LinkedInの画面上にある推薦するコンテンツを並べたコンポーネントをさす。
 Browsemapsにおける水平型は特徴の種類の違いによらず異なるエンティティを統一的に扱えることであり、実際に、人、仕事、会社など複数のエンティティをBrowsemapsでユーザに推薦している。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>論文小メモ</title>
-      <link>https://nryotaro.dev/posts/note/</link>
-      <pubDate>Sun, 18 Jul 2021 13:44:03 +0900</pubDate>
-      
-      <guid>https://nryotaro.dev/posts/note/</guid>
-      <description>&lt;p&gt;気になったものの備忘録&lt;/p&gt;</description>
     </item>
     
     <item>

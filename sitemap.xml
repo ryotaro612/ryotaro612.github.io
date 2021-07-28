@@ -19,8 +19,13 @@
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2021-07-22T13:01:15+09:00</lastmod>
+    <lastmod>2021-07-25T13:44:03+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/note/</loc>
+    <lastmod>2021-07-25T13:44:03+09:00</lastmod>
   </url>
   
   <url>
@@ -31,11 +36,6 @@
   <url>
     <loc>https://nryotaro.dev/gallery/casal_di_serra2/</loc>
     <lastmod>2021-07-19T23:19:41+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nryotaro.dev/posts/note/</loc>
-    <lastmod>2021-07-18T13:44:03+09:00</lastmod>
   </url>
   
   <url>

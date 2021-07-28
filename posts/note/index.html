@@ -43,13 +43,17 @@
     </header>
     
 <main>
-    <h1>論文小メモ</h1>
-    <span class="date">July 18, 2021</span>
+    <h1>Note</h1>
+    <span class="date">July 25, 2021</span>
     <div>
         <p>気になったものの備忘録</p>
 <h2 id="what-helped-and-what-did-not-an-evaluation-of-the-strategies-to-improve-continuous-integrationhttpsarxivorgpdf210206666pdf"><a href="https://arxiv.org/pdf/2102.06666.pdf">What helped, and what did not? An Evaluation of the Strategies to Improve Continuous Integration</a></h2>
-<p>CIの技法を、失敗するテストを早期に見つけるためのテストやビルドの事項順序の優先づけ、および、不要な計算資資源を消費しないための実行するテストの選択精度で評価した。
-評価した技法の数は10個で、評価には、<a href="https://travistorrent.testroots.org/">TravisTorrent</a>のうち100件のプロジェクトを使った。</p>
+<p>10個のCIの技法を<a href="https://travistorrent.testroots.org/">TravisTorrent</a>のうち100件のプロジェクトで定量評価した。
+評価した技法は、不要なビルドやテストをスキップする技法か、実行順序を優先づける技法のどちらかに分けられる。
+前者は計算資源の消費を減らすこと、後者は失敗するケースを早めに実行することを目的にする。
+ビルドやテストをスキップする技法には、失敗するテストをスキップするおそれがある。
+最も、成功するテストやビルドをスキップした技法は、コードに変更のないケースをスキップするものだったが、同時に失敗するテストを多く見落とした。
+実行順序を優先付ける手法で最も性能のよかった手法は、<a href="https://www.semanticscholar.org/paper/Static-test-case-prioritization-using-topic-models-Thomas-Hemmati/ad77a2776733c7fdc10c0b043f7504a14fce3b6e">Thomasら</a>のもので、シグネチャやコメントで学習したトピックモデルを使い直前に実行したテストと違うトピックのテストを実行する。</p>
 <h2 id="an-empirical-analysis-of-ui-based-flaky-testshttpsarxivorgpdf210302669pdf"><a href="https://arxiv.org/pdf/2103.02669.pdf">An Empirical Analysis of UI-based Flaky Tests</a></h2>
 <p>GitHub上の25個のWebアプリケーションと37個のAndroidアプリケーションにある235個のUIのFlaky Tests（何度も実行すると成功する不安定なテスト）を調査し、原因と修正のパターンを求めた。</p>
 <p>大きく原因を、非同期処理の待機、環境依存の動作、DOMのセレクタやテストライブラリの誤用、テスト対象の事前条件を満たせていないテストスクリプトの4つに大別した。
@@ -79,13 +83,9 @@
 <ul class="pagination">
     
     <li>
-        <a href="/posts/linearizability/"><span class="material-icons">chevron_left</span></a>
+        <a href="/posts/browsemaps/"><span class="material-icons">chevron_left</span></a>
     </li>
     
-    
-    <li>
-        <a href="/posts/browsemaps/"><span class="material-icons">chevron_right</span></a>
-    </li>
     
 </ul>
 
