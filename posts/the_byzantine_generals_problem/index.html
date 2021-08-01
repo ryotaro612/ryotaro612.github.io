@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-64L0YEFRY5"></script>
+    <script>
+        if (location.hostname != 'localhost') {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-64L0YEFRY5');
+        }
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>The Byzantine Generals Problem</h1>
+    <span class="date">July 31, 2021</span>
+    <div>
+        <p>ビザンチン将軍問題は、故障したコンポーネントが別のコンポーネントに誤ったメッセージを送りうるとき、コンポーネント間でメッセージを交換した結果、全コンポーネントが一つの正しいメッセージを合意する手段を問う。
+2つのアルゴリズムがあり、署名付きメッセージを使うかどうかで分かれる。
+署名付きメッセージを使うと、受信したメッセージが改ざんされたかをコンポーネントが判断できる。
+署名を使わない場合、3分の2より多くのコンポーネントが正常でなければシステム全体が正しい1つのメッセージについて合意にできないことを示した。</p>
+<p>署名を使わないアルゴリズムをOral Message algorithm OM(\(m\))という。
+\(m\)は誤ったメッセージを送りうるコンポーネントの数である。
+ここで、\(n\)をコンポーネントの総数として、与えられた引数から大半を占める値を返す関数\(\text{majority}(v_1,\dots , v_{n-1})\)を定義する。
+「大半を占める」の定義には、\(v_i\)に順序関係があれば、中央値を選ぶ。
+順序関係がなく過半数が同じ値であれば、その値を選ぶ。それ以外では\(\texttt{RETREAT}\)を返す関数にする。</p>
+<p>このとき、OM(\(0\))は次の手順をとる。</p>
+<ol>
+<li>コンポーネント(commander)は、ほかのコンポーネント(lieutenant)に値を送る。</li>
+<li>各lieutenantは、commanderから受信した値を使う。受信していなければ\(\texttt{RETREAT}\)を使う。</li>
+</ol>
+<p>OM(\(m\))は、再帰的な手続きであり、\(m&gt;0\)の場合は次の手順にしたがう。</p>
+<ol>
+<li>commanderは各lieutenantに値を送る。</li>
+<li>lieutenant \(i\)は、commanderとして、値\(v_i\)を受信した場合は\(v_i\)を、そうでなければ\(\texttt{RETREAT}\)を、OM(\(m-1\))にしたがって、ほかの\(n-2\)のlieutenantに送る。</li>
+<li>\(i\neq j\)とする。lieutenant \(i\)がlieutenant \(j\)から2.で受信したメッセージ、もしくは、受信していなければ\(\texttt{RETREAT}\)を\(v_j\)とみなして、lieutenant \(i\)は\(\text{majority}(v_1,\dots , v_{n-1})\)に合意する。</li>
+</ol>
+<p>署名付きメッセージを使うアルゴリズムSM(\(m\))は、順序関係のあるメッセージを仮定し、\(\text{majority}\)のかわりに、関数を\(\text{choice}\)を使う。
+\(\text{choice}\)は、\(\text{choice}(\{v\})=v\), choice\((\emptyset) =\texttt{RETREAT}\)でなければならない。
+集合の要素が2つ以上である場合は、中央値を返すと自然な定義になる。</p>
+<p>\(i\)の署名付きの値\(x\)を\(x:i\)で表す。
+このとき、\(v:j:i\)は、\(j\)の署名つき値\(v:j\)に対して、\(i\)が署名した値を示す。</p>
+<p>lieutentnt \(i\)は、署名付きの値の集合\(V_i\)をもち、次の手順にしたがう。</p>
+<ol>
+<li>\(V_i = \emptyset\)に初期化する。</li>
+<li>commander(0) が署名付きの値をlieutenantに送る。</li>
+<li>各\(i\)について
+<ol>
+<li>lieutenant \(i\)が\(v:0\)を受信し、ほかの値を受信していないなら、\(V_i\)を\(\{v\}\)とし、\(v:0:t\)をほかのlieutenantに送る。</li>
+<li>\(i\)が署名付き値\(v:0:j_1:\cdots :j_k\)を受信し、\(v\)が\(V_i\)の要素でなければ
+<ol>
+<li>\(v\)を\(V_i\)に加える。</li>
+<li>\(k&lt; m \)であれば、\(v:0:j_1:\cdots :j_k:i\)を\(j_1,\dots j_k\)以外のlieutenantに送る。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>各\(i\)について、lieutenant \(i\)にメッセージがこなくなったら、\(\text{choice}(V_i)\)の値に合意する。</li>
+</ol>
+<p>論文を<a href="https://lamport.azurewebsites.net/pubs/byz.pdf">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/note/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+            <li class="atcoder"><a href="https://kenkoooo.com/atcoder/#/user/nryotaro">AtCoder</a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

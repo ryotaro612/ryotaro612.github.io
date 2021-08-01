@@ -3,24 +3,29 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://nryotaro.dev/gallery/chateau_la_croix_blanche2/</loc>
-    <lastmod>2021-07-26T10:04:27+09:00</lastmod>
+    <loc>https://nryotaro.dev/posts/</loc>
+    <lastmod>2021-07-31T11:07:42+09:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://nryotaro.dev/</loc>
+    <lastmod>2021-07-31T11:07:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/the_byzantine_generals_problem/</loc>
+    <lastmod>2021-07-31T11:07:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/gallery/chateau_la_croix_blanche2/</loc>
     <lastmod>2021-07-26T10:04:27+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://nryotaro.dev/gallery/</loc>
     <lastmod>2021-07-26T10:04:27+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2021-07-25T13:44:03+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
