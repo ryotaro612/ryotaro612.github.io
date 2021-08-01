@@ -48,6 +48,13 @@
     <div>
         <p>気になったものの備忘録</p>
 <h2 id="is-rust-used-safely-by-software-developershttpsarxivorgabs200700752"><a href="https://arxiv.org/abs/2007.00752">Is Rust Used Safely by Software Developers?</a></h2>
+<p><a href="https://crates.io/">crates.io</a>に登録された15097個のクレートにおける<code>unsafe</code>キーワードの使用状況を調査した。
+調査対象のクレートは、調査を開始した2018年9月時点で<a href="https://crates.io/">crates.io</a>に登録された全クレートの81%にあたる。
+<code>unsafe</code>をふくむクレートは、そのうちの29%だったが、依存するクレートにある<code>unsafe</code>も対象にすると、50%におよぶ。
+<a href="https://crates.io/">crates.io</a>の総ダウンロード数のうち90%を占める473個のクレートに限定すると、60%のクレートがコードに<code>unsafe</code>をふくむ。
+2018年9月から2019年6月までの10ヶ月間で<code>unsafe</code>の使用傾向に変化はなく、<code>unsafe</code>の数が少し増えただけであった。
+<code>unsafe</code>の用途の大半は<code>unsafe</code>で修飾されたRustの関数を呼び出すためだった。
+なお、コンパイラで生成された<code>unsafe</code>キーワードは集計にふくまれていない。</p>
 <h2 id="what-helped-and-what-did-not-an-evaluation-of-the-strategies-to-improve-continuous-integrationhttpsarxivorgpdf210206666pdf"><a href="https://arxiv.org/pdf/2102.06666.pdf">What helped, and what did not? An Evaluation of the Strategies to Improve Continuous Integration</a></h2>
 <p>10個のCIの技法を<a href="https://travistorrent.testroots.org/">TravisTorrent</a>のうち100件のプロジェクトで定量評価した。
 評価した技法は、不要なビルドやテストをスキップする技法か、実行順序を優先づける技法のどちらかに分けられる。
