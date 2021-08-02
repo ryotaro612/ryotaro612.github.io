@@ -6,7 +6,16 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 31 Jul 2021 11:07:42 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Aug 2021 13:44:03 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Note</title>
+      <link>https://nryotaro.dev/posts/note/</link>
+      <pubDate>Sun, 01 Aug 2021 13:44:03 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/note/</guid>
+      <description>&lt;p&gt;気になったものの備忘録&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>The Byzantine Generals Problem</title>
       <link>https://nryotaro.dev/posts/the_byzantine_generals_problem/</link>
@@ -26,15 +35,6 @@
       
       <guid>https://nryotaro.dev/gallery/chateau_la_croix_blanche2/</guid>
       <description>酸味はあまりない。少し渋い。</description>
-    </item>
-    
-    <item>
-      <title>Note</title>
-      <link>https://nryotaro.dev/posts/note/</link>
-      <pubDate>Sun, 25 Jul 2021 13:44:03 +0900</pubDate>
-      
-      <guid>https://nryotaro.dev/posts/note/</guid>
-      <description>&lt;p&gt;気になったものの備忘録&lt;/p&gt;</description>
     </item>
     
     <item>

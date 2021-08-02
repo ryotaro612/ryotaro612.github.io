@@ -6,7 +6,16 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 31 Jul 2021 11:07:42 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Aug 2021 13:44:03 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Note</title>
+      <link>https://nryotaro.dev/posts/note/</link>
+      <pubDate>Sun, 01 Aug 2021 13:44:03 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/note/</guid>
+      <description>&lt;p&gt;気になったものの備忘録&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>The Byzantine Generals Problem</title>
       <link>https://nryotaro.dev/posts/the_byzantine_generals_problem/</link>
@@ -17,15 +26,6 @@
 2つのアルゴリズムがあり、署名付きメッセージを使うかどうかで分かれる。
 署名付きメッセージを使うと、受信したメッセージが改ざんされたかをコンポーネントが判断できる。
 署名を使わない場合、3分の2より多くのコンポーネントが正常でなければシステム全体が正しい1つのメッセージについて合意にできないことを示した。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Note</title>
-      <link>https://nryotaro.dev/posts/note/</link>
-      <pubDate>Sun, 25 Jul 2021 13:44:03 +0900</pubDate>
-      
-      <guid>https://nryotaro.dev/posts/note/</guid>
-      <description>&lt;p&gt;気になったものの備忘録&lt;/p&gt;</description>
     </item>
     
     <item>
