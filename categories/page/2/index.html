@@ -85,14 +85,15 @@ One Size Fits Allは以前本ページで<a href="/posts/one_size_fit_all/">紹�
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/burst_tries/">Burst Tries: A Fast, Efficient Data Structure for String Keys</a></h3>
-        <div class="summary"><p>Burst trieは、trie木の一種で、2分木よりもメモリ効率がよく、trie木と同じくらい速い。
-2種類のデータ構造からなり、trie木に加えて別のデータ構造も使う。
+        <div class="summary"><p>trie木の一種のburst trieは、2分木よりもメモリ効率がよく、trie木と同じくらい速い。
+内部は2種類のデータ構造からなり、trie木のほかに別のデータ構造もつかう。
 どのデータ構造を使うかは要件次第で、論文では、連結リスト、二分探索木、スプレー木を使った場合の実験がなされた。
-Burst trie内の別のデータ構造の箇所はcontainerと呼ばれる。
-初期状態のBurst trieは、1つのcontainerからなり、別のデータ構造そのものに等しい。
-その後、コンテナ内の要素のアクセス頻度やヒット率にもとづくヒューリスティックな基準が満たされると、containerの要素をtrie木のノードにおきかえ、ノードに下に新しいcontainerをつくる。
-新しくできたcontainerにも基準を適用し、適宜おきかえる。
-これにより、与えられる文字列の頻度に合わせてtrie木と別のデータ構造を使い分けることができると同時に、性能はデータの歪度に依存する。</p></div>
+Burst trie内の別のデータ構造の箇所はcontainerとよばれる。
+初期状態のburst trieは、1つのcontainerからなり、別のデータ構造そのものに等しい。
+その後、containerの要素のアクセス頻度やヒット率にもとづくヒューリスティックな基準が満たされると、containerの要素をtrie木のノードにおきかえ、ノードの下に新しいcontainerをつくる。
+新しくできたcontainerにも基準を適用し、適宜containerをtrieのノードにおきかえる。
+以上の手続きより、与えられる文字列の頻度に合わせてtrie木と別のデータ構造を使い分けることができる。
+性能はデータ分布の歪度に依存する。</p></div>
         <div class="article-footer">
             <span class="date">May 22, 2021</span>
         </div>

@@ -46,22 +46,23 @@
     <h1>Burst Tries: A Fast, Efficient Data Structure for String Keys</h1>
     <span class="date">May 22, 2021</span>
     <div>
-        <p>Burst trieは、trie木の一種で、2分木よりもメモリ効率がよく、trie木と同じくらい速い。
-2種類のデータ構造からなり、trie木に加えて別のデータ構造も使う。
+        <p>trie木の一種のburst trieは、2分木よりもメモリ効率がよく、trie木と同じくらい速い。
+内部は2種類のデータ構造からなり、trie木のほかに別のデータ構造もつかう。
 どのデータ構造を使うかは要件次第で、論文では、連結リスト、二分探索木、スプレー木を使った場合の実験がなされた。
-Burst trie内の別のデータ構造の箇所はcontainerと呼ばれる。
-初期状態のBurst trieは、1つのcontainerからなり、別のデータ構造そのものに等しい。
-その後、コンテナ内の要素のアクセス頻度やヒット率にもとづくヒューリスティックな基準が満たされると、containerの要素をtrie木のノードにおきかえ、ノードに下に新しいcontainerをつくる。
-新しくできたcontainerにも基準を適用し、適宜おきかえる。
-これにより、与えられる文字列の頻度に合わせてtrie木と別のデータ構造を使い分けることができると同時に、性能はデータの歪度に依存する。</p>
-<p>データ構造に2分探索木を使う場合で、containerの一部がtrieノードに変わるburstの様子を例示する。
-下の2つの図は、右下のcontainerがbusrtする様子を示し、containerの各要素の先頭文字がtrie木のノードにおきかえられている。
-新しくできるcontainerの各要素は、前のcontainerにあった先頭文字を含まない。</p>
+Burst trie内の別のデータ構造の箇所はcontainerとよばれる。
+初期状態のburst trieは、1つのcontainerからなり、別のデータ構造そのものに等しい。
+その後、containerの要素のアクセス頻度やヒット率にもとづくヒューリスティックな基準が満たされると、containerの要素をtrie木のノードにおきかえ、ノードの下に新しいcontainerをつくる。
+新しくできたcontainerにも基準を適用し、適宜containerをtrieのノードにおきかえる。
+以上の手続きより、与えられる文字列の頻度に合わせてtrie木と別のデータ構造を使い分けることができる。
+性能はデータ分布の歪度に依存する。</p>
+<p>データ構造に2分探索木をつかい、containerの一部がtrieノードに変わるburst状態を例示する。
+下の2つの図は、右下のcontainerのburstを示し、containerの各要素の先頭文字がtrie木のノードにおきかえられる。
+新しくできるcontainerの各要素は、前のcontainerにあった先頭文字をふくまない。</p>
 <p><img src="/burst_trie/before_burst.png" alt="before">
 <img src="/burst_trie/after_burst.png" alt="after"></p>
-<p>要素を削除するときは、containerのデータ構造の削除アルゴリズムに通りに要素を削除する。
+<p>要素を削除するときは、containerの削除アルゴリズムに通りに要素を削除する。
 このとき、containerが空になり、親のtrie木のノードが子containerを持たないならばburst trie木からノードを削除する。
-trie木のノードの削除は、空でない親ノードかルートに到達するまで再帰的に繰り返される。</p>
+trie木のノードの削除は、空でない親ノードかルートに到達するまで再帰的にくりかえされる。</p>
 <p>論文を<a href="http://www.lindstaedt.com.br/estruturas/bursttries.pdf">こちら</a>からダウンロードできます。
 画像は論文から引用されています。</p>
     </div>
