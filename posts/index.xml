@@ -6,7 +6,19 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 06 Aug 2021 13:44:03 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Aug 2021 15:11:48 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-Scale, unbounded, Out-of-Order Data Processing</title>
+      <link>https://nryotaro.dev/posts/dataflow/</link>
+      <pubDate>Sat, 07 Aug 2021 15:11:48 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/dataflow/</guid>
+      <description>&lt;p&gt;データ処理サービスには、処理の正確さ、遅延、システムの複雑さの間にトレードオフがある。
+ストリーミング処理サービスのStorm, Samza, Pulsarは、(論文が発表された2015年時点では)メッセージは、exactly-onceではなく、欠損または重複しうる。
+MapReduceやSparkなどのバッチ処理サービスは、バッチ処理の単位までデータが集まるのを待たねばならない。
+Lambda architectureは、システムの複雑化を許容し、2つのアーキテクチャを使い分けることで、処理の正確さと遅延のバランスをとる。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Note</title>
       <link>https://nryotaro.dev/posts/note/</link>
