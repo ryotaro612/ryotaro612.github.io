@@ -162,14 +162,13 @@ Thrift自体は、大きくType, Transport, Protocol, Versioning, Processorの5�
     </item>
     
     <item>
-      <title>The End of an Architectural Era (It&#39;s Time for a complete Rewrite)</title>
+      <title>The End of an Architectural Era (It&#39;s Time for a Complete Rewrite)</title>
       <link>https://nryotaro.dev/posts/the_end_of_an_architectural_era/</link>
       <pubDate>Sat, 29 May 2021 20:54:27 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/the_end_of_an_architectural_era/</guid>
-      <description>&lt;p&gt;発表時期は2007年で、RDBMSの源流のSystem Rが開発された70年代と今日ではハードウェアの性能や価格が変わったことを背景に、RDMSの延長ではなく抜本から刷新し、いわゆるNoSQLを開発する必要性を主張している。
-第一著者のMichael Stonebrakerは、後の2011年に今日全てのデータベースの要件をRDMSだけではまかなえないという旨の論文&lt;a href=&#34;https://cs.brown.edu/~ugur/fits_all.pdf&#34;&gt;&amp;ldquo;One Size Fits All&amp;rdquo;&lt;/a&gt;を出している。
-One Size Fits Allは以前本ページで&lt;a href=&#34;https://nryotaro.dev/posts/one_size_fit_all/&#34;&gt;紹介&lt;/a&gt;したことがある。
+      <description>&lt;p&gt;発表時期は2007年で、RDBMSの源流であるSystem Rが開発された70年代からハードウェアの性能や価格が変わったことを背景に、RDMSのアーキテクチャを既存技術の延長ではなく抜本から刷新し、いわゆるNoSQLを開発する必要性を主張している。
+第一著者のMichael Stonebrakerは、後の2011年に今日全てのデータベースの要件をRDMSだけでは満たすことができないと主張する論文&lt;a href=&#34;https://cs.brown.edu/~ugur/fits_all.pdf&#34;&gt;&amp;ldquo;One Size Fits All&amp;rdquo;&lt;/a&gt;を出している。
 表題の論文では、OLTPに特化したデータベースH-Storeを実装し、TPC-Cをベンチマークとして商用データベースと比較したところ、H-Storeの方が82倍高速だった。&lt;/p&gt;</description>
     </item>
     
