@@ -47,6 +47,46 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/a_history_and_evaluation_of_systemr/">A History and Evaluation of System R</a></h3>
+        <div class="summary"><p>System Rは、1970年にE.F. Coddが発表したリレーショナルモデルを実装した初めてのリレーショナルデータベースである。
+1981年に発表された表題の論文は、System Rの開発プロジェクトを3つのフェーズに分け、各フェーズの知見をまとめている。
+Phase 0は、1974年から1975年にかけて、シングルユーザ向けにSQLサブセットと対話的なインターフェースを開発した期間にあたる。
+Phase 1は、1976年から1977年の、Phase 0のコードを破棄し、マルチユーザに対応しSystem Rの機能を完全に実装するまでの期間にあたる。
+Phase 2は、1978年から1979年にSan Jose Research Laboratoryなどでの実用にもとづく評価期間にあたる。</p></div>
+        <div class="article-footer">
+            <span class="date">July 3, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/rei/">beamerのスタイルファイル rei.sty</a></h3>
+        <div class="summary"><p>日本語用のbeamerスライドのデザインを作った。
+飽きないように単純なデザインにした。
+デモは<a href="/rei.pdf">こっち</a></p></div>
+        <div class="article-footer">
+            <span class="date">June 26, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/atcoder_abc206d/">AtCoder Beginner Contest 206 D KAIBUNsyo</a></h3>
+        <div class="summary"><p>Union Findを使うと通せる。すべての\(A_i\)と\(A_{N+1-i}\)が同じグループに所属するために必要なunionの回数を答えればいい。</p></div>
+        <div class="article-footer">
+            <span class="date">June 20, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/consistent_hashing_and_random_trees/">Consistent Hashing and Random Trees: Distributed Chaching Protocols for Relieving Hot Spots on the World Wide Web</a></h3>
+        <div class="summary"><p>各サーバーがネットワーク全体の情報を保持できない分散キャッシュネットワークにホットスポットを作らせないためのキャッシュプロトコルを開発した。
+表題のconsistent hashingは、プロトコルの基礎になるハッシュ関数で、値域の違いに関数の写像が影響されにくい。
+また、クライアントは一部のキャッシュサーバーにアクセスできればよく、クライアントごとにアクセス可能なキャッシュサーバーの集合は違ってよい。</p></div>
+        <div class="article-footer">
+            <span class="date">June 19, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/abc051d/">AtCoder Begineer Contest 051 D - Candidates of No Shortest Paths</a></h3>
         <div class="summary"><p>ワーシャルフロイト法で全ての2頂点間の最短距離を求めた後、隣接する2頂点の辺のうち、2頂点の最短距離が辺の重みと異なる辺を数えれば通る。</p></div>
         <div class="article-footer">
@@ -107,48 +147,6 @@ Burst trie内の別のデータ構造はcontainerとよばれる。
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/suffix_arrays/">Suffix Arrays: A New Method for On-Line String Searches</a></h3>
-        <div class="summary"><p>接尾辞配列 Suffix Arrayは、長さ\(P\)の文字列が長さ\(W\)の文字列のどこに出現するかを時間計算量\(\mathcal{O}(P + \log N)\)で判定できるデータ構造で、接尾辞木 suffix treeよりもメモリ効率が3-5倍よい。
-一方、検索の準備にかかる最悪時間計算量はsuffix treeよりも大きい。
-suffix arrayの構築にかかる最悪時間計算量が\(\mathcal{O}(N\log N)\)に対して、suffix treeは\(\mathcal{O}(N)\)しかかからない。</p></div>
-        <div class="article-footer">
-            <span class="date">May 16, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/hyperdex/">論文メモ HyperDex: A Distribute, searchable Key-Value Store</a></h3>
-        <div class="summary"><p><a href="https://dbdb.io/db/hyperdex">HyperDex</a>はキー以外の要素で値を検索できるキーバリューストアで、このキー以外の要素による検索速度がCassandraやMongoDBと比べて12-13倍速い。
-キーバリューストアは、RDBMSとくらべて、処理速度は速く、検索条件の機能に乏しい。
-HyperDexは、要素数と同数の次元からなるユークリッド空間を構成し、要素のハッシュ値で決まる座標に値をおくことで、キー以外でも高速に検索することを可能にする。
-もとのドメインの順序関係を保持するハッシュ関数を使うため、範囲検索もあつかえる。</p></div>
-        <div class="article-footer">
-            <span class="date">May 7, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/integrating_the_ub_tree_into_a_database_system_kernel/">論文メモ Integrating the UB-Tree into a Database System Kernel</a></h3>
-        <div class="summary"><p>商用DBMS TransBaseのインデックスをB木から<a href="https://link.springer.com/chapter/10.1007/3-540-63343-X_48">UB木</a>に変え、 多次元アクセス（複数の列の範囲を指定するクエリ）を高速化した。
-一見、商用DBMSのインデックスの拡張は複雑かつ高コストのように思える。
-UB木は、B木をベースにしたインデックスで、B木のキーの生成とページ分割方法を細工し、範囲クエリを高速化できる。
-範囲クエリに向きB木に似たUB木を使うことで、既存のDBMSの範囲クエリを人々の想定よりも簡単に高速化できることを例示した。
-また、既存のインデックスの拡張用に提供されたインターフェースを使わず、インデックスを置き換えカーネルにUB木を密結合することで、クエリのオプティマイザを継続して利用できた。</p></div>
-        <div class="article-footer">
-            <span class="date">April 29, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/designing_access_methods/">論文メモ Designing Access Methods: The RUM Conjecture</a></h3>
-        <div class="summary"><p>データ構造は読み込み(Read, R), 更新(Update, U), 所要メモリ容量(Memory, M)にトリレンマを抱え、いかなるデータ構造でも、2つを最適化すると残る1つのオーバヘッドが悪化すると予想した。
-Read, Update, Memoryの頭文字から、これをRUM Conjectureと名付けた。</p></div>
-        <div class="article-footer">
-            <span class="date">April 26, 2021</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -167,7 +165,7 @@ Read, Update, Memoryの頭文字から、これをRUM Conjectureと名付けた�
         <a href="/page/3/"><span class="material-icons">chevron_right</span></a>
     </li>
     <li>
-        <a href="/page/17/"><span class="material-icons">last_page</span></a>
+        <a href="/page/18/"><span class="material-icons">last_page</span></a>
     </li>
     
 </ul>

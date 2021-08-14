@@ -47,6 +47,45 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/an_empirical_analysis_of_ui-based_flaky_tests/">An Empirical Analysis of UI-based Flaky Tests</a></h3>
+        <div class="summary">GitHub上の5つのWebアプリケーションと37のAndroidアプリケーションから集めた235件のUIのflaky tests（何度か実行すると成功する不安定なテスト）を調査し、原因と修正を分類した。
+大きく原因を、非同期処理の待機、環境依存の動作、DOMのセレクタやテストライブラリの誤用、テスト対象の事前条件を満たしていないテストスクリプトの4つに大別した。 具体例をあげると、環境依存の動作には、IE固有のバグや予期していないレイアウトで画面が表示される場合、テストの事前条件については、テストの実行順序次第で誤ったテストデータが作られる場合がある。 最も多くのテストが分類され、全体の45%を占めたのは、非同期処理の不適切な待機方法だった。
+修正のパターンには、待機時間の追加、テスト用APIの誤用の修正やAPIのアップグレード、テストスクリプトのリファクタリング、アニメーションの削除、不要なテストの削除がある。
+論文をこちらからダウンロードできます。</div>
+        <div class="article-footer">
+            <span class="date">August 14, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/a_case_study_of_onboarding_in_software_teams/">A Case Study of Onboarding in Software Teams: Tasks and Strategies</a></h3>
+        <div class="summary"><p>オンボーディングのためのタスクの選び方とタスクの効果を調査するために、マイクロソフトのエンジニアとマネージャーにインタビューした。
+まず、新しいチームに入った32人のエンジニアとエンジニアを迎えた15人のマネージャーにインタビューし、特に、チームのことを知る、担当する役割を果たせる自信の醸成、メンバーとの交流の3つを重視し、これらに対するタスクの影響を調査した。
+タスクの選び方は、大きく、割り当てるタスクを少しずつ複雑にする、優先度の高いものを選ぶ、曖昧なタスクを選ぶ、の3つがあった。
+オンボーディングするエンジニアがジュニアであれば最初の選び方、シニアであれば最後の選び方、アジャイルを採用するチーム、新しいチーム、納期の厳しいチームは優先度でタスクが選ばれやすく、効果的であった。
+以上の考察を189名のエンジニアと37名のマネージャに評価してもらい、妥当性を確認した。</p></div>
+        <div class="article-footer">
+            <span class="date">August 14, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/a_differential_testing_approach_for_evaluating_ast_mapping_algorithms/">A Differential Testing Approach for Evaluating Abstract Syntax Tree Mapping Algorithms</a></h3>
+        <div class="summary"><p>AST mappingは、コードの変更前後のASTを比べてノードの対応関係を見つける手法であり、変更差分検出に使われる。 現状、対応関係の精度を自動で評価する有効な方法はなく、評価には人手による手間がかかる。 多くのノードに1対1の対応関係があることに着目し、異なる2つのAST mappingを同じ変更に適用した結果を比べ、個別の文やトークンごとに、より正確な方を推定するアルゴリズムを提案した。 これを応用し、複数のAST mappingアルゴリズムに同じファイルの変更差分を入力し、アルゴリズムごとの不正確に検出した箇所を自動で推定できることを示した。 特定性能は、Precisionが0.98-1.00, Recallは0.65-0.75だった。</p></div>
+        <div class="article-footer">
+            <span class="date">August 14, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/ignorance_and_prejudice_in_software_fairness/">“Ignorance and Prejudice” in Software Fairness</a></h3>
+        <div class="summary"><p>特徴の種類を増やすと、機械学習の予測の公平性と精度を改善できることを5つのデータセットで例示した。 データセットのタスク内容は、性別、人種、年齢を特徴に含み、経済的な裕福さや再犯率を予測するもの。 他方、教師データの数を増やしても公平性は改善されなかった。</p></div>
+        <div class="article-footer">
+            <span class="date">August 14, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/dataflow/">The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-Scale, unbounded, Out-of-Order Data Processing</a></h3>
         <div class="summary"><p>データ処理サービスには、処理の正確さ、遅延、システムの複雑さの間にトレードオフがある。
 ストリーミング処理サービスのStorm, Samza, Pulsarは、(論文が発表された2015年時点では)メッセージは、exactly-onceではなく、欠損または重複しうる。
@@ -111,46 +150,6 @@ Browsemapsにおける水平型は特徴の種類の違いによらず異なる�
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/a_history_and_evaluation_of_systemr/">A History and Evaluation of System R</a></h3>
-        <div class="summary"><p>System Rは、1970年にE.F. Coddが発表したリレーショナルモデルを実装した初めてのリレーショナルデータベースである。
-1981年に発表された表題の論文は、System Rの開発プロジェクトを3つのフェーズに分け、各フェーズの知見をまとめている。
-Phase 0は、1974年から1975年にかけて、シングルユーザ向けにSQLサブセットと対話的なインターフェースを開発した期間にあたる。
-Phase 1は、1976年から1977年の、Phase 0のコードを破棄し、マルチユーザに対応しSystem Rの機能を完全に実装するまでの期間にあたる。
-Phase 2は、1978年から1979年にSan Jose Research Laboratoryなどでの実用にもとづく評価期間にあたる。</p></div>
-        <div class="article-footer">
-            <span class="date">July 3, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/rei/">beamerのスタイルファイル rei.sty</a></h3>
-        <div class="summary"><p>日本語用のbeamerスライドのデザインを作った。
-飽きないように単純なデザインにした。
-デモは<a href="/rei.pdf">こっち</a></p></div>
-        <div class="article-footer">
-            <span class="date">June 26, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/atcoder_abc206d/">AtCoder Beginner Contest 206 D KAIBUNsyo</a></h3>
-        <div class="summary"><p>Union Findを使うと通せる。すべての\(A_i\)と\(A_{N+1-i}\)が同じグループに所属するために必要なunionの回数を答えればいい。</p></div>
-        <div class="article-footer">
-            <span class="date">June 20, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/consistent_hashing_and_random_trees/">Consistent Hashing and Random Trees: Distributed Chaching Protocols for Relieving Hot Spots on the World Wide Web</a></h3>
-        <div class="summary"><p>各サーバーがネットワーク全体の情報を保持できない分散キャッシュネットワークにホットスポットを作らせないためのキャッシュプロトコルを開発した。
-表題のconsistent hashingは、プロトコルの基礎になるハッシュ関数で、値域の違いに関数の写像が影響されにくい。
-また、クライアントは一部のキャッシュサーバーにアクセスできればよく、クライアントごとにアクセス可能なキャッシュサーバーの集合は違ってよい。</p></div>
-        <div class="article-footer">
-            <span class="date">June 19, 2021</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -162,7 +161,7 @@ Phase 2は、1978年から1979年にSan Jose Research Laboratoryなどでの実�
         <a href="/page/2/"><span class="material-icons">chevron_right</span></a>
     </li>
     <li>
-        <a href="/page/17/"><span class="material-icons">last_page</span></a>
+        <a href="/page/18/"><span class="material-icons">last_page</span></a>
     </li>
     
 </ul>

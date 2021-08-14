@@ -47,6 +47,51 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/">論文メモ Learning Deep Structured Semantic Models for Web Search using Clickthrough Data</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>クエリと文書を同じ低次元の空間に射影する深層学習のモデルを提案した論文である。
+クエリと文書は、適合度合いが高いほど、近くに配置される。
+教師データは、クエリと文書の組からなる教師データである。
+実験では、商用検索エンジンから抽出した16510件のクエリと対応するWeサイトのタイトルがつかわれる。
+Web文書の大量の語彙をあつかうために、語彙の増加に対して次元数を抑えるbag-of-wordsの手法、word hasingも提案した。</p></div>
+        <div class="article-footer">
+            <span class="date">January 4, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/classification_in_the_presence_of_label_noise/">論文メモ Classification in the Presence of Label Noise: a Survey</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>ノイズのある教師データによるクラス分類の<a href="https://romisatriawahono.net/lecture/rm/survey/machine%20learning/Frenay%20-%20Classification%20in%20the%20Presence%20of%20Label%20Noise%20-%202014.pdf">サーベイ論文</a>である。発表時期は、<a href="https://ieeexplore.ieee.org/document/6685834">2013年の12月</a>である。
+主な内容は、ノイズの分類、ノイズが分類に及ぼす影響、ノイズへの対策である。</p></div>
+        <div class="article-footer">
+            <span class="date">December 30, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/distributed_representations_of_sentences_and_documents/">論文メモ Distributed Representations of Sentences and Documents</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p><a href="https://radimrehurek.com/gensim/models/doc2vec.html">Doc2Vec</a>のアルゴリズムとして採用されたニューラル言語モデルParagraph Vectorを提案した論文である。
+bag of wordsは、文書の単語順を記憶せず、また、似た意味の単語ベクトルと無関係なベクトルを単語にわりあてる。
+Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文脈の中心の単語をあてられるように学習することで、可変長文字列から固定長の文書埋め込みベクトルを生成できるようになる。
+これにより、単語順と単語の意味を記憶したベクトルの生成を実現する。</p></div>
+        <div class="article-footer">
+            <span class="date">December 28, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/glove_vectors_for_word_representation/">論文メモ GloVe: Global Vectors for Word Representation</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p><a href="https://www.aclweb.org/anthology/D14-1162.pdf">GloVe</a>は,コーパスに出現する単語の共起回数を学習するニューラル言語モデルである。
+既存手法を単語の出現頻度の統計値つかう手法と対数双線形モデルに分類し、両者の長所を備え短所を補う手法として、GloVeを提案する。</p></div>
+        <div class="article-footer">
+            <span class="date">December 21, 2019</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/bert/">論文メモ BERT: Pre-training of Deep Bidirectional Transformers for Lnaguages Understaing</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>BERTは<a href="https://arxiv.org/pdf/1706.03762.pdf">Attention Is All You Need</a>にあるTransformerをアーキテクチャに導入した分散表現のモデルであり、本稿は、事前学習済みのBERTにファインチューニングを適用しQAタスクや自然言語推論のベンチマークにおいて既存研究を上回る結果を示している。
@@ -111,54 +156,6 @@ DESMは、クエリの単語に関係する単語をもとに判断する。
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/get_another_label/">論文メモ Get Another Label? Improving Data Quality and Data Mining Using Multiple, Noisy Labelers</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>ある確率でデータに誤ったラベルをふるlabelerでデータにラベルをふるときに、
-既にラベルのあるデータに重ねてラベルをふるべきか調査した。
-12種類のラベルつきデータセットを使い、
-正解ラベルを誤ったラベルに置換する割合や同一のデータのもつラベルの数を変化させ、モデルの精度の違いを観察した。
-加えて、ラベルをふるべきデータを推定する手法も提案している。</p></div>
-        <div class="article-footer">
-            <span class="date">November 9, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/active_clean/">メモ ActiveClean: Interactive Data Cleaning For Statistical Modeling</a></h3>
-        <div class="summary"><p>ActiveCleanは、教師データの誤りを修正し、モデルの精度を改善する手法である。
-優先して修正すべきデータを推定し、データが修正されたら修正されたデータでモデルを学習する。
-この修正と学習を条件を満たすまでくりかえす。
-反復的な学習で大域的最適解をえられるモデルであれば、最適解への収束が保証される。
-データの修正件数が等しい場合に、先行研究と比べて最大2.5倍の精度改善を達成した。</p></div>
-        <div class="article-footer">
-            <span class="date">November 9, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/web_tables/">メモ WebTables: Exploring the Power of Tables on the Web</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>表題の論文は、Web上の表から抽出した大量の関係モデルを対象にした検索を提案・評価した
-。検索の他にも、一部の属性を入力とするスキーマの補完、入力した属性ないしスキーマに類似のものを推定するアルゴリズムの議論もある。
-ここのスキーマは属性のリストである。論文の著者らは研究時にGoogleに在籍しており、論文で使われたコーパスはグーグルの汎用ウェブクローラで集めた141億のHTMLの表から抽出した高精度な154百万の関係モデルである。
-コーパスに使うものはHTML形式の表から抽出した関係モデルのみである。
-手法の新規性は、1億以上もの大量のテーブルを対象にしていることにある。</p></div>
-        <div class="article-footer">
-            <span class="date">October 31, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/a_survey_on_data_collection_for_machine_learning/">メモ A Survey on Data Collection for Machine Learning</a></h3>
-        <div class="summary"><p>表題の論文は、文字通り、機械学習に使う教師データに関するサーベイ論文であり、
-機械学習や自然言語処理などのデータの応用分野だけでなく、データの管理にまつわる分野の調査も含まれているところに特徴がある。
-データの管理に着目している理由は、深層学習の発展によって必要な教師データが増えたことで、データの管理の課題が顕在化してきたことである。</p></div>
-        <div class="article-footer">
-            <span class="date">October 26, 2019</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -177,7 +174,7 @@ DESMは、クエリの単語に関係する単語をもとに判断する。
         <a href="/page/14/"><span class="material-icons">chevron_right</span></a>
     </li>
     <li>
-        <a href="/page/17/"><span class="material-icons">last_page</span></a>
+        <a href="/page/18/"><span class="material-icons">last_page</span></a>
     </li>
     
 </ul>

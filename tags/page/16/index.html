@@ -46,6 +46,43 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/textrank/">概要 TextRank: Bringing Order into Texts</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>表題にある論文は、ドキュメントからキーワードとキーセンテンスを抽出するためのグラフベースのアルゴリズムTextRankを提案、評価した。
+TextRankは、名前から推測できるようにPageRankを応用した手法であり、頂点の重要度を、頂点の内容のような局所的な情報ではなく、他の頂点との辺の接続関係を含むグラフ全体の大域的な情報から決定する。PageRankとTextRankのアルゴリズムの違いは、TextRankの場合は辺ごとに重みが設定できるところにある。</p></div>
+        <div class="article-footer">
+            <span class="date">July 20, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/subword_regularization/">概要 Subword Regularization: Improving Neural Network Translation Models with Multiple Subword Candidates</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>表題は、過去に<a href="../neural_machine_translation_of_rate_words/">紹介</a>した<a href="https://www.aclweb.org/anthology/P16-1162">論文</a>と同様、sentencepiece（ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザ）の元になった論文にあたる。
+ノイズに対する頑強さのために、単語のサブワード（部分文字列）を生成するユニグラム言語モデルの学習方法と、モデルから生成されたサブワード列を入力とする機械翻訳モデルの学習方法を提案した。</p></div>
+        <div class="article-footer">
+            <span class="date">July 17, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/neural_machine_translation_of_rate_words/">概要 Neural Machine Trasnslation of Rare Words with Subword Units</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>内容は、sentencepiece（ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザ）のトークナイズで使われるアルゴリズムになっている。単語をサブワード（単語の部分文字列）に分割し、サブワードを組み合わせて珍しい単語や未知語を表現することで、これらの出現頻度の低い単語の翻訳上げるというもの。</p></div>
+        <div class="article-footer">
+            <span class="date">July 13, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/the_annotated_transformer/">論文メモ The Annotated Transformer</a></h3>
+        <div class="summary"><p>論文は、当サイトで紹介した<a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a>で提案されたTransformerのアーキテクチャを、サンプルコードとオリジナルの論文の引用を交えて解説している。 実装にはPyTorchを使用している。</p></div>
+        <div class="article-footer">
+            <span class="date">July 1, 2019</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/embedding_logical_queries_on_knowledge_graphs/">メモ Embedding Logical Queries on Knowledge Graphs</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>一階述語論理式で表現されたクエリを満たすノードを、分散表現に変換し、ナレッジグラフの中から計算時間上効率よく見つけるアルゴリズムを提案した。
@@ -102,51 +139,6 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/bidirectional_lstm_crf_models_for_sequence_tagging/">メモ Bidirectional LSTM-CRF Models for Sequence Tagging</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>本稿では、NLPにおける系列ラベリングためのニューラルネットワークアーキテクチャの提案と評価がなされている。
-このアーキテクチャは、当ページで以前紹介した<a href="https://aclweb.org/anthology/papers/C/C18/C18-1139/">Contextual String Embeddings for Sequence Labeling</a>で応用されている。</p></div>
-        <div class="article-footer">
-            <span class="date">October 5, 2018</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/context_string_embeddings_for_sequence_labeling/">メモ Contextual String Embeddings for Sequence Labeling</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>表題の論文は、ライブラリflairのアルゴリズムを提案、評価したもの。</p>
-<p>論文は、テキストの系列ラベリングに向いた単語の分散表現モデルを提案し、
-提案手法が予測性能において既存手法より優れいたことを実験的に示した。
-本手法における単語の分散表現は、単語の字面だけでなく、文中における単語の出現位置によって決まる。
-いいかえると、同じ単語であっても、文中における出現位置が異なれば、単語は異なる分散表現に変換される。
-著者らは、分散表現に文脈の情報を含められることを強調して、提案手法をContextual String Embeddingsと名付けた。</p></div>
-        <div class="article-footer">
-            <span class="date">September 28, 2018</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/universal_language_model_fine_tuning_for_text_classification/">メモ Universal Language Model Fine-tuning for Text Classification</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>UMLFiTという、様々なNLPの問題に適用可能なファインチューニングの手法を提案、評価した。
-評価手段として、6種のテキスト分類のタスクにおける既存手法とのエラー率の比較が採られている。
-主要な評価として、100件のラベル付きデータだけでその100倍のデータを要した事前学習を用いない手法と同等の予測性能が出たことを報告している。</p></div>
-        <div class="article-footer">
-            <span class="date">September 14, 2018</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/metapath2vec/">メモ metapath2vec: Scalable Representation Learning for Heterogeneous Networks</a></h3>
-        <div class="summary"><p>異種混合ネットワークから、ノード数x次元数の分散表現を獲得するための手法。
-異種混合とは、企業、業界、ニュースなど複数の種類の概念がグラフのノードとして扱われていることを意味する。
-獲得した分散表現を訓練データとして分類、クラスタリング、検索に応用し、既存手法と比較している。</p></div>
-        <div class="article-footer">
-            <span class="date">September 7, 2018</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -165,7 +157,7 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
         <a href="/tags/page/17/"><span class="material-icons">chevron_right</span></a>
     </li>
     <li>
-        <a href="/tags/page/17/"><span class="material-icons">last_page</span></a>
+        <a href="/tags/page/18/"><span class="material-icons">last_page</span></a>
     </li>
     
 </ul>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-64L0YEFRY5"></script>
+    <script>
+        if (location.hostname != 'localhost') {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-64L0YEFRY5');
+        }
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>A Differential Testing Approach for Evaluating Abstract Syntax Tree Mapping Algorithms</h1>
+    <span class="date">August 14, 2021</span>
+    <div>
+        <p>AST mappingは、コードの変更前後のASTを比べてノードの対応関係を見つける手法であり、変更差分検出に使われる。 現状、対応関係の精度を自動で評価する有効な方法はなく、評価には人手による手間がかかる。 多くのノードに1対1の対応関係があることに着目し、異なる2つのAST mappingを同じ変更に適用した結果を比べ、個別の文やトークンごとに、より正確な方を推定するアルゴリズムを提案した。 これを応用し、複数のAST mappingアルゴリズムに同じファイルの変更差分を入力し、アルゴリズムごとの不正確に検出した箇所を自動で推定できることを示した。 特定性能は、Precisionが0.98-1.00, Recallは0.65-0.75だった。</p>
+<p><a href="https://xin-xia.github.io/publication/icse212.pdf">論文</a>をこちらからダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/ignorance_and_prejudice_in_software_fairness/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/a_case_study_of_onboarding_in_software_teams/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+            <li class="atcoder"><a href="https://kenkoooo.com/atcoder/#/user/nryotaro">AtCoder</a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

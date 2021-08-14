@@ -47,6 +47,52 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/class_imbalance_redux/">メモ Class Imbalance, Redux</a></h3>
+        <div class="summary"><p>表題の論文は、不均衡データの特徴が二値分類の予測性能に及ぼす影響を理論づける論文である。
+理論と実験を通じて、多くのケースにおいて、アンダーサンプリングによる均衡データのバギングで予測性能があがったことを示している。
+バギングは、アンダーサンプリングによる偏りを抑えて予測性能を安定させるために使われる。
+論文で扱うモデルは、SVMなどの学習で経験損失を最小化するモデルに限定されている。発表学会は2011年のICDMである。</p></div>
+        <div class="article-footer">
+            <span class="date">September 7, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/learning_on_border/">メモ Learning on the Border: Active Learning in Imbalanced Data Classification</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>表題にある論文は、不均衡データの二値分類についての予測性能を能動学習で改善する手法を提案している。
+着想は、学習器のマージン付近では正例と負例がよりバランスしていると仮定し、
+マージン付近にあるデータを集めることで、均衡のとれたデータセットを用意することにある。
+具体的には、ラベルづけしたデータでSVMをオンライン学習し、無作為に抽出されたラベルのないデータの中で最も超平面に近いデータにラベルをつける手順をマージンの中にあるデータ数が変わらなくなるまで繰り返す。</p></div>
+        <div class="article-footer">
+            <span class="date">August 31, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/distilling_the_knowledge_in_a_neural_network/">メモ Distilling the Knowledge in a Neural Network</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>表題にあるニューラルネットワークの蒸留についての論文を紹介する。
+蒸留は、既存のモデルを使い、できるだけ予測性能を落とさずに、より小さいモデルを作るための学習手法である。
+既存のモデルとして想定されているのは、複数のモデルからなるモデルや正則化された大きなモデルのように予測性能は高いが計算コストが高いものであり、
+蒸留の目的は本番の運用に耐えられるデプロイ可能なモデル作ることにある。
+本論文は、出力層の活性化関数に温度つきソフトマックスを使った多クラス分類のモデルを蒸留する手法を提案し、実験により手法を評価している。</p></div>
+        <div class="article-footer">
+            <span class="date">August 24, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/fastxml/">メモ FastXML: A Fast, Accurate and Stable Tree-classifier for eXtreme Multi-label Learning</a></h3>
+        <div class="summary"><p>表題にあるExtreme multi-label classificationの手法を紹介する。
+Extreme multi-label classificationの目的は、大量のラベルの候補から与えられたデータに関連する複数のラベルを推定する学習器を構築することにある。
+FastXMLは、弱学習器に決定木を使うアンサンブル学習であり、ノードの分割の評価関数にnDCGを採用することで、学習にかかる時間と予測精度の向上を意図している。</p></div>
+        <div class="article-footer">
+            <span class="date">August 24, 2019</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/advantages_and_disadvantages_of_a_monolithic_repository/">メモ Advantages and Disadvantages of a Monolithic Repository</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>表題は、マルチリポジトリと比べたときのモノリシックリポジトリの長所と短所の調べた論文のタイトルである。
@@ -115,43 +161,6 @@ CatBoostは二進木の決定木を弱識別器に用いる。</p></div>
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/textrank/">概要 TextRank: Bringing Order into Texts</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>表題にある論文は、ドキュメントからキーワードとキーセンテンスを抽出するためのグラフベースのアルゴリズムTextRankを提案、評価した。
-TextRankは、名前から推測できるようにPageRankを応用した手法であり、頂点の重要度を、頂点の内容のような局所的な情報ではなく、他の頂点との辺の接続関係を含むグラフ全体の大域的な情報から決定する。PageRankとTextRankのアルゴリズムの違いは、TextRankの場合は辺ごとに重みが設定できるところにある。</p></div>
-        <div class="article-footer">
-            <span class="date">July 20, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/subword_regularization/">概要 Subword Regularization: Improving Neural Network Translation Models with Multiple Subword Candidates</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>表題は、過去に<a href="../neural_machine_translation_of_rate_words/">紹介</a>した<a href="https://www.aclweb.org/anthology/P16-1162">論文</a>と同様、sentencepiece（ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザ）の元になった論文にあたる。
-ノイズに対する頑強さのために、単語のサブワード（部分文字列）を生成するユニグラム言語モデルの学習方法と、モデルから生成されたサブワード列を入力とする機械翻訳モデルの学習方法を提案した。</p></div>
-        <div class="article-footer">
-            <span class="date">July 17, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/neural_machine_translation_of_rate_words/">概要 Neural Machine Trasnslation of Rare Words with Subword Units</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>内容は、sentencepiece（ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザ）のトークナイズで使われるアルゴリズムになっている。単語をサブワード（単語の部分文字列）に分割し、サブワードを組み合わせて珍しい単語や未知語を表現することで、これらの出現頻度の低い単語の翻訳上げるというもの。</p></div>
-        <div class="article-footer">
-            <span class="date">July 13, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/the_annotated_transformer/">論文メモ The Annotated Transformer</a></h3>
-        <div class="summary"><p>論文は、当サイトで紹介した<a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a>で提案されたTransformerのアーキテクチャを、サンプルコードとオリジナルの論文の引用を交えて解説している。 実装にはPyTorchを使用している。</p></div>
-        <div class="article-footer">
-            <span class="date">July 1, 2019</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -170,7 +179,7 @@ TextRankは、名前から推測できるようにPageRankを応用した手法�
         <a href="/page/16/"><span class="material-icons">chevron_right</span></a>
     </li>
     <li>
-        <a href="/page/17/"><span class="material-icons">last_page</span></a>
+        <a href="/page/18/"><span class="material-icons">last_page</span></a>
     </li>
     
 </ul>

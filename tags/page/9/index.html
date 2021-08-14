@@ -46,6 +46,49 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/">論文メモ Improving Language Understanding by Generative Pre-Training</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>GPTの略称で知られる教師なしの事前学習である。
+評価実験では、12の自然言語処理タスクのうち9つで、当時のSoTAを上まわる性能を発揮した。
+ネットワークはTransformerであり、事前学習では言語モデルを学習する。
+手法の独自性は、ファインチューニングでの入力データの作り方にある。
+入力形式を工夫し、事前学習時のネットワーク構成を維持することで、効率的な転移学習を実現する。</p></div>
+        <div class="article-footer">
+            <span class="date">August 7, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/a_tale_from_the_trenches/">論文メモ A Tale from the Trenches: Cognitive Biases and Software Development</a></h3>
+        <div class="summary"><p>エンジニア10人の普段の開発状況から、認知バイアスが開発者にあたえる影響やバイアスの頻度、対策方法について調査した。</p></div>
+        <div class="article-footer">
+            <span class="date">July 31, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/factorization_machines/">論文メモ Factorization Machines</a></h3>
+        <div class="summary"><p>Factorization Machineは、Matrix factorizationのようなFactorization modelとSVMの両方の利点をもつ。
+Matrix modelには疎な特徴を入力することができるが、予測のモデルに使うには汎用性に欠ける。
+一方、SVMは、汎用的であるが、推薦システムで使われるような疎な特徴を扱うことができない。
+Factorizatiom Machineは、両者の利点をそなえており、疎な任意の実数を要素にもつ特徴ベクトルを扱うことができる。
+また、予測の計算量が線形であり、必要なパラメタの数も線形であるため、SVMのサポートベクタのように訓練データをモデルに持たせる必要がない。
+そのために、大量の訓練データを使う学習も可能となる。</p></div>
+        <div class="article-footer">
+            <span class="date">July 31, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/exploration_of_technical_debt_in_start_ups/">Exploration of Technical Debt in Start-ups</a></h3>
+        <div class="summary"><p>スタートアップ86社を調査し、スタートアップにおける技術的負債を招く要因(precedents)、負債を抱える側面(dimentions)、その影響(outcomes)について調査した。
+チームの人数の多さと熟練度の低さが負債の要因を誘発し、負債はテストの不足によくみられた。</p></div>
+        <div class="article-footer">
+            <span class="date">July 24, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/deep_learning_recommendation_model_for_personalization_and_recommendation_systems/">論文メモ Deep Learning Recommendation Model for Personalization and Recoomendation Systems</a></h3>
         <div class="summary"><p>協調フィルタリングのような推薦システムのためのネットワークアーキテクチャを提案した。
 特徴の疎・密にかかわらず入力として与えることができる。
@@ -105,47 +148,6 @@ Pytorchは、4つの設計原則として、PythonらしいAPI、機械学習の
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/automatic_differentiation_in_pytorch/">論文メモ Automatic differentiation in Pytorch</a></h3>
-        <div class="summary"><p>Pytorchの自動微分を解説したプレプリントのショートペーパである。
-Pytorchの自動微分特徴として、in-placeアルゴリズム、微分の導出に不要な計算を省く仕組みのあるテープ、C++による実装をあげている。
-<a href="https://pytorch.org/blog/pytorch-0_4_0-migration-guide/">0.4.0での仕様変更</a>によって<code>Tensors</code>と<code>Variables</code>がマージされたことや<code>volatile</code>が非推奨になったことをふまえていない。
-読むときは、以上の点をはじめとする現在のAPIとの差異に注意する必要がある。</p></div>
-        <div class="article-footer">
-            <span class="date">July 4, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/rouge/">論文メモ ROUGE: A Package for Automatic Evaluation of Summaries</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>生成された要約を機械的に評価するための指標, Recall-Oriented Understudy for Gisting Evaluation(ROUGE)を提案した論文である。
-人が作成した複数の要約文書との再現率で要約文書を評価する。
-ROUGEは、ROUGE-N, ROUGE-L, ROUGE-W, ROUGE-S, ROUGE-SUの5つの指標の総称である。
-同じ要約へのROUGEスコアと人の評価の相関によって、ROUGEの指標としての有用性を評価した。
-その結果、ROUGE-2, ROUGE-L, ROUGE-W, ROUGE-Sは、文書の要約の評価に向き、ROUGE-1, ROUGE-L, ROUGE-W, ROUGE-SU4, ROUGE-SU9はヘッドラインほどの短い要約文の評価に向いていることがわかった。</p></div>
-        <div class="article-footer">
-            <span class="date">June 27, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/do_developers_discover_new_tools_on_the_toilet/">論文メモ Do Developers Discover New Tools On The Toilet?</a></h3>
-        <div class="summary"><p><a href="https://mike-bland.com/2011/10/25/testing-on-the-toilet.html">Testing on the Toilet</a>の効果を<a href="https://research.google/pubs/pub41854/">CausalImpact</a>で示した。</p></div>
-        <div class="article-footer">
-            <span class="date">June 20, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/a_neural_attention_model_for_sentence_summarization/">論文メモ A Neural Attention Model for Sentence Summarization</a></h3>
-        <div class="summary"><p>注意機構による深層学習で文を要約する手法である。
-もとの文にない単語を含む要約文を生成できるが、生成前に文の長さを決めておかなければならない。</p></div>
-        <div class="article-footer">
-            <span class="date">June 20, 2020</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -164,7 +166,7 @@ ROUGEは、ROUGE-N, ROUGE-L, ROUGE-W, ROUGE-S, ROUGE-SUの5つの指標の総称
         <a href="/tags/page/10/"><span class="material-icons">chevron_right</span></a>
     </li>
     <li>
-        <a href="/tags/page/17/"><span class="material-icons">last_page</span></a>
+        <a href="/tags/page/18/"><span class="material-icons">last_page</span></a>
     </li>
     
 </ul>

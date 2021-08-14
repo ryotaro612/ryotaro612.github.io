@@ -46,6 +46,54 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/get_another_label/">論文メモ Get Another Label? Improving Data Quality and Data Mining Using Multiple, Noisy Labelers</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>ある確率でデータに誤ったラベルをふるlabelerでデータにラベルをふるときに、
+既にラベルのあるデータに重ねてラベルをふるべきか調査した。
+12種類のラベルつきデータセットを使い、
+正解ラベルを誤ったラベルに置換する割合や同一のデータのもつラベルの数を変化させ、モデルの精度の違いを観察した。
+加えて、ラベルをふるべきデータを推定する手法も提案している。</p></div>
+        <div class="article-footer">
+            <span class="date">November 9, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/active_clean/">メモ ActiveClean: Interactive Data Cleaning For Statistical Modeling</a></h3>
+        <div class="summary"><p>ActiveCleanは、教師データの誤りを修正し、モデルの精度を改善する手法である。
+優先して修正すべきデータを推定し、データが修正されたら修正されたデータでモデルを学習する。
+この修正と学習を条件を満たすまでくりかえす。
+反復的な学習で大域的最適解をえられるモデルであれば、最適解への収束が保証される。
+データの修正件数が等しい場合に、先行研究と比べて最大2.5倍の精度改善を達成した。</p></div>
+        <div class="article-footer">
+            <span class="date">November 9, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/web_tables/">メモ WebTables: Exploring the Power of Tables on the Web</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>表題の論文は、Web上の表から抽出した大量の関係モデルを対象にした検索を提案・評価した
+。検索の他にも、一部の属性を入力とするスキーマの補完、入力した属性ないしスキーマに類似のものを推定するアルゴリズムの議論もある。
+ここのスキーマは属性のリストである。論文の著者らは研究時にGoogleに在籍しており、論文で使われたコーパスはグーグルの汎用ウェブクローラで集めた141億のHTMLの表から抽出した高精度な154百万の関係モデルである。
+コーパスに使うものはHTML形式の表から抽出した関係モデルのみである。
+手法の新規性は、1億以上もの大量のテーブルを対象にしていることにある。</p></div>
+        <div class="article-footer">
+            <span class="date">October 31, 2019</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/a_survey_on_data_collection_for_machine_learning/">メモ A Survey on Data Collection for Machine Learning</a></h3>
+        <div class="summary"><p>表題の論文は、文字通り、機械学習に使う教師データに関するサーベイ論文であり、
+機械学習や自然言語処理などのデータの応用分野だけでなく、データの管理にまつわる分野の調査も含まれているところに特徴がある。
+データの管理に着目している理由は、深層学習の発展によって必要な教師データが増えたことで、データの管理の課題が顕在化してきたことである。</p></div>
+        <div class="article-footer">
+            <span class="date">October 26, 2019</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/structure_estimation_for_dscrete_graphical_models/">メモ Structure estimation for discrete graphical models: Generalized covariance matrices and their inverses</a></h3>
         <div class="summary"><p>表題の論文は、マルコフ確率場をなす無向グラフとグラフの構造を反映した逆共分散行列の間の対応関係を証明し、
 観測した確率変数の値からグラフの構造を復元する実験を通じて、対応関係を確認した。
@@ -105,52 +153,6 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/class_imbalance_redux/">メモ Class Imbalance, Redux</a></h3>
-        <div class="summary"><p>表題の論文は、不均衡データの特徴が二値分類の予測性能に及ぼす影響を理論づける論文である。
-理論と実験を通じて、多くのケースにおいて、アンダーサンプリングによる均衡データのバギングで予測性能があがったことを示している。
-バギングは、アンダーサンプリングによる偏りを抑えて予測性能を安定させるために使われる。
-論文で扱うモデルは、SVMなどの学習で経験損失を最小化するモデルに限定されている。発表学会は2011年のICDMである。</p></div>
-        <div class="article-footer">
-            <span class="date">September 7, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/learning_on_border/">メモ Learning on the Border: Active Learning in Imbalanced Data Classification</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>表題にある論文は、不均衡データの二値分類についての予測性能を能動学習で改善する手法を提案している。
-着想は、学習器のマージン付近では正例と負例がよりバランスしていると仮定し、
-マージン付近にあるデータを集めることで、均衡のとれたデータセットを用意することにある。
-具体的には、ラベルづけしたデータでSVMをオンライン学習し、無作為に抽出されたラベルのないデータの中で最も超平面に近いデータにラベルをつける手順をマージンの中にあるデータ数が変わらなくなるまで繰り返す。</p></div>
-        <div class="article-footer">
-            <span class="date">August 31, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/distilling_the_knowledge_in_a_neural_network/">メモ Distilling the Knowledge in a Neural Network</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>表題にあるニューラルネットワークの蒸留についての論文を紹介する。
-蒸留は、既存のモデルを使い、できるだけ予測性能を落とさずに、より小さいモデルを作るための学習手法である。
-既存のモデルとして想定されているのは、複数のモデルからなるモデルや正則化された大きなモデルのように予測性能は高いが計算コストが高いものであり、
-蒸留の目的は本番の運用に耐えられるデプロイ可能なモデル作ることにある。
-本論文は、出力層の活性化関数に温度つきソフトマックスを使った多クラス分類のモデルを蒸留する手法を提案し、実験により手法を評価している。</p></div>
-        <div class="article-footer">
-            <span class="date">August 24, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/fastxml/">メモ FastXML: A Fast, Accurate and Stable Tree-classifier for eXtreme Multi-label Learning</a></h3>
-        <div class="summary"><p>表題にあるExtreme multi-label classificationの手法を紹介する。
-Extreme multi-label classificationの目的は、大量のラベルの候補から与えられたデータに関連する複数のラベルを推定する学習器を構築することにある。
-FastXMLは、弱学習器に決定木を使うアンサンブル学習であり、ノードの分割の評価関数にnDCGを採用することで、学習にかかる時間と予測精度の向上を意図している。</p></div>
-        <div class="article-footer">
-            <span class="date">August 24, 2019</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -169,7 +171,7 @@ FastXMLは、弱学習器に決定木を使うアンサンブル学習であり�
         <a href="/tags/page/15/"><span class="material-icons">chevron_right</span></a>
     </li>
     <li>
-        <a href="/tags/page/17/"><span class="material-icons">last_page</span></a>
+        <a href="/tags/page/18/"><span class="material-icons">last_page</span></a>
     </li>
     
 </ul>

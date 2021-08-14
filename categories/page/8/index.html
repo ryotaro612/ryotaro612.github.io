@@ -46,6 +46,47 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/beyond_accuracy/">論文メモ Beyond Accuracy: Behavioral Testing of NLP Models with CHECKLIST</a></h3>
+        <div class="summary"><p>ホールドアウト法にかわる自然言語処理モデルの汎化性能を評価するための手法CHECKLISTを提案した。
+テストデータと訓練データが同じ方法で集められたときなど、ホールドアウト法はモデルを過大評価することがある。
+CHECKLISTは、ソフトウェア開発のブラックボックステストにならい、半自動生成したテストデータで汎化性能を評価する。
+CHECKLISTの汎用性と性能を評価するために、感情分析、Quoraの重複質問検出、読解の3タスクについて、商用やSoTAに近いモデルを学習させ、CHECKLISTでモデルがあつかえない入力パターンをどれだけ生成できるか実験した。
+感情分析の評価には、Microsoft, Google, AmazonのAPIとBERT, RoBERTaを使い、重複検出にはBERTとRoBERTa, 読解にはBERTを使用した。
+CHECKLISTはOSSとして<a href="https://github.com/marcotcr/checklist">公開</a>されている。</p></div>
+        <div class="article-footer">
+            <span class="date">September 4, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/why_good_developers_write_bad_code/">Why Good Developers Write Bad Code: An Observational Case Study of the Impacts of Organizational Factors on Software Quality</a></h3>
+        <div class="summary"><p>創立40年以上の電気通信系企業における内製システムのリプレースプロジェクトを観察し、コードに悪影響をおよぼす10の組織的な要因をまとめた。
+表題には、&ldquo;Good Developers&quot;とあるが、開発者のスキルの高さは議論されていない。
+列挙された要因は、包括的ではなく、また、あくまでコードの品質を悪化させるものであり、プロジェクトの失敗に直結するわけではない。</p></div>
+        <div class="article-footer">
+            <span class="date">September 4, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/a_comparative_study_of_programming_languages_in_rosetta_code/">論文メモ A Comparative Study of Programming Lanugages in Rosetta Code</a></h3>
+        <div class="summary"><p><a href="http://rosettacode.org/wiki/Rosetta_Code">Rosetta Code</a>に投稿された実装で言語の性能を比較した。
+比較した言語は、Ruby, F#, Java, C#, Go, C, Python, Haskellの8つである。</p></div>
+        <div class="article-footer">
+            <span class="date">August 28, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/squad/">論文メモ SQuAD: 100,000&#43; Questions for Machine Comprehension of Text</a></h3>
+        <div class="summary"><p>読解タスクのテストデータセットSQuADをつくり、ロジスティック回帰で難易度を評価した。
+難易度は、ベースラインのF1スコアが20%, 強いモデルで51.0%, 人間で86.8%程度である。</p></div>
+        <div class="article-footer">
+            <span class="date">August 28, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/extensible_effects/">論文メモ Extensible Effects An Alternative to Monad Transformers</a></h3>
         <div class="summary"><p>モナド変換子にかわるモナドの合成方法Extensible Effectsの実装を示す。</p></div>
         <div class="article-footer">
@@ -104,49 +145,6 @@ Ladder Networkは、2015年に、著者の一人Valpolaによって教師なし�
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/">論文メモ Improving Language Understanding by Generative Pre-Training</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>GPTの略称で知られる教師なしの事前学習である。
-評価実験では、12の自然言語処理タスクのうち9つで、当時のSoTAを上まわる性能を発揮した。
-ネットワークはTransformerであり、事前学習では言語モデルを学習する。
-手法の独自性は、ファインチューニングでの入力データの作り方にある。
-入力形式を工夫し、事前学習時のネットワーク構成を維持することで、効率的な転移学習を実現する。</p></div>
-        <div class="article-footer">
-            <span class="date">August 7, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/a_tale_from_the_trenches/">論文メモ A Tale from the Trenches: Cognitive Biases and Software Development</a></h3>
-        <div class="summary"><p>エンジニア10人の普段の開発状況から、認知バイアスが開発者にあたえる影響やバイアスの頻度、対策方法について調査した。</p></div>
-        <div class="article-footer">
-            <span class="date">July 31, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/factorization_machines/">論文メモ Factorization Machines</a></h3>
-        <div class="summary"><p>Factorization Machineは、Matrix factorizationのようなFactorization modelとSVMの両方の利点をもつ。
-Matrix modelには疎な特徴を入力することができるが、予測のモデルに使うには汎用性に欠ける。
-一方、SVMは、汎用的であるが、推薦システムで使われるような疎な特徴を扱うことができない。
-Factorizatiom Machineは、両者の利点をそなえており、疎な任意の実数を要素にもつ特徴ベクトルを扱うことができる。
-また、予測の計算量が線形であり、必要なパラメタの数も線形であるため、SVMのサポートベクタのように訓練データをモデルに持たせる必要がない。
-そのために、大量の訓練データを使う学習も可能となる。</p></div>
-        <div class="article-footer">
-            <span class="date">July 31, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/exploration_of_technical_debt_in_start_ups/">Exploration of Technical Debt in Start-ups</a></h3>
-        <div class="summary"><p>スタートアップ86社を調査し、スタートアップにおける技術的負債を招く要因(precedents)、負債を抱える側面(dimentions)、その影響(outcomes)について調査した。
-チームの人数の多さと熟練度の低さが負債の要因を誘発し、負債はテストの不足によくみられた。</p></div>
-        <div class="article-footer">
-            <span class="date">July 24, 2020</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -165,7 +163,7 @@ Factorizatiom Machineは、両者の利点をそなえており、疎な任意�
         <a href="/categories/page/9/"><span class="material-icons">chevron_right</span></a>
     </li>
     <li>
-        <a href="/categories/page/17/"><span class="material-icons">last_page</span></a>
+        <a href="/categories/page/18/"><span class="material-icons">last_page</span></a>
     </li>
     
 </ul>

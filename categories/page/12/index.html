@@ -46,6 +46,58 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/latent_dirichlet_allocation/">論文メモ Latent Dirichlet Allocation</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>トピックモデルの潜在的ディリクレ配分法(LDA)の原論文である。
+LDAは、テキストコーパスのような離散データの確率的生成モデルである。
+意味のあるデータのまとまりに対する端的な説明を与える情報を見つけることを目的としている。
+3つの階層からなる階層ベイズモデルである。
+、データの要素は、各トピックを表すモデルの混合モデルから生成される。
+トピックもまた混合モデルから確率的に生成される。
+推論にはベイズ変分法を、パラメタの推定にはEMアルゴリズムをもちいらる。</p></div>
+        <div class="article-footer">
+            <span class="date">February 23, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/unsupervised_pretraining_for_sequence_to_sequence_learning/">論文メモ Unsupervised Pretraining for Sequence to Sequence Learning</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>事前学習とファインチューニングにより<a href="https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf">seq2seq</a>の汎化性能を改善する手法を提案した論文である。
+encoderの重みを学習済み言語モデルの重みで初期化する。
+decoderについても、encoderと別の言語モデルを用意し、その重みで初期化する。
+ただし、工夫のないファインチューニングをすると<a href="https://arxiv.org/pdf/1312.6211.pdf">破滅的忘却</a>が生じてしまう。
+そこで、ファインチューニングでは言語モデルとseq2seqの目的関数の両方を学習につかうことで、過学習をさけ、汎化性能を確保する。</p></div>
+        <div class="article-footer">
+            <span class="date">February 16, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/playing_atari_with_deep_reinforcement_learning/">論文メモ Playing Atari with Deep Reinforcement Learning</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>深層強化学習をAtari2600の7つのゲームに応用し、うち6つについて先行手法の性能を超えたDeep Q-Networks(DQN)を提案した論文である。
+ピクセルデータを直接入力として与え、深層学習で方策を学習する手法としては初めて提案された。</p></div>
+        <div class="article-footer">
+            <span class="date">February 9, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/context2vec/">論文メモ context2vec: Learning Generic Context Embedding with Bidirectional LSTM</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>文書の文脈の分散表現を獲得するニューラルネットワークのアーキテクチャ<em>context2vec</em>を提案、評価した論文である。
+アーキテクチャの基本構造は<a href="https://arxiv.org/pdf/1301.3781.pdf">CBOW</a>と同様で、周辺の単語から中心の単語を当てられるようにコーパスをもとにモデルを訓練する。
+CBOWとの違いは、文脈の算出方法にある。
+CBOWは、ウィンドウ内のベクトルの平均値で文脈の分散表現を求める。
+一方、<em>context2vec</em>では、双方向LSTMの出力をもとに算出する。</p>
+<!-- raw HTML omitted --></div>
+        <div class="article-footer">
+            <span class="date">February 2, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/neural_machine_translation_by_jointly_learning_to_align_and_translate/">論文メモ NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>Decoderに注意機構を採用したencoder-decoderモデルを提案した論文である。
@@ -118,51 +170,6 @@ ELOに用いる損失関数にDCGを採用したExpected DCG Loss Optimization(E
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/">論文メモ Learning Deep Structured Semantic Models for Web Search using Clickthrough Data</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>クエリと文書を同じ低次元の空間に射影する深層学習のモデルを提案した論文である。
-クエリと文書は、適合度合いが高いほど、近くに配置される。
-教師データは、クエリと文書の組からなる教師データである。
-実験では、商用検索エンジンから抽出した16510件のクエリと対応するWeサイトのタイトルがつかわれる。
-Web文書の大量の語彙をあつかうために、語彙の増加に対して次元数を抑えるbag-of-wordsの手法、word hasingも提案した。</p></div>
-        <div class="article-footer">
-            <span class="date">January 4, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/classification_in_the_presence_of_label_noise/">論文メモ Classification in the Presence of Label Noise: a Survey</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>ノイズのある教師データによるクラス分類の<a href="https://romisatriawahono.net/lecture/rm/survey/machine%20learning/Frenay%20-%20Classification%20in%20the%20Presence%20of%20Label%20Noise%20-%202014.pdf">サーベイ論文</a>である。発表時期は、<a href="https://ieeexplore.ieee.org/document/6685834">2013年の12月</a>である。
-主な内容は、ノイズの分類、ノイズが分類に及ぼす影響、ノイズへの対策である。</p></div>
-        <div class="article-footer">
-            <span class="date">December 30, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/distributed_representations_of_sentences_and_documents/">論文メモ Distributed Representations of Sentences and Documents</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p><a href="https://radimrehurek.com/gensim/models/doc2vec.html">Doc2Vec</a>のアルゴリズムとして採用されたニューラル言語モデルParagraph Vectorを提案した論文である。
-bag of wordsは、文書の単語順を記憶せず、また、似た意味の単語ベクトルと無関係なベクトルを単語にわりあてる。
-Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文脈の中心の単語をあてられるように学習することで、可変長文字列から固定長の文書埋め込みベクトルを生成できるようになる。
-これにより、単語順と単語の意味を記憶したベクトルの生成を実現する。</p></div>
-        <div class="article-footer">
-            <span class="date">December 28, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/glove_vectors_for_word_representation/">論文メモ GloVe: Global Vectors for Word Representation</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p><a href="https://www.aclweb.org/anthology/D14-1162.pdf">GloVe</a>は,コーパスに出現する単語の共起回数を学習するニューラル言語モデルである。
-既存手法を単語の出現頻度の統計値つかう手法と対数双線形モデルに分類し、両者の長所を備え短所を補う手法として、GloVeを提案する。</p></div>
-        <div class="article-footer">
-            <span class="date">December 21, 2019</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -181,7 +188,7 @@ Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文�
         <a href="/categories/page/13/"><span class="material-icons">chevron_right</span></a>
     </li>
     <li>
-        <a href="/categories/page/17/"><span class="material-icons">last_page</span></a>
+        <a href="/categories/page/18/"><span class="material-icons">last_page</span></a>
     </li>
     
 </ul>

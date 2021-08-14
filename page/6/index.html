@@ -47,6 +47,50 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/on_designing_and_deploying_internet-scale_services/">論文メモ On Designing and Deploying Internet-Scale Services</a></h3>
+        <div class="summary"><p>MSNとWindows Liveで培われたシステム管理者による運用負担を減らすためのベストプラクティス集。
+07年に発表された。
+プラクティス集は、10のグループに分かれ、それぞれ複数のアドバイスからなる。
+特徴的な内容に絞って以下に要約する。</p></div>
+        <div class="article-footer">
+            <span class="date">November 20, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/weighted_voting_for_replicated_data/">論文メモ Weighted Voting for Replicated Data</a></h3>
+        <div class="summary"><p>1979年に発表されたレプリケーション管理のクオーラムモデルのアルゴリズムの論文で、以前紹介したように<a href="https://awsmedia.awsstatic-china.com/blog/2017/aurora-design-considerations-paper.pdf">Amazon Aurora</a>や<a href="https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf">Dynamo</a>で採用されている。
+ファイルの読み込みや書き込みのトランザクションは、複製されたファイルのもつ票を集め、所定の数、クオーラムを越えたときのみ実行される。
+これにより、読み込み、書き込みの線形の一貫性が保証され、実行中のトランザクションが高々一つであるかのように見せかけられる。</p></div>
+        <div class="article-footer">
+            <span class="date">November 19, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/amazon_aurora/">論文メモ Amazon Aurora: Design Considerations for High Throughput Cloud-Native Relational Databases</a></h3>
+        <div class="summary"><p>AWSで提供されるRDBM, Amazon Auroraのアーキテクチャを解説した論文。
+分散システムをクラウドにおく場合、計算やIOはノードに分散され、ボトルネックではなくなる。
+そして、ボトルネックは、DBインスタンスとストレージ間のネットワークになる。
+この仮説もと、プライマリインスタンスが、別テナントのストレージに直接Redoログを送ることで、レプリカインスタンスとストレージ間の負荷を減らし、処理性能の向上をはかる。
+また、レプリケーションのために、MySQLがRedoログだけでなくバイナリログなど複数種類のログをスレーブに送るのに対し、AuroraはRedoログだけを転送する。
+これにより、リカバリや縮退、フェールオーバの性能も向上している。</p></div>
+        <div class="article-footer">
+            <span class="date">November 13, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/one_size_fit_all/">論文メモ &#34;One Size Fits All&#34;: An Idea Whose Time Has Come and Gone</a></h3>
+        <div class="summary"><p>2011年に発表された論文で、これまでのようにDBMSを様々なデータ中心のアプリケーションに利用することがデータベース市場で受け入れられなくなったと主張する。
+データウェアハウスとストリーミング処理を例にとり、これらに特化したデータベースをDBMSで代用することの限界が説明されている。
+表題の&quot;One Size Fits All&quot;はフリーサイズ、転じて、万能、汎用的を意味する。</p></div>
+        <div class="article-footer">
+            <span class="date">November 13, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/dynamo_amazons_highly_available_key_value_store/">論文メモ Dynamo: Amazon&#39;s Highly Available Key-value Store</a></h3>
         <div class="summary"><p>Amazonで社内運用されている高可用性のKVS, Dynamoのアーキテクチャを解説している。
 まぎらわしいが、Dynamoは、AWSサービスのDynamo DBとは違う<a href="https://www.oreilly.co.jp/books/9784873118703/">*</a>。
@@ -109,45 +153,6 @@ Javaのバイトコードから以上の3パターンを検出するツールを
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/software_development_waste/">論文メモ Software Development Waste</a></h3>
-        <div class="summary"><p>Pivotal Labs(Pivoital社の一部門、PivotalはSpring Frameworkを開発している会社。昨年VM Wareに買収された？)における8プロジェクトを、グラウンデットセオリーにしたがって参与観察し、ソフトウェア開発においる無駄を特定し、無駄を9つの区分に分類した。
-論文では、無駄は「リソースを使っのに顧客にとっての価値を生みださなかった活動」と定義されている。
-調査期間は2年5ヶ月で、調査結果は、ソフトウェア開発者、インタラクションデザイナ、プロダクトマネジャーからなる33名のステークホルダに面接した結果もふまえてある。
-分類のほかに、無駄を生みだす二項対立や原因にも言及されている。</p></div>
-        <div class="article-footer">
-            <span class="date">October 11, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/end_to_end_neural_coreference_resolution/">論文メモ End-to-end Neural Coreference Resolution</a></h3>
-        <div class="summary"><p>ニューラルネットワークによる共参照解析の手法で、End-to-Endとあるように、構文解析やルールベースの参照表現に頼らず、先行研究を上回る性能を発揮した。
-文書中の全ての単語系列を参照表現の候補とみなし、ある単語系列の組が照応関係にある確率の分布を学習する。</p></div>
-        <div class="article-footer">
-            <span class="date">October 10, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/build_it_yourself/">論文メモ Build it yourself! Homegrown Tools in a Large Software Company</a></h3>
-        <div class="summary"><p>マイクロソフトにおいて、誰が(RQ1)、どんな(RQ2)自作ツールを、どのような動機(RQ3)で、いつ(RQ3)開発し、どのように普及するのか(RQ4)を調査した。
-調査結果では、大多数の開発者はツールを自作し、そのほとんどは所属するチームの外までは普及せす、ツールの使用者と共同開発者は一人以上いることが多かった。
-受容的な組織文化はツールの自作を促進し、また、自作ツールは組織に大きな影響をあたえる可能性があることを示唆している。</p></div>
-        <div class="article-footer">
-            <span class="date">October 2, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/universal_sentence_encoder/">論文メモ Universal Sentence Encoder</a></h3>
-        <div class="summary"><p>転移学習のための文の分散表現を獲得するモデルを提案した。
-提案されたモデルは2つで、両者には精度と計算量の間にトレードオフがある。</p></div>
-        <div class="article-footer">
-            <span class="date">October 2, 2020</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -166,7 +171,7 @@ Javaのバイトコードから以上の3パターンを検出するツールを
         <a href="/page/7/"><span class="material-icons">chevron_right</span></a>
     </li>
     <li>
-        <a href="/page/17/"><span class="material-icons">last_page</span></a>
+        <a href="/page/18/"><span class="material-icons">last_page</span></a>
     </li>
     
 </ul>

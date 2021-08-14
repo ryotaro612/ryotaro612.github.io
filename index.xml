@@ -6,7 +6,50 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 07 Aug 2021 15:11:48 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Aug 2021 16:33:14 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>An Empirical Analysis of UI-based Flaky Tests</title>
+      <link>https://nryotaro.dev/posts/an_empirical_analysis_of_ui-based_flaky_tests/</link>
+      <pubDate>Sat, 14 Aug 2021 16:33:14 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/an_empirical_analysis_of_ui-based_flaky_tests/</guid>
+      <description>GitHub上の5つのWebアプリケーションと37のAndroidアプリケーションから集めた235件のUIのflaky tests（何度か実行すると成功する不安定なテスト）を調査し、原因と修正を分類した。
+大きく原因を、非同期処理の待機、環境依存の動作、DOMのセレクタやテストライブラリの誤用、テスト対象の事前条件を満たしていないテストスクリプトの4つに大別した。 具体例をあげると、環境依存の動作には、IE固有のバグや予期していないレイアウトで画面が表示される場合、テストの事前条件については、テストの実行順序次第で誤ったテストデータが作られる場合がある。 最も多くのテストが分類され、全体の45%を占めたのは、非同期処理の不適切な待機方法だった。
+修正のパターンには、待機時間の追加、テスト用APIの誤用の修正やAPIのアップグレード、テストスクリプトのリファクタリング、アニメーションの削除、不要なテストの削除がある。
+論文をこちらからダウンロードできます。</description>
+    </item>
+    
+    <item>
+      <title>A Case Study of Onboarding in Software Teams: Tasks and Strategies</title>
+      <link>https://nryotaro.dev/posts/a_case_study_of_onboarding_in_software_teams/</link>
+      <pubDate>Sat, 14 Aug 2021 16:31:08 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/a_case_study_of_onboarding_in_software_teams/</guid>
+      <description>&lt;p&gt;オンボーディングのためのタスクの選び方とタスクの効果を調査するために、マイクロソフトのエンジニアとマネージャーにインタビューした。
+まず、新しいチームに入った32人のエンジニアとエンジニアを迎えた15人のマネージャーにインタビューし、特に、チームのことを知る、担当する役割を果たせる自信の醸成、メンバーとの交流の3つを重視し、これらに対するタスクの影響を調査した。
+タスクの選び方は、大きく、割り当てるタスクを少しずつ複雑にする、優先度の高いものを選ぶ、曖昧なタスクを選ぶ、の3つがあった。
+オンボーディングするエンジニアがジュニアであれば最初の選び方、シニアであれば最後の選び方、アジャイルを採用するチーム、新しいチーム、納期の厳しいチームは優先度でタスクが選ばれやすく、効果的であった。
+以上の考察を189名のエンジニアと37名のマネージャに評価してもらい、妥当性を確認した。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>A Differential Testing Approach for Evaluating Abstract Syntax Tree Mapping Algorithms</title>
+      <link>https://nryotaro.dev/posts/a_differential_testing_approach_for_evaluating_ast_mapping_algorithms/</link>
+      <pubDate>Sat, 14 Aug 2021 16:29:33 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/a_differential_testing_approach_for_evaluating_ast_mapping_algorithms/</guid>
+      <description>&lt;p&gt;AST mappingは、コードの変更前後のASTを比べてノードの対応関係を見つける手法であり、変更差分検出に使われる。 現状、対応関係の精度を自動で評価する有効な方法はなく、評価には人手による手間がかかる。 多くのノードに1対1の対応関係があることに着目し、異なる2つのAST mappingを同じ変更に適用した結果を比べ、個別の文やトークンごとに、より正確な方を推定するアルゴリズムを提案した。 これを応用し、複数のAST mappingアルゴリズムに同じファイルの変更差分を入力し、アルゴリズムごとの不正確に検出した箇所を自動で推定できることを示した。 特定性能は、Precisionが0.98-1.00, Recallは0.65-0.75だった。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>“Ignorance and Prejudice” in Software Fairness</title>
+      <link>https://nryotaro.dev/posts/ignorance_and_prejudice_in_software_fairness/</link>
+      <pubDate>Sat, 14 Aug 2021 16:23:49 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/ignorance_and_prejudice_in_software_fairness/</guid>
+      <description>&lt;p&gt;特徴の種類を増やすと、機械学習の予測の公平性と精度を改善できることを5つのデータセットで例示した。 データセットのタスク内容は、性別、人種、年齢を特徴に含み、経済的な裕福さや再犯率を予測するもの。 他方、教師データの数を増やしても公平性は改善されなかった。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-Scale, unbounded, Out-of-Order Data Processing</title>
       <link>https://nryotaro.dev/posts/dataflow/</link>

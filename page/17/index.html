@@ -47,6 +47,51 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/bidirectional_lstm_crf_models_for_sequence_tagging/">メモ Bidirectional LSTM-CRF Models for Sequence Tagging</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>本稿では、NLPにおける系列ラベリングためのニューラルネットワークアーキテクチャの提案と評価がなされている。
+このアーキテクチャは、当ページで以前紹介した<a href="https://aclweb.org/anthology/papers/C/C18/C18-1139/">Contextual String Embeddings for Sequence Labeling</a>で応用されている。</p></div>
+        <div class="article-footer">
+            <span class="date">October 5, 2018</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/context_string_embeddings_for_sequence_labeling/">メモ Contextual String Embeddings for Sequence Labeling</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>表題の論文は、ライブラリflairのアルゴリズムを提案、評価したもの。</p>
+<p>論文は、テキストの系列ラベリングに向いた単語の分散表現モデルを提案し、
+提案手法が予測性能において既存手法より優れいたことを実験的に示した。
+本手法における単語の分散表現は、単語の字面だけでなく、文中における単語の出現位置によって決まる。
+いいかえると、同じ単語であっても、文中における出現位置が異なれば、単語は異なる分散表現に変換される。
+著者らは、分散表現に文脈の情報を含められることを強調して、提案手法をContextual String Embeddingsと名付けた。</p></div>
+        <div class="article-footer">
+            <span class="date">September 28, 2018</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/universal_language_model_fine_tuning_for_text_classification/">メモ Universal Language Model Fine-tuning for Text Classification</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>UMLFiTという、様々なNLPの問題に適用可能なファインチューニングの手法を提案、評価した。
+評価手段として、6種のテキスト分類のタスクにおける既存手法とのエラー率の比較が採られている。
+主要な評価として、100件のラベル付きデータだけでその100倍のデータを要した事前学習を用いない手法と同等の予測性能が出たことを報告している。</p></div>
+        <div class="article-footer">
+            <span class="date">September 14, 2018</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/metapath2vec/">メモ metapath2vec: Scalable Representation Learning for Heterogeneous Networks</a></h3>
+        <div class="summary"><p>異種混合ネットワークから、ノード数x次元数の分散表現を獲得するための手法。
+異種混合とは、企業、業界、ニュースなど複数の種類の概念がグラフのノードとして扱われていることを意味する。
+獲得した分散表現を訓練データとして分類、クラスタリング、検索に応用し、既存手法と比較している。</p></div>
+        <div class="article-footer">
+            <span class="date">September 7, 2018</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/applying_deep_learning_to_airbnb_search/">Applying Deep Learning To Airbnb Search</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>論文では、Airbnbが深層学習を宿泊先検索に適用した時の試行錯誤と結果を紹介している。
@@ -108,16 +153,6 @@ Character n-gramsを入力としてskip-gramのモデルを作る方法を提案
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/text_cls_from_lbl_and_unlbl_doc_em/">概要 Text Classification from Labeled and Unlabeled Documents using EM</a></h3>
-        <div class="summary"><h3 id="アルゴリズム">アルゴリズム</h3>
-<p>提案手法は、Naive BayesとEMアルゴリズムを組み合わせたもの。
-ラベル付きデータが\(D^l\)でラベルなしデータが\(D^u\)で表されるとき、対数尤度\(\log P(D^l)P(D^u)\)を最大化する問題を解く。</p></div>
-        <div class="article-footer">
-            <span class="date">July 8, 2018</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -131,6 +166,13 @@ Character n-gramsを入力としてskip-gramのモデルを作る方法を提案
         <a href="/page/16/"><span class="material-icons">chevron_left</span></a>
     </li>
     
+    
+    <li>
+        <a href="/page/18/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    <li>
+        <a href="/page/18/"><span class="material-icons">last_page</span></a>
+    </li>
     
 </ul>
 
