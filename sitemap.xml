@@ -4,17 +4,22 @@
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2021-08-14T16:33:14+09:00</lastmod>
+    <lastmod>2021-08-14T16:40:58+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nryotaro.dev/posts/an_empirical_analysis_of_ui-based_flaky_tests/</loc>
-    <lastmod>2021-08-14T16:33:14+09:00</lastmod>
+    <loc>https://nryotaro.dev/</loc>
+    <lastmod>2021-08-14T16:40:58+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://nryotaro.dev/</loc>
+    <loc>https://nryotaro.dev/posts/dont_do_that/</loc>
+    <lastmod>2021-08-14T16:40:58+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/an_empirical_analysis_of_ui-based_flaky_tests/</loc>
     <lastmod>2021-08-14T16:33:14+09:00</lastmod>
   </url>
   

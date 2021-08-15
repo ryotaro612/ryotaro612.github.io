@@ -46,6 +46,17 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/dont_do_that/">Don&#39;t Do That! Hunting Down Visual Design Smells in Complex UIs against Design Guidelines</a></h3>
+        <div class="summary"><p>マテリアルデザインの公式ドキュメントから93種類の不吉な匂いを洗い出し、71種類の匂いを検出するツールUIS-Hunterを開発した。
+2020年5月のドキュメントから&quot;don&rsquo;t&quot;や&quot;caution&quot;の単語とUIの例があることを条件に不吉な匂いを選び、9,286個のアンドロイドアプリにある7,497のUIを調べたところ、2,587個のアプリから1つ以上の不吉な匂いのあるUIが見つかった。
+UIS-Hunterは、FigmaやAndroid Studio Layout EditorなどのモックアップやAndroid UI AutomatorやSeleniumのスクリーンショットから不吉な匂いを解析し、UIのソースコードを必要としない。
+9,286個のアプリの60,756のUIで検出性能を評価したところ、precisionが0.81, recallが0.90だった。</p></div>
+        <div class="article-footer">
+            <span class="date">August 14, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/an_empirical_analysis_of_ui-based_flaky_tests/">An Empirical Analysis of UI-based Flaky Tests</a></h3>
         <div class="summary">GitHub上の5つのWebアプリケーションと37のAndroidアプリケーションから集めた235件のUIのflaky tests（何度か実行すると成功する不安定なテスト）を調査し、原因と修正を分類した。
 大きく原因を、非同期処理の待機、環境依存の動作、DOMのセレクタやテストライブラリの誤用、テスト対象の事前条件を満たしていないテストスクリプトの4つに大別した。 具体例をあげると、環境依存の動作には、IE固有のバグや予期していないレイアウトで画面が表示される場合、テストの事前条件については、テストの実行順序次第で誤ったテストデータが作られる場合がある。 最も多くのテストが分類され、全体の45%を占めたのは、非同期処理の不適切な待機方法だった。
@@ -133,19 +144,6 @@ Browsemapsにおける水平型は特徴の種類の違いによらず異なる�
 ただし、そのためには、オブジェクトの任意の状態における操作の振る舞いが定義されていなければならない。</p></div>
         <div class="article-footer">
             <span class="date">July 17, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/end_to_end_arguments_in_system_design/">END-TO-END ARGUMENTS IN SYSTEM DESIGN</a></h3>
-        <div class="summary"><p>分散システムにおける通信は、あるシステムから送られると、システムより低いレイヤーのネットワークを通り、ほかのシステムに到達する。
-論文の発表当時から、分散システムの信頼性にかかわる機能には、途中の低レイヤーではなく高レイヤーの終端におくべきものがあると知られていた。
-表題の論文は、それらを列挙し、END-TO-END ARGUMENTSと名付け、原則として提示する。
-例えば、データの完全性の保証、メッセージの重複対応、メッセージの到達の保証が原則にあてはまる。
-これらの機能を低レイヤーにおくと、完全性を検証後の経路でメッセージが壊れた場合、送信元が重複メッセージをおくる場合、対向システムが受信したメッセージを処理できない場合に対処できない。
-したがって、分散システム全体の信頼性をあげるのであれば、信頼性を上げる機能を低レイヤーではなく終端の高レイヤーにおくほうが効率がよい。</p></div>
-        <div class="article-footer">
-            <span class="date">July 10, 2021</span>
         </div>
     </article>
     

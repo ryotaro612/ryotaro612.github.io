@@ -6,7 +6,19 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 14 Aug 2021 16:33:14 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Aug 2021 16:40:58 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Don&#39;t Do That! Hunting Down Visual Design Smells in Complex UIs against Design Guidelines</title>
+      <link>https://nryotaro.dev/posts/dont_do_that/</link>
+      <pubDate>Sat, 14 Aug 2021 16:40:58 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/dont_do_that/</guid>
+      <description>&lt;p&gt;マテリアルデザインの公式ドキュメントから93種類の不吉な匂いを洗い出し、71種類の匂いを検出するツールUIS-Hunterを開発した。
+2020年5月のドキュメントから&amp;quot;don&amp;rsquo;t&amp;quot;や&amp;quot;caution&amp;quot;の単語とUIの例があることを条件に不吉な匂いを選び、9,286個のアンドロイドアプリにある7,497のUIを調べたところ、2,587個のアプリから1つ以上の不吉な匂いのあるUIが見つかった。
+UIS-Hunterは、FigmaやAndroid Studio Layout EditorなどのモックアップやAndroid UI AutomatorやSeleniumのスクリーンショットから不吉な匂いを解析し、UIのソースコードを必要としない。
+9,286個のアプリの60,756のUIで検出性能を評価したところ、precisionが0.81, recallが0.90だった。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>An Empirical Analysis of UI-based Flaky Tests</title>
       <link>https://nryotaro.dev/posts/an_empirical_analysis_of_ui-based_flaky_tests/</link>

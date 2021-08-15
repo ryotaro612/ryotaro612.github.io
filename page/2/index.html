@@ -47,6 +47,19 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/end_to_end_arguments_in_system_design/">END-TO-END ARGUMENTS IN SYSTEM DESIGN</a></h3>
+        <div class="summary"><p>分散システムにおける通信は、あるシステムから送られると、システムより低いレイヤーのネットワークを通り、ほかのシステムに到達する。
+論文の発表当時から、分散システムの信頼性にかかわる機能には、途中の低レイヤーではなく高レイヤーの終端におくべきものがあると知られていた。
+表題の論文は、それらを列挙し、END-TO-END ARGUMENTSと名付け、原則として提示する。
+例えば、データの完全性の保証、メッセージの重複対応、メッセージの到達の保証が原則にあてはまる。
+これらの機能を低レイヤーにおくと、完全性を検証後の経路でメッセージが壊れた場合、送信元が重複メッセージをおくる場合、対向システムが受信したメッセージを処理できない場合に対処できない。
+したがって、分散システム全体の信頼性をあげるのであれば、信頼性を上げる機能を低レイヤーではなく終端の高レイヤーにおくほうが効率がよい。</p></div>
+        <div class="article-footer">
+            <span class="date">July 10, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/a_history_and_evaluation_of_systemr/">A History and Evaluation of System R</a></h3>
         <div class="summary"><p>System Rは、1970年にE.F. Coddが発表したリレーショナルモデルを実装した初めてのリレーショナルデータベースである。
 1981年に発表された表題の論文は、System Rの開発プロジェクトを3つのフェーズに分け、各フェーズの知見をまとめている。
@@ -128,22 +141,6 @@ Thrift自体は、大きくType, Transport, Protocol, Versioning, Processorの5�
 表題の論文では、OLTPに特化したデータベースH-Storeを実装し、TPC-Cをベンチマークとして商用データベースと比較したところ、H-Storeの方が82倍高速だった。</p></div>
         <div class="article-footer">
             <span class="date">May 29, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/burst_tries/">Burst Tries: A Fast, Efficient Data Structure for String Keys</a></h3>
-        <div class="summary"><p>trie木の一種のburst trieは、2分木よりもメモリ効率がよく、trie木と同じくらい速い。
-内部は2種類のデータ構造からなり、trie木のほかに別のデータ構造もつかう。
-どのデータ構造を使うかは要件次第で、実験では、連結リスト、二分探索木、スプレー木をつかった。
-Burst trie内の別のデータ構造はcontainerとよばれる。
-初期状態のburst trieは、1つのcontainerからなり、別のデータ構造そのものに等しい。
-その後、containerの要素のアクセス頻度やヒット率にもとづくヒューリスティックな基準が満たされると、containerの要素をtrie木のノードにおきかえ、ノードの下に新しいcontainerをつくる。
-新しくできたcontainerにも基準を適用し、適宜containerをtrieのノードにおきかえる。
-以上の手続きより、与えられる文字列の頻度に合わせてtrie木と別のデータ構造を使い分けることができる。
-性能はデータ分布の歪度に依存する。</p></div>
-        <div class="article-footer">
-            <span class="date">May 22, 2021</span>
         </div>
     </article>
     
