@@ -96,6 +96,21 @@ UIS-Hunterは、FigmaやAndroid Studio Layout Editorなどのモックアップ�
     </article>
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/time_clocks_and_the_ordering_of_events_in_a_distributed_system/">Time, Clocks, and the Ordering of Events in a Distributed System</a></h3>
+        <div class="summary"><p>分散システムの各プロセスにおける送受信の半順序関係をすべてのプロセスで起きた送受信の全順序関係に拡張するアルゴリズムを提案し、アルゴリズムを同期処理に応用できることを例示した。
+分散システムのプロセスの時刻はほかのプロセスと同期していない可能性がある。
+あるプロセスで起きたメッセージの送受信をプロセスでの時刻順に並べられても、その計測時刻を信じて全プロセスで起きたイベントを正しく発生順に並べることはできない。</p>
+<p>アルゴリズムは、プロセスごとに論理的なクロックをもたせる。
+クロックは、メッセージを送信するときに時を進める。
+メッセージを送信するプロセスは、送信時刻をメッセージにふくめる。
+受信したプロセスは現在の時刻とメッセージにある送信元の時刻より先の時刻に時を進める。
+以上の手続きで、異なるプロセス間の送受信であっても送信時刻が受信時刻より必ず前になり、全プロセスの送受信イベントに全順序関係を定義できる。</p></div>
+        <div class="article-footer">
+            <span class="date">August 14, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/dataflow/">The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-Scale, unbounded, Out-of-Order Data Processing</a></h3>
         <div class="summary"><p>データ処理サービスには、処理の正確さ、遅延、システムの複雑さの間にトレードオフがある。
 ストリーミング処理サービスのStorm, Samza, Pulsarは、(論文が発表された2015年時点では)メッセージは、exactly-onceではなく、欠損または重複しうる。
@@ -132,18 +147,6 @@ Browsemapは、LinkedInの画面上にある推薦するコンテンツを並べ
 Browsemapsにおける水平型は特徴の種類の違いによらず異なるエンティティを統一的に扱えることであり、実際に、人、仕事、会社など複数のエンティティをBrowsemapsでユーザに推薦している。</p></div>
         <div class="article-footer">
             <span class="date">July 22, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/linearizability/">Linearizability: A Correctness Condition for Concurrent Objects</a></h3>
-        <div class="summary"><p>オブジェクトを読み書きする並行プロセスの実行系列があるとき、操作がアトミックであるように観測でき、かつ、プロセスの実行を仮に直列化したときと同じ実行結果をえられる条件を示し、これを線形化可能性と呼んだ。
-線形化可能性は、直列化可能性と同様に安全性の条件だが、直列化可能性にはないローカル性がある。
-つまり、各オブジェクトが線形化可能かつそのとき限り、システム全体が線形化可能になる。
-また、ローカル性だけでなく、ノンブロッキング性もあり、受信したリクエストの操作を保留しているオブジェクトは別オブジェクトの保留した操作の完了を待たずに自分の操作を実行できる。
-ただし、そのためには、オブジェクトの任意の状態における操作の振る舞いが定義されていなければならない。</p></div>
-        <div class="article-footer">
-            <span class="date">July 17, 2021</span>
         </div>
     </article>
     

@@ -39,6 +39,11 @@
   </url>
   
   <url>
+    <loc>https://nryotaro.dev/posts/time_clocks_and_the_ordering_of_events_in_a_distributed_system/</loc>
+    <lastmod>2021-08-14T14:18:01+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://nryotaro.dev/posts/dataflow/</loc>
     <lastmod>2021-08-07T15:11:48+09:00</lastmod>
   </url>

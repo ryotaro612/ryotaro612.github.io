@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-64L0YEFRY5"></script>
+    <script>
+        if (location.hostname != 'localhost') {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-64L0YEFRY5');
+        }
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Time, Clocks, and the Ordering of Events in a Distributed System</h1>
+    <span class="date">August 14, 2021</span>
+    <div>
+        <p>分散システムの各プロセスにおける送受信の半順序関係をすべてのプロセスで起きた送受信の全順序関係に拡張するアルゴリズムを提案し、アルゴリズムを同期処理に応用できることを例示した。
+分散システムのプロセスの時刻はほかのプロセスと同期していない可能性がある。
+あるプロセスで起きたメッセージの送受信をプロセスでの時刻順に並べられても、その計測時刻を信じて全プロセスで起きたイベントを正しく発生順に並べることはできない。</p>
+<p>アルゴリズムは、プロセスごとに論理的なクロックをもたせる。
+クロックは、メッセージを送信するときに時を進める。
+メッセージを送信するプロセスは、送信時刻をメッセージにふくめる。
+受信したプロセスは現在の時刻とメッセージにある送信元の時刻より先の時刻に時を進める。
+以上の手続きで、異なるプロセス間の送受信であっても送信時刻が受信時刻より必ず前になり、全プロセスの送受信イベントに全順序関係を定義できる。</p>
+<p>メッセージの送受信をイベントとし、イベントの「前に起きた」関係\(\rightarrow\)を以下で定義する。</p>
+<ol>
+<li>\(a, b\)が同じプロセスで起きたイベントであり\(a\)が\(b\)より前にあれば\(a\rightarrow b\)である。</li>
+<li>\(a\)があるプロセスからの送信であり、\(b\)がほかのプロセスによるそのメッセージの受信であれば、\(a\rightarrow b\)である。</li>
+<li>\(\rightarrow\)は推移律がなりたつ。異なる\(a, b\)において\(a\rightarrow b\)も\(b\rightarrow a\)も成立しなければ、\(a, b\)は並行である。</li>
+</ol>
+<p>クロックをイベントを引数にとり時刻を返す関数とみなし、プロセス\(P_i\)のクロックを\(C_i\), システム全体のクロックを\(C\)とする。
+\(b\)がプロセス\(P_j\)のイベントであれば\(C\langle b \rangle = C_j\langle b\rangle\)になる。
+イベントの全順序関係を定義する上で\(C\)が正しい条件は、任意の\(a, b\)について\(a\rightarrow b\)であれば\(C\langle a \rangle &lt; C\langle b \rangle\)となることである。
+これは、次の1, 2が成り立てば十分であり、メッセージに送信元の送信時刻をふくめる冒頭の手続きでこれらをみたすことができる。</p>
+<ol>
+<li>\(a, b\)がプロセス\(P_i\)のイベントであり、\(a\)が\(b\)より前であれば\(C_i\langle a\rangle &lt; C_i\langle b \rangle\)である。</li>
+<li>\(a\)が\(P_i\)による送信イベントであり、\(b\)が\(P_j\)による受信であるとき\(C_i\langle a\rangle &lt; C_j\langle b\rangle\)である。</li>
+</ol>
+<p>論文を<a href="https://lamport.azurewebsites.net/pubs/time-clocks.pdf">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/dataflow/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/ignorance_and_prejudice_in_software_fairness/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+            <li class="atcoder"><a href="https://kenkoooo.com/atcoder/#/user/nryotaro">AtCoder</a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
