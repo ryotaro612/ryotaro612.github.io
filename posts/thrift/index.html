@@ -52,17 +52,17 @@ Thrift自体は、大きくType, Transport, Protocol, Versioning, Processorの5�
 たとえば、Thriftの辞書型からはPythonのdictが生成される。</p>
 <p>TransportはTCPやHTTPなどシリアライズされたデータを通信するストリームにあたる。
 Transportは、<code>open</code>, <code>close</code>, <code>read</code>, <code>write</code>などを備えたインターフェースを提供し、Transportを呼び出すコードがストリームの種類に依存しないように作られている。</p>
-<p>Protocolは、JSONなど、型で構造を制約されたデータをTransportで転送するためのシリアライズ、デシリアライズの表現形式にあたる。
+<p>Protocolは、JSONなど、型で構造化されたデータをTransportで転送するためのシリアライズ、デシリアライズの手続きを定める。
 ThriftのユーザがProtocolを意識する必要はない。
-Protocolも、Transportと同様、<code>writeFieldBegin</code>, <code>writeFieldEnd</code>などを宣言したインターフェースを提供している。
-インターフェースは、処理性能を上げるために、フレーム分割や事前のデータ長さ計算をせずに読み書きできる実装形式を強制している。</p>
+Protocolも、Transportとおなじく、<code>writeFieldBegin</code>, <code>writeFieldEnd</code>などを宣言したインターフェースを提供する。
+インターフェースは、処理性能を上げるために、読み書き前に処理するデータのサイズを計算したりフレーム分割したりしなくてよい実装を強制する。</p>
 <p>Thriftは、クライアントとサーバ間のバージョンの違いや定義の違いに対して頑強に設計されており、受信側で期待しないフィールドがあっても、エラーにならず、フィールドは暗黙的に破棄される。
-期待するフィールドがない場合については、各フィールドが存在するかを示す真偽値をもった<code>isset</code>という構造体があり、<code>isset</code>を調べることでフィールドがない場合のフォールバックを開発者は実装できる。</p>
+期待するフィールドがない場合については、各フィールドが存在するかを示す真偽値をもった<code>isset</code>という構造体があり、<code>isset</code>を調べることでフィールドがない場合のフォールバックを開発者が実装できる。</p>
 <p>ProcessorはIDLにしたがってコードを生成する。
 サーバは複数のクライアントからのリクエストを並行処理できなければいけないので、マルチスレッドを使ったサーバのコードを生成しなければならない。
 Thriftはできるだけ依存ライブラリの数を減らす方針で実装されている。
 そのため、マルチスレッドを標準のライブラリで提供されていないC++のサーバは、<code>boost::shared_ptr</code>をもちいたThrift独自のマルチスレッドのライブラリで実装されている。
-ライブラリは、Javaのマルチスレッドの設計が借用されており、並行処理の基本概念にあたるMutex, Condition, Monitorに加え、<code>Thread</code>, <code>Runnable</code>クラスや<code>syncrhonized</code>ブロックをまねるための<code>Synchronized</code>クラスがある。</p>
+ライブラリは、Javaのマルチスレッドの設計を借用しており、並行処理の基本概念にあたるMutex, Condition, Monitorに加え、<code>Thread</code>, <code>Runnable</code>クラスや<code>syncrhonized</code>ブロックをまねるための<code>Synchronized</code>クラスがある。</p>
 <p>論文を<a href="https://thrift.apache.org/static/files/thrift-20070401.pdf">こちら</a>からダウンロードできます。</p>
     </div>
 </main>
