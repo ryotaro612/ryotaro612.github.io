@@ -68,13 +68,6 @@
 2018年9月から2019年6月までの10ヶ月間で<code>unsafe</code>の使用傾向に変化はなく、<code>unsafe</code>の数が少し増えただけであった。
 <code>unsafe</code>の用途の大半は<code>unsafe</code>で修飾されたRustの関数を呼び出すためだった。
 なお、コンパイラで生成された<code>unsafe</code>キーワードは集計にふくまれていない。</p>
-<h2 id="what-helped-and-what-did-not-an-evaluation-of-the-strategies-to-improve-continuous-integrationhttpsarxivorgpdf210206666pdf"><a href="https://arxiv.org/pdf/2102.06666.pdf">What helped, and what did not? An Evaluation of the Strategies to Improve Continuous Integration</a></h2>
-<p>10個のCIの技法を<a href="https://travistorrent.testroots.org/">TravisTorrent</a>のうち100件のプロジェクトで定量評価した。
-評価した技法は、不要なビルドやテストをスキップする技法か、実行順序を優先づける技法のどちらかに分けられる。
-前者は計算資源の消費を減らすこと、後者は失敗するケースを早めに実行することを目的にする。
-ビルドやテストをスキップする技法には、失敗するテストをスキップするおそれがある。
-最も、成功するテストやビルドをスキップした技法は、コードに変更のないケースをスキップするものだったが、同時に失敗するテストを多く見落とした。
-実行順序を優先付ける手法で最も性能のよかった手法は、<a href="https://www.semanticscholar.org/paper/Static-test-case-prioritization-using-topic-models-Thomas-Hemmati/ad77a2776733c7fdc10c0b043f7504a14fce3b6e">Thomasら</a>のもので、シグネチャやコメントで学習したトピックモデルを使い直前に実行したテストと違うトピックのテストを実行する。</p>
     </div>
 </main>
 

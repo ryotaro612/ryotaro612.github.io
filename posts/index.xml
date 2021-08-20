@@ -6,7 +6,20 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 14 Aug 2021 16:40:58 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Aug 2021 17:58:08 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What helped, and what did not? An Evaluation of the Strategies to Improve Continuous Integration</title>
+      <link>https://nryotaro.dev/posts/what_helped_and_what_did_not/</link>
+      <pubDate>Fri, 20 Aug 2021 17:58:08 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/what_helped_and_what_did_not/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://travistorrent.testroots.org/&#34;&gt;TravisTorrent&lt;/a&gt;にある100件のプロジェクトで10種類のCIのテクニックを定量評価した。
+テクニックは、不要なビルドやテストをスキップするか、実行順序を優先づけるものかに分かれる。
+前者は計算資源の消費を減らすこと、後者は失敗するケースを早めに実行することを目的にする。
+もっとも成功するテストやビルドをスキップできたテクニックは、コードに変更のないケースをスキップするものだったが、同時に失敗するテストを多く見落とした。
+実行順序を優先付ける手法で最も性能のよかったテクニックは、&lt;a href=&#34;https://www.semanticscholar.org/paper/Static-test-case-prioritization-using-topic-models-Thomas-Hemmati/ad77a2776733c7fdc10c0b043f7504a14fce3b6e&#34;&gt;Thomasら&lt;/a&gt;のもので、シグネチャやコメントで学習したトピックモデルを使い直前に実行したテストと違うトピックのテストを実行する。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Don&#39;t Do That! Hunting Down Visual Design Smells in Complex UIs against Design Guidelines</title>
       <link>https://nryotaro.dev/posts/dont_do_that/</link>
@@ -1674,7 +1687,7 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
     </item>
     
     <item>
-      <title>メモ Software Engineerng for Machine Learning: A Case Study</title>
+      <title>メモ Software Engineering for Machine Learning: A Case Study</title>
       <link>https://nryotaro.dev/posts/software_engineering_for_machine_learning/</link>
       <pubDate>Sat, 14 Sep 2019 11:26:41 +0900</pubDate>
       
