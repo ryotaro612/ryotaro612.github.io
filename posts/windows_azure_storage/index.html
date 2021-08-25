@@ -48,20 +48,20 @@
     <div>
         <p>AzureのクラウドストレージサービスWindows Azure Storage(WAS) は、2008年の11月から本番運用されている。
 保存できるデータの形式には、単なるファイル(Blob)だけでなく、テーブルのレコードとキューのメッセージがある。
-ハードウェアの故障に備えたローカルでのレプリケーションだけでなく、地理的に離れたデータセンタにもレプリケーションを分散し、災害復旧にも備えがある。</p>
+ハードウェアの故障に備えたローカルでのレプリケーションだけでなく、地理的に離れたデータセンタにもレプリケーションを分散し、災害復旧にも備える。</p>
 <p>WASは、大きくstroage stampとlocation serviceからなる。
 下にstorage stampとlocation serviceのアーキテクチャを図示する。
 storage stampはストレージノードを積んだラックからなるクラスタであり、典型的なクラスタは18のノードを積んだ10から20個のラックである。
 location serivceは、アカウントのデータがどのstorage stampに保存されているかを管理する。
-新しいアカウントを作成するとき、アカウントのIDを含んだURLからstorage stampのVIPを解決するようにDNSを更新する。
+新しいアカウントを作成するときは、アカウントのIDを含んだURLからstorage stampのVIPを解決するようにDNSを更新する。
 <img src="/was/high_level_arch.png" alt="high level architecture"></p>
 <p>storage stampはstream Layer, partition layer, front-endsの3層からなる。
 stream Layerは、storage stamp内でファイルを分散、複製するための分散ファイルシステムとみなすことができる。
 stream layerは、高可用性を担う層であり、データの種類がオブジェクト、テーブル、キューのいずれであるかを意識せずにデータを保存、提供する。
 partition layerは、stream layerと同じノードにあり、stream layerに保存されたデータの種類を解釈できる。また、トランザクションの順序を管理し、データの一貫性を守る。
 front-endsはステートレスなサーバからなり、リクエストの認証と認可を担う。
-stream layerはリクエストの処理中に同期的にstorage stamp内部にレプリケーションを作成し、ハードウェアの耐障害性を高める。
-Parition Layerは、リクエストの処理とは非同期に、storage stamp横断のレプリケーションを作成し、災害復旧に備える。</p>
+Stream layerはリクエストの処理中に同期的にstorage stamp内部にレプリケーションを作成し、ハードウェアの耐障害性を高める。
+Parition layerは、リクエストの処理とは非同期に、storage stamp横断のレプリケーションを作成し、災害復旧に備える。</p>
 <p>Stream Layerのstreamは、extentとよばれる大きなデータの順序つきリストを意味する。
 extentへの書き込みは追記しかできず、更新はできない。
 下に、4つのextentからなるstreamを例示する。
@@ -72,7 +72,7 @@ Extentはレプリケーションの単位であり、デフォルトでは1つ�
 extentの大きさは1GBであり、それより大きなデータを保存するときは、データを分割して、複数のextentにデータを保存する。
 streamはextentを参照するポインタの順序付きリストであり、既存のstreamを連結することで新しいstreamが作られる。
 追記ができるextentはstreamの末尾のものに限られる。</p>
-<p>Stream Layerはstream manager(SM)とextent node(EN)からなる。
+<p>Stream layerはstream manager(SM)とextent node(EN)からなる。
 Stream layerのアーキテクチャを以下に図示する。
 <img src="/was/stream_layer.png" alt="stream_layer">
 SMは、新しいextentを作り、ENに割りあてる。
@@ -80,13 +80,13 @@ SMは、新しいextentを作り、ENに割りあてる。
 SMの処理は、クライアントのリクエストの処理とは非同期であり、クリティカルパス上にはない。
 一方、ENは複数のディスクをもち、extentの別々のディスクにレプリカを保存する。
 ENはextentとblockを管理し、これらがどのstreamに属するかを知ることはない。</p>
-<p>Stream Layerがレプリケーションで高可用性を支えるのに対し、parititon layerは一貫性を支える。
+<p>Stream layerがレプリケーションで高可用性を支えるのに対し、parititon layerは一貫性を支える。
 Partiton layerは下図のようにpartition manager(PM)とpartition server(PS)からなる。
 <img src="/was/partition_layer.png" alt="partition_layer">
 Partiton layerはobject table(OT)というデータ構造を構成し、streamに保存された単なるデータを、ユーザからはBlobやテーブル、キューのように見えるようにする。
 OTは、ペタバイト級のサイズであるため、OTの連続するレコードの集合であるRangePartitionに分割して管理される。
-PMはOTをRange Partitionとよばれる単位に分割し、各Range Partitionが常に1つのアクティブなPSに割り当てられ、Range Partitionが重複しないことを保証する。
-保証にはLock Serivceを使い、Paxosによって合意されたPMのリーダが選出される。</p>
+PMはOTをrange partitionとよばれる単位に分割し、各range partitionが常に1つのアクティブなPSに割り当てられ、range partitionが重複しないことを保証する。
+保証にはlock serivceを使い、Paxosによって合意されたPMのリーダが選出される。</p>
 <p>論文を<a href="https://www.semanticscholar.org/paper/Windows-Azure-Storage%3A-a-highly-available-cloud-Calder-Wang/4582416a108d1a916b6c00e9ae4e763d15f8d4e0">こちら</a>からダウンロードできます。
 図は論文から引用されています。</p>
     </div>
