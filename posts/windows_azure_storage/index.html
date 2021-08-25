@@ -46,25 +46,25 @@
     <h1>Windows Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency</h1>
     <span class="date">June 12, 2021</span>
     <div>
-        <p>AzureのクラウドストレージサービスであるWindows Azure Storage(WAS) は、2008年の11月から本番運用されている。
-保存できるデータの形式には、単なるファイル(Blob)のほかにも、テーブルのレコードとキューのメッセージがある。
+        <p>AzureのクラウドストレージサービスWindows Azure Storage(WAS) は、2008年の11月から本番運用されている。
+保存できるデータの形式には、単なるファイル(Blob)だけでなく、テーブルのレコードとキューのメッセージがある。
 ハードウェアの故障に備えたローカルでのレプリケーションだけでなく、地理的に離れたデータセンタにもレプリケーションを分散し、災害復旧にも備えがある。</p>
 <p>WASは、大きくstroage stampとlocation serviceからなる。
-以下にstorage stampとlocation serviceのアーキテクチャを図示する。
-storage stampはストレージノードを積んだラックからなるクラスタであり、典型的なクラスタは18のノードを搭載した10から20個のラックからなる。
+下にstorage stampとlocation serviceのアーキテクチャを図示する。
+storage stampはストレージノードを積んだラックからなるクラスタであり、典型的なクラスタは18のノードを積んだ10から20個のラックである。
 location serivceは、アカウントのデータがどのstorage stampに保存されているかを管理する。
 新しいアカウントを作成するとき、アカウントのIDを含んだURLからstorage stampのVIPを解決するようにDNSを更新する。
 <img src="/was/high_level_arch.png" alt="high level architecture"></p>
 <p>storage stampはstream Layer, partition layer, front-endsの3層からなる。
 stream Layerは、storage stamp内でファイルを分散、複製するための分散ファイルシステムとみなすことができる。
-stream Layerは、高可用性を担う層であり、データの種類がオブジェクト、テーブル、キューのいずれであるかを意識せずにデータを保存、提供する。
+stream layerは、高可用性を担う層であり、データの種類がオブジェクト、テーブル、キューのいずれであるかを意識せずにデータを保存、提供する。
 partition layerは、stream layerと同じノードにあり、stream layerに保存されたデータの種類を解釈できる。また、トランザクションの順序を管理し、データの一貫性を守る。
 front-endsはステートレスなサーバからなり、リクエストの認証と認可を担う。
-Stream layerがリクエストの処理中に同期的にstorage stamp内部にレプリケーションを作成し、ハードウェアの耐障害性を高める。
+stream layerはリクエストの処理中に同期的にstorage stamp内部にレプリケーションを作成し、ハードウェアの耐障害性を高める。
 Parition Layerは、リクエストの処理とは非同期に、storage stamp横断のレプリケーションを作成し、災害復旧に備える。</p>
 <p>Stream Layerのstreamは、extentとよばれる大きなデータの順序つきリストを意味する。
 extentへの書き込みは追記しかできず、更新はできない。
-以下に、4つのextentからなるstreamを例示する。
+下に、4つのextentからなるstreamを例示する。
 <img src="/was/stream.png" alt="stream">
 図中の<code>B</code>はblockとよばれる読み込みと追記の最小単位であり、サイズは4MB程度である。extentは連結したblockからなる。
 blockのサイズはblockごとに違ってよい。

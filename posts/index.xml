@@ -230,8 +230,8 @@ Phase 2は、1978年から1979年にSan Jose Research Laboratoryなどでの実�
       <pubDate>Sat, 12 Jun 2021 17:21:52 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/windows_azure_storage/</guid>
-      <description>&lt;p&gt;AzureのクラウドストレージサービスであるWindows Azure Storage(WAS) は、2008年の11月から本番運用されている。
-保存できるデータの形式には、単なるファイル(Blob)のほかにも、テーブルのレコードとキューのメッセージがある。
+      <description>&lt;p&gt;AzureのクラウドストレージサービスWindows Azure Storage(WAS) は、2008年の11月から本番運用されている。
+保存できるデータの形式には、単なるファイル(Blob)だけでなく、テーブルのレコードとキューのメッセージがある。
 ハードウェアの故障に備えたローカルでのレプリケーションだけでなく、地理的に離れたデータセンタにもレプリケーションを分散し、災害復旧にも備えがある。&lt;/p&gt;</description>
     </item>
     
