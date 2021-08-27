@@ -6,7 +6,22 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 20 Aug 2021 17:58:08 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 Aug 2021 17:51:26 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Is Rust Used Safely by Software Developers?</title>
+      <link>https://nryotaro.dev/posts/is_rust_used_safely_by_software_developers/</link>
+      <pubDate>Fri, 27 Aug 2021 17:51:26 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/is_rust_used_safely_by_software_developers/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://crates.io/&#34;&gt;crates.io&lt;/a&gt;に登録された15,097個のクレートにおける&lt;code&gt;unsafe&lt;/code&gt;キーワードの使用状況を調べた。
+調査したクレートは、調査を開始した2018年9月時点で&lt;a href=&#34;https://crates.io/&#34;&gt;crates.io&lt;/a&gt;に登録された全クレートの81%にあたる。
+&lt;code&gt;unsafe&lt;/code&gt;を含むクレートは、そのうちの29%だったが、依存するクレートにある&lt;code&gt;unsafe&lt;/code&gt;も対象にすると、50%におよぶ。
+&lt;a href=&#34;https://crates.io/&#34;&gt;crates.io&lt;/a&gt;の総ダウンロード数のうち90%を占める473個の有名なクレートに限定すると、60%のクレート&lt;code&gt;unsafe&lt;/code&gt;が含まれる。
+2018年9月から2019年6月までの10ヶ月間で&lt;code&gt;unsafe&lt;/code&gt;の使用傾向に変化はなく、&lt;code&gt;unsafe&lt;/code&gt;の数が少し増えただけであった。
+&lt;code&gt;unsafe&lt;/code&gt;の用途の大半は&lt;code&gt;unsafe&lt;/code&gt;で修飾されたRustの関数を呼び出すためだった。
+なお、コンパイラで生成された&lt;code&gt;unsafe&lt;/code&gt;キーワードは集計に含まれていない。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>What helped, and what did not? An Evaluation of the Strategies to Improve Continuous Integration</title>
       <link>https://nryotaro.dev/posts/what_helped_and_what_did_not/</link>

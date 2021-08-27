@@ -46,6 +46,20 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/is_rust_used_safely_by_software_developers/">Is Rust Used Safely by Software Developers?</a></h3>
+        <div class="summary"><p><a href="https://crates.io/">crates.io</a>に登録された15,097個のクレートにおける<code>unsafe</code>キーワードの使用状況を調べた。
+調査したクレートは、調査を開始した2018年9月時点で<a href="https://crates.io/">crates.io</a>に登録された全クレートの81%にあたる。
+<code>unsafe</code>を含むクレートは、そのうちの29%だったが、依存するクレートにある<code>unsafe</code>も対象にすると、50%におよぶ。
+<a href="https://crates.io/">crates.io</a>の総ダウンロード数のうち90%を占める473個の有名なクレートに限定すると、60%のクレート<code>unsafe</code>が含まれる。
+2018年9月から2019年6月までの10ヶ月間で<code>unsafe</code>の使用傾向に変化はなく、<code>unsafe</code>の数が少し増えただけであった。
+<code>unsafe</code>の用途の大半は<code>unsafe</code>で修飾されたRustの関数を呼び出すためだった。
+なお、コンパイラで生成された<code>unsafe</code>キーワードは集計に含まれていない。</p></div>
+        <div class="article-footer">
+            <span class="date">August 27, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/what_helped_and_what_did_not/">What helped, and what did not? An Evaluation of the Strategies to Improve Continuous Integration</a></h3>
         <div class="summary"><p><a href="https://travistorrent.testroots.org/">TravisTorrent</a>にある100件のプロジェクトで10種類のCIのテクニックを定量評価した。
 テクニックは、不要なビルドやテストをスキップするか、実行順序を優先づけるものかに分かれる。
@@ -138,17 +152,6 @@ Lambda architectureは、システムの複雑化を許容し、2つのアーキ
         <div class="summary"><p>気になったものの備忘録</p></div>
         <div class="article-footer">
             <span class="date">August 6, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/the_byzantine_generals_problem/">The Byzantine Generals Problem</a></h3>
-        <div class="summary"><p>ビザンチン将軍問題は、故障したコンポーネントが別のコンポーネントに誤ったメッセージを送りうるとき、コンポーネント間でメッセージを交換した結果、全コンポーネントが一つの正しいメッセージを合意する手段を問う。
-2つのアルゴリズムがあり、署名付きメッセージを使うかどうかで分かれる。
-署名付きメッセージを使うと、受信したメッセージが改ざんされたかをコンポーネントが判断できる。
-署名を使わない場合、3分の2より多くのコンポーネントが正常でなければシステム全体が正しい1つのメッセージについて合意にできないことを示した。</p></div>
-        <div class="article-footer">
-            <span class="date">July 31, 2021</span>
         </div>
     </article>
     
