@@ -23,6 +23,16 @@
     </item>
     
     <item>
+      <title>Design Tradeoffs for SSD Performance</title>
+      <link>https://nryotaro.dev/posts/design_tradeoffs_for_ssd_performance/</link>
+      <pubDate>Mon, 23 Aug 2021 12:03:39 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/design_tradeoffs_for_ssd_performance/</guid>
+      <description>&lt;p&gt;HDDの処理性能を測るためのシミュレーションソフト&lt;a href=&#34;https://www.pdl.cmu.edu/DiskSim/index.shtml&#34;&gt;DiskSim&lt;/a&gt;をSSD向けに改造し、SSDの設計における選択肢の分類と選択にともなうトレードオフを報告する。
+主要な選択肢は、論理アドレスと物理アドレスのマッピング、ページサイズ、オーバープロビジョニング、複数のpackageでcontrollerに接続するピンを共有するgangingがある。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>What helped, and what did not? An Evaluation of the Strategies to Improve Continuous Integration</title>
       <link>https://nryotaro.dev/posts/what_helped_and_what_did_not/</link>
       <pubDate>Fri, 20 Aug 2021 17:58:08 +0900</pubDate>
