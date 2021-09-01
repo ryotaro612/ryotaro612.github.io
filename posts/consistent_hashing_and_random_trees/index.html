@@ -43,11 +43,12 @@
     </header>
     
 <main>
-    <h1>Consistent Hashing and Random Trees: Distributed Chaching Protocols for Relieving Hot Spots on the World Wide Web</h1>
+    <h1>Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web</h1>
     <span class="date">June 19, 2021</span>
     <div>
-        <p>各サーバーがネットワーク全体の情報を保持できない分散キャッシュネットワークにホットスポットを作らせないためのキャッシュプロトコルを開発した。
-表題のconsistent hashingは、プロトコルの基礎になるハッシュ関数で、値域の違いに関数の写像が影響されにくい。
+        <p>各サーバーがネットワーク全体の情報を保持しない分散キャッシュネットワークにホットスポットを生まないためのキャッシュプロトコルを開発した。
+表題のconsistent hashingは、プロトコルの基礎になるハッシュ関数で、関数の写像が値域の違いに影響されにくい。
+この影響しにくさは、クライアントから見えるアクティブなサーバが入れ替わる可能性に対して機能する。
 また、クライアントは一部のキャッシュサーバーにアクセスできればよく、クライアントごとにアクセス可能なキャッシュサーバーの集合は違ってよい。</p>
 <p>キャッシュサーバーが複数ある場合、クライアントは、オブジェクトのキャッシュをホストするサーバを特定しなければならない。
 サーバーとクライントでハッシュ関数を共有し、オブジェクトをキャッシュすべきサーバーをハッシュ値で決めれば、クライアントはサーバーに問い合わせることなく対象のサーバーを特定できる。
@@ -86,7 +87,7 @@ loadが最大のキャッシュサーバーのloadを\(f\)のloadとする。
 <li>Spread: \(\rho\)を定数、viewの数を\(V=\rho C\), オブジェクトの数を\(I=C\)とすると、\(i\in \mathcal{I}\)について、\(1-1/C^{\Omega(1)}\)より大きい確率で\(\sigma(i)\)は\(O(t\log(C))\)になる。</li>
 <li>load: \(b\in\mathcal{B}\)について、\(1-1/C^{\Omega(1)}\)より大きい確率で\(\lambda(b)\)は\(O(t\log(C))\)になる。</li>
 </ul>
-<p>論文を<a href="https://www.akamai.com/uk/en/multimedia/documents/technical-publication/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web-technical-publication.pdf">こちら</a>からダウンロードできます。</p>
+<p>論文を<a href="https://www.researchgate.net/publication/2395793_Consistent_Hashing_and_Random_Trees_Distributed_Caching_Protocols_for_Relieving_Hot_Spots_on_the_World_Wide_Web">こちら</a>からダウンロードできます。</p>
     </div>
 </main>
 
