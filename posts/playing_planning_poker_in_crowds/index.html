@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-64L0YEFRY5"></script>
+    <script>
+        if (location.hostname != 'localhost') {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-64L0YEFRY5');
+        }
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Playing Planning Poker in Crowds: Human Computation of Software Effort Estimates</h1>
+    <span class="date">August 6, 2021</span>
+    <div>
+        <p>プランニングポーカーにみられるように、ソフトウェア開発の工数を見積もる手法は、プロジェクトに一定期間在籍する専門家がいることを前提にする。
+しかし、OSS開発はその限りではなく、見積りの対象になるイシューの数は多い。
+各イシューの見積りに5分から10分時間をかけるなら、Linux Kernelのバックログを見積りきるのに半年がかかる。</p>
+<p>著者らは、大規模OSSのように固定的な専門家がおらずイシューの多いプロジェクトのために、クラウドワーカーによるプランニングポーカーを設計した。
+クラウドワーカーは、Mechanical Turk上で、工数を、1時間、半日、1日、半周、1週間、2週間のどれかに見積り、その理由を回答する。
+クラウドワーカー間の回答がある程度そろえば、見積りを終える。
+そろっていなければ、ほかの見積りと理由の統計をワーカーに見せる。
+以上の手続きを回答がそろうまで最大三回くりかえす。</p>
+<p>見積りと実際の工数が記録されている3つのOSSプロジェクトJBoss, Apache, Spring Integrationのイシュー39個をクラウドワーカーに見積りを依頼し、記録された見積りを専門家の見積りとして、両者を比べた。
+パイロットテストでは、回答の80%があきらかに誤りのある回答であった。
+そのため、本番の評価実験では、パイロットテストのデータからランダムフォレストのモデルを訓練し、明らかな誤りのある回答を除外するようにした。
+結果、各イシューを平均8人で見積もることになり、その結果は専門家と同程度に正確だった。</p>
+<p>論文を<a href="http://eprints.gla.ac.uk/234713/1/234713.pdf">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/the_byzantine_generals_problem/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/dataflow/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+            <li class="atcoder"><a href="https://kenkoooo.com/atcoder/#/user/nryotaro">AtCoder</a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
