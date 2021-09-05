@@ -6,7 +6,18 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 27 Aug 2021 17:51:26 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Sep 2021 15:55:14 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dremel: Interactive Analysis of Web-Scale Datasets</title>
+      <link>https://nryotaro.dev/posts/dremel/</link>
+      <pubDate>Sat, 04 Sep 2021 15:55:14 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/dremel/</guid>
+      <description>&lt;p&gt;Dremelは2006年からGoogle社内で利用されているDWHで、社外にはBigQueryとして提供されている。
+列指向の形式でデータを保存し、SQLに似た言語のクエリでデータを検索できる。
+Dremelは、サーバーのクラスタを木構造に組織し、ルートで受理したクエリの処理を下層のサーバに分配し、その結果を集約することで処理を分散し高速化をはかる。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Is Rust Used Safely by Software Developers?</title>
       <link>https://nryotaro.dev/posts/is_rust_used_safely_by_software_developers/</link>

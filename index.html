@@ -47,6 +47,16 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/dremel/">Dremel: Interactive Analysis of Web-Scale Datasets</a></h3>
+        <div class="summary"><p>Dremelは2006年からGoogle社内で利用されているDWHで、社外にはBigQueryとして提供されている。
+列指向の形式でデータを保存し、SQLに似た言語のクエリでデータを検索できる。
+Dremelは、サーバーのクラスタを木構造に組織し、ルートで受理したクエリの処理を下層のサーバに分配し、その結果を集約することで処理を分散し高速化をはかる。</p></div>
+        <div class="article-footer">
+            <span class="date">September 4, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/is_rust_used_safely_by_software_developers/">Is Rust Used Safely by Software Developers?</a></h3>
         <div class="summary"><p><a href="https://crates.io/">crates.io</a>に登録された15,097個のクレートにおける<code>unsafe</code>キーワードの使用状況を調べた。
 調査したクレートは、調査を開始した2018年9月時点で<a href="https://crates.io/">crates.io</a>に登録された全クレートの81%にあたる。
@@ -143,17 +153,6 @@ UIS-Hunterは、FigmaやAndroid Studio Layout Editorなどのモックアップ�
 以上の手続きで、異なるプロセス間の送受信であっても送信時刻が受信時刻より必ず前になり、全プロセスの送受信イベントに全順序関係を定義できる。</p></div>
         <div class="article-footer">
             <span class="date">August 14, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/dataflow/">The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-Scale, unbounded, Out-of-Order Data Processing</a></h3>
-        <div class="summary"><p>データ処理サービスには、処理の正確さ、遅延、システムの複雑さの間にトレードオフがある。
-ストリーミング処理サービスのStorm, Samza, Pulsarは、(論文が発表された2015年時点では)メッセージは、exactly-onceではなく、欠損または重複しうる。
-MapReduceやSparkなどのバッチ処理サービスは、バッチ処理の単位までデータが集まるのを待たねばならない。
-Lambda architectureは、システムの複雑化を許容し、2つのアーキテクチャを使い分けることで、処理の正確さと遅延のバランスをとる。</p></div>
-        <div class="article-footer">
-            <span class="date">August 7, 2021</span>
         </div>
     </article>
     

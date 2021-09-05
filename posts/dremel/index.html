@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-64L0YEFRY5"></script>
+    <script>
+        if (location.hostname != 'localhost') {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-64L0YEFRY5');
+        }
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Dremel: Interactive Analysis of Web-Scale Datasets</h1>
+    <span class="date">September 4, 2021</span>
+    <div>
+        <p>Dremelは2006年からGoogle社内で利用されているDWHで、社外にはBigQueryとして提供されている。
+列指向の形式でデータを保存し、SQLに似た言語のクエリでデータを検索できる。
+Dremelは、サーバーのクラスタを木構造に組織し、ルートで受理したクエリの処理を下層のサーバに分配し、その結果を集約することで処理を分散し高速化をはかる。</p>
+<p>Dremelのデータモデルは、Protocol Bufferに由来し、繰り返されるフィールド、オプショナルなフィールド、ネストがある。
+これにより、リレーショナルモデルでない大量のデータを保存し、アドホックに分析できる。
+以下の図は、スキーマとデータの例である。
+<img src="/dremel/fig2.png" alt="fig2">
+列指向データベースとして、全レコードの特定のフィールドを高速に処理するには、下図のように、フィールドごとにデータを局所化して保存する必要がある。
+同時に、フィールドの繰り返しやオプショナルなフィールドを復元できなければならない。
+<img src="/dremel/fig1.png" alt="fig2"></p>
+<p>以上の要件のために、フィールドの値を、パス上で繰り返された途中のフィールドを意味するrepetition levelやパス上に存在した繰り返し可能かオプショナルなフィールドの数を意味するdefinition levelと一緒に保存する。
+下図は上で例示したデータに対応し、rとdはそれぞれrepetition levelとdefinition levelをあらわす。</p>
+<p>例えば、パス<code>Name.Language.Code</code>であれば、<code>Name</code>と<code>Language</code>は繰り返しされる可能があるため、<code>Code</code>のrepetition levelは0以上2以下の値をとる。
+<code>r1</code>をトップダウンに探索した場合、&lsquo;en-us&rsquo;にいたるまで繰り返しがないため、repetition levelは0になる。
+0はパス上に繰り返されたフィールドがないことを意味する。
+&lsquo;en&rsquo;の場合、パス上で<code>Language</code>が繰り返されたので、repetition levelは<code>Language</code>の階層である2になる。
+&lsquo;en-gb&rsquo;は、1層目の<code>Name</code>が繰り返されるので1があてはまる。
+<img src="/dremel/fig3.png" alt="fig3"></p>
+<p>次に、defintion levelの例をあげる。
+<code>r1</code>には<code>Links.Backward</code>がなく、<code>Backward</code>までのパス上にオプショナルフィールドの<code>Links</code>が1つあるので、definition levelは1で、値は<code>NULL</code>である。
+<code>r2</code>に<code>Name.Language.Country</code>はなく、<code>Country</code>のパス上に<code>Name</code>が1つあるので、definition levelは1になる。</p>
+<p>木構造で構成されたクラスタのルートで受理したクエリがleaf nodeに到達すると、leaf nodeはGFSなどからなるストレージ層やローカルストレージにデータを問い合わせる。
+以下はクラスタの図である。
+<img src="/dremel/fig7.png" alt="fig7">
+ルートサーバは、探索すべきtablet(テーブルの水平パーティション)を特定し、下層のノードに検索処理を分散できるようにクエリを書きかえる。
+たとえば、以下のクエリがあたえられると、
+$$
+\texttt{SELECT A, COUNT(B) FROM T GROUP BY A}
+$$
+ルートサーバーはこれを
+$$
+\texttt{SELECT A}, \texttt{SUM(c) FROM} (R^1_1\ \texttt{UNION ALL}\dots R^1_1) \texttt{GROUP BY A}
+$$
+に書きかえる。
+\(R^1_1, \dots , R^1_n\)は1層の\(1,\dots , n\)ノードの以下のクエリの結果をあらわす。各層でこの書きかえをleafに到達するまでくりかえす。
+$$
+R^1_i = \texttt{SELECT A, COUNT(B) AS c FROM}\ T^1_i\ \texttt{GROUP BY A}
+$$</p>
+<p>論文を<a href="https://static.googleusercontent.com/media/research.google.com/ja//pubs/archive/36632.pdf">こちら</a>からダウンロードできます。
+画像は論文から引用したものです。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/is_rust_used_safely_by_software_developers/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+            <li class="atcoder"><a href="https://kenkoooo.com/atcoder/#/user/nryotaro">AtCoder</a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
