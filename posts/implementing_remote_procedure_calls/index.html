@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-64L0YEFRY5"></script>
+    <script>
+        if (location.hostname != 'localhost') {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-64L0YEFRY5');
+        }
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Implementing Remote Procedure Calls</h1>
+    <span class="date">September 11, 2021</span>
+    <div>
+        <p>Xeroxのプログラミング環境<a href="http://www.bitsavers.org/pdf/xerox/parc/techReports/CSL-80-10_Requirements_for_an_Experimental_Programming_Environment.pdf">Cedar</a>のために開発されたRPCを解説した84年の論文である。
+RPCの開発目的は、分散コンピューティングを簡単に実装できるようにする、通信時間を短くする、通信をセキュアにすることの3点である。
+RPCは大部分で<a href="http://www.bitsavers.org/pdf/xerox/parc/techReports/CSL-79-3_Mesa_Language_Manual_Version_5.0.pdf">Mesa</a>が使われた。</p>
+<p>CedarのRPCの設計は現在のRPCフレームワークのものと大きく変わらない。
+以下に設計の全体像を図示する。
+大きくUser, User-stub, RPCRuntime, Server-stub, Serverの5つのモジュールならなる。
+RPCを呼び出すUserからみれば、RPCでないメソッドを呼び出すようにRPCを呼び出すことができる。
+Stubは、RPCと通常のメソッドの差異を埋めるためにあり、Lupineというプログラムで生成できる。
+Userの対称にあるServerも同様で、server-stubがServerからみてRPCメソッドをほかのメソッドと違わないように見せる。
+RPCRuntimeは通信の信頼性や通信のセキュアを確保する。
+<img src="/implementing_remote_procedure_calls.png" alt="overview">
+論文を<a href="http://web.eecs.umich.edu/~mosharaf/Readings/RPC.pdf">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/dremel/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

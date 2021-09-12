@@ -6,7 +6,18 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 04 Sep 2021 15:55:14 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Sep 2021 12:34:19 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Implementing Remote Procedure Calls</title>
+      <link>https://nryotaro.dev/posts/implementing_remote_procedure_calls/</link>
+      <pubDate>Sat, 11 Sep 2021 12:34:19 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/implementing_remote_procedure_calls/</guid>
+      <description>&lt;p&gt;Xeroxのプログラミング環境&lt;a href=&#34;http://www.bitsavers.org/pdf/xerox/parc/techReports/CSL-80-10_Requirements_for_an_Experimental_Programming_Environment.pdf&#34;&gt;Cedar&lt;/a&gt;のために開発されたRPCを解説した84年の論文である。
+RPCの開発目的は、分散コンピューティングを簡単に実装できるようにする、通信時間を短くする、通信をセキュアにすることの3点である。
+RPCは大部分で&lt;a href=&#34;http://www.bitsavers.org/pdf/xerox/parc/techReports/CSL-79-3_Mesa_Language_Manual_Version_5.0.pdf&#34;&gt;Mesa&lt;/a&gt;が使われた。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Dremel: Interactive Analysis of Web-Scale Datasets</title>
       <link>https://nryotaro.dev/posts/dremel/</link>

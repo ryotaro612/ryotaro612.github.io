@@ -46,6 +46,15 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/designing_access_methods/">論文メモ Designing Access Methods: The RUM Conjecture</a></h3>
+        <div class="summary"><p>データ構造は読み込み(Read, R), 更新(Update, U), 所要メモリ容量(Memory, M)にトリレンマを抱え、いかなるデータ構造でも、2つを最適化すると残る1つのオーバヘッドが悪化すると予想した。
+Read, Update, Memoryの頭文字から、これをRUM Conjectureと名付けた。</p></div>
+        <div class="article-footer">
+            <span class="date">April 26, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/a_comparision_of_fractal_trees_to_lsm_trees/">論文メモ A comparison of Fractal Trees to Log-Structured Merge (LSM) Trees</a></h3>
         <div class="summary"><p>Fractal Treeは、B+木のルートと節にバッファをもたせるデータ構造にあたる。
 そのFractal TreeのamplificationをB+木やLSM Treeのそれと比較した。
@@ -140,15 +149,6 @@ RRCTは、特徴の値でデータを2分するノードからなる木の集合
 偽陰性の誤りはない。</p></div>
         <div class="article-footer">
             <span class="date">February 20, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/tree_index_on_solid_state_drives/">論文メモ Tree Indexing on Solid State Drives</a></h3>
-        <div class="summary"><p>SSDのランダムな書き込みを高速化するために、インデックスのためのデータ構造FD-treeを提案した。
-FD-treeのエントリ数が\(n\), ページサイズが\(B\)であれば、ランダムな読み込みと書き込みの計算量はともに\(\mathcal{O}(\log_B(n))\)になる。</p></div>
-        <div class="article-footer">
-            <span class="date">February 15, 2021</span>
         </div>
     </article>
     
