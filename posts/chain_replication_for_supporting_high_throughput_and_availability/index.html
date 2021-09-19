@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-64L0YEFRY5"></script>
+    <script>
+        if (location.hostname != 'localhost') {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-64L0YEFRY5');
+        }
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Coda</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Chain Replication for Supporting High Throughput and Availability</h1>
+    <span class="date">September 18, 2021</span>
+    <div>
+        <p>ストレージサーバーに順番をつけ、順にオブジェクトを複製することで、ストレージサービスの一貫性を維持しつつスループットと可用性の向上をはかる。
+ここでのストレージサービスは、オブジェクトを保存し、クエリに対して一つのオブジェクトを返し、アトミックに一つのオブジェクトを更新できるものをさす。
+また、一貫性は、オブジェクトごとにクエリと更新を直列的に適用し、更新につづくクエリが更新内容結果になることを意味する。
+末尾のサーバーがクエリを受信し、該当するオブジェクトをクライアントに返す。
+先頭のサーバーが更新リクエストを受信し、順にサーバーのオブジェクトを更新し、末尾のサーバーが更新の結果をクライアントに返す。</p>
+<p>サーバーはfail stopであり、異常があれば処理を継続せずに停止し、サーバーの停止を外から検知できると仮定する。
+とまったサーバーを放置すると、後続のサーバにオブジェクトの複製がわたらなくなる。
+そこで、masterサーバーをおき、ストレージサーバーの停止を検知し、停止したサーバーを除外し、新しく隣接するサーバーを通知し、クライアントに先頭と末尾のサーバーを伝える役割をもたせる。
+masterはPaxosなどの分散含意アルゴリズムによって停止しないと仮定する。</p>
+<p>停止したサーバーが先頭であれば、2番目のサーバーを新しく先頭にする。
+このとき、先頭のサーバーが2番目のサーバーに渡していないリクエストを破棄する。
+クライアントからみえれば、サーバの停止とリクエストがサーバに届かなかった場合の区別がつかない。</p>
+<p>末尾のサーバーが停止した場合、一つ前のサーバーを新しい末尾にする。
+更新は先頭から末尾の順に反映されるので、末尾のサーバーが停止したことでクライアントに応答可能な更新リクエストの数がふえる。</p>
+<p>中間のサーバーが停止した場合、そのサーバーの前後のサーバーをつなげて新しい順序をつくる。
+masterは後ろのサーバーに新しい順序を伝えたあとに、前のサーバーに順序を伝える。
+このとき、停止したサーバーが後ろのサーバーに送っていない更新リクエストを前のサーバが再送する必要がある。
+そのために、後続のサーバーに送った更新リクエストのうち末尾で処理されていない可能性のあるリクエストのリストを各サーバーに管理させる。
+末尾のサーバーは更新処理を実行したら末尾の1つ前のサーバーにackメッセージを送り、サーバーはリストからその更新を削除し、前のサーバーにackを伝える。
+停止したサーバーの前のサーバーは後のサーバーにこのリストにある更新リクエストを送ることで、停止したサーバーが送りそこねた更新リクエストを伝える。</p>
+<p>サーバーを追加するときは、新しいサーバーを末尾に追加する。
+新しいサーバーが末尾になるので、末尾で処理していない更新リクエストのリストを空リストで初期化できる。
+オブジェクトは、現在の末尾のサーバーから複製する。
+末尾のサーバーになる準備ができたら、現在の末尾のサーバーはクエリを破棄し、リストの更新リクエストを新しい末尾に送る。
+masterは、新しい末尾サーバーの通知を受け、クライアントは新しい末尾サーバにクエリを送りはじめる。</p>
+<p>論文を<a href="https://www.cs.cornell.edu/home/rvr/papers/OSDI04.pdf">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/implementing_remote_procedure_calls/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
