@@ -46,26 +46,25 @@
     <h1>Linearizability: A Correctness Condition for Concurrent Objects</h1>
     <span class="date">July 17, 2021</span>
     <div>
-        <p>オブジェクトを読み書きする並行プロセスの実行系列があるとき、操作がアトミックであるように観測でき、かつ、プロセスの実行を仮に直列化したときと同じ実行結果をえられる条件を示し、これを線形化可能性と呼んだ。
+        <p>オブジェクトを読み書きする並行プロセスの実行系列があるとき、読み書き操作がアトミックであるように観測でき、かつ、プロセスの実行を仮に直列化したときと同じ実行結果をえられる条件を示し、これを線形化可能性とよんだ。
 線形化可能性は、直列化可能性と同様に安全性の条件だが、直列化可能性にはないローカル性がある。
-つまり、各オブジェクトが線形化可能かつそのとき限り、システム全体が線形化可能になる。
-また、ローカル性だけでなく、ノンブロッキング性もあり、受信したリクエストの操作を保留しているオブジェクトは別オブジェクトの保留した操作の完了を待たずに自分の操作を実行できる。
-ただし、そのためには、オブジェクトの任意の状態における操作の振る舞いが定義されていなければならない。</p>
+いいかえると、各オブジェクトが線形化可能かつそのとき限り、システム全体が線形化可能になる。
+また、ローカル性だけでなく、ノンブロッキング性もあり、操作がオブジェクトの任意の状態において定義されていれば、受信したリクエストの操作を保留しているオブジェクトは別オブジェクトの保留した操作の完了を待たずに自分の操作を進行できる。</p>
 <p>線形化可能性で発生しないことを保証できる実行系列を例示する。
 下図の2つの実行系列は、並行プロセスA, B, Cがあり、オブジェクトに0か1を書き込み(W), 読み込み(R)をする。
-直線は、操作の呼び出しから応答までの期間を表す。
+直線は、操作の呼び出しから応答までの期間であり、直線上のある点で操作がおきる。
 (a)は、Aが1を読み取ったので、Bは、Aの書き込み後、Aの読み取り前に1を書き込んだという順序に整理できる。
 一方、(b)は、R(1) AをみるとW(1) Bが先行するように解釈できるが、W(0) CとR(1) とをみると、その中間にあるように解釈しなければならない。
 線形化可能性は、このような直列化された実行系列ではみなれない事態が起きない条件を提供する。
 <img src="/linearizability/fig2.png" alt="fig2"></p>
-<p>線形化可能性の定義に必要な用語を定義する。
+<p>線形化可能性の定義に必要な用語を整理する。
 システム全体の実行をhistoryとよぶ。
 historyは、操作のinvocationとresponseの2種類のイベントの有限な系列からなる。
 invocationを、オブジェクト\(x\), 操作名と引数\(\textit{op}(\textit{args*})\), プロセスAの組で\(&lt;x,\textit{op}(\textit{args}^*)A&gt;\)と書く。
 responseを、終了条件を\(\textit{term}\)、結果を\(res*\)として、\(&lt;x, \textit{term}(\textit{res*})A)&gt;\)と書く。
 responseに、オブジェクトとプロセスが同じinvocationがあるとき、responseはそのinvocationとmatchする。
 Hをhistoryとして、complete(H)は、invocationとmatchするresponseからなるHの最大の部分系列をあらわす。
-このとき以下の2つが成り立てば、Hはsequentialであるといい、成り立たなければconcurrentである。</p>
+このとき以下の2つがなりたてば、Hはsequentialであるといい、それ以外ではconcurrentである。</p>
 <ul>
 <li>Hの最初のイベントがinvocationである。</li>
 <li>各invocationの直後のイベントはmatchするresponseである。ただし、最後のinvocationにmatchするresponseがなければ、そのinvocationの直後のイベントは問わない。</li>
@@ -73,7 +72,7 @@ Hをhistoryとして、complete(H)は、invocationとmatchするresponseから�
 <p>H中の、プロセスPやオブジェクトxだけについての系列を、\(H\mid P\), \(H\mid x\)と書く。
 あるH, H&rsquo;があり、全プロセスPについて\(H\mid P = H'\mid P\)であれば、HとH&rsquo;は等価である。
 また、各Pについて\(H\mid P\)がsequentialであれば、Hはwell-formedである。</p>
-<p>Historyの集合Sがあり、HがSの要素であるときHのprefixもSの要素であれば、Sはprefix-closedであるという。
+<p>Historyの集合Sがあり、HがSの要素であるときHのprefixもSの要素であれば、Sはprefix-closedである。
 あるオブジェクトのsequential historyだけからなるprefix-closed集合をオブジェクトのsequential specificationという。
 各\(H\mid x\)がsequential specificationの要素であるとき、Hはsequentialかつlegalである。</p>
 <!-- raw HTML omitted -->
