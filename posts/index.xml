@@ -6,7 +6,17 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 18 Sep 2021 15:34:12 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Sep 2021 13:09:34 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Parallel Database Systems: The Future of High Performance Database Systems</title>
+      <link>https://nryotaro.dev/posts/parallel_database_systems/</link>
+      <pubDate>Sat, 25 Sep 2021 13:09:34 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/parallel_database_systems/</guid>
+      <description>&lt;p&gt;データベースの処理性能を上げる手段として、特殊なハードウェアをもちいたり、メモリやディスクを共有した複数のコンピュータを使ったりするよりも、安価で単純に実装できることから、汎用的なコンピュータによる水平パーティションのシェアードナッシング構成を支持した。
+論文が発表された1992年の時点でTeradataやTandem NonStopなどのパーティンション化されたデータベースがある。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Chain Replication for Supporting High Throughput and Availability</title>
       <link>https://nryotaro.dev/posts/chain_replication_for_supporting_high_throughput_and_availability/</link>
