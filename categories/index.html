@@ -46,6 +46,16 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/the_notion_of_consistency_and_predicate_locks_in_a_database_system/">The Notion of Consistency and Predicate Locks in a Database System</a></h3>
+        <div class="summary"><p>トランザクションを並行実行するときに、直列実行した場合と同じ実行結果をえるには、各トランザクションがロックを解放後に新しいロックを獲得してはならないことを示した。
+その場合もデッドロックがおきうるが、それは並列実行を終了するためにはいつロックをかければよいかという議論である。
+ここでは、並列実行が終了した場合に直列実行と同じ結果になる一貫性を保証できるロックの順序を問う。</p></div>
+        <div class="article-footer">
+            <span class="date">October 2, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/parallel_database_systems/">Parallel Database Systems: The Future of High Performance Database Systems</a></h3>
         <div class="summary"><p>データベースの処理性能を上げる手段として、特殊なハードウェアをもちいたり、メモリやディスクを共有した複数のコンピュータを使ったりするよりも、安価で単純に実装できることから、汎用的なコンピュータによる水平パーティションのシェアードナッシング構成を支持した。
 論文が発表された1992年の時点でTeradataやTandem NonStopなどのパーティンション化されたデータベースがある。</p></div>
@@ -143,18 +153,6 @@ UIS-Hunterは、FigmaやAndroid Studio Layout Editorなどのモックアップ�
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/a_case_study_of_onboarding_in_software_teams/">A Case Study of Onboarding in Software Teams: Tasks and Strategies</a></h3>
-        <div class="summary"><p>オンボーディングのためのタスクの選び方とタスクの効果を調査するために、マイクロソフトのエンジニアとマネージャーにインタビューした。
-まず、新しいチームに入った32人のエンジニアとエンジニアを迎えた15人のマネージャーにインタビューし、特に、チームのことを知る、担当する役割を果たせる自信の醸成、メンバーとの交流の3つを重視し、これらに対するタスクの影響を調査した。
-タスクの選び方は、大きく、割り当てるタスクを少しずつ複雑にする、優先度の高いものを選ぶ、曖昧なタスクを選ぶ、の3つがあった。
-オンボーディングするエンジニアがジュニアであれば最初の選び方、シニアであれば最後の選び方、アジャイルを採用するチーム、新しいチーム、納期の厳しいチームは優先度でタスクが選ばれやすく、効果的であった。
-以上の考察を189名のエンジニアと37名のマネージャに評価してもらい、妥当性を確認した。</p></div>
-        <div class="article-footer">
-            <span class="date">August 14, 2021</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -166,7 +164,7 @@ UIS-Hunterは、FigmaやAndroid Studio Layout Editorなどのモックアップ�
         <a href="/categories/page/2/"><span class="material-icons">chevron_right</span></a>
     </li>
     <li>
-        <a href="/categories/page/18/"><span class="material-icons">last_page</span></a>
+        <a href="/categories/page/19/"><span class="material-icons">last_page</span></a>
     </li>
     
 </ul>

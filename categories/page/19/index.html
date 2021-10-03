@@ -20,14 +20,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/base.css">
     
-<link rel="stylesheet" href="/css/single.css">
-<link rel="stylesheet" href="/css/posts/single.css">
-<link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/articles.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>The Browsemaps: Collaborative Filtering at LinkedIn</title>
+    <title>Categories</title>
 </head>
 
 <body>
@@ -43,37 +41,35 @@
     </header>
     
 <main>
-    <h1>The Browsemaps: Collaborative Filtering at LinkedIn</h1>
-    <span class="date">July 22, 2021</span>
-    <div>
-        <p>Browsemapsは、LinkedInのアイテムベースで水平型の協調フィルタリングである。
-Browsemapは、LinkedInの画面上にある推薦するコンテンツを並べたコンポーネントを意味する。
-ここでの水平型は特徴の種類の違いによらず異なるエンティティを統一的に扱えることであり、実際に、人、仕事、会社など複数のエンティティをBrowsemapsでユーザに推薦している。</p>
-<p>Browsemapsは、協調フィルタリングの計算を非同期に実行し、結果をKVSに保存する。
-フロントエンドは、ユーザのリクエストに応じて、API経由でKVSに推薦内容をといあわせる。
-アーキテクチャ以下の図のとおりで、協調フィルタリングの計算にはHadoopをつかう。
-アルゴリズムの具体的な解説はなく、論文から知れるのは、<a href="https://www.researchgate.net/publication/200043124_Mining_Association_Rules_Between_Sets_of_Items_in_Large_Databases_SIGMOD_Conference">典型的な手法</a>
-を使い、前回の計算以降に蓄積されたユーザの行動情報をもとにした差分計算で推薦結果を更新することぐらいだった。
-<img src="/browsemaps.png" alt="browsemaps"></p>
-<p>論文を<a href="http://ceur-ws.org/Vol-1271/Paper3.pdf">こちら</a>からダウンロードできます。
-画像は論文から引用しました。</p>
-    </div>
+    <h1>Posts</h1>
+
+    
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/text_cls_from_lbl_and_unlbl_doc_em/">概要 Text Classification from Labeled and Unlabeled Documents using EM</a></h3>
+        <div class="summary"><h3 id="アルゴリズム">アルゴリズム</h3>
+<p>提案手法は、Naive BayesとEMアルゴリズムを組み合わせたもの。
+ラベル付きデータが\(D^l\)でラベルなしデータが\(D^u\)で表されるとき、対数尤度\(\log P(D^l)P(D^u)\)を最大化する問題を解く。</p></div>
+        <div class="article-footer">
+            <span class="date">July 8, 2018</span>
+        </div>
+    </article>
+    
 </main>
 
     
+
 <ul class="pagination">
     
     <li>
-        <a href="/posts/linearizability/"><span class="material-icons">chevron_left</span></a>
+        <a href="/categories/"><span class="material-icons">first_page</span></a>
     </li>
-    
-    
     <li>
-        <a href="/posts/the_byzantine_generals_problem/"><span class="material-icons">chevron_right</span></a>
+        <a href="/categories/page/18/"><span class="material-icons">chevron_left</span></a>
     </li>
+    
     
 </ul>
-
 
     <footer>
         <ul>

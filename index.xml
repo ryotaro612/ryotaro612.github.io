@@ -6,7 +6,18 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 25 Sep 2021 13:09:34 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Oct 2021 16:24:31 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Notion of Consistency and Predicate Locks in a Database System</title>
+      <link>https://nryotaro.dev/posts/the_notion_of_consistency_and_predicate_locks_in_a_database_system/</link>
+      <pubDate>Sat, 02 Oct 2021 16:24:31 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/the_notion_of_consistency_and_predicate_locks_in_a_database_system/</guid>
+      <description>&lt;p&gt;トランザクションを並行実行するときに、直列実行した場合と同じ実行結果をえるには、各トランザクションがロックを解放後に新しいロックを獲得してはならないことを示した。
+その場合もデッドロックがおきうるが、それは並列実行を終了するためにはいつロックをかければよいかという議論である。
+ここでは、並列実行が終了した場合に直列実行と同じ結果になる一貫性を保証できるロックの順序を問う。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Parallel Database Systems: The Future of High Performance Database Systems</title>
       <link>https://nryotaro.dev/posts/parallel_database_systems/</link>
@@ -230,8 +241,8 @@ Lambda architectureは、システムの複雑化を許容し、2つのアーキ
       
       <guid>https://nryotaro.dev/posts/browsemaps/</guid>
       <description>&lt;p&gt;Browsemapsは、LinkedInのアイテムベースで水平型の協調フィルタリングである。
-Browsemapは、LinkedInの画面上にある推薦するコンテンツを並べたコンポーネントをさす。
-Browsemapsにおける水平型は特徴の種類の違いによらず異なるエンティティを統一的に扱えることであり、実際に、人、仕事、会社など複数のエンティティをBrowsemapsでユーザに推薦している。&lt;/p&gt;</description>
+Browsemapは、LinkedInの画面上にある推薦するコンテンツを並べたコンポーネントを意味する。
+ここでの水平型は特徴の種類の違いによらず異なるエンティティを統一的に扱えることであり、実際に、人、仕事、会社など複数のエンティティをBrowsemapsでユーザに推薦している。&lt;/p&gt;</description>
     </item>
     
     <item>
