@@ -6,7 +6,18 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 02 Oct 2021 16:24:31 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Oct 2021 12:44:26 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Congestion Avoidance and Control</title>
+      <link>https://nryotaro.dev/posts/congestion_avoidance_and_control/</link>
+      <pubDate>Sat, 09 Oct 2021 12:44:26 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/congestion_avoidance_and_control/</guid>
+      <description>&lt;p&gt;86年の10月に生じたインターネットの輻輳の反省から、4BSDに7つのTCPの輻輳制御のアルゴリズムが導入された。
+うち5つは、送信したパケットが到達や消失でネットワークからなくなるまでウィンドウサイズ以上の新しいパケットを送らない原則を守るためにある。
+この原則をconservation of packets principleという。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>The Notion of Consistency and Predicate Locks in a Database System</title>
       <link>https://nryotaro.dev/posts/the_notion_of_consistency_and_predicate_locks_in_a_database_system/</link>

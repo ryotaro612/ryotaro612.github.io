@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-64L0YEFRY5"></script>
+    <script>
+        if (location.hostname != 'localhost') {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-64L0YEFRY5');
+        }
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Congestion Avoidance and Control</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Congestion Avoidance and Control</h1>
+    <span class="date">October 9, 2021</span>
+    <div>
+        <p>86年の10月に生じたインターネットの輻輳の反省から、4BSDに7つのTCPの輻輳制御のアルゴリズムが導入された。
+うち5つは、送信したパケットが到達や消失でネットワークからなくなるまでウィンドウサイズ以上の新しいパケットを送らない原則を守るためにある。
+この原則をconservation of packets principleという。</p>
+<p>原則が守られない状況の原因は、接続が平衡状態に到達しないか、古いパケットがネットワークから消える前に新しいパケットが流れているか、経路上のリソースが足らずに平衡に到達できないかの3つのいずれかである。
+消失したパケットを再送する接続や最初のパケット送信に問題があるときに、接続が平衡状態に達しないことがある。
+これは、ackが到達した既存のパケットがあることを前提にするため、前提をみたさない初回の接続や再送はackによって原則を守ることができないからである。
+slow-startアルゴリズムは、接続後の最初のパケット送信や再送では輻輳ウィンドウサイズを1パケットに制限し、到達ごとに1パケットずつ受信側の設定した上限の大きさまでウィンドウサイズを大きくしていくことで、これらの接続を制御する。</p>
+<p>TCPプロトコルを正しく実装していれば、送信側の再送するタイミングに問題があるとき、古いパケットの消失前に新しいパケットが送られる。
+正しい再送のタイミングのためには、正確なラウンドトリップタイム(RTT)の予測が欠かせない。
+待ち行列理論によれば、負荷が大きくなるについてRTT(\(R\))のばらつきが急激に大きくなる。
+そこで、RTTの予測値を\(R\)、パラメタを\(\beta\)とする再送のタイムアウト間隔\(\beta R\)に対して、\(\beta\)を定数にせずoverflowのおそれが少なく分散よりも大きな値になる平均偏差を使い、実際の測定結果にもとづくタイムアウト間隔を設定する。
+また、一度再送に失敗したら、以降は間隔を指数関数的に増やして再送する。</p>
+<p>経路上のリソースが不足しているときにタイムアウトがおきるため、タイムアウト時には流すパケットを減らさなければならない。
+タイムアウトがおきたら、輻輳ウィンドウサイズを半分にする。
+ackを受けとれたら、輻輳ウィンドウサイズに現在の輻輳ウィンドウサイズの逆数を加算し、流せるパケットの量を増やす。
+送信するときは、受信側の設定する輻輳ウィンドウで通信する。</p>
+<p>論文を<a href="https://ee.lbl.gov/papers/congavoid.pdf">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/the_notion_of_consistency_and_predicate_locks_in_a_database_system/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
