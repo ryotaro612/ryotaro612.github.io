@@ -210,7 +210,7 @@ Lambda architectureは、システムの複雑化を許容し、2つのアーキ
       <pubDate>Fri, 06 Aug 2021 13:44:03 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/playing_planning_poker_in_crowds/</guid>
-      <description>&lt;p&gt;プランニングポーカーにみられるように、ソフトウェア開発の工数を見積もる手法は、プロジェクトに一定期間在籍する専門家がいることを前提にする。
+      <description>&lt;p&gt;プランニングポーカーのように、ソフトウェア開発の工数を見積もる手法の前提には、プロジェクトに一定期間在籍する専門家がいることがある。
 しかし、OSS開発はその限りではなく、見積りの対象になるイシューの数は多い。
 各イシューの見積りに5分から10分時間をかけるなら、Linux Kernelのバックログを見積りきるのに半年がかかる。&lt;/p&gt;</description>
     </item>
