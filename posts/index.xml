@@ -6,7 +6,23 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 09 Oct 2021 12:44:26 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Oct 2021 15:16:55 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Chubby lock service for loosely-coupled distributed systems</title>
+      <link>https://nryotaro.dev/posts/the_chubby_lock_service_for_loosely_coupled_distributed_systems/</link>
+      <pubDate>Sat, 16 Oct 2021 15:16:55 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/the_chubby_lock_service_for_loosely_coupled_distributed_systems/</guid>
+      <description>&lt;p&gt;Chubbyは、助言ロックをかけられるファイルを作れる低容量のストレージであり、分散システム向けのロックサービスとしてはたらく。
+処理性能よりも高可用性と信頼性を重視し、ロックを保持する期間は数時間から数日にわたる長いものを想定する。
+ロックされたファイルで実行環境の情報を共有でき、例えばリーダーの選出にも使える。
+Chubbyは既存のアルゴリズムを集積であり、表題の論文は、新しいアルゴリズムよりも、Chubbyの設計や想定していた使用方法や実際の使われ方の解説に重点をおく。
+Chubbyはロックサービスとして作られたが、ネームサーバとして最もよく使われる。
+数千規模の互いに依存するプロセスがあり、プロセスが落ちたら新しいプロセスに置き換えるとする。
+このとき、ネームサーバにDNSをつかうと、DNSは時間で失効するキャッシュ方式なので、TTLを短くし、落ちたプロセスにリクエストが届かないようにすると、DNSへの負荷が増える。
+一方、Chubbyのキャッシュは時間ではなくファイルに変更されたときに無効になるので、Chubbyをネームサーバに使うことで、名前解決の負荷を減らすことができる。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Congestion Avoidance and Control</title>
       <link>https://nryotaro.dev/posts/congestion_avoidance_and_control/</link>

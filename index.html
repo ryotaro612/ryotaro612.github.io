@@ -47,6 +47,21 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/the_chubby_lock_service_for_loosely_coupled_distributed_systems/">The Chubby lock service for loosely-coupled distributed systems</a></h3>
+        <div class="summary"><p>Chubbyは、助言ロックをかけられるファイルを作れる低容量のストレージであり、分散システム向けのロックサービスとしてはたらく。
+処理性能よりも高可用性と信頼性を重視し、ロックを保持する期間は数時間から数日にわたる長いものを想定する。
+ロックされたファイルで実行環境の情報を共有でき、例えばリーダーの選出にも使える。
+Chubbyは既存のアルゴリズムを集積であり、表題の論文は、新しいアルゴリズムよりも、Chubbyの設計や想定していた使用方法や実際の使われ方の解説に重点をおく。
+Chubbyはロックサービスとして作られたが、ネームサーバとして最もよく使われる。
+数千規模の互いに依存するプロセスがあり、プロセスが落ちたら新しいプロセスに置き換えるとする。
+このとき、ネームサーバにDNSをつかうと、DNSは時間で失効するキャッシュ方式なので、TTLを短くし、落ちたプロセスにリクエストが届かないようにすると、DNSへの負荷が増える。
+一方、Chubbyのキャッシュは時間ではなくファイルに変更されたときに無効になるので、Chubbyをネームサーバに使うことで、名前解決の負荷を減らすことができる。</p></div>
+        <div class="article-footer">
+            <span class="date">October 16, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/congestion_avoidance_and_control/">Congestion Avoidance and Control</a></h3>
         <div class="summary"><p>86年の10月に生じたインターネットの輻輳の反省から、4BSDに7つのTCPの輻輳制御のアルゴリズムが導入された。
 うち5つは、送信したパケットが到達や消失でネットワークからなくなるまでウィンドウサイズ以上の新しいパケットを送らない原則を守るためにある。
@@ -139,17 +154,6 @@ Dremelは、サーバーのクラスタを木構造に組織し、ルートで�
 実行順序を優先付ける手法で最も性能のよかったテクニックは、<a href="https://www.semanticscholar.org/paper/Static-test-case-prioritization-using-topic-models-Thomas-Hemmati/ad77a2776733c7fdc10c0b043f7504a14fce3b6e">Thomasら</a>のもので、シグネチャやコメントで学習したトピックモデルを使い直前に実行したテストと違うトピックのテストを実行する。</p></div>
         <div class="article-footer">
             <span class="date">August 20, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/dont_do_that/">Don&#39;t Do That! Hunting Down Visual Design Smells in Complex UIs against Design Guidelines</a></h3>
-        <div class="summary"><p>マテリアルデザインの公式ドキュメントから93種類の不吉な匂いを洗い出し、71種類の匂いを検出するツールUIS-Hunterを開発した。
-2020年5月のドキュメントから&quot;don&rsquo;t&quot;や&quot;caution&quot;の単語とUIの例があることを条件に不吉な匂いを選び、9,286個のアンドロイドアプリにある7,497のUIを調べたところ、2,587個のアプリから1つ以上の不吉な匂いのあるUIが見つかった。
-UIS-Hunterは、FigmaやAndroid Studio Layout EditorなどのモックアップやAndroid UI AutomatorやSeleniumのスクリーンショットから不吉な匂いを解析し、UIのソースコードを必要としない。
-9,286個のアプリの60,756のUIで検出性能を評価したところ、precisionが0.81, recallが0.90だった。</p></div>
-        <div class="article-footer">
-            <span class="date">August 14, 2021</span>
         </div>
     </article>
     
