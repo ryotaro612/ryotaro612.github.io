@@ -113,9 +113,9 @@ UIS-Hunterは、FigmaやAndroid Studio Layout Editorなどのモックアップ�
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/dataflow/">The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-Scale, unbounded, Out-of-Order Data Processing</a></h3>
-        <div class="summary"><p>データ処理サービスには、処理の正確さ、遅延、システムの複雑さの間にトレードオフがある。
-ストリーミング処理サービスのStorm, Samza, Pulsarは、(論文が発表された2015年時点では)メッセージは、exactly-onceではなく、欠損または重複しうる。
-MapReduceやSparkなどのバッチ処理サービスは、バッチ処理の単位までデータが集まるのを待たねばならない。
+        <div class="summary"><p>データ処理サービスは、処理の正確さ、遅延、システムの複雑さの間にトレードオフを抱える。
+ストリーミング処理サービスのStorm, Samza, Pulsarは、(論文が発表された2015年時点では)メッセージ配信がexactly-onceではなく欠損や重複する。
+MapReduceやSparkなどのバッチ処理サービスは、バッチ処理の単位までデータが集まらなければバッチ実行できない。
 Lambda architectureは、システムの複雑化を許容し、2つのアーキテクチャを使い分けることで、処理の正確さと遅延のバランスをとる。</p></div>
         <div class="article-footer">
             <span class="date">August 7, 2021</span>
