@@ -46,6 +46,17 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/dryad/">Dryad: Distributed Data-Parallel Programs from Sequential building Blocks</a></h3>
+        <div class="summary"><p>DryadはMicrosoftで開発された分散コンピューティングエンジンであり、MapReduceに近い。
+処理を点、処理結果を受け渡す通信経路を辺とするDAGで、分散処理を定義する。
+通信経路にはファイル、TCP, FIFOを使え、実行環境は1台のマルチコアのコンピュータから数千台のコンピュータまでスケールできる。
+MapReduceは入力と出力が一つでなければならないが、DryadはDAGであれば入力と出力が複数あってもかまわない。</p></div>
+        <div class="article-footer">
+            <span class="date">October 23, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/the_chubby_lock_service_for_loosely_coupled_distributed_systems/">The Chubby lock service for loosely-coupled distributed systems</a></h3>
         <div class="summary"><p>Chubbyは、助言ロックをかけられるファイルを作れる低容量のストレージであり、分散システム向けのロックサービスとしてはたらく。
 処理性能よりも高可用性と信頼性を重視し、ロックを保持する期間は数時間から数日にわたる長いものを想定する。
@@ -141,18 +152,6 @@ Dremelは、サーバーのクラスタを木構造に組織し、ルートで�
 主要な選択肢は、論理アドレスと物理アドレスのマッピング、ページサイズ、オーバープロビジョニング、複数のpackageでcontrollerに接続するピンを共有するgangingがある。</p></div>
         <div class="article-footer">
             <span class="date">August 23, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/what_helped_and_what_did_not/">What helped, and what did not? An Evaluation of the Strategies to Improve Continuous Integration</a></h3>
-        <div class="summary"><p><a href="https://travistorrent.testroots.org/">TravisTorrent</a>にある100件のプロジェクトで10種類のCIのテクニックを定量評価した。
-テクニックは、不要なビルドやテストをスキップするか、実行順序を優先づけるものかに分かれる。
-前者は計算資源の消費を減らすこと、後者は失敗するケースを早めに実行することを目的にする。
-もっとも成功するテストやビルドをスキップできたテクニックは、コードに変更のないケースをスキップするものだったが、同時に失敗するテストを多く見落とした。
-実行順序を優先付ける手法で最も性能のよかったテクニックは、<a href="https://www.semanticscholar.org/paper/Static-test-case-prioritization-using-topic-models-Thomas-Hemmati/ad77a2776733c7fdc10c0b043f7504a14fce3b6e">Thomasら</a>のもので、シグネチャやコメントで学習したトピックモデルを使い直前に実行したテストと違うトピックのテストを実行する。</p></div>
-        <div class="article-footer">
-            <span class="date">August 20, 2021</span>
         </div>
     </article>
     
