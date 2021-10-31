@@ -6,7 +6,19 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 23 Oct 2021 19:03:45 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 Oct 2021 16:13:08 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Many Faces of Publish/Subscribe</title>
+      <link>https://nryotaro.dev/posts/the_many_faces_of_publish_subscribe/</link>
+      <pubDate>Sat, 30 Oct 2021 16:13:08 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/the_many_faces_of_publish_subscribe/</guid>
+      <description>&lt;p&gt;分散システムの通信をpublish/subscribeモデルにするとシステム間の結合を疎にできる。
+タイトルと同名の2003年に発表された論文は、publish/subscribeのサーベイであり、publish/subscribeモデルを空間、時間、同期の3種の結合度を下げる技術ととらえ、ほかの通信技術と比較する。
+次に、先行研究のpublish/subscribeモデルを、購読するイベントの宣言手段によって、topic-based, content-based, type-basedに分類する。
+最後に、メッセージブローカを使うかどうかなどpublish/subscribeモデルの設計や実装の利点や欠点を整理する。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Dryad: Distributed Data-Parallel Programs from Sequential building Blocks</title>
       <link>https://nryotaro.dev/posts/dryad/</link>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-64L0YEFRY5"></script>
+    <script>
+        if (location.hostname != 'localhost') {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-64L0YEFRY5');
+        }
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>The Many Faces of Publish/Subscribe</title>
+</head>
+
+<body>
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>The Many Faces of Publish/Subscribe</h1>
+    <span class="date">October 30, 2021</span>
+    <div>
+        <p>分散システムの通信をpublish/subscribeモデルにするとシステム間の結合を疎にできる。
+タイトルと同名の2003年に発表された論文は、publish/subscribeのサーベイであり、publish/subscribeモデルを空間、時間、同期の3種の結合度を下げる技術ととらえ、ほかの通信技術と比較する。
+次に、先行研究のpublish/subscribeモデルを、購読するイベントの宣言手段によって、topic-based, content-based, type-basedに分類する。
+最後に、メッセージブローカを使うかどうかなどpublish/subscribeモデルの設計や実装の利点や欠点を整理する。</p>
+<p>Publish/subsribeモデルにおける空間の粗結合とは、publisherとsubscriberが互いを直接参照することがなく、対向のpublisherやsubscriberの数を知らなくてよいことを意味する。
+時間については、publisherとsubscriberが同時刻に通信可能でなくてもよいことであり、publisherはsubscriberが通信できなくてもイベントを発信でき、他方、subscriberはpublisherが不在になってもイベントを受信できる。
+また、publisherは同期なしにイベントを並行して送信でき、subscriberは受信処理のコールバックを並行してよびだせる。</p>
+<p>Subscirberがpublisherから発信される特定のイベントのみを受信したいとき、受信すべきイベントを定義する仕組みが必要になる。
+古典的な手法であるtopic-basedは、イベントをtopicというグループに分け、文字列であるキーワードでtopicを指定することで、subscriberが望むイベントだけを購読できるようにする。
+手法によっては、topicで階層構造を表現し、topicの包含関係を定義できるものもある。
+topic-basedではイベントが内容だけでなく構造にもとづいてイベントをグループ化される傾向あり、イベントの型で購読する対象を定義する設計が発展した。
+これがtype-basedに分類される。
+Content-basedは、論理演算子や比較演算子でイベントの内容に対する述語で購読するイベントを選ぶ。</p>
+<p>論文を<a href="https://www.cs.ru.nl/~pieter/oss/manyfaces.pdf">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/dryad/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

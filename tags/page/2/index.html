@@ -46,6 +46,15 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/design_tradeoffs_for_ssd_performance/">Design Tradeoffs for SSD Performance</a></h3>
+        <div class="summary"><p>HDDの処理性能を測るためのシミュレーションソフト<a href="https://www.pdl.cmu.edu/DiskSim/index.shtml">DiskSim</a>をSSD向けに改造し、SSDの設計における選択肢の分類と選択にともなうトレードオフを報告する。
+主要な選択肢は、論理アドレスと物理アドレスのマッピング、ページサイズ、オーバープロビジョニング、複数のpackageでcontrollerに接続するピンを共有するgangingがある。</p></div>
+        <div class="article-footer">
+            <span class="date">August 23, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/what_helped_and_what_did_not/">What helped, and what did not? An Evaluation of the Strategies to Improve Continuous Integration</a></h3>
         <div class="summary"><p><a href="https://travistorrent.testroots.org/">TravisTorrent</a>にある100件のプロジェクトで10種類のCIのテクニックを定量評価した。
 テクニックは、不要なビルドやテストをスキップするか、実行順序を優先づけるものかに分かれる。
@@ -140,17 +149,6 @@ Lambda architectureは、システムの複雑化を許容し、2つのアーキ
 各イシューの見積りに5分から10分時間をかけるなら、Linux Kernelのバックログを見積りきるのに半年がかかる。</p></div>
         <div class="article-footer">
             <span class="date">August 6, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/the_byzantine_generals_problem/">The Byzantine Generals Problem</a></h3>
-        <div class="summary"><p>ビザンチン将軍問題は、故障したコンポーネントがほかのコンポーネントに誤ったメッセージを送りうるとき、コンポーネント間でメッセージを交換した結果、すべてのコンポーネントが一つの正しいメッセージを合意する問題をあつかう。
-アルゴリズムは、署名付きメッセージを使うものと使わないものの2つがある。
-署名付きメッセージを使うと、受信したメッセージが改ざんされたかをコンポーネントが判断できる。
-署名を使わない場合、3分の2より多くのコンポーネントが正常でなければシステム全体が正しい1つのメッセージについて合意にできないことを示した。</p></div>
-        <div class="article-footer">
-            <span class="date">July 31, 2021</span>
         </div>
     </article>
     
