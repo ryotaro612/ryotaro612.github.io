@@ -3,13 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://nryotaro.dev/posts/</loc>
+    <loc>https://nryotaro.dev/</loc>
     <lastmod>2021-10-30T16:13:08+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://nryotaro.dev/</loc>
+    <loc>https://nryotaro.dev/posts/</loc>
     <lastmod>2021-10-30T16:13:08+09:00</lastmod>
   </url>
   
