@@ -47,6 +47,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/is_rust_used_safely_by_software_developers/">Is Rust Used Safely by Software Developers?</a></h3>
+        <div class="summary"><p><a href="https://crates.io/">crates.io</a>に登録された15,097個のクレートにおける<code>unsafe</code>キーワードの使用状況を調べた。
+調査したクレートは、調査を開始した2018年9月時点で<a href="https://crates.io/">crates.io</a>に登録された全クレートの81%にあたる。
+<code>unsafe</code>を含むクレートは、そのうちの29%だったが、依存するクレートにある<code>unsafe</code>も対象にすると、50%におよぶ。
+<a href="https://crates.io/">crates.io</a>の総ダウンロード数のうち90%を占める473個の有名なクレートに限定すると、60%のクレート<code>unsafe</code>が含まれる。
+2018年9月から2019年6月までの10ヶ月間で<code>unsafe</code>の使用傾向に変化はなく、<code>unsafe</code>の数が少し増えただけであった。
+<code>unsafe</code>の用途の大半は<code>unsafe</code>で修飾されたRustの関数を呼び出すためだった。
+なお、コンパイラで生成された<code>unsafe</code>キーワードは集計に含まれていない。</p></div>
+        <div class="article-footer">
+            <span class="date">August 27, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/design_tradeoffs_for_ssd_performance/">Design Tradeoffs for SSD Performance</a></h3>
         <div class="summary"><p>HDDの処理性能を測るためのシミュレーションソフト<a href="https://www.pdl.cmu.edu/DiskSim/index.shtml">DiskSim</a>をSSD向けに改造し、SSDの設計における選択肢の分類と選択にともなうトレードオフを報告する。
 主要な選択肢は、論理アドレスと物理アドレスのマッピング、ページサイズ、オーバープロビジョニング、複数のpackageでcontrollerに接続するピンを共有するgangingがある。</p></div>
@@ -140,16 +154,6 @@ MapReduceやSparkなどのバッチ処理サービスは、バッチ処理の単
 Lambda architectureは、システムの複雑化を許容し、2つのアーキテクチャを使い分けることで、処理の正確さと遅延のバランスをとる。</p></div>
         <div class="article-footer">
             <span class="date">August 7, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/playing_planning_poker_in_crowds/">Playing Planning Poker in Crowds: Human Computation of Software Effort Estimates</a></h3>
-        <div class="summary"><p>プランニングポーカーのように、ソフトウェア開発の工数を見積もる手法の前提には、プロジェクトに一定期間在籍する専門家がいることがある。
-しかし、OSS開発はその限りではなく、見積りの対象になるイシューの数は多い。
-各イシューの見積りに5分から10分時間をかけるなら、Linux Kernelのバックログを見積りきるのに半年がかかる。</p></div>
-        <div class="article-footer">
-            <span class="date">August 6, 2021</span>
         </div>
     </article>
     

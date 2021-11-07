@@ -6,7 +6,20 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 30 Oct 2021 16:13:08 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Nov 2021 18:41:01 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Managing Update Conflicts in Bayou, a Weakly Connected Replicated Storage System</title>
+      <link>https://nryotaro.dev/posts/bayou/</link>
+      <pubDate>Sat, 06 Nov 2021 18:41:01 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/bayou/</guid>
+      <description>&lt;p&gt;Bayouは、モバイルコンピューティングむけに95年に発表されたストレージで、弱い一貫性とレプリケーションがある。
+発表当時の不安定なモバイルネットワーク環境でもクライアントがストレージにアクセスできるように、一貫性を犠牲にしてクライアントにどんなレプリケーションへの読み書きも認める。
+Bayouは、アプリケーションの知識を借りてデータの整合性を復元するアプローチを開拓したストレージとして知られ、書き込み時に開発者が実装した不整合を検知する処理を実行する。
+不整合を検知したら、同じく開発者によって実装された不整合を解消する処理を実行する。
+ただし、書き込みのログをほかのレプリケーションに伝搬することでデータを同期するため、どんなレプリケーションでも不整合の検知と解消の処理が同一の結果になるように、これらの処理は決定的でなければならない。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>The Many Faces of Publish/Subscribe</title>
       <link>https://nryotaro.dev/posts/the_many_faces_of_publish_subscribe/</link>
