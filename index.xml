@@ -153,6 +153,18 @@ Dremelは、サーバーのクラスタを木構造に組織し、ルートで�
     </item>
     
     <item>
+      <title>The UNIX Time-Sharing System</title>
+      <link>https://nryotaro.dev/posts/the_unix_time_sharing_system/</link>
+      <pubDate>Sat, 21 Aug 2021 13:11:06 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/the_unix_time_sharing_system/</guid>
+      <description>&lt;p&gt;デニス・リッチーとケン・トンプソンによるPDP-11/40, /45, /70で採用されたUnixのファイルシステムとコマンドラインインターフェースの解説である。
+PDP-11は1971年2月から運用がはじまり、当初はアセンブリ言語で実装されていたが、1973年の夏にCで再実装された。
+ファイルシステムは、UNIXの最も重要な役割に位置づけられ、特殊ファイルによるI/Oデバイスの抽象化、外部ディスクのマウント、ファイルの権限、i-nodeをふくむ多くの特徴が今日まで引き継がれている。
+2人は、UNIXの設計に影響したものとして、プログラマとして対話的なインターフェースを望んでいたこと、ハードウェアの低い性能ゆえにソフトウェアの設計を洗練させる必要があったこと、ソースコードをUNIX上で編集し簡単にプログラムを変更できたことをあげている。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>What helped, and what did not? An Evaluation of the Strategies to Improve Continuous Integration</title>
       <link>https://nryotaro.dev/posts/what_helped_and_what_did_not/</link>
       <pubDate>Fri, 20 Aug 2021 17:58:08 +0900</pubDate>
