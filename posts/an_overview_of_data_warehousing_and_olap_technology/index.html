@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>An Overview of Data Warehousing and OLAP Technology</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>An Overview of Data Warehousing and OLAP Technology</h1>
+    <span class="date">November 6, 2021</span>
+    <div>
+        <p>データウェアハウスの概要と発表時期の97年の関連技術を解説した論文で、
+データウェアハウスの理論を提唱したInmonにならい、データウェアハウスを目的指向(subject-oriented)で、統合され、時刻を横断する組織の意思決定に資する永続的なデータとらえている。
+関連技術を、ETL処理、データ保存方法、保存したデータによる分析の3つに分けて整理する。
+データベースの設計手法では、Kimballの提唱したスタースキーマ、その応用のスノーフレークスキーマ, 事実の星座(fact constellations)、インデックスについてビットマップインデックスを解説する。</p>
+<p>ある事実のデータをほかの事実のデータと比べるとき、比べたい事実のデータは一つであっても比べるデータの選び方は複数ある。同じ地域の売上を月別で比較することもできれば、同月の異なる地域での売上を比較することもできる。
+データウェアハウスのデータモデリングでは、この分析の軸が複数あることを多次元とよぶ。
+スタースキーマは、事実のデータを格納する一つのテーブルが分析の複数の次元をあつかうテーブルの外部キーをもつ構造であり、中心にある事実のテーブルを周辺の分析のテーブルが参照する様子を星に見立てている。
+スタースキーマを以下に例示する。
+<img src="/dwh/star.png" alt="star"></p>
+<p>スノーフレークスキーマは、次元のテーブルを正規化によって階層化したもので、雪の結晶にみえることから名がつけられた。
+上のスタースキーマをスノーフレークに発展すると次のような図になる。
+<img src="/dwh/snowflake.png" alt="snowflake">
+事実の星座は、複数の事実のテーブルが同じ次元のテーブルを参照するものである。</p>
+<p>データウェアハウスでは、高速に直和や直積を計算できるビットマップインデックスが使われる。
+ビットマップインデックスでは、クエリで指定された値をもつレコードのIDのリストのかわりに、レコード数xカーディナリティのビットマップの行列をつかう。
+値のカーディナリティが少ない場合に効果を発揮する。</p>
+<p>論文を<a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/sigrecord.pdf">こちら</a>からダウンロードできます。
+画像は論文から引用されています。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/bayou/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
