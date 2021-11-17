@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Program Comprehension and Code Complexity Metrics: An fMRI Study</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Program Comprehension and Code Complexity Metrics: An fMRI Study</h1>
+    <span class="date">August 21, 2021</span>
+    <div>
+        <p>コードの複雑さのメトリクスがコードを理解する難しさの指標になるかは疑問視されてきた。
+19人の被験者に16個のソースコードを読ませ、関数の返り値を回答してもらい、作業中の脳の状態をfMRIで観察することで、メトリクスと回答時間、正答率、脳の活性状態の相関関係を調べた。
+メトリクスと主観的な評価を比較するために、回答後に被験者にコードの複雑さを評価してもらった。
+調べたメトリクスは、41種類あり、コードの行数(LOC), 語彙の多さ(Halstead), とりえる実行パスの数(McCabe), 依存するデータの数(DepDegree)の4種類に大別できる。
+相関関係をケンドールの順位相関係数\(\tau\)で評価し、相関なし(\(\tau &lt;0.1\)), 弱い(\(0.1 &lt; \tau &lt; 0.3\)), 中(\(0.3 &lt; \tau &lt;0.5\)), 強い(\(0.5&lt;\tau\))とみなす。</p>
+<p>回答と脳の活性状態と相関関係にあったメトリクスはDepDegreeだったが、被験者の主観的な評価のほうが強い相関がみられた。
+LOC, Halstead, DepDeegreeは回答時間や正答率と弱い〜中程度の相関があった。
+この3つのメトリクスは脳の活性度合いと弱から中の相関があり、活性度合いと正答率には強い相関、回答時間には弱から中の相関があった。
+一方、主観的な評価は、メトリクスと弱い相関があり、問題の正答率や脳の活性状態と強い相関関係があった。</p>
+<p>論文を<a href="https://www.se.cs.uni-saarland.de/publications/docs/PAP+21.pdf">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/the_unix_time_sharing_system/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/design_tradeoffs_for_ssd_performance/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
