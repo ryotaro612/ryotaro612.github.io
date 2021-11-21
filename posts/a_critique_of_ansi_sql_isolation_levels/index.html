@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>A Critique of ANSI SQL Isolation Levels</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>A Critique of ANSI SQL Isolation Levels</h1>
+    <span class="date">November 13, 2021</span>
+    <div>
+        <p>ANSI SQL-92規格は、トランザクション分離レベルを、Dirty Read, Non-Repeatable Reads, Phantomが発生する可能性で定義する。
+トランザクション分離レベルを禁止する現象で定義する理由は、ロックなどの実装手段で定義すると規格が実装に依存するからだと考えられている。
+表題の論文は、規格の現象による定義があいまいであり、3つの異常が起きなくても望まない結果になる実行があることを例示した。
+また、規格のトランザクション分離レベルが、商用データベースで採用されているトランザクション分離レベルにあてはまらない問題もある。
+禁止する現象にDirty Writeをくわえ、厳しく実行列を禁止するように現象の定義を解釈した上で自然言語から形式的な記述に変えることを提唱した。
+さらに、規格がデータの版が単一であることを前提としていることを指摘した上で、多版型のトランザクションであるSnaphot Isolationを提案した。</p>
+<p>規格は、Dirty Read, Fuzzy Read, Phantomの生じる可能性で4つのトランザクション分離レベルを定義する。
+問題の現象とトランザクション分離レベルの関係を以下に図示する。
+Dirty Readは、トランザクションT1がデータを編集し、T1のコミットかロールバック前にT2がデータを読む。
+このとき、T1がロールバックしたらT2は未来から見ると存在しないデータを読んだようにみえる。
+Fuzzy Readだと、T1がデータを読み、T2がデータを変更か削除すると、T1が再びデータを読んだときに前の読み込みと同じ結果にならない。
+Phantomでは、T1が条件を満たすデータを読んだ後にT2が条件を満たすデータを追加するとT1が同じ条件で読み込んだときに追加されたデータも読み込んでしまう。
+<img src="/critique/ansi.png" alt="ansi"></p>
+<p>規格のDirty Read, Fuzzy Read, Phantomは自然言語で定義されており、解釈の余地がある。
+たとえば、これらの3つの現象を以下のように定義できる。
+数字はトランザクションを区別し、aはabort, cはcommitを意味する。</p>
+<pre><code>A1: w1[x]...r2[x]...(a1 and c2 in either order) (Dirty Read)
+A2 : r1[x]...w2[x]...c2...r1[x]...c1 (Fuzzy Read)
+A3 : r1[P]...w2[y in P]...c2....r1[P]...c1 (Phantom)
+</code></pre>
+<p>このとき、合計残高が100ドルの口座x, yがあり、xからyに40ドルを送金する以下のトランザクションはいずれのAにも該当しないが、T2は残高の合計を60ドルとみなしてしまう。</p>
+<pre><code>r1[x=50]w1[x=10]r2[x=10]r2[y=50]c2r1[y=50]w1[y=90]c1
+</code></pre>
+<p>提唱するトランザクション分離レベルは、ANSI規格の現象を厳しく現象列を操作列するように解釈し、新たにDirty Writeを現象にくわえる。
+トランザクション分離レベルと現象の対応と現象の形式的な定義を以下にのせる。
+<img src="/critique/table3.png" alt="table3"></p>
+<pre><code>P0: w1[x]...w2[x]...(c1 or a1) (Dirty Write)
+P1: w1[x]...r2[x]...(c1 or a1) (Dirty Read)
+P2: r1[x]...w2[x]...(c1 or a1) (Fuzzy Read)
+P3: r1[P]...w2[y in P]...(c1 or a1) (Phantom)
+</code></pre>
+<p>Dirty Writeは、T1がデータを修正し、T1がコミットかロールバックする前に、T2がデータを変更する現象であり、T1かT2のどちらかがロールバックをすると正しいデータが不明瞭になる。
+例えば、値が等価でなければならないxとyがあるとき、T1とT2が等価であるようにトランザクションを実行しても、Dirty writeを認めていれば、xとyの変更順が違っていればx\(\neq\)yになりえる。</p>
+<p>Snapshot Isolationは、トランザクション開始時にコミットされたスナップショットからデータを読みとる。
+トランザクションは、トランザクション開始時に開始時より前の時刻Start-Timestampを取得し、その値が維持されている間はブロックされずにスナップショットからデータを読める。
+挿入、変更、削除はスナップショットに適用される。
+コミット時には、発行済みのどのStart-TimestampやCommit-Timestampよりも大きいCommit-Timestampを獲得する。
+Start-TimestampとCommit-Timestampの間に、同じデータを変更した別のトランザクションのCommit-Timestampがなければ、コミットが成功する。
+トランザクション分離レベルは、READ COMMITTEDより高い。
+一方、REPETABLE READで防げないPhantom(P3)が起きないが、同トランザクション分離レベルで防げるWrite Skewが防げないので、REPEATABLE READとSnapshot Isolationのレベルの高さは比較できない。
+Write Skewは、制約のある2つのデータを2つのトランザクションが対称的に読み書きすることで発生する。</p>
+<pre><code>r1[x]...r2[y]...w1[y]...w2[x]...(c1 and c2 occur) (Write Skew)
+</code></pre>
+<p>論文を<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.884.4056&amp;rep=rep1&amp;type=pdf">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/an_overview_of_data_warehousing_and_olap_technology/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

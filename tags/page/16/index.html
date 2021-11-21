@@ -47,6 +47,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/active_clean/">メモ ActiveClean: Interactive Data Cleaning For Statistical Modeling</a></h3>
+        <div class="summary"><p>ActiveCleanは、教師データの誤りを修正し、モデルの精度を改善する手法である。
+優先して修正すべきデータを推定し、データが修正されたら修正されたデータでモデルを学習する。
+この修正と学習を条件を満たすまでくりかえす。
+反復的な学習で大域的最適解をえられるモデルであれば、最適解への収束が保証される。
+データの修正件数が等しい場合に、先行研究と比べて最大2.5倍の精度改善を達成した。</p></div>
+        <div class="article-footer">
+            <span class="date">November 9, 2019</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/web_tables/">メモ WebTables: Exploring the Power of Tables on the Web</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>表題の論文は、Web上の表から抽出した大量の関係モデルを対象にした検索を提案・評価した
@@ -137,18 +149,6 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
 論文で扱うモデルは、SVMなどの学習で経験損失を最小化するモデルに限定されている。発表学会は2011年のICDMである。</p></div>
         <div class="article-footer">
             <span class="date">September 7, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/learning_on_border/">メモ Learning on the Border: Active Learning in Imbalanced Data Classification</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>表題にある論文は、不均衡データの二値分類についての予測性能を能動学習で改善する手法を提案している。
-着想は、学習器のマージン付近では正例と負例がよりバランスしていると仮定し、
-マージン付近にあるデータを集めることで、均衡のとれたデータセットを用意することにある。
-具体的には、ラベルづけしたデータでSVMをオンライン学習し、無作為に抽出されたラベルのないデータの中で最も超平面に近いデータにラベルをつける手順をマージンの中にあるデータ数が変わらなくなるまで繰り返す。</p></div>
-        <div class="article-footer">
-            <span class="date">August 31, 2019</span>
         </div>
     </article>
     

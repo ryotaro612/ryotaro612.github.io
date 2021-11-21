@@ -6,7 +6,21 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 06 Nov 2021 21:10:04 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 Nov 2021 19:34:24 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Critique of ANSI SQL Isolation Levels</title>
+      <link>https://nryotaro.dev/posts/a_critique_of_ansi_sql_isolation_levels/</link>
+      <pubDate>Sat, 13 Nov 2021 19:34:24 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/a_critique_of_ansi_sql_isolation_levels/</guid>
+      <description>&lt;p&gt;ANSI SQL-92規格は、トランザクション分離レベルを、Dirty Read, Non-Repeatable Reads, Phantomが発生する可能性で定義する。
+トランザクション分離レベルを禁止する現象で定義する理由は、ロックなどの実装手段で定義すると規格が実装に依存するからだと考えられている。
+表題の論文は、規格の現象による定義があいまいであり、3つの異常が起きなくても望まない結果になる実行があることを例示した。
+また、規格のトランザクション分離レベルが、商用データベースで採用されているトランザクション分離レベルにあてはまらない問題もある。
+禁止する現象にDirty Writeをくわえ、厳しく実行列を禁止するように現象の定義を解釈した上で自然言語から形式的な記述に変えることを提唱した。
+さらに、規格がデータの版が単一であることを前提としていることを指摘した上で、多版型のトランザクションであるSnaphot Isolationを提案した。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>An Overview of Data Warehousing and OLAP Technology</title>
       <link>https://nryotaro.dev/posts/an_overview_of_data_warehousing_and_olap_technology/</link>
