@@ -47,6 +47,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/chain_replication_for_supporting_high_throughput_and_availability/">Chain Replication for Supporting High Throughput and Availability</a></h3>
+        <div class="summary"><p>ストレージサーバーに順番をつけ、順にオブジェクトを複製することで、ストレージサービスの一貫性を維持しつつスループットと可用性の向上をはかる。
+ここでのストレージサービスは、オブジェクトを保存し、クエリに対して一つのオブジェクトを返し、アトミックに一つのオブジェクトを更新できるものをさす。
+また、一貫性は、オブジェクトごとにクエリと更新を直列的に適用し、更新につづくクエリが更新内容結果になることを意味する。
+末尾のサーバーがクエリを受信し、該当するオブジェクトをクライアントに返す。
+先頭のサーバーが更新リクエストを受信し、順にサーバーのオブジェクトを更新し、末尾のサーバーが更新の結果をクライアントに返す。</p></div>
+        <div class="article-footer">
+            <span class="date">September 18, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/implementing_remote_procedure_calls/">Implementing Remote Procedure Calls</a></h3>
         <div class="summary"><p>Xeroxのプログラミング環境<a href="http://www.bitsavers.org/pdf/xerox/parc/techReports/CSL-80-10_Requirements_for_an_Experimental_Programming_Environment.pdf">Cedar</a>のために開発されたRPCを解説した84年の論文である。
 RPCの開発目的は、分散コンピューティングを簡単に実装できるようにする、通信時間を短くする、通信をセキュアにすることの3点である。
@@ -150,18 +162,6 @@ UIS-Hunterは、FigmaやAndroid Studio Layout Editorなどのモックアップ�
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/a_case_study_of_onboarding_in_software_teams/">A Case Study of Onboarding in Software Teams: Tasks and Strategies</a></h3>
-        <div class="summary"><p>オンボーディングのためのタスクの選び方とタスクの効果を調査するために、マイクロソフトのエンジニアとマネージャーにインタビューした。
-まず、新しいチームに入った32人のエンジニアとエンジニアを迎えた15人のマネージャーにインタビューし、特に、チームのことを知る、担当する役割を果たせる自信の醸成、メンバーとの交流の3つを重視し、これらに対するタスクの影響を調査した。
-タスクの選び方は、大きく、割り当てるタスクを少しずつ複雑にする、優先度の高いものを選ぶ、曖昧なタスクを選ぶ、の3つがあった。
-オンボーディングするエンジニアがジュニアであれば最初の選び方、シニアであれば最後の選び方、アジャイルを採用するチーム、新しいチーム、納期の厳しいチームは優先度でタスクが選ばれやすく、効果的であった。
-以上の考察を189名のエンジニアと37名のマネージャに評価してもらい、妥当性を確認した。</p></div>
-        <div class="article-footer">
-            <span class="date">August 14, 2021</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -180,7 +180,7 @@ UIS-Hunterは、FigmaやAndroid Studio Layout Editorなどのモックアップ�
         <a href="/tags/page/3/"><span class="material-icons">chevron_right</span></a>
     </li>
     <li>
-        <a href="/tags/page/19/"><span class="material-icons">last_page</span></a>
+        <a href="/tags/page/20/"><span class="material-icons">last_page</span></a>
     </li>
     
 </ul>

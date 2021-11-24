@@ -6,7 +6,19 @@
     <description>Recent content on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 13 Nov 2021 19:34:24 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Nov 2021 19:53:45 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Live Migration of Virtual Machines</title>
+      <link>https://nryotaro.dev/posts/live_migration_of_virtual_machines/</link>
+      <pubDate>Sat, 20 Nov 2021 19:53:45 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/live_migration_of_virtual_machines/</guid>
+      <description>&lt;p&gt;XenのハイパーバイザーにOSのライブマグレーションを統合し、約60msのダウンタイムでのOSのライブマイグレーションを実現した。
+手法の焦点は、短いダウンタイムや移行時間で、移行元と移行先のメモリの状態を同等にできるかにある。
+ネットワークアドレスや物理デバイスの移行は扱わない。
+移行元と移行先は同じローカルネットワークにあり、マイグレーションによるIPアドレスのホストの移動を主にARP replyで通知でき、NASにデータを保存することを前提にし、ネットワークや物理デバイスの移行を考えなくてよいものとしている。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>A Critique of ANSI SQL Isolation Levels</title>
       <link>https://nryotaro.dev/posts/a_critique_of_ansi_sql_isolation_levels/</link>

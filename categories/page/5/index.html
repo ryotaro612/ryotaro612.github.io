@@ -47,6 +47,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/suffix_arrays/">Suffix Arrays: A New Method for On-Line String Searches</a></h3>
+        <div class="summary"><p>接尾辞配列 Suffix Arrayは、長さ\(P\)の文字列が長さ\(W\)の文字列のどこに出現するかを時間計算量\(\mathcal{O}(P + \log N)\)で判定できるデータ構造で、接尾辞木 suffix treeよりもメモリ効率が3-5倍よい。
+一方、検索の準備にかかる最悪時間計算量はsuffix treeよりも大きい。
+suffix arrayの構築にかかる最悪時間計算量が\(\mathcal{O}(N\log N)\)に対して、suffix treeは\(\mathcal{O}(N)\)しかかからない。</p></div>
+        <div class="article-footer">
+            <span class="date">May 16, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/hyperdex/">論文メモ HyperDex: A Distribute, searchable Key-Value Store</a></h3>
         <div class="summary"><p><a href="https://dbdb.io/db/hyperdex">HyperDex</a>はキー以外の要素で値を検索できるキーバリューストアで、このキー以外の要素による検索速度がCassandraやMongoDBと比べて12-13倍速い。
 キーバリューストアは、RDBMSとくらべて、処理速度は速く、検索条件の機能に乏しい。
@@ -144,16 +154,6 @@ B+木は、全てのキーを葉におき、葉を隣接リストでつなぐこ
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/robust_random_cut_forest_based_anomaly_detection_on_streams/">論文メモ Robust Random Cut Forest Based Anomaly Detection On Streams</a></h3>
-        <div class="summary"><p>Robust Random Cut Forest(RRCT)はストリームデータ向きの異常検知の手法で、<a href="https://www.aclweb.org/anthology/P16-1162/">Amazon SageMaker</a>から提供されている。
-バッチデータと違い、ストリームデータは新たなデータが随時追加、修正される。
-RRCTは、特徴の値でデータを2分するノードからなる木の集合であり、データを追加したときに木の集合であるモデルを大きく複雑するものを異常と判定する。</p></div>
-        <div class="article-footer">
-            <span class="date">March 12, 2021</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -172,7 +172,7 @@ RRCTは、特徴の値でデータを2分するノードからなる木の集合
         <a href="/categories/page/6/"><span class="material-icons">chevron_right</span></a>
     </li>
     <li>
-        <a href="/categories/page/19/"><span class="material-icons">last_page</span></a>
+        <a href="/categories/page/20/"><span class="material-icons">last_page</span></a>
     </li>
     
 </ul>
