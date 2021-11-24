@@ -186,7 +186,7 @@ Dremelは、サーバーのクラスタを木構造に組織し、ルートで�
       <pubDate>Mon, 23 Aug 2021 12:03:39 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/design_tradeoffs_for_ssd_performance/</guid>
-      <description>&lt;p&gt;HDDの処理性能を測るためのシミュレーションソフト&lt;a href=&#34;https://www.pdl.cmu.edu/DiskSim/index.shtml&#34;&gt;DiskSim&lt;/a&gt;をSSD向けに改造し、SSDの設計における選択肢の分類と選択にともなうトレードオフを報告する。
+      <description>&lt;p&gt;HDDの処理性能を測定するシミュレーションソフト&lt;a href=&#34;https://www.pdl.cmu.edu/DiskSim/index.shtml&#34;&gt;DiskSim&lt;/a&gt;をSSD向けに改造し、SSDの設計における選択肢の分類と選択にともなうトレードオフを報告した。
 主要な選択肢は、論理アドレスと物理アドレスのマッピング、ページサイズ、オーバープロビジョニング、複数のpackageでcontrollerに接続するピンを共有するgangingがある。&lt;/p&gt;</description>
     </item>
     
