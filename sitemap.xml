@@ -4,16 +4,21 @@
   
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2021-11-20T19:53:45+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nryotaro.dev/posts/live_migration_of_virtual_machines/</loc>
-    <lastmod>2021-11-20T19:53:45+09:00</lastmod>
+    <lastmod>2021-11-27T12:41:19+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
+    <lastmod>2021-11-27T12:41:19+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/wait_free_synchronization/</loc>
+    <lastmod>2021-11-27T12:41:19+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/live_migration_of_virtual_machines/</loc>
     <lastmod>2021-11-20T19:53:45+09:00</lastmod>
   </url>
   

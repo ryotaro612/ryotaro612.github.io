@@ -47,6 +47,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/here_we_go_again/">論文メモ Here We Go Again: Why Is It Difficult for Developers to Learn Another Programming Language?</a></h3>
+        <div class="summary"><p>既知のプログラミング言語の知識は新しい言語を覚える役に立つ。
+一方で、新しい言語の学習の妨げにもなることをStack Overflowの質問とプログラマへのインタビューで明らかにした。</p></div>
+        <div class="article-footer">
+            <span class="date">July 4, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/automatic_differentiation_in_pytorch/">論文メモ Automatic differentiation in Pytorch</a></h3>
         <div class="summary"><p>Pytorchの自動微分を解説したプレプリントのショートペーパである。
 Pytorchの自動微分特徴として、in-placeアルゴリズム、微分の導出に不要な計算を省く仕組みのあるテープ、C++による実装をあげている。
@@ -151,21 +160,6 @@ PACフレームワークにもとづく必要な学習データの件数を示�
 注意機構は複数のベクトルのどれを重視するかを学習できるため、埋め込まれた文の箇所を可視化できることも示した。</p></div>
         <div class="article-footer">
             <span class="date">May 16, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/poincare_embeddings/">論文メモ Poincaré Embeddings for Learning Hierarchical Representations</a></h3>
-        <div class="summary">概要 単語のように上位下位関係のある記号を、ポアンカレ球体模型という双曲空間に埋め込む手法を発表した論文である。 ユークリッド空間よりも、記号間の類似度や上位下位関係が保たれていることを実験的に示した。 記号を木のノードとして配置し関係を表現するとき、ノード数は深さ\(l\)対して指数関数的に増加する。 双曲幾何学では、円板の面積や周は半径\(r\)に対して指数関数的に増大するため、木を2次元でモデル化できる。 たとえば、深さ\(l\)以下のノードを半径\(r \varpropto l \)の空間に配置することができる。 一方、2次元のユークリッド空間の場合、半径\(r\)に対する円周は線形、円の面積は2次関数的であるため、モデル化が難しい。 実験では、次元数が少ないほど、ポアンカレ球体模型とユークリッド空間の間で、上下関係や類似度の表現力に差があった。
-損失関数 埋め込みたい上下関係\(\mathcal{D}=\{(u, v)\}\)を記号の数を\(n\)として入力すると、アルゴリズムは、埋め込みベクトルの集合\({\rm \Theta}=\{\boldsymbol{\theta}_i\}^n_{i=1}\)を出力する。 ただし、\(\boldsymbol{\theta}\in \mathcal{B}^d\), \(\mathcal{B}^d=\{\boldsymbol{x}\in \mathbb{R}^d\mid ||\boldsymbol{x}||&lt;1\}\)とする。 学習では、次の損失関数\(\mathcal{L}(\Theta)\)をもちいる。
-$$ \mathcal{L}(\Theta)=\sum_{(u, v)\in \mathcal{D}}\log\frac{e^{-d(\boldsymbol{u}, \boldsymbol{v})}}{\sum_{\boldsymbol{v}'\in \mathcal{N}(u)}e^{-d(\boldsymbol{u}, \boldsymbol{v}')}} $$ \(\mathcal{N}(u)=\{v'\mid (u, v')\notin \mathcal{D}\} \cup \{v\}\)は\(v\)を含んだ\(u\)に対する負例である。 実験では、正例に対して10の負例をサンプリングしていた。 \(d\)は、\(\boldsymbol{u}, \boldsymbol{v}\in \mathcal{B}^d\)の距離であり、次の式であたえらえる。
-$$ d(\boldsymbol{u}, \boldsymbol{v}) = \mathrm{arccosh}\left(1+2\frac{||\boldsymbol{u}-\boldsymbol{v}||^2}{(1-||\boldsymbol{u}||^2)(1-||\boldsymbol{v}||^2)}\right) $$
-最適化 RSGDやRSVRGで損失関数の値を最小化する埋め込みベクトルを探す。 ここでは、RSGDについて説明する。 RSGDでは、次のパラメタの更新式をとる。
-$$ \boldsymbol{\theta}_{t+1} = \mathfrak{R}_{\theta_t}(-\eta_t\nabla_R\mathcal{L}(\boldsymbol{\theta}_t)) $$ \(\mathfrak{R}_{\theta_t}\)はレトラクションで、ここでは\(\mathfrak{R}_\theta(\boldsymbol{v})=\boldsymbol{\theta}+\boldsymbol{v}\)をもちいる。 \(\eta_t\)は時刻\(t\)の学習率をさす。 \(\nabla_R\)はリーマン多様体上の勾配であり、ユークリッド空間上の勾配\(\nabla_E\)とは
-$$ \nabla_R = \frac{(1-||\boldsymbol{\theta_t}||^2)^2}{4}\nabla_E $$ の関係がある。 以上より、更新式は
-$$ \mathrm{proj}(\boldsymbol{\theta})= \begin{cases} \boldsymbol{\theta}/||\boldsymbol{\theta}|| - \epsilon &amp;\mathrm{if}\ ||\boldsymbol{\theta}||\ge 1 \\</div>
-        <div class="article-footer">
-            <span class="date">May 9, 2020</span>
         </div>
     </article>
     

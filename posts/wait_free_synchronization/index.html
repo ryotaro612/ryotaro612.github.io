@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Wait-Free Synchronization</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Wait-Free Synchronization</h1>
+    <span class="date">November 27, 2021</span>
+    <div>
+        <p>あるデータ構造がwait-freeであり、データ構造への操作が有限回のステップで完了するのであれば、ほかの並行プロセスの処理速度によらず、任意のプロセスによるその操作は必ず完了する。
+表題のsynchronizationは、wait-freeなデータ構造から別のwait-freeなデータ構造を実装する意味であり、実装の可能性を議論するためにコンセンサス数が導入される。
+あるデータ構造のコンセンサス数は、単純な含意形成問題を解くときに参加できるプロセス数の最大値である。
+たとえば、read / writeレジスタには1, test &amp; swapは2, compare &amp; swapには無限のコンセンサス数が割りあてられる。
+プロセス数を定義した上で、あるコンセンサス数のデータ構造を、それより小さいコンセンサス数のデータ構造では実装できないことを示した。</p>
+<p>あるコンセンサス数のデータ構造でより大きなコンセンサス数のデータ構造を実装できないことを示すために、プロセスやデータ構造をI/O オートマタとしてあつかう。
+\(n\)個のプロセス\(P\)と\(m\)個のデータ構造\(A\)として、並行システムを\(\{P_1, \dots , P_n;A_1, \dots , A_m\}\)とおく。
+このとき、\(A\)もまた並行システムとみなすことができ、\(F\)を\(P\)から呼ばれるプロシージャ、\(R\)を\(A\)を実装するデータ構造とすると、\(\{F_1, \dots , F_n ; R\}\)とあらわせる。
+以下にこの再帰的な様子を図示する。
+<img src="/waitfree/view.png" alt="view"></p>
+<p>コンセンサス数\(n\)のデータ構造\(X\)と\(m(&lt; n) \)の\(Y\)があり、\(m\)より多数のプロセスが参加するシステムにおいて、\(Y\)による\(X\)の実装がないことを背理法で示す。
+\(k&gt; m\), \(W\)をread/write レジスタ、\(\{F_1, \dots , F_k;W, X\}\)を含意プロトコルでwait-freeであるとする。
+\(\{F'_1, \dots , F'_k;Y\}\)が\(X\)の実装とすると、I/Oオートマタの合成の結合性より\(\{F_1, \dots , F_n;W, \{F'_1, \dots , F'_n; Y\}\}\)はwait-freeになる。
+これは、合成の結合性から\(\{F_1\cdot F'_1, \dots , F_n \cdot F'_n;W, Y\}\)に等しい。
+ところが、これは含意プロトコルであるため、\(Y\)のコンセンサス数が\(m\)であることに反し矛盾する。</p>
+<p>論文を<a href="http://cs.brown.edu/~mph/Herlihy91/p124-herlihy.pdf">こちら</a>からダウンロードできます。
+画像は論文から引用されています。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/live_migration_of_virtual_machines/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
