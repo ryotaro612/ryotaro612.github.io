@@ -54,9 +54,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 一方で、何が良い初期値をなすのかは知られていなかった。
 表題の論文は、その条件は入力に含まれるノイズに対して頑強であると仮説をおき、ノイズを除去できるように目的関数を設定することで、次元圧縮の性能が上がることを示し、仮説の正しさを確かめた。</p>
 <p>目的関数を説明するにあたり、ノイズのない入力\(\mathrm{\boldsymbol{x}}\in [0, 1]^d\)からノイズのある入力\(\tilde{\mathrm{\boldsymbol{x}}}\)をつくるために、確率\(\nu\)で\(\nu d\)個の要素を0に変える場合を考える。
-ネットワークが1つの中間層だけをもち、\(s(\mathrm{\boldsymbol{x}})\)をシグモイド関数として、中間層の表現を\(f_{\theta}(\mathrm{\boldsymbol{x}})=s(\mathrm{\boldsymbol{Wx+b}})\), 出力を\(g_{\theta'}(\mathrm{\boldsymbol{y}})=s(\boldsymbol{\mathrm{W&rsquo;y+b'}})\)とするとき、目的関数は次の式になる。</p>
+ネットワークが1つの中間層だけをもち、\(s(\mathrm{\boldsymbol{x}})\)をシグモイド関数として、中間層の表現を\(f_{\theta}(\mathrm{\boldsymbol{x}})=s(\mathrm{\boldsymbol{Wx+b}})\), 出力を\(g_{\theta&rsquo;}(\mathrm{\boldsymbol{y}})=s(\boldsymbol{\mathrm{W&rsquo;y+b&rsquo;}})\)とするとき、目的関数は次の式になる。</p>
 <p>$$
-\underset{\theta, \theta'}{\operatorname{argmin}}\mathbb{E}_{q^0(X, \tilde{X})}\left[L_{\mathbb{H}}\left(X,g_{\theta'}(f_{\theta}(\tilde{X}))\right)\right]
+\underset{\theta, \theta&rsquo;}{\operatorname{argmin}}\mathbb{E}_{q^0(X, \tilde{X})}\left[L_{\mathbb{H}}\left(X,g_{\theta&rsquo;}(f_{\theta}(\tilde{X}))\right)\right]
 $$</p>
 <p>\(q^0(X, \tilde{X})\)は、学習データにおける\(X\)と\(\tilde{X}\)の同時確率分布, \(L_{\mathbb{H}}\)は交差エントロピーを示す。
 $$

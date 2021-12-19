@@ -6,7 +6,42 @@
     <description>Recent content in Posts on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 27 Nov 2021 12:41:19 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Dec 2021 18:27:24 +0900</lastBuildDate>
+    
+	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Monitoring Streams - A New Class of Data Management Applications (2002)</title>
+      <link>https://nryotaro.dev/posts/monitoring_streams/</link>
+      <pubDate>Sat, 11 Dec 2021 18:27:24 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/monitoring_streams/</guid>
+      <description>&lt;p&gt;センサー情報などにみられる継続的に発生するストリームデータの監視にむいた開発中のDBMS, Auroraを発表した。
+既存のDBMSは人の行動で起きるトランザクションを想定している。
+一方、ストリームデータは、人の能動的な活動によらず絶えず発生し、異常値があればアラートを出す必要がある。
+また、グラフの描画などで時系列に長期的なデータをとり、また、リアルタイムに応答するために不要なデータを切り捨て負荷を下げる必要もある。
+Auroraは、以上のストリーミング、トリガー、不正確なデータ、リアルタイム性の4特性を扱えるモデルとして、ストリームデータの出力元をソース、ノードをストリームデータの計算、シンクをアプリケーションとするDAGを採用する。
+ノードで表す計算には、ストリームをウィンドウに区切る、フィルタ、リサンプリングなどの8つがある。
+DAGで表せる計算をAurora内部で実行し、その結果が接続するアプリケーションにわたる。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>A Birdging Model for parallel Computation (1990)</title>
+      <link>https://nryotaro.dev/posts/a_bridging_model_for_parallel_computation/</link>
+      <pubDate>Sat, 11 Dec 2021 14:29:16 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/a_bridging_model_for_parallel_computation/</guid>
+      <description>&lt;p&gt;表題と同名の論文は、バッチ処理グラフの最適化として演算処理のバルク同期並列（bulk synchronous parallel、 BSP）を提唱した。
+BPSは、Apache Giraph, Spark の GraphX API, Gelly APIで採用され、なかでもGoogleのPregelで知られるようになった&lt;a href=&#34;https://www.oreilly.co.jp/books/9784873118703/&#34;&gt;*1&lt;/a&gt;。
+BPSの目的は、フォン・ノイマンモデルのように、ハードウェアと並列計算の高水準なプログラミングモデルがどちらもBPSに準ずることで、高水準なプログラミングモデルで実装された並列計算を多様なハードウェア上で動かせるようにすることにある。
+フォン・ノイマンモデル型のコンピュータであれば、ハードウェアの種類を意識することなく、その上で逐次計算をおこなう多様なソフトウェアを動かせる。
+フォン・ノイマンモデルは、多様なハードウェアと多様なソフトウェアをつなぐ。
+BPSは、並列計算用のハードウェアと高水準な並列計算のためのプログラミングモデルをつなぐためにある。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+    
     <item>
       <title>Wait-Free Synchronization</title>
       <link>https://nryotaro.dev/posts/wait_free_synchronization/</link>
@@ -151,7 +186,7 @@ Chubbyはロックサービスとして作られたが、ネームサーバと�
       <guid>https://nryotaro.dev/posts/chain_replication_for_supporting_high_throughput_and_availability/</guid>
       <description>&lt;p&gt;ストレージサーバーに順番をつけ、順にオブジェクトを複製することで、ストレージサービスの一貫性を維持しつつスループットと可用性の向上をはかる。
 ここでのストレージサービスは、オブジェクトを保存し、クエリに対して一つのオブジェクトを返し、アトミックに一つのオブジェクトを更新できるものをさす。
-また、一貫性は、オブジェクトごとにクエリと更新を直列的に適用し、更新につづくクエリが更新内容結果になることを意味する。
+また、一貫性は、オブジェクトごとにクエリと更新を直列的に適用し、更新につづくクエリが更新内容になることを意味する。
 末尾のサーバーがクエリを受信し、該当するオブジェクトをクライアントに返す。
 先頭のサーバーが更新リクエストを受信し、順にサーバーのオブジェクトを更新し、末尾のサーバーが更新の結果をクライアントに返す。&lt;/p&gt;</description>
     </item>
@@ -162,8 +197,8 @@ Chubbyはロックサービスとして作られたが、ネームサーバと�
       <pubDate>Sat, 11 Sep 2021 12:34:19 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/implementing_remote_procedure_calls/</guid>
-      <description>&lt;p&gt;Xeroxのプログラミング環境&lt;a href=&#34;http://www.bitsavers.org/pdf/xerox/parc/techReports/CSL-80-10_Requirements_for_an_Experimental_Programming_Environment.pdf&#34;&gt;Cedar&lt;/a&gt;のために開発されたRPCを解説した84年の論文である。
-RPCの開発目的は、分散コンピューティングを簡単に実装できるようにする、通信時間を短くする、通信をセキュアにすることの3点である。
+      <description>&lt;p&gt;Xeroxのプログラミング環境&lt;a href=&#34;http://www.bitsavers.org/pdf/xerox/parc/techReports/CSL-80-10_Requirements_for_an_Experimental_Programming_Environment.pdf&#34;&gt;Cedar&lt;/a&gt;のために開発されたRPCを解説した84年の論文。
+RPCの開発目的は、分散コンピューティングを簡単に実装できるようにする、通信時間を短くする、通信をセキュアにすることの3点にある。
 RPCは大部分で&lt;a href=&#34;http://www.bitsavers.org/pdf/xerox/parc/techReports/CSL-79-3_Mesa_Language_Manual_Version_5.0.pdf&#34;&gt;Mesa&lt;/a&gt;が使われた。&lt;/p&gt;</description>
     </item>
     
@@ -1418,7 +1453,7 @@ PACフレームワークにもとづく必要な学習データの件数を示�
       <guid>https://nryotaro.dev/posts/poincare_embeddings/</guid>
       <description>概要 単語のように上位下位関係のある記号を、ポアンカレ球体模型という双曲空間に埋め込む手法を発表した論文である。 ユークリッド空間よりも、記号間の類似度や上位下位関係が保たれていることを実験的に示した。 記号を木のノードとして配置し関係を表現するとき、ノード数は深さ\(l\)対して指数関数的に増加する。 双曲幾何学では、円板の面積や周は半径\(r\)に対して指数関数的に増大するため、木を2次元でモデル化できる。 たとえば、深さ\(l\)以下のノードを半径\(r \varpropto l \)の空間に配置することができる。 一方、2次元のユークリッド空間の場合、半径\(r\)に対する円周は線形、円の面積は2次関数的であるため、モデル化が難しい。 実験では、次元数が少ないほど、ポアンカレ球体模型とユークリッド空間の間で、上下関係や類似度の表現力に差があった。
 損失関数 埋め込みたい上下関係\(\mathcal{D}=\{(u, v)\}\)を記号の数を\(n\)として入力すると、アルゴリズムは、埋め込みベクトルの集合\({\rm \Theta}=\{\boldsymbol{\theta}_i\}^n_{i=1}\)を出力する。 ただし、\(\boldsymbol{\theta}\in \mathcal{B}^d\), \(\mathcal{B}^d=\{\boldsymbol{x}\in \mathbb{R}^d\mid ||\boldsymbol{x}||&amp;lt;1\}\)とする。 学習では、次の損失関数\(\mathcal{L}(\Theta)\)をもちいる。
-$$ \mathcal{L}(\Theta)=\sum_{(u, v)\in \mathcal{D}}\log\frac{e^{-d(\boldsymbol{u}, \boldsymbol{v})}}{\sum_{\boldsymbol{v}&#39;\in \mathcal{N}(u)}e^{-d(\boldsymbol{u}, \boldsymbol{v}&#39;)}} $$ \(\mathcal{N}(u)=\{v&#39;\mid (u, v&#39;)\notin \mathcal{D}\} \cup \{v\}\)は\(v\)を含んだ\(u\)に対する負例である。 実験では、正例に対して10の負例をサンプリングしていた。 \(d\)は、\(\boldsymbol{u}, \boldsymbol{v}\in \mathcal{B}^d\)の距離であり、次の式であたえらえる。
+$$ \mathcal{L}(\Theta)=\sum_{(u, v)\in \mathcal{D}}\log\frac{e^{-d(\boldsymbol{u}, \boldsymbol{v})}}{\sum_{\boldsymbol{v}&#39;\in \mathcal{N}(u)}e^{-d(\boldsymbol{u}, \boldsymbol{v}&#39;)}} $$ \(\mathcal{N}(u)=\{v&amp;rsquo;\mid (u, v&amp;rsquo;)\notin \mathcal{D}\} \cup \{v\}\)は\(v\)を含んだ\(u\)に対する負例である。 実験では、正例に対して10の負例をサンプリングしていた。 \(d\)は、\(\boldsymbol{u}, \boldsymbol{v}\in \mathcal{B}^d\)の距離であり、次の式であたえらえる。
 $$ d(\boldsymbol{u}, \boldsymbol{v}) = \mathrm{arccosh}\left(1+2\frac{||\boldsymbol{u}-\boldsymbol{v}||^2}{(1-||\boldsymbol{u}||^2)(1-||\boldsymbol{v}||^2)}\right) $$
 最適化 RSGDやRSVRGで損失関数の値を最小化する埋め込みベクトルを探す。 ここでは、RSGDについて説明する。 RSGDでは、次のパラメタの更新式をとる。
 $$ \boldsymbol{\theta}_{t+1} = \mathfrak{R}_{\theta_t}(-\eta_t\nabla_R\mathcal{L}(\boldsymbol{\theta}_t)) $$ \(\mathfrak{R}_{\theta_t}\)はレトラクションで、ここでは\(\mathfrak{R}_\theta(\boldsymbol{v})=\boldsymbol{\theta}+\boldsymbol{v}\)をもちいる。 \(\eta_t\)は時刻\(t\)の学習率をさす。 \(\nabla_R\)はリーマン多様体上の勾配であり、ユークリッド空間上の勾配\(\nabla_E\)とは

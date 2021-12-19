@@ -59,8 +59,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <img src="/waitfree/view.png" alt="view"></p>
 <p>コンセンサス数\(n\)のデータ構造\(X\)と\(m(&lt; n) \)の\(Y\)があり、\(m\)より多数のプロセスが参加するシステムにおいて、\(Y\)による\(X\)の実装がないことを背理法で示す。
 \(k&gt; m\), \(W\)をread/write レジスタ、\(\{F_1, \dots , F_k;W, X\}\)を含意プロトコルでwait-freeであるとする。
-\(\{F'_1, \dots , F'_k;Y\}\)が\(X\)の実装とすると、I/Oオートマタの合成の結合性より\(\{F_1, \dots , F_n;W, \{F'_1, \dots , F'_n; Y\}\}\)はwait-freeになる。
-これは、合成の結合性から\(\{F_1\cdot F'_1, \dots , F_n \cdot F'_n;W, Y\}\)に等しい。
+\(\{F&rsquo;_1, \dots , F&rsquo;_k;Y\}\)が\(X\)の実装とすると、I/Oオートマタの合成の結合性より\(\{F_1, \dots , F_n;W, \{F&rsquo;_1, \dots , F&rsquo;_n; Y\}\}\)はwait-freeになる。
+これは、合成の結合性から\(\{F_1\cdot F&rsquo;_1, \dots , F_n \cdot F&rsquo;_n;W, Y\}\)に等しい。
 ところが、これは含意プロトコルであるため、\(Y\)のコンセンサス数が\(m\)であることに反し矛盾する。</p>
 <p>論文を<a href="http://cs.brown.edu/~mph/Herlihy91/p124-herlihy.pdf">こちら</a>からダウンロードできます。
 画像は論文から引用されています。</p>
@@ -74,6 +74,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="/posts/live_migration_of_virtual_machines/"><span class="material-icons">chevron_left</span></a>
     </li>
     
+    
+    <li>
+        <a href="/posts/a_bridging_model_for_parallel_computation/"><span class="material-icons">chevron_right</span></a>
+    </li>
     
 </ul>
 

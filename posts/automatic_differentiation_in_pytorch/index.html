@@ -55,7 +55,7 @@ Pytorchの自動微分特徴として、in-placeアルゴリズム、微分の�
 例えば、副作用をゆるし、出力を入力の記憶領域に格納する手法はこれに該当する。
 in-placeアルゴリズムは記憶領域を節約できるが、自動微分の計算が不可能になる。
 そこで、in-placeアルゴリムで微分計算ができない場合は、例外を発生させるように作られている。
-例えば、\(\tanh'(x)=1-\tanh'(x)\)であるため、次の計算は失敗する。</p>
+例えば、\(\tanh&rsquo;(x)=1-\tanh&rsquo;(x)\)であるため、次の計算は失敗する。</p>
 <pre><code>import torch
 x = torch.randn(1, required_grad=True)
 y = x.tanh()

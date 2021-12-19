@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<meta name="generator" content="Hugo 0.80.0" />
+	<meta name="generator" content="Hugo 0.68.3" />
     
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -48,6 +48,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/congestion_avoidance_and_control/">Congestion Avoidance and Control</a></h3>
+        <div class="summary"><p>86年の10月に生じたインターネットの輻輳の反省から、4BSDに7つのTCPの輻輳制御のアルゴリズムが導入された。
+うち5つは、送信したパケットが到達や消失でネットワークからなくなるまでウィンドウサイズ以上の新しいパケットを送らない原則を守るためにある。
+この原則をconservation of packets principleという。</p></div>
+        <div class="article-footer">
+            <span class="date">October 9, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/the_notion_of_consistency_and_predicate_locks_in_a_database_system/">The Notion of Consistency and Predicate Locks in a Database System</a></h3>
+        <div class="summary"><p>トランザクションを並行実行するときに、直列実行した場合と同じ実行結果をえるには、各トランザクションがロックを解放後に新しいロックを獲得してはならないことを示した。
+その場合もデッドロックがおきうるが、それは並列実行を終了するためにはいつロックをかければよいかという議論である。
+ここでは、並列実行が終了した場合に直列実行と同じ結果になる一貫性を保証できるロックの順序を問う。</p></div>
+        <div class="article-footer">
+            <span class="date">October 2, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/parallel_database_systems/">Parallel Database Systems: The Future of High Performance Database Systems</a></h3>
         <div class="summary"><p>データベースの処理性能を上げる手段として、特殊なハードウェアをもちいたり、メモリやディスクを共有した複数のコンピュータを使ったりするよりも、安価で単純に実装できることから、汎用的なコンピュータによる水平パーティションのシェアードナッシング構成を支持した。
 論文が発表された1992年の時点でTeradataやTandem NonStopなどのパーティンション化されたデータベースがある。</p></div>
@@ -60,7 +80,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h3><a href="https://nryotaro.dev/posts/chain_replication_for_supporting_high_throughput_and_availability/">Chain Replication for Supporting High Throughput and Availability</a></h3>
         <div class="summary"><p>ストレージサーバーに順番をつけ、順にオブジェクトを複製することで、ストレージサービスの一貫性を維持しつつスループットと可用性の向上をはかる。
 ここでのストレージサービスは、オブジェクトを保存し、クエリに対して一つのオブジェクトを返し、アトミックに一つのオブジェクトを更新できるものをさす。
-また、一貫性は、オブジェクトごとにクエリと更新を直列的に適用し、更新につづくクエリが更新内容結果になることを意味する。
+また、一貫性は、オブジェクトごとにクエリと更新を直列的に適用し、更新につづくクエリが更新内容になることを意味する。
 末尾のサーバーがクエリを受信し、該当するオブジェクトをクライアントに返す。
 先頭のサーバーが更新リクエストを受信し、順にサーバーのオブジェクトを更新し、末尾のサーバーが更新の結果をクライアントに返す。</p></div>
         <div class="article-footer">
@@ -70,8 +90,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/implementing_remote_procedure_calls/">Implementing Remote Procedure Calls</a></h3>
-        <div class="summary"><p>Xeroxのプログラミング環境<a href="http://www.bitsavers.org/pdf/xerox/parc/techReports/CSL-80-10_Requirements_for_an_Experimental_Programming_Environment.pdf">Cedar</a>のために開発されたRPCを解説した84年の論文である。
-RPCの開発目的は、分散コンピューティングを簡単に実装できるようにする、通信時間を短くする、通信をセキュアにすることの3点である。
+        <div class="summary"><p>Xeroxのプログラミング環境<a href="http://www.bitsavers.org/pdf/xerox/parc/techReports/CSL-80-10_Requirements_for_an_Experimental_Programming_Environment.pdf">Cedar</a>のために開発されたRPCを解説した84年の論文。
+RPCの開発目的は、分散コンピューティングを簡単に実装できるようにする、通信時間を短くする、通信をセキュアにすることの3点にある。
 RPCは大部分で<a href="http://www.bitsavers.org/pdf/xerox/parc/techReports/CSL-79-3_Mesa_Language_Manual_Version_5.0.pdf">Mesa</a>が使われた。</p></div>
         <div class="article-footer">
             <span class="date">September 11, 2021</span>
@@ -135,29 +155,6 @@ PDP-11は1971年2月から運用がはじまり、当初はアセンブリ言語
 2人は、UNIXの設計に影響したものとして、プログラマとして対話的なインターフェースを望んでいたこと、ハードウェアの低い性能ゆえにソフトウェアの設計を洗練させる必要があったこと、ソースコードをUNIX上で編集し簡単にプログラムを変更できたことをあげている。</p></div>
         <div class="article-footer">
             <span class="date">August 21, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/what_helped_and_what_did_not/">What helped, and what did not? An Evaluation of the Strategies to Improve Continuous Integration</a></h3>
-        <div class="summary"><p><a href="https://travistorrent.testroots.org/">TravisTorrent</a>にある100件のプロジェクトで10種類のCIのテクニックを定量評価した。
-テクニックは、不要なビルドやテストをスキップするか、実行順序を優先づけるものかに分かれる。
-前者は計算資源の消費を減らすこと、後者は失敗するケースを早めに実行することを目的にする。
-もっとも成功するテストやビルドをスキップできたテクニックは、コードに変更のないケースをスキップするものだったが、同時に失敗するテストを多く見落とした。
-実行順序を優先付ける手法で最も性能のよかったテクニックは、<a href="https://www.semanticscholar.org/paper/Static-test-case-prioritization-using-topic-models-Thomas-Hemmati/ad77a2776733c7fdc10c0b043f7504a14fce3b6e">Thomasら</a>のもので、シグネチャやコメントで学習したトピックモデルを使い直前に実行したテストと違うトピックのテストを実行する。</p></div>
-        <div class="article-footer">
-            <span class="date">August 20, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/dont_do_that/">Don&#39;t Do That! Hunting Down Visual Design Smells in Complex UIs against Design Guidelines</a></h3>
-        <div class="summary"><p>2020年5月時点のマテリアルデザインの公式ドキュメントから93種類の不吉な匂いを洗い出し、71種類の匂いを検出するツールUIS-Hunterを開発した。
-文中に&quot;don&rsquo;t&quot;や&quot;caution&quot;があることとUIの画像があることを条件に不吉な匂いを選び、9,286個のアンドロイドアプリにある7,497のUIを調べたところ、2,587個のアプリから1つ以上の不吉な匂いのあるUIが見つかった。
-UIS-Hunterは、FigmaやAndroid Studio Layout EditorなどのモックアップやAndroid UI AutomatorやSeleniumのスクリーンショットから不吉な匂いを解析し、UIのソースコードを必要としない。
-9,286個のアプリの60,756のUIで検出性能を評価したところ、precisionが0.81, recallが0.90だった。</p></div>
-        <div class="article-footer">
-            <span class="date">August 14, 2021</span>
         </div>
     </article>
     
