@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 11 Dec 2021 18:27:24 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 25 Dec 2021 11:44:17 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Deep Learning Based Text Classification: A Comprehensive Review (2020)</title>
+      <link>https://nryotaro.dev/posts/deep_learning_based_text_classification/</link>
+      <pubDate>Sat, 25 Dec 2021 11:44:17 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/deep_learning_based_text_classification/</guid>
+      <description>&lt;p&gt;深層学習によるテキスト分類のサーベイで、調査したモデル数の多さで論文の貢献を主張している。
+文章の構成は、150個のモデル、40件のデータセット、定量的な評価指標の解説がつづく。
+文書分類を広くとらえ、典型的なテキスト分類だけでなくQAやテキスト含意にもふれている。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Monitoring Streams - A New Class of Data Management Applications (2002)</title>
@@ -169,12 +180,13 @@ Chubbyはロックサービスとして作られたが、ネームサーバと�
     </item>
     
     <item>
-      <title>Parallel Database Systems: The Future of High Performance Database Systems</title>
+      <title>Parallel Database Systems: The Future of High Performance Database Systems (1992)</title>
       <link>https://nryotaro.dev/posts/parallel_database_systems/</link>
       <pubDate>Sat, 25 Sep 2021 13:09:34 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/parallel_database_systems/</guid>
-      <description>&lt;p&gt;データベースの処理性能を上げる手段として、特殊なハードウェアをもちいたり、メモリやディスクを共有した複数のコンピュータを使ったりするよりも、安価で単純に実装できることから、汎用的なコンピュータによる水平パーティションのシェアードナッシング構成を支持した。
+      <description>&lt;p&gt;データベースの処理性能を上げる方法として、汎用的なコンピュータによる水平パーティションのシェアードナッシング構成を主張した。
+特殊なハードウェアを使ったり、メモリ、ディスクを共有する複数のコンピュータを使ったりするよりも、単純で安く実装できる。
 論文が発表された1992年の時点でTeradataやTandem NonStopなどのパーティンション化されたデータベースがある。&lt;/p&gt;</description>
     </item>
     

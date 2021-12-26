@@ -24,7 +24,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>Parallel Database Systems: The Future of High Performance Database Systems</title>
+    <title>Parallel Database Systems: The Future of High Performance Database Systems (1992)</title>
 </head>
 
 <body>
@@ -44,18 +44,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
     
 <main>
-    <h1>Parallel Database Systems: The Future of High Performance Database Systems</h1>
+    <h1>Parallel Database Systems: The Future of High Performance Database Systems (1992)</h1>
     <span class="date">September 25, 2021</span>
     <div>
-        <p>データベースの処理性能を上げる手段として、特殊なハードウェアをもちいたり、メモリやディスクを共有した複数のコンピュータを使ったりするよりも、安価で単純に実装できることから、汎用的なコンピュータによる水平パーティションのシェアードナッシング構成を支持した。
+        <p>データベースの処理性能を上げる方法として、汎用的なコンピュータによる水平パーティションのシェアードナッシング構成を主張した。
+特殊なハードウェアを使ったり、メモリ、ディスクを共有する複数のコンピュータを使ったりするよりも、単純で安く実装できる。
 論文が発表された1992年の時点でTeradataやTandem NonStopなどのパーティンション化されたデータベースがある。</p>
-<p>データの分割方法にround-robin, hashing partitioning, range partitioningがある。
-round robinはデータが順番に直列的に問い合わせられるときは有効だが、特定の値でレコードを検索する用途にはむかない。</p>
-<p>Hasing partitioningは、属性値のhash値で保存先のデータベースを決める。
-Hash値の計算につかう属性値が同じであれば問い合わせ先のデータベースが一緒になり、クエリを実行すべきディスクの数がへる。したがって、問い合わせが直列的か属性の値を指定したものだけであるときに有効に機能する。</p>
-<p>一緒に検索されることが多いデータは、ディスク上の物理的に近くに配置しておくことが望ましい。
+<p>水平分割の方法にround-robin, hashing partitioning, range partitioningがある。
+round robinはデータが順番かつ直列的に問い合わせられるときは有効だが、特定の値でレコードを検索する用途にはむかない。</p>
+<p>Hasing partitioningは、属性値のハッシュ値で保存先のデータベースを決める。
+ハッシュ値の計算につかう属性値が同じであれば問い合わせ先のデータベースが一緒になり、クエリを実行すべきディスクの数がへる。
+問い合わせが直列的かつ属性の値を指定したものだけであるときに有効に機能する。</p>
+<p>一緒に検索されやすいデータは、物理的にディスク上の近くに配置しておくことがのぞましい。
 range partitioningは、属性値の似ているレコードを同じパーティションに保存することで、直列的な問い合わせや属性値による問い合わせだけでなく、一緒に問い合わせられやすいレコードを同じパーティションに保存できる。
-ただし、Hashing partitioningやround robinに比べ、データの保存先が特定のパーティションに偏ってしまうおそれがある。</p>
+ただし、Hashing partitioningやround robinに比べ、データの保存先が特定のパーティションにかたよるおそれがある。</p>
 <p>論文を<a href="https://people.eecs.berkeley.edu/~brewer/cs262/5-dewittgray92.pdf">こちら</a>からダウンロードできます。</p>
     </div>
 </main>

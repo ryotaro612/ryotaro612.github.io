@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Deep Learning Based Text Classification: A Comprehensive Review (2020)</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Deep Learning Based Text Classification: A Comprehensive Review (2020)</h1>
+    <span class="date">December 25, 2021</span>
+    <div>
+        <p>深層学習によるテキスト分類のサーベイで、調査したモデル数の多さで論文の貢献を主張している。
+文章の構成は、150個のモデル、40件のデータセット、定量的な評価指標の解説がつづく。
+文書分類を広くとらえ、典型的なテキスト分類だけでなくQAやテキスト含意にもふれている。</p>
+<p>言及されたモデルは、FNN, RNN,  CNN, Capsule Network, 注意機構、Memory-augmented network, Graph neural network, Siamense Neural Netowrk, Transformerにわかれる。
+FNNはテキストを多重集合とみなし、RNNはテキストを時系列にならぶ単語の列としてあつかい単語の依存関係とテキストの構造をとらえる。
+はなれた単語同士の関係を学習できるので、品詞タグづけやQAタスクで効果を発揮する。
+時系列のほかにも、単語を空間にならべることもできる。
+CNNは、単語を空間にならべ、テキストによって出現する位置がまちまちで局所的な単語のパターンを学習できる。
+ところが、プーリング層がパターン同士の位置関係の情報を消してしまい、向きが違うだけの同じ画像を判別する場合などパターン同士の位置関係が重要になるタスクで必要な学習データ量が増えてしまう。</p>
+<p>CapsuleNetworkは、このCNNのプーリング層の問題からうまれた。
+CNNのニューロン(ユニット)がスカラー値を出力するのに対し、CapsuleNetworkはニューロンのグループごとに、異なる特徴の空間の位置情報をベクトル値をとして出力する。
+カプセルはこのニューロンのグループを意味する。</p>
+<p>自然言語処理での注意機構は、文中の単語同士の相関関係を学習でき、言語モデルであれば重要さをあらわすベクトルとみなすことができる。
+pair-wizeランキング学習やテキストマッチングでもよくつかわれる。
+<a href="https://www.cs.cmu.edu/~./hovy/papers/16HLT-hierarchical-attention-networks.pdf">Yang et al.</a>は文書分類のための階層的な注意機構のネットワークを提案した。
+エンコーディングのときに注意機構がモデル内部に保存するベクトルを内部メモリとすると、Memory-Augmented Networkは、モデルが読み書きできる外部のメモリとモデルが結合したアーキテクチャである。</p>
+<p>Graph neural networkは文を構文や単語の意味上の依存関係を木構造でとらえる。
+<a href="https://web.eecs.umich.edu/~mihalcea/papers/mihalcea.emnlp04.pdf">TextRank</a>はキーワードやキーセンテンスを文書から抽出する教師なし学習のGrapth neural networkにあたる。
+よく使われるのは文書分類で、文書や単語間の関係からラベルを推論する。
+T N. Kipfらは、畳み込みをもちいた半教師あり学習の<a href="(https://arxiv.org/abs/1609.02907)">ネットワーク</a>を提案した。</p>
+<p>Siamense Neural Networkは、Deep Structured Semantic Modelでも知られ、テキストマッチングむけに設計されている。
+QA集からクエリに対して適当な回答を見つけるタスクでつかわれる。</p>
+<p>RNNの計算上のボトルネックはテキストを直列的に処理するところにあり、必要な計算量は文の長さに依存する。
+Transformerモデルは、自己注意機構によって並列に各単語の注意スコアを計算することで、RNNやCNNよりも並列に学習することができる。</p>
+<p>最もよいモデルはタスクごとに違うことを前提におきつつ、Transfomerや学習ずみ言語モデルをタスクにあわせて調整することをすすめている。
+<a href="https://huggingface.co/">Hugging Face</a>はBERTをはじめとするTransfermerモデルを提供している。
+公開されている言語モデルは汎用的なコーパスで学習されたものであり、汎用コーパスがタスクのもとと大きく違うことがある。
+その場合、事前学習ずみモデルにドメイン適用をほどこしてドメインの差を埋めたうえで、fine tuningで予測性能を上げ、最後に運用のためにモデルを軽量化する。</p>
+<p>論文を<a href="https://arxiv.org/pdf/2004.03705.pdf">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/monitoring_streams/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
