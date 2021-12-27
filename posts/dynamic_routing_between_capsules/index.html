@@ -24,7 +24,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>Dynamic Routing Between Capsules</title>
+    <title>Dynamic Routing Between Capsules (2017)</title>
 </head>
 
 <body>
@@ -44,18 +44,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
     
 <main>
-    <h1>Dynamic Routing Between Capsules</h1>
+    <h1>Dynamic Routing Between Capsules (2017)</h1>
     <span class="date">December 26, 2021</span>
     <div>
-        <p>カプセルはおなじ層にあるニューロン(ユニット)をグループであり、カプセルの出力するベクトルは入力の特定のエンティティの分散表現にあたる。
+        <p>カプセルはおなじ層にあるニューロン(ユニット)をグループであり、カプセルの出力するベクトルは入力にある特定のエンティティの分散表現になる。
 表題のdynamic routingは、カプセルの出力ベクトルを1つ上の層のどのカプセルに渡すべきかを学習する手法である。
-これにより、プーリング層では失われてしまうエンティティの空間上の位置情報をカプセルの出力するベクトルで表現できるようになる。
-実験では、2層の畳こみ層と1層の全結合層からなる浅いニューラルネットワークをMNISTに適用し、長さでエンティティが存在する確率を、向きでエンティティの特徴を表現できるベクトルを学習できたことを示した。</p>
+これにより、プーリング層で失われるエンティティの空間上の位置情報をカプセルの出力するベクトルで表現できる。
+実験では、2層の畳み込み層と1層の全結合層からなる浅いニューラルネットワークをMNISTに適用し、長さでエンティティが存在する確率を、向きでエンティティの特徴を表現できるベクトルを学習できることを示した。</p>
 <p>特定のエンティティが入力にある確率を長さで表現するベクトルが必要なので、ベクトルの長さを0以上1以下できる以下の非線形な関数squashingを導入する。
 $$
 \boldsymbol{\rm v}_j=\frac{\mid\mid \boldsymbol{\rm s}_j\mid\mid^2}{1+\mid\mid \boldsymbol{\rm s}_j\mid\mid^2}\frac{\boldsymbol{\rm s}_j}{\mid\mid \boldsymbol{s}_j\mid\mid}
 $$
 \(\boldsymbol{\rm v}_{j}\)はカプセル\(j\)の出力ベクトルで、\(\boldsymbol{\rm s}_j\)は前の層にあるカプセル\(i\)の出力ベクトル\(\boldsymbol{\rm u}_i\)とdynamic routingで更新する係数\(c_{ij}\)からもとめられる。
+カプセル\(i\)と\(i\)の1つ上にあるレイヤーの全カプセルの係数は合計で1にしたい。
+そこで、\(i\)が\(j\)と結合する対数事前確率\(b_{ij}\)をもとに、\(c_{ij}\)をソフトマックス関数で算出する。
 $$
 \begin{align}
 \boldsymbol{\rm s}_j&amp;=\sum_ic_{ij}\hat{\boldsymbol{\rm u}}_{j\mid i}\\<br>
@@ -63,12 +65,11 @@ $$
 c_{ij}&amp;=\frac{\exp(b_{ij})}{\sum_k\exp (b_{ik})}
 \end{align}
 $$
-カプセル\(i\)と\(i\)の1つ上のレイヤーにあるすべてのカプセルについての係数の合計は1でなければならないため、\(i\)が\(j\)と結合する対数事前確率\(b_{ij}\)をもとに、\(c_{ij}\)をソフトマックス関数で算出する。
 <img src="/dynamic_routing_between_capsules/algo.png" alt="algo"></p>
-<p>MNISTによる実験では、一番下にチャネル数256, カーネル9x9, ストライド 1の畳込み層(Conv1)を、次にチャネル数256, カーネル9x9, ストライド2の畳み込み層で実装した32チャンネル、8次元のカプセル層を、最後に全結合層による16次元のカプセルをクラス数ふくむカプセル層をもったネットワークを利用した。
-以下の図は、ネットワークで生成されたベクトルをしめす。
+<p>MNISTによる実験では、一番下にチャネル数256, カーネル9x9, ストライド 1の畳み込み層(Conv1)を、次にチャネル数256, カーネル9x9, ストライド2の畳み込み層で実装した32チャンネル、8次元のカプセル層を、最後に全結合層による16次元のカプセルをクラス数10だけもったカプセル層を使ったネットワークを利用した。
+以下の図は、ネットワークの中間で生成されるベクトルをあらわす。
 <img src="/dynamic_routing_between_capsules/arch.png" alt="arch">
-また、\(m^{+}=0.9, m^{-}=0.1, \lambda=0.5, T_k\)をクラス\(k\)でありそのときに限り\(1\)の値として、次の損失関数がもちいられた。
+また、\(m^{+}=0.9, m^{-}=0.1, \lambda=0.5, T_k\)をクラス\(k\)でありそのときに限り\(1\)の値として、次の損失関数を使った。
 $$
 L_k=T_{k}\max(0, m^+-\mid\mid \boldsymbol{\rm v}_k\mid\mid)^2 +\lambda (1-T_k)\max(0, \mid\mid \boldsymbol{\rm v}_k\mid\mid - m^-)^2
 $$</p>
