@@ -6,10 +6,22 @@
     <description>Recent content in Posts on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 26 Dec 2021 13:24:12 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 26 Dec 2021 22:26:10 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Dynamic Routing Between Capsules</title>
+      <link>https://nryotaro.dev/posts/dynamic_routing_between_capsules/</link>
+      <pubDate>Sun, 26 Dec 2021 22:26:10 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/dynamic_routing_between_capsules/</guid>
+      <description>&lt;p&gt;カプセルはおなじ層にあるニューロン(ユニット)をグループであり、カプセルの出力するベクトルは入力の特定のエンティティの分散表現にあたる。
+表題のdynamic routingは、カプセルの出力ベクトルを1つ上の層のどのカプセルに渡すべきかを学習する手法である。
+これにより、プーリング層では失われてしまうエンティティの空間上の位置情報をカプセルの出力するベクトルで表現できるようになる。
+実験では、2層の畳こみ層と1層の全結合層からなる浅いニューラルネットワークをMNISTに適用し、長さでエンティティが存在する確率を、向きでエンティティの特徴を表現できるベクトルを学習できたことを示した。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Hierarchical Attention Networks for Document Classification (2016)</title>
