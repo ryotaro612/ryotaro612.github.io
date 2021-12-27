@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Hierarchical Attention Networks for Document Classification (2016)</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Hierarchical Attention Networks for Document Classification (2016)</h1>
+    <span class="date">December 26, 2021</span>
+    <div>
+        <p>Hierarchical Attention Network(HAN)は、単語は文から文書は文からなりたつ文書の構造をアーキテクチャに反映し、単語の注意から文の注意を、文の注意から文書の注意を計算する。
+順方向と逆方向の2つのGRUでエンコードした単語の分散表現から注意を計算し、文ごとに、単語の注意の重みつき和を計算し文の分散表現とする。
+さらに、文の分散表現を別の順、逆方向GRUにあたえ、単語とおなじように各文の注意を計算し、その重みつき和を文書の分散表現としてあつかう。
+最後に、文書の分散表現を全結合層に入力し、ソフトマックス関数で文書のクラスを推定する。
+単語の文の注意を推定できるため、単語と文の2つの粒度で文書の重要な箇所を可視化することができる。</p>
+<!-- raw HTML omitted -->
+<p>アーキテクチャは、以下の図のように、単語と文それぞれについて、エンコードの層と注意の層がある。
+以下では、文書に\(L\)の文があり、文\(s_i\)には\(T_i\)個の単語\(w_{it} (t \in [1, T])\)があるとする。
+<img src="/han.png" alt="han">
+単語の注意層にあたえる隠れ状態\(h_{it}\)は順方向のGRU(\(\overrightarrow{\text{GRU}}\))と逆方向のGRU(\(\overleftarrow{\text{GRU}}\))の隠れ状態を結合したベクトル\(h_{it}=[\overrightarrow{h}_{it}, \overleftarrow{h}_{it}]\)であり、以下の計算でもとめる。
+$$
+\begin{align}
+x_{it} &amp;= W_ew_{it}, t\in [1, T]\\<br>
+\overrightarrow{h}_{it}&amp;=\overrightarrow{\text{GRU}}(x_{it}), t\in[1, T]\\<br>
+\overleftarrow{h}_{it}&amp;=\overleftarrow{\text{GRU}}(x_{it}), t \in [T, 1]
+\end{align}
+$$
+GRUは、リセットゲートを\(r_t\), 更新ゲートを\(z_t\)として以下の式をとる。
+$$
+\begin{align}
+h_t &amp;= (1-z_t)\odot h_{t-1} + z_t \odot \tilde{h}_t\\<br>
+z_t &amp;= \sigma(W_zx_t + U_z h_{t-1}+b_z)\\<br>
+\tilde{h}_t &amp;= \tanh(W_hx_t + r_t \odot (U_hh_{t-1}) + b_h)\\<br>
+r_t &amp;= \sigma (W_rx_t + U_rh_{t-1} + b_r)
+\end{align}
+$$</p>
+<p>文の分散表現\(s_i\)は、単語の注意\(\alpha_{it}\)の重み\(h_{it}\)つき和である。
+\(u_w\)をランダムに初期化し、学習時に同時に更新するパラメタとして、次のようにもとめる。</p>
+<p>$$
+\begin{align}
+u_{it}&amp;=\tanh(W_wh_{it} + b_w)\\<br>
+\alpha_{it}&amp;=\frac{\exp (u^\top_{it} u_w)}{\sum_t \exp (u^\top_{it}u_w)}\\<br>
+s_i&amp;=\sum_t \alpha_{it}h_{it}
+\end{align}
+$$</p>
+<p>単語と同じく、文の分散表現についても、順、逆方向2つのGRUに入力し、隠れ状態\(h_i =[\overrightarrow{h}_i, \overleftarrow{h}_i]\)を計算する。
+\(h_i\)は、文\(i\)を中心にその周辺の情報をもつ。
+$$
+\begin{align}
+\overrightarrow{h}_i &amp;= \overrightarrow{\text{GRU}}(s_i), i\in[1, L]  \\<br>
+\overleftarrow{h}_i &amp;= \overleftarrow{\text{GRU}}(s_i), t\in [L, 1]
+\end{align}
+$$</p>
+<p>文の注意層では、単語のときと同様に、\(u_s\)をランダムに初期化し、文書の分散ベクトル\(v\)をえる。
+$$
+\begin{align}
+u_{i}&amp;=\tanh(W_sh_{i} + b_s)\\<br>
+\alpha_{i}&amp;=\frac{\exp (u^\top_{i} u_s)}{\sum_i \exp (u^\top_{i}u_s)}\\<br>
+v&amp;=\sum_i \alpha_{i}h_{i}
+\end{align}
+$$</p>
+<p>最後に全結合層がある。
+$$
+p=\text{softmax}(W_cv+b_c)
+$$</p>
+<p>以下の目的関数をもちいて学習する。
+$$
+L=-\sum_d\log p_{dj}
+$$</p>
+<p>論文を<a href="https://www.cs.cmu.edu/~./hovy/papers/16HLT-hierarchical-attention-networks.pdf">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/effective_approaches_to_attention_based_neural_machine_translation/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
