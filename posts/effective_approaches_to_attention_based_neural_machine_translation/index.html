@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Effective Approaches to Attention-based Neural Machine Translation (2015)</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Effective Approaches to Attention-based Neural Machine Translation (2015)</h1>
+    <span class="date">December 26, 2021</span>
+    <div>
+        <p>注意機構をつかった翻訳用のニューラルネットワークを2種類例示し、翻訳における効果的な注意機構の使い方を提案した。
+どちらもスタッキングしたLSTMを使うが、注意の計算で参照するLSTMの隠れ状態が違う。
+ひとつは、1単語を出力するときに、すべての単語のLSTMの隠れ状態から注意を算出するグローバルなアプローチで、もうひとつは一部の単語の状態だけから注意を算出するローカルなアプローチである。
+英語とドイツ語の双方への翻訳タスクに適用したところ、ローカルなアプローチで注意機構をつかわない手法と比べてBLEUスコアを5.0ポイントできた。</p>
+<p>以下に図示するグローバルとローカルどちらのアプローチも、時刻\(t\)におけるLSTMのトップ層の隠れ状態\(\boldsymbol{h}_t\)から、次に出力すべき単語の手掛かりになる原文の文脈\(\boldsymbol{c}_t\)を計算する。
+LSTMの隠れ状態\(\boldsymbol{h}_t\)と文脈\(\boldsymbol{c}_t\)を結合したベクトルから図の注意レイヤーの隠れ状態\(\tilde{\boldsymbol{h}}_t\)を計算し、その値をソフトマックス関数を適用し次に出力すべき単語をもとめる。
+$$
+\begin{align}
+\tilde{\boldsymbol{h}}_t &amp;= \tanh(\boldsymbol{W}_c[\boldsymbol{c}_t;\boldsymbol{h}_t]) \\<br>
+p(y_t\mid y_{&lt;t}, x) &amp;= \text{softmax}(\boldsymbol{W}_\boldsymbol{s}\tilde{\boldsymbol{h}}_t)
+\end{align}
+$$
+<img src="/effective_approach_to_attention_based_nmt/global.png" alt="global">
+<img src="/effective_approach_to_attention_based_nmt/local.png" alt="local"></p>
+<p>グローバルなアプローチでは、原文の各単語の注意\(\boldsymbol{a}_t\)の重みつき平均を、文脈\(\boldsymbol{c}_t\)としてあつかう。
+原文のある状態\(s\)の注意\(\boldsymbol{a}_t(s)\)は、現在の出力側の隠れ状態\(\boldsymbol{h}_t\)と隠れ状態\(\bar{\boldsymbol{h}}_s\)から次のように算出できる。
+$$
+\begin{align}
+\boldsymbol{a}_t(s) &amp;=\text{align}(\boldsymbol{h}_t, \bar{\boldsymbol{h}}_s)\\<br>
+&amp;= \frac{\exp(\text{score}(\boldsymbol{h}_t, \bar{\boldsymbol{h}}_s ))}{\sum_{s&rsquo;}\exp(\text{score} (\boldsymbol{h}_t, \bar{\boldsymbol{h}}_{s&rsquo;}) ) }
+\end{align}
+$$
+\(\text{score}\)の定義は、タスクにあわせて以下の3つからえらべる。
+$$
+\text{score}(\boldsymbol{h}_t, \bar{\boldsymbol{h}}_s) =
+\begin{cases}
+\boldsymbol{h}_t^{\top}\bar{\boldsymbol{h}}_s&amp;\text{dot}\\<br>
+\boldsymbol{h}_t^{\top}\boldsymbol{W}_a\bar{\boldsymbol{h}}_s&amp;\text{general}\\<br>
+\boldsymbol{v}_a^{\top}\tanh(\boldsymbol{W}_a[\boldsymbol{h}_t;\bar{\boldsymbol{h}}_s])&amp;\text{concat}\\<br>
+\end{cases}
+$$</p>
+<p>ローカルなアプローチの場合、注意の計算で原文のどの状態を参照するかを決めなければならない。
+\(S\)を原文の文の長さとして\(p_t\in[0, S]\)をもとめ、\([p_t-D, p_t+D]\)の範囲を次に出力すべき単語に関係する原文側の位置と推定する。
+\(\boldsymbol{W}_p\)と\(\boldsymbol{v}_p\)をパラメタとして\(p_t\)を次の式で推定する。
+$$
+p_t=S\cdot \text{sigmoid}(\boldsymbol{v}_p^\top \tanh (\boldsymbol{W}_p\boldsymbol{h}_t))
+$$</p>
+<p>注意は、\(\sigma=\frac{D}{2}\)のガウス関数で算出する。
+$$
+\boldsymbol{a}_t(s)=\text{align}(\boldsymbol{h}_t, \bar{\boldsymbol{h}}_s)\exp\left(\frac{(s-p_t)^2}{2\sigma^2}\right)
+$$</p>
+<p>論文を<a href="https://arxiv.org/pdf/1508.04025.pdf">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/deep_learning_based_text_classification/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

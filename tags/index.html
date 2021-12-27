@@ -47,6 +47,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/effective_approaches_to_attention_based_neural_machine_translation/">Effective Approaches to Attention-based Neural Machine Translation (2015)</a></h3>
+        <div class="summary"><p>注意機構をつかった翻訳用のニューラルネットワークを2種類例示し、翻訳における効果的な注意機構の使い方を提案した。
+どちらもスタッキングしたLSTMを使うが、注意の計算で参照するLSTMの隠れ状態が違う。
+ひとつは、1単語を出力するときに、すべての単語のLSTMの隠れ状態から注意を算出するグローバルなアプローチで、もうひとつは一部の単語の状態だけから注意を算出するローカルなアプローチである。
+英語とドイツ語の双方への翻訳タスクに適用したところ、ローカルなアプローチで注意機構をつかわない手法と比べてBLEUスコアを5.0ポイントできた。</p></div>
+        <div class="article-footer">
+            <span class="date">December 26, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/deep_learning_based_text_classification/">Deep Learning Based Text Classification: A Comprehensive Review (2020)</a></h3>
         <div class="summary"><p>深層学習によるテキスト分類のサーベイで、調査したモデル数の多さで論文の貢献を主張している。
 文章の構成は、150個のモデル、40件のデータセット、定量的な評価指標の解説がつづく。
@@ -152,17 +163,6 @@ Bayouは、アプリケーションの知識を借りてデータの整合性を
 最後に、メッセージブローカを使うかどうかなどpublish/subscribeモデルの設計や実装の利点や欠点を整理する。</p></div>
         <div class="article-footer">
             <span class="date">October 30, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/dryad/">Dryad: Distributed Data-Parallel Programs from Sequential building Blocks</a></h3>
-        <div class="summary"><p>DryadはMicrosoftで開発された分散コンピューティングエンジンであり、MapReduceに近い。
-処理を点、処理結果を受け渡す通信経路を辺とするDAGで、分散処理を定義する。
-通信経路にはファイル、TCP, FIFOを使え、実行環境は1台のマルチコアのコンピュータから数千台のコンピュータまでスケールできる。
-MapReduceは入力と出力が一つでなければならないが、DryadはDAGであれば入力と出力が複数あってもかまわない。</p></div>
-        <div class="article-footer">
-            <span class="date">October 23, 2021</span>
         </div>
     </article>
     
