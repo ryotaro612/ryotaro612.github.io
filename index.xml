@@ -29,7 +29,11 @@
       <pubDate>Sun, 26 Dec 2021 13:24:12 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/hierarchical_attention_networks_for_document_classification/</guid>
-      <description></description>
+      <description>&lt;p&gt;Hierarchical Attention Network(HAN)は、単語は文から文書は文からなりたつ文書の構造をアーキテクチャに反映し、単語の注意から文の注意を、文の注意から文書の注意を計算する。
+順方向と逆方向の2つのGRUでエンコードした単語の分散表現から注意を計算し、文ごとに、単語の注意の重みつき和を計算し文の分散表現とする。
+さらに、文の分散表現を別の順、逆方向GRUにあたえ、単語とおなじように各文の注意を計算し、その重みつき和を文書の分散表現としてあつかう。
+最後に、文書の分散表現を全結合層に入力し、ソフトマックス関数で文書のクラスを推定する。
+単語の文の注意を推定できるため、単語と文の2つの粒度で文書の重要な箇所を可視化することができる。&lt;/p&gt;</description>
     </item>
     
     <item>
