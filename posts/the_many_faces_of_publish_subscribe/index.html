@@ -24,7 +24,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>The Many Faces of Publish/Subscribe</title>
+    <title>The Many Faces of Publish/Subscribe (2003)</title>
 </head>
 
 <body>
@@ -44,14 +44,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
     
 <main>
-    <h1>The Many Faces of Publish/Subscribe</h1>
+    <h1>The Many Faces of Publish/Subscribe (2003)</h1>
     <span class="date">October 30, 2021</span>
     <div>
         <p>分散システムの通信をpublish/subscribeモデルにするとシステム間の結合を疎にできる。
-タイトルと同名の2003年に発表された論文は、publish/subscribeのサーベイであり、publish/subscribeモデルを空間、時間、同期の3種の結合度を下げる技術ととらえ、ほかの通信技術と比較する。
-次に、先行研究のpublish/subscribeモデルを、購読するイベントの宣言手段によって、topic-based, content-based, type-basedに分類する。
-最後に、メッセージブローカを使うかどうかなどpublish/subscribeモデルの設計や実装の利点や欠点を整理する。</p>
-<p>Publish/subsribeモデルにおける空間の粗結合とは、publisherとsubscriberが互いを直接参照することがなく、対向のpublisherやsubscriberの数を知らなくてよいことを意味する。
+表題の論文は、publish/subscribeのサーベイであり、publish/subscribeモデルを空間、時間、同期の3種の結合度を下げる技術ととらえ、ほかの通信技術と比較する。
+また、先行研究のpublish/subscribeモデルを、購読するイベントの宣言手段によって、topic-based, content-based, type-basedに分類する。
+最後に、メッセージブローカーを使うかどうかなどpublish/subscribeモデルの設計や実装の利点や欠点を整理する。</p>
+<p>Publish/subsribeモデルにおける空間の粗結合は、publisherとsubscriberが互いを直接参照することがなく、対向のpublisherやsubscriberの数を知らなくてよいことを意味する。
 時間については、publisherとsubscriberが同時刻に通信可能でなくてもよいことであり、publisherはsubscriberが通信できなくてもイベントを発信でき、他方、subscriberはpublisherが不在になってもイベントを受信できる。
 また、publisherは同期なしにイベントを並行して送信でき、subscriberは受信処理のコールバックを並行してよびだせる。</p>
 <p>Subscirberがpublisherから発信される特定のイベントのみを受信したいとき、受信すべきイベントを定義する仕組みが必要になる。
