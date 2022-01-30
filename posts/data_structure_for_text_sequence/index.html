@@ -24,7 +24,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>SEMI-SUPERVISED CLASSIFICATION WITH GRAPH CONVOLUTIONAL NETWORKS</title>
+    <title>Data Structure for Text Sequences</title>
 </head>
 
 <body>
@@ -44,28 +44,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
     
 <main>
-    <h1>SEMI-SUPERVISED CLASSIFICATION WITH GRAPH CONVOLUTIONAL NETWORKS</h1>
-    <span class="date">January 21, 2022</span>
+    <h1>Data Structure for Text Sequences</h1>
+    <span class="date">January 29, 2022</span>
     <div>
-        <p>文書の特徴を点、引用などの関係を辺でしめしたグラフ構造に畳込みニューラルネットワークを適用する半教師あり学習で、ラベルのない文書は近くにある文書とおなじラベルになると仮定する。
-<a href="https://mlg.eng.cam.ac.uk/zoubin/papers/zgl.pdf">Zhu et al.</a>にみられる先行研究は、辺の情報をニューラルネットワークにあたず、文書の特徴のみを入力していた。
-表題の手法では、文書の特徴にくわえて隣接行列で表現した辺の情報もニューラルネットワークにあたえる。
-グラフの辺の数に対して線形にスケールし、隠れ層でグラフの分散表現を獲得できる。</p>
-<p>\(A\)を隣接行列, \(I_{N}\)を単位行列、\(\tilde{A}=A+I_{N}\), \(\tilde{D}_{ii}=\sum_{j}\tilde{A}_{ij}\)とすると、各層の伝搬規則は次の式になる。
-$$
-H^{(l+1)}=\sigma \left(\tilde{D}^{-\frac{1}{2}}\tilde{A}\tilde{D}^{-\frac{1}{2}}H^{(l)}W^{(l)}  \right)
-$$
-\(\sigma\)は\(\text{ReLU}(\cdot)=\max(0, \cdot)\)などの活性化関数、\(H\in\mathbb{R}^{N\times D}\), \(H^{(0)}=X\)である。
-たとえば、2層のネットワークであれば、\(C\)をチャネル数, \(H\)を特徴マップとして\(W^{(0)}\in\mathbb{R}^{C\times H}\)の
-$$
-Z=f(X, A)=  \text{softmax}\left(\hat{A} \text{ReLU}\left(\hat{A}XW^{(0)}\right)W^{(1)}\right)
-$$
-で、学習時は\(\mathcal{Y}_L\)をラベルのある点の集合として交差エントロピー
-$$
-\mathcal{L}=-\sum_{l\in \mathcal{Y}_L}\sum^{F}_{f=1}Y_{lf}\ln Z_{lf}
-$$
-をもちいる。</p>
-<p>論文を<a href="https://arxiv.org/pdf/1609.02907.pdf">こちら</a>からダウンロードできます。</p>
+        <p>テキストエディタのためのデータ構造として、array, gap, list, line pointers, fixed size buffers, piece tablesを評価する。
+とくに、Piece tablesを評価し詳しく解説する。
+Piece tableはテキストを2つのバッファに記録する。
+2つのバッファはfile buffer, add bufferで、file bufferは初期状態のテキストを保存し、add bufferはあらたに挿入された文字列を保存する追記のみのバッファである。
+なまえのpieceはバッファの連続する部分文字列を意味する。
+そして、pieceへのポインタのシーケンスがpiece tableである。
+ポインタは、どちらのバッファか、参照する部分文字列の開始位置、長さの3つの情報からなる。</p>
+<p>はじめは、ポインタがひとつしかなく、ポインタはfile bufferの全体を参照する。
+削除は、ポインタを2つにわける。
+ひとつは、先頭から削除された文字列より前までを参照する。
+もうひとつは、削除された文字列の次の文字からファイルの最後までを参照する。
+ただし、削除された文字列がファイルの先頭や最後であれば、一方のポインタはいらず、1つのポインタですむ。</p>
+<p>挿入は、ポインタを3つにわける。
+挿入された文字列をadd bufferに保存する。
+はじめのpieceは、挿入された文字列の前の文字列を参照する。
+2つめのpieceは、add bufferに保存された文字列を参照する。
+3つめのpieceは、挿入された文字列の後の文字列を参照する。
+先頭や最後に文字列を挿入したときは、削除とおなじである。</p>
+<p>file bufferに変更はなく、add bufferは追記のみなので、キャッシュやundoを実装しやすい。
+bufferをメモリ上にもたなければ、メモリ量は、テキストサイズではなく編集作業量による。
+そのため、大きなテキストを効率的に処理できる。</p>
+<p>論文を<a href="https://www.cs.unm.edu/~crowley/papers/sds.pdf">こちら</a>からダウンロードできます。</p>
     </div>
 </main>
 
@@ -73,13 +76,9 @@ $$
 <ul class="pagination">
     
     <li>
-        <a href="/posts/dynamic_routing_between_capsules/"><span class="material-icons">chevron_left</span></a>
+        <a href="/posts/semi_supervised_classification_with_graph_convolutional_networks/"><span class="material-icons">chevron_left</span></a>
     </li>
     
-    
-    <li>
-        <a href="/posts/data_structure_for_text_sequence/"><span class="material-icons">chevron_right</span></a>
-    </li>
     
 </ul>
 

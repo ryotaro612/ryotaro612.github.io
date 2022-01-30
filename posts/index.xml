@@ -6,10 +6,25 @@
     <description>Recent content in Posts on Coda</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 21 Jan 2022 21:01:24 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 29 Jan 2022 18:15:25 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Data Structure for Text Sequences</title>
+      <link>https://nryotaro.dev/posts/data_structure_for_text_sequence/</link>
+      <pubDate>Sat, 29 Jan 2022 18:15:25 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/data_structure_for_text_sequence/</guid>
+      <description>&lt;p&gt;テキストエディタのためのデータ構造として、array, gap, list, line pointers, fixed size buffers, piece tablesを評価する。
+とくに、Piece tablesを評価し詳しく解説する。
+Piece tableはテキストを2つのバッファに記録する。
+2つのバッファはfile buffer, add bufferで、file bufferは初期状態のテキストを保存し、add bufferはあらたに挿入された文字列を保存する追記のみのバッファである。
+なまえのpieceはバッファの連続する部分文字列を意味する。
+そして、pieceへのポインタのシーケンスがpiece tableである。
+ポインタは、どちらのバッファか、参照する部分文字列の開始位置、長さの3つの情報からなる。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>SEMI-SUPERVISED CLASSIFICATION WITH GRAPH CONVOLUTIONAL NETWORKS</title>
