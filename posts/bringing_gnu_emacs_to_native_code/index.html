@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Bringing GNU Emacs to Native Code</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Coda</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Bringing GNU Emacs to Native Code</h1>
+    <span class="date">January 30, 2022</span>
+    <div>
+        <p>Emacs 28から利用できる<a href="https://gcc.gnu.org/onlinedocs/jit/">libgccjit</a>によるネイティブコンパイルの解説である。
+パッケージアーカイブELPAにあるelisp-benchmarksによる比較ではバイトコンパイルよりも2.3倍から42倍の高速化を実現した。
+ネイティブコンパイル時は、はじめに、Emacs Lispのコードをバイトコンパイラで、Emacs VM(Lisp Assembly Program, LAP)の中間表現に変換する。
+つぎに、LAPをS式で静的単一代入形式の中間表現LIMPLEに変換する。
+LIMPLEは、GCCの中間表現GIMPLEに由来し、ネイティブコンパイルの中核技術にあたる。
+さいごに、LIMPLEをlibgccjitの中間表現に変換し、GCCでネイティブに実行可能なプログラムにコンパイルする。</p>
+<p>LIMPLE上の関数は、要素が<code>(operator operands)</code>のリストがノードであるグラフで表現される。
+<code>(operator operands)</code>には、たとえば<code>(set dst src)</code>, <code>(call f a b)</code>, <code>(jump bb)</code>がある。
+Emacs LispとGCCの中間表現のあいだにLIMPLEを導入した理由は、どの純粋関数がコンパイル時に最適化できるかや強い型付けなどのGCCの中間表現に渡せない情報が最適化に有用だからである。
+ほかにも、GCCがアンボクシングをサポートしていないことや、GCCの最適化が保守的であるといった理由もある。</p>
+<p>論文を<a href="https://zenodo.org/record/3736363#.YfYrVVvP0UE">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/data_structure_for_text_sequence/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
