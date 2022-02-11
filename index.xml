@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Coda</title>
+    <title>Yellow Blanket</title>
     <link>https://nryotaro.dev/</link>
-    <description>Recent content on Coda</description>
+    <description>Recent content on Yellow Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 30 Jan 2022 14:19:49 +0900</lastBuildDate>
@@ -176,8 +176,7 @@ BPSは、並列計算用のハードウェアと高水準な並列計算のた�
       <pubDate>Sat, 06 Nov 2021 21:10:04 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/an_overview_of_data_warehousing_and_olap_technology/</guid>
-      <description>&lt;p&gt;データウェアハウスの概要と発表時期の97年の関連技術を解説した論文で、
-データウェアハウスの理論を提唱したInmonにならい、データウェアハウスを目的指向(subject-oriented)で、統合され、時刻を横断する組織の意思決定に資する永続的なデータとらえている。
+      <description>&lt;p&gt;データウェアハウスの概要と発表時期の97年の関連技術を解説した論文で、データウェアハウスの理論を提唱したInmonにならい、データウェアハウスを、目的指向(subject-oriented)で、統合され、組織の意思決定に資する永続的なデータとらえている。
 関連技術を、ETL処理、データ保存方法、保存したデータによる分析の3つに分けて整理する。
 データベースの設計手法では、Kimballの提唱したスタースキーマ、その応用のスノーフレークスキーマ, 事実の星座(fact constellations)、インデックスについてビットマップインデックスを解説する。&lt;/p&gt;</description>
     </item>
