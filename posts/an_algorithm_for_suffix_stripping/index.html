@@ -24,7 +24,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>END-TO-END ARGUMENTS IN SYSTEM DESIGN</title>
+    <title>An algorithm for suffix stripping (1980)</title>
 </head>
 
 <body>
@@ -44,19 +44,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
     
 <main>
-    <h1>END-TO-END ARGUMENTS IN SYSTEM DESIGN</h1>
-    <span class="date">July 10, 2021</span>
+    <h1>An algorithm for suffix stripping (1980)</h1>
+    <span class="date">February 11, 2022</span>
     <div>
-        <p>分散システムのあるシステムから発せられた通信は、システムより低いレイヤーのネットワークを通り、ほかのシステムに到達する。
-論文の発表当時から、分散システムの信頼性にかかわる機能には、途中の低レイヤーではなく高レイヤーの終端におくべきものがあると知られていた。
-表題の論文は、それらを列挙し、END-TO-END ARGUMENTSと名付け、原則として提示する。
-例えば、データの完全性の保証、メッセージの重複対応、メッセージが到達したことの保証が原則にあてはまる。
-これらの機能を途中の低レイヤーにおくと、検証後の経路でメッセージが壊れた場合、送信元が重複メッセージをおくる場合、対向システムが受信したメッセージを処理できない場合に対処できない。
-分散システム全体の信頼性をあげるのであれば、信頼性を上げる機能を低レイヤーではなく終端の高レイヤーにおくほうが効率がよい。</p>
-<p>ネットワークの信頼性を上げる妥当な理由は、むしろ処理性能にある。
-ネットワークの信頼性を改善し、再送回数を減らせれば、通信や再送を含めた対向システムとのメッセージの往復時間を短くできる。
-ただし、メッセージの内容や到達を確認するオーバーヘッドが増える、複数のシステムがネットワークを利用する、ネットワークは高レイヤーほど信頼性にかかわる情報をもたないことから、性能のためにネットワークの信頼性を上げるにはこれらのトレードオフを考えなければならない。</p>
-<p>論文を<a href="http://web.mit.edu/saltzer/www/publications/endtoend/endtoend.pdf">こちら</a>からダウンロードできます。</p>
+        <p>Poterのステミングで知られる。
+アルゴリズムが単純で、辞書を必要としないところに特徴がある。
+単語の接尾辞を規則にしたがい段階的に変換し、変換後の文字列を語幹とみなす。</p>
+<p>まず、文字を、A, E, I, O, Uと一つ前の文字が子音でないYをconsonant, それ以外の文字をvowelの2つに区別する。
+consonantをC, vowelをV, [C]や[V]を高々1つのCやV, \(\text{(VC)}^m\)をVCのm回のくりかえしとする。
+このとき、任意の文字列を[C] \(\text{(VC)}^m\)[V] とかける。
+規則は、(condition) S1 \(\rightarrow\) S2 で表記され、単語が(condition)をみたすときに、接尾辞S1をS2に変換すると解釈する。
+(condition)には、(m&gt;1)や(* v *)のように、文字列長やパターンがはいる。
+たとえば、&quot;(m &gt; 1) EMENT \(\rightarrow\) &ldquo;にしたがうと、REPLACEMENTをREPLACに変換できる。</p>
+<p>論文を<a href="https://www.cs.toronto.edu/~frank/csc2501/Readings/R2_Porter/Porter-1980.pdf">こちら</a>からダウンロードできます。</p>
     </div>
 </main>
 
@@ -64,13 +64,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <ul class="pagination">
     
     <li>
-        <a href="/posts/a_history_and_evaluation_of_systemr/"><span class="material-icons">chevron_left</span></a>
+        <a href="/posts/bringing_gnu_emacs_to_native_code/"><span class="material-icons">chevron_left</span></a>
     </li>
     
-    
-    <li>
-        <a href="/posts/linearizability/"><span class="material-icons">chevron_right</span></a>
-    </li>
     
 </ul>
 

@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://nryotaro.dev/posts/bringing_gnu_emacs_to_native_code/</loc>
-    <lastmod>2022-01-30T14:19:49+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2022-01-30T14:19:49+09:00</lastmod>
+    <loc>https://nryotaro.dev/posts/an_algorithm_for_suffix_stripping/</loc>
+    <lastmod>2022-02-11T13:23:45+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://nryotaro.dev/</loc>
+    <lastmod>2022-02-11T13:23:45+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/</loc>
+    <lastmod>2022-02-11T13:23:45+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/bringing_gnu_emacs_to_native_code/</loc>
     <lastmod>2022-01-30T14:19:49+09:00</lastmod>
   </url>
   

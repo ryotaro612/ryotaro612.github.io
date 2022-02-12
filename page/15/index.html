@@ -23,7 +23,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>Yellow Blanket</title>
+    <title>Blanket</title>
 </head>
 
 <body>
@@ -32,7 +32,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <header class="navigation">
-        <h2><a href="/">Yellow Blanket</a></h2>
+        <h2><a href="/">Blanket</a></h2>
         <nav>
             <ul>
                 <li><a href="/about">About me</a></li>
@@ -46,6 +46,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1>Posts</h1>
 
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/sentence_piece/">論文メモ SentencePiece: A simple and language independent subword tokenizer and detokenizer for Neural Text Processing</a></h3>
+        <div class="summary"><p>SentencePieceは、深層学習向けのトークナイザ・脱トークナイザである。
+特定の言語を意識した処理がないため、あらゆるテキストに利用できる。
+本論文では、C++やPythonによる<a href="https://github.com/google/sentencepiece">実装</a>と翻訳への適用実験について書かれている。
+アルゴリズムの解説は、<a href="https://www.aclweb.org/anthology/P16-1162.pdf">Sennrich et al.</a>や<a href="https://arxiv.org/pdf/1804.10959.pdf">Kudo.</a>にゆずられている。
+これらの論文について2019年7月13日の<a href="../neural_machine_translation_of_rate_words/">記事</a>と2019年7月17日の<a href="./subword_regularization/">記事</a>で解説している。</p></div>
+        <div class="article-footer">
+            <span class="date">February 29, 2020</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/latent_dirichlet_allocation/">論文メモ Latent Dirichlet Allocation</a></h3>
@@ -158,17 +170,6 @@ ELOに用いる損失関数にDCGを採用したExpected DCG Loss Optimization(E
 ルールベースの手法のほうがCoBoostよりもよい実験結果であったので、前者のみを説明する。</p></div>
         <div class="article-footer">
             <span class="date">January 13, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/multilabel_classification_with_label_correlations_and_missing_labels/">論文メモ Multilabel Classification with Label Correlations and Missing Labels</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>ラベルの相関関係を学習し推論に利用するマルチラベルの線形モデルを提案した論文である。
-相関関係のあるラベル集合を相関関係のないラベル集合に変換し、ラベルごとに分けて学習する手法、Label transformationを応用する。
-分類器は、相関関係だけなく、学習データに与えられていないラベルを推定するように拡張できる。</p></div>
-        <div class="article-footer">
-            <span class="date">January 6, 2020</span>
         </div>
     </article>
     
