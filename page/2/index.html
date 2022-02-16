@@ -73,10 +73,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <article>
         <h3><a href="https://nryotaro.dev/posts/a_critique_of_ansi_sql_isolation_levels/">A Critique of ANSI SQL Isolation Levels</a></h3>
         <div class="summary"><p>ANSI SQL-92規格は、トランザクション分離レベルを、Dirty Read, Non-Repeatable Reads, Phantomが発生する可能性で定義する。
-トランザクション分離レベルを禁止する現象で定義する理由は、ロックなどの実装手段で定義すると規格が実装に依存するからだと考えられている。
+著者は、トランザクション分離レベルを禁止する現象で定義する理由を、ロックなどの実装手段で定義すると規格が実装依存になるからだと考えている。
 表題の論文は、規格の現象による定義があいまいであり、3つの異常が起きなくても望まない結果になる実行があることを例示した。
 また、規格のトランザクション分離レベルが、商用データベースで採用されているトランザクション分離レベルにあてはまらない問題もある。
-禁止する現象にDirty Writeをくわえ、厳しく実行列を禁止するように現象の定義を解釈した上で自然言語から形式的な記述に変えることを提唱した。
+禁止する現象にDirty Writeを規格に加え、厳しく実行列を制限するように現象の定義を解釈し、現象の説明を自然言語から形式的な記述に変えることを提唱した。
 さらに、規格がデータの版が単一であることを前提としていることを指摘した上で、多版型のトランザクションであるSnaphot Isolationを提案した。</p></div>
         <div class="article-footer">
             <span class="date">November 13, 2021</span>
