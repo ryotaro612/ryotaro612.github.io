@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://nryotaro.dev/posts/an_algorithm_for_suffix_stripping/</loc>
-    <lastmod>2022-02-11T13:23:45+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2022-02-11T13:23:45+09:00</lastmod>
+    <lastmod>2022-02-19T13:31:44+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
+    <lastmod>2022-02-19T13:31:44+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/using_tfidf_to_determine_word_relevance_in_document_queries/</loc>
+    <lastmod>2022-02-19T13:31:44+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/an_algorithm_for_suffix_stripping/</loc>
     <lastmod>2022-02-11T13:23:45+09:00</lastmod>
   </url>
   

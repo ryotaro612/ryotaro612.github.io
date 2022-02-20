@@ -47,6 +47,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/pytorch_an_imperative_style_high_performance_deep_learning_library/">論文メモ Pytorch: An Imperative Style, High-Performane Deep Learning Library</a></h3>
+        <div class="summary"><p>Pytorchの使い勝手と実行速度について解説した論文である。
+ここでの使い勝手は、命令型かつPythonらしいコードでPytorchのAPIを呼びだせることを意味する。
+Pytorchは、4つの設計原則として、PythonらしいAPI、機械学習の複雑な処理をPytorch内に隠蔽する、使い勝手のために過度にパフォーマンスを犠牲にしない、完璧な解決策よりも実装の単純さを重視する、をかかげる。</p></div>
+        <div class="article-footer">
+            <span class="date">July 11, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/here_we_go_again/">論文メモ Here We Go Again: Why Is It Difficult for Developers to Learn Another Programming Language?</a></h3>
         <div class="summary"><p>既知のプログラミング言語の知識は新しい言語を覚える役に立つ。
 一方で、新しい言語の学習の妨げにもなることをStack Overflowの質問とプログラマへのインタビューで明らかにした。</p></div>
@@ -146,20 +156,6 @@ BLEUは、参照訳にある単語を過剰に含むことや文の短さにペ�
 PACフレームワークにもとづく必要な学習データの件数を示し、そのデータで訓練されたモデルが学習データにないラベルを推定できる確率を示した。</p></div>
         <div class="article-footer">
             <span class="date">May 23, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/a_structured_self_attentivesentence_embedding/">論文メモ A STRUCTURED SELF-ATTENTIVE SENTENCE EMBEDDING</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>自己注意機構をもちいて、可変長の文を埋め込み行列に変換するアーキテクチャを発表した論文である。
-埋め込み行列の各行は、それぞれ文中の異なる箇所の意味を反映する。
-アーキテクチャは2つの構成からなり、入力から出力にむかい双方向LSTMを、次に自己注意機構をもつ。
-自己注意機構を導入した背景は、回帰結合型のネットワークでは、全ての時刻わたって入力の意味を保持することは難しく、また不要であるという著者らの仮説である。
-3つの実験により、文の分散表現を獲得する先行研究と比較し、自己注意機構の効果が確認された。
-注意機構は複数のベクトルのどれを重視するかを学習できるため、埋め込まれた文の箇所を可視化できることも示した。</p></div>
-        <div class="article-footer">
-            <span class="date">May 16, 2020</span>
         </div>
     </article>
     
