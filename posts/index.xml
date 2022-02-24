@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 19 Feb 2022 13:31:44 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 19 Feb 2022 15:02:19 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Regularization Paths for Generalized Linear Models via Coordinate Descent</title>
+      <link>https://nryotaro.dev/posts/regularization_paths_for_generalized_liner_models_via_coordinate_descent/</link>
+      <pubDate>Sat, 19 Feb 2022 15:02:19 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/regularization_paths_for_generalized_liner_models_via_coordinate_descent/</guid>
+      <description>&lt;p&gt;ラッソ、リッジ、またはその両方をくみあわせたelastictnetを正則化項にもつ一般化線形モデルの学習を高速化する座標降下法である。
+座標降下法を単純に実装すると、スパースで次元数の多い特徴だと学習に時間がかかる。
+表題の手法は、その単純なパラメタの更新式の一部を、説明変数の内積におきかえ、学習データの数や次元数に対して学習時間を短縮する。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Using TF-IDF to Determine Word Relevance in Document Queries(2003)</title>
@@ -173,8 +184,8 @@ BPSは、並列計算用のハードウェアと高水準な並列計算のた�
       
       <guid>https://nryotaro.dev/posts/live_migration_of_virtual_machines/</guid>
       <description>&lt;p&gt;XenのハイパーバイザーにOSのライブマグレーションを統合し、約60msのダウンタイムでのOSのライブマイグレーションを実現した。
-手法の焦点は、短いダウンタイムや移行時間で、移行元と移行先のメモリの状態を同等にできるかにある。
-ネットワークアドレスや物理デバイスの移行は扱わない。
+手法の焦点は、どれだけ短いダウンタイムや移行時間で、移行元と移行先のメモリの状態を同等にできるかにある。
+ネットワークアドレスや物理デバイスの移行はあつかわない。
 移行元と移行先は同じローカルネットワークにあり、マイグレーションによるIPアドレスのホストの移動を主にARP replyで通知でき、NASにデータを保存することを前提にし、ネットワークや物理デバイスの移行を考えなくてよいものとしている。&lt;/p&gt;</description>
     </item>
     

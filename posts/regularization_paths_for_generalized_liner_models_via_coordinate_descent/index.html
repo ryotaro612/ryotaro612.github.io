@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Regularization Paths for Generalized Linear Models via Coordinate Descent</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Regularization Paths for Generalized Linear Models via Coordinate Descent</h1>
+    <span class="date">February 19, 2022</span>
+    <div>
+        <p>ラッソ、リッジ、またはその両方をくみあわせたelastictnetを正則化項にもつ一般化線形モデルの学習を高速化する座標降下法である。
+座標降下法を単純に実装すると、スパースで次元数の多い特徴だと学習に時間がかかる。
+表題の手法は、その単純なパラメタの更新式の一部を、説明変数の内積におきかえ、学習データの数や次元数に対して学習時間を短縮する。</p>
+<p>目的変数を\(Y \in \mathbb{R}\), 説明変数を\(X\in \mathbb{R}^p\), \(N\)件の学習データを\((x_i, y_i)\)として、説明のために線形回帰\(E(Y\mid X=x)=\beta_0 + x^\top\beta\)を導入する。
+簡単のために、\(j=1, \dots , p\)について、\(x_{i,j}\)は、\(\sum^N_{i=1}x_{i,j}=0, \frac{1}{N}\sum^{N}_{i=1}x^2_{i,j}=1\)で標準化されていると仮定する。
+このとき、\(P_\alpha\)をelastic-net penaltyにもつelasticnetの学習は、つぎの問題をとく。
+$$
+\begin{align}
+\min_{\beta_0, \beta\in \mathbb{R}^{p+1}}R_\lambda(\beta_0, \beta) &amp;= \min_{(\beta_0, \beta)\in\mathbb{R}^{p+1}}\left[\frac{1}{2N}\sum_{i=1}^{N}(y_i-\beta_0-x^{\top}_i\beta)^2 + \lambda P_\alpha (\beta)\right]\\<br>
+P_{\alpha}(\beta) &amp;= (1-\alpha)\frac{1}{2}\mid\mid \beta\mid\mid^2_{l_2}+\alpha\mid\mid\beta\mid\mid_{l_1}\\<br>
+&amp;=\sum^p_{j=1}\left[\frac{1}{2}(1-\alpha)\beta^2_j+\alpha\mid\beta_j\mid\right]
+\end{align}
+$$
+このとき、座標降下法で次元\(j\)の係数\(\tilde{\beta}_j\)を以下の式で更新できる。
+$$
+\begin{align}
+\tilde{\beta}_j&amp;\leftarrow\frac{S\left(\frac{1}{N}\sum^N_{i=1}x_{ij}(y_i-\tilde{y}_i^{(j)}), \lambda\alpha\right)}{1+\lambda (1-\alpha)}\\<br>
+\tilde{y}_i^{(j)}&amp;=\tilde{\beta}_0 + \sum_{l\neq j}x_{il}\tilde{\beta}_l
+\end{align}
+$$
+$$
+S(z, \gamma) =
+\begin{cases}
+z-\gamma &amp; \text{if }z&gt;0 \text{ and }\gamma &lt;\mid z\mid\\<br>
+z+\gamma &amp; \text{if } z &lt; 0 \text{ and } \gamma &lt; \mid z \mid \\<br>
+0 &amp;\text{if } \gamma \ge \mid z \mid
+\end{cases}
+$$</p>
+<p>ここで、\(\hat{y}_i\)をサンプル\(i\)の現在の予測値、\(r_i\)を残差とすると
+$$
+\begin{align}
+y_i-\tilde{y}_i^{(j)}&amp;=y_i-\hat{y}_i+x_{ij}\tilde{\beta}_j\\<br>
+&amp;=r_i+x_{ij}\tilde{\beta}_j
+\end{align}
+$$
+であり、\(x_j\)を平均0で標準化しているため
+$$
+\frac{1}{N}\sum^N_{i=1}x_{ij}(y_i-\tilde{y}_i^{(j)})=\frac{1}{N}\sum^N_{i=1}x_{ij}r_i+\tilde{\beta}_j
+$$
+この場合、各次元の係数を一回ずつ更新するときの計算量は\(O(pN)\)になり、説明変数の次元数がおおいと計算に時間がかかる。
+そこで、\(\langle x_j,y\rangle = \sum^N_{i=1}x_{ij}y_i\)とすると説明変数の内積により
+$$
+\begin{align}
+\sum_{i=1}^Nx_{ij}r_j
+&amp;=\sum_i^{N}(y_i-\tilde{y_i}^{(j)}-x_{ij}\tilde{\beta}_j)x_{ij}\\<br>
+&amp;=\sum_i^{N}x_{ij}y_i-\sum^N_{i=1}x_{ij}(\tilde{y}_i^{(j)}+x_{ij}\tilde{\beta}_j)\\<br>
+&amp;=\langle x_j,y\rangle - \sum_{i=1}^Nx_{ij}(\tilde{\beta}_0 + \sum_{l\neq j}x_{il}\tilde{\beta}_l + x_{ij}\tilde{\beta}_j)\\<br>
+&amp;=\langle x_j,y\rangle - \sum_{i=1}^Nx_{ij}(\tilde{\beta}_0 + \sum_{k=1}^px_{ik}\tilde{\beta}_k)\\<br>
+&amp;=\langle x_j,y\rangle - \sum_{k:\mid\tilde{\beta}_k\mid &gt; 0}\langle x_j,x_k\rangle \tilde{\beta}_k
+\end{align}
+$$
+に変形できる。
+\(\langle x_j,y\rangle\)は係数を更新に影響しないので一度だけ計算すればよい。
+係数のひとつが更新されたときに各勾配を\(O(p)\)で更新できる。
+したがって、あたらしい説明変数が追加されず、0でない項が\(m\)あれば各次元の係数を更新するときにかかる計算量は\(O(pm)\)になる。</p>
+<p>論文を<a href="https://pubmed.ncbi.nlm.nih.gov/20808728/">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/using_tfidf_to_determine_word_relevance_in_document_queries/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

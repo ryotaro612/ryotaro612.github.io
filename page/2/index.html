@@ -48,6 +48,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/monitoring_streams/">Monitoring Streams - A New Class of Data Management Applications (2002)</a></h3>
+        <div class="summary"><p>センサー情報などにみられる継続的に発生するストリームデータの監視にむいた開発中のDBMS, Auroraを発表した。
+既存のDBMSは人の行動で起きるトランザクションを想定している。
+一方、ストリームデータは、人の能動的な活動によらず絶えず発生し、異常値があればアラートを出す必要がある。
+また、グラフの描画などで時系列に長期的なデータをとり、また、リアルタイムに応答するために不要なデータを切り捨て負荷を下げる必要もある。
+Auroraは、以上のストリーミング、トリガー、不正確なデータ、リアルタイム性の4特性を扱えるモデルとして、ストリームデータの出力元をソース、ノードをストリームデータの計算、シンクをアプリケーションとするDAGを採用する。
+ノードで表す計算には、ストリームをウィンドウに区切る、フィルタ、リサンプリングなどの8つがある。
+DAGで表せる計算をAurora内部で実行し、その結果が接続するアプリケーションにわたる。</p></div>
+        <div class="article-footer">
+            <span class="date">December 11, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/a_bridging_model_for_parallel_computation/">A Birdging Model for parallel Computation (1990)</a></h3>
         <div class="summary"><p>表題と同名の論文は、バッチ処理グラフの最適化として演算処理のバルク同期並列（bulk synchronous parallel、 BSP）を提唱した。
 BPSは、Apache Giraph, Spark の GraphX API, Gelly APIで採用され、なかでもGoogleのPregelで知られるようになった<a href="https://www.oreilly.co.jp/books/9784873118703/">*1</a>。
@@ -77,8 +91,8 @@ BPSは、並列計算用のハードウェアと高水準な並列計算のた�
     <article>
         <h3><a href="https://nryotaro.dev/posts/live_migration_of_virtual_machines/">Live Migration of Virtual Machines</a></h3>
         <div class="summary"><p>XenのハイパーバイザーにOSのライブマグレーションを統合し、約60msのダウンタイムでのOSのライブマイグレーションを実現した。
-手法の焦点は、短いダウンタイムや移行時間で、移行元と移行先のメモリの状態を同等にできるかにある。
-ネットワークアドレスや物理デバイスの移行は扱わない。
+手法の焦点は、どれだけ短いダウンタイムや移行時間で、移行元と移行先のメモリの状態を同等にできるかにある。
+ネットワークアドレスや物理デバイスの移行はあつかわない。
 移行元と移行先は同じローカルネットワークにあり、マイグレーションによるIPアドレスのホストの移動を主にARP replyで通知でき、NASにデータを保存することを前提にし、ネットワークや物理デバイスの移行を考えなくてよいものとしている。</p></div>
         <div class="article-footer">
             <span class="date">November 20, 2021</span>
@@ -154,16 +168,6 @@ Chubbyはロックサービスとして作られたが、ネームサーバと�
 一方、Chubbyのキャッシュは時間ではなくファイルに変更されたときに無効になるので、Chubbyをネームサーバに使うことで、名前解決の負荷を減らすことができる。</p></div>
         <div class="article-footer">
             <span class="date">October 16, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/congestion_avoidance_and_control/">Congestion Avoidance and Control</a></h3>
-        <div class="summary"><p>86年の10月におきたインターネットの世界規模の輻輳の反省から、4BSDに7つのTCPの輻輳制御のアルゴリズムが導入された。
-うち5つは、送信したパケットが到達や消失でネットワークに流れなくなるまで、ウィンドウサイズ以上の新しいパケットを送らない原則を守るためにある。
-この原則をconservation of packets principleという。</p></div>
-        <div class="article-footer">
-            <span class="date">October 9, 2021</span>
         </div>
     </article>
     
