@@ -79,9 +79,10 @@ BPSは、並列計算用のハードウェアと高水準な並列計算のた�
     <article>
         <h3><a href="https://nryotaro.dev/posts/wait_free_synchronization/">Wait-Free Synchronization</a></h3>
         <div class="summary"><p>あるデータ構造がwait-freeであり、データ構造への操作が有限回のステップで完了するのであれば、ほかの並行プロセスの処理速度によらず、任意のプロセスによるその操作は必ず完了する。
-表題のsynchronizationは、wait-freeなデータ構造から別のwait-freeなデータ構造を実装する意味であり、実装の可能性を議論するためにコンセンサス数が導入される。
+表題のsynchronizationは、wait-freeであるデータ構造で別のwait-freeなデータ構造を実装することを意味する。
+実装可能かを定義するためにコンセンサス数を導入する。
 あるデータ構造のコンセンサス数は、単純な含意形成問題を解くときに参加できるプロセス数の最大値である。
-たとえば、read / writeレジスタには1, test &amp; swapは2, compare &amp; swapには無限のコンセンサス数が割りあてられる。
+たとえば、read / writeレジスタのコンセンサス数は1, test &amp; swapは2, compare &amp; swapは無限である。
 プロセス数を定義した上で、あるコンセンサス数のデータ構造を、それより小さいコンセンサス数のデータ構造では実装できないことを示した。</p></div>
         <div class="article-footer">
             <span class="date">November 27, 2021</span>
