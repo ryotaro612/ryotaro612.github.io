@@ -48,6 +48,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/deep_learning_based_text_classification/">Deep Learning Based Text Classification: A Comprehensive Review (2020)</a></h3>
+        <div class="summary"><p>深層学習によるテキスト分類のサーベイで、調査したモデル数の多さで論文の貢献を主張している。
+文章の構成は、150個のモデル、40件のデータセット、定量的な評価指標の解説がつづく。
+文書分類を広くとらえ、典型的なテキスト分類だけでなくQAやテキスト含意にもふれている。</p></div>
+        <div class="article-footer">
+            <span class="date">December 25, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/monitoring_streams/">Monitoring Streams - A New Class of Data Management Applications (2002)</a></h3>
         <div class="summary"><p>センサー情報などにみられる継続的に発生するストリームデータの監視にむいた開発中のDBMS, Auroraを発表した。
 既存のDBMSは人の行動で起きるトランザクションを想定している。
@@ -154,21 +164,6 @@ Bayouは、アプリケーションの知識を借りてデータの整合性を
 MapReduceは入力と出力が一つでなければならないが、DryadはDAGであれば入力と出力が複数あってもかまわない。</p></div>
         <div class="article-footer">
             <span class="date">October 23, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/the_chubby_lock_service_for_loosely_coupled_distributed_systems/">The Chubby lock service for loosely-coupled distributed systems</a></h3>
-        <div class="summary"><p>Chubbyは、ファイルに助言ロックをかけられる低容量のストレージで、開発元のGoogleは分散システム向けのロックサービスとして使っている。
-処理性能よりも高可用性と信頼性を重視し、ロックを保持する期間は数時間から数日にわたる長いものを想定する。
-ロックされたファイルで情報を共有でき、例えばリーダーの選出に使える。
-Chubbyは既存のアルゴリズムを集積であり、表題の論文は、新しいアルゴリズムよりも、Chubbyの設計や想定していた使用方法や想定外の使われ方に重点をおく。
-Chubbyはロックサービスとして作られたが、ネームサーバとして最もよく使われる。
-数千規模の互いに依存するプロセスがあり、プロセスが落ちたら新しいプロセスに置き換えるとする。
-このとき、ネームサーバにDNSをつかうと、DNSは時間で失効するキャッシュ方式なので、TTLを短くし、落ちたプロセスにリクエストが届かないようにすると、DNSへの負荷が増える。
-一方、Chubbyのキャッシュは時間ではなくファイルに変更されたときに無効になるので、Chubbyをネームサーバに使うことで、名前解決の負荷を減らすことができる。</p></div>
-        <div class="article-footer">
-            <span class="date">October 16, 2021</span>
         </div>
     </article>
     

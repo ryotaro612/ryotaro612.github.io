@@ -6,10 +6,22 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 19 Feb 2022 15:02:19 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 05 Mar 2022 13:11:47 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>An Interior-Point Method for Large-Scale L1-Regularized Least Squares</title>
+      <link>https://nryotaro.dev/posts/an_interior_point_method_for_large_scale_l1_regularized_least_squares/</link>
+      <pubDate>Sat, 05 Mar 2022 13:11:47 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/an_interior_point_method_for_large_scale_l1_regularized_least_squares/</guid>
+      <description>&lt;p&gt;前処理付共役勾配法により、スパースな説明変数をもつリッジ回帰の学習を高速化する。
+リッジ回帰の目的関数は、凸関数だが微分可能ではない。
+また、リッジ回帰の係数はスパースになりやすい。
+そこで、目的関数を最小化する係数の探索を、線形不等式制約つきの凸二次計画問題とらえ、前処理付共役勾配法をつかった内点法で係数の更新方向を探索する。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Regularization Paths for Generalized Linear Models via Coordinate Descent</title>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>An Interior-Point Method for Large-Scale L1-Regularized Least Squares</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>An Interior-Point Method for Large-Scale L1-Regularized Least Squares</h1>
+    <span class="date">March 5, 2022</span>
+    <div>
+        <p>前処理付共役勾配法により、スパースな説明変数をもつリッジ回帰の学習を高速化する。
+リッジ回帰の目的関数は、凸関数だが微分可能ではない。
+また、リッジ回帰の係数はスパースになりやすい。
+そこで、目的関数を最小化する係数の探索を、線形不等式制約つきの凸二次計画問題とらえ、前処理付共役勾配法をつかった内点法で係数の更新方向を探索する。</p>
+<p>\($x\in \boldsymbol{\rm R}^n\)を係数、\(y\in \boldsymbol{\rm R}^m\)を目的変数、\(A\in \boldsymbol{\rm R}^{m\times n} \)をデータとする線形モデル\(y=Ax+v\)があるときL1正則化項つきの目的関数は以下になる。
+$$
+\text{minimize}\ {\mid\mid Ax-y\mid \mid}^2_2 +\lambda \mid\mid x \mid\mid_1\\<br>
+$$
+$$
+\mid\mid x\mid \mid _1 = \sum^n_i\mid x_i\mid
+$$
+$$
+\lambda &gt; 0
+$$
+これを線形不等式制約つきの凸二次計画問題におきかえると
+$$
+\text{minimize} \mid\mid Ax-y\mid\mid^2_2 + \lambda \sum^n_{i=1}u_i
+$$
+$$
+\text{subject to} -u_i\le x_i \le u_i, i = 1,\dots n
+$$</p>
+<p>まず、\(-u_i\le x_i \le u_i \)に対するバリア関数を導入する。
+$$
+\Phi (x, u) = -\sum_{i=1}^n\log(u_i + x_i) - \sum^n_{i=1}\log(u_i-x_i)
+$$
+$$
+\text{dom} \Phi = \{(x, u)\in \boldsymbol{\rm R}^n \times \boldsymbol{\rm R}^n \mid\ \mid x_i \mid &lt; u_i, i= 1,\dots n\}
+$$
+このとき、0から\(\infty\)までとりえるパラメタ\(t\)をもつ中心パスは
+$$
+\phi_t(x, u) = t\mid\mid Ax - y \mid\mid^2_2 + t \sum^n_{i=1}\lambda u_i +\Phi(x,u)
+$$
+になる。</p>
+<p>アルゴリズムは、入力に、反復終了の条件\(\epsilon_{\text{rel}} &gt; 0 \)のほかパラメタ\(\alpha\), \(\beta\), \(\mu\), \(s_{\min}\)をとる。
+はじめに、\(t:= 1/\lambda, u:= 1 = (1,\dots,1)\in \boldsymbol{\rm R}^n\) で初期化する。
+そして以下の手順をくりかえす。</p>
+<p>はじめに、前処理付共役勾配法で\((\Delta x, \Delta u)\)をもとめる。</p>
+<p>次に、以下をみたす最小の\(k&gt;=0\)をもとめ、\(s=\beta^k\)により、\((x, u) := s(\Delta x, \Delta u)\)と更新する。
+$$
+\phi_t(x+\beta^k\Delta x, u+\beta^k\Delta u) \le \phi_t (x, u) + \alpha \beta^k\nabla\phi_t (x, u)^\top [\Delta x \Delta u]
+$$
+また、\(t\)も更新する。
+$$
+t :=
+\begin{cases}
+\max \{ \mu \min \{2n / \eta, t\}, t\},&amp; s \ge s_{\min} \\<br>
+t,&amp; s &lt; s_{\min}
+\end{cases}
+$$</p>
+<p>そして、\(\eta / G(\upsilon)\le \epsilon_{\text{rel}}\)であれば、終了し、そうでなければ最初の手順にもどる。
+$$
+\begin{align}
+\eta &amp;= \mid\mid Ax - y \mid\mid^2_2 + \lambda \mid\mid x \mid\mid_1 - G(\upsilon) \\<br>
+G(\upsilon) &amp;= -(1/4)\upsilon^\top \upsilon - \upsilon^\top y \\<br>
+\upsilon &amp;= 2s(Ax - y)
+\end{align}
+$$</p>
+<p>論文を<a href="https://web.stanford.edu/~boyd/papers/pdf/l1_ls.pdf">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/regularization_paths_for_generalized_liner_models_via_coordinate_descent/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

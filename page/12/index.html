@@ -48,6 +48,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/extracting_and_composing_robust_features_with_denoising_autoencoders/">論文メモ Extracting and Composing Robust Features with Denoising Autoencoders</a></h3>
+        <div class="summary"><p>ノイズを含む入力からノイズのない入力を復元するように学習すると、次元圧縮の性能を向上できることを示した。
+層の深いautoencoderを学習するには、良い初期値を与えなければらないことが知られていた。
+<a href="https://www.cs.toronto.edu/~hinton/science.pdf">先行研究</a>は、各中間層を個別に学習することで、良い初期値を求められることを示した。
+具体的には、各中間層について、前の層の入力から次の層の出力を推定できるよう個別に学習させる。
+一方で、何が良い初期値をなすのかは知られていなかった。
+表題の論文は、その条件は入力に含まれるノイズに対して頑強であると仮説をおき、ノイズを除去できるように目的関数を設定することで、次元圧縮の性能が上がることを示し、仮説の正しさを確かめた。</p></div>
+        <div class="article-footer">
+            <span class="date">August 21, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/statistical_errors_in_software_engineering_experiments/">論文メモ Statistical Errors in Software Engineering Experiments: A Preliminary Literature Review</a></h3>
         <div class="summary"><p>ソフトウェア工学の実験において、統計をもちいた手法がどれだけ誤用されているかを調査した。
 薬学や心理学の実験では、統計による手法が時に誤って使われていることが知られている。
@@ -135,16 +148,6 @@ Factorizatiom Machineは、両者の利点をそなえており、疎な任意�
 従来は、熟練度合いで開発者を分けて、ペアプログラミングを分析・評価することが多い。
 今回の調査では、システムの要件・仕様のようなシステム固有の知識と、言語、デザインパターン、開発ツールなどの開発全般の知識の2軸で、開発者と知識を分ける重要性を定性的に示した。
 一方がシステム固有の知識に欠け、他方が開発全般の知識に欠けるときに、最も知識の伝達が活発だった。</p></div>
-        <div class="article-footer">
-            <span class="date">July 17, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/bag_of_trics_for_efficient_text_classification/">論文メモ Bag of Tricks for Efficient Text Classification</a></h3>
-        <div class="summary"><p>2016年における分類のSOTAと互角の精度でありながら、格段に高速に学習、推定可能なモデルを<code>fastText</code>で構築できることを示した。
-評価実験には、<a href="http://projects.dfki.uni-kl.de/yfcc100m/">YFCC100M</a>のキャプションとタイトルからタグを予測するタスク、8つのデータセットによる感情分析が採用された。
-タグの予測では、312116個のユニークなタグをつかい、大きなクラス数でもモデルがうまくはたらくことが確かめられた。</p></div>
         <div class="article-footer">
             <span class="date">July 17, 2020</span>
         </div>
