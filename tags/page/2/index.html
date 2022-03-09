@@ -72,14 +72,12 @@ DAGで表せる計算をAurora内部で実行し、その結果が接続する�
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/a_bridging_model_for_parallel_computation/">A Birdging Model for parallel Computation (1990)</a></h3>
-        <div class="summary"><p>表題と同名の論文は、バッチ処理グラフの最適化として演算処理のバルク同期並列（bulk synchronous parallel、 BSP）を提唱した。
+        <div class="summary"><p>バッチ処理グラフの最適化を目的として演算処理のバルク同期並列（bulk synchronous parallel、 BSP）を提唱した。
 BPSは、Apache Giraph, Spark の GraphX API, Gelly APIで採用され、なかでもGoogleのPregelで知られるようになった<a href="https://www.oreilly.co.jp/books/9784873118703/">*1</a>。
-BPSの目的は、フォン・ノイマンモデルのように、ハードウェアと並列計算の高水準なプログラミングモデルがどちらもBPSに準ずることで、高水準なプログラミングモデルで実装された並列計算を多様なハードウェア上で動かせるようにすることにある。
+BPSの目的は、ハードウェアと並列計算の高水準なプログラミングモデルがどちらもBPSに準ずることで、高水準なプログラミングモデルで実装された並列計算を多様なハードウェア上で動かすことにある。
 フォン・ノイマンモデル型のコンピュータであれば、ハードウェアの種類を意識することなく、その上で逐次計算をおこなう多様なソフトウェアを動かせる。
 フォン・ノイマンモデルは、多様なハードウェアと多様なソフトウェアをつなぐ。
-BPSは、並列計算用のハードウェアと高水準な並列計算のためのプログラミングモデルをつなぐためにある。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted --></div>
+BPSは、並列計算用のハードウェアと高水準な並列計算のプログラミングモデルをつなぐためにある。</p></div>
         <div class="article-footer">
             <span class="date">December 11, 2021</span>
         </div>
