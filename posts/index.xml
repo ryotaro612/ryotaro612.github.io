@@ -6,10 +6,22 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 05 Mar 2022 13:11:47 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 12 Mar 2022 11:50:41 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pegasos: Primal Estimated sub-GrAdient SOlver for SVM</title>
+      <link>https://nryotaro.dev/posts/pegasos/</link>
+      <pubDate>Sat, 12 Mar 2022 11:50:41 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/pegasos/</guid>
+      <description>&lt;p&gt;Pegasosは、SVMの学習のための反復的なアルゴリズムであり、2022年3月現在、scikit-learnの&lt;a href=&#34;https://scikit-learn.org/stable/modules/sgd.html#implementation-details&#34;&gt;SGDClassifier&lt;/a&gt;で学習率を更新に採用されている。
+Pegasosは、目的関数の最小値の近似値をもとめる。
+求める最小値との誤差を\(\epsilon\), SVMの正則化パラメタを\(\lambda\), 各サンプルの説明変数の0でない要素数の上限を\(d\)とすると、線形カーネルをつかうSVMの時間計算量は、\(\tilde{O}(d/\lambda \epsilon)\)になる。
+訓練データの数が計算量に影響しないので、教師データの数に対してスケールする。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>An Interior-Point Method for Large-Scale L1-Regularized Least Squares</title>
