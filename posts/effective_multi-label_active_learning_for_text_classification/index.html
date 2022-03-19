@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Effective Multi-Label Active Learning for Text Classification</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Effective Multi-Label Active Learning for Text Classification</h1>
+    <span class="date">March 12, 2022</span>
+    <div>
+        <p>SVMをつかったマルチラベル文書分類のための能動学習である。
+ラベルをつければモデルの損失を最も小さくできるデータをさがす。
+ラベルつきデータでSVMを学習し、さらに、その識別関数の値を特徴としてラベルの数を予測するロジスティック回帰を学習する。
+ラベルのないデータを両モデルに入力し、ロジスティック回帰が予測するラベルの数だけ、識別関数の値の高い順にラベルを選び、そのデータのマルチラベルとみなす。
+このとき、その推定したマルチラベルと識別関数の値がほど、損失関数を最も小さくできるデータとみなす。</p>
+<p>ロジスティック回帰は、データのラベルの数を予測する。
+\(D_l\)をラベルつきデータとし、ラベルの種類\(k\)のマルチラベル分類器\(f\)を\(D_l\)で学習する。
+各事例\(\mathcal{\rm x}\)について、ラベル\(i\)の識別関数をシグモイド関数にあたえた結果を\(p(y^i=1\mid\mathcal{\rm x})\)として
+$$
+\sum^k_{i=1}p(y^i=1\mid\mathcal{\rm x}) = 1
+$$
+に正規化し、降順に\(q_1(\mathcal{\rm x}), \dots , q_k(\mathcal{\rm x})\)とおく。
+\(q_i(\mathcal{\rm x})\)を特徴、ラベルを\(i\)としてロジスティック回帰を学習する。</p>
+<p>\(D_u\)をラベルのないデータ、\(T\)を繰返し回数、\(S\)を一度の反復でラベルをつけるデータの数として、次の手順を\(T\)回くりかえす。
+\(D_l\)でマルチラベル分類器\(f\)とロジスティック回帰を学習する。
+各事例\(\mathcal{\rm x}\)について、、ロジスティック回帰の予測するラベルの数だけ識別関数の高いものから正のラベルをつけ、残りを負のラベルとみなす。
+この予測したマルチラベルを\(\hat{\mathcal{\rm y}}\)として\(\mathcal{\rm x}\)のスコアを
+$$
+\textit{score}(\mathcal{\rm x}) = \sum^k_{i=1}\left(\frac{1-\hat{y}^if_i(\mathcal{\rm x})}{2}\right)
+$$
+とするとき、スコアの高い\(S\)個の事例にラベルをつけてラベルのあるデータの集合に加える。</p>
+<p>論文を<a href="http://www.cs.cmu.edu/~bishan/papers/multi-label-active-learning-kdd09.pdf">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/pegasos/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

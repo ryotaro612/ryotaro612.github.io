@@ -47,6 +47,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/hierarchical_attention_networks_for_document_classification/">Hierarchical Attention Networks for Document Classification (2016)</a></h3>
+        <div class="summary"><p>Hierarchical Attention Network(HAN)は、単語は文から文書は文からなりたつ文書の構造をアーキテクチャに反映し、単語の注意から文の注意を、文の注意から文書の注意を計算する。
+順方向と逆方向の2つのGRUでエンコードした単語の分散表現から注意を計算し、文ごとに、単語の注意の重みつき和を計算し文の分散表現とする。
+さらに、文の分散表現を別の順、逆方向GRUにあたえ、単語とおなじように各文の注意を計算し、その重みつき和を文書の分散表現としてあつかう。
+最後に、文書の分散表現を全結合層に入力し、ソフトマックス関数で文書のクラスを推定する。
+単語の文の注意を推定できるため、単語と文の2つの粒度で文書の重要な箇所を可視化することができる。</p></div>
+        <div class="article-footer">
+            <span class="date">December 26, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/effective_approaches_to_attention_based_neural_machine_translation/">Effective Approaches to Attention-based Neural Machine Translation (2015)</a></h3>
         <div class="summary"><p>注意機構をつかった翻訳用のニューラルネットワークを2種類例示し、翻訳における効果的な注意機構の使い方を提案した。
 どちらもスタッキングしたLSTMを使うが、注意の計算で参照するLSTMの隠れ状態が違う。
@@ -150,17 +162,6 @@ Bayouは、アプリケーションの知識を借りてデータの整合性を
 ただし、書き込みのログをほかのレプリケーションに伝搬することでデータを同期するため、どんなレプリケーションでも不整合の検知と解消の処理が同一の結果になるように、これらの処理は決定的でなければならない。</p></div>
         <div class="article-footer">
             <span class="date">November 6, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/the_many_faces_of_publish_subscribe/">The Many Faces of Publish/Subscribe (2003)</a></h3>
-        <div class="summary"><p>分散システムの通信をpublish/subscribeモデルにするとシステム間の結合を疎にできる。
-表題の論文は、publish/subscribeのサーベイであり、publish/subscribeモデルを空間、時間、同期の3種の結合度を下げる技術ととらえ、ほかの通信技術と比較する。
-また、先行研究のpublish/subscribeモデルを、購読するイベントの宣言手段によって、topic-based, content-based, type-basedに分類する。
-最後に、メッセージブローカーを使うかどうかなどpublish/subscribeモデルの設計や実装の利点や欠点を整理する。</p></div>
-        <div class="article-footer">
-            <span class="date">October 30, 2021</span>
         </div>
     </article>
     
