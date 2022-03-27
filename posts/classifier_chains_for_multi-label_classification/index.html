@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Classifier Chains for Multi-label Classification</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Classifier Chains for Multi-label Classification</h1>
+    <span class="date">March 22, 2022</span>
+    <div>
+        <p>scikit-learnの<a href="https://scikit-learn.org/stable/modules/generated/sklearn.multioutput.ClassifierChain.html?highlight=chain#sklearn-multioutput-classifierchain">Classifier Chain</a>で実装されたClassifier Chainsは、ラベルの相関関係を特徴につかうマルチラベル分類のモデルで、既存の相関関係をもちいる手法よりも計算量がすくない。
+より細かくみれば、Classifier Chainsは、Classifier Chain Model(CC)とCCのアンサンブル学習であるEnsembles of Classifier Chains(ECC)の2つにわかれる。</p>
+<p>CCは、one vs restとおなじく、ラベルの種類数だけの2値分類のモデルをつかい、モデルを順番に学習する。
+One vs restとの違いは、\(i\)番目のモデルをするときに、すでに学習したモデル\(0,\dots i-1\)の出力を特徴に加えることである。
+先に学習するモデルほど別のモデルの出力を特徴につかえないので、CCは学習するモデルの順番に影響されやすい。</p>
+<p>ECCは、アンサンブル学習により、CCの順番への依存を解決する。
+ECCは、複数のCCをランダムサンプルした訓練データの一部で学習する。
+推定するときは、すべてのCCの出力の和をもちいる。</p>
+<p>論文を<a href="https://www.cs.waikato.ac.nz/~eibe/pubs/chains.pdf">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/effective_multi-label_active_learning_for_text_classification/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

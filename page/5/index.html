@@ -48,6 +48,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/time_clocks_and_the_ordering_of_events_in_a_distributed_system/">Time, Clocks, and the Ordering of Events in a Distributed System</a></h3>
+        <div class="summary"><p>分散システムの各プロセスにおける送受信の半順序関係をすべてのプロセスで起きた送受信の全順序関係に拡張するアルゴリズムを提案し、アルゴリズムを同期処理に応用できることを例示した。
+分散システムではプロセスの時刻が同期しているとはかぎらない。
+各プロセスで起きたメッセージの送受信をプロセスでの時刻順に並べられても、その計測時刻を信じて全プロセスで起きたイベントを正しく発生順に並べることはできない。</p>
+<p>アルゴリズムは、プロセスごとに論理的なクロックをもたせる。
+クロックは、メッセージを送信するときに時を進める。
+メッセージを送信するプロセスは、送信時刻をメッセージにふくめる。
+受信したプロセスは現在の時刻とメッセージにある送信元の時刻より先の時刻に時を進める。
+以上の手続きで、異なるプロセス間の送受信であっても送信時刻が受信時刻より必ず前になり、全プロセスの送受信イベントに全順序関係を定義できる。</p></div>
+        <div class="article-footer">
+            <span class="date">August 14, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/dataflow/">The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-Scale, unbounded, Out-of-Order Data Processing</a></h3>
         <div class="summary"><p>データ処理サービスは、処理の正確さ、遅延、システムの複雑さの間にトレードオフを抱える。
 ストリーミング処理サービスのStorm, Samza, Pulsarは、(論文が発表された2015年時点では)メッセージ配信がexactly-onceではなく欠損や重複する。
@@ -140,17 +155,6 @@ Phase 2は、78年から79年にSan Jose Research Laboratoryなどでの実用�
         <div class="summary"><p>Union Findを使うと通せる。すべての\(A_i\)と\(A_{N+1-i}\)が同じグループに所属するために必要なunionの回数を答えればいい。</p></div>
         <div class="article-footer">
             <span class="date">June 20, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/consistent_hashing_and_random_trees/">Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web</a></h3>
-        <div class="summary"><p>各サーバーがネットワーク全体の情報を保持しない分散キャッシュネットワークにホットスポットを生まないためのキャッシュプロトコルを開発した。
-表題のconsistent hashingは、プロトコルの基礎になるハッシュ関数で、関数の写像が値域の違いに影響されにくい。
-この影響しにくさは、クライアントから見えるアクティブなサーバが入れ替わる可能性に対して機能する。
-また、クライアントは一部のキャッシュサーバーにアクセスできればよく、クライアントごとにアクセス可能なキャッシュサーバーの集合は違ってよい。</p></div>
-        <div class="article-footer">
-            <span class="date">June 19, 2021</span>
         </div>
     </article>
     

@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Mar 2022 15:25:23 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 22 Mar 2022 16:30:13 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Classifier Chains for Multi-label Classification</title>
+      <link>https://nryotaro.dev/posts/classifier_chains_for_multi-label_classification/</link>
+      <pubDate>Tue, 22 Mar 2022 16:30:13 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/classifier_chains_for_multi-label_classification/</guid>
+      <description>&lt;p&gt;scikit-learnの&lt;a href=&#34;https://scikit-learn.org/stable/modules/generated/sklearn.multioutput.ClassifierChain.html?highlight=chain#sklearn-multioutput-classifierchain&#34;&gt;Classifier Chain&lt;/a&gt;で実装されたClassifier Chainsは、ラベルの相関関係を特徴につかうマルチラベル分類のモデルで、既存の相関関係をもちいる手法よりも計算量がすくない。
+より細かくみれば、Classifier Chainsは、Classifier Chain Model(CC)とCCのアンサンブル学習であるEnsembles of Classifier Chains(ECC)の2つにわかれる。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Effective Multi-Label Active Learning for Text Classification</title>
@@ -167,7 +177,7 @@ Piece tableはテキストを2つのバッファに記録する。
       <guid>https://nryotaro.dev/posts/deep_learning_based_text_classification/</guid>
       <description>&lt;p&gt;深層学習によるテキスト分類のサーベイで、調査したモデル数の多さで論文の貢献を主張している。
 文章の構成は、150個のモデル、40件のデータセット、定量的な評価指標の解説がつづく。
-文書分類を広くとらえ、典型的なテキスト分類だけでなくQAやテキスト含意にもふれている。&lt;/p&gt;</description>
+文書分類を広くとらえ、典型的なテキスト分類だけでなくQAやテキスト含意への言及もある。&lt;/p&gt;</description>
     </item>
     
     <item>
