@@ -48,6 +48,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/an_overview_of_data_warehousing_and_olap_technology/">An Overview of Data Warehousing and OLAP Technology</a></h3>
+        <div class="summary"><p>データウェアハウスの概要と発表時期の97年の関連技術を解説した論文で、データウェアハウスの理論を提唱したInmonにならい、データウェアハウスを、目的指向(subject-oriented)で、統合され、組織の意思決定に資する永続的なデータとらえている。
+関連技術を、ETL処理、データ保存方法、保存したデータによる分析の3つに分けて整理する。
+データベースの設計手法では、Kimballの提唱したスタースキーマ、その応用のスノーフレークスキーマ, 事実の星座(fact constellations)、インデックスについてビットマップインデックスを解説する。</p></div>
+        <div class="article-footer">
+            <span class="date">November 6, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/bayou/">Managing Update Conflicts in Bayou, a Weakly Connected Replicated Storage System</a></h3>
         <div class="summary"><p>Bayouは、モバイルコンピューティングむけに95年に発表されたストレージで、弱い一貫性とレプリケーションがある。
 発表当時の不安定なモバイルネットワーク環境でもクライアントがストレージにアクセスできるように、一貫性を犠牲にしてクライアントにどんなレプリケーションへの読み書きも認める。
@@ -145,16 +155,6 @@ RPCの開発目的は、分散コンピューティングを簡単に実装で�
 RPCは大部分で<a href="http://www.bitsavers.org/pdf/xerox/parc/techReports/CSL-79-3_Mesa_Language_Manual_Version_5.0.pdf">Mesa</a>が使われた。</p></div>
         <div class="article-footer">
             <span class="date">September 11, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/dremel/">Dremel: Interactive Analysis of Web-Scale Datasets</a></h3>
-        <div class="summary"><p>Dremelは2006年からGoogle社内で利用されているDWHで、社外にはBigQueryとして提供されている。
-列指向の形式でデータを保存し、SQLに似た言語のクエリでデータを検索できる。
-Dremelは、サーバーのクラスタを木構造に組織し、ルートで受理したクエリの処理を下層のサーバに分配し、その結果を集約することで処理を分散し高速化をはかる。</p></div>
-        <div class="article-footer">
-            <span class="date">September 4, 2021</span>
         </div>
     </article>
     

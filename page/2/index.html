@@ -48,6 +48,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/semi_supervised_classification_with_graph_convolutional_networks/">SEMI-SUPERVISED CLASSIFICATION WITH GRAPH CONVOLUTIONAL NETWORKS</a></h3>
+        <div class="summary"><p>文書の特徴を点、引用などの関係を辺でしめしたグラフ構造に畳込みニューラルネットワークを適用する半教師あり学習で、ラベルのない文書は近くにある文書とおなじラベルになると仮定する。
+<a href="https://mlg.eng.cam.ac.uk/zoubin/papers/zgl.pdf">Zhu et al.</a>にみられる先行研究は、辺の情報をニューラルネットワークにあたず、文書の特徴のみを入力していた。
+表題の手法では、文書の特徴にくわえて隣接行列で表現した辺の情報もニューラルネットワークにあたえる。
+グラフの辺の数に対して線形にスケールし、隠れ層でグラフの分散表現を獲得できる。</p></div>
+        <div class="article-footer">
+            <span class="date">January 21, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/dynamic_routing_between_capsules/">Dynamic Routing Between Capsules (2017)</a></h3>
         <div class="summary"><p>カプセルはおなじ層にあるニューロン(ユニット)をグループであり、カプセルの出力するベクトルは入力にある特定のエンティティの分散表現になる。
 表題のdynamic routingは、カプセルの出力ベクトルを1つ上の層のどのカプセルに渡すべきかを学習する手法である。
@@ -72,7 +83,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/effective_approaches_to_attention_based_neural_machine_translation/">Effective Approaches to Attention-based Neural Machine Translation (2015)</a></h3>
-        <div class="summary"><p>注意機構をつかった翻訳用のニューラルネットワークを2種類例示し、翻訳における効果的な注意機構の使い方を提案した。
+        <div class="summary"><p>注意機構をつかった翻訳用のニューラルネットワークを2つ例示し、翻訳における効果的な注意機構の使い方を提案した。
 どちらもスタッキングしたLSTMを使うが、注意の計算で参照するLSTMの隠れ状態が違う。
 ひとつは、1単語を出力するときに、すべての単語のLSTMの隠れ状態から注意を算出するグローバルなアプローチで、もうひとつは一部の単語の状態だけから注意を算出するローカルなアプローチである。
 英語とドイツ語の双方への翻訳タスクに適用したところ、ローカルなアプローチで注意機構をつかわない手法と比べてBLEUスコアを5.0ポイントできた。</p></div>
@@ -152,16 +163,6 @@ BPSは、並列計算用のハードウェアと高水準な並列計算のプ�
 さらに、規格がデータの版が単一であることを前提としていることを指摘した上で、多版型のトランザクションであるSnaphot Isolationを提案した。</p></div>
         <div class="article-footer">
             <span class="date">November 13, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/an_overview_of_data_warehousing_and_olap_technology/">An Overview of Data Warehousing and OLAP Technology</a></h3>
-        <div class="summary"><p>データウェアハウスの概要と発表時期の97年の関連技術を解説した論文で、データウェアハウスの理論を提唱したInmonにならい、データウェアハウスを、目的指向(subject-oriented)で、統合され、組織の意思決定に資する永続的なデータとらえている。
-関連技術を、ETL処理、データ保存方法、保存したデータによる分析の3つに分けて整理する。
-データベースの設計手法では、Kimballの提唱したスタースキーマ、その応用のスノーフレークスキーマ, 事実の星座(fact constellations)、インデックスについてビットマップインデックスを解説する。</p></div>
-        <div class="article-footer">
-            <span class="date">November 6, 2021</span>
         </div>
     </article>
     

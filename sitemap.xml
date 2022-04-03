@@ -4,16 +4,21 @@
   
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2022-03-22T16:30:13+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nryotaro.dev/posts/classifier_chains_for_multi-label_classification/</loc>
-    <lastmod>2022-03-22T16:30:13+09:00</lastmod>
+    <lastmod>2022-03-26T17:38:58+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
+    <lastmod>2022-03-26T17:38:58+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/xgboost/</loc>
+    <lastmod>2022-03-26T17:38:58+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/classifier_chains_for_multi-label_classification/</loc>
     <lastmod>2022-03-22T16:30:13+09:00</lastmod>
   </url>
   

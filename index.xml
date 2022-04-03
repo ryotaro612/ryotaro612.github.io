@@ -6,10 +6,22 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 22 Mar 2022 16:30:13 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 26 Mar 2022 17:38:58 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>XGBoost: A Scalable Tree Boosting System</title>
+      <link>https://nryotaro.dev/posts/xgboost/</link>
+      <pubDate>Sat, 26 Mar 2022 17:38:58 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/xgboost/</guid>
+      <description>&lt;p&gt;XGBoostは、キャッシュやシャーディングによる高速な勾配ブースティングのライブラリであり、スパースなデータもあつかえる。
+情報利得を最大化する分岐をもとめてノードからのばすときは、ノードにあるサンプルで分岐の条件を決定する。
+このとき、欠損のない特徴の値のみをつかい、欠損のないサンプル数の線形オーダまで計算量を削減する。
+情報利得の最大値をもとめるときは、分岐条件になる特徴が欠損しているときに左右どちらに分岐させるべきかを計算する。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Classifier Chains for Multi-label Classification</title>
@@ -163,7 +175,7 @@ Piece tableはテキストを2つのバッファに記録する。
       <pubDate>Sun, 26 Dec 2021 01:54:42 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/effective_approaches_to_attention_based_neural_machine_translation/</guid>
-      <description>&lt;p&gt;注意機構をつかった翻訳用のニューラルネットワークを2種類例示し、翻訳における効果的な注意機構の使い方を提案した。
+      <description>&lt;p&gt;注意機構をつかった翻訳用のニューラルネットワークを2つ例示し、翻訳における効果的な注意機構の使い方を提案した。
 どちらもスタッキングしたLSTMを使うが、注意の計算で参照するLSTMの隠れ状態が違う。
 ひとつは、1単語を出力するときに、すべての単語のLSTMの隠れ状態から注意を算出するグローバルなアプローチで、もうひとつは一部の単語の状態だけから注意を算出するローカルなアプローチである。
 英語とドイツ語の双方への翻訳タスクに適用したところ、ローカルなアプローチで注意機構をつかわない手法と比べてBLEUスコアを5.0ポイントできた。&lt;/p&gt;</description>
