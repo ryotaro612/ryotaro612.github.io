@@ -162,7 +162,7 @@ Piece tableはテキストを2つのバッファに記録する。
       <pubDate>Sun, 26 Dec 2021 13:24:12 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/hierarchical_attention_networks_for_document_classification/</guid>
-      <description>&lt;p&gt;Hierarchical Attention Network(HAN)は、単語は文から文書は文からなりたつ文書の構造をアーキテクチャに反映し、単語の注意から文の注意を、文の注意から文書の注意を計算する。
+      <description>&lt;p&gt;Hierarchical Attention Network(HAN)は、単語は文から文書は文からなる文書の構造をアーキテクチャに反映し、単語の注意から文の注意を、文の注意から文書の注意を計算する。
 順方向と逆方向の2つのGRUでエンコードした単語の分散表現から注意を計算し、文ごとに、単語の注意の重みつき和を計算し文の分散表現とする。
 さらに、文の分散表現を別の順、逆方向GRUにあたえ、単語とおなじように各文の注意を計算し、その重みつき和を文書の分散表現としてあつかう。
 最後に、文書の分散表現を全結合層に入力し、ソフトマックス関数で文書のクラスを推定する。
@@ -2046,7 +2046,7 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
       <pubDate>Mon, 09 Mar 2020 02:17:22 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/raft/</guid>
-      <description>&lt;p&gt;Raftとよばれるコンセンサスアルゴリズムを提案した論文である。
+      <description>&lt;p&gt;コンセンサスアルゴリズムRaftを提案した論文である。
 Raftは、Multi Paxosと同様の実行結果をもたらす。
 実行するコマンドのログをサーバ間で交換することで、状態を同期し、サーバの一部が落ちてもシステムを継続することができる。&lt;/p&gt;</description>
     </item>
