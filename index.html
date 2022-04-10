@@ -48,6 +48,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/adam/">ADAM: A METHOD FOR STOCASTIC OPTIMIZATION</a></h3>
+        <div class="summary"><p>ADAMはAdaptive moment estimationに由来し、名前のとおり、推定した1, 2次のモーメントによる学習率最適化のアルゴリズムである。
+勾配が疎なときに有効なAdaGradの利点と、目的関数が時間とともに変化してもよいRMSPropの利点をそなえる。
+一次や二次のモーメントを、指数関数的に加重を減少させる移動平均で推定する。
+ただし、モーメントの初期値を0にすると最初のうちはモーメントの推定値が0に偏ってしまう。
+そこで、反復回数がすくないほど推定値を大きくなるよう補正する。</p></div>
+        <div class="article-footer">
+            <span class="date">April 9, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/xgboost/">XGBoost: A Scalable Tree Boosting System</a></h3>
         <div class="summary"><p>XGBoostは、キャッシュやシャーディングによる高速な勾配ブースティングのライブラリであり、スパースなデータもあつかえる。
 情報利得を最大化する分岐をもとめてノードからのばすときは、ノードにあるサンプルで分岐の条件を決定する。
@@ -141,20 +153,6 @@ LIMPLEは、GCCの中間表現GIMPLEに由来し、ネイティブコンパイ�
 さいごに、LIMPLEをlibgccjitの中間表現に変換し、GCCでネイティブに実行可能なプログラムにコンパイルする。</p></div>
         <div class="article-footer">
             <span class="date">January 30, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/data_structure_for_text_sequence/">Data Structure for Text Sequences</a></h3>
-        <div class="summary"><p>テキストエディタのためのデータ構造として、array, gap, list, line pointers, fixed size buffers, piece tablesを評価する。
-とくに、Piece tablesを評価し詳しく解説する。
-Piece tableはテキストを2つのバッファに記録する。
-2つのバッファはfile buffer, add bufferで、file bufferは初期状態のテキストを保存し、add bufferはあらたに挿入された文字列を保存する追記のみのバッファである。
-なまえのpieceはバッファの連続する部分文字列を意味する。
-そして、pieceへのポインタのシーケンスがpiece tableである。
-ポインタは、どちらのバッファか、参照する部分文字列の開始位置、長さの3つの情報からなる。</p></div>
-        <div class="article-footer">
-            <span class="date">January 29, 2022</span>
         </div>
     </article>
     

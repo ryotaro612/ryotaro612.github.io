@@ -6,10 +6,23 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 26 Mar 2022 17:38:58 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 09 Apr 2022 13:43:35 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ADAM: A METHOD FOR STOCASTIC OPTIMIZATION</title>
+      <link>https://nryotaro.dev/posts/adam/</link>
+      <pubDate>Sat, 09 Apr 2022 13:43:35 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/adam/</guid>
+      <description>&lt;p&gt;ADAMはAdaptive moment estimationに由来し、名前のとおり、推定した1, 2次のモーメントによる学習率最適化のアルゴリズムである。
+勾配が疎なときに有効なAdaGradの利点と、目的関数が時間とともに変化してもよいRMSPropの利点をそなえる。
+一次や二次のモーメントを、指数関数的に加重を減少させる移動平均で推定する。
+ただし、モーメントの初期値を0にすると最初のうちはモーメントの推定値が0に偏ってしまう。
+そこで、反復回数がすくないほど推定値を大きくなるよう補正する。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>XGBoost: A Scalable Tree Boosting System</title>
