@@ -48,6 +48,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/live_migration_of_virtual_machines/">Live Migration of Virtual Machines</a></h3>
+        <div class="summary"><p>XenのハイパーバイザーにOSのライブマグレーションを統合し、約60msのダウンタイムでのOSのライブマイグレーションを実現した。
+手法の焦点は、どれだけ短いダウンタイムや移行時間で、移行元と移行先のメモリの状態を同等にできるかにある。
+ネットワークアドレスや物理デバイスの移行はあつかわない。
+移行元と移行先は同じローカルネットワークにあり、マイグレーションによるIPアドレスのホストの移動を主にARP replyで通知でき、NASにデータを保存することを前提にし、ネットワークや物理デバイスの移行を考えなくてよいものとしている。</p></div>
+        <div class="article-footer">
+            <span class="date">November 20, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/a_critique_of_ansi_sql_isolation_levels/">A Critique of ANSI SQL Isolation Levels</a></h3>
         <div class="summary"><p>ANSI SQL-92規格は、トランザクション分離レベルを、Dirty Read, Non-Repeatable Reads, Phantomが発生する可能性で定義する。
 著者は、トランザクション分離レベルを禁止する現象で定義する理由を、ロックなどの実装手段で定義すると規格が実装依存になるからだと考えている。
@@ -149,18 +160,6 @@ Chubbyはロックサービスとして作られたが、ネームサーバと�
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/chain_replication_for_supporting_high_throughput_and_availability/">Chain Replication for Supporting High Throughput and Availability</a></h3>
-        <div class="summary"><p>ストレージサーバーに順番をつけ、順にオブジェクトを複製することで、ストレージサービスの一貫性を維持しつつスループットと可用性の向上をはかる。
-ここでのストレージサービスは、オブジェクトを保存し、クエリに対して一つのオブジェクトを返し、アトミックに一つのオブジェクトを更新できるものをさす。
-また、一貫性は、オブジェクトごとにクエリと更新を直列的に適用し、更新につづくクエリが更新内容になることを意味する。
-末尾のサーバーがクエリを受信し、該当するオブジェクトをクライアントに返す。
-先頭のサーバーが更新リクエストを受信し、順にサーバーのオブジェクトを更新し、末尾のサーバーが更新の結果をクライアントに返す。</p></div>
-        <div class="article-footer">
-            <span class="date">September 18, 2021</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -179,7 +178,7 @@ Chubbyはロックサービスとして作られたが、ネームサーバと�
         <a href="/page/4/"><span class="material-icons">chevron_right</span></a>
     </li>
     <li>
-        <a href="/page/21/"><span class="material-icons">last_page</span></a>
+        <a href="/page/22/"><span class="material-icons">last_page</span></a>
     </li>
     
 </ul>

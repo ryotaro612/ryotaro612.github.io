@@ -24,7 +24,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>ADAM: A METHOD FOR STOCASTIC OPTIMIZATION</title>
+    <title>LightGBM: A Highly Efficient Gradient Boosting Decision Tree</title>
 </head>
 
 <body>
@@ -44,19 +44,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
     
 <main>
-    <h1>ADAM: A METHOD FOR STOCASTIC OPTIMIZATION</h1>
-    <span class="date">April 9, 2022</span>
+    <h1>LightGBM: A Highly Efficient Gradient Boosting Decision Tree</h1>
+    <span class="date">April 16, 2022</span>
     <div>
-        <p>ADAMはAdaptive moment estimationに由来し、名前のとおり、推定した1, 2次のモーメントによる学習率最適化のアルゴリズムである。
-勾配が疎なときに有効なAdaGradの利点と、目的関数が時間とともに変化してもよいRMSPropの利点をそなえる。
-一次や二次のモーメントを、指数関数的に加重を減少させる移動平均で推定する。
-ただし、モーメントの初期値を0にすると最初のうちはモーメントの推定値が0に偏ってしまう。
-そこで、反復回数がすくないほど推定値を大きくなるよう補正する。</p>
-<p>アルゴリズムを以下に示す。
-一次と二次のモーメントを反復回数にしたがって大きくなる\((1-\beta_{1,2}^t)\)で除算し、推定値を補正している。
-<img src="/adam.png" alt="adam"></p>
-<p>論文を<a href="https://arxiv.org/abs/1412.6980">こちら</a>からダウンロードできます。<br>
-画像は論文から引用されています。</p>
+        <p>LightGBMは、GBDTを高速化したアルゴリズムであり、実験ではXGBoostよりも計算時間と消費メモリが少ない。
+GBDTは決定木の分岐を決めるのに最も時間がかかる。
+その前処理で特徴の値をソートする場合は、ソートがボトルネックになる。
+勾配の小さいサンプルを除外することでデータを減らし、また、同時に0でない値にならない排他的な特徴をマージすることで特徴の種類を減らし、ソートを高速化した。</p>
+<p>勾配の小さいサンプルは決定木が十分に学習しているとみなし、学習対象から除外する。
+ただし、サンプルを除外するとデータの分布が変わるため、でランダムに勾配の小さいサンプルを選び、重みを与えたうえで学習対象にふくめる。
+以下が具体的なアルゴリズムである。
+<img src="/lightgbm/goss.png" alt="goss"></p>
+<p>次元の多いデータがスパースな傾向にあることを利用し、同時に非0にならない特徴同士をまとめて次元数を減らす。
+ただし、排他的なまとまりを見つける問題はNP困難なので、貪欲法で近似解をもとめる。
+貪欲法は、問題を、特徴を点、排他的でない特徴間を辺にしたグラフの彩色問題におきかえる。
+辺は共起する回数を重みにもつ。
+点を次数の降順に並べ、順に、矛盾の少ない既存のまとまりに追加するか、新たなまとまりを生成することを繰り返す。
+以下が具体的なアルゴリズムである。
+<img src="/lightgbm/bundle.png" alt="bundle"></p>
+<p>論文を<a href="https://proceedings.neurips.cc/paper/2017/file/6449f44a102fde848669bdd9eb6b76fa-Paper.pdf">こちら</a>からダウンロードできます。</p>
     </div>
 </main>
 
@@ -64,13 +70,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <ul class="pagination">
     
     <li>
-        <a href="/posts/xgboost/"><span class="material-icons">chevron_left</span></a>
+        <a href="/posts/adam/"><span class="material-icons">chevron_left</span></a>
     </li>
     
-    
-    <li>
-        <a href="/posts/lightgbm/"><span class="material-icons">chevron_right</span></a>
-    </li>
     
 </ul>
 

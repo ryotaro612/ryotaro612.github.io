@@ -6,10 +6,22 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 09 Apr 2022 13:43:35 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 16 Apr 2022 14:32:01 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>LightGBM: A Highly Efficient Gradient Boosting Decision Tree</title>
+      <link>https://nryotaro.dev/posts/lightgbm/</link>
+      <pubDate>Sat, 16 Apr 2022 14:32:01 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/lightgbm/</guid>
+      <description>&lt;p&gt;LightGBMは、GBDTを高速化したアルゴリズムであり、実験ではXGBoostよりも計算時間と消費メモリが少ない。
+GBDTは決定木の分岐を決めるのに最も時間がかかる。
+その前処理で特徴の値をソートする場合は、ソートがボトルネックになる。
+勾配の小さいサンプルを除外することでデータを減らし、また、同時に0でない値にならない排他的な特徴をマージすることで特徴の種類を減らし、ソートを高速化した。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>ADAM: A METHOD FOR STOCASTIC OPTIMIZATION</title>
