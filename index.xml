@@ -6,10 +6,20 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 16 Apr 2022 14:32:01 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 23 Apr 2022 14:05:43 +0900</lastBuildDate>
     
 	<atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Stochastic Gradient Boosting</title>
+      <link>https://nryotaro.dev/posts/stochastic_gradient_boosting/</link>
+      <pubDate>Sat, 23 Apr 2022 14:05:43 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/stochastic_gradient_boosting/</guid>
+      <description>&lt;p&gt;Gradient Boostingは、反復的に、モデルの予測と正解の残差に弱識別器をあてはめ、弱識別器をモデルに追加する。
+Stochastic Gradient Boostingは、弱識別器の学習に非復元抽出したデータの部分集合をつかい、精度と学習速度を向上する。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>LightGBM: A Highly Efficient Gradient Boosting Decision Tree</title>
@@ -163,9 +173,10 @@ Piece tableはテキストを2つのバッファに記録する。
       <pubDate>Fri, 21 Jan 2022 21:01:24 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/semi_supervised_classification_with_graph_convolutional_networks/</guid>
-      <description>&lt;p&gt;文書の特徴を点、引用などの関係を辺でしめしたグラフ構造に畳込みニューラルネットワークを適用する半教師あり学習で、ラベルのない文書は近くにある文書とおなじラベルになると仮定する。
-&lt;a href=&#34;https://mlg.eng.cam.ac.uk/zoubin/papers/zgl.pdf&#34;&gt;Zhu et al.&lt;/a&gt;にみられる先行研究は、辺の情報をニューラルネットワークにあたず、文書の特徴のみを入力していた。
-表題の手法では、文書の特徴にくわえて隣接行列で表現した辺の情報もニューラルネットワークにあたえる。
+      <description>&lt;p&gt;文書の特徴を点、引用などの文書間の関係を辺であらわすグラフ構造に畳込みニューラルネットワークを適用する。
+半教師あり学習であり、ラベルのない文書は近くにある文書とおなじラベルになると仮定する。
+&lt;a href=&#34;https://mlg.eng.cam.ac.uk/zoubin/papers/zgl.pdf&#34;&gt;Zhu et al.&lt;/a&gt;の先行研究は、辺の情報をネットワークにあたず、文書の特徴のみを入力する。
+表題の手法では、文書の特徴にくわえ、隣接行列で表現した辺の情報もネットワークにあたえる。
 グラフの辺の数に対して線形にスケールし、隠れ層でグラフの分散表現を獲得できる。&lt;/p&gt;</description>
     </item>
     

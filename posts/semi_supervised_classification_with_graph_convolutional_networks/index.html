@@ -47,9 +47,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1>SEMI-SUPERVISED CLASSIFICATION WITH GRAPH CONVOLUTIONAL NETWORKS</h1>
     <span class="date">January 21, 2022</span>
     <div>
-        <p>文書の特徴を点、引用などの関係を辺でしめしたグラフ構造に畳込みニューラルネットワークを適用する半教師あり学習で、ラベルのない文書は近くにある文書とおなじラベルになると仮定する。
-<a href="https://mlg.eng.cam.ac.uk/zoubin/papers/zgl.pdf">Zhu et al.</a>にみられる先行研究は、辺の情報をニューラルネットワークにあたず、文書の特徴のみを入力していた。
-表題の手法では、文書の特徴にくわえて隣接行列で表現した辺の情報もニューラルネットワークにあたえる。
+        <p>文書の特徴を点、引用などの文書間の関係を辺であらわすグラフ構造に畳込みニューラルネットワークを適用する。
+半教師あり学習であり、ラベルのない文書は近くにある文書とおなじラベルになると仮定する。
+<a href="https://mlg.eng.cam.ac.uk/zoubin/papers/zgl.pdf">Zhu et al.</a>の先行研究は、辺の情報をネットワークにあたず、文書の特徴のみを入力する。
+表題の手法では、文書の特徴にくわえ、隣接行列で表現した辺の情報もネットワークにあたえる。
 グラフの辺の数に対して線形にスケールし、隠れ層でグラフの分散表現を獲得できる。</p>
 <p>\(A\)を隣接行列, \(I_{N}\)を単位行列、\(\tilde{A}=A+I_{N}\), \(\tilde{D}_{ii}=\sum_{j}\tilde{A}_{ij}\)とすると、各層の伝搬規則は次の式になる。
 $$

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Stochastic Gradient Boosting</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Stochastic Gradient Boosting</h1>
+    <span class="date">April 23, 2022</span>
+    <div>
+        <p>Gradient Boostingは、反復的に、モデルの予測と正解の残差に弱識別器をあてはめ、弱識別器をモデルに追加する。
+Stochastic Gradient Boostingは、弱識別器の学習に非復元抽出したデータの部分集合をつかい、精度と学習速度を向上する。</p>
+<p>学習データを\(\{y_i, \boldsymbol{\rm x}_i\}_1^N\), 損失関数を\(\Psi\)とする。
+ブースティングは、損失関数に学習データを入力したときの出力を最小にする関数を次の加法展開\(F(\boldsymbol{\rm x})\)で近似する。
+$$
+F(\boldsymbol{\rm x})=\sum^M_{m=0}\beta_mh(\boldsymbol{\rm x};\boldsymbol{\rm a}_m)
+$$
+$$
+(\beta_m,\boldsymbol{\rm a}_m) = \underset{\beta, \boldsymbol{\rm a}}{\operatorname{arg min}}\sum^N_{i=1}\Psi(y_i,F_{m-1}(\boldsymbol{\rm x}_i) + \beta h(\boldsymbol{\rm x}_i;\boldsymbol{\rm a}))
+$$
+\(h\)は弱識別器であり、\(\boldsymbol{\rm a}\)はパラメータである。
+\(m=0\)であれば、弱識別器は識別器とかわらない。</p>
+<p>勾配ブースティングは、\(m\)回目の反復において、ラベルと\(F_{m-1}(\boldsymbol{\rm x})\)の残差の二乗誤差を最小化する弱識別器を学習する。
+$$
+\boldsymbol{\rm a}_{m} = \underset{\boldsymbol{\rm a},\rho}{\operatorname{arg min}}\sum^N_{i=1}[\tilde{y}_{im}-\rho h(\boldsymbol{\rm x}_i; \boldsymbol{\rm a})]^2
+$$
+$$
+\tilde{y}_{im}=-\left[\frac{\partial\Psi(y_i,F(\boldsymbol{x}_i))}{\partial F(\boldsymbol{x}_i)}\right]_{F(\boldsymbol{x})=F_{m-1}(\boldsymbol{\rm x})}
+$$
+弱識別器を学習後、その係数を決める。
+$$
+\beta_m = \underset{\beta}{\operatorname{arg min}}\sum^N_{i=1}\Psi(y_i, F_{m-1}(\boldsymbol{\rm x}_i), +\beta h(\boldsymbol{\rm x}_i;\boldsymbol{\rm a}_m))
+$$</p>
+<p>\(L\)個の葉をもつ決定木を弱識別器にする勾配ブースティングでは、弱識別器が\(\boldsymbol{\rm x}\)を分ける領域\(\{R_{lm}\}^L_1\)をパラメタにもつ。
+決定木は\(\boldsymbol{\rm x}\)の所属する領域によって予測値を決める。
+$$
+h(\boldsymbol{\rm x}, \{R_{lm}\}^L_1)=\sum^L_{l=1}\bar{y}_{lm}1(\boldsymbol{\rm x}\in R_{lm})
+$$
+\(\bar{y}_{lm}=\text{mean}_{\boldsymbol{\rm x}_i \in R_{lm}}(\tilde{y}_{im})\)である。
+このとき、上の\(\beta_m\)は領域ごとに決まる。
+$$
+\gamma_{lm}=\underset{\gamma}{\operatorname{arg min}}\sum_{\boldsymbol{\rm x}_i\in R_{lm}}\Psi (y_i, F_{m-1}(\boldsymbol{\rm x}_i)+\gamma)
+$$</p>
+<p>Stochastic gradient boostingは、サンプル数が\(N\)より小さい値であり、非復元抽出した学習データをつかって弱識別器を学習する。</p>
+<p>論文を<a href="https://www.sciencedirect.com/science/article/abs/pii/S0167947301000652">こちら</a>からダウンロードできます。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/lightgbm/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

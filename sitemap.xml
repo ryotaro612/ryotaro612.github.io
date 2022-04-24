@@ -4,16 +4,21 @@
   
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2022-04-16T14:32:01+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://nryotaro.dev/posts/lightgbm/</loc>
-    <lastmod>2022-04-16T14:32:01+09:00</lastmod>
+    <lastmod>2022-04-23T14:05:43+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://nryotaro.dev/posts/</loc>
+    <lastmod>2022-04-23T14:05:43+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/stochastic_gradient_boosting/</loc>
+    <lastmod>2022-04-23T14:05:43+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://nryotaro.dev/posts/lightgbm/</loc>
     <lastmod>2022-04-16T14:32:01+09:00</lastmod>
   </url>
   

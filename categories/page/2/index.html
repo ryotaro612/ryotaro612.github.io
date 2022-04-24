@@ -47,6 +47,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/an_algorithm_for_suffix_stripping/">An algorithm for suffix stripping (1980)</a></h3>
+        <div class="summary"><p>Poterのステミングで知られる。
+アルゴリズムが単純で、辞書を必要としないところに特徴がある。
+単語の接尾辞を規則にしたがい段階的に変換し、変換後の文字列を語幹とみなす。</p></div>
+        <div class="article-footer">
+            <span class="date">February 11, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/bringing_gnu_emacs_to_native_code/">Bringing GNU Emacs to Native Code</a></h3>
         <div class="summary"><p>Emacs 28から利用できる<a href="https://gcc.gnu.org/onlinedocs/jit/">libgccjit</a>によるネイティブコンパイルの解説である。
 パッケージアーカイブELPAにあるelisp-benchmarksによる比較ではバイトコンパイルよりも2.3倍から42倍の高速化を実現した。
@@ -75,9 +85,10 @@ Piece tableはテキストを2つのバッファに記録する。
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/semi_supervised_classification_with_graph_convolutional_networks/">SEMI-SUPERVISED CLASSIFICATION WITH GRAPH CONVOLUTIONAL NETWORKS</a></h3>
-        <div class="summary"><p>文書の特徴を点、引用などの関係を辺でしめしたグラフ構造に畳込みニューラルネットワークを適用する半教師あり学習で、ラベルのない文書は近くにある文書とおなじラベルになると仮定する。
-<a href="https://mlg.eng.cam.ac.uk/zoubin/papers/zgl.pdf">Zhu et al.</a>にみられる先行研究は、辺の情報をニューラルネットワークにあたず、文書の特徴のみを入力していた。
-表題の手法では、文書の特徴にくわえて隣接行列で表現した辺の情報もニューラルネットワークにあたえる。
+        <div class="summary"><p>文書の特徴を点、引用などの文書間の関係を辺であらわすグラフ構造に畳込みニューラルネットワークを適用する。
+半教師あり学習であり、ラベルのない文書は近くにある文書とおなじラベルになると仮定する。
+<a href="https://mlg.eng.cam.ac.uk/zoubin/papers/zgl.pdf">Zhu et al.</a>の先行研究は、辺の情報をネットワークにあたず、文書の特徴のみを入力する。
+表題の手法では、文書の特徴にくわえ、隣接行列で表現した辺の情報もネットワークにあたえる。
 グラフの辺の数に対して線形にスケールし、隠れ層でグラフの分散表現を獲得できる。</p></div>
         <div class="article-footer">
             <span class="date">January 21, 2022</span>
@@ -152,19 +163,6 @@ BPSの目的は、ハードウェアと並列計算の高水準なプログラ�
 BPSは、並列計算用のハードウェアと高水準な並列計算のプログラミングモデルをつなぐためにある。</p></div>
         <div class="article-footer">
             <span class="date">December 11, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/wait_free_synchronization/">Wait-Free Synchronization</a></h3>
-        <div class="summary"><p>あるデータ構造がwait-freeであり、データ構造への操作が有限回のステップで完了するのであれば、ほかの並行プロセスの処理速度によらず、任意のプロセスによるその操作は必ず完了する。
-表題のsynchronizationは、wait-freeであるデータ構造で別のwait-freeなデータ構造を実装することを意味する。
-実装可能かを定義するためにコンセンサス数を導入する。
-あるデータ構造のコンセンサス数は、単純な含意形成問題を解くときに参加できるプロセス数の最大値である。
-たとえば、read / writeレジスタのコンセンサス数は1, test &amp; swapは2, compare &amp; swapは無限である。
-プロセス数を定義した上で、あるコンセンサス数のデータ構造を、それより小さいコンセンサス数のデータ構造では実装できないことを示した。</p></div>
-        <div class="article-footer">
-            <span class="date">November 27, 2021</span>
         </div>
     </article>
     
