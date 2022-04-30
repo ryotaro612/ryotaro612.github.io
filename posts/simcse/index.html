@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>SimCSE: Simple Contrastive Learning of Sentence Embeddings</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>SimCSE: Simple Contrastive Learning of Sentence Embeddings</h1>
+    <span class="date">April 29, 2022</span>
+    <div>
+        <p>対照学習は、意味の近い要素同士を近くに、異なる要素を遠くに配置する分散表現を獲得する。
+SimCSEは、文の分散表現のための対照学習であり、教師なしと教師ありの2つの学習方法を提供する。
+教師なし学習は、Dropout層を通したサンプルが近くに配置されるように、Dropout層の出力2つからなるペアを教師データにする。
+教師あり学習は、自然言語推論(含意関係認識)の教師データをつかい、前提と含意の分散表現が近くになるように学習する。</p>
+<p>教師なし学習は、\(N\)をミニバッチのサイズ、\(\boldsymbol{\rm h}_i^z=f_{\theta}(x_i, z)\)を事例\(x_i\)にドロップアウトによるマスク\(z\)を適用した結果とすると、損失関数は以下になる。
+$$
+\ell_i = -\log\frac{e^{\text{sim}(\boldsymbol{\rm h}_i^{z_i}, \boldsymbol{\rm h}_i^{z_i&rsquo;})/\tau}}{\sum_{j=1}^Ne^{\text{sim}(\boldsymbol{\rm h}_i^{z_i}, \boldsymbol{\rm h}_j^{z&rsquo;_j})/\tau}}
+$$
+\(\tau\)は温度パラメータである。</p>
+<p>教師あり学習の場合、\(x_i\)を前提、含意を\(x_i^+\), 矛盾を\(x_i^-\)として
+$$
+\ell_i = -\log\frac{e^{\text{sim}(\boldsymbol{\rm h}_i, \boldsymbol{\rm h}_i^+)/\tau}}{\sum^N_{j=1}\left(e^{\text{sim}(\boldsymbol{\rm h}_i, \boldsymbol{\rm h}_j^+)/\tau} + e^{\text{sim}(\boldsymbol{\rm h}_i, \boldsymbol{\rm h}_j^-)/\tau}\right)}
+$$</p>
+<p>論文への<a href="https://arxiv.org/pdf/2104.08821.pdf">リンク</a></p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/stochastic_gradient_boosting/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/a_family_of_experiments_on_test_driven_development/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

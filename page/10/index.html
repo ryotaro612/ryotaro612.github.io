@@ -48,6 +48,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/aerospike/">論文メモ Aerospike: Architecture of a Real-Time Operational Database</a></h3>
+        <div class="summary"><p>Aerospikeは、高い対障害性をもった分散データベースで、正式にはCitrusleafという。
+CPU, DRAM, HDDやSSDを搭載したコモディティなサーバでクラスタを組める。
+ノード同士はTCP/IPで通信し、シェアードナッシングなクラスタを構成する。
+処理性能の向上のために、スケールアウトだけでなく、スケールアップも重視しており、ハードウェアを意識した実装で高速化をはかっている。</p></div>
+        <div class="article-footer">
+            <span class="date">November 28, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/spanner/">論文メモ Spanner: Google&#39;s Globally Distributed Database</a></h3>
+        <div class="summary"><p>Spannerは、世界中のデータセンタにデータを複製する高可用な分散データベースで、<a href="http://bitsavers.trailing-edge.com/pdf/xerox/parc/techReports/CSL-81-8_Information_Storage_in_a_Decentralized_Computer_System.pdf">外部整合性</a>のある分散トランザクションを保証する。
+ユーザからみると半リレーショナルなデータモデルのデータベースであり、各テーブルに一つ以上の順序つき主キーが必要なところがリレーショナルデータモデルと違う。
+一方、内部は文字列とタイムスタンプの組をキーにしたキーバリューストアであり、Single Paxos状態機械でデータの一貫性を守りながら複数のデータセンタにデータを複製する。</p></div>
+        <div class="article-footer">
+            <span class="date">November 27, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/a_relational_model_of_data_for_large_shared_data_banks/">論文メモ A Relational Model of Data for Large Shared Data Banks</a></h3>
         <div class="summary"><p>Coddがリレーショナルデータモデルを提唱した70年の論文。
 データをリレーション(SQLでのテーブル)として束ね、リレーションを順序なしのタプル(SQLの行)で構成する。</p></div>
@@ -132,24 +153,6 @@ catastrophic failuresの35%の原因は、エラーハンドラがログの出�
 Javaのバイトコードから以上の3パターンを検出するツールを実装し、9種類の分散システムに適用したことで、121件の未知のバグを特定することができた。</p></div>
         <div class="article-footer">
             <span class="date">October 29, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/from_diversity_by_numbers_to_diversity_as_process/">論文メモ From Diversity by Numbers to Diversity as Process</a></h3>
-        <div class="summary">開発におけるブレーンストーミングが、マイノリティに属する開発者の満足度の向上に貢献することを実験的に示した。 ここでの開発は、ハッカソンのような短時間かつ集中が求められるものが想定されている。 満足度は、開発プロセスと成果物に対するもので分けて扱われ、どちらの観点でもブレーンストーミングは満足度に対してよい効果をもたらした。
-  論文をこちらからダウンロードできます。  </div>
-        <div class="article-footer">
-            <span class="date">October 16, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/end_to_end_sequence_labeling_via_bi_directional_lstm_cnns_crf/">論文メモ End-to-end Sequence Labeling via Bi-directional LSTM-CNNs-CRF</a></h3>
-        <div class="summary"><p>タスク固有の特徴を使わないEnd to Endの系列ラベリングのためのネットワークアーキテクチャを発表した。
-実験では、Penn Treebank WSJの品詞タグ付けで97.55%のaccuracy, CoNLL 2003の固有表現抽出で91.21%のF1値を発揮し、発表当時の先行研究を上まわる性能を示した。</p></div>
-        <div class="article-footer">
-            <span class="date">October 16, 2020</span>
         </div>
     </article>
     
