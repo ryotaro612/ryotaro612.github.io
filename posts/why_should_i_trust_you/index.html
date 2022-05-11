@@ -63,16 +63,16 @@ $$
 次のアルゴリズムで\(\xi(x)\)を近似する。
 \(\mathcal{L}\)は、次のように、\(x\)に近い事例の誤りにより大きなペナルティを与える。
 $$
-\mathcal{L}(f, g,\pi_x)=\sum_{z,z&rsquo;\in\mathcal{Z}}\pi_x (z)(f(z)-g(z&rsquo;))^2
+\mathcal{L}(f, g,\pi_x)=\sum_{z,z'\in\mathcal{Z}}\pi_x (z)(f(z)-g(z'))^2
 $$
 <img src="/why_should_i_trust_you/lime.png" alt="lime">
-\(g\)は解釈可能なければならないため、\(x&rsquo;\)もまた解釈できるものでなければならない。
+\(g\)は解釈可能なければならないため、\(x'\)もまた解釈できるものでなければならない。
 例えばテキスト分類であればbag-of-wordsをもちいる。</p>
 <h3 id="sp-lime">SP-LIME</h3>
 <p>SP-LIMEはモデルをよく説明する事例の集合を見つけだす。\(B\)を求める集合の要素数の上限、\(c(V, \mathcal{W}, I)\)を
 $$
 \newcommand{\1}{\mbox{1}\hspace{-0.25em}\mbox{l}}
-c(V, \mathcal{W}, I)=\sum^{d&rsquo;}_{j=1}\1_{\exists i\in V:\mathcal{W}_{i,j&gt;0}}I_j
+c(V, \mathcal{W}, I)=\sum^{d'}_{j=1}\1_{\exists i\in V:\mathcal{W}_{i,j&gt;0}}I_j
 $$
 として、次のアルゴリズムにより、既に集められた事例にみられない重要な特徴をもつ事例を探索する。
 <img src="/why_should_i_trust_you/sp-lime.png" alt="sp-lime"></p>

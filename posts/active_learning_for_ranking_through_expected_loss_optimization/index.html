@@ -74,7 +74,7 @@ $$
 <p>学習すべき文書を選ぶ場合、クエリ\(q\)に関連する\(i\)番目の文書を選んだときの損失の期待値\(\text{EL}(q,i)\)を
 $$
 \begin{align}
-\text{EL}(q, i)&amp;=\int_{Y^i}\underset{\pi}{\operatorname{min}}\int_{y_i}l(\pi, Y)P(Y\mid X_q , D)dy_idY^i\\<br>
+\text{EL}(q, i)&amp;=\int_{Y^i}\underset{\pi}{\operatorname{min}}\int_{y_i}l(\pi, Y)P(Y\mid X_q , D)dy_idY^i\\
 &amp;=\int_{Y^i}\left(\int_{y^i}\underset{\pi}{\operatorname{max}}\text{DCG}(\pi, Y)P(Y\mid X_q, D)dy_i - \underset{\pi}{\operatorname{max}}\int_{y^i}\text{DCG}(\pi, Y)P(Y\mid X_q, D)dy_i\right)dY^i
 \end{align}
 $$

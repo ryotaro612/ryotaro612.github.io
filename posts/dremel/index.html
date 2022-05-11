@@ -59,10 +59,10 @@ Dremelは、サーバーのクラスタを木構造に組織し、ルートで�
 <p>以上の要件のために、フィールドの値を、パス上で繰り返された途中のフィールドをあらわすrepetition levelやパス上に存在した繰り返し可能かオプショナルなフィールドの数を意味するdefinition levelと一緒に保存する。
 下図は上で例示したデータに対応し、rとdはそれぞれrepetition levelとdefinition levelをあらわす。</p>
 <p>例えば、パス<code>Name.Language.Code</code>であれば、<code>Name</code>と<code>Language</code>は繰り返しされる可能があるため、<code>Code</code>のrepetition levelは0以上2以下の値をとる。
-<code>r1</code>をトップダウンに探索した場合、&lsquo;en-us'にいたるまで繰り返しがないため、repetition levelは0になる。
+<code>r1</code>をトップダウンに探索した場合、&lsquo;en-us&rsquo;にいたるまで繰り返しがないため、repetition levelは0になる。
 0はパス上に繰り返されたフィールドがないことを意味する。
-&lsquo;en'の場合、パス上で<code>Language</code>が繰り返されたので、repetition levelは<code>Language</code>の階層である2になる。
-&lsquo;en-gb'は、1層目の<code>Name</code>が繰り返されるので1があてはまる。
+&lsquo;en&rsquo;の場合、パス上で<code>Language</code>が繰り返されたので、repetition levelは<code>Language</code>の階層である2になる。
+&lsquo;en-gb&rsquo;は、1層目の<code>Name</code>が繰り返されるので1があてはまる。
 <img src="/dremel/fig3.png" alt="fig3"></p>
 <p>次に、defintion levelの例をあげる。
 <code>r1</code>には<code>Links.Backward</code>がなく、<code>Backward</code>までのパス上にオプショナルフィールドの<code>Links</code>が1つあるので、definition levelは1で、値は<code>NULL</code>である。

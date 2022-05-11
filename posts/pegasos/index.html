@@ -67,9 +67,9 @@ $$
 以降は、要素数\(k\)の学習データの部分集合\(A_t \subseteq S \)をえらび、\(T\)回以下の手順をくりかえす。
 $$
 \begin{align}
-A^+_t &amp;:= \{(\boldsymbol{\rm x}, y)\in A_t : y\langle \boldsymbol{\rm w_t}, \boldsymbol{\rm x} \rangle &lt; 1\}\\<br>
-\eta_t &amp;:= \frac{1}{\lambda t}\\<br>
-\boldsymbol{\rm w}_{t + \frac{1}{2}} &amp;:= (1-\eta_t\lambda)\boldsymbol{\rm w}_t + \frac{\eta_t}{k}\sum_{\boldsymbol{\rm w}, y\in A_t^+}y\boldsymbol{\rm x}\\<br>
+A^+_t &amp;:= \{(\boldsymbol{\rm x}, y)\in A_t : y\langle \boldsymbol{\rm w_t}, \boldsymbol{\rm x} \rangle &lt; 1\}\\
+\eta_t &amp;:= \frac{1}{\lambda t}\\
+\boldsymbol{\rm w}_{t + \frac{1}{2}} &amp;:= (1-\eta_t\lambda)\boldsymbol{\rm w}_t + \frac{\eta_t}{k}\sum_{\boldsymbol{\rm w}, y\in A_t^+}y\boldsymbol{\rm x}\\
 w_{\boldsymbol{w}_{t+1}} &amp;:= \min\left( 1, \frac{1/\sqrt{\lambda}}{\mid\mid \boldsymbol{\rm w}_{t+\frac{1}{2}}\mid\mid} \right)\boldsymbol{\rm w}_{t+\frac{1}{2}}
 \end{align}
 $$</p>

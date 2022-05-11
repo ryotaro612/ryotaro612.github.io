@@ -63,9 +63,9 @@ u^i=[h^i_f,h^i_b]
 $$</p>
 <p>$$
 \begin{align}
-e^i_t&amp;=\text{dot}(W_qu^i,W_ku^t);t\in [1, T]\\<br>
-a^i&amp;=\text{softmax}\left(\frac{e^i}{\sqrt{d_k}}\right)\\<br>
-c^i&amp;=\sum_{t\in [1,T]}a^i_tW_vu^t\\<br>
+e^i_t&amp;=\text{dot}(W_qu^i,W_ku^t);t\in [1, T]\\\
+a^i&amp;=\text{softmax}\left(\frac{e^i}{\sqrt{d_k}}\right)\\\
+c^i&amp;=\sum_{t\in [1,T]}a^i_tW_vu^t\\\
 r^i&amp;=[u^i, c^i]
 \end{align}
 $$</p>
@@ -82,8 +82,8 @@ Max PoolingではLSTMの出力について、各次元の最大値を選択す�
 \(f(x)\)を正規化線形関数\(f(x)=\max (0, x)\)、\(\bar{q(h)}\), \(\bar{e_l}\)をそれぞれベクトルを行列に変換、\(\text{vec}\)を行列からベクトルに変換する操作として、次の損失関数\(L_C\)で\(e_{\{h,l,t\}}\)学習する。</p>
 <p>$$
 \begin{align}
-\psi_l(e_h, e_t)&amp;=f(\text{vec}(f([\bar{q(h)};\bar{e_l}]*w))W)e_t\\<br>
-p&amp;=\sigma(\psi_l(e_h,e_t))\\<br>
+\psi_l(e_h, e_t)&amp;=f(\text{vec}(f([\bar{q(h)};\bar{e_l}]*w))W)e_t\\\
+p&amp;=\sigma(\psi_l(e_h,e_t))\\\
 L_C&amp;=-\frac{1}{N}\sum_i(t_i\log(p_i) + (1-t_i)\log(1-p_i))
 \end{align}
 $$</p>
@@ -93,7 +93,7 @@ $$</p>
 ただし、\(z^i\)は\(S\)上の意味を示すone-hotベクトルである。</p>
 <p>$$
 \begin{align}
-\hat{p}_j^i&amp;=\text{softmax}(\text{dot}(v^i,\rho_j)+\text{dot}(b,\rho_j));\rho\in S\\<br>
+\hat{p}_j^i&amp;=\text{softmax}(\text{dot}(v^i,\rho_j)+\text{dot}(b,\rho_j));\rho\in S\\\
 L^i_{wsd}&amp;=-\sum_j(z^i_j\log(\hat{p}^i_j))
 \end{align}
 $$</p>

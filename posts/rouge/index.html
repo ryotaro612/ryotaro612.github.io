@@ -67,8 +67,8 @@ $$</p>
 長さ\(n\)の参照要約を\(X\), 長さ\(y\)の候補要約を\(Y\)とする次の\(F_{lcs}\)がROUGE-Lとなる。</p>
 <p>$$
 \begin{align}
-R_{lcs}&amp;=\frac{LCS(X, Y)}{m}\\<br>
-P_{lcs}&amp;=\frac{LCS(X, Y)}{n}\\<br>
+R_{lcs}&amp;=\frac{LCS(X, Y)}{m}\\\
+P_{lcs}&amp;=\frac{LCS(X, Y)}{n}\\\
 F_{lcs}&amp;=\frac{(1+\beta^2)R_{lcs}P_{lcs}}{R_{lcs}+\beta^2P_{lcs}}
 \end{align}
 $$</p>
@@ -78,8 +78,8 @@ $$</p>
 単語の総数が\(m\)で\(u\)個の文からなる参照約文書で\(n\)個の単語からなる候補要約文書\(C\)を評価する場合、\(R_{lcs}, P_{lcs}, F_{lcs}\)は次の式になる。
 $$
 \begin{align}
-R_{lcs}=\frac{\sum_{i=1}^uLCS_{\cup}(r_i, C)}{m}\\<br>
-P_{lcs}=\frac{\sum_{i=1}^uLCS_{\cup}(r_i,C)}{n}\\<br>
+R_{lcs}=\frac{\sum_{i=1}^uLCS_{\cup}(r_i, C)}{m}\\\
+P_{lcs}=\frac{\sum_{i=1}^uLCS_{\cup}(r_i,C)}{n}\\\
 F_{lcs}=\frac{(1+\beta^2)R_{lcs}P_{lcs}}{R_{lcs}+\beta^2P_{lcs}}
 \end{align}
 $$</p>
@@ -88,8 +88,8 @@ $$</p>
 次の参照要約\(X\)と候補要約\(Y_1\), \(Y_2\)があるとき、\(Y_1\)のほうが\(X\)に似ているため\(Y_2\)より高いスコアを与えたいが、ROUGE-Lであれば\(Y_1\)と\(Y_2\)のスコアは同じになってしまう。</p>
 <p>$$
 \begin{align}
-X&amp;:[\underline{A}\underline{B}\underline{C}\underline{D}EFG]\\<br>
-Y_1&amp;:[\underline{A}\underline{B}\underline{C}\underline{D}HIK]\\<br>
+X&amp;:[\underline{A}\underline{B}\underline{C}\underline{D}EFG]\\\
+Y_1&amp;:[\underline{A}\underline{B}\underline{C}\underline{D}HIK]\\\
 Y_2&amp;:[\underline{A}H\underline{B}K\underline{C}I\underline{D}]
 \end{align}
 $$
@@ -97,8 +97,8 @@ ROUGE-Wは、LCSの要素の隣接度合いにもとづく重みつきLCS(WLCS)�
 \(f\)の例として\(f(x)=x^2\)がある。</p>
 <p>$$
 \begin{align}
-R_{wlcs}&amp;=f^{-1}\left(\frac{WLCS(X, Y)}{f(m)}\right)\\<br>
-P_{wlcs}&amp;=f^{-1}\left(\frac{WLCS(X, Y)}{f(n)}\right)\\<br>
+R_{wlcs}&amp;=f^{-1}\left(\frac{WLCS(X, Y)}{f(m)}\right)\\\
+P_{wlcs}&amp;=f^{-1}\left(\frac{WLCS(X, Y)}{f(n)}\right)\\\
 F_{wlcs}&amp;=\frac{(1+\beta^2)R_{wlcs}P_{wlcs}}{R_{wlcs}+\beta^2P_{wlcs}}
 \end{align}
 $$</p>

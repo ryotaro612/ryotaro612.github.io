@@ -73,7 +73,7 @@ $$</p>
 g_S (\theta) = \frac{1}{\mid S\mid}\sum_{i\in S}\frac{1}{p(i)}\nabla\phi(x_i^{( c )}, y_i^{( c )}, \theta)
 $$</p>
 <p>\((x_i^{( c )}, y_i^{( c )})\)は修正後のデータとラベルの組、
-\(R\)は\(x\)のと1対1の関係にあるレコード\(r\)の集合であり、修正とはレコード\(r\)をレコード\(r&rsquo;\)ないしは\(\emptyset\)に変換する操作をいう。
+\(R\)は\(x\)のと1対1の関係にあるレコード\(r\)の集合であり、修正とはレコード\(r\)をレコード\(r'\)ないしは\(\emptyset\)に変換する操作をいう。
 \(R_\mathcal{clean}\)は修正後のレコードの集合, \(R_\mathcal{dirty}\)は確率\(p\)で推定されていないレコードの集合を示す。
 \(S\)はバッチを示す。
 \(t\)回目の学習では、求めた推定値で学習率\(\gamma\)でパラメタを更新する。
@@ -95,8 +95,8 @@ $$
 また、学習と同様に、汚れのないデータを推定する方針で\(p\)を、</p>
 <p>$$
 \begin{aligned}
-\nabla\phi(x_i^{( c )}, y_i^{( c )}, \theta^{(t)}) &amp;\approx \nabla\phi(x_i^{(d)}, y_i^{(d)}, \theta^{(t)})\\<br>
-&amp; + \frac{\partial}{\partial X}\nabla\phi(x_i^{(d)}, y_i^{(d)}, \theta^{(t)})\cdot (x^{(d)} - x^{( c)}) \\<br>
+\nabla\phi(x_i^{( c )}, y_i^{( c )}, \theta^{(t)}) &amp;\approx \nabla\phi(x_i^{(d)}, y_i^{(d)}, \theta^{(t)})\\\
+&amp; + \frac{\partial}{\partial X}\nabla\phi(x_i^{(d)}, y_i^{(d)}, \theta^{(t)})\cdot (x^{(d)} - x^{( c)}) \\\
 &amp; + \frac{\partial}{\partial Y}\nabla\phi(x_i^{(d)}, y_i^{(d)}, \theta^{(t)})\cdot (x^{(d)} - x^{( c)})
 \end{aligned}
 $$

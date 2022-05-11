@@ -81,26 +81,26 @@ $$
 複数のLSTMを重ねるときは、\(\boldsymbol{\rm h}_t\)を次のLSTMにわたす。</p>
 <p>$$
 \begin{align}
-\boldsymbol{\rm i}_t &amp;= \sigma(\boldsymbol{\rm W}^i\boldsymbol{\rm z}_t + \boldsymbol{\rm U}^i\boldsymbol{\rm h}_{t-1}+\boldsymbol{\rm b}^i)\\<br>
-\boldsymbol{\rm f}_t &amp;= \sigma(\boldsymbol{\rm W}^f\boldsymbol{\rm z}_t + \boldsymbol{\rm U}^f\boldsymbol{\rm h}_{t-1}+\boldsymbol{\rm b}^f)\\<br>
-\boldsymbol{\rm o}_t &amp;= \sigma(\boldsymbol{\rm W}^o\boldsymbol{\rm z}_t + \boldsymbol{\rm U}^o\boldsymbol{\rm h}_{t-1}+\boldsymbol{\rm b}^o)\\<br>
-\boldsymbol{\rm g}_t &amp;= \tanh(\boldsymbol{\rm W}^g\boldsymbol{\rm z}_t + \boldsymbol{\rm U}^g\boldsymbol{\rm h}_{t-1}+\boldsymbol{\rm b}^g)\\<br>
-\boldsymbol{\rm c}_t &amp;= \boldsymbol{\rm f}_t \odot \boldsymbol{\rm c}_{t-1} + \boldsymbol{\rm i}_t \odot \boldsymbol{\rm g}_t \\<br>
+\boldsymbol{\rm i}_t &amp;= \sigma(\boldsymbol{\rm W}^i\boldsymbol{\rm z}_t + \boldsymbol{\rm U}^i\boldsymbol{\rm h}_{t-1}+\boldsymbol{\rm b}^i)\\
+\boldsymbol{\rm f}_t &amp;= \sigma(\boldsymbol{\rm W}^f\boldsymbol{\rm z}_t + \boldsymbol{\rm U}^f\boldsymbol{\rm h}_{t-1}+\boldsymbol{\rm b}^f)\\
+\boldsymbol{\rm o}_t &amp;= \sigma(\boldsymbol{\rm W}^o\boldsymbol{\rm z}_t + \boldsymbol{\rm U}^o\boldsymbol{\rm h}_{t-1}+\boldsymbol{\rm b}^o)\\
+\boldsymbol{\rm g}_t &amp;= \tanh(\boldsymbol{\rm W}^g\boldsymbol{\rm z}_t + \boldsymbol{\rm U}^g\boldsymbol{\rm h}_{t-1}+\boldsymbol{\rm b}^g)\\
+\boldsymbol{\rm c}_t &amp;= \boldsymbol{\rm f}_t \odot \boldsymbol{\rm c}_{t-1} + \boldsymbol{\rm i}_t \odot \boldsymbol{\rm g}_t \\
 \boldsymbol{\rm h}_t &amp;= \boldsymbol{\rm o}_t \odot \tanh (\boldsymbol{\rm c}_t)
 \end{align}
 $$</p>
 <h4 id="出力層">出力層</h4>
 <p>LSTMの出力\(\boldsymbol{\rm h}_t\)を全結合層とソフトマックス関数に入力し、単語列\(w_{1:t}=[w_1, \dots w_t]\)から次の単語\(w_{t+1}\)を予測する。</p>
 <p>$$
-\text{Pr}(w_{t+1}=j\mid w_{1:t}) = \frac{\exp (\boldsymbol{\rm h}_t \cdot \boldsymbol{\rm p}^j + q^j)}{\sum_{j&rsquo;\in \mathcal{V}}\exp (\boldsymbol{\rm h}_t \cdot \boldsymbol{\rm p}^{j&rsquo;}+ q^{j&rsquo;})}
+\text{Pr}(w_{t+1}=j\mid w_{1:t}) = \frac{\exp (\boldsymbol{\rm h}_t \cdot \boldsymbol{\rm p}^j + q^j)}{\sum_{j'\in \mathcal{V}}\exp (\boldsymbol{\rm h}_t \cdot \boldsymbol{\rm p}^{j'}+ q^{j'})}
 $$</p>
 <p>\(\mathcal{V}\)は単語の集合をさす。
 単語数\(\mid\mathcal{V}\mid\)が多い場合、階層的ソフトマックスをもちいる。
 \(\mathcal{V}\)を\(c=\lceil\sqrt{\mid\mathcal{V}\mid} \rceil\)として\(\mathcal{V}_1,\dots \mathcal{V}_c\)に分割し、次のように予測する。</p>
 <p>$$
 \begin{align}
-\text{Pr}(w_{t+1} = j\mid w_{1:t}) &amp;= \frac{\exp (\boldsymbol{\rm h}_t\cdot \boldsymbol{\rm s}^r + t^r)}{\sum^c_{r'=1}\exp (\boldsymbol{\rm h}_t \cdot \boldsymbol{\rm s}^{r&rsquo;}+ t^{r&rsquo;})} \\<br>
-&amp;\times \frac{\exp (\boldsymbol{\rm h}_t\cdot \boldsymbol{\rm p}_r^j + q_r^j)}{\sum_{j&rsquo;\in\mathcal{V}_r}\exp (\boldsymbol{\rm h}_t \cdot \boldsymbol{\rm p}_r^{j&rsquo;}+ q_r^{j&rsquo;})}
+\text{Pr}(w_{t+1} = j\mid w_{1:t}) &amp;= \frac{\exp (\boldsymbol{\rm h}_t\cdot \boldsymbol{\rm s}^r + t^r)}{\sum^c_{r'=1}\exp (\boldsymbol{\rm h}_t \cdot \boldsymbol{\rm s}^{r'}+ t^{r'})} \\
+&amp;\times \frac{\exp (\boldsymbol{\rm h}_t\cdot \boldsymbol{\rm p}_r^j + q_r^j)}{\sum_{j'\in\mathcal{V}_r}\exp (\boldsymbol{\rm h}_t \cdot \boldsymbol{\rm p}_r^{j'}+ q_r^{j'})}
 \end{align}
 $$</p>
 <h4 id="損失関数">損失関数</h4>

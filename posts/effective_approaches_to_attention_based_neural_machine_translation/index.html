@@ -55,7 +55,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 LSTMの隠れ状態\(\boldsymbol{h}_t\)と文脈\(\boldsymbol{c}_t\)を結合したベクトルから図の注意レイヤーの隠れ状態\(\tilde{\boldsymbol{h}}_t\)を計算し、その値をソフトマックス関数を適用し次に出力すべき単語をもとめる。
 $$
 \begin{align}
-\tilde{\boldsymbol{h}}_t &amp;= \tanh(\boldsymbol{W}_c[\boldsymbol{c}_t;\boldsymbol{h}_t]) \\<br>
+\tilde{\boldsymbol{h}}_t &amp;= \tanh(\boldsymbol{W}_c[\boldsymbol{c}_t;\boldsymbol{h}_t]) \\
 p(y_t\mid y_{&lt;t}, x) &amp;= \text{softmax}(\boldsymbol{W}_\boldsymbol{s}\tilde{\boldsymbol{h}}_t)
 \end{align}
 $$
@@ -65,17 +65,17 @@ $$
 原文のある状態\(s\)の注意\(\boldsymbol{a}_t(s)\)は、現在の出力側の隠れ状態\(\boldsymbol{h}_t\)と隠れ状態\(\bar{\boldsymbol{h}}_s\)から次のように算出できる。
 $$
 \begin{align}
-\boldsymbol{a}_t(s) &amp;=\text{align}(\boldsymbol{h}_t, \bar{\boldsymbol{h}}_s)\\<br>
-&amp;= \frac{\exp(\text{score}(\boldsymbol{h}_t, \bar{\boldsymbol{h}}_s ))}{\sum_{s&rsquo;}\exp(\text{score} (\boldsymbol{h}_t, \bar{\boldsymbol{h}}_{s&rsquo;}) ) }
+\boldsymbol{a}_t(s) &amp;=\text{align}(\boldsymbol{h}_t, \bar{\boldsymbol{h}}_s)\\
+&amp;= \frac{\exp(\text{score}(\boldsymbol{h}_t, \bar{\boldsymbol{h}}_s ))}{\sum_{s'}\exp(\text{score} (\boldsymbol{h}_t, \bar{\boldsymbol{h}}_{s'}) ) }
 \end{align}
 $$
 \(\text{score}\)の定義は、タスクにあわせて以下の3つからえらべる。
 $$
 \text{score}(\boldsymbol{h}_t, \bar{\boldsymbol{h}}_s) =
 \begin{cases}
-\boldsymbol{h}_t^{\top}\bar{\boldsymbol{h}}_s&amp;\text{dot}\\<br>
-\boldsymbol{h}_t^{\top}\boldsymbol{W}_a\bar{\boldsymbol{h}}_s&amp;\text{general}\\<br>
-\boldsymbol{v}_a^{\top}\tanh(\boldsymbol{W}_a[\boldsymbol{h}_t;\bar{\boldsymbol{h}}_s])&amp;\text{concat}\\<br>
+\boldsymbol{h}_t^{\top}\bar{\boldsymbol{h}}_s&amp;\text{dot}\\
+\boldsymbol{h}_t^{\top}\boldsymbol{W}_a\bar{\boldsymbol{h}}_s&amp;\text{general}\\
+\boldsymbol{v}_a^{\top}\tanh(\boldsymbol{W}_a[\boldsymbol{h}_t;\bar{\boldsymbol{h}}_s])&amp;\text{concat}\\
 \end{cases}
 $$</p>
 <p>ローカルなアプローチの場合、注意の計算で原文のどの状態を参照するかを決めなければならない。

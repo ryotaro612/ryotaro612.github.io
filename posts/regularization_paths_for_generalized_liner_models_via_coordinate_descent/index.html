@@ -55,30 +55,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 このとき、\(P_\alpha\)をelastic-net penaltyにもつelasticnetの学習は、つぎの問題をとく。
 $$
 \begin{align}
-\min_{\beta_0, \beta\in \mathbb{R}^{p+1}}R_\lambda(\beta_0, \beta) &amp;= \min_{(\beta_0, \beta)\in\mathbb{R}^{p+1}}\left[\frac{1}{2N}\sum_{i=1}^{N}(y_i-\beta_0-x^{\top}_i\beta)^2 + \lambda P_\alpha (\beta)\right]\\<br>
-P_{\alpha}(\beta) &amp;= (1-\alpha)\frac{1}{2}\mid\mid \beta\mid\mid^2_{l_2}+\alpha\mid\mid\beta\mid\mid_{l_1}\\<br>
+\min_{\beta_0, \beta\in \mathbb{R}^{p+1}}R_\lambda(\beta_0, \beta) &amp;= \min_{(\beta_0, \beta)\in\mathbb{R}^{p+1}}\left[\frac{1}{2N}\sum_{i=1}^{N}(y_i-\beta_0-x^{\top}_i\beta)^2 + \lambda P_\alpha (\beta)\right]\\
+P_{\alpha}(\beta) &amp;= (1-\alpha)\frac{1}{2}\mid\mid \beta\mid\mid^2_{l_2}+\alpha\mid\mid\beta\mid\mid_{l_1}\\
 &amp;=\sum^p_{j=1}\left[\frac{1}{2}(1-\alpha)\beta^2_j+\alpha\mid\beta_j\mid\right]
 \end{align}
 $$
 このとき、座標降下法で次元\(j\)の係数\(\tilde{\beta}_j\)を以下の式で更新できる。
 $$
 \begin{align}
-\tilde{\beta}_j&amp;\leftarrow\frac{S\left(\frac{1}{N}\sum^N_{i=1}x_{ij}(y_i-\tilde{y}_i^{(j)}), \lambda\alpha\right)}{1+\lambda (1-\alpha)}\\<br>
+\tilde{\beta}_j&amp;\leftarrow\frac{S\left(\frac{1}{N}\sum^N_{i=1}x_{ij}(y_i-\tilde{y}_i^{(j)}), \lambda\alpha\right)}{1+\lambda (1-\alpha)}\\
 \tilde{y}_i^{(j)}&amp;=\tilde{\beta}_0 + \sum_{l\neq j}x_{il}\tilde{\beta}_l
 \end{align}
 $$
 $$
 S(z, \gamma) =
 \begin{cases}
-z-\gamma &amp; \text{if }z&gt;0 \text{ and }\gamma &lt;\mid z\mid\\<br>
-z+\gamma &amp; \text{if } z &lt; 0 \text{ and } \gamma &lt; \mid z \mid \\<br>
+z-\gamma &amp; \text{if }z&gt;0 \text{ and }\gamma &lt;\mid z\mid\\
+z+\gamma &amp; \text{if } z &lt; 0 \text{ and } \gamma &lt; \mid z \mid \\
 0 &amp;\text{if } \gamma \ge \mid z \mid
 \end{cases}
 $$</p>
 <p>ここで、\(\hat{y}_i\)をサンプル\(i\)の現在の予測値、\(r_i\)を残差とすると
 $$
 \begin{align}
-y_i-\tilde{y}_i^{(j)}&amp;=y_i-\hat{y}_i+x_{ij}\tilde{\beta}_j\\<br>
+y_i-\tilde{y}_i^{(j)}&amp;=y_i-\hat{y}_i+x_{ij}\tilde{\beta}_j\\
 &amp;=r_i+x_{ij}\tilde{\beta}_j
 \end{align}
 $$
@@ -91,10 +91,10 @@ $$
 $$
 \begin{align}
 \sum_{i=1}^Nx_{ij}r_j
-&amp;=\sum_i^{N}(y_i-\tilde{y_i}^{(j)}-x_{ij}\tilde{\beta}_j)x_{ij}\\<br>
-&amp;=\sum_i^{N}x_{ij}y_i-\sum^N_{i=1}x_{ij}(\tilde{y}_i^{(j)}+x_{ij}\tilde{\beta}_j)\\<br>
-&amp;=\langle x_j,y\rangle - \sum_{i=1}^Nx_{ij}(\tilde{\beta}_0 + \sum_{l\neq j}x_{il}\tilde{\beta}_l + x_{ij}\tilde{\beta}_j)\\<br>
-&amp;=\langle x_j,y\rangle - \sum_{i=1}^Nx_{ij}(\tilde{\beta}_0 + \sum_{k=1}^px_{ik}\tilde{\beta}_k)\\<br>
+&amp;=\sum_i^{N}(y_i-\tilde{y_i}^{(j)}-x_{ij}\tilde{\beta}_j)x_{ij}\\
+&amp;=\sum_i^{N}x_{ij}y_i-\sum^N_{i=1}x_{ij}(\tilde{y}_i^{(j)}+x_{ij}\tilde{\beta}_j)\\
+&amp;=\langle x_j,y\rangle - \sum_{i=1}^Nx_{ij}(\tilde{\beta}_0 + \sum_{l\neq j}x_{il}\tilde{\beta}_l + x_{ij}\tilde{\beta}_j)\\
+&amp;=\langle x_j,y\rangle - \sum_{i=1}^Nx_{ij}(\tilde{\beta}_0 + \sum_{k=1}^px_{ik}\tilde{\beta}_k)\\
 &amp;=\langle x_j,y\rangle - \sum_{k:\mid\tilde{\beta}_k\mid &gt; 0}\langle x_j,x_k\rangle \tilde{\beta}_k
 \end{align}
 $$

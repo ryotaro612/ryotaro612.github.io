@@ -62,7 +62,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>$$
 \mathcal{L}(\Theta)=\sum_{(u, v)\in \mathcal{D}}\log\frac{e^{-d(\boldsymbol{u}, \boldsymbol{v})}}{\sum_{\boldsymbol{v}'\in \mathcal{N}(u)}e^{-d(\boldsymbol{u}, \boldsymbol{v}')}}
 $$
-\(\mathcal{N}(u)=\{v&rsquo;\mid (u, v&rsquo;)\notin \mathcal{D}\} \cup \{v\}\)は\(v\)を含んだ\(u\)に対する負例である。
+\(\mathcal{N}(u)=\{v'\mid (u, v')\notin \mathcal{D}\} \cup \{v\}\)は\(v\)を含んだ\(u\)に対する負例である。
 実験では、正例に対して10の負例をサンプリングしていた。
 \(d\)は、\(\boldsymbol{u}, \boldsymbol{v}\in \mathcal{B}^d\)の距離であり、次の式であたえらえる。</p>
 <p>$$
@@ -86,7 +86,7 @@ $$
 <p>$$
 \mathrm{proj}(\boldsymbol{\theta})=
 \begin{cases}
-\boldsymbol{\theta}/||\boldsymbol{\theta}|| - \epsilon &amp;\mathrm{if}\ ||\boldsymbol{\theta}||\ge 1 \\<br>
+\boldsymbol{\theta}/||\boldsymbol{\theta}|| - \epsilon &amp;\mathrm{if}\ ||\boldsymbol{\theta}||\ge 1 \\
 \boldsymbol{\theta}&amp;\mathrm{otherwise.}
 \end{cases}
 $$</p>

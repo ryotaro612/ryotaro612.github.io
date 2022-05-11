@@ -60,9 +60,9 @@ Skip-Toughtを8タスクに適用し、汎用性を確かめた。</p>
 以下の式では添字\(i\)を省略している。</p>
 <p>$$
 \begin{align}
-\mathrm{\boldsymbol{r}}^t &amp;=\sigma (\boldsymbol{\mathrm{W}}_r\mathrm{\boldsymbol{x}}^t+\mathrm{\boldsymbol{U}}_r\mathrm{\boldsymbol{h}}^{t-1})\\<br>
-\mathrm{\boldsymbol{z}}^t&amp;=\sigma(\boldsymbol{\mathrm{W}}_z\boldsymbol{\mathrm{x}}^t + \mathrm{\boldsymbol{U}}_z\boldsymbol{\mathrm{h}}^{t-1})\\<br>
-\bar{\boldsymbol{\mathrm{h}}}^t&amp;=\tanh(\mathrm{\boldsymbol{W}}\boldsymbol{\mathrm{x}}^t+\boldsymbol{\mathrm{U}}(\mathrm{\boldsymbol{r}}^t\odot \mathrm{\boldsymbol{h}}^{t-1}))\\<br>
+\mathrm{\boldsymbol{r}}^t &amp;=\sigma (\boldsymbol{\mathrm{W}}_r\mathrm{\boldsymbol{x}}^t+\mathrm{\boldsymbol{U}}_r\mathrm{\boldsymbol{h}}^{t-1})\\\
+\mathrm{\boldsymbol{z}}^t&amp;=\sigma(\boldsymbol{\mathrm{W}}_z\boldsymbol{\mathrm{x}}^t + \mathrm{\boldsymbol{U}}_z\boldsymbol{\mathrm{h}}^{t-1})\\\
+\bar{\boldsymbol{\mathrm{h}}}^t&amp;=\tanh(\mathrm{\boldsymbol{W}}\boldsymbol{\mathrm{x}}^t+\boldsymbol{\mathrm{U}}(\mathrm{\boldsymbol{r}}^t\odot \mathrm{\boldsymbol{h}}^{t-1}))\\\
 \boldsymbol{\mathrm{h}}^t&amp;=(1-\mathrm{\boldsymbol{z}}^t)\odot \mathrm{\boldsymbol{h}}^{t-1}+\boldsymbol{\mathrm{z}}^t\odot\bar{\mathrm{\boldsymbol{h}}}^t
 \end{align}
 $$</p>
@@ -72,9 +72,9 @@ $$</p>
 後の文を推定するdecoderは次の式をとる。</p>
 <p>$$
 \begin{align}
-\mathrm{\boldsymbol{r}}^t &amp;=\sigma (\boldsymbol{\mathrm{W}}^d_r\mathrm{\boldsymbol{x}}^{t-1}+\mathrm{\boldsymbol{U}}^d_r\mathrm{\boldsymbol{h}}^{t-1}+\mathrm{\boldsymbol{C}}_r\mathrm{\boldsymbol{h}}_i)\\<br>
-\mathrm{\boldsymbol{z}}^t&amp;=\sigma(\boldsymbol{\mathrm{W}}^d_z\boldsymbol{\mathrm{x}}^{t-1} + \mathrm{\boldsymbol{U}}^d_z\boldsymbol{\mathrm{h}}^{t-1}+\mathrm{\boldsymbol{C}}_z\mathrm{\boldsymbol{h}}_i)\\<br>
-\bar{\boldsymbol{\mathrm{h}}}^t&amp;=\tanh(\mathrm{\boldsymbol{W}}^d\boldsymbol{\mathrm{x}}^{t-1}+\boldsymbol{\mathrm{U}}^d(\mathrm{\boldsymbol{r}}^t\odot \mathrm{\boldsymbol{h}}^{t-1})+\mathrm{\boldsymbol{C}}\mathrm{\boldsymbol{h}}_i)\\<br>
+\mathrm{\boldsymbol{r}}^t &amp;=\sigma (\boldsymbol{\mathrm{W}}^d_r\mathrm{\boldsymbol{x}}^{t-1}+\mathrm{\boldsymbol{U}}^d_r\mathrm{\boldsymbol{h}}^{t-1}+\mathrm{\boldsymbol{C}}_r\mathrm{\boldsymbol{h}}_i)\\\
+\mathrm{\boldsymbol{z}}^t&amp;=\sigma(\boldsymbol{\mathrm{W}}^d_z\boldsymbol{\mathrm{x}}^{t-1} + \mathrm{\boldsymbol{U}}^d_z\boldsymbol{\mathrm{h}}^{t-1}+\mathrm{\boldsymbol{C}}_z\mathrm{\boldsymbol{h}}_i)\\\
+\bar{\boldsymbol{\mathrm{h}}}^t&amp;=\tanh(\mathrm{\boldsymbol{W}}^d\boldsymbol{\mathrm{x}}^{t-1}+\boldsymbol{\mathrm{U}}^d(\mathrm{\boldsymbol{r}}^t\odot \mathrm{\boldsymbol{h}}^{t-1})+\mathrm{\boldsymbol{C}}\mathrm{\boldsymbol{h}}_i)\\\
 \boldsymbol{\mathrm{h}}^t_{i+1}&amp;=(1-\mathrm{\boldsymbol{z}}^t)\odot \mathrm{\boldsymbol{h}}^{t-1}+\boldsymbol{\mathrm{z}}^t\odot\bar{\mathrm{\boldsymbol{h}}}^t
 \end{align}
 $$</p>

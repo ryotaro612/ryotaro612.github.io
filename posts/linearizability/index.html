@@ -61,8 +61,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>線形化可能性の定義に必要な用語を整理する。
 システム全体の実行をhistoryとよぶ。
 historyは、操作のinvocationとresponseの2種類のイベントの有限な系列からなる。
-invocationを、オブジェクト\(x\), 操作名と引数\(\textit{op}(\textit{args*})\), プロセスAの組で\(&lt;x,\textit{op}(\textit{args}^*)A&gt;\)と書く。
-responseを、終了条件を\(\textit{term}\)、結果を\(res*\)として、\(&lt;x, \textit{term}(\textit{res*})A)&gt;\)と書く。
+invocationを、オブジェクト\(x\), 操作名と引数\(\textit{op}(\textit{args*})\), プロセスAの組で\(&lt;x,\textit{op}(\textit{args}^<em>)A&gt;\)と書く。
+responseを、終了条件を\(\textit{term}\)、結果を\(res</em>\)として、\(&lt;x, \textit{term}(\textit{res*})A)&gt;\)と書く。
 responseに、オブジェクトとプロセスが同じinvocationがあるとき、responseはそのinvocationとmatchする。
 Hをhistoryとして、complete(H)は、invocationとmatchするresponseからなるHの最大の部分系列をあらわす。
 このとき以下の2つがなりたてば、Hはsequentialであるといい、それ以外ではconcurrentである。</p>
@@ -71,7 +71,7 @@ Hをhistoryとして、complete(H)は、invocationとmatchするresponseから�
 <li>各invocationの直後のイベントはmatchするresponseである。ただし、最後のinvocationにmatchするresponseがなければ、そのinvocationの直後のイベントは問わない。</li>
 </ul>
 <p>H中の、プロセスPやオブジェクトxだけについての系列を、\(H\mid P\), \(H\mid x\)と書く。
-あるH, H'があり、全プロセスPについて\(H\mid P = H&rsquo;\mid P\)であれば、HとH'は等価である。
+あるH, H&rsquo;があり、全プロセスPについて\(H\mid P = H'\mid P\)であれば、HとH&rsquo;は等価である。
 また、各Pについて\(H\mid P\)がsequentialであれば、Hはwell-formedである。</p>
 <p>Historyの集合Sがあり、HがSの要素であるときHのprefixもSの要素であれば、Sはprefix-closedである。
 あるオブジェクトのsequential historyだけからなるprefix-closed集合をオブジェクトのsequential specificationという。
@@ -80,9 +80,9 @@ Hをhistoryとして、complete(H)は、invocationとmatchするresponseから�
 <!-- raw HTML omitted -->
 <p>\(e\)をinvocationとresponseのペアとして、Hの中で\(e_0\)のresponseが\(e_1\)のinvocationに先行する関係を、\(e_0 &lt;_H e_1\)と書く。
 \(&lt;_H\)は反射律の成立しない半順序関係である。
-Hに0以上のresponseを追加したhistoryをH'とすると、次の2つが成立するとき、Hは線形化可能である。</p>
+Hに0以上のresponseを追加したhistoryをH&rsquo;とすると、次の2つが成立するとき、Hは線形化可能である。</p>
 <ul>
-<li>complete(H&rsquo;)と等価なlegal sequential history Sが存在する。</li>
+<li>complete(H')と等価なlegal sequential history Sが存在する。</li>
 <li>\(&lt;_H\subseteq &lt;_S\)</li>
 </ul>
 <p>論文を<a href="https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf">こちら</a>からダウンロードできます。

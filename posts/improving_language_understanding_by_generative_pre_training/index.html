@@ -63,8 +63,8 @@ $$
 <p>\(n\)層のTransformer decoderは、トークンの埋込み行列\(W_e\)とトークンの位置の埋込み行列\(W_p\)を受け取り、次の式になる。
 $$
 \begin{align}
-h_0&amp;=UW_e+W_p\\<br>
-h_l&amp;=\texttt{transformer_block}(h_{l-1})\forall i \in[1,n]\\<br>
+h_0&amp;=UW_e+W_p\\\
+h_l&amp;=\texttt{transformer_block}(h_{l-1})\forall i \in[1,n]\\\
 P(u)&amp;=\texttt{softmax}(h_nW^{T}_{e})
 \end{align}
 $$</p>
@@ -75,8 +75,8 @@ $$</p>
 <p>教師データの事例のトークン列を\(x^1,\dots , x^m\)、最終層の出力を\(h_l^m\), 全結合層のパラメタを\(W_y\)とおくと、学習時には次の\(L_3(\mathcal{C})\)を最大化する。
 $$
 \begin{align}
-P(y\mid x^1 , \dots , x^m) &amp;= \texttt{softmax}(h^m_lW_y) \\<br>
-L_2(\mathcal{C})&amp;=\sum_{(x,y)}\log P(y\mid x^1\dots , x^m)\\<br>
+P(y\mid x^1 , \dots , x^m) &amp;= \texttt{softmax}(h^m_lW_y) \\\
+L_2(\mathcal{C})&amp;=\sum_{(x,y)}\log P(y\mid x^1\dots , x^m)\\\
 L_3(\mathcal{C})&amp;=L(\mathcal{C})+\lambda * L_1(\mathcal{C})
 \end{align}
 $$</p>

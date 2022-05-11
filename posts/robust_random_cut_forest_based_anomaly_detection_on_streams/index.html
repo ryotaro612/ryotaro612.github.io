@@ -61,15 +61,15 @@ RRCTは、特徴の値でデータを2分するノードからなる木の集合
 複雑さの指標には、以下の図のように、根から各葉に到達するための分岐方向をビット列で表したときのビット数の総和をつかう。
 <img src="/random_cut_forest/fig2.png" alt="fig2">
 \(T\)を木、\(Z\)をデータ集合、\(y\)を\(Z\)の要素、\(f(y, Z, T)\)を根から\(y\)に到達するまでの経路を表すために必要なビット数とする。
-このとき、\(x\)を\(Z\)から除いたときのモデルの複雑さ\(\mid M(T&rsquo;) \mid\)を次の式で評価する。
+このとき、\(x\)を\(Z\)から除いたときのモデルの複雑さ\(\mid M(T') \mid\)を次の式で評価する。
 $$
-\mid  M(T&rsquo;)\mid =\sum_{y\in Z-\{x\}}f(y, Z-\{x\}, T&rsquo;)
+\mid  M(T')\mid =\sum_{y\in Z-\{x\}}f(y, Z-\{x\}, T')
 $$
 \(x\)の有無によるモデルの複雑さの変化の期待値を以下の式で算出する。
 $$
 \begin{align}
-&amp;\mathbb{E}_{T(Z)}[\mid M(T)\mid ]-\mathbb{E}_{T(Z-\{x\})}[\mid M(T(Z-\{x\})\mid]\\<br>
-&amp;=\sum_T\sum_{y\in Z-\{x\}}\mathbb{P}_r[T]\left(f(y,Z,T)-f(y,Z-\{x\},T&rsquo;)\right)\\<br>
+&amp;\mathbb{E}_{T(Z)}[\mid M(T)\mid ]-\mathbb{E}_{T(Z-\{x\})}[\mid M(T(Z-\{x\})\mid]\\
+&amp;=\sum_T\sum_{y\in Z-\{x\}}\mathbb{P}_r[T]\left(f(y,Z,T)-f(y,Z-\{x\},T')\right)\\
 &amp;+\sum_T\mathbb{P}_r[T]f(x,Z,T)
 \end{align}
 $$
@@ -81,7 +81,7 @@ $$
 $$
 最終的には、次の値が高いほど\(x\)が異常であると推定する。
 $$
-\mathbb{E}_{S\subseteq Z, T}\left[\max_{x\in C\subseteq S}\frac{1}{\mid C\mid}\sum_{y\in S-C}\left(f(y, S, T)-f(y,S-C,T&rsquo;')\right)\right]
+\mathbb{E}_{S\subseteq Z, T}\left[\max_{x\in C\subseteq S}\frac{1}{\mid C\mid}\sum_{y\in S-C}\left(f(y, S, T)-f(y,S-C,T'')\right)\right]
 $$</p>
 <p>論文を<a href="https://d1.awsstatic.com/whitepapers/kinesis-anomaly-detection-on-streaming-data.pdf">こちら</a>からダウンロードできます。</p>
     </div>

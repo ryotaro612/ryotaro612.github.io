@@ -58,17 +58,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 単語の注意層にあたえる隠れ状態\(h_{it}\)は順方向のGRU(\(\overrightarrow{\text{GRU}}\))と逆方向のGRU(\(\overleftarrow{\text{GRU}}\))の隠れ状態を結合したベクトル\(h_{it}=[\overrightarrow{h}_{it}, \overleftarrow{h}_{it}]\)であり、以下の計算でもとめる。
 $$
 \begin{align}
-x_{it} &amp;= W_ew_{it}, t\in [1, T]\\<br>
-\overrightarrow{h}_{it}&amp;=\overrightarrow{\text{GRU}}(x_{it}), t\in[1, T]\\<br>
+x_{it} &amp;= W_ew_{it}, t\in [1, T]\\
+\overrightarrow{h}_{it}&amp;=\overrightarrow{\text{GRU}}(x_{it}), t\in[1, T]\\
 \overleftarrow{h}_{it}&amp;=\overleftarrow{\text{GRU}}(x_{it}), t \in [T, 1]
 \end{align}
 $$
 GRUは、リセットゲートを\(r_t\), 更新ゲートを\(z_t\)として以下の式をとる。
 $$
 \begin{align}
-h_t &amp;= (1-z_t)\odot h_{t-1} + z_t \odot \tilde{h}_t\\<br>
-z_t &amp;= \sigma(W_zx_t + U_z h_{t-1}+b_z)\\<br>
-\tilde{h}_t &amp;= \tanh(W_hx_t + r_t \odot (U_hh_{t-1}) + b_h)\\<br>
+h_t &amp;= (1-z_t)\odot h_{t-1} + z_t \odot \tilde{h}_t\\
+z_t &amp;= \sigma(W_zx_t + U_z h_{t-1}+b_z)\\
+\tilde{h}_t &amp;= \tanh(W_hx_t + r_t \odot (U_hh_{t-1}) + b_h)\\
 r_t &amp;= \sigma (W_rx_t + U_rh_{t-1} + b_r)
 \end{align}
 $$</p>
@@ -76,8 +76,8 @@ $$</p>
 \(u_w\)をランダムに初期化し、学習時に同時に更新するパラメタとして、次のようにもとめる。</p>
 <p>$$
 \begin{align}
-u_{it}&amp;=\tanh(W_wh_{it} + b_w)\\<br>
-\alpha_{it}&amp;=\frac{\exp (u^\top_{it} u_w)}{\sum_t \exp (u^\top_{it}u_w)}\\<br>
+u_{it}&amp;=\tanh(W_wh_{it} + b_w)\\
+\alpha_{it}&amp;=\frac{\exp (u^\top_{it} u_w)}{\sum_t \exp (u^\top_{it}u_w)}\\
 s_i&amp;=\sum_t \alpha_{it}h_{it}
 \end{align}
 $$</p>
@@ -85,15 +85,15 @@ $$</p>
 \(h_i\)は、文\(i\)を中心にその周辺の情報をもつ。
 $$
 \begin{align}
-\overrightarrow{h}_i &amp;= \overrightarrow{\text{GRU}}(s_i), i\in[1, L]  \\<br>
+\overrightarrow{h}_i &amp;= \overrightarrow{\text{GRU}}(s_i), i\in[1, L]  \\
 \overleftarrow{h}_i &amp;= \overleftarrow{\text{GRU}}(s_i), t\in [L, 1]
 \end{align}
 $$</p>
 <p>文の注意層では、単語のときと同様に、\(u_s\)をランダムに初期化し、文書の分散ベクトル\(v\)をえる。
 $$
 \begin{align}
-u_{i}&amp;=\tanh(W_sh_{i} + b_s)\\<br>
-\alpha_{i}&amp;=\frac{\exp (u^\top_{i} u_s)}{\sum_i \exp (u^\top_{i}u_s)}\\<br>
+u_{i}&amp;=\tanh(W_sh_{i} + b_s)\\
+\alpha_{i}&amp;=\frac{\exp (u^\top_{i} u_s)}{\sum_i \exp (u^\top_{i}u_s)}\\
 v&amp;=\sum_i \alpha_{i}h_{i}
 \end{align}
 $$</p>

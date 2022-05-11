@@ -58,9 +58,9 @@ $$
 <p>ウインドウサイズを\(C\)とする\(\boldsymbol{\rm y}_c\triangleq \boldsymbol{\rm y}_{[i-C+1,\dots , i]}\)によるマルコフ性を仮定し、スコア関数を次の式で近似する。
 $$
 \begin{align}
-s(\boldsymbol{\rm x}, \boldsymbol{\rm y})&amp;\approx \sum^{N-1}_{i=0}\log p(\boldsymbol{\rm y}_{i+1}\mid \boldsymbol{\rm x}, \boldsymbol{\rm y}_c;\theta)\\<br>
-p(\boldsymbol{\rm y}_{i+1}\mid \boldsymbol{\rm x}, \boldsymbol{\rm y}_c;\theta)&amp;\propto \exp (\boldsymbol{\rm Vh}+\boldsymbol{\rm W}\text{enc}(\boldsymbol{\rm x,y_c}))\\<br>
-\tilde{\boldsymbol{\rm y}}_c&amp;=[\boldsymbol{\rm E}\boldsymbol{\rm y}_{i-C+1},\dots , \boldsymbol{\rm E}\boldsymbol{\rm y}_i]\\<br>
+s(\boldsymbol{\rm x}, \boldsymbol{\rm y})&amp;\approx \sum^{N-1}_{i=0}\log p(\boldsymbol{\rm y}_{i+1}\mid \boldsymbol{\rm x}, \boldsymbol{\rm y}_c;\theta)\\\
+p(\boldsymbol{\rm y}_{i+1}\mid \boldsymbol{\rm x}, \boldsymbol{\rm y}_c;\theta)&amp;\propto \exp (\boldsymbol{\rm Vh}+\boldsymbol{\rm W}\text{enc}(\boldsymbol{\rm x,y_c}))\\\
+\tilde{\boldsymbol{\rm y}}_c&amp;=[\boldsymbol{\rm E}\boldsymbol{\rm y}_{i-C+1},\dots , \boldsymbol{\rm E}\boldsymbol{\rm y}_i]\\\
 \boldsymbol{\rm h}&amp;=\tanh (\boldsymbol{\rm U}\tilde{\boldsymbol{\rm y}}_c)
 \end{align}
 $$
@@ -70,10 +70,10 @@ $$
 <p>\(\text{enc}\)は文脈と入力を表すサイズ\(H\)のベクタを返すエンコーダであり、注意機構がつかわれる。
 $$
 \begin{align}
-\text{enc}(\boldsymbol{\rm x}, \boldsymbol{y}_c)&amp;=\boldsymbol{\rm p}^{T}\boldsymbol{\rm \bar{x}},\\<br>
-\boldsymbol{\rm p}&amp;\propto \exp(\tilde{\boldsymbol{\rm x}}\boldsymbol{\rm P}\tilde{\boldsymbol{\rm y}}'_c),\\<br>
-\tilde{\boldsymbol{\rm x}}&amp;=[\boldsymbol{\rm F}\boldsymbol{\rm x}_1,\dots , \boldsymbol{\rm F}\boldsymbol{\rm x}_M],\\<br>
-\tilde{\boldsymbol{\rm y}}'_c&amp;=[\boldsymbol{\rm G}\boldsymbol{\rm y}_{i-C+1}, \dots , \boldsymbol{\rm G}\boldsymbol{\rm y}_i],\\<br>
+\text{enc}(\boldsymbol{\rm x}, \boldsymbol{y}_c)&amp;=\boldsymbol{\rm p}^{T}\boldsymbol{\rm \bar{x}},\\\
+\boldsymbol{\rm p}&amp;\propto \exp(\tilde{\boldsymbol{\rm x}}\boldsymbol{\rm P}\tilde{\boldsymbol{\rm y}}'_c),\\\
+\tilde{\boldsymbol{\rm x}}&amp;=[\boldsymbol{\rm F}\boldsymbol{\rm x}_1,\dots , \boldsymbol{\rm F}\boldsymbol{\rm x}_M],\\\
+\tilde{\boldsymbol{\rm y}}'_c&amp;=[\boldsymbol{\rm G}\boldsymbol{\rm y}_{i-C+1}, \dots , \boldsymbol{\rm G}\boldsymbol{\rm y}_i],\\\
 \forall i\ \bar{\boldsymbol{\rm x}}_i &amp;=\sum^{i+Q}_{q=i-Q}\tilde{\boldsymbol{\rm x}}_i/Q
 \end{align}
 $$
@@ -82,7 +82,7 @@ $$
 <p>学習では負の対数尤度関数を損失関数にもちいる。\(J\)件の学習データのうち\(j\)番目のデータを\((\boldsymbol{\rm x}^{(j)}, \boldsymbol{\rm y}^{(j)})\)とすると、損失関数は次の式になる。
 $$
 \begin{align}
-\text{NNL}(\theta)&amp;=-\sum^J_{j=1}\log p(\boldsymbol{\rm y}^{(j)}\mid \boldsymbol{\rm x}^{(j)};\theta)\\<br>
+\text{NNL}(\theta)&amp;=-\sum^J_{j=1}\log p(\boldsymbol{\rm y}^{(j)}\mid \boldsymbol{\rm x}^{(j)};\theta)\\\
 &amp;=-\sum^J_{j=1}\sum^{N-1}_{i=1}\log p (\boldsymbol{\rm y}^{(j)}_{i+1}\mid \boldsymbol{\rm x}^{(j)},\boldsymbol{\rm y}_c;\theta)
 \end{align}
 $$</p>

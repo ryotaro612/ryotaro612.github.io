@@ -58,8 +58,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 これは、各単語系列の先行詞についての確率分布の積になっている。</p>
 <p>$$
 \begin{align}
-P(y_1, \dots y_N\mid D)&amp;=\prod_{i=1}^{N}P(y_i\mid D)\\<br>
-&amp;=\prod_{i}^{N}\frac{\exp (s(i, y_i))}{\sum_{y&rsquo;\in \mathcal{Y}(i)}\exp(s(i, y&rsquo;))}
+P(y_1, \dots y_N\mid D)&amp;=\prod_{i=1}^{N}P(y_i\mid D)\\\
+&amp;=\prod_{i}^{N}\frac{\exp (s(i, y_i))}{\sum_{y'\in \mathcal{Y}(i)}\exp(s(i, y'))}
 \end{align}
 $$</p>
 <p>\(s(i,j)\)は、単語系列\(i, j\)の照応関係のスコアを示す。
@@ -68,7 +68,7 @@ $$</p>
 <p>$$
 s(i,j)=
 \begin{cases}
-0&amp;j=\epsilon\\<br>
+0&amp;j=\epsilon\\\
 s_m(i)+s_m(j)+s_a(i,j)&amp;j\neq \epsilon
 \end{cases}
 $$</p>
@@ -88,9 +88,9 @@ $$</p>
 単語系列の始点をSTART(\(i\)), 終点をEND(\(i\))とすると、\(\boldsymbol{g}_i\)は、次の式で計算される。</p>
 <p>$$
 \begin{align}
-\alpha_t&amp;=\boldsymbol{w}_{\alpha}\cdot\text{FFNN}_{\alpha}(\boldsymbol{x}^{*}_{t})\\<br>
-\alpha_{i,t}&amp;=\frac{\exp(\alpha_t)}{\sum^{\text{END}(i)}_{k=\text{START}(i)}\exp(\alpha_k)}\\<br>
-\boldsymbol{\hat{x}}_i&amp;=\sum^{\text{END}(i)}_{t=\text{START}(i)}\alpha_{i,t}\cdot\boldsymbol{x}_t\\<br>
+\alpha_t&amp;=\boldsymbol{w}_{\alpha}\cdot\text{FFNN}_{\alpha}(\boldsymbol{x}^{*}_{t})\\\
+\alpha_{i,t}&amp;=\frac{\exp(\alpha_t)}{\sum^{\text{END}(i)}_{k=\text{START}(i)}\exp(\alpha_k)}\\\
+\boldsymbol{\hat{x}}_i&amp;=\sum^{\text{END}(i)}_{t=\text{START}(i)}\alpha_{i,t}\cdot\boldsymbol{x}_t\\\
 \boldsymbol{g}_i&amp;=[\boldsymbol{x}_{\text{START}(i)}^{\star},\boldsymbol{x}_{\text{END}(i)}^{\star},\boldsymbol{\hat{x}}_{i},\phi (i)]
 \end{align}
 $$</p>

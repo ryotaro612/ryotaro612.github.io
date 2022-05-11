@@ -53,7 +53,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 そこで、目的関数を最小化する係数の探索を、線形不等式制約つきの凸二次計画問題とらえ、前処理付共役勾配法をつかった内点法で係数の更新方向を探索する。</p>
 <p>\($x\in \boldsymbol{\rm R}^n\)を係数、\(y\in \boldsymbol{\rm R}^m\)を目的変数、\(A\in \boldsymbol{\rm R}^{m\times n} \)をデータとする線形モデル\(y=Ax+v\)があるときL1正則化項つきの目的関数は以下になる。
 $$
-\text{minimize}\ {\mid\mid Ax-y\mid \mid}^2_2 +\lambda \mid\mid x \mid\mid_1\\<br>
+\text{minimize}\ {\mid\mid Ax-y\mid \mid}^2_2 +\lambda \mid\mid x \mid\mid_1\\
 $$
 $$
 \mid\mid x\mid \mid _1 = \sum^n_i\mid x_i\mid
@@ -92,15 +92,15 @@ $$
 $$
 t :=
 \begin{cases}
-\max \{ \mu \min \{2n / \eta, t\}, t\},&amp; s \ge s_{\min} \\<br>
+\max \{ \mu \min \{2n / \eta, t\}, t\},&amp; s \ge s_{\min} \\
 t,&amp; s &lt; s_{\min}
 \end{cases}
 $$</p>
 <p>そして、\(\eta / G(\upsilon)\le \epsilon_{\text{rel}}\)であれば、終了し、そうでなければ最初の手順にもどる。
 $$
 \begin{align}
-\eta &amp;= \mid\mid Ax - y \mid\mid^2_2 + \lambda \mid\mid x \mid\mid_1 - G(\upsilon) \\<br>
-G(\upsilon) &amp;= -(1/4)\upsilon^\top \upsilon - \upsilon^\top y \\<br>
+\eta &amp;= \mid\mid Ax - y \mid\mid^2_2 + \lambda \mid\mid x \mid\mid_1 - G(\upsilon) \\
+G(\upsilon) &amp;= -(1/4)\upsilon^\top \upsilon - \upsilon^\top y \\
 \upsilon &amp;= 2s(Ax - y)
 \end{align}
 $$</p>
