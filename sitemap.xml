@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://nryotaro.dev/posts/a_family_of_experiments_on_test_driven_development/</loc>
-    <lastmod>2022-04-29T19:10:03+09:00</lastmod>
-  </url><url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2022-04-29T19:10:03+09:00</lastmod>
+    <lastmod>2022-05-14T12:29:55+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/</loc>
+    <lastmod>2022-05-14T12:29:55+09:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/posts/statistics_and_causal_inference/</loc>
+    <lastmod>2022-05-14T12:29:55+09:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/posts/a_family_of_experiments_on_test_driven_development/</loc>
     <lastmod>2022-04-29T19:10:03+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/simcse/</loc>

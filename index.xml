@@ -6,7 +6,18 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 29 Apr 2022 19:10:03 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 May 2022 12:29:55 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Statistics and Causal Inference(1986)</title>
+      <link>https://nryotaro.dev/posts/statistics_and_causal_inference/</link>
+      <pubDate>Sat, 14 May 2022 12:29:55 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/statistics_and_causal_inference/</guid>
+      <description>&lt;p&gt;ルービンの因果モデルによる統計的因果推定では、群\(U\)の要素を\(u\), 処置を\(t\), \(c\), \(Y\)を潜在的結果変数とすると、\(u\)に対して処置\(c\)を適用するときの処置\(t\)の因果効果を、\(T = Y_t(u) - Y_c(u)\)とみなす。
+たとえば、\(u\)を人、\(t\), \(c\)を運動をする、しない、\(Y\)をコレステロールの値とすれば、運動とコレステロール値の関係になる。
+\(Y_t(u)\)と\(Y_c(u)\)は観測できないので、因果効果は、観測するのではなく、推定するものになる。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>A Family of Experiments on Test-Driven Development</title>
       <link>https://nryotaro.dev/posts/a_family_of_experiments_on_test_driven_development/</link>
