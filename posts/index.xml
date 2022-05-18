@@ -155,8 +155,8 @@ Pegasosは、目的関数の最小値の近似値をもとめる。
       <pubDate>Sat, 19 Feb 2022 13:31:44 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/using_tfidf_to_determine_word_relevance_in_document_queries/</guid>
-      <description>&lt;p&gt;自然言語のクエリで文書を検索する問題に、TF-IDFをベースラインにつかう利点と欠点を調べた。
-クエリにある各単語のTF-IDF値の総和が最大化の文書を最も関連する文書とみなす。
+      <description>&lt;p&gt;自然言語による文書検索で、TF-IDFをベースラインにつかう利点と欠点を調べた。
+クエリにある各単語のTF-IDF値の総和が最大の文書を最も関連する文書とみなす。
 実験では、TFのみで検索する手法よりも予測性能がよかったが、類義語同士の同一判定をできない問題があった。&lt;/p&gt;</description>
     </item>
     
