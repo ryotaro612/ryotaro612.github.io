@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>PLS-regression: a basic tool of chemometrics</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>PLS-regression: a basic tool of chemometrics</h1>
+    <span class="date">May 21, 2022</span>
+    <div>
+        <p>重回帰分析は、説明変数の行列がフルランクでないとき、多重共線性により、出力が不安定になる。
+そのため、説明変数の数を減らし、説明変数間に相関関係がないようにする必要がある。
+PLS（部分的最小二乗法）は、入力変数の線形結合で表わせる潜在変数を求め、潜在変数の線形結合で目的変数を表現する。
+説明変数の数より少ない数の潜在変数を求めることで、説明変数間の相関関係をとりのぞく。</p>
+<p>説明変数を\(\boldsymbol{\rm x}_k(k=1, \dots K)\), 目的変数を\(\boldsymbol{\rm y}_m(
+=1,2, \dots M)\)として、求める潜在変数を\(\boldsymbol{\rm t}_a (a=1,2, \dots , A)\)とおく。
+以下では\(\boldsymbol{\rm X}\)は中心化と標準化されているものとする。</p>
+<p>潜在変数の要件より、\(A\)は\(K\)より小さく、潜在変数\(\boldsymbol{\rm t}\)は互いに直交である。
+潜在変数は、説明変数の一部の\(A\)次元で
+$$
+t_{ia} = \sum_kW^*_{ka}X_{ik}; (\boldsymbol{\rm T}=\boldsymbol{\rm XW}^*)
+$$
+と表せる。逆に、潜在変数の線形結合で説明変数を近似するであれば、\(e_{ik}\)を残差すると
+$$
+X_{ik}=\sum_at_{ia}p_{ak} + e_{ik}; (\boldsymbol{\rm X}=\boldsymbol{\rm TP}^\top+\boldsymbol{\rm E})
+$$
+となる。
+\(f_{im}\)を残差とすると目的変数も潜在変数の線形結合により
+$$
+y_{im} = \sum_ac_{ma}t_{ia} + f_{im}; (\boldsymbol{\rm Y}=\boldsymbol{\rm TC}^\top+\boldsymbol{\rm F})
+$$
+になる。以上をあわせると、
+$$
+y_{im}=\sum_ac_{ma}\sum_kw^*_{ka}x_{ik} + f_{im} = \sum_kb_{mk}x_{ik}+f_{im}
+$$
+$$
+\boldsymbol{\rm Y} = \boldsymbol{\rm XW}^*\boldsymbol{\rm C}^\top + \boldsymbol{\rm F} = \boldsymbol{\rm XB} + \boldsymbol{\rm F}
+$$
+であり、PLSの回帰係数を
+$$
+b_{mk}=\sum_ac_{ma}w^*_{ka}; (\boldsymbol{\rm B}=\boldsymbol{\rm W}^* \boldsymbol{\rm C}^\top)
+$$
+とかける。</p>
+<p>PLSの学習アルゴリズムに、NIPALS（非線形反復部分最小二乗法）がある。
+これはまず、\(\boldsymbol{\rm u}\)を\(\boldsymbol{\rm Y}\)のある列ベクトルとする。
+次に
+$$
+\boldsymbol{\rm w} = \boldsymbol{\rm X}^\top \boldsymbol{\rm u} / \boldsymbol{\rm u}^\top \boldsymbol{\rm u}
+$$
+その後、\(\mid\mid \boldsymbol{\rm w}\mid \mid = 1.0\)としてもよい。</p>
+<p>これをもとに\(\boldsymbol{\rm t}=\boldsymbol{\rm Xw}\)として潜在変数\(\boldsymbol{\rm t}\)を計算し、さらに、\(\boldsymbol{\rm c}=\boldsymbol{\rm Y}^\top \boldsymbol{\rm t} / \boldsymbol{\rm t}^\top \boldsymbol{\rm t}\)とする。</p>
+<p>最後に、\(\boldsymbol{\rm u}\)を更新する。
+$$
+\boldsymbol{\rm u}=\boldsymbol{\rm Yc}/\boldsymbol{\rm c}^\top\boldsymbol{\rm c}
+$$</p>
+<p>\(\mid \mid\boldsymbol{\rm t_{\text{old}}} - \boldsymbol{\rm t_{\text{new}}}\mid\mid / \mid\mid \boldsymbol{\rm t_{\text{new}}}\mid\mid &lt; \epsilon\)が収束していなければ、\(\boldsymbol{\rm w}\)を求めるところに戻る。</p>
+<p>以下の式で現在の成分を\(\boldsymbol{\rm X}, \boldsymbol{\rm Y}\)からデフレーションし、はじめに戻る。
+$$
+\begin{align}
+\boldsymbol{\rm p} &amp;= \boldsymbol{\rm X}^\top \boldsymbol{\rm t}/(\boldsymbol{\rm t}^\top \boldsymbol{\rm t}) \\
+\boldsymbol{\rm X} &amp;= \boldsymbol{\rm X} - \boldsymbol{\rm t} \boldsymbol{\rm p}^\top \\
+\boldsymbol{\rm Y} &amp;= \boldsymbol{\rm Y} - \boldsymbol{\rm t}\boldsymbol{\rm c}^\top
+\end{align}
+$$</p>
+<p>論文の<a href="https://www.libpls.net/publication/PLS_basic_2001.pdf">リンク</a></p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/statistics_and_causal_inference/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
