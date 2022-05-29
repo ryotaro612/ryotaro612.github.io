@@ -48,6 +48,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/effective_multi-label_active_learning_for_text_classification/">Effective Multi-Label Active Learning for Text Classification</a></h3>
+        <div class="summary"><p>SVMをつかったマルチラベル文書分類のための能動学習である。
+ラベルをつければモデルの損失を最も小さくできるデータをさがす。
+ラベルつきデータでSVMを学習し、さらに、その識別関数の値を特徴としてラベルの数を予測するロジスティック回帰を学習する。
+ラベルのないデータを両モデルに入力し、ロジスティック回帰が予測するラベルの数だけ、識別関数の値の高い順にラベルを選び、そのデータのマルチラベルとみなす。
+このとき、その推定したマルチラベルと識別関数の値がほど、損失関数を最も小さくできるデータとみなす。</p></div>
+        <div class="article-footer">
+            <span class="date">March 12, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/pegasos/">Pegasos: Primal Estimated sub-GrAdient SOlver for SVM</a></h3>
         <div class="summary"><p>Pegasosは、SVMの学習のための反復的なアルゴリズムであり、2022年3月現在、scikit-learnの<a href="https://scikit-learn.org/stable/modules/sgd.html#implementation-details">SGDClassifier</a>で学習率を更新に採用されている。
 Pegasosは、目的関数の最小値の近似値をもとめる。
@@ -71,7 +83,7 @@ Pegasosは、目的関数の最小値の近似値をもとめる。
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/regularization_paths_for_generalized_liner_models_via_coordinate_descent/">Regularization Paths for Generalized Linear Models via Coordinate Descent</a></h3>
-        <div class="summary"><p>ラッソ、リッジ、またはその両方をくみあわせたelastictnetを正則化項にもつ一般化線形モデルの学習を高速化する座標降下法である。
+        <div class="summary"><p>ラッソ、リッジ、またはその両方をくみあわせるelastictnetを正則化項とする一般化線形モデルの学習を高速化した座標降下法である。
 座標降下法を単純に実装すると、スパースで次元数の多い特徴だと学習に時間がかかる。
 表題の手法は、その単純なパラメタの更新式の一部を、説明変数の内積におきかえ、学習データの数や次元数に対して学習時間を短縮する。</p></div>
         <div class="article-footer">
@@ -144,18 +156,6 @@ Piece tableはテキストを2つのバッファに記録する。
 表題のdynamic routingは、カプセルの出力ベクトルを1つ上の層のどのカプセルに渡すべきかを学習する手法である。
 これにより、プーリング層で失われるエンティティの空間上の位置情報をカプセルの出力するベクトルで表現する。
 実験では、2層の畳み込み層と1層の全結合層からなる浅いニューラルネットワークをMNISTに適用し、長さでエンティティが存在する確率を、向きでエンティティの特徴を表現できるベクトルを学習できることを示した。</p></div>
-        <div class="article-footer">
-            <span class="date">December 26, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/hierarchical_attention_networks_for_document_classification/">Hierarchical Attention Networks for Document Classification (2016)</a></h3>
-        <div class="summary"><p>Hierarchical Attention Network(HAN)は、単語は文から文書は文からなる文書の構造をアーキテクチャに反映し、単語の注意から文の注意を、文の注意から文書の注意を計算する。
-順方向と逆方向の2つのGRUでエンコードした単語の分散表現から注意を計算し、文ごとに、単語の注意の重みつき和を計算し文の分散表現とする。
-さらに、文の分散表現を別の順、逆方向GRUにあたえ、単語とおなじように各文の注意を計算し、その重みつき和を文書の分散表現としてあつかう。
-最後に、文書の分散表現を全結合層に入力し、ソフトマックス関数で文書のクラスを推定する。
-単語の文の注意を推定できるため、単語と文の2つの粒度で文書の重要な箇所を可視化することができる。</p></div>
         <div class="article-footer">
             <span class="date">December 26, 2021</span>
         </div>

@@ -6,7 +6,22 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 21 May 2022 12:21:05 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 May 2022 13:19:37 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Experience Report The WyCach Portfolio Management System(1992)</title>
+      <link>https://nryotaro.dev/posts/experience_report_the_wycash_portfolio_management_system/</link>
+      <pubDate>Sat, 28 May 2022 13:19:37 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/experience_report_the_wycash_portfolio_management_system/</guid>
+      <description>&lt;p&gt;Ward Cunninghamが証券ポートフォリオ管理システムWyCASH+を開発したときの事例報告で、92年のオブジェクト指向の国際会議OOPSLAで発表された。
+この発表が技術的負債の典拠であるが、文中には技術的(technical)はなく単に負債(debt)と書かれている。
+アジャイルソフトウェア開発宣言が発表された2001年以前に、ウォーターフォールよりもインクリメンタルな開発のほうが最短で適当な品質のソフトウェアを構築できると主張した。
+しかし、インクリメンタルな開発では全ての知識が十分に揃っていない段階でコーディングするためシステムの部分的な修正を重ねる必要がある。
+そして、オブジェクト指向言語のメッセージパッシングによって漸進的な修正が可能になるというのが発表の骨子である。
+負債で会社の成長を早められるように、コードをリリースすることで後に修正する必要があるかもしれないが、よい設計を早く知ることができるため、Cunninghamは最初にリリースするコードを負債と形容した。
+負債と対比されているのはプログラミングの前にプログラムを熟考することあり、こちらが前払い、全額払いと表現されている。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>PLS-regression: a basic tool of chemometrics</title>
       <link>https://nryotaro.dev/posts/pls_regression_a_basic_tool_of_chemometrics/</link>
@@ -156,7 +171,7 @@ Pegasosは、目的関数の最小値の近似値をもとめる。
       <pubDate>Sat, 19 Feb 2022 15:02:19 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/regularization_paths_for_generalized_liner_models_via_coordinate_descent/</guid>
-      <description>&lt;p&gt;ラッソ、リッジ、またはその両方をくみあわせたelastictnetを正則化項にもつ一般化線形モデルの学習を高速化する座標降下法である。
+      <description>&lt;p&gt;ラッソ、リッジ、またはその両方をくみあわせるelastictnetを正則化項とする一般化線形モデルの学習を高速化した座標降下法である。
 座標降下法を単純に実装すると、スパースで次元数の多い特徴だと学習に時間がかかる。
 表題の手法は、その単純なパラメタの更新式の一部を、説明変数の内積におきかえ、学習データの数や次元数に対して学習時間を短縮する。&lt;/p&gt;</description>
     </item>
