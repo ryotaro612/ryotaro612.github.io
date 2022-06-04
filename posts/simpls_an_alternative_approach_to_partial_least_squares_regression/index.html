@@ -24,7 +24,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>Experience Report The WyCach Portfolio Management System(1992)</title>
+    <title>SIMPLS: an alternative approach to partial least squares regression</title>
 </head>
 
 <body>
@@ -44,17 +44,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
     
 <main>
-    <h1>Experience Report The WyCach Portfolio Management System(1992)</h1>
+    <h1>SIMPLS: an alternative approach to partial least squares regression</h1>
     <span class="date">May 28, 2022</span>
     <div>
-        <p>Ward Cunninghamが証券ポートフォリオ管理システムWyCASH+を開発したときの事例報告で、92年のオブジェクト指向の国際会議OOPSLAで発表された。
-この発表が技術的負債の典拠であるが、文中には技術的(technical)はなく単に負債(debt)と書かれている。
-アジャイルソフトウェア開発宣言が発表された2001年以前に、ウォーターフォールよりもインクリメンタルな開発のほうが最短で適当な品質のソフトウェアを構築できると主張した。
-しかし、インクリメンタルな開発では全ての知識が十分に揃っていない段階でコーディングするためシステムの部分的な修正を重ねる必要がある。
-そして、オブジェクト指向言語のメッセージパッシングによって漸進的な修正が可能になるというのが発表の骨子である。
-負債で会社の成長を早められるように、コードをリリースすることで後に修正する必要があるかもしれないが、よい設計を早く知ることができるため、Cunninghamは最初にリリースするコードを負債と形容した。
-負債と対比されているのはプログラミングの前にプログラムを熟考することあり、こちらが前払い、全額払いと表現されている。</p>
-<p>論文への<a href="https://www.semanticscholar.org/paper/The-WyCash-portfolio-management-system-Cunningham/27b66c6e7486bc036f05d58db9dd1d8dc8f4fc46">リンク</a></p>
+        <p>SIMPLSは、NIPALSとおなじく部分的最小二乗法（PLS）である。
+NIPALSでは、潜在変数が、デフレーションされた説明変数の線形結合になる。
+多方、SIMPLSの潜在変数は、中心化された説明変数の線形結合で表現できる。
+そのため、NIPALSよりもSIMPLSの潜在変数の方が説明変数との関係を解釈しやすい。</p>
+<p>中心化された説明変数を\(\boldsymbol{\rm X}_0^\top\), 目的変数を\(\boldsymbol{\rm Y}_0\)とおく。
+潜在変数の数を\(\boldsymbol{\rm A}\)として\(a=1,\dots A\)について次の手順を繰り返す。</p>
+<p>\(a=1\)であれば\(\boldsymbol{\rm S}\)を、それ以外の場合\(\boldsymbol{\rm S - P(P^\top P)^{-1}P^\top S}\)を特異値分解(SVD)する。
+この左特異値ベクトルを\(\boldsymbol{\rm r}\)として、潜在変数\(\boldsymbol{\rm t = X_0 r}\)とローディングクトル\(\boldsymbol{\rm p=X^\top_0 t/(t^\top t)}\)をもとめ、\(\boldsymbol{\rm R, T, P}\)として記録する。</p>
+<p>最後に回帰係数を\(\boldsymbol{\rm B_{PLS}=RT^-Y_0}\)としで求める。</p>
+<p>上では、潜在変数\(\boldsymbol{t}\)がもとの説明変数\(\boldsymbol{\rm X}_0\)で表されている。</p>
+<p>論文への<a href="https://www.sciencedirect.com/science/article/abs/pii/016974399385002X">リンク</a></p>
     </div>
 </main>
 
@@ -62,13 +65,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <ul class="pagination">
     
     <li>
-        <a href="/posts/pls_regression_a_basic_tool_of_chemometrics/"><span class="material-icons">chevron_left</span></a>
+        <a href="/posts/experience_report_the_wycash_portfolio_management_system/"><span class="material-icons">chevron_left</span></a>
     </li>
     
-    
-    <li>
-        <a href="/posts/simpls_an_alternative_approach_to_partial_least_squares_regression/"><span class="material-icons">chevron_right</span></a>
-    </li>
     
 </ul>
 

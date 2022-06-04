@@ -6,7 +6,19 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 28 May 2022 13:19:37 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 May 2022 15:05:49 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SIMPLS: an alternative approach to partial least squares regression</title>
+      <link>https://nryotaro.dev/posts/simpls_an_alternative_approach_to_partial_least_squares_regression/</link>
+      <pubDate>Sat, 28 May 2022 15:05:49 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/simpls_an_alternative_approach_to_partial_least_squares_regression/</guid>
+      <description>&lt;p&gt;SIMPLSは、NIPALSとおなじく部分的最小二乗法（PLS）である。
+NIPALSでは、潜在変数が、デフレーションされた説明変数の線形結合になる。
+多方、SIMPLSの潜在変数は、中心化された説明変数の線形結合で表現できる。
+そのため、NIPALSよりもSIMPLSの潜在変数の方が説明変数との関係を解釈しやすい。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Experience Report The WyCach Portfolio Management System(1992)</title>
       <link>https://nryotaro.dev/posts/experience_report_the_wycash_portfolio_management_system/</link>
