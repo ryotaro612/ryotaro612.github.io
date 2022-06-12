@@ -48,6 +48,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/c-store_a_column_oriented_dbms/">C-Store: A Column-oriented DBMS(2005)</a></h3>
+        <div class="summary"><p>C-Storeは、OLAP系の読み込みクエリに特化した列指向データベースで、標準のSQLでのデータへのアクセスをサポートする。
+高速化のために、テーブルのデータを、ある列の値でソートした複数の投影として保存する。
+読み込みクエリのSELECT句やソートに合致する投影があれば処理を高速化でき、さらに可用性も向上する。
+しかし、同じ列を重複して複数の投影に含める場合、必要なディスク容量も増える。
+そのため、C-Storeは4種類の圧縮アルゴリズムによって、データを圧縮して保存する。</p></div>
+        <div class="article-footer">
+            <span class="date">June 4, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/simpls_an_alternative_approach_to_partial_least_squares_regression/">SIMPLS: an alternative approach to partial least squares regression</a></h3>
         <div class="summary"><p>SIMPLSは、NIPALSとおなじく部分的最小二乗法（PLS）である。
 NIPALSでは、潜在変数が、デフレーションされた説明変数の線形結合になる。
@@ -146,17 +158,6 @@ GBDTは決定木の分岐を決めるのに最も時間がかかる。
 そこで、反復回数がすくないほど推定値を大きくなるよう補正する。</p></div>
         <div class="article-footer">
             <span class="date">April 9, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/xgboost/">XGBoost: A Scalable Tree Boosting System</a></h3>
-        <div class="summary"><p>XGBoostは、キャッシュやシャーディングによる高速な勾配ブースティングのライブラリであり、スパースなデータもあつかえる。
-情報利得を最大化する分岐をもとめてノードからのばすときは、ノードにあるサンプルで分岐の条件を決定する。
-このとき、欠損のない特徴の値のみをつかい、欠損のないサンプル数の線形オーダまで計算量を削減する。
-情報利得の最大値をもとめるときは、分岐条件になる特徴が欠損しているときに左右どちらに分岐させるべきかを計算する。</p></div>
-        <div class="article-footer">
-            <span class="date">March 26, 2022</span>
         </div>
     </article>
     

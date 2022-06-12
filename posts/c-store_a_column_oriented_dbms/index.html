@@ -24,7 +24,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>SIMPLS: an alternative approach to partial least squares regression</title>
+    <title>C-Store: A Column-oriented DBMS(2005)</title>
 </head>
 
 <body>
@@ -44,20 +44,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
     
 <main>
-    <h1>SIMPLS: an alternative approach to partial least squares regression</h1>
-    <span class="date">May 28, 2022</span>
+    <h1>C-Store: A Column-oriented DBMS(2005)</h1>
+    <span class="date">June 4, 2022</span>
     <div>
-        <p>SIMPLSは、NIPALSとおなじく部分的最小二乗法（PLS）である。
-NIPALSでは、潜在変数が、デフレーションされた説明変数の線形結合になる。
-多方、SIMPLSの潜在変数は、中心化された説明変数の線形結合で表現できる。
-そのため、NIPALSよりもSIMPLSの潜在変数の方が説明変数との関係を解釈しやすい。</p>
-<p>中心化された説明変数を\(\boldsymbol{\rm X}_0^\top\), 目的変数を\(\boldsymbol{\rm Y}_0\)とおく。
-潜在変数の数を\(\boldsymbol{\rm A}\)として\(a=1,\dots A\)について次の手順を繰り返す。</p>
-<p>\(a=1\)であれば\(\boldsymbol{\rm S}\)を、それ以外の場合\(\boldsymbol{\rm S - P(P^\top P)^{-1}P^\top S}\)を特異値分解(SVD)する。
-この左特異値ベクトルを\(\boldsymbol{\rm r}\)として、潜在変数\(\boldsymbol{\rm t = X_0 r}\)とローディングクトル\(\boldsymbol{\rm p=X^\top_0 t/(t^\top t)}\)をもとめ、\(\boldsymbol{\rm R, T, P}\)として記録する。</p>
-<p>最後に回帰係数を\(\boldsymbol{\rm B_{PLS}=RT^-Y_0}\)としで求める。</p>
-<p>上では、潜在変数\(\boldsymbol{t}\)がもとの説明変数\(\boldsymbol{\rm X}_0\)で表されている。</p>
-<p>論文への<a href="https://www.sciencedirect.com/science/article/abs/pii/016974399385002X">リンク</a></p>
+        <p>C-Storeは、OLAP系の読み込みクエリに特化した列指向データベースで、標準のSQLでのデータへのアクセスをサポートする。
+高速化のために、テーブルのデータを、ある列の値でソートした複数の投影として保存する。
+読み込みクエリのSELECT句やソートに合致する投影があれば処理を高速化でき、さらに可用性も向上する。
+しかし、同じ列を重複して複数の投影に含める場合、必要なディスク容量も増える。
+そのため、C-Storeは4種類の圧縮アルゴリズムによって、データを圧縮して保存する。</p>
+<p>C-Storeの読み込みに特化した保存形式は、書込みには適さない。
+そこで、C-Storeは、挿入と更新に特化した領域Writable Store(WS)と、容量の大きく読み込みに特化したRead-optimized Store(RS)を分離し、定期的にWSからRSへLSM-treeに似た仕組みでデータを移すことで、書込み速度の劣化を抑制する。</p>
+<p>論文への<a href="https://web.stanford.edu/class/cs245/readings/c-store.pdf">リンク</a></p>
     </div>
 </main>
 
@@ -65,13 +62,9 @@ NIPALSでは、潜在変数が、デフレーションされた説明変数の�
 <ul class="pagination">
     
     <li>
-        <a href="/posts/experience_report_the_wycash_portfolio_management_system/"><span class="material-icons">chevron_left</span></a>
+        <a href="/posts/simpls_an_alternative_approach_to_partial_least_squares_regression/"><span class="material-icons">chevron_left</span></a>
     </li>
     
-    
-    <li>
-        <a href="/posts/c-store_a_column_oriented_dbms/"><span class="material-icons">chevron_right</span></a>
-    </li>
     
 </ul>
 

@@ -6,7 +6,20 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 28 May 2022 15:05:49 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Jun 2022 13:20:16 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C-Store: A Column-oriented DBMS(2005)</title>
+      <link>https://nryotaro.dev/posts/c-store_a_column_oriented_dbms/</link>
+      <pubDate>Sat, 04 Jun 2022 13:20:16 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/c-store_a_column_oriented_dbms/</guid>
+      <description>&lt;p&gt;C-Storeは、OLAP系の読み込みクエリに特化した列指向データベースで、標準のSQLでのデータへのアクセスをサポートする。
+高速化のために、テーブルのデータを、ある列の値でソートした複数の投影として保存する。
+読み込みクエリのSELECT句やソートに合致する投影があれば処理を高速化でき、さらに可用性も向上する。
+しかし、同じ列を重複して複数の投影に含める場合、必要なディスク容量も増える。
+そのため、C-Storeは4種類の圧縮アルゴリズムによって、データを圧縮して保存する。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>SIMPLS: an alternative approach to partial least squares regression</title>
       <link>https://nryotaro.dev/posts/simpls_an_alternative_approach_to_partial_least_squares_regression/</link>
