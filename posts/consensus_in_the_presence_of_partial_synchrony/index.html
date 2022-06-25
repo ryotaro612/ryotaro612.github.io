@@ -24,7 +24,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>Classifier Chains for Multi-label Classification</title>
+    <title>Consensus in the Presence of Patial Synchrony (1988)</title>
 </head>
 
 <body>
@@ -44,18 +44,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
     
 <main>
-    <h1>Classifier Chains for Multi-label Classification</h1>
-    <span class="date">March 22, 2022</span>
+    <h1>Consensus in the Presence of Patial Synchrony (1988)</h1>
+    <span class="date">June 18, 2022</span>
     <div>
-        <p>scikit-learnの<a href="https://scikit-learn.org/stable/modules/generated/sklearn.multioutput.ClassifierChain.html?highlight=chain#sklearn-multioutput-classifierchain">Classifier Chain</a>で実装されたClassifier Chainsは、ラベルの相関関係を特徴につかうマルチラベル分類のモデルで、相関関係をもちいる既存手法よりも計算量がすくない。
-より細かくみれば、Classifier Chainsは、Classifier Chain Model(CC)とCCのアンサンブル学習であるEnsembles of Classifier Chains(ECC)の2つにわかれる。</p>
-<p>CCは、one vs restとおなじく、ラベルの種類数だけの2値分類のモデルをつかい、モデルを順番に学習する。
-One vs restとの違いは、\(i\)番目のモデルを訓練するときに、すでに学習したモデル\(0,\dots i-1\)の出力を特徴に加えることである。
-先に学習するモデルほど別のモデルの出力を特徴につかえないので、CCは学習するモデルの順番に影響されやすい。</p>
-<p>ECCは、アンサンブル学習により、CCの順番への依存を解決する。
-ECCは、複数のCCをランダムサンプルした訓練データの一部で学習する。
-推定するときは、すべてのCCの出力の和をもちいる。</p>
-<p>論文を<a href="https://www.cs.waikato.ac.nz/~eibe/pubs/chains.pdf">こちら</a>からダウンロードできます。</p>
+        <p>同期的なシステムには、プロセッサ間のメッセージの到達時間や時刻の誤差に有界がある。
+非同期的なシステムには、どちらにも特定の有界はない。
+表題のpartial synchronousは、同期、非同期の中間的な環境である。
+到達時間や時刻の誤差の有界について、存在するが値が分からない環境と、値が分かっているがどの時刻から値が保証されるか分からない環境を意味する。</p>
+<p>このpartial synchronousなシステム下で、Fault-stop, Ommission, Authenticated Byzantine, Byzantineの4障害において、正常に機能するために必要なプロセッサの総数\(N\)と障害を許容できるプロセッサ数\(t\)の関係を示した。
+Fault stopは、正常に動作してるプロセッサがある時刻に停止し再起動できない障害をさす。
+Omissionは、正常にメッセージを処理できるプロセッサにメッセージが届かず、処理し損ねたメッセージがある障害である。
+Authenticated Byzantineは署名によりメッセージの改竄を検知できるビザンチン問題である。
+4つの障害における\(N\)と\(t\)の関係を以下に示す。
+<img src="/consensus_in_the_presence_of_partial_synchrony.png" alt="faults"></p>
+<p>以上の関係を証明するためには、プロセッサが正常である条件を定義する必要がある。
+そのため、正常性を安全性と活性の2つに分けて議論されている。
+安全性は、\(t\)に含まれないプロセッサは、システムの妥当性に反する決定をせず、互いに必ず含意できることである。
+活性は、\(t\)に含まれないプロセッサはある時刻において合意対象の候補を決定することである。
+ある障害に対して、\(N-t\)個の任意のプロセッサが安全性と活性を満たすプロトコルを\(t\)-resilinent consensus protocolという。</p>
+<p>論文への<a href="https://groups.csail.mit.edu/tds/papers/Lynch/jacm88.pdf">リンク</a></p>
+<p>画像は論文から引用されています。</p>
     </div>
 </main>
 
@@ -63,13 +71,9 @@ ECCは、複数のCCをランダムサンプルした訓練データの一部で
 <ul class="pagination">
     
     <li>
-        <a href="/posts/effective_multi-label_active_learning_for_text_classification/"><span class="material-icons">chevron_left</span></a>
+        <a href="/posts/regression_shrinkage_and_selection_via_the_lasso/"><span class="material-icons">chevron_left</span></a>
     </li>
     
-    
-    <li>
-        <a href="/posts/xgboost/"><span class="material-icons">chevron_right</span></a>
-    </li>
     
 </ul>
 

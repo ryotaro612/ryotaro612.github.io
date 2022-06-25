@@ -48,6 +48,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/learning_joint_multilingual_sentence_representations_with_neural_machine_translation/">論文 メモ Learning Joint Multilingual Sentence Representations with Neural Machine Translation</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>多言語の文をあつかう分散表現モデルを発表した論文である。
+異なる言語の文であっても、意味が同じであれば、同様の分散表現に変換される。
+モデルのアーキテクチャにはseq2seqを、入力と出力には対訳コーパスをつかう。
+ミニバッチごとに、入力または出力の言語をいれかえ、言語に依存しない文の意味の分散表現への変換方法を学習する。
+本論文の成果は多言語に対応する分散表現のモデルのライブラリ<a href="https://github.com/facebookresearch/LASER">LASER</a>に応用されている。</p></div>
+        <div class="article-footer">
+            <span class="date">April 29, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/albert/">論文メモ ALBERT: A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS</a></h3>
         <div class="summary"><p>BERTのパラメタ数を削減し、学習時間の短縮と正則化による予測性能の向上を両立したモデルALBERTを提案し、GLUE, RACE, SQuADでSoTAを実現した。
 BERT-largeと比べると、ALBERT-largeのパラメタ数は約5.3%の18Mであり、学習時間は1.7倍速い。
@@ -150,21 +163,6 @@ Raftは、Multi Paxosと同様の実行結果をもたらす。
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/latent_dirichlet_allocation/">論文メモ Latent Dirichlet Allocation</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>トピックモデルの潜在的ディリクレ配分法(LDA)の原論文である。
-LDAは、テキストコーパスのような離散データの確率的生成モデルである。
-意味のあるデータのまとまりに対する端的な説明を与える情報を見つけることを目的としている。
-3つの階層からなる階層ベイズモデルである。
-、データの要素は、各トピックを表すモデルの混合モデルから生成される。
-トピックもまた混合モデルから確率的に生成される。
-推論にはベイズ変分法を、パラメタの推定にはEMアルゴリズムをもちいらる。</p></div>
-        <div class="article-footer">
-            <span class="date">February 23, 2020</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -183,7 +181,7 @@ LDAは、テキストコーパスのような離散データの確率的生成�
         <a href="/page/17/"><span class="material-icons">chevron_right</span></a>
     </li>
     <li>
-        <a href="/page/22/"><span class="material-icons">last_page</span></a>
+        <a href="/page/23/"><span class="material-icons">last_page</span></a>
     </li>
     
 </ul>
