@@ -47,15 +47,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1>XGBoost: A Scalable Tree Boosting System</h1>
     <span class="date">March 26, 2022</span>
     <div>
-        <p>XGBoostは、キャッシュやシャーディングによる高速な勾配ブースティングのライブラリであり、スパースなデータもあつかえる。
-情報利得を最大化する分岐をもとめてノードからのばすときは、ノードにあるサンプルで分岐の条件を決定する。
-このとき、欠損のない特徴の値のみをつかい、欠損のないサンプル数の線形オーダまで計算量を削減する。
-情報利得の最大値をもとめるときは、分岐条件になる特徴が欠損しているときに左右どちらに分岐させるべきかを計算する。</p>
+        <p>XGBoostは、キャッシュやシャーディングによる高速な勾配ブースティングのライブラリであり、スパースなデータでも高速に学習できる。
+情報利得が大きくなるにノードから枝をのばすときは、ノードにあるサンプルで分岐の条件を決定する。
+このとき、分岐条件の特徴が欠損するサンプルを左右どちらかに無条件にふり分けると利得が大きくなるかを計算する。
+これにより、欠損のないサンプル数の線形オーダまで計算量を削減する。</p>
 <p>訓練データ\(\mathcal{D}=\{(\boldsymbol{\rm x}_i, y_i)\}(\mid \mathcal{D} \mid = n, \boldsymbol{\rm x}_i\in \mathbb{R}^m, y_i\in \mathbb{R})\)があるとき、決定木を弱識別器にするアンサンブルモデルの出力関数は次の式をとる。
 $$
 \hat{y}_i=\phi(\boldsymbol{\rm x}_i)=\sum^K_{k=1}f_k(\mathcal{\rm x}_i), f_k \in \mathcal{F}
 $$
-ただし、\(F=\{f(\boldsymbol{\rm x})=w_{q(\boldsymbol{\rm x})}\}(q: \mathbb{R}^m \rightarrow T, w\in \mathbb{R}^T)\)は決定木の集合、\(T\)は葉の数、\(q\)はサンプルを葉に写像する決定木の関数、\(w\)は葉の重みである。</p>
+ただし、\(\mathcal{F}=\{f(\boldsymbol{\rm x})=w_{q(\boldsymbol{\rm x})}\}(q: \mathbb{R}^m \rightarrow T, w\in \mathbb{R}^T)\)は決定木の集合、\(T\)は葉の数、\(q\)はサンプルを葉に写像する決定木の関数、\(w\)は葉の重みである。</p>
 <p>この出力関数の正則化項をふくむ損失関数は
 $$
 \mathcal{L}(\phi) = \sum_i l(\hat{y_i}, y_i) + \sum_k  \left(\gamma T + \frac{1}{2}\lambda \mid\mid w \mid\mid^2 \right)
