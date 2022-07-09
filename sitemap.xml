@@ -3,12 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2022-06-18T15:46:42+09:00</lastmod>
+    <lastmod>2022-06-26T11:27:52+09:00</lastmod>
   </url><url>
-    <loc>https://nryotaro.dev/posts/consensus_in_the_presence_of_partial_synchrony/</loc>
-    <lastmod>2022-06-18T15:46:42+09:00</lastmod>
+    <loc>https://nryotaro.dev/posts/implementing_fault-tolerant_services_using_the_state_machine_approach_a_tutorial/</loc>
+    <lastmod>2022-06-26T11:27:52+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/</loc>
+    <lastmod>2022-06-26T11:27:52+09:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/posts/least_angle_regression/</loc>
+    <lastmod>2022-06-25T15:35:05+09:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/posts/consensus_in_the_presence_of_partial_synchrony/</loc>
     <lastmod>2022-06-18T15:46:42+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/regression_shrinkage_and_selection_via_the_lasso/</loc>

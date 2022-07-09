@@ -6,7 +6,32 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 18 Jun 2022 15:46:42 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Jun 2022 11:27:52 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Implementing Fault-Tolerant Services Using the State Machine Approach: A Tutorial</title>
+      <link>https://nryotaro.dev/posts/implementing_fault-tolerant_services_using_the_state_machine_approach_a_tutorial/</link>
+      <pubDate>Sun, 26 Jun 2022 11:27:52 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/implementing_fault-tolerant_services_using_the_state_machine_approach_a_tutorial/</guid>
+      <description>&lt;p&gt;サーバのレプリケーションによってフォールトトレランスを高めることができるが、レプリケーション間の合意形成のプロトコルが必要になる。
+そこで、ステートマシンをモデルにプロトコルを定義する手法を、Fail Stopとビザンチン将軍問題で例示する。
+ステートマシンは、状態変数を決定的に変更するコマンドからなり、入力系列のみから出力が決まる。
+モデルは、複数のステートマシンを同じ初期状態から開始し、同じ入力を与え、出力の合意をはかる。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>LEAST ANGLE REGRESSION</title>
+      <link>https://nryotaro.dev/posts/least_angle_regression/</link>
+      <pubDate>Sat, 25 Jun 2022 15:35:05 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/least_angle_regression/</guid>
+      <description>Least Angle Regression(LARS)はLASSO回帰をとくアルゴリズムであり、目的変数とモデルの推定値の残差と相関の大きい入力変数をひとつずつモデルに取り込む。相関が大きいとベクトル間の角度が小さくなるため、least angle(最小角)と名がつく。
+初期状態のモデルは説明変数をもたず推定値は0である。 そのため、目的変数との相関が最大の説明変数を最初にモデルに取り込む。 次に、別の説明変数と残差の相関が取り込んだ説明変数の相関と等しくなるまで、取り込んだ説明変数の方向に、出力する推定値を更新する。 以降は、取り込んだすべての説明変数から等角度の方向に、取り込んでいない説明変数と残差の相関が取り込んだ説明変数との相関と等しくなるまで、モデルの推定値を更新する。
+説明変数\(\boldsymbol{x}_1\), \(\boldsymbol{x}_2\)と目的変数\(\boldsymbol{y}\)で更新の様子を説明する。 初期状態の推定値\(\hat{\boldsymbol{\eta}}_0\)では、\(\boldsymbol{x}_2\)よりも\(\boldsymbol{x}_1\)のほうが\(\boldsymbol{y}-\boldsymbol{\hat{\eta}}_0\)と相関がある。そこで、\(\boldsymbol{x}_1\)を最初にモデルに取り込む。 \(\boldsymbol{x}_1\)の方向に\(\boldsymbol{\hat{\eta}_1}\)まで更新すると、\(\boldsymbol{x}_1\)と\(\boldsymbol{x}_2\)は、残差\(\boldsymbol{y}-\boldsymbol{\hat{\eta}}_1\)との相関が等しくなる。 そして今度は、\(\boldsymbol{x}_1\)と\(\boldsymbol{x}_2\)と等角度の方向に\(\boldsymbol{\eta}_2\)まで更新する。
+論文へのリンク
+引用元の画像が荒いため、画像は、スモールデータ解析と機械学習から引用しました。</description>
+    </item>
+    
     <item>
       <title>Consensus in the Presence of Patial Synchrony (1988)</title>
       <link>https://nryotaro.dev/posts/consensus_in_the_presence_of_partial_synchrony/</link>
@@ -145,7 +170,7 @@ GBDTは決定木の分岐を決めるのに最も時間がかかる。
     </item>
     
     <item>
-      <title>ADAM: A METHOD FOR STOCASTIC OPTIMIZATION</title>
+      <title>Adam: A Method for Stochastic Optimization</title>
       <link>https://nryotaro.dev/posts/adam/</link>
       <pubDate>Sat, 09 Apr 2022 13:43:35 +0900</pubDate>
       

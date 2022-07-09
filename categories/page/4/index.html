@@ -47,6 +47,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/a_bridging_model_for_parallel_computation/">A Bridging Model for parallel Computation (1990)</a></h3>
+        <div class="summary"><p>バッチ処理グラフの最適化を目的として演算処理のバルク同期並列（bulk synchronous parallel、 BSP）を提唱した。
+BPSは、Apache Giraph, Spark の GraphX API, Gelly APIで採用され、なかでもGoogleのPregelで知られるようになった<a href="https://www.oreilly.co.jp/books/9784873118703/">*1</a>。
+BPSの目的は、ハードウェアと並列計算の高水準なプログラミングモデルがどちらもBPSに準ずることで、高水準なプログラミングモデルで実装された並列計算を多様なハードウェア上で動かすことにある。
+フォン・ノイマンモデル型のコンピュータであれば、ハードウェアの種類を意識することなく、その上で逐次計算をおこなう多様なソフトウェアを動かせる。
+フォン・ノイマンモデルは、多様なハードウェアと多様なソフトウェアをつなぐ。
+BPSは、並列計算用のハードウェアと高水準な並列計算のプログラミングモデルをつなぐためにある。</p></div>
+        <div class="article-footer">
+            <span class="date">December 11, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/wait_free_synchronization/">Wait-Free Synchronization</a></h3>
+        <div class="summary"><p>あるデータ構造がwait-freeであり、データ構造への操作が有限回のステップで完了するのであれば、ほかの並行プロセスの処理速度によらず、任意のプロセスによるその操作は必ず完了する。
+表題のsynchronizationは、wait-freeであるデータ構造で別のwait-freeなデータ構造を実装することを意味する。
+実装可能かを定義するためにコンセンサス数を導入する。
+あるデータ構造のコンセンサス数は、単純な含意形成問題を解くときに参加できるプロセス数の最大値である。
+たとえば、read / writeレジスタのコンセンサス数は1, test &amp; swapは2, compare &amp; swapは無限である。
+プロセス数を定義した上で、あるコンセンサス数のデータ構造を、それより小さいコンセンサス数のデータ構造では実装できないことを示した。</p></div>
+        <div class="article-footer">
+            <span class="date">November 27, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/live_migration_of_virtual_machines/">Live Migration of Virtual Machines</a></h3>
         <div class="summary"><p>XenのハイパーバイザーにOSのライブマグレーションを統合し、約60msのダウンタイムでのOSのライブマイグレーションを実現した。
 手法の焦点は、どれだけ短いダウンタイムや移行時間で、移行元と移行先のメモリの状態を同等にできるかにある。
@@ -136,26 +162,6 @@ Chubbyはロックサービスとして作られたが、ネームサーバと�
 この原則をconservation of packets principleという。</p></div>
         <div class="article-footer">
             <span class="date">October 9, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/the_notion_of_consistency_and_predicate_locks_in_a_database_system/">The Notion of Consistency and Predicate Locks in a Database System</a></h3>
-        <div class="summary"><p>トランザクションを並行実行するときに、直列実行した場合と同じ実行結果をえるには、各トランザクションがロックを解放後に新しいロックを獲得してはならないことを示した。
-その場合もデッドロックがおきうるが、それは並列実行を終了するためにはいつロックをかければよいかという議論である。
-ここでは、並列実行が終了した場合に直列実行と同じ結果になる一貫性を保証できるロックの順序を問う。</p></div>
-        <div class="article-footer">
-            <span class="date">October 2, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/parallel_database_systems/">Parallel Database Systems: The Future of High Performance Database Systems (1992)</a></h3>
-        <div class="summary"><p>データベースの処理性能を上げる方法として、汎用的なコンピュータによる水平パーティションのシェアードナッシング構成を主張した。
-特殊なハードウェアを使ったり、メモリ、ディスクを共有する複数のコンピュータを使ったりするよりも、単純で安く実装できる。
-論文が発表された1992年の時点でTeradataやTandem NonStopなどのパーティンション化されたデータベースがある。</p></div>
-        <div class="article-footer">
-            <span class="date">September 25, 2021</span>
         </div>
     </article>
     

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Implementing Fault-Tolerant Services Using the State Machine Approach: A Tutorial</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Implementing Fault-Tolerant Services Using the State Machine Approach: A Tutorial</h1>
+    <span class="date">June 26, 2022</span>
+    <div>
+        <p>サーバのレプリケーションによってフォールトトレランスを高めることができるが、レプリケーション間の合意形成のプロトコルが必要になる。
+そこで、ステートマシンをモデルにプロトコルを定義する手法を、Fail Stopとビザンチン将軍問題で例示する。
+ステートマシンは、状態変数を決定的に変更するコマンドからなり、入力系列のみから出力が決まる。
+モデルは、複数のステートマシンを同じ初期状態から開始し、同じ入力を与え、出力の合意をはかる。</p>
+<p>ここでは、ステートマシンが仕様を満たさない状態をフォールトとよぶ。
+ステートマシンへのリクエストが遅延するとステートマシンはフォールトになりえる。
+すべてのレプリカが同じリクエストの系列を受信し処理する要件は、2つに分解できる。
+ひとつは、合意についての要件で、すべてのフォールトでないステートマシンがすべてのリクエストを受信することである。
+もうひとつは、順序の要件で、すべてのフォールトでないステートマシンが、受信したリクエストと同じ順序で処理することである。</p>
+<p>あるクライアントやステートマシンがほかのステートマシンを値を伝達する場合、伝達するステートマシンがフォールトでなければ、フォールトでないステートマシンが伝達された値に合意するとき、合意の要件は満たされる。
+伝達するステートマシンがフォールトであれば、ある同じ値に合意できればいい。
+ビザンチン将軍問題であれば、Strong, H.R. and D. DolevらのByzantine agreementが、この要件をみたす。
+ただし、FLP帰結により、ビザンチン将軍問題があり、ステートマシンの処理やリクエストの遅延に有界を想定しなければ、これを実装することはできない。</p>
+<p>順序の要件は、Lamportの<a href="https://lamport.azurewebsites.net/pubs/time-clocks.pdf">logical clock</a>で実装できる。
+これは、分散システムにおけるメッセージに全順序関係をあたえる。
+ステートマシンはそれぞれ整数の時刻をもち、イベントにタイムスタンプを割り当てる。
+ステートマシンは、ステートマシン上でイベントが起きる度に時刻をインクリメントする。
+メッセージは、時刻とペアにして送信される。
+メッセージを受信したステートマシンは、そのステートマシンがもつ時刻と添付された時刻のうち、大きい方をインクリメントした値に時刻を更新する。</p>
+<p>論文の<a href="https://www.cs.cornell.edu/fbs/publications/SMSurvey.pdf">リンク</a></p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/least_angle_regression/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

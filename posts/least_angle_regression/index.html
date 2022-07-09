@@ -24,7 +24,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>Adam: A Method for Stochastic Optimization</title>
+    <title>LEAST ANGLE REGRESSION</title>
 </head>
 
 <body>
@@ -44,19 +44,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
     
 <main>
-    <h1>Adam: A Method for Stochastic Optimization</h1>
-    <span class="date">April 9, 2022</span>
+    <h1>LEAST ANGLE REGRESSION</h1>
+    <span class="date">June 25, 2022</span>
     <div>
-        <p>ADAMはAdaptive moment estimationに由来し、名前のとおり、推定した1, 2次のモーメントによる学習率最適化のアルゴリズムである。
-勾配が疎なときに有効なAdaGradの利点と、目的関数が時間とともに変化してもよいRMSPropの利点をそなえる。
-一次や二次のモーメントを、指数関数的に加重を減少させる移動平均で推定する。
-ただし、モーメントの初期値を0にすると最初のうちはモーメントの推定値が0に偏ってしまう。
-そこで、反復回数がすくないほど推定値を大きくなるよう補正する。</p>
-<p>アルゴリズムを以下に示す。
-一次と二次のモーメントを反復回数にしたがって大きくなる\((1-\beta_{1,2}^t)\)で除算し、推定値を補正している。
-<img src="/adam.png" alt="adam"></p>
-<p>論文を<a href="https://arxiv.org/abs/1412.6980">こちら</a>からダウンロードできます。<br>
-画像は論文から引用されています。</p>
+        <p>Least Angle Regression(LARS)はLASSO回帰をとくアルゴリズムであり、目的変数とモデルの推定値の残差と相関の大きい入力変数をひとつずつモデルに取り込む。相関が大きいとベクトル間の角度が小さくなるため、least angle(最小角)と名がつく。</p>
+<p>初期状態のモデルは説明変数をもたず推定値は0である。
+そのため、目的変数との相関が最大の説明変数を最初にモデルに取り込む。
+次に、別の説明変数と残差の相関が取り込んだ説明変数の相関と等しくなるまで、取り込んだ説明変数の方向に、出力する推定値を更新する。
+以降は、取り込んだすべての説明変数から等角度の方向に、取り込んでいない説明変数と残差の相関が取り込んだ説明変数との相関と等しくなるまで、モデルの推定値を更新する。</p>
+<p>説明変数\(\boldsymbol{x}_1\), \(\boldsymbol{x}_2\)と目的変数\(\boldsymbol{y}\)で更新の様子を説明する。
+初期状態の推定値\(\hat{\boldsymbol{\eta}}_0\)では、\(\boldsymbol{x}_2\)よりも\(\boldsymbol{x}_1\)のほうが\(\boldsymbol{y}-\boldsymbol{\hat{\eta}}_0\)と相関がある。そこで、\(\boldsymbol{x}_1\)を最初にモデルに取り込む。
+\(\boldsymbol{x}_1\)の方向に\(\boldsymbol{\hat{\eta}_1}\)まで更新すると、\(\boldsymbol{x}_1\)と\(\boldsymbol{x}_2\)は、残差\(\boldsymbol{y}-\boldsymbol{\hat{\eta}}_1\)との相関が等しくなる。
+そして今度は、\(\boldsymbol{x}_1\)と\(\boldsymbol{x}_2\)と等角度の方向に\(\boldsymbol{\eta}_2\)まで更新する。</p>
+<p><img src="/least_angle_regression.png" alt="img"></p>
+<p>論文への<a href="https://arxiv.org/pdf/math/0406456.pdf">リンク</a></p>
+<p>引用元の画像が荒いため、画像は、<a href="https://www.ohmsha.co.jp/book/9784274227783/">スモールデータ解析と機械学習</a>から引用しました。</p>
+
     </div>
 </main>
 
@@ -64,12 +67,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <ul class="pagination">
     
     <li>
-        <a href="/posts/xgboost/"><span class="material-icons">chevron_left</span></a>
+        <a href="/posts/consensus_in_the_presence_of_partial_synchrony/"><span class="material-icons">chevron_left</span></a>
     </li>
     
     
     <li>
-        <a href="/posts/lightgbm/"><span class="material-icons">chevron_right</span></a>
+        <a href="/posts/implementing_fault-tolerant_services_using_the_state_machine_approach_a_tutorial/"><span class="material-icons">chevron_right</span></a>
     </li>
     
 </ul>

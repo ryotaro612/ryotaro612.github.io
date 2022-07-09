@@ -48,6 +48,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/unsupervised_models_for_named_entity_classification/">論文メモ Unsupervised Models for Named Entity Classification</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>1999年に発表された教師なしの固有表現抽出の手法である。
+発表時期が古いことに注意してほしい。
+2つの手法が提案されている。
+ひとつは、DL-CoTrainと呼ばれるルールベースの手法であり、教師なしデータに既存のルールを適用、適用結果から導出したルールを既存のルールに追加、をくりかえしてルールを増やす。
+もう一方は、AdaBoostを応用したCoBoostとよばれる手法である。
+ルールベースの手法のほうがCoBoostよりもよい実験結果であったので、前者のみを説明する。</p></div>
+        <div class="article-footer">
+            <span class="date">January 13, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/multilabel_classification_with_label_correlations_and_missing_labels/">論文メモ Multilabel Classification with Label Correlations and Missing Labels</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>ラベルの相関関係を学習し推論に利用するマルチラベルの線形モデルを提案した論文である。
+相関関係のあるラベル集合を相関関係のないラベル集合に変換し、ラベルごとに分けて学習する手法、Label transformationを応用する。
+分類器は、相関関係だけなく、学習データに与えられていないラベルを推定するように拡張できる。</p></div>
+        <div class="article-footer">
+            <span class="date">January 6, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/">論文メモ Learning Deep Structured Semantic Models for Web Search using Clickthrough Data</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>クエリと文書を同じ低次元の空間に射影する深層学習のモデルを提案した論文である。
@@ -133,27 +158,6 @@ DESMは、クエリの単語に関係する単語をもとに判断する。
 アルゴリズムを実装したライブラリへのリンクは<a href="https://github.com/nryotaro/desm">こちら</a>。</p></div>
         <div class="article-footer">
             <span class="date">November 30, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/on_calibration_of_modern_neural_networks/">論文メモ On Calibration of Modern Neural Networks</a></h3>
-        <div class="summary"><p>ネットワークの複雑化、バッチ正則化、重み減衰を使わない、負の対数尤度の過学習が汎化精度を上げるが、予測確率と精度のズレを大きくすることを実験的に示した。
-予測確率を補正する6つの手法を19種類のクラス分類のデータセットに適用した結果、
-最も補正できたものは、温度つきソフトマックスの出力を予測確率にする場合であった。</p></div>
-        <div class="article-footer">
-            <span class="date">November 23, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/trinary_projection_trees/">論文メモ Trinary-Projection Trees for Approximate Nearest Neighbor Search</a></h3>
-        <div class="summary"><p>Trinary-Projection Trees(TP trees)は、kd木のように、ユークリッド空間の分割を二分木で表現できるデータ構造である。
-超平面は1または-1の重みのついた少数の座標軸で定義される。
-これにより、探索時の分岐にかかる計算が、加算と減算だけからなる\(O(1)\)となる。
-また、射影されたデータの分散の大きい超平面を探し、同じ分割にある点同士の距離を小さくすることで、精度を向上させている。</p></div>
-        <div class="article-footer">
-            <span class="date">November 16, 2019</span>
         </div>
     </article>
     

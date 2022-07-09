@@ -47,6 +47,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/simcse/">SimCSE: Simple Contrastive Learning of Sentence Embeddings</a></h3>
+        <div class="summary"><p>対照学習は、意味の近い要素同士を近くに、異なる要素を遠くに配置する分散表現を獲得する。
+SimCSEは、文の分散表現のための対照学習であり、教師なしと教師ありの2つの学習方法を提供する。
+教師なし学習は、Dropout層を通したサンプルが近くに配置されるように、Dropout層の出力2つからなるペアを教師データにする。
+教師あり学習は、自然言語推論(含意関係認識)の教師データをつかい、前提と含意の分散表現が近くになるように学習する。</p></div>
+        <div class="article-footer">
+            <span class="date">April 29, 2022</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/stochastic_gradient_boosting/">Stochastic Gradient Boosting</a></h3>
+        <div class="summary"><p>Gradient Boostingは、反復的に、モデルの予測と正解の残差に弱識別器をあてはめ、弱識別器をモデルに追加する。
+Stochastic Gradient Boostingは、弱識別器の学習に非復元抽出したデータの部分集合をつかい、精度と学習速度を向上する。</p></div>
+        <div class="article-footer">
+            <span class="date">April 23, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/lightgbm/">LightGBM: A Highly Efficient Gradient Boosting Decision Tree</a></h3>
         <div class="summary"><p>LightGBMは、GBDTを高速化したアルゴリズムであり、実験ではXGBoostよりも計算時間と消費メモリが少ない。
 GBDTは決定木の分岐を決めるのに最も時間がかかる。
@@ -58,7 +78,7 @@ GBDTは決定木の分岐を決めるのに最も時間がかかる。
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/adam/">ADAM: A METHOD FOR STOCASTIC OPTIMIZATION</a></h3>
+        <h3><a href="https://nryotaro.dev/posts/adam/">Adam: A Method for Stochastic Optimization</a></h3>
         <div class="summary"><p>ADAMはAdaptive moment estimationに由来し、名前のとおり、推定した1, 2次のモーメントによる学習率最適化のアルゴリズムである。
 勾配が疎なときに有効なAdaGradの利点と、目的関数が時間とともに変化してもよいRMSPropの利点をそなえる。
 一次や二次のモーメントを、指数関数的に加重を減少させる移動平均で推定する。
@@ -130,26 +150,6 @@ Pegasosは、目的関数の最小値の近似値をもとめる。
 表題の手法は、その単純なパラメタの更新式の一部を、説明変数の内積におきかえ、学習データの数や次元数に対して学習時間を短縮する。</p></div>
         <div class="article-footer">
             <span class="date">February 19, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/using_tfidf_to_determine_word_relevance_in_document_queries/">Using TF-IDF to Determine Word Relevance in Document Queries(2003)</a></h3>
-        <div class="summary"><p>自然言語による文書検索で、TF-IDFをベースラインにつかう利点と欠点を調べた。
-クエリにある各単語のTF-IDF値の総和が最大の文書を最も関連する文書とみなす。
-実験では、TFのみで検索する手法よりも予測性能がよかったが、類義語同士の同一判定をできない問題があった。</p></div>
-        <div class="article-footer">
-            <span class="date">February 19, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/an_algorithm_for_suffix_stripping/">An algorithm for suffix stripping (1980)</a></h3>
-        <div class="summary"><p>Poterのステミングで知られる。
-アルゴリズムが単純で、辞書を必要としないところに特徴がある。
-規則にしたがって単語の接尾辞を段階的に変換し、変換後の文字列を語幹とみなす。</p></div>
-        <div class="article-footer">
-            <span class="date">February 11, 2022</span>
         </div>
     </article>
     

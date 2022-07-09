@@ -47,6 +47,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/dont_do_that/">Don&#39;t Do That! Hunting Down Visual Design Smells in Complex UIs against Design Guidelines</a></h3>
+        <div class="summary"><p>2020年5月時点のマテリアルデザインの公式ドキュメントから93種類の不吉な匂いを洗い出し、71種類の匂いを検出するツールUIS-Hunterを開発した。
+文中に&quot;don&rsquo;t&quot;や&quot;caution&quot;があることとUIの画像があることを条件に不吉な匂いを選び、9,286個のアンドロイドアプリにある7,497のUIを調べたところ、2,587個のアプリから1つ以上の不吉な匂いのあるUIが見つかった。
+UIS-Hunterは、FigmaやAndroid Studio Layout EditorなどのモックアップやAndroid UI AutomatorやSeleniumのスクリーンショットから不吉な匂いを解析し、UIのソースコードを必要としない。
+9,286個のアプリの60,756のUIで検出性能を評価したところ、precisionが0.81, recallが0.90だった。</p></div>
+        <div class="article-footer">
+            <span class="date">August 14, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/an_empirical_analysis_of_ui-based_flaky_tests/">An Empirical Analysis of UI-based Flaky Tests</a></h3>
+        <div class="summary">GitHub上の5つのWebアプリケーションと37のAndroidアプリケーションから集めた235件のUIのflaky tests（何度か実行すると成功する不安定なテスト）を調査し、原因と修正を分類した。
+大きく原因を、非同期処理の待機、環境依存の動作、DOMのセレクタやテストライブラリの誤用、テスト対象の事前条件を満たしていないテストスクリプトの4つに大別した。 具体例をあげると、環境依存の動作には、IE固有のバグや予期していないレイアウトで画面が表示される場合、テストの事前条件については、テストの実行順序次第で誤ったテストデータが作られる場合がある。 最も多くのテストが分類され、全体の45%を占めたのは、非同期処理の不適切な待機方法だった。
+修正のパターンには、待機時間の追加、テスト用APIの誤用の修正やAPIのアップグレード、テストスクリプトのリファクタリング、アニメーションの削除、不要なテストの削除がある。
+論文をこちらからダウンロードできます。</div>
+        <div class="article-footer">
+            <span class="date">August 14, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/a_case_study_of_onboarding_in_software_teams/">A Case Study of Onboarding in Software Teams: Tasks and Strategies</a></h3>
         <div class="summary"><p>オンボーディングのためのタスクの選び方とタスクの効果を調査するために、マイクロソフトのエンジニアとマネージャーにインタビューした。
 まず、新しいチームに入った32人のエンジニアとエンジニアを迎えた15人のマネージャーにインタビューし、特に、チームのことを知る、担当する役割を果たせる自信の醸成、メンバーとの交流の3つを重視し、これらに対するタスクの影響を調査した。
@@ -128,30 +150,6 @@ Browsemapは、LinkedInの画面上にある推薦するコンテンツを並べ
 ここでの水平型は特徴の種類の違いによらず異なるエンティティを統一的に扱えることであり、実際に、人、仕事、会社など複数のエンティティをBrowsemapsでユーザに推薦している。</p></div>
         <div class="article-footer">
             <span class="date">July 22, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/linearizability/">Linearizability: A Correctness Condition for Concurrent Objects</a></h3>
-        <div class="summary"><p>オブジェクトを読み書きする並行プロセスの実行系列があるとき、読み書き操作がアトミックであるように観測でき、かつ、プロセスの実行を仮に直列化したときと同じ実行結果をえられる条件を示し、これを線形化可能性とよんだ。
-線形化可能性は、直列化可能性と同様に安全性の条件だが、直列化可能性にはないローカル性がある。
-いいかえると、各オブジェクトが線形化可能かつそのとき限り、システム全体が線形化可能になる。
-また、ローカル性だけでなく、ノンブロッキング性もあり、操作がオブジェクトの任意の状態において定義されていれば、受信したリクエストの操作を保留しているオブジェクトは別オブジェクトの保留した操作の完了を待たずに自分の操作を進行できる。</p></div>
-        <div class="article-footer">
-            <span class="date">July 17, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/end_to_end_arguments_in_system_design/">END-TO-END ARGUMENTS IN SYSTEM DESIGN</a></h3>
-        <div class="summary"><p>分散システムのあるシステムから発せられた通信は、システムより低いレイヤーのネットワークを通り、ほかのシステムに到達する。
-論文の発表当時から、分散システムの信頼性にかかわる機能には、途中の低レイヤーではなく高レイヤーの終端におくべきものがあると知られていた。
-表題の論文は、それらを列挙し、END-TO-END ARGUMENTSと名付け、原則として提示する。
-例えば、データの完全性の保証、メッセージの重複対応、メッセージが到達したことの保証が原則にあてはまる。
-これらの機能を途中の低レイヤーにおくと、検証後の経路でメッセージが壊れた場合、送信元が重複メッセージをおくる場合、対向システムが受信したメッセージを処理できない場合に対処できない。
-分散システム全体の信頼性をあげるのであれば、信頼性を上げる機能を低レイヤーではなく終端の高レイヤーにおくほうが効率がよい。</p></div>
-        <div class="article-footer">
-            <span class="date">July 10, 2021</span>
         </div>
     </article>
     
