@@ -6,7 +6,21 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 26 Jun 2022 11:27:52 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Jul 2022 17:11:22 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Min-max Cut Algorithm for Graph Partitioning and Data Clustering</title>
+      <link>https://nryotaro.dev/posts/a_min-max_cut_algorithm_for_graph_partitioning_and_data_clustering/</link>
+      <pubDate>Sat, 09 Jul 2022 17:11:22 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/a_min-max_cut_algorithm_for_graph_partitioning_and_data_clustering/</guid>
+      <description>&lt;p&gt;重みつき隣接行列で表した無向グラフを2分割するクラスタリングであり、グラフ間の類似を最小化し、グラフ内のノードの類似の最大化をはかる。
+隣接行列を\(W_{uv}\), \(\text{cut}(A, B)=W(A, B)\), \(W(A, B) = \sum_{u\in A, v\in B}W_{uv}\)として、以下の目的関数を最小化する分割を探索する。
+ノードを2つに分ける最適解はNP完全であるため、近似解をもとめる。
+$$
+\text{Mcut} = \frac{\text{cut}(A, B)}{W(A)} + \frac{\text{cut}(A, B)}{W(B)}
+$$&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Implementing Fault-Tolerant Services Using the State Machine Approach: A Tutorial</title>
       <link>https://nryotaro.dev/posts/implementing_fault-tolerant_services_using_the_state_machine_approach_a_tutorial/</link>

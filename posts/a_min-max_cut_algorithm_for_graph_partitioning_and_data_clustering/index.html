@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>A Min-max Cut Algorithm for Graph Partitioning and Data Clustering</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>A Min-max Cut Algorithm for Graph Partitioning and Data Clustering</h1>
+    <span class="date">July 9, 2022</span>
+    <div>
+        <p>重みつき隣接行列で表した無向グラフを2分割するクラスタリングであり、グラフ間の類似を最小化し、グラフ内のノードの類似の最大化をはかる。
+隣接行列を\(W_{uv}\), \(\text{cut}(A, B)=W(A, B)\), \(W(A, B) = \sum_{u\in A, v\in B}W_{uv}\)として、以下の目的関数を最小化する分割を探索する。
+ノードを2つに分ける最適解はNP完全であるため、近似解をもとめる。
+$$
+\text{Mcut} = \frac{\text{cut}(A, B)}{W(A)} + \frac{\text{cut}(A, B)}{W(B)}
+$$</p>
+<p>\(W_A\)や\(W_B\)をサブグラフ\(A\), \(B\)内の類似度、\(W_{A, B}, W_{B, A}\)をグラフ間の類似度とする。
+\(W\)を次のようにインデックスを置きかえても一般性は失われない。
+$$
+W=
+\begin{pmatrix}
+W_A &amp; W_{A, B} \\
+W_{B,A} &amp; W_B
+\end{pmatrix}
+$$</p>
+<p>並びかえた後では、\(D=\text{diag}(W\boldsymbol{e})\), \(\boldsymbol{e}=[1,\dots , 1]^\top\), \(\boldsymbol{\rm x}=(1\dots 1, 0\dots 0)^\top\), \(\boldsymbol{\rm y}=(0\dots 0,1\dots 1)^\top\)
+とすると、MCutを以下のように表せる。
+$$
+\text{Mcut}=\frac{\boldsymbol{\rm x}^\top(D-W)\boldsymbol{\rm x}}{\boldsymbol{\rm x}^\top W\boldsymbol{\rm x}} + \frac{\boldsymbol{\rm y}^\top(D-W)\boldsymbol{\rm y}}{\boldsymbol{\rm y}^\top W\boldsymbol{\rm y}}
+$$</p>
+<p>この最適化を求めるのはNP完全なので、線形緩和問題を考える。
+ノードを\(u\)として、\(u \in A\)であれば\(a\), \(u\in B\)であれば\(-b\)のどちらに属するか示す最適な\(\boldsymbol{\rm q}(q_u=\{a, -b\})\)を見つける。
+このとき、目的関数は
+$$
+\min_{\boldsymbol{\rm q}}\text{Mcut}(A, B)=\min_{\boldsymbol{\rm q}}\frac{J_N(A, B)}{1-J_N(A, B)/2}\Rightarrow \min_{\boldsymbol{\rm q}}J_N(A, B)
+$$
+ただし
+$$
+J_N(A, B)\equiv J_N(\boldsymbol{\rm q})=\frac{\boldsymbol{\rm q}^\top (D-W)\boldsymbol{\rm q}}{\boldsymbol{\rm q}^\top D\boldsymbol{\rm q}}
+$$</p>
+<p>\(q_u\)を区間\([-1, 1]\)の実数とすると、レイリー商\(J_N(\boldsymbol{\rm q})\)を最小化する解は\(\boldsymbol{\rm q}^\top \boldsymbol{\rm e}=0\)
+として
+$$
+(D-W)\boldsymbol{\rm q}=\zeta D\boldsymbol{\rm q}
+$$
+のFiedler vector \(\boldsymbol{\rm q}_2\)とその固有値 Fiedler value \(\zeta_2\)である。
+Fielder vectorをソートし、Mcutを最小値にする分割を線形探索する。</p>
+<p>線形探索で分割した後は、境界に近いノードが所属するサブグラフを他方に移し、Mcutの値をさらに最小化する。
+\(l(A, B)=W(A, B)/W(A)W(B)\)の値が小さいほど、境界に近い。</p>
+<p>論文への<a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.454.9484&amp;rep=rep1&amp;type=pdf">リンク</a></p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/implementing_fault-tolerant_services_using_the_state_machine_approach_a_tutorial/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
