@@ -177,8 +177,8 @@ Stochastic Gradient Boostingは、弱識別器の学習に非復元抽出した�
       <pubDate>Sat, 16 Apr 2022 14:32:01 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/lightgbm/</guid>
-      <description>&lt;p&gt;LightGBMは、GBDTを高速化したアルゴリズムであり、実験ではXGBoostよりも計算時間と消費メモリが少ない。
-GBDTは決定木の分岐を決めるのに最も時間がかかる。
+      <description>&lt;p&gt;LightGBMは、GBDTを高速化したアルゴリズムであり、XGBoostよりも必要な計算時間と消費メモリが少ない。
+GBDTの処理時間のボトルネックは決定木の分岐を決めるところである。
 その前処理で特徴の値をソートする場合は、ソートがボトルネックになる。
 勾配の小さいサンプルを除外することでデータを減らし、また、同時に0でない値にならない排他的な特徴をマージすることで特徴の種類を減らし、ソートを高速化した。&lt;/p&gt;</description>
     </item>
