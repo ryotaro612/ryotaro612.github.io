@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://nryotaro.dev/posts/a_min-max_cut_algorithm_for_graph_partitioning_and_data_clustering/</loc>
-    <lastmod>2022-07-09T17:11:22+09:00</lastmod>
-  </url><url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2022-07-09T17:11:22+09:00</lastmod>
+    <lastmod>2022-07-16T16:07:20+09:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/posts/how_to_make_a_multiprocessor_computer_that_correctly_executes_multiprocess_programs/</loc>
+    <lastmod>2022-07-16T16:07:20+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/</loc>
+    <lastmod>2022-07-16T16:07:20+09:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/posts/a_min-max_cut_algorithm_for_graph_partitioning_and_data_clustering/</loc>
     <lastmod>2022-07-09T17:11:22+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/implementing_fault-tolerant_services_using_the_state_machine_approach_a_tutorial/</loc>
