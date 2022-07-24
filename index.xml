@@ -6,7 +6,19 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 16 Jul 2022 16:07:20 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Jul 2022 14:06:59 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>On Spectral Clustering: Analysis and an algorithm</title>
+      <link>https://nryotaro.dev/posts/on_spectral_clustering_analysis_and_an_algorithm/</link>
+      <pubDate>Sat, 23 Jul 2022 14:06:59 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/on_spectral_clustering_analysis_and_an_algorithm/</guid>
+      <description>&lt;p&gt;スペクトラルクラスタリングは、類似度を辺の重みとするグラフをデータから構築し、重みをもとにカットする辺を決めて、データをクラスタに分ける。
+グラフラプラシアンのようなグラフを表現した行列をつくり、その固有ベクトルを求め、固有ベクトルを列ベクトルとして並べた行列にK-meansを適用する。
+もとのデータに二重丸のような凸集合でないクラスタがあるときに、最初からK-meansを適用するよりも良い結果を期待できる。
+また、データ分布に確率モデルにあてはめ、どのクラスタにデータを割りあてるか確率的に決めるクラスタリングと違い、データの分布を仮定しなくてよい。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>How to Make a Multiprocessor Computer That Correctly Executes Multiprocess Programs(1979)</title>
       <link>https://nryotaro.dev/posts/how_to_make_a_multiprocessor_computer_that_correctly_executes_multiprocess_programs/</link>

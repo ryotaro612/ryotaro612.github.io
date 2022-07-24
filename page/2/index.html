@@ -48,6 +48,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/pls_regression_a_basic_tool_of_chemometrics/">PLS-regression: a basic tool of chemometrics</a></h3>
+        <div class="summary"><p>重回帰分析は、説明変数の行列がフルランクでないとき、多重共線性により、出力が不安定になる。
+そのため、説明変数の数を減らし、説明変数間に相関関係がないようにする必要がある。
+PLS（部分的最小二乗法）は、入力変数の線形結合で表わせる潜在変数を求め、潜在変数の線形結合で目的変数を表現する。
+説明変数の数より少ない数の潜在変数を求めることで、説明変数間の相関関係をとりのぞく。</p></div>
+        <div class="article-footer">
+            <span class="date">May 21, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/statistics_and_causal_inference/">Statistics and Causal Inference(1986)</a></h3>
         <div class="summary"><p>ルービンの因果モデルによる統計的因果推定では、群\(U\)の要素を\(u\), 処置を\(t\), \(c\), \(Y\)を潜在的結果変数とすると、\(u\)に対して処置\(c\)を適用するときの処置\(t\)の因果効果を、\(T = Y_t(u) - Y_c(u)\)とみなす。
 たとえば、\(u\)を人、\(t\), \(c\)を運動をする、しない、\(Y\)をコレステロールの値とすれば、運動とコレステロール値の関係になる。
@@ -140,17 +151,6 @@ GBDTの処理時間のボトルネックは決定木の分岐を決めるとこ�
 ラベルつきデータでSVMを学習し、さらに、その識別関数の値を特徴としてラベルの数を予測するロジスティック回帰を学習する。
 ラベルのないデータを両モデルに入力し、ロジスティック回帰が予測するラベルの数だけ、識別関数の値の高い順にラベルを選び、そのデータのマルチラベルとみなす。
 このとき、その推定したマルチラベルと識別関数の値がほど、損失関数を最も小さくできるデータとみなす。</p></div>
-        <div class="article-footer">
-            <span class="date">March 12, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/pegasos/">Pegasos: Primal Estimated sub-GrAdient SOlver for SVM</a></h3>
-        <div class="summary"><p>Pegasosは、SVMの学習のための反復的なアルゴリズムであり、2022年3月現在、scikit-learnの<a href="https://scikit-learn.org/stable/modules/sgd.html#implementation-details">SGDClassifier</a>で学習率を更新に採用されている。
-Pegasosは、目的関数の最小値の近似値をもとめる。
-求める最小値との誤差を\(\epsilon\), SVMの正則化パラメタを\(\lambda\), 各サンプルの説明変数の0でない要素数の上限を\(d\)とすると、線形カーネルをつかうSVMの時間計算量は、\(\tilde{O}(d/\lambda \epsilon)\)になる。
-訓練データの数が計算量に影響しないので、教師データの数に対してスケールする。</p></div>
         <div class="article-footer">
             <span class="date">March 12, 2022</span>
         </div>

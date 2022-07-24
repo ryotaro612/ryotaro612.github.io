@@ -3,12 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2022-07-16T16:07:20+09:00</lastmod>
+    <lastmod>2022-07-23T14:06:59+09:00</lastmod>
   </url><url>
-    <loc>https://nryotaro.dev/posts/how_to_make_a_multiprocessor_computer_that_correctly_executes_multiprocess_programs/</loc>
-    <lastmod>2022-07-16T16:07:20+09:00</lastmod>
+    <loc>https://nryotaro.dev/posts/on_spectral_clustering_analysis_and_an_algorithm/</loc>
+    <lastmod>2022-07-23T14:06:59+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/</loc>
+    <lastmod>2022-07-23T14:06:59+09:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/posts/how_to_make_a_multiprocessor_computer_that_correctly_executes_multiprocess_programs/</loc>
     <lastmod>2022-07-16T16:07:20+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/a_min-max_cut_algorithm_for_graph_partitioning_and_data_clustering/</loc>
