@@ -24,7 +24,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>On Spectral Clustering: Analysis and an algorithm</title>
+    <title>The Transaction Concept: Virtues and Limitations(1981)</title>
 </head>
 
 <body>
@@ -44,30 +44,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
     
 <main>
-    <h1>On Spectral Clustering: Analysis and an algorithm</h1>
-    <span class="date">July 23, 2022</span>
+    <h1>The Transaction Concept: Virtues and Limitations(1981)</h1>
+    <span class="date">July 30, 2022</span>
     <div>
-        <p>スペクトラルクラスタリングは、類似度を辺の重みとするグラフをデータから構築し、重みをもとにカットする辺を決めて、データをクラスタに分ける。
-グラフラプラシアンのようなグラフを表現した行列をつくり、その固有ベクトルを求め、固有ベクトルを列ベクトルとして並べた行列にK-meansを適用する。
-もとのデータに二重丸のような凸集合でないクラスタがあるときに、最初からK-meansを適用するよりも良い結果を期待できる。
-また、データ分布に確率モデルにあてはめ、どのクラスタにデータを割りあてるか確率的に決めるクラスタリングと違い、データの分布を仮定しなくてよい。</p>
-<p>\(\mathbb{R}^l\)上の\(S=\{s_1,\dots ,s_n\}\)を\(k\)個のクラスタに分ける。
-データの類似度を表すアフィニティ行列\(A\in\mathbb{R}^{n\times n}\)を、
-$$
-A_{ij}=
-\begin{cases}
-\exp(-\mid\mid s_i - s_j\mid\mid^2 / 2\sigma^2) &amp; i\neq j\\
-0 &amp; i = j\\
-\end{cases}
-$$
-とする。</p>
-<p>\(A\)の\(i\)番目の行の合計を\((i,i)\)番目の値とする対角行列\(D\)をもって
-$$
-L=D^{-1/2}AD^{-1/2}
-$$
-である\(L\)の固有値の大きい順に\(k\)個の直交する固有ベクトル\(x_1,x_2,\dots , x_k\)を求め、\([x_1,x_2,\dots x_k]\in\mathbb{R}^{n\times k}\)をつくる。
-\(X\)を\(Y_{ij}=X_{ij}/(\sum_j X^2_{ij})^{\frac{1}{2}}\)で正規化した\(Y\)にK-meansを適用し、\(Y\)の\(i\)番目の行が所属するクラスタに\(s_i\)を割り当てる。</p>
-<p>論文への<a href="https://proceedings.neurips.cc/paper/2001/file/801272ee79cfde7fa5960571fee36b9b-Paper.pdf">リンク</a></p>
+        <p>トランザクションのコミット、ロールバックを実装する方針を2つあげ、その概要が書かれている。
+1つは、オブジェクトの値とその値の有効期間を記録し、値の履歴を管理する。
+もうひとつは、ログとロックを利用した実装で、操作時にUNDOログとREDOログを出力する。
+ロールバック時には、ログをもとにコミット開始前の状態にシステムを復元する。
+UNDOやREDOを再実行可能でなければならず、そのためにオブジェクトにしばしばバージョンをつけることがある。
+そのため、2つの実装方針は異なるように見えるが、内部の実装は似かよったものになる。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>論文への<a href="https://jimgray.azurewebsites.net/papers/theTransactionConcept.pdf">リンク</a></p>
     </div>
 </main>
 
@@ -75,13 +63,9 @@ $$
 <ul class="pagination">
     
     <li>
-        <a href="/posts/how_to_make_a_multiprocessor_computer_that_correctly_executes_multiprocess_programs/"><span class="material-icons">chevron_left</span></a>
+        <a href="/posts/on_spectral_clustering_analysis_and_an_algorithm/"><span class="material-icons">chevron_left</span></a>
     </li>
     
-    
-    <li>
-        <a href="/posts/the_transaction_concept/"><span class="material-icons">chevron_right</span></a>
-    </li>
     
 </ul>
 

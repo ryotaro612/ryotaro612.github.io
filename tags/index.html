@@ -47,6 +47,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/the_transaction_concept/">The Transaction Concept: Virtues and Limitations(1981)</a></h3>
+        <div class="summary"><p>トランザクションのコミット、ロールバックを実装する方針を2つあげ、その概要が書かれている。
+1つは、オブジェクトの値とその値の有効期間を記録し、値の履歴を管理する。
+もうひとつは、ログとロックを利用した実装で、操作時にUNDOログとREDOログを出力する。
+ロールバック時には、ログをもとにコミット開始前の状態にシステムを復元する。
+UNDOやREDOを再実行可能でなければならず、そのためにオブジェクトにしばしばバージョンをつけることがある。
+そのため、2つの実装方針は異なるように見えるが、内部の実装は似かよったものになる。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted --></div>
+        <div class="article-footer">
+            <span class="date">July 30, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/on_spectral_clustering_analysis_and_an_algorithm/">On Spectral Clustering: Analysis and an algorithm</a></h3>
         <div class="summary"><p>スペクトラルクラスタリングは、類似度を辺の重みとするグラフをデータから構築し、重みをもとにカットする辺を決めて、データをクラスタに分ける。
 グラフラプラシアンのようなグラフを表現した行列をつくり、その固有ベクトルを求め、固有ベクトルを列ベクトルとして並べた行列にK-meansを適用する。
@@ -148,20 +163,6 @@ Ridge回帰は、回帰係数を全体的に小さくすることで正則化項
 NIPALSでは、潜在変数が、デフレーションされた説明変数の線形結合になる。
 多方、SIMPLSの潜在変数は、中心化された説明変数の線形結合で表現できる。
 そのため、NIPALSよりもSIMPLSの潜在変数の方が説明変数との関係を解釈しやすい。</p></div>
-        <div class="article-footer">
-            <span class="date">May 28, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/experience_report_the_wycash_portfolio_management_system/">Experience Report The WyCach Portfolio Management System(1992)</a></h3>
-        <div class="summary"><p>Ward Cunninghamが証券ポートフォリオ管理システムWyCASH+を開発したときの事例報告で、92年のオブジェクト指向の国際会議OOPSLAで発表された。
-この発表が技術的負債の典拠であるが、文中には技術的(technical)はなく単に負債(debt)と書かれている。
-アジャイルソフトウェア開発宣言が発表された2001年以前に、ウォーターフォールよりもインクリメンタルな開発のほうが最短で適当な品質のソフトウェアを構築できると主張した。
-しかし、インクリメンタルな開発では全ての知識が十分に揃っていない段階でコーディングするためシステムの部分的な修正を重ねる必要がある。
-そして、オブジェクト指向言語のメッセージパッシングによって漸進的な修正が可能になるというのが発表の骨子である。
-負債で会社の成長を早められるように、コードをリリースすることで後に修正する必要があるかもしれないが、よい設計を早く知ることができるため、Cunninghamは最初にリリースするコードを負債と形容した。
-負債と対比されているのはプログラミングの前にプログラムを熟考することあり、こちらが前払い、全額払いと表現されている。</p></div>
         <div class="article-footer">
             <span class="date">May 28, 2022</span>
         </div>
