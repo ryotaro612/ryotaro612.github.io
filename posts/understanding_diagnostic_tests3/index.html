@@ -24,7 +24,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>The Transaction Concept: Virtues and Limitations(1981)</title>
+    <title>Understanding diagnostic tests3: receiver operating characteristic curves(2007)</title>
 </head>
 
 <body>
@@ -44,18 +44,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
     
 <main>
-    <h1>The Transaction Concept: Virtues and Limitations(1981)</h1>
-    <span class="date">July 30, 2022</span>
+    <h1>Understanding diagnostic tests3: receiver operating characteristic curves(2007)</h1>
+    <span class="date">August 6, 2022</span>
     <div>
-        <p>トランザクションのコミット、ロールバックを実装する方針を2つあげ、その概要が書かれている。
-1つは、オブジェクトの値とその値の有効期間を記録し、値の履歴を管理する。
-もうひとつは、ログとロックを利用した実装で、操作時にUNDOログとREDOログを出力する。
-ロールバック時には、ログをもとにコミット開始前の状態にシステムを復元する。
-UNDOやREDOを再実行可能でなければならず、そのためにオブジェクトにしばしばバージョンをつけることがある。
-そのため、2つの実装方針は異なるように見えるが、内部の実装は似かよったものになる。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>論文への<a href="https://jimgray.azurewebsites.net/papers/theTransactionConcept.pdf">リンク</a></p>
+        <p>医学では陰性と陽性を区別する分割点をカットオフポイントと呼ぶ。
+ROC曲線は、縦軸を感度(sensitivity)TP/(FN+TP), 横軸を1-特異度(specificity)1 - TN/(TN+FP)とするグラフで、この2値はトレードオフの関係にある。
+トレードオフのもとでカットオフポイントの決める方法を先行研究から2つ紹介している。</p>
+<p>ひとつは、座標(0, 1)から最も近い点を選ぶ方法で、\((1-\text{sensitivity})^2 + (1-\text{specificity})^2\)の値が最小の点をもとめる。
+もう一つは、\(\{\text{sensitivity} + \text{specificity} - 1\}\)が最大である点Youden indexをカットオフポイントとする方法である。</p>
+<p>論文への<a href="https://pubmed.ncbi.nlm.nih.gov/17376185/">リンク</a></p>
     </div>
 </main>
 
@@ -63,13 +60,9 @@ UNDOやREDOを再実行可能でなければならず、そのためにオブジ
 <ul class="pagination">
     
     <li>
-        <a href="/posts/on_spectral_clustering_analysis_and_an_algorithm/"><span class="material-icons">chevron_left</span></a>
+        <a href="/posts/the_transaction_concept/"><span class="material-icons">chevron_left</span></a>
     </li>
     
-    
-    <li>
-        <a href="/posts/understanding_diagnostic_tests3/"><span class="material-icons">chevron_right</span></a>
-    </li>
     
 </ul>
 

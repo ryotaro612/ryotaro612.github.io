@@ -6,7 +6,18 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 30 Jul 2022 16:29:35 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Aug 2022 02:20:21 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding diagnostic tests3: receiver operating characteristic curves(2007)</title>
+      <link>https://nryotaro.dev/posts/understanding_diagnostic_tests3/</link>
+      <pubDate>Sat, 06 Aug 2022 02:20:21 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/understanding_diagnostic_tests3/</guid>
+      <description>&lt;p&gt;医学では陰性と陽性を区別する分割点をカットオフポイントと呼ぶ。
+ROC曲線は、縦軸を感度(sensitivity)TP/(FN+TP), 横軸を1-特異度(specificity)1 - TN/(TN+FP)とするグラフで、この2値はトレードオフの関係にある。
+トレードオフのもとでカットオフポイントの決める方法を先行研究から2つ紹介している。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>The Transaction Concept: Virtues and Limitations(1981)</title>
       <link>https://nryotaro.dev/posts/the_transaction_concept/</link>
@@ -183,10 +194,10 @@ PLS（部分的最小二乗法）は、入力変数の線形結合で表わせ�
       <pubDate>Fri, 29 Apr 2022 19:10:03 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/a_family_of_experiments_on_test_driven_development/</guid>
-      <description>&lt;p&gt;コードの品質への影響を調査するTDDの先行研究は複数あるが、研究手法、被検者、プログラミング環境などの実験条件は様々、結論は違い、明確なこたえはない。
-表題の論文は、個別のTDDの実験結果の精度と汎化性を上げることにあり、そのために、結果に影響すると考えられる実験条件をかえ、TDDとITL(iterative test-last development)を比較する12の実験を実施した。
-被検者は4大学と企業12社、5つのトイタスクを解き、通ったテストオラクルの割合で実装の品質を評価した。
-結果、TDDをはじめたばかりの被検者はITLによる実装のほうが品質が高かった。
+      <description>&lt;p&gt;TDDがコードに及ぼす影響を調べた先行研究はあるが、研究手法、被検者、プログラミング環境などの実験条件は様々、結論は違い、明確な結論はない。
+表題の論文は、個別のTDDの実験結果の精度と汎化性を上げるために、実験結果に影響するとみられる実験条件をかえ、TDDとITL(iterative test-last development)を比較する12の実験を実施した。
+被検者は4大学と企業12社で、5つのトイタスクを解かせ、通ったテストオラクルの割合で実装の品質を評価した。
+結果、TDD初心者の被検者はITLによる実装のほうが品質が高かった。
 エディタや言語、ITLとTDDの実験の被験順序、TDDとITLをどちらを先に学んだかは品質に影響しなかった。
 学生よりも企業に所属するプロフェッショナルのほうがTDD、ITL両方で品質がよかったが、TDDで実装したときの品質の下がり幅は学生の下がり幅の2倍に及んだ。&lt;/p&gt;</description>
     </item>
