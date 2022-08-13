@@ -6,7 +6,19 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 06 Aug 2022 02:20:21 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Aug 2022 15:03:06 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Normalized Cuts and Image Segmentation (2000)</title>
+      <link>https://nryotaro.dev/posts/normalized_cuts_and_image_segmentation/</link>
+      <pubDate>Sat, 06 Aug 2022 15:03:06 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/normalized_cuts_and_image_segmentation/</guid>
+      <description>&lt;p&gt;単純無向グラフのクラスタリングを応用して画像をセグメントに分割する。
+カットの評価基準としてnormalized cutとその近似解を求め方を提案した。
+Normalized cutが最小値のとき、異なるサブグラフにあるノード間の類似度は最小に、同じサブグラフにあるノードの類似度は最大になる。
+Normalized cutをレイリー商に変形し、固有値問題をとくことで、Normalized cutの最小値の近似解を求める。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Understanding diagnostic tests3: receiver operating characteristic curves(2007)</title>
       <link>https://nryotaro.dev/posts/understanding_diagnostic_tests3/</link>
