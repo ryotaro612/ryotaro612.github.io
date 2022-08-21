@@ -47,9 +47,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1>PLS-regression: a basic tool of chemometrics</h1>
     <span class="date">May 21, 2022</span>
     <div>
-        <p>重回帰分析は、説明変数の行列がフルランクでないとき、多重共線性により、出力が不安定になる。
+        <p>重回帰分析は、説明変数の行列がフルランクでないとき、多重共線性により出力が不安定になる。
 そのため、説明変数の数を減らし、説明変数間に相関関係がないようにする必要がある。
-PLS（部分的最小二乗法）は、入力変数の線形結合で表わせる潜在変数を求め、潜在変数の線形結合で目的変数を表現する。
+PLS（部分的最小二乗法）は、入力変数の線形結合で表わせる潜在変数を求め、潜在変数の線形結合で目的変数を表す。
 説明変数の数より少ない数の潜在変数を求めることで、説明変数間の相関関係をとりのぞく。</p>
 <p>説明変数を\(\boldsymbol{\rm x}_k(k=1, \dots K)\), 目的変数を\(\boldsymbol{\rm y}_m(
 =1,2, \dots M)\)として、求める潜在変数を\(\boldsymbol{\rm t}_a (a=1,2, \dots , A)\)とおく。
@@ -59,7 +59,7 @@ PLS（部分的最小二乗法）は、入力変数の線形結合で表わせ�
 $$
 t_{ia} = \sum_kW^*_{ka}X_{ik}; (\boldsymbol{\rm T}=\boldsymbol{\rm XW}^*)
 $$
-と表せる。逆に、潜在変数の線形結合で説明変数を近似するであれば、\(e_{ik}\)を残差すると
+と表せる。逆に、潜在変数の線形結合で説明変数を近似するのであれば、\(e_{ik}\)を残差すると
 $$
 X_{ik}=\sum_at_{ia}p_{ak} + e_{ik}; (\boldsymbol{\rm X}=\boldsymbol{\rm TP}^\top+\boldsymbol{\rm E})
 $$

@@ -6,7 +6,22 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 06 Aug 2022 15:03:06 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Aug 2022 23:47:30 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pregel: A System for Large-Scale Graph Processing(2010)</title>
+      <link>https://nryotaro.dev/posts/pregel_a_system_for_large_scale_graph_processing/</link>
+      <pubDate>Fri, 19 Aug 2022 23:47:30 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/pregel_a_system_for_large_scale_graph_processing/</guid>
+      <description>&lt;p&gt;Googleで開発されたPregelは、ソーシャルグラフやハイパーリンクのグラフなどの巨大なグラフデータの処理に適した計算モデルである。
+計算モデル自体も、処理対象のデータとおなじく、ワーカーが別のワーカーとのメッセージの送受信を繰り返すグラフ構造をなす。
+このモデルのオリジナルは、以前&lt;a href=&#34;https://nryotaro.dev/posts/a_bridging_model_for_parallel_computation/&#34;&gt;紹介&lt;/a&gt;したValiantの&lt;a href=&#34;https://dl.acm.org/doi/pdf/10.1145/79173.79181&#34;&gt;Bulk Synchronous Parallel model&lt;/a&gt;(BPS)である。
+BPSは時間を一定間隔に区切り、次の間隔が始まる時点で、それまでのメッセージの送受信が全て成功していることを保証する。
+間隔の中で、コンポーネントは別のコンポーネントにメッセージを送信する。
+間隔を過ぎたとき、失敗した処理や未送信のあるコンポーネントがあれば、成功するまで計算を再実行させる。
+Pregelでは、この間隔をsuperstepとよび、グラフ上の点であるワーカーがコンポーネントにあたる。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Normalized Cuts and Image Segmentation (2000)</title>
       <link>https://nryotaro.dev/posts/normalized_cuts_and_image_segmentation/</link>
@@ -183,9 +198,9 @@ NIPALSでは、潜在変数が、デフレーションされた説明変数の�
       <pubDate>Sat, 21 May 2022 12:21:05 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/pls_regression_a_basic_tool_of_chemometrics/</guid>
-      <description>&lt;p&gt;重回帰分析は、説明変数の行列がフルランクでないとき、多重共線性により、出力が不安定になる。
+      <description>&lt;p&gt;重回帰分析は、説明変数の行列がフルランクでないとき、多重共線性により出力が不安定になる。
 そのため、説明変数の数を減らし、説明変数間に相関関係がないようにする必要がある。
-PLS（部分的最小二乗法）は、入力変数の線形結合で表わせる潜在変数を求め、潜在変数の線形結合で目的変数を表現する。
+PLS（部分的最小二乗法）は、入力変数の線形結合で表わせる潜在変数を求め、潜在変数の線形結合で目的変数を表す。
 説明変数の数より少ない数の潜在変数を求めることで、説明変数間の相関関係をとりのぞく。&lt;/p&gt;</description>
     </item>
     

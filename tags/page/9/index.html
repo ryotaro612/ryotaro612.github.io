@@ -47,6 +47,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/hyperdex/">論文メモ HyperDex: A Distribute, searchable Key-Value Store</a></h3>
+        <div class="summary"><p><a href="https://dbdb.io/db/hyperdex">HyperDex</a>はキー以外の要素で値を検索できるキーバリューストアで、このキー以外の要素による検索速度がCassandraやMongoDBと比べて12-13倍速い。
+キーバリューストアは、RDBMSとくらべて、処理速度は速く、検索条件の機能に乏しい。
+HyperDexは、要素数と同数の次元からなるユークリッド空間を構成し、要素のハッシュ値で決まる座標に値をおくことで、キー以外でも高速に検索することを可能にする。
+もとのドメインの順序関係を保持するハッシュ関数を使うため、範囲検索もあつかえる。</p></div>
+        <div class="article-footer">
+            <span class="date">May 7, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/integrating_the_ub_tree_into_a_database_system_kernel/">論文メモ Integrating the UB-Tree into a Database System Kernel</a></h3>
         <div class="summary"><p>商用DBMS TransBaseのインデックスをB木から<a href="https://link.springer.com/chapter/10.1007/3-540-63343-X_48">UB木</a>に変え、 多次元アクセス（複数の列の範囲を指定するクエリ）を高速化した。
 一見、商用DBMSのインデックスの拡張は複雑かつ高コストのように思える。
@@ -140,17 +151,6 @@ B+木は、全てのキーを葉におき、葉を隣接リストでつなぐこ
 RRCTは、特徴の値でデータを2分するノードからなる木の集合であり、データを追加したときに木の集合であるモデルを大きく複雑するものを異常と判定する。</p></div>
         <div class="article-footer">
             <span class="date">March 12, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/organization_and_maintenance_of_large_orderred_indexes/">論文メモ Organization and Maintenance of Large Ordered indexes</a></h3>
-        <div class="summary"><p>1972年に発表されたB木のオリジナルの論文。
-\(I\)をインデックスの大きさ、\(k\)をハードウェア依存の値とすると、検索、挿入、削除の時間計算量は\(\log_kI\)になる。
-ここでのインデックスは、固定長の\((x, \alpha)\)を要素とする連想配列で、最大\(2k\)個のキーを格納できる連続したページ上にある。
-\(\alpha\)には、データを保存した1つ以上のレコードへのポインタが格納される。</p></div>
-        <div class="article-footer">
-            <span class="date">February 27, 2021</span>
         </div>
     </article>
     

@@ -3,12 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2022-08-06T15:03:06+09:00</lastmod>
-  </url><url>
-    <loc>https://nryotaro.dev/posts/normalized_cuts_and_image_segmentation/</loc>
-    <lastmod>2022-08-06T15:03:06+09:00</lastmod>
+    <lastmod>2022-08-19T23:47:30+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/</loc>
+    <lastmod>2022-08-19T23:47:30+09:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/posts/pregel_a_system_for_large_scale_graph_processing/</loc>
+    <lastmod>2022-08-19T23:47:30+09:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/posts/normalized_cuts_and_image_segmentation/</loc>
     <lastmod>2022-08-06T15:03:06+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/understanding_diagnostic_tests3/</loc>

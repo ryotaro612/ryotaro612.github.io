@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>Pregel: A System for Large-Scale Graph Processing(2010)</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>Pregel: A System for Large-Scale Graph Processing(2010)</h1>
+    <span class="date">August 19, 2022</span>
+    <div>
+        <p>Googleで開発されたPregelは、ソーシャルグラフやハイパーリンクのグラフなどの巨大なグラフデータの処理に適した計算モデルである。
+計算モデル自体も、処理対象のデータとおなじく、ワーカーが別のワーカーとのメッセージの送受信を繰り返すグラフ構造をなす。
+このモデルのオリジナルは、以前<a href="/posts/a_bridging_model_for_parallel_computation/">紹介</a>したValiantの<a href="https://dl.acm.org/doi/pdf/10.1145/79173.79181">Bulk Synchronous Parallel model</a>(BPS)である。
+BPSは時間を一定間隔に区切り、次の間隔が始まる時点で、それまでのメッセージの送受信が全て成功していることを保証する。
+間隔の中で、コンポーネントは別のコンポーネントにメッセージを送信する。
+間隔を過ぎたとき、失敗した処理や未送信のあるコンポーネントがあれば、成功するまで計算を再実行させる。
+Pregelでは、この間隔をsuperstepとよび、グラフ上の点であるワーカーがコンポーネントにあたる。</p>
+<p>グラフの頂点は、開発者が定義した処理とその送信先がふくまれる。
+頂点は、active, inactiveの2値状態をもつ。
+superstep 0では全ての頂点はactiveであり、inactiveはメッセージを受信しない限り以降のsuperstepでやるべき処理をもたないことを示す。
+inactiveのノードがメッセージを受信すると、activeな状態に戻る。
+すべての頂点がinactiveになるとプログラムは終了する。</p>
+<p>実行前にプログラムは、クラスターのマシンに配布され、そのうちの一つはマスタとして機能する。
+マスターは、プログラム上のグラフに分割し、パーティションをマシンに配布する。
+以降、マスターは、プログラムの入力のグラフを受理すると、それをマシンに配布、すべての頂点をactiveにし、計算を始める。
+マスターは定期的にワーカーにpingを送り、ワーカーが停止していないか確認する。
+ワーカーから応答がなければ、マスターはワーカーの処理は失敗したとみなす。
+また、逆に、ワーカーは、一定時間内にpingを受信しなければ、実行中の処理を中止する。</p>
+<h2 id="雑記">雑記</h2>
+<p>マスターが失敗した場合の説明はなさそう。</p>
+<p>グラフデータを処理する場合、MapReduceと比べて、グラフの状態をプログラムのステップからステップへ引き渡し続ける手間がかからないとある。
+しかし、Pregelのコードと同じ処理をする他の計算モデルのコードの比較がなく、Pregelのコードがどれほど書きやすいかは論文だけからは比べ難い。</p>
+<p>ワーカー同士で共有メモリをもたず、メッセージの交換で処理をすすめる点で、アクターと似ている。
+大きな違いはsuperstepの有無で、superstepがあることで、ある時点までの処理がすべて正常終了していると仮定できることで、開発者はどれくらいプログラムを書きやすくなるだろうか。また、superstepでの同期によるオーバーヘッドはどうなのか。</p>
+<p>論文への<a href="https://kowshik.github.io/JPregel/pregel_paper.pdf">リンク</a></p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/normalized_cuts_and_image_segmentation/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
