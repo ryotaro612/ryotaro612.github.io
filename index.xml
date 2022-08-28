@@ -6,7 +6,20 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 19 Aug 2022 23:47:30 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Aug 2022 19:30:19 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抄訳 Kafka: a Distributed Messaging System for Log Processing (2011)</title>
+      <link>https://nryotaro.dev/posts/kafka_a_distributed_messaging_system_for_log_processing/</link>
+      <pubDate>Mon, 22 Aug 2022 19:30:19 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/kafka_a_distributed_messaging_system_for_log_processing/</guid>
+      <description>&lt;p&gt;Kafkaは、LinkedInで開発された分散メッセージングサービスである。
+配信モデルはpullベースであり、メッセージを取得するスループットをconsumerが制御できる。
+Consumerは、関心のあるメッセージのストリームであるトピックを作る。
+Producerは、トピックつきのメッセージをborkerに送り、brokerがメッセージを保持する。
+Consumerは、Brokerのトピックからメッセージを取得する。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Pregel: A System for Large-Scale Graph Processing(2010)</title>
       <link>https://nryotaro.dev/posts/pregel_a_system_for_large_scale_graph_processing/</link>

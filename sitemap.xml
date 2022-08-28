@@ -3,10 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2022-08-19T23:47:30+09:00</lastmod>
+    <lastmod>2022-08-22T19:30:19+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2022-08-19T23:47:30+09:00</lastmod>
+    <lastmod>2022-08-22T19:30:19+09:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/posts/kafka_a_distributed_messaging_system_for_log_processing/</loc>
+    <lastmod>2022-08-22T19:30:19+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/pregel_a_system_for_large_scale_graph_processing/</loc>
     <lastmod>2022-08-19T23:47:30+09:00</lastmod>

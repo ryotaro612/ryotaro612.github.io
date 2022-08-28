@@ -47,6 +47,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/consensus_in_the_presence_of_partial_synchrony/">Consensus in the Presence of Patial Synchrony (1988)</a></h3>
+        <div class="summary"><p>同期的なシステムには、プロセッサ間のメッセージの到達時間や時刻の誤差に有界がある。
+非同期的なシステムには、どちらにも特定の有界はない。
+表題のpartial synchronousは、同期、非同期の中間的な環境である。
+到達時間や時刻の誤差の有界について、存在するが値が分からない環境と、値が分かっているがどの時刻から値が保証されるか分からない環境を意味する。</p></div>
+        <div class="article-footer">
+            <span class="date">June 18, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/regression_shrinkage_and_selection_via_the_lasso/">Regression Shrinkage and Selection via the Lasso</a></h3>
         <div class="summary"><p>Lasso(least absolute shrinkage and selection operator)を提案した論文で、特定の回帰係数を0にする正則化項により、モデルを解釈しやすくする。
 Subset selectionはデータの変化に敏感で、学習結果が安定しない。
@@ -151,17 +162,6 @@ Stochastic Gradient Boostingは、弱識別器の学習に非復元抽出した�
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/lightgbm/">LightGBM: A Highly Efficient Gradient Boosting Decision Tree</a></h3>
-        <div class="summary"><p>LightGBMは、GBDTを高速化したアルゴリズムであり、XGBoostよりも必要な計算時間と消費メモリが少ない。
-GBDTの処理時間のボトルネックは決定木の分岐を決めるところである。
-その前処理で特徴の値をソートする場合は、ソートがボトルネックになる。
-勾配の小さいサンプルを除外することでデータを減らし、また、同時に0でない値にならない排他的な特徴をマージすることで特徴の種類を減らし、ソートを高速化した。</p></div>
-        <div class="article-footer">
-            <span class="date">April 16, 2022</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -180,7 +180,7 @@ GBDTの処理時間のボトルネックは決定木の分岐を決めるとこ�
         <a href="/tags/page/3/"><span class="material-icons">chevron_right</span></a>
     </li>
     <li>
-        <a href="/tags/page/23/"><span class="material-icons">last_page</span></a>
+        <a href="/tags/page/24/"><span class="material-icons">last_page</span></a>
     </li>
     
 </ul>

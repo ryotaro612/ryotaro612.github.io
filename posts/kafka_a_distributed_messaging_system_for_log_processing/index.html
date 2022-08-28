@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>抄訳 Kafka: a Distributed Messaging System for Log Processing (2011)</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>抄訳 Kafka: a Distributed Messaging System for Log Processing (2011)</h1>
+    <span class="date">August 22, 2022</span>
+    <div>
+        <p>Kafkaは、LinkedInで開発された分散メッセージングサービスである。
+配信モデルはpullベースであり、メッセージを取得するスループットをconsumerが制御できる。
+Consumerは、関心のあるメッセージのストリームであるトピックを作る。
+Producerは、トピックつきのメッセージをborkerに送り、brokerがメッセージを保持する。
+Consumerは、Brokerのトピックからメッセージを取得する。</p>
+<p>Consumerをconsumer groupという単位でグループ化できる。
+1つのグループは複数のトピックを購読でき、グループ内の1つのconsumerが別々のメッセージを受信できる。
+これにより、重複を避けながら複数のConsumerで同じトピックを購読できる。</p>
+<p>配信のat-least-onceは保証されているが、exactly onceではない。
+正常状態では、メッセージはちょうど一回だけconsumer groupに配信される。
+一方、あるconsumerが正常に停止しなかった場合、フェールオーバーしたconsumerが、停止したconsumerで未処理だったメッセージを受信しうる。</p>
+<!-- raw HTML omitted -->
+<p>Brokerは、負荷分散のために、トピックを複数のパーティションに分け、1つ以上のパーティションをもつ。
+Producerはpartitionに対してメッセージを送る。
+あるパーティションからあるconsumerへのメッセージの順序は、パーティションに到着したメッセージの順序と等しいことが保証される。
+パーティンションは、1つの論理的なログに相当し、複数のセグメントファイルに分割されて保存される。
+Brokerはメッセージをバッファに貯め、一定時間すぎたときか、バッファが満杯になるときに、セグメントファイルにメッセージを書き込む。
+メッセージはセグメントファイルに書き込まれるまで、consumerには公開されない。</p>
+<p>メッセージの消費状況を、brokerではなく、consumerが管理をするところが特徴的である。
+メッセージには一意に特定するIDはないため、consumerは、ログ上の相対位置でメッセージを指定し、brokerにリクエストを送る。
+メッセージを受信したら、次のメッセージの相対位置を計算し、次のリクエストを送る。
+したがって、consumerは、相対位置を調整すれば、以前のメッセージを再取得することができる。
+そのままでは、メッセージがbrokerに貯まり続けるので、brokerはproducerから受信して一定期間過ぎたメッセージを破棄する。</p>
+<p>Kafkaのキャッシュはファイルシステムのページキャッシュにまかせ、アプリケーションレイヤーではキャッシュをもたない。
+これにより、brokerが再起動した場合も継続してキャッシュを利用でき、また、メモリの節約できるためガベージコレクションも短くなる。
+また、brokerは、sendfileシステムコールを使い、セグメントファイルからネットワークソケットに直接メッセージを書き込み、readやwriteのオーバーヘッドを減らしている。</p>
+<p>Kafkaはbrokerやconsumerの追加や削除、consumerが次に取得するべきメッセージの相対位置をZookeeperで管理する。
+現在、Zookeeperを使わずKafka自体で管理するための<a href="https://www.confluent.io/ja-jp/blog/removing-zookeeper-dependency-in-kafka/">開発</a>が進められている。</p>
+<h2 id="雑記">雑記</h2>
+<p>セグメントファイルに書き込まれる前にbrokerが停止したらProducerが送信したメッセージは消失しそう。
+実験ではRabbitMQと性能を比較しているが、sendfileやページキャッシュによる個別の工夫が処理性能にどれだけ貢献しているかは、実験から分からない。</p>
+<p>論文への<a href="http://notes.stephenholiday.com/Kafka.pdf">リンク</a></p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/pregel_a_system_for_large_scale_graph_processing/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
