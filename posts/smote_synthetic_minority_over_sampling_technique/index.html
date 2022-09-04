@@ -17,12 +17,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/base.css">
     
-    <link rel="stylesheet" href="/css/articles.css">
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>Tags</title>
+    <title>抄訳 SMOTE: Synthetic Minority Over-sampling Technique</title>
 </head>
 
 <body>
@@ -42,43 +44,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
     
 <main>
-    <h1>Posts</h1>
-
-    
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/applying_crf_to_japanese_morph_analysis/">要約 Applying Conditional Random Fields to Japanese Morphological Analysis</a></h3>
-        <div class="summary"><p>Mecabの中の人の<a href="http://chasen.naist.jp/chaki/t/2009-09-30/doc/mecab-cabocha-nlp-seminar-2009.pdf">資料</a>で紹介でされている、Mecabのアルゴリズムを提案・評価した論文。</p></div>
-        <div class="article-footer">
-            <span class="date">July 17, 2018</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/text_cls_from_lbl_and_unlbl_doc_em/">概要 Text Classification from Labeled and Unlabeled Documents using EM</a></h3>
-        <div class="summary"><h3 id="アルゴリズム">アルゴリズム</h3>
-<p>提案手法は、Naive BayesとEMアルゴリズムを組み合わせたもの。
-ラベル付きデータが\(D^l\)でラベルなしデータが\(D^u\)で表されるとき、対数尤度\(\log P(D^l)P(D^u)\)を最大化する問題を解く。</p></div>
-        <div class="article-footer">
-            <span class="date">July 8, 2018</span>
-        </div>
-    </article>
-    
+    <h1>抄訳 SMOTE: Synthetic Minority Over-sampling Technique</h1>
+    <span class="date">August 31, 2022</span>
+    <div>
+        <p>SMOTEはオーバーサンプリングで不均衡データの予測性能の向上をはかる。
+少数クラスのサンプルからk近傍にあるサンプルのうち1つをランダムに選ぶ。
+もとのサンプルと選ばれたサンプルの各特徴の差に[0,1]区間のランダムな値を掛け、その値をもとのサンプルに足して、少数クラスのサンプルを合成する。</p>
+<p>SOMTEは、少数クラスの\(T\)個のサンプルのほかに、近傍の大きさ\(k\), 1つのサンプルから合成するサンプルの割合\(N\)を受けつける。このとき、SOMTEは\(N/100 \times T\)個のサンプルを生成する。
+\(N\)が\(T\)より小さければ、
+$$
+\begin{align}
+T &amp;= (N/100) \times T\\
+N &amp;= 100
+\end{align}
+$$
+としてランダムに選んだ\(N/100\times T\)個のサンプルのみを合成につかう。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="雑記">雑記</h2>
+<p>少数クラスに分類されやすくなる手法なので、少数クラスについて偽陽性が高ければ控えたほうがよさそう。
+実験の評価には、ROCが使われている。不均衡データの場合、ROCは評価が甘くなりやすく、PR-AUCとROC-AUCではAUCを最大化できるポイントが<a href="https://www.biostat.wisc.edu/~page/rocpr.pdf">違う</a>ので、どうしてROCで評価したのか気になる。</p>
+<p>論文への<a href="https://arxiv.org/pdf/1106.1813.pdf">リンク</a></p>
+    </div>
 </main>
 
     
-
 <ul class="pagination">
     
     <li>
-        <a href="/tags/"><span class="material-icons">first_page</span></a>
-    </li>
-    <li>
-        <a href="/tags/page/23/"><span class="material-icons">chevron_left</span></a>
+        <a href="/posts/kafka_a_distributed_messaging_system_for_log_processing/"><span class="material-icons">chevron_left</span></a>
     </li>
     
     
 </ul>
+
 
     <footer>
         <ul>
