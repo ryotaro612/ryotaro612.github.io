@@ -48,6 +48,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/ariesim/">論文メモ ARIES/IM: An Efficient and High Concurrency Index Management Method Using Write-Ahead Logging</a></h3>
+        <div class="summary"><p>ARIES/IMは、B+木への直列化可能性のある並行処理とログ先行書き込み(Write-Ahead Logging, WAL)による復元を実現する。
+ARIES/IMのベースには、先行研究の<a href="https://web.stanford.edu/class/cs345d-01/rl/aries.pdf">ARIES</a>がある。
+復元手順はARIESとほとんど変わらない。
+キーの参照先にあるデータのレコードとキーを同じロックで保護したり、ロックの代わりにラッチを使ったりすることで、ロックの頻度を下げ、B+木の高速化を実現する。</p></div>
+        <div class="article-footer">
+            <span class="date">March 21, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/the_ubiquitous_b_tree/">論文メモ The Ubiquitous B-Tree</a></h3>
         <div class="summary"><p>B木とその派生データ構造のサーベイ論文で、とくにB+木に重点がおかれている。
 B+木は、全てのキーを葉におき、葉を隣接リストでつなぐことで、B木が不得手なシーケンシャルなアクセスを改善する。
@@ -139,16 +150,6 @@ Dapperをもとに、TwitterはZipkinを、UberはJaegerを<a href="https://www.
 Dapper以前に開発された<a href="https://www.usenix.org/legacy/publications/library/proceedings/hotos03/tech/full_papers/barham/barham_html/paper.html">Magpie</a>や<a href="https://www.usenix.org/conference/nsdi-07/x-trace-pervasive-network-tracing-framework">X-Trace</a>との違いは、サンプリングされたリクエストのみをトレースし負荷を下げるられたり、少数の共通ライブラリだけを測定対象したりする点にある。</p></div>
         <div class="article-footer">
             <span class="date">January 23, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/convolutional_2d_knowledge_graph_embeddings/">論文メモ Convolutional 2D Knowledge Graph Embeddings</a></h3>
-        <div class="summary"><p>ナレッジグラフの未知のリンクを予測するモデルは、一般に大きなグラフをあつかえるようにネットワークを浅くし、処理性能の高速化をはかる。一方、代償として層の深いモデルと比べて表現力を欠く。
-提唱されるネットワークConvEは、畳み込み層をつかった深めのネットワークで予測性能の向上をはかる。
-層が深くなると計算コストの増加や過学習が課題になるが、先行研究の<a href="https://arxiv.org/abs/1412.6575">DistMult</a>や<a href="https://arxiv.org/abs/1703.06103">R-GCN</a>と比べたConvEのパラメタ数は1/8や1/17であり、パラメタ効率がよい。</p></div>
-        <div class="article-footer">
-            <span class="date">January 11, 2021</span>
         </div>
     </article>
     

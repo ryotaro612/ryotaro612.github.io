@@ -47,6 +47,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/implementing_fault-tolerant_services_using_the_state_machine_approach_a_tutorial/">Implementing Fault-Tolerant Services Using the State Machine Approach: A Tutorial</a></h3>
+        <div class="summary"><p>サーバのレプリケーションによってフォールトトレランスを高めることができるが、レプリケーション間の合意形成のプロトコルが必要になる。
+そこで、ステートマシンをモデルにプロトコルを定義する手法を、Fail Stopとビザンチン将軍問題で例示する。
+ステートマシンは、状態変数を決定的に変更するコマンドからなり、入力系列のみから出力が決まる。
+モデルは、複数のステートマシンを同じ初期状態から開始し、同じ入力を与え、出力の合意をはかる。</p></div>
+        <div class="article-footer">
+            <span class="date">June 26, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/least_angle_regression/">LEAST ANGLE REGRESSION</a></h3>
         <div class="summary">Least Angle Regression(LARS)はLASSO回帰をとくアルゴリズムであり、目的変数とモデルの推定値の残差と相関の大きい入力変数をひとつずつモデルに取り込む。相関が大きいとベクトル間の角度が小さくなるため、least angle(最小角)と名がつく。
 初期状態のモデルは説明変数をもたず推定値は0である。 そのため、目的変数との相関が最大の説明変数を最初にモデルに取り込む。 次に、別の説明変数と残差の相関が取り込んだ説明変数の相関と等しくなるまで、取り込んだ説明変数の方向に、出力する推定値を更新する。 以降は、取り込んだすべての説明変数から等角度の方向に、取り込んでいない説明変数と残差の相関が取り込んだ説明変数との相関と等しくなるまで、モデルの推定値を更新する。
@@ -149,17 +160,6 @@ PLS（部分的最小二乗法）は、入力変数の線形結合で表わせ�
 結果、TDD初心者の被検者はITLによる実装のほうが品質が高かった。
 エディタや言語、ITLとTDDの実験の被験順序、TDDとITLをどちらを先に学んだかは品質に影響しなかった。
 学生よりも企業に所属するプロフェッショナルのほうがTDD、ITL両方で品質がよかったが、TDDで実装したときの品質の下がり幅は学生の下がり幅の2倍に及んだ。</p></div>
-        <div class="article-footer">
-            <span class="date">April 29, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/simcse/">SimCSE: Simple Contrastive Learning of Sentence Embeddings</a></h3>
-        <div class="summary"><p>対照学習は、意味の近い要素同士を近くに、異なる要素を遠くに配置する分散表現を獲得する。
-SimCSEは、文の分散表現のための対照学習であり、教師なしと教師ありの2つの学習方法を提供する。
-教師なし学習は、Dropout層を通したサンプルが近くに配置されるように、Dropout層の出力2つからなるペアを教師データにする。
-教師あり学習は、自然言語推論(含意関係認識)の教師データをつかい、前提と含意の分散表現が近くになるように学習する。</p></div>
         <div class="article-footer">
             <span class="date">April 29, 2022</span>
         </div>

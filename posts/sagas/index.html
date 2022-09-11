@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>抄訳 Sagas(1987)</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>抄訳 Sagas(1987)</h1>
+    <span class="date">September 4, 2022</span>
+    <div>
+        <p>データベースのトランザクションが長くなるほど、ほかのトランザクションを待たせてしまう。
+トランザクションの時間は短いほどよい。
+トランザクションを短い複数のトランザクションに分割でき、そのトランザクションの間にほかのトランザクションを実行できるなら、そのトランザクションをsagaと呼ぶ。</p>
+<p>Sagaを複数のトランザクションに分けて実行する場合、一部のトランザクションだけが成功してしまえば、アトミックな性質を失う。
+そのため、サーガは、各トランザクションを取り消す補償トランザクションをもつ。
+トランザクションを\(T_i\), その補償トランザクションを\(C_i\)とするとき、全てのトランザクションが成功するときの系列は\(T_1, T_2, \dots T_n\), Saga全体を取り消す系列は\(T_1, T_2, \dots T_j, C_j, \dots C_2, C_1\)になる。
+トランザクションが有効でない間に、システムの状態を記録できるチェックポイントを設けられるなら、\(T_1, T_2, C_2, T_2, T_3, T_4\)のように補償トランザクションを実行し、失敗したトランザクションを再実行して、sagaを進められる。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="雑記">雑記</h2>
+<p>論文は1つのDBMSを参照することを想定しているが、<a href="https://docs.aws.amazon.com/ja_jp/prescriptive-guidance/latest/modernization-data-persistence/saga-pattern.html">AWS</a>や<a href="https://docs.microsoft.com/ja-jp/azure/architecture/reference-architectures/saga/saga">Azure</a>の解説では、マイクロサービス間の整合性をとるための手法としてsagaが扱われている。
+今日では、長いトランザクションが別のトランザクションを妨げないようにするためではなく、分散トランザクションの目的で使われている。
+また、sagaの実装方法としてDBMSの内部を修正する方法と既存のDBMS上にsagaの機構を導入する手法が論文では提案されていた。
+今日での分散トランザクションの実現方法としては、後者の方が主流のよう。</p>
+<p>論文への<a href="https://www.cs.cornell.edu/andru/cs711/2002fa/reading/sagas.pdf">リンク</a></p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/smote_synthetic_minority_over_sampling_technique/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
