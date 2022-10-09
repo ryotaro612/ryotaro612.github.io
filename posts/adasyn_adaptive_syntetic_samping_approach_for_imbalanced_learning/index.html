@@ -24,7 +24,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>LEAST ANGLE REGRESSION</title>
+    <title>抄訳 ADASYN: Adaptive Synthetic Sampling Approach for Imbalanced Learning</title>
 </head>
 
 <body>
@@ -44,23 +44,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
     
 <main>
-    <h1>LEAST ANGLE REGRESSION</h1>
-    <span class="date">June 25, 2022</span>
+    <h1>抄訳 ADASYN: Adaptive Synthetic Sampling Approach for Imbalanced Learning</h1>
+    <span class="date">September 11, 2022</span>
     <div>
-        <p>Least Angle Regression(LARS)はLASSO回帰のアルゴリズムで、目的変数の値とモデルの推定値の残差と相関の大きい入力変数をひとつずつモデルに取り込む。
-ベクトル間の相関が大きいほど間の角度が小さくなるため、least angle(最小角)と名がつく。</p>
-<p>初期状態のモデルは説明変数をもたず推定値は0である。
-そのため、目的変数との相関が最大の説明変数を最初にモデルに取り込む。
-次に、別の説明変数と残差の相関が取り込んだ説明変数の相関と等しくなるまで、取り込んだ説明変数の方向に、出力する推定値を更新する。
-以降は、取り込んだすべての説明変数から等角度の方向に、取り込んでいない説明変数と残差の相関が取り込んだ説明変数との相関と等しくなるまで、モデルの推定値を更新する。</p>
-<p>説明変数\(\boldsymbol{x}_1\), \(\boldsymbol{x}_2\)と目的変数\(\boldsymbol{y}\)で更新の様子を説明する。
-初期状態の推定値\(\hat{\boldsymbol{\eta}}_0\)では、\(\boldsymbol{x}_2\)よりも\(\boldsymbol{x}_1\)のほうが\(\boldsymbol{y}-\boldsymbol{\hat{\eta}}_0\)と相関がある。そこで、\(\boldsymbol{x}_1\)を最初にモデルに取り込む。
-\(\boldsymbol{x}_1\)の方向に\(\boldsymbol{\hat{\eta}_1}\)まで更新すると、\(\boldsymbol{x}_1\)と\(\boldsymbol{x}_2\)は、残差\(\boldsymbol{y}-\boldsymbol{\hat{\eta}}_1\)との相関が等しくなる。
-そして今度は、\(\boldsymbol{x}_1\)と\(\boldsymbol{x}_2\)と等角度の方向に\(\boldsymbol{\eta}_2\)まで更新する。</p>
-<p><img src="/least_angle_regression.png" alt="img"></p>
-<p>論文への<a href="https://arxiv.org/pdf/math/0406456.pdf">リンク</a></p>
-<p>引用元の画像が荒いため、画像は、<a href="https://www.ohmsha.co.jp/book/9784274227783/">スモールデータ解析と機械学習</a>から引用しました。</p>
-
+        <p>ADASYNはオーバーサンプリングで不均衡データの予測性能を向上させる。
+以前<a href="/smote_synthetic_minority_over_sampling_technique/">抄訳</a>した<a href="https://arxiv.org/pdf/1106.1813.pdf">SMOTE</a>とおなじく、既存の学習データからサンプルを合成する。
+SMOTEとの違いは、K近傍に多数クラスのサンプルの多い少数クラスのサンプルから、より多くのサンプルを合成する点にある。</p>
+<p>サンプル数\(m_l\)件の多数クラスと\(m_s\)件の少数クラスからなる\(m\)件の\(n\)次元の学習データでアルゴリズムを説明する。
+まず、ハイパーパラメタ\(\beta\in[0,1]\)で合成するサンプル数を制御する\(G\)を求める。
+$$
+G=(m_l - m_s)\times\beta
+$$</p>
+<p>少数クラスの各サンプルについて、K近傍にある多数クラスのサンプル数を\(\Delta_i\), \(i=1, \dots , m_s\)として以下を求める。
+$$
+r_i=\frac{\Delta_i}{K}
+$$</p>
+<p>次に、密度分布になるように正規化する。
+$$
+\hat{r}_i = \frac{r_i}{\sum^{m_s}_{i=1}r_i}
+$$
+正規化された値と\(G\)の積\(g_i\)だけサンプルから少数クラスを合成する。
+$$
+g_i=\hat{r}_i\times G
+$$
+K近傍の少数クラスのサンプルをランダムに1つ\(\boldsymbol{x}_{zi}\)を選び、 \([0, 1]\)区間のランダムな値\(\lambda\)をもちいて、以下の式で\(n\)次元の各要素を計算し、サンプルを合成する。</p>
+<p>$$
+\boldsymbol{s}_i = \boldsymbol{x}_i + (\boldsymbol{z_{zi}}-\boldsymbol{x}_i)\times \lambda
+$$</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="雑記">雑記</h2>
+<p>少数クラスと多数クラスの境界面に多くのサンプルが生成されるため、少数クラスが期待よりも予測されがちな場合は避けたほうがよさそう。</p>
     </div>
 </main>
 
@@ -68,13 +82,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <ul class="pagination">
     
     <li>
-        <a href="/posts/consensus_in_the_presence_of_partial_synchrony/"><span class="material-icons">chevron_left</span></a>
+        <a href="/posts/sagas/"><span class="material-icons">chevron_left</span></a>
     </li>
     
-    
-    <li>
-        <a href="/posts/implementing_fault-tolerant_services_using_the_state_machine_approach_a_tutorial/"><span class="material-icons">chevron_right</span></a>
-    </li>
     
 </ul>
 

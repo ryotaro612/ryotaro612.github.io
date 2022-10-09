@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 04 Sep 2022 00:45:37 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Sep 2022 11:33:21 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抄訳 ADASYN: Adaptive Synthetic Sampling Approach for Imbalanced Learning</title>
+      <link>https://nryotaro.dev/posts/adasyn_adaptive_syntetic_samping_approach_for_imbalanced_learning/</link>
+      <pubDate>Sun, 11 Sep 2022 11:33:21 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/adasyn_adaptive_syntetic_samping_approach_for_imbalanced_learning/</guid>
+      <description>&lt;p&gt;ADASYNはオーバーサンプリングで不均衡データの予測性能を向上させる。
+以前&lt;a href=&#34;https://nryotaro.dev/smote_synthetic_minority_over_sampling_technique/&#34;&gt;抄訳&lt;/a&gt;した&lt;a href=&#34;https://arxiv.org/pdf/1106.1813.pdf&#34;&gt;SMOTE&lt;/a&gt;とおなじく、既存の学習データからサンプルを合成する。
+SMOTEとの違いは、K近傍に多数クラスのサンプルの多い少数クラスのサンプルから、より多くのサンプルを合成する点にある。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>抄訳 Sagas(1987)</title>
       <link>https://nryotaro.dev/posts/sagas/</link>
@@ -154,7 +165,7 @@ $$&lt;/p&gt;</description>
       <pubDate>Sat, 25 Jun 2022 15:35:05 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/least_angle_regression/</guid>
-      <description>Least Angle Regression(LARS)はLASSO回帰をとくアルゴリズムであり、目的変数とモデルの推定値の残差と相関の大きい入力変数をひとつずつモデルに取り込む。相関が大きいとベクトル間の角度が小さくなるため、least angle(最小角)と名がつく。
+      <description>Least Angle Regression(LARS)はLASSO回帰のアルゴリズムで、目的変数の値とモデルの推定値の残差と相関の大きい入力変数をひとつずつモデルに取り込む。 ベクトル間の相関が大きいほど間の角度が小さくなるため、least angle(最小角)と名がつく。
 初期状態のモデルは説明変数をもたず推定値は0である。 そのため、目的変数との相関が最大の説明変数を最初にモデルに取り込む。 次に、別の説明変数と残差の相関が取り込んだ説明変数の相関と等しくなるまで、取り込んだ説明変数の方向に、出力する推定値を更新する。 以降は、取り込んだすべての説明変数から等角度の方向に、取り込んでいない説明変数と残差の相関が取り込んだ説明変数との相関と等しくなるまで、モデルの推定値を更新する。
 説明変数\(\boldsymbol{x}_1\), \(\boldsymbol{x}_2\)と目的変数\(\boldsymbol{y}\)で更新の様子を説明する。 初期状態の推定値\(\hat{\boldsymbol{\eta}}_0\)では、\(\boldsymbol{x}_2\)よりも\(\boldsymbol{x}_1\)のほうが\(\boldsymbol{y}-\boldsymbol{\hat{\eta}}_0\)と相関がある。そこで、\(\boldsymbol{x}_1\)を最初にモデルに取り込む。 \(\boldsymbol{x}_1\)の方向に\(\boldsymbol{\hat{\eta}_1}\)まで更新すると、\(\boldsymbol{x}_1\)と\(\boldsymbol{x}_2\)は、残差\(\boldsymbol{y}-\boldsymbol{\hat{\eta}}_1\)との相関が等しくなる。 そして今度は、\(\boldsymbol{x}_1\)と\(\boldsymbol{x}_2\)と等角度の方向に\(\boldsymbol{\eta}_2\)まで更新する。
 論文へのリンク
