@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 11 Sep 2022 11:33:21 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Oct 2022 10:28:20 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抄訳 Data Cube : A Relational Aggregation Operator Generalizing Group-By, Cross-Tab, and Sub-Totals(1997)</title>
+      <link>https://nryotaro.dev/posts/data_cube_a_relational_aggregation_operator_generalizing_group_by_cross_tab_and_sub_totals/</link>
+      <pubDate>Sat, 15 Oct 2022 10:28:20 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/data_cube_a_relational_aggregation_operator_generalizing_group_by_cross_tab_and_sub_totals/</guid>
+      <description>&lt;p&gt;SQLのGROUP BYと集約関数を組み合わせて0次元や1次元の値を出力できる。
+一方、ピボットテーブルのように、ある属性値の同じレコードの別の属性値を集計し、さらに集計値の集計値を求めることがある。
+(DATA) CUBEは、GROUP BYを多次元に拡張した演算子であり、ヒストグラム、ピボットテーブル、ロールアップ、ドリルダウンの計算に使える。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>抄訳 ADASYN: Adaptive Synthetic Sampling Approach for Imbalanced Learning</title>
       <link>https://nryotaro.dev/posts/adasyn_adaptive_syntetic_samping_approach_for_imbalanced_learning/</link>

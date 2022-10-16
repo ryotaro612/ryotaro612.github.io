@@ -24,7 +24,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>抄訳 ADASYN: Adaptive Synthetic Sampling Approach for Imbalanced Learning</title>
+    <title>抄訳 Data Cube : A Relational Aggregation Operator Generalizing Group-By, Cross-Tab, and Sub-Totals(1997)</title>
 </head>
 
 <body>
@@ -44,37 +44,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
     
 <main>
-    <h1>抄訳 ADASYN: Adaptive Synthetic Sampling Approach for Imbalanced Learning</h1>
-    <span class="date">September 11, 2022</span>
+    <h1>抄訳 Data Cube : A Relational Aggregation Operator Generalizing Group-By, Cross-Tab, and Sub-Totals(1997)</h1>
+    <span class="date">October 15, 2022</span>
     <div>
-        <p>ADASYNはオーバーサンプリングで不均衡データの予測性能を向上させる。
-以前<a href="/smote_synthetic_minority_over_sampling_technique/">抄訳</a>した<a href="https://arxiv.org/pdf/1106.1813.pdf">SMOTE</a>とおなじく、既存の学習データからサンプルを合成する。
-SMOTEとの違いは、K近傍に多数クラスのサンプルの多い少数クラスのサンプルから、より多くのサンプルを合成する点にある。</p>
-<p>サンプル数\(m_l\)件の多数クラスと\(m_s\)件の少数クラスからなる\(m\)件の\(n\)次元の学習データでアルゴリズムを説明する。
-まず、ハイパーパラメタ\(\beta\in[0,1]\)で合成するサンプル数を制御する\(G\)を求める。
-$$
-G=(m_l - m_s)\times\beta
-$$</p>
-<p>少数クラスの各サンプルについて、K近傍にある多数クラスのサンプル数を\(\Delta_i\), \(i=1, \dots , m_s\)として以下を求める。
-$$
-r_i=\frac{\Delta_i}{K}
-$$</p>
-<p>次に、密度分布になるように正規化する。
-$$
-\hat{r}_i = \frac{r_i}{\sum^{m_s}_{i=1}r_i}
-$$
-正規化された値と\(G\)の積\(g_i\)だけサンプルから少数クラスを合成する。
-$$
-g_i=\hat{r}_i\times G
-$$
-K近傍の少数クラスのサンプルをランダムに1つ\(\boldsymbol{x}_{zi}\)を選び、 \([0, 1]\)区間のランダムな値\(\lambda\)をもちいて、以下の式で\(n\)次元の各要素を計算し、サンプルを合成する。</p>
-<p>$$
-\boldsymbol{s}_i = \boldsymbol{x}_i + (\boldsymbol{z_{zi}}-\boldsymbol{x}_i)\times \lambda
-$$</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>SQLのGROUP BYと集約関数を組み合わせて0次元や1次元の値を出力できる。
+一方、ピボットテーブルのように、ある属性値の同じレコードの別の属性値を集計し、さらに集計値の集計値を求めることがある。
+(DATA) CUBEは、GROUP BYを多次元に拡張した演算子であり、ヒストグラム、ピボットテーブル、ロールアップ、ドリルダウンの計算に使える。</p>
+<p>GROUP BYに続いて<code>CUBE</code>を書けるように、SQLの構文を拡張する。</p>
+<pre><code>GROUP BY
+{ &lt;column name&gt; | &lt;expression&gt;)
+  [ AS &lt;correlation name&gt; ]
+      [ &lt;collate clause&gt;  ]
+,...}
+  [ WITH CUBE ]
+</code></pre>
+<p>たとえば、車のメーカー、色、年ごとの売上があるとき、以下の画像の左のデータから右の結果を得ることができる。
+集計の軸になる属性数が\(n\)のとき、一つ以上の属性を軸にする選び方は\(2^n-1\)通りある。
+<code>cube</code>は、その全ての選び方でえられたレコードと元のテーブルをunionした結果になる。
+<img src="/datacube.png" alt="datacube"></p>
 <h2 id="雑記">雑記</h2>
-<p>少数クラスと多数クラスの境界面に多くのサンプルが生成されるため、少数クラスが期待よりも予測されがちな場合は避けたほうがよさそう。</p>
+<p>CUBEは<a href="https://docs.snowflake.com/ja/sql-reference/constructs/group-by-cube.html">snowflake</a>のようなOLAPのデータベースで採用されている。
+後半に<code>CUBE</code>の実装方針があるが、実験などの評価はなく、SQLの構文の拡張を提案にとどまる。
+処理性能を評価するなら、<code>CUBE</code>を使わずUNIONを使う場合と比較するのだろう。</p>
+<hr>
+<p>論文の<a href="https://cs.stanford.edu/people/chrismre/cs345/rl/olap.pdf">リンク</a></p>
+<p>本文中の画像を論文から引用をしました。</p>
     </div>
 </main>
 
@@ -82,13 +76,9 @@ $$</p>
 <ul class="pagination">
     
     <li>
-        <a href="/posts/sagas/"><span class="material-icons">chevron_left</span></a>
+        <a href="/posts/adasyn_adaptive_syntetic_samping_approach_for_imbalanced_learning/"><span class="material-icons">chevron_left</span></a>
     </li>
     
-    
-    <li>
-        <a href="/posts/data_cube_a_relational_aggregation_operator_generalizing_group_by_cross_tab_and_sub_totals/"><span class="material-icons">chevron_right</span></a>
-    </li>
     
 </ul>
 

@@ -48,6 +48,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/simple_testing_can_prevent_most_critical_failures/">論文メモ Simple Testing Can Prevent Most Critical Failures</a></h3>
+        <div class="summary"><p>5つの分散システムのバグのうち198件を無作為に抽出、調査したところ、エラーハンドリングに対する単純なテストが有効であることが分かった。
+198件のうちの48件は、論文でcatastrophic failuresと形容された、多くのユーザに影響を与える障害が占めた。
+調査対象は、Cassandra, HBase, HDFS, Hadoop MapReduce, Redisの5つである。
+catastrophic failuresの35%の原因は、エラーハンドラがログの出力だけしかしていない、過剰に上位の例外クラスが宣言されたcatch構文で例外を処理していること、例外に<code>FIXME</code>, <code>TODO</code>コメントがある、の3パターンに分類された。
+Javaのバイトコードから以上の3パターンを検出するツールを実装し、9種類の分散システムに適用したことで、121件の未知のバグを特定することができた。</p></div>
+        <div class="article-footer">
+            <span class="date">October 29, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/from_diversity_by_numbers_to_diversity_as_process/">論文メモ From Diversity by Numbers to Diversity as Process</a></h3>
         <div class="summary">開発におけるブレーンストーミングが、マイノリティに属する開発者の満足度の向上に貢献することを実験的に示した。 ここでの開発は、ハッカソンのような短時間かつ集中が求められるものが想定されている。 満足度は、開発プロセスと成果物に対するもので分けて扱われ、どちらの観点でもブレーンストーミングは満足度に対してよい効果をもたらした。
   論文をこちらからダウンロードできます。  </div>
@@ -130,14 +142,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 文字単位のCNNに大量の訓練データをあたえれば、別途単語の意味をモデルにあたえずとも性能を発揮することを示した。</p></div>
         <div class="article-footer">
             <span class="date">September 25, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/what_makes_a_great_software_engineer/">論文メモ What Makes A Great Software Engineer?</a></h3>
-        <div class="summary"><p>優れたエンジニアの特徴を知るために、マイクロソフト社のアーキテクト59名と半構造化された面接をし、グラウンデッドセオリーで内容から特徴を抽出した。</p></div>
-        <div class="article-footer">
-            <span class="date">September 18, 2020</span>
         </div>
     </article>
     
