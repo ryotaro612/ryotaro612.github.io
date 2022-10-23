@@ -6,7 +6,20 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 15 Oct 2022 10:28:20 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Oct 2022 09:42:58 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抄訳 Borderline-SMOTE: A New Over-Sampling Method in Imbalanced Data Sets Learning(2005)</title>
+      <link>https://nryotaro.dev/posts/borderline-smote_a_new_over-sampling_method_inbalanced_data_sets_learning/</link>
+      <pubDate>Sat, 22 Oct 2022 09:42:58 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/borderline-smote_a_new_over-sampling_method_inbalanced_data_sets_learning/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1106.1813.pdf&#34;&gt;SMOTE&lt;/a&gt;は不均衡データに対するオーバーサンプリングを使う手法である。
+少数側のクラスのサンプルと近傍のサンプルから少数クラスのサンプルを合成する。
+SMOTEはすべての少数クラスのサンプルが合成のもとになりえる。
+対して、borderline-SMOTE1とborderline-SMOTE2は、境界から遠い少数クラスのサンプルを使わず、近いサンプルのみから合成する。
+borderline-SMOTE1は、合成の相手側として常に少数クラスのサンプルを選び、borderline-SMOTE2は多数クラスのサンプルを選ぶこともある。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>抄訳 Data Cube : A Relational Aggregation Operator Generalizing Group-By, Cross-Tab, and Sub-Totals(1997)</title>
       <link>https://nryotaro.dev/posts/data_cube_a_relational_aggregation_operator_generalizing_group_by_cross_tab_and_sub_totals/</link>
@@ -19,7 +32,7 @@
     </item>
     
     <item>
-      <title>抄訳 ADASYN: Adaptive Synthetic Sampling Approach for Imbalanced Learning</title>
+      <title>抄訳 ADASYN: Adaptive Synthetic Sampling Approach for Imbalanced Learning(2008)</title>
       <link>https://nryotaro.dev/posts/adasyn_adaptive_syntetic_samping_approach_for_imbalanced_learning/</link>
       <pubDate>Sun, 11 Sep 2022 11:33:21 +0900</pubDate>
       
@@ -41,7 +54,7 @@ SMOTEとの違いは、K近傍に多数クラスのサンプルの多い少数�
     </item>
     
     <item>
-      <title>抄訳 SMOTE: Synthetic Minority Over-sampling Technique</title>
+      <title>抄訳 SMOTE: Synthetic Minority Over-sampling Technique(2002)</title>
       <link>https://nryotaro.dev/posts/smote_synthetic_minority_over_sampling_technique/</link>
       <pubDate>Wed, 31 Aug 2022 19:07:55 +0900</pubDate>
       
