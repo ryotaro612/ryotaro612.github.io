@@ -3,10 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2022-10-22T09:42:58-04:00</lastmod>
+    <lastmod>2022-10-29T09:04:26-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2022-10-22T09:42:58-04:00</lastmod>
+    <lastmod>2022-10-29T09:04:26-04:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/posts/defining_liveness/</loc>
+    <lastmod>2022-10-29T09:04:26-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/borderline-smote_a_new_over-sampling_method_inbalanced_data_sets_learning/</loc>
     <lastmod>2022-10-22T09:42:58-04:00</lastmod>

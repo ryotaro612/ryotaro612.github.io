@@ -48,6 +48,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/dynamo_amazons_highly_available_key_value_store/">論文メモ Dynamo: Amazon&#39;s Highly Available Key-value Store</a></h3>
+        <div class="summary"><p>Amazonで社内運用されている高可用性のKVS, Dynamoのアーキテクチャを解説している。
+まぎらわしいが、Dynamoは、AWSサービスのDynamo DBとは違う<a href="https://www.oreilly.co.jp/books/9784873118703/">*</a>。
+Dynamoは、リーダーレスレプリケーションモデルで、Dynamo DBはシングルリーダレプリケーションモデルを採用している。
+Dynamoは、高信頼性が必要なシステムの状態管理に使用される。
+その用途から、トランザクション分離レベルのサポートは不要で、可用性を優先するために結果整合性を許容する。</p></div>
+        <div class="article-footer">
+            <span class="date">November 6, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/zero_shot_word_sense_disambiguation_using_sense_definition_embeddings/">論文メモ Zero-shot Word Sense Disambiguation using Sense Definition Embeddings</a></h3>
         <div class="summary"><p>語義曖昧性解消のためのアーキテクチャ, Extended WSD Incorporating Sense Embeddings(EWISE)を発表した。
 EWISEは単語の意味をアノテーションしあテキストと辞書を教師データにもちいる。
@@ -134,14 +146,6 @@ Javaのバイトコードから以上の3パターンを検出するツールを
 提案されたモデルは2つで、両者には精度と計算量の間にトレードオフがある。</p></div>
         <div class="article-footer">
             <span class="date">October 2, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/how_much_up-front/">論文メモ How much Up-Front? A Grounded Theory of Agile Architecture</a></h3>
-        <div class="summary"><p>「アジャイル開発において、実装前のアーキテクチャ設計にどれだけ工数を割くべきか？」という問いの回答指針を、44名のソフトウェア開発者に面接し、その結果からグラウンデッド・セオリーで提案した。</p></div>
-        <div class="article-footer">
-            <span class="date">September 25, 2020</span>
         </div>
     </article>
     

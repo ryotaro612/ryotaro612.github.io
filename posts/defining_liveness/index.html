@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>抄訳 DEFNING LIVENESS(1985)</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>抄訳 DEFNING LIVENESS(1985)</h1>
+    <span class="date">October 29, 2022</span>
+    <div>
+        <p>L.Lamportは、<a href="https://lamport.azurewebsites.net/pubs/proving.pdf">Proving the Correctness of Multiprocess Programs</a>で、安全性と活性を導入し、並行プログラミングの正しさを議論した。
+そこでは、安全性は、実行中に「よくないこと」が起きない性質であり、活性は「よいこと」が起きる性質である。
+後に、Lamportは安全性を形式的に<a href="https://link.springer.com/book/10.1007/3-540-15216-4#toc">定義</a>したが、活性には与えていない。
+そこで、並行プログラムの実行を状態系列とみなし、活性を形式的な定義した。
+プログラムの一部である任意の有限長系列\(\alpha\)について、\(\alpha\)に後続する無限長の系列を\(\beta\)とするとき、性質\(P\)をみたす連結\(\alpha\beta\)が存在し、また、そのときに限り、\(\alpha\)は\(P\)の活性がある。</p>
+<p>\(S\)をプログラムの状態の集合、\(S^{\omega}\)を無限長、\(S^{*}\)を有限長の系列とする。
+また、\(S^{\omega}\)の要素\(\sigma\)が性質\(P\)を満たすことを\(\sigma\vDash P\)とかく。
+このとき活性の定義は</p>
+<p>$$
+\forall\alpha : \alpha \in S^{*}:(\exists \beta: \beta \in S^\omega : \alpha \beta \vDash P)
+$$
+である。\(\beta\)は無限長であるため、「よいこと」が常におきるのではなく、いつか起きるという定義になっている。</p>
+<p>なお、\(\sigma_i\)を\(\sigma\)の最初の\(i\)個の状態からなる系列とすると、以下をみたし、かつそのときのみ、\(P\)は安全性であると定義できる。</p>
+<p>$$
+\forall \sigma: \sigma \in S^\omega: \sigma \nvDash P \Rightarrow (\exists i: 0 \leq i:(\forall \beta : \beta \in S^\omega : \sigma_i \beta \nvDash P))
+$$</p>
+<p>論文への<a href="https://www.cs.cornell.edu/fbs/publications/DefLiveness.pdf">リンク</a></p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/borderline-smote_a_new_over-sampling_method_inbalanced_data_sets_learning/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

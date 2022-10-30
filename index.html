@@ -48,6 +48,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/defining_liveness/">抄訳 DEFNING LIVENESS(1985)</a></h3>
+        <div class="summary"><p>L.Lamportは、<a href="https://lamport.azurewebsites.net/pubs/proving.pdf">Proving the Correctness of Multiprocess Programs</a>で、安全性と活性を導入し、並行プログラミングの正しさを議論した。
+そこでは、安全性は、実行中に「よくないこと」が起きない性質であり、活性は「よいこと」が起きる性質である。
+後に、Lamportは安全性を形式的に<a href="https://link.springer.com/book/10.1007/3-540-15216-4#toc">定義</a>したが、活性には与えていない。
+そこで、並行プログラムの実行を状態系列とみなし、活性を形式的な定義した。
+プログラムの一部である任意の有限長系列\(\alpha\)について、\(\alpha\)に後続する無限長の系列を\(\beta\)とするとき、性質\(P\)をみたす連結\(\alpha\beta\)が存在し、また、そのときに限り、\(\alpha\)は\(P\)の活性がある。</p></div>
+        <div class="article-footer">
+            <span class="date">October 29, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/borderline-smote_a_new_over-sampling_method_inbalanced_data_sets_learning/">抄訳 Borderline-SMOTE: A New Over-Sampling Method in Imbalanced Data Sets Learning(2005)</a></h3>
         <div class="summary"><p><a href="https://arxiv.org/pdf/1106.1813.pdf">SMOTE</a>は不均衡データに対するオーバーサンプリングを使う手法である。
 少数側のクラスのサンプルと近傍のサンプルから少数クラスのサンプルを合成する。
@@ -143,21 +155,6 @@ ROC曲線は、縦軸を感度(sensitivity)TP/(FN+TP), 横軸を1-特異度(spec
 トレードオフのもとでカットオフポイントの決める方法を先行研究から2つ紹介している。</p></div>
         <div class="article-footer">
             <span class="date">August 6, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/the_transaction_concept/">The Transaction Concept: Virtues and Limitations(1981)</a></h3>
-        <div class="summary"><p>トランザクションのコミット、ロールバックを実装する方針を2つあげ、その概要が書かれている。
-1つは、オブジェクトの値とその値の有効期間を記録し、値の履歴を管理する。
-もうひとつは、ログとロックを利用した実装で、操作時にUNDOログとREDOログを出力する。
-ロールバック時には、ログをもとにコミット開始前の状態にシステムを復元する。
-UNDOやREDOを再実行可能でなければならず、そのためにオブジェクトにしばしばバージョンをつけることがある。
-そのため、2つの実装方針は異なるように見えるが、内部の実装は似かよったものになる。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted --></div>
-        <div class="article-footer">
-            <span class="date">July 30, 2022</span>
         </div>
     </article>
     
