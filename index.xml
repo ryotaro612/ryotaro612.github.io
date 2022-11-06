@@ -6,7 +6,22 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 29 Oct 2022 09:04:26 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Nov 2022 10:19:41 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抄訳 Popular Ensemble Methods: An Empirical Study(1999)</title>
+      <link>https://nryotaro.dev/posts/popular_ensemble_methods_an_empirical_study/</link>
+      <pubDate>Sat, 05 Nov 2022 10:19:41 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/popular_ensemble_methods_an_empirical_study/</guid>
+      <description>&lt;p&gt;アンサンブル学習は、弱学習器を組みわせ、より予測性能の高いモデルを生成する。
+ニューラルネットワークと決定木を弱学習器にしたバギングとブースティングの予測性能を、23件のデータで測定した。
+バギングはほぼすべての場合に1つの学習器よりも性能がよかったが、まれにブースティングよりも著しく性能が低かった。
+他方、ブースティングは、特にニューラルネットワークを弱学習器にした場合に、1つの学習器よりも性能が低いことがあった。
+ブースティグは、既存の弱学習器が誤答したサンプルを回答できる弱学習器を生成する。
+&lt;a href=&#34;https://cseweb.ucsd.edu/~yfreund/papers/boostingexperiments.pdf&#34;&gt;Freundら&lt;/a&gt;は、データにノイズが多いと、学習の後半になるほどノイズを学習するので、性能が悪くなると示唆した。
+データにノイズを混ぜ、その量とブースティングの精度を比較することで、ノイズが多いほどブースティングの性能がバギングと比べたときよりも悪くなることを確認した。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>抄訳 DEFNING LIVENESS(1985)</title>
       <link>https://nryotaro.dev/posts/defining_liveness/</link>
