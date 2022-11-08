@@ -144,17 +144,17 @@ ROC曲線は、縦軸を感度(sensitivity)TP/(FN+TP), 横軸を1-特異度(spec
     </item>
     
     <item>
-      <title>The Transaction Concept: Virtues and Limitations(1981)</title>
+      <title>抄訳 The Transaction Concept: Virtues and Limitations(1981)</title>
       <link>https://nryotaro.dev/posts/the_transaction_concept/</link>
       <pubDate>Sat, 30 Jul 2022 16:29:35 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/the_transaction_concept/</guid>
-      <description>&lt;p&gt;トランザクションのコミット、ロールバックを実装する方針を2つあげ、その概要が書かれている。
+      <description>&lt;p&gt;トランザクションのコミットとロールバックの2通りの実装方針を提案している。
 1つは、オブジェクトの値とその値の有効期間を記録し、値の履歴を管理する。
 もうひとつは、ログとロックを利用した実装で、操作時にUNDOログとREDOログを出力する。
 ロールバック時には、ログをもとにコミット開始前の状態にシステムを復元する。
 UNDOやREDOを再実行可能でなければならず、そのためにオブジェクトにしばしばバージョンをつけることがある。
-そのため、2つの実装方針は異なるように見えるが、内部の実装は似かよったものになる。&lt;/p&gt;
+2つの実装方針は異なるように見えるが、内部の実装は似かよったものになる。&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;</description>
     </item>

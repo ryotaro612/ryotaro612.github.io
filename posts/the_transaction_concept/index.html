@@ -24,7 +24,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>The Transaction Concept: Virtues and Limitations(1981)</title>
+    <title>抄訳 The Transaction Concept: Virtues and Limitations(1981)</title>
 </head>
 
 <body>
@@ -44,15 +44,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
     
 <main>
-    <h1>The Transaction Concept: Virtues and Limitations(1981)</h1>
+    <h1>抄訳 The Transaction Concept: Virtues and Limitations(1981)</h1>
     <span class="date">July 30, 2022</span>
     <div>
-        <p>トランザクションのコミット、ロールバックを実装する方針を2つあげ、その概要が書かれている。
+        <p>トランザクションのコミットとロールバックの2通りの実装方針を提案している。
 1つは、オブジェクトの値とその値の有効期間を記録し、値の履歴を管理する。
 もうひとつは、ログとロックを利用した実装で、操作時にUNDOログとREDOログを出力する。
 ロールバック時には、ログをもとにコミット開始前の状態にシステムを復元する。
 UNDOやREDOを再実行可能でなければならず、そのためにオブジェクトにしばしばバージョンをつけることがある。
-そのため、2つの実装方針は異なるように見えるが、内部の実装は似かよったものになる。</p>
+2つの実装方針は異なるように見えるが、内部の実装は似かよったものになる。</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>論文への<a href="https://jimgray.azurewebsites.net/papers/theTransactionConcept.pdf">リンク</a></p>
