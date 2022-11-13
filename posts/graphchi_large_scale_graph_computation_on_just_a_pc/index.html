@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>抄訳 GraphChi: Large-Scale Graph Computation on Just a PC(2012)</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>抄訳 GraphChi: Large-Scale Graph Computation on Just a PC(2012)</h1>
+    <span class="date">November 12, 2022</span>
+    <div>
+        <p>商業規模の有向グラフを一般PCで計算できるデータ構造とプログラミングモデルであり、任意のひとつのノードとそのノードに接続する全てのエッジを読み込めるメモリがあればよい。
+順序つきのノードを互いに素なP個の集合に分け、それぞれをintervalをよぶ。
+interval内のノードに向うエッジを根のノード順にソートし、エッジをP個のshardに分けて保存する。
+1つのshardをディスクの連続領域に保存することで、あるノードとノードに接続するエッジを、高々P回のディスクへのアクセスでメモリに読み込める。</p>
+<p>エッジの追加や削除もできる。
+メモリ上のバッファに追加されたエッジを追加し、バッファが満杯になるときにディスクに書き込む。
+1つのshardごとにP個のバッファをもち、追加したエッジの根があるintervalで保存先のバッファを変える。
+エッジを削除するときは、エッジに削除されたフラグを与え、shardをディスクに書き戻すときにそのエッジを無視する。</p>
+<p>計算のモデルは、各ノードとそのエッジの現在の値から次の状態を計算するものであり、開発者は以下の<code>f</code>, <code>g</code>を実装する。
+ガウス＝ザイデル法を応用し、非同期に各ノードを<code>Update(vertex)</code>によってグラフの状態が収束するまで非同期に更新する。</p>
+<pre tabindex="0"><code>Update(vertex) begin
+  x[] ← read values of in- and out-edges of vertex ;
+  vertex.value ← f(x[]) ;
+    foreach edge of vertex do
+  edge.value ← g(vertex.value, edge.value);
+end
+</code></pre><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>論文の<a href="https://www.usenix.org/system/files/conference/osdi12/osdi12-final-126.pdf">リンク</a></p>
+<h2 id="雑記">雑記</h2>
+<p>単一のPCで動かすので、ネットワーク上の通信の失敗を考えなくてよいため、論文中で比較されたBulk-Synchromous Parall(BSP model) にある同期やフォールトトレランスの仕組みが省かれているようにみえる。
+実験の比較対象がクラスタを使った場合なので、単一のPCで動かす同様の目的の手法と比べたときの評価がわからない。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/popular_ensemble_methods_an_empirical_study/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

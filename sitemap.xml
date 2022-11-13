@@ -3,10 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2022-11-05T10:19:41-04:00</lastmod>
+    <lastmod>2022-11-12T09:57:01-05:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2022-11-05T10:19:41-04:00</lastmod>
+    <lastmod>2022-11-12T09:57:01-05:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/posts/graphchi_large_scale_graph_computation_on_just_a_pc/</loc>
+    <lastmod>2022-11-12T09:57:01-05:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/popular_ensemble_methods_an_empirical_study/</loc>
     <lastmod>2022-11-05T10:19:41-04:00</lastmod>

@@ -6,7 +6,19 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 05 Nov 2022 10:19:41 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Nov 2022 09:57:01 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抄訳 GraphChi: Large-Scale Graph Computation on Just a PC(2012)</title>
+      <link>https://nryotaro.dev/posts/graphchi_large_scale_graph_computation_on_just_a_pc/</link>
+      <pubDate>Sat, 12 Nov 2022 09:57:01 -0500</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/graphchi_large_scale_graph_computation_on_just_a_pc/</guid>
+      <description>&lt;p&gt;商業規模の有向グラフを一般PCで計算できるデータ構造とプログラミングモデルであり、任意のひとつのノードとそのノードに接続する全てのエッジを読み込めるメモリがあればよい。
+順序つきのノードを互いに素なP個の集合に分け、それぞれをintervalをよぶ。
+interval内のノードに向うエッジを根のノード順にソートし、エッジをP個のshardに分けて保存する。
+1つのshardをディスクの連続領域に保存することで、あるノードとノードに接続するエッジを、高々P回のディスクへのアクセスでメモリに読み込める。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>抄訳 Popular Ensemble Methods: An Empirical Study(1999)</title>
       <link>https://nryotaro.dev/posts/popular_ensemble_methods_an_empirical_study/</link>
