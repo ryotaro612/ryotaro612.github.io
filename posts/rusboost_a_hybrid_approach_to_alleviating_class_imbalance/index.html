@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>抄訳 RUSBoost: A Hybrid Approach to Alleviating Class Imbalance(2010)</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>抄訳 RUSBoost: A Hybrid Approach to Alleviating Class Imbalance(2010)</h1>
+    <span class="date">November 13, 2022</span>
+    <div>
+        <p>RUSBoostは、random undersampling(RUS)とAdaBoostを応用し、不均衡データの予測性能を改善する。
+類似の先行研究である<a href="http://www.datascienceassn.org/sites/default/files/SMOTEBoost%20Improving%20Prediction%20of%20the%20Minority%20Class%20in%20Boosting%20.pdf">SMOTEBoost</a>よりも学習時間が短く、アルゴリズムが単純である。
+アンダーサンプリングで学習データを減らせば、学習時間を短くできるが、学習器に与える情報が減る。
+一方、AdaBoostは、前に訓練した弱学習器が誤分類したデータに高い重みを与え、次の弱学習器を学習し、予測性能を上げる。
+AdaBoostを借りることで、単分類の難しい少数クラスのサンプルに高い重みを単純に与えられる。</p>
+<p>\((x_1, y_1),\dots (x_m, y_m)\)からなる学習データの集合を\(S\)とし、\(y^r\in Y, |Y|=2\)の二値分類のタスクをとく。
+\(t\in [1,T]\)回目の学習における\(i\)番目のサンプルの重みを\(D_t(i)\)とし、\(D_1(i)\)で\(1/m\)で初期化する。
+\(t\)回目の訓練には、少数クラスの割合が\(N\%\)になるようにアンダーサンプリングしたデータ集合\(S'_t\)を使い、弱学習器\(h_t:X\times Y\rightarrow [0, 1]\)を訓練する。
+\(D_t\)で重みづけした\(S\)に\(h_t\)を適用し、疑似損失\(\epsilon_t\)から重みの更新パラメタ\(\alpha_t\)を求め、\(t+1\)回目の重みを計算する。</p>
+<p>$$
+\begin{align*}
+\epsilon_t &amp;= \sum_{(i,y): y_i\neq y}D_t(i)(1-h_t(x_i, y_i) + h_t(x_i, y))\\
+\alpha_t&amp;=\frac{\epsilon_t}{1-\epsilon_t}\\
+D_{t+1}(i)&amp;=D_t(i)\alpha_t^{\frac{1}{2}(1+h_t(x_i,y_i)-h_t(x_i,y:y\neq y_i))}\\
+D_{t+1}(i)&amp;:=\frac{D_{t+1}(i)}{\sum_iD_{t+1}(i)}
+\end{align*}
+$$
+以上により、弱学習器を束ねた学習器\(H(x)=\textrm{argmax}_{y\in Y}\sum^T_{t=1}h_t(x,y)\log\frac{1}{\alpha_t}\)をえる。</p>
+<p>論文への<a href="https://sci2s.ugr.es/keel/pdf/algorithm/articulo/2010-IEEE%20TSMCpartA-RUSBoost%20A%20Hybrid%20Approach%20to%20Alleviating%20Class%20Imbalance.pdf">リンク</a></p>
+<h2 id="所感">所感</h2>
+<p>SMOTEBoostよりも学習時間が短いとあるが、論文中には学習時間を比較した評価がない。
+アンダーサンプリングとバギングで不均衡データに対処する<a href="https://www.semanticscholar.org/paper/Class-Imbalance%2C-Redux-Wallace-Small/a8ef5a810099178b70d1490a4e6fc4426b642cde?p2df">手法</a>もある。抄訳は<a href="/posts/class_imbalance_redux/">こちら</a></p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/graphchi_large_scale_graph_computation_on_just_a_pc/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
