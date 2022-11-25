@@ -3,10 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2022-11-13T12:18:12-05:00</lastmod>
+    <lastmod>2022-11-23T11:44:08-05:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2022-11-13T12:18:12-05:00</lastmod>
+    <lastmod>2022-11-23T11:44:08-05:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/posts/millwheel_fault_tolerant_stream_processing_at_internet_scale/</loc>
+    <lastmod>2022-11-23T11:44:08-05:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/rusboost_a_hybrid_approach_to_alleviating_class_imbalance/</loc>
     <lastmod>2022-11-13T12:18:12-05:00</lastmod>

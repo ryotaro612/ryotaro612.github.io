@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>抄訳 MillWheel: Fault-Tolerant Stream Processing at Internet Scale(2013)</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>抄訳 MillWheel: Fault-Tolerant Stream Processing at Internet Scale(2013)</h1>
+    <span class="date">November 23, 2022</span>
+    <div>
+        <p>MillWheelはGoogleで開発されたストリーミング処理のフレームワークである。
+開発者が羃等な処理をノードとする有向グラフを実装すれば、MillWheelがデータをノードに正確に一回だけ配信する。
+データは、キー、値、論理的な時刻の3組からなるレコードを単位として、ノードからノードに出力される。
+向き先のノードは、レコードからキーへの関数を、根のノードから出力されるレコードに適用し、期待するキーに対応するレコードをノードに集約する。</p>
+<p>論文でMillWheelの動機付けにつかわれたGoogle’s Zeitgeistは、<a href="https://cloud.google.com/blog/ja/products/data-analytics/how-cloud-batch-and-stream-data-processing-works">Googleトレンドの前身</a>であり、急激に検索回数の変化したキーワードを検知する。
+Zeitgeistであれば、検索キーワードをキーにし、同じキーワードの検索のレコードをノードに集約し、レコード数を数える使い方をする。</p>
+<p>正確に一回だけの配信を保証だけでなく、処理の遅延を抑えなければならない。
+MillWheelは、ノードごとにlow watermarkを設定し、low watermarkより前のレコードが遅れてノードに届いた場合、そのレコードを破棄する。
+あるノードのlow watermarkは、ノードが処理中のレコードで最も古いtimestampか上流のノードのlow watermarkのうち、より古い方である。</p>
+<p>ノードはレコードを受信すると、受信済のレコードとの重複がないか調べ、なければ、処理を実行する。
+処理に成功すれば、ノードは送信元にACKを返す。
+送信元はACKが返るまで送信を繰り返すが、ノードの受信後からACKまでに受信元がクラッシュすると、受信元にレコードが届いていても再送を繰り返すおそれがある。
+そのため、送信元は、レコードを送信する時にレコードにはユニークなIDを割りあてる。
+受信元のノードは、受信したレコードのIDを調べ、ACK前の処理中のレコードを再受信しないようにする。</p>
+<p>論文への<a href="https://static.googleusercontent.com/media/research.google.com/ja//pubs/archive/41378.pdf">リンク</a></p>
+<h2 id="雑記">雑記</h2>
+<p>MillWheelは、<a href="https://storage.googleapis.com/pub-tools-public-publication-data/pdf/43864.pdf">Dataflow</a>に<a href="https://cloud.google.com/blog/ja/products/data-analytics/how-cloud-batch-and-stream-data-processing-works">影響</a>を与えた。
+Dataflowはウィンドウサイズの幅を変えることでバッチ処理もストリーミング処理も統一的に実装できる。</p>
+<p>low watermarkは前のノード以上の時刻になるので、例えば深い有向グラフだと、一部のレコードの遅延で全体のlow watermarkが大きくなりそう。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/rusboost_a_hybrid_approach_to_alleviating_class_imbalance/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

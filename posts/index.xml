@@ -6,7 +6,19 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 13 Nov 2022 12:18:12 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Nov 2022 11:44:08 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抄訳 MillWheel: Fault-Tolerant Stream Processing at Internet Scale(2013)</title>
+      <link>https://nryotaro.dev/posts/millwheel_fault_tolerant_stream_processing_at_internet_scale/</link>
+      <pubDate>Wed, 23 Nov 2022 11:44:08 -0500</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/millwheel_fault_tolerant_stream_processing_at_internet_scale/</guid>
+      <description>&lt;p&gt;MillWheelはGoogleで開発されたストリーミング処理のフレームワークである。
+開発者が羃等な処理をノードとする有向グラフを実装すれば、MillWheelがデータをノードに正確に一回だけ配信する。
+データは、キー、値、論理的な時刻の3組からなるレコードを単位として、ノードからノードに出力される。
+向き先のノードは、レコードからキーへの関数を、根のノードから出力されるレコードに適用し、期待するキーに対応するレコードをノードに集約する。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>抄訳 RUSBoost: A Hybrid Approach to Alleviating Class Imbalance(2010)</title>
       <link>https://nryotaro.dev/posts/rusboost_a_hybrid_approach_to_alleviating_class_imbalance/</link>
