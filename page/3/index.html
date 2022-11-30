@@ -48,6 +48,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/least_angle_regression/">LEAST ANGLE REGRESSION</a></h3>
+        <div class="summary">Least Angle Regression(LARS)はLASSO回帰のアルゴリズムで、目的変数の値とモデルの推定値の残差と相関の大きい入力変数をひとつずつモデルに取り込む。 ベクトル間の相関が大きいほど間の角度が小さくなるため、least angle(最小角)と名がつく。
+初期状態のモデルは説明変数をもたず推定値は0である。 そのため、目的変数との相関が最大の説明変数を最初にモデルに取り込む。 次に、別の説明変数と残差の相関が取り込んだ説明変数の相関と等しくなるまで、取り込んだ説明変数の方向に、出力する推定値を更新する。 以降は、取り込んだすべての説明変数から等角度の方向に、取り込んでいない説明変数と残差の相関が取り込んだ説明変数との相関と等しくなるまで、モデルの推定値を更新する。
+説明変数\(\boldsymbol{x}_1\), \(\boldsymbol{x}_2\)と目的変数\(\boldsymbol{y}\)で更新の様子を説明する。 初期状態の推定値\(\hat{\boldsymbol{\eta}}_0\)では、\(\boldsymbol{x}_2\)よりも\(\boldsymbol{x}_1\)のほうが\(\boldsymbol{y}-\boldsymbol{\hat{\eta}}_0\)と相関がある。そこで、\(\boldsymbol{x}_1\)を最初にモデルに取り込む。 \(\boldsymbol{x}_1\)の方向に\(\boldsymbol{\hat{\eta}_1}\)まで更新すると、\(\boldsymbol{x}_1\)と\(\boldsymbol{x}_2\)は、残差\(\boldsymbol{y}-\boldsymbol{\hat{\eta}}_1\)との相関が等しくなる。 そして今度は、\(\boldsymbol{x}_1\)と\(\boldsymbol{x}_2\)と等角度の方向に\(\boldsymbol{\eta}_2\)まで更新する。
+論文へのリンク
+引用元の画像が荒いため、画像は、スモールデータ解析と機械学習から引用しました。</div>
+        <div class="article-footer">
+            <span class="date">June 25, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/consensus_in_the_presence_of_partial_synchrony/">Consensus in the Presence of Patial Synchrony (1988)</a></h3>
         <div class="summary"><p>同期的なシステムには、プロセッサ間のメッセージの到達時間や時刻の誤差に有界がある。
 非同期的なシステムには、どちらの有界もない。
@@ -151,15 +163,6 @@ SimCSEは、文の分散表現のための対照学習であり、教師なし�
 教師あり学習は、自然言語推論(含意関係認識)の教師データをつかい、前提と含意の分散表現が近くになるように学習する。</p></div>
         <div class="article-footer">
             <span class="date">April 29, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/stochastic_gradient_boosting/">Stochastic Gradient Boosting</a></h3>
-        <div class="summary"><p>Gradient Boostingは、反復的に、モデルの予測と正解の残差に弱識別器をあてはめ、弱識別器をモデルに追加する。
-Stochastic Gradient Boostingは、弱識別器の学習に非復元抽出したデータの部分集合をつかい、精度と学習速度を向上する。</p></div>
-        <div class="article-footer">
-            <span class="date">April 23, 2022</span>
         </div>
     </article>
     

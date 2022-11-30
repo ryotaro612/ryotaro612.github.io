@@ -6,7 +6,21 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 23 Nov 2022 11:44:08 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Nov 2022 12:22:20 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抄訳 LOF: Identifying Density-Based Local Outilers(2000)</title>
+      <link>https://nryotaro.dev/posts/lof_identifying_density_based_local_outliners/</link>
+      <pubDate>Mon, 28 Nov 2022 12:22:20 -0500</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/lof_identifying_density_based_local_outliners/</guid>
+      <description>&lt;p&gt;局所外れ値因子法(LOF)は、あるインスタンスが外れ値かを、その周囲のインスタンスとの距離をもとに判定する。
+異常検知の手法の中には異常か正常かの二値を出力するものがあるが、LOFは[0,1]区間の値を出力する。
+L1に近いほど正常とみなす。
+密度の高いクラスタと低いクラスタがあり、密度の高いクラスタの少し遠くに外れ値とみなすべきインスタンスがあるとする。
+このとき、密度の低いクラスタのインスタンス間の距離を基準にすると、密度の高いクラスタのインスタンスと外れ値のインスタンス間の距離は大きいとみなせない。しかし、外れ値のインスタンスのそばの密度の高いクラスタの距離を基準にすれば、外れ値のインスタンスは周囲のインスタンスから遠いとみなせる。
+このように、密度の違うクラスタがあるデータセットでも、インスタンスに近いサンプル間の距離を基準にすることで、他のクラスタの密度で測れば正常なインタンスと判定される外れ値を検出できる。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>抄訳 MillWheel: Fault-Tolerant Stream Processing at Internet Scale(2013)</title>
       <link>https://nryotaro.dev/posts/millwheel_fault_tolerant_stream_processing_at_internet_scale/</link>
@@ -143,7 +157,7 @@ Consumerは、Brokerのトピックからメッセージを取得する。&lt;/p
     </item>
     
     <item>
-      <title>Pregel: A System for Large-Scale Graph Processing(2010)</title>
+      <title>抄訳 Pregel: A System for Large-Scale Graph Processing(2010)</title>
       <link>https://nryotaro.dev/posts/pregel_a_system_for_large_scale_graph_processing/</link>
       <pubDate>Fri, 19 Aug 2022 23:47:30 +0900</pubDate>
       

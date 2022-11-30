@@ -47,6 +47,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/smote_synthetic_minority_over_sampling_technique/">抄訳 SMOTE: Synthetic Minority Over-sampling Technique(2002)</a></h3>
+        <div class="summary"><p>SMOTEはオーバーサンプリングで不均衡データの予測性能の向上をはかる。
+少数クラスのサンプルからk近傍にあるサンプルのうち1つをランダムに選ぶ。
+もとのサンプルと選ばれたサンプルの各特徴の差に[0,1]区間のランダムな値を掛け、その値をもとのサンプルに足して、少数クラスのサンプルを合成する。</p></div>
+        <div class="article-footer">
+            <span class="date">August 31, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/kafka_a_distributed_messaging_system_for_log_processing/">抄訳 Kafka: a Distributed Messaging System for Log Processing (2011)</a></h3>
         <div class="summary"><p>Kafkaは、LinkedInで開発された分散メッセージングサービスである。
 配信モデルはpullベースであり、メッセージを取得するスループットをconsumerが制御できる。
@@ -59,7 +69,7 @@ Consumerは、Brokerのトピックからメッセージを取得する。</p></
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/pregel_a_system_for_large_scale_graph_processing/">Pregel: A System for Large-Scale Graph Processing(2010)</a></h3>
+        <h3><a href="https://nryotaro.dev/posts/pregel_a_system_for_large_scale_graph_processing/">抄訳 Pregel: A System for Large-Scale Graph Processing(2010)</a></h3>
         <div class="summary"><p>Googleで開発されたPregelは、ソーシャルグラフやハイパーリンクのグラフなどの巨大なグラフデータの処理に適した計算モデルである。
 計算モデル自体も、処理対象のデータとおなじく、ワーカーが別のワーカーとのメッセージの送受信を繰り返すグラフ構造をなす。
 このモデルのオリジナルは、以前<a href="/posts/a_bridging_model_for_parallel_computation/">紹介</a>したValiantの<a href="https://dl.acm.org/doi/pdf/10.1145/79173.79181">Bulk Synchronous Parallel model</a>(BPS)である。
@@ -153,18 +163,6 @@ $$</p></div>
 モデルは、複数のステートマシンを同じ初期状態から開始し、同じ入力を与え、出力の合意をはかる。</p></div>
         <div class="article-footer">
             <span class="date">June 26, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/least_angle_regression/">LEAST ANGLE REGRESSION</a></h3>
-        <div class="summary">Least Angle Regression(LARS)はLASSO回帰のアルゴリズムで、目的変数の値とモデルの推定値の残差と相関の大きい入力変数をひとつずつモデルに取り込む。 ベクトル間の相関が大きいほど間の角度が小さくなるため、least angle(最小角)と名がつく。
-初期状態のモデルは説明変数をもたず推定値は0である。 そのため、目的変数との相関が最大の説明変数を最初にモデルに取り込む。 次に、別の説明変数と残差の相関が取り込んだ説明変数の相関と等しくなるまで、取り込んだ説明変数の方向に、出力する推定値を更新する。 以降は、取り込んだすべての説明変数から等角度の方向に、取り込んでいない説明変数と残差の相関が取り込んだ説明変数との相関と等しくなるまで、モデルの推定値を更新する。
-説明変数\(\boldsymbol{x}_1\), \(\boldsymbol{x}_2\)と目的変数\(\boldsymbol{y}\)で更新の様子を説明する。 初期状態の推定値\(\hat{\boldsymbol{\eta}}_0\)では、\(\boldsymbol{x}_2\)よりも\(\boldsymbol{x}_1\)のほうが\(\boldsymbol{y}-\boldsymbol{\hat{\eta}}_0\)と相関がある。そこで、\(\boldsymbol{x}_1\)を最初にモデルに取り込む。 \(\boldsymbol{x}_1\)の方向に\(\boldsymbol{\hat{\eta}_1}\)まで更新すると、\(\boldsymbol{x}_1\)と\(\boldsymbol{x}_2\)は、残差\(\boldsymbol{y}-\boldsymbol{\hat{\eta}}_1\)との相関が等しくなる。 そして今度は、\(\boldsymbol{x}_1\)と\(\boldsymbol{x}_2\)と等角度の方向に\(\boldsymbol{\eta}_2\)まで更新する。
-論文へのリンク
-引用元の画像が荒いため、画像は、スモールデータ解析と機械学習から引用しました。</div>
-        <div class="article-footer">
-            <span class="date">June 25, 2022</span>
         </div>
     </article>
     

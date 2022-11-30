@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>抄訳 LOF: Identifying Density-Based Local Outilers(2000)</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>抄訳 LOF: Identifying Density-Based Local Outilers(2000)</h1>
+    <span class="date">November 28, 2022</span>
+    <div>
+        <p>局所外れ値因子法(LOF)は、あるインスタンスが外れ値かを、その周囲のインスタンスとの距離をもとに判定する。
+異常検知の手法の中には異常か正常かの二値を出力するものがあるが、LOFは[0,1]区間の値を出力する。
+L1に近いほど正常とみなす。
+密度の高いクラスタと低いクラスタがあり、密度の高いクラスタの少し遠くに外れ値とみなすべきインスタンスがあるとする。
+このとき、密度の低いクラスタのインスタンス間の距離を基準にすると、密度の高いクラスタのインスタンスと外れ値のインスタンス間の距離は大きいとみなせない。しかし、外れ値のインスタンスのそばの密度の高いクラスタの距離を基準にすれば、外れ値のインスタンスは周囲のインスタンスから遠いとみなせる。
+このように、密度の違うクラスタがあるデータセットでも、インスタンスに近いサンプル間の距離を基準にすることで、他のクラスタの密度で測れば正常なインタンスと判定される外れ値を検出できる。</p>
+<p>インスタンスの集合を\(D\), インタンス\(p\), \(o\)の距離を\(d(p, o)\)として、\(\textit{k-distance}(p)\)を\(p\)から\(k\)番目の近傍のインタンスの距離とする。
+厳密に言えば、少なくとも\(k\)個の\(o'\in D \setminus \{p\}\)が\(d(p,o') \le d(p,o) \)であり、かつ、高々\(k-1\)個の\(o'\in D\setminus \{p\}\)が\(d(p, o') &lt; d(p, o)\)である値である。</p>
+<p>\(o\)への到達可能性距離\(\textit{reach-dist}_k(p,o)\)を\(\max \{\textit{k-distance}(o), d(p, o)\}\), \(N_k\)を\(p\)からの\(k\)近傍の要素の集合として、局所到達可能性密度\(\textit{lrd}_k(p)\)を</p>
+<p>$$
+lrd_{k}(p)=\frac{|N_k(p)|}{\sum_{o\in N_k(p)}\textit{reach-dist}_k(p,o)}
+$$
+と定義したとき、\(p\)に対する出力\(\textit{LOF}_k(p)\)は</p>
+<p>$$
+\textit{LOF}_k(p)=\frac{\sum_{o\in N_k (p)} \frac{\textit{lrd}_k(o)}{\textit{lrd}_k(p)}}{|N_k(p)|}
+$$
+となる。</p>
+<p>論文への<a href="https://www.dbs.ifi.lmu.de/Publikationen/Papers/LOF.pdf">リンク</a></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="雑記">雑記</h2>
+<p>到達可能性距離は対称性を満たさなそうなので、厳密には距離ではなさそう。
+密度がほぼ同じクラスタが複数あり、1つのクラスタだけ他のクラスタから遠く離れている場合には、遠く離れたクラスタの要素を外れ値とみなすことはできないようだ。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/millwheel_fault_tolerant_stream_processing_at_internet_scale/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
