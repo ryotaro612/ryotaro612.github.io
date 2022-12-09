@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>An Improved Data Stream Summary: The Count-Min Scketch and its Applications</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>An Improved Data Stream Summary: The Count-Min Scketch and its Applications</h1>
+    <span class="date">December 7, 2022</span>
+    <div>
+        <p>Count-Min Sketch(CM Sketch)は、単位時間ごとに1要素ずつ更新される\(n\)次元のベクトルの要素を\(n\)の劣線形の計算量で集計できるデータ構造である。
+空間の大きさはパラメタで指定する誤差大きさと誤差の生じる確率に依存する。
+誤差と確率のパラメタを\(\epsilon\)と\(\delta\)とすると、CM sketchは\(\lceil{\ln \frac{1}{\delta}\rceil}\times \lceil\frac{e}{\epsilon}\rceil\)の二次元行列である。
+\(\ln\)の底は\(e\)である。
+要素の値、ベクトルの内積、ある範囲の要素の和を劣線形の計算量で求めることができる。
+また、これらと二分探索を応用すれば、指定した値よりも大きい要素のみからなる範囲や分位数も計算できる。</p>
+<p>時刻\(t\)の\(n\)次元のベクトルを\(\boldsymbol{\rm a}(t)=[a_1(t),\dots a_i(t),\dots a_n(t)]\)とする。
+はじめ\(\boldsymbol{a}\)は\(\boldsymbol{0}\)であり、時刻\(t\)に\(i_t\)番目の要素に\(c_t\)が加算される前提である。より厳密には
+$$
+a_{i_t}(t) = a_{i_t}(t-1) + c_t;\ \ a_{i'}(t) = a_{i'}(t-1)\ \ i'\neq t_t \ \ c_t &gt; 0
+$$
+という状況である。
+\(w=\lceil\frac{e}{\epsilon}\rceil, d=\lceil\ln\frac{1}{\delta}\rceil\)とする\(d\times w\)の二次元行列\(\text{count}\)の全ての要素の初期値は0である。
+また、\(\{1\dots n\}\)から\(\{1\dots w\}\)に写像する\(d\)個のハッシュ関数\(h_1\dots h_d\)を\(d\)ワイズ独立なハッシュ関数の集合から無作為に\(d\)個選ぶ。
+このとき、時刻\(t\)における\(i_t\)番目の要素への\(c_t\)を加算は
+$$
+\forall 1 \le j \le d: \textit{count}[j,h_j(i_t)] \leftarrow \textit{count}[j,h_j(i_t)] + c_t
+$$
+に対応する。</p>
+<p>\(i\)番目の要素の推定値\(\hat{a}_i\)は
+$$
+\hat{a}_i = \min_j \textit{count}[j,h_j(i)]
+$$
+であり、\(a_i\le \hat{a}_i\)、かつ、少なくとも\(1-\delta\)の確率で\(\hat{a}_i\le a_i + \epsilon||\boldsymbol{\rm a}||_1\)である。</p>
+<p>内積の推定値\(\widehat{\boldsymbol{\rm a}\odot \boldsymbol{\rm b}}\)は\(\min_j(\widehat{\boldsymbol{\rm a}\odot \boldsymbol{\rm b}})_j=\min_j \sum^w_{k=1}\textit{count}_{\boldsymbol{\rm a}}[j,k]*\textit{count}_{\boldsymbol{\rm b}}[j,k]\)であり、\(\epsilon\)と\(\delta\)の間には
+$$
+\textrm{Pr}\left[\widehat{\boldsymbol{\rm a}\odot \boldsymbol{\rm b}} -\boldsymbol{\rm a}\odot \boldsymbol{\rm b} &gt; \epsilon ||\boldsymbol{\rm a}||_1||\boldsymbol{\rm b}||_1\right]\le\delta
+$$
+が成立する。
+ある範囲の和については、\(\boldsymbol{\rm b}\)の内積を応用すれば求められる。</p>
+<p>論文への<a href="https://www.cse.unsw.edu.au/~cs9314/07s1/lectures/Lin_CS9314_References/cm-latin.pdf">リンク</a></p>
+<h2 id="雑記">雑記</h2>
+<p>\(n\)を途中で変えられない不便さはあるが、アクセス頻度の集計とかに使えそう。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/lof_identifying_density_based_local_outliners/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

@@ -6,7 +6,21 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 28 Nov 2022 12:22:20 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Dec 2022 12:29:36 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>An Improved Data Stream Summary: The Count-Min Scketch and its Applications</title>
+      <link>https://nryotaro.dev/posts/an_improved_data_stream_summary_the_count_min_sketch_and_its_application/</link>
+      <pubDate>Wed, 07 Dec 2022 12:29:36 -0500</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/an_improved_data_stream_summary_the_count_min_sketch_and_its_application/</guid>
+      <description>&lt;p&gt;Count-Min Sketch(CM Sketch)は、単位時間ごとに1要素ずつ更新される\(n\)次元のベクトルの要素を\(n\)の劣線形の計算量で集計できるデータ構造である。
+空間の大きさはパラメタで指定する誤差大きさと誤差の生じる確率に依存する。
+誤差と確率のパラメタを\(\epsilon\)と\(\delta\)とすると、CM sketchは\(\lceil{\ln \frac{1}{\delta}\rceil}\times \lceil\frac{e}{\epsilon}\rceil\)の二次元行列である。
+\(\ln\)の底は\(e\)である。
+要素の値、ベクトルの内積、ある範囲の要素の和を劣線形の計算量で求めることができる。
+また、これらと二分探索を応用すれば、指定した値よりも大きい要素のみからなる範囲や分位数も計算できる。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>抄訳 LOF: Identifying Density-Based Local Outilers(2000)</title>
       <link>https://nryotaro.dev/posts/lof_identifying_density_based_local_outliners/</link>
@@ -150,10 +164,10 @@ SMOTEとの違いは、K近傍に多数クラスのサンプルの多い少数�
       
       <guid>https://nryotaro.dev/posts/kafka_a_distributed_messaging_system_for_log_processing/</guid>
       <description>&lt;p&gt;Kafkaは、LinkedInで開発された分散メッセージングサービスである。
-配信モデルはpullベースであり、メッセージを取得するスループットをconsumerが制御できる。
-Consumerは、関心のあるメッセージのストリームであるトピックを作る。
-Producerは、トピックつきのメッセージをborkerに送り、brokerがメッセージを保持する。
-Consumerは、Brokerのトピックからメッセージを取得する。&lt;/p&gt;</description>
+配信モデルはpullベースであり、consumerが、メッセージをリクエストし、メッセージを消費するスループットを制御する。
+consumerは、関心のあるメッセージのストリームであるトピックを作る。
+producerは、トピックつきのメッセージをborkerに送り、brokerがメッセージを保持する。
+consumerは、brokerのトピックからメッセージを取得する。&lt;/p&gt;</description>
     </item>
     
     <item>
