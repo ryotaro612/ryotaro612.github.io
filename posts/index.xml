@@ -6,7 +6,19 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 07 Dec 2022 12:29:36 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Dec 2022 13:38:46 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抄訳 Syntactic Clustering of the Web(1997)</title>
+      <link>https://nryotaro.dev/posts/syntactic_clustering_of_the_web/</link>
+      <pubDate>Tue, 13 Dec 2022 13:38:46 -0500</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/syntactic_clustering_of_the_web/</guid>
+      <description>&lt;p&gt;2つのWeb文書から抽出したn-gramの集合を比較し、文書の包含関係と類似度を測定する。
+はじめに、大文字をすべて小文字にしたり、htmlタグを除外したりして文書に前処理をかける。
+次に文書\(A\)からnグラムの集合\(S(A)\)を抽出する。
+このとき、文書\(A\)と\(B\)間の類似度を\(|S(A)\cap S(B)|/|S(A) \cup S(B)|\)、\(A\)の\(B\)への包含の度合いを\(|S(A) \cap S(B)|/|S(A)|\)と定義する。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>An Improved Data Stream Summary: The Count-Min Scketch and its Applications</title>
       <link>https://nryotaro.dev/posts/an_improved_data_stream_summary_the_count_min_sketch_and_its_application/</link>

@@ -24,7 +24,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>抄訳 SMOTE: Synthetic Minority Over-sampling Technique(2002)</title>
+    <title>抄訳 Syntactic Clustering of the Web(1997)</title>
 </head>
 
 <body>
@@ -44,25 +44,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
     
 <main>
-    <h1>抄訳 SMOTE: Synthetic Minority Over-sampling Technique(2002)</h1>
-    <span class="date">August 31, 2022</span>
+    <h1>抄訳 Syntactic Clustering of the Web(1997)</h1>
+    <span class="date">December 13, 2022</span>
     <div>
-        <p>SMOTEはオーバーサンプリングで不均衡データの予測性能の向上をはかる。
-少数クラスのサンプルからk近傍にあるサンプルのうち1つをランダムに選ぶ。
-もとのサンプルと選ばれたサンプルの各特徴の差に[0,1]区間のランダムな値を掛け、その値をもとのサンプルに足して、少数クラスのサンプルを合成する。</p>
-<p>SOMTEは、少数クラスの\(T\)個のサンプルのほかに、近傍の大きさ\(k\), 1つのサンプルから合成するサンプルの割合\(N\)を受けつける。このとき、SOMTEは\(N/100 \times T\)個のサンプルを生成する。
-\(N\)が\(T\)より小さければ、
-$$
-\begin{align}
-T &amp;= (N/100) \times T\\
-N &amp;= 100
-\end{align}
-$$
-としてランダムに選んだ\(N/100\times T\)個のサンプルのみを合成につかう。</p>
+        <p>2つのWeb文書から抽出したn-gramの集合を比較し、文書の包含関係と類似度を測定する。
+はじめに、大文字をすべて小文字にしたり、htmlタグを除外したりして文書に前処理をかける。
+次に文書\(A\)からnグラムの集合\(S(A)\)を抽出する。
+このとき、文書\(A\)と\(B\)間の類似度を\(|S(A)\cap S(B)|/|S(A) \cup S(B)|\)、\(A\)の\(B\)への包含の度合いを\(|S(A) \cap S(B)|/|S(A)|\)と定義する。</p>
+<p>計算量を減らすために、Nグラムから非負の整数へ一様にランダムに写像する関数\(\pi\)と非負の整数\(m\)をつかう手法も提案されている。
+この場合、写像先の値が\(\text{MOD}_m\)が\(0\)になるNグラムのみで類似度と包含を測定する。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>論文への<a href="https://www.hpl.hp.com/techreports/Compaq-DEC/SRC-TN-1997-015.pdf">リンク</a></p>
 <h2 id="雑記">雑記</h2>
-<p>少数クラスに分類されやすくなる手法なので、少数クラスについて偽陽性が高ければ控えたほうがよさそう。
-実験の評価には、ROCが使われている。不均衡データの場合、ROCは評価が甘くなりやすく、PR-AUCとROC-AUCではAUCを最大化できるポイントが<a href="https://www.biostat.wisc.edu/~page/rocpr.pdf">違う</a>ので、どうしてROCで評価したのか気になる。</p>
-<p>論文への<a href="https://arxiv.org/pdf/1106.1813.pdf">リンク</a></p>
+<p>Nグラムで評価するので、類義語同士がまったく別の意味の単語と同様に扱われてしまう。
+包含関係の定義は、包含している文書がされている文書よりも大きすぎると、実際に包含関係にあっても値が小さくなりそう。</p>
     </div>
 </main>
 
@@ -70,13 +66,9 @@ $$
 <ul class="pagination">
     
     <li>
-        <a href="/posts/kafka_a_distributed_messaging_system_for_log_processing/"><span class="material-icons">chevron_left</span></a>
+        <a href="/posts/an_improved_data_stream_summary_the_count_min_sketch_and_its_application/"><span class="material-icons">chevron_left</span></a>
     </li>
     
-    
-    <li>
-        <a href="/posts/sagas/"><span class="material-icons">chevron_right</span></a>
-    </li>
     
 </ul>
 
