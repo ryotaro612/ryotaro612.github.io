@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>抄訳 Epidemic Algorithm for Replicated Database Maintenance(1987)</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>抄訳 Epidemic Algorithm for Replicated Database Maintenance(1987)</h1>
+    <span class="date">December 19, 2022</span>
+    <div>
+        <p>Epidemic Algorithmは、データベース間の差分を解消するために、データベースがランダムに選んだ別のデータベースと同期する手法である。
+ここではデータベースにはマスタースレーブの区別はなく、任意のサーバーがレコードの変更を受理できる。
+Epidemic Algorithmには、定期的にデーターベース全体を同期する手法と、変更を受理したときにその変更のみを別のデータベースに伝搬させる手法の2つがある。
+前者は、データベース全体を同期するので変更のとりこぼしがいずれは解消されるが、同期に時間がかかる。
+後者は、時間はかからないが、伝搬を終えるまでに同期できなかった変更があれば、その齟齬が残りつづける。
+データベースがある時点で最新の変更をもたない確率を仮定し、その確率で次の同期で変更を取得できる確率を表し、手法間の同期する収束の速さを比較した。</p>
+<p>データベース全体を同期する手法は、さらにpull型とpush型に分かれる。
+pull型は、伝搬されていない変更があるデータベースがランダムに選んだ別のデータベースと同期する。
+push型は、変更を受信したデータベースが別のサーバーをランダムに選んで同期する。</p>
+<p>\(i\)回目の同期後に、あるデータベースが最新の変更を受理していない確率を\(p_i\)とする。
+pull型の場合、\(i+1\)回目の同期後にも最新の変更を受理していない状態になるのは、\(i\)回目の同期後に変更を受理しておらず、かつ、\(i+1\)回目に最新の変更をもたないデータベースと同期する場合であり、その確率は
+$$
+p_{i+1}=(p_i)^2
+$$
+である。
+push型の場合、\(i+1\)回目の同期後にも同様の状態になるのは、\(i\)回目までに変更を受信しておらず、\(i+1\)回目にどんな最新の状態にあるデータベースからも選ばれない場合であり、その確率は、
+$$
+p_{i+1}=p_i\left(1-\frac{1}{n}\right)^{n(1-p_i)}
+$$
+である。pull型とpush型を比較するとpull型のほうが0への収束が速い。</p>
+<p>受理した変更のみを別のデータベースに伝搬する場合、データベースは、3つの状態をとる。それぞれ、変更を受信していない(susceptible), 受信済みで別のデータベースに伝搬している(infective), 受信済みだが別のデータベースへの伝搬をやめている(removed)状態である。
+ここでは、変更を受信したinfectiveのデータベースがinfectiveのデータベースと同期した場合に\(1/k\)の確率でremovedに遷移する。
+このときのsuspectiveなデータベースの割合の推移を求める。
+susceptive, infective, removedなデータベースの割合をそれぞれ\(s, i, r\)とおく。
+\(s+i+r=1\)である。
+このとき、
+$$
+\begin{align}
+\frac{d s}{dt}&amp;=-si\\
+\frac{di}{dt}&amp;=+si-\frac{1}{k}(1-s)i
+\end{align}
+$$
+であるから\(c\)を定数とすると
+$$
+\begin{align}
+\frac{di}{ds}&amp;=-\frac{k+1}{k} + \frac{1}{ks}\\
+i(s)&amp;=-\frac{k+1}{k}s + \frac{1}{k}\log s + c
+\end{align}
+$$
+\(c=\frac{k+1}{k}\)とすると
+$$
+i(s) = \frac{k+1}{k}(1-s)+\frac{1}{k}\log s
+$$
+であり、\(i(s)=0\)になるのは
+$$
+s=e^{-(k+1)(1-s)}
+$$
+のときである。\(k=1\)であれば20%のデータベースは変更を受信し損ねるが、\(k=2\)であれば6%まで下がる。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>論文への<a href="http://bitsavers.trailing-edge.com/pdf/xerox/parc/techReports/CSL-89-1_Epidemic_Algorithms_for_Replicated_Database_Maintenance.pdf">リンク</a></p>
+<h2 id="雑記">雑記</h2>
+<p>レコード同士の依存関係によらずデータを更新できるデータベースが想定されているので、今日でいえばRDMSよりKVSに近いものが想定されている。
+Epidemic Algorithmを、ランダム性に頼らず変更を受信したデータベースがほかの全てのデータベースに変更を伝搬させる手法と比較している。後者について、通信が失敗する場合に変更が伝搬しきれない問題が指摘されている。Epidemic Algorithmにも通信が失敗する可能性があるので、後者に対して通信の失敗を指摘するのであれば、変更を待機するデータベースの確率のモデルには通信が失敗する確率を含めるべきではないか。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/syntactic_clustering_of_the_web/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
