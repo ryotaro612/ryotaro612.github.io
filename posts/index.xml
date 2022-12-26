@@ -6,7 +6,22 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 19 Dec 2022 11:07:49 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Dec 2022 22:44:46 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抄訳 A taxonomy of web search(2002)</title>
+      <link>https://nryotaro.dev/posts/a_taxonomy_of_web_search/</link>
+      <pubDate>Fri, 23 Dec 2022 22:44:46 -0500</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/a_taxonomy_of_web_search/</guid>
+      <description>&lt;p&gt;Web検索をnavigational, informational, transactionalの3つに分類する。
+Navigationalは、ユーザーに訪問したい特定のサイトがあり、そのサイトを開くための検索である。
+Informationalは、ユーザーに収集したい情報があり、その情報があると思われるサイトを検索する。
+情報が断片的であれば、複数のサイトを訪問することもある。
+Transactionalは、検索や種々のダウンロードなどインタラクションを要するサイトを訪問するための検索である。
+ユーザーは、最終的な目的の情報のために訪問先のサイトでさらに検索をする。
+たとえばECサイトへの検索が該当する。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>抄訳 Epidemic Algorithm for Replicated Database Maintenance(1987)</title>
       <link>https://nryotaro.dev/posts/epidemic_algorithms_for_replicated_database_maintenance/</link>
