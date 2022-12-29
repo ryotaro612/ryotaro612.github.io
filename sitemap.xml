@@ -3,10 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2022-12-23T22:44:46-05:00</lastmod>
+    <lastmod>2022-12-28T12:52:36-05:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2022-12-23T22:44:46-05:00</lastmod>
+    <lastmod>2022-12-28T12:52:36-05:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/posts/programming_with_abstract_data_types/</loc>
+    <lastmod>2022-12-28T12:52:36-05:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/a_taxonomy_of_web_search/</loc>
     <lastmod>2022-12-23T22:44:46-05:00</lastmod>

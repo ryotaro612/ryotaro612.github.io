@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>抄訳 PROGRAMMING WITH ABSTRACT DATA TYPES (1974)</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>抄訳 PROGRAMMING WITH ABSTRACT DATA TYPES (1974)</h1>
+    <span class="date">December 28, 2022</span>
+    <div>
+        <p>高水準言語は、実装の詳細を意識せずに使える操作、データ構造、while文などの制御構造を提供する。
+この3つは抽象とよばれる。
+実装に必要なすべての抽象が言語から提供されることはないので、開発者は足りない抽象を実装しなければならない。
+抽象データ型は、言語から提供される抽象を組合せて作るデータ構造であり、開発対象の問題領域にあてはまる抽象を実現する手段でもある。
+抽象データ型に対する操作の実装は外部に公開されず、抽象データ型の特徴は抽象データ型に可能な操作によって決められる。
+構造化プログラミングと抽象データ型を提供するプログラミング言語を開発し、抽象データ型を使うプログラムのソースコードを例示することで、ほとんどの処理を抽象データ型で実装できることを示唆した。</p>
+<p>開発された言語は、抽象データ型の型、操作名、値の3組を指定することで、操作を呼び出す。
+以下は、stack<code>型の値</code>s<code>に別の抽象データ型の値</code>t<code>を</code>push<code>する操作とstackの宣言の一例である。 </code>create`は予約語であり、引数から抽象データ型を生成する関数名である。</p>
+<pre><code>stack$push(s, t)
+
+stack: cluster(element_type: type)
+...
+create
+  s: rep(element_type);
+  s.tp := 0;
+  e.e_type := element_type;
+  return s;
+  end
+	
+push operation(s: rep, v:s.e_type);
+  s.top := s.top+1;
+  s.stk[s.tp] := v;
+  return;
+  end;
+</code></pre>
+<p>開発された言語と最も近い言語は、オブジェクト指向が最初に実装されたSIMULA67である。
+抽象データ型の宣言とSIMULA67のクラスには多くの共通点があるが、内部の実装の可視性が両者を分ける。
+SIMULA67は、クラス内の属性と関数がクラスを宣言したブロック内部からアクセスできる。</p>
+<p>抽象データ型と構造化プログラミングは、ソースコードの理解に役立つが、時に実行速度を劣化させる。
+ソースコードの構造化と実行速度のトレードオフはコンパイラが解決すべき課題とみなされている。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>論文の<a href="https://dl.acm.org/doi/pdf/10.1145/942572.807045#:~:text=An%20abstract%20data%20type%20defines,characterizing%20operations%20for%20that%20type.">リンク</a></p>
+<h2 id="雑記">雑記</h2>
+<p>著者は、リスコフ置換原則で知られるリスコフ。
+抽象データ型との併用を想定したプログラミングパラダイムは構造化プログラミングであり、オブジェクト指向ではない。
+実装を隠蔽しモジュールをデータではなく振る舞いに依存する設計のプラクティスは、抽象データ型にもあり、オブジェクト指向のカプセル化固有のものではない。
+また、オブジェクト指向(SIMULA67)と抽象データ型を分けるのは、実装の可視性であり、抽象データ型のほうが実装の隠蔽を重視する。
+そのためか、カプセル化と情報隠蔽と区別する<a href="https://www.shuwasystem.co.jp/book/9784798046143.html">書籍</a>もある。
+抽象データ型とオブジェクト指向を分けるのは、むしろポリモーフィズムにあるように見える。
+抽象データ型の宣言は操作名と実装が同じ箇所にあり不可分であるから、抽象データ型はオブジェクト指向のインターフェースよりもクラスに近い。
+操作名と操作の実装を分けて宣言できないため、開発された言語がポリモーフィズムをどう実現できるか簡単には想像できない。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/a_taxonomy_of_web_search/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
