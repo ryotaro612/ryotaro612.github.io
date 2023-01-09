@@ -48,6 +48,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/dynamic_routing_between_capsules/">Dynamic Routing Between Capsules (2017)</a></h3>
+        <div class="summary"><p>カプセルはおなじ層にあるニューロン(ユニット)のグループであり、カプセルの出力するベクトルは入力にある特定のエンティティの分散表現になる。
+表題のdynamic routingは、カプセルの出力ベクトルを1つ上の層のどのカプセルに渡すべきかを学習する手法である。
+これにより、プーリング層で失われるエンティティの空間上の位置情報をカプセルの出力するベクトルで表現する。
+実験では、2層の畳み込み層と1層の全結合層からなる浅いニューラルネットワークをMNISTに適用し、長さでエンティティが存在する確率を、向きでエンティティの特徴を表現できるベクトルを学習できることを示した。</p></div>
+        <div class="article-footer">
+            <span class="date">December 26, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/hierarchical_attention_networks_for_document_classification/">Hierarchical Attention Networks for Document Classification (2016)</a></h3>
         <div class="summary"><p>Hierarchical Attention Network(HAN)は、単語は文から文書は文からなる文書の構造をアーキテクチャに反映し、単語の注意から文の注意を、文の注意から文書の注意を計算する。
 順方向と逆方向の2つのGRUでエンコードした単語の分散表現から注意を計算し、文ごとに、単語の注意の重みつき和を計算し文の分散表現とする。
@@ -149,18 +160,6 @@ BPSは、並列計算用のハードウェアと高水準な並列計算のプ�
         <div class="summary"><p>データウェアハウスの概要と発表時期の97年の関連技術を解説した論文で、データウェアハウスの理論を提唱したInmonにならい、データウェアハウスを、目的指向(subject-oriented)で、統合され、組織の意思決定に資する永続的なデータとらえている。
 関連技術を、ETL処理、データ保存方法、保存したデータによる分析の3つに分けて整理する。
 データベースの設計手法では、Kimballの提唱したスタースキーマ、その応用のスノーフレークスキーマ, 事実の星座(fact constellations)、インデックスについてビットマップインデックスを解説する。</p></div>
-        <div class="article-footer">
-            <span class="date">November 6, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/bayou/">Managing Update Conflicts in Bayou, a Weakly Connected Replicated Storage System</a></h3>
-        <div class="summary"><p>Bayouは、モバイルコンピューティングむけに95年に発表されたストレージで、弱い一貫性とレプリケーションがある。
-発表当時の不安定なモバイルネットワーク環境でもクライアントがストレージにアクセスできるように、一貫性を犠牲にしてクライアントにどんなレプリケーションへの読み書きも認める。
-Bayouは、アプリケーションの知識を借りてデータの整合性を復元するアプローチを開拓したストレージとして知られ、書き込み時に開発者が実装した不整合を検知する処理を実行する。
-不整合を検知したら、同じく開発者によって実装された不整合を解消する処理を実行する。
-ただし、書き込みのログをほかのレプリケーションに伝搬することでデータを同期するため、どんなレプリケーションでも不整合の検知と解消の処理が同一の結果になるように、これらの処理は決定的でなければならない。</p></div>
         <div class="article-footer">
             <span class="date">November 6, 2021</span>
         </div>

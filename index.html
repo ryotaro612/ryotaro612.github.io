@@ -48,6 +48,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/learning_to_rank_using_gradient_descent/">抄訳 Learning to Rank using Gradient Descent (2005)</a></h3>
+        <div class="summary"><p>ランキング学習のニューラルネットワークRankNetを提案する。
+RankNetは、ベクトルから実数を出力し、その出力が大きいほどランキングが高いと予測する。
+損失関数には、ある2つのベクトルのうち片方が他方よりもランキングが高い確率をあたえる。
+ここでの確率には、両ベクトルのモデルの出力の差をシグモイド関数に入力したときの出力を使う。
+RankNetの学習は、モデルの出力と訓練データの確率分布の交差エントロピーを最小化する。</p></div>
+        <div class="article-footer">
+            <span class="date">January 7, 2023</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/programming_with_abstract_data_types/">抄訳 PROGRAMMING WITH ABSTRACT DATA TYPES (1974)</a></h3>
         <div class="summary"><p>高水準言語は、実装の詳細を意識せずに使える操作、データ構造、while文などの制御構造を提供する。
 この3つは抽象とよばれる。
@@ -155,20 +167,6 @@ interval内のノードに向うエッジを根のノード順にソートし、
 1つのshardをディスクの連続領域に保存することで、あるノードとノードに接続するエッジを、高々P回のディスクへのアクセスでメモリに読み込める。</p></div>
         <div class="article-footer">
             <span class="date">November 12, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/popular_ensemble_methods_an_empirical_study/">抄訳 Popular Ensemble Methods: An Empirical Study(1999)</a></h3>
-        <div class="summary"><p>アンサンブル学習は、弱学習器を組みわせ、より予測性能の高いモデルを生成する。
-ニューラルネットワークと決定木を弱学習器にしたバギングとブースティングの予測性能を、23件のデータで測定した。
-バギングはほぼすべての場合に1つの学習器よりも性能がよかったが、まれにブースティングよりも著しく性能が低かった。
-他方、ブースティングは、特にニューラルネットワークを弱学習器にした場合に、1つの学習器よりも性能が低いことがあった。
-ブースティグは、既存の弱学習器が誤答したサンプルを回答できる弱学習器を生成する。
-<a href="https://cseweb.ucsd.edu/~yfreund/papers/boostingexperiments.pdf">Freundら</a>は、データにノイズが多いと、学習の後半になるほどノイズを学習するので、性能が悪くなると示唆した。
-データにノイズを混ぜ、その量とブースティングの精度を比較することで、ノイズが多いほどブースティングの性能がバギングと比べたときよりも悪くなることを確認した。</p></div>
-        <div class="article-footer">
-            <span class="date">November 5, 2022</span>
         </div>
     </article>
     
