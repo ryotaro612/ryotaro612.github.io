@@ -49,9 +49,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div>
         <p><a href="https://arxiv.org/pdf/1106.1813.pdf">SMOTE</a>は不均衡データに対するオーバーサンプリングを使う手法である。
 少数側のクラスのサンプルと近傍のサンプルから少数クラスのサンプルを合成する。
-SMOTEはすべての少数クラスのサンプルが合成のもとになりえる。
+SMOTEはすべての少数クラスのサンプルが合成の材料になりえる。
 対して、borderline-SMOTE1とborderline-SMOTE2は、境界から遠い少数クラスのサンプルを使わず、近いサンプルのみから合成する。
-borderline-SMOTE1は、合成の相手側として常に少数クラスのサンプルを選び、borderline-SMOTE2は多数クラスのサンプルを選ぶこともある。</p>
+borderline-SMOTE1は合成の相手側として常に少数クラスのサンプルを選ぶ。
+borderline-SMOTE2は多数クラスのサンプルを選ぶこともある。</p>
 <p>borderline-SMOTE1の場合、少数クラスを\(P=\{p_1,p_2,\dots p_{\textit{num}}\}\), 多数クラスを\(N=\{n_1,n_2,\dots n_{\textit{num}}\}\)とする。
 各\(p_i\)について、\(m\)近傍を探す。
 \(m\)個のうち、多数クラスに属するサンプルの数を\(m'\)とする。
@@ -68,7 +69,8 @@ $$
 によってサンプルを合成する。</p>
 <p>論文への<a href="https://sci2s.ugr.es/keel/pdf/specific/congreso/han_borderline_smote.pdf">リンク</a></p>
 <h2 id="雑記">雑記</h2>
-<p>すべての近傍が多数のサンプルであれば、その少数クラスのサンプルを合成に使わないが、少数だからこそ近傍がすべて多数クラスのサンプルでありえるので、本当にノイズかどうかは確認したほうがよさそう。</p>
+<p>すべての近傍が多数のサンプルであれば、その少数クラスのサンプルを合成に使わないが、少数だからこそ近傍がすべて多数クラスのサンプルでありえるそう。
+本当にノイズかどうかは確認したほうがよいかも。</p>
     </div>
 </main>
 
