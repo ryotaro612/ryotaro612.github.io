@@ -47,6 +47,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/web_tables/">メモ WebTables: Exploring the Power of Tables on the Web</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>表題の論文は、Web上の表から抽出した大量の関係モデルを対象にした検索を提案・評価した
+。検索の他にも、一部の属性を入力とするスキーマの補完、入力した属性ないしスキーマに類似のものを推定するアルゴリズムの議論もある。
+ここのスキーマは属性のリストである。論文の著者らは研究時にGoogleに在籍しており、論文で使われたコーパスはグーグルの汎用ウェブクローラで集めた141億のHTMLの表から抽出した高精度な154百万の関係モデルである。
+コーパスに使うものはHTML形式の表から抽出した関係モデルのみである。
+手法の新規性は、1億以上もの大量のテーブルを対象にしていることにある。</p></div>
+        <div class="article-footer">
+            <span class="date">October 31, 2019</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/a_survey_on_data_collection_for_machine_learning/">メモ A Survey on Data Collection for Machine Learning</a></h3>
         <div class="summary"><p>表題の論文は、文字通り、機械学習に使う教師データに関するサーベイ論文であり、
 機械学習や自然言語処理などのデータの応用分野だけでなく、データの管理にまつわる分野の調査も含まれているところに特徴がある。
@@ -136,19 +149,6 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
 具体的には、ラベルづけしたデータでSVMをオンライン学習し、無作為に抽出されたラベルのないデータの中で最も超平面に近いデータにラベルをつける手順をマージンの中にあるデータ数が変わらなくなるまで繰り返す。</p></div>
         <div class="article-footer">
             <span class="date">August 31, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/distilling_the_knowledge_in_a_neural_network/">メモ Distilling the Knowledge in a Neural Network</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>表題にあるニューラルネットワークの蒸留についての論文を紹介する。
-蒸留は、既存のモデルを使い、できるだけ予測性能を落とさずに、より小さいモデルを作るための学習手法である。
-既存のモデルとして想定されているのは、複数のモデルからなるモデルや正則化された大きなモデルのように予測性能は高いが計算コストが高いものであり、
-蒸留の目的は本番の運用に耐えられるデプロイ可能なモデル作ることにある。
-本論文は、出力層の活性化関数に温度つきソフトマックスを使った多クラス分類のモデルを蒸留する手法を提案し、実験により手法を評価している。</p></div>
-        <div class="article-footer">
-            <span class="date">August 24, 2019</span>
         </div>
     </article>
     

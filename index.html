@@ -48,6 +48,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/">抄訳 Brewer&#39;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web(2002)</a></h3>
+        <div class="summary"><p>分散システムは一貫性、可用性、分断耐性を同時に満たすことができない。
+この予想は、2000年のPODCでBrewerが発表したCAP定理として知られてる。
+Brewerの<a href="https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf">講演</a>では厳密な定義と証明がなく、それを補うために、2つの計算モデルにおいてCAPが成立することを証明する。
+計算モデルは、asynchronous network modelとpartially synchhronous modelである。
+asynchronouse network modelでは、モデルのノードは、クロックをもたず、受信したメッセージとノード内の計算のみで出力を決定する。
+partially synchronous modelでは、各ノードは、一定間隔で単調増加するクロックをもち、処理をタイムアウトしたり、スケジューリングしたりできる。
+ただし、ノード間でクロックが同期されているとは限らない。</p></div>
+        <div class="article-footer">
+            <span class="date">January 17, 2023</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/learning_to_rank_using_gradient_descent/">抄訳 Learning to Rank using Gradient Descent (2005)</a></h3>
         <div class="summary"><p>ランキング学習のニューラルネットワークRankNetを提案する。
 RankNetは、ベクトルから実数を出力し、その出力が大きいほどランキングが高いと予測する。
@@ -156,17 +170,6 @@ L1に近いほど正常とみなす。
 AdaBoostを借りることで、単分類の難しい少数クラスのサンプルに高い重みを単純に与えられる。</p></div>
         <div class="article-footer">
             <span class="date">November 13, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/graphchi_large_scale_graph_computation_on_just_a_pc/">抄訳 GraphChi: Large-Scale Graph Computation on Just a PC(2012)</a></h3>
-        <div class="summary"><p>商業規模の有向グラフを一般PCで計算できるデータ構造とプログラミングモデルであり、任意のひとつのノードとそのノードに接続する全てのエッジを読み込めるメモリがあればよい。
-順序つきのノードを互いに素なP個の集合に分け、それぞれをintervalをよぶ。
-interval内のノードに向うエッジを根のノード順にソートし、エッジをP個のshardに分けて保存する。
-1つのshardをディスクの連続領域に保存することで、あるノードとノードに接続するエッジを、高々P回のディスクへのアクセスでメモリに読み込める。</p></div>
-        <div class="article-footer">
-            <span class="date">November 12, 2022</span>
         </div>
     </article>
     

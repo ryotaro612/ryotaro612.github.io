@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>抄訳 Brewer&#39;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web(2002)</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>抄訳 Brewer&#39;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web(2002)</h1>
+    <span class="date">January 17, 2023</span>
+    <div>
+        <p>分散システムは一貫性、可用性、分断耐性を同時に満たすことができない。
+この予想は、2000年のPODCでBrewerが発表したCAP定理として知られてる。
+Brewerの<a href="https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf">講演</a>では厳密な定義と証明がなく、それを補うために、2つの計算モデルにおいてCAPが成立することを証明する。
+計算モデルは、asynchronous network modelとpartially synchhronous modelである。
+asynchronouse network modelでは、モデルのノードは、クロックをもたず、受信したメッセージとノード内の計算のみで出力を決定する。
+partially synchronous modelでは、各ノードは、一定間隔で単調増加するクロックをもち、処理をタイムアウトしたり、スケジューリングしたりできる。
+ただし、ノード間でクロックが同期されているとは限らない。</p>
+<p>証明するには、はじめに、一貫性、可用性、分断耐性を定義する必要がある。
+証明において<a href="https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf">線形化可能性</a>を一貫性とみなす。
+線形化可能性の必要十分条件は、読み書きがアトミックであるかのように観測できる全順序の操作列が存在することである。
+可用性があれば、正常なノードにメッセージを送ると、かならず応答をえられる。
+ただし、応答の時間の長さに上限はない。
+分断耐性の分断は、ノードから別のノードへのメッセージが届かないことを意味する。</p>
+<p>以上の定義でCAP定理が成立するとき、asynchronous network modelは、分断しうるネットワークにおいて、可用性と線形化可能性を満たすことはない。
+証明には背理法を使い、両性質を満たすアルゴリズム\(A\)を仮定する。
+ここに2つのノードの素集合\(G_1, G_2\)があり、異なる素集合のノード間の通信が分断されている。
+\(A\)のプレフィックス\(\alpha_1\)を、\(G_1\)のノードが一貫性のあるオブジェクトの値を\(v_0\)とは別の値の書き込みで終わる操作系列とする。
+また、\(\alpha_2\)を、\(G_2\)のノードがオブジェクトの値の読み込みで終わる操作系列とする。
+また、\(\alpha_1, \alpha_2\)には、\(G_1, G_2\)間でのメッセージを送信はないとする。
+可用性があるので、\(\alpha_1\)の書き込みと\(\alpha_2\)の読み込みは完了する。
+\(\alpha_1\)と\(\alpha_2\)を連結した実行系列を\(\alpha\)とおく。
+\(G_2\)は、\(G_1\)とメッセージを交換できないため、\(\alpha\)と\(\alpha_2\)を区別できない。
+そのため、線形化可能性より\(\alpha_2\)の読み込みの結果は\(v_0\)でなければならない。
+ところが、\(\alpha\)において、\(\alpha_2\)の前には\(\alpha_1\)があり、オブジェクトの値が変更された後にしか読み込みはない。
+したがって矛盾である。</p>
+<p>メッセージが消失しないネットワークであっても、可用性と一貫性を満たすことはない。
+asynchronous network modelは、到達時間が無限に長いメッセージと消失したメッセージを区別できない。
+そのため、メッセージの消失しないネットワークで性質を同時に満たすアルゴリズムがあるならば、それは消失する環境でも2つの性質をみたすことになり、さきほどの証明に反する。
+一方、partially synchronous modelであれば、一貫性を犠牲にすれば可用性を実現できる。
+これは、ノードが別のノードに送信したメッセージの応答が一定時間経過しても返らない場合、フォールバックの値を出力すればよい。</p>
+<p>論文の<a href="https://users.ece.cmu.edu/~adrian/731-sp04/readings/GL-cap.pdf">リンク</a></p>
+<h2 id="雑記">雑記</h2>
+<p>第二著者のNancy A. LinchはFLP不可能性を証明したことでも知られる。
+FLP不可能性は、プロセスがクラッシュしうる場合には常に含意を保証できる非同期アルゴリズムは存在しないことをいう。</p>
+<p>asynchronous network modelが線形化可能性をみたさないことを示すときに、線形化可能性のローカル性が使われている。
+各ノードが線形化可能かつそのとき限り、システム全体が線形化可能になる。
+そのために、\(G_2\)だけに着目した操作系列が線形化可能でないことから、システム全体が線形化可能でないといえる。</p>
+<p>線形化可能性はかなり強い制約で、PostgreSQLをはじめとするRDMSでも、<a href="https://www.postgresql.org/docs/current/transaction-iso.html">デフォルト</a>のトランザクション分離レベルでサポートしていない。
+また、CAP定理の可用性は、1つのノードだけに着目した性質であって、ノードが故障したときにシステム全体が正常に機能するかを問うていない。
+Nancy Linchの論文のなかで、後者について分析したものに<a href="https://groups.csail.mit.edu/tds/papers/Lynch/jacm88.pdf">Consensus in the Presence of Patial Synchrony</a>がある。これは、partial synchronousとよばれる環境でシステムが正常に機能するために必要なプロセッサ数と障害を許容できるプロセッサ数の関係を示した。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/learning_to_rank_using_gradient_descent/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
