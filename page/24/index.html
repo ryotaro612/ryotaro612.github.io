@@ -48,6 +48,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/subword_regularization/">概要 Subword Regularization: Improving Neural Network Translation Models with Multiple Subword Candidates</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>表題は、過去に<a href="../neural_machine_translation_of_rate_words/">紹介</a>した<a href="https://www.aclweb.org/anthology/P16-1162">論文</a>と同様、sentencepiece（ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザ）の元になった論文にあたる。
+ノイズに対する頑強さのために、単語のサブワード（部分文字列）を生成するユニグラム言語モデルの学習方法と、モデルから生成されたサブワード列を入力とする機械翻訳モデルの学習方法を提案した。</p></div>
+        <div class="article-footer">
+            <span class="date">July 17, 2019</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/neural_machine_translation_of_rate_words/">概要 Neural Machine Trasnslation of Rare Words with Subword Units</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>内容は、sentencepiece（ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザ）のトークナイズで使われるアルゴリズムになっている。単語をサブワード（単語の部分文字列）に分割し、サブワードを組み合わせて珍しい単語や未知語を表現することで、これらの出現頻度の低い単語の翻訳上げるというもの。</p></div>
@@ -128,20 +138,6 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
 このアーキテクチャは、当ページで以前紹介した<a href="https://aclweb.org/anthology/papers/C/C18/C18-1139/">Contextual String Embeddings for Sequence Labeling</a>で応用されている。</p></div>
         <div class="article-footer">
             <span class="date">October 5, 2018</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/context_string_embeddings_for_sequence_labeling/">メモ Contextual String Embeddings for Sequence Labeling</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>表題の論文は、ライブラリflairのアルゴリズムを提案、評価したもの。</p>
-<p>論文は、テキストの系列ラベリングに向いた単語の分散表現モデルを提案し、
-提案手法が予測性能において既存手法より優れいたことを実験的に示した。
-本手法における単語の分散表現は、単語の字面だけでなく、文中における単語の出現位置によって決まる。
-いいかえると、同じ単語であっても、文中における出現位置が異なれば、単語は異なる分散表現に変換される。
-著者らは、分散表現に文脈の情報を含められることを強調して、提案手法をContextual String Embeddingsと名付けた。</p></div>
-        <div class="article-footer">
-            <span class="date">September 28, 2018</span>
         </div>
     </article>
     

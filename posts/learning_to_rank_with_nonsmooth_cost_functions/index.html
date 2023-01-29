@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>抄訳 Learning to Rank with Nonsmooth Cost Functions (2006)</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>抄訳 Learning to Rank with Nonsmooth Cost Functions (2006)</h1>
+    <span class="date">January 23, 2023</span>
+    <div>
+        <p>情報検索の指標は、モデルの返す文書の順序を評価する。
+指標の関数自体を損失関数にできれば、重みの更新を指標に最適化できる。
+ところが、文書の順序を評価する指標は、重みによる微分が未定義や0になりえるので、損失関数には使えない。
+LambdaRankは損失関数に直接は使えない関数を学習に応用するアルゴリズムである。
+RankNetをLambdaRankで学習することで、学習時間を短縮し、NDCGを向上できた。</p>
+<p>RankNetは、2つの文書からクエリに適合する方を選べるように学習する。
+損失関数\(C_T\)に交差エントロピーを使う場合、文書\(i, j\)を入力したときのスコアの差\(s_i - s_j\)をシグモイド関数にあたえ、その値を文書\(i\)が\(j\)よりも適合する確率とみなす。
+学習データの集合を\(\mathcal{P}\), モデルの重みを\(w_k\in\mathcal{R}\)とするとき、\(w_k\)で\(C_T\)を偏微分すると</p>
+<p>$$
+\begin{align}
+C_T&amp;\equiv\sum_{\{i,j\}\in P}C(s_i,s_j)\\
+\frac{\partial C_T}{\partial w_k}&amp;=\sum_{\{i,j\}\in P}\frac{\partial C(s_i, s_j)}{\partial s_i}\frac{\partial s_i}{\partial w_k} + \frac{\partial C(s_i, s_j)}{\partial s_j}\frac{\partial s_j}{\partial w_k}\\
+\end{align}
+$$</p>
+<p>もっとも、式が成立するには\(C(s_i, s_j)\)が\(s_i\)と\(s_j\)でつねに偏微分できなければならない。
+そこで、クエリ\(i\)を与えたときにモデルが出力する\(n_i\)個のスコアを\(s\)とラベルを\(l\)として
+$$
+\frac{\partial C}{\partial s_j} = -\lambda_j(s_1, l_1,\dots, s_{n_i}, l_{n_i})
+$$
+が存在する必要十分条件を求める。</p>
+<p>ポアンカレの補題より、\(S\in \mathcal{R}^n\)が星型の開集合であるとき、\(S\)上の閉形式は完全である。
+同時に完全形式は閉形式であるから、星型の開集合上の微分形式が完全形式であり、かつそのときに限り、閉形式になる。
+\(\mathcal{R}^{n}\)上の1-形式の基底を\(dx^j\)として\(\boldsymbol{\lambda}\)を
+$$
+\boldsymbol{\lambda} \equiv \sum_j \lambda_j dx^j
+$$
+と定義する。
+このとき1-形式\(\boldsymbol{\lambda}\)は閉であるから
+$$
+\frac{\partial \lambda_k}{\partial x^j} - \frac{\partial\lambda_j}{\partial x_k} = 0\ \ (\forall k &lt; j \le n_i)
+$$
+である。以上から
+$$
+\frac{\partial\lambda_j}{\partial s_k} = \frac{\partial \lambda_k}{\partial s_j}\ \ \forall j,k \in \{1,\dots , n_i\}
+$$
+が成りたつように\(C\)を選べばよい。</p>
+<p>論文の<a href="https://papers.nips.cc/paper/2006/hash/af44c4c56f385c43f2529f9b1b018f6a-Abstract.html">リンク</a></p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

@@ -48,6 +48,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/rusboost_a_hybrid_approach_to_alleviating_class_imbalance/">抄訳 RUSBoost: A Hybrid Approach to Alleviating Class Imbalance(2010)</a></h3>
+        <div class="summary"><p>RUSBoostは、random undersampling(RUS)とAdaBoostを応用し、不均衡データの予測性能を改善する。
+類似の先行研究である<a href="http://www.datascienceassn.org/sites/default/files/SMOTEBoost%20Improving%20Prediction%20of%20the%20Minority%20Class%20in%20Boosting%20.pdf">SMOTEBoost</a>よりも学習時間が短く、アルゴリズムが単純である。
+アンダーサンプリングで学習データを減らせば、学習時間を短くできるが、学習器に与える情報が減る。
+一方、AdaBoostは、前に訓練した弱学習器が誤分類したデータに高い重みを与え、次の弱学習器を学習し、予測性能を上げる。
+AdaBoostを借りることで、単分類の難しい少数クラスのサンプルに高い重みを単純に与えられる。</p></div>
+        <div class="article-footer">
+            <span class="date">November 13, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/graphchi_large_scale_graph_computation_on_just_a_pc/">抄訳 GraphChi: Large-Scale Graph Computation on Just a PC(2012)</a></h3>
         <div class="summary"><p>商業規模の有向グラフを一般PCで計算できるデータ構造とプログラミングモデルであり、任意のひとつのノードとそのノードに接続する全てのエッジを読み込めるメモリがあればよい。
 順序つきのノードを互いに素なP個の集合に分け、それぞれをintervalをよぶ。
@@ -147,20 +159,6 @@ producerは、トピックつきのメッセージをborkerに送り、brokerが
 consumerは、brokerのトピックからメッセージを取得する。</p></div>
         <div class="article-footer">
             <span class="date">August 22, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/pregel_a_system_for_large_scale_graph_processing/">抄訳 Pregel: A System for Large-Scale Graph Processing(2010)</a></h3>
-        <div class="summary"><p>Googleで開発されたPregelは、ソーシャルグラフやハイパーリンクのグラフなどの巨大なグラフデータの処理に適した計算モデルである。
-計算モデル自体も、処理対象のデータとおなじく、ワーカーが別のワーカーとのメッセージの送受信を繰り返すグラフ構造をなす。
-このモデルのオリジナルは、以前<a href="/posts/a_bridging_model_for_parallel_computation/">紹介</a>したValiantの<a href="https://dl.acm.org/doi/pdf/10.1145/79173.79181">Bulk Synchronous Parallel model</a>(BPS)である。
-BPSは時間を一定間隔に区切り、次の間隔が始まる時点で、それまでのメッセージの送受信が全て成功していることを保証する。
-間隔の中で、コンポーネントは別のコンポーネントにメッセージを送信する。
-間隔を過ぎたとき、失敗した処理や未送信のあるコンポーネントがあれば、成功するまで計算を再実行させる。
-Pregelでは、この間隔をsuperstepとよび、グラフ上の点であるワーカーがコンポーネントにあたる。</p></div>
-        <div class="article-footer">
-            <span class="date">August 19, 2022</span>
         </div>
     </article>
     

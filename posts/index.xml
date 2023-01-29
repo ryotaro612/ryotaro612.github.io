@@ -6,7 +6,20 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 17 Jan 2023 11:42:12 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Jan 2023 16:23:52 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抄訳 Learning to Rank with Nonsmooth Cost Functions (2006)</title>
+      <link>https://nryotaro.dev/posts/learning_to_rank_with_nonsmooth_cost_functions/</link>
+      <pubDate>Mon, 23 Jan 2023 16:23:52 -0500</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/learning_to_rank_with_nonsmooth_cost_functions/</guid>
+      <description>&lt;p&gt;情報検索の指標は、モデルの返す文書の順序を評価する。
+指標の関数自体を損失関数にできれば、重みの更新を指標に最適化できる。
+ところが、文書の順序を評価する指標は、重みによる微分が未定義や0になりえるので、損失関数には使えない。
+LambdaRankは損失関数に直接は使えない関数を学習に応用するアルゴリズムである。
+RankNetをLambdaRankで学習することで、学習時間を短縮し、NDCGを向上できた。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>抄訳 Brewer&#39;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web(2002)</title>
       <link>https://nryotaro.dev/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/</link>
