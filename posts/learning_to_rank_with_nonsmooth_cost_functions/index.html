@@ -82,7 +82,13 @@ $$
 $$
 \frac{\partial\lambda_j}{\partial s_k} = \frac{\partial \lambda_k}{\partial s_j}\ \ \forall j,k \in \{1,\dots , n_i\}
 $$
-が成りたつように\(C\)を選べばよい。</p>
+が成りたつような\(C\)であればよい。</p>
+<p>RankNetの高速化をはかる実験では、複数の損失2つの文書を入れ換えてえられるNDCGの利得とRankNetの損失関数の積が、損失関数に使われている。
+このとき
+$$
+\lambda = N\left(\frac{1}{1+e^{s_i-s_j}}\right)(2^{l_i}-2^{l_j})\left(\frac{1}{\log(1+i)}-\frac{1}{\log(1+j)}\right)
+$$
+である。</p>
 <p>論文の<a href="https://papers.nips.cc/paper/2006/hash/af44c4c56f385c43f2529f9b1b018f6a-Abstract.html">リンク</a></p>
     </div>
 </main>
