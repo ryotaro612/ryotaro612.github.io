@@ -2,6 +2,7 @@
 <html>
 
 <head>
+	<meta name="generator" content="Hugo 0.92.2" />
     
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -17,14 +18,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/base.css">
     
-<link rel="stylesheet" href="/css/single.css">
-<link rel="stylesheet" href="/css/posts/single.css">
-<link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/articles.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>要約 Applying Conditional Random Fields to Japanese Morphological Analysis</title>
+    <title>Blanket</title>
 </head>
 
 <body>
@@ -44,34 +43,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
     
 <main>
-    <h1>要約 Applying Conditional Random Fields to Japanese Morphological Analysis</h1>
-    <span class="date">July 17, 2018</span>
-    <div>
-        <p>Mecabの中の人の<a href="http://chasen.naist.jp/chaki/t/2009-09-30/doc/mecab-cabocha-nlp-seminar-2009.pdf">資料</a>で紹介でされている、Mecabのアルゴリズムを提案・評価した論文。</p>
-<p>CRF（の一種）を使った形態素解析を提案し、提案手法の方がHMMベースの従来手法よりも高い精度で解析できることを実験で示した。</p>
-<p>品詞の間には名詞と固有名詞のように階層関係があり、特定の階層の品詞だけを学習データに使うとスパースなデータになったり逆に品詞の粒度が荒すぎたりしてしまう。
-そこで、提案手法では階層を問わず品詞を素性関数に与えて品詞の粒度を調整している。</p>
-<p>また、HMMだと遷移先が少ない状態（形態素の候補）が多い系列や遷移する状態が少ない系列に高い確率になりやすい問題を取り上げ、
-提案手法ではそのような偏りの影響を抑えられると説明されている。</p>
-<p>パラメタ推定にある数式の展開を詳しく知りたければ、<a href="http://www.coronasha.co.jp/np/isbn/9784339027518/">自然言語処理シリーズ 言語処理のための機械学習入門</a>の5章により詳しく書かれている。</p>
-<p>論文は<a href="https://aclanthology.org/W04-3230.pdf">こちら</a></p>
-    </div>
+    <h1>Posts</h1>
+
+    
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/text_cls_from_lbl_and_unlbl_doc_em/">概要 Text Classification from Labeled and Unlabeled Documents using EM</a></h3>
+        <div class="summary"><h3 id="アルゴリズム">アルゴリズム</h3>
+<p>提案手法は、Naive BayesとEMアルゴリズムを組み合わせたもの。
+ラベル付きデータが\(D^l\)でラベルなしデータが\(D^u\)で表されるとき、対数尤度\(\log P(D^l)P(D^u)\)を最大化する問題を解く。</p></div>
+        <div class="article-footer">
+            <span class="date">July 8, 2018</span>
+        </div>
+    </article>
+    
 </main>
 
     
+
 <ul class="pagination">
     
     <li>
-        <a href="/posts/text_cls_from_lbl_and_unlbl_doc_em/"><span class="material-icons">chevron_left</span></a>
+        <a href="/"><span class="material-icons">first_page</span></a>
     </li>
-    
-    
     <li>
-        <a href="/posts/a_simple_semi_supervised_for_ner/"><span class="material-icons">chevron_right</span></a>
+        <a href="/page/25/"><span class="material-icons">chevron_left</span></a>
     </li>
+    
     
 </ul>
-
 
     <footer>
         <ul>

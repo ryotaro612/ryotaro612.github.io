@@ -3,10 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2023-01-23T16:23:52-05:00</lastmod>
+    <lastmod>2023-01-29T15:14:29-05:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2023-01-23T16:23:52-05:00</lastmod>
+    <lastmod>2023-01-29T15:14:29-05:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/posts/principles_of_transaction_oriented_database_recovery/</loc>
+    <lastmod>2023-01-29T15:14:29-05:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/learning_to_rank_with_nonsmooth_cost_functions/</loc>
     <lastmod>2023-01-23T16:23:52-05:00</lastmod>

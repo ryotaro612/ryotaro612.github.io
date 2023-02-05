@@ -47,7 +47,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1>抄訳 GraphChi: Large-Scale Graph Computation on Just a PC(2012)</h1>
     <span class="date">November 12, 2022</span>
     <div>
-        <p>商業規模の有向グラフを一般PCで計算できるデータ構造とプログラミングモデルであり、任意のひとつのノードとそのノードに接続する全てのエッジを読み込めるメモリがあればよい。
+        <p>GraphChiは、商業規模の有向グラフをコンシューマPCで計算できるとうたうデータ構造とプログラミングモデルである。
+そのためには、任意のひとつのノードとそのノードに接続する全てのエッジを読み込めるメモリがあればよい。
 順序つきのノードを互いに素なP個の集合に分け、それぞれをintervalをよぶ。
 interval内のノードに向うエッジを根のノード順にソートし、エッジをP個のshardに分けて保存する。
 1つのshardをディスクの連続領域に保存することで、あるノードとノードに接続するエッジを、高々P回のディスクへのアクセスでメモリに読み込める。</p>
@@ -67,8 +68,9 @@ end
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>論文の<a href="https://www.usenix.org/system/files/conference/osdi12/osdi12-final-126.pdf">リンク</a></p>
-<h2 id="雑記">雑記</h2>
-<p>単一のPCで動かすので、ネットワーク上の通信の失敗を考えなくてよいため、論文中で比較されたBulk-Synchromous Parall(BSP model) にある同期やフォールトトレランスの仕組みが省かれているようにみえる。
+<h3 id="雑記">雑記</h3>
+<p>単一のPCで動かすため、ネットワーク上の通信の失敗をあまり考えなくてよい。
+そのために、論文中で比較されたBulk-Synchromous Parall(BSP model) にある同期やフォールトトレランスの仕組みが省かれているようにみえる。
 実験の比較対象がクラスタを使った場合なので、単一のPCで動かす同様の目的の手法と比べたときの評価がわからない。</p>
     </div>
 </main>

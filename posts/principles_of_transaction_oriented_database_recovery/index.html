@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>抄訳 Principles of Transaction-Oriented Database Recovery(1983)</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>抄訳 Principles of Transaction-Oriented Database Recovery(1983)</h1>
+    <span class="date">January 29, 2023</span>
+    <div>
+        <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>クラッシュしたRDMSのディスクとバッファの状態をクラッシュ前の状態にもどす手法を体系化する。
+体系は、Propagation, Buffer handling, EOT Processing, Checkpointingの4要素に着目して技術を分類する。</p>
+<p>Propagationは、ブロックにページ上のデータを書き込むことを意味する。
+Propagationで書き込まれたデータは、RDMBSがクラッシュしてもログを使わずに復旧できる。
+書き込み方は、もとのページのあったブロックとは別のブロックに更新後のページを書き込むアトミックな方法と、もとのページを上書きするアトミックでない方法がある。
+アトミックであれば、propagationの結果は、すべてのデータを書き込めるか、すべて書き込まれないかのどちらかになる。
+アトミックでなければ、一部データのみ書き込みが失敗することがある。
+あるアトミックな方法はページテーブルへの参照を使い、propagationが終わった後に、ページテーブルの永続的な参照先を、新しいページテーブルのアドレスに更新する。
+もし、propagationとアドレスの更新の間にRDBMSがクラッシュしたら、ページテーブルはpropagation前の状態に戻る。</p>
+<p>Buffer handlingは、propagationまたはページをブロックに書き込むタイミングの戦略である。
+RDBMSがクラッシュするとpropagationされていないバッファ上のデータは失われる。
+バッファのデータが部分的に永続化されてRDBMSが異常終了すると、データの整合性がなくる。
+整合性を復元するため操作を取り消さなくてはならない(UNDO)が、UNDOの方法はbuffer hanlingによって変わってくる。
+体系は、ディスクへの書き込みとpropagationを任意のタイミングで実行するパターンと、トランザクションの終了(EOT)まで書き込みを延期するパターンを区別する。
+propagationがアトミックであれば、前者の場合はUNDOのためにログが必要であり、後者であれば不要である。</p>
+<p>ACID特性のDurabilityを保証するならば、トランザクションで起きた更新は、トランザクション終了後にRDMBSがクラッシュしても、永続化されていなければならない。
+トランザクションの終了後もpropagationされていないページを残す場合、クラッシュ後にトランザクションの操作を再現(REDO)し、ページを復元しなければならない。
+そのためには、そのトランザクションのREDOログが必要になる。
+一方、トランザクションの終了時に更新されたページをすべてpropagationするのであれば、不要である。
+ただし、ディスクの故障などの物理障害からDurabilityを保証するには、物理的なDB間のレプリケーションをとらなければならず、障害からレプリケーションの内容を守るためのREDOログは依然として必要になる。</p>
+<p>Checkpointingは、トランザクションのREDO時にある時点以前の操作のREDOを不要にするための手法である。
+Checkpointingは、いつ実行するかによって4種類の区別があり、Transaction-Oriented Checkpoint(TOC), Transaction-Consistent-Checkpoint(TCC), Action-Consisitent Checkpoint(ACC), Fuzzy Checkpointがある。
+TOCは、各トランザクションの終了時にトランザクションで更新されたページをpropagationする。
+TCCは、前回のチェックポイント以降に発生し、すでに完了したすてのトランザクションをチェックポイントの対象にする。
+TCCの開始時点で実行中のトランザクションがすべて完了するまで待機し、完了後にチェックポイントを生成する。
+生成が完了するまで、新しいトランザクションの開始を延期する。
+ACCは、TCCと同じく、複数のトランザクションを対象にする。TCCとの違いは、ページを更新する処理と処理に実行する点にあり、ACCは実行中のトランザクションもチェックポイントの対象する。
+fuzzy checkpointは、バッファの状態をログに記録しておき、復元時には、ログからクラッシュ時点のバッファの状態を復元する。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>論文の<a href="http://www.cs.cmu.edu/~dga/15-712/F07/papers/haerder83.pdf">リンク</a></p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/learning_to_rank_with_nonsmooth_cost_functions/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>

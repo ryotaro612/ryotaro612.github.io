@@ -48,6 +48,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/lightgbm/">LightGBM: A Highly Efficient Gradient Boosting Decision Tree</a></h3>
+        <div class="summary"><p>LightGBMは、GBDTを高速化したアルゴリズムであり、XGBoostよりも必要な計算時間と消費メモリが少ない。
+GBDTの処理時間のボトルネックは決定木の分岐を決めるところである。
+その前処理で特徴の値をソートする場合は、ソートがボトルネックになる。
+勾配の小さいサンプルを除外することでデータを減らし、また、同時に0でない値にならない排他的な特徴をマージすることで特徴の種類を減らし、ソートを高速化した。</p></div>
+        <div class="article-footer">
+            <span class="date">April 16, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/adam/">Adam: A Method for Stochastic Optimization</a></h3>
         <div class="summary"><p>ADAMはAdaptive moment estimationに由来し、名前のとおり、推定した1, 2次のモーメントによる学習率最適化のアルゴリズムである。
 勾配が疎なときに有効なAdaGradの利点と、目的関数が時間とともに変化してもよいRMSPropの利点をそなえる。
@@ -143,19 +154,6 @@ Pegasosは、目的関数の最小値の近似値をもとめる。
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/bringing_gnu_emacs_to_native_code/">Bringing GNU Emacs to Native Code</a></h3>
-        <div class="summary"><p>Emacs 28から利用できる<a href="https://gcc.gnu.org/onlinedocs/jit/">libgccjit</a>によるネイティブコンパイルの解説である。
-パッケージアーカイブELPAにあるelisp-benchmarksによる比較ではバイトコンパイルよりも2.3倍から42倍の高速化を実現した。
-ネイティブコンパイル時は、はじめに、Emacs Lispのコードをバイトコンパイラで、Emacs VM(Lisp Assembly Program, LAP)の中間表現に変換する。
-つぎに、LAPをS式で静的単一代入形式の中間表現LIMPLEに変換する。
-LIMPLEは、GCCの中間表現GIMPLEに由来し、ネイティブコンパイルの中核技術にあたる。
-さいごに、LIMPLEをlibgccjitの中間表現に変換し、GCCでネイティブに実行可能なプログラムにコンパイルする。</p></div>
-        <div class="article-footer">
-            <span class="date">January 30, 2022</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -174,7 +172,7 @@ LIMPLEは、GCCの中間表現GIMPLEに由来し、ネイティブコンパイ�
         <a href="/page/6/"><span class="material-icons">chevron_right</span></a>
     </li>
     <li>
-        <a href="/page/25/"><span class="material-icons">last_page</span></a>
+        <a href="/page/26/"><span class="material-icons">last_page</span></a>
     </li>
     
 </ul>

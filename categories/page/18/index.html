@@ -47,6 +47,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/automatic_differentiation_in_pytorch/">論文メモ Automatic differentiation in Pytorch</a></h3>
+        <div class="summary"><p>Pytorchの自動微分を解説したプレプリントのショートペーパである。
+Pytorchの自動微分特徴として、in-placeアルゴリズム、微分の導出に不要な計算を省く仕組みのあるテープ、C++による実装をあげている。
+<a href="https://pytorch.org/blog/pytorch-0_4_0-migration-guide/">0.4.0での仕様変更</a>によって<code>Tensors</code>と<code>Variables</code>がマージされたことや<code>volatile</code>が非推奨になったことをふまえていない。
+読むときは、以上の点をはじめとする現在のAPIとの差異に注意する必要がある。</p></div>
+        <div class="article-footer">
+            <span class="date">July 4, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/rouge/">論文メモ ROUGE: A Package for Automatic Evaluation of Summaries</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>生成された要約を機械的に評価するための指標, Recall-Oriented Understudy for Gisting Evaluation(ROUGE)を提案した論文である。
@@ -158,19 +169,6 @@ $$ \mathrm{proj}(\boldsymbol{\theta})= \begin{cases} \boldsymbol{\theta}/||\bold
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/learning_joint_multilingual_sentence_representations_with_neural_machine_translation/">論文 メモ Learning Joint Multilingual Sentence Representations with Neural Machine Translation</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>多言語の文をあつかう分散表現モデルを発表した論文である。
-異なる言語の文であっても、意味が同じであれば、同様の分散表現に変換される。
-モデルのアーキテクチャにはseq2seqを、入力と出力には対訳コーパスをつかう。
-ミニバッチごとに、入力または出力の言語をいれかえ、言語に依存しない文の意味の分散表現への変換方法を学習する。
-本論文の成果は多言語に対応する分散表現のモデルのライブラリ<a href="https://github.com/facebookresearch/LASER">LASER</a>に応用されている。</p></div>
-        <div class="article-footer">
-            <span class="date">April 29, 2020</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -189,7 +187,7 @@ $$ \mathrm{proj}(\boldsymbol{\theta})= \begin{cases} \boldsymbol{\theta}/||\bold
         <a href="/categories/page/19/"><span class="material-icons">chevron_right</span></a>
     </li>
     <li>
-        <a href="/categories/page/25/"><span class="material-icons">last_page</span></a>
+        <a href="/categories/page/26/"><span class="material-icons">last_page</span></a>
     </li>
     
 </ul>
