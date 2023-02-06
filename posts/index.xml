@@ -3003,8 +3003,7 @@ Character n-gramsを入力としてskip-gramのモデルを作る方法を提案
       
       <guid>https://nryotaro.dev/posts/when_do_changes_induce_fixes/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-&lt;p&gt;ざっくり言うと、バージョン管理ツールとバグチケット管理ツールを導入しているプロジェクトにおいて、
-バージョン管理ツールで追跡されている変更とバグチケット管理ツールで追跡されているバグを紐付ける手法を提案した。&lt;/p&gt;</description>
+&lt;p&gt;バージョン管理ツールで追跡されている変更とバグを紐付ける手法を提案した。&lt;/p&gt;</description>
     </item>
     
     <item>
