@@ -3295,15 +3295,15 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
       
       <guid>https://nryotaro.dev/posts/enriching_word_vectors_with_subword_information/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-&lt;p&gt;Fasttextを提案、評価した論文。
-Character n-gramsを入力としてskip-gramのモデルを作る方法を提案、評価している。
+&lt;p&gt;Fasttextの論文。
+Character n-gramsを入力としてskip-gramのモデルを作る方法を提案、評価した。
 単語の部分文字列（subword）を使わない手法や形態素解析に頼る手法よりも提案手法が優れていることを実験で示した。
-部分文字列のベクトルの和が単語のベクトルとなる。
+単語のベクトルは部分文字列のベクトルの和である。
 実験の考察では、そのために、未知語の部分文字列が学習データにあれば、未知語に対しても妥当な分散表現を与えることができるとあった。&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>概要 When Do Chagnes Induce Fixes?</title>
+      <title>概要 When Do Changes Induce Fixes?</title>
       <link>https://nryotaro.dev/posts/when_do_changes_induce_fixes/</link>
       <pubDate>Fri, 03 Aug 2018 21:47:03 +0900</pubDate>
       
