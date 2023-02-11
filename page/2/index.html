@@ -48,6 +48,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/lof_identifying_density_based_local_outliners/">抄訳 LOF: Identifying Density-Based Local Outilers(2000)</a></h3>
+        <div class="summary"><p>局所外れ値因子法(LOF)は、あるインスタンスが外れ値かを、その周囲のインスタンスとの距離をもとに判定する。
+異常検知の手法の中には異常か正常かの二値を出力するものがあるが、LOFは[0,1]区間の値を出力する。
+L1に近いほど正常とみなす。
+密度の高いクラスタと低いクラスタがあり、密度の高いクラスタの少し遠くに外れ値とみなすべきインスタンスがあるとする。
+このとき、密度の低いクラスタのインスタンス間の距離を基準にすると、密度の高いクラスタのインスタンスと外れ値のインスタンス間の距離は大きいとみなせない。しかし、外れ値のインスタンスのそばの密度の高いクラスタの距離を基準にすれば、外れ値のインスタンスは周囲のインスタンスから遠いとみなせる。
+このように、密度の違うクラスタがあるデータセットでも、インスタンスに近いサンプル間の距離を基準にすることで、他のクラスタの密度で測れば正常なインタンスと判定される外れ値を検出できる。</p></div>
+        <div class="article-footer">
+            <span class="date">November 28, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/millwheel_fault_tolerant_stream_processing_at_internet_scale/">抄訳 MillWheel: Fault-Tolerant Stream Processing at Internet Scale(2013)</a></h3>
         <div class="summary"><p>MillWheelはGoogleで開発されたストリーミング処理のフレームワークである。
 開発者が羃等な処理をノードとする有向グラフを実装すれば、MillWheelがデータをノードに正確に一回だけ配信する。
@@ -149,16 +162,6 @@ SMOTEとの違いは、K近傍に多数クラスのサンプルの多い少数�
 トランザクションを短い複数のトランザクションに分割でき、そのトランザクションの間にほかのトランザクションを実行できるなら、そのトランザクションをsagaと呼ぶ。</p></div>
         <div class="article-footer">
             <span class="date">September 4, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/smote_synthetic_minority_over_sampling_technique/">抄訳 SMOTE: Synthetic Minority Over-sampling Technique(2002)</a></h3>
-        <div class="summary"><p>SMOTEはオーバーサンプリングで不均衡データの予測性能の向上をはかる。
-少数クラスのサンプルからk近傍にあるサンプルのうち1つをランダムに選ぶ。
-もとのサンプルと選ばれたサンプルの各特徴の差に[0,1]区間のランダムな値を掛け、その値をもとのサンプルに足して、少数クラスのサンプルを合成する。</p></div>
-        <div class="article-footer">
-            <span class="date">August 31, 2022</span>
         </div>
     </article>
     

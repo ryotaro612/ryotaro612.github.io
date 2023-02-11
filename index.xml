@@ -6,7 +6,18 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 29 Jan 2023 15:14:29 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Feb 2023 11:04:07 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解説 ARC 005C 器物損壊！高橋君</title>
+      <link>https://nryotaro.dev/posts/arc005/</link>
+      <pubDate>Tue, 07 Feb 2023 11:04:07 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/arc005/</guid>
+      <description>&lt;p&gt;ダイクストラ法を使えば、スタート地点から各区画への最短距離を求められる。
+塀に移動にかかる時間を十分に大きい値、かりに\(HM+1\)として、ダイクストラ法適用すると、
+ゴール地点が\(3(HM+1)\)以下未満であり、そのときに限り、塀を壊す回数が2回以下でゴール地点に到達できる。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>抄訳 Principles of Transaction-Oriented Database Recovery(1983)</title>
       <link>https://nryotaro.dev/posts/principles_of_transaction_oriented_database_recovery/</link>
