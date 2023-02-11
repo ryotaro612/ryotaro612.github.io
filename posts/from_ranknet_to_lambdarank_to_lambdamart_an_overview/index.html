@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>抄訳 From RankNet to LambdaRank to LambdaMART: An Overview(2010)</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>抄訳 From RankNet to LambdaRank to LambdaMART: An Overview(2010)</h1>
+    <span class="date">February 3, 2023</span>
+    <div>
+        <p>LambdaMARTは、勾配ブースティング決定木(MART)の訓練に、<a href="https://icml.cc/2015/wp-content/uploads/2015/06/icml_ranking.pdf">RankNet</a>と<a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/lambdarank.pdf">LambdaRank</a>を応用するランキング学習である。
+RankNetとLambdaRankを以前抄訳で解説した(<a href="/posts/learning_to_rank_using_gradient_descent/">RankNet</a>, <a href="/posts/learning_to_rank_with_nonsmooth_cost_functions/">LambdaRank</a>)。
+RankNetは、名前にNetがついているが、ネットワークアーキテクチャではなく学習方法の技術である。
+モデルが入力されたベクトルを実数に写像することができれば、モデルはニューラルネットワークでなくてもよい。
+RankNetの学習は、モデルの出力する実数をスコアとみなし、あるクエリに該当する2つの事例のうち、より該当する方に高いスコアを与えられるようにモデルを訓練する。
+各訓練データはランキングの異なる2つの特徴とランキングの高い方を示すラベルであり、2つのスコアの差をシグモイドに与えたときの出力を、一方のサンプルが他方よりもランキングが高い確率とみなす。
+そして、交差エントロピーが最小になるようにモデルを訓練する。
+LambdaRankは、損失の計算を省き、スコアと損失の勾配で重みを更新することで、RankNetの学習を高速化する。
+LambdaMARTは、RankNetに勾配ブースティング決定木を使い、残差の計算にLambdaRankを応用したランキング学習のモデルである。</p>
+<p>MARTは、スコアについての損失の勾配を予測する決定木の学習をくりかえす。
+\(N\)回目に訓練した決定木を\(f_i(x)\), その重みを\(\alpha_i\)とするとMARTを関数
+$$
+F_N(x) = \sum^N_{i=1}\alpha_if_i(x)
+$$
+であらわせる。
+損失関数を\(C\), 学習データの数を\(m\)、\(i\)番目の特徴を\(x_i\)とおけば、\(N+1\)番目の決定木は、\(x_i, i=1,\dots m\)における微分係数\(\frac{\partial C}{\partial F_N}\)を学習する。
+損失とスコアの微小変化の関係
+$$
+\delta C\approx\frac{\partial C(F_N)}{\partial F_N}\partial F
+$$
+より、学習率を\(\eta\)として\(\delta F=-\eta \frac{\partial\mathcal{C}}{\partial F_N}\)であれば、\(\delta C&lt;0\)であり、決定木を追加して損失を減らすことを期待できる。</p>
+<p>MARTを二値分類のために訓練する場合、\(m\)番目の決定木の\(j\)番目の葉の出力\(\gamma_{jm}\)を求める。
+学習データのラベルを\(y_i\in\{\pm 1\}\), \(P_+\equiv P(y=1|x)\), \(P_-\equiv P(y=-1|x)\)とする。
+ロジスティック回帰はオッズ比の対数のモデルであることより
+$$
+F_N(x)=\frac{1}{2}\log\left(\frac{P_+}{P_-}\right)
+$$
+または
+$$
+\begin{align}
+P_+&amp;=\frac{1}{1+e^{-2\sigma F_N(x)}}\\
+P_-&amp;=1-P_+=\frac{1}{1+e^{2\sigma F_N(x)}}
+\end{align}
+$$
+である。損失関数\(L(y,F_N)\)が交差エントロピーであれば
+$$
+L(y,F_N) =\log\left(1+e^{-2y\sigma F_N}\right)
+$$
+である。\(m\)番目の決定木の\(j\)番目の葉にあるサンプルの集合を\(R_{jm}\)とすると\(\gamma_{jm}\)は、
+$$
+\gamma_{jm}=\underset{\gamma}{\operatorname{argmin}}\sum_{x_i\in R_{jm}}\log\left(1+e^{-2y_i\sigma(F_{m-1}(x_i)+\gamma)}\right)\equiv \underset{\gamma}{\operatorname{argmin}}g(\gamma)
+$$
+MARTは、ニュートンラプソン法によって以下の更新式で反復的に\(\gamma\)の近似解を求める。
+LambdaMARTは、この更新でLambdaRankを利用する。
+$$
+\gamma_{n+1}=\gamma_n - \frac{g'(\gamma_n)}{g''(\gamma_n)}
+$$</p>
+<p>LamdaRankを導入するために、MARTから離れ、RankNetの話をする。
+RankNetは、あるクエリに該当した2つのURL \(U_i, U_j\)があり、そのスコア\(s_i, s_j\)があれば、\(U_i\)が\(U_j\)よりも高いランキングである確率\(P_{ij}\)を
+$$
+P_{ij}\equiv\frac{1}{1+e^{-\sigma(s_i-s_j)}}
+$$
+とする。
+RankNetの各学習データは、2つの特徴\(U_i, U_j\)とランキングのより高い方を示すラベルからなる。
+ラベルを\(S_{i,j}\in\{0,\pm 1\}\)とし、\(i\)のランキングが\(j\)より高ければ\(1\), 低ければ\(-1\), 同じであれば\(0\)とする。
+このとき、\(\bar{P}_{ij}=\frac{1}{2}(1+S_{ij})\)として交差エントロピーを損失\(C\)とすると
+$$
+\begin{align}
+C&amp;=-\bar{P}_{ij}\log P_{ij}-(1-\bar{P}_{ij})\log(1-P_{ij})\\
+C&amp;=\frac{1}{2}(1-S_{ij})\sigma(s_i-s_j) + \log\left(1+e^{-\sigma(s_i-s_j)}\right)
+\end{align}
+$$
+である。この\(C\)の微小変化\(\delta C\)を負にするには、
+$$
+\delta C=\sum_k \frac{\partial C}{\partial w_k}\delta w_k=\sum_k \frac{\partial C}{\partial w_k}\left(-\eta \frac{\partial C}{\partial w_k}\right)=-\eta \sum_k\left(\frac{\partial C}{\partial w_k}\right)^2 &lt; 0
+$$
+より\(\delta w_k=-\eta\frac{\partial C}{\partial w_k}\)であればよい。</p>
+<p>ここで、モデルのあるパラメータを\(w_k\)とし、\(C\)を合成関数とみると
+$$
+\begin{align}
+\frac{\partial C}{\partial w_k}
+&amp;=\frac{\partial C}{\partial s_i}\frac{\partial s_i}{\partial w_k} + \frac{\partial C}{\partial s_j}\frac{\partial s_j}{\partial w_k}\\
+&amp;=\sigma \left(\frac{1}{2}(1-S_{ij})-\frac{1}{1+e^{\sigma(s_i-s_j)}} \right)\left(\frac{\partial s_i}{\partial w_k}-\frac{\partial s_j}{\partial w_k}\right)\\
+&amp;=\lambda_{ij}\left(\frac{\partial s_i}{\partial w_k}-\frac{\partial s_j}{\partial w_k}\right)
+\end{align}
+$$
+となる。ただし
+$$
+\lambda_{ij}\equiv\frac{\partial C(s_i-s_j)}{\partial s_i}=\sigma \left(\frac{1}{2}(1-S_{ij})-\frac{1}{1+e^{\sigma(s_i-s_j)}} \right)
+$$
+と定義した。
+任意の\(i,j\)について\(S_{ij}=1\)となる学習データの集合\(I\)があれば
+$$
+\lambda_i = \sum_{j:\{i,j\}\in I}\lambda_{ij} - \sum_{j:\{j,i\}\in I}\lambda_{ij}
+$$
+とおくとき
+$$
+\delta w_k=-\eta\sum_{\{i,j\}\in I}\left(\lambda_{ij}\frac{\partial s_i}{\partial w_k}-\lambda_{ij}\frac{\partial s_j}{\partial w_k}\right)\equiv -\eta \sum_i\lambda_i\frac{\partial s_i}{\partial w_k}
+$$
+である。もともとのRankNetは各学習データを処理する度に重みを更新していたが、LambdaRankは\(\lambda_i\)によってURLごとに計算をまとめ、重みの更新頻度を減らし、計算を高速化する。
+LamdaRankは、ほかにも、モデルの評価にNDCGを使う場合、\(U_i\)と\(U_j\)を入れ換えたときのNDCGの変化の大きさを\(|\Delta_{\textrm{NDCG}}|\)として
+$$
+\lambda_{ij}=\frac{\partial C(s_i-s_j)}{\partial s_i}=\frac{-\sigma}{1+e^{\sigma(s_i-s_j)}}|\Delta_{\textrm{NDCG}}|
+$$
+とすると評価が上がることを実験的に示した。</p>
+<p>MARTに話をもどして、モデルのスコアについての\(L(y, F_N)\)の勾配は
+$$
+\bar{y}_i=-\left[\frac{\partial L(y_i, F(x_i))}{\partial F(x_i)}\right]_{F(x)=F_{m-1}(x)}=\frac{2y_i\sigma}{1+2^{2y_i\sigma F_{m-1}(x)}}
+$$
+である。
+これが\(\lambda_{ij}\)に類似することから、LambdaMARTは\(\bar{y}_i\)の代わりに\(\lambda_i\)を利用する。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>論文の<a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/MSR-TR-2010-82.pdf">リンク</a></p>
+<h2 id="雑記">雑記</h2>
+<p>LambdaMARTはAirbnbでも<a href="https://arxiv.org/abs/1810.09591">使われていた</a>。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/principles_of_transaction_oriented_database_recovery/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+    <li>
+        <a href="/posts/arc005/"><span class="material-icons">chevron_right</span></a>
+    </li>
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
