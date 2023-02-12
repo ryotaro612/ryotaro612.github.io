@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 07 Feb 2023 11:04:07 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Feb 2023 11:04:07 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解説 AtCoder Regular Contest 007 C - 節約生活</title>
+      <link>https://nryotaro.dev/posts/arc007/</link>
+      <pubDate>Sat, 11 Feb 2023 11:04:07 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/arc007/</guid>
+      <description>&lt;p&gt;文字数を\(n\)とすると複数のテレビを組合せたときの視聴パターンの重ね方は\(2^n\)個ある。
+最大文字数は整数型のビット数より数分の1しかないので、ビット操作ですべての重ね方を試行することを考える。
+各重ね方について、パターンを十分に連結した値の論理和に最大文字数以上連続する1があれば、その試行は要件を満たす。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>解説 ARC 005C 器物損壊！高橋君</title>
       <link>https://nryotaro.dev/posts/arc005/</link>

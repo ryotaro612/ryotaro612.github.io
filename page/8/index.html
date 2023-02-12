@@ -48,6 +48,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/congestion_avoidance_and_control/">Congestion Avoidance and Control</a></h3>
+        <div class="summary"><p>86年の10月におきたインターネットの世界規模の輻輳の反省から、4BSDに7つのTCPの輻輳制御のアルゴリズムが導入された。
+うち5つは、送信したパケットが到達や消失でネットワークに流れなくなるまで、ウィンドウサイズ以上の新しいパケットを送らない原則を守るためにある。
+この原則をconservation of packets principleという。</p></div>
+        <div class="article-footer">
+            <span class="date">October 9, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/the_notion_of_consistency_and_predicate_locks_in_a_database_system/">The Notion of Consistency and Predicate Locks in a Database System</a></h3>
         <div class="summary"><p>トランザクションを並行実行するときに、直列実行した場合と同じ実行結果をえるには、各トランザクションがロックを解放後に新しいロックを獲得してはならないことを示した。
 その場合もデッドロックがおきうるが、それは並列実行を終了するためにはいつロックをかければよいかという議論である。
@@ -146,18 +156,6 @@ PDP-11は1971年2月から運用がはじまり、当初はアセンブリ言語
 2人は、UNIXの設計に影響したものとして、プログラマとして対話的なインターフェースを望んでいたこと、ハードウェアの低い性能ゆえにソフトウェアの設計を洗練させる必要があったこと、ソースコードをUNIX上で編集し簡単にプログラムを変更できたことをあげている。</p></div>
         <div class="article-footer">
             <span class="date">August 21, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/what_helped_and_what_did_not/">What helped, and what did not? An Evaluation of the Strategies to Improve Continuous Integration</a></h3>
-        <div class="summary"><p><a href="https://travistorrent.testroots.org/">TravisTorrent</a>にある100件のプロジェクトで10種類のCIのテクニックを定量評価した。
-テクニックは、不要なビルドやテストをスキップするか、実行順序を優先づけるものかに分かれる。
-前者は計算資源の消費を減らすこと、後者は失敗するケースを早めに実行することを目的にする。
-もっとも成功するテストやビルドをスキップできたテクニックは、コードに変更のないケースをスキップするものだったが、同時に失敗するテストを多く見落とした。
-実行順序を優先付ける手法で最も性能のよかったテクニックは、<a href="https://www.semanticscholar.org/paper/Static-test-case-prioritization-using-topic-models-Thomas-Hemmati/ad77a2776733c7fdc10c0b043f7504a14fce3b6e">Thomasら</a>のもので、シグネチャやコメントで学習したトピックモデルを使い直前に実行したテストと違うトピックのテストを実行する。</p></div>
-        <div class="article-footer">
-            <span class="date">August 20, 2021</span>
         </div>
     </article>
     
