@@ -48,6 +48,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/deep_joint_entity_disambiguation/">メモ Deep Joint Entity Disambiguation with Local Neural Attention</a></h3>
+        <div class="summary"><p>本稿は、当ページで紹介した<a href="https://aclweb.org/anthology/K18-1050">End-to-End Neural Entity Linking</a>(End-to-End) の著者らの先行研究にあたる。
+End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)の両方をアプローチの対象にしているのに対し、本稿ではEDのみが対象となっている。
+したがって、文章からmention（参照表現）が抽出されていることが前提にあり、提案の中心は、参照表現に対応するエンティティを候補の中から正しく求める手法にある。</p></div>
+        <div class="article-footer">
+            <span class="date">November 9, 2018</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/end_to_end_neural_entity_linking/">メモ End-to-end Neural Entity Linking</a></h3>
         <div class="summary"><h3 id="背景">背景</h3>
 <p>本稿は、End to EndなEntity Linkingモデルのアーキテクチャを提案し、予測性能の評価実験で有用性を評価した。
@@ -76,20 +86,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/bidirectional_lstm_crf_models_for_sequence_tagging/">メモ Bidirectional LSTM-CRF Models for Sequence Tagging</a></h3>
+        <h3><a href="https://nryotaro.dev/posts/bidirectional_lstm_crf_models_for_sequence_tagging/">抄訳 Bidirectional LSTM-CRF Models for Sequence Tagging(2015)</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
-<p>本稿では、NLPにおける系列ラベリングためのニューラルネットワークアーキテクチャの提案と評価がなされている。
-このアーキテクチャは、当ページで以前紹介した<a href="https://aclweb.org/anthology/papers/C/C18/C18-1139/">Contextual String Embeddings for Sequence Labeling</a>で応用されている。</p></div>
+<p>NLPにおける系列ラベリングためのニューラルネットワークアーキテクチャの提案と評価がなされている。
+このアーキテクチャは、当サイトで以前紹介した<a href="https://aclweb.org/anthology/papers/C/C18/C18-1139/">Contextual String Embeddings for Sequence Labeling</a>で応用されている。</p></div>
         <div class="article-footer">
             <span class="date">October 5, 2018</span>
         </div>
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/context_string_embeddings_for_sequence_labeling/">メモ Contextual String Embeddings for Sequence Labeling</a></h3>
+        <h3><a href="https://nryotaro.dev/posts/context_string_embeddings_for_sequence_labeling/">抄訳 Contextual String Embeddings for Sequence Labeling(2018)</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
-<p>表題の論文は、ライブラリflairのアルゴリズムを提案、評価したもの。</p>
-<p>論文は、テキストの系列ラベリングに向いた単語の分散表現モデルを提案し、
+<p>表題の論文は、<a href="https://github.com/flairNLP/flair">flair</a>のアルゴリズムを提案、評価したもの。
+論文は、テキストの系列ラベリングに向いた単語の分散表現モデルを提案し、
 提案手法が予測性能において既存手法より優れいたことを実験的に示した。
 本手法における単語の分散表現は、単語の字面だけでなく、文中における単語の出現位置によって決まる。
 いいかえると、同じ単語であっても、文中における出現位置が異なれば、単語は異なる分散表現に変換される。
@@ -138,19 +148,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  1 Recallが0でなければ、ROC曲線には一対一に対応するPR曲線がある。 2 PR曲線AがPR曲線Bに対して常に優位であることとは、ROC曲線においてAがBより常に優位であることの必要十分条件。 3 1,2よりROC空間上の凸包に対応するPR曲線は、他の妥当なPR曲線よりも優位な曲線になる。 4 線形補間でROC曲線を描くことは妥当。一方で、Recallの分母は固定値であるが、Precisionの分母の値はRecallが上がると増える。そのため、PR曲線を線形補間でプロットすると、評価の甘い曲線になる。   論文はこちらからダウンロードできます。</div>
         <div class="article-footer">
             <span class="date">August 25, 2018</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/enriching_word_vectors_with_subword_information/">メモ Enriching Word Vectors with Subword Information</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>Fasttextの論文。
-Character n-gramsを入力としてskip-gramのモデルを作る方法を提案、評価した。
-単語の部分文字列（subword）を使わない手法や形態素解析に頼る手法よりも提案手法が優れていることを実験で示した。
-単語のベクトルは部分文字列のベクトルの和である。
-実験の考察では、そのために、未知語の部分文字列が学習データにあれば、未知語に対しても妥当な分散表現を与えることができるとあった。</p></div>
-        <div class="article-footer">
-            <span class="date">August 10, 2018</span>
         </div>
     </article>
     

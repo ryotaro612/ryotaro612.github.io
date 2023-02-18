@@ -48,6 +48,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/epidemic_algorithms_for_replicated_database_maintenance/">抄訳 Epidemic Algorithm for Replicated Database Maintenance(1987)</a></h3>
+        <div class="summary"><p>Epidemic Algorithmは、データベース間の差分を解消するために、データベースがランダムに選んだ別のデータベースと同期する手法である。
+ここではデータベースにはマスタースレーブの区別はなく、任意のサーバーがレコードの変更を受理できる。
+Epidemic Algorithmには、定期的にデーターベース全体を同期する手法と、変更を受理したときにその変更のみを別のデータベースに伝搬させる手法の2つがある。
+前者は、データベース全体を同期するので変更のとりこぼしがいずれは解消されるが、同期に時間がかかる。
+後者は、時間はかからないが、伝搬を終えるまでに同期できなかった変更があれば、その齟齬が残りつづける。
+データベースがある時点で最新の変更をもたない確率を仮定し、その確率で次の同期で変更を取得できる確率を表し、手法間の同期する収束の速さを比較した。</p></div>
+        <div class="article-footer">
+            <span class="date">December 19, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/syntactic_clustering_of_the_web/">抄訳 Syntactic Clustering of the Web(1997)</a></h3>
         <div class="summary"><p>2つのWeb文書から抽出したn-gramの集合を比較し、文書の包含関係と類似度を測定する。
 はじめに、大文字をすべて小文字にしたり、htmlタグを除外したりして文書に前処理をかける。
@@ -88,6 +101,7 @@ L1に近いほど正常とみなす。
         <h3><a href="https://nryotaro.dev/posts/millwheel_fault_tolerant_stream_processing_at_internet_scale/">抄訳 MillWheel: Fault-Tolerant Stream Processing at Internet Scale(2013)</a></h3>
         <div class="summary"><p>MillWheelはGoogleで開発されたストリーミング処理のフレームワークである。
 開発者が羃等な処理をノードとする有向グラフを実装すれば、MillWheelがデータをノードに正確に一回だけ配信する。
+ただし、転送が遅延しているデータは破棄される。
 データは、キー、値、論理的な時刻の3組からなるレコードを単位として、ノードからノードに出力される。
 向き先のノードは、レコードからキーへの関数を、根のノードから出力されるレコードに適用し、期待するキーに対応するレコードをノードに集約する。</p></div>
         <div class="article-footer">
@@ -156,16 +170,6 @@ borderline-SMOTE1は合成の相手側として常に少数クラスのサンプ
 borderline-SMOTE2は多数クラスのサンプルを選ぶこともある。</p></div>
         <div class="article-footer">
             <span class="date">October 22, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/data_cube_a_relational_aggregation_operator_generalizing_group_by_cross_tab_and_sub_totals/">抄訳 Data Cube: A Relational Aggregation Operator Generalizing Group-By, Cross-Tab, and Sub-Totals(1997)</a></h3>
-        <div class="summary"><p>SQLのGROUP BYと集約関数を組み合わせて0次元や1次元の値を出力できる。
-一方、ピボットテーブルのように、ある属性値の同じレコードの別の属性値を集計し、さらに集計値の集計値を求めたいことがある。
-(DATA) CUBEは、GROUP BYを多次元に拡張した演算子であり、ヒストグラム、ピボットテーブル、ロールアップ、ドリルダウンの計算に使える。</p></div>
-        <div class="article-footer">
-            <span class="date">October 15, 2022</span>
         </div>
     </article>
     

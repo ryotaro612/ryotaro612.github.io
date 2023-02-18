@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 11 Feb 2023 11:04:07 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Feb 2023 15:47:06 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抄訳 Zookeeper: Wait-free coordination for Internet-scale systems (2010)</title>
+      <link>https://nryotaro.dev/posts/zookeeper_wait_free_coordination_for_internat_scale_systems/</link>
+      <pubDate>Sun, 12 Feb 2023 15:47:06 -0500</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/zookeeper_wait_free_coordination_for_internat_scale_systems/</guid>
+      <description>&lt;p&gt;ZooKeeperは、リーダ選出と構成管理の機能を提供するためのインメモリーデータベースである。
+データーベースは、ファイルシステムのような階層構造のwait-freeな抽象データ型であり、各ノードにはデフォルトで最大1MBの少量のデータを保存できる。
+たとえば、ノードに設定を保存して共有することも、設定ファイルが編集中でないことを示すフラグ代わりのファイルを置くこともできる。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>解説 AtCoder Regular Contest 007 C - 節約生活</title>
       <link>https://nryotaro.dev/posts/arc007/</link>
@@ -190,6 +201,7 @@ L1に近いほど正常とみなす。
       <guid>https://nryotaro.dev/posts/millwheel_fault_tolerant_stream_processing_at_internet_scale/</guid>
       <description>&lt;p&gt;MillWheelはGoogleで開発されたストリーミング処理のフレームワークである。
 開発者が羃等な処理をノードとする有向グラフを実装すれば、MillWheelがデータをノードに正確に一回だけ配信する。
+ただし、転送が遅延しているデータは破棄される。
 データは、キー、値、論理的な時刻の3組からなるレコードを単位として、ノードからノードに出力される。
 向き先のノードは、レコードからキーへの関数を、根のノードから出力されるレコードに適用し、期待するキーに対応するレコードをノードに集約する。&lt;/p&gt;</description>
     </item>
@@ -2950,25 +2962,25 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
     </item>
     
     <item>
-      <title>メモ Bidirectional LSTM-CRF Models for Sequence Tagging</title>
+      <title>抄訳 Bidirectional LSTM-CRF Models for Sequence Tagging(2015)</title>
       <link>https://nryotaro.dev/posts/bidirectional_lstm_crf_models_for_sequence_tagging/</link>
       <pubDate>Fri, 05 Oct 2018 18:46:36 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/bidirectional_lstm_crf_models_for_sequence_tagging/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-&lt;p&gt;本稿では、NLPにおける系列ラベリングためのニューラルネットワークアーキテクチャの提案と評価がなされている。
-このアーキテクチャは、当ページで以前紹介した&lt;a href=&#34;https://aclweb.org/anthology/papers/C/C18/C18-1139/&#34;&gt;Contextual String Embeddings for Sequence Labeling&lt;/a&gt;で応用されている。&lt;/p&gt;</description>
+&lt;p&gt;NLPにおける系列ラベリングためのニューラルネットワークアーキテクチャの提案と評価がなされている。
+このアーキテクチャは、当サイトで以前紹介した&lt;a href=&#34;https://aclweb.org/anthology/papers/C/C18/C18-1139/&#34;&gt;Contextual String Embeddings for Sequence Labeling&lt;/a&gt;で応用されている。&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>メモ Contextual String Embeddings for Sequence Labeling</title>
+      <title>抄訳 Contextual String Embeddings for Sequence Labeling(2018)</title>
       <link>https://nryotaro.dev/posts/context_string_embeddings_for_sequence_labeling/</link>
       <pubDate>Fri, 28 Sep 2018 16:29:46 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/context_string_embeddings_for_sequence_labeling/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-&lt;p&gt;表題の論文は、ライブラリflairのアルゴリズムを提案、評価したもの。&lt;/p&gt;
-&lt;p&gt;論文は、テキストの系列ラベリングに向いた単語の分散表現モデルを提案し、
+&lt;p&gt;表題の論文は、&lt;a href=&#34;https://github.com/flairNLP/flair&#34;&gt;flair&lt;/a&gt;のアルゴリズムを提案、評価したもの。
+論文は、テキストの系列ラベリングに向いた単語の分散表現モデルを提案し、
 提案手法が予測性能において既存手法より優れいたことを実験的に示した。
 本手法における単語の分散表現は、単語の字面だけでなく、文中における単語の出現位置によって決まる。
 いいかえると、同じ単語であっても、文中における出現位置が異なれば、単語は異なる分散表現に変換される。

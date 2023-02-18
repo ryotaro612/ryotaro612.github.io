@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+    
+<link rel="stylesheet" href="/css/single.css">
+<link rel="stylesheet" href="/css/posts/single.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
+    <title>抄訳 Zookeeper: Wait-free coordination for Internet-scale systems (2010)</title>
+</head>
+
+<body>
+    
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="navigation">
+        <h2><a href="/">Blanket</a></h2>
+        <nav>
+            <ul>
+                <li><a href="/about">About me</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<main>
+    <h1>抄訳 Zookeeper: Wait-free coordination for Internet-scale systems (2010)</h1>
+    <span class="date">February 12, 2023</span>
+    <div>
+        <p>ZooKeeperは、リーダ選出と構成管理の機能を提供するためのインメモリーデータベースである。
+データーベースは、ファイルシステムのような階層構造のwait-freeな抽象データ型であり、各ノードにはデフォルトで最大1MBの少量のデータを保存できる。
+たとえば、ノードに設定を保存して共有することも、設定ファイルが編集中でないことを示すフラグ代わりのファイルを置くこともできる。</p>
+<p>分散システムのための低容量のストレージサービスには、ZooKeeperのほかにも<a href="https://static.googleusercontent.com/media/research.google.com/ja//archive/chubby-osdi06.pdf">Chubby</a>がある。
+Chubbyが、処理性能よりも高可用性と信頼性を重視し、厳格な同期を保証する一方で、ZooKeeperは処理性能を重視する。
+ファイルの変更をクライアントに通知するイベント駆動なAPIがあり、クラインアントはブロックを待機しなくてよい。
+また、<a href="https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf">線形化可能性</a>にかえて、Asynchronous-linearizability(A-linearizability)を保証する。
+本来の線形化可能性を満たすためには、クライアントが外から観測できる操作を同時に2つ以上実行してはならない。
+A-linearilzabilityは、制限を緩めて、複数の同時操作を認める。
+ただし、この場合、同じクライアントが実行した操作の順序は未定義になる。
+制限を守るときは、同じクライアントから送られたリクエストは送信順に処理される。</p>
+<p>ZooKeeperは大きく分けてRequest Processor, Atomic Broadcast, Replicated Databaseからなる。
+以下の図は、ZooKeeper内における読み込みと書き込みのリクエストの処理の流れである。
+<img src="/zookeeper.png" alt="ZooKeeper">
+ZooKeeperのサーバーは、リーダー選出アルゴリズム<a href="https://www.datadoghq.com/pdf/zab.totally-ordered-broadcast-protocol.2008.pdf">Zab</a>で選ばれるleaderとそれ以外のfollowerに分かれる。</p>
+<p>書き込みリクエストはleaderに送られ、読み込みリクエストはfollowerに送られる。
+更新のAPIのシグネチャには、更新したいデータの位置や更新後のデータに加えて、更新対象のバージョンのパラメータもある。
+たとえば、<code>delete(path, version)</code>, <code>setData(path, data, version)</code>である。
+Leaderは、引数のバージョンが最新のバージョンと一致する場合に限り、リクエストを受理する。
+リクエストを羃等なトランザクションに変更し、トランザクションを適用する。</p>
+<p>Zabは、リーダー選出だけでなく、メッセージを送られた順番にブロードキャストする機能がある。
+また、新しく選ばれたリーダーのところには、リーダがブロードキャストを始める前に、以前のリーダーが送信したメッセージが届いていることが保証される。
+このブロードキャストのプロトコルによって、follower同士のレプリケーションデータベースの状態を統一することで、followerが読み込みリクエストを処理できるようになっている。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>論文の<a href="https://www.usenix.org/legacy/event/atc10/tech/full_papers/Hunt.pdf">リンク</a></p>
+<p>図は論文から引用されています。</p>
+<h2 id="雑記">雑記</h2>
+<p>更新系のAPIは、<code>version</code>があるので、compare and swapと同等の役割をはたし、wait-freeな抽象データ型の実装に使えるのだろうか。</p>
+    </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+        <a href="/posts/arc007/"><span class="material-icons">chevron_left</span></a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/nryotaro">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            
+            
+            <li>
+                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+            
+            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+            
+        </ul>
+        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+</body>
+
+</html>
