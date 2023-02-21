@@ -16,9 +16,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.790fa3aecb49ec15e342419cad69b69ae9a75817c3c6e1f2b1e08bc49636e24b.css">
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.852c1c9119a48dcf6a4274cb71a00bd3b5d55b5040e4d37d525e743de1d0e8da.css">
     
 
 <link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.78272bdd99a3c4f03ee4c826bbe3a970cda497ed85b5da23b0af6dbaf9f30522.css">
@@ -66,7 +65,7 @@
   <span class="date">October 12, 2018</span>    
   <div>
     <h3 id="概要">概要</h3>
-<p>本稿は、条件付き確率場（Conditional Random Fields, CRF）を提案し、品詞タグづけにおけるerror rateをもとに評価した。
+<p>条件付き確率場（Conditional Random Fields, CRF）を提案し、品詞タグづけにおけるerror rateをもとに評価した。
 評価の比較対象には、Maximum entropy Markov models(MEMMs)が採用されている。</p>
 <p>論文の構成は、MEMMsにおける”The Label Bias Problem”を既存手法の問題として取り上げ、問題に対する分析、提案、評価となっている。
 MEMMsは、ある状態に遷移する確率を遷移元の状態と入力値によって決める。このとき、状態間の遷移確率は、系列上の他の位置での遷移によらず決まる。
@@ -75,7 +74,7 @@ MEMMsは、ある状態に遷移する確率を遷移元の状態と入力値に
 <p>CRFでは、この問題に対応するにあたり、出力系列の入力系列に対する条件付き確率をモデルする。
 これにより、系列上の他の位置における遷移が別の状態間の遷移に影響を与えるようになり、局所的に遷移先の候補が限られた経路に対する偏りを抑えることができる。</p>
 <h3 id="備考">備考</h3>
-<p>本稿を読んだ動機は、<a href="https://arxiv.org/abs/1508.01991">Bidirectional LSTM-CRF</a>の論文におけるCRFを用いた箇所の理解のため。
+<p>論文を読んだ動機は、<a href="https://arxiv.org/abs/1508.01991">Bidirectional LSTM-CRF</a>の論文におけるCRFを用いた箇所の理解のため。
 以前「言語処理のための機械学習入門」という書籍でCRFの解説を読んでいた。
 ところが、Bidiretional LSTM-CRFではラベル間の遷移を行列で扱っており、行列による表現は書籍になかったので読解に苦労した。
 そこで理解の助けになると期待して論文にあたった。</p>
@@ -90,12 +89,16 @@ CRFの実装方法や<a href="https://python-crfsuite.readthedocs.io/en/latest/p
 <ul class="pagination">
     
     <li>
-        <a href="/posts/bidirectional_lstm_crf_models_for_sequence_tagging/"><span class="material-icons">chevron_left</span></a>
+      <a href="/posts/bidirectional_lstm_crf_models_for_sequence_tagging/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
     </li>
     
     
     <li>
-        <a href="/posts/deeptype/"><span class="material-icons">chevron_right</span></a>
+      <a href="/posts/deeptype/">
+	<i class="fa-solid fa-xl fa-angle-right"></i>
+      </a>
     </li>
     
 </ul>
