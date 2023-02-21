@@ -1,58 +1,77 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
 	<meta name="generator" content="Hugo 0.92.2" />
     
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=300,initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
-        crossorigin="anonymous" />
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/css/base.css">
     
-    <link rel="stylesheet" href="/css/articles.css">
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.790fa3aecb49ec15e342419cad69b69ae9a75817c3c6e1f2b1e08bc49636e24b.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>Blanket</title>
-</head>
-
-<body>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
     
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <title>Blanket</title>
+  </head>
 
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
     <header class="navigation">
-        <h2><a href="/">Blanket</a></h2>
-        <nav>
-            <ul>
-                <li><a href="/about">About me</a></li>
-                <li><a href="/posts">Posts</a></li>
-                <li><a href="/gallery">Gallery</a></li>
-            </ul>
-        </nav>
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
     </header>
     
 <main>
     <h1>Posts</h1>
-
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/the_declarative_imperative/">論文メモ The Declarative Imperative</a></h3>
+        <div class="summary"><p>宣言型言語Datalogを拡張した言語でネットワークプロトコルと分散システムを開発した7年間の経験から、次世代の並列分散プログラミング言語の基礎になる理論上の予想を4つ提唱した。
+Datalogは、論理プログラミング言語Prologのサブセットの構文をもった言語である。
+予想の説明に使われるDatalogの拡張言語<a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2009/EECS-2009-173.pdf">Dedalus</a>は、分散システムのノードが互いの時刻を直接的に推論できない性質を、送受信するデータから離れたノードの時刻を推論する問題に帰着する。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">December 5, 2020</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/bigtable/">論文メモ Bigtable: A Distributed Storage System for Structured Data</a></h3>
         <div class="summary"><p>Bigtableは、数千のコモディティサーバ上でペタバイト級のデータをホスティングできる分散ストレージであり、行、列、タイムスタンプをキーとして値の文字列を保存する。
 論文の発表された2005年時点で、検索エンジンのインデックス, Google Earth, Google Financeなどの多様なアプリケーションの実装に使用されている。</p></div>
         <div class="article-footer">
-            <span class="date">November 30, 2020</span>
+	  
+          <span class="date">November 30, 2020</span>
         </div>
     </article>
     
@@ -63,7 +82,8 @@ CPU, DRAM, HDDやSSDを搭載したコモディティなサーバでクラスタ
 ノード同士はTCP/IPで通信し、シェアードナッシングなクラスタを構成する。
 処理性能の向上のために、スケールアウトだけでなく、スケールアップも重視しており、ハードウェアを意識した実装で高速化をはかっている。</p></div>
         <div class="article-footer">
-            <span class="date">November 28, 2020</span>
+	  
+          <span class="date">November 28, 2020</span>
         </div>
     </article>
     
@@ -73,7 +93,8 @@ CPU, DRAM, HDDやSSDを搭載したコモディティなサーバでクラスタ
 ユーザからみると半リレーショナルなデータモデルのデータベースであり、各テーブルに一つ以上の順序つき主キーが必要なところがリレーショナルデータモデルと違う。
 一方、内部は文字列とタイムスタンプの組をキーにしたキーバリューストアであり、Single Paxos状態機械でデータの一貫性を守りながら複数のデータセンタにデータを複製する。</p></div>
         <div class="article-footer">
-            <span class="date">November 27, 2020</span>
+	  
+          <span class="date">November 27, 2020</span>
         </div>
     </article>
     
@@ -82,7 +103,8 @@ CPU, DRAM, HDDやSSDを搭載したコモディティなサーバでクラスタ
         <div class="summary"><p>Coddがリレーショナルデータモデルを提唱した70年の論文。
 データをリレーション(SQLでのテーブル)として束ね、リレーションを順序なしのタプル(SQLの行)で構成する。</p></div>
         <div class="article-footer">
-            <span class="date">November 21, 2020</span>
+	  
+          <span class="date">November 21, 2020</span>
         </div>
     </article>
     
@@ -93,7 +115,8 @@ CPU, DRAM, HDDやSSDを搭載したコモディティなサーバでクラスタ
 プラクティス集は、10のグループに分かれ、それぞれ複数のアドバイスからなる。
 特徴的な内容に絞って以下に要約する。</p></div>
         <div class="article-footer">
-            <span class="date">November 20, 2020</span>
+	  
+          <span class="date">November 20, 2020</span>
         </div>
     </article>
     
@@ -103,7 +126,8 @@ CPU, DRAM, HDDやSSDを搭載したコモディティなサーバでクラスタ
 ファイルの読み込みや書き込みのトランザクションは、複製されたファイルのもつ票を集め、所定の数、クオーラムを越えたときのみ実行される。
 これにより、読み込み、書き込みの線形の一貫性が保証され、実行中のトランザクションが高々一つであるかのように見せかけられる。</p></div>
         <div class="article-footer">
-            <span class="date">November 19, 2020</span>
+	  
+          <span class="date">November 19, 2020</span>
         </div>
     </article>
     
@@ -116,7 +140,8 @@ CPU, DRAM, HDDやSSDを搭載したコモディティなサーバでクラスタ
 また、レプリケーションのために、MySQLがRedoログだけでなくバイナリログなど複数種類のログをスレーブに送るのに対し、AuroraはRedoログだけを転送する。
 これにより、リカバリや縮退、フェールオーバの性能も向上している。</p></div>
         <div class="article-footer">
-            <span class="date">November 13, 2020</span>
+	  
+          <span class="date">November 13, 2020</span>
         </div>
     </article>
     
@@ -126,7 +151,8 @@ CPU, DRAM, HDDやSSDを搭載したコモディティなサーバでクラスタ
 データウェアハウスとストリーミング処理を例にとり、これらに特化したデータベースをDBMSで代用することの限界が説明されている。
 表題の&quot;One Size Fits All&quot;はフリーサイズ、転じて、万能、汎用的を意味する。</p></div>
         <div class="article-footer">
-            <span class="date">November 13, 2020</span>
+	  
+          <span class="date">November 13, 2020</span>
         </div>
     </article>
     
@@ -138,18 +164,8 @@ Dynamoは、リーダーレスレプリケーションモデルで、Dynamo DB�
 Dynamoは、高信頼性が必要なシステムの状態管理に使用される。
 その用途から、トランザクション分離レベルのサポートは不要で、可用性を優先するために結果整合性を許容する。</p></div>
         <div class="article-footer">
-            <span class="date">November 6, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/zero_shot_word_sense_disambiguation_using_sense_definition_embeddings/">論文メモ Zero-shot Word Sense Disambiguation using Sense Definition Embeddings</a></h3>
-        <div class="summary"><p>語義曖昧性解消のためのアーキテクチャ, Extended WSD Incorporating Sense Embeddings(EWISE)を発表した。
-EWISEは単語の意味をアノテーションしあテキストと辞書を教師データにもちいる。
-実験では、辞書にWordNetをつかい、概念同士の上下関係や関係を示す分散表現を獲得する。
-学習であたえられていない意味を推定するために、離散値ではなく分散表現でラベルの意味を表現する。</p></div>
-        <div class="article-footer">
-            <span class="date">October 30, 2020</span>
+	  
+          <span class="date">November 6, 2020</span>
         </div>
     </article>
     
@@ -157,10 +173,12 @@ EWISEは単語の意味をアノテーションしあテキストと辞書を教
 
     
 
-<ul class="pagination">
+<ul class="pagination">  
     
     <li>
-        <a href="/"><span class="material-icons">first_page</span></a>
+      <a href="/">
+	<span class="material-icons">first_page</span>
+      </a>
     </li>
     <li>
         <a href="/page/13/"><span class="material-icons">chevron_left</span></a>
@@ -168,7 +186,9 @@ EWISEは単語の意味をアノテーションしあテキストと辞書を教
     
     
     <li>
-        <a href="/page/15/"><span class="material-icons">chevron_right</span></a>
+      <a href="/page/15/">
+	<span class="material-icons">chevron_right</span>
+      </a>
     </li>
     <li>
         <a href="/page/26/"><span class="material-icons">last_page</span></a>
@@ -177,26 +197,26 @@ EWISEは単語の意味をアノテーションしあテキストと辞書を教
 </ul>
 
     <footer>
-        <ul>
-            
-            <li>
-                <a href="https://github.com/nryotaro">
-                    <i class="fab fa-github"></i>
-                </a>
-            </li>
-            
-            
-            <li>
-                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </li>
-            
-            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-            
-        </ul>
-        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-</body>
+  </body>
 
 </html>

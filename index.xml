@@ -6,7 +6,18 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 12 Feb 2023 15:47:06 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Feb 2023 10:56:35 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解説 AtCoder Regular Contest 028 B 特別賞</title>
+      <link>https://nryotaro.dev/posts/arc028b/</link>
+      <pubDate>Sun, 19 Feb 2023 10:56:35 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/arc028b/</guid>
+      <description>&lt;p&gt;Pythonであればheap, C++であればsetを2つ使えばよい。
+新しい要素を追加する度に、一方に上位kの要素、他方にk+1以降の要素があるように、2つのset, heap間で要素を交換する。
+類似の問題をLeetCodeのHard modeで見かけたことがある。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>抄訳 Zookeeper: Wait-free coordination for Internet-scale systems (2010)</title>
       <link>https://nryotaro.dev/posts/zookeeper_wait_free_coordination_for_internat_scale_systems/</link>

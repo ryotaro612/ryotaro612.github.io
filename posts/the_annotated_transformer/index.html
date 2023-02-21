@@ -1,59 +1,71 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=300,initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
-        crossorigin="anonymous" />
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/css/base.css">
     
-<link rel="stylesheet" href="/css/single.css">
-<link rel="stylesheet" href="/css/posts/single.css">
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.790fa3aecb49ec15e342419cad69b69ae9a75817c3c6e1f2b1e08bc49636e24b.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.78272bdd99a3c4f03ee4c826bbe3a970cda497ed85b5da23b0af6dbaf9f30522.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
 <link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>論文メモ The Annotated Transformer</title>
-</head>
-
-<body>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
     
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <title>論文メモ The Annotated Transformer</title>
+  </head>
 
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
     <header class="navigation">
-        <h2><a href="/">Blanket</a></h2>
-        <nav>
-            <ul>
-                <li><a href="/about">About me</a></li>
-                <li><a href="/posts">Posts</a></li>
-                <li><a href="/gallery">Gallery</a></li>
-            </ul>
-        </nav>
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
     </header>
     
 <main>
-    <h1>論文メモ The Annotated Transformer</h1>
-    <span class="date">July 1, 2019</span>
-    <div>
-        <p>論文は、当サイトで紹介した<a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a>で提案されたTransformerのアーキテクチャを、サンプルコードとオリジナルの論文の引用を交えて解説している。 実装にはPyTorchを使用している。</p>
+  <h1>論文メモ The Annotated Transformer</h1>
+  <ul class="tags">
+    
+  </ul>  
+  <span class="date">July 1, 2019</span>    
+  <div>
+    <p>論文は、当サイトで紹介した<a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a>で提案されたTransformerのアーキテクチャを、サンプルコードとオリジナルの論文の引用を交えて解説している。 実装にはPyTorchを使用している。</p>
 <p>Attention(注意)
 Transformerの概要は当ページにあるAttention Is All You Needで解説にあるため、ここではその補足を記載する。 Attention自体は既存技術であり、すでに<a href="https://www.kspub.co.jp/book/detail/1529243.html">深層学習による自然言語処理</a>のような参考書でも取り上げられている。 そこでは、「複数のベクトルがあったときに、どのベクトルを重要視するかも含めて学習させる仕組みのことを注意機構(attention mecanism)，あるいは注意と呼びます」とある。 attentionには、いくつか種類があり、元の論文によれば、中でもよく使われているのがadditive attentionやdot-product attentionとのこと。既存手法の一部を除けば、系列モデリングにおいては、回帰結合型ネットワークとattentionを組合わせたアプローチが採用されることがほとんであった。 元の論文の新規性は、表題の通り、回帰結合型ネットワークや畳み込みネットワークを使わず、attentionだけを使い、既存手法を上回る翻訳の性能を出せたことにある。</p>
 <p>備考
 本稿の位置付けとしては、既存研究の理解のための補助資料であり、学問上の新規性を意図したものではない。 しかし、<a href="https://arxiv.org/abs/1810.04805">BERT: Pre-training of Deep Bidirectional Transformers for Lnaguages Understaing</a>において、Transformerの解説に本稿の元になった<a href="http://nlp.seas.harvard.edu/2018/04/03/attention.html">記事</a>への引用があり、補助資料としての価値が充分にあると認められているようであったため、紹介することにした。</p>
 <p>論文を<a href="https://www.aclweb.org/anthology/W18-2509/">こちら</a>からダウンロードできます。</p>
-    </div>
+  </div>
 </main>
 
     
@@ -72,26 +84,26 @@ Transformerの概要は当ページにあるAttention Is All You Needで解説�
 
 
     <footer>
-        <ul>
-            
-            <li>
-                <a href="https://github.com/nryotaro">
-                    <i class="fab fa-github"></i>
-                </a>
-            </li>
-            
-            
-            <li>
-                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </li>
-            
-            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-            
-        </ul>
-        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-</body>
+  </body>
 
 </html>

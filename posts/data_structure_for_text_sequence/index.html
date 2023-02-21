@@ -1,53 +1,65 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=300,initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
-        crossorigin="anonymous" />
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/css/base.css">
     
-<link rel="stylesheet" href="/css/single.css">
-<link rel="stylesheet" href="/css/posts/single.css">
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.790fa3aecb49ec15e342419cad69b69ae9a75817c3c6e1f2b1e08bc49636e24b.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.78272bdd99a3c4f03ee4c826bbe3a970cda497ed85b5da23b0af6dbaf9f30522.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
 <link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>Data Structure for Text Sequences</title>
-</head>
-
-<body>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
     
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <title>Data Structure for Text Sequences</title>
+  </head>
 
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
     <header class="navigation">
-        <h2><a href="/">Blanket</a></h2>
-        <nav>
-            <ul>
-                <li><a href="/about">About me</a></li>
-                <li><a href="/posts">Posts</a></li>
-                <li><a href="/gallery">Gallery</a></li>
-            </ul>
-        </nav>
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
     </header>
     
 <main>
-    <h1>Data Structure for Text Sequences</h1>
-    <span class="date">January 29, 2022</span>
-    <div>
-        <p>テキストエディタのためのデータ構造として、array, gap, list, line pointers, fixed size buffers, piece tablesを評価する。
+  <h1>Data Structure for Text Sequences</h1>
+  <ul class="tags">
+    
+  </ul>  
+  <span class="date">January 29, 2022</span>    
+  <div>
+    <p>テキストエディタのためのデータ構造として、array, gap, list, line pointers, fixed size buffers, piece tablesを評価する。
 とくに、Piece tablesを評価し詳しく解説する。
 Piece tableはテキストを2つのバッファに記録する。
 2つのバッファはfile buffer, add bufferで、file bufferは初期状態のテキストを保存し、add bufferは新たに挿入される文字列を保存する追記のみのバッファである。
@@ -69,7 +81,7 @@ Piece tableはテキストを2つのバッファに記録する。
 bufferをメモリ上にもたなければ、メモリ量は、テキストサイズではなく編集作業量による。
 そのため、大きなテキストを効率的に処理できる。</p>
 <p>論文を<a href="https://www.cs.unm.edu/~crowley/papers/sds.pdf">こちら</a>からダウンロードできます。</p>
-    </div>
+  </div>
 </main>
 
     
@@ -88,26 +100,26 @@ bufferをメモリ上にもたなければ、メモリ量は、テキストサ�
 
 
     <footer>
-        <ul>
-            
-            <li>
-                <a href="https://github.com/nryotaro">
-                    <i class="fab fa-github"></i>
-                </a>
-            </li>
-            
-            
-            <li>
-                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </li>
-            
-            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-            
-        </ul>
-        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-</body>
+  </body>
 
 </html>

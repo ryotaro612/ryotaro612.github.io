@@ -1,51 +1,72 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
 	<meta name="generator" content="Hugo 0.92.2" />
     
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=300,initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
-        crossorigin="anonymous" />
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/css/base.css">
     
-    <link rel="stylesheet" href="/css/articles.css">
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.790fa3aecb49ec15e342419cad69b69ae9a75817c3c6e1f2b1e08bc49636e24b.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>Blanket</title>
-</head>
-
-<body>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
     
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <title>Blanket</title>
+  </head>
 
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
     <header class="navigation">
-        <h2><a href="/">Blanket</a></h2>
-        <nav>
-            <ul>
-                <li><a href="/about">About me</a></li>
-                <li><a href="/posts">Posts</a></li>
-                <li><a href="/gallery">Gallery</a></li>
-            </ul>
-        </nav>
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
     </header>
     
 <main>
     <h1>Posts</h1>
-
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/borderline-smote_a_new_over-sampling_method_inbalanced_data_sets_learning/">抄訳 Borderline-SMOTE: A New Over-Sampling Method in Imbalanced Data Sets Learning(2005)</a></h3>
+        <div class="summary"><p><a href="https://arxiv.org/pdf/1106.1813.pdf">SMOTE</a>は不均衡データに対するオーバーサンプリングを使う手法である。
+少数側のクラスのサンプルと近傍のサンプルから少数クラスのサンプルを合成する。
+SMOTEはすべての少数クラスのサンプルが合成の材料になりえる。
+対して、borderline-SMOTE1とborderline-SMOTE2は、境界から遠い少数クラスのサンプルを使わず、近いサンプルのみから合成する。
+borderline-SMOTE1は合成の相手側として常に少数クラスのサンプルを選ぶ。
+borderline-SMOTE2は多数クラスのサンプルを選ぶこともある。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">October 22, 2022</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/data_cube_a_relational_aggregation_operator_generalizing_group_by_cross_tab_and_sub_totals/">抄訳 Data Cube: A Relational Aggregation Operator Generalizing Group-By, Cross-Tab, and Sub-Totals(1997)</a></h3>
@@ -53,7 +74,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 一方、ピボットテーブルのように、ある属性値の同じレコードの別の属性値を集計し、さらに集計値の集計値を求めたいことがある。
 (DATA) CUBEは、GROUP BYを多次元に拡張した演算子であり、ヒストグラム、ピボットテーブル、ロールアップ、ドリルダウンの計算に使える。</p></div>
         <div class="article-footer">
-            <span class="date">October 15, 2022</span>
+	  
+          <span class="date">October 15, 2022</span>
         </div>
     </article>
     
@@ -63,7 +85,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 以前<a href="/smote_synthetic_minority_over_sampling_technique/">抄訳</a>した<a href="https://arxiv.org/pdf/1106.1813.pdf">SMOTE</a>とおなじく、既存の学習データからサンプルを合成する。
 SMOTEとの違いは、K近傍に多数クラスのサンプルの多い少数クラスのサンプルから、より多くのサンプルを合成する点にある。</p></div>
         <div class="article-footer">
-            <span class="date">September 11, 2022</span>
+	  
+          <span class="date">September 11, 2022</span>
         </div>
     </article>
     
@@ -73,7 +96,8 @@ SMOTEとの違いは、K近傍に多数クラスのサンプルの多い少数�
 トランザクションの時間は短いほどよい。
 トランザクションを短い複数のトランザクションに分割でき、そのトランザクションの間にほかのトランザクションを実行できるなら、そのトランザクションをsagaと呼ぶ。</p></div>
         <div class="article-footer">
-            <span class="date">September 4, 2022</span>
+	  
+          <span class="date">September 4, 2022</span>
         </div>
     </article>
     
@@ -83,7 +107,8 @@ SMOTEとの違いは、K近傍に多数クラスのサンプルの多い少数�
 少数クラスのサンプルからk近傍にあるサンプルのうち1つをランダムに選ぶ。
 もとのサンプルと選ばれたサンプルの各特徴の差に[0,1]区間のランダムな値を掛け、その値をもとのサンプルに足して、少数クラスのサンプルを合成する。</p></div>
         <div class="article-footer">
-            <span class="date">August 31, 2022</span>
+	  
+          <span class="date">August 31, 2022</span>
         </div>
     </article>
     
@@ -95,7 +120,8 @@ consumerは、関心のあるメッセージのストリームであるトピッ
 producerは、トピックつきのメッセージをborkerに送り、brokerがメッセージを保持する。
 consumerは、brokerのトピックからメッセージを取得する。</p></div>
         <div class="article-footer">
-            <span class="date">August 22, 2022</span>
+	  
+          <span class="date">August 22, 2022</span>
         </div>
     </article>
     
@@ -109,7 +135,8 @@ BPSは時間を一定間隔に区切り、次の間隔が始まる時点で、�
 間隔を過ぎたとき、失敗した処理や未送信のあるコンポーネントがあれば、成功するまで計算を再実行させる。
 Pregelでは、この間隔をsuperstepとよび、グラフ上の点であるワーカーがコンポーネントにあたる。</p></div>
         <div class="article-footer">
-            <span class="date">August 19, 2022</span>
+	  
+          <span class="date">August 19, 2022</span>
         </div>
     </article>
     
@@ -120,7 +147,8 @@ Pregelでは、この間隔をsuperstepとよび、グラフ上の点である�
 Normalized cutが最小値のとき、異なるサブグラフにあるノード間の類似度は最小に、同じサブグラフにあるノードの類似度は最大になる。
 Normalized cutをレイリー商に変形し、固有値問題をとくことで、Normalized cutの最小値の近似解を求める。</p></div>
         <div class="article-footer">
-            <span class="date">August 6, 2022</span>
+	  
+          <span class="date">August 6, 2022</span>
         </div>
     </article>
     
@@ -130,7 +158,8 @@ Normalized cutをレイリー商に変形し、固有値問題をとくことで
 ROC曲線は、縦軸を感度(sensitivity)TP/(FN+TP), 横軸を1-特異度(specificity)1 - TN/(TN+FP)とするグラフで、この2値はトレードオフの関係にある。
 トレードオフのもとでカットオフポイントの決める方法を先行研究から2つ紹介している。</p></div>
         <div class="article-footer">
-            <span class="date">August 6, 2022</span>
+	  
+          <span class="date">August 6, 2022</span>
         </div>
     </article>
     
@@ -145,18 +174,8 @@ UNDOやREDOを再実行可能でなければならず、そのためにオブジ
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted --></div>
         <div class="article-footer">
-            <span class="date">July 30, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/on_spectral_clustering_analysis_and_an_algorithm/">On Spectral Clustering: Analysis and an algorithm</a></h3>
-        <div class="summary"><p>スペクトラルクラスタリングは、類似度を辺の重みとするグラフをデータから構築し、重みをもとにカットする辺を決めて、データをクラスタに分ける。
-グラフラプラシアンのようなグラフを表現した行列をつくり、その固有ベクトルを求め、固有ベクトルを列ベクトルとして並べた行列にK-meansを適用する。
-もとのデータに二重丸のような凸集合でないクラスタがあるときに、最初からK-meansを適用するよりも良い結果を期待できる。
-また、データ分布に確率モデルにあてはめ、どのクラスタにデータを割りあてるか確率的に決めるクラスタリングと違い、データの分布を仮定しなくてよい。</p></div>
-        <div class="article-footer">
-            <span class="date">July 23, 2022</span>
+	  
+          <span class="date">July 30, 2022</span>
         </div>
     </article>
     
@@ -164,10 +183,12 @@ UNDOやREDOを再実行可能でなければならず、そのためにオブジ
 
     
 
-<ul class="pagination">
+<ul class="pagination">  
     
     <li>
-        <a href="/"><span class="material-icons">first_page</span></a>
+      <a href="/">
+	<span class="material-icons">first_page</span>
+      </a>
     </li>
     <li>
         <a href="/page/2/"><span class="material-icons">chevron_left</span></a>
@@ -175,7 +196,9 @@ UNDOやREDOを再実行可能でなければならず、そのためにオブジ
     
     
     <li>
-        <a href="/page/4/"><span class="material-icons">chevron_right</span></a>
+      <a href="/page/4/">
+	<span class="material-icons">chevron_right</span>
+      </a>
     </li>
     <li>
         <a href="/page/26/"><span class="material-icons">last_page</span></a>
@@ -184,26 +207,26 @@ UNDOやREDOを再実行可能でなければならず、そのためにオブジ
 </ul>
 
     <footer>
-        <ul>
-            
-            <li>
-                <a href="https://github.com/nryotaro">
-                    <i class="fab fa-github"></i>
-                </a>
-            </li>
-            
-            
-            <li>
-                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </li>
-            
-            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-            
-        </ul>
-        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-</body>
+  </body>
 
 </html>

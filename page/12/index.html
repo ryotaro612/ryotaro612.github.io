@@ -1,51 +1,69 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
 	<meta name="generator" content="Hugo 0.92.2" />
     
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=300,initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
-        crossorigin="anonymous" />
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/css/base.css">
     
-    <link rel="stylesheet" href="/css/articles.css">
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.790fa3aecb49ec15e342419cad69b69ae9a75817c3c6e1f2b1e08bc49636e24b.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>Blanket</title>
-</head>
-
-<body>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
     
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <title>Blanket</title>
+  </head>
 
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
     <header class="navigation">
-        <h2><a href="/">Blanket</a></h2>
-        <nav>
-            <ul>
-                <li><a href="/about">About me</a></li>
-                <li><a href="/posts">Posts</a></li>
-                <li><a href="/gallery">Gallery</a></li>
-            </ul>
-        </nav>
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
     </header>
     
 <main>
     <h1>Posts</h1>
-
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/fast_intersection_algorithms_for_sorted_sequences/">論文メモ Fast Intersection Algorithms for Sorted Sequences</a></h3>
+        <div class="summary"><p>ソートされたシーケンスの直積を高速に求めるアルゴリズム Double Binary Searchを示した。
+2つのシーケンス\(D\), \(Q\)があり、\(\mid D\mid=n\), \(\mid Q\mid=m\), \(n &gt;= m\)であれば、平均と最悪時間計算量が、それぞれ、\(\mathcal{O}(m\log(n/m))\), \(m\)になる。
+本アルゴリズムは、Web検索エンジンで大きなシーケンスの直積を高速に求めるために開発された。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">April 12, 2021</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/lsmtree/">論文メモ The Log-Structured Merge-Tree (LSM-Tree)</a></h3>
@@ -56,7 +74,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 連続領域に書き込み、アームの移動やディスクの回転を減らすことで、高速に挿入や削除ができる。
 一方、検索速度は、複数の木を探索しなければならないために、1つの木でインデックスを構成するB木に劣る。</p></div>
         <div class="article-footer">
-            <span class="date">April 3, 2021</span>
+	  
+          <span class="date">April 3, 2021</span>
         </div>
     </article>
     
@@ -65,7 +84,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="summary"><p>Log-structured file system(LFS)は、91年に提唱されたHDD向けのファイルシステムであり、バッファリングした変更をディスクの連続領域に一度に書き込むことで、小さなファイルを大量に高速で書き込める。
 また、クラッシュからのリカバリも、ディスク全体ではなくチェックポイント以降に追記された箇所だけを検査すればよいので、高速になる。</p></div>
         <div class="article-footer">
-            <span class="date">March 29, 2021</span>
+	  
+          <span class="date">March 29, 2021</span>
         </div>
     </article>
     
@@ -76,7 +96,8 @@ ARIES/IMのベースには、先行研究の<a href="https://web.stanford.edu/cl
 復元手順はARIESとほとんど変わらない。
 キーの参照先にあるデータのレコードとキーを同じロックで保護したり、ロックの代わりにラッチを使ったりすることで、ロックの頻度を下げ、B+木の高速化を実現する。</p></div>
         <div class="article-footer">
-            <span class="date">March 21, 2021</span>
+	  
+          <span class="date">March 21, 2021</span>
         </div>
     </article>
     
@@ -88,7 +109,8 @@ B+木は、全てのキーを葉におき、葉を隣接リストでつなぐこ
 ランダムな検索、挿入、削除にかかる時間、空間計算量はB木と変わらない。
 以降はB木のデータ構造を前提としてB+木の概要を説明する。B木について知りたい場合は、<a href="/posts/organization_and_maintenance_of_large_orderred_indexes/">B木のオリジナル論文の解説記事</a>を見てほしい。</p></div>
         <div class="article-footer">
-            <span class="date">March 19, 2021</span>
+	  
+          <span class="date">March 19, 2021</span>
         </div>
     </article>
     
@@ -98,7 +120,8 @@ B+木は、全てのキーを葉におき、葉を隣接リストでつなぐこ
 バッチデータと違い、ストリームデータは新たなデータが随時追加、修正される。
 RRCTは、特徴の値でデータを2分するノードからなる木の集合であり、データを追加したときに木の集合であるモデルを大きく複雑するものを異常と判定する。</p></div>
         <div class="article-footer">
-            <span class="date">March 12, 2021</span>
+	  
+          <span class="date">March 12, 2021</span>
         </div>
     </article>
     
@@ -109,7 +132,8 @@ RRCTは、特徴の値でデータを2分するノードからなる木の集合
 ここでのインデックスは、固定長の\((x, \alpha)\)を要素とする連想配列で、最大\(2k\)個のキーを格納できる連続したページ上にある。
 \(\alpha\)には、データを保存した1つ以上のレコードへのポインタが格納される。</p></div>
         <div class="article-footer">
-            <span class="date">February 27, 2021</span>
+	  
+          <span class="date">February 27, 2021</span>
         </div>
     </article>
     
@@ -120,7 +144,8 @@ RRCTは、特徴の値でデータを2分するノードからなる木の集合
 例えば、<a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/">データベースのストレージで使われており</a>、検索するキーがデータベースに存在するか事前に確かめ、存在しないキーのための不要なディスクの読み取りを省いている。
 偽陰性の誤りはない。</p></div>
         <div class="article-footer">
-            <span class="date">February 20, 2021</span>
+	  
+          <span class="date">February 20, 2021</span>
         </div>
     </article>
     
@@ -129,7 +154,8 @@ RRCTは、特徴の値でデータを2分するノードからなる木の集合
         <div class="summary"><p>SSDのランダムな書き込みを高速化するために、インデックスのためのデータ構造FD-treeを提案した。
 FD-treeのエントリ数が\(n\), ページサイズが\(B\)であれば、ランダムな読み込みと書き込みの計算量はともに\(\mathcal{O}(\log_B(n))\)になる。</p></div>
         <div class="article-footer">
-            <span class="date">February 15, 2021</span>
+	  
+          <span class="date">February 15, 2021</span>
         </div>
     </article>
     
@@ -138,17 +164,8 @@ FD-treeのエントリ数が\(n\), ページサイズが\(B\)であれば、ラ�
         <div class="summary"><p>Isolation Forestは、完全二分木による異常検知の手法で、iForestともよばれる。時間計算量が線形で、ハイパーパラメタがわずか2つで、メモリ効率がよい。
 時間、空間計算量が少なく高次元のデータに向く。</p></div>
         <div class="article-footer">
-            <span class="date">February 13, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/tao_facebooks_distributed_data_store_for_social_graph/">論文メモ TAO: Facebook&#39;s Distributed Data Store for the Social Graph</a></h3>
-        <div class="summary"><p>TAOは、Facebookで開発されたソーシャルグラフのためのマルチリージョンの分散システムで、秒間10億件の読み込みと数百万件の書き込みの性能を発揮する。
-Facebookは、もともとソーシャルグラフを、MySQLに保存し、memcacheでキャッシュし、PHPで問いあわせるシステムで構成していた。
-TAOは、そのシステムの現状を引きつぎ、MySQLをストレージに採用している。</p></div>
-        <div class="article-footer">
-            <span class="date">February 4, 2021</span>
+	  
+          <span class="date">February 13, 2021</span>
         </div>
     </article>
     
@@ -156,10 +173,12 @@ TAOは、そのシステムの現状を引きつぎ、MySQLをストレージに
 
     
 
-<ul class="pagination">
+<ul class="pagination">  
     
     <li>
-        <a href="/"><span class="material-icons">first_page</span></a>
+      <a href="/">
+	<span class="material-icons">first_page</span>
+      </a>
     </li>
     <li>
         <a href="/page/11/"><span class="material-icons">chevron_left</span></a>
@@ -167,7 +186,9 @@ TAOは、そのシステムの現状を引きつぎ、MySQLをストレージに
     
     
     <li>
-        <a href="/page/13/"><span class="material-icons">chevron_right</span></a>
+      <a href="/page/13/">
+	<span class="material-icons">chevron_right</span>
+      </a>
     </li>
     <li>
         <a href="/page/26/"><span class="material-icons">last_page</span></a>
@@ -176,26 +197,26 @@ TAOは、そのシステムの現状を引きつぎ、MySQLをストレージに
 </ul>
 
     <footer>
-        <ul>
-            
-            <li>
-                <a href="https://github.com/nryotaro">
-                    <i class="fab fa-github"></i>
-                </a>
-            </li>
-            
-            
-            <li>
-                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </li>
-            
-            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-            
-        </ul>
-        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-</body>
+  </body>
 
 </html>

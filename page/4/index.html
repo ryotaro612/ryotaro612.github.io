@@ -1,51 +1,70 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
 	<meta name="generator" content="Hugo 0.92.2" />
     
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=300,initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
-        crossorigin="anonymous" />
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/css/base.css">
     
-    <link rel="stylesheet" href="/css/articles.css">
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.790fa3aecb49ec15e342419cad69b69ae9a75817c3c6e1f2b1e08bc49636e24b.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>Blanket</title>
-</head>
-
-<body>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
     
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <title>Blanket</title>
+  </head>
 
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
     <header class="navigation">
-        <h2><a href="/">Blanket</a></h2>
-        <nav>
-            <ul>
-                <li><a href="/about">About me</a></li>
-                <li><a href="/posts">Posts</a></li>
-                <li><a href="/gallery">Gallery</a></li>
-            </ul>
-        </nav>
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
     </header>
     
 <main>
     <h1>Posts</h1>
-
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/on_spectral_clustering_analysis_and_an_algorithm/">On Spectral Clustering: Analysis and an algorithm</a></h3>
+        <div class="summary"><p>スペクトラルクラスタリングは、類似度を辺の重みとするグラフをデータから構築し、重みをもとにカットする辺を決めて、データをクラスタに分ける。
+グラフラプラシアンのようなグラフを表現した行列をつくり、その固有ベクトルを求め、固有ベクトルを列ベクトルとして並べた行列にK-meansを適用する。
+もとのデータに二重丸のような凸集合でないクラスタがあるときに、最初からK-meansを適用するよりも良い結果を期待できる。
+また、データ分布に確率モデルにあてはめ、どのクラスタにデータを割りあてるか確率的に決めるクラスタリングと違い、データの分布を仮定しなくてよい。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">July 23, 2022</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/how_to_make_a_multiprocessor_computer_that_correctly_executes_multiprocess_programs/">How to Make a Multiprocessor Computer That Correctly Executes Multiprocess Programs(1979)</a></h3>
@@ -56,7 +75,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 プロセッサがメモリ上のデータを共有する場合、各プロセッサが逐次的でも、マルチプロセッサが逐次一貫になるとは限らない。
 マルチプロセッサが逐次一貫であるには、各プロセッサがソースコード通りの順序でメモリにリクエストを送り、メモリは各セルへのリクエストを到着順(FIFO)に処理しなければならない。</p></div>
         <div class="article-footer">
-            <span class="date">July 16, 2022</span>
+	  
+          <span class="date">July 16, 2022</span>
         </div>
     </article>
     
@@ -69,7 +89,8 @@ $$
 \text{Mcut} = \frac{\text{cut}(A, B)}{W(A)} + \frac{\text{cut}(A, B)}{W(B)}
 $$</p></div>
         <div class="article-footer">
-            <span class="date">July 9, 2022</span>
+	  
+          <span class="date">July 9, 2022</span>
         </div>
     </article>
     
@@ -80,7 +101,8 @@ $$</p></div>
 ステートマシンは、状態変数を決定的に変更するコマンドからなり、入力系列のみから出力が決まる。
 モデルは、複数のステートマシンを同じ初期状態から開始し、同じ入力を与え、出力の合意をはかる。</p></div>
         <div class="article-footer">
-            <span class="date">June 26, 2022</span>
+	  
+          <span class="date">June 26, 2022</span>
         </div>
     </article>
     
@@ -92,7 +114,8 @@ $$</p></div>
 論文へのリンク
 引用元の画像が荒いため、画像は、スモールデータ解析と機械学習から引用しました。</div>
         <div class="article-footer">
-            <span class="date">June 25, 2022</span>
+	  
+          <span class="date">June 25, 2022</span>
         </div>
     </article>
     
@@ -103,7 +126,8 @@ $$</p></div>
 表題のpartial synchronousは、同期、非同期の中間的な環境である。
 到達時間や時刻の誤差の有界について、存在するが値が分からない環境と、値が分かっているがどの時刻から値が保証されるか分からない環境を意味する。</p></div>
         <div class="article-footer">
-            <span class="date">June 18, 2022</span>
+	  
+          <span class="date">June 18, 2022</span>
         </div>
     </article>
     
@@ -116,7 +140,8 @@ Ridge回帰は、回帰係数を全体的に小さくすることで正則化項
 結果、もとのモデルの少数から中程度の回帰係数の絶対値が小さく残りが0のときに、Lasso回帰の精度が最も高かった。
 絶対値の大きい少数の回帰係数と0の回帰係数のときはSubset selectionが、絶対値の小さい回帰係数が多いときにRidge回帰の精度が最も高かった。</p></div>
         <div class="article-footer">
-            <span class="date">June 12, 2022</span>
+	  
+          <span class="date">June 12, 2022</span>
         </div>
     </article>
     
@@ -128,7 +153,8 @@ Ridge回帰は、回帰係数を全体的に小さくすることで正則化項
 しかし、同じ列を重複して複数の投影に含める場合、必要なディスク容量も増える。
 そのため、C-Storeは4種類の圧縮アルゴリズムによって、データを圧縮して保存する。</p></div>
         <div class="article-footer">
-            <span class="date">June 4, 2022</span>
+	  
+          <span class="date">June 4, 2022</span>
         </div>
     </article>
     
@@ -139,7 +165,8 @@ NIPALSでは、潜在変数が、デフレーションされた説明変数の�
 他方、SIMPLSの潜在変数は、中心化された説明変数の線形結合で表現できる。
 そのため、NIPALSよりもSIMPLSの潜在変数の方が説明変数との関係を解釈しやすい。</p></div>
         <div class="article-footer">
-            <span class="date">May 28, 2022</span>
+	  
+          <span class="date">May 28, 2022</span>
         </div>
     </article>
     
@@ -153,18 +180,8 @@ NIPALSでは、潜在変数が、デフレーションされた説明変数の�
 負債で会社の成長を早められるように、コードをリリースすることで後に修正する必要があるかもしれないが、よい設計を早く知ることができるため、Cunninghamは最初にリリースするコードを負債と形容した。
 負債と対比されているのはプログラミングの前に設計を熟考することであり、こちらが前払い、全額払いと表現されている。</p></div>
         <div class="article-footer">
-            <span class="date">May 28, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/pls_regression_a_basic_tool_of_chemometrics/">PLS-regression: a basic tool of chemometrics</a></h3>
-        <div class="summary"><p>重回帰分析は、説明変数の行列がフルランクでないとき、多重共線性により出力が不安定になる。
-そのため、説明変数の数を減らし、説明変数間に相関関係がないようにする必要がある。
-PLS（部分的最小二乗法）は、入力変数の線形結合で表わせる潜在変数を求め、潜在変数の線形結合で目的変数を表す。
-説明変数の数より少ない数の潜在変数を求めることで、説明変数間の相関関係をとりのぞく。</p></div>
-        <div class="article-footer">
-            <span class="date">May 21, 2022</span>
+	  
+          <span class="date">May 28, 2022</span>
         </div>
     </article>
     
@@ -172,10 +189,12 @@ PLS（部分的最小二乗法）は、入力変数の線形結合で表わせ�
 
     
 
-<ul class="pagination">
+<ul class="pagination">  
     
     <li>
-        <a href="/"><span class="material-icons">first_page</span></a>
+      <a href="/">
+	<span class="material-icons">first_page</span>
+      </a>
     </li>
     <li>
         <a href="/page/3/"><span class="material-icons">chevron_left</span></a>
@@ -183,7 +202,9 @@ PLS（部分的最小二乗法）は、入力変数の線形結合で表わせ�
     
     
     <li>
-        <a href="/page/5/"><span class="material-icons">chevron_right</span></a>
+      <a href="/page/5/">
+	<span class="material-icons">chevron_right</span>
+      </a>
     </li>
     <li>
         <a href="/page/26/"><span class="material-icons">last_page</span></a>
@@ -192,26 +213,26 @@ PLS（部分的最小二乗法）は、入力変数の線形結合で表わせ�
 </ul>
 
     <footer>
-        <ul>
-            
-            <li>
-                <a href="https://github.com/nryotaro">
-                    <i class="fab fa-github"></i>
-                </a>
-            </li>
-            
-            
-            <li>
-                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </li>
-            
-            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-            
-        </ul>
-        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-</body>
+  </body>
 
 </html>

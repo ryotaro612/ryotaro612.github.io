@@ -1,51 +1,74 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
 	<meta name="generator" content="Hugo 0.92.2" />
     
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=300,initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
-        crossorigin="anonymous" />
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/css/base.css">
     
-    <link rel="stylesheet" href="/css/articles.css">
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.790fa3aecb49ec15e342419cad69b69ae9a75817c3c6e1f2b1e08bc49636e24b.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>Blanket</title>
-</head>
-
-<body>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
     
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <title>Blanket</title>
+  </head>
 
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
     <header class="navigation">
-        <h2><a href="/">Blanket</a></h2>
-        <nav>
-            <ul>
-                <li><a href="/about">About me</a></li>
-                <li><a href="/posts">Posts</a></li>
-                <li><a href="/gallery">Gallery</a></li>
-            </ul>
-        </nav>
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
     </header>
     
 <main>
     <h1>Posts</h1>
-
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/sequence_to_sequence_learning_with_neural_networks/">論文メモ Sequence to Sequence Learning with Nueral Networks</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>Sequence to Sequenceの論文。
+入出力が系列データを学習する場合、入力と出力の長さが等しかったり対応関係にある箇所が系列の方向に単調でなければならなかったりする。
+これらの制約に対処するために、Sequence to Sequenceでは、入力全体を固定長のベクトルに一度変換し、そのベクトルをもとに出力を予測する。
+2種類のLSTMをもち、入力を与えるLSTMの最終層の隠れ状態で、固定長ベクトルをつくる。
+固定長のベクトルは、単調の制約を緩めるはたらきをする。
+このベクトルは、もう一方のLSTMにあたえられ、その主力が最終的な出力になる。
+実験では、入力系列を反転してあたえると、入力と出力の対応関係にある箇所の距離が近づき、予測性能が上がることが確認された。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">June 6, 2020</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/google_neural_machine_translation_system/">論文メモ Google&#39;s Neural Machine Transltation System: Bridging the Gap between Human and Machine Translation</a></h3>
@@ -57,7 +80,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 低頻出の単語でも翻訳できるようにwordpieceでエンコードされた入力をうけとる。
 入力文の一部が翻訳されない問題に対しては、短い出力文に罰則を課すビームサーチで出力文の候補を探索する仕組みが導入されている。</p></div>
         <div class="article-footer">
-            <span class="date">May 30, 2020</span>
+	  
+          <span class="date">May 30, 2020</span>
         </div>
     </article>
     
@@ -68,7 +92,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 最近傍探索は、2値分類器の出力を要素とするベクトルをうけとり、最近傍のラベルに対応するベクトルを探す。
 PACフレームワークにもとづく必要な学習データの件数を示し、そのデータで訓練されたモデルが学習データにないラベルを推定できる確率を示した。</p></div>
         <div class="article-footer">
-            <span class="date">May 23, 2020</span>
+	  
+          <span class="date">May 23, 2020</span>
         </div>
     </article>
     
@@ -82,7 +107,8 @@ PACフレームワークにもとづく必要な学習データの件数を示�
 3つの実験により、文の分散表現を獲得する先行研究と比較し、自己注意機構の効果が確認された。
 注意機構は複数のベクトルのどれを重視するかを学習できるため、埋め込まれた文の箇所を可視化できることも示した。</p></div>
         <div class="article-footer">
-            <span class="date">May 16, 2020</span>
+	  
+          <span class="date">May 16, 2020</span>
         </div>
     </article>
     
@@ -97,7 +123,8 @@ $$ \boldsymbol{\theta}_{t+1} = \mathfrak{R}_{\theta_t}(-\eta_t\nabla_R\mathcal{L
 $$ \nabla_R = \frac{(1-||\boldsymbol{\theta_t}||^2)^2}{4}\nabla_E $$ の関係がある。 以上より、更新式は
 $$ \mathrm{proj}(\boldsymbol{\theta})= \begin{cases} \boldsymbol{\theta}/||\boldsymbol{\theta}|| - \epsilon &amp;\mathrm{if}\ ||\boldsymbol{\theta}||\ge 1 \\ \boldsymbol{\theta}&amp;\mathrm{otherwise.</div>
         <div class="article-footer">
-            <span class="date">May 9, 2020</span>
+	  
+          <span class="date">May 9, 2020</span>
         </div>
     </article>
     
@@ -110,7 +137,8 @@ $$ \mathrm{proj}(\boldsymbol{\theta})= \begin{cases} \boldsymbol{\theta}/||\bold
 ミニバッチごとに、入力または出力の言語をいれかえ、言語に依存しない文の意味の分散表現への変換方法を学習する。
 本論文の成果は多言語に対応する分散表現のモデルのライブラリ<a href="https://github.com/facebookresearch/LASER">LASER</a>に応用されている。</p></div>
         <div class="article-footer">
-            <span class="date">April 29, 2020</span>
+	  
+          <span class="date">April 29, 2020</span>
         </div>
     </article>
     
@@ -121,7 +149,8 @@ BERT-largeと比べると、ALBERT-largeのパラメタ数は約5.3%の18Mであ
 パラメタを削減するために、単語のOne-hotベクトルをあたえられる単語埋め込み行列の次元を減らし、隠れ層の順伝播ネットワークや注意機構のパラメタを層の間で共有した。
 また、Next Sentence Prediction(NSP)による学習を、与えられた2文の前後関係を判定する学習Sentence Order Prediction(SOP)におきかえ、主タスクの予測性能を向上をはかった。</p></div>
         <div class="article-footer">
-            <span class="date">April 25, 2020</span>
+	  
+          <span class="date">April 25, 2020</span>
         </div>
     </article>
     
@@ -133,7 +162,8 @@ BERT-largeと比べると、ALBERT-largeのパラメタ数は約5.3%の18Mであ
 実験には、MovieLensのデータセットが使われた。
 F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒット数で評価したところ、著者らの用意した単純な手法\(P^s\)やその拡張\(P_\alpha^s\)が質と計算量の両方で最も優れた結果を残した。</p></div>
         <div class="article-footer">
-            <span class="date">April 18, 2020</span>
+	  
+          <span class="date">April 18, 2020</span>
         </div>
     </article>
     
@@ -148,7 +178,8 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
 目標関数から、ドメイン間のデータの分布が近いほど、目標ドメインのデータでも高い分類性能を発揮する。
 先行研究との違いは、できるだけ共通するする特徴で分類するという着想を、通常の分類と同じく、確率的勾配降下法で実現したところにある。</p></div>
         <div class="article-footer">
-            <span class="date">April 11, 2020</span>
+	  
+          <span class="date">April 11, 2020</span>
         </div>
     </article>
     
@@ -160,19 +191,8 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
 実験データにPenn Treebankを、評価指標にPerplexityを採用してモデルを評価したところ、
 論文が発表された2016年時点での<a href="https://arxiv.org/abs/1409.2329">SOTA</a>の60%程度のパラメタしかないモデルでありながら、これに匹敵する性能を発揮した。</p></div>
         <div class="article-footer">
-            <span class="date">April 4, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/deep_contextualized_word_representations/">論文メモ Deep contextualized word representations</a></h3>
-        <div class="summary"><p>文脈をふまえた単語の分散表現を生成する手法を提案し、教師あり学習に応用することで評価した論文である。
-文字単位の学習済み双方向LSTM言語モデルへの入力と各層の出力から分散表現をつくる。
-言語モデルの入力やどの層をどれだけ重視するかは、教師あり学習のときに更新するパラメタのひとつになる。
-実験では、構文にかかわるタスクであれば入力層に近い層が、意味にかかわるものであれば出力層に近い層が、重視された。
-モデルは、Embeddings from Language Modelsにちなみ、ELMoと名付けられた。</p></div>
-        <div class="article-footer">
-            <span class="date">March 24, 2020</span>
+	  
+          <span class="date">April 4, 2020</span>
         </div>
     </article>
     
@@ -180,10 +200,12 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
 
     
 
-<ul class="pagination">
+<ul class="pagination">  
     
     <li>
-        <a href="/"><span class="material-icons">first_page</span></a>
+      <a href="/">
+	<span class="material-icons">first_page</span>
+      </a>
     </li>
     <li>
         <a href="/page/18/"><span class="material-icons">chevron_left</span></a>
@@ -191,7 +213,9 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
     
     
     <li>
-        <a href="/page/20/"><span class="material-icons">chevron_right</span></a>
+      <a href="/page/20/">
+	<span class="material-icons">chevron_right</span>
+      </a>
     </li>
     <li>
         <a href="/page/26/"><span class="material-icons">last_page</span></a>
@@ -200,26 +224,26 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
 </ul>
 
     <footer>
-        <ul>
-            
-            <li>
-                <a href="https://github.com/nryotaro">
-                    <i class="fab fa-github"></i>
-                </a>
-            </li>
-            
-            
-            <li>
-                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </li>
-            
-            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-            
-        </ul>
-        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-</body>
+  </body>
 
 </html>

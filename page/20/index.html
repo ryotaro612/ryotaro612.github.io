@@ -1,51 +1,71 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
 	<meta name="generator" content="Hugo 0.92.2" />
     
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=300,initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
-        crossorigin="anonymous" />
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/css/base.css">
     
-    <link rel="stylesheet" href="/css/articles.css">
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.790fa3aecb49ec15e342419cad69b69ae9a75817c3c6e1f2b1e08bc49636e24b.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>Blanket</title>
-</head>
-
-<body>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
     
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <title>Blanket</title>
+  </head>
 
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
     <header class="navigation">
-        <h2><a href="/">Blanket</a></h2>
-        <nav>
-            <ul>
-                <li><a href="/about">About me</a></li>
-                <li><a href="/posts">Posts</a></li>
-                <li><a href="/gallery">Gallery</a></li>
-            </ul>
-        </nav>
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
     </header>
     
 <main>
     <h1>Posts</h1>
-
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/deep_contextualized_word_representations/">論文メモ Deep contextualized word representations</a></h3>
+        <div class="summary"><p>文脈をふまえた単語の分散表現を生成する手法を提案し、教師あり学習に応用することで評価した論文である。
+文字単位の学習済み双方向LSTM言語モデルへの入力と各層の出力から分散表現をつくる。
+言語モデルの入力やどの層をどれだけ重視するかは、教師あり学習のときに更新するパラメタのひとつになる。
+実験では、構文にかかわるタスクであれば入力層に近い層が、意味にかかわるものであれば出力層に近い層が、重視された。
+モデルは、Embeddings from Language Modelsにちなみ、ELMoと名付けられた。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">March 24, 2020</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/the_seven_sins/">論文メモ The Seven Sins: Security Smells in Infrastructure as Code Scripts</a></h3>
@@ -54,7 +74,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 論文のねらいは、開発者がIaCスクリプトに不吉な匂いを混ぜないようにすることにある。
 著者らは、本論文で、ICSE2019のDistinguished Paper Awardを受賞した。</p></div>
         <div class="article-footer">
-            <span class="date">March 20, 2020</span>
+	  
+          <span class="date">March 20, 2020</span>
         </div>
     </article>
     
@@ -62,7 +83,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h3><a href="https://nryotaro.dev/posts/semi_supervised_sequence_learning/">論文メモ Semi-supervised Sequence Learning</a></h3>
         <div class="summary"><p>系列データの教師あり学習において、ラベルのないデータを学習した言語モデルやオートエンコーダーの重みでLSTMを初期化することの有用性を実験的に示した。</p></div>
         <div class="article-footer">
-            <span class="date">March 14, 2020</span>
+	  
+          <span class="date">March 14, 2020</span>
         </div>
     </article>
     
@@ -72,7 +94,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 Raftは、Multi Paxosと同様の実行結果をもたらす。
 実行するコマンドのログをサーバ間で交換することで、状態を同期し、サーバの一部が落ちてもシステムを継続することができる。</p></div>
         <div class="article-footer">
-            <span class="date">March 9, 2020</span>
+	  
+          <span class="date">March 9, 2020</span>
         </div>
     </article>
     
@@ -84,7 +107,8 @@ Raftは、Multi Paxosと同様の実行結果をもたらす。
 アルゴリズムの解説は、<a href="https://www.aclweb.org/anthology/P16-1162.pdf">Sennrich et al.</a>や<a href="https://arxiv.org/pdf/1804.10959.pdf">Kudo.</a>にゆずられている。
 これらの論文について2019年7月13日の<a href="../neural_machine_translation_of_rate_words/">記事</a>と2019年7月17日の<a href="./subword_regularization/">記事</a>で解説している。</p></div>
         <div class="article-footer">
-            <span class="date">February 29, 2020</span>
+	  
+          <span class="date">February 29, 2020</span>
         </div>
     </article>
     
@@ -99,7 +123,8 @@ LDAは、テキストコーパスのような離散データの確率的生成�
 トピックもまた混合モデルから確率的に生成される。
 推論にはベイズ変分法を、パラメタの推定にはEMアルゴリズムをもちいらる。</p></div>
         <div class="article-footer">
-            <span class="date">February 23, 2020</span>
+	  
+          <span class="date">February 23, 2020</span>
         </div>
     </article>
     
@@ -112,7 +137,8 @@ decoderについても、encoderと別の言語モデルを用意し、その重
 ただし、工夫のないファインチューニングをすると<a href="https://arxiv.org/pdf/1312.6211.pdf">破滅的忘却</a>が生じてしまう。
 そこで、ファインチューニングでは言語モデルとseq2seqの目的関数の両方を学習につかうことで、過学習をさけ、汎化性能を確保する。</p></div>
         <div class="article-footer">
-            <span class="date">February 16, 2020</span>
+	  
+          <span class="date">February 16, 2020</span>
         </div>
     </article>
     
@@ -122,7 +148,8 @@ decoderについても、encoderと別の言語モデルを用意し、その重
 <p>深層強化学習をAtari2600の7つのゲームに応用し、うち6つについて先行手法の性能を超えたDeep Q-Networks(DQN)を提案した論文である。
 ピクセルデータを直接入力として与え、深層学習で方策を学習する手法としては初めて提案された。</p></div>
         <div class="article-footer">
-            <span class="date">February 9, 2020</span>
+	  
+          <span class="date">February 9, 2020</span>
         </div>
     </article>
     
@@ -136,7 +163,8 @@ CBOWは、ウィンドウ内のベクトルの平均値で文脈の分散表現�
 一方、<em>context2vec</em>では、双方向LSTMの出力をもとに算出する。</p>
 <!-- raw HTML omitted --></div>
         <div class="article-footer">
-            <span class="date">February 2, 2020</span>
+	  
+          <span class="date">February 2, 2020</span>
         </div>
     </article>
     
@@ -152,19 +180,8 @@ ICLR2015で発表された。
 次に、推定された箇所と生成済の単語列をもとに、単語を生成する。
 特に長い文書の翻訳において、固定長ベクトルをつかうモデルよりも、提案手法が優れていることを実験的に示した。</p></div>
         <div class="article-footer">
-            <span class="date">February 1, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/why_should_i_trust_you/">論文メモ &#34;Why Should I Trust You?&#34; Explaining the Predictions of Any Classifier</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>モデルの予測に説明をあたえる手法、Local Interpretable Model-agnostic Explanations (LIME)を提案する。
-モデルが回帰や分類器であれば、アルゴリズムによらずLIMEを適用できる。
-説明を与えたい事例近くにある事例を解釈可能なモデルに学習させ、解釈可能なモデルで予測を説明する。
-また、個別の予測ではなく、モデル自体をよく説明する事例を集める手法Submodullar Pick (SP)-LIMEを提案する。</p></div>
-        <div class="article-footer">
-            <span class="date">January 26, 2020</span>
+	  
+          <span class="date">February 1, 2020</span>
         </div>
     </article>
     
@@ -172,10 +189,12 @@ ICLR2015で発表された。
 
     
 
-<ul class="pagination">
+<ul class="pagination">  
     
     <li>
-        <a href="/"><span class="material-icons">first_page</span></a>
+      <a href="/">
+	<span class="material-icons">first_page</span>
+      </a>
     </li>
     <li>
         <a href="/page/19/"><span class="material-icons">chevron_left</span></a>
@@ -183,7 +202,9 @@ ICLR2015で発表された。
     
     
     <li>
-        <a href="/page/21/"><span class="material-icons">chevron_right</span></a>
+      <a href="/page/21/">
+	<span class="material-icons">chevron_right</span>
+      </a>
     </li>
     <li>
         <a href="/page/26/"><span class="material-icons">last_page</span></a>
@@ -192,26 +213,26 @@ ICLR2015で発表された。
 </ul>
 
     <footer>
-        <ul>
-            
-            <li>
-                <a href="https://github.com/nryotaro">
-                    <i class="fab fa-github"></i>
-                </a>
-            </li>
-            
-            
-            <li>
-                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </li>
-            
-            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-            
-        </ul>
-        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-</body>
+  </body>
 
 </html>

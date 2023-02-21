@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>プログラミングモデル on Blanket</title>
+    <link>https://nryotaro.dev/tags/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%A2%E3%83%87%E3%83%AB/</link>
+    <description>Recent content in プログラミングモデル on Blanket</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Wed, 23 Nov 2022 11:44:08 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/tags/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%A2%E3%83%87%E3%83%AB/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抄訳 MillWheel: Fault-Tolerant Stream Processing at Internet Scale(2013)</title>
+      <link>https://nryotaro.dev/posts/millwheel_fault_tolerant_stream_processing_at_internet_scale/</link>
+      <pubDate>Wed, 23 Nov 2022 11:44:08 -0500</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/millwheel_fault_tolerant_stream_processing_at_internet_scale/</guid>
+      <description>&lt;p&gt;MillWheelはGoogleで開発されたストリーミング処理のフレームワークである。
+開発者が羃等な処理をノードとする有向グラフを実装すれば、MillWheelがデータをノードに正確に一回だけ配信する。
+ただし、転送が遅延しているデータは破棄される。
+データは、キー、値、論理的な時刻の3組からなるレコードを単位として、ノードからノードに出力される。
+向き先のノードは、レコードからキーへの関数を、根のノードから出力されるレコードに適用し、期待するキーに対応するレコードをノードに集約する。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>抄訳 GraphChi: Large-Scale Graph Computation on Just a PC(2012)</title>
+      <link>https://nryotaro.dev/posts/graphchi_large_scale_graph_computation_on_just_a_pc/</link>
+      <pubDate>Sat, 12 Nov 2022 09:57:01 -0500</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/graphchi_large_scale_graph_computation_on_just_a_pc/</guid>
+      <description>&lt;p&gt;GraphChiは、商業規模の有向グラフをコンシューマPCで計算できるとうたうデータ構造とプログラミングモデルである。
+そのためには、任意のひとつのノードとそのノードに接続する全てのエッジを読み込めるメモリがあればよい。
+順序つきのノードを互いに素なP個の集合に分け、それぞれをintervalをよぶ。
+interval内のノードに向うエッジを根のノード順にソートし、エッジをP個のshardに分けて保存する。
+1つのshardをディスクの連続領域に保存することで、あるノードとノードに接続するエッジを、高々P回のディスクへのアクセスでメモリに読み込める。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

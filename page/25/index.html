@@ -1,51 +1,67 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
 	<meta name="generator" content="Hugo 0.92.2" />
     
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=300,initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
-        crossorigin="anonymous" />
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/css/base.css">
     
-    <link rel="stylesheet" href="/css/articles.css">
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.790fa3aecb49ec15e342419cad69b69ae9a75817c3c6e1f2b1e08bc49636e24b.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>Blanket</title>
-</head>
-
-<body>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
     
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <title>Blanket</title>
+  </head>
 
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
     <header class="navigation">
-        <h2><a href="/">Blanket</a></h2>
-        <nav>
-            <ul>
-                <li><a href="/about">About me</a></li>
-                <li><a href="/posts">Posts</a></li>
-                <li><a href="/gallery">Gallery</a></li>
-            </ul>
-        </nav>
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
     </header>
     
 <main>
     <h1>Posts</h1>
-
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/regularizing_and_optimizing_lstm_language_models/">論文メモ Regularizing and Optimizing LSTM Language Models</a></h3>
+        <div class="summary"><p>本稿は、LSTMを用いた言語モデルに対して正規化と最適化を適用し、実験を通して既存の先行研究とperplexityの観点で予測性能を評価した。本稿の手法の利点は、LSTMの実装に変更を加えずに適用できるために、NVIDIA cuDNNなどの高速でブラックボックスなライブラリで実装できることにある。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">November 23, 2018</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/deep_joint_entity_disambiguation/">メモ Deep Joint Entity Disambiguation with Local Neural Attention</a></h3>
@@ -53,7 +69,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)の両方をアプローチの対象にしているのに対し、本稿ではEDのみが対象となっている。
 したがって、文章からmention（参照表現）が抽出されていることが前提にあり、提案の中心は、参照表現に対応するエンティティを候補の中から正しく求める手法にある。</p></div>
         <div class="article-footer">
-            <span class="date">November 9, 2018</span>
+	  
+          <span class="date">November 9, 2018</span>
         </div>
     </article>
     
@@ -63,7 +80,8 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
 <p>本稿は、End to EndなEntity Linkingモデルのアーキテクチャを提案し、予測性能の評価実験で有用性を評価した。
 実験のデータセットには、Entity annotationの評価に使える様々なデータセットを集めた<a href="https://github.com/dice-group/gerbil/wiki">Gerbil Platform</a>が使われている。そのうちの<a href="https://natural-language-understanding.fandom.com/wiki/AIDA-CoNLL">AIDA/CoNLL</a>データセットにおいて、提案手法は既存手法を超える予測性能を発揮した。</p></div>
         <div class="article-footer">
-            <span class="date">November 2, 2018</span>
+	  
+          <span class="date">November 2, 2018</span>
         </div>
     </article>
     
@@ -71,7 +89,8 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
         <h3><a href="https://nryotaro.dev/posts/deeptype/">DeepType: Multilingual Entity Linking by Neural Type System Evolution(2018)</a></h3>
         <div class="summary"><p>本稿は、既存のオントロジから型システムを構築するアルゴリズムと型システムによるEntity Linking(EL)を提案した。実験を通じて既存手法と比較し、精度の向上を確認した。</p></div>
         <div class="article-footer">
-            <span class="date">October 26, 2018</span>
+	  
+          <span class="date">October 26, 2018</span>
         </div>
     </article>
     
@@ -81,7 +100,18 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
 <p>本稿は、条件付き確率場（Conditional Random Fields, CRF）を提案し、品詞タグづけにおけるerror rateをもとに評価した。
 評価の比較対象には、Maximum entropy Markov models(MEMMs)が採用されている。</p></div>
         <div class="article-footer">
-            <span class="date">October 12, 2018</span>
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/crf/">
+		#CRF
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">October 12, 2018</span>
         </div>
     </article>
     
@@ -91,7 +121,18 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
 <p>NLPにおける系列ラベリングためのニューラルネットワークアーキテクチャの提案と評価がなされている。
 このアーキテクチャは、当サイトで以前紹介した<a href="https://aclweb.org/anthology/papers/C/C18/C18-1139/">Contextual String Embeddings for Sequence Labeling</a>で応用されている。</p></div>
         <div class="article-footer">
-            <span class="date">October 5, 2018</span>
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E7%B3%BB%E5%88%97%E3%83%A9%E3%83%99%E3%83%AA%E3%83%B3%E3%82%B0/">
+		#系列ラベリング
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">October 5, 2018</span>
         </div>
     </article>
     
@@ -105,7 +146,24 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
 いいかえると、同じ単語であっても、文中における出現位置が異なれば、単語は異なる分散表現に変換される。
 著者らは、分散表現に文脈の情報を含められることを強調して、提案手法をContextual String Embeddingsと名付けた。</p></div>
         <div class="article-footer">
-            <span class="date">September 28, 2018</span>
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/word-embedding/">
+		#Word embedding
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/ner/">
+		#NER
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">September 28, 2018</span>
         </div>
     </article>
     
@@ -116,7 +174,18 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
 評価手段として、6種のテキスト分類のタスクにおける既存手法とのエラー率の比較が採られている。
 主要な評価として、100件のラベル付きデータだけでその100倍のデータを要した事前学習を用いない手法と同等の予測性能が出たことを報告している。</p></div>
         <div class="article-footer">
-            <span class="date">September 14, 2018</span>
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/fine-tuning/">
+		#Fine tuning
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">September 14, 2018</span>
         </div>
     </article>
     
@@ -126,7 +195,18 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
 異種混合とは、企業、業界、ニュースなど複数の種類の概念がグラフのノードとして扱われていることを意味する。
 獲得した分散表現を訓練データとして分類、クラスタリング、検索に応用し、既存手法と比較している。</p></div>
         <div class="article-footer">
-            <span class="date">September 7, 2018</span>
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/graph-embedding/">
+		#Graph embedding
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">September 7, 2018</span>
         </div>
     </article>
     
@@ -138,16 +218,18 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
 深層学習を試す以前はGBDTを採用おり、以下の順にアルゴリズムを変えていった。
 当初は、アルゴリズムを段階的に高度にしていくつもりはなく、1.以前には複雑なアルゴリズムをいきなり試したが、失敗に終わっている。</p></div>
         <div class="article-footer">
-            <span class="date">August 31, 2018</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/the_relationship_between_precision_recall_and_roc_curve/">メモ The Relationship Between Precision-Recall and ROC Curve</a></h3>
-        <div class="summary">ROCとPrecision Recallの関係を示した論文。
- 1 Recallが0でなければ、ROC曲線には一対一に対応するPR曲線がある。 2 PR曲線AがPR曲線Bに対して常に優位であることとは、ROC曲線においてAがBより常に優位であることの必要十分条件。 3 1,2よりROC空間上の凸包に対応するPR曲線は、他の妥当なPR曲線よりも優位な曲線になる。 4 線形補間でROC曲線を描くことは妥当。一方で、Recallの分母は固定値であるが、Precisionの分母の値はRecallが上がると増える。そのため、PR曲線を線形補間でプロットすると、評価の甘い曲線になる。   論文はこちらからダウンロードできます。</div>
-        <div class="article-footer">
-            <span class="date">August 25, 2018</span>
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/">
+		#ランキング学習
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">August 31, 2018</span>
         </div>
     </article>
     
@@ -155,10 +237,12 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
 
     
 
-<ul class="pagination">
+<ul class="pagination">  
     
     <li>
-        <a href="/"><span class="material-icons">first_page</span></a>
+      <a href="/">
+	<span class="material-icons">first_page</span>
+      </a>
     </li>
     <li>
         <a href="/page/24/"><span class="material-icons">chevron_left</span></a>
@@ -166,7 +250,9 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
     
     
     <li>
-        <a href="/page/26/"><span class="material-icons">chevron_right</span></a>
+      <a href="/page/26/">
+	<span class="material-icons">chevron_right</span>
+      </a>
     </li>
     <li>
         <a href="/page/26/"><span class="material-icons">last_page</span></a>
@@ -175,26 +261,26 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
 </ul>
 
     <footer>
-        <ul>
-            
-            <li>
-                <a href="https://github.com/nryotaro">
-                    <i class="fab fa-github"></i>
-                </a>
-            </li>
-            
-            
-            <li>
-                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </li>
-            
-            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-            
-        </ul>
-        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-</body>
+  </body>
 
 </html>

@@ -1,51 +1,69 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
 	<meta name="generator" content="Hugo 0.92.2" />
     
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=300,initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
-        crossorigin="anonymous" />
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/css/base.css">
     
-    <link rel="stylesheet" href="/css/articles.css">
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.790fa3aecb49ec15e342419cad69b69ae9a75817c3c6e1f2b1e08bc49636e24b.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>Blanket</title>
-</head>
-
-<body>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
     
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <title>Blanket</title>
+  </head>
 
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
     <header class="navigation">
-        <h2><a href="/">Blanket</a></h2>
-        <nav>
-            <ul>
-                <li><a href="/about">About me</a></li>
-                <li><a href="/posts">Posts</a></li>
-                <li><a href="/gallery">Gallery</a></li>
-            </ul>
-        </nav>
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
     </header>
     
 <main>
     <h1>Posts</h1>
-
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/feature_selection_for_text_categorization_on_imbalance_data/">メモ Feature Selection for Text Categorization on Imbalanced Data</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>表題の論文は、特徴選択において、正例に顕著な特徴から選ぶ割合を明示的に決めることで、正例と負例それぞれに顕著な特徴の割合を調整することが、不均衡な文書分類における予測性能の向上に役立つことを示した。
+情報利得やオッズ比など単変量統計にもとづく特徴選択において、統計量の値によって暗黙的に決められた割合と異なる割合の場合の方が予測性能が高いことを実験的に示した。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">October 12, 2019</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/snorkel_drybell_case_study/">メモ Snorkel DryBell: A Case Study in Deploying Weak Supervision at Industrial Scale</a></h3>
@@ -54,7 +72,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 Weak Supervisionは、人手よりも効率良くノイズ交じりの教師データを生成する手法である。
 Snorkelは、引数にサンプルを返り値にラベルを返す複数の関数をラベルなしデータに適用し、結果から関数の精度を予測し、個々の関数よりも高い精度でデータにラベルを与える。この関数をラベリング関数という。Snorkel DryBellは、Snorkelのアルゴリズムをスケールさせるために、MapReduceに適用できるように修正されたものをさす。</p></div>
         <div class="article-footer">
-            <span class="date">October 5, 2019</span>
+	  
+          <span class="date">October 5, 2019</span>
         </div>
     </article>
     
@@ -62,7 +81,8 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
         <h3><a href="https://nryotaro.dev/posts/training_complex_models_with_multi_task_weak_supervision/">メモ Training Complex Models with Multi-Task Weak Supervision</a></h3>
         <div class="summary"><p>論文の表題は、ソース間の粒度や精度が揃っていることを前提とせず、<a href="https://arxiv.org/pdf/1212.0478.pdf">LohとWainwrightらの手法</a>でソースの精度を推定し、ソースのラベルよりも精度が高いラベルをデータに与えるWeak supervsionの手法である。</p></div>
         <div class="article-footer">
-            <span class="date">September 28, 2019</span>
+	  
+          <span class="date">September 28, 2019</span>
         </div>
     </article>
     
@@ -71,7 +91,8 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
         <div class="summary"><h3 id="概要">概要</h3>
 <p>表題の論文は、Weak supervisionの一種であるSnorkelを学習データの収集効率と予測性能についての既存手法や教師あり学習と比べた評価をまとめてる。</p></div>
         <div class="article-footer">
-            <span class="date">September 21, 2019</span>
+	  
+          <span class="date">September 21, 2019</span>
         </div>
     </article>
     
@@ -82,7 +103,8 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
 著者らは、9人中の8名がMicrosoft Researchに所属し、本論文で2019年のICSEのSoftware Engineering in Practiceの分野でBest Paper Awardを受賞した。
 主な貢献は、各チームにおける開発フローを9のステージに分けて解説したこと、機械学習を応用するアプリケーションやプラットフォームの開発におけるベストプラクティスを示したこと、機械学習を応用するアプリケーションの開発に固有の課題にまつわる論考の3つである。</p></div>
         <div class="article-footer">
-            <span class="date">September 14, 2019</span>
+	  
+          <span class="date">September 14, 2019</span>
         </div>
     </article>
     
@@ -93,7 +115,8 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
 バギングは、アンダーサンプリングによる偏りを抑えて予測性能を安定させるために使われる。
 論文で扱うモデルは、SVMなどの学習で経験損失を最小化するモデルに限定されている。発表学会は2011年のICDMである。</p></div>
         <div class="article-footer">
-            <span class="date">September 7, 2019</span>
+	  
+          <span class="date">September 7, 2019</span>
         </div>
     </article>
     
@@ -105,7 +128,8 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
 マージン付近にあるデータを集めることで、均衡のとれたデータセットを用意することにある。
 具体的には、ラベルづけしたデータでSVMをオンライン学習し、無作為に抽出されたラベルのないデータの中で最も超平面に近いデータにラベルをつける手順をマージンの中にあるデータ数が変わらなくなるまで繰り返す。</p></div>
         <div class="article-footer">
-            <span class="date">August 31, 2019</span>
+	  
+          <span class="date">August 31, 2019</span>
         </div>
     </article>
     
@@ -118,7 +142,8 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
 蒸留の目的は本番の運用に耐えられるデプロイ可能なモデル作ることにある。
 本論文は、出力層の活性化関数に温度つきソフトマックスを使った多クラス分類のモデルを蒸留する手法を提案し、実験により手法を評価している。</p></div>
         <div class="article-footer">
-            <span class="date">August 24, 2019</span>
+	  
+          <span class="date">August 24, 2019</span>
         </div>
     </article>
     
@@ -128,7 +153,8 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
 Extreme multi-label classificationの目的は、大量のラベルの候補から与えられたデータに関連する複数のラベルを推定する学習器を構築することにある。
 FastXMLは、弱学習器に決定木を使うアンサンブル学習であり、ノードの分割の評価関数にnDCGを採用することで、学習にかかる時間と予測精度の向上を意図している。</p></div>
         <div class="article-footer">
-            <span class="date">August 24, 2019</span>
+	  
+          <span class="date">August 24, 2019</span>
         </div>
     </article>
     
@@ -140,18 +166,8 @@ FastXMLは、弱学習器に決定木を使うアンサンブル学習であり�
 調査方法はGoogle社のエンジニアへのアンケートとエンジニアの行動ログの分析が採用されている。
 Googleではモノリシックリポジトリが採用されており、エンジニアがこれまで経験したマルチリポジトリが比較対象となっている。</p></div>
         <div class="article-footer">
-            <span class="date">August 17, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/cat_boost/">メモ CatBoost: unbaiased boosting with categorical features</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>表題はNeurIPS 2018で発表されたCatBoostという勾配ブースティングの手法を論文にちなむ。
-Target Statisticsというカテゴリカル特徴量の前処理と勾配ブースティングの学習時に生じる一種のleakageが起きることを示し、leakageをさけて前処理と学習をする手法を示した。
-CatBoostは二進木の決定木を弱識別器に用いる。</p></div>
-        <div class="article-footer">
-            <span class="date">August 10, 2019</span>
+	  
+          <span class="date">August 17, 2019</span>
         </div>
     </article>
     
@@ -159,10 +175,12 @@ CatBoostは二進木の決定木を弱識別器に用いる。</p></div>
 
     
 
-<ul class="pagination">
+<ul class="pagination">  
     
     <li>
-        <a href="/"><span class="material-icons">first_page</span></a>
+      <a href="/">
+	<span class="material-icons">first_page</span>
+      </a>
     </li>
     <li>
         <a href="/page/22/"><span class="material-icons">chevron_left</span></a>
@@ -170,7 +188,9 @@ CatBoostは二進木の決定木を弱識別器に用いる。</p></div>
     
     
     <li>
-        <a href="/page/24/"><span class="material-icons">chevron_right</span></a>
+      <a href="/page/24/">
+	<span class="material-icons">chevron_right</span>
+      </a>
     </li>
     <li>
         <a href="/page/26/"><span class="material-icons">last_page</span></a>
@@ -179,26 +199,26 @@ CatBoostは二進木の決定木を弱識別器に用いる。</p></div>
 </ul>
 
     <footer>
-        <ul>
-            
-            <li>
-                <a href="https://github.com/nryotaro">
-                    <i class="fab fa-github"></i>
-                </a>
-            </li>
-            
-            
-            <li>
-                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </li>
-            
-            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-            
-        </ul>
-        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-</body>
+  </body>
 
 </html>

@@ -1,51 +1,69 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
 	<meta name="generator" content="Hugo 0.92.2" />
     
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W5TDG76');</script>
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=300,initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
-        crossorigin="anonymous" />
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/css/base.css">
     
-    <link rel="stylesheet" href="/css/articles.css">
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.790fa3aecb49ec15e342419cad69b69ae9a75817c3c6e1f2b1e08bc49636e24b.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://kit.fontawesome.com/4e0e0c0a41.js" crossorigin="anonymous"></script>
-    <title>Blanket</title>
-</head>
-
-<body>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
     
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <title>Blanket</title>
+  </head>
 
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
     <header class="navigation">
-        <h2><a href="/">Blanket</a></h2>
-        <nav>
-            <ul>
-                <li><a href="/about">About me</a></li>
-                <li><a href="/posts">Posts</a></li>
-                <li><a href="/gallery">Gallery</a></li>
-            </ul>
-        </nav>
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
     </header>
     
 <main>
     <h1>Posts</h1>
-
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/arc028b/">解説 AtCoder Regular Contest 028 B 特別賞</a></h3>
+        <div class="summary"><p>Pythonであればheap, C++であればsetを2つ使えばよい。
+新しい要素を追加する度に、一方に上位kの要素、他方にk+1以降の要素があるように、2つのset, heap間で要素を交換する。
+類似の問題をLeetCodeのHard modeで見かけたことがある。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">February 19, 2023</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/zookeeper_wait_free_coordination_for_internat_scale_systems/">抄訳 Zookeeper: Wait-free coordination for Internet-scale systems (2010)</a></h3>
@@ -53,7 +71,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 データーベースは、ファイルシステムのような階層構造のwait-freeな抽象データ型であり、各ノードにはデフォルトで最大1MBの少量のデータを保存できる。
 たとえば、ノードに設定を保存して共有することも、設定ファイルが編集中でないことを示すフラグ代わりのファイルを置くこともできる。</p></div>
         <div class="article-footer">
-            <span class="date">February 12, 2023</span>
+	  
+          <span class="date">February 12, 2023</span>
         </div>
     </article>
     
@@ -63,7 +82,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 最大文字数は整数型のビット数より数分の1しかないので、ビット操作ですべての重ね方を試行することを考える。
 各重ね方について、パターンを十分に連結した値の論理和に最大文字数以上連続する1があれば、その試行は要件を満たす。</p></div>
         <div class="article-footer">
-            <span class="date">February 11, 2023</span>
+	  
+          <span class="date">February 11, 2023</span>
         </div>
     </article>
     
@@ -73,7 +93,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 塀に移動にかかる時間を十分に大きい値、かりに\(HM+1\)として、ダイクストラ法適用すると、
 ゴール地点が\(3(HM+1)\)以下未満であり、そのときに限り、塀を壊す回数が2回以下でゴール地点に到達できる。</p></div>
         <div class="article-footer">
-            <span class="date">February 7, 2023</span>
+	  
+          <span class="date">February 7, 2023</span>
         </div>
     </article>
     
@@ -89,7 +110,8 @@ RankNetの学習は、モデルの出力する実数をスコアとみなし、�
 LambdaRankは、損失の計算を省き、スコアと損失の勾配で重みを更新することで、RankNetの学習を高速化する。
 LambdaMARTは、RankNetに勾配ブースティング決定木を使い、残差の計算にLambdaRankを応用したランキング学習のモデルである。</p></div>
         <div class="article-footer">
-            <span class="date">February 3, 2023</span>
+	  
+          <span class="date">February 3, 2023</span>
         </div>
     </article>
     
@@ -100,7 +122,8 @@ LambdaMARTは、RankNetに勾配ブースティング決定木を使い、残差
 <p>クラッシュしたRDMSのディスクとバッファの状態をクラッシュ前の状態にもどす手法を体系化する。
 体系は、Propagation, Buffer handling, EOT Processing, Checkpointingの4要素に着目して技術を分類する。</p></div>
         <div class="article-footer">
-            <span class="date">January 29, 2023</span>
+	  
+          <span class="date">January 29, 2023</span>
         </div>
     </article>
     
@@ -112,7 +135,8 @@ LambdaMARTは、RankNetに勾配ブースティング決定木を使い、残差
 LambdaRankは損失関数に直接は使えない関数を学習に応用するアルゴリズムである。
 RankNetをLambdaRankで学習することで、学習時間を短縮し、NDCGを向上できた。</p></div>
         <div class="article-footer">
-            <span class="date">January 23, 2023</span>
+	  
+          <span class="date">January 23, 2023</span>
         </div>
     </article>
     
@@ -126,7 +150,8 @@ asynchronouse network modelでは、モデルのノードは、クロックを�
 partially synchronous modelでは、各ノードは、一定間隔で単調増加するクロックをもち、処理をタイムアウトしたり、スケジューリングしたりできる。
 ただし、ノード間でクロックが同期されているとは限らない。</p></div>
         <div class="article-footer">
-            <span class="date">January 17, 2023</span>
+	  
+          <span class="date">January 17, 2023</span>
         </div>
     </article>
     
@@ -138,7 +163,8 @@ RankNetは、ベクトルから実数を出力し、その出力が大きいほ�
 ここでの確率には、両ベクトルのモデルの出力の差をシグモイド関数に入力したときの出力を使う。
 RankNetの学習は、モデルの出力と訓練データの確率分布の交差エントロピーを最小化する。</p></div>
         <div class="article-footer">
-            <span class="date">January 7, 2023</span>
+	  
+          <span class="date">January 7, 2023</span>
         </div>
     </article>
     
@@ -151,21 +177,8 @@ RankNetの学習は、モデルの出力と訓練データの確率分布の交�
 抽象データ型に対する操作の実装は外部に公開されず、抽象データ型の特徴は抽象データ型に可能な操作によって決められる。
 構造化プログラミングと抽象データ型を提供するプログラミング言語を開発し、抽象データ型を使うプログラムのソースコードを例示することで、ほとんどの処理を抽象データ型で実装できることを示唆した。</p></div>
         <div class="article-footer">
-            <span class="date">December 28, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/a_taxonomy_of_web_search/">抄訳 A taxonomy of web search(2002)</a></h3>
-        <div class="summary"><p>Web検索をnavigational, informational, transactionalの3つに分類する。
-Navigationalは、ユーザーに訪問したい特定のサイトがあり、そのサイトを開くための検索である。
-Informationalは、ユーザーに収集したい情報があり、その情報があると思われるサイトを検索する。
-情報が断片的であれば、複数のサイトを訪問することもある。
-Transactionalは、検索や種々のダウンロードなどインタラクションを要するサイトを訪問するための検索である。
-ユーザーは、最終的な目的の情報のために訪問先のサイトでさらに検索をする。
-たとえばECサイトへの検索が該当する。</p></div>
-        <div class="article-footer">
-            <span class="date">December 23, 2022</span>
+	  
+          <span class="date">December 28, 2022</span>
         </div>
     </article>
     
@@ -173,11 +186,13 @@ Transactionalは、検索や種々のダウンロードなどインタラクシ�
 
     
 
-<ul class="pagination">
+<ul class="pagination">  
     
     
     <li>
-        <a href="/page/2/"><span class="material-icons">chevron_right</span></a>
+      <a href="/page/2/">
+	<span class="material-icons">chevron_right</span>
+      </a>
     </li>
     <li>
         <a href="/page/26/"><span class="material-icons">last_page</span></a>
@@ -186,26 +201,26 @@ Transactionalは、検索や種々のダウンロードなどインタラクシ�
 </ul>
 
     <footer>
-        <ul>
-            
-            <li>
-                <a href="https://github.com/nryotaro">
-                    <i class="fab fa-github"></i>
-                </a>
-            </li>
-            
-            
-            <li>
-                <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </li>
-            
-            <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
-            
-        </ul>
-        <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
     </footer>
-</body>
+  </body>
 
 </html>
