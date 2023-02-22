@@ -109,14 +109,25 @@ Epidemic Algorithmには、定期的にデーターベース全体を同期す�
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/lof_identifying_density_based_local_outliners/">抄訳 LOF: Identifying Density-Based Local Outilers(2000)</a></h3>
+        <h3><a href="https://nryotaro.dev/posts/lof_identifying_density_based_local_outliners/">抄訳 LOF: Identifying Density-Based Local Outliers(2000)</a></h3>
         <div class="summary"><p>局所外れ値因子法(LOF)は、あるインスタンスが外れ値であるかを、その周囲のインスタンスとの距離から判定する。
 異常検知の手法の中には異常か正常かの二値を出力するものがあるが、LOFは[0,1]区間の値を出力する。
 1に近いほど正常とみなす。
 要素間の距離が近くて密度の高いクラスタと低いクラスタがあり、密度の高いクラスタの少し遠くに外れ値とみなすべきインスタンスがあるとする。
-このとき、密度の低いクラスタのインスタンス間の距離を基準にすると、密度の高いクラスタのインスタンスと外れ値のインスタンス間の距離は大きいとみなせない。しかし、外れ値のインスタンスのそばの密度の高いクラスタの距離を基準にすれば、外れ値のインスタンスは周囲のインスタンスから遠いとみなせる。
+このとき、密度の低いクラスタのインスタンス間の距離を基準にすると、密度の高いクラスタのインスタンスと外れ値のインスタンス間の距離は大きいとみなせない。</p>
+<p>他方で、外れ値のインスタンスのそばの密度の高いクラスタの距離を基準にすれば、外れ値のインスタンスは周囲のインスタンスから遠いとみなせる。
 このように、密度の違うクラスタがあるデータセットでも、インスタンスに近いサンプル間の距離を基準にすることで、他のクラスタの密度で測れば正常なインタンスと判定される外れ値を検出できる。</p></div>
         <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E7%95%B0%E5%B8%B8%E6%A4%9C%E7%9F%A5/">
+		#異常検知
+	      </a>
+	    </li>
+	    
+	  </ul>
 	  
           <span class="date">November 28, 2022</span>
         </div>
