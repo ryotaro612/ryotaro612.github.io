@@ -2954,12 +2954,14 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
     </item>
     
     <item>
-      <title>DeepType: Multilingual Entity Linking by Neural Type System Evolution(2018)</title>
+      <title>抄訳 DeepType: Multilingual Entity Linking by Neural Type System Evolution(2018)</title>
       <link>https://nryotaro.dev/posts/deeptype/</link>
       <pubDate>Fri, 26 Oct 2018 20:53:08 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/deeptype/</guid>
-      <description>&lt;p&gt;本稿は、既存のオントロジから型システムを構築するアルゴリズムと型システムによるEntity Linking(EL)を提案した。実験を通じて既存手法と比較し、精度の向上を確認した。&lt;/p&gt;</description>
+      <description>&lt;p&gt;既存のオントロジから型システムを構築するアルゴリズムと型システムによるEntity Linking(EL)を提案した。
+DeepTypeにおける型は、Wikipediaのようなオントロジにおける関係を意味する。
+たとえば、オントロジに&lt;code&gt;Human&lt;/code&gt;という根から&lt;code&gt;instance of&lt;/code&gt;で結ばれる子ノードがあれば、&lt;code&gt;IsHuman&lt;/code&gt;を型とみなす。&lt;/p&gt;</description>
     </item>
     
     <item>
