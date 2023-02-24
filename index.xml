@@ -3249,13 +3249,13 @@ End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)�
     </item>
     
     <item>
-      <title>メモ End-to-end Neural Entity Linking</title>
+      <title>抄訳 End-to-end Neural Entity Linking(2018)</title>
       <link>https://nryotaro.dev/posts/end_to_end_neural_entity_linking/</link>
       <pubDate>Fri, 02 Nov 2018 16:59:14 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/end_to_end_neural_entity_linking/</guid>
       <description>&lt;h3 id=&#34;背景&#34;&gt;背景&lt;/h3&gt;
-&lt;p&gt;本稿は、End to EndなEntity Linkingモデルのアーキテクチャを提案し、予測性能の評価実験で有用性を評価した。
+&lt;p&gt;End to EndなEntity Linkingモデルのアーキテクチャを提案し、予測性能の評価実験で有用性を評価した。
 実験のデータセットには、Entity annotationの評価に使える様々なデータセットを集めた&lt;a href=&#34;https://github.com/dice-group/gerbil/wiki&#34;&gt;Gerbil Platform&lt;/a&gt;が使われている。そのうちの&lt;a href=&#34;https://natural-language-understanding.fandom.com/wiki/AIDA-CoNLL&#34;&gt;AIDA/CoNLL&lt;/a&gt;データセットにおいて、提案手法は既存手法を超える予測性能を発揮した。&lt;/p&gt;</description>
     </item>
     

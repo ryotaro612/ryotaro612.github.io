@@ -29,7 +29,7 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
     
-    <title>メモ End-to-end Neural Entity Linking</title>
+    <title>抄訳 End-to-end Neural Entity Linking(2018)</title>
   </head>
 
   <body>
@@ -52,14 +52,20 @@
     </header>
     
 <main>
-  <h1>メモ End-to-end Neural Entity Linking</h1>
+  <h1>抄訳 End-to-end Neural Entity Linking(2018)</h1>
   <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/entity-linking/">
+	#Entity linking
+      </a>
+    </li>
     
   </ul>  
   <span class="date">November 2, 2018</span>    
   <div>
     <h3 id="背景">背景</h3>
-<p>本稿は、End to EndなEntity Linkingモデルのアーキテクチャを提案し、予測性能の評価実験で有用性を評価した。
+<p>End to EndなEntity Linkingモデルのアーキテクチャを提案し、予測性能の評価実験で有用性を評価した。
 実験のデータセットには、Entity annotationの評価に使える様々なデータセットを集めた<a href="https://github.com/dice-group/gerbil/wiki">Gerbil Platform</a>が使われている。そのうちの<a href="https://natural-language-understanding.fandom.com/wiki/AIDA-CoNLL">AIDA/CoNLL</a>データセットにおいて、提案手法は既存手法を超える予測性能を発揮した。</p>
 <p>表題にあるEnd to Endは、固有表現抽出(Mention Detection, MD)とエンティティの曖昧性解消(Entity Disambiguation, ED)の両方を実現するアーキテクチャを提案していることに由来する。例えば以前紹介した<a href="https://arxiv.org/abs/1802.01021">DeepType</a>のように、Entity Linkingにおける研究には、MDとEDの一方のみに焦点を絞ったものが多い。これに対して、本稿は、MDで抽出した情報がEDでの予測性能に役立ちうると主張し、MDとEDの両方を単一のアーキテクチャで対処する立場をとる。</p>
 <h3 id="貢献">貢献</h3>
@@ -70,9 +76,9 @@
 </ul>
 <h3 id="アーキテクチャ">アーキテクチャ</h3>
 <p>提案されたアーキテクチャは、テキストを受け取り、文中の参照表現(Mention)とエンティティの組み合わせに対する確信度を出力する。
-以下の図は、本稿にあるアーキテクチャ図を示す。
-アルゴリズムの要諦は、テキストから参照表現の候補を抽出し、各参照表現の候補と各エンティティ間の文脈上の類似度を学習する点にある。
-類似度の学習は、図中のFFNN2が示すネットワークが行う。類似度の学習において文脈の情報を参照するために、FFNN2に与える参照表現の候補の分散表現(FFNN1の出力)に文脈の情報を含めている。文脈の情報を含んだ分散表現を作るために、Bidirectional LSTMが使われる。
+アーキテクチャ図を以下に論文から引用する。
+ポイントは、テキストから参照表現の候補を抽出し、各参照表現の候補と各エンティティ間の文脈上の類似度を学習する点にある。
+類似度の学習は、図中のFFNN2が示すネットワークが行う。類似度の学習において文脈の情報を参照するために、FFNN2に与える参照表現の候補の分散表現(FFNN1の出力)に、文脈の情報を含めている。文脈の情報を含んだ分散表現を作るために、Bidirectional LSTMが使われる。
 図中のyxは、エンティティの学習する分散表現を示す。アーキテクチャが出力する最終的なmentionとentity間のペアは、FFNN2が出力する参照表現の候補とエンティティの文における局所的な類似度をFFNN3によって互いに比較した結果となっている。</p>
 <p><img src="/end-to-end/arch.png" alt="end-to-end"></p>
 <hr>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Entity linking on Blanket</title>
+    <link>https://nryotaro.dev/tags/entity-linking/</link>
+    <description>Recent content in Entity linking on Blanket</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Fri, 02 Nov 2018 16:59:14 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/tags/entity-linking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抄訳 End-to-end Neural Entity Linking(2018)</title>
+      <link>https://nryotaro.dev/posts/end_to_end_neural_entity_linking/</link>
+      <pubDate>Fri, 02 Nov 2018 16:59:14 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/end_to_end_neural_entity_linking/</guid>
+      <description>&lt;h3 id=&#34;背景&#34;&gt;背景&lt;/h3&gt;
+&lt;p&gt;End to EndなEntity Linkingモデルのアーキテクチャを提案し、予測性能の評価実験で有用性を評価した。
+実験のデータセットには、Entity annotationの評価に使える様々なデータセットを集めた&lt;a href=&#34;https://github.com/dice-group/gerbil/wiki&#34;&gt;Gerbil Platform&lt;/a&gt;が使われている。そのうちの&lt;a href=&#34;https://natural-language-understanding.fandom.com/wiki/AIDA-CoNLL&#34;&gt;AIDA/CoNLL&lt;/a&gt;データセットにおいて、提案手法は既存手法を超える予測性能を発揮した。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>抄訳 DeepType: Multilingual Entity Linking by Neural Type System Evolution(2018)</title>
+      <link>https://nryotaro.dev/posts/deeptype/</link>
+      <pubDate>Fri, 26 Oct 2018 20:53:08 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/deeptype/</guid>
+      <description>&lt;p&gt;既存のオントロジから型システムを構築するアルゴリズムと型システムによるEntity Linking(EL)を提案した。
+DeepTypeにおける型は、Wikipediaのようなオントロジにおける関係を意味する。
+たとえば、オントロジに&lt;code&gt;Human&lt;/code&gt;という根から&lt;code&gt;instance of&lt;/code&gt;で結ばれる子ノードがあれば、&lt;code&gt;IsHuman&lt;/code&gt;を型とみなす。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
