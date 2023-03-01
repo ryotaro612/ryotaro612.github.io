@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.852c1c9119a48dcf6a4274cb71a00bd3b5d55b5040e4d37d525e743de1d0e8da.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.78272bdd99a3c4f03ee4c826bbe3a970cda497ed85b5da23b0af6dbaf9f30522.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
+    
+    <title>抄訳 Scatter/Gather: A Cluster-based Approach to Browsing Large Document Collections(1992)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>抄訳 Scatter/Gather: A Cluster-based Approach to Browsing Large Document Collections(1992)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/">
+	#クラスタリング
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">February 19, 2023</span>    
+  <div>
+    <p>Scatter/Gatherは、ユーザーにクエリを入力するかわりに、システムが提示する文書のクラスタをユーザーに選ばせる情報検索の手法である。
+ユーザーが目的の情報にだどりつける適当なクエリをいつも作れるとはかぎらない。
+ユーザーが詳しくない分野の情報を調べるときは、クエリにつかえる用語を知らないかもしれない。
+また、ある分野の情報を広く浅く収集したいときは、クエリの単語によって検索対象を狭く限定したくないかもしれない。</p>
+<p>Scatter/Gatherは、文書のクラスタを生成し、ユーザーに関心のあるクラスタを選んでもらい、選ばれたクラスタの文書だけから再度クラスタを生成する手順を繰りかえす情報検索の手法である。
+ユーザーが反復的にクラスタを選択するインタラクティブな手法であるため、ユーザーを待たせないように、高速にクラスタを生成しなければならない。
+そこで、クラスタリングを高速化するために、BuckshotとFractionationの2つのクラスタリング手法を提案する。
+Buckshotは、Fractionationよりも速度を重視し、ランダムサンプルした文書のみをクラスタリングする。
+他方で、FractionationはBuckshotよりも精度を重視する。
+また、ユーザーがクラスタを選びやすくするために、クラスタを要約する手法としてCluster Digestを提案する。
+Cluster Digiestは、クラスタをよく表す単語をクラスタ内の文書から抽出し、ユーザーに提示する。</p>
+<p>文書を\(\alpha\), その集合を\(C\), \(V\)を\(C\)内にある単語の集合とおく。
+また、\(c(\alpha)\)を\(\alpha\)に出現する単語とその頻度をペアが要素で要素数が\(|V|\)の集合とする。</p>
+<p>文書の類似度にコサイン類似度を採用し、文書\(\alpha, \beta\)の類似度\(s(\alpha, \beta)\)を
+$$
+s(\alpha, \beta)=\frac{\langle g(c(\alpha)), g(c(\beta))\rangle}{||g(c(\alpha))||||g(c(\beta))||}
+$$
+と定義する。
+\(||\cdot||\)はノルム、\(\langle\cdot\rangle\)は内積である。
+\(g\)は単調な減衰関数であり、実験では成分単位の平方根の乗積にすると良い結果がえられた。</p>
+<p>また、文書集合\(\Gamma\)と文書\(\alpha\)の類似度\(s(\Gamma, \alpha)\)を定義するために、文書の\(\alpha\)について\(\textit{profile}(\alpha)=\frac{g(c(\alpha))}{||g(c(\alpha))||}\)とおく。
+$$
+\begin{align}
+\hat{p}(\Gamma)&amp;=\sum_{\alpha\in\Gamma}p(\alpha)\\
+p(\Gamma)&amp;=\frac{\hat{\Gamma}}{||\hat{p}(\Gamma)||}\\
+s(\Gamma, \alpha) &amp;=\langle p(\Gamma), p(\alpha) \rangle
+\end{align}
+$$</p>
+<p>クラスタの中心から遠い文書をクラスタから除けば、クラスタの意味がわかりやすくなることがある。
+クラスタ\(\Gamma\)の中心から最も近い、つまり\(s(\alpha, \Gamma)\)の大きい上位\(m\)個の文書集合\(r_m(\Gamma)\)をとする。
+クラスタ\(\Gamma\)を説明するためのCluster Digestは、\(p(\Gamma)\)のうち重みの大きい上位\(w\)個の単語と\(r_m(\Gamma)\)である。</p>
+<p>BuckshotとFractionationは、最初のクラスタの中心を決めることで、ほかのクラスタリング手法を高速化するアルゴリズムであり、別のクラスタリング手法と組み合わせて使われる。
+Buckshotは、クラスタ数を\(k\), 文書数を\(n\)とすると、\(\sqrt{kn}\)個ランダムサンプルした文書のみにクラスタリングを適用し、求めたクラスタの中心を初期値にする。
+Fractionationは、はじめに、\(m&gt;k\)として文書集合\(C\)を\(n/m\)個のバケットに分割する。
+つぎに、別のクラスタリングを各バケットに適用し、文書数に対する\(\rho\)の割合だけクラスタを生成する。
+以降は、生成されたクラスタを1つの文書とみなし、クラスタ数が\(k\)になるまで、手続きを繰り返す。
+中心の初期値が決まれば、たとえば、文書を最近傍の中心に割りあてることで、クラスタをつくれる。</p>
+<p>論文の<a href="https://www-users.cse.umn.edu/~hanxx023/dmclass/scatter.pdf">リンク</a></p>
+<h2 id="雑記">雑記</h2>
+<p>解きたい問題はクエリを作れない状況での検索の質を向上することで、やや込み入った状況設定だったが、提案された手段はクラスタリングの高速化という分かりやすいものだった。
+手法の評価がなく、インタラクティブな手法であるため評価が難しいため、Scatter/Gatherがどの程度有効か分からない。
+単に、クラスタリングを高速化することを目的とした論文にして、既存手法と処理時間を比較したほうが完結した研究になった気がする。</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/arc028b/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

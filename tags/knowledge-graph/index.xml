@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Knowledge graph on Blanket</title>
+    <link>https://nryotaro.dev/tags/knowledge-graph/</link>
+    <description>Recent content in Knowledge graph on Blanket</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sun, 17 Feb 2019 17:03:49 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/tags/knowledge-graph/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抄訳 Embedding Logical Queries on Knowledge Graphs(2018)</title>
+      <link>https://nryotaro.dev/posts/embedding_logical_queries_on_knowledge_graphs/</link>
+      <pubDate>Sun, 17 Feb 2019 17:03:49 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/embedding_logical_queries_on_knowledge_graphs/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+&lt;p&gt;一階述語論理式で表現されたクエリを満たすノードを、分散表現に変換し、ナレッジグラフの中から計算時間上効率よく見つけるアルゴリズムを提案した。
+クエリに現れるエッジの数に対して計算時間が線形であることが特徴。
+ただし、クエリには、存在量化と連接を使えるが、全称量化、選択、否定を使うことができない制約がある。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,7 +6,19 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 19 Feb 2023 10:56:35 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Feb 2023 20:23:11 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抄訳 Scatter/Gather: A Cluster-based Approach to Browsing Large Document Collections(1992)</title>
+      <link>https://nryotaro.dev/posts/scatter_gather_a_cluster_based_approach_to_browsing_large_document_collections/</link>
+      <pubDate>Sun, 19 Feb 2023 20:23:11 -0500</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/scatter_gather_a_cluster_based_approach_to_browsing_large_document_collections/</guid>
+      <description>&lt;p&gt;Scatter/Gatherは、ユーザーにクエリを入力するかわりに、システムが提示する文書のクラスタをユーザーに選ばせる情報検索の手法である。
+ユーザーが目的の情報にだどりつける適当なクエリをいつも作れるとはかぎらない。
+ユーザーが詳しくない分野の情報を調べるときは、クエリにつかえる用語を知らないかもしれない。
+また、ある分野の情報を広く浅く収集したいときは、クエリの単語によって検索対象を狭く限定したくないかもしれない。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>解説 AtCoder Regular Contest 028 B 特別賞</title>
       <link>https://nryotaro.dev/posts/arc028b/</link>
@@ -177,7 +189,7 @@ Epidemic Algorithmには、定期的にデーターベース全体を同期す�
     </item>
     
     <item>
-      <title>An Improved Data Stream Summary: The Count-Min Scketch and its Applications</title>
+      <title>An Improved Data Stream Summary: The Count-Min Sketch and its Applications(2005)</title>
       <link>https://nryotaro.dev/posts/an_improved_data_stream_summary_the_count_min_sketch_and_its_application/</link>
       <pubDate>Wed, 07 Dec 2022 12:29:36 -0500</pubDate>
       
@@ -2911,7 +2923,7 @@ TextRankは、名前から推測できるようにPageRankを応用した手法�
     </item>
     
     <item>
-      <title>メモ Embedding Logical Queries on Knowledge Graphs</title>
+      <title>抄訳 Embedding Logical Queries on Knowledge Graphs(2018)</title>
       <link>https://nryotaro.dev/posts/embedding_logical_queries_on_knowledge_graphs/</link>
       <pubDate>Sun, 17 Feb 2019 17:03:49 +0900</pubDate>
       
@@ -2923,22 +2935,23 @@ TextRankは、名前から推測できるようにPageRankを応用した手法�
     </item>
     
     <item>
-      <title>論文メモ Regularizing and Optimizing LSTM Language Models</title>
+      <title>抄訳 Regularizing and Optimizing LSTM Language Models(2017)</title>
       <link>https://nryotaro.dev/posts/regularizing_and_optimizing_lstm_language_models/</link>
       <pubDate>Fri, 23 Nov 2018 19:27:00 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/regularizing_and_optimizing_lstm_language_models/</guid>
-      <description>&lt;p&gt;本稿は、LSTMを用いた言語モデルに対して正規化と最適化を適用し、実験を通して既存の先行研究とperplexityの観点で予測性能を評価した。本稿の手法の利点は、LSTMの実装に変更を加えずに適用できるために、NVIDIA cuDNNなどの高速でブラックボックスなライブラリで実装できることにある。&lt;/p&gt;</description>
+      <description>&lt;p&gt;LSTMをつかった言語モデルに正規化と最適化を適用し、実験でperplexityを評価した。
+LSTMの実装に変更を加えない手法なので、NVIDIAやcuDNNなどの高速でブラックボックスなライブラリで実装できる。&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>メモ Deep Joint Entity Disambiguation with Local Neural Attention</title>
+      <title>抄訳 Deep Joint Entity Disambiguation with Local Neural Attention(2017)</title>
       <link>https://nryotaro.dev/posts/deep_joint_entity_disambiguation/</link>
       <pubDate>Fri, 09 Nov 2018 21:11:50 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/deep_joint_entity_disambiguation/</guid>
-      <description>&lt;p&gt;本稿は、当ページで紹介した&lt;a href=&#34;https://aclweb.org/anthology/K18-1050&#34;&gt;End-to-End Neural Entity Linking&lt;/a&gt;(End-to-End) の著者らの先行研究にあたる。
-End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)の両方をアプローチの対象にしているのに対し、本稿ではEDのみが対象となっている。
+      <description>&lt;p&gt;当ページで紹介した&lt;a href=&#34;https://aclweb.org/anthology/K18-1050&#34;&gt;End-to-End Neural Entity Linking&lt;/a&gt;(End-to-End) の著者らの先行研究にあたる。
+End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)の両方をアプローチの対象にしているのに対し、今回の論文はEDのみが対象となっている。
 したがって、文章からmention（参照表現）が抽出されていることが前提にあり、提案の中心は、参照表現に対応するエンティティを候補の中から正しく求める手法にある。&lt;/p&gt;</description>
     </item>
     

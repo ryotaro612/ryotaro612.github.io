@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>分散システム on Blanket</title>
+    <link>https://nryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</link>
+    <description>Recent content in 分散システム on Blanket</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Wed, 07 Dec 2022 12:29:36 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>An Improved Data Stream Summary: The Count-Min Sketch and its Applications(2005)</title>
+      <link>https://nryotaro.dev/posts/an_improved_data_stream_summary_the_count_min_sketch_and_its_application/</link>
+      <pubDate>Wed, 07 Dec 2022 12:29:36 -0500</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/an_improved_data_stream_summary_the_count_min_sketch_and_its_application/</guid>
+      <description>&lt;p&gt;Count-Min Sketch(CM Sketch)は、単位時間ごとに1要素ずつ更新される\(n\)次元のベクトルの要素を\(n\)の劣線形の計算量で集計できるデータ構造である。
+空間の大きさはパラメタで指定する誤差大きさと誤差の生じる確率に依存する。
+誤差と確率のパラメタを\(\epsilon\)と\(\delta\)とすると、CM sketchは\(\lceil{\ln \frac{1}{\delta}\rceil}\times \lceil\frac{e}{\epsilon}\rceil\)の二次元行列である。
+\(\ln\)の底は\(e\)である。
+要素の値、ベクトルの内積、ある範囲の要素の和を劣線形の計算量で求めることができる。
+また、これらと二分探索を応用すれば、指定した値よりも大きい要素のみからなる範囲や分位数も計算できる。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

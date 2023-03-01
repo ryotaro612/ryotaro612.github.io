@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>クラスタリング on Blanket</title>
+    <link>https://nryotaro.dev/tags/%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/</link>
+    <description>Recent content in クラスタリング on Blanket</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sun, 19 Feb 2023 20:23:11 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/tags/%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抄訳 Scatter/Gather: A Cluster-based Approach to Browsing Large Document Collections(1992)</title>
+      <link>https://nryotaro.dev/posts/scatter_gather_a_cluster_based_approach_to_browsing_large_document_collections/</link>
+      <pubDate>Sun, 19 Feb 2023 20:23:11 -0500</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/scatter_gather_a_cluster_based_approach_to_browsing_large_document_collections/</guid>
+      <description>&lt;p&gt;Scatter/Gatherは、ユーザーにクエリを入力するかわりに、システムが提示する文書のクラスタをユーザーに選ばせる情報検索の手法である。
+ユーザーが目的の情報にだどりつける適当なクエリをいつも作れるとはかぎらない。
+ユーザーが詳しくない分野の情報を調べるときは、クエリにつかえる用語を知らないかもしれない。
+また、ある分野の情報を広く浅く収集したいときは、クエリの単語によって検索対象を狭く限定したくないかもしれない。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

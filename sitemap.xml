@@ -3,10 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2023-02-19T10:56:35+09:00</lastmod>
+    <lastmod>2023-02-19T20:23:11-05:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2023-02-19T10:56:35+09:00</lastmod>
+    <lastmod>2023-02-19T20:23:11-05:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/tags/</loc>
+    <lastmod>2023-02-19T20:23:11-05:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/tags/%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/</loc>
+    <lastmod>2023-02-19T20:23:11-05:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/posts/scatter_gather_a_cluster_based_approach_to_browsing_large_document_collections/</loc>
+    <lastmod>2023-02-19T20:23:11-05:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/arc028b/</loc>
     <lastmod>2023-02-19T10:56:35+09:00</lastmod>
@@ -50,8 +59,8 @@
     <loc>https://nryotaro.dev/posts/an_improved_data_stream_summary_the_count_min_sketch_and_its_application/</loc>
     <lastmod>2022-12-07T12:29:36-05:00</lastmod>
   </url><url>
-    <loc>https://nryotaro.dev/tags/</loc>
-    <lastmod>2022-11-28T12:22:20-05:00</lastmod>
+    <loc>https://nryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</loc>
+    <lastmod>2022-12-07T12:29:36-05:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/lof_identifying_density_based_local_outliners/</loc>
     <lastmod>2022-11-28T12:22:20-05:00</lastmod>
@@ -842,11 +851,20 @@
     <loc>https://nryotaro.dev/posts/the_annotated_transformer/</loc>
     <lastmod>2019-07-01T12:57:09+09:00</lastmod>
   </url><url>
+    <loc>https://nryotaro.dev/tags/knowledge-graph/</loc>
+    <lastmod>2019-02-17T17:03:49+09:00</lastmod>
+  </url><url>
     <loc>https://nryotaro.dev/posts/embedding_logical_queries_on_knowledge_graphs/</loc>
     <lastmod>2019-02-17T17:03:49+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/regularizing_and_optimizing_lstm_language_models/</loc>
     <lastmod>2018-11-23T19:27:00+09:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/</loc>
+    <lastmod>2018-11-23T19:27:00+09:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/tags/entity-disambiguation/</loc>
+    <lastmod>2018-11-09T21:11:50+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/deep_joint_entity_disambiguation/</loc>
     <lastmod>2018-11-09T21:11:50+09:00</lastmod>
