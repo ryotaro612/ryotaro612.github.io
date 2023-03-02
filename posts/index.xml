@@ -2914,12 +2914,12 @@ TextRankは、名前から推測できるようにPageRankを応用した手法�
     </item>
     
     <item>
-      <title>論文メモ The Annotated Transformer</title>
+      <title>The Annotated Transformer (2018)</title>
       <link>https://nryotaro.dev/posts/the_annotated_transformer/</link>
       <pubDate>Mon, 01 Jul 2019 12:57:09 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/the_annotated_transformer/</guid>
-      <description>&lt;p&gt;論文は、当サイトで紹介した&lt;a href=&#34;https://arxiv.org/abs/1706.03762&#34;&gt;Attention Is All You Need&lt;/a&gt;で提案されたTransformerのアーキテクチャを、サンプルコードとオリジナルの論文の引用を交えて解説している。 実装にはPyTorchを使用している。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1706.03762&#34;&gt;Attention Is All You Need&lt;/a&gt;で提案されたTransformerのアーキテクチャを、サンプルコードとオリジナルの論文の引用を交えて解説している。 PyTorchで実装されている。&lt;/p&gt;</description>
     </item>
     
     <item>

@@ -6,7 +6,16 @@
     <description>Recent content in 言語モデル on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 23 Nov 2018 19:27:00 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Jul 2019 12:57:09 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Annotated Transformer (2018)</title>
+      <link>https://nryotaro.dev/posts/the_annotated_transformer/</link>
+      <pubDate>Mon, 01 Jul 2019 12:57:09 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/the_annotated_transformer/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1706.03762&#34;&gt;Attention Is All You Need&lt;/a&gt;で提案されたTransformerのアーキテクチャを、サンプルコードとオリジナルの論文の引用を交えて解説している。 PyTorchで実装されている。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>抄訳 Regularizing and Optimizing LSTM Language Models(2017)</title>
       <link>https://nryotaro.dev/posts/regularizing_and_optimizing_lstm_language_models/</link>
