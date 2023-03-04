@@ -6,7 +6,22 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 19 Feb 2023 20:23:11 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Feb 2023 01:47:13 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抄訳 ARIES: A Transaction Recovery Method Supporting Fine-Granularity Locking and Partial Rollbacks Using Write-Ahead Logging(1992)</title>
+      <link>https://nryotaro.dev/posts/aries/</link>
+      <pubDate>Sun, 26 Feb 2023 01:47:13 -0500</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/aries/</guid>
+      <description>&lt;p&gt;ARIES(Algorithm for Recovery and Isolation Exploiting Semantics)は、ログ先行書き込み(write-ahead-logging, WAL)によるSAVEPOINTまでの部分的なトランザクションのロールバック、レコード単位のロック、回復のためのアルゴリズムである。
+ログの対象と粒度はページの更新であり、レコードには単調増加するLSN(Log Sequence number)をわりあてる。
+レコードは直前の更新のレコードへのポインタであるPrevLSNも含み、あるレコードから以前の更新のレコードへ遡行できる。&lt;/p&gt;
+&lt;p&gt;ロールバックやリスタート時の更新は、通常時の更新とは別に、保証ログレコード(compensation log record, CLR)に記録される。
+ARIESのCLSに記録された更新はUNDOされない。
+一方、IMS, AS/400, DB2のCLSは、あるトランザクションが何度もロールバックされると、対応するCLSの更新をUNDOすることがある。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+    
     <item>
       <title>抄訳 Scatter/Gather: A Cluster-based Approach to Browsing Large Document Collections(1992)</title>
       <link>https://nryotaro.dev/posts/scatter_gather_a_cluster_based_approach_to_browsing_large_document_collections/</link>
@@ -2904,7 +2919,7 @@ TextRankは、名前から推測できるようにPageRankを応用した手法�
     </item>
     
     <item>
-      <title>概要 Neural Machine Trasnslation of Rare Words with Subword Units</title>
+      <title>Neural Machine Translation of Rare Words with Subword Units (2016)</title>
       <link>https://nryotaro.dev/posts/neural_machine_translation_of_rate_words/</link>
       <pubDate>Sat, 13 Jul 2019 17:19:10 +0900</pubDate>
       

@@ -54,6 +54,19 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/bayou/">Managing Update Conflicts in Bayou, a Weakly Connected Replicated Storage System</a></h3>
+        <div class="summary"><p>Bayouは、モバイルコンピューティングむけに95年に発表されたストレージで、弱い一貫性とレプリケーションがある。
+発表当時の不安定なモバイルネットワーク環境でもクライアントがストレージにアクセスできるように、一貫性を犠牲にしてクライアントにどんなレプリケーションへの読み書きも認める。
+Bayouは、アプリケーションの知識を借りてデータの整合性を復元するアプローチを開拓したストレージとして知られ、書き込み時に開発者が実装した不整合を検知する処理を実行する。
+不整合を検知したら、同じく開発者によって実装された不整合を解消する処理を実行する。
+ただし、書き込みのログをほかのレプリケーションに伝搬することでデータを同期するため、どんなレプリケーションでも不整合の検知と解消の処理が同一の結果になるように、これらの処理は決定的でなければならない。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">November 6, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/the_many_faces_of_publish_subscribe/">The Many Faces of Publish/Subscribe (2003)</a></h3>
         <div class="summary"><p>分散システムの通信をpublish/subscribeモデルにするとシステム間の結合を疎にできる。
 表題の論文は、publish/subscribeのサーベイであり、publish/subscribeモデルを空間、時間、同期の3種の結合度を下げる技術ととらえ、ほかの通信技術と比較する。
@@ -158,21 +171,6 @@ Dremelは、サーバーのクラスタを木構造に組織し、ルートで�
         <div class="article-footer">
 	  
           <span class="date">September 4, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/is_rust_used_safely_by_software_developers/">Is Rust Used Safely by Software Developers?</a></h3>
-        <div class="summary"><p><a href="https://crates.io/">crates.io</a>に登録された15,097個のクレートにおける<code>unsafe</code>キーワードの使用状況を調べた。
-調査したクレートは、調査を開始した2018年9月時点で<a href="https://crates.io/">crates.io</a>に登録された全クレートの81%にあたる。
-<code>unsafe</code>を含むクレートは、そのうちの29%だったが、依存するクレートにある<code>unsafe</code>も対象にすると、50%におよぶ。
-<a href="https://crates.io/">crates.io</a>の総ダウンロード数のうち90%を占める473個の有名なクレートに限定すると、60%のクレート<code>unsafe</code>が含まれる。
-2018年9月から2019年6月までの10ヶ月間で<code>unsafe</code>の使用傾向に変化はなく、<code>unsafe</code>の数が少し増えただけであった。
-<code>unsafe</code>の用途の大半は<code>unsafe</code>で修飾されたRustの関数を呼び出すためだった。
-なお、コンパイラで生成された<code>unsafe</code>キーワードは集計に含まれていない。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">August 27, 2021</span>
         </div>
     </article>
     

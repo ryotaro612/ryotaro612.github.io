@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.852c1c9119a48dcf6a4274cb71a00bd3b5d55b5040e4d37d525e743de1d0e8da.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.78272bdd99a3c4f03ee4c826bbe3a970cda497ed85b5da23b0af6dbaf9f30522.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
+    
+    <title>抄訳 ARIES: A Transaction Recovery Method Supporting Fine-Granularity Locking and Partial Rollbacks Using Write-Ahead Logging(1992)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>抄訳 ARIES: A Transaction Recovery Method Supporting Fine-Granularity Locking and Partial Rollbacks Using Write-Ahead Logging(1992)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/rdbms/">
+	#RDBMS
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">February 26, 2023</span>    
+  <div>
+    <p>ARIES(Algorithm for Recovery and Isolation Exploiting Semantics)は、ログ先行書き込み(write-ahead-logging, WAL)によるSAVEPOINTまでの部分的なトランザクションのロールバック、レコード単位のロック、回復のためのアルゴリズムである。
+ログの対象と粒度はページの更新であり、レコードには単調増加するLSN(Log Sequence number)をわりあてる。
+レコードは直前の更新のレコードへのポインタであるPrevLSNも含み、あるレコードから以前の更新のレコードへ遡行できる。</p>
+<p>ロールバックやリスタート時の更新は、通常時の更新とは別に、保証ログレコード(compensation log record, CLR)に記録される。
+ARIESのCLSに記録された更新はUNDOされない。
+一方、IMS, AS/400, DB2のCLSは、あるトランザクションが何度もロールバックされると、対応するCLSの更新をUNDOすることがある。</p>
+<!-- raw HTML omitted -->
+<p>WALに記録された更新をUNDOすると、UNDO対象のWALレコードより1つ前のレコードへのポインタ(UndoNxtLSN)も、UNDO時の更新と一緒に、CLRに追加される。
+以下の図は、ポインタによって繋がれたレコードを示す。
+1, 2, 3は通常のトランザクションで生じたレコードで、2', 3&rsquo;は2, 3のためのCLRのレコードである。
+すべてレコードにはPrevLSNがあるため、先行するレコードに簡単にたどりつける。
+UndoNxtLSNによって、トランザクションをどこまでUNDOできたか正確に記録する。
+<img src="/aries/fig5.png" alt="fig5"></p>
+<p>ARIESは定期的にチェックポイントを生成する。
+チェックポイント時には、再起動時にREDOを開始する位置を特定するために、実行中のトランザクションとその状態、最後にログに書きこまれたLSN、永続化されていないバッファ上のデータをログに記録する。
+再起動し、最後のチェックポイントから停止直前の状態に戻すときは、ディスクに書き込まれていないデータを永続化するためにREDOし、そのあとで、トランザクションをロールバックするためにUNDOを実行する。</p>
+<p>REDO時には、はじめに、障害時にコミット済みでないまたは未確定(in-doubt)状態だったトランザクションもふくめたすべてのトランザクションを対象に、永続化されていないページのLSN(RedoLSN)を探す。
+そのあと、RedoLSN以降のログに記録されているが永続化されていないページ上の更新を再実行する。
+ARIESは、ページが更新されると、更新とLSNをログに書き出したあとに、ページにもLSNを書き込む。
+チェックポイントから復旧したページ上のLSNがログ上のLSNよりも小さいページの更新をREDOする。
+REDO時の更新は、UNDOする必要がないので、ログに記録されなない。</p>
+<p>未コミットや未確定状態のトランザクションを障害時の直前状態まで戻したら、競合と劣後されたトランザクションをUNDOする。
+ロールバックする各トランザクションの最大のLSNを見つけ、時系列とは逆順にUNDOする。
+このとき、REDO時のように、ページ上のLSNとログ上のLSNを比べることはない。</p>
+<p>論文の<a href="https://cs.stanford.edu/people/chrismre/cs345/rl/aries.pdf">リンク</a>
+論文から図を引用しました。</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/scatter_gather_a_cluster_based_approach_to_browsing_large_document_collections/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>
