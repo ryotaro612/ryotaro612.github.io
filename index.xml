@@ -3220,8 +3220,8 @@ TextRankは、名前から推測できるようにPageRankを応用した手法�
       
       <guid>https://nryotaro.dev/posts/subword_regularization/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-&lt;p&gt;表題は、過去に&lt;a href=&#34;../neural_machine_translation_of_rate_words/&#34;&gt;紹介&lt;/a&gt;した&lt;a href=&#34;https://www.aclweb.org/anthology/P16-1162&#34;&gt;論文&lt;/a&gt;と同様、sentencepiece（ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザ）の元になった論文にあたる。
-ノイズに対する頑強さのために、単語のサブワード（部分文字列）を生成するユニグラム言語モデルの学習方法と、モデルから生成されたサブワード列を入力とする機械翻訳モデルの学習方法を提案した。&lt;/p&gt;</description>
+&lt;p&gt;過去に&lt;a href=&#34;../neural_machine_translation_of_rate_words/&#34;&gt;紹介&lt;/a&gt;した&lt;a href=&#34;https://www.aclweb.org/anthology/P16-1162&#34;&gt;論文&lt;/a&gt;と同様、SentencePiece（ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザ）の元になった論文である。
+ノイズに対するロバストさを上げるために、単語のサブワード（部分文字列）を生成するユニグラム言語モデルの学習方法と、モデルから生成されたサブワード列を入力とする機械翻訳モデルの学習方法を提案した。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -3231,7 +3231,7 @@ TextRankは、名前から推測できるようにPageRankを応用した手法�
       
       <guid>https://nryotaro.dev/posts/neural_machine_translation_of_rate_words/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-&lt;p&gt;sentencepiece（ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザ）のトークナイズのアルゴリズムである。
+&lt;p&gt;SentencePiece（ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザ）のトークナイズのアルゴリズムである。
 単語をサブワード（単語の部分文字列）に分割し、サブワードを組み合わせて珍しい単語や未知語を表現することで、これらの出現頻度の低い単語の翻訳上げるというもの。&lt;/p&gt;</description>
     </item>
     

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>機械翻訳 on Blanket</title>
-    <link>https://nryotaro.dev/tags/%E6%A9%9F%E6%A2%B0%E7%BF%BB%E8%A8%B3/</link>
-    <description>Recent content in 機械翻訳 on Blanket</description>
+    <title>SentencePiece on Blanket</title>
+    <link>https://nryotaro.dev/tags/sentencepiece/</link>
+    <description>Recent content in SentencePiece on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 17 Jul 2019 12:51:29 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/tags/%E6%A9%9F%E6%A2%B0%E7%BF%BB%E8%A8%B3/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Jul 2019 12:51:29 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/tags/sentencepiece/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>概要 Subword Regularization: Improving Neural Network Translation Models with Multiple Subword Candidates</title>
       <link>https://nryotaro.dev/posts/subword_regularization/</link>
