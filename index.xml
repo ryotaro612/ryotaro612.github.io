@@ -3203,14 +3203,16 @@ CatBoostは二進木の決定木を弱識別器に用いる。&lt;/p&gt;</descri
     </item>
     
     <item>
-      <title>概要 TextRank: Bringing Order into Texts</title>
+      <title>抄訳 TextRank: Bringing Order into Texts(2004)</title>
       <link>https://nryotaro.dev/posts/textrank/</link>
       <pubDate>Sat, 20 Jul 2019 17:49:36 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/textrank/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-&lt;p&gt;表題にある論文は、ドキュメントからキーワードとキーセンテンスを抽出するためのグラフベースのアルゴリズムTextRankを提案、評価した。
-TextRankは、名前から推測できるようにPageRankを応用した手法であり、頂点の重要度を、頂点の内容のような局所的な情報ではなく、他の頂点との辺の接続関係を含むグラフ全体の大域的な情報から決定する。PageRankとTextRankのアルゴリズムの違いは、TextRankの場合は辺ごとに重みが設定できるところにある。&lt;/p&gt;</description>
+&lt;p&gt;TextRankは、ドキュメントからキーワードとキーセンテンスを抽出するためのグラフベースのアルゴリズムである。
+TextRankは、単語を頂点、文書をグラフとみなすことで、PageRankを応用する。
+頂点の重要度を、頂点の内容のような局所的な情報ではなく、他の頂点との辺の接続関係を含むグラフ全体の大域的な情報から決定する。
+TextRankは、PageRankと違い、辺ごとに重みを設定できる。&lt;/p&gt;</description>
     </item>
     
     <item>
