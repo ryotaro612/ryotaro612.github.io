@@ -54,6 +54,29 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/indexing_by_latent_semantic_analysis/">抄訳 Indexing by Latent Semantic Analysis (1990)</a></h3>
+        <div class="summary"><p>特異値分解を応用した潜在的な意味にもとづく文書検索の手法である。
+文書を、単語の出現回数が成分の列ベクトルとしてあつかう。
+その列ベクトルからなる文書集合の行列に特異値分解(Singular Value Decomposition, SVD)を適用する。
+大きい順に\(k\)個の特異値とその特異ベクトルを選んで、低ランクの行列をつくり、もとの行列を近似する。
+単語の数が\(t\), 文書数が\(d\)のとき、低ランクの行列の左特異ベクトルの行列\(T\)と右特異ベクトルの転置行列\(D'\)のサイズは、それぞれ、\(t\times k\), \(k \times d\)になる。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E6%BD%9C%E5%9C%A8%E6%84%8F%E5%91%B3%E8%A7%A3%E6%9E%90/">
+		#潜在意味解析
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">March 4, 2023</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/aries/">抄訳 ARIES: A Transaction Recovery Method Supporting Fine-Granularity Locking and Partial Rollbacks Using Write-Ahead Logging(1992)</a></h3>
         <div class="summary"><p>ARIES(Algorithm for Recovery and Isolation Exploiting Semantics)は、ログ先行書き込み(write-ahead-logging, WAL)によるSAVEPOINTまでの部分的なトランザクションのロールバック、レコード単位のロック、回復のためのアルゴリズムである。
 ログの対象と粒度はページの更新であり、レコードには単調増加するLSN(Log Sequence number)をわりあてる。
@@ -183,21 +206,6 @@ RankNetをLambdaRankで学習することで、学習時間を短縮し、NDCG�
         <div class="article-footer">
 	  
           <span class="date">January 23, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/">抄訳 Brewer&#39;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web(2002)</a></h3>
-        <div class="summary"><p>分散システムは一貫性、可用性、分断耐性を同時に満たすことができない。
-この予想は、2000年のPODCでBrewerが発表したCAP定理として知られてる。
-Brewerの<a href="https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf">講演</a>では厳密な定義と証明がなく、それを補うために、2つの計算モデルにおいてCAPが成立することを証明する。
-計算モデルは、asynchronous network modelとpartially synchhronous modelである。
-asynchronouse network modelでは、モデルのノードは、クロックをもたず、受信したメッセージとノード内の計算のみで出力を決定する。
-partially synchronous modelでは、各ノードは、一定間隔で単調増加するクロックをもち、処理をタイムアウトしたり、スケジューリングしたりできる。
-ただし、ノード間でクロックが同期されているとは限らない。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">January 17, 2023</span>
         </div>
     </article>
     

@@ -6,7 +6,20 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 26 Feb 2023 01:47:13 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Mar 2023 18:27:24 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抄訳 Indexing by Latent Semantic Analysis (1990)</title>
+      <link>https://nryotaro.dev/posts/indexing_by_latent_semantic_analysis/</link>
+      <pubDate>Sat, 04 Mar 2023 18:27:24 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/indexing_by_latent_semantic_analysis/</guid>
+      <description>&lt;p&gt;特異値分解を応用した潜在的な意味にもとづく文書検索の手法である。
+文書を、単語の出現回数が成分の列ベクトルとしてあつかう。
+その列ベクトルからなる文書集合の行列に特異値分解(Singular Value Decomposition, SVD)を適用する。
+大きい順に\(k\)個の特異値とその特異ベクトルを選んで、低ランクの行列をつくり、もとの行列を近似する。
+単語の数が\(t\), 文書数が\(d\)のとき、低ランクの行列の左特異ベクトルの行列\(T\)と右特異ベクトルの転置行列\(D&#39;\)のサイズは、それぞれ、\(t\times k\), \(k \times d\)になる。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>抄訳 ARIES: A Transaction Recovery Method Supporting Fine-Granularity Locking and Partial Rollbacks Using Write-Ahead Logging(1992)</title>
       <link>https://nryotaro.dev/posts/aries/</link>

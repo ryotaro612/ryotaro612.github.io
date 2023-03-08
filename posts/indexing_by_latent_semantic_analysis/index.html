@@ -29,7 +29,7 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
     
-    <title>抄訳 Syntactic Clustering of the Web(1997)</title>
+    <title>抄訳 Indexing by Latent Semantic Analysis (1990)</title>
   </head>
 
   <body>
@@ -52,28 +52,38 @@
     </header>
     
 <main>
-  <h1>抄訳 Syntactic Clustering of the Web(1997)</h1>
+  <h1>抄訳 Indexing by Latent Semantic Analysis (1990)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://nryotaro.dev/tags/%E6%96%87%E6%9B%B8%E9%96%93%E9%A1%9E%E4%BC%BC%E5%BA%A6/">
-	#文書間類似度
+      <a href="https://nryotaro.dev/tags/%E6%BD%9C%E5%9C%A8%E6%84%8F%E5%91%B3%E8%A7%A3%E6%9E%90/">
+	#潜在意味解析
       </a>
     </li>
     
   </ul>  
-  <span class="date">December 13, 2022</span>    
+  <span class="date">March 4, 2023</span>    
   <div>
-    <p>2つのWeb文書から抽出したn-gramの集合を比較し、文書の包含関係と類似度を測定する。
-はじめに、大文字をすべて小文字にしたり、htmlタグを除外したりして文書に前処理をかける。
-次に文書\(A\)からnグラムの集合\(S(A)\)を抽出する。
-このとき、文書\(A\)と\(B\)間の類似度を\(|S(A)\cap S(B)|/|S(A) \cup S(B)|\)、\(A\)の\(B\)への包含の度合いを\(|S(A) \cap S(B)|/|S(A)|\)と定義する。</p>
-<p>計算量を減らすために、Nグラムから非負の整数へ一様にランダムに写像する関数\(\pi\)と非負の整数\(m\)をつかう手法も提案されている。
-この場合、写像先の値が\(\text{MOD}_m\)が\(0\)になるNグラムのみで類似度と包含を測定する。</p>
-<p>論文への<a href="https://www.hpl.hp.com/techreports/Compaq-DEC/SRC-TN-1997-015.pdf">リンク</a></p>
+    <p>特異値分解を応用した潜在的な意味にもとづく文書検索の手法である。
+文書を、単語の出現回数が成分の列ベクトルとしてあつかう。
+その列ベクトルからなる文書集合の行列に特異値分解(Singular Value Decomposition, SVD)を適用する。
+大きい順に\(k\)個の特異値とその特異ベクトルを選んで、低ランクの行列をつくり、もとの行列を近似する。
+単語の数が\(t\), 文書数が\(d\)のとき、低ランクの行列の左特異ベクトルの行列\(T\)と右特異ベクトルの転置行列\(D'\)のサイズは、それぞれ、\(t\times k\), \(k \times d\)になる。</p>
+<p>クエリで文書を検索するときは、クエリを文書とみなす。
+文書のベクトル\(X_q\)をつくり、特異値を要素とする対角行列を\(S\)として、クエリの分散表現\(D_q\)を\(D_q=X_q&rsquo;TS^{-1}\)として計算し、\(D_q\)とコサイン類似度の近い文書をクエリに関連する文書とみなす。</p>
+<p>クエリと文書だけでなく、単語同士、文書同士、単語と文書の関係を比較することもできる。
+\(\textit{Xhihat}=TSD'\)とすると、\(\textit{Xhihat}\)の2つ行のドット積は、文書集合における2単語の出現パターンの類似度を反映する。
+このとき、\(\textit{Xhihat}\textit{Xhihat}'=TS^2T'\)は、各単語のペアの類似度を示す行列になる。
+同様に、文書同士であれば、\(\textit{Xhihat}'\textit{Xhihat}=DS^2D'\)を求めればよい。
+単語と文書の関係であれば、\(t\times d\)のサイズの行列\(\textit{Xhihat}\)の成分そのものが、文書と単語の関係を示す。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h2 id="雑記">雑記</h2>
-<p>Nグラムで評価するので、類義語同士がまったく別の意味の単語と同様に扱われてしまう。
-包含関係の定義は、包含している文書がされている文書よりも大きすぎると、実際に包含関係にあっても値が小さくなりそう。</p>
+<p>直交行列\(P\)では\(P^{-1}=P'\)がなりたつので、\(D_q=X_q&rsquo;TS^{-1}\)となる。
+単語の出現回数を成分にするので、同じ話題の文書でも、文書の長さが違うと類似とみなされない気がした。</p>
+<p>論文の<a href="http://wordvec.colorado.edu/papers/Deerwester_1990.pdf">リンク</a></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
   </div>
 </main>
 
@@ -81,17 +91,11 @@
 <ul class="pagination">
     
     <li>
-      <a href="/posts/an_improved_data_stream_summary_the_count_min_sketch_and_its_application/">
+      <a href="/posts/aries/">
 	<i class="fa-solid fa-xl fa-angle-left"></i>
       </a>
     </li>
     
-    
-    <li>
-      <a href="/posts/epidemic_algorithms_for_replicated_database_maintenance/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
     
 </ul>
 
