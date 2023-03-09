@@ -29,7 +29,7 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
     
-    <title>概要 Learning Active Learning from Data</title>
+    <title>抄訳 Learning Active Learning from Data</title>
   </head>
 
   <body>
@@ -52,28 +52,34 @@
     </header>
     
 <main>
-  <h1>概要 Learning Active Learning from Data</h1>
+  <h1>抄訳 Learning Active Learning from Data</h1>
   <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/active-learning/">
+	#Active Learning
+      </a>
+    </li>
     
   </ul>  
   <span class="date">July 27, 2019</span>    
   <div>
     <h3 id="概要">概要</h3>
-<p>表題にある論文は、次にラベルを与えるべきデータが何かという能動学習における問題を、
-あるサンプルを教師データに追加したときの損失関数の減少値を予測する回帰の問題としてとらえる。
-能動学習の目的は最小限データで最大の予測性能をもつモデルを構築することであり、次にアノテーションすべきデータが何かを正しく予測することが課題になる。
-論文は、アノテーションすべきサンプルを予測する回帰モデルを学習するアルゴリズムを提案、評価する。アルゴリズムは2値分類の分類器を対象としている。</p>
-<p>回帰モデルは、分類器にラベルなしのサンプルの与えたときの出力と学習済み分類器のパラメタを入力として、サンプルを教師データに加えたときの汎化誤差の減少値を予測する。
-論文では、この回帰モデルを学習するための2通りのアルゴリズムが提案されている。本稿では、そのうちの1つである <em>BUILDLALINDEPENDENT</em> についてまとめる。</p>
+<p>能動学習は、できるだけ少数のサンプルでモデルの予測性能を向上できる学習データセットを集める技術である。
+論文は、2値分類問題のための能動学習で、サンプルを教師データに追加したときの汎化誤差の減少値を予測し、追加すべきサンプルを推定する。</p>
+<p>減少値を推定する回帰モデルは、分類器にラベルなしのサンプルの与えたときの出力と学習済み分類器のパラメタを入力として、サンプルを教師データに加えたときの汎化誤差の減少値を予測する。
+論文では、この回帰モデルを学習するための2通りのアルゴリズムが提案されている。以下の解説は、そのうちの1つであるBUILDLALINDEPENDENTである。</p>
 <p>回帰モデルの教師データの作成するために、訓練データ\(\mathcal{D}\)、テストデータ\(\mathcal{D}'\)、分類器のアルゴリズム\(f\)を入力として、\(2\leq\tau\leq T+1\)について\(Q\)回以下のステップを実行し、\(QMT\)件の教師データを作成する。</p>
 <ol>
 <li>\(D\)を、\(\tau\)件の訓練データ\(\mathcal{L_{\tau}}\)とラベルなしデータに\(\mathcal{U}_{\tau}\)に分ける。</li>
 <li>\(\mathcal{L_{\tau}}\)で\(f_{\tau}\)を学習する。</li>
 <li>\(D'\)で汎化誤差\(\ell_{\tau}\)を計算する。</li>
-<li>\(f\)の状態を\(\{\phi^1_\tau, \dots,\phi^K_\tau\}\)を記録する。\(\phi\)には、分類器固有の値や訓練データに影響される値などの値がいる。例えば、木の深さやカーネル関数の種類が値になりえる。</li>
+<li>\(f\)を定義するパラメタ\(\{\phi^1_\tau, \dots,\phi^K_\tau\}\)を記録する。
+分類器固有の値や訓練データに影響される値などが\(\phi\)に該当する。
+たとえば、木の深さやカーネル関数の種類が値になりえる。</li>
 <li>\(1\leq m\leq M\)の範囲で以降のステップを繰り返す。</li>
 <li>無作為に\(x\in\mathcal{U}_\tau\)を選び、\(\mathcal{L}_\tau\cup\{x\}\)を\(\mathcal{L}_x\)として新たな訓練データを作成する。</li>
-<li>\(x\)があるクラスに属する確信度や、\(x\)から最も近いラベル付きデータからの距離など、\(f\)に入力される特徴以外の\(x\)の要素を、\(\{\psi^1_x,\dots,\psi^R_x\}\)として記録する。</li>
+<li>\(x\)があるクラスである確信度や、\(x\)から最も近いラベル付きデータからの距離など、\(f\)に入力される特徴以外の\(x\)の要素を、\(\{\psi^1_x,\dots,\psi^R_x\}\)として記録する。</li>
 <li>\(\mathcal{L}_x\)で\(f_x\)を学習し、\(D'\)をもとに汎化誤差\(\ell_x\)を求める。</li>
 <li>\([\phi^1_\tau\ \dots\ \phi^K_\tau\ \psi^1_x\ \dots\ \psi^R_x]\)を\(\xi_m\)、\(x\)を訓練データに加えたことで減少した汎化誤差\(\ell_\tau - \ell_x\)を\(\delta_m\)として、回帰モデルの訓練データの一つとして記録する。</li>
 </ol>
