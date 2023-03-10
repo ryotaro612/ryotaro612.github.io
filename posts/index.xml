@@ -2886,13 +2886,13 @@ CatBoostは二進木の決定木を弱識別器に用いる。&lt;/p&gt;</descri
     </item>
     
     <item>
-      <title>概要 Google Vizier: A Service for Black-Box Optimization</title>
+      <title>概要 Google Vizier: A Service for Black-Box Optimization(2017)</title>
       <link>https://nryotaro.dev/posts/google_vizier/</link>
       <pubDate>Sat, 03 Aug 2019 17:18:36 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/google_vizier/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-&lt;p&gt;表題にあるVizierはGoogleにおいてデファクトになっているブラックボックス最適化のためのサービスであり、
+&lt;p&gt;VizierはGoogleで開発されたブラックボックス最適化のためのサービスである。
 論文は、Vizierのシステムアーキテクチャの構成とアルゴリズムの説明とその評価からなる。&lt;/p&gt;</description>
     </item>
     
