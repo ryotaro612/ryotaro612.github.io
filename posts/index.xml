@@ -2875,12 +2875,13 @@ CatBoostは二進木の決定木を弱識別器に用いる。&lt;/p&gt;</descri
     </item>
     
     <item>
-      <title>メモ Gaussian Processes for Regression</title>
+      <title>概要 Gaussian Processes for Regression(1996)</title>
       <link>https://nryotaro.dev/posts/gaussian_processes_for_regression/</link>
       <pubDate>Sat, 03 Aug 2019 21:54:03 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/gaussian_processes_for_regression/</guid>
-      <description>&lt;p&gt;表題はガウス過程の回帰問題への応用を提案した論文。著者らは、scikit-learnの&lt;a href=&#34;https://scikit-learn.org/stable/modules/gaussian_process.html#gaussian-process&#34;&gt;ガウス過程回帰&lt;/a&gt;の
+      <description>&lt;p&gt;ガウス過程を回帰の問題に応用した。
+著者らは、scikit-learnの&lt;a href=&#34;https://scikit-learn.org/stable/modules/gaussian_process.html#gaussian-process&#34;&gt;ガウス過程回帰&lt;/a&gt;の
 元になっている&lt;a href=&#34;http://www.gaussianprocess.org/gpml/chapters/RW.pdf&#34;&gt;Gaussian Processes for Machine Learning&lt;/a&gt;の著者と同じ。
 論文の構成は、ガウス過程回帰の予測分布の式、ハイパーパラメタ推定方法、実験による評価からなる。&lt;/p&gt;</description>
     </item>
