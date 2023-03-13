@@ -197,8 +197,9 @@ Transactionalは、検索や種々のダウンロードなどインタラクシ�
       
       <guid>https://nryotaro.dev/posts/epidemic_algorithms_for_replicated_database_maintenance/</guid>
       <description>&lt;p&gt;Epidemic Algorithmは、データベース間の差分を解消するために、データベースがランダムに選んだ別のデータベースと同期する手法である。
-ここではデータベースにはマスタースレーブの区別はなく、任意のサーバーがレコードの変更を受理できる。
-Epidemic Algorithmには、定期的にデーターベース全体を同期する手法と、変更を受理したときにその変更のみを別のデータベースに伝搬させる手法の2つがある。
+Epidemicを邦訳すると伝染性である。
+ここではデータベースにはマスタースレーブの区別はなく、任意のサーバーがレコードの変更リクエストを受理できる。
+Epidemic Algorithmには、定期的にデーターベース全体を同期する手法と、変更を受理したときに当該の変更のみを別のデータベースに伝搬させる手法の2つがある。
 前者は、データベース全体を同期するので変更のとりこぼしがいずれは解消されるが、同期に時間がかかる。
 後者は、時間はかからないが、伝搬を終えるまでに同期できなかった変更があれば、その齟齬が残りつづける。
 データベースがある時点で最新の変更をもたない確率を仮定し、その確率で次の同期で変更を取得できる確率を表し、手法間の同期する収束の速さを比較した。&lt;/p&gt;</description>
@@ -3147,14 +3148,14 @@ FastXMLは、弱学習器に決定木を使うアンサンブル学習であり�
       
       <guid>https://nryotaro.dev/posts/advantages_and_disadvantages_of_a_monolithic_repository/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-&lt;p&gt;表題は、マルチリポジトリと比べたときのモノリシックリポジトリの長所と短所の調べた論文のタイトルである。
+&lt;p&gt;マルチリポジトリと比べたときのモノリシックリポジトリの長所と短所を調査した。
 論文は2018年のICSEでGoogleから発表された。
 調査方法はGoogle社のエンジニアへのアンケートとエンジニアの行動ログの分析が採用されている。
 Googleではモノリシックリポジトリが採用されており、エンジニアがこれまで経験したマルチリポジトリが比較対象となっている。&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>メモ CatBoost: unbaiased boosting with categorical features</title>
+      <title>抄訳 CatBoost: unbaiased boosting with categorical features(2017)</title>
       <link>https://nryotaro.dev/posts/cat_boost/</link>
       <pubDate>Sat, 10 Aug 2019 23:27:29 +0900</pubDate>
       
@@ -3166,14 +3167,16 @@ CatBoostは二進木の決定木を弱識別器に用いる。&lt;/p&gt;</descri
     </item>
     
     <item>
-      <title>メモ Are We Really Making Much Progress? A Worrying Analysis of Recent Neural Recommendation Approaches</title>
+      <title>抄訳 Are We Really Making Much Progress? A Worrying Analysis of Recent Neural Recommendation Approaches(2019)</title>
       <link>https://nryotaro.dev/posts/are_we_really_making_much_progress/</link>
       <pubDate>Sat, 10 Aug 2019 14:39:11 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/are_we_really_making_much_progress/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-&lt;p&gt;表題は、ニューラルネットワークを用いた推薦システムを提案、評価した論文における実験の再現性と予測性能の再評価した論文のタイトルにあたる。
-発表学会は、2019年のRecSys。著者らは、以下の2つのRQに回答するためにトップ会議で発表された18の論文を調査した。その結果、実験を再現できた論文は7稿であり、その中でも単純な手法を上回る性能が認められたのは1稿だけだった。&lt;/p&gt;
+&lt;p&gt;ニューラルネットワークを用いた推薦システムを提案、評価した論文における実験の再現性と予測性能の再評価した。
+発表学会は、2019年のRecSys。
+著者らは、以下の2つのRQに回答するためにトップ会議で発表された18の論文を調査した。
+その結果、実験を再現できた論文は7稿であり、その中でも単純な手法を上回る性能が認められたのは1稿だけだった。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;RQ1: ニューラルネットワークを用いた推薦システムの研究の再現性はどの程度か&lt;/li&gt;
 &lt;li&gt;RQ2: 最近発表されたアルゴリズムは、ハイパーパラメタチューニングされた単純な手法と比べてどの程度性能がいいか&lt;/li&gt;
