@@ -6,7 +6,23 @@
     <description>Recent content in 分散システム on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 07 Dec 2022 12:29:36 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Mar 2023 16:17:35 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抄訳 Your Coffee Shop Doesn&#39;t Use Two-Phase Commit(2005)</title>
+      <link>https://nryotaro.dev/posts/your_coffee_shop_doesnt_use_two_phase_commit/</link>
+      <pubDate>Sun, 12 Mar 2023 16:17:35 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/your_coffee_shop_doesnt_use_two_phase_commit/</guid>
+      <description>&lt;p&gt;非同期処理を、スターバックスの注文からコーヒーの提供までの流れにたとえたアネクドートである。
+注文をうけたレジの店員は、どの客の注文か分かる目印をコーヒーカップに書き、カップをエスプレッソマシンの上にならべる。
+客はバリスタのいるカウンターに移動し、レジの店員は次の顧客の注文をうけつける。
+バリスタは、ならべられたカップをとり、コーヒーを注ぎ、客に提供する。&lt;/p&gt;
+&lt;p&gt;レジの店員とバリスタは非同期にはたらいている。
+バリスタのコーヒーの提供が滞っても、レジの店員は注文をうけることができる。
+カップの列が長くなれば、バリスタの人数を増やせば、レジの店員に影響することなく、より速くコーヒーを提供できる。
+それはキューで通信するプロデューサーとコンシューマーのようである。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>An Improved Data Stream Summary: The Count-Min Sketch and its Applications(2005)</title>
       <link>https://nryotaro.dev/posts/an_improved_data_stream_summary_the_count_min_sketch_and_its_application/</link>

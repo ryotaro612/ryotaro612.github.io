@@ -54,6 +54,20 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/a_critique_of_ansi_sql_isolation_levels/">A Critique of ANSI SQL Isolation Levels</a></h3>
+        <div class="summary"><p>ANSI SQL-92規格は、トランザクション分離レベルを、Dirty Read, Non-Repeatable Reads, Phantomが発生する可能性で定義する。
+著者は、トランザクション分離レベルを禁止する現象で定義する理由を、ロックなどの実装手段で定義すると規格が実装依存になるからだと考えている。
+表題の論文は、規格の現象による定義があいまいであり、3つの異常が起きなくても望まない結果になる実行があることを例示した。
+また、規格のトランザクション分離レベルが、商用データベースで採用されているトランザクション分離レベルにあてはまらない問題もある。
+禁止する現象にDirty Writeを規格に加え、厳しく実行列を制限するように現象の定義を解釈し、現象の説明を自然言語から形式的な記述に変えることを提唱した。
+さらに、規格がデータの版が単一であることを前提としていることを指摘した上で、多版型のトランザクションであるSnaphot Isolationを提案した。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">November 13, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/an_overview_of_data_warehousing_and_olap_technology/">An Overview of Data Warehousing and OLAP Technology</a></h3>
         <div class="summary"><p>データウェアハウスの概要と発表時期の97年の関連技術を解説した論文で、データウェアハウスの理論を提唱したInmonにならい、データウェアハウスを、目的指向(subject-oriented)で、統合され、組織の意思決定に資する永続的なデータとらえている。
 関連技術を、ETL処理、データ保存方法、保存したデータによる分析の3つに分けて整理する。
@@ -160,17 +174,6 @@ Chubbyはロックサービスとして作られたが、ネームサーバと�
         <div class="article-footer">
 	  
           <span class="date">September 18, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/implementing_remote_procedure_calls/">Implementing Remote Procedure Calls</a></h3>
-        <div class="summary"><p>Xeroxのプログラミング環境<a href="http://www.bitsavers.org/pdf/xerox/parc/techReports/CSL-80-10_Requirements_for_an_Experimental_Programming_Environment.pdf">Cedar</a>のために開発されたRPCを解説した84年の論文。
-RPCの開発目的は、分散コンピューティングを簡単に実装できるようにする、通信時間を短くする、通信をセキュアにすることの3点にある。
-RPCは大部分で<a href="http://www.bitsavers.org/pdf/xerox/parc/techReports/CSL-79-3_Mesa_Language_Manual_Version_5.0.pdf">Mesa</a>が使われた。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">September 11, 2021</span>
         </div>
     </article>
     

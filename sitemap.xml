@@ -3,13 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2023-03-04T18:27:24+09:00</lastmod>
+    <lastmod>2023-03-12T16:17:35-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2023-03-04T18:27:24+09:00</lastmod>
+    <lastmod>2023-03-12T16:17:35-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/tags/</loc>
-    <lastmod>2023-03-04T18:27:24+09:00</lastmod>
+    <lastmod>2023-03-12T16:17:35-04:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</loc>
+    <lastmod>2023-03-12T16:17:35-04:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/posts/your_coffee_shop_doesnt_use_two_phase_commit/</loc>
+    <lastmod>2023-03-12T16:17:35-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/indexing_by_latent_semantic_analysis/</loc>
     <lastmod>2023-03-04T18:27:24+09:00</lastmod>
@@ -72,9 +78,6 @@
     <lastmod>2022-12-13T13:38:46-05:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/an_improved_data_stream_summary_the_count_min_sketch_and_its_application/</loc>
-    <lastmod>2022-12-07T12:29:36-05:00</lastmod>
-  </url><url>
-    <loc>https://nryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</loc>
     <lastmod>2022-12-07T12:29:36-05:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/lof_identifying_density_based_local_outliners/</loc>

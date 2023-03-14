@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.78272bdd99a3c4f03ee4c826bbe3a970cda497ed85b5da23b0af6dbaf9f30522.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
+    
+    <title>抄訳 Your Coffee Shop Doesn&#39;t Use Two-Phase Commit(2005)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>抄訳 Your Coffee Shop Doesn&#39;t Use Two-Phase Commit(2005)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+	#分散システム
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">March 12, 2023</span>    
+  <div>
+    <p>非同期処理を、スターバックスの注文からコーヒーの提供までの流れにたとえたアネクドートである。
+注文をうけたレジの店員は、どの客の注文か分かる目印をコーヒーカップに書き、カップをエスプレッソマシンの上にならべる。
+客はバリスタのいるカウンターに移動し、レジの店員は次の顧客の注文をうけつける。
+バリスタは、ならべられたカップをとり、コーヒーを注ぎ、客に提供する。</p>
+<p>レジの店員とバリスタは非同期にはたらいている。
+バリスタのコーヒーの提供が滞っても、レジの店員は注文をうけることができる。
+カップの列が長くなれば、バリスタの人数を増やせば、レジの店員に影響することなく、より速くコーヒーを提供できる。
+それはキューで通信するプロデューサーとコンシューマーのようである。</p>
+<p>スターバックスが採用していない2相コミット(Two-Phase Commit)は、複数のノードが参加するトランザクション処理をアトミックにするためのアルゴリズムである。
+2相と呼ばれるのは、複数ノードが各自のデータベースにデータを書き込んだあと、2つのフェーズをかけてトランザクションを<a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/">終了するから</a>である。
+フェーズ1では、ノードの状態を管理するコーディネータが各ノードにコミット可能か問い合わせる。
+すべてのノードがコミット可能であれば、フェーズ2でコーディネータは、各ノードにコミットをリクエストする。</p>
+<p>2相コミットをスターバックスにたとえるなら、注文をうけた客はコーヒーを受けとるまでレジの前に立ち、コーヒーができあがるとお金とコーヒーを交換するものである。
+店員が非同期に働くときにくらべて、単位時間に対応できる顧客の数は減る。</p>
+<p>非同期処理によってスループットを上げられるが、同時に、エラー処理が難しくなる。
+プロデューサとコンシューマが疎結合になると、コンシューマーで起きたエラーをプロデューサに伝達することが難しくなる。
+注文した後に客がお金がないことに気づいた場合や、エスプレッソマシンが故障する場合、同期的な接客時よりも対応が難しい。</p>
+<p>スターバックスは、conversation patternのたとえでもある。
+conversation patternは短時間の同期的なインタラクションと長期間の非同期なインタラクションからなる通信である。
+客はレジの店員と同期的に会話し、会話より長い時間バリスタのいるカウンターでコーヒーを待つ。
+Amazonで商品を注文し、品物が届くまでのシステムの処理もconversation patternといえる。</p>
+<p>店員にとってスターバックスの経験は非同期であるが、客はコーヒーを受けとるまで店を出られないので、客の経験は同期的である。
+また、ユーザーからみて同期的なシステムの実装が非同期処理であることがある。
+<a href="https://www.oreilly.com/library/view/pattern-oriented-software-architecture/9781118725177/">Half-sync, Half-asyncパターン</a>は、非同期に動くシステムがバッファに出力し、同期的な振る舞いを期待する側がバッファから出力を受けとらせることで、この非対称性を解決する。
+まるで、バリスタが出来あがったコーヒーをカウンタに置くように。</p>
+<p>論文の<a href="https://www.enterpriseintegrationpatterns.com/docs/IEEE_Software_Design_2PC.pdf">リンク</a></p>
+<h2 id="雑記">雑記</h2>
+<p>非同期処理をソフトウェア開発者以外に説明するときに便利かもしれない。</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/indexing_by_latent_semantic_analysis/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>
