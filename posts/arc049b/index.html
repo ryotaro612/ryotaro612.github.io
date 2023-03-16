@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.78272bdd99a3c4f03ee4c826bbe3a970cda497ed85b5da23b0af6dbaf9f30522.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+<link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
+    
+    <title>AtCoder Regular Contest 049 B - 高橋ノルム君</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>AtCoder Regular Contest 049 B - 高橋ノルム君</h1>
+  <ul class="tags">
+    
+  </ul>  
+  <span class="date">March 15, 2023</span>    
+  <div>
+    <p>XとYは互いに干渉しないので、独立してX, Yを考えることができる。
+\(x_i, x_{i+1}\)の間に最適な\(X\)があるとすると、\(X\)の位置を\(x_i, x_{i+1}\)を境界として三分探索で求めることができる。
+これをすべての\(i\)について試行すればいい。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#66d9ef">using</span> ld <span style="color:#f92672">=</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">double</span>;
+<span style="color:#75715e">#define rep(i, n) for (int i = 0; i &lt; (int)(n); i++)
+</span><span style="color:#75715e"></span>
+ld <span style="color:#a6e22e">sub</span>(vector<span style="color:#f92672">&lt;</span>ld<span style="color:#f92672">&gt;</span> xv, vector<span style="color:#f92672">&lt;</span>ld<span style="color:#f92672">&gt;</span> cv) {
+  <span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> xv.size();
+  vector<span style="color:#f92672">&lt;</span>pair<span style="color:#f92672">&lt;</span>ld, ld<span style="color:#f92672">&gt;&gt;</span> xcv(n);
+  rep(i, n) { xcv[i] <span style="color:#f92672">=</span> {xv[i], cv[i]}; }
+  sort(xcv.begin(), xcv.end());
+  ld res <span style="color:#f92672">=</span> numeric_limits<span style="color:#f92672">&lt;</span>ld<span style="color:#f92672">&gt;::</span>max();
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; i<span style="color:#f92672">++</span>) {
+    ld lb <span style="color:#f92672">=</span> xcv[i].first, ub <span style="color:#f92672">=</span> xcv[i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>].first;
+
+    <span style="color:#66d9ef">while</span> (ub <span style="color:#f92672">-</span> lb <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0.00000000001</span>) {
+      ld lmid <span style="color:#f92672">=</span> (<span style="color:#ae81ff">2.0</span> <span style="color:#f92672">*</span> lb <span style="color:#f92672">+</span> ub) <span style="color:#f92672">/</span> <span style="color:#ae81ff">3.0</span>;
+      ld rmid <span style="color:#f92672">=</span> (lb <span style="color:#f92672">+</span> <span style="color:#ae81ff">2.0</span> <span style="color:#f92672">*</span> ub) <span style="color:#f92672">/</span> <span style="color:#ae81ff">3.0</span>;
+      ld time_l <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, time_r <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+      rep(j, n) {
+        time_l <span style="color:#f92672">=</span> max(time_l, abs(xcv[j].first <span style="color:#f92672">-</span> lmid) <span style="color:#f92672">*</span> xcv[j].second);
+        time_r <span style="color:#f92672">=</span> max(time_r, abs(xcv[j].first <span style="color:#f92672">-</span> rmid) <span style="color:#f92672">*</span> xcv[j].second);
+      }
+      <span style="color:#66d9ef">if</span> (time_l <span style="color:#f92672">&lt;</span> time_r)
+        ub <span style="color:#f92672">=</span> rmid;
+      <span style="color:#66d9ef">else</span>
+        lb <span style="color:#f92672">=</span> lmid;
+    }
+    ld temp <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    rep(j, n) { temp <span style="color:#f92672">=</span> max(temp, abs(xcv[j].first <span style="color:#f92672">-</span> lb) <span style="color:#f92672">*</span> xcv[j].second); }
+    res <span style="color:#f92672">=</span> min(res, temp);
+  }
+  <span style="color:#66d9ef">return</span> res;
+}
+
+<span style="color:#75715e">#ifdef ONLINE_JUDGE
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+  <span style="color:#66d9ef">int</span> n;
+  cin <span style="color:#f92672">&gt;&gt;</span> n;
+  vector<span style="color:#f92672">&lt;</span>ld<span style="color:#f92672">&gt;</span> xv(n), yv(n), cv(n);
+  rep(i, n) cin <span style="color:#f92672">&gt;&gt;</span> xv[i] <span style="color:#f92672">&gt;&gt;</span> yv[i] <span style="color:#f92672">&gt;&gt;</span> cv[i];
+
+  cout <span style="color:#f92672">&lt;&lt;</span> fixed <span style="color:#f92672">&lt;&lt;</span> setprecision(<span style="color:#ae81ff">12</span>) <span style="color:#f92672">&lt;&lt;</span> max(sub(xv, cv), sub(yv, cv)) <span style="color:#f92672">&lt;&lt;</span> endl;
+  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+<span style="color:#75715e">#endif
+</span></code></pre></div>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/your_coffee_shop_doesnt_use_two_phase_commit/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

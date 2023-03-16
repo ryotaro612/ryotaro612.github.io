@@ -6,7 +6,18 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 12 Mar 2023 16:17:35 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Mar 2023 11:04:07 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AtCoder Regular Contest 049 B - 高橋ノルム君</title>
+      <link>https://nryotaro.dev/posts/arc049b/</link>
+      <pubDate>Wed, 15 Mar 2023 11:04:07 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/arc049b/</guid>
+      <description>&lt;p&gt;XとYは互いに干渉しないので、独立してX, Yを考えることができる。
+\(x_i, x_{i+1}\)の間に最適な\(X\)があるとすると、\(X\)の位置を\(x_i, x_{i+1}\)を境界として三分探索で求めることができる。
+これをすべての\(i\)について試行すればいい。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>抄訳 Your Coffee Shop Doesn&#39;t Use Two-Phase Commit(2005)</title>
       <link>https://nryotaro.dev/posts/your_coffee_shop_doesnt_use_two_phase_commit/</link>
