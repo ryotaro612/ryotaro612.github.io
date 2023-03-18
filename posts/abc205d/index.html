@@ -23,7 +23,6 @@
 <link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.78272bdd99a3c4f03ee4c826bbe3a970cda497ed85b5da23b0af6dbaf9f30522.css">
 
 <link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
-<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -59,35 +58,35 @@
   <span class="date">June 14, 2021</span>    
   <div>
     <p>\(K_q\)ごとに二部探索で答えを直接検索しても通すことができる。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
-<span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> ll;
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#78787e">#include</span> <span style="color:#78787e">&lt;bits/stdc++.h&gt;</span><span style="color:#78787e">
+</span><span style="color:#78787e"></span><span style="color:#ff6ac1">using</span> <span style="color:#ff6ac1">namespace</span> std;
+<span style="color:#ff6ac1">typedef</span> <span style="color:#9aedfe">long</span> <span style="color:#9aedfe">long</span> ll;
 
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
-    <span style="color:#66d9ef">int</span> n, q;
-    cin <span style="color:#f92672">&gt;&gt;</span> n <span style="color:#f92672">&gt;&gt;</span> q;
-    vector<span style="color:#f92672">&lt;</span>ll<span style="color:#f92672">&gt;</span> a(n), k(q);
-    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">++</span>)
-        cin <span style="color:#f92672">&gt;&gt;</span> a[i];
-    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> q; i<span style="color:#f92672">++</span>)
-        cin <span style="color:#f92672">&gt;&gt;</span> k[i];
+<span style="color:#9aedfe">int</span> <span style="color:#57c7ff">main</span>() {
+    <span style="color:#9aedfe">int</span> n, q;
+    cin <span style="color:#ff6ac1">&gt;&gt;</span> n <span style="color:#ff6ac1">&gt;&gt;</span> q;
+    vector<span style="color:#ff6ac1">&lt;</span>ll<span style="color:#ff6ac1">&gt;</span> a(n), k(q);
+    <span style="color:#ff6ac1">for</span>(<span style="color:#9aedfe">int</span> i <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>; i <span style="color:#ff6ac1">&lt;</span> n; i<span style="color:#ff6ac1">++</span>)
+        cin <span style="color:#ff6ac1">&gt;&gt;</span> a[i];
+    <span style="color:#ff6ac1">for</span>(<span style="color:#9aedfe">int</span> i <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>; i <span style="color:#ff6ac1">&lt;</span> q; i<span style="color:#ff6ac1">++</span>)
+        cin <span style="color:#ff6ac1">&gt;&gt;</span> k[i];
 
-    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">auto</span> kk : k) {
+    <span style="color:#ff6ac1">for</span>(<span style="color:#ff6ac1">auto</span> <span style="color:#ff5c57">kk</span> : k) {
 
-        ll lb <span style="color:#f92672">=</span> <span style="color:#ae81ff">0ll</span>, ub <span style="color:#f92672">=</span> numeric_limits<span style="color:#f92672">&lt;</span>ll<span style="color:#f92672">&gt;::</span>max();
-        <span style="color:#66d9ef">while</span>(ub <span style="color:#f92672">-</span> lb <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>) {
-            ll mid <span style="color:#f92672">=</span> (ub <span style="color:#f92672">+</span> lb) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2ll</span>;
-            <span style="color:#66d9ef">auto</span> it <span style="color:#f92672">=</span> lower_bound(a.begin(), a.end(), mid);
-            ll index <span style="color:#f92672">=</span> it <span style="color:#f92672">-</span> a.begin();
-            <span style="color:#66d9ef">if</span>(kk <span style="color:#f92672">&lt;</span> mid <span style="color:#f92672">-</span> index) {
-                ub <span style="color:#f92672">=</span> mid;
-            } <span style="color:#66d9ef">else</span> {
-                lb <span style="color:#f92672">=</span> mid;
+        ll lb <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0ll</span>, ub <span style="color:#ff6ac1">=</span> numeric_limits<span style="color:#ff6ac1">&lt;</span>ll<span style="color:#ff6ac1">&gt;::</span>max();
+        <span style="color:#ff6ac1">while</span>(ub <span style="color:#ff6ac1">-</span> lb <span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">1</span>) {
+            ll mid <span style="color:#ff6ac1">=</span> (ub <span style="color:#ff6ac1">+</span> lb) <span style="color:#ff6ac1">/</span> <span style="color:#ff9f43">2ll</span>;
+            <span style="color:#ff6ac1">auto</span> it <span style="color:#ff6ac1">=</span> lower_bound(a.begin(), a.end(), mid);
+            ll index <span style="color:#ff6ac1">=</span> it <span style="color:#ff6ac1">-</span> a.begin();
+            <span style="color:#ff6ac1">if</span>(kk <span style="color:#ff6ac1">&lt;</span> mid <span style="color:#ff6ac1">-</span> index) {
+                ub <span style="color:#ff6ac1">=</span> mid;
+            } <span style="color:#ff6ac1">else</span> {
+                lb <span style="color:#ff6ac1">=</span> mid;
             }
         }
-        cout <span style="color:#f92672">&lt;&lt;</span> lb <span style="color:#f92672">&lt;&lt;</span> endl;
+        cout <span style="color:#ff6ac1">&lt;&lt;</span> lb <span style="color:#ff6ac1">&lt;&lt;</span> endl;
     }
-    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#ff6ac1">return</span> <span style="color:#ff9f43">0</span>;
 }
 </code></pre></div>
   </div>

@@ -23,7 +23,6 @@
 <link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.78272bdd99a3c4f03ee4c826bbe3a970cda497ed85b5da23b0af6dbaf9f30522.css">
 
 <link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
-<link rel="stylesheet" href="/css/syntax.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -61,37 +60,37 @@
     <p>Pythonであればheap, C++であればsetを2つ使えばよい。
 新しい要素を追加する度に、一方に上位kの要素、他方にk+1以降の要素があるように、2つのset, heap間で要素を交換する。
 類似の問題をLeetCodeのHard modeで見かけたことがある。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
-<span style="color:#75715e">#define rep(i, n) for (int i = 0; i &lt; (int)(n); i++)
-</span><span style="color:#75715e">#define as_int(a) static_cast&lt;int&gt;(a)
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
-  <span style="color:#66d9ef">int</span> n, k;
-  cin <span style="color:#f92672">&gt;&gt;</span> n <span style="color:#f92672">&gt;&gt;</span> k;
-  vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> xv(n);
-  rep(i, n) cin <span style="color:#f92672">&gt;&gt;</span> xv[i];
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#78787e">#include</span> <span style="color:#78787e">&lt;bits/stdc++.h&gt;</span><span style="color:#78787e">
+</span><span style="color:#78787e"></span><span style="color:#ff6ac1">using</span> <span style="color:#ff6ac1">namespace</span> std;
+<span style="color:#78787e">#define rep(i, n) for (int i = 0; i &lt; (int)(n); i++)
+</span><span style="color:#78787e">#define as_int(a) static_cast&lt;int&gt;(a)
+</span><span style="color:#78787e"></span>
+<span style="color:#9aedfe">int</span> <span style="color:#57c7ff">main</span>() {
+  <span style="color:#9aedfe">int</span> n, k;
+  cin <span style="color:#ff6ac1">&gt;&gt;</span> n <span style="color:#ff6ac1">&gt;&gt;</span> k;
+  vector<span style="color:#ff6ac1">&lt;</span><span style="color:#9aedfe">int</span><span style="color:#ff6ac1">&gt;</span> xv(n);
+  rep(i, n) cin <span style="color:#ff6ac1">&gt;&gt;</span> xv[i];
 
-  set<span style="color:#f92672">&lt;</span>pair<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&gt;</span> first, second;
+  set<span style="color:#ff6ac1">&lt;</span>pair<span style="color:#ff6ac1">&lt;</span><span style="color:#9aedfe">int</span>, <span style="color:#9aedfe">int</span><span style="color:#ff6ac1">&gt;&gt;</span> first, second;
   rep(i, n) {
-    first.insert({xv[i], i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>});
-    <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span> k)
-      <span style="color:#66d9ef">continue</span>;
+    first.insert({xv[i], i <span style="color:#ff6ac1">+</span> <span style="color:#ff9f43">1</span>});
+    <span style="color:#ff6ac1">if</span> (i <span style="color:#ff6ac1">+</span> <span style="color:#ff9f43">1</span> <span style="color:#ff6ac1">&lt;</span> k)
+      <span style="color:#ff6ac1">continue</span>;
 
-    <span style="color:#66d9ef">while</span> (as_int(first.size()) <span style="color:#f92672">&gt;</span> k) {
-      second.insert(<span style="color:#f92672">*</span>first.rbegin());
+    <span style="color:#ff6ac1">while</span> (as_int(first.size()) <span style="color:#ff6ac1">&gt;</span> k) {
+      second.insert(<span style="color:#ff6ac1">*</span>first.rbegin());
       first.erase(prev(first.end()));
     }
-    <span style="color:#66d9ef">while</span> (second.size() <span style="color:#f92672">&amp;&amp;</span> first.rbegin()<span style="color:#f92672">-&gt;</span>first <span style="color:#f92672">&gt;</span> second.begin()<span style="color:#f92672">-&gt;</span>first) {
-      first.insert(<span style="color:#f92672">*</span>second.begin());
-      second.insert(<span style="color:#f92672">*</span>first.rbegin());
+    <span style="color:#ff6ac1">while</span> (second.size() <span style="color:#ff6ac1">&amp;&amp;</span> first.rbegin()<span style="color:#ff6ac1">-&gt;</span>first <span style="color:#ff6ac1">&gt;</span> second.begin()<span style="color:#ff6ac1">-&gt;</span>first) {
+      first.insert(<span style="color:#ff6ac1">*</span>second.begin());
+      second.insert(<span style="color:#ff6ac1">*</span>first.rbegin());
       first.erase(prev(first.end()));
       second.erase(second.begin());
     }
-    cout <span style="color:#f92672">&lt;&lt;</span> first.rbegin()<span style="color:#f92672">-&gt;</span>second <span style="color:#f92672">&lt;&lt;</span> endl;
+    cout <span style="color:#ff6ac1">&lt;&lt;</span> first.rbegin()<span style="color:#ff6ac1">-&gt;</span>second <span style="color:#ff6ac1">&lt;&lt;</span> endl;
   }
 
-  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#ff6ac1">return</span> <span style="color:#ff9f43">0</span>;
 }
 </code></pre></div>
   </div>
