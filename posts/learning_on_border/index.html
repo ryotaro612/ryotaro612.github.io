@@ -28,7 +28,7 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
     
-    <title>メモ Learning on the Border: Active Learning in Imbalanced Data Classification</title>
+    <title>概要 Learning on the Border: Active Learning in Imbalanced Data Classification(2007)</title>
   </head>
 
   <body>
@@ -51,19 +51,25 @@
     </header>
     
 <main>
-  <h1>メモ Learning on the Border: Active Learning in Imbalanced Data Classification</h1>
+  <h1>概要 Learning on the Border: Active Learning in Imbalanced Data Classification(2007)</h1>
   <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/active-learning/">
+	#Active Learning
+      </a>
+    </li>
     
   </ul>  
   <span class="date">August 31, 2019</span>    
   <div>
     <h3 id="概要">概要</h3>
-<p>表題にある論文は、不均衡データの二値分類についての予測性能を能動学習で改善する手法を提案している。
-着想は、学習器のマージン付近では正例と負例がよりバランスしていると仮定し、
-マージン付近にあるデータを集めることで、均衡のとれたデータセットを用意することにある。
-具体的には、ラベルづけしたデータでSVMをオンライン学習し、無作為に抽出されたラベルのないデータの中で最も超平面に近いデータにラベルをつける手順をマージンの中にあるデータ数が変わらなくなるまで繰り返す。</p>
-<p>SVMの超平面はマージン内にあるサンプルによって定められるので、当論文ではマージン内にあるサンプルは外にあるサンプルよりも貢献するという立場をとる。</p>
-<p>超平面は次の目的関数を最小化することで求まる。</p>
+<p>不均衡データに対する二値分類の予測性能を能動学習で改善する。
+学習器のマージン付近では正例と負例がよりバランスしていると仮定し、
+マージン付近にあるデータを集めることで、均衡のとれたデータセットをあつめる。
+具体的には、ラベルづけしたデータでSVMをオンライン学習し、無作為に抽出されたラベルのないデータの中で最も超平面に近いデータにラベルをつける手順をマージンの中にあるデータ数が変わらなくなるまでくりかえす。</p>
+<p>SVMの超平面はマージン内にあるサンプルによって定められるので、論文は、マージン内にあるサンプルは外にあるサンプルよりも貢献するという立場である。</p>
+<p>超平面は次の損失関数を最小化することで求まる。</p>
 <p>$$
 \min_{{\bf w},\boldsymbol{b}, \xi_i}\frac{1}{2}{\bf w}\cdot{\bf w}^{T}+C\sum^{N}_{i=1}\xi_i
 $$
@@ -93,7 +99,7 @@ $$
 <p>論文中の実験では、59件のサンプルを一度に無作為に選び、最も超平面に近いサンプルを探す。
 無作為に選んだ\(L\)件のサンプルの中に母集団内で超平面に近い上位\(p%\)にあるサンプルが含まれる確率が\(1-\eta\)であるとき、
 $$
-1-(1-p%)^{L} = 1 -\eta
+1-(1-p\%)^{L} = 1 -\eta
 $$
 より
 $$
@@ -101,9 +107,9 @@ L=\frac{\log \eta}{\log (1-p%)}
 $$
 となり母集団の大きさによらず\(L=59\)のとき95%の確率で超平面に近い上位5%のサンプルを抽出することができる。</p>
 <h3 id="感想">感想</h3>
-<p>提案手法で集めたデータセットでSVM以外の学習器を訓練した場合にも、不均衡なデータに対して高い予測性能をだすことができるのか気になる。</p>
+<p>提案手法で集めたデータセットでSVM以外の学習器を訓練した場合にも、不均衡なデータに対して高い予測性能をだせるだろうか。</p>
 <hr>
-<p>論文は<a href="http://web.mit.edu/seyda/www/Papers/CIKM07_LearningontheBorder.pdf">こちら</a>からダウンロードできます。</p>
+<p>論文は<a href="https://clgiles.ist.psu.edu/pubs/CIKM-2007-learning-border.pdf">こちら</a>からダウンロードできます。</p>
   </div>
 </main>
 

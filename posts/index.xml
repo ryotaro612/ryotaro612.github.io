@@ -2813,42 +2813,41 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
     </item>
     
     <item>
-      <title>メモ Class Imbalance, Redux</title>
+      <title>メモ Class Imbalance, Redux(2012)</title>
       <link>https://nryotaro.dev/posts/class_imbalance_redux/</link>
       <pubDate>Sat, 07 Sep 2019 15:34:06 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/class_imbalance_redux/</guid>
-      <description>&lt;p&gt;表題の論文は、不均衡データの特徴が二値分類の予測性能に及ぼす影響を理論づける論文である。
+      <description>&lt;p&gt;不均衡データの特徴が二値分類の予測性能に及ぼす影響を理論づける論文である。
 理論と実験を通じて、多くのケースにおいて、アンダーサンプリングによる均衡データのバギングで予測性能があがったことを示している。
 バギングは、アンダーサンプリングによる偏りを抑えて予測性能を安定させるために使われる。
 論文で扱うモデルは、SVMなどの学習で経験損失を最小化するモデルに限定されている。発表学会は2011年のICDMである。&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>メモ Learning on the Border: Active Learning in Imbalanced Data Classification</title>
+      <title>概要 Learning on the Border: Active Learning in Imbalanced Data Classification(2007)</title>
       <link>https://nryotaro.dev/posts/learning_on_border/</link>
       <pubDate>Sat, 31 Aug 2019 02:05:53 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/learning_on_border/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-&lt;p&gt;表題にある論文は、不均衡データの二値分類についての予測性能を能動学習で改善する手法を提案している。
-着想は、学習器のマージン付近では正例と負例がよりバランスしていると仮定し、
-マージン付近にあるデータを集めることで、均衡のとれたデータセットを用意することにある。
-具体的には、ラベルづけしたデータでSVMをオンライン学習し、無作為に抽出されたラベルのないデータの中で最も超平面に近いデータにラベルをつける手順をマージンの中にあるデータ数が変わらなくなるまで繰り返す。&lt;/p&gt;</description>
+&lt;p&gt;不均衡データに対する二値分類の予測性能を能動学習で改善する。
+学習器のマージン付近では正例と負例がよりバランスしていると仮定し、
+マージン付近にあるデータを集めることで、均衡のとれたデータセットをあつめる。
+具体的には、ラベルづけしたデータでSVMをオンライン学習し、無作為に抽出されたラベルのないデータの中で最も超平面に近いデータにラベルをつける手順をマージンの中にあるデータ数が変わらなくなるまでくりかえす。&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>メモ Distilling the Knowledge in a Neural Network</title>
+      <title>概要 Distilling the Knowledge in a Neural Network(2015)</title>
       <link>https://nryotaro.dev/posts/distilling_the_knowledge_in_a_neural_network/</link>
       <pubDate>Sat, 24 Aug 2019 23:04:39 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/distilling_the_knowledge_in_a_neural_network/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-&lt;p&gt;表題にあるニューラルネットワークの蒸留についての論文を紹介する。
-蒸留は、既存のモデルを使い、できるだけ予測性能を落とさずに、より小さいモデルを作るための学習手法である。
-既存のモデルとして想定されているのは、複数のモデルからなるモデルや正則化された大きなモデルのように予測性能は高いが計算コストが高いものであり、
-蒸留の目的は本番の運用に耐えられるデプロイ可能なモデル作ることにある。
-本論文は、出力層の活性化関数に温度つきソフトマックスを使った多クラス分類のモデルを蒸留する手法を提案し、実験により手法を評価している。&lt;/p&gt;</description>
+&lt;p&gt;蒸留(Distilling)は、既存のモデルの予測性能をできるだけ落とさずに、より小さいモデルを作るための手法である。
+複数のモデルからなるモデルや正則化された大きなモデルのように予測性能は高いが、同時に計算コストも高くつく。
+蒸留の目的は本番運用に耐えられるデプロイ可能なモデル作ることにである。
+出力層の活性化関数に温度つきソフトマックスを使った多クラス分類のモデルを蒸留する手法を提案、評価した。&lt;/p&gt;</description>
     </item>
     
     <item>

@@ -54,39 +54,68 @@
     
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/class_imbalance_redux/">メモ Class Imbalance, Redux</a></h3>
-        <div class="summary"><p>表題の論文は、不均衡データの特徴が二値分類の予測性能に及ぼす影響を理論づける論文である。
+        <h3><a href="https://nryotaro.dev/posts/class_imbalance_redux/">メモ Class Imbalance, Redux(2012)</a></h3>
+        <div class="summary"><p>不均衡データの特徴が二値分類の予測性能に及ぼす影響を理論づける論文である。
 理論と実験を通じて、多くのケースにおいて、アンダーサンプリングによる均衡データのバギングで予測性能があがったことを示している。
 バギングは、アンダーサンプリングによる偏りを抑えて予測性能を安定させるために使われる。
 論文で扱うモデルは、SVMなどの学習で経験損失を最小化するモデルに限定されている。発表学会は2011年のICDMである。</p></div>
         <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E4%B8%8D%E5%9D%87%E8%A1%A1%E3%83%87%E3%83%BC%E3%82%BF/">
+		#不均衡データ
+	      </a>
+	    </li>
+	    
+	  </ul>
 	  
           <span class="date">September 7, 2019</span>
         </div>
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/learning_on_border/">メモ Learning on the Border: Active Learning in Imbalanced Data Classification</a></h3>
+        <h3><a href="https://nryotaro.dev/posts/learning_on_border/">概要 Learning on the Border: Active Learning in Imbalanced Data Classification(2007)</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
-<p>表題にある論文は、不均衡データの二値分類についての予測性能を能動学習で改善する手法を提案している。
-着想は、学習器のマージン付近では正例と負例がよりバランスしていると仮定し、
-マージン付近にあるデータを集めることで、均衡のとれたデータセットを用意することにある。
-具体的には、ラベルづけしたデータでSVMをオンライン学習し、無作為に抽出されたラベルのないデータの中で最も超平面に近いデータにラベルをつける手順をマージンの中にあるデータ数が変わらなくなるまで繰り返す。</p></div>
+<p>不均衡データに対する二値分類の予測性能を能動学習で改善する。
+学習器のマージン付近では正例と負例がよりバランスしていると仮定し、
+マージン付近にあるデータを集めることで、均衡のとれたデータセットをあつめる。
+具体的には、ラベルづけしたデータでSVMをオンライン学習し、無作為に抽出されたラベルのないデータの中で最も超平面に近いデータにラベルをつける手順をマージンの中にあるデータ数が変わらなくなるまでくりかえす。</p></div>
         <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/active-learning/">
+		#Active Learning
+	      </a>
+	    </li>
+	    
+	  </ul>
 	  
           <span class="date">August 31, 2019</span>
         </div>
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/distilling_the_knowledge_in_a_neural_network/">メモ Distilling the Knowledge in a Neural Network</a></h3>
+        <h3><a href="https://nryotaro.dev/posts/distilling_the_knowledge_in_a_neural_network/">概要 Distilling the Knowledge in a Neural Network(2015)</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
-<p>表題にあるニューラルネットワークの蒸留についての論文を紹介する。
-蒸留は、既存のモデルを使い、できるだけ予測性能を落とさずに、より小さいモデルを作るための学習手法である。
-既存のモデルとして想定されているのは、複数のモデルからなるモデルや正則化された大きなモデルのように予測性能は高いが計算コストが高いものであり、
-蒸留の目的は本番の運用に耐えられるデプロイ可能なモデル作ることにある。
-本論文は、出力層の活性化関数に温度つきソフトマックスを使った多クラス分類のモデルを蒸留する手法を提案し、実験により手法を評価している。</p></div>
+<p>蒸留(Distilling)は、既存のモデルの予測性能をできるだけ落とさずに、より小さいモデルを作るための手法である。
+複数のモデルからなるモデルや正則化された大きなモデルのように予測性能は高いが、同時に計算コストも高くつく。
+蒸留の目的は本番運用に耐えられるデプロイ可能なモデル作ることにである。
+出力層の活性化関数に温度つきソフトマックスを使った多クラス分類のモデルを蒸留する手法を提案、評価した。</p></div>
         <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E7%9F%A5%E8%AD%98%E8%92%B8%E7%95%99/">
+		#知識蒸留
+	      </a>
+	    </li>
+	    
+	  </ul>
 	  
           <span class="date">August 24, 2019</span>
         </div>
