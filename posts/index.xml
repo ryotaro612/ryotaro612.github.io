@@ -2068,17 +2068,17 @@ Ladder Networkは、2015年に、著者の一人Valpolaによって教師なし�
     </item>
     
     <item>
-      <title>論文メモ Improving Language Understanding by Generative Pre-Training</title>
+      <title>概要 Improving Language Understanding by Generative Pre-Training</title>
       <link>https://nryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/</link>
       <pubDate>Fri, 07 Aug 2020 16:45:55 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
 &lt;p&gt;GPTの略称で知られる教師なしの事前学習である。
-評価実験では、12の自然言語処理タスクのうち9つで、当時のSoTAを上まわる性能を発揮した。
-ネットワークはTransformerであり、事前学習では言語モデルを学習する。
-手法の独自性は、ファインチューニングでの入力データの作り方にある。
-入力形式を工夫し、事前学習時のネットワーク構成を維持することで、効率的な転移学習を実現する。&lt;/p&gt;</description>
+評価実験では、全結合層を1層追加したファインチューニングで、12の自然言語処理タスクのうち9つについて、当時のSoTAを上まわる性能を発揮した。
+ネットワークには&lt;a href=&#34;https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;Transformer&lt;/a&gt;のデコーダー部分が使われている。
+ファインチューニング時には、事前学習の効果を生かすために、特徴の入力をモデルのアーキテクチャに合わせ、アーキテクチャの変更を最小限におさえる。
+推論タスクであれば前提や仮定、テキストの類似性判定であれば比較する2つのテキストといった異種の特徴をデリミタで連結した系列を作り、モデルに入力する。&lt;/p&gt;</description>
     </item>
     
     <item>

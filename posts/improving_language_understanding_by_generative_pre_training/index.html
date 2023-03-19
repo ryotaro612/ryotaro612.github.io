@@ -28,7 +28,7 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
     
-    <title>論文メモ Improving Language Understanding by Generative Pre-Training</title>
+    <title>概要 Improving Language Understanding by Generative Pre-Training</title>
   </head>
 
   <body>
@@ -51,18 +51,24 @@
     </header>
     
 <main>
-  <h1>論文メモ Improving Language Understanding by Generative Pre-Training</h1>
+  <h1>概要 Improving Language Understanding by Generative Pre-Training</h1>
   <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/">
+	#言語モデル
+      </a>
+    </li>
     
   </ul>  
   <span class="date">August 7, 2020</span>    
   <div>
     <h3 id="概要">概要</h3>
 <p>GPTの略称で知られる教師なしの事前学習である。
-評価実験では、12の自然言語処理タスクのうち9つで、当時のSoTAを上まわる性能を発揮した。
-ネットワークはTransformerであり、事前学習では言語モデルを学習する。
-手法の独自性は、ファインチューニングでの入力データの作り方にある。
-入力形式を工夫し、事前学習時のネットワーク構成を維持することで、効率的な転移学習を実現する。</p>
+評価実験では、全結合層を1層追加したファインチューニングで、12の自然言語処理タスクのうち9つについて、当時のSoTAを上まわる性能を発揮した。
+ネットワークには<a href="https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">Transformer</a>のデコーダー部分が使われている。
+ファインチューニング時には、事前学習の効果を生かすために、特徴の入力をモデルのアーキテクチャに合わせ、アーキテクチャの変更を最小限におさえる。
+推論タスクであれば前提や仮定、テキストの類似性判定であれば比較する2つのテキストといった異種の特徴をデリミタで連結した系列を作り、モデルに入力する。</p>
 <h3 id="事前学習">事前学習</h3>
 <p>事前学習では、次の目的関数でトークン列\(\mathcal{U}=\{u_1,\dots , u_n\}\)で言語モデルをつくる。
 $$
@@ -90,7 +96,7 @@ L_2(\mathcal{C})&amp;=\sum_{(x,y)}\log P(y\mid x^1\dots , x^m)\\\
 L_3(\mathcal{C})&amp;=L(\mathcal{C})+\lambda * L_1(\mathcal{C})
 \end{align}
 $$</p>
-<p>事前学習時のアーキクチャを変えないようにするために、タスクに合わせて入力形式を工夫する。
+<p>事前学習時のアーキクチャをできるだけ変えずに事前学習の効果を発揮するために、タスクに合わせて入力形式を工夫する。
 上の図の右部は、分類、含意関係認識、類似度、Q&amp;Aのタスクにおける入力を示す。
 分類以外は全て、事例の要素をデリメタを挟んで隣接させ、モデルにあたえている。</p>
 <hr>
