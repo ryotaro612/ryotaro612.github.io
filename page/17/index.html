@@ -54,6 +54,20 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/skip_thought_vectors/">論文メモ Skip-Thought Vectors</a></h3>
+        <div class="summary"><p>様々なタスクで性能を発揮できる文の分散表現を生成するモデルSkip-Thougtを提案した。
+表題のSkip-Tought Vectorsは、Skip-Toughtで生成されるベクトルである。
+Skip-Thoughtは、文書を入力とする教師なし学習であり、与えられた文から隣接する左右の文を推定できるようにパラメタを学習する。
+学習後は、語彙を増やすために、Word2Vecの単語のベクトルからSkip-Toughtのベクトルを推定するための正則化なしの回帰モデルを学習させる。
+学習データにない単語のベクトルを回帰モデルの推定結果で代用し、未知の単語を含む文の分散表現もつくれるようにする。
+Skip-Toughtを8タスクに適用し、汎用性を確かめた。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">September 11, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/beyond_accuracy/">論文メモ Beyond Accuracy: Behavioral Testing of NLP Models with CHECKLIST</a></h3>
         <div class="summary"><p>ホールドアウト法にかわる自然言語処理モデルの汎化性能を評価するための手法CHECKLISTを提案した。
 テストデータと訓練データが同じ方法で集められたときなど、ホールドアウト法はモデルを過大評価することがある。
@@ -150,16 +164,6 @@ Ladder Networkは、2015年に、著者の一人Valpolaによって教師なし�
         <div class="article-footer">
 	  
           <span class="date">August 14, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/an_empirical_study_on_program_failures_on_deep_learning_jobs/">論文メモ An Empirical Study On Program Failures On Deep Learning Jobs</a></h3>
-        <div class="summary"><p>Microsoftの社内では深層学習のプラットフォームPhillyが運用されており、そこで起きた4960件のジョブの失敗原因を調査した。
-調査では、失敗の原因を20のカテゴリに分類し、カテゴリごとに失敗の件数を集計した。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">August 7, 2020</span>
         </div>
     </article>
     

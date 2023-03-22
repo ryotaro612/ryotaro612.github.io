@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.78272bdd99a3c4f03ee4c826bbe3a970cda497ed85b5da23b0af6dbaf9f30522.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
+    
+    <title>概要 Deep Reinforcement Learing from Human Preferences (2017)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>概要 Deep Reinforcement Learing from Human Preferences (2017)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92/">
+	#強化学習
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">March 20, 2023</span>    
+  <div>
+    <p>エージェントの行動を撮影した2つのビデオクリップから良い方を人間に選ばせ、報酬関数の学習データを生成する。
+テーブルを掃除するロボットの制御などは、報酬関数の設計が難しい。
+そこで、2つのビデオクリップとその選好を1つのサンプルとする訓練データで、モデルに報酬関数を学習させる。</p>
+<p>環境の状態と状態下での行動のペアの系列を生成し、1秒から2秒間のビデオクリップとして記録する。
+そして、人間に、2つのビデオクリップをうち良い方を選んでもらう。
+2つのビデオクップのうち一方が他方よりも良い確率を出力できるようにモデルを訓練する。</p>
+<p>行動を決定する方策の学習には、従来のアルゴリズムを使う。
+ただし、報酬関数は定常ではなく時刻とともに変化するので、報酬関数の変化に頑強なアルゴリズムがよい。
+実験では、<a href="https://arxiv.org/abs/1602.01783">advantage actor-critic</a>と<a href="https://arxiv.org/abs/1502.05477">trust region policy optimization</a>が採用された。
+報酬は平均0、分散1に標準化する。</p>
+<p>ビデオクリップは、時刻\(t\)における観察可能な環境の状態\(o_t\in\mathcal{O}\)とエージェントが\(o_t\)が実行した行動\(a_t\in\mathcal{A}\)
+の系列\(\sigma=((o_0, a_0), (o_1, a_1),\dots ,(o_{k-1}, a_{k-1}))\in(\mathcal{O}\times \mathcal{A})^k\)とかく。
+系列\(\sigma^1\)が\(\sigma^2\)よりも好ましい関係を\(\sigma^1\succ\sigma^2\)で表し、報酬関数\(r: \mathcal{O}\times \mathcal{A}\rightarrow \mathbb{R}\)によって
+$$
+r(o^1_0,a^1_0)+\dots + r(o^1_{k-1},a^1_{}k-1) &gt; r(a^2_0,a^2_0) + \dots + r(o^2_{k-1}, a^2_{k-1})
+$$
+であるとき
+$$
+r(o^1_0,a^1_0)+\dots + r(o^1_{k-1},a^1_{k-1}) \succ r(a^2_0,a^2_0) + \dots + r(o^2_{k-1}, a^2_{k-1})
+$$
+である。
+\(\sigma^1\succ \sigma^2\)であれば\(\mu=1\), \(\sigma^2 \succ \sigma^1\)であれば\(\mu=2\)として、訓練データのサンプルを\((\sigma^1, \sigma^2, \mu)\), その集合を\(\mathcal{D}\)とする。</p>
+<p>\(\mathcal{D}\)で、関係\(\sigma^1\succ\sigma^2\)が成立する確率\(\hat{P}[\sigma^1\succ \sigma^2]\)を推定できるように報酬関数のモデル\(\hat{r}\)を学習する。
+<a href="https://www.jstor.org/stable/2334029">Bradley-Terry</a>の確率モデルにしたがい
+$$
+\hat{P}[\sigma^1\succ \sigma^2]=\frac{\exp\sum\hat{r}(o^{1}_{t},a^1_t)}{\exp\sum\hat{r}(o^1_t,a^1_t)+\exp \sum \hat{r}(o^2_t,a^2_t)}
+$$
+で確率を推定し、交差エントロピーによる損失は
+$$
+\textrm{loss}(\hat{r})=-\sum_{(\sigma^1,\sigma^2,\mu)=\mathcal{D}}\mu(1)\log\hat{P}[\sigma^1\succ\sigma^2]+\mu(2)\log\hat{P}[\sigma^2\succ \sigma^1]
+$$
+になる。</p>
+<p>実験では、以上のアルゴリズムに3つの改良が加えられている。
+まず、アンサンブル学習により、複数のモデルの出力の平均値を報酬にしている。
+次に、\(l_2\)正則化により検証時損失が訓練時の損失よりも\(1.1\)から\(1.5\)倍の値になるように制御されており、実験によってはドロップアウト層が使われている。
+最後に、ソフトマックス関数を直接適用せず、人間が誤回答する可能性があることを仮定し、\(10\%\)の確率で一様に人間がランダムに好みの系列を選択しうることを前提にしている。</p>
+<p>論文の<a href="https://arxiv.org/abs/1706.03741">リンク</a></p>
+<h2 id="雑記">雑記</h2>
+<p>2つの特徴のうちどちらが良いかを選ぶ訓練方法はランキング学習でも使われている。<a href="https://icml.cc/2015/wp-content/uploads/2015/06/icml_ranking.pdf">RankNet</a>はその一例。
+実験に使用したモデルを付録で説明したとあるが、付録が見あたらない。</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/arc049b/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

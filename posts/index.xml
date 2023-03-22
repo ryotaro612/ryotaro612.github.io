@@ -6,7 +6,21 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 15 Mar 2023 11:04:07 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Mar 2023 11:54:48 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>概要 Deep Reinforcement Learing from Human Preferences (2017)</title>
+      <link>https://nryotaro.dev/posts/deep_reinforcement_learning_from_human_preferences/</link>
+      <pubDate>Mon, 20 Mar 2023 11:54:48 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/deep_reinforcement_learning_from_human_preferences/</guid>
+      <description>&lt;p&gt;エージェントの行動を撮影した2つのビデオクリップから良い方を人間に選ばせ、報酬関数の学習データを生成する。
+テーブルを掃除するロボットの制御などは、報酬関数の設計が難しい。
+そこで、2つのビデオクリップとその選好を1つのサンプルとする訓練データで、モデルに報酬関数を学習させる。&lt;/p&gt;
+&lt;p&gt;環境の状態と状態下での行動のペアの系列を生成し、1秒から2秒間のビデオクリップとして記録する。
+そして、人間に、2つのビデオクリップをうち良い方を選んでもらう。
+2つのビデオクップのうち一方が他方よりも良い確率を出力できるようにモデルを訓練する。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>AtCoder Regular Contest 049 B - 高橋ノルム君</title>
       <link>https://nryotaro.dev/posts/arc049b/</link>
