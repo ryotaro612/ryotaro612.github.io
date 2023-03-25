@@ -209,11 +209,11 @@ RankNetの学習は、モデルの出力と訓練データの確率分布の交�
       
       <guid>https://nryotaro.dev/posts/programming_with_abstract_data_types/</guid>
       <description>&lt;p&gt;高水準言語は、実装の詳細を意識せずに使える操作、データ構造、while文などの制御構造を提供する。
-この3つは抽象とよばれる。
-実装に必要なすべての抽象が言語から提供されることはないので、開発者は足りない抽象を実装しなければならない。
-抽象データ型は、言語から提供される抽象を組合せて作るデータ構造であり、開発対象の問題領域にあてはまる抽象を実現する手段でもある。
-抽象データ型に対する操作の実装は外部に公開されず、抽象データ型の特徴は抽象データ型に可能な操作によって決められる。
-構造化プログラミングと抽象データ型を提供するプログラミング言語を開発し、抽象データ型を使うプログラムのソースコードを例示することで、ほとんどの処理を抽象データ型で実装できることを示唆した。&lt;/p&gt;</description>
+この3つを抽象とよぶ。
+プログラミング言語から提供される抽象だけではプログラムを実装できないので、開発者は、足りない抽象を実装しなければならない。
+抽象データ型は、言語から提供される抽象を組合せて作るデータ構造である。
+抽象データ型に対する操作の実装は外部に公開されず、抽象データ型の特徴は抽象データ型に可能な操作によって決まる。
+構造化プログラミングと抽象データ型を提供するプログラミング言語を開発し、抽象データ型を使うプログラムのソースコードを例示することで、ほとんどの処理が抽象データ型だけで実装可能なことを示唆した。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -3111,7 +3111,7 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
     </item>
     
     <item>
-      <title>メモ Snorkel: Rapid Traning Data Creation with Weak Supervision</title>
+      <title>メモ Snorkel: Rapid Traning Data Creation with Weak Supervision (2020)</title>
       <link>https://nryotaro.dev/posts/snorkel_rapid_training_data_creation_with_weak_supervision/</link>
       <pubDate>Sat, 21 Sep 2019 12:01:51 +0900</pubDate>
       
