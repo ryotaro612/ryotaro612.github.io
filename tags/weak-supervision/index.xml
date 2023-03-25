@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Weak supervision on Blanket</title>
+    <link>https://nryotaro.dev/tags/weak-supervision/</link>
+    <description>Recent content in Weak supervision on Blanket</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sat, 21 Sep 2019 12:01:51 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/tags/weak-supervision/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>メモ Snorkel: Rapid Traning Data Creation with Weak Supervision</title>
+      <link>https://nryotaro.dev/posts/snorkel_rapid_training_data_creation_with_weak_supervision/</link>
+      <pubDate>Sat, 21 Sep 2019 12:01:51 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/snorkel_rapid_training_data_creation_with_weak_supervision/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+&lt;p&gt;Snorkelは、不正確なラベルを許容した上で半手動で大量の教師データを生成するWeak supervisionの一種である。
+Snorkelは、データを受け取りラベルの予測値か予測不可能であることを示す値を返す関数を使い、データにラベルを割りあてる。
+このラベル付けする関数は、ラベリング関数と呼ばれ、データとともにSnorkelに与えられる。
+ラベリング関数は人間が実装したルールベースな関数でよい。
+Snorkelは、入力された複数のラベリング関数をデータに適用し、データ件数xラベリング関数の個数をサイズとするラベルの予測値の行列を作る。その後、真のラベルを予測するモデルを行列にあてはめ、サンプルにラベルごとの真のラベルについての確信度を出力する。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

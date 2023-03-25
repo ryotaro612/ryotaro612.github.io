@@ -164,8 +164,22 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
     <article>
         <h3><a href="https://nryotaro.dev/posts/snorkel_rapid_training_data_creation_with_weak_supervision/">メモ Snorkel: Rapid Traning Data Creation with Weak Supervision</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
-<p>表題の論文は、Weak supervisionの一種であるSnorkelを学習データの収集効率と予測性能についての既存手法や教師あり学習と比べた評価をまとめてる。</p></div>
+<p>Snorkelは、不正確なラベルを許容した上で半手動で大量の教師データを生成するWeak supervisionの一種である。
+Snorkelは、データを受け取りラベルの予測値か予測不可能であることを示す値を返す関数を使い、データにラベルを割りあてる。
+このラベル付けする関数は、ラベリング関数と呼ばれ、データとともにSnorkelに与えられる。
+ラベリング関数は人間が実装したルールベースな関数でよい。
+Snorkelは、入力された複数のラベリング関数をデータに適用し、データ件数xラベリング関数の個数をサイズとするラベルの予測値の行列を作る。その後、真のラベルを予測するモデルを行列にあてはめ、サンプルにラベルごとの真のラベルについての確信度を出力する。</p></div>
         <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/weak-supervision/">
+		#Weak supervision
+	      </a>
+	    </li>
+	    
+	  </ul>
 	  
           <span class="date">September 21, 2019</span>
         </div>

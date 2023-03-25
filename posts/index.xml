@@ -2811,7 +2811,11 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
       
       <guid>https://nryotaro.dev/posts/snorkel_rapid_training_data_creation_with_weak_supervision/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-&lt;p&gt;表題の論文は、Weak supervisionの一種であるSnorkelを学習データの収集効率と予測性能についての既存手法や教師あり学習と比べた評価をまとめてる。&lt;/p&gt;</description>
+&lt;p&gt;Snorkelは、不正確なラベルを許容した上で半手動で大量の教師データを生成するWeak supervisionの一種である。
+Snorkelは、データを受け取りラベルの予測値か予測不可能であることを示す値を返す関数を使い、データにラベルを割りあてる。
+このラベル付けする関数は、ラベリング関数と呼ばれ、データとともにSnorkelに与えられる。
+ラベリング関数は人間が実装したルールベースな関数でよい。
+Snorkelは、入力された複数のラベリング関数をデータに適用し、データ件数xラベリング関数の個数をサイズとするラベルの予測値の行列を作る。その後、真のラベルを予測するモデルを行列にあてはめ、サンプルにラベルごとの真のラベルについての確信度を出力する。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2821,7 +2825,7 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
       
       <guid>https://nryotaro.dev/posts/software_engineering_for_machine_learning/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-&lt;p&gt;表題の論文は、マイクロソフトでのAIを応用したアプリケーションの開発についての調査結果をまとている。
+&lt;p&gt;マイクロソフトにおける機械学習を応用したアプリケーションの開発についての調査結果をまとている。
 著者らは、9人中の8名がMicrosoft Researchに所属し、本論文で2019年のICSEのSoftware Engineering in Practiceの分野でBest Paper Awardを受賞した。
 主な貢献は、各チームにおける開発フローを9のステージに分けて解説したこと、機械学習を応用するアプリケーションやプラットフォームの開発におけるベストプラクティスを示したこと、機械学習を応用するアプリケーションの開発に固有の課題にまつわる論考の3つである。&lt;/p&gt;</description>
     </item>
