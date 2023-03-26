@@ -77,6 +77,9 @@
     <loc>https://nryotaro.dev/posts/programming_with_abstract_data_types/</loc>
     <lastmod>2022-12-28T12:52:36-05:00</lastmod>
   </url><url>
+    <loc>https://nryotaro.dev/tags/%E6%8A%BD%E8%B1%A1%E3%83%87%E3%83%BC%E3%82%BF%E5%9E%8B/</loc>
+    <lastmod>2022-12-28T12:52:36-05:00</lastmod>
+  </url><url>
     <loc>https://nryotaro.dev/tags/%E3%82%A6%E3%82%A7%E3%83%96%E6%A4%9C%E7%B4%A2/</loc>
     <lastmod>2022-12-23T22:44:46-05:00</lastmod>
   </url><url>
@@ -836,11 +839,11 @@
     <loc>https://nryotaro.dev/posts/snorkel_drybell_case_study/</loc>
     <lastmod>2019-10-05T00:45:00+09:00</lastmod>
   </url><url>
-    <loc>https://nryotaro.dev/posts/training_complex_models_with_multi_task_weak_supervision/</loc>
+    <loc>https://nryotaro.dev/tags/weak-supervision/</loc>
     <lastmod>2019-09-28T14:53:47+09:00</lastmod>
   </url><url>
-    <loc>https://nryotaro.dev/tags/weak-supervision/</loc>
-    <lastmod>2019-09-21T12:01:51+09:00</lastmod>
+    <loc>https://nryotaro.dev/posts/training_complex_models_with_multi_task_weak_supervision/</loc>
+    <lastmod>2019-09-28T14:53:47+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/snorkel_rapid_training_data_creation_with_weak_supervision/</loc>
     <lastmod>2019-09-21T12:01:51+09:00</lastmod>

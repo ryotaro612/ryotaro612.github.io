@@ -28,7 +28,7 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
     
-    <title>メモ Training Complex Models with Multi-Task Weak Supervision</title>
+    <title>メモ Training Complex Models with Multi-Task Weak Supervision(2018)</title>
   </head>
 
   <body>
@@ -51,13 +51,19 @@
     </header>
     
 <main>
-  <h1>メモ Training Complex Models with Multi-Task Weak Supervision</h1>
+  <h1>メモ Training Complex Models with Multi-Task Weak Supervision(2018)</h1>
   <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/weak-supervision/">
+	#Weak supervision
+      </a>
+    </li>
     
   </ul>  
   <span class="date">September 28, 2019</span>    
   <div>
-    <p>論文の表題は、ソース間の粒度や精度が揃っていることを前提とせず、<a href="https://arxiv.org/pdf/1212.0478.pdf">LohとWainwrightらの手法</a>でソースの精度を推定し、ソースのラベルよりも精度が高いラベルをデータに与えるWeak supervsionの手法である。</p>
+    <p>ソース間の粒度や精度が揃っていることを前提とせず、<a href="https://arxiv.org/pdf/1212.0478.pdf">LohとWainwrightらの手法</a>でソースの精度を推定し、ソースのラベルよりも精度が高いラベルをデータに与えるWeak supervsionの手法である。</p>
 <p>論文で紹介される手法は、<a href="https://github.com/HazyResearch/metal"><em>MeTaL</em></a>という名のフレームワークとして実装され、公開されている。
 ただし、<a href="https://github.com/HazyResearch/metal#project-status">Projectの状況</a>にあるように、MeTaLプロジェクトは、<a href="https://www.snorkel.org/">Snorkel</a>に吸収されることになり、今はメンテナンスモードにある。</p>
 <p>ソースとは、データに対して必ずしも正しいとは限らないラベルを付与するための知識源を示す。

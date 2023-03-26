@@ -3102,12 +3102,12 @@ Snorkelは、引数にサンプルを返り値にラベルを返す複数の関�
     </item>
     
     <item>
-      <title>メモ Training Complex Models with Multi-Task Weak Supervision</title>
+      <title>メモ Training Complex Models with Multi-Task Weak Supervision(2018)</title>
       <link>https://nryotaro.dev/posts/training_complex_models_with_multi_task_weak_supervision/</link>
       <pubDate>Sat, 28 Sep 2019 14:53:47 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/training_complex_models_with_multi_task_weak_supervision/</guid>
-      <description>&lt;p&gt;論文の表題は、ソース間の粒度や精度が揃っていることを前提とせず、&lt;a href=&#34;https://arxiv.org/pdf/1212.0478.pdf&#34;&gt;LohとWainwrightらの手法&lt;/a&gt;でソースの精度を推定し、ソースのラベルよりも精度が高いラベルをデータに与えるWeak supervsionの手法である。&lt;/p&gt;</description>
+      <description>&lt;p&gt;ソース間の粒度や精度が揃っていることを前提とせず、&lt;a href=&#34;https://arxiv.org/pdf/1212.0478.pdf&#34;&gt;LohとWainwrightらの手法&lt;/a&gt;でソースの精度を推定し、ソースのラベルよりも精度が高いラベルをデータに与えるWeak supervsionの手法である。&lt;/p&gt;</description>
     </item>
     
     <item>
