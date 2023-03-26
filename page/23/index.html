@@ -143,10 +143,22 @@
     <article>
         <h3><a href="https://nryotaro.dev/posts/snorkel_drybell_case_study/">メモ Snorkel DryBell: A Case Study in Deploying Weak Supervision at Industrial Scale</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
-<p>表題の論文では、<a href="https://www.snorkel.org">Snorkel</a>というWeak Supervisionの手法をGoogleで適用した結果の考察と評価がなされている。
-Weak Supervisionは、人手よりも効率良くノイズ交じりの教師データを生成する手法である。
-Snorkelは、引数にサンプルを返り値にラベルを返す複数の関数をラベルなしデータに適用し、結果から関数の精度を予測し、個々の関数よりも高い精度でデータにラベルを与える。この関数をラベリング関数という。Snorkel DryBellは、Snorkelのアルゴリズムをスケールさせるために、MapReduceに適用できるように修正されたものをさす。</p></div>
+<p>Weak Supervisionは、人手によるルールベースよりも効率良くノイズ交じりの教師データを生成する手法である。
+表題の論文は、Weak Supervisionの手法である<a href="https://www.snorkel.org">Snorkel</a>をGoogleで適用したケーススタディである。
+Snorkelは、サンプルから推定したラベルを返す関数（ラベリング関数）を複数用意し、それをラベルなしデータに適用する。
+その結果から関数の精度を予測し、個々の関数よりも高い精度でデータにラベルを与える。この関数をラベリング関数という。
+Snorkel DryBellは、Snorkelのアルゴリズムをスケールさせるために、MapReduceに適用できるように修正された主要である。</p></div>
         <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/weak-supervision/">
+		#Weak supervision
+	      </a>
+	    </li>
+	    
+	  </ul>
 	  
           <span class="date">October 5, 2019</span>
         </div>

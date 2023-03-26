@@ -3096,9 +3096,11 @@ DESMは、クエリの単語に関係する単語をもとに判断する。
       
       <guid>https://nryotaro.dev/posts/snorkel_drybell_case_study/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-&lt;p&gt;表題の論文では、&lt;a href=&#34;https://www.snorkel.org&#34;&gt;Snorkel&lt;/a&gt;というWeak Supervisionの手法をGoogleで適用した結果の考察と評価がなされている。
-Weak Supervisionは、人手よりも効率良くノイズ交じりの教師データを生成する手法である。
-Snorkelは、引数にサンプルを返り値にラベルを返す複数の関数をラベルなしデータに適用し、結果から関数の精度を予測し、個々の関数よりも高い精度でデータにラベルを与える。この関数をラベリング関数という。Snorkel DryBellは、Snorkelのアルゴリズムをスケールさせるために、MapReduceに適用できるように修正されたものをさす。&lt;/p&gt;</description>
+&lt;p&gt;Weak Supervisionは、人手によるルールベースよりも効率良くノイズ交じりの教師データを生成する手法である。
+表題の論文は、Weak Supervisionの手法である&lt;a href=&#34;https://www.snorkel.org&#34;&gt;Snorkel&lt;/a&gt;をGoogleで適用したケーススタディである。
+Snorkelは、サンプルから推定したラベルを返す関数（ラベリング関数）を複数用意し、それをラベルなしデータに適用する。
+その結果から関数の精度を予測し、個々の関数よりも高い精度でデータにラベルを与える。この関数をラベリング関数という。
+Snorkel DryBellは、Snorkelのアルゴリズムをスケールさせるために、MapReduceに適用できるように修正された主要である。&lt;/p&gt;</description>
     </item>
     
     <item>

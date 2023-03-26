@@ -6,7 +6,21 @@
     <description>Recent content in Weak supervision on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 28 Sep 2019 14:53:47 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/tags/weak-supervision/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Oct 2019 00:45:00 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/tags/weak-supervision/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>メモ Snorkel DryBell: A Case Study in Deploying Weak Supervision at Industrial Scale</title>
+      <link>https://nryotaro.dev/posts/snorkel_drybell_case_study/</link>
+      <pubDate>Sat, 05 Oct 2019 00:45:00 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/snorkel_drybell_case_study/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+&lt;p&gt;Weak Supervisionは、人手によるルールベースよりも効率良くノイズ交じりの教師データを生成する手法である。
+表題の論文は、Weak Supervisionの手法である&lt;a href=&#34;https://www.snorkel.org&#34;&gt;Snorkel&lt;/a&gt;をGoogleで適用したケーススタディである。
+Snorkelは、サンプルから推定したラベルを返す関数（ラベリング関数）を複数用意し、それをラベルなしデータに適用する。
+その結果から関数の精度を予測し、個々の関数よりも高い精度でデータにラベルを与える。この関数をラベリング関数という。
+Snorkel DryBellは、Snorkelのアルゴリズムをスケールさせるために、MapReduceに適用できるように修正された主要である。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>メモ Training Complex Models with Multi-Task Weak Supervision(2018)</title>
       <link>https://nryotaro.dev/posts/training_complex_models_with_multi_task_weak_supervision/</link>
