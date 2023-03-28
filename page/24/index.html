@@ -24,9 +24,13 @@
 <link rel="stylesheet" href="https://nryotaro.dev/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
     
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
     <title>Blanket</title>
   </head>
 
@@ -52,6 +56,30 @@
 <main>
     <h1>Posts</h1>
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/snorkel_rapid_training_data_creation_with_weak_supervision/">メモ Snorkel: Rapid Traning Data Creation with Weak Supervision (2020)</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>Snorkelは、不正確なラベルを許容した上で半手動で大量の教師データを生成するWeak supervisionの一種である。
+Snorkelは、データを受け取りラベルの予測値か予測不可能であることを示す値を返す関数を使い、データにラベルを割りあてる。
+このラベル付けする関数は、ラベリング関数と呼ばれ、データとともにSnorkelに与えられる。
+ラベリング関数は人間が実装したルールベースな関数でよい。
+Snorkelは、入力された複数のラベリング関数をデータに適用し、データ件数xラベリング関数の個数をサイズとするラベルの予測値の行列を作る。その後、真のラベルを予測するモデルを行列にあてはめ、サンプルにラベルごとの真のラベルについての確信度を出力する。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/weak-supervision/">
+		#Weak supervision
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">September 21, 2019</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/software_engineering_for_machine_learning/">メモ Software Engineering for Machine Learning: A Case Study</a></h3>
@@ -249,27 +277,6 @@ CatBoostは二進木の決定木を弱識別器に用いる。</p></div>
             <li class="tag">
 	      <a href="https://nryotaro.dev/tags/%E3%82%AC%E3%82%A6%E3%82%B9%E9%81%8E%E7%A8%8B%E5%9B%9E%E5%B8%B0/">
 		#ガウス過程回帰
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">August 3, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/google_vizier/">概要 Google Vizier: A Service for Black-Box Optimization(2017)</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>VizierはGoogleで開発されたブラックボックス最適化のためのサービスである。
-論文は、Vizierのシステムアーキテクチャの構成とアルゴリズムの説明とその評価からなる。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E3%83%8F%E3%82%A4%E3%83%91%E3%83%BC%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E6%8E%A2%E7%B4%A2/">
-		#ハイパーパラメータ探索
 	      </a>
 	    </li>
 	    

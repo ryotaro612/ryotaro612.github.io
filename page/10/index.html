@@ -24,9 +24,13 @@
 <link rel="stylesheet" href="https://nryotaro.dev/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
     
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
     <title>Blanket</title>
   </head>
 
@@ -52,6 +56,18 @@
 <main>
     <h1>Posts</h1>
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/dont_do_that/">Don&#39;t Do That! Hunting Down Visual Design Smells in Complex UIs against Design Guidelines</a></h3>
+        <div class="summary"><p>2020年5月時点のマテリアルデザインの公式ドキュメントから93種類の不吉な匂いを洗い出し、71種類の匂いを検出するツールUIS-Hunterを開発した。
+文中に&quot;don&rsquo;t&quot;や&quot;caution&quot;があることとUIの画像があることを条件に不吉な匂いを選び、9,286個のアンドロイドアプリにある7,497のUIを調べたところ、2,587個のアプリから1つ以上の不吉な匂いのあるUIが見つかった。
+UIS-Hunterは、FigmaやAndroid Studio Layout EditorなどのモックアップやAndroid UI AutomatorやSeleniumのスクリーンショットから不吉な匂いを解析し、UIのソースコードを必要としない。
+9,286個のアプリの60,756のUIで検出性能を評価したところ、precisionが0.81, recallが0.90だった。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">August 14, 2021</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/an_empirical_analysis_of_ui-based_flaky_tests/">An Empirical Analysis of UI-based Flaky Tests</a></h3>
@@ -155,18 +171,6 @@ Browsemapは、LinkedInの画面上にある推薦するコンテンツを並べ
         <div class="article-footer">
 	  
           <span class="date">July 22, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/linearizability/">Linearizability: A Correctness Condition for Concurrent Objects</a></h3>
-        <div class="summary"><p>オブジェクトを読み書きする並行プロセスの実行系列があるとき、読み書き操作がアトミックであるように観測でき、かつ、プロセスの実行を仮に直列化したときと同じ実行結果をえられる条件を示し、これを線形化可能性とよんだ。
-線形化可能性は、直列化可能性と同様に安全性の条件だが、直列化可能性にはないローカル性がある。
-いいかえると、各オブジェクトが線形化可能かつそのとき限り、システム全体が線形化可能になる。
-また、ローカル性だけでなく、ノンブロッキング性もあり、操作がオブジェクトの任意の状態において定義されていれば、受信したリクエストの操作を保留しているオブジェクトは別オブジェクトの保留した操作の完了を待たずに自分の操作を進行できる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">July 17, 2021</span>
         </div>
     </article>
     

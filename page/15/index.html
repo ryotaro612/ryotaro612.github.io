@@ -24,9 +24,13 @@
 <link rel="stylesheet" href="https://nryotaro.dev/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
     
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
     <title>Blanket</title>
   </head>
 
@@ -52,6 +56,17 @@
 <main>
     <h1>Posts</h1>
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/spanner/">論文メモ Spanner: Google&#39;s Globally Distributed Database</a></h3>
+        <div class="summary"><p>Spannerは、世界中のデータセンタにデータを複製する高可用な分散データベースで、<a href="http://bitsavers.trailing-edge.com/pdf/xerox/parc/techReports/CSL-81-8_Information_Storage_in_a_Decentralized_Computer_System.pdf">外部整合性</a>のある分散トランザクションを保証する。
+ユーザからみると半リレーショナルなデータモデルのデータベースであり、各テーブルに一つ以上の順序つき主キーが必要なところがリレーショナルデータモデルと違う。
+一方、内部は文字列とタイムスタンプの組をキーにしたキーバリューストアであり、Single Paxos状態機械でデータの一貫性を守りながら複数のデータセンタにデータを複製する。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">November 27, 2020</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/a_relational_model_of_data_for_large_shared_data_banks/">論文メモ A Relational Model of Data for Large Shared Data Banks</a></h3>
@@ -153,16 +168,6 @@ Javaのバイトコードから以上の3パターンを検出するツールを
         <h3><a href="https://nryotaro.dev/posts/from_diversity_by_numbers_to_diversity_as_process/">論文メモ From Diversity by Numbers to Diversity as Process</a></h3>
         <div class="summary">開発におけるブレーンストーミングが、マイノリティに属する開発者の満足度の向上に貢献することを実験的に示した。 ここでの開発は、ハッカソンのような短時間かつ集中が求められるものが想定されている。 満足度は、開発プロセスと成果物に対するもので分けて扱われ、どちらの観点でもブレーンストーミングは満足度に対してよい効果をもたらした。
   論文をこちらからダウンロードできます。  </div>
-        <div class="article-footer">
-	  
-          <span class="date">October 16, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/end_to_end_sequence_labeling_via_bi_directional_lstm_cnns_crf/">論文メモ End-to-end Sequence Labeling via Bi-directional LSTM-CNNs-CRF</a></h3>
-        <div class="summary"><p>タスク固有の特徴を使わないEnd to Endの系列ラベリングのためのネットワークアーキテクチャを発表した。
-実験では、Penn Treebank WSJの品詞タグ付けで97.55%のaccuracy, CoNLL 2003の固有表現抽出で91.21%のF1値を発揮し、発表当時の先行研究を上まわる性能を示した。</p></div>
         <div class="article-footer">
 	  
           <span class="date">October 16, 2020</span>

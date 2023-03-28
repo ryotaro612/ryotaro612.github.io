@@ -24,9 +24,13 @@
 <link rel="stylesheet" href="https://nryotaro.dev/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
     
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
     <title>Blanket</title>
   </head>
 
@@ -52,6 +56,17 @@
 <main>
     <h1>Posts</h1>
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/sagas/">抄訳 Sagas(1987)</a></h3>
+        <div class="summary"><p>データベースのトランザクションが長くなるほど、ほかのトランザクションを待たせてしまう。
+トランザクションの時間は短いほどよい。
+トランザクションを短い複数のトランザクションに分割でき、そのトランザクションの間にほかのトランザクションを実行できるなら、そのトランザクションをsagaと呼ぶ。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">September 4, 2022</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/smote_synthetic_minority_over_sampling_technique/">抄訳 SMOTE: Synthetic Minority Over-sampling Technique(2002)</a></h3>
@@ -168,18 +183,6 @@ $$</p></div>
         <div class="article-footer">
 	  
           <span class="date">July 9, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/implementing_fault-tolerant_services_using_the_state_machine_approach_a_tutorial/">Implementing Fault-Tolerant Services Using the State Machine Approach: A Tutorial</a></h3>
-        <div class="summary"><p>サーバのレプリケーションによってフォールトトレランスを高めることができるが、レプリケーション間の合意形成のプロトコルが必要になる。
-そこで、ステートマシンをモデルにプロトコルを定義する手法を、Fail Stopとビザンチン将軍問題で例示する。
-ステートマシンは、状態変数を決定的に変更するコマンドからなり、入力系列のみから出力が決まる。
-モデルは、複数のステートマシンを同じ初期状態から開始し、同じ入力を与え、出力の合意をはかる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">June 26, 2022</span>
         </div>
     </article>
     

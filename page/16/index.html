@@ -24,9 +24,13 @@
 <link rel="stylesheet" href="https://nryotaro.dev/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
     
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
     <title>Blanket</title>
   </head>
 
@@ -52,6 +56,16 @@
 <main>
     <h1>Posts</h1>
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/end_to_end_sequence_labeling_via_bi_directional_lstm_cnns_crf/">論文メモ End-to-end Sequence Labeling via Bi-directional LSTM-CNNs-CRF</a></h3>
+        <div class="summary"><p>タスク固有の特徴を使わないEnd to Endの系列ラベリングのためのネットワークアーキテクチャを発表した。
+実験では、Penn Treebank WSJの品詞タグ付けで97.55%のaccuracy, CoNLL 2003の固有表現抽出で91.21%のF1値を発揮し、発表当時の先行研究を上まわる性能を示した。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">October 16, 2020</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/becoming_agile/">論文メモ Becoming Agile: A Grounded Theory of Agile Transitions in Practice</a></h3>
@@ -148,17 +162,6 @@ Model-Agnosticとあるように、MAMLの汎用性は高く、勾配法をも�
         <div class="article-footer">
 	  
           <span class="date">September 18, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/truth_in_advertising/">論文メモ Truth in Advertising: The Hidden Cost of Mobile Ads for Software Developers</a></h3>
-        <div class="summary"><p>モバイルアプリを無料で提供し、アプリ内の広告で収益をえるビジネスが普及している。
-このビジネスモデルでは、一見、ユーザには、画面に広告を表示されること以外のコストがないように思える。
-表題の論文は、それ以外のコストを確かめるために、CPU, 電力, ネットワーク, 広告関連のためのリリース, アプリケーションへのユーザからの評価へ広告が及ぼす影響を調査した。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">September 11, 2020</span>
         </div>
     </article>
     

@@ -24,9 +24,13 @@
 <link rel="stylesheet" href="https://nryotaro.dev/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
     
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
     <title>Blanket</title>
   </head>
 
@@ -52,6 +56,21 @@
 <main>
     <h1>Posts</h1>
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/a_structured_self_attentivesentence_embedding/">論文メモ A STRUCTURED SELF-ATTENTIVE SENTENCE EMBEDDING</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>自己注意機構をもちいて、可変長の文を埋め込み行列に変換するアーキテクチャを発表した論文である。
+埋め込み行列の各行は、それぞれ文中の異なる箇所の意味を反映する。
+アーキテクチャは2つの構成からなり、入力から出力にむかい双方向LSTMを、次に自己注意機構をもつ。
+自己注意機構を導入した背景は、回帰結合型のネットワークでは、全ての時刻わたって入力の意味を保持することは難しく、また不要であるという著者らの仮説である。
+3つの実験により、文の分散表現を獲得する先行研究と比較し、自己注意機構の効果が確認された。
+注意機構は複数のベクトルのどれを重視するかを学習できるため、埋め込まれた文の箇所を可視化できることも示した。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">May 16, 2020</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/poincare_embeddings/">論文メモ Poincaré Embeddings for Learning Hierarchical Representations</a></h3>
@@ -168,17 +187,6 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
         <div class="article-footer">
 	  
           <span class="date">March 14, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/raft/">論文メモ In Search of an Understandable Consensus Algorithm</a></h3>
-        <div class="summary"><p>コンセンサスアルゴリズムRaftを提案した論文である。
-Raftは、Multi Paxosと同様の実行結果をもたらす。
-実行するコマンドのログをサーバ間で交換することで、状態を同期し、サーバの一部が落ちてもシステムを継続することができる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">March 9, 2020</span>
         </div>
     </article>
     

@@ -24,9 +24,13 @@
 <link rel="stylesheet" href="https://nryotaro.dev/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>    
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
     
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
     <title>Blanket</title>
   </head>
 
@@ -52,6 +56,17 @@
 <main>
     <h1>Posts</h1>
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/using_tfidf_to_determine_word_relevance_in_document_queries/">Using TF-IDF to Determine Word Relevance in Document Queries(2003)</a></h3>
+        <div class="summary"><p>自然言語による文書検索で、TF-IDFをベースラインにつかう利点と欠点を調べた。
+クエリにある各単語のTF-IDF値の総和が最大の文書を最も関連する文書とみなす。
+実験では、TFのみで検索する手法よりも予測性能がよかったが、類義語同士の同一判定をできない問題があった。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">February 19, 2022</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/an_algorithm_for_suffix_stripping/">An algorithm for suffix stripping (1980)</a></h3>
@@ -163,20 +178,6 @@ Piece tableはテキストを2つのバッファに記録する。
 Auroraは、以上のストリーミング、トリガー、不正確なデータ、リアルタイム性の4特性を扱えるモデルとして、ストリームデータの出力元をソース、ノードをストリームデータの計算、シンクをアプリケーションとするDAGで抽象化されたアーキテクチャをもつ。
 ノードが計算には、ストリームをウィンドウに区切る、フィルタ、リサンプリングなどの8つがある。
 DAGで表せる計算をAurora内部で実行し、その結果が接続するアプリケーションにわたる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">December 11, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/a_bridging_model_for_parallel_computation/">A Bridging Model for parallel Computation (1990)</a></h3>
-        <div class="summary"><p>バッチ処理グラフの最適化を目的として演算処理のバルク同期並列（bulk synchronous parallel、 BSP）を提唱した。
-BPSは、Apache Giraph, Spark の GraphX API, Gelly APIで採用され、なかでもGoogleのPregelで知られるようになった<a href="https://www.oreilly.co.jp/books/9784873118703/">*1</a>。
-BPSの目的は、ハードウェアと並列計算の高水準なプログラミングモデルがどちらもBPSに準ずることで、高水準なプログラミングモデルで実装された並列計算を多様なハードウェア上で動かすことにある。
-フォン・ノイマンモデル型のコンピュータであれば、ハードウェアの種類を意識することなく、その上で逐次計算をおこなう多様なソフトウェアを動かせる。
-フォン・ノイマンモデルは、多様なハードウェアと多様なソフトウェアをつなぐ。
-BPSは、並列計算用のハードウェアと高水準な並列計算のプログラミングモデルをつなぐためにある。</p></div>
         <div class="article-footer">
 	  
           <span class="date">December 11, 2021</span>
