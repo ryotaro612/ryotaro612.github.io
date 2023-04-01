@@ -6,7 +6,20 @@
     <description>Recent content in ランキング学習 on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 31 Aug 2018 19:21:10 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Jan 2023 20:59:34 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抄訳 Learning to Rank using Gradient Descent (2005)</title>
+      <link>https://nryotaro.dev/posts/learning_to_rank_using_gradient_descent/</link>
+      <pubDate>Sat, 07 Jan 2023 20:59:34 -0500</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/learning_to_rank_using_gradient_descent/</guid>
+      <description>&lt;p&gt;ランキング学習のニューラルネットワークRankNetを提案する。
+RankNetは、ベクトルから実数を出力し、その出力が大きいほどランキングが高いと予測する。
+損失関数には、ある2つのベクトルのうち片方が他方よりもランキングが高い確率をあたえる。
+ここでの確率には、両ベクトルのモデルの出力の差をシグモイド関数に入力したときの出力を使う。
+RankNetの学習は、モデルの出力と訓練データの確率分布の交差エントロピーを最小化する。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Applying Deep Learning To Airbnb Search</title>
       <link>https://nryotaro.dev/posts/applying_deep_learning_to_airbnb_search/</link>
