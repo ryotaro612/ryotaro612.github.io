@@ -32,7 +32,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>メモ Feature Selection for Text Categorization on Imbalanced Data</title>
+    <title>概要 Feature Selection for Text Categorization on Imbalanced Data(2004)</title>
   </head>
 
   <body>
@@ -55,22 +55,35 @@
     </header>
     
 <main>
-  <h1>メモ Feature Selection for Text Categorization on Imbalanced Data</h1>
+  <h1>概要 Feature Selection for Text Categorization on Imbalanced Data(2004)</h1>
   <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/%E4%B8%8D%E5%9D%87%E8%A1%A1%E3%83%87%E3%83%BC%E3%82%BF/">
+	#不均衡データ
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/%E7%89%B9%E5%BE%B4%E9%81%B8%E6%8A%9E/">
+	#特徴選択
+      </a>
+    </li>
     
   </ul>  
   <span class="date">October 12, 2019</span>    
   <div>
-    <h3 id="概要">概要</h3>
-<p>表題の論文は、特徴選択において、正例に顕著な特徴から選ぶ割合を明示的に決めることで、正例と負例それぞれに顕著な特徴の割合を調整することが、不均衡な文書分類における予測性能の向上に役立つことを示した。
-情報利得やオッズ比など単変量統計にもとづく特徴選択において、統計量の値によって暗黙的に決められた割合と異なる割合の場合の方が予測性能が高いことを実験的に示した。</p>
+    <p>分類すべきデータには、正例と負例どちらか一方にのみ顕著にみられる特徴がある。
+特徴選択をする場合、正例だけでなく負例の選択された顕著な特徴の割合も性能に影響する。
+不均衡データの文書分類で、選択する割合を調整するほうが、予測性能を向上できたことを実験的に示した。
+情報利得やオッズ比など単変量統計にもとづく特徴選択の場合、統計量の値によって暗黙的に決められた割合と異なる割合の場合の方が予測性能が高かった。</p>
 <p>比較対象となる統計量は情報利得, カイ二乗, 相関係数、オッズ比がある。
 これらの統計量は、正と負の値がそれぞれ正例と負例に顕著な特徴に対応するものを片側(one-side)、
 非負の値しかとらず正例と負例の一方において顕著な特徴に対応するものを両側(two-side)のメトリクスとして分類している。次のように特徴とクラスの諸確率を定義すると、
 相関係数とオッズ比は片側、情報利得とカイ二乗は両側に分類できる。</p>
 <ul>
-<li>\(P( c )\): (クラス\(c\)に属する訓練文書数)/(訓練文書数)</li>
-<li>\(P(t, c)\): (クラス\(c\)に属する訓練文書のうち\(w\)を含む文書の数)/(クラス\(c\)に属する訓練文書数)、</li>
+<li>\(P(c)\): (クラス\(c\)に属する訓練文書数)/(訓練文書数)</li>
+<li>\(P(t, c)\): (クラス\(c\)に属する訓練文書のうち\(w\)を含む文書の数)/(クラス\(c\)に属する訓練文書数)</li>
 <li>\(P(t)\): (全訓練文書における単語\(t\)の出現回数)/(全訓練文書における単語数)</li>
 </ul>
 <p>以上の諸確率の場合、割合を調整しなければ、片側のメトリクスだと正例に顕著な特徴から順に選ばれ、両側であれば正例と負例いずれかにおいて顕著な特徴から順に選ばれる。</p>

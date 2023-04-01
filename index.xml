@@ -3093,14 +3093,15 @@ DESMは、クエリの単語に関係する単語をもとに判断する。
     </item>
     
     <item>
-      <title>メモ Feature Selection for Text Categorization on Imbalanced Data</title>
+      <title>概要 Feature Selection for Text Categorization on Imbalanced Data(2004)</title>
       <link>https://nryotaro.dev/posts/feature_selection_for_text_categorization_on_imbalance_data/</link>
       <pubDate>Sat, 12 Oct 2019 15:59:09 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/feature_selection_for_text_categorization_on_imbalance_data/</guid>
-      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-&lt;p&gt;表題の論文は、特徴選択において、正例に顕著な特徴から選ぶ割合を明示的に決めることで、正例と負例それぞれに顕著な特徴の割合を調整することが、不均衡な文書分類における予測性能の向上に役立つことを示した。
-情報利得やオッズ比など単変量統計にもとづく特徴選択において、統計量の値によって暗黙的に決められた割合と異なる割合の場合の方が予測性能が高いことを実験的に示した。&lt;/p&gt;</description>
+      <description>&lt;p&gt;分類すべきデータには、正例と負例どちらか一方にのみ顕著にみられる特徴がある。
+特徴選択をする場合、正例だけでなく負例の選択された顕著な特徴の割合も性能に影響する。
+不均衡データの文書分類で、選択する割合を調整するほうが、予測性能を向上できたことを実験的に示した。
+情報利得やオッズ比など単変量統計にもとづく特徴選択の場合、統計量の値によって暗黙的に決められた割合と異なる割合の場合の方が予測性能が高かった。&lt;/p&gt;</description>
     </item>
     
     <item>
