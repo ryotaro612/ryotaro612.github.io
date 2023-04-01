@@ -80,11 +80,11 @@ L_1(\mathcal{U})=\sum_i\log P(u_i\mid u_{i-k},\dots , u_{i-1};\Theta)
 $$
 \(k\)はウィンドウサイズを示す。
 モデルに使われるmulti-layer <a href="https://openreview.net/pdf?id=Hyg0vbWC-">Trasformer decoder</a>は、条件付き確率\(P\)にあてはまるようにパラメタ\(\Theta\)を学習する。</p>
-<p>\(n\)層のTransformer decoderは、トークンの埋込み行列\(W_e\)とトークンの位置の埋込み行列\(W_p\)を受け取り、次の式になる。
-$$
+<p>\(n\)層のTransformer decoderは、トークンの埋込み行列\(W_e\)とトークンの位置の埋込み行列\(W_p\)を受け取り、次の式になる。</p>
+<p>$$
 \begin{align}
-h_0&amp;=UW_e+W_p\\\
-h_l&amp;=\texttt{transformer_block}(h_{l-1})\forall i \in[1,n]\\\
+h_0&amp;=UW_e+W_p\\
+h_l&amp;=\mathtt{transformer_block}(h_{l-1})\forall i \in[1,n]\\
 P(u)&amp;=\texttt{softmax}(h_nW^{T}_{e})
 \end{align}
 $$</p>
