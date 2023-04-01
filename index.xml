@@ -212,7 +212,7 @@ partially synchronous modelでは、各ノードは、一定間隔で単調増�
       <description>&lt;p&gt;ランキング学習のニューラルネットワークRankNetを提案する。
 RankNetは、ベクトルから実数を出力し、その出力が大きいほどランキングが高いと予測する。
 損失関数には、ある2つのベクトルのうち片方が他方よりもランキングが高い確率をあたえる。
-ここでの確率には、両ベクトルのモデルの出力の差をシグモイド関数に入力したときの出力を使う。
+確率とみなす値は、両ベクトルのモデルの出力の差をシグモイド関数に入力したときの出力である。
 RankNetの学習は、モデルの出力と訓練データの確率分布の交差エントロピーを最小化する。&lt;/p&gt;</description>
     </item>
     
@@ -3056,28 +3056,27 @@ DESMは、クエリの単語に関係する単語をもとに判断する。
     </item>
     
     <item>
-      <title>メモ WebTables: Exploring the Power of Tables on the Web</title>
+      <title>概要 WebTables: Exploring the Power of Tables on the Web(2008)</title>
       <link>https://nryotaro.dev/posts/web_tables/</link>
       <pubDate>Thu, 31 Oct 2019 21:09:38 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/web_tables/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-&lt;p&gt;表題の論文は、Web上の表から抽出した大量の関係モデルを対象にした検索を提案・評価した
-。検索の他にも、一部の属性を入力とするスキーマの補完、入力した属性ないしスキーマに類似のものを推定するアルゴリズムの議論もある。
+&lt;p&gt;Web上の表から抽出した大量の関係モデルを対象にした検索を提案・評価した。
+検索の他にも、一部の属性を入力とするスキーマの補完、入力した属性ないしスキーマに類似のものを推定するアルゴリズムの議論もある。
 ここのスキーマは属性のリストである。論文の著者らは研究時にGoogleに在籍しており、論文で使われたコーパスはグーグルの汎用ウェブクローラで集めた141億のHTMLの表から抽出した高精度な154百万の関係モデルである。
 コーパスに使うものはHTML形式の表から抽出した関係モデルのみである。
 手法の新規性は、1億以上もの大量のテーブルを対象にしていることにある。&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>メモ A Survey on Data Collection for Machine Learning</title>
+      <title>メモ A Survey on Data Collection for Machine Learning(2018)</title>
       <link>https://nryotaro.dev/posts/a_survey_on_data_collection_for_machine_learning/</link>
       <pubDate>Sat, 26 Oct 2019 14:27:10 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/a_survey_on_data_collection_for_machine_learning/</guid>
-      <description>&lt;p&gt;表題の論文は、文字通り、機械学習に使う教師データに関するサーベイ論文であり、
-機械学習や自然言語処理などのデータの応用分野だけでなく、データの管理にまつわる分野の調査も含まれているところに特徴がある。
-データの管理に着目している理由は、深層学習の発展によって必要な教師データが増えたことで、データの管理の課題が顕在化してきたことである。&lt;/p&gt;</description>
+      <description>&lt;p&gt;機械学習に使う教師データに関するサーベイ論文であり、機械学習や自然言語処理などのデータの応用分野だけでなく、データの管理にまつわる分野の調査も含まれているところに特徴がある。
+データの管理に着目している理由は、深層学習の発展によって必要な教師データが増えたことで、データの管理の課題が顕在化してきたからである。&lt;/p&gt;</description>
     </item>
     
     <item>
