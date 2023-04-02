@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.78272bdd99a3c4f03ee4c826bbe3a970cda497ed85b5da23b0af6dbaf9f30522.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>概要 Language Models are Unsupervised Mmultitask Learners(2018)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>概要 Language Models are Unsupervised Mmultitask Learners(2018)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/">
+	#言語モデル
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">April 1, 2023</span>    
+  <div>
+    <p>Zero-shotかつマルチタスク用のモデルとして<a href="https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf">GPT-1</a>の後経のGPT-2を提案した。
+<a href="https://www.semanticscholar.org/paper/Multitask-Learning-Caruana/161ffb54a3fdf0715b198bb57bd22f910242eb49">マルチタスク学習</a>は、複数のタスクむけにモデルを訓練する手法である。
+特徴の入力形式はタスクによらず同じであり、タスク間で知識を補うことで各タスクの汎化性能を向上させる。
+GPT-1の用途がファインチューニングであるため、GPT-1とGPT-2では解けるタスクが違う。
+学習のために、45,000,000件のリンクを含む高品質なコーパスであるWebTextを人の手もかりて用意した。
+GPT-2のアーキテクチャは、GPT-1に層正規化の位置を変え、residual layerの重みをスケールしただけであり、GPT-1と大きな違いはない。</p>
+<p>あるタスクを言語モデルにならって表現する場合、条件付き確率\(p\)で\(p(\text{output}|\text{input})\)と表現できる。
+マルチタスクであれば\(p(\text{output}|\text{input}, \text{task})\)である。
+たとえば、<a href="https://arxiv.org/abs/1806.08730">McCann, B.ら</a>は、翻訳であれば(translate to french, english text, french text), 質問であれば(answer the question, document, answer)のように、タスクの指示、入力文、出力文をトークンでつなげた系列であらゆるタスクを統一的に表現することで、モデルに複数のタスクを訓練できることを示した。
+GPT-2の入力形式もMcCann, Bらにならう。</p>
+<p>大きいだけでなく品質もよい学習データが必要であったため、データセットWebTextを作成した。
+WebTextは、karmaが3以上のRedditの外部リンクをスクレイピングし、それを人の手で編集、フィルタしたコーパスである。
+既存の大規模なコーパスに<a href="https://commoncrawl.org/">Common Crawl</a>があるものの、<a href="https://arxiv.org/abs/1806.02847">Trieu H. Trinhら</a>によると学習に足る知的な文書は少ない。</p>
+<p>出現頻度の低い単語や未知語に対応するために、バイト単位のByte Pair Encoding(BPE)を使用した。
+BPEは、文を文字列に分解し、次に最も出現回数の高い隣接文字をペアとしてマージする。
+これを期待する語彙集合の要素数に到達するまで繰り返す。
+ただし、BPEをそのまま適用すると、dog., dog!, dog?のように同じ単語に対応する複数のバイト列が生成されすぎたので、同じカテゴリのバイト列同士のみがマージの対象になる。</p>
+<p>モデルのアーキテクチャは、GPT-1とほとんど変わらず、<a href="https://arxiv.org/abs/1706.03762">Transformer</a>のデコーダからなる。
+変更点は、層正規化の位置と、残差結合層の重みのスケールである。
+既存の層正規化を各ブロックの入力部分に移し、最後の注意機構の後に新たな層正規化を追加した。
+また、残差層の数を\(N\)とすると、残差結合層の重みを\(1/\sqrt(N)\)だけスケールし初期化する。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>論文の<a href="https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf">リンク</a></p>
+<h2 id="雑記">雑記</h2>
+<p>モデル自体ではなく、モデルに入力するデータの品質を用意したことが貢献になったのだろう。
+入力文を表現するために使用されたByte Pair Encoding(BPE)は<a href="https://www.aclweb.org/anthology/P16-1162">SentencePiece</a>でも使われている。</p>
+<p>スクレイピングに使用したツールは、<a href="https://github.com/codelucas/newspaper">newspaper</a>と<a href="https://github.com/dragnet-org/dragnet">dragnet</a>である。
+WebTextの一部は、<a href="https://github.com/openai/gpt-2-output-dataset">公開</a>されている。
+各サンプルは、入力と出力を&quot;\n\n&quot;で連結した2つの文からなる。</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/proving_correctness_of_multiprocess_programs/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

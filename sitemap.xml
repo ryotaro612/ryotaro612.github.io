@@ -3,13 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2023-03-25T12:34:08-04:00</lastmod>
+    <lastmod>2023-04-01T09:39:17-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2023-03-25T12:34:08-04:00</lastmod>
+    <lastmod>2023-04-01T09:39:17-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/tags/</loc>
-    <lastmod>2023-03-25T12:34:08-04:00</lastmod>
+    <lastmod>2023-04-01T09:39:17-04:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/posts/language_models_are_unsupervised_multitask_learners/</loc>
+    <lastmod>2023-04-01T09:39:17-04:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/</loc>
+    <lastmod>2023-04-01T09:39:17-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</loc>
     <lastmod>2023-03-25T12:34:08-04:00</lastmod>
@@ -672,9 +678,6 @@
     <lastmod>2020-08-07T18:50:12+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/</loc>
-    <lastmod>2020-08-07T16:45:55+09:00</lastmod>
-  </url><url>
-    <loc>https://nryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/</loc>
     <lastmod>2020-08-07T16:45:55+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/a_tale_from_the_trenches/</loc>

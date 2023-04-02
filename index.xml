@@ -6,7 +6,21 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 25 Mar 2023 12:34:08 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Apr 2023 09:39:17 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>概要 Language Models are Unsupervised Mmultitask Learners(2018)</title>
+      <link>https://nryotaro.dev/posts/language_models_are_unsupervised_multitask_learners/</link>
+      <pubDate>Sat, 01 Apr 2023 09:39:17 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/language_models_are_unsupervised_multitask_learners/</guid>
+      <description>&lt;p&gt;Zero-shotかつマルチタスク用のモデルとして&lt;a href=&#34;https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf&#34;&gt;GPT-1&lt;/a&gt;の後経のGPT-2を提案した。
+&lt;a href=&#34;https://www.semanticscholar.org/paper/Multitask-Learning-Caruana/161ffb54a3fdf0715b198bb57bd22f910242eb49&#34;&gt;マルチタスク学習&lt;/a&gt;は、複数のタスクむけにモデルを訓練する手法である。
+特徴の入力形式はタスクによらず同じであり、タスク間で知識を補うことで各タスクの汎化性能を向上させる。
+GPT-1の用途がファインチューニングであるため、GPT-1とGPT-2では解けるタスクが違う。
+学習のために、45,000,000件のリンクを含む高品質なコーパスであるWebTextを人の手もかりて用意した。
+GPT-2のアーキテクチャは、GPT-1に層正規化の位置を変え、residual layerの重みをスケールしただけであり、GPT-1と大きな違いはない。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>概要 Proving the Correctness of Multiprocess Programs (1977)</title>
       <link>https://nryotaro.dev/posts/proving_correctness_of_multiprocess_programs/</link>
