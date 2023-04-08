@@ -32,7 +32,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>論文メモ On Calibration of Modern Neural Networks</title>
+    <title>論文メモ On Calibration of Modern Neural Networks(2017)</title>
   </head>
 
   <body>
@@ -55,8 +55,14 @@
     </header>
     
 <main>
-  <h1>論文メモ On Calibration of Modern Neural Networks</h1>
+  <h1>論文メモ On Calibration of Modern Neural Networks(2017)</h1>
   <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/confidence-calibration/">
+	#Confidence Calibration
+      </a>
+    </li>
     
   </ul>  
   <span class="date">November 23, 2019</span>    
@@ -79,16 +85,16 @@ ECEは、\(p\)からの左辺と右辺の差の期待値を意味する。
 $$
 \mathbb{E}\left[\big|\mathbb{P}\left(\hat{Y}=Y\mid\hat{P}=p\right)-p\big|\right]
 $$
-\(p\)は連続量なので、ECEは次のように有限のデータで差を求めるために近似する。</p>
-<p>$$
-ECE =\sum^{M}_{m=1}\frac{\mid B_m \mid}{n}\big|acc (B_m) - conf (B_m)\big|
+\(p\)は連続量なので、ECEは次のように有限のデータで差を求めるために近似する。
+$$
+\textit{ECE}=\sum^{M}_{m=1}\frac{|B_m|}{n}\big|\textit{acc}(B_m)-\textit{conf}(B_m)\big|
 $$
 ただし
 $$
-acc(B_m) =\frac{1}{\mid B_m\mid}\sum_{i\in B_m}\boldsymbol{1}(\hat{y}_i - y_i)
+\textit{acc}(B_m) =\frac{1}{|B_m|}\sum_{i\in B_m}\boldsymbol{1}(\hat{y}_i - y_i)
 $$
 $$
-conf(B_m) = \frac{1}{\mid B_m \mid}\sum_{i\in B_m}\hat{p_i}
+\textit{conf}(B_m)=\frac{1}{|B_m|}\sum_{i\in B_m}\hat{p_i}
 $$
 である。
 補正は、補正の前後でのECEの差で評価できる。</p>
@@ -98,8 +104,8 @@ $$
 次のように温度\(T\)によって補正された\(\hat{q}_i\)を予測確率とみなす。
 $$
 \hat{q}_i=\max_{k} \frac{\exp(z_i/T^{(k)})}{\sum_{j=1}^{K}\exp({z_i/T}^{(j)})}
-$$
-温度\(T\)は、検証データを使い、負の対数尤度を誤差関数とする学習で求められる。</p>
+$$</p>
+<p>温度\(T\)は、検証データを使い、負の対数尤度を誤差関数とする学習で求められる。</p>
 <hr>
 <ul>
 <li>論文は<a href="https://arxiv.org/pdf/1706.04599.pdf">こちら</a>からダウンロードできます。</li>
