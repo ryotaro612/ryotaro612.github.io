@@ -22,5 +22,17 @@ ARIESのCLSに記録された更新はUNDOされない。
 &lt;!-- raw HTML omitted --&gt;</description>
     </item>
     
+    <item>
+      <title>抄訳 Principles of Transaction-Oriented Database Recovery(1983)</title>
+      <link>https://nryotaro.dev/posts/principles_of_transaction_oriented_database_recovery/</link>
+      <pubDate>Sun, 29 Jan 2023 15:14:29 -0500</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/principles_of_transaction_oriented_database_recovery/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;クラッシュしたRDMSのディスクとバッファの状態をクラッシュ前の状態にもどす手法を体系化する。
+体系は、Propagation, Buffer handling, EOT Processing, Checkpointingの4要素に着目して技術を分類する。&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

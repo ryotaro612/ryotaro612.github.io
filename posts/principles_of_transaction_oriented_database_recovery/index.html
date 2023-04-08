@@ -58,6 +58,12 @@
   <h1>抄訳 Principles of Transaction-Oriented Database Recovery(1983)</h1>
   <ul class="tags">
     
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/rdbms/">
+	#RDBMS
+      </a>
+    </li>
+    
   </ul>  
   <span class="date">January 29, 2023</span>    
   <div>
@@ -65,16 +71,16 @@
 <!-- raw HTML omitted -->
 <p>クラッシュしたRDMSのディスクとバッファの状態をクラッシュ前の状態にもどす手法を体系化する。
 体系は、Propagation, Buffer handling, EOT Processing, Checkpointingの4要素に着目して技術を分類する。</p>
-<p>Propagationは、ブロックにページ上のデータを書き込むことを意味する。
+<p>Propagationは、ブロックにページ上のデータを書き込むことである。
 Propagationで書き込まれたデータは、RDMBSがクラッシュしてもログを使わずに復旧できる。
 書き込み方は、もとのページのあったブロックとは別のブロックに更新後のページを書き込むアトミックな方法と、もとのページを上書きするアトミックでない方法がある。
 アトミックであれば、propagationの結果は、すべてのデータを書き込めるか、すべて書き込まれないかのどちらかになる。
 アトミックでなければ、一部データのみ書き込みが失敗することがある。
-あるアトミックな方法はページテーブルへの参照を使い、propagationが終わった後に、ページテーブルの永続的な参照先を、新しいページテーブルのアドレスに更新する。
+たとえば、ページテーブルへの参照を使い、propagationが終わった後に、ページテーブルへの永続的な参照先を、新しいページテーブルのアドレスに更新することで、アトミックな方法を実現できる。
 もし、propagationとアドレスの更新の間にRDBMSがクラッシュしたら、ページテーブルはpropagation前の状態に戻る。</p>
-<p>Buffer handlingは、propagationまたはページをブロックに書き込むタイミングの戦略である。
+<p>Buffer handlingは、ページをブロックに書き込むタイミングの決め方である。
 RDBMSがクラッシュするとpropagationされていないバッファ上のデータは失われる。
-バッファのデータが部分的に永続化されてRDBMSが異常終了すると、データの整合性がなくる。
+バッファのデータが部分的に永続化されてRDBMSが異常終了すると、データの整合性がなくなる。
 整合性を復元するため操作を取り消さなくてはならない(UNDO)が、UNDOの方法はbuffer hanlingによって変わってくる。
 体系は、ディスクへの書き込みとpropagationを任意のタイミングで実行するパターンと、トランザクションの終了(EOT)まで書き込みを延期するパターンを区別する。
 propagationがアトミックであれば、前者の場合はUNDOのためにログが必要であり、後者であれば不要である。</p>
