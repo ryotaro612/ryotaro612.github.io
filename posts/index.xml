@@ -191,7 +191,7 @@ LambdaMARTは、RankNetに勾配ブースティング決定木を使い、残差
     </item>
     
     <item>
-      <title>抄訳 Principles of Transaction-Oriented Database Recovery(1983)</title>
+      <title>Principles of Transaction-Oriented Database Recovery(1983)</title>
       <link>https://nryotaro.dev/posts/principles_of_transaction_oriented_database_recovery/</link>
       <pubDate>Sun, 29 Jan 2023 15:14:29 -0500</pubDate>
       
