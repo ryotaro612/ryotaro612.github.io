@@ -6,7 +6,20 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 01 Apr 2023 09:39:17 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Apr 2023 12:38:44 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Storing a Sparse Table with O(1) Worst Case Access Time(1984)</title>
+      <link>https://nryotaro.dev/posts/storing_a_sparse_table_with_o1_worst_case_access_time/</link>
+      <pubDate>Sat, 08 Apr 2023 12:38:44 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/storing_a_sparse_table_with_o1_worst_case_access_time/</guid>
+      <description>&lt;p&gt;単射のハッシュ関数は完全である。完全ハッシュ関数により、衝突することのないハッシュテーブルのデータ構造と計算時間量の証明を示す。
+データ構造は、はじめに、\(U(|U|=m)\)の部分集合\(S\)(\(|S|=n\))の要素\(x\)をハッシュテーブルに格納するとき、ある\(U\)の要素\(k\)を使った関数\(f(x)=(kx\mod p)\mod n\)で\(x\)を格納するブロック\(W_j(0\le j &amp;lt; n)\)を決める。
+\(p\)は\(p=m+1\)の素数である。
+次に\(U\)の要素\(k&#39;_j\)をもちいた関数\(g(x) = ((k&#39;_jx) \mod p)\mod |W_j|^2\)で、\(x\)のエントリを特定する。
+データ構造の証明は、\(f, g\)によって重複なくエントリを特定できる\(k\), \(k&#39;_j\)があることを示す。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>概要 Language Models are Unsupervised Mmultitask Learners(2018)</title>
       <link>https://nryotaro.dev/posts/language_models_are_unsupervised_multitask_learners/</link>
