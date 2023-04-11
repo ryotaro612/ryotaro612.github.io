@@ -21,6 +21,32 @@ RankNetの学習は、モデルの出力と訓練データの確率分布の交�
     </item>
     
     <item>
+      <title>Ranking Relevance In Yahoo Search(2016)</title>
+      <link>https://nryotaro.dev/posts/ranking_relevance_in_yahoo_search/</link>
+      <pubDate>Sat, 07 Dec 2019 15:10:51 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/ranking_relevance_in_yahoo_search/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+&lt;p&gt;Yahooの検索エンジンを解説するKDD16の論文である。
+論文におけるランキングの課題は、クエリと文書の語彙がことなること、ほとんどのクエリは滅多に入力されないこと、クエリの意味の解釈が難しいことである。
+これらの課題に対する手法として、ランキングのモデル、特徴のつくりかた、クエリを文書によせる翻訳モデルを解説する。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>A Dual Embedding Space Model for Document Ranking</title>
+      <link>https://nryotaro.dev/posts/a_dual_embedding_space_model_for_document_ranking/</link>
+      <pubDate>Sat, 30 Nov 2019 08:18:06 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/a_dual_embedding_space_model_for_document_ranking/</guid>
+      <description>&lt;p&gt;Dual Embedding Space Model(DESM)は、word2vecによるランキング学習である。
+word2vecは、単語ごとに、入力と出力それぞれに近い重みから、2つの分散表現を生成できる。
+DESMは、入力側の重みでクエリを、出力側の重みで文書を、それぞれ分散表現に変換する。&lt;/p&gt;
+&lt;p&gt;実験では、BM25と比較して評価した。
+DESMだけで順位づけをすると偽陽性が高くなるが、DESMとBM25の加重平均をとるとBM25よりも高いNDCG値になった。
+アルゴリズムを実装し&lt;a href=&#34;https://github.com/nryotaro/desm&#34;&gt;公開&lt;/a&gt;した。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Applying Deep Learning To Airbnb Search</title>
       <link>https://nryotaro.dev/posts/applying_deep_learning_to_airbnb_search/</link>
       <pubDate>Fri, 31 Aug 2018 19:21:10 +0900</pubDate>

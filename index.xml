@@ -2996,7 +2996,7 @@ Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文�
     </item>
     
     <item>
-      <title>論文メモ 150 Successful Machine Learning Models: 6 Lessons Learned at Booking.com</title>
+      <title>150 Successful Machine Learning Models: 6 Lessons Learned at Booking.com(2019)</title>
       <link>https://nryotaro.dev/posts/150_successfuly_machine_learning_modes/</link>
       <pubDate>Sat, 14 Dec 2019 13:25:04 +0900</pubDate>
       
@@ -3007,7 +3007,7 @@ Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文�
     </item>
     
     <item>
-      <title>論文メモ Ranking Relevance In Yahoo Search</title>
+      <title>Ranking Relevance In Yahoo Search(2016)</title>
       <link>https://nryotaro.dev/posts/ranking_relevance_in_yahoo_search/</link>
       <pubDate>Sat, 07 Dec 2019 15:10:51 +0900</pubDate>
       
@@ -3019,17 +3019,17 @@ Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文�
     </item>
     
     <item>
-      <title>論文メモ A Dual Embedding Space Model for Document Ranking</title>
+      <title>A Dual Embedding Space Model for Document Ranking</title>
       <link>https://nryotaro.dev/posts/a_dual_embedding_space_model_for_document_ranking/</link>
       <pubDate>Sat, 30 Nov 2019 08:18:06 +0900</pubDate>
       
       <guid>https://nryotaro.dev/posts/a_dual_embedding_space_model_for_document_ranking/</guid>
-      <description>&lt;p&gt;Dual Embedding Space Model(DESM)は、word2vecで単語埋め込みベクトルにしたクエリと文書のランキング関数である。
-実験における比較対象のBM25は、クエリの単語の文書での出現頻度をもとに順序をつける。
-DESMは、クエリの単語に関係する単語をもとに判断する。
-単語埋め込みベクトルの作りに特徴があり、入力側のone-hotベクトル表現にわりあてる単語埋め込みベクトルでクエリを、出力側でベクトルで文書を分散表現にする。
-実験から、DESMだけで順位づけをすると偽陽性が高くなるが、DESMとBM25の加重平均をとるとBM25よりも高いNDCG値になることが分かった。
-アルゴリズムを実装したライブラリへのリンクは&lt;a href=&#34;https://github.com/nryotaro/desm&#34;&gt;こちら&lt;/a&gt;。&lt;/p&gt;</description>
+      <description>&lt;p&gt;Dual Embedding Space Model(DESM)は、word2vecによるランキング学習である。
+word2vecは、単語ごとに、入力と出力それぞれに近い重みから、2つの分散表現を生成できる。
+DESMは、入力側の重みでクエリを、出力側の重みで文書を、それぞれ分散表現に変換する。&lt;/p&gt;
+&lt;p&gt;実験では、BM25と比較して評価した。
+DESMだけで順位づけをすると偽陽性が高くなるが、DESMとBM25の加重平均をとるとBM25よりも高いNDCG値になった。
+アルゴリズムを実装し&lt;a href=&#34;https://github.com/nryotaro/desm&#34;&gt;公開&lt;/a&gt;した。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -3168,7 +3168,7 @@ Snorkelは、入力された複数のラベリング関数をデータに適用�
     </item>
     
     <item>
-      <title>メモ Software Engineering for Machine Learning: A Case Study</title>
+      <title>Software Engineering for Machine Learning: A Case Study</title>
       <link>https://nryotaro.dev/posts/software_engineering_for_machine_learning/</link>
       <pubDate>Sat, 14 Sep 2019 11:26:41 +0900</pubDate>
       

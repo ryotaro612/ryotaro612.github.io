@@ -824,10 +824,19 @@
     <loc>https://nryotaro.dev/posts/150_successfuly_machine_learning_modes/</loc>
     <lastmod>2019-12-14T13:25:04+09:00</lastmod>
   </url><url>
+    <loc>https://nryotaro.dev/tags/empirical-research/</loc>
+    <lastmod>2019-12-14T13:25:04+09:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/tags/mlops/</loc>
+    <lastmod>2019-12-14T13:25:04+09:00</lastmod>
+  </url><url>
     <loc>https://nryotaro.dev/posts/ranking_relevance_in_yahoo_search/</loc>
     <lastmod>2019-12-07T15:10:51+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/a_dual_embedding_space_model_for_document_ranking/</loc>
+    <lastmod>2019-11-30T08:18:06+09:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/tags/embedding/</loc>
     <lastmod>2019-11-30T08:18:06+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/tags/confidence-calibration/</loc>
@@ -883,9 +892,6 @@
   </url><url>
     <loc>https://nryotaro.dev/posts/snorkel_rapid_training_data_creation_with_weak_supervision/</loc>
     <lastmod>2019-09-21T12:01:51+09:00</lastmod>
-  </url><url>
-    <loc>https://nryotaro.dev/tags/empirical-study/</loc>
-    <lastmod>2019-09-14T11:26:41+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/software_engineering_for_machine_learning/</loc>
     <lastmod>2019-09-14T11:26:41+09:00</lastmod>

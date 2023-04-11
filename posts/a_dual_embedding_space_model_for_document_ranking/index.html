@@ -32,7 +32,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>論文メモ A Dual Embedding Space Model for Document Ranking</title>
+    <title>A Dual Embedding Space Model for Document Ranking</title>
   </head>
 
   <body>
@@ -55,18 +55,30 @@
     </header>
     
 <main>
-  <h1>論文メモ A Dual Embedding Space Model for Document Ranking</h1>
+  <h1>A Dual Embedding Space Model for Document Ranking</h1>
   <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/">
+	#ランキング学習
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/embedding/">
+	#Embedding
+      </a>
+    </li>
     
   </ul>  
   <span class="date">November 30, 2019</span>    
   <div>
-    <p>Dual Embedding Space Model(DESM)は、word2vecで単語埋め込みベクトルにしたクエリと文書のランキング関数である。
-実験における比較対象のBM25は、クエリの単語の文書での出現頻度をもとに順序をつける。
-DESMは、クエリの単語に関係する単語をもとに判断する。
-単語埋め込みベクトルの作りに特徴があり、入力側のone-hotベクトル表現にわりあてる単語埋め込みベクトルでクエリを、出力側でベクトルで文書を分散表現にする。
-実験から、DESMだけで順位づけをすると偽陽性が高くなるが、DESMとBM25の加重平均をとるとBM25よりも高いNDCG値になることが分かった。
-アルゴリズムを実装したライブラリへのリンクは<a href="https://github.com/nryotaro/desm">こちら</a>。</p>
+    <p>Dual Embedding Space Model(DESM)は、word2vecによるランキング学習である。
+word2vecは、単語ごとに、入力と出力それぞれに近い重みから、2つの分散表現を生成できる。
+DESMは、入力側の重みでクエリを、出力側の重みで文書を、それぞれ分散表現に変換する。</p>
+<p>実験では、BM25と比較して評価した。
+DESMだけで順位づけをすると偽陽性が高くなるが、DESMとBM25の加重平均をとるとBM25よりも高いNDCG値になった。
+アルゴリズムを実装し<a href="https://github.com/nryotaro/desm">公開</a>した。</p>
 <p>Continuous Bag-of-Words(CBOW)は、ウィンドウ内の単語を与えられたときの中心の単語の生起確率を学習する。
 コーパスを\({\mathcal D}\), 埋め込みベクトルの次元を\(d\), 大きさ\(K-1\)のウィンドウにある単語の埋め込みベクトルを\(\boldsymbol{c}_k \in \mathbb{R}^d \), 中心の単語の\(w_i\)の埋め込みベクトルを\(\boldsymbol{w}_i \in \mathbb{R}^d\)とおくと、損失関数\({\mathcal L_{CBOW}}\)が最小値になる埋め込みベクトルを学習する。
 $$
@@ -76,12 +88,12 @@ $$
 \end{align}
 $$
 $$
-\bar{C}_K = \frac{1}{K-1}\sum_{i-k\le k \le i~K, k\neq i} \boldsymbol{c}_k
+\bar{C}_K = \frac{1}{K-1}\sum_{i-k\le k \le i+K, k\neq i} \boldsymbol{c}_k
 $$
 とする。
 \(\boldsymbol{c}\)からなる重み行列を\(\boldsymbol{W}_{IN}\), \(\boldsymbol{w}\)からなる重み行列を\(\boldsymbol{W}_{OUT}\)と表記する。</p>
-<p>通常では、\(\boldsymbol{W}_{IN}\)だけで単語埋め込みベクトルを作るが、DESMは、クエリと文書にそれぞれ\(\boldsymbol{W}_{IN}\)と\(\boldsymbol{W}_{OUT}\)をあてがう。
-以下の表は、Bingのクエリ2,748,230単語で学習したyaleのベクトルにコサイン類似度で最も近いベクトルの単語を並べている。
+<p>通常のword2vecは、\(\boldsymbol{W}_{IN}\)だけで単語埋め込みベクトルを作るが、DESMは、クエリと文書にそれぞれ\(\boldsymbol{W}_{IN}\)と\(\boldsymbol{W}_{OUT}\)をあてがう。
+以下の表は、Bingのクエリ2,748,230単語で学習したyaleのベクトルにコサイン類似度で最も近いベクトルの単語である。
 <img src="/desm_tab1.png" alt="table1">
 IN-IN同士のベクトルでは「大学」という同じ機能をもった単語同士が近くに配置されている。
 論文の洞察は、このような単語の存在をクエリと文書の関連度の手がかりにすることにある。</p>

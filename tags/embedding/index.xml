@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Embedding on Blanket</title>
+    <link>https://nryotaro.dev/tags/embedding/</link>
+    <description>Recent content in Embedding on Blanket</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sat, 30 Nov 2019 08:18:06 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/tags/embedding/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Dual Embedding Space Model for Document Ranking</title>
+      <link>https://nryotaro.dev/posts/a_dual_embedding_space_model_for_document_ranking/</link>
+      <pubDate>Sat, 30 Nov 2019 08:18:06 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/a_dual_embedding_space_model_for_document_ranking/</guid>
+      <description>&lt;p&gt;Dual Embedding Space Model(DESM)は、word2vecによるランキング学習である。
+word2vecは、単語ごとに、入力と出力それぞれに近い重みから、2つの分散表現を生成できる。
+DESMは、入力側の重みでクエリを、出力側の重みで文書を、それぞれ分散表現に変換する。&lt;/p&gt;
+&lt;p&gt;実験では、BM25と比較して評価した。
+DESMだけで順位づけをすると偽陽性が高くなるが、DESMとBM25の加重平均をとるとBM25よりも高いNDCG値になった。
+アルゴリズムを実装し&lt;a href=&#34;https://github.com/nryotaro/desm&#34;&gt;公開&lt;/a&gt;した。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
