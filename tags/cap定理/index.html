@@ -20,9 +20,7 @@
     <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
     
 
-<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.78272bdd99a3c4f03ee4c826bbe3a970cda497ed85b5da23b0af6dbaf9f30522.css">
-
-<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+<link rel="stylesheet" href="https://nryotaro.dev/scss/list.min.8bd0eb32012aaff1a394fe4dfa99dba153e539578f4d72458fbc70b8f1ed8927.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -32,7 +30,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>BERT: Pre-training of Deep Bidirectional Transformers for Lnaguages Understaing(2018)</title>
+    <title>CAP定理</title>
   </head>
 
   <body>
@@ -55,47 +53,19 @@
     </header>
     
 <main>
-  <h1>BERT: Pre-training of Deep Bidirectional Transformers for Lnaguages Understaing(2018)</h1>
-  <ul class="tags">
-    
-  </ul>  
-  <span class="date">December 14, 2019</span>    
-  <div>
-    <h3 id="概要">概要</h3>
-<p>BERTは<a href="https://arxiv.org/pdf/1706.03762.pdf">Attention Is All You Need</a>にあるTransformerをアーキテクチャに導入した分散表現のモデルであり、本稿は、事前学習済みのBERTにファインチューニングを適用しQAタスクや自然言語推論のベンチマークにおいて既存研究を上回る結果を示している。
-なお、アーキテクチャに関する説明は少なく、子細に知りたい場合は<a href="https://arxiv.org/pdf/1706.03762.pdf">Attention Is All You Need</a>や<a href="http://nlp.seas.harvard.edu/2018/04/03/attention.html">The Annotated Transformer</a>を参照するように案内されている。</p>
-<h3 id="事前学習">事前学習</h3>
-<p>事前学習では、単語をトークンとし、単語の前後の文脈を反映した分散表現を双方向のモデルを学習する。
-双方向性を与えるために、無作為に選んだトークンをマスクし、周辺のトークンからマスクされたトークンを当てるというタスクを解く。論文にある事前学習の様子を示した図を以下に示す。様々なタスクに応用できるように、文の組みを示すトークンを導入するこで、文のペアも単一の文も入力として扱えるようになっている。図は対になる文の入力の様子を示しており、<code>[CLS]</code>はペアの始まりを、<code>[SEP]</code>はペアの要素間の区切りを、それぞれ表している。</p>
-<p><img src="/bert/bert.png" alt="bert"></p>
-<h3 id="ファインチューニング">ファインチューニング</h3>
-<p>BERTの出力を入力とする一層の出力層を追加するだけで、既存研究を上回る予測性能をあげることができたと報告されている。</p>
-<hr>
-<ul>
-<li><a href="https://arxiv.org/abs/1810.04805">pdf</a></li>
-</ul>
-  </div>
-</main>
+    <h1>CAP定理</h1>
+    <div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/">Brewer&#39;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web(2002)</a></h2>
+            <span class="date">January 17, 2023</span>
+        </div>
+        
+    </div>
+</main>>    
 
     
-<ul class="pagination">
     
-    <li>
-      <a href="/posts/150_successfuly_machine_learning_modes/">
-	<i class="fa-solid fa-xl fa-angle-left"></i>
-      </a>
-    </li>
-    
-    
-    <li>
-      <a href="/posts/glove_vectors_for_word_representation/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
-    
-</ul>
-
-
     <footer>
       <ul>
         

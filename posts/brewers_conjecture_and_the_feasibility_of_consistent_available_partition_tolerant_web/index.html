@@ -32,7 +32,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>抄訳 Brewer&#39;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web(2002)</title>
+    <title>Brewer&#39;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web(2002)</title>
   </head>
 
   <body>
@@ -55,21 +55,34 @@
     </header>
     
 <main>
-  <h1>抄訳 Brewer&#39;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web(2002)</h1>
+  <h1>Brewer&#39;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web(2002)</h1>
   <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/cap%E5%AE%9A%E7%90%86/">
+	#CAP定理
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+	#分散システム
+      </a>
+    </li>
     
   </ul>  
   <span class="date">January 17, 2023</span>    
   <div>
     <p>分散システムは一貫性、可用性、分断耐性を同時に満たすことができない。
-この予想は、2000年のPODCでBrewerが発表したCAP定理として知られてる。
-Brewerの<a href="https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf">講演</a>では厳密な定義と証明がなく、それを補うために、2つの計算モデルにおいてCAPが成立することを証明する。
+この予想は、2000年のPODCでBrewerが発表したCAP定理として知られている。
+しかし、Brewerの<a href="https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf">講演</a>では厳密な定義や証明はない。
+そこで、それを補うために、ある2つの計算モデルでCAPが成立することを証明する。
 計算モデルは、asynchronous network modelとpartially synchhronous modelである。
 asynchronouse network modelでは、モデルのノードは、クロックをもたず、受信したメッセージとノード内の計算のみで出力を決定する。
 partially synchronous modelでは、各ノードは、一定間隔で単調増加するクロックをもち、処理をタイムアウトしたり、スケジューリングしたりできる。
 ただし、ノード間でクロックが同期されているとは限らない。</p>
-<p>証明するには、はじめに、一貫性、可用性、分断耐性を定義する必要がある。
-証明において<a href="https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf">線形化可能性</a>を一貫性とみなす。
+<p>証明のために、はじめに、一貫性、可用性、分断耐性を定義する。
+一貫性を<a href="https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf">線形化可能性</a>とみなす。
 線形化可能性の必要十分条件は、読み書きがアトミックであるかのように観測できる全順序の操作列が存在することである。
 可用性があれば、正常なノードにメッセージを送ると、かならず応答をえられる。
 ただし、応答の時間の長さに上限はない。

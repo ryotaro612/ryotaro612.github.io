@@ -91,17 +91,27 @@
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/from_ranknet_to_lambdarank_to_lambdamart_an_overview/">抄訳 From RankNet to LambdaRank to LambdaMART: An Overview(2010)</a></h3>
-        <div class="summary"><p>LambdaMARTは、勾配ブースティング決定木(MART)の訓練に、<a href="https://icml.cc/2015/wp-content/uploads/2015/06/icml_ranking.pdf">RankNet</a>と<a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/lambdarank.pdf">LambdaRank</a>を応用するランキング学習である。
+        <h3><a href="https://nryotaro.dev/posts/from_ranknet_to_lambdarank_to_lambdamart_an_overview/">From RankNet to LambdaRank to LambdaMART: An Overview(2010)</a></h3>
+        <div class="summary"><p>LambdaMARTは、勾配ブースティング決定木(MART)の訓練に、<a href="https://icml.cc/2015/wp-content/uploads/2015/06/icml_ranking.pdf">RankNet</a>と<a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/lambdarank.pdf">LambdaRank</a>を応用したランキング学習である。
 RankNetとLambdaRankを以前抄訳で解説した(<a href="/posts/learning_to_rank_using_gradient_descent/">RankNet</a>, <a href="/posts/learning_to_rank_with_nonsmooth_cost_functions/">LambdaRank</a>)。
-RankNetは、名前にNetがついているが、ネットワークアーキテクチャではなく学習方法の技術である。
-モデルが入力されたベクトルを実数に写像することができれば、モデルはニューラルネットワークでなくてもよい。
+RankNetは、名前にNetがついているが、RankNetの論文で提案されたものは、ネットワークアーキテクチャではなくランキング学習のための損失関数である。
+入力されたベクトルをモデルが実数に写像することができれば、ニューラルネットワークでなくてもよい。
 RankNetの学習は、モデルの出力する実数をスコアとみなし、あるクエリに該当する2つの事例のうち、より該当する方に高いスコアを与えられるようにモデルを訓練する。
 各訓練データはランキングの異なる2つの特徴とランキングの高い方を示すラベルであり、2つのスコアの差をシグモイドに与えたときの出力を、一方のサンプルが他方よりもランキングが高い確率とみなす。
 そして、交差エントロピーが最小になるようにモデルを訓練する。
 LambdaRankは、損失の計算を省き、スコアと損失の勾配で重みを更新することで、RankNetの学習を高速化する。
 LambdaMARTは、RankNetに勾配ブースティング決定木を使い、残差の計算にLambdaRankを応用したランキング学習のモデルである。</p></div>
         <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/">
+		#ランキング学習
+	      </a>
+	    </li>
+	    
+	  </ul>
 	  
           <span class="date">February 3, 2023</span>
         </div>
@@ -143,15 +153,32 @@ RankNetをLambdaRankで学習することで、学習時間を短縮し、NDCG�
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/">抄訳 Brewer&#39;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web(2002)</a></h3>
+        <h3><a href="https://nryotaro.dev/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/">Brewer&#39;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web(2002)</a></h3>
         <div class="summary"><p>分散システムは一貫性、可用性、分断耐性を同時に満たすことができない。
-この予想は、2000年のPODCでBrewerが発表したCAP定理として知られてる。
-Brewerの<a href="https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf">講演</a>では厳密な定義と証明がなく、それを補うために、2つの計算モデルにおいてCAPが成立することを証明する。
+この予想は、2000年のPODCでBrewerが発表したCAP定理として知られている。
+しかし、Brewerの<a href="https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf">講演</a>では厳密な定義や証明はない。
+そこで、それを補うために、ある2つの計算モデルでCAPが成立することを証明する。
 計算モデルは、asynchronous network modelとpartially synchhronous modelである。
 asynchronouse network modelでは、モデルのノードは、クロックをもたず、受信したメッセージとノード内の計算のみで出力を決定する。
 partially synchronous modelでは、各ノードは、一定間隔で単調増加するクロックをもち、処理をタイムアウトしたり、スケジューリングしたりできる。
 ただし、ノード間でクロックが同期されているとは限らない。</p></div>
         <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/cap%E5%AE%9A%E7%90%86/">
+		#CAP定理
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+		#分散システム
+	      </a>
+	    </li>
+	    
+	  </ul>
 	  
           <span class="date">January 17, 2023</span>
         </div>

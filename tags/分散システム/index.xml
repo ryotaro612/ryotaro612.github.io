@@ -38,6 +38,37 @@
     </item>
     
     <item>
+      <title>Brewer&#39;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web(2002)</title>
+      <link>https://nryotaro.dev/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/</link>
+      <pubDate>Tue, 17 Jan 2023 11:42:12 -0500</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/</guid>
+      <description>&lt;p&gt;分散システムは一貫性、可用性、分断耐性を同時に満たすことができない。
+この予想は、2000年のPODCでBrewerが発表したCAP定理として知られている。
+しかし、Brewerの&lt;a href=&#34;https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf&#34;&gt;講演&lt;/a&gt;では厳密な定義や証明はない。
+そこで、それを補うために、ある2つの計算モデルでCAPが成立することを証明する。
+計算モデルは、asynchronous network modelとpartially synchhronous modelである。
+asynchronouse network modelでは、モデルのノードは、クロックをもたず、受信したメッセージとノード内の計算のみで出力を決定する。
+partially synchronous modelでは、各ノードは、一定間隔で単調増加するクロックをもち、処理をタイムアウトしたり、スケジューリングしたりできる。
+ただし、ノード間でクロックが同期されているとは限らない。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Epidemic Algorithm for Replicated Database Maintenance(1987)</title>
+      <link>https://nryotaro.dev/posts/epidemic_algorithms_for_replicated_database_maintenance/</link>
+      <pubDate>Mon, 19 Dec 2022 11:07:49 -0500</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/epidemic_algorithms_for_replicated_database_maintenance/</guid>
+      <description>&lt;p&gt;Epidemic Algorithmは、データベース間の差分を解消するために、データベースがランダムに選んだ別のデータベースと同期する手法である。
+Epidemicを邦訳すると伝染性である。
+ここではデータベースにはマスタースレーブの区別はなく、任意のサーバーがレコードの変更リクエストを受理できる。
+Epidemic Algorithmには、定期的にデーターベース全体を同期する手法と、変更を受理したときに当該の変更のみを別のデータベースに伝搬させる手法の2つがある。
+前者は、データベース全体を同期するので変更のとりこぼしがいずれは解消されるが、同期に時間がかかる。
+後者は、時間はかからないが、伝搬を終えるまでに同期できなかった変更があれば、その齟齬が残りつづける。
+データベースがある時点で最新の変更をもたない確率を仮定し、その確率で次の同期で変更を取得できる確率を表し、手法間の同期する収束の速さを比較した。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>An Improved Data Stream Summary: The Count-Min Sketch and its Applications(2005)</title>
       <link>https://nryotaro.dev/posts/an_improved_data_stream_summary_the_count_min_sketch_and_its_application/</link>
       <pubDate>Wed, 07 Dec 2022 12:29:36 -0500</pubDate>
@@ -49,6 +80,19 @@
 \(\ln\)の底は\(e\)である。
 要素の値、ベクトルの内積、ある範囲の要素の和を劣線形の計算量で求めることができる。
 また、これらと二分探索を応用すれば、指定した値よりも大きい要素のみからなる範囲や分位数も計算できる。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>抄訳 MillWheel: Fault-Tolerant Stream Processing at Internet Scale(2013)</title>
+      <link>https://nryotaro.dev/posts/millwheel_fault_tolerant_stream_processing_at_internet_scale/</link>
+      <pubDate>Wed, 23 Nov 2022 11:44:08 -0500</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/millwheel_fault_tolerant_stream_processing_at_internet_scale/</guid>
+      <description>&lt;p&gt;MillWheelはGoogleで開発されたストリーミング処理のフレームワークである。
+開発者が羃等な処理をノードとする有向グラフを実装すれば、MillWheelがデータをノードに正確に一回だけ配信する。
+ただし、転送が遅延しているデータは破棄される。
+データは、キー、値、論理的な時刻の3組からなるレコードを単位として、ノードからノードに出力される。
+向き先のノードは、レコードからキーへの関数を、根のノードから出力されるレコードに適用し、期待するキーに対応するレコードをノードに集約する。&lt;/p&gt;</description>
     </item>
     
   </channel>
