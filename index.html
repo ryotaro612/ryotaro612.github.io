@@ -58,6 +58,30 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/generating_long_sequences_with_sparse_transformers/">Generating Long Sequences with Sparse Transformers</a></h3>
+        <div class="summary"><p><a href="https://arxiv.org/abs/1706.03762">Transformer</a>のQKV注意機構に入力するベクトルを限定し、長さ\(n\)の系列をQKV注意機構に入力したときの空間計算量を\(\mathcal{O}(n\sqrt{n})\)まで減らす。
+Transformerであれば、系列の要素は、要素自体の位置と以前の要素すべてを注意し、時間と空間計算量は\(\mathcal{O}(n^2)\)になる。
+Sparse Transformerは、\(p\)個のパターンを用意し、パターンに該当する要素のみを各注意機構に入力し、\(p\)個の注意を生成する。
+そして、\(p\)個の注意を合成し、1つの注意に変換する。
+パターンは、画像やテキストなど、入力するデータの種類によって決めておく規則であり、たとえば、直近にある一定数の要素や等間隔に離れた要素を指定するパターンがありえある。
+パターンが\(p\)であれば、計算量は\(\mathcal{O}\sqrt[p]{n}\)になる。実験の設定は\(p=2\)である。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/">
+		#言語モデル
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">April 15, 2023</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/storing_a_sparse_table_with_o1_worst_case_access_time/">Storing a Sparse Table with O(1) Worst Case Access Time(1984)</a></h3>
         <div class="summary"><p>単射のハッシュ関数は完全である。完全ハッシュ関数により、衝突することのないハッシュテーブルのデータ構造と計算時間量の証明を示す。
 データ構造は、はじめに、\(U(|U|=m)\)の部分集合\(S\)(\(|S|=n\))の要素\(x\)をハッシュテーブルに格納するとき、ある\(U\)の要素\(k\)を使った関数\(f(x)=(kx\mod p)\mod n\)で\(x\)を格納するブロック\(W_j(0\le j &lt; n)\)を決める。
@@ -270,17 +294,6 @@ ARIESのCLSに記録された更新はUNDOされない。
 	    </li>
 	    
 	  </ul>
-	  
-          <span class="date">February 19, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/arc028b/">AtCoder Regular Contest 028 B 特別賞</a></h3>
-        <div class="summary"><p>Pythonであればheap, C++であればsetを2つ使えばよい。
-新しい要素を追加する度に、一方に上位kの要素、他方にk+1以降の要素があるように、2つのset, heap間で要素を交換する。
-類似の問題をLeetCodeのHard modeで見かけたことがある。</p></div>
-        <div class="article-footer">
 	  
           <span class="date">February 19, 2023</span>
         </div>

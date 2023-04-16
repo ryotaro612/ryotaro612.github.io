@@ -6,7 +6,21 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 08 Apr 2023 12:38:44 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Apr 2023 10:59:43 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Generating Long Sequences with Sparse Transformers</title>
+      <link>https://nryotaro.dev/posts/generating_long_sequences_with_sparse_transformers/</link>
+      <pubDate>Sat, 15 Apr 2023 10:59:43 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/generating_long_sequences_with_sparse_transformers/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1706.03762&#34;&gt;Transformer&lt;/a&gt;のQKV注意機構に入力するベクトルを限定し、長さ\(n\)の系列をQKV注意機構に入力したときの空間計算量を\(\mathcal{O}(n\sqrt{n})\)まで減らす。
+Transformerであれば、系列の要素は、要素自体の位置と以前の要素すべてを注意し、時間と空間計算量は\(\mathcal{O}(n^2)\)になる。
+Sparse Transformerは、\(p\)個のパターンを用意し、パターンに該当する要素のみを各注意機構に入力し、\(p\)個の注意を生成する。
+そして、\(p\)個の注意を合成し、1つの注意に変換する。
+パターンは、画像やテキストなど、入力するデータの種類によって決めておく規則であり、たとえば、直近にある一定数の要素や等間隔に離れた要素を指定するパターンがありえある。
+パターンが\(p\)であれば、計算量は\(\mathcal{O}\sqrt[p]{n}\)になる。実験の設定は\(p=2\)である。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Storing a Sparse Table with O(1) Worst Case Access Time(1984)</title>
       <link>https://nryotaro.dev/posts/storing_a_sparse_table_with_o1_worst_case_access_time/</link>

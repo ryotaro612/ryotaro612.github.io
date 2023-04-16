@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.78272bdd99a3c4f03ee4c826bbe3a970cda497ed85b5da23b0af6dbaf9f30522.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Generating Long Sequences with Sparse Transformers</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>Generating Long Sequences with Sparse Transformers</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/">
+	#言語モデル
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">April 15, 2023</span>    
+  <div>
+    <p><a href="https://arxiv.org/abs/1706.03762">Transformer</a>のQKV注意機構に入力するベクトルを限定し、長さ\(n\)の系列をQKV注意機構に入力したときの空間計算量を\(\mathcal{O}(n\sqrt{n})\)まで減らす。
+Transformerであれば、系列の要素は、要素自体の位置と以前の要素すべてを注意し、時間と空間計算量は\(\mathcal{O}(n^2)\)になる。
+Sparse Transformerは、\(p\)個のパターンを用意し、パターンに該当する要素のみを各注意機構に入力し、\(p\)個の注意を生成する。
+そして、\(p\)個の注意を合成し、1つの注意に変換する。
+パターンは、画像やテキストなど、入力するデータの種類によって決めておく規則であり、たとえば、直近にある一定数の要素や等間隔に離れた要素を指定するパターンがありえある。
+パターンが\(p\)であれば、計算量は\(\mathcal{O}\sqrt[p]{n}\)になる。実験の設定は\(p=2\)である。</p>
+<p>パターンに該当する要素のみを注意機構に入力する以外は、Transformerの注意機構とおなじである。
+パターン\(m\)が\(i\)番目位置にある要素が注意する位置の集合を\(A^{(m)}_{i}\)とする。
+このとき、パターン\(A^{(m)}\)の注意機構が再構成するクエリ\(\text{Attend}(X,A^{(m)})=\left(a({\rm x}_i,A^{(m)}_i)\right)_{i\in\{1,\dots,n\}}\)は、</p>
+<!-- raw HTML omitted -->
+<p>$$
+\begin{align}
+a({\rm x}_i,A^{(m)}_i)&amp;=\text{softmax} \left(\frac{(W_q{\rm x}_i)K^T_{A^{(m)}_i}}{\sqrt{d}}\right)V_{A^{(m)}_i}\\
+K_{A^{(m)}_i}&amp;=\left(W_k{\rm x}_j\right)_{j\in A^{(m)}_i}\\
+V_{A^{(m)}_i}&amp;=\left(W_v{\rm x}_j\right)_{j\in A^{(m)}_i}
+\end{align}
+$$
+である。\(W_q, W_k,W_v\)は\({\rm x}_i\)をクエリ、キー、バリューに変換する重みであり、\(d\)はクエリとキーの次元である。
+実験では、パターンの数は2である。
+パターンを形式的に定義するなら、たとえば、\(A_i^{(1)}=\{t,t+1,\dots,i\}\ \text{for}\ t = \max(0, i-l) \), \(A^{(2)}_i=\{j:(i-j)\ \mod l=0\}\)と示すことができる。</p>
+<p>注意機構がパターン数\(p\)個あるマルチヘッド注意機構であるから、個別の注意機構で生成された注意を合成する。
+2つの合成方法を例示しており、そのうちの一つは、重みを\(W_p\)として
+$$
+\text{attention}(X)=W_p\cdot \text{attend}\left(X,\bigcup^p_{m=1}A^{(m)}\right)
+$$
+を計算し、注意を生成する。</p>
+<h2 id="雑記">雑記</h2>
+<p>sparse factorizationをみて行列分解を想像したが、factorizationは単にQKV注意機構へ入力する要素を限定することだけを意味しているように読めた。
+\(|A^{(m)}_i|\propto\sqrt[p]{n}\)になるようにパターンを選ぶことで、空間計算量を\(\mathcal{O}n\sqrt[p]{n}\)にできるとあるが、\(n\sqrt[p]{n}\)を目標にする必然性が読みとれない。</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/storing_a_sparse_table_with_o1_worst_case_access_time/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>
