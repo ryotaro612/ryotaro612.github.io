@@ -824,6 +824,9 @@
     <loc>https://nryotaro.dev/posts/distributed_representations_of_sentences_and_documents/</loc>
     <lastmod>2019-12-28T00:56:36+09:00</lastmod>
   </url><url>
+    <loc>https://nryotaro.dev/tags/embedding/</loc>
+    <lastmod>2019-12-21T23:53:36+09:00</lastmod>
+  </url><url>
     <loc>https://nryotaro.dev/posts/glove_vectors_for_word_representation/</loc>
     <lastmod>2019-12-21T23:53:36+09:00</lastmod>
   </url><url>
@@ -843,9 +846,6 @@
     <lastmod>2019-12-07T15:10:51+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/a_dual_embedding_space_model_for_document_ranking/</loc>
-    <lastmod>2019-11-30T08:18:06+09:00</lastmod>
-  </url><url>
-    <loc>https://nryotaro.dev/tags/embedding/</loc>
     <lastmod>2019-11-30T08:18:06+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/tags/confidence-calibration/</loc>
