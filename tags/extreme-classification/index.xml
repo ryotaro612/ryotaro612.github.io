@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Extreme Classification on Blanket</title>
+    <title>Extreme classification on Blanket</title>
     <link>https://nryotaro.dev/tags/extreme-classification/</link>
-    <description>Recent content in Extreme Classification on Blanket</description>
+    <description>Recent content in Extreme classification on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 24 Aug 2019 15:45:40 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/tags/extreme-classification/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>メモ FastXML: A Fast, Accurate and Stable Tree-classifier for eXtreme Multi-label Learning(2014)</title>
+      <title>FastXML: A Fast, Accurate and Stable Tree-classifier for eXtreme Multi-label Learning(2014)</title>
       <link>https://nryotaro.dev/posts/fastxml/</link>
       <pubDate>Sat, 24 Aug 2019 15:45:40 +0900</pubDate>
       

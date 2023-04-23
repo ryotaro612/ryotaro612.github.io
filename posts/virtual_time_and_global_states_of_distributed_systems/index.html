@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.78272bdd99a3c4f03ee4c826bbe3a970cda497ed85b5da23b0af6dbaf9f30522.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Virtual Time and Global States of Distributed Systems(1988)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>Virtual Time and Global States of Distributed Systems(1988)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+	#分散システム
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">April 22, 2023</span>    
+  <div>
+    <p>分散システムのプロセス間で時刻が常に同期しているとは限らない。
+プロセスの時刻から判断すると、プロセスでは、ほかのプロセスのイベントと比べてどちらが先に起きたか分からないイベントが起きえる。
+<a href="https://lamport.azurewebsites.net/pubs/time-clocks.pdf">Lamport</a>は、各プロセスに単調増加する論理的な時刻をもたせ、メッセージとともに時刻をプロセス間で交換することで、イベントの依存関係と矛盾せずにイベントを全順序に並べる手法を提案した。
+先行するイベントは、必ず後続のイベントよりも小さい時刻をもつ。
+しかし、逆は必ずしも成り立たない。
+先行する場合もあれば、前後関係がないこともある。
+<a href="http://www.vs.inf.ethz.ch/publ/papers/VirtTimeGlobStates.pdf">Virtual Time and Global States of Distributed Systems</a>は、各プロセスの時刻を、プロセス数とおなじ数の長さの配列で表現する。
+これにより、時刻の前後関係が定義されていることがイベント間に前後関係があることの必要十分条件であることを可能にした。</p>
+<p>イベント\(e\)が\(e'\)に先行する関係を\(&lt;\)と書くなら、Lamportのアルゴリズムは、イベントから時刻への関数を\(C\)として
+$$
+e&lt;e' \rightarrow C(e) &lt; C(e')
+$$
+が成立するようにイベントに時刻を割りあてられる。
+イベントが発生すると、プロセス\(i\)の時刻\(C_i\)が増加する。
+別のプロセスとやりとりしないイベントが発生すると、時刻が\(d\)増加する。
+$$
+C_i:=C_i+d\ (d&gt;0)
+$$
+プロセスがメッセージと一緒に送信時刻\(t\)を別のプロセス\(i\)に送ると、メッセージを受信した\(i\)は、送信元や自身の時刻よりも大きい時刻に更新する。
+$$
+c_i := \max(C_i,t)+ d\ (d&gt;0)
+$$</p>
+<p>Virtual Time and Global States of Distributed Systemsでは、\(n\)個のプロセスからなる分散システムのプロセス\(i\)の時刻を長さ\(n\)の配列で定義する。
+\(i\)で別のプロセスと通信しないイベントが発生するとき、\(C_i[i]:= C_i[i]+1\)と時刻を更新する。
+プロセス\(j\)からメッセージと一緒に送信元の時刻\(C_j\)を受信したときは、\(C_i:=\max(C_i, C_j)\)として要素が\(C_j\)より小さくならないように更新する。
+時刻\(u, v\)の前後関係\(\le, &lt;\)と順序関係の未定義\(||\)の定義は、
+$$
+u\le v\ \textit{iff}\ \forall i: u[i]\le v[i]
+$$
+$$
+u&lt;v\ \textit{iff}\ u \le v\ \textrm{and}\ u\neq v
+$$
+$$
+u||v\ \textit{iff}\ \neg(u&lt;v) \textrm{and}\ \neg (v&lt;u)
+$$
+である。</p>
+<p>以下に論文中にある実行系列の例を示す。Lamportの手法の場合は、時刻を0で初期化し\(d=1\)とすると\(\begin{pmatrix}0\\1\\0\\0\end{pmatrix}\)と\(\begin{pmatrix}0\\0\\0\\2\end{pmatrix}\)のイベントの時刻はどちらも\(\begin{pmatrix}2\\1\\2\\1\end{pmatrix}\)より小さくなる。
+前者は前後関係があり、後者は未定義である。
+<img src="/virtual_time_and_global_states_of_distributed_systems.png" alt="example"></p>
+<h2 id="雑記">雑記</h2>
+<p>Lamportの論文も以前<a href="https://nryotaro.dev/posts/time_clocks_and_the_ordering_of_events_in_a_distributed_system/">解説</a>した。</p>
+<p>論文では、デバッグと分散システムのアルゴリズムの設計が応用先として提案されている。
+アルゴリズムの設計の応用例として、<a href="https://lamport.azurewebsites.net/pubs/chandy.pdf">Distributed Snapshots: Determining Global States of Distributed Systems</a>を提案手法で再実装する方針の説明がある。
+ただし、もとのアルゴリズムとの比較がない。
+デバッグに役立つと語るならば、デバッグの容易さを比較するべきだろう。</p>
+<p>また、デバッグとは別に、アルゴリズムの設計に役立つと主張するなら、Lamportの\(e&lt;e' \rightarrow C(e) &lt; C(e')\)が\(e&lt;e' \leftrightarrow C(e) &lt; C(e')\)になることで可能になるアルゴリズムがあることを主張すると説得力が増すだろうが、そのようなアルゴリズムの提案は論文中にはない。</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/generating_long_sequences_with_sparse_transformers/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

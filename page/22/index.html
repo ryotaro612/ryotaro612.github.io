@@ -58,6 +58,23 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/neural_machine_translation_by_jointly_learning_to_align_and_translate/">論文メモ NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>Decoderに注意機構を採用したencoder-decoderモデルを提案した論文である。
+ICLR2015で発表された。
+論文の発表当時、encoder-decoderモデルによる翻訳の多くは、encoderが入力文を固定長ベクトルに変換し、固定長ベクトルから翻訳された文を出力していた。
+著者らは、固定長ベクトルへの変換が長い文の翻訳性能を下げていると考え、固定長ベクトルを注意機構におきかえたencoder-decoderモデルを提案する。
+モデルは、翻訳に加え、生成する単語と入力文の箇所の関係を学習する。
+推定時には、まず、次に生成する単語に関係する入力文の箇所を推定する。
+次に、推定された箇所と生成済の単語列をもとに、単語を生成する。
+特に長い文書の翻訳において、固定長ベクトルをつかうモデルよりも、提案手法が優れていることを実験的に示した。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">February 1, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/why_should_i_trust_you/">論文メモ &#34;Why Should I Trust You?&#34; Explaining the Predictions of Any Classifier</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>モデルの予測に説明をあたえる手法、Local Interpretable Model-agnostic Explanations (LIME)を提案する。
@@ -120,7 +137,7 @@ ELOに用いる損失関数にDCGを採用したExpected DCG Loss Optimization(E
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/">論文メモ Learning Deep Structured Semantic Models for Web Search using Clickthrough Data</a></h3>
+        <h3><a href="https://nryotaro.dev/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/">Learning Deep Structured Semantic Models for Web Search using Clickthrough Data(2013)</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>クエリと文書を同じ低次元の空間に射影する深層学習のモデルを提案した論文である。
 クエリと文書は、適合度合いが高いほど、近くに配置される。
@@ -128,30 +145,66 @@ ELOに用いる損失関数にDCGを採用したExpected DCG Loss Optimization(E
 実験では、商用検索エンジンから抽出した16510件のクエリと対応するWeサイトのタイトルがつかわれる。
 Web文書の大量の語彙をあつかうために、語彙の増加に対して次元数を抑えるbag-of-wordsの手法、word hasingも提案した。</p></div>
         <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/">
+		#ランキング学習
+	      </a>
+	    </li>
+	    
+	  </ul>
 	  
           <span class="date">January 4, 2020</span>
         </div>
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/classification_in_the_presence_of_label_noise/">論文メモ Classification in the Presence of Label Noise: a Survey</a></h3>
+        <h3><a href="https://nryotaro.dev/posts/classification_in_the_presence_of_label_noise/">Classification in the Presence of Label Noise: a Survey(2013)</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>ノイズのある教師データによるクラス分類の<a href="https://romisatriawahono.net/lecture/rm/survey/machine%20learning/Frenay%20-%20Classification%20in%20the%20Presence%20of%20Label%20Noise%20-%202014.pdf">サーベイ論文</a>である。発表時期は、<a href="https://ieeexplore.ieee.org/document/6685834">2013年の12月</a>である。
 主な内容は、ノイズの分類、ノイズが分類に及ぼす影響、ノイズへの対策である。</p></div>
         <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/label-noise/">
+		#Label noise
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E3%82%B5%E3%83%BC%E3%83%99%E3%82%A4%E8%AB%96%E6%96%87/">
+		#サーベイ論文
+	      </a>
+	    </li>
+	    
+	  </ul>
 	  
           <span class="date">December 30, 2019</span>
         </div>
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/distributed_representations_of_sentences_and_documents/">論文メモ Distributed Representations of Sentences and Documents</a></h3>
+        <h3><a href="https://nryotaro.dev/posts/distributed_representations_of_sentences_and_documents/">Distributed Representations of Sentences and Documents(2014)</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p><a href="https://radimrehurek.com/gensim/models/doc2vec.html">Doc2Vec</a>のアルゴリズムとして採用されたニューラル言語モデルParagraph Vectorを提案した論文である。
 bag of wordsは、文書の単語順を記憶せず、また、似た意味の単語ベクトルと無関係なベクトルを単語にわりあてる。
 Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文脈の中心の単語をあてられるように学習することで、可変長文字列から固定長の文書埋め込みベクトルを生成できるようになる。
 これにより、単語順と単語の意味を記憶したベクトルの生成を実現する。</p></div>
         <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/embedding/">
+		#Embedding
+	      </a>
+	    </li>
+	    
+	  </ul>
 	  
           <span class="date">December 28, 2019</span>
         </div>
@@ -175,17 +228,6 @@ Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文�
 	  </ul>
 	  
           <span class="date">December 21, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/bert/">BERT: Pre-training of Deep Bidirectional Transformers for Lnaguages Understaing(2018)</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>BERTは<a href="https://arxiv.org/pdf/1706.03762.pdf">Attention Is All You Need</a>にあるTransformerをアーキテクチャに導入した分散表現のモデルであり、本稿は、事前学習済みのBERTにファインチューニングを適用しQAタスクや自然言語推論のベンチマークにおいて既存研究を上回る結果を示している。
-なお、アーキテクチャに関する説明は少なく、子細に知りたい場合は<a href="https://arxiv.org/pdf/1706.03762.pdf">Attention Is All You Need</a>や<a href="http://nlp.seas.harvard.edu/2018/04/03/attention.html">The Annotated Transformer</a>を参照するように案内されている。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">December 14, 2019</span>
         </div>
     </article>
     

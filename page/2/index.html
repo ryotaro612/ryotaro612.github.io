@@ -58,6 +58,28 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/scatter_gather_a_cluster_based_approach_to_browsing_large_document_collections/">抄訳 Scatter/Gather: A Cluster-based Approach to Browsing Large Document Collections(1992)</a></h3>
+        <div class="summary"><p>Scatter/Gatherは、ユーザーにクエリを入力するかわりに、システムが提示する文書のクラスタをユーザーに選ばせる情報検索の手法である。
+ユーザーが目的の情報にだどりつける適当なクエリをいつも作れるとはかぎらない。
+ユーザーが詳しくない分野の情報を調べるときは、クエリにつかえる用語を知らないかもしれない。
+また、ある分野の情報を広く浅く収集したいときは、クエリの単語によって検索対象を狭く限定したくないかもしれない。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/">
+		#クラスタリング
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">February 19, 2023</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/arc028b/">AtCoder Regular Contest 028 B 特別賞</a></h3>
         <div class="summary"><p>Pythonであればheap, C++であればsetを2つ使えばよい。
 新しい要素を追加する度に、一方に上位kの要素、他方にk+1以降の要素があるように、2つのset, heap間で要素を交換する。
@@ -107,7 +129,7 @@
 RankNetとLambdaRankを以前抄訳で解説した(<a href="/posts/learning_to_rank_using_gradient_descent/">RankNet</a>, <a href="/posts/learning_to_rank_with_nonsmooth_cost_functions/">LambdaRank</a>)。
 RankNetは、名前にNetがついているが、RankNetの論文で提案されたものは、ネットワークアーキテクチャではなくランキング学習のための損失関数である。
 入力されたベクトルをモデルが実数に写像することができれば、ニューラルネットワークでなくてもよい。
-RankNetの学習は、モデルの出力する実数をスコアとみなし、あるクエリに該当する2つの事例のうち、より該当する方に高いスコアを与えられるようにモデルを訓練する。
+RankNetの学習は、モデルの出力する実数をスコアとみなし、あるクエリに該当する2つの事例のうち、より該当する事例に高いスコアを与えられるようにモデルを訓練する。
 各訓練データはランキングの異なる2つの特徴とランキングの高い方を示すラベルであり、2つのスコアの差をシグモイドに与えたときの出力を、一方のサンプルが他方よりもランキングが高い確率とみなす。
 そして、交差エントロピーが最小になるようにモデルを訓練する。
 LambdaRankは、損失の計算を省き、スコアと損失の勾配で重みを更新することで、RankNetの学習を高速化する。
@@ -215,30 +237,6 @@ RankNetの学習は、モデルの出力と訓練データの確率分布の交�
 	  </ul>
 	  
           <span class="date">January 7, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/programming_with_abstract_data_types/">抄訳 PROGRAMMING WITH ABSTRACT DATA TYPES (1974)</a></h3>
-        <div class="summary"><p>高水準言語は、実装の詳細を意識せずに使える操作、データ構造、while文などの制御構造を提供する。
-この3つを抽象とよぶ。
-プログラミング言語から提供される抽象だけではプログラムを実装できないので、開発者は、足りない抽象を実装しなければならない。
-抽象データ型は、言語から提供される抽象を組合せて作るデータ構造である。
-抽象データ型に対する操作の実装は外部に公開されず、抽象データ型の特徴は抽象データ型に可能な操作によって決まる。
-構造化プログラミングと抽象データ型を提供するプログラミング言語を開発し、抽象データ型を使うプログラムのソースコードを例示することで、ほとんどの処理が抽象データ型だけで実装可能なことを示唆した。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E6%8A%BD%E8%B1%A1%E3%83%87%E3%83%BC%E3%82%BF%E5%9E%8B/">
-		#抽象データ型
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 28, 2022</span>
         </div>
     </article>
     

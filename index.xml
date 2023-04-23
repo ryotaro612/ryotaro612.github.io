@@ -6,7 +6,23 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 15 Apr 2023 10:59:43 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Apr 2023 21:35:08 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Virtual Time and Global States of Distributed Systems(1988)</title>
+      <link>https://nryotaro.dev/posts/virtual_time_and_global_states_of_distributed_systems/</link>
+      <pubDate>Sat, 22 Apr 2023 21:35:08 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/virtual_time_and_global_states_of_distributed_systems/</guid>
+      <description>&lt;p&gt;分散システムのプロセス間で時刻が常に同期しているとは限らない。
+プロセスの時刻から判断すると、プロセスでは、ほかのプロセスのイベントと比べてどちらが先に起きたか分からないイベントが起きえる。
+&lt;a href=&#34;https://lamport.azurewebsites.net/pubs/time-clocks.pdf&#34;&gt;Lamport&lt;/a&gt;は、各プロセスに単調増加する論理的な時刻をもたせ、メッセージとともに時刻をプロセス間で交換することで、イベントの依存関係と矛盾せずにイベントを全順序に並べる手法を提案した。
+先行するイベントは、必ず後続のイベントよりも小さい時刻をもつ。
+しかし、逆は必ずしも成り立たない。
+先行する場合もあれば、前後関係がないこともある。
+&lt;a href=&#34;http://www.vs.inf.ethz.ch/publ/papers/VirtTimeGlobStates.pdf&#34;&gt;Virtual Time and Global States of Distributed Systems&lt;/a&gt;は、各プロセスの時刻を、プロセス数とおなじ数の長さの配列で表現する。
+これにより、時刻の前後関係が定義されていることがイベント間に前後関係があることの必要十分条件であることを可能にした。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Generating Long Sequences with Sparse Transformers</title>
       <link>https://nryotaro.dev/posts/generating_long_sequences_with_sparse_transformers/</link>
@@ -49,7 +65,7 @@ GPT-2のアーキテクチャは、GPT-1に層正規化の位置を変え、resi
     </item>
     
     <item>
-      <title>概要 Proving the Correctness of Multiprocess Programs (1977)</title>
+      <title>Proving the Correctness of Multiprocess Programs (1977)</title>
       <link>https://nryotaro.dev/posts/proving_correctness_of_multiprocess_programs/</link>
       <pubDate>Sat, 25 Mar 2023 12:34:08 -0400</pubDate>
       
@@ -88,7 +104,7 @@ GPT-2のアーキテクチャは、GPT-1に層正規化の位置を変え、resi
     </item>
     
     <item>
-      <title>抄訳 Your Coffee Shop Doesn&#39;t Use Two-Phase Commit(2005)</title>
+      <title>Your Coffee Shop Doesn&#39;t Use Two-Phase Commit(2005)</title>
       <link>https://nryotaro.dev/posts/your_coffee_shop_doesnt_use_two_phase_commit/</link>
       <pubDate>Sun, 12 Mar 2023 16:17:35 -0400</pubDate>
       
@@ -197,7 +213,7 @@ ARIESのCLSに記録された更新はUNDOされない。
 RankNetとLambdaRankを以前抄訳で解説した(&lt;a href=&#34;https://nryotaro.dev/posts/learning_to_rank_using_gradient_descent/&#34;&gt;RankNet&lt;/a&gt;, &lt;a href=&#34;https://nryotaro.dev/posts/learning_to_rank_with_nonsmooth_cost_functions/&#34;&gt;LambdaRank&lt;/a&gt;)。
 RankNetは、名前にNetがついているが、RankNetの論文で提案されたものは、ネットワークアーキテクチャではなくランキング学習のための損失関数である。
 入力されたベクトルをモデルが実数に写像することができれば、ニューラルネットワークでなくてもよい。
-RankNetの学習は、モデルの出力する実数をスコアとみなし、あるクエリに該当する2つの事例のうち、より該当する方に高いスコアを与えられるようにモデルを訓練する。
+RankNetの学習は、モデルの出力する実数をスコアとみなし、あるクエリに該当する2つの事例のうち、より該当する事例に高いスコアを与えられるようにモデルを訓練する。
 各訓練データはランキングの異なる2つの特徴とランキングの高い方を示すラベルであり、2つのスコアの差をシグモイドに与えたときの出力を、一方のサンプルが他方よりもランキングが高い確率とみなす。
 そして、交差エントロピーが最小になるようにモデルを訓練する。
 LambdaRankは、損失の計算を省き、スコアと損失の勾配で重みを更新することで、RankNetの学習を高速化する。
@@ -344,7 +360,7 @@ Epidemic Algorithmには、定期的にデーターベース全体を同期す�
     </item>
     
     <item>
-      <title>抄訳 MillWheel: Fault-Tolerant Stream Processing at Internet Scale(2013)</title>
+      <title>MillWheel: Fault-Tolerant Stream Processing at Internet Scale(2013)</title>
       <link>https://nryotaro.dev/posts/millwheel_fault_tolerant_stream_processing_at_internet_scale/</link>
       <pubDate>Wed, 23 Nov 2022 11:44:08 -0500</pubDate>
       
@@ -2951,7 +2967,7 @@ ELOに用いる損失関数にDCGを採用したExpected DCG Loss Optimization(E
     </item>
     
     <item>
-      <title>論文メモ Learning Deep Structured Semantic Models for Web Search using Clickthrough Data</title>
+      <title>Learning Deep Structured Semantic Models for Web Search using Clickthrough Data(2013)</title>
       <link>https://nryotaro.dev/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/</link>
       <pubDate>Sat, 04 Jan 2020 23:25:20 +0900</pubDate>
       
@@ -2965,7 +2981,7 @@ Web文書の大量の語彙をあつかうために、語彙の増加に対し�
     </item>
     
     <item>
-      <title>論文メモ Classification in the Presence of Label Noise: a Survey</title>
+      <title>Classification in the Presence of Label Noise: a Survey(2013)</title>
       <link>https://nryotaro.dev/posts/classification_in_the_presence_of_label_noise/</link>
       <pubDate>Mon, 30 Dec 2019 16:07:40 +0900</pubDate>
       
@@ -2976,7 +2992,7 @@ Web文書の大量の語彙をあつかうために、語彙の増加に対し�
     </item>
     
     <item>
-      <title>論文メモ Distributed Representations of Sentences and Documents</title>
+      <title>Distributed Representations of Sentences and Documents(2014)</title>
       <link>https://nryotaro.dev/posts/distributed_representations_of_sentences_and_documents/</link>
       <pubDate>Sat, 28 Dec 2019 00:56:36 +0900</pubDate>
       
@@ -3233,7 +3249,7 @@ Snorkelは、入力された複数のラベリング関数をデータに適用�
     </item>
     
     <item>
-      <title>メモ FastXML: A Fast, Accurate and Stable Tree-classifier for eXtreme Multi-label Learning(2014)</title>
+      <title>FastXML: A Fast, Accurate and Stable Tree-classifier for eXtreme Multi-label Learning(2014)</title>
       <link>https://nryotaro.dev/posts/fastxml/</link>
       <pubDate>Sat, 24 Aug 2019 15:45:40 +0900</pubDate>
       
