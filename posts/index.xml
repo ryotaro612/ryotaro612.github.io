@@ -6,7 +6,21 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 22 Apr 2023 21:35:08 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Apr 2023 12:12:11 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AN IMAGE IS WORTH 16x16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE(2021)</title>
+      <link>https://nryotaro.dev/posts/an_image_is_worth_16x16_words_transformers_for_image_recognition_at_scale/</link>
+      <pubDate>Sat, 29 Apr 2023 12:12:11 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/an_image_is_worth_16x16_words_transformers_for_image_recognition_at_scale/</guid>
+      <description>&lt;p&gt;画像認識に&lt;a href=&#34;https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;Transformer&lt;/a&gt;を使う手法を提案し、&lt;a href=&#34;https://arxiv.org/abs/1912.11370&#34;&gt;Big Transfer&lt;/a&gt;と&lt;a href=&#34;https://arxiv.org/abs/1911.04252&#34;&gt;Noisy Student&lt;/a&gt;と比較した。
+論文が発表された2021年でも、画像認識にニューラルネットワークを使う場合、畳込みニューラルネット(CNN)が基本の選択肢になる。
+自己注意機構を使った画像処理の&lt;a href=&#34;https://arxiv.org/abs/2003.07853&#34;&gt;先行研究&lt;/a&gt;はあるが、スケールするアーキテクチャではない。&lt;/p&gt;
+&lt;p&gt;AN IMAGE IS WORTH 16x16 WORDSは、分割した画像をトークン（単語）のようにTransformerへ入力することで、Transformerを画像認識へ応用できるこを示した。
+TransformerはCNNのように画像の向きや局所性を帰納バイアスにもたず、データが不十分でないと汎化性能は低い。
+しかし、学習データを14M-300Mまで増やすと、CNNを越える汎化性能を発揮した。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Virtual Time and Global States of Distributed Systems(1988)</title>
       <link>https://nryotaro.dev/posts/virtual_time_and_global_states_of_distributed_systems/</link>
@@ -24,12 +38,12 @@
     </item>
     
     <item>
-      <title>Generating Long Sequences with Sparse Transformers</title>
+      <title>Generating Long Sequences with Sparse Transformers(2019)</title>
       <link>https://nryotaro.dev/posts/generating_long_sequences_with_sparse_transformers/</link>
       <pubDate>Sat, 15 Apr 2023 10:59:43 -0400</pubDate>
       
       <guid>https://nryotaro.dev/posts/generating_long_sequences_with_sparse_transformers/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1706.03762&#34;&gt;Transformer&lt;/a&gt;のQKV注意機構に入力するベクトルを限定し、長さ\(n\)の系列をQKV注意機構に入力したときの空間計算量を\(\mathcal{O}(n\sqrt{n})\)まで減らす。
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1706.03762&#34;&gt;Transformer&lt;/a&gt;のQKV注意機構に入力するベクトルを限定し、長さ\(n\)の系列をQKV注意機構に入力したときの空間計算量を\(\mathcal{O}(n\sqrt{n})\)まで減らした&lt;a href=&#34;https://arxiv.org/abs/1904.10509&#34;&gt;研究&lt;/a&gt;である。
 Transformerであれば、系列の要素は、要素自体の位置と以前の要素すべてを注意し、時間と空間計算量は\(\mathcal{O}(n^2)\)になる。
 Sparse Transformerは、\(p\)個のパターンを用意し、パターンに該当する要素のみを各注意機構に入力し、\(p\)個の注意を生成する。
 そして、\(p\)個の注意を合成し、1つの注意に変換する。
@@ -171,7 +185,7 @@ ARIESのCLSに記録された更新はUNDOされない。
     </item>
     
     <item>
-      <title>抄訳 Zookeeper: Wait-free coordination for Internet-scale systems (2010)</title>
+      <title>Zookeeper: Wait-free coordination for Internet-scale systems (2010)</title>
       <link>https://nryotaro.dev/posts/zookeeper_wait_free_coordination_for_internat_scale_systems/</link>
       <pubDate>Sun, 12 Feb 2023 15:47:06 -0500</pubDate>
       
@@ -2599,7 +2613,7 @@ ICLR2015で発表された。
     </item>
     
     <item>
-      <title>論文メモ &#34;Why Should I Trust You?&#34; Explaining the Predictions of Any Classifier</title>
+      <title>Why Should I Trust You? Explaining the Predictions of Any Classifier</title>
       <link>https://nryotaro.dev/posts/why_should_i_trust_you/</link>
       <pubDate>Sun, 26 Jan 2020 01:38:57 +0900</pubDate>
       
@@ -2612,7 +2626,7 @@ ICLR2015で発表された。
     </item>
     
     <item>
-      <title>論文メモ Active Learning for Ranking through Expected Loss Optimization</title>
+      <title>Active Learning for Ranking through Expected Loss Optimization</title>
       <link>https://nryotaro.dev/posts/active_learning_for_ranking_through_expected_loss_optimization/</link>
       <pubDate>Sun, 19 Jan 2020 18:23:41 +0900</pubDate>
       
@@ -2634,7 +2648,7 @@ ELOに用いる損失関数にDCGを採用したExpected DCG Loss Optimization(E
     </item>
     
     <item>
-      <title>論文メモ Unsupervised Models for Named Entity Classification</title>
+      <title>Unsupervised Models for Named Entity Classification(1999)</title>
       <link>https://nryotaro.dev/posts/unsupervised_models_for_named_entity_classification/</link>
       <pubDate>Mon, 13 Jan 2020 19:54:03 +0900</pubDate>
       
@@ -2649,7 +2663,7 @@ ELOに用いる損失関数にDCGを採用したExpected DCG Loss Optimization(E
     </item>
     
     <item>
-      <title>論文メモ Multilabel Classification with Label Correlations and Missing Labels</title>
+      <title>Multilabel Classification with Label Correlations and Missing Labels(2014)</title>
       <link>https://nryotaro.dev/posts/multilabel_classification_with_label_correlations_and_missing_labels/</link>
       <pubDate>Mon, 06 Jan 2020 22:27:05 +0900</pubDate>
       

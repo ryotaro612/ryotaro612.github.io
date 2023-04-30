@@ -2,14 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://nryotaro.dev/posts/an_image_is_worth_16x16_words_transformers_for_image_recognition_at_scale/</loc>
+    <lastmod>2023-04-29T12:12:11-04:00</lastmod>
+  </url><url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2023-04-22T21:35:08-04:00</lastmod>
+    <lastmod>2023-04-29T12:12:11-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2023-04-22T21:35:08-04:00</lastmod>
+    <lastmod>2023-04-29T12:12:11-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/tags/</loc>
-    <lastmod>2023-04-22T21:35:08-04:00</lastmod>
+    <lastmod>2023-04-29T12:12:11-04:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/tags/transformer/</loc>
+    <lastmod>2023-04-29T12:12:11-04:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/tags/%E7%94%BB%E5%83%8F%E8%AA%8D%E8%AD%98/</loc>
+    <lastmod>2023-04-29T12:12:11-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/virtual_time_and_global_states_of_distributed_systems/</loc>
     <lastmod>2023-04-22T21:35:08-04:00</lastmod>
@@ -73,6 +82,9 @@
   </url><url>
     <loc>https://nryotaro.dev/posts/arc028b/</loc>
     <lastmod>2023-02-19T10:56:35+09:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/tags/zookeeper/</loc>
+    <lastmod>2023-02-12T15:47:06-05:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/zookeeper_wait_free_coordination_for_internat_scale_systems/</loc>
     <lastmod>2023-02-12T15:47:06-05:00</lastmod>
@@ -803,16 +815,31 @@
     <loc>https://nryotaro.dev/posts/why_should_i_trust_you/</loc>
     <lastmod>2020-01-26T01:38:57+09:00</lastmod>
   </url><url>
+    <loc>https://nryotaro.dev/tags/%E8%AA%AC%E6%98%8E%E5%8F%AF%E8%83%BD%E3%81%AAai/</loc>
+    <lastmod>2020-01-26T01:38:57+09:00</lastmod>
+  </url><url>
     <loc>https://nryotaro.dev/posts/active_learning_for_ranking_through_expected_loss_optimization/</loc>
+    <lastmod>2020-01-19T18:23:41+09:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/tags/%E8%83%BD%E5%8B%95%E5%AD%A6%E7%BF%92/</loc>
     <lastmod>2020-01-19T18:23:41+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/docker-cmake-clang/</loc>
     <lastmod>2020-01-14T00:29:43+09:00</lastmod>
   </url><url>
+    <loc>https://nryotaro.dev/tags/ner/</loc>
+    <lastmod>2020-01-13T19:54:03+09:00</lastmod>
+  </url><url>
     <loc>https://nryotaro.dev/posts/unsupervised_models_for_named_entity_classification/</loc>
     <lastmod>2020-01-13T19:54:03+09:00</lastmod>
   </url><url>
+    <loc>https://nryotaro.dev/tags/%E6%95%99%E5%B8%AB%E3%81%AA%E3%81%97%E5%AD%A6%E7%BF%92/</loc>
+    <lastmod>2020-01-13T19:54:03+09:00</lastmod>
+  </url><url>
     <loc>https://nryotaro.dev/posts/multilabel_classification_with_label_correlations_and_missing_labels/</loc>
+    <lastmod>2020-01-06T22:27:05+09:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/tags/%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A9%E3%83%99%E3%83%AB%E5%88%86%E9%A1%9E/</loc>
     <lastmod>2020-01-06T22:27:05+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/gallery/taihoh/</loc>
@@ -1021,9 +1048,6 @@
   </url><url>
     <loc>https://nryotaro.dev/tags/%E7%B3%BB%E5%88%97%E3%83%A9%E3%83%99%E3%83%AA%E3%83%B3%E3%82%B0/</loc>
     <lastmod>2018-10-05T18:46:36+09:00</lastmod>
-  </url><url>
-    <loc>https://nryotaro.dev/tags/ner/</loc>
-    <lastmod>2018-09-28T16:29:46+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/tags/word-embedding/</loc>
     <lastmod>2018-09-28T16:29:46+09:00</lastmod>

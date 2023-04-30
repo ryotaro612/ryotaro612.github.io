@@ -38,6 +38,19 @@ RankNetの学習は、モデルの出力と訓練データの確率分布の交�
     </item>
     
     <item>
+      <title>Active Learning for Ranking through Expected Loss Optimization</title>
+      <link>https://nryotaro.dev/posts/active_learning_for_ranking_through_expected_loss_optimization/</link>
+      <pubDate>Sun, 19 Jan 2020 18:23:41 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/active_learning_for_ranking_through_expected_loss_optimization/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+&lt;p&gt;Yahoo! Labsで開発されたランキングのための能動学習の論文である。
+提案手法は、Yahoo!検索エンジンでの&lt;a href=&#34;https://www.kdd.org/kdd2016/papers/files/adf0361-yinA.pdf&#34;&gt;採用実績&lt;/a&gt;がある。
+手法は、Expected Loss Optimization(ELO)とよばれ、ベイズ決定則によって識別したときの損失の期待値が最大になるデータを選ぶ。
+ELOに用いる損失関数にDCGを採用したExpected DCG Loss Optimization(ELO-DCG)を提案し、実験で評価した。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Learning Deep Structured Semantic Models for Web Search using Clickthrough Data(2013)</title>
       <link>https://nryotaro.dev/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/</link>
       <pubDate>Sat, 04 Jan 2020 23:25:20 +0900</pubDate>

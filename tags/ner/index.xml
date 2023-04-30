@@ -6,7 +6,22 @@
     <description>Recent content in NER on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 28 Sep 2018 16:29:46 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/tags/ner/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Jan 2020 19:54:03 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/tags/ner/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unsupervised Models for Named Entity Classification(1999)</title>
+      <link>https://nryotaro.dev/posts/unsupervised_models_for_named_entity_classification/</link>
+      <pubDate>Mon, 13 Jan 2020 19:54:03 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/unsupervised_models_for_named_entity_classification/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+&lt;p&gt;1999年に発表された教師なしの固有表現抽出の手法である。
+発表時期が古いことに注意してほしい。
+2つの手法が提案されている。
+ひとつは、DL-CoTrainと呼ばれるルールベースの手法であり、教師なしデータに既存のルールを適用、適用結果から導出したルールを既存のルールに追加、をくりかえしてルールを増やす。
+もう一方は、AdaBoostを応用したCoBoostとよばれる手法である。
+ルールベースの手法のほうがCoBoostよりもよい実験結果であったので、前者のみを説明する。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>抄訳 Contextual String Embeddings for Sequence Labeling(2018)</title>
       <link>https://nryotaro.dev/posts/context_string_embeddings_for_sequence_labeling/</link>

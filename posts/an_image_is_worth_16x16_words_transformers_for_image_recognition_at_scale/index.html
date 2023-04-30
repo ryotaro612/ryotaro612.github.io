@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.78272bdd99a3c4f03ee4c826bbe3a970cda497ed85b5da23b0af6dbaf9f30522.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>AN IMAGE IS WORTH 16x16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE(2021)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>AN IMAGE IS WORTH 16x16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE(2021)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/%E7%94%BB%E5%83%8F%E8%AA%8D%E8%AD%98/">
+	#画像認識
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/transformer/">
+	#Transformer
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">April 29, 2023</span>    
+  <div>
+    <p>画像認識に<a href="https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">Transformer</a>を使う手法を提案し、<a href="https://arxiv.org/abs/1912.11370">Big Transfer</a>と<a href="https://arxiv.org/abs/1911.04252">Noisy Student</a>と比較した。
+論文が発表された2021年でも、画像認識にニューラルネットワークを使う場合、畳込みニューラルネット(CNN)が基本の選択肢になる。
+自己注意機構を使った画像処理の<a href="https://arxiv.org/abs/2003.07853">先行研究</a>はあるが、スケールするアーキテクチャではない。</p>
+<p>AN IMAGE IS WORTH 16x16 WORDSは、分割した画像をトークン（単語）のようにTransformerへ入力することで、Transformerを画像認識へ応用できるこを示した。
+TransformerはCNNのように画像の向きや局所性を帰納バイアスにもたず、データが不十分でないと汎化性能は低い。
+しかし、学習データを14M-300Mまで増やすと、CNNを越える汎化性能を発揮した。</p>
+<p>画像をパッチに分割し、画像の断片を単語のように<a href="(https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)">Transformer</a>へ入力する。
+ただし、単語とは異なり、一次元ではなく二次元のデータに画像を変換し、Transformerに入力する。
+以下は、論文にある学習時の様子である。
+<img src="/an_image_is_worth_16x16_words.png" alt="image">
+解像度を\(H\times W\), チャネルを\(C\), パッチの解像度を\((P\times P)\)として、画像\({\rm x}\in\mathbb{R}^{H\times W\times C}\)をパッチ\({\rm x}_p\in\mathbb{R}^{N\times (P^2\cdot C)}\)に分割する。
+\(N=HW/P^2\)である。</p>
+<p>Transformerは後続の層に入力データを流すために、長さ\(D\)の固定長の潜在ベクトルにパッチを変換する。
+以下の式により、クラスを表現するためのエンベディング\({\rm z}^0_0={\rm x}_{\text{class}}\)と重み\(\boldsymbol{\rm E, E}_{\textit{pos}}\)を使い、画像を\({\rm z}_0\in \mathbb{R}^{(N+1)\times D}\)に変換する。
+\(E_{\textit{pos}}\)はパッチの位置を表すパラメタである。
+$$
+{\rm z}_0 =[{\rm x}_{\text{class}};{\rm x}^1_p{\rm E};{\rm x}^2_p{\rm E};\cdots ;{\rm x}^N_p{\rm E}]+{\rm E}_{\textit{pos}}
+$$
+\({\rm E}\in \mathbb{R}^{(P^2\cdot C)\times D}\), \({\rm E}_{\textit{pos}}\in\mathbb{R}^{(N+1)\times D}\)である。</p>
+<p>層正規化を\(\text{LN}\), マルチヘッド注意機構を\(\text{MSA}\), フィードフォワード層を\(\text{MLP}\)とすると、画像の表現\({\rm y}\)までの後続のネットワークは、\(l=1\dots L\)として
+$$
+\begin{align*}
+{\rm z}'_l&amp;=\text{MSA}(\text{LN}({\rm z_{l-1}}))+{\rm z}_{l-1}\\
+{\rm z}_l&amp;=\text{MLP}(\text{LN}(z'_l))+{\rm z}'_l\\
+{\rm y}&amp;=\text{LN}({\rm z}^0_L)
+\end{align*}
+$$
+と示せる。
+事前学習時には、\({\rm z^0_L}\)の後に、隠れ層が1つのMLPが続き、ファインチューニング時にはlinear layerが1つ続く。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="雑記">雑記</h2>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/virtual_time_and_global_states_of_distributed_systems/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

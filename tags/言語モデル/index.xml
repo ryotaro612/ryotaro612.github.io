@@ -8,12 +8,12 @@
     <language>ja</language>
     <lastBuildDate>Sat, 15 Apr 2023 10:59:43 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Generating Long Sequences with Sparse Transformers</title>
+      <title>Generating Long Sequences with Sparse Transformers(2019)</title>
       <link>https://nryotaro.dev/posts/generating_long_sequences_with_sparse_transformers/</link>
       <pubDate>Sat, 15 Apr 2023 10:59:43 -0400</pubDate>
       
       <guid>https://nryotaro.dev/posts/generating_long_sequences_with_sparse_transformers/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1706.03762&#34;&gt;Transformer&lt;/a&gt;のQKV注意機構に入力するベクトルを限定し、長さ\(n\)の系列をQKV注意機構に入力したときの空間計算量を\(\mathcal{O}(n\sqrt{n})\)まで減らす。
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1706.03762&#34;&gt;Transformer&lt;/a&gt;のQKV注意機構に入力するベクトルを限定し、長さ\(n\)の系列をQKV注意機構に入力したときの空間計算量を\(\mathcal{O}(n\sqrt{n})\)まで減らした&lt;a href=&#34;https://arxiv.org/abs/1904.10509&#34;&gt;研究&lt;/a&gt;である。
 Transformerであれば、系列の要素は、要素自体の位置と以前の要素すべてを注意し、時間と空間計算量は\(\mathcal{O}(n^2)\)になる。
 Sparse Transformerは、\(p\)個のパターンを用意し、パターンに該当する要素のみを各注意機構に入力し、\(p\)個の注意を生成する。
 そして、\(p\)個の注意を合成し、1つの注意に変換する。

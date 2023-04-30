@@ -32,7 +32,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>Generating Long Sequences with Sparse Transformers</title>
+    <title>Generating Long Sequences with Sparse Transformers(2019)</title>
   </head>
 
   <body>
@@ -55,7 +55,7 @@
     </header>
     
 <main>
-  <h1>Generating Long Sequences with Sparse Transformers</h1>
+  <h1>Generating Long Sequences with Sparse Transformers(2019)</h1>
   <ul class="tags">
     
     <li class="tag">
@@ -64,10 +64,16 @@
       </a>
     </li>
     
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/transformer/">
+	#Transformer
+      </a>
+    </li>
+    
   </ul>  
   <span class="date">April 15, 2023</span>    
   <div>
-    <p><a href="https://arxiv.org/abs/1706.03762">Transformer</a>のQKV注意機構に入力するベクトルを限定し、長さ\(n\)の系列をQKV注意機構に入力したときの空間計算量を\(\mathcal{O}(n\sqrt{n})\)まで減らす。
+    <p><a href="https://arxiv.org/abs/1706.03762">Transformer</a>のQKV注意機構に入力するベクトルを限定し、長さ\(n\)の系列をQKV注意機構に入力したときの空間計算量を\(\mathcal{O}(n\sqrt{n})\)まで減らした<a href="https://arxiv.org/abs/1904.10509">研究</a>である。
 Transformerであれば、系列の要素は、要素自体の位置と以前の要素すべてを注意し、時間と空間計算量は\(\mathcal{O}(n^2)\)になる。
 Sparse Transformerは、\(p\)個のパターンを用意し、パターンに該当する要素のみを各注意機構に入力し、\(p\)個の注意を生成する。
 そして、\(p\)個の注意を合成し、1つの注意に変換する。

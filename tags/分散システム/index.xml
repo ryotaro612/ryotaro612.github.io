@@ -54,6 +54,17 @@
     </item>
     
     <item>
+      <title>Zookeeper: Wait-free coordination for Internet-scale systems (2010)</title>
+      <link>https://nryotaro.dev/posts/zookeeper_wait_free_coordination_for_internat_scale_systems/</link>
+      <pubDate>Sun, 12 Feb 2023 15:47:06 -0500</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/zookeeper_wait_free_coordination_for_internat_scale_systems/</guid>
+      <description>&lt;p&gt;ZooKeeperは、リーダ選出と構成管理の機能を提供するためのインメモリーデータベースである。
+データーベースは、ファイルシステムのような階層構造のwait-freeな抽象データ型であり、各ノードにはデフォルトで最大1MBの少量のデータを保存できる。
+たとえば、ノードに設定を保存して共有することも、設定ファイルが編集中でないことを示すフラグ代わりのファイルを置くこともできる。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Brewer&#39;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web(2002)</title>
       <link>https://nryotaro.dev/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/</link>
       <pubDate>Tue, 17 Jan 2023 11:42:12 -0500</pubDate>
@@ -109,6 +120,22 @@ Epidemic Algorithmには、定期的にデーターベース全体を同期す�
 ただし、転送が遅延しているデータは破棄される。
 データは、キー、値、論理的な時刻の3組からなるレコードを単位として、ノードからノードに出力される。
 向き先のノードは、レコードからキーへの関数を、根のノードから出力されるレコードに適用し、期待するキーに対応するレコードをノードに集約する。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Time, Clocks, and the Ordering of Events in a Distributed System</title>
+      <link>https://nryotaro.dev/posts/time_clocks_and_the_ordering_of_events_in_a_distributed_system/</link>
+      <pubDate>Sat, 14 Aug 2021 14:18:01 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/time_clocks_and_the_ordering_of_events_in_a_distributed_system/</guid>
+      <description>&lt;p&gt;分散システムの各プロセスにおける送受信の半順序関係をすべてのプロセスで起きた送受信の全順序関係に拡張するアルゴリズムを提案し、アルゴリズムを同期処理に応用できることを例示した。
+分散システムではプロセスの時刻が同期しているとはかぎらない。
+各プロセスで起きたメッセージの送受信をプロセスでの時刻順に並べられても、その計測時刻を信じて全プロセスで起きたイベントを正しく発生順に並べることはできない。&lt;/p&gt;
+&lt;p&gt;アルゴリズムは、プロセスごとに論理的なクロックをもたせる。
+クロックは、メッセージを送信するときに時を進める。
+メッセージを送信するプロセスは、送信時刻をメッセージにふくめる。
+受信したプロセスは現在の時刻とメッセージにある送信元の時刻より先の時刻に時を進める。
+以上の手続きで、異なるプロセス間の送受信であっても送信時刻が受信時刻より必ず前になり、全プロセスの送受信イベントに全順序関係を定義できる。&lt;/p&gt;</description>
     </item>
     
   </channel>

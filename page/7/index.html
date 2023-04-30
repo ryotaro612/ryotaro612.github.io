@@ -58,6 +58,16 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/classifier_chains_for_multi-label_classification/">Classifier Chains for Multi-label Classification</a></h3>
+        <div class="summary"><p>scikit-learnの<a href="https://scikit-learn.org/stable/modules/generated/sklearn.multioutput.ClassifierChain.html?highlight=chain#sklearn-multioutput-classifierchain">Classifier Chain</a>で実装されたClassifier Chainsは、ラベルの相関関係を特徴につかうマルチラベル分類のモデルで、相関関係をもちいる既存手法よりも計算量がすくない。
+より細かくみれば、Classifier Chainsは、Classifier Chain Model(CC)とCCのアンサンブル学習であるEnsembles of Classifier Chains(ECC)の2つにわかれる。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">March 22, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/effective_multi-label_active_learning_for_text_classification/">Effective Multi-Label Active Learning for Text Classification</a></h3>
         <div class="summary"><p>SVMをつかったマルチラベル文書分類のための能動学習である。
 ラベルをつければモデルの損失を最も小さくできるデータをさがす。
@@ -166,18 +176,6 @@ Piece tableはテキストを2つのバッファに記録する。
         <div class="article-footer">
 	  
           <span class="date">January 21, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/dynamic_routing_between_capsules/">Dynamic Routing Between Capsules (2017)</a></h3>
-        <div class="summary"><p>カプセルはおなじ層にあるニューロン(ユニット)のグループであり、カプセルの出力するベクトルは入力にある特定のエンティティの分散表現になる。
-表題のdynamic routingは、カプセルの出力ベクトルを1つ上の層のどのカプセルに渡すべきかを学習する手法である。
-これにより、プーリング層で失われるエンティティの空間上の位置情報をカプセルの出力するベクトルで表現する。
-実験では、2層の畳み込み層と1層の全結合層からなる浅いニューラルネットワークをMNISTに適用し、長さでエンティティが存在する確率を、向きでエンティティの特徴を表現できるベクトルを学習できることを示した。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">December 26, 2021</span>
         </div>
     </article>
     
