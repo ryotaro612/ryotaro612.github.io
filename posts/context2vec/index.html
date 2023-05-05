@@ -32,7 +32,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>論文メモ context2vec: Learning Generic Context Embedding with Bidirectional LSTM</title>
+    <title>context2vec: Learning Generic Context Embedding with Bidirectional LSTM (2016)</title>
   </head>
 
   <body>
@@ -55,8 +55,14 @@
     </header>
     
 <main>
-  <h1>論文メモ context2vec: Learning Generic Context Embedding with Bidirectional LSTM</h1>
+  <h1>context2vec: Learning Generic Context Embedding with Bidirectional LSTM (2016)</h1>
   <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/embedding/">
+	#Embedding
+      </a>
+    </li>
     
   </ul>  
   <span class="date">February 2, 2020</span>    
@@ -74,7 +80,7 @@ context2vecのアーキテクチャを次に示す。
 <img src="/context2vec/fig2.png" alt="fig2"></p>
 <p>\(n\)単語からなる文を\(w_{1:n}\)とおき、単語列を順方向に受理するLSTMをlLS, 逆方向のをrLSとすると、両LSTMの出力の連結ベクトルで単語\(w_i\)の「浅い」文脈の分散表現をつくる。
 $$
-\text{biLS}(w_{1:n}, i) = \text{lLS}(l_{1:i-1})\oplus\text{rLS}(r{n:i+1})
+\text{biLS}(w_{1:n}, i) = \text{lLS}(l_{1:i-1})\oplus\text{rLS}(r_{n:i+1})
 $$</p>
 <p>この「浅い」文脈の分散表現は、多層パーセプロトロン(MLP)にわたり、求める「深い」分散表現\(\vec{c}\)に変換される。
 $$

@@ -32,7 +32,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>論文メモ NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE</title>
+    <title>NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE(2015)</title>
   </head>
 
   <body>
@@ -55,17 +55,28 @@
     </header>
     
 <main>
-  <h1>論文メモ NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE</h1>
+  <h1>NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE(2015)</h1>
   <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/%E6%A9%9F%E6%A2%B0%E7%BF%BB%E8%A8%B3/">
+	#機械翻訳
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/attention/">
+	#Attention
+      </a>
+    </li>
     
   </ul>  
   <span class="date">February 1, 2020</span>    
   <div>
     <h3 id="概要">概要</h3>
-<p>Decoderに注意機構を採用したencoder-decoderモデルを提案した論文である。
-ICLR2015で発表された。
+<p>Decoderに注意機構を採用したencoder-decoderモデルを提案したICLR2015の論文である。
 論文の発表当時、encoder-decoderモデルによる翻訳の多くは、encoderが入力文を固定長ベクトルに変換し、固定長ベクトルから翻訳された文を出力していた。
-著者らは、固定長ベクトルへの変換が長い文の翻訳性能を下げていると考え、固定長ベクトルを注意機構におきかえたencoder-decoderモデルを提案する。
+著者らは、固定長ベクトルへの変換が長い文の翻訳性能を下げていると考え、固定長ベクトルを注意機構におきかえたencoder-decoderモデルを提案した。
 モデルは、翻訳に加え、生成する単語と入力文の箇所の関係を学習する。
 推定時には、まず、次に生成する単語に関係する入力文の箇所を推定する。
 次に、推定された箇所と生成済の単語列をもとに、単語を生成する。
@@ -74,7 +85,7 @@ ICLR2015で発表された。
 <p>長さ\(T_{T_x}\)のone-hotベクトルのシーケンス\({\rm \boldsymbol{x}}\)を入力文、長さ\(T_{T_y}\)のシーケンス\({\rm \boldsymbol{y}}\)を出力文とする。
 \({\rm \boldsymbol{x}}\)と\({\rm \boldsymbol{y}}\)の間には次の関係が成り立つ。
 $$
-{\rm \boldsymbol{y}} = \underset{{\rm \boldsymbol{y}}}{\operatorname{argmax}}p({\rm \boldsymbol{y}}\mid {\rm \boldsymbol{x}})
+{\rm \boldsymbol{y}} = \underset{{\rm \boldsymbol{y}}}{\operatorname{argmax}}\ p({\rm \boldsymbol{y}}\mid {\rm \boldsymbol{x}})
 $$
 \(p({\rm \boldsymbol{y}})\)を次のように条件付き確率に分解する。
 $$

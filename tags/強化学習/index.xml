@@ -21,5 +21,16 @@
 2つのビデオクップのうち一方が他方よりも良い確率を出力できるようにモデルを訓練する。&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Playing Atari with Deep Reinforcement Learning(2013)</title>
+      <link>https://nryotaro.dev/posts/playing_atari_with_deep_reinforcement_learning/</link>
+      <pubDate>Sun, 09 Feb 2020 17:05:30 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/playing_atari_with_deep_reinforcement_learning/</guid>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
+&lt;p&gt;深層強化学習をAtari2600の7つのゲームに応用し、うち6つについて先行手法の性能を超えたDeep Q-Networks(DQN)を提案した論文である。
+ピクセルデータを直接入力として与え、深層学習で方策を学習する手法としては初めて提案された。&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>
