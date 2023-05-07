@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://nryotaro.dev/posts/an_image_is_worth_16x16_words_transformers_for_image_recognition_at_scale/</loc>
-    <lastmod>2023-04-29T12:12:11-04:00</lastmod>
-  </url><url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2023-04-29T12:12:11-04:00</lastmod>
+    <lastmod>2023-05-06T15:03:48-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2023-04-29T12:12:11-04:00</lastmod>
+    <lastmod>2023-05-06T15:03:48-04:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/posts/skip_lists_a_probablistic_alternative_to_balanced_trees/</loc>
+    <lastmod>2023-05-06T15:03:48-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/tags/</loc>
+    <lastmod>2023-05-06T15:03:48-04:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/tags/%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0/</loc>
+    <lastmod>2023-05-06T15:03:48-04:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/posts/an_image_is_worth_16x16_words_transformers_for_image_recognition_at_scale/</loc>
     <lastmod>2023-04-29T12:12:11-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/tags/transformer/</loc>

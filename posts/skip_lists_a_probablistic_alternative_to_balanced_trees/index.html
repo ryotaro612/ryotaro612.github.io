@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.78272bdd99a3c4f03ee4c826bbe3a970cda497ed85b5da23b0af6dbaf9f30522.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Skip Lists: A Probabilistic Alternative to Balanced Trees</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>Skip Lists: A Probabilistic Alternative to Balanced Trees</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0/">
+	#データ構造
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">May 6, 2023</span>    
+  <div>
+    <p><a href="https://15721.courses.cs.cmu.edu/spring2018/papers/08-oltpindexes1/pugh-skiplists-cacm1990.pdf">Skip Lists</a>は、バランス木の代用になるアルゴリズムである。
+Skip listsのノードは、ランダムに選ばれた後続のノードへのポインタをもつ。
+ランダムに参照するノードを選ぶことで、バランス木よりも単純なアルゴリズムで、計算量を均衡をでき、さらに最悪計算量をより小さくできる。</p>
+<p>Skip listsは、キーを指定した検索、挿入、削除をもつ抽象データ構造である。
+レベル\(i\)のノードは\(i\)個の後続のノードを参照し、ポインタには\(1,\dots ,i\)までの順番がついている。
+以下は、論文にあるSkip listsの例である。
+<img src="/skiplists.png" alt="figure3">
+リストの先頭のノードは、挿入された値をもたずノードのレベルの最大値\(\textit{MaxLevel}\)個のポインタをもつ。
+リストの末尾は、挿入されるキーよりも十分大きい値をキーにもつノード\(\texttt{NIL}\)がある。
+ノードがもつポインタ数の最大が\(i\)であるとき、skip listsのレベルは\(i\)である。
+レベル\(i\)のskip listsのヘッダにあるポインタのうち、\(i+1\)番目以降のポインタは、\(\texttt{NIL}\)を参照する。</p>
+<p>初期状態のskip listsのノードは、headerと\(\texttt{NIL}\)のみである。
+Skip listsのレベルは1であり、headerは\(\texttt{NIL}\)を参照するポインタを1つだけもつ。</p>
+<p>検索するときは、各ノードにおいて、目的のキー未満のキーをもつノードへのポインタが見つかるまで降順に探す。
+以下は検索の疑似コードである。</p>
+<pre tabindex="0"><code>Search(list, searchKey)
+  x := list-&gt;header
+  -- loop invariant: x-&gt;key &lt; searchKey
+  for i := list→level downto 1 do
+    while x→forward[i]-&gt;key &lt; searchKey do
+      x := x-&gt;forward[i]
+  -- x→key &lt; searchKey &lt;= x-&gt;forward[1]-&gt;key
+  x := x-&gt;forward[1]
+  if x-&gt;key = searchKey then return x→value
+</code></pre><p>skip listsに挿入したいキーがあれば、値を上書きするだけでよい。
+以下は、挿入の疑似コードである。</p>
+<pre tabindex="0"><code>Insert(list, searchKey, newValue)
+  local update[1..MaxLevel]
+  x := list-&gt;header
+  for i := list-&gt;level downto 1 do
+    while x-&gt;forward[i]-&gt;key &lt; searchKey do
+      x := x→forward[i]
+    -- x-&gt;key &lt; searchKey ≤ x-&gt;forward[i]-&gt;key
+    update[i] := x
+  x := x-&gt;forward[1]
+  if x-&gt;key = searchKey then x-&gt;value := newValue
+  else
+    lvl := randomLevel()
+    if lvl &gt; list-&gt;level then
+      for i := list-&gt;level + 1 to lvl do
+        update[i] := list→header
+      list-&gt;level := lvl
+    x := makeNode(lvl, searchKey, value)
+    for i := 1 to lvl do
+      x-&gt;forward[i] := update[i]-&gt;forward[i]
+      update[i]-&gt;forward[i] := x
+</code></pre><p>キーがなければ、新しいノードを挿入する。
+コードにある\(\texttt{update}\)は挿入箇所以前のノードを格納する配列である。
+\(i\)番目の要素は、\(i\)番目のポインタが挿入箇所以降のノードを参照する最も後ろにあるノードである。</p>
+<p>以下は削除の疑似コードである。skip listのレベルと同じノードがなくなれば、listのレベルを下げる。</p>
+<pre tabindex="0"><code>Delete(list, searchKey)
+  local update[1..MaxLevel]
+  x := list-&gt;header
+  for i := list-&gt;level downto 1 do
+    while x-&gt;forward[i]-&gt;key &lt; searchKey do
+      x := x-&gt;forward[i]
+    update[i] := x
+  x := x→forward[1]
+  if x-&gt;key = searchKey then
+    for i := 1 to list-&gt;level do
+      if update[i]-&gt;forward[i] != x then break
+      update[i]-&gt;forward[i] := x-&gt;forward[i]
+    free(x)
+    while list-&gt;level &gt; 1 and list-&gt;header-&gt;forward[list-&gt;level] = NIL do
+      list-&gt;level := list-&gt;level – 1
+</code></pre><h2 id="雑記">雑記</h2>
+<p>疑似コードを論文から引用したが、もとの挿入のコードには、後ろから3行目に未定義変数<code>level</code>がある。
+おそらく<code>lvl</code>の誤記であるので、上の引用では、修正したコードを掲載した。</p>
+<p>バランス木よりも実装が単純と主張している。
+ただし、アルゴリズムから自明であるものとして、バランス木との実装の複雑さの比較はない。</p>
+<p>バランス木の代わりになると主張されているが、逆順の探索はできなさそう。</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/an_image_is_worth_16x16_words_transformers_for_image_recognition_at_scale/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>
