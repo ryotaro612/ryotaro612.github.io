@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.78272bdd99a3c4f03ee4c826bbe3a970cda497ed85b5da23b0af6dbaf9f30522.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>WORD TRANSLATION WITHOUT PARALLEL DATA(2018)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>WORD TRANSLATION WITHOUT PARALLEL DATA(2018)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/embedding/">
+	#Embedding
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/%E6%A9%9F%E6%A2%B0%E7%BF%BB%E8%A8%B3/">
+	#機械翻訳
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">May 21, 2023</span>    
+  <div>
+    <p>対訳コーパスを使わずに、ある言語のエンベディングから別の言語のエンベディングへの写像を学習する。
+はじめに、敵対的生成ネットワークで写像を学習する。
+次に、出現頻度の高い単語について、写像されたエンベディングと目的言語のエンベディングにプロクラステス分析を適用し、より正確な写像関数を求める。</p>
+<p>生成ネットワークは原言語から目的言語へのエンベディングの写像を学習し、識別ネットワークはエンベディングの単語が原言語か目的言語かを判別する。
+原言語のエンベディングの集合を\(\mathcal{X}=\{x_1, \dots x_n\}\), 目的言語のエンベディングの集合を\(\mathcal{Y}=\{y_1,\dots y_m\}\)とする。
+\(n\)と\(m\)は単語の数である。写像を\(W\)とすると、\(W\mathcal{X}\)と\(\mathcal{Y}\)からランダムにサンプルを選び、ネットワークを学習する。</p>
+<p>識別ネットワークのパラメタを\(\theta_D\)とすると、損失関数は
+$$
+\mathcal{L}_D(W|\theta_D)=-\frac{1}{n}\sum^n_{i=1}\log P_{\theta_D}(\text{source}=0|Wx_i)-\frac{1}{m}\sum^m_{i=1}\log P_{\theta_D}(\text{source}=1|y_i)
+$$
+である。
+損失関数は
+$$
+\mathcal{L}_D(\theta_D|W)=-\frac{1}{n}\sum^n_{i=1}\log P_{\theta_D}(\text{source}=1|Wx_i)-\frac{1}{m}\sum^m_{i=1}\log P_{\theta_D}(\text{source}=0|y_i)
+$$
+である。</p>
+<p>敵対的生成ネットワークは、単語の出現頻度を無視して、エンベディングを写像する。
+出現頻度の低い単語は、原言語と目的言語それぞれで違う文脈で出現しがちである。
+出現頻度の低い単語を正確に写像しがたい一方で、頻出単語は敵対的生成ネットワークで正確に写像できる。
+そこで、頻出単語とその近傍の単語だけからなる辞書を生成することで、辞書の正確性を確保する。</p>
+<p>K-NNとコサイン類似度で単語の近傍を定義できる。
+しかし、<a href="https://www.jmlr.org/papers/volume11/radovanovic10a/radovanovic10a.pdf">Radovanović et el.</a>によれば、特徴の次元が高いと、密に特徴が集まる空間が生じ、正確なペアのマッチングが難しくなる。
+そこで、密に集まる特徴間の類似にペナルティを与える類似度の指標 Cross-Domain Similarity Local Scaling(CSLS)を定義する。
+\(\mathcal{N}_T(Wx_s)\)を\(Wx_s\)の近傍にある目的言語の単語の集合、\(N_S(y_t)\)を単語\(t\)の近傍にある写像された原言語の単語集合とする。
+$$
+\begin{align*}
+r_T(Wx_s)&amp;=\frac{1}{K}\sum_{y_t\in \mathcal{N}_T(Wx_s)}\text{cos}(Wx_s, y_t)\\
+r_S(y_t)&amp;=\frac{1}{K}\sum_{Wx_s\in \mathcal{N}_S(y_t)}\text{cos}(Wx_s, y_t)
+\end{align*}
+$$
+とおくと、
+$$
+\text{CSLS}(Wx_s, y_t)=2\text{cos}(Wx_s, y_t)-r_T(Wx_s)-r_S(y_t)
+$$
+である。</p>
+<p>CSLSと写像関数で原言語に対応する目的言語のエンベディングを特定する。
+<a href="https://aclanthology.org/N15-1104/">Xing et al</a>は\(W\)に直交性の制約を与えることで精度を向上できることを示した。
+そこで、出現頻度の高い単語に対して、プロクラステス分析を適用し、以下の式で表せる\(W^{*}\)を求める。
+$$
+W^{*}=\underset{W\in O_d(\mathbb{R})}{\operatorname{argmin}}||WX-Y ||_F = UV^T,\ \text{with}\ U{\textstyle \sum} V^T = SVD(YX^T)
+$$</p>
+<p>論文の<a href="https://arxiv.org/abs/1710.04087">リンク</a></p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/skip_lists_a_probablistic_alternative_to_balanced_trees/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

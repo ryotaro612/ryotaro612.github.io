@@ -8,7 +8,7 @@
     <language>ja</language>
     <lastBuildDate>Sun, 26 Feb 2023 01:47:13 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/tags/rdbms/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>抄訳 ARIES: A Transaction Recovery Method Supporting Fine-Granularity Locking and Partial Rollbacks Using Write-Ahead Logging(1992)</title>
+      <title>ARIES: A Transaction Recovery Method Supporting Fine-Granularity Locking and Partial Rollbacks Using Write-Ahead Logging(1992)</title>
       <link>https://nryotaro.dev/posts/aries/</link>
       <pubDate>Sun, 26 Feb 2023 01:47:13 -0500</pubDate>
       

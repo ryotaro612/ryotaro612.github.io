@@ -6,9 +6,20 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 06 May 2023 15:03:48 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 May 2023 14:43:39 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Skip Lists: A Probabilistic Alternative to Balanced Trees</title>
+      <title>WORD TRANSLATION WITHOUT PARALLEL DATA(2018)</title>
+      <link>https://nryotaro.dev/posts/word_translation_without_parallel_data/</link>
+      <pubDate>Sun, 21 May 2023 14:43:39 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/word_translation_without_parallel_data/</guid>
+      <description>&lt;p&gt;対訳コーパスを使わずに、ある言語のエンベディングから別の言語のエンベディングへの写像を学習する。
+はじめに、敵対的生成ネットワークで写像を学習する。
+次に、出現頻度の高い単語について、写像されたエンベディングと目的言語のエンベディングにプロクラステス分析を適用し、より正確な写像関数を求める。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Skip Lists: A Probabilistic Alternative to Balanced Trees(1990)</title>
       <link>https://nryotaro.dev/posts/skip_lists_a_probablistic_alternative_to_balanced_trees/</link>
       <pubDate>Sat, 06 May 2023 15:03:48 -0400</pubDate>
       
@@ -158,7 +169,7 @@ GPT-2のアーキテクチャは、GPT-1に層正規化の位置を変え、resi
     </item>
     
     <item>
-      <title>抄訳 ARIES: A Transaction Recovery Method Supporting Fine-Granularity Locking and Partial Rollbacks Using Write-Ahead Logging(1992)</title>
+      <title>ARIES: A Transaction Recovery Method Supporting Fine-Granularity Locking and Partial Rollbacks Using Write-Ahead Logging(1992)</title>
       <link>https://nryotaro.dev/posts/aries/</link>
       <pubDate>Sun, 26 Feb 2023 01:47:13 -0500</pubDate>
       
@@ -173,7 +184,7 @@ ARIESのCLSに記録された更新はUNDOされない。
     </item>
     
     <item>
-      <title>抄訳 Scatter/Gather: A Cluster-based Approach to Browsing Large Document Collections(1992)</title>
+      <title>Scatter/Gather: A Cluster-based Approach to Browsing Large Document Collections(1992)</title>
       <link>https://nryotaro.dev/posts/scatter_gather_a_cluster_based_approach_to_browsing_large_document_collections/</link>
       <pubDate>Sun, 19 Feb 2023 20:23:11 -0500</pubDate>
       
@@ -2815,7 +2826,7 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
     </item>
     
     <item>
-      <title>論文メモ Semi-supervised Sequence Learning</title>
+      <title>Semi-supervised Sequence Learning(2015)</title>
       <link>https://nryotaro.dev/posts/semi_supervised_sequence_learning/</link>
       <pubDate>Sat, 14 Mar 2020 23:46:31 +0900</pubDate>
       
@@ -2824,7 +2835,7 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
     </item>
     
     <item>
-      <title>論文メモ In Search of an Understandable Consensus Algorithm</title>
+      <title>In Search of an Understandable Consensus Algorithm(2014)</title>
       <link>https://nryotaro.dev/posts/raft/</link>
       <pubDate>Mon, 09 Mar 2020 02:17:22 +0900</pubDate>
       
@@ -2835,7 +2846,7 @@ Raftは、Multi Paxosと同様の実行結果をもたらす。
     </item>
     
     <item>
-      <title>論文メモ SentencePiece: A simple and language independent subword tokenizer and detokenizer for Neural Text Processing</title>
+      <title>SentencePiece: A simple and language independent subword tokenizer and detokenizer for Neural Text Processing</title>
       <link>https://nryotaro.dev/posts/sentence_piece/</link>
       <pubDate>Sat, 29 Feb 2020 21:15:17 +0900</pubDate>
       
@@ -2848,7 +2859,7 @@ Raftは、Multi Paxosと同様の実行結果をもたらす。
     </item>
     
     <item>
-      <title>Latent Dirichlet Allocation</title>
+      <title>Latent Dirichlet Allocation(2003)</title>
       <link>https://nryotaro.dev/posts/latent_dirichlet_allocation/</link>
       <pubDate>Sun, 23 Feb 2020 21:54:59 +0900</pubDate>
       
@@ -2858,9 +2869,9 @@ Raftは、Multi Paxosと同様の実行結果をもたらす。
 LDAは、テキストコーパスのような離散データの確率的生成モデルである。
 意味のあるデータのまとまりに対する端的な説明を与える情報を見つけることを目的としている。
 3つの階層からなる階層ベイズモデルである。
-、データの要素は、各トピックを表すモデルの混合モデルから生成される。
+データの要素は、各トピックを表すモデルの混合モデルから生成される。
 トピックもまた混合モデルから確率的に生成される。
-推論にはベイズ変分法を、パラメタの推定にはEMアルゴリズムをもちいらる。&lt;/p&gt;</description>
+推論にはベイズ変分法を、パラメタの推定にはEMアルゴリズムをもちいる。&lt;/p&gt;</description>
     </item>
     
     <item>

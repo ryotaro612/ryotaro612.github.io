@@ -58,6 +58,18 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/albert/">論文メモ ALBERT: A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS</a></h3>
+        <div class="summary"><p>BERTのパラメタ数を削減し、学習時間の短縮と正則化による予測性能の向上を両立したモデルALBERTを提案し、GLUE, RACE, SQuADでSoTAを実現した。
+BERT-largeと比べると、ALBERT-largeのパラメタ数は約5.3%の18Mであり、学習時間は1.7倍速い。
+パラメタを削減するために、単語のOne-hotベクトルをあたえられる単語埋め込み行列の次元を減らし、隠れ層の順伝播ネットワークや注意機構のパラメタを層の間で共有した。
+また、Next Sentence Prediction(NSP)による学習を、与えられた2文の前後関係を判定する学習Sentence Order Prediction(SOP)におきかえ、主タスクの予測性能を向上をはかった。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">April 25, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/random_walks_in_recommender_systems/">論文メモ Random Walks in recommender Systems: Exact Computation and Simulations</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p><a href="https://ieeexplore.ieee.org/document/4072747">F. Foussら</a>や<a href="https://www.aaai.org/Papers/IJCAI/2007/IJCAI07-444.pdf">M. Goriら</a>のランダムウォークによる推薦システムの先行研究を、質や計算量について比較した論文である。
@@ -125,81 +137,97 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/semi_supervised_sequence_learning/">論文メモ Semi-supervised Sequence Learning</a></h3>
+        <h3><a href="https://nryotaro.dev/posts/semi_supervised_sequence_learning/">Semi-supervised Sequence Learning(2015)</a></h3>
         <div class="summary"><p>系列データの教師あり学習において、ラベルのないデータを学習した言語モデルやオートエンコーダーの重みでLSTMを初期化することの有用性を実験的に示した。</p></div>
         <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/">
+		#言語モデル
+	      </a>
+	    </li>
+	    
+	  </ul>
 	  
           <span class="date">March 14, 2020</span>
         </div>
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/raft/">論文メモ In Search of an Understandable Consensus Algorithm</a></h3>
+        <h3><a href="https://nryotaro.dev/posts/raft/">In Search of an Understandable Consensus Algorithm(2014)</a></h3>
         <div class="summary"><p>コンセンサスアルゴリズムRaftを提案した論文である。
 Raftは、Multi Paxosと同様の実行結果をもたらす。
 実行するコマンドのログをサーバ間で交換することで、状態を同期し、サーバの一部が落ちてもシステムを継続することができる。</p></div>
         <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/raft/">
+		#Raft
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+		#分散システム
+	      </a>
+	    </li>
+	    
+	  </ul>
 	  
           <span class="date">March 9, 2020</span>
         </div>
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/sentence_piece/">論文メモ SentencePiece: A simple and language independent subword tokenizer and detokenizer for Neural Text Processing</a></h3>
+        <h3><a href="https://nryotaro.dev/posts/sentence_piece/">SentencePiece: A simple and language independent subword tokenizer and detokenizer for Neural Text Processing</a></h3>
         <div class="summary"><p>SentencePieceは、深層学習向けのトークナイザ・脱トークナイザである。
 特定の言語を意識した処理がないため、あらゆるテキストに利用できる。
 本論文では、C++やPythonによる<a href="https://github.com/google/sentencepiece">実装</a>と翻訳への適用実験について書かれている。
 アルゴリズムの解説は、<a href="https://www.aclweb.org/anthology/P16-1162.pdf">Sennrich et al.</a>や<a href="https://arxiv.org/pdf/1804.10959.pdf">Kudo.</a>にゆずられている。
 これらの論文について2019年7月13日の<a href="../neural_machine_translation_of_rate_words/">記事</a>と2019年7月17日の<a href="./subword_regularization/">記事</a>で解説している。</p></div>
         <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/sentencepiece/">
+		#SentencePiece
+	      </a>
+	    </li>
+	    
+	  </ul>
 	  
           <span class="date">February 29, 2020</span>
         </div>
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/latent_dirichlet_allocation/">Latent Dirichlet Allocation</a></h3>
+        <h3><a href="https://nryotaro.dev/posts/latent_dirichlet_allocation/">Latent Dirichlet Allocation(2003)</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>トピックモデルの潜在的ディリクレ配分法(LDA)の原論文である。
 LDAは、テキストコーパスのような離散データの確率的生成モデルである。
 意味のあるデータのまとまりに対する端的な説明を与える情報を見つけることを目的としている。
 3つの階層からなる階層ベイズモデルである。
-、データの要素は、各トピックを表すモデルの混合モデルから生成される。
+データの要素は、各トピックを表すモデルの混合モデルから生成される。
 トピックもまた混合モデルから確率的に生成される。
-推論にはベイズ変分法を、パラメタの推定にはEMアルゴリズムをもちいらる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">February 23, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/unsupervised_pretraining_for_sequence_to_sequence_learning/">Unsupervised Pretraining for Sequence to Sequence Learning(2017)</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>事前学習とファインチューニングにより<a href="https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf">seq2seq</a>の汎化性能を改善する手法を提案した論文である。
-encoderの重みを学習済み言語モデルの重みで初期化する。
-decoderについても、encoderと別の言語モデルを用意し、その重みで初期化する。
-ただし、工夫のないファインチューニングをすると<a href="https://arxiv.org/pdf/1312.6211.pdf">破滅的忘却</a>が生じてしまう。
-そこで、ファインチューニングでは言語モデルとseq2seqの目的関数の両方を学習につかうことで、過学習をさけ、汎化性能を確保する。</p></div>
+推論にはベイズ変分法を、パラメタの推定にはEMアルゴリズムをもちいる。</p></div>
         <div class="article-footer">
 	  	  
 	  <ul class="tags">
 	    
             <li class="tag">
-	      <a href="https://nryotaro.dev/tags/seq2seq/">
-		#seq2seq
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/pretraining/">
-		#Pretraining
+	      <a href="https://nryotaro.dev/tags/%E3%83%88%E3%83%94%E3%83%83%E3%82%AF%E3%83%A2%E3%83%87%E3%83%AB/">
+		#トピックモデル
 	      </a>
 	    </li>
 	    
 	  </ul>
 	  
-          <span class="date">February 16, 2020</span>
+          <span class="date">February 23, 2020</span>
         </div>
     </article>
     

@@ -32,7 +32,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>Latent Dirichlet Allocation</title>
+    <title>Latent Dirichlet Allocation(2003)</title>
   </head>
 
   <body>
@@ -55,8 +55,14 @@
     </header>
     
 <main>
-  <h1>Latent Dirichlet Allocation</h1>
+  <h1>Latent Dirichlet Allocation(2003)</h1>
   <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/%E3%83%88%E3%83%94%E3%83%83%E3%82%AF%E3%83%A2%E3%83%87%E3%83%AB/">
+	#トピックモデル
+      </a>
+    </li>
     
   </ul>  
   <span class="date">February 23, 2020</span>    
@@ -66,9 +72,9 @@
 LDAは、テキストコーパスのような離散データの確率的生成モデルである。
 意味のあるデータのまとまりに対する端的な説明を与える情報を見つけることを目的としている。
 3つの階層からなる階層ベイズモデルである。
-、データの要素は、各トピックを表すモデルの混合モデルから生成される。
+データの要素は、各トピックを表すモデルの混合モデルから生成される。
 トピックもまた混合モデルから確率的に生成される。
-推論にはベイズ変分法を、パラメタの推定にはEMアルゴリズムをもちいらる。</p>
+推論にはベイズ変分法を、パラメタの推定にはEMアルゴリズムをもちいる。</p>
 <h3 id="モデル">モデル</h3>
 <p>テキストコーパスをLDAでモデル化する場合を考える。
 ただし、文書をbag-of-wordsでとらえ、単語の並びは考慮しない。

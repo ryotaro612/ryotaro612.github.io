@@ -6,7 +6,18 @@
     <description>Recent content in Embedding on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 02 Feb 2020 19:19:46 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/tags/embedding/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 May 2023 14:43:39 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/tags/embedding/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WORD TRANSLATION WITHOUT PARALLEL DATA(2018)</title>
+      <link>https://nryotaro.dev/posts/word_translation_without_parallel_data/</link>
+      <pubDate>Sun, 21 May 2023 14:43:39 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/word_translation_without_parallel_data/</guid>
+      <description>&lt;p&gt;対訳コーパスを使わずに、ある言語のエンベディングから別の言語のエンベディングへの写像を学習する。
+はじめに、敵対的生成ネットワークで写像を学習する。
+次に、出現頻度の高い単語について、写像されたエンベディングと目的言語のエンベディングにプロクラステス分析を適用し、より正確な写像関数を求める。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>context2vec: Learning Generic Context Embedding with Bidirectional LSTM (2016)</title>
       <link>https://nryotaro.dev/posts/context2vec/</link>

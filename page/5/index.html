@@ -58,6 +58,21 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/pregel_a_system_for_large_scale_graph_processing/">抄訳 Pregel: A System for Large-Scale Graph Processing(2010)</a></h3>
+        <div class="summary"><p>Googleで開発されたPregelは、ソーシャルグラフやハイパーリンクのグラフなどの巨大なグラフデータの処理に適した計算モデルである。
+計算モデル自体も、処理対象のデータとおなじく、ワーカーが別のワーカーとのメッセージの送受信を繰り返すグラフ構造をなす。
+このモデルのオリジナルは、以前<a href="/posts/a_bridging_model_for_parallel_computation/">紹介</a>したValiantの<a href="https://dl.acm.org/doi/pdf/10.1145/79173.79181">Bulk Synchronous Parallel model</a>(BPS)である。
+BPSは時間を一定間隔に区切り、次の間隔が始まる時点で、それまでのメッセージの送受信が全て成功していることを保証する。
+間隔の中で、コンポーネントは別のコンポーネントにメッセージを送信する。
+間隔を過ぎたとき、失敗した処理や未送信のあるコンポーネントがあれば、成功するまで計算を再実行させる。
+Pregelでは、この間隔をsuperstepとよび、グラフ上の点であるワーカーがコンポーネントにあたる。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">August 19, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/normalized_cuts_and_image_segmentation/">Normalized Cuts and Image Segmentation (2000)</a></h3>
         <div class="summary"><p>単純無向グラフのクラスタリングを応用して画像をセグメントに分割する。
 カットの評価基準としてnormalized cutとその近似解を求め方を提案した。
@@ -170,20 +185,6 @@ $$</p></div>
         <div class="article-footer">
 	  
           <span class="date">June 18, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/regression_shrinkage_and_selection_via_the_lasso/">Regression Shrinkage and Selection via the Lasso</a></h3>
-        <div class="summary"><p>Lasso(least absolute shrinkage and selection operator)を提案した論文で、特定の回帰係数を0にする正則化項により、モデルを解釈しやすくする。
-Subset selectionはデータの変化に敏感で、学習結果が安定しない。
-Ridge回帰は、回帰係数を全体的に小さくすることで正則化項の制約をみたすため、説明変数を減らしてモデルを解釈しやすくはしない。
-線形回帰のモデルから人工的に生成し、Lasso回帰、Subset selection, Ridge回帰を比較した。
-結果、もとのモデルの少数から中程度の回帰係数の絶対値が小さく残りが0のときに、Lasso回帰の精度が最も高かった。
-絶対値の大きい少数の回帰係数と0の回帰係数のときはSubset selectionが、絶対値の小さい回帰係数が多いときにRidge回帰の精度が最も高かった。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">June 12, 2022</span>
         </div>
     </article>
     

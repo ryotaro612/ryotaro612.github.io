@@ -50,6 +50,15 @@ GPT-2のアーキテクチャは、GPT-1に層正規化の位置を変え、resi
     </item>
     
     <item>
+      <title>Semi-supervised Sequence Learning(2015)</title>
+      <link>https://nryotaro.dev/posts/semi_supervised_sequence_learning/</link>
+      <pubDate>Sat, 14 Mar 2020 23:46:31 +0900</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/semi_supervised_sequence_learning/</guid>
+      <description>&lt;p&gt;系列データの教師あり学習において、ラベルのないデータを学習した言語モデルやオートエンコーダーの重みでLSTMを初期化することの有用性を実験的に示した。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>The Annotated Transformer (2018)</title>
       <link>https://nryotaro.dev/posts/the_annotated_transformer/</link>
       <pubDate>Mon, 01 Jul 2019 12:57:09 +0900</pubDate>
