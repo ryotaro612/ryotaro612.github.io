@@ -58,6 +58,28 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/principles_of_transaction_oriented_database_recovery/">Principles of Transaction-Oriented Database Recovery(1983)</a></h3>
+        <div class="summary"><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>クラッシュしたRDMSのディスクとバッファの状態をクラッシュ前の状態にもどす手法を体系化する。
+体系は、Propagation, Buffer handling, EOT Processing, Checkpointingの4要素に着目して技術を分類する。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/rdbms/">
+		#RDBMS
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">January 29, 2023</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/learning_to_rank_with_nonsmooth_cost_functions/">抄訳 Learning to Rank with Nonsmooth Cost Functions (2006)</a></h3>
         <div class="summary"><p>情報検索の指標は、モデルの返す文書の順序を評価する。
 指標の関数自体を損失関数にできれば、重みの更新を指標に最適化できる。
@@ -276,35 +298,6 @@ Epidemic Algorithmには、定期的にデーターベース全体を同期す�
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/millwheel_fault_tolerant_stream_processing_at_internet_scale/">MillWheel: Fault-Tolerant Stream Processing at Internet Scale(2013)</a></h3>
-        <div class="summary"><p>MillWheelはGoogleで開発されたストリーミング処理のフレームワークである。
-開発者が羃等な処理をノードとする有向グラフを実装すれば、MillWheelがデータをノードに正確に一回だけ配信する。
-ただし、転送が遅延しているデータは破棄される。
-データは、キー、値、論理的な時刻の3組からなるレコードを単位として、ノードからノードに出力される。
-向き先のノードは、レコードからキーへの関数を、根のノードから出力されるレコードに適用し、期待するキーに対応するレコードをノードに集約する。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%A2%E3%83%87%E3%83%AB/">
-		#プログラミングモデル
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
-		#分散システム
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">November 23, 2022</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -329,7 +322,7 @@ Epidemic Algorithmには、定期的にデーターベース全体を同期す�
       </a>
     </li>
     <li>
-      <a href="/page/27/">
+      <a href="/page/28/">
 	<i class="fa-solid fa-xl fa-angles-right"></i>
       </a>
     </li>

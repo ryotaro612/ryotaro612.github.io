@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.78272bdd99a3c4f03ee4c826bbe3a970cda497ed85b5da23b0af6dbaf9f30522.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>A Majority Consensus Approach to Concurrency Control for Multiple Copy Databases(1979)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>A Majority Consensus Approach to Concurrency Control for Multiple Copy Databases(1979)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+	#分散システム
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">May 27, 2023</span>    
+  <div>
+    <p>データベースを同期するためのアルゴリズム<a href="https://pages.cs.wisc.edu/~remzi/Classes/739/Fall2018/Papers/thomas79-quorums.pdf">majority consensus</a>を提案する。
+アプリケーションは任意のデータベースに更新リクエストを送信でき、データベースは更新リクエストの処理について含意をとる。
+データベースは、タイムスタンプのついたレコードの集合である。
+タイムスタンプは、レコードの値の更新時刻をあらわす。</p>
+<p>データベースの値を更新するとき、アプリーケーションは、更新に必要なレコードを取得し、計算した新しい値をデータベースに送り返す。
+更新に必要なレコードは、base variablesとよばれる。
+更新対象のレコードもbase variablesであり、アプリケーションは更新するためにはレコードを取得しなければならない。
+アプリケーションは、新しい値を更新すると、更新後の値とbase variablesのタイムスタンプをデータベースに送る。
+更新対象の値はupdate variablesとよばれる。
+データベースは、含意アルゴリズムにより、リクエストの承認、棄却を決め、アプリケーションに結果を返す。
+承認の合意が成立した場合は、データベースを更新する。</p>
+<p>アプリケーションのリクエストを転送するためのデータベースのトポロジーは、ブロードキャストでもデイジーチェーン(数珠つなぎ)でもよいが、解説では後者を採用する。
+未投票の送信先のデータベースが見つからない場合や、リクエストを送信する前にデータベースがクラッシュする場合、転送に失敗する。
+そこで、メッセージの送信元のデータベースは永続化されており、また、投票から合意形成までの時間にタイムアウトを設定すると仮定する。</p>
+<p>アプリケーションのリクエストを転送されたデータベースは、2つの矛盾したリクエストを受理しないように、リクエストの可決か棄却を投票によって決定する。
+一方のリクエストのbase variablesと他方のupdate variablesに重複があるとき、2つのリクエストが矛盾するとみなす。
+データベースは、受信したbase variableとデータベースにある対応するレコードのtimestampを比較する。
+base variableが古ければ、リクエストの棄却に投票する。
+base variableが,最新の状態であり、かつ、受理、棄却が決まっていない以前に投票したリクエストと矛盾しない場合、受理を投票する。
+最新であるが、以前のより優先度の高いリクエストと矛盾する場合は、PASSを投じる。
+それ以外の場合、一定時間投票を遅らせて再度投票のプロセスを実行する。</p>
+<p>投票をすませたデータベースは、投票結果が確定したかを確認する。
+過半数のデータベースが可決したときに、リクエストが可決される。
+任意の2つの過半数の積集合は空集合にならない。
+したがって、過半数を基準にすることで、任意の2つのリクエストに可決したデータベースを保証できる。</p>
+<p>もし、投票が可決し、majority consensusが存在すれば、データベースはリクエストを受理し、すべてのデータベースとアプリケーションに受理したことを通知する。
+棄却に投票していれば、棄却したことを通知する。
+PASSに投票し、合意形成が成立しえないと分かれば、棄却したことを通知する。
+それ以外の場合、リクエストや未投票の過去のリクエストへの投票を転送する。
+リクエストが受理されていれば、データベースにリクエストを反映し、棄却されたら、リクエストによって遅延されていたリクエストの投票を再開する。</p>
+<h2 id="雑記">雑記</h2>
+<p>送信したメッセージが届かないこと、データベースを追加、削除することは想定されていない。
+過半数が承認したリクエストを棄却したデータベースがupdate variablesで自分のローカルのデータを上書きしてよい理由がわからない。</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/word_translation_without_parallel_data/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>
