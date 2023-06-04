@@ -58,6 +58,30 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/deep_reinforcement_learning_from_human_preferences/">概要 Deep Reinforcement Learing from Human Preferences (2017)</a></h3>
+        <div class="summary"><p>エージェントの行動を撮影した2つのビデオクリップから良い方を人間に選ばせ、報酬関数の学習データを生成する。
+テーブルを掃除するロボットの制御などは、報酬関数の設計が難しい。
+そこで、2つのビデオクリップとその選好を1つのサンプルとする訓練データで、モデルに報酬関数を学習させる。</p>
+<p>環境の状態と状態下での行動のペアの系列を生成し、1秒から2秒間のビデオクリップとして記録する。
+そして、人間に、2つのビデオクリップをうち良い方を選んでもらう。
+2つのビデオクップのうち一方が他方よりも良い確率を出力できるようにモデルを訓練する。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92/">
+		#強化学習
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">March 20, 2023</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/arc049b/">AtCoder Regular Contest 049 B - 高橋ノルム君</a></h3>
         <div class="summary"><p>XとYは互いに干渉しないので、独立してX, Yを考えることができる。
 \(x_i, x_{i+1}\)の間に最適な\(X\)があるとすると、\(X\)の位置を\(x_i, x_{i+1}\)を境界として三分探索で求めることができる。
@@ -231,33 +255,6 @@ ARIESのCLSに記録された更新はUNDOされない。
         <div class="article-footer">
 	  
           <span class="date">February 7, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/from_ranknet_to_lambdarank_to_lambdamart_an_overview/">From RankNet to LambdaRank to LambdaMART: An Overview(2010)</a></h3>
-        <div class="summary"><p>LambdaMARTは、勾配ブースティング決定木(MART)の訓練に、<a href="https://icml.cc/2015/wp-content/uploads/2015/06/icml_ranking.pdf">RankNet</a>と<a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/lambdarank.pdf">LambdaRank</a>を応用したランキング学習である。
-RankNetとLambdaRankを以前抄訳で解説した(<a href="/posts/learning_to_rank_using_gradient_descent/">RankNet</a>, <a href="/posts/learning_to_rank_with_nonsmooth_cost_functions/">LambdaRank</a>)。
-RankNetは、名前にNetがついているが、RankNetの論文で提案されたものは、ネットワークアーキテクチャではなくランキング学習のための損失関数である。
-入力されたベクトルをモデルが実数に写像することができれば、ニューラルネットワークでなくてもよい。
-RankNetの学習は、モデルの出力する実数をスコアとみなし、あるクエリに該当する2つの事例のうち、より該当する事例に高いスコアを与えられるようにモデルを訓練する。
-各訓練データはランキングの異なる2つの特徴とランキングの高い方を示すラベルであり、2つのスコアの差をシグモイドに与えたときの出力を、一方のサンプルが他方よりもランキングが高い確率とみなす。
-そして、交差エントロピーが最小になるようにモデルを訓練する。
-LambdaRankは、損失の計算を省き、スコアと損失の勾配で重みを更新することで、RankNetの学習を高速化する。
-LambdaMARTは、RankNetに勾配ブースティング決定木を使い、残差の計算にLambdaRankを応用したランキング学習のモデルである。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/">
-		#ランキング学習
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">February 3, 2023</span>
         </div>
     </article>
     

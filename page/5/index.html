@@ -58,6 +58,17 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/smote_synthetic_minority_over_sampling_technique/">抄訳 SMOTE: Synthetic Minority Over-sampling Technique(2002)</a></h3>
+        <div class="summary"><p>SMOTEはオーバーサンプリングで不均衡データの予測性能の向上をはかる。
+少数クラスのサンプルからk近傍にあるサンプルのうち1つをランダムに選ぶ。
+もとのサンプルと選ばれたサンプルの各特徴の差に[0,1]区間のランダムな値を掛け、その値をもとのサンプルに足して、少数クラスのサンプルを合成する。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">August 31, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/kafka_a_distributed_messaging_system_for_log_processing/">抄訳 Kafka: a Distributed Messaging System for Log Processing (2011)</a></h3>
         <div class="summary"><p>Kafkaは、LinkedInで開発された分散メッセージングサービスである。
 配信モデルはpullベースであり、consumerが、メッセージをリクエストし、メッセージを消費するスループットを制御する。
@@ -173,19 +184,6 @@ $$</p></div>
         <div class="article-footer">
 	  
           <span class="date">June 26, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/least_angle_regression/">LEAST ANGLE REGRESSION</a></h3>
-        <div class="summary">Least Angle Regression(LARS)はLASSO回帰のアルゴリズムで、目的変数の値とモデルの推定値の残差と相関の大きい入力変数をひとつずつモデルに取り込む。 ベクトル間の相関が大きいほど間の角度が小さくなるため、least angle(最小角)と名がつく。
-初期状態のモデルは説明変数をもたず推定値は0である。 そのため、目的変数との相関が最大の説明変数を最初にモデルに取り込む。 次に、別の説明変数と残差の相関が取り込んだ説明変数の相関と等しくなるまで、取り込んだ説明変数の方向に、出力する推定値を更新する。 以降は、取り込んだすべての説明変数から等角度の方向に、取り込んでいない説明変数と残差の相関が取り込んだ説明変数との相関と等しくなるまで、モデルの推定値を更新する。
-説明変数\(\boldsymbol{x}_1\), \(\boldsymbol{x}_2\)と目的変数\(\boldsymbol{y}\)で更新の様子を説明する。 初期状態の推定値\(\hat{\boldsymbol{\eta}}_0\)では、\(\boldsymbol{x}_2\)よりも\(\boldsymbol{x}_1\)のほうが\(\boldsymbol{y}-\boldsymbol{\hat{\eta}}_0\)と相関がある。そこで、\(\boldsymbol{x}_1\)を最初にモデルに取り込む。 \(\boldsymbol{x}_1\)の方向に\(\boldsymbol{\hat{\eta}_1}\)まで更新すると、\(\boldsymbol{x}_1\)と\(\boldsymbol{x}_2\)は、残差\(\boldsymbol{y}-\boldsymbol{\hat{\eta}}_1\)との相関が等しくなる。 そして今度は、\(\boldsymbol{x}_1\)と\(\boldsymbol{x}_2\)と等角度の方向に\(\boldsymbol{\eta}_2\)まで更新する。
-論文へのリンク
-引用元の画像が荒いため、画像は、スモールデータ解析と機械学習から引用しました。</div>
-        <div class="article-footer">
-	  
-          <span class="date">June 25, 2022</span>
         </div>
     </article>
     
