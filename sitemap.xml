@@ -3,13 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2023-06-03T12:32:35-04:00</lastmod>
+    <lastmod>2023-06-10T17:32:42-04:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/tags/hash-function/</loc>
+    <lastmod>2023-06-10T17:32:42-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2023-06-03T12:32:35-04:00</lastmod>
+    <lastmod>2023-06-10T17:32:42-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/tags/</loc>
-    <lastmod>2023-06-03T12:32:35-04:00</lastmod>
+    <lastmod>2023-06-10T17:32:42-04:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/posts/universal_classes_of_hash_functions/</loc>
+    <lastmod>2023-06-10T17:32:42-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/unsupervised_cross_lingual_representation_learning_at_scale/</loc>
     <lastmod>2023-06-03T12:32:35-04:00</lastmod>

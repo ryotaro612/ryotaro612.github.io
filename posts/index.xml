@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 03 Jun 2023 12:32:35 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Jun 2023 17:32:42 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Universal Classes of Hash Functions(1977)</title>
+      <link>https://nryotaro.dev/posts/universal_classes_of_hash_functions/</link>
+      <pubDate>Sat, 10 Jun 2023 17:32:42 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/universal_classes_of_hash_functions/</guid>
+      <description>&lt;p&gt;値の保存と参照からなる任意のリクエストの系列を、系列長の時間計算量で処理できるハッシュ関数と連想配列を示す。
+求めるハッシュ関数の集合があるとき、各ハッシュ関数の時間計算量の平均がリクエストの系列長に等しくなる。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Unsupervised Cross-lingual Representation Learning at Scale(2020)</title>
       <link>https://nryotaro.dev/posts/unsupervised_cross_lingual_representation_learning_at_scale/</link>
