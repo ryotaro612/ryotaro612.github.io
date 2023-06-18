@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.78272bdd99a3c4f03ee4c826bbe3a970cda497ed85b5da23b0af6dbaf9f30522.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Layer Normalization</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>Layer Normalization</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/%E6%AD%A3%E8%A6%8F%E5%8C%96/">
+	#正規化
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">June 17, 2023</span>    
+  <div>
+    <p><a href="https://arxiv.org/abs/1607.06450">層正規化</a>(Layer Normalization)は、ユニットへの入力の重みつきの和を正規化し、学習時間を短縮する手法である。
+各層ごとにユニットへの入力の和の平均と標準偏差を求め、この2つの統計量で、その層にあるユニットへの入力を正規化する。
+先行研究には<a href="https://arxiv.org/abs/1502.03167">バッチ正規化</a>がある。
+バッチ正規化では、各ミニバッチにおいて、ユニットごとに入力の重みつき和の平均と分散を計算し、正規化する。
+バッチ正規化でも学習時間を短縮できるが、その効果はミニバッチのサイズに依存し、また、RNNに簡単に応用することはできない欠点がある。</p>
+<p>順伝搬ニューラルネットワークにおける層正規化を説明する。
+中間層\(l^{\textit{th}}\)への入力を\(h^l\), 活性化関数を\(f\), \(i\)番目のユニットの重みを\(w_i\), バイアス項を\(b_i\)とおく。
+このとき、ユニットへの入力の重みつき和\(a_i\)を以下の式で表せる。
+$$
+a^l_i = {w^l_i}^{\top}h^l\ \ \ \ h^{l+1}_i = f(a^l_i + b^l_i)
+$$</p>
+<p>層正規化では、おなじ層にあるユニットは共通の平均と標準偏差を共有する。層のユニット数が\(H\)であるとき、層\(l\)の平均\(\mu^l\)と標準偏差\(\sigma^l\)は
+$$
+\mu^l=\frac{1}{H}\sum^H_{i=1}a^l_i\ \ \ \ \sigma^l=\sqrt{\frac{1}{H}\sum^H_{i=1}(a^l_i-\mu^l)^2}
+$$
+であり、スケールを調整するハイパーパラメータを\(g^l_i\)として、\(\bar{a}^l_i\)に正規化する。
+$$
+\bar{a}^l_i=\frac{g^l_i}{\sigma^l_i}(a^l_i-\mu^l_i)
+$$</p>
+<p>次にRNNに層正規化を適用する場合を説明する。
+RNNにおいては、入力の重みつき和\(\boldsymbol{\rm a}^t\)は、時刻\(t\)における入力\({\rm x}^t\)と\(t-1\)での隠れ層の状態\({\rm h}^{t-1}\)によって
+$$
+\boldsymbol{\rm a}^t=W_{hh}h^{t-1}+W_{xh}{\rm x}^t
+$$
+であらわせる。ただし、\(W_{hh}\)は中間層から中間への重みであり、\(W_{xh}\)は入力層から中間層への重みである。</p>
+<p>このとき、正規化した隠れ層の状態\({\rm h}^t\)は
+$$
+\boldsymbol{h}^t = f\left[\frac{\boldsymbol{g}}{\sigma^t}\odot  (\boldsymbol{a}^t-\mu^t )+\boldsymbol{b}\right] \ \ \ \ \mu^t=\frac{1}{H}\sum^H_{i=1}a^t_i\ \ \ \ \sigma^t=\sqrt{\frac{1}{H}\sum^H_{i=1}(a^t_i-\mu^t)^2}
+$$
+である。</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/universal_classes_of_hash_functions/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

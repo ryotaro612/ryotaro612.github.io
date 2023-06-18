@@ -3,15 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2023-06-10T17:32:42-04:00</lastmod>
+    <lastmod>2023-06-17T10:18:51-04:00</lastmod>
   </url><url>
-    <loc>https://nryotaro.dev/tags/hash-function/</loc>
-    <lastmod>2023-06-10T17:32:42-04:00</lastmod>
+    <loc>https://nryotaro.dev/posts/layer_normalization/</loc>
+    <lastmod>2023-06-17T10:18:51-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2023-06-10T17:32:42-04:00</lastmod>
+    <lastmod>2023-06-17T10:18:51-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/tags/</loc>
+    <lastmod>2023-06-17T10:18:51-04:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/tags/%E6%AD%A3%E8%A6%8F%E5%8C%96/</loc>
+    <lastmod>2023-06-17T10:18:51-04:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/tags/hash-function/</loc>
     <lastmod>2023-06-10T17:32:42-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/universal_classes_of_hash_functions/</loc>

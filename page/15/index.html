@@ -58,6 +58,18 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/dapper/">論文メモ Dapper, a Large-Scale Distributed Systems Tracing Infrastructure</a></h3>
+        <div class="summary"><p>分散トレーシングシステムDapperをGoogle社内で開発、デプロイ、運用した知見がまとめられている。
+運用期間は2年にわたる。
+Dapperをもとに、TwitterはZipkinを、UberはJaegerを<a href="https://www.oreilly.co.jp/books/9784873119038/">開発した</a>。
+Dapper以前に開発された<a href="https://www.usenix.org/legacy/publications/library/proceedings/hotos03/tech/full_papers/barham/barham_html/paper.html">Magpie</a>や<a href="https://www.usenix.org/conference/nsdi-07/x-trace-pervasive-network-tracing-framework">X-Trace</a>との違いは、サンプリングされたリクエストのみをトレースし負荷を下げるられたり、少数の共通ライブラリだけを測定対象したりする点にある。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">January 23, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/convolutional_2d_knowledge_graph_embeddings/">論文メモ Convolutional 2D Knowledge Graph Embeddings</a></h3>
         <div class="summary"><p>ナレッジグラフの未知のリンクを予測するモデルは、一般に大きなグラフをあつかえるようにネットワークを浅くし、処理性能の高速化をはかる。一方、代償として層の深いモデルと比べて表現力を欠く。
 提唱されるネットワークConvEは、畳み込み層をつかった深めのネットワークで予測性能の向上をはかる。
@@ -153,18 +165,6 @@ Datalogは、論理プログラミング言語Prologのサブセットの構文�
         <div class="article-footer">
 	  
           <span class="date">November 30, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/aerospike/">論文メモ Aerospike: Architecture of a Real-Time Operational Database</a></h3>
-        <div class="summary"><p>Aerospikeは、高い対障害性をもった分散データベースで、正式にはCitrusleafという。
-CPU, DRAM, HDDやSSDを搭載したコモディティなサーバでクラスタを組める。
-ノード同士はTCP/IPで通信し、シェアードナッシングなクラスタを構成する。
-処理性能の向上のために、スケールアウトだけでなく、スケールアップも重視しており、ハードウェアを意識した実装で高速化をはかっている。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">November 28, 2020</span>
         </div>
     </article>
     
