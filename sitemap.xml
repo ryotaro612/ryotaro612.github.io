@@ -3,12 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2023-06-17T10:18:51-04:00</lastmod>
+    <lastmod>2023-06-24T10:38:25-04:00</lastmod>
   </url><url>
-    <loc>https://nryotaro.dev/posts/layer_normalization/</loc>
-    <lastmod>2023-06-17T10:18:51-04:00</lastmod>
+    <loc>https://nryotaro.dev/posts/fibonacci_heaps_and_their_uses_in_improving_network_optimization_algorithms/</loc>
+    <lastmod>2023-06-24T10:38:25-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/</loc>
+    <lastmod>2023-06-24T10:38:25-04:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/posts/layer_normalization/</loc>
     <lastmod>2023-06-17T10:18:51-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/tags/</loc>

@@ -6,7 +6,22 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 17 Jun 2023 10:18:51 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Jun 2023 10:38:25 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fibonacchi Heaps and Their Uses in Improved Network Optimization Algorithms(1987)</title>
+      <link>https://nryotaro.dev/posts/fibonacci_heaps_and_their_uses_in_improving_network_optimization_algorithms/</link>
+      <pubDate>Sat, 24 Jun 2023 10:38:25 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/fibonacci_heaps_and_their_uses_in_improving_network_optimization_algorithms/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://web.eecs.umich.edu/~pettie/matching/Fredman-Tarjan-Fibonacci-Heaps.pdf&#34;&gt;Fibonacci heaps&lt;/a&gt;(F-heaps)は、ダイクストラアルゴリズムの高速化ために開発された木構造の抽象データ型である。
+ノードは、1つの値を保存し、親へのポインタをもつ。
+また、2つのポインタによって、同じ階層にある兄弟ノードからなる双方向リストに組み込まれる。
+ルート階層にあるノードはいずれも親をもたない。
+そのほかにも、削除時に使用されるboolean型の変数がノードごとに1つある。
+ヒープにある要素の数\(n\)に対して、要素を償却時間計算量\(O(\log n)\)でき、また、定数の償却時間計算量でほかの主要な操作を行える。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+    
     <item>
       <title>Layer Normalization</title>
       <link>https://nryotaro.dev/posts/layer_normalization/</link>

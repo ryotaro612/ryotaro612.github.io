@@ -58,6 +58,27 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/deep_joint_entity_disambiguation/">抄訳 Deep Joint Entity Disambiguation with Local Neural Attention(2017)</a></h3>
+        <div class="summary"><p>当ページで紹介した<a href="https://aclweb.org/anthology/K18-1050">End-to-End Neural Entity Linking</a>(End-to-End) の著者らの先行研究にあたる。
+End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)の両方をアプローチの対象にしているのに対し、今回の論文はEDのみが対象となっている。
+したがって、文章からmention（参照表現）が抽出されていることが前提にあり、提案の中心は、参照表現に対応するエンティティを候補の中から正しく求める手法にある。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/entity-disambiguation/">
+		#Entity disambiguation
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">November 9, 2018</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/end_to_end_neural_entity_linking/">抄訳 End-to-end Neural Entity Linking(2018)</a></h3>
         <div class="summary"><h3 id="背景">背景</h3>
 <p>End to EndなEntity Linkingモデルのアーキテクチャを提案し、予測性能の評価実験で有用性を評価した。
@@ -255,30 +276,6 @@ DeepTypeにおける型は、Wikipediaのようなオントロジにおける関
 	  </ul>
 	  
           <span class="date">August 25, 2018</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/enriching_word_vectors_with_subword_information/">メモ Enriching Word Vectors with Subword Information</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>Fasttextの論文。
-Character n-gramsを入力としてskip-gramのモデルを作る方法を提案、評価した。
-単語の部分文字列（subword）を使わない手法や形態素解析に頼る手法よりも提案手法が優れていることを実験で示した。
-単語のベクトルは部分文字列のベクトルの和である。
-実験の考察では、そのために、未知語の部分文字列が学習データにあれば、未知語に対しても妥当な分散表現を与えることができるとあった。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/word-embedding/">
-		#Word embedding
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">August 10, 2018</span>
         </div>
     </article>
     

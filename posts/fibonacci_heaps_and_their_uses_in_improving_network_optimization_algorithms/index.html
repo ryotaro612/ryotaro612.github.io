@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.78272bdd99a3c4f03ee4c826bbe3a970cda497ed85b5da23b0af6dbaf9f30522.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Fibonacchi Heaps and Their Uses in Improved Network Optimization Algorithms(1987)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>Fibonacchi Heaps and Their Uses in Improved Network Optimization Algorithms(1987)</h1>
+  <ul class="tags">
+    
+  </ul>  
+  <span class="date">June 24, 2023</span>    
+  <div>
+    <p><a href="https://web.eecs.umich.edu/~pettie/matching/Fredman-Tarjan-Fibonacci-Heaps.pdf">Fibonacci heaps</a>(F-heaps)は、ダイクストラアルゴリズムの高速化ために開発された木構造の抽象データ型である。
+ノードは、1つの値を保存し、親へのポインタをもつ。
+また、2つのポインタによって、同じ階層にある兄弟ノードからなる双方向リストに組み込まれる。
+ルート階層にあるノードはいずれも親をもたない。
+そのほかにも、削除時に使用されるboolean型の変数がノードごとに1つある。
+ヒープにある要素の数\(n\)に対して、要素を償却時間計算量\(O(\log n)\)でき、また、定数の償却時間計算量でほかの主要な操作を行える。</p>
+<!-- raw HTML omitted -->
+<p>Fibonacchi heapsは、値の追加や削除の後でも、常に子ノードにある値が親ノードにある値以上になるように木構造を維持する。
+初期状態のヒープは、nullへのポインタに等しい。
+空でないFibonacci heapsであれば、ポインタは最小の値をもつノードをさす。
+ヒープにある最小の値を取得する場合、このポインタの先にあるノードの値が返される。
+値を追加するときは、値を保存したノードをルートの双方向リストに追加する。
+もし追加した値が、もとのヒープの最小値よりも小さければ、ヒープをさすポインタの参照先を追加されたノードに変える。</p>
+<p>もっとも計算時間量が大きい操作は最小値の削除である。
+まず、最小値をもつノードの子ノードを兄弟ノードがある隣接リストに追加する。
+ここから、子ノードの数をノードのランクと呼ぶことにする。
+ノードを追加した隣接リストにある兄弟ノードのうち、ランクが等しいノードのペアを選び、値がより大きいノードを他方の子ノードに変更する。
+これをランクが等しいノードがなくなるまで続け、最終的に双方向リストにはランクが互いに異なるノードのみが残る。
+最小値をもつノードの削除するときの様子を以下に示す。
+<img src="/fibonacci_heaps/min.png" alt="min"></p>
+<p>任意のノードを削除することもできる。
+そのノードを\(x\)とすると、\(x\)の子ノードを、\(x\)の兄弟ノードからなる双方向リストに追加し、\(x\)をヒープから除外する。
+ただし、連鎖的にほかのノードの位置を変える必要がある場合がある。
+あるノードを別のノードの子にするときに、子として移動するノードの真偽値変数にFalseを代入する。
+一方、子ノードが削除された親ノードがルートになければ、その真偽値変数にTrueを代入する。
+そしてTrueを代入されたノードの親の真偽値変数がTrueであれば、ノードを一つ上の階層に移動させ、親の兄弟にする。
+以上の手順でノードを再帰的に移動する。</p>
+<p>図の出典はもとの<a href="https://web.eecs.umich.edu/~pettie/matching/Fredman-Tarjan-Fibonacci-Heaps.pdf">論文</a>です。</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/layer_normalization/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>
