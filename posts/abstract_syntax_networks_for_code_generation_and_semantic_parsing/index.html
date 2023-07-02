@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.78272bdd99a3c4f03ee4c826bbe3a970cda497ed85b5da23b0af6dbaf9f30522.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Abstract Syntax Networks for Code Generation and Semantic Parsing</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li><a href="/tags">Tags</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>Abstract Syntax Networks for Code Generation and Semantic Parsing</h1>
+  <ul class="tags">
+    
+  </ul>  
+  <span class="date">July 1, 2023</span>    
+  <div>
+    <p><a href="https://aclanthology.org/P17-1105/">Abstract Syntax Networks</a>は、非構造的な文章などの入力から、抽象構文木(AST)にしたがう系列を生成できるencoder decoderである。
+decoderは、ASTの生成規則にある記号に対応するモジュールを再帰的に構成したネットワークである。
+モジュールは、右辺のどの生成規則を選択すべきか推定する。
+そして、選択した規則のモジュールをさらに再帰的に選択することで、ASTにしたがう出力を生成する。</p>
+<p>Abstract Syntax Networksは、複数の系列を入力に受けとれる。
+実験では、カードゲームHEARTSTONEのカードに書かれた名前と説明文から、カードの効果を実装したコードを生成した。
+系列を個別の双方向LSTMに入力し、順方向と逆方向の隠れ状態を連結したベクトルを系列ごとに用意する。</p>
+<p>生成規則の右辺が非終端記号の選択である場合、モジュールは、そのうちの一つ\(\text{C}\)を推定する。
+系列のベクトルの連結\(\textbf{v}\)と順伝搬ネットワーク\(f_\text{T}\)に与えることで、以下のように生成規則を求める。
+$$
+p({\rm C}| \text{T}, \textbf{v}) = [\text{softmax}(f_\text{T}(\textbf{v}))]_{\text{C}}
+$$</p>
+<p>生成規則の右辺が非終端記号列であれば、\(\textbf{v}\)と注意\(\textbf{c}\)から、系列にある各記号の中間状態を計算する。
+入力系列中のトークン\(t\)の埋め込みベクトルを\(\textbf{e}^\top_t\), 入力系列の種類\(g\)の重みを\(\textbf{w}_g\)とすると、注意\(\textbf{c}\)を次のように計算する。
+$$
+\begin{align}
+q_t&amp;=\textbf{e}^\top_t\textbf{W}\textbf{v}+\textbf{w}^\top_c{\rm v}\\
+\textbf{a}&amp;=\text{softmax}(\textbf{q})\\
+\textbf{c}&amp;=\sum_ta_t\textbf{e}_t
+\end{align}
+$$
+順伝搬ネットワーク\(f_\text{C}\)と生成規則の右辺にある記号\(\text{F}\)の埋め込みベクトル\(\textbf{e}_\text{F}\)から、ノード\(u\)における\(\text{F}\)の隠れ状態\(\textbf{v}_{u,\text{F}}\)を計算する。
+ノード\(u\)から再帰的に呼び出すモジュールには、\(\textbf{v}\)にかわって\(\textbf{v}_{u,\text{F}}\)を渡す。
+\(\text{LSTM}(\textbf{h}, \textbf{x})\)は、隠れ状態に\(\textbf{h}\), 入力に\(\textbf{x}\)を与えることを意味する。
+$$
+\textbf{v}_{u, \text{F}}=\text{LSTM}(\textbf{v}, f_{\text{C}}(\textbf{e}_\text{F}, \textbf{c}))
+$$</p>
+<p>記号が終端記号\(\text{T}\)であれば、記号の隠れ状態\(\textbf{v}_{u, \text{F}}\)を順伝搬ネットワーク\(f\)に入力し、出力\(y\)を決定する。
+$$
+p(y|\text{T}, \textbf{v}_{u,\text{F}})=[\text{softmax}(f(\textbf{v}_{u,\text{F}}))]_y
+$$</p>
+<p>記号が別の記号オプションであれば、順伝搬ネットワーク\(f^{\text{gen}}_{\text{F}}\)で記号を生成すべきか推定する。
+$$
+p(z_{\text{F}}=1|\textbf{v}_{u,\text{F}})=\text{sigmoid}(f^{\text{gen}}_{\text{F}}(\textbf{v}_{u,\text{F}}))
+$$</p>
+<h2 id="雑記">雑記</h2>
+<p>学習をはじめたばかりでは、再帰しつづけるような生成規則の展開が起きてしまわないだろうか。</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/fibonacci_heaps_and_their_uses_in_improving_network_optimization_algorithms/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

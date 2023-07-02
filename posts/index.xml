@@ -6,7 +6,19 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 24 Jun 2023 10:38:25 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Jul 2023 17:53:10 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Abstract Syntax Networks for Code Generation and Semantic Parsing</title>
+      <link>https://nryotaro.dev/posts/abstract_syntax_networks_for_code_generation_and_semantic_parsing/</link>
+      <pubDate>Sat, 01 Jul 2023 17:53:10 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/abstract_syntax_networks_for_code_generation_and_semantic_parsing/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://aclanthology.org/P17-1105/&#34;&gt;Abstract Syntax Networks&lt;/a&gt;は、非構造的な文章などの入力から、抽象構文木(AST)にしたがう系列を生成できるencoder decoderである。
+decoderは、ASTの生成規則にある記号に対応するモジュールを再帰的に構成したネットワークである。
+モジュールは、右辺のどの生成規則を選択すべきか推定する。
+そして、選択した規則のモジュールをさらに再帰的に選択することで、ASTにしたがう出力を生成する。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Fibonacchi Heaps and Their Uses in Improved Network Optimization Algorithms(1987)</title>
       <link>https://nryotaro.dev/posts/fibonacci_heaps_and_their_uses_in_improving_network_optimization_algorithms/</link>

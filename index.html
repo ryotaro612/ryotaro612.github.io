@@ -58,6 +58,18 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/abstract_syntax_networks_for_code_generation_and_semantic_parsing/">Abstract Syntax Networks for Code Generation and Semantic Parsing</a></h3>
+        <div class="summary"><p><a href="https://aclanthology.org/P17-1105/">Abstract Syntax Networks</a>は、非構造的な文章などの入力から、抽象構文木(AST)にしたがう系列を生成できるencoder decoderである。
+decoderは、ASTの生成規則にある記号に対応するモジュールを再帰的に構成したネットワークである。
+モジュールは、右辺のどの生成規則を選択すべきか推定する。
+そして、選択した規則のモジュールをさらに再帰的に選択することで、ASTにしたがう出力を生成する。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">July 1, 2023</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/fibonacci_heaps_and_their_uses_in_improving_network_optimization_algorithms/">Fibonacchi Heaps and Their Uses in Improved Network Optimization Algorithms(1987)</a></h3>
         <div class="summary"><p><a href="https://web.eecs.umich.edu/~pettie/matching/Fredman-Tarjan-Fibonacci-Heaps.pdf">Fibonacci heaps</a>(F-heaps)は、ダイクストラアルゴリズムの高速化ために開発された木構造の抽象データ型である。
 ノードは、1つの値を保存し、親へのポインタをもつ。
@@ -267,36 +279,6 @@ TransformerはCNNのように画像の向きや局所性を帰納バイアスに
 	  </ul>
 	  
           <span class="date">April 22, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/generating_long_sequences_with_sparse_transformers/">Generating Long Sequences with Sparse Transformers(2019)</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/abs/1706.03762">Transformer</a>のQKV注意機構に入力するベクトルを限定し、長さ\(n\)の系列をQKV注意機構に入力したときの空間計算量を\(\mathcal{O}(n\sqrt{n})\)まで減らした<a href="https://arxiv.org/abs/1904.10509">研究</a>である。
-Transformerであれば、系列の要素は、要素自体の位置と以前の要素すべてを注意し、時間と空間計算量は\(\mathcal{O}(n^2)\)になる。
-Sparse Transformerは、\(p\)個のパターンを用意し、パターンに該当する要素のみを各注意機構に入力し、\(p\)個の注意を生成する。
-そして、\(p\)個の注意を合成し、1つの注意に変換する。
-パターンは、画像やテキストなど、入力するデータの種類によって決めておく規則であり、たとえば、直近にある一定数の要素や等間隔に離れた要素を指定するパターンがありえある。
-パターンが\(p\)であれば、計算量は\(\mathcal{O}\sqrt[p]{n}\)になる。実験の設定は\(p=2\)である。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/">
-		#言語モデル
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/transformer/">
-		#Transformer
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">April 15, 2023</span>
         </div>
     </article>
     
