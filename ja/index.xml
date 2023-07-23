@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blanket</title>
+    <link>https://nryotaro.dev/ja/</link>
+    <description>Recent content on Blanket</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language><atom:link href="https://nryotaro.dev/ja/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Me</title>
+      <link>https://nryotaro.dev/ja/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nryotaro.dev/ja/about/</guid>
+      <description>Disclaimer 当ウェブサイトに掲載されている情報の正確性については万全を期していますが、当ウェブサイトの著者は利用者が当ホームページの情報を用いて行う一切の行為について、何らの責任を負うものではありません。</description>
+    </item>
+    
+  </channel>
+</rss>
