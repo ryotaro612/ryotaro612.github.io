@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.78272bdd99a3c4f03ee4c826bbe3a970cda497ed85b5da23b0af6dbaf9f30522.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Catalan Numbers</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://nryotaro.dev/en/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://nryotaro.dev/en/about">About</a></li>
+          <li><a href="https://nryotaro.dev/en/posts">Posts</a></li>
+          <li><a href="https://nryotaro.dev/en/tags">Tags</a></li>
+	  
+	  <li><a href="https://nryotaro.dev/posts/catalan_number/">ja</a></li>
+	  
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>Catalan Numbers</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/en/tags/catalan-numbers/">
+	#Catalan numbers
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">July 29, 2023</span>    
+  <div>
+    <p>The Catalan numbers are a sequence of natural numbers that occur in various problems in combinatorial mathematics.
+For example, the number of expressions containing \(n\) valid pairs of parentheses is the \(n\)th Catalan number.
+Suppose you have a grid of \(n \times n\) squares, the \(n\)th Catalan number represents the number of paths with a length of \(2n\) that lead from the upper left corner to the lower right corner without intersecting the diagonal dotted line running from the upper left to the lower right.
+Later in the page, we will derive explicit formulas for the Catalan numbers in two different ways.</p>
+<p>A string of parentheses is valid if you begin at the left as you move to the right, add 1 each time you pass an open and subtract 1 each time you pass a closed parenthesis, then the sum is always non-negative. The sum must be 0 when you reach at the end of the string.
+For example, The number of the valid strings is 0 if \(n\) is \(0\) or \(1\). The number is \(2\) if n is \(2\)(i.e., &ldquo;()()&ldquo;and &ldquo;(())&quot;).
+The number of the valid groupings of n pairs of parentheses is the \(n\)th Catalan number.</p>
+<p>Let us assume that we already have the counts for \(0, 1, 2, 3, \cdots , n − 1\) pairs and we would like to obtain the count for \(n\) pairs.
+Any \(n(&gt;0)\) valid pairs of parentheses can be represented as &ldquo;(A)B.&rdquo;
+A and B are balanced sets of parentheses.
+If A contains \(k\) pairs, then B contains \(n − k − 1\) pairs.
+\(k\) is between \(0\) and \(n-1\), and we conclude that:
+$$
+C_n = C_{n-1}C_0 + C_{n-2}C_1 + \cdots + C_1C_{n-2} + C_0C_{n-1}
+$$</p>
+<p>We will obtain an explicit formula for the Catalan numbers by analyzing the number of the diagonal-avoiding paths.
+The total number of paths through an \(n\times n\) grid is \(\binom{2n}{n}\) because every path from the upper left corner to the lower right corner contains \(n\) steps to the right and \(n\) steps down.</p>
+<p>We will count the number of diagonal-avoiding paths by counting the total number of paths through the grid and then subtract the number of paths that hit the diagonal.
+The following figure illustrates a path that crosses the dotted diagonal line.
+<img src="/catalan.png" alt="grid"></p>
+<p>A point \(P\) is the first grid point it touches on the wrong side of the diagonal.
+Every diagonal-avoiding path has the first grid point.
+If you swap steps to the right and steps down that are in a sub path begins at P, the swapped path contains \(n-1\) steps to the right and \(n+1\) steps down:
+$$
+C_n = \binom{2n}{n} - \binom{2n}{n+1}
+$$</p>
+<h2 id="reference">Reference</h2>
+<p><a href="http://www.geometer.org/mathcircles/catalan.pdf">Tom Davis, Catalan Numbers, 2016</a></p>
+<p>The above figure was cited from the paper.</p>
+
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="https://nryotaro.dev/en/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

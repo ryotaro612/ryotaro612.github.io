@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.78272bdd99a3c4f03ee4c826bbe3a970cda497ed85b5da23b0af6dbaf9f30522.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Catalan Numbers</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://nryotaro.dev/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://nryotaro.dev/about">About</a></li>
+          <li><a href="https://nryotaro.dev/posts">Posts</a></li>
+          <li><a href="https://nryotaro.dev/tags">Tags</a></li>
+	  
+	  <li><a href="https://nryotaro.dev/en/posts/catalan_number/">en</a></li>
+	  
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>Catalan Numbers</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/%E3%82%AB%E3%82%BF%E3%83%A9%E3%83%B3%E6%95%B0/">
+	#カタラン数
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">July 29, 2023</span>    
+  <div>
+    <p>カタラン数は、いくつかの組合せの問題の解で知られる自然数の系列である。
+\(n\)個の対応する括弧&quot;(, )&ldquo;からなる文字列の組合せの数や、一辺の長さが\(n\)の格子の左上から右下への対角線より上を通る最短経路の数は、\(n\)番目のカタラン数である。
+このページでは、この2つの問題の解がカタラン数であるとして、漸化式と二項係数の2つの形式によるカタラン数の一般項を求める。</p>
+<p>対応する括弧の意味を明確にする。
+文字列を左から順に読んでいき、0で初期化された変数に対して、(があれば1を加算、)があれば1を減算する。
+文字列を読み終えたときの変数の値が0かつ、変数が一度も負にならないとき、文字列のすべての括弧は対応関係にあるとみなす。</p>
+<p>対応する括弧の数\(n\)が0であれば組合せの数は0, 1であれば1, 2であれば2, 3であれば5とつづく。
+つまり、括弧の数が\(n\)であるときの組合せの数は、\(n\)番目のカタラン数\(C_n\)である。</p>
+<p>この括弧の問題から、カタラン数\(n\)の漸化式による一般項を求める。
+\(n\)より小さいカタラン数を\(C_i (i &lt; n)\)とおく。
+n個の対応する括弧からなる空でない文字列を&rdquo;(A)B&quot;とする。
+A, Bは\(n\)個よりも小さい文字列である。
+Aにある括弧の数が\(k\)であるとき、Bの括弧の数は\(n-1-k\)である。
+\(k\)がとりあえる値の範囲は\(0\)以上\(n-1\)以下であるからカタラン数\(C_n\)は
+$$
+C_n = C_{n-1}C_0 + C_{n-2}C_1 + \cdots + C_1C_{n-2} + C_0C_{n-1}
+$$
+となる。</p>
+<p>今度は、格子を例題に、二項係数によるカタラン数の表現を求める。
+縦の長さが\(n\), 横の長さが\(m\)の格子の左上から右下への最短経路は、\(n+m\)回の距離1の移動からなり、そのうち\(n\)個が下への移動である。
+そのため、最短経路の数は\(\binom{n+m}{n}\)になる。</p>
+<p>左上から右下への対角線を一回でも横切る経路の数が分かれば、すべての最短経路の数との差からカタラン数を求められる。
+すべての対角線を横切る経路は、以下の図にあるPのような、最初に対角線を横切った直後の点を通る。
+<img src="/catalan.png" alt="grid">
+右図のように、この点より右下にある格子を対角線を軸に反転すると、横切る経路は\(n+1\)回の下への移動と\(n-1\)回の右への移動からなる。
+以上からカタラン数は、二項係数で
+$$
+C_n = \binom{2n}{n} - \binom{2n}{n+1}
+$$
+とも表せる。</p>
+<p>図を参考文献の論文から引用しました。</p>
+<h2 id="参考文献">参考文献</h2>
+<p><a href="http://www.geometer.org/mathcircles/catalan.pdf">Tom Davis, Catalan Numbers, 2016</a></p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/abstract_syntax_networks_for_code_generation_and_semantic_parsing/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="https://nryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

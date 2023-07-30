@@ -61,6 +61,18 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/a_comparision_of_fractal_trees_to_lsm_trees/">論文メモ A comparison of Fractal Trees to Log-Structured Merge (LSM) Trees</a></h3>
+        <div class="summary"><p>Fractal Treeは、B+木のルートと節にバッファをもたせるデータ構造にあたる。
+そのFractal TreeのamplificationをB+木やLSM Treeのそれと比較した。
+議論になるamplificationは、write, read, spaceの3つで、write amplificationはアプリケーションが書き込むデータ量に対して実際にストレージに書き込まれたデータ量を表す。
+read amplificationはクエリの実行に必要なI/Oの回数、space amplificationは仕組み上避けられない断片化や一時的なデータのコピーに該当する。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">April 19, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/fast_intersection_algorithms_for_sorted_sequences/">論文メモ Fast Intersection Algorithms for Sorted Sequences</a></h3>
         <div class="summary"><p>ソートされたシーケンスの直積を高速に求めるアルゴリズム Double Binary Searchを示した。
 2つのシーケンス\(D\), \(Q\)があり、\(\mid D\mid=n\), \(\mid Q\mid=m\), \(n &gt;= m\)であれば、平均と最悪時間計算量が、それぞれ、\(\mathcal{O}(m\log(n/m))\), \(m\)になる。
@@ -162,16 +174,6 @@ FD-treeのエントリ数が\(n\), ページサイズが\(B\)であれば、ラ�
         <div class="article-footer">
 	  
           <span class="date">February 15, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/isolation_forest/">論文メモ Isolation Forest</a></h3>
-        <div class="summary"><p>Isolation Forestは、完全二分木による異常検知の手法で、iForestともよばれる。時間計算量が線形で、ハイパーパラメタがわずか2つで、メモリ効率がよい。
-時間、空間計算量が少なく高次元のデータに向く。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">February 13, 2021</span>
         </div>
     </article>
     

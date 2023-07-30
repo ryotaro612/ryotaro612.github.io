@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blanket</title>
-    <link>https://nryotaro.dev/en/</link>
-    <description>Recent content on Blanket</description>
+    <title>Catalan numbers on Blanket</title>
+    <link>https://nryotaro.dev/en/tags/catalan-numbers/</link>
+    <description>Recent content in Catalan numbers on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 29 Jul 2023 15:24:15 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Jul 2023 15:24:15 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/en/tags/catalan-numbers/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Catalan Numbers</title>
       <link>https://nryotaro.dev/en/posts/catalan_number/</link>
@@ -13,15 +13,6 @@
       
       <guid>https://nryotaro.dev/en/posts/catalan_number/</guid>
       <description>The Catalan numbers are a sequence of natural numbers that occur in various problems in combinatorial mathematics. For example, the number of expressions containing \(n\) valid pairs of parentheses is the \(n\)th Catalan number. Suppose you have a grid of \(n \times n\) squares, the \(n\)th Catalan number represents the number of paths with a length of \(2n\) that lead from the upper left corner to the lower right corner without intersecting the diagonal dotted line running from the upper left to the lower right.</description>
-    </item>
-    
-    <item>
-      <title>About Me</title>
-      <link>https://nryotaro.dev/en/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://nryotaro.dev/en/about/</guid>
-      <description>Disclaimer All the information on this website is published in good faith and for general information purpose only. This website does not make any warranties about the completeness, reliability and accuracy of this information. Any action you take upon the information you find on this website, is strictly at your own risk. Ryotaro Nakamura will not be liable for any losses and/or damages in connection with the use of this website.</description>
     </item>
     
   </channel>

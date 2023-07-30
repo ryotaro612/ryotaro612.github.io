@@ -5,7 +5,18 @@
     <link>https://nryotaro.dev/posts/</link>
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 01 Jul 2023 17:53:10 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Jul 2023 15:24:15 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Catalan Numbers</title>
+      <link>https://nryotaro.dev/posts/catalan_number/</link>
+      <pubDate>Sat, 29 Jul 2023 15:24:15 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/catalan_number/</guid>
+      <description>&lt;p&gt;カタラン数は、いくつかの組合せの問題の解で知られる自然数の系列である。
+\(n\)個の対応する括弧&amp;quot;(, )&amp;ldquo;からなる文字列の組合せの数や、一辺の長さが\(n\)の格子の左上から右下への対角線より上を通る最短経路の数は、\(n\)番目のカタラン数である。
+このページでは、この2つの問題の解がカタラン数であるとして、漸化式と二項係数の2つの形式によるカタラン数の一般項を求める。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Abstract Syntax Networks for Code Generation and Semantic Parsing</title>
       <link>https://nryotaro.dev/posts/abstract_syntax_networks_for_code_generation_and_semantic_parsing/</link>

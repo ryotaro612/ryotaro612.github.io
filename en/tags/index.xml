@@ -4,6 +4,16 @@
     <title>Tags on Blanket</title>
     <link>https://nryotaro.dev/en/tags/</link>
     <description>Recent content in Tags on Blanket</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://nryotaro.dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 29 Jul 2023 15:24:15 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Catalan numbers</title>
+      <link>https://nryotaro.dev/en/tags/catalan-numbers/</link>
+      <pubDate>Sat, 29 Jul 2023 15:24:15 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/en/tags/catalan-numbers/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
