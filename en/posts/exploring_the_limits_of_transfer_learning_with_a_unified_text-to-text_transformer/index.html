@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.509cb66f68beb5c84b4f129b985690c090c0cad8a3d02a993f2287c0cafd524c.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer(2020)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://nryotaro.dev/en/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://nryotaro.dev/en/about">About</a></li>
+          <li><a href="https://nryotaro.dev/en/posts">Posts</a></li>
+          <li><a href="https://nryotaro.dev/en/tags">Tags</a></li>
+	  
+	  <li><a href="https://nryotaro.dev/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/">ja</a></li>
+	  
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer(2020)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/en/tags/transformer/">
+	#Transformer
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">August 5, 2023</span>    
+  <div>
+    <p>The authors of <a href="https://arxiv.org/abs/1910.10683">Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer</a> performed experiments with <em>T</em>ext-<em>t</em>o-<em>T</em>ext <em>T</em>ransfer <em>T</em>ransformer(T5), a unified framework for NLP.
+The basic idea underlying T5 is to treat various NLP problems as taking text as input and producing new text as output.
+Their goal is to explore general language learning abilities instead of providing new methods.
+They are interested in exploring the limits of transfer learning for NLP by scaling up models and data sets beyond what has previously been considered.
+To perform experiments at scale, they created Colossal Clean Crawled Corpus (C4), a dataset consisting of hundreds of gigabytes of clean English text scraped from the web.
+They leveraged <a href="https://commoncrawl.org/">Common Crawl</a> to create C4.
+They used heuristic for cleaning up Common Crawl web-extracted text, and used <code>langdetect</code> to filter out any pages that are not classified as English documents.</p>
+<p>To train a single model on the diverse set of downstream tasks, including machine translation, question answering, abstractive summarization, and text classification, they cast the tasks into a &ldquo;text-to-text&rdquo; format where they add a task-specific (text) prefix to the original input sequence before feeding it to the model.
+For example, to ask the model to translate a sentence from English to German, the input sequence becomes &ldquo;translate English to German: That is good.&rdquo; and the model would be trained to output &ldquo;Das ist guit.&rdquo;</p>
+<p>They compared three pre-training objectives.
+The first technique is prefix language modeling, which splits text into two components, one to use as inputs to the model and the other use as a target sequence to be predicted.
+The second technique is &ldquo;masked language modeling&rdquo;(MLM) used in BERT.
+MLM takes a span of text and corrupts 15% of the tokens.
+In the encoder-decoder case, they use the entire uncorrupted sequence as the target, while their baseline objective uses only the corrupted tokens as targets.
+The third technique is the deshuffling objective, which takes a sequence of tokens, shuffles it, and reconstruct the original sequence.
+MLM performed best.</p>
+<p>The models that they study through the experiments are roughly equivalent to the original <a href="https://arxiv.org/abs/1706.03762">Transformer</a> except for removing the Layer Norm bias, placing the layer normalization outside the residual path, using the position embedding scheme.
+While The original Transformer used fixed embeddings for each position, they used relative position embeddings for the experiments.</p>
+<p>Training a larger model and using an ensemble of models yielded better results than a single model and a small model.
+A larger model often outperformed a smaller model on more data for less steps.
+Ensembling models that were fine-tuned from the same base pre-trained model performed worse than separately pre-training and fine-tuning all models.</p>
+
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/en/posts/catalan_number/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="https://nryotaro.dev/en/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

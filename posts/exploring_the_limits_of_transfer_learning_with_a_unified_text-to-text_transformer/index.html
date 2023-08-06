@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.509cb66f68beb5c84b4f129b985690c090c0cad8a3d02a993f2287c0cafd524c.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer(2020)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://nryotaro.dev/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://nryotaro.dev/about">About</a></li>
+          <li><a href="https://nryotaro.dev/posts">Posts</a></li>
+          <li><a href="https://nryotaro.dev/tags">Tags</a></li>
+	  
+	  <li><a href="https://nryotaro.dev/en/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/">en</a></li>
+	  
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer(2020)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/transformer/">
+	#Transformer
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">August 5, 2023</span>    
+  <div>
+    <p><a href="https://arxiv.org/abs/1910.10683">Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer</a>は、
+複数の異なる自然言語処理を、統一的にテキストからテキストを生成する問題とみなした大規模な実験によって、自然言語処理への転移学習の応用に見通しをつけた。
+この統一的なアプローチは、<em>T</em>ext-<em>t</em>o-<em>T</em>ext <em>T</em>ransfer <em>T</em>ransformer(T5)と名づけられた。
+既存の技術への理解を深めることを目的としており、新たなアルゴリズムの提案はない。
+一方、調査する技術の限界を調べるために、大きなデータが必要であったことから、新たなデータセットColossal Clean Crawled Corpus(C4)が作られた。
+C4には、<a href="https://commoncrawl.org/">Common Crawl</a>から抽出された英語のテキストがふくまれる。</p>
+<p>T5は、モデルにタスクの種類を伝えるために、タスクごとに違うプレフィックスと入力文を連結し、連結文字列をモデルに入力する。
+たとえば、翻訳のプレフィックスは&quot;translate English to German&quot;, テキスト含意であれば、&ldquo;mnli premise: I hate pigeons. hypothesis: My feelings towards pigeons are filled with animosity.&ldquo;にある&quot;mnli premise, hypothesis&quot;がプレフィックスである。</p>
+<p>3種類の事前学習のタスクを比較した。
+比較したタスクは、BERTとおなじくマスクされたトークンを予測する、文書の前半部分から後半の部分を推定する、順序を入れ替えたトークン列を元の文書に戻すタスクであった。
+最も高い性能であったのは、マスクされたトークンを予測する事前学習のモデルだった。
+実験のファインチューニングでは、タスク別にモデルを訓練した。</p>
+<p>実験で比較するモデルはいずれも、位置のエンベディングと層正規化を除いて、もとの<a href="https://arxiv.org/abs/1706.03762">Transformer</a>と大きく変わらない。
+<a href="https://aclanthology.org/N18-2074/">Shaw et al., 2018</a>のように単語同士の相対的な位置のエンベディングを自己注意機構で計算する点が、もとのTransformerと違う。
+層正規化については、層正規化にはバイアス項を使わず、残差結合のパスの外に層正規化を置く点がオリジナルのTransformerと違う。
+モデル同士を比べるときは、パラメタや層の数に注目し、スケールによる影響を観察した。</p>
+<p>訓練データやパラメタ数を増やすだけでなく、アンサンブルでも性能を向上できた。
+学習データを4倍に増やすよりも、パラメタ数や学習時間を倍にするほうが効果的だった。
+また、アンサンブル学習のときは、事前学習とファインチューニングが両方違うモデルを組合せるほうが、事前学習が同じでファインチューニングのみ異なるモデルを組み合わせる場合よりも、性能が高かった。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/catalan_number/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="https://nryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

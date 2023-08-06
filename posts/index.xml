@@ -5,9 +5,23 @@
     <link>https://nryotaro.dev/posts/</link>
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 29 Jul 2023 15:24:15 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Aug 2023 13:27:09 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Catalan Numbers</title>
+      <title>Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer(2020)</title>
+      <link>https://nryotaro.dev/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/</link>
+      <pubDate>Sat, 05 Aug 2023 13:27:09 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1910.10683&#34;&gt;Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer&lt;/a&gt;は、
+複数の異なる自然言語処理を、統一的にテキストからテキストを生成する問題とみなした大規模な実験によって、自然言語処理への転移学習の応用に見通しをつけた。
+この統一的なアプローチは、&lt;em&gt;T&lt;/em&gt;ext-&lt;em&gt;t&lt;/em&gt;o-&lt;em&gt;T&lt;/em&gt;ext &lt;em&gt;T&lt;/em&gt;ransfer &lt;em&gt;T&lt;/em&gt;ransformer(T5)と名づけられた。
+既存の技術への理解を深めることを目的としており、新たなアルゴリズムの提案はない。
+一方、調査する技術の限界を調べるために、大きなデータが必要であったことから、新たなデータセットColossal Clean Crawled Corpus(C4)が作られた。
+C4には、&lt;a href=&#34;https://commoncrawl.org/&#34;&gt;Common Crawl&lt;/a&gt;から抽出された英語のテキストがふくまれる。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Catalan Numbers(2016)</title>
       <link>https://nryotaro.dev/posts/catalan_number/</link>
       <pubDate>Sat, 29 Jul 2023 15:24:15 -0400</pubDate>
       

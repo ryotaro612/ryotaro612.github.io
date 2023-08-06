@@ -61,6 +61,22 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/domain_adversarial_training_of_neural_networks/">論文メモ Domain Adversarial Training of Neural Networks</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>ニューラルネットワークをもちいたドメイン適用の論文である。
+ソースドメインのラベルつきデータと目標ドメインのラベルのないデータでモデルを訓練し、目標ドメインに対する分類性能を引きあげる。
+目的関数は、ソースドメインの分類器の目的関数とデータのドメインを判定する識別器の目的関数からなる。
+後者は、前者の正則化項としてはたらく。
+これにより、ドメイン間に共通する特徴からソースドメインのデータのラベルを高い性能で予測できるようになる。
+目標関数から、ドメイン間のデータの分布が近いほど、目標ドメインのデータでも高い分類性能を発揮する。
+先行研究との違いは、できるだけ共通するする特徴で分類するという着想を、通常の分類と同じく、確率的勾配降下法で実現したところにある。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">April 11, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/character_aware_neural_language_models/">論文メモ Character-Aware Neural Language Models</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>文字単位の入力から次に出現する単語を予測するニューラル言語モデルの論文である。
@@ -241,31 +257,6 @@ decoderについても、encoderと別の言語モデルを用意し、その重
 	  </ul>
 	  
           <span class="date">February 9, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/context2vec/">context2vec: Learning Generic Context Embedding with Bidirectional LSTM (2016)</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>文書の文脈の分散表現を獲得するニューラルネットワークのアーキテクチャ<em>context2vec</em>を提案、評価した論文である。
-アーキテクチャの基本構造は<a href="https://arxiv.org/pdf/1301.3781.pdf">CBOW</a>と同様で、周辺の単語から中心の単語を当てられるようにコーパスをもとにモデルを訓練する。
-CBOWとの違いは、文脈の算出方法にある。
-CBOWは、ウィンドウ内のベクトルの平均値で文脈の分散表現を求める。
-一方、<em>context2vec</em>では、双方向LSTMの出力をもとに算出する。</p>
-<!-- raw HTML omitted --></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/embedding/">
-		#Embedding
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">February 2, 2020</span>
         </div>
     </article>
     

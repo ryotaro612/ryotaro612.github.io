@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2023-07-29T15:24:15-04:00</lastmod>
+    <lastmod>2023-08-05T13:27:09-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -13,6 +13,58 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://nryotaro.dev/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/</loc>
+    <lastmod>2023-08-05T13:27:09-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/posts/</loc>
+    <lastmod>2023-08-05T13:27:09-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/tags/</loc>
+    <lastmod>2023-08-05T13:27:09-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/tags/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/tags/transformer/</loc>
+    <lastmod>2023-08-05T13:27:09-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/tags/transformer/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/tags/transformer/"
                 />
   </url><url>
     <loc>https://nryotaro.dev/posts/catalan_number/</loc>
@@ -26,32 +78,6 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://nryotaro.dev/posts/catalan_number/"
-                />
-  </url><url>
-    <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2023-07-29T15:24:15-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/posts/"
-                />
-  </url><url>
-    <loc>https://nryotaro.dev/tags/</loc>
-    <lastmod>2023-07-29T15:24:15-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/tags/"
                 />
   </url><url>
     <loc>https://nryotaro.dev/tags/%E3%82%AB%E3%82%BF%E3%83%A9%E3%83%B3%E6%95%B0/</loc>
@@ -106,9 +132,6 @@
     <lastmod>2023-05-06T15:03:48-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/an_image_is_worth_16x16_words_transformers_for_image_recognition_at_scale/</loc>
-    <lastmod>2023-04-29T12:12:11-04:00</lastmod>
-  </url><url>
-    <loc>https://nryotaro.dev/tags/transformer/</loc>
     <lastmod>2023-04-29T12:12:11-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/tags/%E7%94%BB%E5%83%8F%E8%AA%8D%E8%AD%98/</loc>

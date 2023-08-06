@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nryotaro.dev/en/</loc>
-    <lastmod>2023-07-29T15:24:15-04:00</lastmod>
+    <lastmod>2023-08-05T13:27:09-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -15,24 +15,21 @@
                 href="https://nryotaro.dev/en/"
                 />
   </url><url>
-    <loc>https://nryotaro.dev/en/posts/catalan_number/</loc>
-    <lastmod>2023-07-29T15:24:15-04:00</lastmod>
+    <loc>https://nryotaro.dev/en/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/</loc>
+    <lastmod>2023-08-05T13:27:09-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://nryotaro.dev/posts/catalan_number/"
+                href="https://nryotaro.dev/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://nryotaro.dev/en/posts/catalan_number/"
+                href="https://nryotaro.dev/en/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/"
                 />
   </url><url>
-    <loc>https://nryotaro.dev/en/tags/catalan-numbers/</loc>
-    <lastmod>2023-07-29T15:24:15-04:00</lastmod>
-  </url><url>
     <loc>https://nryotaro.dev/en/posts/</loc>
-    <lastmod>2023-07-29T15:24:15-04:00</lastmod>
+    <lastmod>2023-08-05T13:27:09-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -45,7 +42,7 @@
                 />
   </url><url>
     <loc>https://nryotaro.dev/en/tags/</loc>
-    <lastmod>2023-07-29T15:24:15-04:00</lastmod>
+    <lastmod>2023-08-05T13:27:09-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -55,6 +52,35 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://nryotaro.dev/en/tags/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/en/tags/transformer/</loc>
+    <lastmod>2023-08-05T13:27:09-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/tags/transformer/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/tags/transformer/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/en/tags/catalan-numbers/</loc>
+    <lastmod>2023-07-29T15:24:15-04:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/en/posts/catalan_number/</loc>
+    <lastmod>2023-07-29T15:24:15-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/catalan_number/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/catalan_number/"
                 />
   </url><url>
     <loc>https://nryotaro.dev/en/about/</loc>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Blanket</title>
-    <link>https://nryotaro.dev/en/posts/</link>
-    <description>Recent content in Posts on Blanket</description>
+    <title>Transformer on Blanket</title>
+    <link>https://nryotaro.dev/en/tags/transformer/</link>
+    <description>Recent content in Transformer on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 05 Aug 2023 13:27:09 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/en/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Aug 2023 13:27:09 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/en/tags/transformer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer(2020)</title>
       <link>https://nryotaro.dev/en/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/</link>
@@ -13,15 +13,6 @@
       
       <guid>https://nryotaro.dev/en/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/</guid>
       <description>The authors of Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer performed experiments with Text-to-Text Transfer Transformer(T5), a unified framework for NLP. The basic idea underlying T5 is to treat various NLP problems as taking text as input and producing new text as output. Their goal is to explore general language learning abilities instead of providing new methods. They are interested in exploring the limits of transfer learning for NLP by scaling up models and data sets beyond what has previously been considered.</description>
-    </item>
-    
-    <item>
-      <title>Catalan Numbers(2016)</title>
-      <link>https://nryotaro.dev/en/posts/catalan_number/</link>
-      <pubDate>Sat, 29 Jul 2023 15:24:15 -0400</pubDate>
-      
-      <guid>https://nryotaro.dev/en/posts/catalan_number/</guid>
-      <description>The Catalan numbers are a sequence of natural numbers that occur in various problems in combinatorial mathematics. For example, the number of expressions containing \(n\) valid pairs of parentheses is the \(n\)th Catalan number. Suppose you have a grid of \(n \times n\) squares, the \(n\)th Catalan number represents the number of paths with a length of \(2n\) that lead from the upper left corner to the lower right corner without intersecting the diagonal dotted line running from the upper left to the lower right.</description>
     </item>
     
   </channel>
