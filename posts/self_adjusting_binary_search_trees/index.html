@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.509cb66f68beb5c84b4f129b985690c090c0cad8a3d02a993f2287c0cafd524c.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Self-Adjusting Binary Search Trees(1985)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://nryotaro.dev/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://nryotaro.dev/about">About</a></li>
+          <li><a href="https://nryotaro.dev/posts">Posts</a></li>
+          <li><a href="https://nryotaro.dev/tags">Tags</a></li>
+	  
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>Self-Adjusting Binary Search Trees(1985)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC%E6%9C%A8/">
+	#スプレー木
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">August 12, 2023</span>    
+  <div>
+    <p><a href="https://www.cs.cmu.edu/~sleator/papers/self-adjusting.pdf">Self-Adjusting Binary Search Tree</a>は、スプレー木といい、ノードを参照するたびに、ノードを木のルートに移動させる抽象データ構造である。
+参照、挿入、削除の償却時間計算量は、ノード数\(n\)の木であれば\(\log(n)\)である。
+さらに、十分な数の参照にかかる時間計算量は、その参照の系列に最適化された二分探索木の計算量の定数倍におさまる。</p>
+<p>スプレーは、アクセスした直後のノードをルートに移動する再帰的な操作である。
+ノードがルートの子であれば両者を結ぶ辺を回転するだけでいい。
+親がルートではなく、ノードも親も左側または右側の子であれば、親と祖父母の辺を回転した後に、ノードと親の辺を回転する。
+ノードと親の左右が違えば、ノードと親の辺を回転し、ノードとノードの新しい親の辺を回転する。
+以上の手続きを参照されたノードがルートに到達するまでくりかえす。
+以下の図は、ノード<code>x</code>にスプレーを適用する様子である。
+<img src="/splay/splay.png" alt="splay"></p>
+<p>ノードの追加や削除はスプレーによって実装できる。
+ノードを挿入する場合、ノードが挿入されるべき位置を特定し、その位置にノードを追加し、最後に追加したノードにスプレーを適用する。
+削除の場合、まず、削除対象のノードを特定し、ノードの左の子以下にある最大のノードにスプレーを適用し、新しく左の子となった最大のノードが右の子を持たないようにする。
+次に、削除対象であるノードの右の子を左の子の右に配置する。
+最後に、削除対象のノードを除外し、削除したノードの左の子を削除したノードの位置に移動する。
+以下の図は、80を挿入し、30を削除する様子である。
+<img src="/splay/mod.png" alt="mod"></p>
+<p>論文から図を引用しました。</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="https://nryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>
