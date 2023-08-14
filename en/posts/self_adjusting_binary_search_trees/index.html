@@ -19,7 +19,7 @@
     
     <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
     
-    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
     
 
 <link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
@@ -46,14 +46,14 @@
     
         
     <header class="navigation">
-      <h2><a href="https://nryotaro.dev/">Blanket</a></h2>
+      <h2><a href="https://nryotaro.dev/en/">Blanket</a></h2>
       <nav>
         <ul>
-          <li><a href="https://nryotaro.dev/about">About</a></li>
-          <li><a href="https://nryotaro.dev/posts">Posts</a></li>
-          <li><a href="https://nryotaro.dev/tags">Tags</a></li>
+          <li><a href="https://nryotaro.dev/en/about">About</a></li>
+          <li><a href="https://nryotaro.dev/en/posts">Posts</a></li>
+          <li><a href="https://nryotaro.dev/en/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/en/posts/self_adjusting_binary_search_trees/">en</a></li>
+	  <li><a href="https://nryotaro.dev/posts/self_adjusting_binary_search_trees/">ja</a></li>
 	  
         </ul>
       </nav>
@@ -64,32 +64,33 @@
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://nryotaro.dev/tags/%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC%E6%9C%A8/">
-	#スプレー木
+      <a href="https://nryotaro.dev/en/tags/splay-tree/">
+	#Splay tree
       </a>
     </li>
     
   </ul>  
   <span class="date">August 12, 2023</span>    
   <div>
-    <p><a href="https://www.cs.cmu.edu/~sleator/papers/self-adjusting.pdf">Self-Adjusting Binary Search Tree</a>は、スプレー木といい、ノードを参照するたびに、ノードを木のルートに移動させる抽象データ構造である。
-参照、挿入、削除の償却時間計算量は、ノード数\(n\)の木であれば\(\log(n)\)である。
-さらに、十分な数の参照にかかる時間計算量は、その参照の系列に最適化された二分探索木の計算量の定数倍におさまる。</p>
-<p>スプレーは、アクセスした直後のノードをルートに移動する再帰的な操作である。
-ノードがルートの子であれば両者を結ぶ辺を回転するだけでいい。
-親がルートではなく、ノードも親も左側または右側の子であれば、親と祖父母の辺を回転した後に、ノードと親の辺を回転する。
-ノードと親の左右が違えば、ノードと親の辺を回転し、ノードとノードの新しい親の辺を回転する。
-以上の手続きを参照されたノードがルートに到達するまでくりかえす。
-以下の図は、ノード<code>x</code>にスプレーを適用する様子である。
+    <p><a href="https://www.cs.cmu.edu/~sleator/papers/self-adjusting.pdf">The splay tree</a>, a self-adjusting form of a binary search tree, is a binary search tree that moves an accessed node to the root after each access.
+On an \(n\)-node splay tree, accessing, inserting and deleting have an amortized time bound of \(O(\log n)\) per operation.
+In addition, for sufficiently long access sequences, splay trees are as efficient, to within a constant factor, as static optimum search trees.</p>
+<p>Splaying is a restructuring heuristic that moves the accessed item to the root after each access on the assumption that the item is likely to be accessed again soon.
+If we want to splay a tree at a node \(x\) and \(p(x)\), the parent of x, is the root, rotate the edge joining \(x\) with \(p(x)\)(Figure a).
+If \(p(x)\) is not the root and \(x\) and \(p(x)\) are both left or both right children, rotate the edge joining \(p(x)\) with its grandparent and then rotate the edge joining \(x\) with p(x)(Figure b).
+If \(p\) is not the root and \(x\) is a left child and \(p(x)\) a right child, or vice versa, rotate the edge joining \(x\) with \(p(x)\) and then rotate the edge joining \(x\) with the new \(p(x)\).
 <img src="/splay/splay.png" alt="splay"></p>
-<p>ノードの追加や削除はスプレーによって実装できる。
-ノードを挿入する場合、ノードが挿入されるべき位置を特定し、その位置にノードを追加し、最後に追加したノードにスプレーを適用する。
-削除の場合、まず、削除対象のノードを特定し、ノードの左の子以下にある最大のノードにスプレーを適用し、新しく左の子となった最大のノードが右の子を持たないようにする。
-次に、削除対象であるノードの右の子を左の子の右に配置する。
-最後に、削除対象のノードを除外し、削除したノードの左の子を削除したノードの位置に移動する。
-以下の図は、80を挿入し、30を削除する様子である。
+<p>We can implement the insertion, join, and deletion using splaying.
+To carry out \(insert(i, t)\), inserting item \(i\) in a tree \(t\), we search for \(i\), then replace the pointer to null reached during the search by a pointer to a new node containing \(i\), and finally splay the tree at the new node.
+\(join(t_1, t_2)\) is combining trees \(t_1\) and \(t_2\) into a single tree. This operation assumes that all items in \(t_1\) are less than all those in \(t_2\).
+To carry out \(join(t_1, t_2)\), we move the largest, say \(i\) , in \(t_1\) to the root by splaying at \(i\).
+After the access, the root of \(t_1\) contains \(i\) and thus has a null right child.
+We finally make \(t_2\) the right subtree of the root.
+To carry out \(delete(i, t)\), we search for the node containing \(i\), say \(x\), and let its parent be \(y\).
+We replace \(x\) as a child of \(y\) by the join of the left and right subtrees of \(x\), and then we splay at \(y\).
+The following figure illustrates insertion of 80 followed by deletion of 30.
 <img src="/splay/mod.png" alt="mod"></p>
-<p>論文から図を引用しました。</p>
+<p>The figures were cited from the paper.</p>
   </div>
 </main>
 
@@ -97,7 +98,7 @@
 <ul class="pagination">
     
     <li>
-      <a href="/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/">
+      <a href="/en/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/">
 	<i class="fa-solid fa-xl fa-angle-left"></i>
       </a>
     </li>
@@ -122,7 +123,7 @@
           </a>
         </li>
         
-        <li><a href="https://nryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        <li><a href="https://nryotaro.dev/en/index.xml"><i class="fas fa-rss"></i></a></li>
         
       </ul>
       <small>© Nakamura, Ryotaro. All Rights Reserved.</small>

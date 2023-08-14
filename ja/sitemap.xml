@@ -30,6 +30,16 @@
   </url><url>
     <loc>https://nryotaro.dev/posts/self_adjusting_binary_search_trees/</loc>
     <lastmod>2023-08-12T13:49:56-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/self_adjusting_binary_search_trees/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/self_adjusting_binary_search_trees/"
+                />
   </url><url>
     <loc>https://nryotaro.dev/tags/</loc>
     <lastmod>2023-08-12T13:49:56-04:00</lastmod>
