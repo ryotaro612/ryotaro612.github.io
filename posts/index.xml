@@ -5,7 +5,20 @@
     <link>https://nryotaro.dev/posts/</link>
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 12 Aug 2023 13:49:56 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Aug 2023 10:02:50 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Self-Attention with Relative Position Representations(2018)</title>
+      <link>https://nryotaro.dev/posts/self_attention_with_relative_position_representations/</link>
+      <pubDate>Sat, 19 Aug 2023 10:02:50 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/self_attention_with_relative_position_representations/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1803.02155.pdf&#34;&gt;Self-Attention with Relative Position Representations&lt;/a&gt;は、&lt;a href=&#34;https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;Transformer&lt;/a&gt;のQKV注意機構に系列の要素間の相対位置をあたえる手法である。
+Transformerは、RNNやCNNとはちがい、要素の位置をモデルにあたえる決まった方法をもたない。
+Transformerの原論文は、正弦関数で要素の位置からベクトルを計算し、それを埋め込みベクトルに加算することで、位置情報をエンコードする。
+正弦関数を使う理由は、訓練データにない長さの系列に対する汎化性能を周期性で上げられると仮定したからである。
+提案手法は、この仮定を継承し、要素間の相対位置で位置情報をエンコードすることで、訓練データにない系列長の入力に対する汎化性能の向上をはかる。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Self-Adjusting Binary Search Trees(1985)</title>
       <link>https://nryotaro.dev/posts/self_adjusting_binary_search_trees/</link>

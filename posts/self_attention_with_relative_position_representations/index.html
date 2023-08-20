@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>Self-Adjusting Binary Search Trees(1985)</title>
+    <title>Self-Attention with Relative Position Representations(2018)</title>
   </head>
 
   <body>
@@ -53,43 +53,62 @@
           <li><a href="https://nryotaro.dev/posts">Posts</a></li>
           <li><a href="https://nryotaro.dev/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/en/posts/self_adjusting_binary_search_trees/">en</a></li>
+	  <li><a href="https://nryotaro.dev/en/posts/self_attention_with_relative_position_representations/">en</a></li>
 	  
         </ul>
       </nav>
     </header>
     
 <main>
-  <h1>Self-Adjusting Binary Search Trees(1985)</h1>
+  <h1>Self-Attention with Relative Position Representations(2018)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://nryotaro.dev/tags/%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC%E6%9C%A8/">
-	#スプレー木
+      <a href="https://nryotaro.dev/tags/attention/">
+	#Attention
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/transformer/">
+	#Transformer
       </a>
     </li>
     
   </ul>  
-  <span class="date">August 12, 2023</span>    
+  <span class="date">August 19, 2023</span>    
   <div>
-    <p><a href="https://www.cs.cmu.edu/~sleator/papers/self-adjusting.pdf">Self-Adjusting Binary Search Tree</a>は、スプレー木といい、ノードを参照するたびに、ノードを木のルートに移動させる抽象データ構造である。
-参照、挿入、削除の償却時間計算量は、ノード数\(n\)の木であれば\(\log(n)\)である。
-さらに、十分な数の参照にかかる時間計算量は、その参照の系列に最適化された二分探索木の計算量の定数倍におさまる。</p>
-<p>スプレーは、アクセスした直後のノードをルートに移動する再帰的な操作である。
-ノードがルートの子であれば両者を結ぶ辺を回転するだけでいい。
-親がルートではなく、ノードも親も左側または右側の子であれば、親と祖父母の辺を回転した後に、ノードと親の辺を回転する。
-ノードと親の左右が違えば、ノードと親の辺を回転し、ノードとノードの新しい親の辺を回転する。
-以上の手続きを参照されたノードがルートに到達するまでくりかえす。
-以下の図は、ノード<code>x</code>にスプレーを適用する様子である。
-<img src="/splay/splay.png" alt="splay"></p>
-<p>ノードの追加や削除はスプレーによって実装できる。
-ノードを挿入する場合、ノードが挿入されるべき位置を特定し、その位置にノードを追加し、最後に追加したノードにスプレーを適用する。
-削除の場合、まず、削除対象のノードを特定し、ノードの左の子以下にある最大のノードにスプレーを適用し、新しく左の子となった最大のノードが右の子を持たないようにする。
-次に、削除対象であるノードの右の子を左の子の右に配置する。
-最後に、削除対象のノードを除外し、削除したノードの左の子を削除したノードの位置に移動する。
-以下の図は、80を挿入し、30を削除する様子である。
-<img src="/splay/mod.png" alt="mod"></p>
-<p>論文から図を引用しました。</p>
+    <p><a href="https://arxiv.org/pdf/1803.02155.pdf">Self-Attention with Relative Position Representations</a>は、<a href="https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">Transformer</a>のQKV注意機構に系列の要素間の相対位置をあたえる手法である。
+Transformerは、RNNやCNNとはちがい、要素の位置をモデルにあたえる決まった方法をもたない。
+Transformerの原論文は、正弦関数で要素の位置からベクトルを計算し、それを埋め込みベクトルに加算することで、位置情報をエンコードする。
+正弦関数を使う理由は、訓練データにない長さの系列に対する汎化性能を周期性で上げられると仮定したからである。
+提案手法は、この仮定を継承し、要素間の相対位置で位置情報をエンコードすることで、訓練データにない系列長の入力に対する汎化性能の向上をはかる。</p>
+<p>長さ\(n\)の系列\(x=(x_1,\dots ,x_n)\)を入力されたQKV注意機構は、系列\((z_1 ,\dots , z_n)\)を出力する。
+\(x_i\), \(z_i\)の次元を\(d_x\), \(d_z\)とすると、クエリー、キー、バリューのパラメタ\(W^Q, W^K, W^V\)のサイズは\(d_x\times d_z\)である。
+このときのQKV注意機構の計算は以下の式になる。
+$$
+\begin{align}
+z_i&amp;=\sum^n_{j=1}\alpha_{ij}(x_jW^V)\\
+\alpha_{ij}&amp;=\frac{\exp e_{ij}}{\sum^n_{k=1}\exp e_{ik}}\\
+e_{ij}&amp;=\frac{(x_iW^Q)(x_jW^K)^T}{\sqrt{d_z}}
+\end{align}
+$$</p>
+<p>提案手法は、相対位置のための\(\mathbb{R}^{d_a}\)のパラメタ\(w^V_{\text{clip}(j-i,k)}\)と\(w^K_{\text{clip}(j-i, k)}\)を導入し、\((1)\)と\((3)\)に以下の式におきかえる。
+$$
+\begin{align}
+z_i&amp;=\sum^n_{j=1}\alpha_{ij}(x_jW^V+w^V_{\text{clip}(j-i,k)})\\
+e_{ij}&amp;=\frac{(x_iW^Q)(x_jW^K+w^K_{\text{clip}(j-i, k)})^T}{\sqrt{d_z}}
+\end{align}
+$$
+\(\text{clip}\)関数は以下の式であり、\(i\)と\(j\)がハイパーパラメタ\(k\)よりも離れていれば、正確な相対位置を不要とみなす。
+$$
+\text{clip}(x, k)=\max(-k, \min(k, x))
+$$
+\(\text{clip}(x, k)\)のとりえる範囲より、\(w^K_i,w^V_i\in \mathbb{R}^{d_a}\), \(w^K=(w^K_{-k},\dots ,w^K_{k})\), \(w^V=(w_{-k}^V,\dots w_k^V)\)である。</p>
+<h2 id="雑記">雑記</h2>
+<p>訓練データにない入力長の系列に対する汎化性能が低くなることを問題にしている。
+正弦関数によるエンコードの場合、訓練データにある入力長の系列の予測であっても、先頭からの絶対的な距離が大きく違う要素があれば、予測がうまくいかないようにみえる。
+だから、相対位置でエンコードするのは、入力長に対する汎化性能を上げるためというよりも、単語の位置の影響を弱めたいというほうが正確に思える。</p>
   </div>
 </main>
 
@@ -97,17 +116,11 @@
 <ul class="pagination">
     
     <li>
-      <a href="/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/">
+      <a href="/posts/self_adjusting_binary_search_trees/">
 	<i class="fa-solid fa-xl fa-angle-left"></i>
       </a>
     </li>
     
-    
-    <li>
-      <a href="/posts/self_attention_with_relative_position_representations/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
     
 </ul>
 

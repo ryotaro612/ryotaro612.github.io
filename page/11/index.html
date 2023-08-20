@@ -63,6 +63,17 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/implementing_remote_procedure_calls/">Implementing Remote Procedure Calls</a></h3>
+        <div class="summary"><p>Xeroxのプログラミング環境<a href="http://www.bitsavers.org/pdf/xerox/parc/techReports/CSL-80-10_Requirements_for_an_Experimental_Programming_Environment.pdf">Cedar</a>のために開発されたRPCを解説した84年の論文。
+RPCの開発目的は、分散コンピューティングを簡単に実装できるようにする、通信時間を短くする、通信をセキュアにすることの3点にある。
+RPCは大部分で<a href="http://www.bitsavers.org/pdf/xerox/parc/techReports/CSL-79-3_Mesa_Language_Manual_Version_5.0.pdf">Mesa</a>が使われた。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">September 11, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/dremel/">Dremel: Interactive Analysis of Web-Scale Datasets</a></h3>
         <div class="summary"><p>Dremelは2006年からGoogle社内で利用されているDWHで、社外にはBigQueryとして提供されている。
 列指向の形式でデータを保存し、SQLに似た言語のクエリでデータを検索できる。
@@ -171,15 +182,6 @@ UIS-Hunterは、FigmaやAndroid Studio Layout Editorなどのモックアップ�
 タスクの選び方は、大きく、割り当てるタスクを少しずつ複雑にする、優先度の高いものを選ぶ、曖昧なタスクを選ぶ、の3つがあった。
 オンボーディングするエンジニアがジュニアであれば最初の選び方、シニアであれば最後の選び方、アジャイルを採用するチーム、新しいチーム、納期の厳しいチームは優先度でタスクが選ばれやすく、効果的であった。
 以上の考察を189名のエンジニアと37名のマネージャに評価してもらい、妥当性を確認した。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">August 14, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/a_differential_testing_approach_for_evaluating_ast_mapping_algorithms/">A Differential Testing Approach for Evaluating Abstract Syntax Tree Mapping Algorithms</a></h3>
-        <div class="summary"><p>AST mappingは、コードの変更前後のASTを比べてノードの対応関係を見つける手法であり、変更差分検出に使われる。 現状、対応関係の精度を自動で評価する有効な方法はなく、評価には人手による手間がかかる。 多くのノードに1対1の対応関係があることに着目し、異なる2つのAST mappingを同じ変更に適用した結果を比べ、個別の文やトークンごとに、より正確な方を推定するアルゴリズムを提案した。 これを応用し、複数のAST mappingアルゴリズムに同じファイルの変更差分を入力し、アルゴリズムごとの不正確に検出した箇所を自動で推定できることを示した。 特定性能は、Precisionが0.98-1.00, Recallは0.65-0.75だった。</p></div>
         <div class="article-footer">
 	  
           <span class="date">August 14, 2021</span>

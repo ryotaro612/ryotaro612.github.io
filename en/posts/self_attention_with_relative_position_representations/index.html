@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>Self-Adjusting Binary Search Trees(1985)</title>
+    <title>Self-Attention with Relative Position Representations(2018)</title>
   </head>
 
   <body>
@@ -53,44 +53,61 @@
           <li><a href="https://nryotaro.dev/en/posts">Posts</a></li>
           <li><a href="https://nryotaro.dev/en/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/posts/self_adjusting_binary_search_trees/">ja</a></li>
+	  <li><a href="https://nryotaro.dev/posts/self_attention_with_relative_position_representations/">ja</a></li>
 	  
         </ul>
       </nav>
     </header>
     
 <main>
-  <h1>Self-Adjusting Binary Search Trees(1985)</h1>
+  <h1>Self-Attention with Relative Position Representations(2018)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://nryotaro.dev/en/tags/splay-tree/">
-	#Splay tree
+      <a href="https://nryotaro.dev/en/tags/attention/">
+	#Attention
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/en/tags/transformer/">
+	#Transformer
       </a>
     </li>
     
   </ul>  
-  <span class="date">August 12, 2023</span>    
+  <span class="date">August 19, 2023</span>    
   <div>
-    <p><a href="https://www.cs.cmu.edu/~sleator/papers/self-adjusting.pdf">The splay tree</a>, a self-adjusting form of a binary search tree, is a binary search tree that moves an accessed node to the root after each access.
-On an \(n\)-node splay tree, accessing, inserting and deleting have an amortized time bound of \(O(\log n)\) per operation.
-In addition, for sufficiently long access sequences, splay trees are as efficient, to within a constant factor, as static optimum search trees.</p>
-<p>Splaying is a restructuring heuristic that moves the accessed item to the root after each access on the assumption that the item is likely to be accessed again soon.
-If we want to splay a tree at a node \(x\) and \(p(x)\), the parent of x, is the root, rotate the edge joining \(x\) with \(p(x)\)(Figure a).
-If \(p(x)\) is not the root and \(x\) and \(p(x)\) are both left or both right children, rotate the edge joining \(p(x)\) with its grandparent and then rotate the edge joining \(x\) with p(x)(Figure b).
-If \(p\) is not the root and \(x\) is a left child and \(p(x)\) a right child, or vice versa, rotate the edge joining \(x\) with \(p(x)\) and then rotate the edge joining \(x\) with the new \(p(x)\).
-<img src="/splay/splay.png" alt="splay"></p>
-<p>We can implement the insertion, join, and deletion using splaying.
-To carry out \(insert(i, t)\), inserting item \(i\) in a tree \(t\), we search for \(i\), then replace the pointer to null reached during the search by a pointer to a new node containing \(i\), and finally splay the tree at the new node.
-\(join(t_1, t_2)\) is combining trees \(t_1\) and \(t_2\) into a single tree. This operation assumes that all items in \(t_1\) are less than all those in \(t_2\).
-To carry out \(join(t_1, t_2)\), we move the largest, say \(i\) , in \(t_1\) to the root by splaying at \(i\).
-After the access, the root of \(t_1\) contains \(i\) and thus has a null right child.
-We finally make \(t_2\) the right subtree of the root.
-To carry out \(delete(i, t)\), we search for the node containing \(i\), say \(x\), and let its parent be \(y\).
-We replace \(x\) as a child of \(y\) by the join of the left and right subtrees of \(x\), and then we splay at \(y\).
-The following figure illustrates insertion of 80 followed by deletion of 30.
-<img src="/splay/mod.png" alt="mod"></p>
-<p>The figures were cited from the paper.</p>
+    <p>The authors of <a href="https://arxiv.org/pdf/1803.02155.pdf">Self-Attention with Relative Position Representations</a> presented a way of injecting relative position representations in the self-attention mechanism of the <a href="https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">Transformer</a>.
+In contrast to recurrent and convolutional neural networks, Transformer does not explicitly model position information in its structure.
+<a href="https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">The original position encoding</a> employs sine and cosine functions of different frequencies.
+The authors of Transformer hypothesized that sinusoidal position encodings would help Transformer to generalize to sequence lengths unseen during training.
+Positional encodings are added to the input embeddings at the bottoms of the encoder and decoder stacks of Transformer.
+This hypothesis was shared by the relative position representations.
+In contrast to absolute position representations, the relative position representations are invariant to the total sequence length.</p>
+<p>Self-attention mechanism maps an input sequence, \(x=(x_1 , \dots , x_n)\) of \(n\) elements where \(x_i\in\mathbb{R}^{d_x}\), to a new sequence, \(z=(z_1,\dots , z_n)\) of \(n\) where \(z_i\in\mathbb{R}^{d_z}\).
+The output is computed as a weighted sum of a linearly transformed input elements:
+$$
+\begin{align}
+z_i&amp;=\sum^n_{j=1}\alpha_{ij}(x_jW^V)\\
+\alpha_{ij}&amp;=\frac{\exp e_{ij}}{\sum^n_{k=1}\exp e_{ik}}\\
+e_{ij}&amp;=\frac{(x_iW^Q)(x_jW^K)^T}{\sqrt{d_z}}
+\end{align}
+$$
+Where the projections are parameter matrices \(W^Q, W^K, W^V \in \mathbb{R}^{d_x\times d_z}\).</p>
+<p>They extended the self-attention to consider the pairwise relationships between input elements without additional linear transformations.
+They modified equations (1) and (3):
+$$
+\begin{align}
+z_i&amp;=\sum^n_{j=1}\alpha_{ij}(x_jW^V+w^V_{\text{clip}(j-i,k)})\\
+e_{ij}&amp;=\frac{(x_iW^Q)(x_jW^K+w^K_{\text{clip}(j-i, k)})^T}{\sqrt{d_z}}
+\end{align}
+$$
+They employed the function \(\text{clip}(x, k)\) to clip the maximum relative position to an absolute value of \(k\):
+$$
+\text{clip}(x, k)=\max(-k, \min(k, x))
+$$
+They hypothesized that precise relative position information is not useful beyond a certain distance, \(k\), and the parameters of the relative position representations are \(w^K_i,w^V_i\in \mathbb{R}^{d_a}\) and \(w^K=(w^K_{-k},\dots ,w^K_{k})\) where \(w^V=(w_{-k}^V,\dots w_k^V)\).</p>
   </div>
 </main>
 
@@ -98,17 +115,11 @@ The following figure illustrates insertion of 80 followed by deletion of 30.
 <ul class="pagination">
     
     <li>
-      <a href="/en/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/">
+      <a href="/en/posts/self_adjusting_binary_search_trees/">
 	<i class="fa-solid fa-xl fa-angle-left"></i>
       </a>
     </li>
     
-    
-    <li>
-      <a href="/en/posts/self_attention_with_relative_position_representations/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
     
 </ul>
 
