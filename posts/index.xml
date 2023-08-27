@@ -5,7 +5,19 @@
     <link>https://nryotaro.dev/posts/</link>
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 19 Aug 2023 10:02:50 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Aug 2023 10:46:18 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go To Statement Considered Harmful(1968)</title>
+      <link>https://nryotaro.dev/posts/go_to_statement_considered_harmful/</link>
+      <pubDate>Sat, 26 Aug 2023 10:46:18 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/go_to_statement_considered_harmful/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf&#34;&gt;Go To Statement Considered Harmful&lt;/a&gt;でEdger Dijkstraは機械語以外でのGO TO文の使用を批判した。
+ソースコードは機械語にコンパイルされ、プログラムとして実行される。
+ソースコードは静的な成果物であるが、プログラムは時間とともに変化する。
+プログラマにとって理解しやすいのは実行中のプログラムよりもソースコードの方なので、ソースコードからプログラムの実行状態を予測できることがのぞましい。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Self-Attention with Relative Position Representations(2018)</title>
       <link>https://nryotaro.dev/posts/self_attention_with_relative_position_representations/</link>

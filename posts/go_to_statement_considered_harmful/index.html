@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>Self-Attention with Relative Position Representations(2018)</title>
+    <title>Go To Statement Considered Harmful(1968)</title>
   </head>
 
   <body>
@@ -53,62 +53,40 @@
           <li><a href="https://nryotaro.dev/posts">Posts</a></li>
           <li><a href="https://nryotaro.dev/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/en/posts/self_attention_with_relative_position_representations/">en</a></li>
+	  <li><a href="https://nryotaro.dev/en/posts/go_to_statement_considered_harmful/">en</a></li>
 	  
         </ul>
       </nav>
     </header>
     
 <main>
-  <h1>Self-Attention with Relative Position Representations(2018)</h1>
+  <h1>Go To Statement Considered Harmful(1968)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://nryotaro.dev/tags/attention/">
-	#Attention
-      </a>
-    </li>
-    
-    <li class="tag">
-      <a href="https://nryotaro.dev/tags/transformer/">
-	#Transformer
+      <a href="https://nryotaro.dev/tags/early-programming/">
+	#Early Programming
       </a>
     </li>
     
   </ul>  
-  <span class="date">August 19, 2023</span>    
+  <span class="date">August 26, 2023</span>    
   <div>
-    <p><a href="https://arxiv.org/pdf/1803.02155.pdf">Self-Attention with Relative Position Representations</a>は、<a href="https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">Transformer</a>のQKV注意機構に系列の要素間の相対位置をあたえる手法である。
-Transformerは、RNNやCNNとはちがい、要素の位置をモデルにあたえる決まった方法をもたない。
-Transformerの原論文は、正弦関数で要素の位置からベクトルを計算し、それを埋め込みベクトルに加算することで、位置情報をエンコードする。
-正弦関数を使う理由は、訓練データにない長さの系列に対する汎化性能を周期性で上げられると仮定したからである。
-提案手法は、この仮定を継承し、要素間の相対位置で位置情報をエンコードすることで、訓練データにない系列長の入力に対する汎化性能の向上をはかる。</p>
-<p>長さ\(n\)の系列\(x=(x_1,\dots ,x_n)\)を入力されたQKV注意機構は、系列\((z_1 ,\dots , z_n)\)を出力する。
-\(x_i\), \(z_i\)の次元を\(d_x\), \(d_z\)とすると、クエリー、キー、バリューのパラメタ\(W^Q, W^K, W^V\)のサイズは\(d_x\times d_z\)である。
-このときのQKV注意機構の計算は以下の式になる。
-$$
-\begin{align}
-z_i&amp;=\sum^n_{j=1}\alpha_{ij}(x_jW^V)\\
-\alpha_{ij}&amp;=\frac{\exp e_{ij}}{\sum^n_{k=1}\exp e_{ik}}\\
-e_{ij}&amp;=\frac{(x_iW^Q)(x_jW^K)^T}{\sqrt{d_z}}
-\end{align}
-$$</p>
-<p>提案手法は、相対位置のための\(\mathbb{R}^{d_a}\)のパラメタ\(w^V_{\text{clip}(j-i,k)}\)と\(w^K_{\text{clip}(j-i, k)}\)を導入し、\((1)\)と\((3)\)に以下の式におきかえる。
-$$
-\begin{align}
-z_i&amp;=\sum^n_{j=1}\alpha_{ij}(x_jW^V+w^V_{\text{clip}(j-i,k)})\\
-e_{ij}&amp;=\frac{(x_iW^Q)(x_jW^K+w^K_{\text{clip}(j-i, k)})^T}{\sqrt{d_z}}
-\end{align}
-$$
-\(\text{clip}\)関数は以下の式であり、\(i\)と\(j\)がハイパーパラメタ\(k\)よりも離れていれば、正確な相対位置を不要とみなす。
-$$
-\text{clip}(x, k)=\max(-k, \min(k, x))
-$$
-\(\text{clip}(x, k)\)のとりえる範囲より、\(w^K_i,w^V_i\in \mathbb{R}^{d_a}\), \(w^K=(w^K_{-k},\dots ,w^K_{k})\), \(w^V=(w_{-k}^V,\dots w_k^V)\)である。</p>
+    <p><a href="https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf">Go To Statement Considered Harmful</a>でEdger Dijkstraは機械語以外でのGO TO文の使用を批判した。
+ソースコードは機械語にコンパイルされ、プログラムとして実行される。
+ソースコードは静的な成果物であるが、プログラムは時間とともに変化する。
+プログラマにとって理解しやすいのは実行中のプログラムよりもソースコードの方なので、ソースコードからプログラムの実行状態を予測できることがのぞましい。</p>
+<p>ソースコードからプログラムの実行状態を特定することを、ソースコードのステップをさすインデックスを指定することとみなす。
+このとき、if文以外の制御構文もプロシージャもないソースコードであれば、ひとつのインデックスのみでプログラムの実行状態を特定できる。
+プロシージャが加わると、呼び出し中のプロシージャの順に並んだ複数のインデックスが必要になる。</p>
+<p>whileも導入するとインデックスだけで実行状態を一意に指定できなくなり、while文の反復回数を記録するカウンタが必要になる。
+カウンタの値は、ソースコードに現れることなく、プログラムの実行によって変化する。
+ソースコードに現れる静的なインデックスとプログラムの実行によって変化する動的なカウンタ、この2種類の独立座標でプログラムの実行状態を特定するようになる。
+ここにGOTO文があると、実行状態を特定するためのインデックスとカウンタの集合をみつけにくくなり、プログラムの実行状態を追うことが難しくなる。</p>
 <h2 id="雑記">雑記</h2>
-<p>訓練データにない入力長の系列に対する汎化性能が低くなることを問題にしている。
-正弦関数によるエンコードの場合、訓練データにある入力長の系列の予測であっても、先頭からの絶対的な距離が大きく違う要素があれば、予測がうまくいかないようにみえる。
-だから、相対位置でエンコードするのは、入力長に対する汎化性能を上げるためというよりも、単語の位置の影響を弱めたいというほうが正確に思える。</p>
+<p>GOTO文がなぜインデックスとカウンタの特定しずらくなると主張したが、その理由については述べられていない。
+プログラムの実行状態への理解を、インデックスの順序とカウンタの値を特定することと形式化したことにとどまる。</p>
+<p>今日、Go To Statement Considered HarmfulはGO TO文への批判の参考文献として知られているが、参考文献のセクションには論文の発表時点で既にGOTOに対する批判が新しいものではないと書かれている。</p>
   </div>
 </main>
 
@@ -116,17 +94,11 @@ $$
 <ul class="pagination">
     
     <li>
-      <a href="/posts/self_adjusting_binary_search_trees/">
+      <a href="/posts/self_attention_with_relative_position_representations/">
 	<i class="fa-solid fa-xl fa-angle-left"></i>
       </a>
     </li>
     
-    
-    <li>
-      <a href="/posts/go_to_statement_considered_harmful/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
     
 </ul>
 

@@ -63,6 +63,35 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/millwheel_fault_tolerant_stream_processing_at_internet_scale/">MillWheel: Fault-Tolerant Stream Processing at Internet Scale(2013)</a></h3>
+        <div class="summary"><p>MillWheelはGoogleで開発されたストリーミング処理のフレームワークである。
+開発者が羃等な処理をノードとする有向グラフを実装すれば、MillWheelがデータをノードに正確に一回だけ配信する。
+ただし、転送が遅延しているデータは破棄される。
+データは、キー、値、論理的な時刻の3組からなるレコードを単位として、ノードからノードに出力される。
+向き先のノードは、レコードからキーへの関数を、根のノードから出力されるレコードに適用し、期待するキーに対応するレコードをノードに集約する。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%A2%E3%83%87%E3%83%AB/">
+		#プログラミングモデル
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+		#分散システム
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">November 23, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/rusboost_a_hybrid_approach_to_alleviating_class_imbalance/">抄訳 RUSBoost: A Hybrid Approach to Alleviating Class Imbalance(2010)</a></h3>
         <div class="summary"><p>RUSBoostは、random undersampling(RUS)とAdaBoostを応用し、不均衡データの予測性能を改善する。
 類似の先行研究である<a href="http://www.datascienceassn.org/sites/default/files/SMOTEBoost%20Improving%20Prediction%20of%20the%20Minority%20Class%20in%20Boosting%20.pdf">SMOTEBoost</a>よりも学習時間が短く、アルゴリズムが単純である。
@@ -195,19 +224,6 @@ SMOTEとの違いは、K近傍に多数クラスのサンプルの多い少数�
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/kafka_a_distributed_messaging_system_for_log_processing/">抄訳 Kafka: a Distributed Messaging System for Log Processing (2011)</a></h3>
-        <div class="summary"><p>Kafkaは、LinkedInで開発された分散メッセージングサービスである。
-配信モデルはpullベースであり、consumerが、メッセージをリクエストし、メッセージを消費するスループットを制御する。
-consumerは、関心のあるメッセージのストリームであるトピックを作る。
-producerは、トピックつきのメッセージをborkerに送り、brokerがメッセージを保持する。
-consumerは、brokerのトピックからメッセージを取得する。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">August 22, 2022</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -232,7 +248,7 @@ consumerは、brokerのトピックからメッセージを取得する。</p></
       </a>
     </li>
     <li>
-      <a href="/page/28/">
+      <a href="/page/29/">
 	<i class="fa-solid fa-xl fa-angles-right"></i>
       </a>
     </li>

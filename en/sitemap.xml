@@ -2,6 +2,71 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://nryotaro.dev/en/</loc>
+    <lastmod>2023-08-26T10:46:18-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/en/tags/early-programming/</loc>
+    <lastmod>2023-08-26T10:46:18-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/tags/early-programming/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/tags/early-programming/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/en/posts/go_to_statement_considered_harmful/</loc>
+    <lastmod>2023-08-26T10:46:18-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/go_to_statement_considered_harmful/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/go_to_statement_considered_harmful/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/en/posts/</loc>
+    <lastmod>2023-08-26T10:46:18-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/en/tags/</loc>
+    <lastmod>2023-08-26T10:46:18-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/tags/"
+                />
+  </url><url>
     <loc>https://nryotaro.dev/en/tags/attention/</loc>
     <lastmod>2023-08-19T10:02:50-04:00</lastmod>
     <xhtml:link
@@ -15,32 +80,6 @@
                 href="https://nryotaro.dev/en/tags/attention/"
                 />
   </url><url>
-    <loc>https://nryotaro.dev/en/</loc>
-    <lastmod>2023-08-19T10:02:50-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/"
-                />
-  </url><url>
-    <loc>https://nryotaro.dev/en/posts/</loc>
-    <lastmod>2023-08-19T10:02:50-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/posts/"
-                />
-  </url><url>
     <loc>https://nryotaro.dev/en/posts/self_attention_with_relative_position_representations/</loc>
     <lastmod>2023-08-19T10:02:50-04:00</lastmod>
     <xhtml:link
@@ -52,19 +91,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://nryotaro.dev/en/posts/self_attention_with_relative_position_representations/"
-                />
-  </url><url>
-    <loc>https://nryotaro.dev/en/tags/</loc>
-    <lastmod>2023-08-19T10:02:50-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/tags/"
                 />
   </url><url>
     <loc>https://nryotaro.dev/en/tags/transformer/</loc>

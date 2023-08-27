@@ -22,7 +22,9 @@
     <link rel="stylesheet" href="https://nryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
     
 
-<link rel="stylesheet" href="https://nryotaro.dev/scss/list.min.8bd0eb32012aaff1a394fe4dfa99dba153e539578f4d72458fbc70b8f1ed8927.css">
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -32,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>Tags</title>
+    <title>Go To Statement Considered Harmful(1968)</title>
   </head>
 
   <body>
@@ -51,51 +53,53 @@
           <li><a href="https://nryotaro.dev/en/posts">Posts</a></li>
           <li><a href="https://nryotaro.dev/en/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/tags/">ja</a></li>
+	  <li><a href="https://nryotaro.dev/posts/go_to_statement_considered_harmful/">ja</a></li>
 	  
         </ul>
       </nav>
     </header>
     
 <main>
-  <h1>Tags</h1>
-    <div>
-      
+  <h1>Go To Statement Considered Harmful(1968)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
       <a href="https://nryotaro.dev/en/tags/early-programming/">
-        <div class="entry">
-          <h2>Early Programming</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/attention/">
-        <div class="entry">
-          <h2>Attention</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/transformer/">
-        <div class="entry">
-          <h2>Transformer</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/splay-tree/">
-        <div class="entry">
-          <h2>Splay tree</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/catalan-numbers/">
-        <div class="entry">
-          <h2>Catalan numbers</h2>
-        </div>
-      </a>	
-      
-    </div>
+	#Early Programming
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">August 26, 2023</span>    
+  <div>
+    <p>Edgar Djkstra criticized the excessive use of the go to statement in <a href="https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf">Go To Statement Considered Harmful</a>.
+While the source code is static, the process taking place under the control of the source code is dynamic.
+The programmers should aim to shorten the conceptual gap between the source code and its process to describe the progress.</p>
+<p>Let us characterize the progress of a process.
+If there are no procedures and repetition clauses, we can characterize the progress by a pointer to a suitable step in the source code.
+With the inclusion of procedures, we need a sequence of pointers. The length of this sequence equals to the dynamic depth of procedure calling.</p>
+<p>With the inclusion of procedures, pointers are no longer sufficient to describe the dynamic progress of the process.
+With each entry into a repetition clause, we need a counter that denotes the corresponding current repetition.
+The pointers and the counters provide independent coordinates in which to describe the progress of the process.
+The excessive use of the go to statement makes it hard to find a meaningful set of the coordinates.</p>
+<h2 id="remark">Remark</h2>
+<p>While &ldquo;Go To Statement Considered Harmful&rdquo; became the iconic opponent of go to statement, it does not describe why the go to statement makes it hard to find a meaningful set of pointers and counters that describe the progress of a process.</p>
+  </div>
 </main>
 
     
+<ul class="pagination">
     
+    <li>
+      <a href="/en/posts/self_attention_with_relative_position_representations/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
     <footer>
       <ul>
         

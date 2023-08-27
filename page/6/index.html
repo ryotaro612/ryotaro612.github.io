@@ -63,6 +63,19 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/kafka_a_distributed_messaging_system_for_log_processing/">抄訳 Kafka: a Distributed Messaging System for Log Processing (2011)</a></h3>
+        <div class="summary"><p>Kafkaは、LinkedInで開発された分散メッセージングサービスである。
+配信モデルはpullベースであり、consumerが、メッセージをリクエストし、メッセージを消費するスループットを制御する。
+consumerは、関心のあるメッセージのストリームであるトピックを作る。
+producerは、トピックつきのメッセージをborkerに送り、brokerがメッセージを保持する。
+consumerは、brokerのトピックからメッセージを取得する。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">August 22, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/pregel_a_system_for_large_scale_graph_processing/">抄訳 Pregel: A System for Large-Scale Graph Processing(2010)</a></h3>
         <div class="summary"><p>Googleで開発されたPregelは、ソーシャルグラフやハイパーリンクのグラフなどの巨大なグラフデータの処理に適した計算モデルである。
 計算モデル自体も、処理対象のデータとおなじく、ワーカーが別のワーカーとのメッセージの送受信を繰り返すグラフ構造をなす。
@@ -181,18 +194,6 @@ $$</p></div>
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/consensus_in_the_presence_of_partial_synchrony/">Consensus in the Presence of Patial Synchrony (1988)</a></h3>
-        <div class="summary"><p>同期的なシステムには、プロセッサ間のメッセージの到達時間や時刻の誤差に有界がある。
-非同期的なシステムには、どちらの有界もない。
-表題のpartial synchronousは、同期、非同期の中間的な環境である。
-到達時間や時刻の誤差の有界について、存在するが値が分からない環境と、値が分かっているがどの時刻から値が保証されるか分からない環境を意味する。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">June 18, 2022</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -217,7 +218,7 @@ $$</p></div>
       </a>
     </li>
     <li>
-      <a href="/page/28/">
+      <a href="/page/29/">
 	<i class="fa-solid fa-xl fa-angles-right"></i>
       </a>
     </li>
