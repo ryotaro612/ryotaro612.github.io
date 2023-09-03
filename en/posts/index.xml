@@ -5,7 +5,20 @@
     <link>https://nryotaro.dev/en/posts/</link>
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 26 Aug 2023 10:46:18 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/en/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Aug 2023 13:13:39 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/en/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RoBERTa: A Robustly Optimized BERT Pretraining Approach(2019)</title>
+      <link>https://nryotaro.dev/en/posts/roberta/</link>
+      <pubDate>Sun, 27 Aug 2023 13:13:39 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/en/posts/roberta/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1907.11692.pdf&#34;&gt;RoBERTa&lt;/a&gt;(Robusty optimized BERT approach) is an improved recipe for training &lt;a href=&#34;https://arxiv.org/pdf/1810.04805.pdf&#34;&gt;BERT&lt;/a&gt; models.
+BERT uses two objectives, masked language modeling and next sequence prediction (NSP), during pretraining.
+RoBERTa uses masked language modeling only.
+The authors increased the batch size and Byte-Pair Encoding (BPE) vocabulary size.
+RobERTa is trained with byte-level BPE, which uses bytes instead of unicode characters as the base subword units.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Go To Statement Considered Harmful(1968)</title>
       <link>https://nryotaro.dev/en/posts/go_to_statement_considered_harmful/</link>

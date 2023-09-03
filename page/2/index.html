@@ -63,6 +63,35 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/unsupervised_cross_lingual_representation_learning_at_scale/">Unsupervised Cross-lingual Representation Learning at Scale(2020)</a></h3>
+        <div class="summary"><p>多言語モデルを大規模なコーパスで訓練し、含意関係認識、質問応答、固有表現抽出において、多言語版の<a href="https://arxiv.org/abs/1810.04805">BERT</a>を上まわる予測性能を実現した。
+モデルのアーキテクチャは<a href="https://arxiv.org/abs/1907.11692">RoBERTa</a>で、<a href="https://arxiv.org/abs/1901.07291">Lample and Conneau, 2019</a>に近い方法でモデルを訓練する。
+LampleとConneauの手法を含む従来の多言語の言語モデルの評価実験では、wipediaやwikipediaと同程度の大きさのコーパスが使われていた。
+従来の訓練データに対し、100言語からなる2.5TBのCommonCrawlをコーパスに使い、コーパスを大規模化することによるモデルへの影響を分析した。
+パラメタ数などのモデル大きさを固定し、言語の種類数を30まで増やしたところ、コーパスの小さい言語の性能が向上したが、それ以上増やすと逆に予測性能が低下した。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/">
+		#言語モデル
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E5%A4%9A%E8%A8%80%E8%AA%9E%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/">
+		#多言語言語モデル
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">June 3, 2023</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/a_mojority_consensus_approach_to_concurrency_control_for_multiple_copy_databases/">A Majority Consensus Approach to Concurrency Control for Multiple Copy Databases(1979)</a></h3>
         <div class="summary"><p>データベースを同期するためのアルゴリズム<a href="https://pages.cs.wisc.edu/~remzi/Classes/739/Fall2018/Papers/thomas79-quorums.pdf">majority consensus</a>を提案する。
 アプリケーションは任意のデータベースに更新リクエストを送信でき、データベースは更新リクエストの処理について含意をとる。
@@ -292,30 +321,6 @@ GPT-2のアーキテクチャは、GPT-1に層正規化の位置を変え、resi
 	  </ul>
 	  
           <span class="date">March 25, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/deep_reinforcement_learning_from_human_preferences/">概要 Deep Reinforcement Learing from Human Preferences (2017)</a></h3>
-        <div class="summary"><p>エージェントの行動を撮影した2つのビデオクリップから良い方を人間に選ばせ、報酬関数の学習データを生成する。
-テーブルを掃除するロボットの制御などは、報酬関数の設計が難しい。
-そこで、2つのビデオクリップとその選好を1つのサンプルとする訓練データで、モデルに報酬関数を学習させる。</p>
-<p>環境の状態と状態下での行動のペアの系列を生成し、1秒から2秒間のビデオクリップとして記録する。
-そして、人間に、2つのビデオクリップをうち良い方を選んでもらう。
-2つのビデオクップのうち一方が他方よりも良い確率を出力できるようにモデルを訓練する。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92/">
-		#強化学習
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">March 20, 2023</span>
         </div>
     </article>
     

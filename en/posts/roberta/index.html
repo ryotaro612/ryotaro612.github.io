@@ -22,7 +22,9 @@
     <link rel="stylesheet" href="https://nryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
     
 
-<link rel="stylesheet" href="https://nryotaro.dev/scss/list.min.8bd0eb32012aaff1a394fe4dfa99dba153e539578f4d72458fbc70b8f1ed8927.css">
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -32,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>Tags</title>
+    <title>RoBERTa: A Robustly Optimized BERT Pretraining Approach(2019)</title>
   </head>
 
   <body>
@@ -51,63 +53,65 @@
           <li><a href="https://nryotaro.dev/en/posts">Posts</a></li>
           <li><a href="https://nryotaro.dev/en/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/tags/">ja</a></li>
+	  <li><a href="https://nryotaro.dev/posts/roberta/">ja</a></li>
 	  
         </ul>
       </nav>
     </header>
     
 <main>
-  <h1>Tags</h1>
-    <div>
-      
+  <h1>RoBERTa: A Robustly Optimized BERT Pretraining Approach(2019)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
       <a href="https://nryotaro.dev/en/tags/bert/">
-        <div class="entry">
-          <h2>BERT</h2>
-        </div>
-      </a>	
-      
+	#BERT
+      </a>
+    </li>
+    
+    <li class="tag">
       <a href="https://nryotaro.dev/en/tags/byte-pair-encoding/">
-        <div class="entry">
-          <h2>Byte Pair Encoding</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/early-programming/">
-        <div class="entry">
-          <h2>Early Programming</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/attention/">
-        <div class="entry">
-          <h2>Attention</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/transformer/">
-        <div class="entry">
-          <h2>Transformer</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/splay-tree/">
-        <div class="entry">
-          <h2>Splay tree</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/catalan-numbers/">
-        <div class="entry">
-          <h2>Catalan numbers</h2>
-        </div>
-      </a>	
-      
-    </div>
+	#Byte Pair Encoding
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">August 27, 2023</span>    
+  <div>
+    <p><a href="https://arxiv.org/pdf/1907.11692.pdf">RoBERTa</a>(Robusty optimized BERT approach) is an improved recipe for training <a href="https://arxiv.org/pdf/1810.04805.pdf">BERT</a> models.
+BERT uses two objectives, masked language modeling and next sequence prediction (NSP), during pretraining.
+RoBERTa uses masked language modeling only.
+The authors increased the batch size and Byte-Pair Encoding (BPE) vocabulary size.
+RobERTa is trained with byte-level BPE, which uses bytes instead of unicode characters as the base subword units.</p>
+<p>BERT takes as input a concatenation of two segments, \(x_1,\dots , x_N\) and \(y_1, \dots y_M\).
+The concatenation is presented as a single sequence with special delimiters: \([CLS], x_1,\dots , x_N , [SEP], y_1,\dots , y_M, [EOF]\).
+\(M\) and \(N\) are constrained so that \(M + N &lt; T\), where \(T\) is a parameter that controls the maximum sequence length during training.</p>
+<p>The masked language model randomly masks some of the tokens from the input, and the objective is to predict the original token based only on its context.
+The original BERT implementation duplicates training data 10 times so that each sequence is masked in 10 different ways over the 40 epochs of training.
+It results in that each training sequence is seen with the same mask four times during training.
+RoBERTa generates the masking pattern every time a sequence is fed to the model.</p>
+<p>NSP is a binary classification loss for predicting whether two segments follow each other in the original text.
+RoBERTa is not trained with NSP.
+Each input is packed with full sentences sampled contiguously from one or more documents, such that the total length is at most \(T\) tokens.</p>
+<p>BPE is a simple data compression technique that iteratively replaces the most frequent pair of symbols in a sequence with a single unused symbol.
+The original BERT implementation uses a character-level BPE vocabulary of size 30K.
+RoBERTa instead uses byte-level BPE vocabulary containing 50K subword units.</p>
+  </div>
 </main>
 
     
+<ul class="pagination">
     
+    <li>
+      <a href="/en/posts/go_to_statement_considered_harmful/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
     <footer>
       <ul>
         

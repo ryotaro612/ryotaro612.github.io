@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>Go To Statement Considered Harmful(1968)</title>
+    <title>RoBERTa: A Robustly Optimized BERT Pretraining Approach(2019)</title>
   </head>
 
   <body>
@@ -53,40 +53,50 @@
           <li><a href="https://nryotaro.dev/posts">Posts</a></li>
           <li><a href="https://nryotaro.dev/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/en/posts/go_to_statement_considered_harmful/">en</a></li>
+	  <li><a href="https://nryotaro.dev/en/posts/roberta/">en</a></li>
 	  
         </ul>
       </nav>
     </header>
     
 <main>
-  <h1>Go To Statement Considered Harmful(1968)</h1>
+  <h1>RoBERTa: A Robustly Optimized BERT Pretraining Approach(2019)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://nryotaro.dev/tags/early-programming/">
-	#Early Programming
+      <a href="https://nryotaro.dev/tags/bert/">
+	#BERT
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/byte-pair-encoding/">
+	#Byte Pair Encoding
       </a>
     </li>
     
   </ul>  
-  <span class="date">August 26, 2023</span>    
+  <span class="date">August 27, 2023</span>    
   <div>
-    <p><a href="https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf">Go To Statement Considered Harmful</a>でEdger Dijkstraは機械語以外でのGO TO文の使用を批判した。
-ソースコードは機械語にコンパイルされ、プログラムとして実行される。
-ソースコードは静的な成果物であるが、プログラムは時間とともに変化する。
-プログラマにとって理解しやすいのは実行中のプログラムよりもソースコードの方なので、ソースコードからプログラムの実行状態を予測できることがのぞましい。</p>
-<p>ソースコードからプログラムの実行状態を特定することを、ソースコードのステップをさすインデックスを指定することとみなす。
-このとき、if文以外の制御構文もプロシージャもないソースコードであれば、ひとつのインデックスのみでプログラムの実行状態を特定できる。
-プロシージャが加わると、呼び出し中のプロシージャの順に並んだ複数のインデックスが必要になる。</p>
-<p>whileも導入するとインデックスだけで実行状態を一意に指定できなくなり、while文の反復回数を記録するカウンタが必要になる。
-カウンタの値は、ソースコードに現れることなく、プログラムの実行によって変化する。
-ソースコードに現れる静的なインデックスとプログラムの実行によって変化する動的なカウンタ、この2種類の独立座標でプログラムの実行状態を特定するようになる。
-ここにGOTO文があると、実行状態を特定するためのインデックスとカウンタの集合をみつけにくくなり、プログラムの実行状態を追うことが難しくなる。</p>
-<h2 id="雑記">雑記</h2>
-<p>GOTO文がなぜインデックスとカウンタの特定しずらくなると主張したが、その理由については述べられていない。
-プログラムの実行状態への理解を、インデックスの順序とカウンタの値を特定することと形式化したことにとどまる。</p>
-<p>今日、Go To Statement Considered HarmfulはGO TO文への批判の参考文献として知られているが、参考文献のセクションには論文の発表時点で既にGOTOに対する批判が新しいものではないと書かれている。</p>
+    <p><a href="https://arxiv.org/pdf/1907.11692.pdf">RoBERTa</a>は、<a href="https://arxiv.org/pdf/1810.04805.pdf">BERT</a>のアーキテクチャを変えずに、事前学習の改善によって性能を向上をはかる。
+BERTの事前学習では、Masked Language ModelとNext Sentence Predictionの2つのタスクでパラメータを更新する。
+一方、RoBERTaはMasked Language Modelのみを採用する。
+さらに、Byte Pair Encodingのサブワードの単位を文字からバイトに変更し、語彙集合数が50,000に増えている。
+ミニバッチのサイズもまたBERTより大きい。</p>
+<p>BERTの入力は、2つのトークンの系列\(x_1,\dots , x_N\)と\(y_1, \dots y_M\)を連結した系列である。
+入力を構成する2つの系列はセグメントとも呼ばれ、入力\([CLS], x_1,\dots , x_N , [SEP], y_1,\dots , y_M, [EOF]\)のなかでは、デリミタ\([CLS], [SEP], [EOS]\)で境界が区切られる。
+入力の最大を制限するハイパーパラメタ\(T\)があり、\(M+N&lt;T\)になるように入力の最大長は制限される。</p>
+<p>Masked Language Modelは、マスクされたトークンを含む入力を受けとり、周囲のトークンを手がかりに、マスクされたトークンを推定するタスクである。
+BERTは、前処理において、コーパスからマスクされた入力を生成する。
+テキストを10通りのパターンでマスクすることで、1つのテキストから10通りの入力を生成する。
+BERTの事前学習のエポック数は40であるから、各入力は10回重複してモデルに入力される。
+RoBERTaは、おなじ入力が与えられないように、訓練時にテキストが与えられたときに、確率的にマスクの位置を決め、モデルへの入力を生成する。</p>
+<p>Next Sentence Predictionは、入力中の2つのセグメントが同じ文書の連続した位置から取り出されたかを判別する2値分類のタスクである。
+RoBERTaは、Next Sentence Predictionを使わず、文書の連続する箇所から文を取り出し、セグメントとしてつなげた入力を生成する。</p>
+<p>BERTのトークンは、Byte Pair Encodingによって生成される。
+Byte Pair Encodingは、文書を記号列に分解し、その後、最も出現回数の高い隣接する記号をペアにするマージをくりかえす。
+BERTは記号の単位に文字を採用し、その語彙数は30,000である。
+一方、RoBERTaは、バイトを単位にし、語彙数を50,000に増やしている。</p>
   </div>
 </main>
 
@@ -94,17 +104,11 @@
 <ul class="pagination">
     
     <li>
-      <a href="/posts/self_attention_with_relative_position_representations/">
+      <a href="/posts/go_to_statement_considered_harmful/">
 	<i class="fa-solid fa-xl fa-angle-left"></i>
       </a>
     </li>
     
-    
-    <li>
-      <a href="/posts/roberta/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
     
 </ul>
 
