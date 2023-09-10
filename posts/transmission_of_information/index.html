@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>RoBERTa: A Robustly Optimized BERT Pretraining Approach(2019)</title>
+    <title>Transmission of Information(1927)</title>
   </head>
 
   <body>
@@ -53,50 +53,54 @@
           <li><a href="https://nryotaro.dev/posts">Posts</a></li>
           <li><a href="https://nryotaro.dev/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/en/posts/roberta/">en</a></li>
+	  <li><a href="https://nryotaro.dev/en/posts/transmission_of_information/">en</a></li>
 	  
         </ul>
       </nav>
     </header>
     
 <main>
-  <h1>RoBERTa: A Robustly Optimized BERT Pretraining Approach(2019)</h1>
+  <h1>Transmission of Information(1927)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://nryotaro.dev/tags/bert/">
-	#BERT
-      </a>
-    </li>
-    
-    <li class="tag">
-      <a href="https://nryotaro.dev/tags/byte-pair-encoding/">
-	#Byte Pair Encoding
+      <a href="https://nryotaro.dev/tags/%E6%83%85%E5%A0%B1%E9%87%8F/">
+	#情報量
       </a>
     </li>
     
   </ul>  
-  <span class="date">August 27, 2023</span>    
+  <span class="date">September 9, 2023</span>    
   <div>
-    <p><a href="https://arxiv.org/pdf/1907.11692.pdf">RoBERTa</a>は、<a href="https://arxiv.org/pdf/1810.04805.pdf">BERT</a>のアーキテクチャを変えずに、事前学習の改善によって性能を向上をはかる。
-BERTの事前学習では、Masked Language ModelとNext Sentence Predictionの2つのタスクでパラメータを更新する。
-一方、RoBERTaはMasked Language Modelのみを採用する。
-さらに、Byte Pair Encodingのサブワードの単位を文字からバイトに変更し、語彙集合数が50,000に増えている。
-ミニバッチのサイズもまたBERTより大きい。</p>
-<p>BERTの入力は、2つのトークンの系列\(x_1,\dots , x_N\)と\(y_1, \dots y_M\)を連結した系列である。
-入力を構成する2つの系列はセグメントとも呼ばれ、入力\([CLS], x_1,\dots , x_N , [SEP], y_1,\dots , y_M, [EOF]\)のなかでは、デリミタ\([CLS], [SEP], [EOS]\)で境界が区切られる。
-入力の最大を制限するハイパーパラメタ\(T\)があり、\(M+N&lt;T\)になるように入力の最大長は制限される。</p>
-<p>Masked Language Modelは、マスクされたトークンを含む入力を受けとり、周囲のトークンを手がかりに、マスクされたトークンを推定するタスクである。
-BERTは、前処理において、コーパスからマスクされた入力を生成する。
-テキストを10通りのパターンでマスクすることで、1つのテキストから10通りの入力を生成する。
-BERTの事前学習のエポック数は40であるから、各入力は10回重複してモデルに入力される。
-RoBERTaは、おなじ入力が与えられないように、訓練時にテキストが与えられたときに、確率的にマスクの位置を決め、モデルへの入力を生成する。</p>
-<p>Next Sentence Predictionは、入力中の2つのセグメントが同じ文書の連続した位置から取り出されたかを判別する2値分類のタスクである。
-RoBERTaは、Next Sentence Predictionを使わず、文書の連続する箇所から文を取り出し、セグメントとしてつなげた入力を生成する。</p>
-<p>BERTのトークンは、Byte Pair Encodingによって生成される。
-Byte Pair Encodingは、文書を記号列に分解し、その後、最も出現回数の高い隣接する記号をペアにするマージをくりかえす。
-BERTは記号の単位に文字を採用し、その語彙数は30,000である。
-一方、RoBERTaは、バイトを単位にし、語彙数を50,000に増やしている。</p>
+    <p>Hartleyは、<a href="https://monoskop.org/images/a/a6/Hartley_Ralph_VL_1928_Transmission_of_Information.pdf">Transmission of Information</a>で、通信システムの情報伝達性能を評価するために、情報の定量的な尺度を提唱した。
+シャノンが1948年に情報エントロピーを<a href="https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf">発表</a>する21年前である。
+Hartleyは、通信内容の意味や解釈を捨象し、記号列の有限な候補からある記号列を選ぶことを情報みなした。
+シャノンは、有限の候補から記号列を選択する考えを継承し、さらに、記号が順に確率的に選ばれるとみなすことでHartleyの情報量の定義を情報エントロピーに発展させた。</p>
+<p>Hartleyの情報量\(H\)は、選択された記号列の長さ\(n\)に比例する。
+$$
+H=Kn
+$$
+\(K\)は通信システムが扱う記号の総数\(s\)に依存する定数である。</p>
+<p>2つの通信システム1, 2があり、記号の総数が\(s_1\), \(s_2\), 長さが\(n_1\)の記号列と\(n_2\)の記号列の候補の数が等しいとき、
+$$
+s_1^{n_1} = s_2^{n_2}
+$$
+が成りたつ。
+このとき、情報量が等しくなるように\(K_1\)と\(K_2\)を定義すると
+$$
+H=K_1n_1=K_2n_2
+$$
+から
+$$
+\frac{K_1}{\log s_1}=\frac{K_2}{\log s_2}
+$$
+となる。
+すべての通信システムに共通の定数を\(K_0\)とし、\(K_i=K_0 \log s_i\)となるように\(K_i\)を定義するときのみ、上の等式はすべての\(s\)で成りたつ。</p>
+<p>\(K_0\)を省略できるように、対数の基数を設定すれば
+$$
+H=n\log s
+$$
+となる。</p>
   </div>
 </main>
 
@@ -104,17 +108,11 @@ BERTは記号の単位に文字を採用し、その語彙数は30,000である�
 <ul class="pagination">
     
     <li>
-      <a href="/posts/go_to_statement_considered_harmful/">
+      <a href="/posts/roberta/">
 	<i class="fa-solid fa-xl fa-angle-left"></i>
       </a>
     </li>
     
-    
-    <li>
-      <a href="/posts/transmission_of_information/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
     
 </ul>
 
