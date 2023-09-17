@@ -5,7 +5,19 @@
     <link>https://nryotaro.dev/posts/</link>
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 09 Sep 2023 12:10:45 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Sep 2023 08:59:45 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning(2008)</title>
+      <link>https://nryotaro.dev/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/</link>
+      <pubDate>Sat, 16 Sep 2023 08:59:45 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://machinelearning.org/archive/icml2008/papers/391.pdf&#34;&gt;A Unified Architecture for Natural Language Processing&lt;/a&gt;は、複数のタスクの訓練データで重みの更新を繰り返すマルチタスクの深層学習である。
+複数のタスクから順にあるタスクを選び、選んだタスクからランダムに取り出したサンプルで重みを更新するオンライン学習である。
+ネットワークの層は、入力に近い方から、Word embedding、時間遅延ニューラルネットワーク(Time-Delay Neural Networks, TDNN)層、TDNN層の全時刻にわたる各ユニットの最大値を出力するMax Layer, 全結合層、ソフトマックスからなる。
+Word embeddingのみタスク間で重みを共有し、後続の層の重みはタスクごとに異なる。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Transmission of Information(1927)</title>
       <link>https://nryotaro.dev/posts/transmission_of_information/</link>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Multitask learning on Blanket</title>
+    <link>https://nryotaro.dev/en/tags/multitask-learning/</link>
+    <description>Recent content in Multitask learning on Blanket</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 16 Sep 2023 08:59:45 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/en/tags/multitask-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning(2008)</title>
+      <link>https://nryotaro.dev/en/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/</link>
+      <pubDate>Sat, 16 Sep 2023 08:59:45 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/en/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://machinelearning.org/archive/icml2008/papers/391.pdf&#34;&gt;A Unified Architecture for Natural Language Processing&lt;/a&gt; is an instance of multitask learning.
+The first layer is a lookup table that stores embeddings of a fixed dictionary and size.
+The second layer is a &lt;a href=&#34;https://www.cs.toronto.edu/~hinton/absps/waibelTDNN.pdf&#34;&gt;Time-Delay Neural Networks&lt;/a&gt; layer.
+It extracts features from the sentence treating it as a sequence with local structure.
+The third layer takes the maximum value for each of the output features of the second layer over time.
+The following layers are classical NN layers.
+The lookup-table is shared among the tasks, and the other layers can be task specific to each task.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

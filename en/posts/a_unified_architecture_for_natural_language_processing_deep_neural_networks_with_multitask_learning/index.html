@@ -22,7 +22,9 @@
     <link rel="stylesheet" href="https://nryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
     
 
-<link rel="stylesheet" href="https://nryotaro.dev/scss/list.min.8bd0eb32012aaff1a394fe4dfa99dba153e539578f4d72458fbc70b8f1ed8927.css">
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -32,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>Tags</title>
+    <title>A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning(2008)</title>
   </head>
 
   <body>
@@ -51,75 +53,52 @@
           <li><a href="https://nryotaro.dev/en/posts">Posts</a></li>
           <li><a href="https://nryotaro.dev/en/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/tags/">ja</a></li>
+	  <li><a href="https://nryotaro.dev/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/">ja</a></li>
 	  
         </ul>
       </nav>
     </header>
     
 <main>
-  <h1>Tags</h1>
-    <div>
-      
+  <h1>A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning(2008)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
       <a href="https://nryotaro.dev/en/tags/multitask-learning/">
-        <div class="entry">
-          <h2>Multitask learning</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/entropy/">
-        <div class="entry">
-          <h2>Entropy</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/bert/">
-        <div class="entry">
-          <h2>BERT</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/byte-pair-encoding/">
-        <div class="entry">
-          <h2>Byte Pair Encoding</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/early-programming/">
-        <div class="entry">
-          <h2>Early Programming</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/attention/">
-        <div class="entry">
-          <h2>Attention</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/transformer/">
-        <div class="entry">
-          <h2>Transformer</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/splay-tree/">
-        <div class="entry">
-          <h2>Splay tree</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/catalan-numbers/">
-        <div class="entry">
-          <h2>Catalan numbers</h2>
-        </div>
-      </a>	
-      
-    </div>
+	#Multitask learning
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">September 16, 2023</span>    
+  <div>
+    <p><a href="http://machinelearning.org/archive/icml2008/papers/391.pdf">A Unified Architecture for Natural Language Processing</a> is an instance of multitask learning.
+The first layer is a lookup table that stores embeddings of a fixed dictionary and size.
+The second layer is a <a href="https://www.cs.toronto.edu/~hinton/absps/waibelTDNN.pdf">Time-Delay Neural Networks</a> layer.
+It extracts features from the sentence treating it as a sequence with local structure.
+The third layer takes the maximum value for each of the output features of the second layer over time.
+The following layers are classical NN layers.
+The lookup-table is shared among the tasks, and the other layers can be task specific to each task.</p>
+<p>Training is achieved in an online learning manner by looping over the tasks.
+A training example is randomly selected for the next task, and the weights of the model are updated by taking a gradient step with respect to the example.</p>
+<h2 id="remark">Remark</h2>
+<p>The online learning can be replaced with mini-batch learning.</p>
+  </div>
 </main>
 
     
+<ul class="pagination">
     
+    <li>
+      <a href="/en/posts/transmission_of_information/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
     <footer>
       <ul>
         
