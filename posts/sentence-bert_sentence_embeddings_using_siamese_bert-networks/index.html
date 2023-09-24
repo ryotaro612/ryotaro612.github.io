@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning(2008)</title>
+    <title>Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks</title>
   </head>
 
   <body>
@@ -53,31 +53,61 @@
           <li><a href="https://nryotaro.dev/posts">Posts</a></li>
           <li><a href="https://nryotaro.dev/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/en/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/">en</a></li>
+	  <li><a href="https://nryotaro.dev/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/">en</a></li>
 	  
         </ul>
       </nav>
     </header>
     
 <main>
-  <h1>A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning(2008)</h1>
+  <h1>Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://nryotaro.dev/tags/%E3%83%9E%E3%83%AB%E3%83%81%E3%82%BF%E3%82%B9%E3%82%AF%E5%AD%A6%E7%BF%92/">
-	#マルチタスク学習
+      <a href="https://nryotaro.dev/tags/bert/">
+	#BERT
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/%E3%82%B3%E3%82%B5%E3%82%A4%E3%83%B3%E9%A1%9E%E4%BC%BC%E5%BA%A6/">
+	#コサイン類似度
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/transformer/">
+	#Transformer
       </a>
     </li>
     
   </ul>  
-  <span class="date">September 16, 2023</span>    
+  <span class="date">September 23, 2023</span>    
   <div>
-    <p><a href="http://machinelearning.org/archive/icml2008/papers/391.pdf">A Unified Architecture for Natural Language Processing</a>は、複数のタスクの訓練データで重みの更新を繰り返すマルチタスクの深層学習である。
-複数のタスクから順にあるタスクを選び、選んだタスクからランダムに取り出したサンプルで重みを更新するオンライン学習である。
-ネットワークの層は、入力に近い方から、Word embedding、時間遅延ニューラルネットワーク(Time-Delay Neural Networks, TDNN)層、TDNN層の全時刻にわたる各ユニットの最大値を出力するMax Layer, 全結合層、ソフトマックスからなる。
-Word embeddingのみタスク間で重みを共有し、後続の層の重みはタスクごとに異なる。</p>
-<h2 id="雑記">雑記</h2>
-<p>オンライン学習ではなく、タスクを1つ選び、そのタスクの2つ以上のサンプルで重みを更新するミニバッチ学習もできそう。</p>
+    <p><a href="https://arxiv.org/abs/1908.10084">Sentence-BERT</a>は、テキストをコサイン類似度で意味の類似度を比較できる固定長のベクトルに変換できる。
+<a href="https://arxiv.org/abs/1810.04805">BERT</a>を2つのテキストを入力し類似度を出力するように訓練できるが、あるテキストに類似するテキストを求めたい場合には組合せ爆発が生じる。
+Sentence-BERTは、類似度が定義されたテキストの組から、類似するテキスト同士を近い位置に写像できるように学習する。
+ネットワークは、BERTを使ったシャムネットワークであり、重みを共有した2つのBERTに1つずつテキストを入力し、両方の出力を目的関数に入力する。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>テキストをベクトル空間に配置するために、BERTの出力は固定長のベクトルに変換される。
+変換方法は、2つのテキストの先頭につけられるBERTのCLSトークンの出力、出力のされるすべてのベクトルの平均値、または最大値の3つがある。
+平均値がデフォルトである。</p>
+<p>固定長の変換方法とおなじく、目的関数も、分類、回帰、トリプレットロスの3種類がある。
+訓練データにあわせてふさわしい目的関数を選ぶ。</p>
+<p>分類は、2つのテキストの埋め込みベクトル\(u, v\)と要素間の差\(|u-v|\)を連結したベクトルから\(k\)種類のラベルのうち1つを推定するタスクである。
+$$
+o = \text{softmax}(W_t(u, v, |u-v|))
+$$
+埋め込みベクトルの長さが\(n\)であれば、重みは\(W_t \in \mathbb{R}^{3n\times k}\)である。</p>
+<p>回帰であれば、\(u, v\)のコサイン類似度を計算し、ラベルとの最小二乗誤差を最小化するように重みを更新する。</p>
+<p>トリプレットロスの訓練データは、ancher sentence \(s_a\), positive sentence \(s_p\), negative sentence \(s_n\)の3つのテキストからなり、\(s_p\)と\(s_a\)の距離が\(s_a\)と\(s_n\)よりも小さくなるようにモデルを訓練する。
+\(\epsilon\)を\(s_p\)が\(s_n\)よりも\(s_a\)に少なくとも\(\epsilon\)だけ近いことを保証する値とすると、目的関数は
+$$
+\max(||s_a - s_p|| - ||s_a - s_n || + \epsilon, 0)
+$$
+である。</p>
   </div>
 </main>
 
@@ -85,17 +115,11 @@ Word embeddingのみタスク間で重みを共有し、後続の層の重みは
 <ul class="pagination">
     
     <li>
-      <a href="/posts/transmission_of_information/">
+      <a href="/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/">
 	<i class="fa-solid fa-xl fa-angle-left"></i>
       </a>
     </li>
     
-    
-    <li>
-      <a href="/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
     
 </ul>
 

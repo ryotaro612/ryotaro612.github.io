@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning(2008)</title>
+    <title>Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks(2019)</title>
   </head>
 
   <body>
@@ -53,36 +53,64 @@
           <li><a href="https://nryotaro.dev/en/posts">Posts</a></li>
           <li><a href="https://nryotaro.dev/en/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/">ja</a></li>
+	  <li><a href="https://nryotaro.dev/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/">ja</a></li>
 	  
         </ul>
       </nav>
     </header>
     
 <main>
-  <h1>A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning(2008)</h1>
+  <h1>Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks(2019)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://nryotaro.dev/en/tags/multitask-learning/">
-	#Multitask learning
+      <a href="https://nryotaro.dev/en/tags/bert/">
+	#BERT
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/en/tags/cosine-similarity/">
+	#cosine similarity
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/en/tags/transformer/">
+	#Transformer
       </a>
     </li>
     
   </ul>  
-  <span class="date">September 16, 2023</span>    
+  <span class="date">September 23, 2023</span>    
   <div>
-    <p><a href="http://machinelearning.org/archive/icml2008/papers/391.pdf">A Unified Architecture for Natural Language Processing</a> is an instance of multitask learning.
-The first layer is a lookup table that stores embeddings of a fixed dictionary and size.
-The second layer is a <a href="https://www.cs.toronto.edu/~hinton/absps/waibelTDNN.pdf">Time-Delay Neural Networks</a> layer.
-It extracts features from the sentence treating it as a sequence with local structure.
-The third layer takes the maximum value for each of the output features of the second layer over time.
-The following layers are classical NN layers.
-The lookup-table is shared among the tasks, and the other layers can be task specific to each task.</p>
-<p>Training is achieved in an online learning manner by looping over the tasks.
-A training example is randomly selected for the next task, and the weights of the model are updated by taking a gradient step with respect to the example.</p>
-<h2 id="remark">Remark</h2>
-<p>The online learning can be replaced with mini-batch learning.</p>
+    <p><a href="https://arxiv.org/abs/1908.10084">Sentence-BERT</a> derives semantically meaningful sentence embedding that can be compared using cosine-similarity.
+<a href="https://arxiv.org/abs/1810.04805">BERT</a> achieved new state-of-the art performance on various sentence-pair regression tasks using a cross-encoder.
+A cross-encoder accepts two sentences as input to the transformer network and the target value is predicted.
+Semantic textual similarity is one of the sentence-pair regression tasks.
+However, this setup is often not scalable for various pair regression tasks due to many possible combinations.
+The semantic search that maps each sentence to a vector space where semantically similar sentences are close alleviates the combinatorial explosion.
+Sentence-BERT uses a siamese network in which the two BERT networks have tied weights such that the produced sentence embeddings can be semantically compared using cosine-similarity.</p>
+<p>Sentence-BERT adds a pooling operation to the output of BERT to derive a fixed-sized sentence embedding.
+The authors of Sentence-BERT propose three strategies.
+Using the output of the <code>CLS</code>-token, computing the mean of all output vectors (the default configuration), and computing a max-over-time of the output vectors.</p>
+<p>Sentence-BERT depends on the available training data.
+Three different objective functions are proposed.</p>
+<p>Classification objective function accepts the sentence embeddings \(u\) and \(v\) with the element-wise difference \(|u-v|\), , and multiplies the concatenated embeddings with the trainable weight \(W_t \in \mathbb{R}^{3n\times k}\).
+$$
+o = \text{softmax}(W_t(u, v, |u-v|))
+$$
+where \(n\) is the dimension of the sentence embeddings and \(k\) the number of labels.
+We update the weights to optimize cross-entropy loss.</p>
+<p>Regression objective function computes the cosine similarity between the two sentence embeddings \(u, v\).
+The authors use mean-squared-error loss.</p>
+<p>Triplet objective function takes an anchor sentence embedding \(s_a\),  a positive sentence embedding \(s_p\), and a negative sentence embedding \(n\).
+The function updates the weights such that the distance between \(s_a\) and \(s_p\) is smaller than the distance between \(s_a, s_n\).
+The authors use the following function:
+$$
+\max(||s_a - s_p|| - ||s_a - s_n || + \epsilon, 0)
+$$
+\(\epsilon\) ensures that \(s_p\) is at least \(\epsilon\) closer to \(s_a\) than \(s_n\).</p>
   </div>
 </main>
 
@@ -90,17 +118,11 @@ A training example is randomly selected for the next task, and the weights of th
 <ul class="pagination">
     
     <li>
-      <a href="/en/posts/transmission_of_information/">
+      <a href="/en/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/">
 	<i class="fa-solid fa-xl fa-angle-left"></i>
       </a>
     </li>
     
-    
-    <li>
-      <a href="/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
     
 </ul>
 

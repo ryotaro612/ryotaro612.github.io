@@ -5,7 +5,22 @@
     <link>https://nryotaro.dev/</link>
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 16 Sep 2023 08:59:45 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Sep 2023 10:21:03 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks</title>
+      <link>https://nryotaro.dev/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</link>
+      <pubDate>Sat, 23 Sep 2023 10:21:03 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1908.10084&#34;&gt;Sentence-BERT&lt;/a&gt;は、テキストをコサイン類似度で意味の類似度を比較できる固定長のベクトルに変換できる。
+&lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt;を2つのテキストを入力し類似度を出力するように訓練できるが、あるテキストに類似するテキストを求めたい場合には組合せ爆発が生じる。
+Sentence-BERTは、類似度が定義されたテキストの組から、類似するテキスト同士を近い位置に写像できるように学習する。
+ネットワークは、BERTを使ったシャムネットワークであり、重みを共有した2つのBERTに1つずつテキストを入力し、両方の出力を目的関数に入力する。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
+    
     <item>
       <title>A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning(2008)</title>
       <link>https://nryotaro.dev/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/</link>

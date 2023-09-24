@@ -2,21 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://nryotaro.dev/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/</loc>
-    <lastmod>2023-09-16T08:59:45-04:00</lastmod>
+    <loc>https://nryotaro.dev/tags/bert/</loc>
+    <lastmod>2023-09-23T10:21:03-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://nryotaro.dev/en/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/"
+                href="https://nryotaro.dev/en/tags/bert/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://nryotaro.dev/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/"
+                href="https://nryotaro.dev/tags/bert/"
                 />
   </url><url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2023-09-16T08:59:45-04:00</lastmod>
+    <lastmod>2023-09-23T10:21:03-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2023-09-16T08:59:45-04:00</lastmod>
+    <lastmod>2023-09-23T10:21:03-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -41,8 +41,21 @@
                 href="https://nryotaro.dev/posts/"
                 />
   </url><url>
+    <loc>https://nryotaro.dev/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</loc>
+    <lastmod>2023-09-23T10:21:03-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/"
+                />
+  </url><url>
     <loc>https://nryotaro.dev/tags/</loc>
-    <lastmod>2023-09-16T08:59:45-04:00</lastmod>
+    <lastmod>2023-09-23T10:21:03-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -52,6 +65,35 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://nryotaro.dev/tags/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/tags/transformer/</loc>
+    <lastmod>2023-09-23T10:21:03-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/tags/transformer/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/tags/transformer/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/tags/%E3%82%B3%E3%82%B5%E3%82%A4%E3%83%B3%E9%A1%9E%E4%BC%BC%E5%BA%A6/</loc>
+    <lastmod>2023-09-23T10:21:03-04:00</lastmod>
+  </url><url>
+    <loc>https://nryotaro.dev/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/</loc>
+    <lastmod>2023-09-16T08:59:45-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/"
                 />
   </url><url>
     <loc>https://nryotaro.dev/tags/%E3%83%9E%E3%83%AB%E3%83%81%E3%82%BF%E3%82%B9%E3%82%AF%E5%AD%A6%E7%BF%92/</loc>
@@ -72,19 +114,6 @@
   </url><url>
     <loc>https://nryotaro.dev/tags/%E6%83%85%E5%A0%B1%E9%87%8F/</loc>
     <lastmod>2023-09-09T12:10:45-04:00</lastmod>
-  </url><url>
-    <loc>https://nryotaro.dev/tags/bert/</loc>
-    <lastmod>2023-08-27T13:13:39-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/tags/bert/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/tags/bert/"
-                />
   </url><url>
     <loc>https://nryotaro.dev/tags/byte-pair-encoding/</loc>
     <lastmod>2023-08-27T13:13:39-04:00</lastmod>
@@ -162,19 +191,6 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://nryotaro.dev/posts/self_attention_with_relative_position_representations/"
-                />
-  </url><url>
-    <loc>https://nryotaro.dev/tags/transformer/</loc>
-    <lastmod>2023-08-19T10:02:50-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/tags/transformer/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/tags/transformer/"
                 />
   </url><url>
     <loc>https://nryotaro.dev/posts/self_adjusting_binary_search_trees/</loc>

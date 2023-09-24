@@ -5,7 +5,34 @@
     <link>https://nryotaro.dev/en/tags/</link>
     <description>Recent content in Tags on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 16 Sep 2023 08:59:45 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Sep 2023 10:21:03 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BERT</title>
+      <link>https://nryotaro.dev/en/tags/bert/</link>
+      <pubDate>Sat, 23 Sep 2023 10:21:03 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/en/tags/bert/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cosine similarity</title>
+      <link>https://nryotaro.dev/en/tags/cosine-similarity/</link>
+      <pubDate>Sat, 23 Sep 2023 10:21:03 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/en/tags/cosine-similarity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Transformer</title>
+      <link>https://nryotaro.dev/en/tags/transformer/</link>
+      <pubDate>Sat, 23 Sep 2023 10:21:03 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/en/tags/transformer/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Multitask learning</title>
       <link>https://nryotaro.dev/en/tags/multitask-learning/</link>
@@ -21,15 +48,6 @@
       <pubDate>Sat, 09 Sep 2023 12:10:45 -0400</pubDate>
       
       <guid>https://nryotaro.dev/en/tags/entropy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>BERT</title>
-      <link>https://nryotaro.dev/en/tags/bert/</link>
-      <pubDate>Sun, 27 Aug 2023 13:13:39 -0400</pubDate>
-      
-      <guid>https://nryotaro.dev/en/tags/bert/</guid>
       <description></description>
     </item>
     
@@ -57,15 +75,6 @@
       <pubDate>Sat, 19 Aug 2023 10:02:50 -0400</pubDate>
       
       <guid>https://nryotaro.dev/en/tags/attention/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Transformer</title>
-      <link>https://nryotaro.dev/en/tags/transformer/</link>
-      <pubDate>Sat, 19 Aug 2023 10:02:50 -0400</pubDate>
-      
-      <guid>https://nryotaro.dev/en/tags/transformer/</guid>
       <description></description>
     </item>
     

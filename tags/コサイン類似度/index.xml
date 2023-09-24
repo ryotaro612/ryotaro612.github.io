@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>BERT on Blanket</title>
-    <link>https://nryotaro.dev/tags/bert/</link>
-    <description>Recent content in BERT on Blanket</description>
+    <title>コサイン類似度 on Blanket</title>
+    <link>https://nryotaro.dev/tags/%E3%82%B3%E3%82%B5%E3%82%A4%E3%83%B3%E9%A1%9E%E4%BC%BC%E5%BA%A6/</link>
+    <description>Recent content in コサイン類似度 on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 23 Sep 2023 10:21:03 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/tags/bert/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Sep 2023 10:21:03 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/tags/%E3%82%B3%E3%82%B5%E3%82%A4%E3%83%B3%E9%A1%9E%E4%BC%BC%E5%BA%A6/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks</title>
       <link>https://nryotaro.dev/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</link>
@@ -19,19 +19,6 @@ Sentence-BERTは、類似度が定義されたテキストの組から、類似�
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;!-- raw HTML omitted --&gt;</description>
-    </item>
-    
-    <item>
-      <title>RoBERTa: A Robustly Optimized BERT Pretraining Approach(2019)</title>
-      <link>https://nryotaro.dev/posts/roberta/</link>
-      <pubDate>Sun, 27 Aug 2023 13:13:39 -0400</pubDate>
-      
-      <guid>https://nryotaro.dev/posts/roberta/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1907.11692.pdf&#34;&gt;RoBERTa&lt;/a&gt;は、&lt;a href=&#34;https://arxiv.org/pdf/1810.04805.pdf&#34;&gt;BERT&lt;/a&gt;のアーキテクチャを変えずに、事前学習の改善によって性能を向上をはかる。
-BERTの事前学習では、Masked Language ModelとNext Sentence Predictionの2つのタスクでパラメータを更新する。
-一方、RoBERTaはMasked Language Modelのみを採用する。
-さらに、Byte Pair Encodingのサブワードの単位を文字からバイトに変更し、語彙集合数が50,000に増えている。
-ミニバッチのサイズもまたBERTより大きい。&lt;/p&gt;</description>
     </item>
     
   </channel>

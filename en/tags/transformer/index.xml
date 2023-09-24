@@ -5,7 +5,22 @@
     <link>https://nryotaro.dev/en/tags/transformer/</link>
     <description>Recent content in Transformer on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 19 Aug 2023 10:02:50 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/en/tags/transformer/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Sep 2023 10:21:03 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/en/tags/transformer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks(2019)</title>
+      <link>https://nryotaro.dev/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</link>
+      <pubDate>Sat, 23 Sep 2023 10:21:03 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1908.10084&#34;&gt;Sentence-BERT&lt;/a&gt; derives semantically meaningful sentence embedding that can be compared using cosine-similarity.
+&lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt; achieved new state-of-the art performance on various sentence-pair regression tasks using a cross-encoder.
+A cross-encoder accepts two sentences as input to the transformer network and the target value is predicted.
+Semantic textual similarity is one of the sentence-pair regression tasks.
+However, this setup is often not scalable for various pair regression tasks due to many possible combinations.
+The semantic search that maps each sentence to a vector space where semantically similar sentences are close alleviates the combinatorial explosion.
+Sentence-BERT uses a siamese network in which the two BERT networks have tied weights such that the produced sentence embeddings can be semantically compared using cosine-similarity.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Self-Attention with Relative Position Representations(2018)</title>
       <link>https://nryotaro.dev/en/posts/self_attention_with_relative_position_representations/</link>
