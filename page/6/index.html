@@ -63,6 +63,20 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/borderline-smote_a_new_over-sampling_method_inbalanced_data_sets_learning/">抄訳 Borderline-SMOTE: A New Over-Sampling Method in Imbalanced Data Sets Learning(2005)</a></h3>
+        <div class="summary"><p><a href="https://arxiv.org/pdf/1106.1813.pdf">SMOTE</a>は不均衡データに対するオーバーサンプリングを使う手法である。
+少数側のクラスのサンプルと近傍のサンプルから少数クラスのサンプルを合成する。
+SMOTEはすべての少数クラスのサンプルが合成の材料になりえる。
+対して、borderline-SMOTE1とborderline-SMOTE2は、境界から遠い少数クラスのサンプルを使わず、近いサンプルのみから合成する。
+borderline-SMOTE1は合成の相手側として常に少数クラスのサンプルを選ぶ。
+borderline-SMOTE2は多数クラスのサンプルを選ぶこともある。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">October 22, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/data_cube_a_relational_aggregation_operator_generalizing_group_by_cross_tab_and_sub_totals/">抄訳 Data Cube: A Relational Aggregation Operator Generalizing Group-By, Cross-Tab, and Sub-Totals(1997)</a></h3>
         <div class="summary"><p>SQLのGROUP BYと集約関数を組み合わせて0次元や1次元の値を出力できる。
 一方、ピボットテーブルのように、ある属性値の同じレコードの別の属性値を集計し、さらに集計値の集計値を求めたいことがある。
@@ -170,18 +184,6 @@ UNDOやREDOを再実行可能でなければならず、そのためにオブジ
         <div class="article-footer">
 	  
           <span class="date">July 30, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/on_spectral_clustering_analysis_and_an_algorithm/">On Spectral Clustering: Analysis and an algorithm</a></h3>
-        <div class="summary"><p>スペクトラルクラスタリングは、類似度を辺の重みとするグラフをデータから構築し、重みをもとにカットする辺を決めて、データをクラスタに分ける。
-グラフラプラシアンのようなグラフを表現した行列をつくり、その固有ベクトルを求め、固有ベクトルを列ベクトルとして並べた行列にK-meansを適用する。
-もとのデータに二重丸のような凸集合でないクラスタがあるときに、最初からK-meansを適用するよりも良い結果を期待できる。
-また、データ分布に確率モデルにあてはめ、どのクラスタにデータを割りあてるか確率的に決めるクラスタリングと違い、データの分布を仮定しなくてよい。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">July 23, 2022</span>
         </div>
     </article>
     

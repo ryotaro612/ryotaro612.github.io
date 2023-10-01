@@ -2,6 +2,84 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://nryotaro.dev/en/</loc>
+    <lastmod>2023-09-30T11:34:47-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/en/tags/communicating-sequential-processes/</loc>
+    <lastmod>2023-09-30T11:34:47-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/tags/communicating-sequential-processes/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/tags/communicating-sequential-processes/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/en/posts/communicating_sequenctial_processes/</loc>
+    <lastmod>2023-09-30T11:34:47-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/communicating_sequenctial_processes/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/communicating_sequenctial_processes/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/en/tags/concurrent-programming/</loc>
+    <lastmod>2023-09-30T11:34:47-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/tags/concurrent-programming/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/tags/concurrent-programming/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/en/posts/</loc>
+    <lastmod>2023-09-30T11:34:47-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/en/tags/</loc>
+    <lastmod>2023-09-30T11:34:47-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/tags/"
+                />
+  </url><url>
     <loc>https://nryotaro.dev/en/tags/bert/</loc>
     <lastmod>2023-09-23T10:21:03-04:00</lastmod>
     <xhtml:link
@@ -15,34 +93,8 @@
                 href="https://nryotaro.dev/en/tags/bert/"
                 />
   </url><url>
-    <loc>https://nryotaro.dev/en/</loc>
-    <lastmod>2023-09-23T10:21:03-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/"
-                />
-  </url><url>
     <loc>https://nryotaro.dev/en/tags/cosine-similarity/</loc>
     <lastmod>2023-09-23T10:21:03-04:00</lastmod>
-  </url><url>
-    <loc>https://nryotaro.dev/en/posts/</loc>
-    <lastmod>2023-09-23T10:21:03-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/posts/"
-                />
   </url><url>
     <loc>https://nryotaro.dev/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</loc>
     <lastmod>2023-09-23T10:21:03-04:00</lastmod>
@@ -55,19 +107,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://nryotaro.dev/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/"
-                />
-  </url><url>
-    <loc>https://nryotaro.dev/en/tags/</loc>
-    <lastmod>2023-09-23T10:21:03-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/tags/"
                 />
   </url><url>
     <loc>https://nryotaro.dev/en/tags/transformer/</loc>

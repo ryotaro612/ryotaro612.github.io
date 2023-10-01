@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks</title>
+    <title>Communicating Sequential Processes (1978)</title>
   </head>
 
   <body>
@@ -53,61 +53,43 @@
           <li><a href="https://nryotaro.dev/posts">Posts</a></li>
           <li><a href="https://nryotaro.dev/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/">en</a></li>
+	  <li><a href="https://nryotaro.dev/en/posts/communicating_sequenctial_processes/">en</a></li>
 	  
         </ul>
       </nav>
     </header>
     
 <main>
-  <h1>Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks</h1>
+  <h1>Communicating Sequential Processes (1978)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://nryotaro.dev/tags/bert/">
-	#BERT
+      <a href="https://nryotaro.dev/tags/communicating-sequential-processes/">
+	#Communicating Sequential Processes
       </a>
     </li>
     
     <li class="tag">
-      <a href="https://nryotaro.dev/tags/%E3%82%B3%E3%82%B5%E3%82%A4%E3%83%B3%E9%A1%9E%E4%BC%BC%E5%BA%A6/">
-	#コサイン類似度
-      </a>
-    </li>
-    
-    <li class="tag">
-      <a href="https://nryotaro.dev/tags/transformer/">
-	#Transformer
+      <a href="https://nryotaro.dev/tags/concurrent-programming/">
+	#Concurrent Programming
       </a>
     </li>
     
   </ul>  
-  <span class="date">September 23, 2023</span>    
+  <span class="date">September 30, 2023</span>    
   <div>
-    <p><a href="https://arxiv.org/abs/1908.10084">Sentence-BERT</a>は、テキストをコサイン類似度で意味の類似度を比較できる固定長のベクトルに変換できる。
-<a href="https://arxiv.org/abs/1810.04805">BERT</a>を2つのテキストを入力し類似度を出力するように訓練できるが、あるテキストに類似するテキストを求めたい場合には組合せ爆発が生じる。
-Sentence-BERTは、類似度が定義されたテキストの組から、類似するテキスト同士を近い位置に写像できるように学習する。
-ネットワークは、BERTを使ったシャムネットワークであり、重みを共有した2つのBERTに1つずつテキストを入力し、両方の出力を目的関数に入力する。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>テキストをベクトル空間に配置するために、BERTの出力は固定長のベクトルに変換される。
-変換方法は、2つのテキストの先頭につけられるBERTのCLSトークンの出力、出力のされるすべてのベクトルの平均値、または最大値の3つがある。
-平均値がデフォルトである。</p>
-<p>固定長の変換方法とおなじく、目的関数も、分類、回帰、トリプレットロスの3種類がある。
-訓練データにあわせてふさわしい目的関数を選ぶ。</p>
-<p>分類は、2つのテキストの埋め込みベクトル\(u, v\)と要素間の差\(|u-v|\)を連結したベクトルから\(k\)種類のラベルのうち1つを推定するタスクである。
-$$
-o = \text{softmax}(W_t(u, v, |u-v|))
-$$
-埋め込みベクトルの長さが\(n\)であれば、重みは\(W_t \in \mathbb{R}^{3n\times k}\)である。</p>
-<p>回帰であれば、\(u, v\)のコサイン類似度を計算し、ラベルとの最小二乗誤差を最小化するように重みを更新する。</p>
-<p>トリプレットロスの訓練データは、ancher sentence \(s_a\), positive sentence \(s_p\), negative sentence \(s_n\)の3つのテキストからなり、\(s_p\)と\(s_a\)の距離が\(s_a\)と\(s_n\)よりも小さくなるようにモデルを訓練する。
-\(\epsilon\)を\(s_p\)が\(s_n\)よりも\(s_a\)に少なくとも\(\epsilon\)だけ近いことを保証する値とすると、目的関数は
-$$
-\max(||s_a - s_p|| - ||s_a - s_n || + \epsilon, 0)
-$$
-である。</p>
+    <p><a href="https://www.cs.cmu.edu/~crary/819-f09/Hoare78.pdf">Communicating Sequential Processes (CSP)</a>は、あるプロセスの出力を別のプロセスの入力に渡し、入出力のあるプロセスを並行実行するプログラミングモデルである。
+たとえば、GoのgoroutinesはCSPに<a href="https://www.cs.princeton.edu/courses/archive/fall16/cos418/docs/P1-concurrency.pdf">もとづく</a>軽量スレッドである。</p>
+<p>HoareがCSPを提唱した78年にも、マルチプロセッサ間の排他制御や同期に、プロセッサ間で共有する変数を確認、更新する方法がとられていた。
+変数を共有する方法は、<a href="https://pure.tue.nl/ws/files/4279816/344354178746665.pdf">セマフォ</a>やモニタ、 <a href="https://link.springer.com/chapter/10.1007/978-1-4757-3472-0_6">conditional critial region</a>をはじめとしていつかあり、いつどれを選べばよいか共通の見解はない。
+また、プロセッサ間で記憶領域を共有することで、クロスバースイッチのような並行処理のハードウェアが必要になり、オーバーヘッドや不具合の原因が生じる。</p>
+<p>CSPは、排他制御や同期のアルゴリズムの採択基準やハードウェアの問題を解決する目的で提唱された。
+プロセスは変数を共有せず、プロセスの入出力でデータを受け渡す。
+データは、プロセスに入力される前にDijkstraの<a href="https://www.cs.toronto.edu/~chechik/courses05/csc410/readings/dijkstra.pdf">Guardコマンド</a>に渡され、成功したときにのみ、プロセスが実行される。
+プロセスは、入力されるまで遅延する。</p>
+<h2 id="雑記">雑記</h2>
+<p>論文でHoare自身が指摘した課題に、CSPで実装したプログラムの正しさを検証する形式手法がないことと、実行速度の速いCSPの実装を提案していないことがある。
+後者の解決策としてCSP向けのハードウェアが提案されているが、CSPがハードウェアの不具合やオーバーヘッドを解決する方法として提案されているので、ハードウェアによる解決策も不具合やオーバーヘッドに考慮しなければならない。</p>
   </div>
 </main>
 
@@ -115,17 +97,11 @@ $$
 <ul class="pagination">
     
     <li>
-      <a href="/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/">
+      <a href="/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/">
 	<i class="fa-solid fa-xl fa-angle-left"></i>
       </a>
     </li>
     
-    
-    <li>
-      <a href="/posts/communicating_sequenctial_processes/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
     
 </ul>
 

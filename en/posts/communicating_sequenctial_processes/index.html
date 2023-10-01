@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks(2019)</title>
+    <title>Communicating Sequential Processes (1978)</title>
   </head>
 
   <body>
@@ -53,64 +53,43 @@
           <li><a href="https://nryotaro.dev/en/posts">Posts</a></li>
           <li><a href="https://nryotaro.dev/en/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/">ja</a></li>
+	  <li><a href="https://nryotaro.dev/posts/communicating_sequenctial_processes/">ja</a></li>
 	  
         </ul>
       </nav>
     </header>
     
 <main>
-  <h1>Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks(2019)</h1>
+  <h1>Communicating Sequential Processes (1978)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://nryotaro.dev/en/tags/bert/">
-	#BERT
+      <a href="https://nryotaro.dev/en/tags/communicating-sequential-processes/">
+	#Communicating Sequential Processes
       </a>
     </li>
     
     <li class="tag">
-      <a href="https://nryotaro.dev/en/tags/cosine-similarity/">
-	#cosine similarity
-      </a>
-    </li>
-    
-    <li class="tag">
-      <a href="https://nryotaro.dev/en/tags/transformer/">
-	#Transformer
+      <a href="https://nryotaro.dev/en/tags/concurrent-programming/">
+	#Concurrent Programming
       </a>
     </li>
     
   </ul>  
-  <span class="date">September 23, 2023</span>    
+  <span class="date">September 30, 2023</span>    
   <div>
-    <p><a href="https://arxiv.org/abs/1908.10084">Sentence-BERT</a> derives semantically meaningful sentence embedding that can be compared using cosine-similarity.
-<a href="https://arxiv.org/abs/1810.04805">BERT</a> achieved new state-of-the art performance on various sentence-pair regression tasks using a cross-encoder.
-A cross-encoder accepts two sentences as input to the transformer network and the target value is predicted.
-Semantic textual similarity is one of the sentence-pair regression tasks.
-However, this setup is often not scalable for various pair regression tasks due to many possible combinations.
-The semantic search that maps each sentence to a vector space where semantically similar sentences are close alleviates the combinatorial explosion.
-Sentence-BERT uses a siamese network in which the two BERT networks have tied weights such that the produced sentence embeddings can be semantically compared using cosine-similarity.</p>
-<p>Sentence-BERT adds a pooling operation to the output of BERT to derive a fixed-sized sentence embedding.
-The authors of Sentence-BERT propose three strategies.
-Using the output of the <code>CLS</code>-token, computing the mean of all output vectors (the default configuration), and computing a max-over-time of the output vectors.</p>
-<p>Sentence-BERT depends on the available training data.
-Three different objective functions are proposed.</p>
-<p>Classification objective function accepts the sentence embeddings \(u\) and \(v\) with the element-wise difference \(|u-v|\), , and multiplies the concatenated embeddings with the trainable weight \(W_t \in \mathbb{R}^{3n\times k}\).
-$$
-o = \text{softmax}(W_t(u, v, |u-v|))
-$$
-where \(n\) is the dimension of the sentence embeddings and \(k\) the number of labels.
-We update the weights to optimize cross-entropy loss.</p>
-<p>Regression objective function computes the cosine similarity between the two sentence embeddings \(u, v\).
-The authors use mean-squared-error loss.</p>
-<p>Triplet objective function takes an anchor sentence embedding \(s_a\),  a positive sentence embedding \(s_p\), and a negative sentence embedding \(n\).
-The function updates the weights such that the distance between \(s_a\) and \(s_p\) is smaller than the distance between \(s_a, s_n\).
-The authors use the following function:
-$$
-\max(||s_a - s_p|| - ||s_a - s_n || + \epsilon, 0)
-$$
-\(\epsilon\) ensures that \(s_p\) is at least \(\epsilon\) closer to \(s_a\) than \(s_n\).</p>
+    <p><a href="https://www.cs.cmu.edu/~crary/819-f09/Hoare78.pdf">Communicating Sequential Processes (CSP)</a> is a program structuring method that constructs a program as a parallel composition of a fixed number of sequential processes.
+A process is a sequence of commands.</p>
+<p>In 1978 when Hoare proposed CSP, inspecting and updating a common store was widely adopted method for synchronizing multi processors.
+However, this may lead to expense and unreliability in hardware implementation, and uncertain criterion for choosing a method for synchronization from a greater variety of methods, semaphores like conditional critical regions, and monitors.</p>
+<p>Hoare proposed CSP with an ambitious attempt to find a single simple solution to the two problems.
+Each process does not share any variables with any other processes, and they communicate through their inputs and outputs.
+A process can be guarded with <a href="https://www.cs.toronto.edu/~chechik/courses05/csc410/readings/dijkstra.pdf">Dijkstra&rsquo;s guard</a>.
+A guarded process is executed only if and when the execution of its guard does not fail.</p>
+<h2 id="remark">Remark</h2>
+<p>Hoare pointed out that the paper failed to suggest any proof methods to verify programs and efficient implementation for CSP.
+He thought the design of appropriate hardware can solve the second problem.
+Because one advantage of CSP is that it is free from expense and unreliability in hardware implementation, such hardware must be designed that does not cause the drawbacks.</p>
   </div>
 </main>
 
@@ -118,17 +97,11 @@ $$
 <ul class="pagination">
     
     <li>
-      <a href="/en/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/">
+      <a href="/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/">
 	<i class="fa-solid fa-xl fa-angle-left"></i>
       </a>
     </li>
     
-    
-    <li>
-      <a href="/en/posts/communicating_sequenctial_processes/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
     
 </ul>
 
