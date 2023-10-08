@@ -63,6 +63,20 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/bleu/">論文メモ BLEU: a Method for Automatic Evaluation of Machine Translation</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>自動翻訳を定量的に評価するための指標BLEUを提案した論文である。
+指標は、専門家の翻訳に翻訳に高い評価をあたえるよう設計されている。
+BLEUは、ひとつの候補訳に対する1つ以上の参照訳をあたえ、0から1の値をとるスコアを出力する。
+スコアは高いほどよい。
+BLEUは、参照訳にある単語を過剰に含むことや文の短さにペナルティをあたえ、適合率で候補訳を評価する。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">June 13, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/sequence_to_sequence_learning_with_neural_networks/">論文メモ Sequence to Sequence Learning with Nueral Networks</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>Sequence to Sequenceの論文。
@@ -188,19 +202,6 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
         <div class="article-footer">
 	  
           <span class="date">April 11, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/character_aware_neural_language_models/">論文メモ Character-Aware Neural Language Models</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>文字単位の入力から次に出現する単語を予測するニューラル言語モデルの論文である。
-アーキテクチャは入力から近い順にCNN, highway network, LSTMからなる。
-実験データにPenn Treebankを、評価指標にPerplexityを採用してモデルを評価したところ、
-論文が発表された2016年時点での<a href="https://arxiv.org/abs/1409.2329">SOTA</a>の60%程度のパラメタしかないモデルでありながら、これに匹敵する性能を発揮した。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">April 4, 2020</span>
         </div>
     </article>
     

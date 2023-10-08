@@ -5,7 +5,16 @@
     <link>https://nryotaro.dev/en/tags/</link>
     <description>Recent content in Tags on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 30 Sep 2023 11:34:47 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Oct 2023 10:28:13 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Transformer</title>
+      <link>https://nryotaro.dev/en/tags/transformer/</link>
+      <pubDate>Sat, 07 Oct 2023 10:28:13 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/en/tags/transformer/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Communicating Sequential Processes</title>
       <link>https://nryotaro.dev/en/tags/communicating-sequential-processes/</link>
@@ -39,15 +48,6 @@
       <pubDate>Sat, 23 Sep 2023 10:21:03 -0400</pubDate>
       
       <guid>https://nryotaro.dev/en/tags/cosine-similarity/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Transformer</title>
-      <link>https://nryotaro.dev/en/tags/transformer/</link>
-      <pubDate>Sat, 23 Sep 2023 10:21:03 -0400</pubDate>
-      
-      <guid>https://nryotaro.dev/en/tags/transformer/</guid>
       <description></description>
     </item>
     

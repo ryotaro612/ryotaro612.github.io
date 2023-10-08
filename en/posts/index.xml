@@ -5,7 +5,19 @@
     <link>https://nryotaro.dev/en/posts/</link>
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 30 Sep 2023 11:34:47 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/en/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Oct 2023 10:28:13 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/en/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension (2019)</title>
+      <link>https://nryotaro.dev/en/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/</link>
+      <pubDate>Sat, 07 Oct 2023 10:28:13 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/en/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1910.13461&#34;&gt;BART&lt;/a&gt; is a denoising autoencoder for Pretraining sequence-to-sequence models.
+BART is trained on corrupted text, and updates the parameters to reconstruct the original text.
+The authors experimented with several noising functions that corrupt text like token masking, token deletion, text infilling, sentence permutation, and document rotation.
+BART with text infilling, where text spans are sampled with span lengths drawn from a Poisson distribution(\(\lambda = 3\)), demonstrated the most consistently strong performance.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Communicating Sequential Processes (1978)</title>
       <link>https://nryotaro.dev/en/posts/communicating_sequenctial_processes/</link>
