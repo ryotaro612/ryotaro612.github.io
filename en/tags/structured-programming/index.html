@@ -22,9 +22,7 @@
     <link rel="stylesheet" href="https://nryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
     
 
-<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
-
-<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+<link rel="stylesheet" href="https://nryotaro.dev/scss/list.min.8bd0eb32012aaff1a394fe4dfa99dba153e539578f4d72458fbc70b8f1ed8927.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -34,7 +32,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension (2019)</title>
+    <title>Structured programming</title>
   </head>
 
   <body>
@@ -53,57 +51,26 @@
           <li><a href="https://nryotaro.dev/en/posts">Posts</a></li>
           <li><a href="https://nryotaro.dev/en/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/">ja</a></li>
+	  <li><a href="https://nryotaro.dev/tags/structured-programming/">ja</a></li>
 	  
         </ul>
       </nav>
     </header>
     
 <main>
-  <h1>BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension (2019)</h1>
-  <ul class="tags">
-    
-    <li class="tag">
-      <a href="https://nryotaro.dev/en/tags/transformer/">
-	#Transformer
-      </a>
-    </li>
-    
-  </ul>  
-  <span class="date">October 7, 2023</span>    
-  <div>
-    <p><a href="https://arxiv.org/abs/1910.13461">BART</a> is a denoising autoencoder for Pretraining sequence-to-sequence models.
-BART is trained on corrupted text, and updates the parameters to reconstruct the original text.
-The authors experimented with several noising functions that corrupt text like token masking, token deletion, text infilling, sentence permutation, and document rotation.
-BART with text infilling, where text spans are sampled with span lengths drawn from a Poisson distribution(\(\lambda = 3\)), demonstrated the most consistently strong performance.</p>
-<p>BART is a sequence-to-sequence model with a bidirectional encoder and a left-to-right autoregressive decoder.
-BART replaces the ReLUs in <a href="https://browse.arxiv.org/pdf/1706.03762.pdf">Transformer</a> with <a href="https://browse.arxiv.org/pdf/1606.08415.pdf">GeLUs</a>.
-The authors of BART see the model as a standard Transformer-based neural machine translation architecture that generalizes BERT and GPT.
-Comparing BART and BERT, only BERT uses an additional feed-forward network before word-predictions, and the second multi-head attention mechanism in each decoder performs cross-attention over the final hidden layer of the encoder.</p>
-<p>If a downstream task is a classification task, the same input is fed into the encoder and decoder.
-An additional token like <code>CLS</code> in BERT is added to the end, and its final hidden state of the final decoder is fed into a linear classifier.</p>
-  </div>
-</main>
+    <h1>Structured programming</h1>
+    <div>
+        
+        <div class="entry">
+            <h2><a href="https://nryotaro.dev/en/posts/a_design_methodology_for_reliable_software_systems/">A design methodology for reliable software systems (1972)</a></h2>
+            <span class="date">October 8, 2023</span>
+        </div>
+        
+    </div>
+</main>>    
 
     
-<ul class="pagination">
     
-    <li>
-      <a href="/en/posts/communicating_sequenctial_processes/">
-	<i class="fa-solid fa-xl fa-angle-left"></i>
-      </a>
-    </li>
-    
-    
-    <li>
-      <a href="/en/posts/a_design_methodology_for_reliable_software_systems/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
-    
-</ul>
-
-
     <footer>
       <ul>
         

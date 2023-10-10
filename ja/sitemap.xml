@@ -2,21 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://nryotaro.dev/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/</loc>
-    <lastmod>2023-10-07T10:28:13-04:00</lastmod>
+    <loc>https://nryotaro.dev/posts/a_design_methodology_for_reliable_software_systems/</loc>
+    <lastmod>2023-10-08T09:38:50-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://nryotaro.dev/en/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/"
+                href="https://nryotaro.dev/en/posts/a_design_methodology_for_reliable_software_systems/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://nryotaro.dev/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/"
+                href="https://nryotaro.dev/posts/a_design_methodology_for_reliable_software_systems/"
                 />
   </url><url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2023-10-07T10:28:13-04:00</lastmod>
+    <lastmod>2023-10-08T09:38:50-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2023-10-07T10:28:13-04:00</lastmod>
+    <lastmod>2023-10-08T09:38:50-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -41,8 +41,21 @@
                 href="https://nryotaro.dev/posts/"
                 />
   </url><url>
+    <loc>https://nryotaro.dev/tags/structured-programming/</loc>
+    <lastmod>2023-10-08T09:38:50-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/tags/structured-programming/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/tags/structured-programming/"
+                />
+  </url><url>
     <loc>https://nryotaro.dev/tags/</loc>
-    <lastmod>2023-10-07T10:28:13-04:00</lastmod>
+    <lastmod>2023-10-08T09:38:50-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -52,6 +65,19 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://nryotaro.dev/tags/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/</loc>
+    <lastmod>2023-10-07T10:28:13-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/"
                 />
   </url><url>
     <loc>https://nryotaro.dev/tags/transformer/</loc>

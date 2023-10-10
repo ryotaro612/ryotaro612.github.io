@@ -5,7 +5,17 @@
     <link>https://nryotaro.dev/posts/</link>
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 07 Oct 2023 10:28:13 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Oct 2023 09:38:50 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A design methodology for reliable software systems (1972)</title>
+      <link>https://nryotaro.dev/posts/a_design_methodology_for_reliable_software_systems/</link>
+      <pubDate>Sun, 08 Oct 2023 09:38:50 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/a_design_methodology_for_reliable_software_systems/</guid>
+      <description>&lt;p&gt;スタンフォードで数学の博士号を取得した&lt;a href=&#34;https://computerhistory.org/profile/barbara-liskov/&#34;&gt;Liskov&lt;/a&gt;は以前勤めていたMitre Corporationに戻った後、最初にVenusとよばれるタイムシェアリングシステムの開発プロジェクトを担当し、その次にソフトウェア危機に対処する開発手法の研究に取り組んだ。
+&lt;a href=&#34;https://dl.acm.org/doi/pdf/10.1145/1479992.1480018&#34;&gt;A design methodology for reliable software systems&lt;/a&gt;は、Venusの開発から得られた構造化プログラミングの方法論である。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension (2019)</title>
       <link>https://nryotaro.dev/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/</link>

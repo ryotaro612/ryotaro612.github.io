@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension (2019)</title>
+    <title>A design methodology for reliable software systems (1972)</title>
   </head>
 
   <body>
@@ -53,40 +53,39 @@
           <li><a href="https://nryotaro.dev/posts">Posts</a></li>
           <li><a href="https://nryotaro.dev/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/en/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/">en</a></li>
+	  <li><a href="https://nryotaro.dev/en/posts/a_design_methodology_for_reliable_software_systems/">en</a></li>
 	  
         </ul>
       </nav>
     </header>
     
 <main>
-  <h1>BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension (2019)</h1>
+  <h1>A design methodology for reliable software systems (1972)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://nryotaro.dev/tags/transformer/">
-	#Transformer
+      <a href="https://nryotaro.dev/tags/structured-programming/">
+	#Structured programming
       </a>
     </li>
     
   </ul>  
-  <span class="date">October 7, 2023</span>    
+  <span class="date">October 8, 2023</span>    
   <div>
-    <p><a href="https://arxiv.org/abs/1910.13461">BART</a>は<a href="https://browse.arxiv.org/pdf/1706.03762.pdf">Transformer</a>をつかった系列変換モデルの事前学習である。
-ノイズを入れたテキストからもとのテキストを復元できるようにモデルを訓練する。
-BARTの特徴は、ノイズの作り方に制限がないところにある。
-比較したノイズの作り方は、ランダムに選んだトークンから文書を始めることで回転する、BERTとおなじトークンのマスキング、トークンの一部の削除、文書中の文の順序の入れ換え、ある区間中にあるトークンをまとめて1つの<code>[MASK]</code>に置き換える方法の5種類である。
-最後のトークンを1つのマスクキングするときに最もよい結果になった。
-マスクに置き換える区間の長さは\(\lambda = 3\)のポアソン分布によって決まる。</p>
-<p>BARTは双方向のエンコーダーと自己回帰モデルのデコーダーからなる。
-エンコーダーとデコーダーはどちらも、活性化関数をReLUのかわりに<a href="https://browse.arxiv.org/pdf/1606.08415.pdf">GeLU</a>をつかった6層のTransformerである。
-著者は、BARTを、Transformerのエンコーダ部をもちいたBERTとデコーダ部をもちいたGPTを組み合わせた一般的なモデルとして位置づけている。
-BERTと比べると、単語の予測前にある全結合層がなく、以下の図のようにデコーダー部の2つ目のQKV注意機構がエンコーダの出力を\(K, V\)につかうクロス注意機構になっている。
-<img src="/bart.png" alt="bart"></p>
-<p>下流タスクが分類であれば、エンコーダとデコーダに同じ入力を与え、デコーダの出力を線形分類器に入力する。
-BARTには特別なトークンを文末につけた文を入力し、そのトークンに対応する最後のデコーダの状態を線形分類器に入力する。
-これは、BERTが文頭に<code>[CLS]</code>を付与し、<code>[CLS]</code>に対応する最終層の出力を使うことに近い。</p>
-<p>図は、<a href="https://browse.arxiv.org/pdf/1706.03762.pdf">Transformer</a>のFig 1からの引用になります。</p>
+    <p>スタンフォードで数学の博士号を取得した<a href="https://computerhistory.org/profile/barbara-liskov/">Liskov</a>は以前勤めていたMitre Corporationに戻った後、最初にVenusとよばれるタイムシェアリングシステムの開発プロジェクトを担当し、その次にソフトウェア危機に対処する開発手法の研究に取り組んだ。
+<a href="https://dl.acm.org/doi/pdf/10.1145/1479992.1480018">A design methodology for reliable software systems</a>は、Venusの開発から得られた構造化プログラミングの方法論である。</p>
+<p>表題のとおり、目的はソフトウェアの信頼性を高める方法論であり、そのためにテストのカバレッジを上げることがよいとみなさている。
+効率的にカバレッジを上げるには、必要十分なテストケースを特定し、その量が十分に開発可能でなければならない。
+構造化プログラミングは、プログラムをモジュールに分割することで、テストケースの特定とテストケースの量の削減の両方に寄与する。</p>
+<p>構造化プログラミングは<a href="https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf">1968年</a>から<a href="http://homepages.cs.ncl.ac.uk/brian.randell/NATO/nato1969.PDF">1969年</a>にかけてDijkstraによって提案されており、論文の発表当時からすれば新しいプログラミングパラダイムであるが、標準的な定義はない。
+そこで、Liskovは、制御構文とモジュールの依存関係についての2つのルールで構造化プログラミングを定義した。
+制御構文のルールは、gotoの利用を禁じ、使用可能な制御を、文の逐次的な実行、条件分岐、反復のみに限定する。
+依存関係のルールは、上位のモジュールから下位のモジュールの順に開発し、上位モジュールは下位モジュールの名前を参照することである。</p>
+<p>依存関係のルールにあるモジュールの上下関係は、Dijsktraの<a href="https://www.eecs.ucf.edu/~eurip/papers/dijkstra-the68.pdf">抽象度</a>を意味する。
+より機械を意識してI/Oデバイスやデータを扱うモジュールほど下位に位置する。
+モジュールは、自分の抽象度の異なる方法でリソースにアクセスしてはならず、下位モジュールは上位モジュールに依存してはならない。</p>
+<p>必要なテストケースを簡単に見つけるには、モジュール間の依存関係が分かりすいほうが望ましい。
+モジュール間でデータを受け渡す場合、モジュールが外部に公開している関数に明示的に引数としてデータを渡さなければならない。</p>
   </div>
 </main>
 
@@ -94,17 +93,11 @@ BARTには特別なトークンを文末につけた文を入力し、そのト�
 <ul class="pagination">
     
     <li>
-      <a href="/posts/communicating_sequenctial_processes/">
+      <a href="/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/">
 	<i class="fa-solid fa-xl fa-angle-left"></i>
       </a>
     </li>
     
-    
-    <li>
-      <a href="/posts/a_design_methodology_for_reliable_software_systems/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
     
 </ul>
 

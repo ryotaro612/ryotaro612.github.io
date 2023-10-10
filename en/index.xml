@@ -5,7 +5,17 @@
     <link>https://nryotaro.dev/en/</link>
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 07 Oct 2023 10:28:13 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Oct 2023 09:38:50 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A design methodology for reliable software systems (1972)</title>
+      <link>https://nryotaro.dev/en/posts/a_design_methodology_for_reliable_software_systems/</link>
+      <pubDate>Sun, 08 Oct 2023 09:38:50 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/en/posts/a_design_methodology_for_reliable_software_systems/</guid>
+      <description>After earning her PhD in computer Science at Stanford University, Liskov worked again for MITRE Corporation. She was involved in the development of a time-sharing system called Venus, then was involved in finding ways to address the &amp;ldquo;software crisis.&amp;rdquo; at MITRE. A design methodology for reliable software systems describes a design methodology of structured programming developed as part of the second project.
+The methodology uses testing to guarantee reliability. To test a program, it is necessary to identify relevant test cases, and the set of them must be small enough to implement.</description>
+    </item>
+    
     <item>
       <title>BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension (2019)</title>
       <link>https://nryotaro.dev/en/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/</link>
