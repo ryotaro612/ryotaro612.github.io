@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.92.2" />
+	<meta name="generator" content="Hugo 0.118.2">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -61,6 +61,31 @@
 <main>
     <h1>Posts</h1>
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/en/posts/gaussian_error_linear_units/">GAUSSIAN ERROR LINEAR UNITS(GELUs) 2016</a></h3>
+        <div class="summary"><p>The Gaussian Error Linear Unit (GELU), a neural network activation function,is \(x\Phi(s)\), where \(\Phi(x)\) the standard Gaussian cumulative distribution function.
+GELUs have properties of Dropout, <a href="https://openreview.net/pdf?id=rJqBEPcxe">Zoneout</a>, and ReLUs.
+Zoneout is a method for regularizing RNNs, and stochastically forces some hidden units to maintain their previous values.
+ReLUs introduce nonlinearity to neural networks.
+Dropout is a regularizer.
+GELUs merge the both functionalities by multipling the neuron input \(x\) by \(m \sim \text{Bernoulli}(\Phi (x))\) , where \(\Phi(x)=P(X\le x), X\sim \mathcal{N}(0, 1)\).
+GELU is the expected transformation on an input \(x\), which is \(\Phi(x) \times Ix + (1-\Phi(x))\times 0x = x\Phi(x)\)</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/en/tags/activation-function/">
+		#Activation function
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">October 21, 2023</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/en/posts/a_design_methodology_for_reliable_software_systems/">A design methodology for reliable software systems (1972)</a></h3>
@@ -290,27 +315,6 @@ In contrast to absolute position representations, the relative position represen
 	  </ul>
 	  
           <span class="date">August 19, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/en/posts/self_adjusting_binary_search_trees/">Self-Adjusting Binary Search Trees(1985)</a></h3>
-        <div class="summary"><p><a href="https://www.cs.cmu.edu/~sleator/papers/self-adjusting.pdf">The splay tree</a>, a self-adjusting form of a binary search tree, is a binary search tree that moves an accessed node to the root after each access.
-On an \(n\)-node splay tree, accessing, inserting and deleting have an amortized time bound of \(O(\log n)\) per operation.
-In addition, for sufficiently long access sequences, splay trees are as efficient, to within a constant factor, as static optimum search trees.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/en/tags/splay-tree/">
-		#Splay tree
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">August 12, 2023</span>
         </div>
     </article>
     

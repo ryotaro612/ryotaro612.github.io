@@ -78,7 +78,7 @@
 異なるのは、その分布\((X \times Y)\)である。
 これを次の式で表すと、</p>
 <p>$$
-S=\{(\boldsymbol{\rm x}_i, y_i)\}_{i=1}^n \sim (\mathcal{D}_S)^n; T=\{\mathcal{x}_i\}_{i=n+1}^N \sim (\mathcal{D}_{T}^X)^{n'}
+S=\{(\boldsymbol{\rm x}_i, y_i)\}_{i=1}^n \sim (\mathcal{D}_S)^n; T=\{\mathcal{x}_i\}_{i=n+1}^N \sim (\mathcal{D}_{T}^X)^{n&rsquo;}
 $$
 となる。</p>
 <p>アーキテクチャは、\(D\)次元の特徴を抽出するfeature extractor \(G_f: X\rightarrow \mathbb{R}^D\), label predictor \(G_y: \mathbb{R}^D \rightarrow [0, 1]^L\), 隠れ層の出力からドメインを識別するdomain classifier \(G_d: \mathbb{R}^D \rightarrow [0, 1]\)から構成される。
@@ -88,7 +88,7 @@ $$
 <p>$$
 \begin{align}
 E(\theta_f, \theta_y, \theta_d) &amp;= \frac{1}{n}\sum^n_{i=1}\mathcal{L}_y(G_y(G_f(\boldsymbol{\rm x}_i;\theta_f);\theta_y), y_i) \\
-&amp;-\lambda\left(\frac{1}{n}\sum_{i=1}^n\mathcal{L}_d(G_d(G_f(\boldsymbol{\rm x}_i;\theta_f);\theta_d), d_i) + \frac{1}{n'}\sum_{i=n+1}^N\mathcal{L}_d(G_d(G_f(\boldsymbol{\rm x}_i;\theta_f);\theta_d), d_i)\right)
+&amp;-\lambda\left(\frac{1}{n}\sum_{i=1}^n\mathcal{L}_d(G_d(G_f(\boldsymbol{\rm x}_i;\theta_f);\theta_d), d_i) + \frac{1}{n&rsquo;}\sum_{i=n+1}^N\mathcal{L}_d(G_d(G_f(\boldsymbol{\rm x}_i;\theta_f);\theta_d), d_i)\right)
 \end{align}
 $$</p>
 <p>学習では次の\(\hat{\theta_f}, \hat{\theta_y}, \hat{\theta_d}\)からなる鞍点を探す。
@@ -119,7 +119,7 @@ $$</p>
 $$
 \begin{align}
 \tilde{E}(\theta_f, \theta_y, \theta_d) &amp;= \frac{1}{n}\sum^n_{i=1}\mathcal{L}_y(G_y(G_f(\boldsymbol{\rm x}_i;\theta_f);\theta_y), y_i) \\
-&amp;-\lambda\left(\frac{1}{n}\sum_{i=1}^n\mathcal{L}_d(G_d(\mathcal{R}(G_f(\boldsymbol{\rm x}_i;\theta_f));\theta_d), d_i) + \frac{1}{n'}\sum_{i=n+1}^N\mathcal{L}_d(G_d(\mathcal{R}(G_f(\boldsymbol{\rm x}_i;\theta_f));\theta_d), d_i)\right)
+&amp;-\lambda\left(\frac{1}{n}\sum_{i=1}^n\mathcal{L}_d(G_d(\mathcal{R}(G_f(\boldsymbol{\rm x}_i;\theta_f));\theta_d), d_i) + \frac{1}{n&rsquo;}\sum_{i=n+1}^N\mathcal{L}_d(G_d(\mathcal{R}(G_f(\boldsymbol{\rm x}_i;\theta_f));\theta_d), d_i)\right)
 \end{align}
 $$</p>
 <hr>

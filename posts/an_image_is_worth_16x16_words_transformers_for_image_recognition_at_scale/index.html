@@ -98,8 +98,8 @@ $$
 <p>層正規化を\(\text{LN}\), マルチヘッド注意機構を\(\text{MSA}\), フィードフォワード層を\(\text{MLP}\)とすると、画像の表現\({\rm y}\)までの後続のネットワークは、\(l=1\dots L\)として
 $$
 \begin{align*}
-{\rm z}'_l&amp;=\text{MSA}(\text{LN}({\rm z_{l-1}}))+{\rm z}_{l-1}\\
-{\rm z}_l&amp;=\text{MLP}(\text{LN}(z'_l))+{\rm z}'_l\\
+{\rm z}&rsquo;_l&amp;=\text{MSA}(\text{LN}({\rm z_{l-1}}))+{\rm z}_{l-1}\\
+{\rm z}_l&amp;=\text{MLP}(\text{LN}(z&rsquo;_l))+{\rm z}&rsquo;_l\\
 {\rm y}&amp;=\text{LN}({\rm z}^0_L)
 \end{align*}
 $$

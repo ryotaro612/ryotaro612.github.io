@@ -73,13 +73,13 @@
 このとき、損失関数\(\mathcal{L}\)は次の式をとる。
 パラメタの更新には確率的勾配降下法がつかえる。</p>
 <p>$$
-\mathcal{L}=\sum_{(h, l, t)\in S}\sum_{(h',l,t')\in S'_{(h, l, t)}}[\gamma+d(\boldsymbol{h}+\boldsymbol{l}, \boldsymbol{t})-d(\boldsymbol{h'}+\boldsymbol{l},\boldsymbol{t'})]_+
+\mathcal{L}=\sum_{(h, l, t)\in S}\sum_{(h&rsquo;,l,t&rsquo;)\in S&rsquo;_{(h, l, t)}}[\gamma+d(\boldsymbol{h}+\boldsymbol{l}, \boldsymbol{t})-d(\boldsymbol{h&rsquo;}+\boldsymbol{l},\boldsymbol{t&rsquo;})]_+
 $$</p>
 <p>\([x]_+\)は\(x\)の正のとき\(x\), それ以外では\(0\)となる。
-\(S'\)はネガティブサンプリングされたサンプルの集合をしめす。
-次の式の\(h', t'\)は相手のエンティティとリンク\(l\)で結ばれておらず無作為に選ばれたエンティティをしめす。</p>
+\(S&rsquo;\)はネガティブサンプリングされたサンプルの集合をしめす。
+次の式の\(h&rsquo;, t&rsquo;\)は相手のエンティティとリンク\(l\)で結ばれておらず無作為に選ばれたエンティティをしめす。</p>
 <p>$$
-S'_{(h, l, t)} = \{(h',l,t)\mid h'\in E\}\cup\{(h,l,t')\mid t'\in E\}
+S&rsquo;_{(h, l, t)} = \{(h&rsquo;,l,t)\mid h&rsquo;\in E\}\cup\{(h,l,t&rsquo;)\mid t&rsquo;\in E\}
 $$</p>
 <hr>
 <ul>

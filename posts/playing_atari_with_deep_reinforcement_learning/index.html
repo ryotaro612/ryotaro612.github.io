@@ -88,7 +88,7 @@ L_i(\theta_i)=\mathbb{E}_{s,a\sim \rho (\cdot) }\big[(y_i - Q(s,a;\theta_i))^2\b
 $$
 としたときの勾配\(\nabla_{\theta_i}L_i(\theta_i)\)
 $$
-\nabla_{\theta_i}L_i(\theta_i) = \mathbb{E}_{s,a\sim \rho(\cdot);s'\sim\epsilon}[\left(r+\gamma\max_{a'}Q(s', a';\theta_{i-1})-Q(s,a;\theta_i)\right)\nabla_{\theta}Q(s,a;\theta_i)]
+\nabla_{\theta_i}L_i(\theta_i) = \mathbb{E}_{s,a\sim \rho(\cdot);s&rsquo;\sim\epsilon}[\left(r+\gamma\max_{a&rsquo;}Q(s&rsquo;, a&rsquo;;\theta_{i-1})-Q(s,a;\theta_i)\right)\nabla_{\theta}Q(s,a;\theta_i)]
 $$
 である。\(\rho(s, a)\)は状態\(s\)と行動\(a\)の確率分布である。</p>
 <hr>

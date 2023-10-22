@@ -72,16 +72,16 @@ borderline-SMOTE1は合成の相手側として常に少数クラスのサンプ
 borderline-SMOTE2は多数クラスのサンプルを選ぶこともある。</p>
 <p>borderline-SMOTE1の場合、少数クラスを\(P=\{p_1,p_2,\dots p_{\textit{num}}\}\), 多数クラスを\(N=\{n_1,n_2,\dots n_{\textit{num}}\}\)とする。
 各\(p_i\)について、\(m\)近傍を探す。
-\(m\)個のうち、多数クラスに属するサンプルの数を\(m'\)とする。
-\(m=m'\)ですべての近傍が少数クラスであれば、ノイズとみなして以降は無視する。
-半数以上が多数クラスに属し、\(m/2\le m' &lt; m\)であれば、オーバーサンプルの対象にする。
-その集合を\(\textit{DANGER}=\{{p'}_1, {p'}_2,\dots ,{p'}_{\textit{dnum}}\}\)とする。</p>
+\(m\)個のうち、多数クラスに属するサンプルの数を\(m&rsquo;\)とする。
+\(m=m&rsquo;\)ですべての近傍が少数クラスであれば、ノイズとみなして以降は無視する。
+半数以上が多数クラスに属し、\(m/2\le m&rsquo; &lt; m\)であれば、オーバーサンプルの対象にする。
+その集合を\(\textit{DANGER}=\{{p&rsquo;}_1, {p&rsquo;}_2,\dots ,{p&rsquo;}_{\textit{dnum}}\}\)とする。</p>
 <p>\(\textit{DANGER}\)の各サンプルについて、少数クラス\(P\)に属する\(k\)個の近傍を見つけ、\(s\times \textit{dnum}\)の少数クラスのサンプルを合成する。
 \(s\)は\(1\)から\(k\)の間の整数である。
-各\({p'}_i\)について\(k\)個からランダムに\(s\)個の近傍を選ぶ。
-次に\({p'}_i\)と\(s\)個の間の差\(\textrm{dif}_j(j=1,2,\dots s)\)と\([0,1]\)区間のランダムな値\(r_j (j=1,2,\dots s)\)を計算し、
+各\({p&rsquo;}_i\)について\(k\)個からランダムに\(s\)個の近傍を選ぶ。
+次に\({p&rsquo;}_i\)と\(s\)個の間の差\(\textrm{dif}_j(j=1,2,\dots s)\)と\([0,1]\)区間のランダムな値\(r_j (j=1,2,\dots s)\)を計算し、
 $$
-\textit{synthetic}_j = {p'}_i + r_j \times \textit{dif}_j (j=1,2,\dots s)
+\textit{synthetic}_j = {p&rsquo;}_i + r_j \times \textit{dif}_j (j=1,2,\dots s)
 $$
 によってサンプルを合成する。</p>
 <p>論文への<a href="https://sci2s.ugr.es/keel/pdf/specific/congreso/han_borderline_smote.pdf">リンク</a></p>

@@ -67,67 +67,67 @@
     <p>ダイクストラ法を使えば、スタート地点から各区画への最短距離を求められる。
 塀に移動にかかる時間を十分に大きい値、かりに\(HM+1\)として、ダイクストラ法適用すると、
 ゴール地点が\(3(HM+1)\)以下未満であり、そのときに限り、塀を壊す回数が2回以下でゴール地点に到達できる。</p>
-<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#78787e">#include</span> <span style="color:#78787e">&lt;bits/stdc++.h&gt;</span><span style="color:#78787e">
-</span><span style="color:#78787e"></span><span style="color:#ff6ac1">using</span> <span style="color:#ff6ac1">namespace</span> std;
-<span style="color:#78787e">#define rep(i, n) for (int i = 0; i &lt; (int)(n); i++)
-</span><span style="color:#78787e"></span>
-<span style="color:#9aedfe">int</span> <span style="color:#57c7ff">main</span>() {
-  <span style="color:#9aedfe">int</span> h, w;
-  cin <span style="color:#ff6ac1">&gt;&gt;</span> h <span style="color:#ff6ac1">&gt;&gt;</span> w;
-  vector<span style="color:#ff6ac1">&lt;</span>string<span style="color:#ff6ac1">&gt;</span> grid(h);
-  rep(i, h) cin <span style="color:#ff6ac1">&gt;&gt;</span> grid[i];
-  priority_queue<span style="color:#ff6ac1">&lt;</span>pair<span style="color:#ff6ac1">&lt;</span><span style="color:#9aedfe">int</span>, pair<span style="color:#ff6ac1">&lt;</span><span style="color:#9aedfe">int</span>, <span style="color:#9aedfe">int</span><span style="color:#ff6ac1">&gt;&gt;</span>, vector<span style="color:#ff6ac1">&lt;</span>pair<span style="color:#ff6ac1">&lt;</span><span style="color:#9aedfe">int</span>, pair<span style="color:#ff6ac1">&lt;</span><span style="color:#9aedfe">int</span>, <span style="color:#9aedfe">int</span><span style="color:#ff6ac1">&gt;&gt;&gt;</span>,
-                 greater<span style="color:#ff6ac1">&lt;</span>pair<span style="color:#ff6ac1">&lt;</span><span style="color:#9aedfe">int</span>, pair<span style="color:#ff6ac1">&lt;</span><span style="color:#9aedfe">int</span>, <span style="color:#9aedfe">int</span><span style="color:#ff6ac1">&gt;&gt;&gt;&gt;</span>
-      que;
-  vector<span style="color:#ff6ac1">&lt;</span>vector<span style="color:#ff6ac1">&lt;</span><span style="color:#9aedfe">int</span><span style="color:#ff6ac1">&gt;&gt;</span> d(h, vector<span style="color:#ff6ac1">&lt;</span><span style="color:#9aedfe">int</span><span style="color:#ff6ac1">&gt;</span>(w, <span style="color:#ff9f43">1</span> <span style="color:#ff6ac1">&lt;&lt;</span> <span style="color:#ff9f43">28</span>));
-  <span style="color:#9aedfe">int</span> goal_r, goal_c;
-  rep(i, h) {
-    rep(j, w) {
-      <span style="color:#ff6ac1">if</span> (grid[i][j] <span style="color:#ff6ac1">==</span> <span style="color:#5af78e">&#39;s&#39;</span>) {
-        d[i][j] <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>;
-        que.push({<span style="color:#ff9f43">0</span>, {i, j}});
-      }
-      <span style="color:#ff6ac1">if</span> (grid[i][j] <span style="color:#ff6ac1">==</span> <span style="color:#5af78e">&#39;g&#39;</span>) {
-        goal_r <span style="color:#ff6ac1">=</span> i;
-        goal_c <span style="color:#ff6ac1">=</span> j;
-      }
-    }
-  }
-  <span style="color:#9aedfe">int</span> mx <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">500</span> <span style="color:#ff6ac1">*</span> <span style="color:#ff9f43">500</span> <span style="color:#ff6ac1">+</span> <span style="color:#ff9f43">1</span>;
-  <span style="color:#ff6ac1">while</span> (que.size()) {
-    <span style="color:#ff6ac1">auto</span> [cost, pos] <span style="color:#ff6ac1">=</span> que.top();
-    que.pop();
-    <span style="color:#ff6ac1">auto</span> [row, col] <span style="color:#ff6ac1">=</span> pos;
-    <span style="color:#ff6ac1">if</span> (d[row][col] <span style="color:#ff6ac1">&lt;</span> cost)
-      <span style="color:#ff6ac1">continue</span>;
-
-    vector<span style="color:#ff6ac1">&lt;</span>pair<span style="color:#ff6ac1">&lt;</span><span style="color:#9aedfe">int</span>, <span style="color:#9aedfe">int</span><span style="color:#ff6ac1">&gt;&gt;</span> neighbors <span style="color:#ff6ac1">=</span> {{<span style="color:#ff6ac1">-</span><span style="color:#ff9f43">1</span>, <span style="color:#ff9f43">0</span>}, {<span style="color:#ff9f43">0</span>, <span style="color:#ff9f43">1</span>}, {<span style="color:#ff9f43">1</span>, <span style="color:#ff9f43">0</span>}, {<span style="color:#ff9f43">0</span>, <span style="color:#ff6ac1">-</span><span style="color:#ff9f43">1</span>}};
-    <span style="color:#ff6ac1">for</span> (<span style="color:#ff6ac1">auto</span> [d_row, d_col] <span style="color:#ff6ac1">:</span> neighbors) {
-      <span style="color:#9aedfe">int</span> next_row <span style="color:#ff6ac1">=</span> row <span style="color:#ff6ac1">+</span> d_row, next_col <span style="color:#ff6ac1">=</span> col <span style="color:#ff6ac1">+</span> d_col;
-
-      <span style="color:#ff6ac1">if</span> (<span style="color:#ff9f43">0</span> <span style="color:#ff6ac1">&lt;=</span> next_row <span style="color:#ff6ac1">&amp;&amp;</span> next_row <span style="color:#ff6ac1">&lt;</span> h <span style="color:#ff6ac1">&amp;&amp;</span> <span style="color:#ff9f43">0</span> <span style="color:#ff6ac1">&lt;=</span> next_col <span style="color:#ff6ac1">&amp;&amp;</span> next_col <span style="color:#ff6ac1">&lt;</span> w) {
-        <span style="color:#9aedfe">int</span> d_cost;
-        <span style="color:#ff6ac1">if</span> (grid[next_row][next_col] <span style="color:#ff6ac1">!=</span> <span style="color:#5af78e">&#39;#&#39;</span>)
-          d_cost <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">1</span>;
-        <span style="color:#ff6ac1">else</span>
-          d_cost <span style="color:#ff6ac1">=</span> mx;
-
-        <span style="color:#ff6ac1">if</span> (cost <span style="color:#ff6ac1">+</span> d_cost <span style="color:#ff6ac1">&lt;</span> d[next_row][next_col]) {
-          d[next_row][next_col] <span style="color:#ff6ac1">=</span> cost <span style="color:#ff6ac1">+</span> d_cost;
-          que.push({cost <span style="color:#ff6ac1">+</span> d_cost, {next_row, next_col}});
-        }
-      }
-    }
-  }
-
-  <span style="color:#ff6ac1">if</span> (d[goal_r][goal_c] <span style="color:#ff6ac1">&lt;</span> mx <span style="color:#ff6ac1">*</span> <span style="color:#ff9f43">3</span>)
-    cout <span style="color:#ff6ac1">&lt;&lt;</span> <span style="color:#5af78e">&#34;YES&#34;</span>;
-  <span style="color:#ff6ac1">else</span>
-    cout <span style="color:#ff6ac1">&lt;&lt;</span> <span style="color:#5af78e">&#34;NO&#34;</span>;
-  cout <span style="color:#ff6ac1">&lt;&lt;</span> endl;
-  <span style="color:#ff6ac1">return</span> <span style="color:#ff9f43">0</span>;
-}
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#78787e">#include</span> <span style="color:#78787e">&lt;bits/stdc++.h&gt;</span><span style="color:#78787e">
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#ff6ac1">using</span> <span style="color:#ff6ac1">namespace</span> std;
+</span></span><span style="display:flex;"><span><span style="color:#78787e">#define rep(i, n) for (int i = 0; i &lt; (int)(n); i++)
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#9aedfe">int</span> <span style="color:#57c7ff">main</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#9aedfe">int</span> h, w;
+</span></span><span style="display:flex;"><span>  cin <span style="color:#ff6ac1">&gt;&gt;</span> h <span style="color:#ff6ac1">&gt;&gt;</span> w;
+</span></span><span style="display:flex;"><span>  vector<span style="color:#ff6ac1">&lt;</span>string<span style="color:#ff6ac1">&gt;</span> grid(h);
+</span></span><span style="display:flex;"><span>  rep(i, h) cin <span style="color:#ff6ac1">&gt;&gt;</span> grid[i];
+</span></span><span style="display:flex;"><span>  priority_queue<span style="color:#ff6ac1">&lt;</span>pair<span style="color:#ff6ac1">&lt;</span><span style="color:#9aedfe">int</span>, pair<span style="color:#ff6ac1">&lt;</span><span style="color:#9aedfe">int</span>, <span style="color:#9aedfe">int</span><span style="color:#ff6ac1">&gt;&gt;</span>, vector<span style="color:#ff6ac1">&lt;</span>pair<span style="color:#ff6ac1">&lt;</span><span style="color:#9aedfe">int</span>, pair<span style="color:#ff6ac1">&lt;</span><span style="color:#9aedfe">int</span>, <span style="color:#9aedfe">int</span><span style="color:#ff6ac1">&gt;&gt;&gt;</span>,
+</span></span><span style="display:flex;"><span>                 greater<span style="color:#ff6ac1">&lt;</span>pair<span style="color:#ff6ac1">&lt;</span><span style="color:#9aedfe">int</span>, pair<span style="color:#ff6ac1">&lt;</span><span style="color:#9aedfe">int</span>, <span style="color:#9aedfe">int</span><span style="color:#ff6ac1">&gt;&gt;&gt;&gt;</span>
+</span></span><span style="display:flex;"><span>      que;
+</span></span><span style="display:flex;"><span>  vector<span style="color:#ff6ac1">&lt;</span>vector<span style="color:#ff6ac1">&lt;</span><span style="color:#9aedfe">int</span><span style="color:#ff6ac1">&gt;&gt;</span> d(h, vector<span style="color:#ff6ac1">&lt;</span><span style="color:#9aedfe">int</span><span style="color:#ff6ac1">&gt;</span>(w, <span style="color:#ff9f43">1</span> <span style="color:#ff6ac1">&lt;&lt;</span> <span style="color:#ff9f43">28</span>));
+</span></span><span style="display:flex;"><span>  <span style="color:#9aedfe">int</span> goal_r, goal_c;
+</span></span><span style="display:flex;"><span>  rep(i, h) {
+</span></span><span style="display:flex;"><span>    rep(j, w) {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff6ac1">if</span> (grid[i][j] <span style="color:#ff6ac1">==</span> <span style="color:#5af78e">&#39;s&#39;</span>) {
+</span></span><span style="display:flex;"><span>        d[i][j] <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>;
+</span></span><span style="display:flex;"><span>        que.push({<span style="color:#ff9f43">0</span>, {i, j}});
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      <span style="color:#ff6ac1">if</span> (grid[i][j] <span style="color:#ff6ac1">==</span> <span style="color:#5af78e">&#39;g&#39;</span>) {
+</span></span><span style="display:flex;"><span>        goal_r <span style="color:#ff6ac1">=</span> i;
+</span></span><span style="display:flex;"><span>        goal_c <span style="color:#ff6ac1">=</span> j;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#9aedfe">int</span> mx <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">500</span> <span style="color:#ff6ac1">*</span> <span style="color:#ff9f43">500</span> <span style="color:#ff6ac1">+</span> <span style="color:#ff9f43">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#ff6ac1">while</span> (que.size()) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">auto</span> [cost, pos] <span style="color:#ff6ac1">=</span> que.top();
+</span></span><span style="display:flex;"><span>    que.pop();
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">auto</span> [row, col] <span style="color:#ff6ac1">=</span> pos;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">if</span> (d[row][col] <span style="color:#ff6ac1">&lt;</span> cost)
+</span></span><span style="display:flex;"><span>      <span style="color:#ff6ac1">continue</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    vector<span style="color:#ff6ac1">&lt;</span>pair<span style="color:#ff6ac1">&lt;</span><span style="color:#9aedfe">int</span>, <span style="color:#9aedfe">int</span><span style="color:#ff6ac1">&gt;&gt;</span> neighbors <span style="color:#ff6ac1">=</span> {{<span style="color:#ff6ac1">-</span><span style="color:#ff9f43">1</span>, <span style="color:#ff9f43">0</span>}, {<span style="color:#ff9f43">0</span>, <span style="color:#ff9f43">1</span>}, {<span style="color:#ff9f43">1</span>, <span style="color:#ff9f43">0</span>}, {<span style="color:#ff9f43">0</span>, <span style="color:#ff6ac1">-</span><span style="color:#ff9f43">1</span>}};
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">for</span> (<span style="color:#ff6ac1">auto</span> [d_row, d_col] <span style="color:#ff6ac1">:</span> neighbors) {
+</span></span><span style="display:flex;"><span>      <span style="color:#9aedfe">int</span> next_row <span style="color:#ff6ac1">=</span> row <span style="color:#ff6ac1">+</span> d_row, next_col <span style="color:#ff6ac1">=</span> col <span style="color:#ff6ac1">+</span> d_col;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#ff6ac1">if</span> (<span style="color:#ff9f43">0</span> <span style="color:#ff6ac1">&lt;=</span> next_row <span style="color:#ff6ac1">&amp;&amp;</span> next_row <span style="color:#ff6ac1">&lt;</span> h <span style="color:#ff6ac1">&amp;&amp;</span> <span style="color:#ff9f43">0</span> <span style="color:#ff6ac1">&lt;=</span> next_col <span style="color:#ff6ac1">&amp;&amp;</span> next_col <span style="color:#ff6ac1">&lt;</span> w) {
+</span></span><span style="display:flex;"><span>        <span style="color:#9aedfe">int</span> d_cost;
+</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">if</span> (grid[next_row][next_col] <span style="color:#ff6ac1">!=</span> <span style="color:#5af78e">&#39;#&#39;</span>)
+</span></span><span style="display:flex;"><span>          d_cost <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">1</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">else</span>
+</span></span><span style="display:flex;"><span>          d_cost <span style="color:#ff6ac1">=</span> mx;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">if</span> (cost <span style="color:#ff6ac1">+</span> d_cost <span style="color:#ff6ac1">&lt;</span> d[next_row][next_col]) {
+</span></span><span style="display:flex;"><span>          d[next_row][next_col] <span style="color:#ff6ac1">=</span> cost <span style="color:#ff6ac1">+</span> d_cost;
+</span></span><span style="display:flex;"><span>          que.push({cost <span style="color:#ff6ac1">+</span> d_cost, {next_row, next_col}});
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ff6ac1">if</span> (d[goal_r][goal_c] <span style="color:#ff6ac1">&lt;</span> mx <span style="color:#ff6ac1">*</span> <span style="color:#ff9f43">3</span>)
+</span></span><span style="display:flex;"><span>    cout <span style="color:#ff6ac1">&lt;&lt;</span> <span style="color:#5af78e">&#34;YES&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#ff6ac1">else</span>
+</span></span><span style="display:flex;"><span>    cout <span style="color:#ff6ac1">&lt;&lt;</span> <span style="color:#5af78e">&#34;NO&#34;</span>;
+</span></span><span style="display:flex;"><span>  cout <span style="color:#ff6ac1">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>  <span style="color:#ff6ac1">return</span> <span style="color:#ff9f43">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
   </div>
 </main>
 

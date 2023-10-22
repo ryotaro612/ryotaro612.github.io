@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.92.2" />
+	<meta name="generator" content="Hugo 0.118.2">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -63,6 +63,20 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/amazon_aurora/">論文メモ Amazon Aurora: Design Considerations for High Throughput Cloud-Native Relational Databases</a></h3>
+        <div class="summary"><p>AWSで提供されるRDBM, Amazon Auroraのアーキテクチャを解説した論文。
+分散システムをクラウドにおく場合、計算やIOはノードに分散され、ボトルネックではなくなる。
+そして、ボトルネックは、DBインスタンスとストレージ間のネットワークになる。
+この仮説もと、プライマリインスタンスが、別テナントのストレージに直接Redoログを送ることで、レプリカインスタンスとストレージ間の負荷を減らし、処理性能の向上をはかる。
+また、レプリケーションのために、MySQLがRedoログだけでなくバイナリログなど複数種類のログをスレーブに送るのに対し、AuroraはRedoログだけを転送する。
+これにより、リカバリや縮退、フェールオーバの性能も向上している。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">November 13, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/one_size_fit_all/">論文メモ &#34;One Size Fits All&#34;: An Idea Whose Time Has Come and Gone</a></h3>
         <div class="summary"><p>2011年に発表された論文で、これまでのようにDBMSを様々なデータ中心のアプリケーションに利用することがデータベース市場で受け入れられなくなったと主張する。
 データウェアハウスとストリーミング処理を例にとり、これらに特化したデータベースをDBMSで代用することの限界が説明されている。
@@ -114,7 +128,7 @@ Javaのバイトコードから以上の3パターンを検出するツールを
     <article>
         <h3><a href="https://nryotaro.dev/posts/from_diversity_by_numbers_to_diversity_as_process/">論文メモ From Diversity by Numbers to Diversity as Process</a></h3>
         <div class="summary">開発におけるブレーンストーミングが、マイノリティに属する開発者の満足度の向上に貢献することを実験的に示した。 ここでの開発は、ハッカソンのような短時間かつ集中が求められるものが想定されている。 満足度は、開発プロセスと成果物に対するもので分けて扱われ、どちらの観点でもブレーンストーミングは満足度に対してよい効果をもたらした。
-  論文をこちらからダウンロードできます。  </div>
+論文をこちらからダウンロードできます。 </div>
         <div class="article-footer">
 	  
           <span class="date">October 16, 2020</span>
@@ -161,17 +175,6 @@ Javaのバイトコードから以上の3パターンを検出するツールを
         <div class="article-footer">
 	  
           <span class="date">October 10, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/build_it_yourself/">論文メモ Build it yourself! Homegrown Tools in a Large Software Company</a></h3>
-        <div class="summary"><p>マイクロソフトにおいて、誰が(RQ1)、どんな(RQ2)自作ツールを、どのような動機(RQ3)で、いつ(RQ3)開発し、どのように普及するのか(RQ4)を調査した。
-調査結果では、大多数の開発者はツールを自作し、そのほとんどは所属するチームの外までは普及せす、ツールの使用者と共同開発者は一人以上いることが多かった。
-受容的な組織文化はツールの自作を促進し、また、自作ツールは組織に大きな影響をあたえる可能性があることを示唆している。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">October 2, 2020</span>
         </div>
     </article>
     

@@ -78,9 +78,9 @@
 先行する場合もあれば、前後関係がないこともある。
 <a href="http://www.vs.inf.ethz.ch/publ/papers/VirtTimeGlobStates.pdf">Virtual Time and Global States of Distributed Systems</a>は、各プロセスの時刻を、プロセス数とおなじ数の長さの配列で表現する。
 これにより、時刻の前後関係が定義されていることがイベント間に前後関係があることの必要十分条件であることを可能にした。</p>
-<p>イベント\(e\)が\(e'\)に先行する関係を\(&lt;\)と書くなら、Lamportのアルゴリズムは、イベントから時刻への関数を\(C\)として
+<p>イベント\(e\)が\(e&rsquo;\)に先行する関係を\(&lt;\)と書くなら、Lamportのアルゴリズムは、イベントから時刻への関数を\(C\)として
 $$
-e&lt;e' \rightarrow C(e) &lt; C(e')
+e&lt;e&rsquo; \rightarrow C(e) &lt; C(e&rsquo;)
 $$
 が成立するようにイベントに時刻を割りあてられる。
 イベントが発生すると、プロセス\(i\)の時刻\(C_i\)が増加する。
@@ -115,7 +115,7 @@ $$
 アルゴリズムの設計の応用例として、<a href="https://lamport.azurewebsites.net/pubs/chandy.pdf">Distributed Snapshots: Determining Global States of Distributed Systems</a>を提案手法で再実装する方針の説明がある。
 ただし、もとのアルゴリズムとの比較がない。
 デバッグに役立つと語るならば、デバッグの容易さを比較するべきだろう。</p>
-<p>また、デバッグとは別に、アルゴリズムの設計に役立つと主張するなら、Lamportの\(e&lt;e' \rightarrow C(e) &lt; C(e')\)が\(e&lt;e' \leftrightarrow C(e) &lt; C(e')\)になることで可能になるアルゴリズムがあることを主張すると説得力が増すだろうが、そのようなアルゴリズムの提案は論文中にはない。</p>
+<p>また、デバッグとは別に、アルゴリズムの設計に役立つと主張するなら、Lamportの\(e&lt;e&rsquo; \rightarrow C(e) &lt; C(e&rsquo;)\)が\(e&lt;e&rsquo; \leftrightarrow C(e) &lt; C(e&rsquo;)\)になることで可能になるアルゴリズムがあることを主張すると説得力が増すだろうが、そのようなアルゴリズムの提案は論文中にはない。</p>
   </div>
 </main>
 

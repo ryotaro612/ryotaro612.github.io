@@ -5,6 +5,7 @@
     <link>https://nryotaro.dev/tags/%E5%88%86%E9%A1%9E%E3%81%AE%E8%A9%95%E4%BE%A1/</link>
     <description>Recent content in 分類の評価 on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
     <lastBuildDate>Sat, 25 Aug 2018 00:56:13 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/tags/%E5%88%86%E9%A1%9E%E3%81%AE%E8%A9%95%E4%BE%A1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>メモ The Relationship Between Precision-Recall and ROC Curve</title>
@@ -13,7 +14,7 @@
       
       <guid>https://nryotaro.dev/posts/the_relationship_between_precision_recall_and_roc_curve/</guid>
       <description>ROCとPrecision Recallの関係を示した論文。
- 1 Recallが0でなければ、ROC曲線には一対一に対応するPR曲線がある。 2 PR曲線AがPR曲線Bに対して常に優位であることとは、ROC曲線においてAがBより常に優位であることの必要十分条件。 3 1,2よりROC空間上の凸包に対応するPR曲線は、他の妥当なPR曲線よりも優位な曲線になる。 4 線形補間でROC曲線を描くことは妥当。一方で、Recallの分母は固定値であるが、Precisionの分母の値はRecallが上がると増える。そのため、PR曲線を線形補間でプロットすると、評価の甘い曲線になる。   論文はこちらからダウンロードできます。</description>
+1 Recallが0でなければ、ROC曲線には一対一に対応するPR曲線がある。 2 PR曲線AがPR曲線Bに対して常に優位であることとは、ROC曲線においてAがBより常に優位であることの必要十分条件。 3 1,2よりROC空間上の凸包に対応するPR曲線は、他の妥当なPR曲線よりも優位な曲線になる。 4 線形補間でROC曲線を描くことは妥当。一方で、Recallの分母は固定値であるが、Precisionの分母の値はRecallが上がると増える。そのため、PR曲線を線形補間でプロットすると、評価の甘い曲線になる。 論文はこちらからダウンロードできます。</description>
     </item>
     
   </channel>

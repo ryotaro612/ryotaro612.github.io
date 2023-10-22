@@ -73,52 +73,52 @@
     <p>XとYは互いに干渉しないので、独立してX, Yを考えることができる。
 \(x_i, x_{i+1}\)の間に最適な\(X\)があるとすると、\(X\)の位置を\(x_i, x_{i+1}\)を境界として三分探索で求めることができる。
 これをすべての\(i\)について試行すればいい。</p>
-<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#78787e">#include</span> <span style="color:#78787e">&lt;bits/stdc++.h&gt;</span><span style="color:#78787e">
-</span><span style="color:#78787e"></span><span style="color:#ff6ac1">using</span> <span style="color:#ff6ac1">namespace</span> std;
-<span style="color:#ff6ac1">using</span> ld <span style="color:#ff6ac1">=</span> <span style="color:#9aedfe">long</span> <span style="color:#9aedfe">double</span>;
-<span style="color:#78787e">#define rep(i, n) for (int i = 0; i &lt; (int)(n); i++)
-</span><span style="color:#78787e"></span>
-ld <span style="color:#57c7ff">sub</span>(vector<span style="color:#ff6ac1">&lt;</span>ld<span style="color:#ff6ac1">&gt;</span> xv, vector<span style="color:#ff6ac1">&lt;</span>ld<span style="color:#ff6ac1">&gt;</span> cv) {
-  <span style="color:#9aedfe">int</span> n <span style="color:#ff6ac1">=</span> xv.size();
-  vector<span style="color:#ff6ac1">&lt;</span>pair<span style="color:#ff6ac1">&lt;</span>ld, ld<span style="color:#ff6ac1">&gt;&gt;</span> xcv(n);
-  rep(i, n) { xcv[i] <span style="color:#ff6ac1">=</span> {xv[i], cv[i]}; }
-  sort(xcv.begin(), xcv.end());
-  ld res <span style="color:#ff6ac1">=</span> numeric_limits<span style="color:#ff6ac1">&lt;</span>ld<span style="color:#ff6ac1">&gt;::</span>max();
-  <span style="color:#ff6ac1">for</span> (<span style="color:#9aedfe">int</span> i <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>; i <span style="color:#ff6ac1">&lt;</span> n <span style="color:#ff6ac1">-</span> <span style="color:#ff9f43">1</span>; i<span style="color:#ff6ac1">++</span>) {
-    ld lb <span style="color:#ff6ac1">=</span> xcv[i].first, ub <span style="color:#ff6ac1">=</span> xcv[i <span style="color:#ff6ac1">+</span> <span style="color:#ff9f43">1</span>].first;
-
-    <span style="color:#ff6ac1">while</span> (ub <span style="color:#ff6ac1">-</span> lb <span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">0.00000000001</span>) {
-      ld lmid <span style="color:#ff6ac1">=</span> (<span style="color:#ff9f43">2.0</span> <span style="color:#ff6ac1">*</span> lb <span style="color:#ff6ac1">+</span> ub) <span style="color:#ff6ac1">/</span> <span style="color:#ff9f43">3.0</span>;
-      ld rmid <span style="color:#ff6ac1">=</span> (lb <span style="color:#ff6ac1">+</span> <span style="color:#ff9f43">2.0</span> <span style="color:#ff6ac1">*</span> ub) <span style="color:#ff6ac1">/</span> <span style="color:#ff9f43">3.0</span>;
-      ld time_l <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>, time_r <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>;
-      rep(j, n) {
-        time_l <span style="color:#ff6ac1">=</span> max(time_l, abs(xcv[j].first <span style="color:#ff6ac1">-</span> lmid) <span style="color:#ff6ac1">*</span> xcv[j].second);
-        time_r <span style="color:#ff6ac1">=</span> max(time_r, abs(xcv[j].first <span style="color:#ff6ac1">-</span> rmid) <span style="color:#ff6ac1">*</span> xcv[j].second);
-      }
-      <span style="color:#ff6ac1">if</span> (time_l <span style="color:#ff6ac1">&lt;</span> time_r)
-        ub <span style="color:#ff6ac1">=</span> rmid;
-      <span style="color:#ff6ac1">else</span>
-        lb <span style="color:#ff6ac1">=</span> lmid;
-    }
-    ld temp <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>;
-    rep(j, n) { temp <span style="color:#ff6ac1">=</span> max(temp, abs(xcv[j].first <span style="color:#ff6ac1">-</span> lb) <span style="color:#ff6ac1">*</span> xcv[j].second); }
-    res <span style="color:#ff6ac1">=</span> min(res, temp);
-  }
-  <span style="color:#ff6ac1">return</span> res;
-}
-
-<span style="color:#78787e">#ifdef ONLINE_JUDGE
-</span><span style="color:#78787e"></span><span style="color:#9aedfe">int</span> <span style="color:#57c7ff">main</span>() {
-  <span style="color:#9aedfe">int</span> n;
-  cin <span style="color:#ff6ac1">&gt;&gt;</span> n;
-  vector<span style="color:#ff6ac1">&lt;</span>ld<span style="color:#ff6ac1">&gt;</span> xv(n), yv(n), cv(n);
-  rep(i, n) cin <span style="color:#ff6ac1">&gt;&gt;</span> xv[i] <span style="color:#ff6ac1">&gt;&gt;</span> yv[i] <span style="color:#ff6ac1">&gt;&gt;</span> cv[i];
-
-  cout <span style="color:#ff6ac1">&lt;&lt;</span> fixed <span style="color:#ff6ac1">&lt;&lt;</span> setprecision(<span style="color:#ff9f43">12</span>) <span style="color:#ff6ac1">&lt;&lt;</span> max(sub(xv, cv), sub(yv, cv)) <span style="color:#ff6ac1">&lt;&lt;</span> endl;
-  <span style="color:#ff6ac1">return</span> <span style="color:#ff9f43">0</span>;
-}
-<span style="color:#78787e">#endif
-</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#78787e">#include</span> <span style="color:#78787e">&lt;bits/stdc++.h&gt;</span><span style="color:#78787e">
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#ff6ac1">using</span> <span style="color:#ff6ac1">namespace</span> std;
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">using</span> ld <span style="color:#ff6ac1">=</span> <span style="color:#9aedfe">long</span> <span style="color:#9aedfe">double</span>;
+</span></span><span style="display:flex;"><span><span style="color:#78787e">#define rep(i, n) for (int i = 0; i &lt; (int)(n); i++)
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span>
+</span></span><span style="display:flex;"><span>ld <span style="color:#57c7ff">sub</span>(vector<span style="color:#ff6ac1">&lt;</span>ld<span style="color:#ff6ac1">&gt;</span> xv, vector<span style="color:#ff6ac1">&lt;</span>ld<span style="color:#ff6ac1">&gt;</span> cv) {
+</span></span><span style="display:flex;"><span>  <span style="color:#9aedfe">int</span> n <span style="color:#ff6ac1">=</span> xv.size();
+</span></span><span style="display:flex;"><span>  vector<span style="color:#ff6ac1">&lt;</span>pair<span style="color:#ff6ac1">&lt;</span>ld, ld<span style="color:#ff6ac1">&gt;&gt;</span> xcv(n);
+</span></span><span style="display:flex;"><span>  rep(i, n) { xcv[i] <span style="color:#ff6ac1">=</span> {xv[i], cv[i]}; }
+</span></span><span style="display:flex;"><span>  sort(xcv.begin(), xcv.end());
+</span></span><span style="display:flex;"><span>  ld res <span style="color:#ff6ac1">=</span> numeric_limits<span style="color:#ff6ac1">&lt;</span>ld<span style="color:#ff6ac1">&gt;::</span>max();
+</span></span><span style="display:flex;"><span>  <span style="color:#ff6ac1">for</span> (<span style="color:#9aedfe">int</span> i <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>; i <span style="color:#ff6ac1">&lt;</span> n <span style="color:#ff6ac1">-</span> <span style="color:#ff9f43">1</span>; i<span style="color:#ff6ac1">++</span>) {
+</span></span><span style="display:flex;"><span>    ld lb <span style="color:#ff6ac1">=</span> xcv[i].first, ub <span style="color:#ff6ac1">=</span> xcv[i <span style="color:#ff6ac1">+</span> <span style="color:#ff9f43">1</span>].first;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">while</span> (ub <span style="color:#ff6ac1">-</span> lb <span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">0.00000000001</span>) {
+</span></span><span style="display:flex;"><span>      ld lmid <span style="color:#ff6ac1">=</span> (<span style="color:#ff9f43">2.0</span> <span style="color:#ff6ac1">*</span> lb <span style="color:#ff6ac1">+</span> ub) <span style="color:#ff6ac1">/</span> <span style="color:#ff9f43">3.0</span>;
+</span></span><span style="display:flex;"><span>      ld rmid <span style="color:#ff6ac1">=</span> (lb <span style="color:#ff6ac1">+</span> <span style="color:#ff9f43">2.0</span> <span style="color:#ff6ac1">*</span> ub) <span style="color:#ff6ac1">/</span> <span style="color:#ff9f43">3.0</span>;
+</span></span><span style="display:flex;"><span>      ld time_l <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>, time_r <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>;
+</span></span><span style="display:flex;"><span>      rep(j, n) {
+</span></span><span style="display:flex;"><span>        time_l <span style="color:#ff6ac1">=</span> max(time_l, abs(xcv[j].first <span style="color:#ff6ac1">-</span> lmid) <span style="color:#ff6ac1">*</span> xcv[j].second);
+</span></span><span style="display:flex;"><span>        time_r <span style="color:#ff6ac1">=</span> max(time_r, abs(xcv[j].first <span style="color:#ff6ac1">-</span> rmid) <span style="color:#ff6ac1">*</span> xcv[j].second);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      <span style="color:#ff6ac1">if</span> (time_l <span style="color:#ff6ac1">&lt;</span> time_r)
+</span></span><span style="display:flex;"><span>        ub <span style="color:#ff6ac1">=</span> rmid;
+</span></span><span style="display:flex;"><span>      <span style="color:#ff6ac1">else</span>
+</span></span><span style="display:flex;"><span>        lb <span style="color:#ff6ac1">=</span> lmid;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    ld temp <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>;
+</span></span><span style="display:flex;"><span>    rep(j, n) { temp <span style="color:#ff6ac1">=</span> max(temp, abs(xcv[j].first <span style="color:#ff6ac1">-</span> lb) <span style="color:#ff6ac1">*</span> xcv[j].second); }
+</span></span><span style="display:flex;"><span>    res <span style="color:#ff6ac1">=</span> min(res, temp);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#ff6ac1">return</span> res;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#78787e">#ifdef ONLINE_JUDGE
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#9aedfe">int</span> <span style="color:#57c7ff">main</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#9aedfe">int</span> n;
+</span></span><span style="display:flex;"><span>  cin <span style="color:#ff6ac1">&gt;&gt;</span> n;
+</span></span><span style="display:flex;"><span>  vector<span style="color:#ff6ac1">&lt;</span>ld<span style="color:#ff6ac1">&gt;</span> xv(n), yv(n), cv(n);
+</span></span><span style="display:flex;"><span>  rep(i, n) cin <span style="color:#ff6ac1">&gt;&gt;</span> xv[i] <span style="color:#ff6ac1">&gt;&gt;</span> yv[i] <span style="color:#ff6ac1">&gt;&gt;</span> cv[i];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  cout <span style="color:#ff6ac1">&lt;&lt;</span> fixed <span style="color:#ff6ac1">&lt;&lt;</span> setprecision(<span style="color:#ff9f43">12</span>) <span style="color:#ff6ac1">&lt;&lt;</span> max(sub(xv, cv), sub(yv, cv)) <span style="color:#ff6ac1">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>  <span style="color:#ff6ac1">return</span> <span style="color:#ff9f43">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#78787e">#endif
+</span></span></span></code></pre></div>
   </div>
 </main>
 

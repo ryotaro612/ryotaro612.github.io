@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Activation function on Blanket</title>
+    <link>https://nryotaro.dev/en/tags/activation-function/</link>
+    <description>Recent content in Activation function on Blanket</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 21 Oct 2023 10:00:49 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/en/tags/activation-function/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GAUSSIAN ERROR LINEAR UNITS(GELUs) 2016</title>
+      <link>https://nryotaro.dev/en/posts/gaussian_error_linear_units/</link>
+      <pubDate>Sat, 21 Oct 2023 10:00:49 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/en/posts/gaussian_error_linear_units/</guid>
+      <description>&lt;p&gt;The Gaussian Error Linear Unit (GELU), a neural network activation function,is \(x\Phi(s)\), where \(\Phi(x)\) the standard Gaussian cumulative distribution function.
+GELUs have properties of Dropout, &lt;a href=&#34;https://openreview.net/pdf?id=rJqBEPcxe&#34;&gt;Zoneout&lt;/a&gt;, and ReLUs.
+Zoneout is a method for regularizing RNNs, and stochastically forces some hidden units to maintain their previous values.
+ReLUs introduce nonlinearity to neural networks.
+Dropout is a regularizer.
+GELUs merge the both functionalities by multipling the neuron input \(x\) by \(m \sim \text{Bernoulli}(\Phi (x))\) , where \(\Phi(x)=P(X\le x), X\sim \mathcal{N}(0, 1)\).
+GELU is the expected transformation on an input \(x\), which is \(\Phi(x) \times Ix + (1-\Phi(x))\times 0x = x\Phi(x)\)&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

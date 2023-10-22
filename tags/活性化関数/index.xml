@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>活性化関数 on Blanket</title>
+    <link>https://nryotaro.dev/tags/%E6%B4%BB%E6%80%A7%E5%8C%96%E9%96%A2%E6%95%B0/</link>
+    <description>Recent content in 活性化関数 on Blanket</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sat, 21 Oct 2023 10:00:49 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/tags/%E6%B4%BB%E6%80%A7%E5%8C%96%E9%96%A2%E6%95%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GAUSSIAN ERROR LINEAR UNITS(GELUs) 2016</title>
+      <link>https://nryotaro.dev/posts/gaussian_error_linear_units/</link>
+      <pubDate>Sat, 21 Oct 2023 10:00:49 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/gaussian_error_linear_units/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1606.08415&#34;&gt;GAUSSIAN ERROR LINEAR UNITS(GELUs)&lt;/a&gt;は、標準正規分布の累積分布関数を\(\Phi(x)\)とおくと、\(\text{GELU}(x)=x\Phi(x)\)で定義される活性化関数である。
+GELUsは、Dropout, &lt;a href=&#34;https://openreview.net/pdf?id=rJqBEPcxe&#34;&gt;Zoneout&lt;/a&gt;, \(\text{ReLU}(x)=\max(0, x)\)の性質を兼ね備える。
+Zoneoutは、RNNむけの正則化であり、ユニットが一つ前の状態を確率的に維持するしくみである。
+ReLUは、非線形性により、ニューラルネットワークを非線形関数に近似できる。
+ZoneoutやDropoutは正則化の役割をはたす。
+ReLUsの出力が入力に依存する一方で、Dropoutの出力は入力に依存しない。
+GELUsは、確率\(\Phi(x)\)で1をとるベルヌーイ分布にしたがう0-1マスクを人工ニューロンへの入力に適用することで、非線形関数への近似と正則化の両方を実現する。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

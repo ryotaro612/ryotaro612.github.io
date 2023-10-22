@@ -87,7 +87,7 @@ theは、参照訳に含まれるものの、過剰に生成された単語the�
 </ul>
 <p>翻訳された文書全体のnグラムの適合率\(p_n\)を計算する場合、文書に含まれる候補訳の集合を\(Candidates\)として次の計算で\(P_n\)を計算する。</p>
 <p>$$
-p_n=\frac{\sum_{C\in\{Candidates\}}\sum_{\text{n-gram}\in C}Count_{clip}(\text{n-gram})}{\sum_{C'\in \{Candidates\}}\sum_{\text{n-gram}'\in C'}Count(\text{n-gram}')}
+p_n=\frac{\sum_{C\in\{Candidates\}}\sum_{\text{n-gram}\in C}Count_{clip}(\text{n-gram})}{\sum_{C&rsquo;\in \{Candidates\}}\sum_{\text{n-gram}&rsquo;\in C&rsquo;}Count(\text{n-gram}&rsquo;)}
 $$</p>
 <h3 id="短い候補訳へのペナルティ">短い候補訳へのペナルティ</h3>
 <p>Medified n-gram precisionは短い候補訳に高いスコアを与えるため、文の短さについてもペナルティを課す必要がある。

@@ -5,6 +5,7 @@
     <link>https://nryotaro.dev/tags/%E6%BD%9C%E5%9C%A8%E6%84%8F%E5%91%B3%E8%A7%A3%E6%9E%90/</link>
     <description>Recent content in 潜在意味解析 on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
     <lastBuildDate>Sat, 04 Mar 2023 18:27:24 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/tags/%E6%BD%9C%E5%9C%A8%E6%84%8F%E5%91%B3%E8%A7%A3%E6%9E%90/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>抄訳 Indexing by Latent Semantic Analysis (1990)</title>
@@ -16,7 +17,7 @@
 文書を、単語の出現回数が成分の列ベクトルとしてあつかう。
 その列ベクトルからなる文書集合の行列に特異値分解(Singular Value Decomposition, SVD)を適用する。
 大きい順に\(k\)個の特異値とその特異ベクトルを選んで、低ランクの行列をつくり、もとの行列を近似する。
-単語の数が\(t\), 文書数が\(d\)のとき、低ランクの行列の左特異ベクトルの行列\(T\)と右特異ベクトルの転置行列\(D&#39;\)のサイズは、それぞれ、\(t\times k\), \(k \times d\)になる。&lt;/p&gt;</description>
+単語の数が\(t\), 文書数が\(d\)のとき、低ランクの行列の左特異ベクトルの行列\(T\)と右特異ベクトルの転置行列\(D&amp;rsquo;\)のサイズは、それぞれ、\(t\times k\), \(k \times d\)になる。&lt;/p&gt;</description>
     </item>
     
   </channel>
