@@ -8,12 +8,12 @@
     <language>ja</language>
     <lastBuildDate>Sat, 21 Oct 2023 10:00:49 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>GAUSSIAN ERROR LINEAR UNITS(GELUs) 2016</title>
+      <title>GAUSSIAN ERROR LINEAR UNITS (GELUs) 2016</title>
       <link>https://nryotaro.dev/posts/gaussian_error_linear_units/</link>
       <pubDate>Sat, 21 Oct 2023 10:00:49 -0400</pubDate>
       
       <guid>https://nryotaro.dev/posts/gaussian_error_linear_units/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1606.08415&#34;&gt;GAUSSIAN ERROR LINEAR UNITS(GELUs)&lt;/a&gt;は、標準正規分布の累積分布関数を\(\Phi(x)\)とおくと、\(\text{GELU}(x)=x\Phi(x)\)で定義される活性化関数である。
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1606.08415&#34;&gt;GAUSSIAN ERROR LINEAR UNITS (GELUs)&lt;/a&gt;は、標準正規分布の累積分布関数を\(\Phi(x)\)とおくと、\(\text{GELU}(x)=x\Phi(x)\)で定義される活性化関数である。
 GELUsは、Dropout, &lt;a href=&#34;https://openreview.net/pdf?id=rJqBEPcxe&#34;&gt;Zoneout&lt;/a&gt;, \(\text{ReLU}(x)=\max(0, x)\)の性質を兼ね備える。
 Zoneoutは、RNNむけの正則化であり、ユニットが一つ前の状態を確率的に維持するしくみである。
 ReLUは、非線形性により、ニューラルネットワークを非線形関数に近似できる。

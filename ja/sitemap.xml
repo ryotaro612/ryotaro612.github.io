@@ -70,18 +70,8 @@
                 href="https://nryotaro.dev/posts/a_design_methodology_for_reliable_software_systems/"
                 />
   </url><url>
-    <loc>https://nryotaro.dev/tags/structured-programming/</loc>
+    <loc>https://nryotaro.dev/tags/%E6%A7%8B%E9%80%A0%E5%8C%96%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/</loc>
     <lastmod>2023-10-08T09:38:50-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/tags/structured-programming/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/tags/structured-programming/"
-                />
   </url><url>
     <loc>https://nryotaro.dev/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/</loc>
     <lastmod>2023-10-07T10:28:13-04:00</lastmod>
