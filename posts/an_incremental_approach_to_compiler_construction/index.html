@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>An Incremental Approach to Compiler Construction (2006)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://nryotaro.dev/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://nryotaro.dev/about">About</a></li>
+          <li><a href="https://nryotaro.dev/posts">Posts</a></li>
+          <li><a href="https://nryotaro.dev/tags">Tags</a></li>
+	  
+	  <li><a href="https://nryotaro.dev/en/posts/an_incremental_approach_to_compiler_construction/">en</a></li>
+	  
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>An Incremental Approach to Compiler Construction (2006)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9/">
+	#コンパイラ
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">October 23, 2023</span>    
+  <div>
+    <p><a href="http://scheme2006.cs.uchicago.edu/11-ghuloum.pdf">An Incremental Approach to Compiler Construction</a>は、コンパイラの学習を目的としたSchemeのコンパイラの実装方法の解説である。
+コンパイラの実装に使用する言語もSchemeであり、コンパイラは、Intel-x86のアセンブリコードを出力する。
+プログラマが普段使用しているコンパイラは、教育用の教材としてのコンパイラと比べて複雑であり、学習には向かない。
+この商用と学習用のコンパイラの溝を埋めるために、Schemeの仕様の大部分を満たす規模のコンパイラの実装例が示されている。
+実装手順は24ステップからなり、最後のステップまで実装しなくても、各ステップにある実装を完了すれば、コンパイラが正常に動作するように実装することができる。</p>
+<p>実装するコンパイラは、引数<code>x</code>で渡されたSchemeのコードのアセブリ言語のステップを関数<code>emit</code>で出力する関数<code>compile-program</code>である。
+アセンブリコードは、Cから関数として呼びだせる。
+C言語の呼出元が返り値の型を判定できるように、アセンブリコードは、下位ビットに型情報をふくめた値を返す。
+最下位2ビットが<code>00</code>であれば、fixnum, <code>00001111</code>であれば文字, <code>0011111</code>であれば真偽値, <code>00101111</code>は空のリストであること意味する。
+以下のコードは、<code>x</code>が整数であれば、整数を2ビット左シフトした値をEAXレジスタに格納する。</p>
+<pre><code> (define (compile-program x)
+   (define (immediate-rep x)
+     (cond
+       ((integer? x) (shift x fixnum-shift))
+       ...))
+   (emit &quot;movl $~a, %eax&quot; (immediate-rep x))
+   (emit &quot;ret&quot;))
+</code></pre>
+<p>また、以下は、返り値の型ごとに処理を分岐するCの実装である。</p>
+<pre><code> #include &lt;stdio.h&gt;
+ #define fixnum_mask  3
+ #define fixnum_tag   0
+ #define fixnum_shift 2
+  ...
+ int main(int argc, char** argv){
+   int val = scheme_entry();
+   if((val &amp; fixnum_mask) == fixnum_tag){
+     printf(&quot;%d\n&quot;, val &gt;&gt; fixnum_shift);
+   } else if(val == empty_list){
+     printf(&quot;()\n&quot;);
+   } ...
+   return 0;
+ }
+</code></pre>
+<p>let式の束縛変数はスタックのインデックスにコンパイルされ、インデックスの示すスタックの位置に変数の値が格納される。
+以下の関数は、<code>si</code>がスタックのインデックス、<code>rhs</code>と<code>lhs</code>がそれぞれ値と変数をとりだす関数として、let式をコンパイルする。</p>
+<pre><code>(define (emit-expr x si env)
+  (cond
+    ((immediate? x) ...)
+    ((variable? x)
+     (emit &quot;movl ~a(%esp), %eax&quot; (lookup x env)))
+    ((let? x)
+     (emit-let (bindings x) (body x) si env))
+    ...))
+	
+(define (emit-let bindings body si env)
+  (let f ((b* bindings) (new-env env) (si si))
+    (cond
+      ((null? b*) (emit-expr body si new-env))
+      (else
+        (let ((b (car b*)))
+          (emit-expr (rhs b) si env)
+          (emit &quot;movl %eax, ~a(%esp)&quot; si)
+          (f (cdr b*)
+             (extend-env (lhs b) si new-env)
+		     (- si wordsize)))))))
+</code></pre>
+<p>ペア、ベクタ、文字列などの1つのマシンワードで保存できないデータは、ヒープに保存される。
+fixnumと同様に、下位3ビットでデータの型を保存し、下位3ビットが0になる8の倍数から始まるヒープ上の空間にデータを保存する。
+以下は、ペアを<code>001</code>ビットで表現し、ヒープのアドレスをESIレジスタで指定する<code>(cons 10 20)</code>を保存するアセンブリコードである。</p>
+<pre><code>movl  $40,  0(%esi)
+movl  $80,  4(%esi)
+movl  %esi, %eax
+orl   $1,   %eax
+addl  $8,   %esi
+</code></pre>
+<p><code>compile-program</code>が受理できる関数の構文を導入する。
+以下の<code>lvar</code>は関数名、<code>code</code>は関数の本体に対応する。</p>
+<pre><code>&lt;Prog&gt;  ::= (labels ((lvar &lt;LExpr&gt;) ...) &lt;Expr&gt;)
+&lt;LExpr&gt; ::= (code (var ...) &lt;Expr&gt;)
+&lt;Expr&gt;  ::= immediate
+          | var
+          | (let ((var &lt;Expr&gt;) ...) &lt;Expr&gt;)
+</code></pre>
+<p>コンパイラは、まず、<code>lvar</code>ごとにユーニークなラベルを出力し、<code>let</code>式のコンパイルの実装にある<code>env</code>のような環境をラベルごとに用意する。
+次に以下の図のようにリターンアドレス、ローカルアドレス、実引数をスタック上に配置する。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><img src="/an_incremental_approach_to_compiler_construction.png" alt="fig"></p>
+<p>論文中より図を引用しました。</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/gaussian_error_linear_units/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="https://nryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

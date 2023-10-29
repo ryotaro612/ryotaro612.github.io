@@ -333,5 +333,19 @@
                 hreflang="en"
                 href="https://nryotaro.dev/en/about/"
                 />
+  </url><url>
+    <loc>https://nryotaro.dev/en/posts/an_incremental_approach_to_compiler_construction/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/an_incremental_approach_to_compiler_construction/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/an_incremental_approach_to_compiler_construction/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/en/tags/compiler/</loc>
   </url>
 </urlset>

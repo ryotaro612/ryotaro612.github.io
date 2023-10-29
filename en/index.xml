@@ -171,5 +171,19 @@ In addition, for sufficiently long access sequences, splay trees are as efficien
       <description>Disclaimer All the information on this website is published in good faith and for general information purpose only. This website does not make any warranties about the completeness, reliability and accuracy of this information. Any action you take upon the information you find on this website, is strictly at your own risk. Ryotaro Nakamura will not be liable for any losses and/or damages in connection with the use of this website.</description>
     </item>
     
+    <item>
+      <title>An Incremental Approach to Compiler Construction (2006)</title>
+      <link>https://nryotaro.dev/en/posts/an_incremental_approach_to_compiler_construction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://nryotaro.dev/en/posts/an_incremental_approach_to_compiler_construction/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://scheme2006.cs.uchicago.edu/11-ghuloum.pdf&#34;&gt;An Incremental Approach to Compiler Construction&lt;/a&gt; shows an incremental approach to build a compiler that accepts a large subset of the Scheme programming language.
+The compiler produces assembly code for the Intel-X86 architecture.
+Because real-life compilers are too complex to serve as an educational tool, the gap between real-life compilers and the educational toy compilers is too wide.&lt;/p&gt;
+&lt;p&gt;The goal of the paper is to break the barrier.
+The development of the compiler is broken down into 24 incremental steps.
+Every step yields a fully working compiler for progressively expanding a subset of Scheme.&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

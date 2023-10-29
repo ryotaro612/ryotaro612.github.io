@@ -6,7 +6,20 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 21 Oct 2023 10:00:49 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Oct 2023 13:49:48 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>An Incremental Approach to Compiler Construction (2006)</title>
+      <link>https://nryotaro.dev/posts/an_incremental_approach_to_compiler_construction/</link>
+      <pubDate>Mon, 23 Oct 2023 13:49:48 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/an_incremental_approach_to_compiler_construction/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://scheme2006.cs.uchicago.edu/11-ghuloum.pdf&#34;&gt;An Incremental Approach to Compiler Construction&lt;/a&gt;は、コンパイラの学習を目的としたSchemeのコンパイラの実装方法の解説である。
+コンパイラの実装に使用する言語もSchemeであり、コンパイラは、Intel-x86のアセンブリコードを出力する。
+プログラマが普段使用しているコンパイラは、教育用の教材としてのコンパイラと比べて複雑であり、学習には向かない。
+この商用と学習用のコンパイラの溝を埋めるために、Schemeの仕様の大部分を満たす規模のコンパイラの実装例が示されている。
+実装手順は24ステップからなり、最後のステップまで実装しなくても、各ステップにある実装を完了すれば、コンパイラが正常に動作するように実装することができる。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>GAUSSIAN ERROR LINEAR UNITS (GELUs) 2016</title>
       <link>https://nryotaro.dev/posts/gaussian_error_linear_units/</link>
@@ -3508,7 +3521,7 @@ Snorkelは、入力された複数のラベリング関数をデータに適用�
     </item>
     
     <item>
-      <title>概要 Distilling the Knowledge in a Neural Network(2015)</title>
+      <title>Distilling the Knowledge in a Neural Network (2015)</title>
       <link>https://nryotaro.dev/posts/distilling_the_knowledge_in_a_neural_network/</link>
       <pubDate>Sat, 24 Aug 2019 23:04:39 +0900</pubDate>
       
@@ -3517,7 +3530,7 @@ Snorkelは、入力された複数のラベリング関数をデータに適用�
 &lt;p&gt;蒸留(Distilling)は、既存のモデルの予測性能をできるだけ落とさずに、より小さいモデルを作るための手法である。
 複数のモデルからなるモデルや正則化された大きなモデルのように予測性能は高いが、同時に計算コストも高くつく。
 蒸留の目的は本番運用に耐えられるデプロイ可能なモデル作ることにである。
-出力層の活性化関数に温度つきソフトマックスを使った多クラス分類のモデルを蒸留する手法を提案、評価した。&lt;/p&gt;</description>
+&lt;a href=&#34;https://arxiv.org/pdf/1503.02531.pdf&#34;&gt;Distilling the Knowledge in a Neural Network&lt;/a&gt;は、出力層の活性化関数に温度つきソフトマックスを使った多クラス分類のモデルを蒸留する手法を提案、評価した。&lt;/p&gt;</description>
     </item>
     
     <item>

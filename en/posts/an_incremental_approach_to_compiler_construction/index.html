@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>An Incremental Approach to Compiler Construction (2006)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://nryotaro.dev/en/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://nryotaro.dev/en/about">About</a></li>
+          <li><a href="https://nryotaro.dev/en/posts">Posts</a></li>
+          <li><a href="https://nryotaro.dev/en/tags">Tags</a></li>
+	  
+	  <li><a href="https://nryotaro.dev/posts/an_incremental_approach_to_compiler_construction/">ja</a></li>
+	  
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>An Incremental Approach to Compiler Construction (2006)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/en/tags/compiler/">
+	#Compiler
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">January 1, 0001</span>    
+  <div>
+    <p><a href="http://scheme2006.cs.uchicago.edu/11-ghuloum.pdf">An Incremental Approach to Compiler Construction</a> shows an incremental approach to build a compiler that accepts a large subset of the Scheme programming language.
+The compiler produces assembly code for the Intel-X86 architecture.
+Because real-life compilers are too complex to serve as an educational tool, the gap between real-life compilers and the educational toy compilers is too wide.</p>
+<p>The goal of the paper is to break the barrier.
+The development of the compiler is broken down into 24 incremental steps.
+Every step yields a fully working compiler for progressively expanding a subset of Scheme.</p>
+<p>The compiler is a function in Scheme, <code>compile-program</code>, that accepts a subset of Scheme.
+The function calls <code>emit</code> to produce assembly code that can be called by C.
+The compiler uses the upper bits of the machine word for storing the value, and the rest of the space to encode the type information.
+For example, the lower two bits of the representation of fixednums are <code>00</code>.
+Characters are tagged with <code>00001111</code>, boolean are given a <code>0011111</code>, and the empty list is given the value <code>00101111</code>.</p>
+<pre><code> (define (compile-program x)
+   (define (immediate-rep x)
+     (cond
+       ((integer? x) (shift x fixnum-shift))
+       ...))
+   (emit &quot;movl $~a, %eax&quot; (immediate-rep x))
+   (emit &quot;ret&quot;))
+
+ #include &lt;stdio.h&gt;
+ #define fixnum_mask  3
+ #define fixnum_tag   0
+ #define fixnum_shift 2
+  ...
+ int main(int argc, char** argv){
+   int val = scheme_entry();
+   if((val &amp; fixnum_mask) == fixnum_tag){
+     printf(&quot;%d\n&quot;, val &gt;&gt; fixnum_shift);
+   } else if(val == empty_list){
+     printf(&quot;()\n&quot;);
+   } ...
+   return 0;
+ }
+</code></pre>
+<p>All local variables in the <code>let</code> form are saved on the stack.
+The following function compiles the let form to assembly.
+<code>si</code> represents the index of the current stack, and <code>rhs</code> means the right-hand-side expression.</p>
+<pre><code>(define (emit-expr x si env)
+  (cond
+    ((immediate? x) ...)
+    ((variable? x)
+     (emit &quot;movl ~a(%esp), %eax&quot; (lookup x env)))
+    ((let? x)
+     (emit-let (bindings x) (body x) si env))
+    ...))
+	
+(define (emit-let bindings body si env)
+  (let f ((b* bindings) (new-env env) (si si))
+    (cond
+      ((null? b*) (emit-expr body si new-env))
+      (else
+        (let ((b (car b*)))
+          (emit-expr (rhs b) si env)
+          (emit &quot;movl %eax, ~a(%esp)&quot; si)
+          (f (cdr b*)
+             (extend-env (lhs b) si new-env)
+		     (- si wordsize)))))))
+</code></pre>
+<p>Pairs, vectors, and strings are allocated in the heap because they do not fit in a machine word.
+Similar to fixnums, every pointer to a heap-allocated object is tagged by a 3-bit mask(e.g., <code>001</code> for pairs, <code>010</code> for vectors).
+The pointers are allocated at double-word boundaries so that the tag and the value of the pointer do not interfare.
+The following code is an implementation of <code>(cons 10 20)</code>.</p>
+<pre><code>movl $40,  0(%esi)
+movl $80,  4(%esi)
+movl %esi, %eax
+orl   $1,  %eax
+addl  $8,  %esi
+</code></pre>
+<p>The language supports procedure calls.
+<code>lvar</code> is bound to a code expression containing a list of formal paramters and a body expression.</p>
+<pre><code>&lt;Prog&gt;  ::= (labels ((lvar &lt;LExpr&gt;) ...) &lt;Expr&gt;)
+&lt;LExpr&gt; ::= (code (var ...) &lt;Expr&gt;)
+&lt;Expr&gt;  ::= immediate
+          | var
+          | (let ((var &lt;Expr&gt;) ...) &lt;Expr&gt;)
+</code></pre>
+<p>For each <code>code</code> expression, the label is first emmitted, followed by the code of the body.
+The following views show the stack from the Caller&rsquo;s side and the Callee&rsquo;s side.</p>
+<p><img src="/an_incremental_approach_to_compiler_construction.png" alt="fig"></p>
+<p>The image above is cited from the paper.</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    
+    <li>
+      <a href="/en/posts/catalan_number/">
+	<i class="fa-solid fa-xl fa-angle-right"></i>
+      </a>
+    </li>
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="https://nryotaro.dev/en/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

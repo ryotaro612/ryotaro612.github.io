@@ -8,7 +8,7 @@
     <language>ja</language>
     <lastBuildDate>Sat, 24 Aug 2019 23:04:39 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/tags/%E7%9F%A5%E8%AD%98%E8%92%B8%E7%95%99/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>概要 Distilling the Knowledge in a Neural Network(2015)</title>
+      <title>Distilling the Knowledge in a Neural Network (2015)</title>
       <link>https://nryotaro.dev/posts/distilling_the_knowledge_in_a_neural_network/</link>
       <pubDate>Sat, 24 Aug 2019 23:04:39 +0900</pubDate>
       
@@ -17,7 +17,7 @@
 &lt;p&gt;蒸留(Distilling)は、既存のモデルの予測性能をできるだけ落とさずに、より小さいモデルを作るための手法である。
 複数のモデルからなるモデルや正則化された大きなモデルのように予測性能は高いが、同時に計算コストも高くつく。
 蒸留の目的は本番運用に耐えられるデプロイ可能なモデル作ることにである。
-出力層の活性化関数に温度つきソフトマックスを使った多クラス分類のモデルを蒸留する手法を提案、評価した。&lt;/p&gt;</description>
+&lt;a href=&#34;https://arxiv.org/pdf/1503.02531.pdf&#34;&gt;Distilling the Knowledge in a Neural Network&lt;/a&gt;は、出力層の活性化関数に温度つきソフトマックスを使った多クラス分類のモデルを蒸留する手法を提案、評価した。&lt;/p&gt;</description>
     </item>
     
   </channel>
