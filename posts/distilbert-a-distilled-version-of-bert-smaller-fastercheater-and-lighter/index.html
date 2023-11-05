@@ -22,7 +22,9 @@
     <link rel="stylesheet" href="https://nryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
 
-<link rel="stylesheet" href="https://nryotaro.dev/scss/list.min.8bd0eb32012aaff1a394fe4dfa99dba153e539578f4d72458fbc70b8f1ed8927.css">
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -32,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>知識蒸留</title>
+    <title>DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter (2019)</title>
   </head>
 
   <body>
@@ -56,24 +58,49 @@
     </header>
     
 <main>
-    <h1>知識蒸留</h1>
-    <div>
-        
-        <div class="entry">
-            <h2><a href="https://nryotaro.dev/posts/distilbert-a-distilled-version-of-bert-smaller-fastercheater-and-lighter/">DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter (2019)</a></h2>
-            <span class="date">November 4, 2023</span>
-        </div>
-        
-        <div class="entry">
-            <h2><a href="https://nryotaro.dev/posts/distilling_the_knowledge_in_a_neural_network/">Distilling the Knowledge in a Neural Network (2015)</a></h2>
-            <span class="date">August 24, 2019</span>
-        </div>
-        
-    </div>
-</main>>    
+  <h1>DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter (2019)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/%E7%9F%A5%E8%AD%98%E8%92%B8%E7%95%99/">
+	#知識蒸留
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/bert/">
+	#BERT
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">November 4, 2023</span>    
+  <div>
+    <p><a href="https://arxiv.org/abs/1910.01108">DistilBERT</a>は、<a href="https://arxiv.org/abs/1810.04805">BERT</a>の事前学習に<a href="https://arxiv.org/pdf/1503.02531.pdf">知識の蒸留</a>を適用したモデルである。
+DistilBERTの事前学習の損失関数は、BERTの学習に使われるMasked language model, BERTとDistilBERTの隠れ状態のコサイン類似度、BERTとDistil BERTの交差エントロピーの線形結合である。
+学習時は温度付きソフトマックスを\(T&gt;1\)に設定し、推論時には\(T=1\)として通常のソフトマックスをもちいる。
+DistilBERTのアーキテクチャは、セグメントエンベディング、下流タスクにCLSトークンのエンベディングを渡す層、半数の層をBERTから取り除いてできている。</p>
+<h2 id="所感">所感</h2>
+<p>推論速度の実験はあるが、事前学習の速度や計算資源に対する評価がない。</p>
+<p>DistilBERTの論文における<a href="https://tinkerd.net/blog/machine-learning/bert-embeddings/#:~:text=The%20final%20type%20of%20embedding,whether%20B%20logically%20follows%20A.">token-type embeddings</a>は、BERTの論文におけるSegment embeddingである。
+また、BERTの論文にはpoolerという単語はないが、これは下流タスクに[CLS]トークンのエンベディングをわたす<a href="(https://github.com/google-research/bert/issues/1102)">層である</a>。</p>
+<p>BERTの目的関数Next setence predictionは<a href="https://arxiv.org/pdf/1907.11692.pdf">効果が疑わている</a>ためか省略されている。</p>
+  </div>
+</main>
 
     
+<ul class="pagination">
     
+    <li>
+      <a href="/posts/an_incremental_approach_to_compiler_construction/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
     <footer>
       <ul>
         

@@ -6,7 +6,19 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 23 Oct 2023 13:49:48 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Nov 2023 06:43:01 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter (2019)</title>
+      <link>https://nryotaro.dev/posts/distilbert-a-distilled-version-of-bert-smaller-fastercheater-and-lighter/</link>
+      <pubDate>Sat, 04 Nov 2023 06:43:01 -0400</pubDate>
+      
+      <guid>https://nryotaro.dev/posts/distilbert-a-distilled-version-of-bert-smaller-fastercheater-and-lighter/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1910.01108&#34;&gt;DistilBERT&lt;/a&gt;は、&lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt;の事前学習に&lt;a href=&#34;https://arxiv.org/pdf/1503.02531.pdf&#34;&gt;知識の蒸留&lt;/a&gt;を適用したモデルである。
+DistilBERTの事前学習の損失関数は、BERTの学習に使われるMasked language model, BERTとDistilBERTの隠れ状態のコサイン類似度、BERTとDistil BERTの交差エントロピーの線形結合である。
+学習時は温度付きソフトマックスを\(T&amp;gt;1\)に設定し、推論時には\(T=1\)として通常のソフトマックスをもちいる。
+DistilBERTのアーキテクチャは、セグメントエンベディング、下流タスクにCLSトークンのエンベディングを渡す層、半数の層をBERTから取り除いてできている。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>An Incremental Approach to Compiler Construction (2006)</title>
       <link>https://nryotaro.dev/posts/an_incremental_approach_to_compiler_construction/</link>
