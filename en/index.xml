@@ -20,12 +20,12 @@ The nodeId ranges from 0 to \(2^{128}-1\).&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>GAUSSIAN ERROR LINEAR UNITS (GELUs) 2016</title>
+      <title>GAUSSIAN ERROR LINEAR UNITS (GELUs) (2016)</title>
       <link>https://nryotaro.dev/en/posts/gaussian_error_linear_units/</link>
       <pubDate>Sat, 21 Oct 2023 10:00:49 -0400</pubDate>
       
       <guid>https://nryotaro.dev/en/posts/gaussian_error_linear_units/</guid>
-      <description>&lt;p&gt;The Gaussian Error Linear Unit (GELU), a neural network activation function,is \(x\Phi(s)\), where \(\Phi(x)\) the standard Gaussian cumulative distribution function.
+      <description>&lt;p&gt;The &lt;a href=&#34;https://arxiv.org/abs/1606.08415&#34;&gt;GAUSSIAN ERROR LINEAR UNITS (GELUs)&lt;/a&gt;, a neural network activation function,is \(x\Phi(s)\), where \(\Phi(x)\) the standard Gaussian cumulative distribution function.
 GELUs have properties of Dropout, &lt;a href=&#34;https://openreview.net/pdf?id=rJqBEPcxe&#34;&gt;Zoneout&lt;/a&gt;, and ReLUs.
 Zoneout is a method for regularizing RNNs, and stochastically forces some hidden units to maintain their previous values.
 ReLUs introduce nonlinearity to neural networks.
