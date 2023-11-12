@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Pastry: Scalable Decentralized Object Location and Routing for Large Scale Peer to Peer Systems (2001)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://nryotaro.dev/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://nryotaro.dev/about">About</a></li>
+          <li><a href="https://nryotaro.dev/posts">Posts</a></li>
+          <li><a href="https://nryotaro.dev/tags">Tags</a></li>
+	  
+	  <li><a href="https://nryotaro.dev/en/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/">en</a></li>
+	  
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>Pastry: Scalable Decentralized Object Location and Routing for Large Scale Peer to Peer Systems (2001)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/peer-to-peer/">
+	#Peer-to-peer
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">November 7, 2023</span>    
+  <div>
+    <p><a href="https://rowstron.azurewebsites.net/PAST/pastry.pdf">Pastry</a>は、広域ネットーワーク規模のPeer-to-Peerなルーティングのアルゴリズムであり、メッセージをメッセージのキーに最も近いIDをもつノードに転送する。
+Pastryに参加するノードは対称的で、すべてのノードは同じアルゴリズムにしたがう。</p>
+<p>各ノードは、ルーティングテーブル、neighborhood set, leaf setを管理する。
+ルーティングテーブルは\(\lceil \log_{2^b}N \rceil\)行\(2^b-1\)列のテーブルである。
+ノードIDとメッセージキーは128ビットの整数であり、整数値は、整数値としてだけでなく、\(2^b\)進数の文字列としても比較される。
+\(b\)のデフォルト値は4で、このときのノードIDは16進数の数列として解釈できる。
+テーブルの\(n\)行\(c\)列には、\(n\)文字までのプレフィックスが等しいノードのIPアドレスを保存する。
+\(c\)は、この共通するプレフィックスの次にある数字に対応し、そのために、この数字はノードIDの先頭\(n+1\)文字目にある文字と異なる。
+neighborhood set \(M\)は、ノードから最も近くにある\(|M|\)個のノードのノードIDとIPアドレスのペアである。
+leaf set \(L\)はノードIDの空間上の最近傍の集合であり、そのうちの\(|L|/2\)個のノードIDはより大きく、それ以外のノードには小さなIDが割り当てられている。</p>
+<p>ノードが受信したメッセージの宛先でなければ、メッセージはキー\(D\)に最も近いノードID \(A\)のノードに転送される。
+\(D\)がleaf setの最小値以上かつ最大値以下であれば、メッセージは、\(D\)に最も近いノードIDのノードに転送される。
+範囲外であれば、\(D\)と\(A\)の共通するプレフィックスの最大長\(l\)とプレフィックスに続く\(D\)の文字が示すルーティングテーブルにノードのアドレスがあるかを調べる。</p>
+<p>存在するのであれば、そのノードにメッセージを転送する。
+次のノードでは、転送先のノードIDの共通プレフィックスの最大長は1以上長くなる。
+テーブルに存在しなければ、\(L \cup U \cup M\)の要素のうちプレフィックスの最大長が\(l\)以上かつ\(D\)との距離が現在のノード\(A\)との距離よりも小さいノードにメッセージを転送する。</p>
+<p>Pastryは動的にノードを追加、削除できる。
+ただし、参加のアルゴリズムは、参加するノード\(X\)がPastryのノード\(A\)にアクセスできると仮定する。
+\(X\)が参加のための特別なメッセージをノードIDをキーにして\(A\)宛てに送信すると、先述のアルゴリズムによって、メッセージは\(X\)のノードIDに最も近いノードIDの\(Z\)に転送される。
+転送されるまでに経由した\(A\)などのノードは、自身の状態を\(X\)に送る。
+\(X\)は、共有された状態から、ルーティングテーブル、neighborhood set, leaf setを生成する。
+その後\(X\)は自分の状態をルーティングテーブル、neighborhood set, leaf setにあるノードにコピーする。</p>
+<p>leaf setの最近傍のノードと通信できないければ、最近傍のノードがPastryから除外されたとみなす。このとき、欠けたleaf setの要素を補うために、通信できないノードのIDが自身のIDよりも小さいならば、leaf setのノードのうちIDが最小のノードにleaf setをリクエストし、大きければ最大のノードにリクエストする。
+通信できなくなったノードがルーティングテーブルの\(l\)行\(d\)列にある場合、同じ行にある別のノードに\(l\)行\(d\)を問い合わせ、\(l\)行\(d\)列を上書きする。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/distilbert-a-distilled-version-of-bert-smaller-fastercheater-and-lighter/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="https://nryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

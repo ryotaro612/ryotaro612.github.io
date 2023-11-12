@@ -2,6 +2,71 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://nryotaro.dev/</loc>
+    <lastmod>2023-11-07T02:04:06-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/</loc>
+    <lastmod>2023-11-07T02:04:06-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/tags/peer-to-peer/</loc>
+    <lastmod>2023-11-07T02:04:06-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/tags/peer-to-peer/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/tags/peer-to-peer/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/posts/</loc>
+    <lastmod>2023-11-07T02:04:06-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/tags/</loc>
+    <lastmod>2023-11-07T02:04:06-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/tags/"
+                />
+  </url><url>
     <loc>https://nryotaro.dev/tags/bert/</loc>
     <lastmod>2023-11-04T06:43:01-04:00</lastmod>
     <xhtml:link
@@ -15,47 +80,8 @@
                 href="https://nryotaro.dev/tags/bert/"
                 />
   </url><url>
-    <loc>https://nryotaro.dev/</loc>
-    <lastmod>2023-11-04T06:43:01-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/"
-                />
-  </url><url>
     <loc>https://nryotaro.dev/posts/distilbert-a-distilled-version-of-bert-smaller-fastercheater-and-lighter/</loc>
     <lastmod>2023-11-04T06:43:01-04:00</lastmod>
-  </url><url>
-    <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2023-11-04T06:43:01-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/posts/"
-                />
-  </url><url>
-    <loc>https://nryotaro.dev/tags/</loc>
-    <lastmod>2023-11-04T06:43:01-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/tags/"
-                />
   </url><url>
     <loc>https://nryotaro.dev/tags/%E7%9F%A5%E8%AD%98%E8%92%B8%E7%95%99/</loc>
     <lastmod>2023-11-04T06:43:01-04:00</lastmod>

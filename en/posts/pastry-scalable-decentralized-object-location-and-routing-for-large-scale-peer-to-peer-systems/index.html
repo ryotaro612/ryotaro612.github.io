@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Pastry: Scalable Decentralized Object Location and Routing for Large Scale Peer to Peer Systems (2001)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://nryotaro.dev/en/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://nryotaro.dev/en/about">About</a></li>
+          <li><a href="https://nryotaro.dev/en/posts">Posts</a></li>
+          <li><a href="https://nryotaro.dev/en/tags">Tags</a></li>
+	  
+	  <li><a href="https://nryotaro.dev/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/">ja</a></li>
+	  
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>Pastry: Scalable Decentralized Object Location and Routing for Large Scale Peer to Peer Systems (2001)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/en/tags/peer-to-peer/">
+	#Peer-to-peer
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">November 7, 2023</span>    
+  <div>
+    <p><a href="https://rowstron.azurewebsites.net/PAST/pastry.pdf">Pastry</a> is a decentralized peer-to-peer object location and routing system based on nodes connected via the Internet.
+When each node in the Pastry network receives a message and a numeric key, it routes them to the node with a nodeId that is numerically close to the key.
+If a node is not the final destination of a message, it forwards the message to another node with a nodeId that is numerically closer to the key than the nodeId of the present node.
+The nodeId ranges from 0 to \(2^{128}-1\).</p>
+<p>Each Pastry node maintains a routing table, a neighborhood set and a leaf set.
+A node&rsquo;s routing table, \(R\), is a table with \lceil\log_{2^b}N \rceil\) rows and \(2^{b}-1\) columns, where \(N\) is the number of Pastry nodes in the network.
+\(b\) is a configuration parameter, and the typical value is 4.
+The \(2^b-1\) th entry at row \(n\) of the routing table contains the IP address of a node whose nodeId shares the present node&rsquo;s nodeId in the first \(n\) digits, but whose \(n+1\) digit has one of the \(2^b-1\) possible values other than the \(n+1\) th digit in the present node&rsquo;s id.
+The neighborhood set \(M\) contains the nodeIds and IP addresses of the \(|M|\) nodes that are closest to the local node according to scalar proximity metric like the number of IP routing hops.
+The leaf set \(L\) is the set of nodes with the \(|L|/2\) numerically closest larger nodeIds, and the \(|L|/2\) nodes with numerically closest smaller nodeIds, relative to the present node&rsquo;s nodeId.</p>
+<p>When a message with key \(D\) arrives at a node with nodeId \(A\), the node forwards the message and \(D\) to another node.
+If \(D\) falls within the range of nodeIds covered by leaf set, the message is forwarded directly to the destination node whose nodeId is closest to the key.
+The destination is in the leaf set.
+If the key is not covered by the leaf set, the present node forwards the message to a node that shares a common prefix with the key by at least one more digit.
+If the entry is empty or the associated node is not reachable, the message is forwarded to a node that shares a prefix with the key at least as long as the present node, and is numerically closer to the key than the present nodeId.</p>
+<p>Pastry can handle the arrival and departure of nodes.
+Pastry assumes a new node knows initially about a nearby Pastry node \(A\), according to the proximity metric, that is already part of the system.
+When a new node with nodeId \(X\) arrives at a network, it asks \(A\) to route a special message with they equal to \(X\).
+Pastry routes the message to the existing node \(Z\) whose nodeId is numerically closest to \(X\).
+In response to the message, the nodes encountered on the path from \(A\) to \(Z\) send their state tables to \(X\), and \(X\) constructs its own state.
+Finally, \(X\) transmits a copy of its state to all the nodes in its neighborhood set, leaf set, and  routing table.</p>
+<p>A node is considered failed when its immediate neighbors in the nodeId space can no longer communicate with the node.
+To replace a failed node in the leaf set, its neighbor contacts the live node with the largest index on the side of the failed node, and asks that node for its leaf set.
+To update the entry in a routing table entry \((l, d)\), a node contacts the node referred to by another entry at \((l, i) (i\neq d)\), and asks for the node&rsquo;s entry for \((l, d)\).</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/en/posts/gaussian_error_linear_units/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="https://nryotaro.dev/en/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>
