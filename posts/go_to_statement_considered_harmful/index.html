@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>Go To Statement Considered Harmful(1968)</title>
+    <title>Go To Statement Considered Harmful (1968)</title>
   </head>
 
   <body>
@@ -60,7 +60,7 @@
     </header>
     
 <main>
-  <h1>Go To Statement Considered Harmful(1968)</h1>
+  <h1>Go To Statement Considered Harmful (1968)</h1>
   <ul class="tags">
     
     <li class="tag">
@@ -75,8 +75,9 @@
     <p><a href="https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf">Go To Statement Considered Harmful</a>でEdger Dijkstraは機械語以外でのGO TO文の使用を批判した。
 ソースコードは機械語にコンパイルされ、プログラムとして実行される。
 ソースコードは静的な成果物であるが、プログラムは時間とともに変化する。
-プログラマにとって理解しやすいのは実行中のプログラムよりもソースコードの方なので、ソースコードからプログラムの実行状態を予測できることがのぞましい。</p>
-<p>ソースコードからプログラムの実行状態を特定することを、ソースコードのステップをさすインデックスを指定することとみなす。
+プログラマが理解しやすいのは、動的に変化する実行中のプログラムよりも静的なソースコードの方である。
+したがって、ソースコードからプログラムの実行状態を予測できることがのぞましい。</p>
+<p>ソースコードからプログラムの実行状態を把握することを、プログラムが実行している処理を実装したソースコードのステップを特定することとみなす。
 このとき、if文以外の制御構文もプロシージャもないソースコードであれば、ひとつのインデックスのみでプログラムの実行状態を特定できる。
 プロシージャが加わると、呼び出し中のプロシージャの順に並んだ複数のインデックスが必要になる。</p>
 <p>whileも導入するとインデックスだけで実行状態を一意に指定できなくなり、while文の反復回数を記録するカウンタが必要になる。
@@ -84,8 +85,8 @@
 ソースコードに現れる静的なインデックスとプログラムの実行によって変化する動的なカウンタ、この2種類の独立座標でプログラムの実行状態を特定するようになる。
 ここにGOTO文があると、実行状態を特定するためのインデックスとカウンタの集合をみつけにくくなり、プログラムの実行状態を追うことが難しくなる。</p>
 <h2 id="雑記">雑記</h2>
-<p>GOTO文がなぜインデックスとカウンタの特定しずらくなると主張したが、その理由については述べられていない。
-プログラムの実行状態への理解を、インデックスの順序とカウンタの値を特定することと形式化したことにとどまる。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>今日、Go To Statement Considered HarmfulはGO TO文への批判の参考文献として知られているが、参考文献のセクションには論文の発表時点で既にGOTOに対する批判が新しいものではないと書かれている。</p>
   </div>
 </main>
