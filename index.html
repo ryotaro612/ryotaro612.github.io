@@ -63,6 +63,29 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/lora-low-rank-adaptation-of-large-language-models/">LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS</a></h3>
+        <div class="summary"><p><a href="https://arxiv.org/pdf/1804.08838.pdf">Li et al. (2018)</a>と<a href="https://arxiv.org/pdf/2012.13255.pdf">Aghajanyan et al. (2020)</a>は、Large Language Models (LLM)のファインチューニングにかかる計算資源は大きいが、下流タスクに必要なパラメータ数はLLMのパラメタ数よりもはるかに少ないと主張した。
+<a href="https://arxiv.org/pdf/2106.09685.pdf">LoRA</a>は、この仮説によりファインチューニングを避け、LLMの重みと線形結合すると下流タスクに最適な重みに近似できる小さな行列を求める。
+LLMの重みを\(W_0\in\mathbb{R}^{d\times k}\)とすると、\(W_0+BA\ (B\in\mathbb{R}^{d\times r}, A\in\mathbb{R}^{r\times k}, r \ll\min (d, k))\)が下流タスクに最適な重みに近づくように、ファインチューニングにかわって\(W_0\)を更新せず\(B,\ A\)のみを更新する。
+\(r\)が\(d, k\)よりも小さいので、ファインチューニングよりも学習時間は短い。
+また、複数の下流タスクを入力に適用する場合、\(W_0x\)を共有できるので、推論に必要な計算も\(W_0\)を更新するファインチューニングより少ない。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/large-language-model/">
+		#Large language model
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">November 18, 2023</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/">Pastry: Scalable Decentralized Object Location and Routing for Large Scale Peer to Peer Systems (2001)</a></h3>
         <div class="summary"><p><a href="https://rowstron.azurewebsites.net/PAST/pastry.pdf">Pastry</a>は、広域ネットーワーク規模のPeer-to-Peerなルーティングのアルゴリズムであり、メッセージをメッセージのキーに最も近いIDをもつノードに転送する。
 Pastryに参加するノードは対称的で、すべてのノードは同じアルゴリズムにしたがう。</p></div>
@@ -284,28 +307,6 @@ Word embeddingのみタスク間で重みを共有し、後続の層の重みは
 	  </ul>
 	  
           <span class="date">September 16, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/transmission_of_information/">Transmission of Information(1927)</a></h3>
-        <div class="summary"><p>Hartleyは、<a href="https://monoskop.org/images/a/a6/Hartley_Ralph_VL_1928_Transmission_of_Information.pdf">Transmission of Information</a>で、通信システムの情報伝達性能を評価するために、情報の定量的な尺度を提唱した。
-シャノンが1948年に情報エントロピーを<a href="https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf">発表</a>する21年前である。
-Hartleyは、通信内容の意味や解釈を捨象し、記号列の有限な候補からある記号列を選ぶことを情報みなした。
-シャノンは、有限の候補から記号列を選択する考えを継承し、さらに、記号が順に確率的に選ばれるとみなすことでHartleyの情報量の定義を情報エントロピーに発展させた。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E6%83%85%E5%A0%B1%E9%87%8F/">
-		#情報量
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">September 9, 2023</span>
         </div>
     </article>
     

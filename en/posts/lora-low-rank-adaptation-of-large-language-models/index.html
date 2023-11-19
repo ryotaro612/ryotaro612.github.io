@@ -22,7 +22,9 @@
     <link rel="stylesheet" href="https://nryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
     
 
-<link rel="stylesheet" href="https://nryotaro.dev/scss/list.min.8bd0eb32012aaff1a394fe4dfa99dba153e539578f4d72458fbc70b8f1ed8927.css">
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -32,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>Tags</title>
+    <title>LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS</title>
   </head>
 
   <body>
@@ -51,123 +53,50 @@
           <li><a href="https://nryotaro.dev/en/posts">Posts</a></li>
           <li><a href="https://nryotaro.dev/en/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/tags/">ja</a></li>
+	  <li><a href="https://nryotaro.dev/posts/lora-low-rank-adaptation-of-large-language-models/">ja</a></li>
 	  
         </ul>
       </nav>
     </header>
     
 <main>
-  <h1>Tags</h1>
-    <div>
-      
+  <h1>LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS</h1>
+  <ul class="tags">
+    
+    <li class="tag">
       <a href="https://nryotaro.dev/en/tags/large-language-model/">
-        <div class="entry">
-          <h2>Large language model</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/peer-to-peer/">
-        <div class="entry">
-          <h2>Peer-to-peer</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/activation-function/">
-        <div class="entry">
-          <h2>Activation function</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/structured-programming/">
-        <div class="entry">
-          <h2>Structured programming</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/transformer/">
-        <div class="entry">
-          <h2>Transformer</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/communicating-sequential-processes/">
-        <div class="entry">
-          <h2>Communicating Sequential Processes</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/concurrent-programming/">
-        <div class="entry">
-          <h2>Concurrent Programming</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/bert/">
-        <div class="entry">
-          <h2>BERT</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/cosine-similarity/">
-        <div class="entry">
-          <h2>cosine similarity</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/multitask-learning/">
-        <div class="entry">
-          <h2>Multitask learning</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/entropy/">
-        <div class="entry">
-          <h2>Entropy</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/byte-pair-encoding/">
-        <div class="entry">
-          <h2>Byte Pair Encoding</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/early-programming/">
-        <div class="entry">
-          <h2>Early Programming</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/attention/">
-        <div class="entry">
-          <h2>Attention</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/splay-tree/">
-        <div class="entry">
-          <h2>Splay tree</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/catalan-numbers/">
-        <div class="entry">
-          <h2>Catalan numbers</h2>
-        </div>
-      </a>	
-      
-      <a href="https://nryotaro.dev/en/tags/compiler/">
-        <div class="entry">
-          <h2>Compiler</h2>
-        </div>
-      </a>	
-      
-    </div>
+	#Large language model
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">November 18, 2023</span>    
+  <div>
+    <p>LoRA is inspired by <a href="https://arxiv.org/pdf/1804.08838.pdf">Li et al. (2018)</a> and <a href="https://arxiv.org/pdf/2012.13255.pdf">Aghajanyan et al. (2020)</a> which show that the learned over-parameterized models reside on a low intrinsic dimension.
+An intrinsic dimension is the minimum number of parameters needed to reach a satisfactory solution to the objective.
+LoRA injects weight matrices into each attention layer of the Transformer architecture instead of fine-tuning the pre-trained model weights.
+The injected weight matrices are rank decomposition matrices, and LoRA can reduce the number of trainable parameters for downstream tasks.</p>
+<p>For a pre-trained weight matrix \(W_0\in \mathbb{R}^{d\times k}\), LoRA replaces it with \(W_0 + BA\) where \(B\in \mathbb{R}^{d\times r}, A\in \mathbb{R}^{r\times k}\), and the rank \(r \ll \min(d, k)\).
+\(A\) is initialized to values drawn randomly from Gaussian distribution, and \(B\) is initialized to zero.
+There are four weight matrices (W_q, W_k, W_v, and W_o) in a self-attention module.
+LoRA is applied to each \(W_q, W_k, W_v\), and treats them as a single matrix while they are sliced into attention heads.</p>
+
+  </div>
 </main>
 
     
+<ul class="pagination">
     
+    <li>
+      <a href="/en/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
     <footer>
       <ul>
         
