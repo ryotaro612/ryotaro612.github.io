@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nryotaro.dev/en/</loc>
-    <lastmod>2023-11-18T12:21:20-05:00</lastmod>
+    <lastmod>2023-11-23T12:31:01-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -13,6 +13,58 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://nryotaro.dev/en/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/en/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/</loc>
+    <lastmod>2023-11-23T12:31:01-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/en/tags/peer-to-peer/</loc>
+    <lastmod>2023-11-23T12:31:01-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/tags/peer-to-peer/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/tags/peer-to-peer/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/en/posts/</loc>
+    <lastmod>2023-11-23T12:31:01-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/en/tags/</loc>
+    <lastmod>2023-11-23T12:31:01-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/tags/"
                 />
   </url><url>
     <loc>https://nryotaro.dev/en/tags/large-language-model/</loc>
@@ -41,32 +93,6 @@
                 href="https://nryotaro.dev/en/posts/lora-low-rank-adaptation-of-large-language-models/"
                 />
   </url><url>
-    <loc>https://nryotaro.dev/en/posts/</loc>
-    <lastmod>2023-11-18T12:21:20-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/posts/"
-                />
-  </url><url>
-    <loc>https://nryotaro.dev/en/tags/</loc>
-    <lastmod>2023-11-18T12:21:20-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/tags/"
-                />
-  </url><url>
     <loc>https://nryotaro.dev/en/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/</loc>
     <lastmod>2023-11-07T02:04:06-05:00</lastmod>
     <xhtml:link
@@ -78,19 +104,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://nryotaro.dev/en/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/"
-                />
-  </url><url>
-    <loc>https://nryotaro.dev/en/tags/peer-to-peer/</loc>
-    <lastmod>2023-11-07T02:04:06-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/tags/peer-to-peer/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/tags/peer-to-peer/"
                 />
   </url><url>
     <loc>https://nryotaro.dev/en/tags/activation-function/</loc>

@@ -41,9 +41,8 @@ Sentence-BERTは、類似度が定義されたテキストの組から、類似�
       
       <guid>https://nryotaro.dev/posts/roberta/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1907.11692.pdf&#34;&gt;RoBERTa&lt;/a&gt;は、&lt;a href=&#34;https://arxiv.org/pdf/1810.04805.pdf&#34;&gt;BERT&lt;/a&gt;のアーキテクチャを変えずに、事前学習の改善によって性能を向上をはかる。
-BERTの事前学習では、Masked Language ModelとNext Sentence Predictionの2つのタスクでパラメータを更新する。
-一方、RoBERTaはMasked Language Modelのみを採用する。
-さらに、Byte Pair Encodingのサブワードの単位を文字からバイトに変更し、語彙集合数が50,000に増えている。
+BERTの事前学習がMasked Language ModelとNext Sentence Predictionの2タスクでパラメータを更新する一方で、RoBERTaはMasked Language Modelのみを採用する。
+また、Byte Pair Encodingのサブワードの単位を文字からバイトに変更し、語彙集合数を50,000にまで増加した。
 ミニバッチのサイズもまたBERTより大きい。&lt;/p&gt;</description>
     </item>
     

@@ -6,7 +6,18 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 18 Nov 2023 12:21:20 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Nov 2023 12:31:01 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chord: A Scalable Peer-to-peer Lookup Service for Internet Applications</title>
+      <link>https://nryotaro.dev/en/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/</link>
+      <pubDate>Thu, 23 Nov 2023 12:31:01 -0500</pubDate>
+      
+      <guid>https://nryotaro.dev/en/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://pdos.csail.mit.edu/papers/ton:chord/paper-ton.pdf&#34;&gt;Chord&lt;/a&gt; is a distributed lookup protocol that supports just one operation: mapping a given key onto a node in a Chord cluster.
+If an \(N\)-node system is in the steady state, each node resolves all the queries via \(O(\log N)\) messages to other nodes.
+Chord uses &lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall09/cos518/papers/chash.pdf&#34;&gt;consistent hashing&lt;/a&gt; to assign keys to Chord nodes.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS</title>
       <link>https://nryotaro.dev/en/posts/lora-low-rank-adaptation-of-large-language-models/</link>
