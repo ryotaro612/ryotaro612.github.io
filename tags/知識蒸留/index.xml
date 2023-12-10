@@ -6,31 +6,21 @@
     <description>Recent content in 知識蒸留 on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 04 Nov 2023 06:43:01 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/tags/%E7%9F%A5%E8%AD%98%E8%92%B8%E7%95%99/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Nov 2023 06:43:01 -0400</lastBuildDate>
+    <atom:link href="https://nryotaro.dev/tags/%E7%9F%A5%E8%AD%98%E8%92%B8%E7%95%99/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter (2019)</title>
       <link>https://nryotaro.dev/posts/distilbert-a-distilled-version-of-bert-smaller-fastercheater-and-lighter/</link>
       <pubDate>Sat, 04 Nov 2023 06:43:01 -0400</pubDate>
-      
       <guid>https://nryotaro.dev/posts/distilbert-a-distilled-version-of-bert-smaller-fastercheater-and-lighter/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1910.01108&#34;&gt;DistilBERT&lt;/a&gt;は、&lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt;の事前学習に&lt;a href=&#34;https://arxiv.org/pdf/1503.02531.pdf&#34;&gt;知識の蒸留&lt;/a&gt;を適用したモデルである。
-DistilBERTの事前学習の損失関数は、BERTの学習に使われるMasked language model, BERTとDistilBERTの隠れ状態のコサイン類似度、BERTとDistil BERTの交差エントロピーの線形結合である。
-学習時は温度付きソフトマックスを\(T&amp;gt;1\)に設定し、推論時には\(T=1\)として通常のソフトマックスをもちいる。
-DistilBERTのアーキテクチャは、セグメントエンベディング、下流タスクにCLSトークンのエンベディングを渡す層、半数の層をBERTから取り除いてできている。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1910.01108&#34;&gt;DistilBERT&lt;/a&gt;は、&lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt;の事前学習に&lt;a href=&#34;https://arxiv.org/pdf/1503.02531.pdf&#34;&gt;知識の蒸留&lt;/a&gt;を適用したモデルである。&#xA;DistilBERTの事前学習の損失関数は、BERTの学習に使われるMasked language model, BERTとDistilBERTの隠れ状態のコサイン類似度、BERTとDistil BERTの交差エントロピーの線形結合である。&#xA;学習時は温度付きソフトマックスを\(T&amp;gt;1\)に設定し、推論時には\(T=1\)として通常のソフトマックスをもちいる。&#xA;DistilBERTのアーキテクチャは、セグメントエンベディング、下流タスクにCLSトークンのエンベディングを渡す層、半数の層をBERTから取り除いてできている。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Distilling the Knowledge in a Neural Network (2015)</title>
       <link>https://nryotaro.dev/posts/distilling_the_knowledge_in_a_neural_network/</link>
       <pubDate>Sat, 24 Aug 2019 23:04:39 +0900</pubDate>
-      
       <guid>https://nryotaro.dev/posts/distilling_the_knowledge_in_a_neural_network/</guid>
-      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-&lt;p&gt;蒸留(Distilling)は、既存のモデルの予測性能をできるだけ落とさずに、より小さいモデルを作るための手法である。
-複数のモデルからなるモデルや正則化された大きなモデルのように予測性能は高いが、同時に計算コストも高くつく。
-蒸留の目的は本番運用に耐えられるデプロイ可能なモデル作ることにである。
-&lt;a href=&#34;https://arxiv.org/pdf/1503.02531.pdf&#34;&gt;Distilling the Knowledge in a Neural Network&lt;/a&gt;は、出力層の活性化関数に温度つきソフトマックスを使った多クラス分類のモデルを蒸留する手法を提案、評価した。&lt;/p&gt;</description>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;蒸留(Distilling)は、既存のモデルの予測性能をできるだけ落とさずに、より小さいモデルを作るための手法である。&#xA;複数のモデルからなるモデルや正則化された大きなモデルのように予測性能は高いが、同時に計算コストも高くつく。&#xA;蒸留の目的は本番運用に耐えられるデプロイ可能なモデル作ることにである。&#xA;&lt;a href=&#34;https://arxiv.org/pdf/1503.02531.pdf&#34;&gt;Distilling the Knowledge in a Neural Network&lt;/a&gt;は、出力層の活性化関数に温度つきソフトマックスを使った多クラス分類のモデルを蒸留する手法を提案、評価した。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.119.0">
+	<meta name="generator" content="Hugo 0.121.0">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -61,6 +61,37 @@
 <main>
     <h1>Posts</h1>
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/sequence_to_sequence_learning_with_neural_networks/">論文メモ Sequence to Sequence Learning with Nueral Networks</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>Sequence to Sequenceの論文。
+入出力が系列データを学習する場合、入力と出力の長さが等しかったり対応関係にある箇所が系列の方向に単調でなければならなかったりする。
+これらの制約に対処するために、Sequence to Sequenceでは、入力全体を固定長のベクトルに一度変換し、そのベクトルをもとに出力を予測する。
+2種類のLSTMをもち、入力を与えるLSTMの最終層の隠れ状態で、固定長ベクトルをつくる。
+固定長のベクトルは、単調の制約を緩めるはたらきをする。
+このベクトルは、もう一方のLSTMにあたえられ、その主力が最終的な出力になる。
+実験では、入力系列を反転してあたえると、入力と出力の対応関係にある箇所の距離が近づき、予測性能が上がることが確認された。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">June 6, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/google_neural_machine_translation_system/">論文メモ Google&#39;s Neural Machine Transltation System: Bridging the Gap between Human and Machine Translation</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>ニューラルネットワークをもちいた機械翻訳システムの論文である。
+解決したい問題として、学習と推論時の処理時間の長さ、低頻出の単語を翻訳する難しさ、入力文の一部が翻訳されないことをあげ、注意機構でつながれたEncoderとDecoderからなるアーキテクチャを提案した。
+学習時間を短縮するために、Decoderの最初の層とEncodeerの出力層から注意をつくる注意機構を採用し、Decoderを並列に学習できるようにしている。
+また、量子化によって推論時間を短縮をしている。
+低頻出の単語でも翻訳できるようにwordpieceでエンコードされた入力をうけとる。
+入力文の一部が翻訳されない問題に対しては、短い出力文に罰則を課すビームサーチで出力文の候補を探索する仕組みが導入されている。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">May 30, 2020</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/zero_shot_learning_with_semantic_output_codes/">論文メモ Zero-Shot Learning with Semantic Output Codes</a></h3>
@@ -170,31 +201,6 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
         <div class="article-footer">
 	  
           <span class="date">April 4, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/deep_contextualized_word_representations/">論文メモ Deep contextualized word representations</a></h3>
-        <div class="summary"><p>文脈をふまえた単語の分散表現を生成する手法を提案し、教師あり学習に応用することで評価した論文である。
-文字単位の学習済み双方向LSTM言語モデルへの入力と各層の出力から分散表現をつくる。
-言語モデルの入力やどの層をどれだけ重視するかは、教師あり学習のときに更新するパラメタのひとつになる。
-実験では、構文にかかわるタスクであれば入力層に近い層が、意味にかかわるものであれば出力層に近い層が、重視された。
-モデルは、Embeddings from Language Modelsにちなみ、ELMoと名付けられた。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">March 24, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/the_seven_sins/">論文メモ The Seven Sins: Security Smells in Infrastructure as Code Scripts</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>OSSの調査にもとづき、Infrastrucure as Code(IaC)スクリプトに潜む主要なセキュリティ上の不吉な匂い(Security Smells)を7つ列挙し、これらを検出するツールを実装した論文である。
-論文のねらいは、開発者がIaCスクリプトに不吉な匂いを混ぜないようにすることにある。
-著者らは、本論文で、ICSE2019のDistinguished Paper Awardを受賞した。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">March 20, 2020</span>
         </div>
     </article>
     

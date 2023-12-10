@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.119.0">
+	<meta name="generator" content="Hugo 0.121.0">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -61,6 +61,27 @@
 <main>
     <h1>Posts</h1>
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/character_level_convolutional_networks_for_text_classification/">論文メモ Character-level Convolutional Networks for Text Classification</a></h3>
+        <div class="summary"><p>文字単位のCNNによる文書の分類を、ほかのモデルと比較して評価した。
+先行研究より、CNNを訓練するときは大量の教師データが必要になると分かっている。
+のため、比較のためのデータセットは大きく、訓練データの事例数は最低でも12万件におよぶ。
+文字単位のCNNに大量の訓練データをあたえれば、別途単語の意味をモデルにあたえずとも性能を発揮することを示した。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">September 25, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/what_makes_a_great_software_engineer/">論文メモ What Makes A Great Software Engineer?</a></h3>
+        <div class="summary"><p>優れたエンジニアの特徴を知るために、マイクロソフト社のアーキテクト59名と半構造化された面接をし、グラウンデッドセオリーで内容から特徴を抽出した。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">September 18, 2020</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/maml/">論文メモ Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks</a></h3>
@@ -152,30 +173,6 @@ CHECKLISTはOSSとして<a href="https://github.com/marcotcr/checklist">公開</
         <div class="article-footer">
 	  
           <span class="date">August 23, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/when_and_why_your_code_starts_to_smell_bad/">論文メモ When and Why Your Code Starts to Smell Bad</a></h3>
-        <div class="summary"><p>200件のAndroid, Apache, EclipseのOSSプロジェクトのコミット履歴を調査し、不吉な匂いが生じる原因と理由を調査した。
-常識では、改修の繰返しによって匂いのない既存のコードに匂いが生じると考えられているが、これに反して、不吉な匂いのするコードのほとんどが作成時点で不吉な匂いを出していたことを明らかにした。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">August 21, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/extracting_and_composing_robust_features_with_denoising_autoencoders/">論文メモ Extracting and Composing Robust Features with Denoising Autoencoders</a></h3>
-        <div class="summary"><p>ノイズを含む入力からノイズのない入力を復元するように学習すると、次元圧縮の性能を向上できることを示した。
-層の深いautoencoderを学習するには、良い初期値を与えなければらないことが知られていた。
-<a href="https://www.cs.toronto.edu/~hinton/science.pdf">先行研究</a>は、各中間層を個別に学習することで、良い初期値を求められることを示した。
-具体的には、各中間層について、前の層の入力から次の層の出力を推定できるよう個別に学習させる。
-一方で、何が良い初期値をなすのかは知られていなかった。
-表題の論文は、その条件は入力に含まれるノイズに対して頑強であると仮説をおき、ノイズを除去できるように目的関数を設定することで、次元圧縮の性能が上がることを示し、仮説の正しさを確かめた。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">August 21, 2020</span>
         </div>
     </article>
     

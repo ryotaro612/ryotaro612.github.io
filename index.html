@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.119.0">
+	<meta name="generator" content="Hugo 0.121.0">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -61,6 +61,49 @@
 <main>
     <h1>Posts</h1>
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/a_protocol_for_packet_network_intercommunication/">A Protocol for Packet Network Intercommunication (1974)</a></h3>
+        <div class="summary"><p>TCPの起源はヴィントン・サーフとロバート・カーンが1974年に出版した<a href="https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf">A Protocol for Packet Network Intercommunication</a>にまでさかのぼる。
+当時、ローカルネットワーク内のコンピュータ同士で通信するためのプロトコルはあったが、ネットワークを横断して通信できるプロコトルはなかった。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/tcp/">
+		#TCP
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 9, 2023</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/probabilistic_latent_semantic_indexing/">Probablistic Latent Semantic Indexing (1999)</a></h3>
+        <div class="summary"><p><a href="http://wordvec.colorado.edu/papers/Deerwester_1990.pdf">Latent Semantic Analysis</a>は、単語の出現頻度の列ベクトルで文書をあらわす行列を、特異値分解し、潜在的な意味を反映した低ランクな行列を求める方法である。
+特異値を大きい順に\(k\)個えらぶとき、単語の数を\(t\), 文書数を\(d\)とすれば、左特異ベクトルのサイズは、\(t\times k\), 右特異ベクトルの転置行列のサイズは\(k\times d\)になる。</p>
+<p><a href="https://sigir.org/wp-content/uploads/2017/06/p211.pdf">Probabilistic Latent Smantic Indexing</a>は、各文書が1つのクラスに分類されると仮定し、クラスを示すベクトルを隠れ変数とみなしたEMアルゴリズムで、文書や単語の尤度、クラスの生起確率を求める。
+これにより、クラス\(z_k\)についての文書\(d_i\)と単語\(w_j\)の尤度を\(P(d_i|z_k)\), \(P(w_j|z_k)\), また\(\hat{\textbf{U}}=(P(d_i|z_k))_{i, k}\), \(\hat{\textbf{V}}=(P(w_j|z_k))_{j, k}\), \(\hat{\Sigma}=\text{diag} (P(z_k))_k\)とすると、同時確率モデルを特異値分解の形式\(P=\hat{\textbf{U}}\hat{\Sigma}\hat{\textbf{V}}^t\)で表すことができる。
+Latent Semantic Analysisと違い、\(P\)の固有値や特異ベクトルの要素から確率モデル上の意味を読みとることができる。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E6%BD%9C%E5%9C%A8%E6%84%8F%E5%91%B3%E8%A7%A3%E6%9E%90/">
+		#潜在意味解析
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 2, 2023</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/">Chord: A Scalable Peer-to-peer Lookup Service for Internet Applications (2001)</a></h3>
@@ -248,69 +291,6 @@ BARTの特徴は、ノイズの作り方に制限がないところにある。
 	  </ul>
 	  
           <span class="date">October 7, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/communicating_sequenctial_processes/">Communicating Sequential Processes (1978)</a></h3>
-        <div class="summary"><p><a href="https://www.cs.cmu.edu/~crary/819-f09/Hoare78.pdf">Communicating Sequential Processes (CSP)</a>は、あるプロセスの出力を別のプロセスの入力に渡し、入出力のあるプロセスを並行実行するプログラミングモデルである。
-たとえば、GoのgoroutinesはCSPに<a href="https://www.cs.princeton.edu/courses/archive/fall16/cos418/docs/P1-concurrency.pdf">もとづく</a>軽量スレッドである。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/communicating-sequential-processes/">
-		#Communicating Sequential Processes
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/concurrent-programming/">
-		#Concurrent Programming
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">September 30, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/">Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/abs/1908.10084">Sentence-BERT</a>は、テキストをコサイン類似度で意味の類似度を比較できる固定長のベクトルに変換できる。
-<a href="https://arxiv.org/abs/1810.04805">BERT</a>を2つのテキストを入力し類似度を出力するように訓練できるが、あるテキストに類似するテキストを求めたい場合には組合せ爆発が生じる。
-Sentence-BERTは、類似度が定義されたテキストの組から、類似するテキスト同士を近い位置に写像できるように学習する。
-ネットワークは、BERTを使ったシャムネットワークであり、重みを共有した2つのBERTに1つずつテキストを入力し、両方の出力を目的関数に入力する。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted --></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/bert/">
-		#BERT
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E3%82%B3%E3%82%B5%E3%82%A4%E3%83%B3%E9%A1%9E%E4%BC%BC%E5%BA%A6/">
-		#コサイン類似度
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/transformer/">
-		#Transformer
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">September 23, 2023</span>
         </div>
     </article>
     

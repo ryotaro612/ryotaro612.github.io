@@ -6,17 +6,14 @@
     <description>Recent content in Extreme classification on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 24 Aug 2019 15:45:40 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/tags/extreme-classification/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Aug 2019 15:45:40 +0900</lastBuildDate>
+    <atom:link href="https://nryotaro.dev/tags/extreme-classification/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>FastXML: A Fast, Accurate and Stable Tree-classifier for eXtreme Multi-label Learning(2014)</title>
       <link>https://nryotaro.dev/posts/fastxml/</link>
       <pubDate>Sat, 24 Aug 2019 15:45:40 +0900</pubDate>
-      
       <guid>https://nryotaro.dev/posts/fastxml/</guid>
-      <description>&lt;p&gt;Extreme multi-label classificationの手法である。
-Extreme multi-label classificationは、大量のラベルの候補からデータに関連する複数のラベルを推定するタスクである。
-FastXMLは、決定木を弱学習器にしたアンサンブル学習であり、ノードを分割するための評価関数にnDCGを採用することで、学習時間を短縮し、予測精度を向上させた。&lt;/p&gt;</description>
+      <description>&lt;p&gt;Extreme multi-label classificationの手法である。&#xA;Extreme multi-label classificationは、大量のラベルの候補からデータに関連する複数のラベルを推定するタスクである。&#xA;FastXMLは、決定木を弱学習器にしたアンサンブル学習であり、ノードを分割するための評価関数にnDCGを採用することで、学習時間を短縮し、予測精度を向上させた。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

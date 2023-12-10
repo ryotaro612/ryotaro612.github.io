@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.119.0">
+	<meta name="generator" content="Hugo 0.121.0">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -61,6 +61,62 @@
 <main>
     <h1>Posts</h1>
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/a_taxonomy_of_web_search/">抄訳 A taxonomy of web search(2002)</a></h3>
+        <div class="summary"><p>Web検索をnavigational, informational, transactionalの3つに分類する。
+Navigationalは、ユーザーに訪問したい特定のサイトがあり、そのサイトを開くための検索である。
+Informationalは、ユーザーに収集したい情報があり、その情報があると思われるサイトを検索する。
+情報が断片的であれば、複数のサイトを訪問することもある。
+Transactionalは、検索や種々のダウンロードなどインタラクションを要するサイトを訪問するための検索である。
+ユーザーは、最終的な目的の情報のために訪問先のサイトでさらに検索をする。
+たとえばECサイトへの検索が該当する。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E3%82%A6%E3%82%A7%E3%83%96%E6%A4%9C%E7%B4%A2/">
+		#ウェブ検索
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 23, 2022</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/epidemic_algorithms_for_replicated_database_maintenance/">Epidemic Algorithm for Replicated Database Maintenance(1987)</a></h3>
+        <div class="summary"><p>Epidemic Algorithmは、データベース間の差分を解消するために、データベースがランダムに選んだ別のデータベースと同期する手法である。
+Epidemicを邦訳すると伝染性である。
+ここではデータベースにはマスタースレーブの区別はなく、任意のサーバーがレコードの変更リクエストを受理できる。
+Epidemic Algorithmには、定期的にデーターベース全体を同期する手法と、変更を受理したときに当該の変更のみを別のデータベースに伝搬させる手法の2つがある。
+前者は、データベース全体を同期するので変更のとりこぼしがいずれは解消されるが、同期に時間がかかる。
+後者は、時間はかからないが、伝搬を終えるまでに同期できなかった変更があれば、その齟齬が残りつづける。
+データベースがある時点で最新の変更をもたない確率を仮定し、その確率で次の同期で変更を取得できる確率を表し、手法間の同期する収束の速さを比較した。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E3%83%AC%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/">
+		#レプリケーション
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+		#分散システム
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 19, 2022</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/syntactic_clustering_of_the_web/">抄訳 Syntactic Clustering of the Web(1997)</a></h3>
@@ -234,31 +290,6 @@ interval内のノードに向うエッジを根のノード順にソートし、
         <div class="article-footer">
 	  
           <span class="date">October 29, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/borderline-smote_a_new_over-sampling_method_inbalanced_data_sets_learning/">抄訳 Borderline-SMOTE: A New Over-Sampling Method in Imbalanced Data Sets Learning(2005)</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/pdf/1106.1813.pdf">SMOTE</a>は不均衡データに対するオーバーサンプリングを使う手法である。
-少数側のクラスのサンプルと近傍のサンプルから少数クラスのサンプルを合成する。
-SMOTEはすべての少数クラスのサンプルが合成の材料になりえる。
-対して、borderline-SMOTE1とborderline-SMOTE2は、境界から遠い少数クラスのサンプルを使わず、近いサンプルのみから合成する。
-borderline-SMOTE1は合成の相手側として常に少数クラスのサンプルを選ぶ。
-borderline-SMOTE2は多数クラスのサンプルを選ぶこともある。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">October 22, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/data_cube_a_relational_aggregation_operator_generalizing_group_by_cross_tab_and_sub_totals/">抄訳 Data Cube: A Relational Aggregation Operator Generalizing Group-By, Cross-Tab, and Sub-Totals(1997)</a></h3>
-        <div class="summary"><p>SQLのGROUP BYと集約関数を組み合わせて0次元や1次元の値を出力できる。
-一方、ピボットテーブルのように、ある属性値の同じレコードの別の属性値を集計し、さらに集計値の集計値を求めたいことがある。
-(DATA) CUBEは、GROUP BYを多次元に拡張した演算子であり、ヒストグラム、ピボットテーブル、ロールアップ、ドリルダウンの計算に使える。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">October 15, 2022</span>
         </div>
     </article>
     

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.119.0">
+	<meta name="generator" content="Hugo 0.121.0">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -61,6 +61,31 @@
 <main>
     <h1>Posts</h1>
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/deep_contextualized_word_representations/">論文メモ Deep contextualized word representations</a></h3>
+        <div class="summary"><p>文脈をふまえた単語の分散表現を生成する手法を提案し、教師あり学習に応用することで評価した論文である。
+文字単位の学習済み双方向LSTM言語モデルへの入力と各層の出力から分散表現をつくる。
+言語モデルの入力やどの層をどれだけ重視するかは、教師あり学習のときに更新するパラメタのひとつになる。
+実験では、構文にかかわるタスクであれば入力層に近い層が、意味にかかわるものであれば出力層に近い層が、重視された。
+モデルは、Embeddings from Language Modelsにちなみ、ELMoと名付けられた。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">March 24, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/the_seven_sins/">論文メモ The Seven Sins: Security Smells in Infrastructure as Code Scripts</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>OSSの調査にもとづき、Infrastrucure as Code(IaC)スクリプトに潜む主要なセキュリティ上の不吉な匂い(Security Smells)を7つ列挙し、これらを検出するツールを実装した論文である。
+論文のねらいは、開発者がIaCスクリプトに不吉な匂いを混ぜないようにすることにある。
+著者らは、本論文で、ICSE2019のDistinguished Paper Awardを受賞した。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">March 20, 2020</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/semi_supervised_sequence_learning/">Semi-supervised Sequence Learning(2015)</a></h3>
@@ -262,58 +287,6 @@ CBOWは、ウィンドウ内のベクトルの平均値で文脈の分散表現�
 	  </ul>
 	  
           <span class="date">February 1, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/why_should_i_trust_you/">Why Should I Trust You? Explaining the Predictions of Any Classifier</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>モデルの予測に説明をあたえる手法、Local Interpretable Model-agnostic Explanations (LIME)を提案する。
-モデルが回帰や分類器であれば、アルゴリズムによらずLIMEを適用できる。
-説明を与えたい事例近くにある事例を解釈可能なモデルに学習させ、解釈可能なモデルで予測を説明する。
-また、個別の予測ではなく、モデル自体をよく説明する事例を集める手法Submodullar Pick (SP)-LIMEを提案する。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E8%AA%AC%E6%98%8E%E5%8F%AF%E8%83%BD%E3%81%AAai/">
-		#説明可能なAI
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">January 26, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/active_learning_for_ranking_through_expected_loss_optimization/">Active Learning for Ranking through Expected Loss Optimization</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>Yahoo! Labsで開発されたランキングのための能動学習の論文である。
-提案手法は、Yahoo!検索エンジンでの<a href="https://www.kdd.org/kdd2016/papers/files/adf0361-yinA.pdf">採用実績</a>がある。
-手法は、Expected Loss Optimization(ELO)とよばれ、ベイズ決定則によって識別したときの損失の期待値が最大になるデータを選ぶ。
-ELOに用いる損失関数にDCGを採用したExpected DCG Loss Optimization(ELO-DCG)を提案し、実験で評価した。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/">
-		#ランキング学習
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E8%83%BD%E5%8B%95%E5%AD%A6%E7%BF%92/">
-		#能動学習
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">January 19, 2020</span>
         </div>
     </article>
     

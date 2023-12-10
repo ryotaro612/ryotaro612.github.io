@@ -6,21 +6,14 @@
     <description>Recent content in Attention on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 19 Aug 2023 10:02:50 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/en/tags/attention/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Aug 2023 10:02:50 -0400</lastBuildDate>
+    <atom:link href="https://nryotaro.dev/en/tags/attention/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Self-Attention with Relative Position Representations(2018)</title>
       <link>https://nryotaro.dev/en/posts/self_attention_with_relative_position_representations/</link>
       <pubDate>Sat, 19 Aug 2023 10:02:50 -0400</pubDate>
-      
       <guid>https://nryotaro.dev/en/posts/self_attention_with_relative_position_representations/</guid>
-      <description>&lt;p&gt;The authors of &lt;a href=&#34;https://arxiv.org/pdf/1803.02155.pdf&#34;&gt;Self-Attention with Relative Position Representations&lt;/a&gt; presented a way of injecting relative position representations in the self-attention mechanism of the &lt;a href=&#34;https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;Transformer&lt;/a&gt;.
-In contrast to recurrent and convolutional neural networks, Transformer does not explicitly model position information in its structure.
-&lt;a href=&#34;https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;The original position encoding&lt;/a&gt; employs sine and cosine functions of different frequencies.
-The authors of Transformer hypothesized that sinusoidal position encodings would help Transformer to generalize to sequence lengths unseen during training.
-Positional encodings are added to the input embeddings at the bottoms of the encoder and decoder stacks of Transformer.
-This hypothesis was shared by the relative position representations.
-In contrast to absolute position representations, the relative position representations are invariant to the total sequence length.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The authors of &lt;a href=&#34;https://arxiv.org/pdf/1803.02155.pdf&#34;&gt;Self-Attention with Relative Position Representations&lt;/a&gt; presented a way of injecting relative position representations in the self-attention mechanism of the &lt;a href=&#34;https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;Transformer&lt;/a&gt;.&#xA;In contrast to recurrent and convolutional neural networks, Transformer does not explicitly model position information in its structure.&#xA;&lt;a href=&#34;https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;The original position encoding&lt;/a&gt; employs sine and cosine functions of different frequencies.&#xA;The authors of Transformer hypothesized that sinusoidal position encodings would help Transformer to generalize to sequence lengths unseen during training.&#xA;Positional encodings are added to the input embeddings at the bottoms of the encoder and decoder stacks of Transformer.&#xA;This hypothesis was shared by the relative position representations.&#xA;In contrast to absolute position representations, the relative position representations are invariant to the total sequence length.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

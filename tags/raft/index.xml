@@ -6,17 +6,14 @@
     <description>Recent content in Raft on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 09 Mar 2020 02:17:22 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/tags/raft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Mar 2020 02:17:22 +0900</lastBuildDate>
+    <atom:link href="https://nryotaro.dev/tags/raft/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>In Search of an Understandable Consensus Algorithm(2014)</title>
       <link>https://nryotaro.dev/posts/raft/</link>
       <pubDate>Mon, 09 Mar 2020 02:17:22 +0900</pubDate>
-      
       <guid>https://nryotaro.dev/posts/raft/</guid>
-      <description>&lt;p&gt;コンセンサスアルゴリズムRaftを提案した論文である。
-Raftは、Multi Paxosと同様の実行結果をもたらす。
-実行するコマンドのログをサーバ間で交換することで、状態を同期し、サーバの一部が落ちてもシステムを継続することができる。&lt;/p&gt;</description>
+      <description>&lt;p&gt;コンセンサスアルゴリズムRaftを提案した論文である。&#xA;Raftは、Multi Paxosと同様の実行結果をもたらす。&#xA;実行するコマンドのログをサーバ間で交換することで、状態を同期し、サーバの一部が落ちてもシステムを継続することができる。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

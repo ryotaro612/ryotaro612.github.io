@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.119.0">
+	<meta name="generator" content="Hugo 0.121.0">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -61,6 +61,30 @@
 <main>
     <h1>Posts</h1>
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/pls_regression_a_basic_tool_of_chemometrics/">PLS-regression: a basic tool of chemometrics</a></h3>
+        <div class="summary"><p>重回帰分析は、説明変数の行列がフルランクでないとき、多重共線性により出力が不安定になる。
+そのため、説明変数の数を減らし、説明変数間に相関関係がないようにする必要がある。
+PLS（部分的最小二乗法）は、入力変数の線形結合で表わせる潜在変数を求め、潜在変数の線形結合で目的変数を表す。
+説明変数の数より少ない数の潜在変数を求めることで、説明変数間の相関関係をとりのぞく。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">May 21, 2022</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/statistics_and_causal_inference/">Statistics and Causal Inference(1986)</a></h3>
+        <div class="summary"><p>ルービンの因果モデルによる統計的因果推定では、群\(U\)の要素を\(u\), 処置を\(t\), \(c\), \(Y\)を潜在的結果変数とすると、\(u\)に対して処置\(c\)を適用するときの処置\(t\)の因果効果を、\(T = Y_t(u) - Y_c(u)\)とみなす。
+たとえば、\(u\)を人、\(t\), \(c\)を運動をする、しない、\(Y\)をコレステロールの値とすれば、運動とコレステロール値の関係になる。
+おなじ\(u\)に対して\(Y_t(u)\)と\(Y_c(u)\)を両方観測することはできない。
+因果効果は、観測するものではなく、推定するものになる。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">May 14, 2022</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/a_family_of_experiments_on_test_driven_development/">A Family of Experiments on Test-Driven Development</a></h3>
@@ -155,30 +179,6 @@ GBDTの処理時間のボトルネックは決定木の分岐を決めるとこ�
         <div class="article-footer">
 	  
           <span class="date">March 12, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/pegasos/">Pegasos: Primal Estimated sub-GrAdient SOlver for SVM</a></h3>
-        <div class="summary"><p>Pegasosは、SVMの学習のための反復的なアルゴリズムであり、2022年3月現在、scikit-learnの<a href="https://scikit-learn.org/stable/modules/sgd.html#implementation-details">SGDClassifier</a>で学習率を更新に採用されている。
-Pegasosは、目的関数の最小値の近似値をもとめる。
-求める最小値との誤差を\(\epsilon\), SVMの正則化パラメタを\(\lambda\), 各サンプルの説明変数の0でない要素数の上限を\(d\)とすると、線形カーネルをつかうSVMの時間計算量は、\(\tilde{O}(d/\lambda \epsilon)\)になる。
-訓練データの数が計算量に影響しないので、教師データの数に対してスケールする。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">March 12, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/an_interior_point_method_for_large_scale_l1_regularized_least_squares/">An Interior-Point Method for Large-Scale L1-Regularized Least Squares</a></h3>
-        <div class="summary"><p>前処理付共役勾配法により、スパースな説明変数をもつリッジ回帰の学習を高速化する。
-リッジ回帰の目的関数は、凸関数だが微分可能ではない。
-また、リッジ回帰の係数はスパースになりやすい。
-そこで、目的関数を最小化する係数の探索を、線形不等式制約つきの凸二次計画問題とらえ、前処理付共役勾配法をつかった内点法で係数の更新方向を探索する。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">March 5, 2022</span>
         </div>
     </article>
     

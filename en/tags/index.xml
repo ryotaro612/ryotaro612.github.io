@@ -6,159 +6,140 @@
     <description>Recent content in Tags on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 23 Nov 2023 12:31:01 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Dec 2023 12:24:23 -0500</lastBuildDate>
+    <atom:link href="https://nryotaro.dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TCP</title>
+      <link>https://nryotaro.dev/en/tags/tcp/</link>
+      <pubDate>Sat, 09 Dec 2023 12:24:23 -0500</pubDate>
+      <guid>https://nryotaro.dev/en/tags/tcp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Latent Semantic Analysis</title>
+      <link>https://nryotaro.dev/en/tags/latent-semantic-analysis/</link>
+      <pubDate>Sat, 02 Dec 2023 11:27:38 -0500</pubDate>
+      <guid>https://nryotaro.dev/en/tags/latent-semantic-analysis/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Peer-to-peer</title>
       <link>https://nryotaro.dev/en/tags/peer-to-peer/</link>
       <pubDate>Thu, 23 Nov 2023 12:31:01 -0500</pubDate>
-      
       <guid>https://nryotaro.dev/en/tags/peer-to-peer/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Large language model</title>
       <link>https://nryotaro.dev/en/tags/large-language-model/</link>
       <pubDate>Sat, 18 Nov 2023 12:21:20 -0500</pubDate>
-      
       <guid>https://nryotaro.dev/en/tags/large-language-model/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Activation function</title>
       <link>https://nryotaro.dev/en/tags/activation-function/</link>
       <pubDate>Sat, 21 Oct 2023 10:00:49 -0400</pubDate>
-      
       <guid>https://nryotaro.dev/en/tags/activation-function/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Structured programming</title>
       <link>https://nryotaro.dev/en/tags/structured-programming/</link>
       <pubDate>Sun, 08 Oct 2023 09:38:50 -0400</pubDate>
-      
       <guid>https://nryotaro.dev/en/tags/structured-programming/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Transformer</title>
       <link>https://nryotaro.dev/en/tags/transformer/</link>
       <pubDate>Sat, 07 Oct 2023 10:28:13 -0400</pubDate>
-      
       <guid>https://nryotaro.dev/en/tags/transformer/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Communicating Sequential Processes</title>
       <link>https://nryotaro.dev/en/tags/communicating-sequential-processes/</link>
       <pubDate>Sat, 30 Sep 2023 11:34:47 -0400</pubDate>
-      
       <guid>https://nryotaro.dev/en/tags/communicating-sequential-processes/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Concurrent Programming</title>
       <link>https://nryotaro.dev/en/tags/concurrent-programming/</link>
       <pubDate>Sat, 30 Sep 2023 11:34:47 -0400</pubDate>
-      
       <guid>https://nryotaro.dev/en/tags/concurrent-programming/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>BERT</title>
       <link>https://nryotaro.dev/en/tags/bert/</link>
       <pubDate>Sat, 23 Sep 2023 10:21:03 -0400</pubDate>
-      
       <guid>https://nryotaro.dev/en/tags/bert/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>cosine similarity</title>
       <link>https://nryotaro.dev/en/tags/cosine-similarity/</link>
       <pubDate>Sat, 23 Sep 2023 10:21:03 -0400</pubDate>
-      
       <guid>https://nryotaro.dev/en/tags/cosine-similarity/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Multitask learning</title>
       <link>https://nryotaro.dev/en/tags/multitask-learning/</link>
       <pubDate>Sat, 16 Sep 2023 08:59:45 -0400</pubDate>
-      
       <guid>https://nryotaro.dev/en/tags/multitask-learning/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Entropy</title>
       <link>https://nryotaro.dev/en/tags/entropy/</link>
       <pubDate>Sat, 09 Sep 2023 12:10:45 -0400</pubDate>
-      
       <guid>https://nryotaro.dev/en/tags/entropy/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Byte Pair Encoding</title>
       <link>https://nryotaro.dev/en/tags/byte-pair-encoding/</link>
       <pubDate>Sun, 27 Aug 2023 13:13:39 -0400</pubDate>
-      
       <guid>https://nryotaro.dev/en/tags/byte-pair-encoding/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Early Programming</title>
       <link>https://nryotaro.dev/en/tags/early-programming/</link>
       <pubDate>Sat, 26 Aug 2023 10:46:18 -0400</pubDate>
-      
       <guid>https://nryotaro.dev/en/tags/early-programming/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Attention</title>
       <link>https://nryotaro.dev/en/tags/attention/</link>
       <pubDate>Sat, 19 Aug 2023 10:02:50 -0400</pubDate>
-      
       <guid>https://nryotaro.dev/en/tags/attention/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Splay tree</title>
       <link>https://nryotaro.dev/en/tags/splay-tree/</link>
       <pubDate>Sat, 12 Aug 2023 13:49:56 -0400</pubDate>
-      
       <guid>https://nryotaro.dev/en/tags/splay-tree/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Catalan numbers</title>
       <link>https://nryotaro.dev/en/tags/catalan-numbers/</link>
       <pubDate>Sat, 29 Jul 2023 15:24:15 -0400</pubDate>
-      
       <guid>https://nryotaro.dev/en/tags/catalan-numbers/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Compiler</title>
       <link>https://nryotaro.dev/en/tags/compiler/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://nryotaro.dev/en/tags/compiler/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

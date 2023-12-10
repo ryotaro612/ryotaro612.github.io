@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.119.0">
+	<meta name="generator" content="Hugo 0.121.0">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -61,6 +61,31 @@
 <main>
     <h1>Posts</h1>
     
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/fast_intersection_algorithms_for_sorted_sequences/">論文メモ Fast Intersection Algorithms for Sorted Sequences</a></h3>
+        <div class="summary"><p>ソートされたシーケンスの直積を高速に求めるアルゴリズム Double Binary Searchを示した。
+2つのシーケンス\(D\), \(Q\)があり、\(\mid D\mid=n\), \(\mid Q\mid=m\), \(n &gt;= m\)であれば、平均と最悪時間計算量が、それぞれ、\(\mathcal{O}(m\log(n/m))\), \(m\)になる。
+本アルゴリズムは、Web検索エンジンで大きなシーケンスの直積を高速に求めるために開発された。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">April 12, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://nryotaro.dev/posts/lsmtree/">論文メモ The Log-Structured Merge-Tree (LSM-Tree)</a></h3>
+        <div class="summary"><p>LSM-Treeは、検索より挿入や削除が多い用途に向いたインデックス構造であり、例えば履歴テーブルやログの保存につかえる。
+メモリにある1つ木とディスク上の1つ以上の木からなり、直近の挿入や削除をメモリの木で管理する。
+メモリの木の大きさがしきい値を超えたとき、メモリの木の葉をディスクの木に移す。
+移動時は、ディスク上の木の葉とメモリの葉をマージソートの要領でソートし、ソートした葉をディスクの新しい連続領域に書き込む。
+連続領域に書き込み、アームの移動やディスクの回転を減らすことで、高速に挿入や削除ができる。
+一方、検索速度は、複数の木を探索しなければならないために、1つの木でインデックスを構成するB木に劣る。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">April 3, 2021</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/the_design_and_implementation_of_a_log_structured_file_system/">論文メモ The Design and Implementation of a Log-Structured File System</a></h3>
@@ -149,30 +174,6 @@ FD-treeのエントリ数が\(n\), ページサイズが\(B\)であれば、ラ�
         <div class="article-footer">
 	  
           <span class="date">February 13, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/tao_facebooks_distributed_data_store_for_social_graph/">論文メモ TAO: Facebook&#39;s Distributed Data Store for the Social Graph</a></h3>
-        <div class="summary"><p>TAOは、Facebookで開発されたソーシャルグラフのためのマルチリージョンの分散システムで、秒間10億件の読み込みと数百万件の書き込みの性能を発揮する。
-Facebookは、もともとソーシャルグラフを、MySQLに保存し、memcacheでキャッシュし、PHPで問いあわせるシステムで構成していた。
-TAOは、そのシステムの現状を引きつぎ、MySQLをストレージに採用している。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">February 4, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/the_daily_life_of_software_engineers_during_the_covid_19_pandemic/">論文メモ The Daily Life of Software Engineers during the COVID-19 Pandemic</a></h3>
-        <div class="summary"><p>COVID19でソフトウェア開発者が在宅稼動(WFH)をはじめたことによる稼動時間の使い方、良好性(Well-being), 生産性の変化を調査した。
-ロックダウンを実施した国々のエンジニア500名の中から、2020年4月20日から26日の一波について192名、2020年5月4日から10日の二波について184名を選び、サンプルを集めた。
-結果、会社での勤務とWFHの間で、稼動時間の使い方はほぼ変わっていないかった。
-また、一波において休憩と生産性の間に負の相関がみられたが、それ以外では良好性、生産性、社会性、心理の4つと特定の業務内容の間に相関関係はみられなかった。
-結果、組織やエンジニアにとってWFHそれ自体が課題になるわけではないと結論づけている。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">January 30, 2021</span>
         </div>
     </article>
     

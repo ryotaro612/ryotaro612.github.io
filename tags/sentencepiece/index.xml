@@ -6,41 +6,28 @@
     <description>Recent content in SentencePiece on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 29 Feb 2020 21:15:17 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/tags/sentencepiece/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Feb 2020 21:15:17 +0900</lastBuildDate>
+    <atom:link href="https://nryotaro.dev/tags/sentencepiece/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SentencePiece: A simple and language independent subword tokenizer and detokenizer for Neural Text Processing</title>
       <link>https://nryotaro.dev/posts/sentence_piece/</link>
       <pubDate>Sat, 29 Feb 2020 21:15:17 +0900</pubDate>
-      
       <guid>https://nryotaro.dev/posts/sentence_piece/</guid>
-      <description>&lt;p&gt;SentencePieceは、深層学習向けのトークナイザ・脱トークナイザである。
-特定の言語を意識した処理がないため、あらゆるテキストに利用できる。
-本論文では、C++やPythonによる&lt;a href=&#34;https://github.com/google/sentencepiece&#34;&gt;実装&lt;/a&gt;と翻訳への適用実験について書かれている。
-アルゴリズムの解説は、&lt;a href=&#34;https://www.aclweb.org/anthology/P16-1162.pdf&#34;&gt;Sennrich et al.&lt;/a&gt;や&lt;a href=&#34;https://arxiv.org/pdf/1804.10959.pdf&#34;&gt;Kudo.&lt;/a&gt;にゆずられている。
-これらの論文について2019年7月13日の&lt;a href=&#34;../neural_machine_translation_of_rate_words/&#34;&gt;記事&lt;/a&gt;と2019年7月17日の&lt;a href=&#34;./subword_regularization/&#34;&gt;記事&lt;/a&gt;で解説している。&lt;/p&gt;</description>
+      <description>&lt;p&gt;SentencePieceは、深層学習向けのトークナイザ・脱トークナイザである。&#xA;特定の言語を意識した処理がないため、あらゆるテキストに利用できる。&#xA;本論文では、C++やPythonによる&lt;a href=&#34;https://github.com/google/sentencepiece&#34;&gt;実装&lt;/a&gt;と翻訳への適用実験について書かれている。&#xA;アルゴリズムの解説は、&lt;a href=&#34;https://www.aclweb.org/anthology/P16-1162.pdf&#34;&gt;Sennrich et al.&lt;/a&gt;や&lt;a href=&#34;https://arxiv.org/pdf/1804.10959.pdf&#34;&gt;Kudo.&lt;/a&gt;にゆずられている。&#xA;これらの論文について2019年7月13日の&lt;a href=&#34;../neural_machine_translation_of_rate_words/&#34;&gt;記事&lt;/a&gt;と2019年7月17日の&lt;a href=&#34;./subword_regularization/&#34;&gt;記事&lt;/a&gt;で解説している。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>概要 Subword Regularization: Improving Neural Network Translation Models with Multiple Subword Candidates</title>
       <link>https://nryotaro.dev/posts/subword_regularization/</link>
       <pubDate>Wed, 17 Jul 2019 12:51:29 +0900</pubDate>
-      
       <guid>https://nryotaro.dev/posts/subword_regularization/</guid>
-      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-&lt;p&gt;過去に&lt;a href=&#34;../neural_machine_translation_of_rate_words/&#34;&gt;紹介&lt;/a&gt;した&lt;a href=&#34;https://www.aclweb.org/anthology/P16-1162&#34;&gt;論文&lt;/a&gt;と同様、SentencePiece（ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザ）の元になった論文である。
-ノイズに対するロバストさを上げるために、単語のサブワード（部分文字列）を生成するユニグラム言語モデルの学習方法と、モデルから生成されたサブワード列を入力とする機械翻訳モデルの学習方法を提案した。&lt;/p&gt;</description>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;過去に&lt;a href=&#34;../neural_machine_translation_of_rate_words/&#34;&gt;紹介&lt;/a&gt;した&lt;a href=&#34;https://www.aclweb.org/anthology/P16-1162&#34;&gt;論文&lt;/a&gt;と同様、SentencePiece（ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザ）の元になった論文である。&#xA;ノイズに対するロバストさを上げるために、単語のサブワード（部分文字列）を生成するユニグラム言語モデルの学習方法と、モデルから生成されたサブワード列を入力とする機械翻訳モデルの学習方法を提案した。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Neural Machine Translation of Rare Words with Subword Units (2016)</title>
       <link>https://nryotaro.dev/posts/neural_machine_translation_of_rate_words/</link>
       <pubDate>Sat, 13 Jul 2019 17:19:10 +0900</pubDate>
-      
       <guid>https://nryotaro.dev/posts/neural_machine_translation_of_rate_words/</guid>
-      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-&lt;p&gt;SentencePiece（ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザ）のトークナイズのアルゴリズムである。
-単語をサブワード（単語の部分文字列）に分割し、サブワードを組み合わせて珍しい単語や未知語を表現することで、これらの出現頻度の低い単語の翻訳上げるというもの。&lt;/p&gt;</description>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;SentencePiece（ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザ）のトークナイズのアルゴリズムである。&#xA;単語をサブワード（単語の部分文字列）に分割し、サブワードを組み合わせて珍しい単語や未知語を表現することで、これらの出現頻度の低い単語の翻訳上げるというもの。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

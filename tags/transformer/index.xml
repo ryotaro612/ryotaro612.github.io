@@ -6,90 +6,49 @@
     <description>Recent content in Transformer on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 07 Oct 2023 10:28:13 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/tags/transformer/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Oct 2023 10:28:13 -0400</lastBuildDate>
+    <atom:link href="https://nryotaro.dev/tags/transformer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension (2019)</title>
       <link>https://nryotaro.dev/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/</link>
       <pubDate>Sat, 07 Oct 2023 10:28:13 -0400</pubDate>
-      
       <guid>https://nryotaro.dev/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1910.13461&#34;&gt;BART&lt;/a&gt;は&lt;a href=&#34;https://browse.arxiv.org/pdf/1706.03762.pdf&#34;&gt;Transformer&lt;/a&gt;をつかった系列変換モデルの事前学習である。
-ノイズを入れたテキストからもとのテキストを復元できるようにモデルを訓練する。
-BARTの特徴は、ノイズの作り方に制限がないところにある。
-比較したノイズの作り方は、ランダムに選んだトークンから文書を始めることで回転する、BERTとおなじトークンのマスキング、トークンの一部の削除、文書中の文の順序の入れ換え、ある区間中にあるトークンをまとめて1つの&lt;code&gt;[MASK]&lt;/code&gt;に置き換える方法の5種類である。
-最後のトークンを1つのマスクキングするときに最もよい結果になった。
-マスクに置き換える区間の長さは\(\lambda = 3\)のポアソン分布によって決まる。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1910.13461&#34;&gt;BART&lt;/a&gt;は&lt;a href=&#34;https://browse.arxiv.org/pdf/1706.03762.pdf&#34;&gt;Transformer&lt;/a&gt;をつかった系列変換モデルの事前学習である。&#xA;ノイズを入れたテキストからもとのテキストを復元できるようにモデルを訓練する。&#xA;BARTの特徴は、ノイズの作り方に制限がないところにある。&#xA;比較したノイズの作り方は、ランダムに選んだトークンから文書を始めることで回転する、BERTとおなじトークンのマスキング、トークンの一部の削除、文書中の文の順序の入れ換え、ある区間中にあるトークンをまとめて1つの&lt;code&gt;[MASK]&lt;/code&gt;に置き換える方法の5種類である。&#xA;最後のトークンを1つのマスクキングするときに最もよい結果になった。&#xA;マスクに置き換える区間の長さは\(\lambda = 3\)のポアソン分布によって決まる。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks</title>
       <link>https://nryotaro.dev/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</link>
       <pubDate>Sat, 23 Sep 2023 10:21:03 -0400</pubDate>
-      
       <guid>https://nryotaro.dev/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1908.10084&#34;&gt;Sentence-BERT&lt;/a&gt;は、テキストをコサイン類似度で意味の類似度を比較できる固定長のベクトルに変換できる。
-&lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt;を2つのテキストを入力し類似度を出力するように訓練できるが、あるテキストに類似するテキストを求めたい場合には組合せ爆発が生じる。
-Sentence-BERTは、類似度が定義されたテキストの組から、類似するテキスト同士を近い位置に写像できるように学習する。
-ネットワークは、BERTを使ったシャムネットワークであり、重みを共有した2つのBERTに1つずつテキストを入力し、両方の出力を目的関数に入力する。&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1908.10084&#34;&gt;Sentence-BERT&lt;/a&gt;は、テキストをコサイン類似度で意味の類似度を比較できる固定長のベクトルに変換できる。&#xA;&lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt;を2つのテキストを入力し類似度を出力するように訓練できるが、あるテキストに類似するテキストを求めたい場合には組合せ爆発が生じる。&#xA;Sentence-BERTは、類似度が定義されたテキストの組から、類似するテキスト同士を近い位置に写像できるように学習する。&#xA;ネットワークは、BERTを使ったシャムネットワークであり、重みを共有した2つのBERTに1つずつテキストを入力し、両方の出力を目的関数に入力する。&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
     <item>
       <title>Self-Attention with Relative Position Representations(2018)</title>
       <link>https://nryotaro.dev/posts/self_attention_with_relative_position_representations/</link>
       <pubDate>Sat, 19 Aug 2023 10:02:50 -0400</pubDate>
-      
       <guid>https://nryotaro.dev/posts/self_attention_with_relative_position_representations/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1803.02155.pdf&#34;&gt;Self-Attention with Relative Position Representations&lt;/a&gt;は、&lt;a href=&#34;https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;Transformer&lt;/a&gt;のQKV注意機構に系列の要素間の相対位置をあたえる手法である。
-Transformerは、RNNやCNNとはちがい、要素の位置をモデルにあたえる決まった方法をもたない。
-Transformerの原論文は、正弦関数で要素の位置からベクトルを計算し、それを埋め込みベクトルに加算することで、位置情報をエンコードする。
-正弦関数を使う理由は、訓練データにない長さの系列に対する汎化性能を周期性で上げられると仮定したからである。
-提案手法は、この仮定を継承し、要素間の相対位置で位置情報をエンコードすることで、訓練データにない系列長の入力に対する汎化性能の向上をはかる。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1803.02155.pdf&#34;&gt;Self-Attention with Relative Position Representations&lt;/a&gt;は、&lt;a href=&#34;https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;Transformer&lt;/a&gt;のQKV注意機構に系列の要素間の相対位置をあたえる手法である。&#xA;Transformerは、RNNやCNNとはちがい、要素の位置をモデルにあたえる決まった方法をもたない。&#xA;Transformerの原論文は、正弦関数で要素の位置からベクトルを計算し、それを埋め込みベクトルに加算することで、位置情報をエンコードする。&#xA;正弦関数を使う理由は、訓練データにない長さの系列に対する汎化性能を周期性で上げられると仮定したからである。&#xA;提案手法は、この仮定を継承し、要素間の相対位置で位置情報をエンコードすることで、訓練データにない系列長の入力に対する汎化性能の向上をはかる。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer(2020)</title>
       <link>https://nryotaro.dev/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/</link>
       <pubDate>Sat, 05 Aug 2023 13:27:09 -0400</pubDate>
-      
       <guid>https://nryotaro.dev/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1910.10683&#34;&gt;Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer&lt;/a&gt;は、
-複数の異なる自然言語処理を、統一的にテキストからテキストを生成する問題とみなした大規模な実験によって、自然言語処理への転移学習の応用に見通しをつけた。
-この統一的なアプローチは、&lt;em&gt;T&lt;/em&gt;ext-&lt;em&gt;t&lt;/em&gt;o-&lt;em&gt;T&lt;/em&gt;ext &lt;em&gt;T&lt;/em&gt;ransfer &lt;em&gt;T&lt;/em&gt;ransformer(T5)と名づけられた。
-既存の技術への理解を深めることを目的としており、新たなアルゴリズムの提案はない。
-一方、調査する技術の限界を調べるために、大きなデータが必要であったことから、新たなデータセットColossal Clean Crawled Corpus(C4)が作られた。
-C4には、&lt;a href=&#34;https://commoncrawl.org/&#34;&gt;Common Crawl&lt;/a&gt;から抽出された英語のテキストがふくまれる。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1910.10683&#34;&gt;Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer&lt;/a&gt;は、&#xA;複数の異なる自然言語処理を、統一的にテキストからテキストを生成する問題とみなした大規模な実験によって、自然言語処理への転移学習の応用に見通しをつけた。&#xA;この統一的なアプローチは、&lt;em&gt;T&lt;/em&gt;ext-&lt;em&gt;t&lt;/em&gt;o-&lt;em&gt;T&lt;/em&gt;ext &lt;em&gt;T&lt;/em&gt;ransfer &lt;em&gt;T&lt;/em&gt;ransformer(T5)と名づけられた。&#xA;既存の技術への理解を深めることを目的としており、新たなアルゴリズムの提案はない。&#xA;一方、調査する技術の限界を調べるために、大きなデータが必要であったことから、新たなデータセットColossal Clean Crawled Corpus(C4)が作られた。&#xA;C4には、&lt;a href=&#34;https://commoncrawl.org/&#34;&gt;Common Crawl&lt;/a&gt;から抽出された英語のテキストがふくまれる。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>AN IMAGE IS WORTH 16x16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE(2021)</title>
       <link>https://nryotaro.dev/posts/an_image_is_worth_16x16_words_transformers_for_image_recognition_at_scale/</link>
       <pubDate>Sat, 29 Apr 2023 12:12:11 -0400</pubDate>
-      
       <guid>https://nryotaro.dev/posts/an_image_is_worth_16x16_words_transformers_for_image_recognition_at_scale/</guid>
-      <description>&lt;p&gt;画像認識に&lt;a href=&#34;https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;Transformer&lt;/a&gt;を使う手法を提案し、&lt;a href=&#34;https://arxiv.org/abs/1912.11370&#34;&gt;Big Transfer&lt;/a&gt;と&lt;a href=&#34;https://arxiv.org/abs/1911.04252&#34;&gt;Noisy Student&lt;/a&gt;と比較した。
-論文が発表された2021年でも、画像認識にニューラルネットワークを使う場合、畳込みニューラルネット(CNN)が基本の選択肢になる。
-自己注意機構を使った画像処理の&lt;a href=&#34;https://arxiv.org/abs/2003.07853&#34;&gt;先行研究&lt;/a&gt;はあるが、スケールするアーキテクチャではない。&lt;/p&gt;
-&lt;p&gt;AN IMAGE IS WORTH 16x16 WORDSは、分割した画像をトークン（単語）のようにTransformerへ入力することで、Transformerを画像認識へ応用できるこを示した。
-TransformerはCNNのように画像の向きや局所性を帰納バイアスにもたず、データが不十分でないと汎化性能は低い。
-しかし、学習データを14M-300Mまで増やすと、CNNを越える汎化性能を発揮した。&lt;/p&gt;</description>
+      <description>&lt;p&gt;画像認識に&lt;a href=&#34;https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;Transformer&lt;/a&gt;を使う手法を提案し、&lt;a href=&#34;https://arxiv.org/abs/1912.11370&#34;&gt;Big Transfer&lt;/a&gt;と&lt;a href=&#34;https://arxiv.org/abs/1911.04252&#34;&gt;Noisy Student&lt;/a&gt;と比較した。&#xA;論文が発表された2021年でも、画像認識にニューラルネットワークを使う場合、畳込みニューラルネット(CNN)が基本の選択肢になる。&#xA;自己注意機構を使った画像処理の&lt;a href=&#34;https://arxiv.org/abs/2003.07853&#34;&gt;先行研究&lt;/a&gt;はあるが、スケールするアーキテクチャではない。&lt;/p&gt;&#xA;&lt;p&gt;AN IMAGE IS WORTH 16x16 WORDSは、分割した画像をトークン（単語）のようにTransformerへ入力することで、Transformerを画像認識へ応用できるこを示した。&#xA;TransformerはCNNのように画像の向きや局所性を帰納バイアスにもたず、データが不十分でないと汎化性能は低い。&#xA;しかし、学習データを14M-300Mまで増やすと、CNNを越える汎化性能を発揮した。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Generating Long Sequences with Sparse Transformers(2019)</title>
       <link>https://nryotaro.dev/posts/generating_long_sequences_with_sparse_transformers/</link>
       <pubDate>Sat, 15 Apr 2023 10:59:43 -0400</pubDate>
-      
       <guid>https://nryotaro.dev/posts/generating_long_sequences_with_sparse_transformers/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1706.03762&#34;&gt;Transformer&lt;/a&gt;のQKV注意機構に入力するベクトルを限定し、長さ\(n\)の系列をQKV注意機構に入力したときの空間計算量を\(\mathcal{O}(n\sqrt{n})\)まで減らした&lt;a href=&#34;https://arxiv.org/abs/1904.10509&#34;&gt;研究&lt;/a&gt;である。
-Transformerであれば、系列の要素は、要素自体の位置と以前の要素すべてを注意し、時間と空間計算量は\(\mathcal{O}(n^2)\)になる。
-Sparse Transformerは、\(p\)個のパターンを用意し、パターンに該当する要素のみを各注意機構に入力し、\(p\)個の注意を生成する。
-そして、\(p\)個の注意を合成し、1つの注意に変換する。
-パターンは、画像やテキストなど、入力するデータの種類によって決めておく規則であり、たとえば、直近にある一定数の要素や等間隔に離れた要素を指定するパターンがありえある。
-パターンが\(p\)であれば、計算量は\(\mathcal{O}\sqrt[p]{n}\)になる。実験の設定は\(p=2\)である。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1706.03762&#34;&gt;Transformer&lt;/a&gt;のQKV注意機構に入力するベクトルを限定し、長さ\(n\)の系列をQKV注意機構に入力したときの空間計算量を\(\mathcal{O}(n\sqrt{n})\)まで減らした&lt;a href=&#34;https://arxiv.org/abs/1904.10509&#34;&gt;研究&lt;/a&gt;である。&#xA;Transformerであれば、系列の要素は、要素自体の位置と以前の要素すべてを注意し、時間と空間計算量は\(\mathcal{O}(n^2)\)になる。&#xA;Sparse Transformerは、\(p\)個のパターンを用意し、パターンに該当する要素のみを各注意機構に入力し、\(p\)個の注意を生成する。&#xA;そして、\(p\)個の注意を合成し、1つの注意に変換する。&#xA;パターンは、画像やテキストなど、入力するデータの種類によって決めておく規則であり、たとえば、直近にある一定数の要素や等間隔に離れた要素を指定するパターンがありえある。&#xA;パターンが\(p\)であれば、計算量は\(\mathcal{O}\sqrt[p]{n}\)になる。実験の設定は\(p=2\)である。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,20 +6,14 @@
     <description>Recent content in 形式手法 on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 25 Mar 2023 12:34:08 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/tags/%E5%BD%A2%E5%BC%8F%E6%89%8B%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Mar 2023 12:34:08 -0400</lastBuildDate>
+    <atom:link href="https://nryotaro.dev/tags/%E5%BD%A2%E5%BC%8F%E6%89%8B%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Proving the Correctness of Multiprocess Programs (1977)</title>
       <link>https://nryotaro.dev/posts/proving_correctness_of_multiprocess_programs/</link>
       <pubDate>Sat, 25 Mar 2023 12:34:08 -0400</pubDate>
-      
       <guid>https://nryotaro.dev/posts/proving_correctness_of_multiprocess_programs/</guid>
-      <description>&lt;p&gt;マルチプロセスプログラムの正しさを証明するための公理を提案する。
-正しさの条件は、プログラムが安全性と活性を満たすことである。
-安全はプログラムが特定の状態になりえないことを、活性はプログラムが特定の状態に必ず到達することを意味する。
-たとえば、キューにメッセージを配信するproducerとキューから取り出すconsumerがあるとする。
-このとき、容量以上のメッセージがキューに蓄積しない性質が安全性に、キューが満杯時にconsumerがメッセージを消費する性質が活性になりえる。
-プログラム、安全性、活性を形式化し、安全性と活性を証明することで、プログラムの正しさを示す。&lt;/p&gt;</description>
+      <description>&lt;p&gt;マルチプロセスプログラムの正しさを証明するための公理を提案する。&#xA;正しさの条件は、プログラムが安全性と活性を満たすことである。&#xA;安全はプログラムが特定の状態になりえないことを、活性はプログラムが特定の状態に必ず到達することを意味する。&#xA;たとえば、キューにメッセージを配信するproducerとキューから取り出すconsumerがあるとする。&#xA;このとき、容量以上のメッセージがキューに蓄積しない性質が安全性に、キューが満杯時にconsumerがメッセージを消費する性質が活性になりえる。&#xA;プログラム、安全性、活性を形式化し、安全性と活性を証明することで、プログラムの正しさを示す。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

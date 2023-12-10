@@ -6,18 +6,14 @@
     <description>Recent content in ガウス過程回帰 on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 03 Aug 2019 21:54:03 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/tags/%E3%82%AC%E3%82%A6%E3%82%B9%E9%81%8E%E7%A8%8B%E5%9B%9E%E5%B8%B0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Aug 2019 21:54:03 +0900</lastBuildDate>
+    <atom:link href="https://nryotaro.dev/tags/%E3%82%AC%E3%82%A6%E3%82%B9%E9%81%8E%E7%A8%8B%E5%9B%9E%E5%B8%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>概要 Gaussian Processes for Regression(1996)</title>
       <link>https://nryotaro.dev/posts/gaussian_processes_for_regression/</link>
       <pubDate>Sat, 03 Aug 2019 21:54:03 +0900</pubDate>
-      
       <guid>https://nryotaro.dev/posts/gaussian_processes_for_regression/</guid>
-      <description>&lt;p&gt;ガウス過程を回帰の問題に応用した。
-著者らは、scikit-learnの&lt;a href=&#34;https://scikit-learn.org/stable/modules/gaussian_process.html#gaussian-process&#34;&gt;ガウス過程回帰&lt;/a&gt;の
-元になっている&lt;a href=&#34;http://www.gaussianprocess.org/gpml/chapters/RW.pdf&#34;&gt;Gaussian Processes for Machine Learning&lt;/a&gt;の著者と同じ。
-論文の構成は、ガウス過程回帰の予測分布の式、ハイパーパラメタ推定方法、実験による評価からなる。&lt;/p&gt;</description>
+      <description>&lt;p&gt;ガウス過程を回帰の問題に応用した。&#xA;著者らは、scikit-learnの&lt;a href=&#34;https://scikit-learn.org/stable/modules/gaussian_process.html#gaussian-process&#34;&gt;ガウス過程回帰&lt;/a&gt;の&#xA;元になっている&lt;a href=&#34;http://www.gaussianprocess.org/gpml/chapters/RW.pdf&#34;&gt;Gaussian Processes for Machine Learning&lt;/a&gt;の著者と同じ。&#xA;論文の構成は、ガウス過程回帰の予測分布の式、ハイパーパラメタ推定方法、実験による評価からなる。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

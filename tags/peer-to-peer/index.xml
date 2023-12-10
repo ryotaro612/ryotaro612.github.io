@@ -6,32 +6,21 @@
     <description>Recent content in Peer-to-peer on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 23 Nov 2023 12:31:01 -0500</lastBuildDate><atom:link href="https://nryotaro.dev/tags/peer-to-peer/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Nov 2023 12:31:01 -0500</lastBuildDate>
+    <atom:link href="https://nryotaro.dev/tags/peer-to-peer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Chord: A Scalable Peer-to-peer Lookup Service for Internet Applications (2001)</title>
       <link>https://nryotaro.dev/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/</link>
       <pubDate>Thu, 23 Nov 2023 12:31:01 -0500</pubDate>
-      
       <guid>https://nryotaro.dev/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/</guid>
-      <description>&lt;p&gt;\(N\)個のノードからなる&lt;a href=&#34;https://pdos.csail.mit.edu/papers/ton:chord/paper-ton.pdf&#34;&gt;Chord&lt;/a&gt;のクラスタは、キーによるノードの問い合せに、\(O(\log N)\)のノードを介して応答できるPeer-to-peerのプロトコルである。
-&lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall09/cos518/papers/chash.pdf&#34;&gt;Consistent Hashing&lt;/a&gt;を応用しており、\(2^{m-1}+1\)以上\(2^m\)以下のノードが参加するconsistent hashingクラスタは、\(\mod(2^m)\)の非負の整数をIDとしてキーとノードを管理し、IDの空間上で隣接するノードにキーをわりあてる。
-Consistent hashingはキーをほぼ均等に配置でき、ノードの参加、離脱時に移動すべきキー数は\(O(1/N)\)に収まる。&lt;/p&gt;
-&lt;p&gt;参加、離脱するノードと隣接するノード間でのみキーの移動が生じる。
-Chordは、多くのノードが参加できるように、各ノードにもたせるルーティング情報を\(m\)個のほかのノードのみに限定する。
-クライアントや別のノードからキーを受信したノードは、ルーティング情報にあるノードと自分のID \(\textit{n}\)をキー\(\textit{key}\)と比較する。
-このとき、\(\textit{key} + x \equiv n_i\mod 2^m\)をみたす最小の非負の整数\(x\)に対応する\(n_i\)が自分のIDであれば、そのノードがキーに対応する。
-それ以外の場合は、最小の値になるIDをもつノードにキーを転送する。&lt;/p&gt;</description>
+      <description>&lt;p&gt;\(N\)個のノードからなる&lt;a href=&#34;https://pdos.csail.mit.edu/papers/ton:chord/paper-ton.pdf&#34;&gt;Chord&lt;/a&gt;のクラスタは、キーによるノードの問い合せに、\(O(\log N)\)のノードを介して応答できるPeer-to-peerのプロトコルである。&#xA;&lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall09/cos518/papers/chash.pdf&#34;&gt;Consistent Hashing&lt;/a&gt;を応用しており、\(2^{m-1}+1\)以上\(2^m\)以下のノードが参加するconsistent hashingクラスタは、\(\mod(2^m)\)の非負の整数をIDとしてキーとノードを管理し、IDの空間上で隣接するノードにキーをわりあてる。&#xA;Consistent hashingはキーをほぼ均等に配置でき、ノードの参加、離脱時に移動すべきキー数は\(O(1/N)\)に収まる。&lt;/p&gt;&#xA;&lt;p&gt;参加、離脱するノードと隣接するノード間でのみキーの移動が生じる。&#xA;Chordは、多くのノードが参加できるように、各ノードにもたせるルーティング情報を\(m\)個のほかのノードのみに限定する。&#xA;クライアントや別のノードからキーを受信したノードは、ルーティング情報にあるノードと自分のID \(\textit{n}\)をキー\(\textit{key}\)と比較する。&#xA;このとき、\(\textit{key} + x \equiv n_i\mod 2^m\)をみたす最小の非負の整数\(x\)に対応する\(n_i\)が自分のIDであれば、そのノードがキーに対応する。&#xA;それ以外の場合は、最小の値になるIDをもつノードにキーを転送する。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Pastry: Scalable Decentralized Object Location and Routing for Large Scale Peer to Peer Systems (2001)</title>
       <link>https://nryotaro.dev/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/</link>
       <pubDate>Tue, 07 Nov 2023 02:04:06 -0500</pubDate>
-      
       <guid>https://nryotaro.dev/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://rowstron.azurewebsites.net/PAST/pastry.pdf&#34;&gt;Pastry&lt;/a&gt;は、広域ネットーワーク規模のPeer-to-Peerなルーティングのアルゴリズムであり、メッセージをメッセージのキーに最も近いIDをもつノードに転送する。
-Pastryに参加するノードは対称的で、すべてのノードは同じアルゴリズムにしたがう。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://rowstron.azurewebsites.net/PAST/pastry.pdf&#34;&gt;Pastry&lt;/a&gt;は、広域ネットーワーク規模のPeer-to-Peerなルーティングのアルゴリズムであり、メッセージをメッセージのキーに最も近いIDをもつノードに転送する。&#xA;Pastryに参加するノードは対称的で、すべてのノードは同じアルゴリズムにしたがう。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

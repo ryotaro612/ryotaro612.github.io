@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Latent Semantic Analysis on Blanket</title>
+    <link>https://nryotaro.dev/en/tags/latent-semantic-analysis/</link>
+    <description>Recent content in Latent Semantic Analysis on Blanket</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 02 Dec 2023 11:27:38 -0500</lastBuildDate>
+    <atom:link href="https://nryotaro.dev/en/tags/latent-semantic-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Probablistic Latent Semantic Indexing (1999)</title>
+      <link>https://nryotaro.dev/en/posts/probabilistic_latent_semantic_indexing/</link>
+      <pubDate>Sat, 02 Dec 2023 11:27:38 -0500</pubDate>
+      <guid>https://nryotaro.dev/en/posts/probabilistic_latent_semantic_indexing/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://wordvec.colorado.edu/papers/Deerwester_1990.pdf&#34;&gt;Latent Semantic Analysis&lt;/a&gt; approximates an original term-document matrix by singular value decomposition (SVD).&#xA;The components consist of the frequencies with which each term occurred in each document.&#xA;The Latent Semantic Analysis thresholds all but the largest \(K\) singular values to zero.&#xA;The left singular vectors are a \(t \times K\) matrix, and the transpose of the right singular vectors are a \(K\times d\) matrix where \(t\) is the number of the terms and \(d\) is the number of the documents.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://sigir.org/wp-content/uploads/2017/06/p211.pdf&#34;&gt;Probabilistic Latent Semantic Indexing&lt;/a&gt; (PLSI) is a generative model that associates each term and document with an unobserved class variable \(z \in \mathcal{Z} = \{z_1,\dots , z_K\}\).&#xA;The likelihoods of the documents and terms are estimated by the Expectation Maximization (EM) algorithm, and the joint probability model \(\textbf{P}\) can be written as \(\textbf{P}=\hat{\textbf{U}}\hat{\Sigma}\hat{\textbf{V}}^t\) where \(\hat{\textbf{U}}=(P(d_i|z_k))_{i, k}\), \(\hat{\textbf{V}}=(P(w_j|z_k))_{j, k}\), \(\hat{\Sigma}=\text{diag} (P(z_k))_k\).&#xA;Compared to the Latent Semantic Analysis, the components of \(\textbf{P}\) have a clear probabilistic meaning in terms of mixture component distributions.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -6,70 +6,42 @@
     <description>Recent content in Embedding on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 21 May 2023 14:43:39 -0400</lastBuildDate><atom:link href="https://nryotaro.dev/tags/embedding/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 May 2023 14:43:39 -0400</lastBuildDate>
+    <atom:link href="https://nryotaro.dev/tags/embedding/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WORD TRANSLATION WITHOUT PARALLEL DATA(2018)</title>
       <link>https://nryotaro.dev/posts/word_translation_without_parallel_data/</link>
       <pubDate>Sun, 21 May 2023 14:43:39 -0400</pubDate>
-      
       <guid>https://nryotaro.dev/posts/word_translation_without_parallel_data/</guid>
-      <description>&lt;p&gt;対訳コーパスを使わずに、ある言語のエンベディングから別の言語のエンベディングへの写像を学習する。
-はじめに、敵対的生成ネットワークで写像を学習する。
-次に、出現頻度の高い単語について、写像されたエンベディングと目的言語のエンベディングにプロクラステス分析を適用し、より正確な写像関数を求める。&lt;/p&gt;</description>
+      <description>&lt;p&gt;対訳コーパスを使わずに、ある言語のエンベディングから別の言語のエンベディングへの写像を学習する。&#xA;はじめに、敵対的生成ネットワークで写像を学習する。&#xA;次に、出現頻度の高い単語について、写像されたエンベディングと目的言語のエンベディングにプロクラステス分析を適用し、より正確な写像関数を求める。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>context2vec: Learning Generic Context Embedding with Bidirectional LSTM (2016)</title>
       <link>https://nryotaro.dev/posts/context2vec/</link>
       <pubDate>Sun, 02 Feb 2020 19:19:46 +0900</pubDate>
-      
       <guid>https://nryotaro.dev/posts/context2vec/</guid>
-      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-&lt;p&gt;文書の文脈の分散表現を獲得するニューラルネットワークのアーキテクチャ&lt;em&gt;context2vec&lt;/em&gt;を提案、評価した論文である。
-アーキテクチャの基本構造は&lt;a href=&#34;https://arxiv.org/pdf/1301.3781.pdf&#34;&gt;CBOW&lt;/a&gt;と同様で、周辺の単語から中心の単語を当てられるようにコーパスをもとにモデルを訓練する。
-CBOWとの違いは、文脈の算出方法にある。
-CBOWは、ウィンドウ内のベクトルの平均値で文脈の分散表現を求める。
-一方、&lt;em&gt;context2vec&lt;/em&gt;では、双方向LSTMの出力をもとに算出する。&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;</description>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;文書の文脈の分散表現を獲得するニューラルネットワークのアーキテクチャ&lt;em&gt;context2vec&lt;/em&gt;を提案、評価した論文である。&#xA;アーキテクチャの基本構造は&lt;a href=&#34;https://arxiv.org/pdf/1301.3781.pdf&#34;&gt;CBOW&lt;/a&gt;と同様で、周辺の単語から中心の単語を当てられるようにコーパスをもとにモデルを訓練する。&#xA;CBOWとの違いは、文脈の算出方法にある。&#xA;CBOWは、ウィンドウ内のベクトルの平均値で文脈の分散表現を求める。&#xA;一方、&lt;em&gt;context2vec&lt;/em&gt;では、双方向LSTMの出力をもとに算出する。&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
-    
     <item>
       <title>Distributed Representations of Sentences and Documents(2014)</title>
       <link>https://nryotaro.dev/posts/distributed_representations_of_sentences_and_documents/</link>
       <pubDate>Sat, 28 Dec 2019 00:56:36 +0900</pubDate>
-      
       <guid>https://nryotaro.dev/posts/distributed_representations_of_sentences_and_documents/</guid>
-      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://radimrehurek.com/gensim/models/doc2vec.html&#34;&gt;Doc2Vec&lt;/a&gt;のアルゴリズムとして採用されたニューラル言語モデルParagraph Vectorを提案した論文である。
-bag of wordsは、文書の単語順を記憶せず、また、似た意味の単語ベクトルと無関係なベクトルを単語にわりあてる。
-Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文脈の中心の単語をあてられるように学習することで、可変長文字列から固定長の文書埋め込みベクトルを生成できるようになる。
-これにより、単語順と単語の意味を記憶したベクトルの生成を実現する。&lt;/p&gt;</description>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://radimrehurek.com/gensim/models/doc2vec.html&#34;&gt;Doc2Vec&lt;/a&gt;のアルゴリズムとして採用されたニューラル言語モデルParagraph Vectorを提案した論文である。&#xA;bag of wordsは、文書の単語順を記憶せず、また、似た意味の単語ベクトルと無関係なベクトルを単語にわりあてる。&#xA;Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文脈の中心の単語をあてられるように学習することで、可変長文字列から固定長の文書埋め込みベクトルを生成できるようになる。&#xA;これにより、単語順と単語の意味を記憶したベクトルの生成を実現する。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>GloVe: Global Vectors for Word Representation(2014)</title>
       <link>https://nryotaro.dev/posts/glove_vectors_for_word_representation/</link>
       <pubDate>Sat, 21 Dec 2019 23:53:36 +0900</pubDate>
-      
       <guid>https://nryotaro.dev/posts/glove_vectors_for_word_representation/</guid>
-      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.aclweb.org/anthology/D14-1162.pdf&#34;&gt;GloVe&lt;/a&gt;は,コーパスに出現する単語の共起回数を学習するニューラル言語モデルである。
-既存手法を単語の出現頻度の統計値つかう手法と対数双線形モデルに分類し、両者の長所を備え短所を補う手法として、GloVeを提案する。&lt;/p&gt;</description>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.aclweb.org/anthology/D14-1162.pdf&#34;&gt;GloVe&lt;/a&gt;は,コーパスに出現する単語の共起回数を学習するニューラル言語モデルである。&#xA;既存手法を単語の出現頻度の統計値つかう手法と対数双線形モデルに分類し、両者の長所を備え短所を補う手法として、GloVeを提案する。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>A Dual Embedding Space Model for Document Ranking</title>
       <link>https://nryotaro.dev/posts/a_dual_embedding_space_model_for_document_ranking/</link>
       <pubDate>Sat, 30 Nov 2019 08:18:06 +0900</pubDate>
-      
       <guid>https://nryotaro.dev/posts/a_dual_embedding_space_model_for_document_ranking/</guid>
-      <description>&lt;p&gt;Dual Embedding Space Model(DESM)は、word2vecによるランキング学習である。
-word2vecは、単語ごとに、入力と出力それぞれに近い重みから、2つの分散表現を生成できる。
-DESMは、入力側の重みでクエリを、出力側の重みで文書を、それぞれ分散表現に変換する。&lt;/p&gt;
-&lt;p&gt;実験では、BM25と比較して評価した。
-DESMだけで順位づけをすると偽陽性が高くなるが、DESMとBM25の加重平均をとるとBM25よりも高いNDCG値になった。
-アルゴリズムを実装し&lt;a href=&#34;https://github.com/nryotaro/desm&#34;&gt;公開&lt;/a&gt;した。&lt;/p&gt;</description>
+      <description>&lt;p&gt;Dual Embedding Space Model(DESM)は、word2vecによるランキング学習である。&#xA;word2vecは、単語ごとに、入力と出力それぞれに近い重みから、2つの分散表現を生成できる。&#xA;DESMは、入力側の重みでクエリを、出力側の重みで文書を、それぞれ分散表現に変換する。&lt;/p&gt;&#xA;&lt;p&gt;実験では、BM25と比較して評価した。&#xA;DESMだけで順位づけをすると偽陽性が高くなるが、DESMとBM25の加重平均をとるとBM25よりも高いNDCG値になった。&#xA;アルゴリズムを実装し&lt;a href=&#34;https://github.com/nryotaro/desm&#34;&gt;公開&lt;/a&gt;した。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

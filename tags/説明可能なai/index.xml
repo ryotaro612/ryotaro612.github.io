@@ -6,19 +6,14 @@
     <description>Recent content in 説明可能なAI on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 26 Jan 2020 01:38:57 +0900</lastBuildDate><atom:link href="https://nryotaro.dev/tags/%E8%AA%AC%E6%98%8E%E5%8F%AF%E8%83%BD%E3%81%AAai/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Jan 2020 01:38:57 +0900</lastBuildDate>
+    <atom:link href="https://nryotaro.dev/tags/%E8%AA%AC%E6%98%8E%E5%8F%AF%E8%83%BD%E3%81%AAai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Why Should I Trust You? Explaining the Predictions of Any Classifier</title>
       <link>https://nryotaro.dev/posts/why_should_i_trust_you/</link>
       <pubDate>Sun, 26 Jan 2020 01:38:57 +0900</pubDate>
-      
       <guid>https://nryotaro.dev/posts/why_should_i_trust_you/</guid>
-      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-&lt;p&gt;モデルの予測に説明をあたえる手法、Local Interpretable Model-agnostic Explanations (LIME)を提案する。
-モデルが回帰や分類器であれば、アルゴリズムによらずLIMEを適用できる。
-説明を与えたい事例近くにある事例を解釈可能なモデルに学習させ、解釈可能なモデルで予測を説明する。
-また、個別の予測ではなく、モデル自体をよく説明する事例を集める手法Submodullar Pick (SP)-LIMEを提案する。&lt;/p&gt;</description>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;モデルの予測に説明をあたえる手法、Local Interpretable Model-agnostic Explanations (LIME)を提案する。&#xA;モデルが回帰や分類器であれば、アルゴリズムによらずLIMEを適用できる。&#xA;説明を与えたい事例近くにある事例を解釈可能なモデルに学習させ、解釈可能なモデルで予測を説明する。&#xA;また、個別の予測ではなく、モデル自体をよく説明する事例を集める手法Submodullar Pick (SP)-LIMEを提案する。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

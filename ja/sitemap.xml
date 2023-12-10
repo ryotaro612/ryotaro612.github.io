@@ -2,8 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://nryotaro.dev/posts/a_protocol_for_packet_network_intercommunication/</loc>
+    <lastmod>2023-12-09T12:24:23-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/a_protocol_for_packet_network_intercommunication/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/a_protocol_for_packet_network_intercommunication/"
+                />
+  </url><url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2023-11-23T12:31:01-05:00</lastmod>
+    <lastmod>2023-12-09T12:24:23-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -14,6 +27,61 @@
                 hreflang="ja"
                 href="https://nryotaro.dev/"
                 />
+  </url><url>
+    <loc>https://nryotaro.dev/posts/</loc>
+    <lastmod>2023-12-09T12:24:23-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/tags/</loc>
+    <lastmod>2023-12-09T12:24:23-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/tags/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/tags/tcp/</loc>
+    <lastmod>2023-12-09T12:24:23-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/tags/tcp/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/tags/tcp/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/posts/probabilistic_latent_semantic_indexing/</loc>
+    <lastmod>2023-12-02T11:27:38-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/probabilistic_latent_semantic_indexing/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/probabilistic_latent_semantic_indexing/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/tags/%E6%BD%9C%E5%9C%A8%E6%84%8F%E5%91%B3%E8%A7%A3%E6%9E%90/</loc>
+    <lastmod>2023-12-02T11:27:38-05:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/</loc>
     <lastmod>2023-11-23T12:31:01-05:00</lastmod>
@@ -39,32 +107,6 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://nryotaro.dev/tags/peer-to-peer/"
-                />
-  </url><url>
-    <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2023-11-23T12:31:01-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/posts/"
-                />
-  </url><url>
-    <loc>https://nryotaro.dev/tags/</loc>
-    <lastmod>2023-11-23T12:31:01-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/tags/"
                 />
   </url><url>
     <loc>https://nryotaro.dev/tags/large-language-model/</loc>
@@ -500,9 +542,6 @@
     <lastmod>2023-03-12T16:17:35-04:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/indexing_by_latent_semantic_analysis/</loc>
-    <lastmod>2023-03-04T18:27:24+09:00</lastmod>
-  </url><url>
-    <loc>https://nryotaro.dev/tags/%E6%BD%9C%E5%9C%A8%E6%84%8F%E5%91%B3%E8%A7%A3%E6%9E%90/</loc>
     <lastmod>2023-03-04T18:27:24+09:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/aries/</loc>
