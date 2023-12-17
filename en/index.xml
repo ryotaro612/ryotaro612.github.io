@@ -6,8 +6,15 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 09 Dec 2023 12:24:23 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 16 Dec 2023 09:48:32 -0500</lastBuildDate>
     <atom:link href="https://nryotaro.dev/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wide and Deep Learning for Recommender Systems (2016)</title>
+      <link>https://nryotaro.dev/en/posts/wide-and-deep-learning-for-recommender-systems/</link>
+      <pubDate>Sat, 16 Dec 2023 09:48:32 -0500</pubDate>
+      <guid>https://nryotaro.dev/en/posts/wide-and-deep-learning-for-recommender-systems/</guid>
+      <description>&lt;p&gt;Generalized linear models are widely used for large-scale regression and classification problems with sparse inputs because they are simple, scale and interpretable.&#xA;One limitation of interactions or cross-prodcution transformations in generalized linear models is that they do not generalize to query-item feature pairs that have not appeared in the training data.&#xA;Compared with generalized linear models, deep neural networks can improve the diversity of the recommendations.&#xA;Howerver it is difficult to learn effective low-dimentional dense embedding vectors.&#xA;&lt;a href=&#34;https://arxiv.org/abs/1606.07792&#34;&gt;Wide &amp;amp; Deep Learning for Recommender Systems&lt;/a&gt; jointly trains a generalized linear model and a feed-forward neural network (FFN) to combines their benefits.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>A Protocol for Packet Network Intercommunication (1974)</title>
       <link>https://nryotaro.dev/en/posts/a_protocol_for_packet_network_intercommunication/</link>

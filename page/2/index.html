@@ -63,6 +63,30 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/">BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension (2019)</a></h3>
+        <div class="summary"><p><a href="https://arxiv.org/abs/1910.13461">BART</a>は<a href="https://browse.arxiv.org/pdf/1706.03762.pdf">Transformer</a>をつかった系列変換モデルの事前学習である。
+ノイズを入れたテキストからもとのテキストを復元できるようにモデルを訓練する。
+BARTの特徴は、ノイズの作り方に制限がないところにある。
+比較したノイズの作り方は、ランダムに選んだトークンから文書を始めることで回転する、BERTとおなじトークンのマスキング、トークンの一部の削除、文書中の文の順序の入れ換え、ある区間中にあるトークンをまとめて1つの<code>[MASK]</code>に置き換える方法の5種類である。
+最後のトークンを1つのマスクキングするときに最もよい結果になった。
+マスクに置き換える区間の長さは\(\lambda = 3\)のポアソン分布によって決まる。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/transformer/">
+		#Transformer
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">October 7, 2023</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/communicating_sequenctial_processes/">Communicating Sequential Processes (1978)</a></h3>
         <div class="summary"><p><a href="https://www.cs.cmu.edu/~crary/819-f09/Hoare78.pdf">Communicating Sequential Processes (CSP)</a>は、あるプロセスの出力を別のプロセスの入力に渡し、入出力のあるプロセスを並行実行するプログラミングモデルである。
 たとえば、GoのgoroutinesはCSPに<a href="https://www.cs.princeton.edu/courses/archive/fall16/cos418/docs/P1-concurrency.pdf">もとづく</a>軽量スレッドである。</p></div>
@@ -291,27 +315,6 @@ C4には、<a href="https://commoncrawl.org/">Common Crawl</a>から抽出され
 	  </ul>
 	  
           <span class="date">August 5, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/catalan_number/">Catalan Numbers(2016)</a></h3>
-        <div class="summary"><p>カタラン数は、いくつかの組合せの問題の解で知られる自然数の系列である。
-\(n\)個の対応する括弧&quot;(, )&ldquo;からなる文字列の組合せの数や、一辺の長さが\(n\)の格子の左上から右下への対角線より上を通る最短経路の数は、\(n\)番目のカタラン数である。
-このページでは、この2つの問題の解がカタラン数であるとして、漸化式と二項係数の2つの形式によるカタラン数の一般項を求める。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E3%82%AB%E3%82%BF%E3%83%A9%E3%83%B3%E6%95%B0/">
-		#カタラン数
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">July 29, 2023</span>
         </div>
     </article>
     

@@ -63,6 +63,19 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/character_aware_neural_language_models/">論文メモ Character-Aware Neural Language Models</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>文字単位の入力から次に出現する単語を予測するニューラル言語モデルの論文である。
+アーキテクチャは入力から近い順にCNN, highway network, LSTMからなる。
+実験データにPenn Treebankを、評価指標にPerplexityを採用してモデルを評価したところ、
+論文が発表された2016年時点での<a href="https://arxiv.org/abs/1409.2329">SOTA</a>の60%程度のパラメタしかないモデルでありながら、これに匹敵する性能を発揮した。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">April 4, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/deep_contextualized_word_representations/">論文メモ Deep contextualized word representations</a></h3>
         <div class="summary"><p>文脈をふまえた単語の分散表現を生成する手法を提案し、教師あり学習に応用することで評価した論文である。
 文字単位の学習済み双方向LSTM言語モデルへの入力と各層の出力から分散表現をつくる。
@@ -255,38 +268,6 @@ CBOWは、ウィンドウ内のベクトルの平均値で文脈の分散表現�
 	  </ul>
 	  
           <span class="date">February 2, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/neural_machine_translation_by_jointly_learning_to_align_and_translate/">NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE(2015)</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>Decoderに注意機構を採用したencoder-decoderモデルを提案したICLR2015の論文である。
-論文の発表当時、encoder-decoderモデルによる翻訳の多くは、encoderが入力文を固定長ベクトルに変換し、固定長ベクトルから翻訳された文を出力していた。
-著者らは、固定長ベクトルへの変換が長い文の翻訳性能を下げていると考え、固定長ベクトルを注意機構におきかえたencoder-decoderモデルを提案した。
-モデルは、翻訳に加え、生成する単語と入力文の箇所の関係を学習する。
-推定時には、まず、次に生成する単語に関係する入力文の箇所を推定する。
-次に、推定された箇所と生成済の単語列をもとに、単語を生成する。
-特に長い文書の翻訳において、固定長ベクトルをつかうモデルよりも、提案手法が優れていることを実験的に示した。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E6%A9%9F%E6%A2%B0%E7%BF%BB%E8%A8%B3/">
-		#機械翻訳
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/attention/">
-		#Attention
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">February 1, 2020</span>
         </div>
     </article>
     

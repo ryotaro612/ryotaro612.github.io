@@ -19,7 +19,7 @@
     
     <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
     
-    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
     
 
 <link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>A Protocol for Packet Network Intercommunication (1974)</title>
+    <title>Wide and Deep Learning for Recommender Systems (2016)</title>
   </head>
 
   <body>
@@ -46,58 +46,52 @@
     
         
     <header class="navigation">
-      <h2><a href="https://nryotaro.dev/">Blanket</a></h2>
+      <h2><a href="https://nryotaro.dev/en/">Blanket</a></h2>
       <nav>
         <ul>
-          <li><a href="https://nryotaro.dev/about">About</a></li>
-          <li><a href="https://nryotaro.dev/posts">Posts</a></li>
-          <li><a href="https://nryotaro.dev/tags">Tags</a></li>
+          <li><a href="https://nryotaro.dev/en/about">About</a></li>
+          <li><a href="https://nryotaro.dev/en/posts">Posts</a></li>
+          <li><a href="https://nryotaro.dev/en/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/en/posts/a_protocol_for_packet_network_intercommunication/">en</a></li>
+	  <li><a href="https://nryotaro.dev/posts/wide-and-deep-learning-for-recommender-systems/">ja</a></li>
 	  
         </ul>
       </nav>
     </header>
     
 <main>
-  <h1>A Protocol for Packet Network Intercommunication (1974)</h1>
+  <h1>Wide and Deep Learning for Recommender Systems (2016)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://nryotaro.dev/tags/tcp/">
-	#TCP
+      <a href="https://nryotaro.dev/en/tags/recommendation/">
+	#Recommendation
       </a>
     </li>
     
   </ul>  
-  <span class="date">December 9, 2023</span>    
+  <span class="date">December 16, 2023</span>    
   <div>
-    <p>TCPの起源はヴィントン・サーフとロバート・カーンが1974年に出版した<a href="https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf">A Protocol for Packet Network Intercommunication</a>にまでさかのぼる。
-当時、ローカルネットワーク内のコンピュータ同士で通信するためのプロトコルはあったが、ネットワークを横断して通信できるプロコトルはなかった。</p>
-<p>プロトコルは、仕様のことなるパケット交換機同士の通信を可能にし、ホスト間の信頼できる通信経路を確立する役割をになう。
-課題になるパケット交換機の仕様の違いには、ホストのアドレスを指定する方法、パケットサイズの上限、タイムアウトのしきい値などがある。
-これらの違いを解消し、さらに、パケットの損失やデータの変更を検知できなければならない。</p>
-<p>今日ではアドレスを標準化するプロトコルはIPであるが、TCPとIPは当初1つのプロトコルとして標準化されていた。
-アドレスでホストを特定し、ポート番号で送受信するプログラムを区別する仕組みは今日と変わらない。
-そのほかの機能についても、詳細は<a href="https://datatracker.ietf.org/doc/html/rfc9293">現在の仕様</a>と違う点はあるが、セグメント、ウィンドウ、フロー制御のような主要な概念は当初から考案されていた。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+    <p>Generalized linear models are widely used for large-scale regression and classification problems with sparse inputs because they are simple, scale and interpretable.
+One limitation of interactions or cross-prodcution transformations in generalized linear models is that they do not generalize to query-item feature pairs that have not appeared in the training data.
+Compared with generalized linear models, deep neural networks can improve the diversity of the recommendations.
+Howerver it is difficult to learn effective low-dimentional dense embedding vectors.
+<a href="https://arxiv.org/abs/1606.07792">Wide &amp; Deep Learning for Recommender Systems</a> jointly trains a generalized linear model and a feed-forward neural network (FFN) to combines their benefits.</p>
+<p>A generalized linear model is in the form \(y=\textbf{w}^T\textbf{x}+b\) where \(y\) is the prediction, \(\textbf{x}=[x_1,x_2,\dots,x_d]\) is a vector of \(d\) features, \(\textbf{w}\) are the parameters, and \(b\) is the bias.</p>
+<p>The \(k\)-th interaction or cross-product transformation can be represented as:
+$$
+\phi_k(\textbf{x})=\prod^d_{i=1}x^{c_{ki}}_i\ c_{ki}\in\{0, 1\}
+$$
+where \(c_{ki}=1\) if the \(i\)-th feature is a part of the \(k\)-th intaction, and 0 otherwise.</p>
+<p>In an FFN, the first layer, often referred to as an embedding layer, converts the high-dimensional features into low-dimensional dense real-valued vectors. The embedding vectors are then fed into the hidden layers in the forward pass:
+$$
+a^{(l+l)}=f(W^{(l)}a^{(l)}+b^{(l)})
+$$
+where \(l\) is the layer number and \(f\) is the activation function.</p>
+<p>The proposed model combines a generalized linear model and an FFN by using a weighted sum of their output log odds that are fed into a logistic loss function:
+$$
+P(Y=1|\textbf{x})=\sigma(\textbf{w}^T_{\textit{wide}}[\textbf{x}, \phi(\textbf{x})]+\textbf{w}^T_{\textit{deep}}a^{(l_f)}+b)
+$$</p>
   </div>
 </main>
 
@@ -105,17 +99,11 @@
 <ul class="pagination">
     
     <li>
-      <a href="/posts/probabilistic_latent_semantic_indexing/">
+      <a href="/en/posts/a_protocol_for_packet_network_intercommunication/">
 	<i class="fa-solid fa-xl fa-angle-left"></i>
       </a>
     </li>
     
-    
-    <li>
-      <a href="/posts/wide-and-deep-learning-for-recommender-systems/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
     
 </ul>
 
@@ -136,7 +124,7 @@
           </a>
         </li>
         
-        <li><a href="https://nryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        <li><a href="https://nryotaro.dev/en/index.xml"><i class="fas fa-rss"></i></a></li>
         
       </ul>
       <small>© Nakamura, Ryotaro. All Rights Reserved.</small>

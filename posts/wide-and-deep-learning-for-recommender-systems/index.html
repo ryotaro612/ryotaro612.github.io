@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>A Protocol for Packet Network Intercommunication (1974)</title>
+    <title>Wide and Deep Learning for Recommender Systems (2016)</title>
   </head>
 
   <body>
@@ -53,51 +53,43 @@
           <li><a href="https://nryotaro.dev/posts">Posts</a></li>
           <li><a href="https://nryotaro.dev/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/en/posts/a_protocol_for_packet_network_intercommunication/">en</a></li>
+	  <li><a href="https://nryotaro.dev/en/posts/wide-and-deep-learning-for-recommender-systems/">en</a></li>
 	  
         </ul>
       </nav>
     </header>
     
 <main>
-  <h1>A Protocol for Packet Network Intercommunication (1974)</h1>
+  <h1>Wide and Deep Learning for Recommender Systems (2016)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://nryotaro.dev/tags/tcp/">
-	#TCP
+      <a href="https://nryotaro.dev/tags/recommendation/">
+	#Recommendation
       </a>
     </li>
     
   </ul>  
-  <span class="date">December 9, 2023</span>    
+  <span class="date">December 16, 2023</span>    
   <div>
-    <p>TCPの起源はヴィントン・サーフとロバート・カーンが1974年に出版した<a href="https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf">A Protocol for Packet Network Intercommunication</a>にまでさかのぼる。
-当時、ローカルネットワーク内のコンピュータ同士で通信するためのプロトコルはあったが、ネットワークを横断して通信できるプロコトルはなかった。</p>
-<p>プロトコルは、仕様のことなるパケット交換機同士の通信を可能にし、ホスト間の信頼できる通信経路を確立する役割をになう。
-課題になるパケット交換機の仕様の違いには、ホストのアドレスを指定する方法、パケットサイズの上限、タイムアウトのしきい値などがある。
-これらの違いを解消し、さらに、パケットの損失やデータの変更を検知できなければならない。</p>
-<p>今日ではアドレスを標準化するプロトコルはIPであるが、TCPとIPは当初1つのプロトコルとして標準化されていた。
-アドレスでホストを特定し、ポート番号で送受信するプログラムを区別する仕組みは今日と変わらない。
-そのほかの機能についても、詳細は<a href="https://datatracker.ietf.org/doc/html/rfc9293">現在の仕様</a>と違う点はあるが、セグメント、ウィンドウ、フロー制御のような主要な概念は当初から考案されていた。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+    <p>推薦システムに一般化線形モデルや深層学習を応用する場合、両者には一長一短がある。
+一般線形化モデルは、学習データに忠実かつ解釈しやすい推測を出力するが、交互作用では学習データにないアイテムを推薦できない。
+深層学習は、汎化性能にすぐれるが、疎で高ランクな行列を学習しがたい。
+<a href="https://arxiv.org/abs/1606.07792">Wide &amp; Deep Learning for Recommender Systems</a>は、一般線形化モデルとフィードフォワードニューラルネットワーク (FFN) の出力の重みつき和をロジスティック関数に適用し、両者の利点を生かし欠点をおぎなうモデルである。</p>
+<p>次元数の\(d\)の特徴を\(\textbf{x}=[x_1, x_2, \dots, x_d]\), バイアス項を\(b\), 重みを\(\textbf{w}\)とすると、一般化線形モデルを\(y=\textbf{w}^T\textbf{x}+b\)と表せる。
+\(k\)番目の交互作用が\(i\)番目の特徴を採用する場合に\(c_{ki}=1\), しない場合に\(c_{ki}=0\)となる\(c_{ki}\)として、\(k\)番目の交互作用項を\(\phi_k(\textbf{x})\)とおく。
+$$
+\phi_k(\textbf{x})=\prod^d_{i=1}x^{c_{ki}}_i\ c_{ki}\in\{0, 1\}
+$$</p>
+<p>FFNは、\(\textbf{x}\)を低次元の埋め込みベクトルに変換する層のあとに隠れ層がつづき、\(l\)を層の位置、\(f\)を活性化関数とすると\(a^{(l+l)}=f(W^{(l)}a^{(l)}+b^{(l)})\)となる。
+なお、アーキテクチャはFFNでなくてもよい。</p>
+<p>モデルは、一般化線形モデルとFFNのログオッズの重みつき和にロジスティック関数を適用した値を出力する。
+一般化線形モデルは、もとの特徴\(\textbf{x}\)と交互作用\(\phi(\textbf{x})\)を連結した行列\([\textbf{x}, \phi(\textbf{x})]\)をうけとる。
+このとき、2クラス問題を推定するモデルは
+$$
+P(Y=1|\textbf{x})=\sigma(\textbf{w}^T_{\textit{wide}}[\textbf{x}, \phi(\textbf{x})]+\textbf{w}^T_{\textit{deep}}a^{(l_f)}+b)
+$$
+となる。</p>
   </div>
 </main>
 
@@ -105,17 +97,11 @@
 <ul class="pagination">
     
     <li>
-      <a href="/posts/probabilistic_latent_semantic_indexing/">
+      <a href="/posts/a_protocol_for_packet_network_intercommunication/">
 	<i class="fa-solid fa-xl fa-angle-left"></i>
       </a>
     </li>
     
-    
-    <li>
-      <a href="/posts/wide-and-deep-learning-for-recommender-systems/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
     
 </ul>
 
