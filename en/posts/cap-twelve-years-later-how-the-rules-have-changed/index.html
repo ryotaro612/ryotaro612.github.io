@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>Wide and Deep Learning for Recommender Systems (2016)</title>
+    <title>CAP Twelve Years Later: How the &#34;Rules&#34; Have Changed (2012)</title>
   </head>
 
   <body>
@@ -53,45 +53,40 @@
           <li><a href="https://nryotaro.dev/en/posts">Posts</a></li>
           <li><a href="https://nryotaro.dev/en/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/posts/wide-and-deep-learning-for-recommender-systems/">ja</a></li>
+	  <li><a href="https://nryotaro.dev/posts/cap-twelve-years-later-how-the-rules-have-changed/">ja</a></li>
 	  
         </ul>
       </nav>
     </header>
     
 <main>
-  <h1>Wide and Deep Learning for Recommender Systems (2016)</h1>
+  <h1>CAP Twelve Years Later: How the &#34;Rules&#34; Have Changed (2012)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://nryotaro.dev/en/tags/recommendation/">
-	#Recommendation
+      <a href="https://nryotaro.dev/en/tags/cap-theorem/">
+	#CAP theorem
       </a>
     </li>
     
   </ul>  
-  <span class="date">December 16, 2023</span>    
+  <span class="date">December 23, 2023</span>    
   <div>
-    <p>Generalized linear models are widely used for large-scale regression and classification problems with sparse inputs because they are simple, scale and interpretable.
-One limitation of interactions or cross-prodcution transformations in generalized linear models is that they do not generalize to query-item feature pairs that have not appeared in the training data.
-Compared with generalized linear models, deep neural networks can improve the diversity of the recommendations.
-Howerver it is difficult to learn effective low-dimentional dense embedding vectors.
-<a href="https://arxiv.org/abs/1606.07792">Wide &amp; Deep Learning for Recommender Systems</a> jointly trains a generalized linear model and a feed-forward neural network (FFN) to combines their benefits.</p>
-<p>A generalized linear model is in the form \(y=\textbf{w}^T\textbf{x}+b\) where \(y\) is the prediction, \(\textbf{x}=[x_1,x_2,\dots,x_d]\) is a vector of \(d\) features, \(\textbf{w}\) are the parameters, and \(b\) is the bias.</p>
-<p>The \(k\)-th interaction or cross-product transformation can be represented as:
-$$
-\phi_k(\textbf{x})=\prod^d_{i=1}x^{c_{ki}}_i\ c_{ki}\in\{0, 1\}
-$$
-where \(c_{ki}=1\) if the \(i\)-th feature is a part of the \(k\)-th intaction, and 0 otherwise.</p>
-<p>In an FFN, the first layer, often referred to as an embedding layer, converts the high-dimensional features into low-dimensional dense real-valued vectors. The embedding vectors are then fed into the hidden layers in the forward pass:
-$$
-a^{(l+l)}=f(W^{(l)}a^{(l)}+b^{(l)})
-$$
-where \(l\) is the layer number and \(f\) is the activation function.</p>
-<p>The proposed model combines a generalized linear model and an FFN by using a weighted sum of their output log odds that are fed into a logistic loss function:
-$$
-P(Y=1|\textbf{x})=\sigma(\textbf{w}^T_{\textit{wide}}[\textbf{x}, \phi(\textbf{x})]+\textbf{w}^T_{\textit{deep}}a^{(l_f)}+b)
-$$</p>
+    <p>The <a href="https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf">CAP theorem</a>, coined by Eric Brewer, states that in a shared-data system, you can have either Consistency (C), Availability (A), or Parition tolerance (P), but not all three simultaneously.
+However, Martin Kleppmann challenges the CAP theorem and discusses its limitations in <a href="https://dataintensive.net/">Designing Data-Intensive Applications</a>, and <a href="https://www.cl.cam.ac.uk/research/dtg/archived/files/publications/public/mk428/cap-critique.pdf">A Critique of the CAP Theorem</a>.
+In <a href="https://sites.cs.ucsb.edu/~rich/class/cs293b-cloud/papers/brewer-cap.pdf">CAP Twelve Years Later: How the “Rules” Have Changed</a>, Brewer clarifies that the notion of &ldquo;2 of 3&rdquo; is misleading.
+In practice, designers cannot forfeit P and have a choice between C and A.</p>
+<p>The consistency of CAP is different from the that of ACID.
+The C in CAP is equivalent to having a single up-to-date copy of the data.
+The cosistency is referred as <a href="https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf">Lineariability</a> in <a href="https://users.ece.cmu.edu/~adrian/731-sp04/readings/GL-cap.pdf">Brewer&rsquo;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web</a>, which proved the CAP theory in an ascynchronous network model.</p>
+<p>The &ldquo;2 of 3&rdquo; view can be misleading.
+Firstly, there is little need to sacrifice consistency or availability when the system is not experiencing partitions, as partitions are rare.
+Secondly, consistency and availability are fine-grained properties that can vary based on specific operations or data.
+Finally they are not strictly binary options.</p>
+<p>Partitioning is a continuous property that is related to both latency and network partitions.
+Managing partitions involves making decisions about detecting the start of a partition and network recovery.
+During the partition recovery process, techniques like version vectors and CRDTs can be used.</p>
+
   </div>
 </main>
 
@@ -99,17 +94,11 @@ $$</p>
 <ul class="pagination">
     
     <li>
-      <a href="/en/posts/a_protocol_for_packet_network_intercommunication/">
+      <a href="/en/posts/wide-and-deep-learning-for-recommender-systems/">
 	<i class="fa-solid fa-xl fa-angle-left"></i>
       </a>
     </li>
     
-    
-    <li>
-      <a href="/en/posts/cap-twelve-years-later-how-the-rules-have-changed/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
     
 </ul>
 

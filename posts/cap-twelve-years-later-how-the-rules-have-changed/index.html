@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>Wide and Deep Learning for Recommender Systems (2016)</title>
+    <title>CAP Twelve Years Later: How the &#34;Rules&#34; Have Changed (2012)</title>
   </head>
 
   <body>
@@ -53,43 +53,40 @@
           <li><a href="https://nryotaro.dev/posts">Posts</a></li>
           <li><a href="https://nryotaro.dev/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/en/posts/wide-and-deep-learning-for-recommender-systems/">en</a></li>
+	  <li><a href="https://nryotaro.dev/en/posts/cap-twelve-years-later-how-the-rules-have-changed/">en</a></li>
 	  
         </ul>
       </nav>
     </header>
     
 <main>
-  <h1>Wide and Deep Learning for Recommender Systems (2016)</h1>
+  <h1>CAP Twelve Years Later: How the &#34;Rules&#34; Have Changed (2012)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://nryotaro.dev/tags/recommendation/">
-	#Recommendation
+      <a href="https://nryotaro.dev/tags/cap%E5%AE%9A%E7%90%86/">
+	#CAP定理
       </a>
     </li>
     
   </ul>  
-  <span class="date">December 16, 2023</span>    
+  <span class="date">December 23, 2023</span>    
   <div>
-    <p>推薦システムに一般化線形モデルや深層学習を応用する場合、両者には一長一短がある。
-一般線形化モデルは、学習データに忠実かつ解釈しやすい推測を出力するが、交互作用では学習データにないアイテムを推薦できない。
-深層学習は、汎化性能にすぐれるが、疎で高ランクな行列を学習しがたい。
-<a href="https://arxiv.org/abs/1606.07792">Wide &amp; Deep Learning for Recommender Systems</a>は、一般線形化モデルとフィードフォワードニューラルネットワーク (FFN) の出力の重みつき和をロジスティック関数に適用し、両者の利点を生かし欠点をおぎなうモデルである。</p>
-<p>次元数の\(d\)の特徴を\(\textbf{x}=[x_1, x_2, \dots, x_d]\), バイアス項を\(b\), 重みを\(\textbf{w}\)とすると、一般化線形モデルを\(y=\textbf{w}^T\textbf{x}+b\)と表せる。
-\(k\)番目の交互作用が\(i\)番目の特徴を採用する場合に\(c_{ki}=1\), しない場合に\(c_{ki}=0\)となる\(c_{ki}\)として、\(k\)番目の交互作用項を\(\phi_k(\textbf{x})\)とおく。
-$$
-\phi_k(\textbf{x})=\prod^d_{i=1}x^{c_{ki}}_i\ c_{ki}\in\{0, 1\}
-$$</p>
-<p>FFNは、\(\textbf{x}\)を低次元の埋め込みベクトルに変換する層のあとに隠れ層がつづき、\(l\)を層の位置、\(f\)を活性化関数とすると\(a^{(l+l)}=f(W^{(l)}a^{(l)}+b^{(l)})\)となる。
-なお、アーキテクチャはFFNでなくてもよい。</p>
-<p>モデルは、一般化線形モデルとFFNのログオッズの重みつき和にロジスティック関数を適用した値を出力する。
-一般化線形モデルは、もとの特徴\(\textbf{x}\)と交互作用\(\phi(\textbf{x})\)を連結した行列\([\textbf{x}, \phi(\textbf{x})]\)をうけとる。
-このとき、2クラス問題を推定するモデルは
-$$
-P(Y=1|\textbf{x})=\sigma(\textbf{w}^T_{\textit{wide}}[\textbf{x}, \phi(\textbf{x})]+\textbf{w}^T_{\textit{deep}}a^{(l_f)}+b)
-$$
-となる。</p>
+    <p><a href="https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf">CAP定理</a>は、データベースが一貫性 (Consistency), 可用性 (Availability), 分断耐性 (Partition Tolerance) から2つしか選択できない定理として知られる。
+この定理は、Martin Kleppmannによって、その著書<a href="https://dataintensive.net/">Designing Data-Intensive Applications</a>や<a href="https://www.cl.cam.ac.uk/research/dtg/archived/files/publications/public/mk428/cap-critique.pdf">A Critique of the CAP Theorem</a> で批判されている。
+CAP定理をなづけたBrewerは、<a href="https://sites.cs.ucsb.edu/~rich/class/cs293b-cloud/papers/brewer-cap.pdf">CAP Twelve Years Later: How the “Rules” Have Changed</a>で、2つを選択するという表現は誤解をまねく表現であると認め、現実的にはデータベースはネットワークの分断時に一貫性と可用性のトレードオフにさまられると主張した。
+CAP定理の発表された12年後の今日では、分断時における一貫性と可用性の最適化に、各ノードの操作履歴を記録するversion verctorsや<a href="https://arxiv.org/pdf/1805.06358.pdf">Commutative Replicated Data Types (CRDTs)</a> を利用できる。</p>
+<p>CAP定理の3性質の定義も誤解されやすい。
+CAP定理の一貫性はデータの最新の値が常に1つに定まることである。
+CAP定理の3性質を厳密に定義し証明をあたえた<a href="https://users.ece.cmu.edu/~adrian/731-sp04/readings/GL-cap.pdf">Brewer&rsquo;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web</a>は、一貫性を線形化可能性とみなす。
+また、ACIDの一貫性がトランザクション前後における複数のデータ間の整合性であり、CAPの一貫性が単一のデータに対する言及であることから、両者の一貫性の意味はちがう。</p>
+<p>CAP定理が誤解をまねきやすい理由が3つあげられている。
+まず、ネットワークの分断はまれで、分断のないときに一貫性や可用性を犠牲にする理由は乏しい。
+次に、一貫性と可用性のトレードオフは個別の操作やデータに対して決められるので、データベースのすべてのデータや操作が同様のトレードオフである必要はない。
+最後に、3つとも、あるかないかの二値ではなく段階のある性質であり、厳密にどの2つの性質が選ばれたのか明確にできないことがある。</p>
+<p>ネットワークの段階的な性質に、分断と遅延を客観的に区別できないことがある。
+デーベースは、分断とみなす遅延時間のしきい値を設定し、分断を検知したら分断を想定した操作に移り、ネットワークの回復を検知しなければならない。
+回復後には、分断されていたノードごとの操作をマージする必要があり、version verctorsやCRDTsはマージの衝突、回避に応用される。</p>
   </div>
 </main>
 
@@ -97,17 +94,11 @@ $$
 <ul class="pagination">
     
     <li>
-      <a href="/posts/a_protocol_for_packet_network_intercommunication/">
+      <a href="/posts/wide-and-deep-learning-for-recommender-systems/">
 	<i class="fa-solid fa-xl fa-angle-left"></i>
       </a>
     </li>
     
-    
-    <li>
-      <a href="/posts/cap-twelve-years-later-how-the-rules-have-changed/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
     
 </ul>
 

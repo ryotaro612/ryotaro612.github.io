@@ -44,7 +44,7 @@
       <description>&lt;p&gt;ZooKeeperは、リーダ選出と構成管理の機能を提供するためのインメモリーデータベースである。&#xA;データーベースは、ファイルシステムのような階層構造のwait-freeな抽象データ型であり、各ノードにはデフォルトで最大1MBの少量のデータを保存できる。&#xA;たとえば、ノードに設定を保存して共有することも、設定ファイルが編集中でないことを示すフラグ代わりのファイルを置くこともできる。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Brewer&#39;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web(2002)</title>
+      <title>Brewer&#39;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web (2002)</title>
       <link>https://nryotaro.dev/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/</link>
       <pubDate>Tue, 17 Jan 2023 11:42:12 -0500</pubDate>
       <guid>https://nryotaro.dev/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/</guid>

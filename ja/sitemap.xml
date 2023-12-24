@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2023-12-16T09:48:32-05:00</lastmod>
+    <lastmod>2023-12-23T11:47:05-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -15,8 +15,24 @@
                 href="https://nryotaro.dev/"
                 />
   </url><url>
+    <loc>https://nryotaro.dev/posts/cap-twelve-years-later-how-the-rules-have-changed/</loc>
+    <lastmod>2023-12-23T11:47:05-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/cap-twelve-years-later-how-the-rules-have-changed/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/cap-twelve-years-later-how-the-rules-have-changed/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/tags/cap%E5%AE%9A%E7%90%86/</loc>
+    <lastmod>2023-12-23T11:47:05-05:00</lastmod>
+  </url><url>
     <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2023-12-16T09:48:32-05:00</lastmod>
+    <lastmod>2023-12-23T11:47:05-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -26,6 +42,19 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://nryotaro.dev/posts/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/tags/</loc>
+    <lastmod>2023-12-23T11:47:05-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/tags/"
                 />
   </url><url>
     <loc>https://nryotaro.dev/tags/recommendation/</loc>
@@ -39,19 +68,6 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://nryotaro.dev/tags/recommendation/"
-                />
-  </url><url>
-    <loc>https://nryotaro.dev/tags/</loc>
-    <lastmod>2023-12-16T09:48:32-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/tags/"
                 />
   </url><url>
     <loc>https://nryotaro.dev/posts/wide-and-deep-learning-for-recommender-systems/</loc>
@@ -612,7 +628,7 @@
     <loc>https://nryotaro.dev/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/</loc>
     <lastmod>2023-01-17T11:42:12-05:00</lastmod>
   </url><url>
-    <loc>https://nryotaro.dev/tags/cap%E5%AE%9A%E7%90%86/</loc>
+    <loc>https://nryotaro.dev/tags/cap/</loc>
     <lastmod>2023-01-17T11:42:12-05:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/learning_to_rank_using_gradient_descent/</loc>

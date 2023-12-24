@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 16 Dec 2023 09:48:32 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 23 Dec 2023 11:47:05 -0500</lastBuildDate>
     <atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CAP Twelve Years Later: How the &#34;Rules&#34; Have Changed (2012)</title>
+      <link>https://nryotaro.dev/posts/cap-twelve-years-later-how-the-rules-have-changed/</link>
+      <pubDate>Sat, 23 Dec 2023 11:47:05 -0500</pubDate>
+      <guid>https://nryotaro.dev/posts/cap-twelve-years-later-how-the-rules-have-changed/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf&#34;&gt;CAP定理&lt;/a&gt;は、データベースが一貫性 (Consistency), 可用性 (Availability), 分断耐性 (Partition Tolerance) から2つしか選択できない定理として知られる。&#xA;この定理は、Martin Kleppmannによって、その著書&lt;a href=&#34;https://dataintensive.net/&#34;&gt;Designing Data-Intensive Applications&lt;/a&gt;や&lt;a href=&#34;https://www.cl.cam.ac.uk/research/dtg/archived/files/publications/public/mk428/cap-critique.pdf&#34;&gt;A Critique of the CAP Theorem&lt;/a&gt; で批判されている。&#xA;CAP定理をなづけたBrewerは、&lt;a href=&#34;https://sites.cs.ucsb.edu/~rich/class/cs293b-cloud/papers/brewer-cap.pdf&#34;&gt;CAP Twelve Years Later: How the “Rules” Have Changed&lt;/a&gt;で、2つを選択するという表現は誤解をまねく表現であると認め、現実的にはデータベースはネットワークの分断時に一貫性と可用性のトレードオフにさまられると主張した。&#xA;CAP定理の発表された12年後の今日では、分断時における一貫性と可用性の最適化に、各ノードの操作履歴を記録するversion verctorsや&lt;a href=&#34;https://arxiv.org/pdf/1805.06358.pdf&#34;&gt;Commutative Replicated Data Types (CRDTs)&lt;/a&gt; を利用できる。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Wide and Deep Learning for Recommender Systems (2016)</title>
       <link>https://nryotaro.dev/posts/wide-and-deep-learning-for-recommender-systems/</link>
@@ -345,7 +352,7 @@
       <description>&lt;p&gt;情報検索の指標は、モデルの返す文書の順序を評価する。&#xA;指標の関数自体を損失関数にできれば、重みの更新を指標に最適化できる。&#xA;ところが、文書の順序を評価する指標は、重みによる微分が未定義や0になりえるので、損失関数には使えない。&#xA;LambdaRankは損失関数に直接は使えない関数を学習に応用するアルゴリズムである。&#xA;RankNetをLambdaRankで学習することで、学習時間を短縮し、NDCGを向上できた。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Brewer&#39;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web(2002)</title>
+      <title>Brewer&#39;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web (2002)</title>
       <link>https://nryotaro.dev/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/</link>
       <pubDate>Tue, 17 Jan 2023 11:42:12 -0500</pubDate>
       <guid>https://nryotaro.dev/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/</guid>
