@@ -84,9 +84,8 @@
     
     <article>
         <h3><a href="https://nryotaro.dev/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/">BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension (2019)</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/abs/1910.13461">BART</a>は<a href="https://browse.arxiv.org/pdf/1706.03762.pdf">Transformer</a>をつかった系列変換モデルの事前学習である。
-ノイズを入れたテキストからもとのテキストを復元できるようにモデルを訓練する。
-BARTの特徴は、ノイズの作り方に制限がないところにある。
+        <div class="summary"><p><a href="https://arxiv.org/abs/1910.13461">BART</a>は<a href="https://browse.arxiv.org/pdf/1706.03762.pdf">Transformer</a>をみちいた系列変換モデルの事前学習である。
+多くのTransformerモデルとおなじように、ノイズを入れたテキストからもとのテキストを復元できるようにモデルを訓練するが、BARTの特徴は、ノイズの作り方に制限がないところにある。
 比較したノイズの作り方は、ランダムに選んだトークンから文書を始めることで回転する、BERTとおなじトークンのマスキング、トークンの一部の削除、文書中の文の順序の入れ換え、ある区間中にあるトークンをまとめて1つの<code>[MASK]</code>に置き換える方法の5種類である。
 最後のトークンを1つのマスクキングするときに最もよい結果になった。
 マスクに置き換える区間の長さは\(\lambda = 3\)のポアソン分布によって決まる。</p></div>

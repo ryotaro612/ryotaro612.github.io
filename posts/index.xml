@@ -90,7 +90,7 @@
       <link>https://nryotaro.dev/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/</link>
       <pubDate>Sat, 07 Oct 2023 10:28:13 -0400</pubDate>
       <guid>https://nryotaro.dev/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1910.13461&#34;&gt;BART&lt;/a&gt;は&lt;a href=&#34;https://browse.arxiv.org/pdf/1706.03762.pdf&#34;&gt;Transformer&lt;/a&gt;をつかった系列変換モデルの事前学習である。&#xA;ノイズを入れたテキストからもとのテキストを復元できるようにモデルを訓練する。&#xA;BARTの特徴は、ノイズの作り方に制限がないところにある。&#xA;比較したノイズの作り方は、ランダムに選んだトークンから文書を始めることで回転する、BERTとおなじトークンのマスキング、トークンの一部の削除、文書中の文の順序の入れ換え、ある区間中にあるトークンをまとめて1つの&lt;code&gt;[MASK]&lt;/code&gt;に置き換える方法の5種類である。&#xA;最後のトークンを1つのマスクキングするときに最もよい結果になった。&#xA;マスクに置き換える区間の長さは\(\lambda = 3\)のポアソン分布によって決まる。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1910.13461&#34;&gt;BART&lt;/a&gt;は&lt;a href=&#34;https://browse.arxiv.org/pdf/1706.03762.pdf&#34;&gt;Transformer&lt;/a&gt;をみちいた系列変換モデルの事前学習である。&#xA;多くのTransformerモデルとおなじように、ノイズを入れたテキストからもとのテキストを復元できるようにモデルを訓練するが、BARTの特徴は、ノイズの作り方に制限がないところにある。&#xA;比較したノイズの作り方は、ランダムに選んだトークンから文書を始めることで回転する、BERTとおなじトークンのマスキング、トークンの一部の削除、文書中の文の順序の入れ換え、ある区間中にあるトークンをまとめて1つの&lt;code&gt;[MASK]&lt;/code&gt;に置き換える方法の5種類である。&#xA;最後のトークンを1つのマスクキングするときに最もよい結果になった。&#xA;マスクに置き換える区間の長さは\(\lambda = 3\)のポアソン分布によって決まる。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Communicating Sequential Processes (1978)</title>
