@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nryotaro.dev/</loc>
-    <lastmod>2023-12-23T11:47:05-05:00</lastmod>
+    <lastmod>2023-12-30T00:42:11-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -14,6 +14,48 @@
                 hreflang="ja"
                 href="https://nryotaro.dev/"
                 />
+  </url><url>
+    <loc>https://nryotaro.dev/posts/dense-passage-retrieval-for-open-domain-question-answering/</loc>
+    <lastmod>2023-12-30T00:42:11-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/dense-passage-retrieval-for-open-domain-question-answering/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/dense-passage-retrieval-for-open-domain-question-answering/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/posts/</loc>
+    <lastmod>2023-12-30T00:42:11-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/tags/</loc>
+    <lastmod>2023-12-30T00:42:11-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/tags/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/tags/%E8%B3%AA%E5%95%8F%E5%BF%9C%E7%AD%94/</loc>
+    <lastmod>2023-12-30T00:42:11-05:00</lastmod>
   </url><url>
     <loc>https://nryotaro.dev/posts/cap-twelve-years-later-how-the-rules-have-changed/</loc>
     <lastmod>2023-12-23T11:47:05-05:00</lastmod>
@@ -30,32 +72,6 @@
   </url><url>
     <loc>https://nryotaro.dev/tags/cap%E5%AE%9A%E7%90%86/</loc>
     <lastmod>2023-12-23T11:47:05-05:00</lastmod>
-  </url><url>
-    <loc>https://nryotaro.dev/posts/</loc>
-    <lastmod>2023-12-23T11:47:05-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/posts/"
-                />
-  </url><url>
-    <loc>https://nryotaro.dev/tags/</loc>
-    <lastmod>2023-12-23T11:47:05-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/tags/"
-                />
   </url><url>
     <loc>https://nryotaro.dev/tags/recommendation/</loc>
     <lastmod>2023-12-16T09:48:32-05:00</lastmod>

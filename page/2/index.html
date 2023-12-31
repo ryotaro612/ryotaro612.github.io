@@ -63,6 +63,31 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/gaussian_error_linear_units/">GAUSSIAN ERROR LINEAR UNITS (GELUs) 2016</a></h3>
+        <div class="summary"><p><a href="https://arxiv.org/abs/1606.08415">GAUSSIAN ERROR LINEAR UNITS (GELUs)</a>は、標準正規分布の累積分布関数を\(\Phi(x)\)とおくと、\(\text{GELU}(x)=x\Phi(x)\)で定義される活性化関数である。
+GELUsは、Dropout, <a href="https://openreview.net/pdf?id=rJqBEPcxe">Zoneout</a>, \(\text{ReLU}(x)=\max(0, x)\)の性質を兼ね備える。
+Zoneoutは、RNNむけの正則化であり、ユニットが一つ前の状態を確率的に維持するしくみである。
+ReLUは、非線形性により、ニューラルネットワークを非線形関数に近似できる。
+ZoneoutやDropoutは正則化の役割をはたす。
+ReLUsの出力が入力に依存する一方で、Dropoutの出力は入力に依存しない。
+GELUsは、確率\(\Phi(x)\)で1をとるベルヌーイ分布にしたがう0-1マスクを人工ニューロンへの入力に適用することで、非線形関数への近似と正則化の両方を実現する。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E6%B4%BB%E6%80%A7%E5%8C%96%E9%96%A2%E6%95%B0/">
+		#活性化関数
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">October 21, 2023</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/a_design_methodology_for_reliable_software_systems/">A design methodology for reliable software systems (1972)</a></h3>
         <div class="summary"><p>スタンフォードで数学の博士号を取得した<a href="https://computerhistory.org/profile/barbara-liskov/">Liskov</a>は以前勤めていたMitre Corporationに戻った後、最初にVenusとよばれるタイムシェアリングシステムの開発プロジェクトを担当し、その次にソフトウェア危機に対処する開発手法の研究に取り組んだ。
 <a href="https://dl.acm.org/doi/pdf/10.1145/1479992.1480018">A design methodology for reliable software systems</a>は、Venusの開発から得られた構造化プログラミングの方法論である。</p></div>
@@ -289,27 +314,6 @@ Transformerの原論文は、正弦関数で要素の位置からベクトルを
 	  </ul>
 	  
           <span class="date">August 19, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/self_adjusting_binary_search_trees/">Self-Adjusting Binary Search Trees(1985)</a></h3>
-        <div class="summary"><p><a href="https://www.cs.cmu.edu/~sleator/papers/self-adjusting.pdf">Self-Adjusting Binary Search Tree</a>は、スプレー木といい、ノードを参照するたびに、ノードを木のルートに移動させる抽象データ構造である。
-参照、挿入、削除の償却時間計算量は、ノード数\(n\)の木であれば\(\log(n)\)である。
-さらに、十分な数の参照にかかる時間計算量は、その参照の系列に最適化された二分探索木の計算量の定数倍におさまる。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC%E6%9C%A8/">
-		#スプレー木
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">August 12, 2023</span>
         </div>
     </article>
     

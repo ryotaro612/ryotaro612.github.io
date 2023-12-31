@@ -63,6 +63,29 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/graphchi_large_scale_graph_computation_on_just_a_pc/">抄訳 GraphChi: Large-Scale Graph Computation on Just a PC(2012)</a></h3>
+        <div class="summary"><p>GraphChiは、商業規模の有向グラフをコンシューマPCで計算できるとうたうデータ構造とプログラミングモデルである。
+そのためには、任意のひとつのノードとそのノードに接続する全てのエッジを読み込めるメモリがあればよい。
+順序つきのノードを互いに素なP個の集合に分け、それぞれをintervalをよぶ。
+interval内のノードに向うエッジを根のノード順にソートし、エッジをP個のshardに分けて保存する。
+1つのshardをディスクの連続領域に保存することで、あるノードとノードに接続するエッジを、高々P回のディスクへのアクセスでメモリに読み込める。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%A2%E3%83%87%E3%83%AB/">
+		#プログラミングモデル
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">November 12, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/popular_ensemble_methods_an_empirical_study/">抄訳 Popular Ensemble Methods: An Empirical Study(1999)</a></h3>
         <div class="summary"><p>アンサンブル学習は、弱学習器を組みわせることで、より予測性能の高いモデルを生成する。
 弱学習器にニューラルネットワークと決定木を使い、バギングとブースティングの予測性能を、23件のデータで測定した。
@@ -174,18 +197,6 @@ Pregelでは、この間隔をsuperstepとよび、グラフ上の点である�
         <div class="article-footer">
 	  
           <span class="date">August 19, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/normalized_cuts_and_image_segmentation/">Normalized Cuts and Image Segmentation (2000)</a></h3>
-        <div class="summary"><p>単純無向グラフのクラスタリングを応用して画像をセグメントに分割する。
-カットの評価基準としてnormalized cutとその近似解を求め方を提案した。
-Normalized cutが最小値のとき、異なるサブグラフにあるノード間の類似度は最小に、同じサブグラフにあるノードの類似度は最大になる。
-Normalized cutをレイリー商に変形し、固有値問題をとくことで、Normalized cutの最小値の近似解を求める。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">August 6, 2022</span>
         </div>
     </article>
     

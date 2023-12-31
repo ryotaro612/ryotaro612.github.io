@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>CAP Twelve Years Later: How the &#34;Rules&#34; Have Changed (2012)</title>
+    <title>Dense Passage Retrieval for Open-Domain Question Answering (2020)</title>
   </head>
 
   <body>
@@ -53,40 +53,51 @@
           <li><a href="https://nryotaro.dev/en/posts">Posts</a></li>
           <li><a href="https://nryotaro.dev/en/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/posts/cap-twelve-years-later-how-the-rules-have-changed/">ja</a></li>
+	  <li><a href="https://nryotaro.dev/posts/dense-passage-retrieval-for-open-domain-question-answering/">ja</a></li>
 	  
         </ul>
       </nav>
     </header>
     
 <main>
-  <h1>CAP Twelve Years Later: How the &#34;Rules&#34; Have Changed (2012)</h1>
+  <h1>Dense Passage Retrieval for Open-Domain Question Answering (2020)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://nryotaro.dev/en/tags/cap-theorem/">
-	#CAP theorem
+      <a href="https://nryotaro.dev/en/tags/question-answering/">
+	#Question answering
       </a>
     </li>
     
   </ul>  
-  <span class="date">December 23, 2023</span>    
+  <span class="date">December 30, 2023</span>    
   <div>
-    <p>The <a href="https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf">CAP theorem</a>, coined by Eric Brewer, states that in a shared-data system, you can have either Consistency (C), Availability (A), or Parition tolerance (P), but not all three simultaneously.
-However, Martin Kleppmann challenges the CAP theorem and discusses its limitations in <a href="https://dataintensive.net/">Designing Data-Intensive Applications</a>, and <a href="https://www.cl.cam.ac.uk/research/dtg/archived/files/publications/public/mk428/cap-critique.pdf">A Critique of the CAP Theorem</a>.
-In <a href="https://sites.cs.ucsb.edu/~rich/class/cs293b-cloud/papers/brewer-cap.pdf">CAP Twelve Years Later: How the “Rules” Have Changed</a>, Brewer clarifies that the notion of &ldquo;2 of 3&rdquo; is misleading.
-In practice, designers cannot forfeit P and have a choice between C and A.</p>
-<p>The consistency of CAP is different from the that of ACID.
-The C in CAP is equivalent to having a single up-to-date copy of the data.
-The cosistency is referred as <a href="https://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf">Lineariability</a> in <a href="https://users.ece.cmu.edu/~adrian/731-sp04/readings/GL-cap.pdf">Brewer&rsquo;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web</a>, which proved the CAP theory in an ascynchronous network model.</p>
-<p>The &ldquo;2 of 3&rdquo; view can be misleading.
-Firstly, there is little need to sacrifice consistency or availability when the system is not experiencing partitions, as partitions are rare.
-Secondly, consistency and availability are fine-grained properties that can vary based on specific operations or data.
-Finally they are not strictly binary options.</p>
-<p>Partitioning is a continuous property that is related to both latency and network partitions.
-Managing partitions involves making decisions about detecting the start of a partition and network recovery.
-During the partition recovery process, techniques like version vectors and CRDTs can be used.</p>
-
+    <p>Open-domain question answering (QA) involves answering fact-based questions using documents.
+An open-domain QA system can be divided into two components: one that retrieves relevant passages and another that extracts the answer spans from those passages <a href="https://arxiv.org/abs/1704.00051">(Chen et al., 2017)</a>.
+While traditional approaches use sparse vector space models like BM25 for the retrieval step, <a href="https://aclanthology.org/2020.emnlp-main.550/">Dense Passage Retrieval for Open-Domain Question Answering</a> shows that dense representations can also be practically implemented using dense representations.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>The embeddings are learned from the training dataset, optimizing for maximizing inner products between question and relevant passage vectors.
+The training is essentially metric learning, and each question needs irrelvant passages.
+In experiments, it was found that utilizing both the top passages returned by BM25, excluding the answer, and positive passages paired with other questions as negatives yielded best performance.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Each passage \(p_i\) is a sequence of tokens,\(w_1^{(i)},w_2^{(i)}, \dots , w_{|p_i|}^{(i)}\), extracted from a document.
+Given a question \(q\), the task is to find a span \(s_s^{(i)}, w_{s+1}^{(i)},\dots ,w_{e}^{(i)}\) from one of the passage \(p_i\) that can answer the question.</p>
+<p>The proposed approach employs BERT as an encoder.
+The similarity between the question and passage is computed using the dot product of their vectors:
+$$
+\text{sim}(q, p) = E_Q(q)^{\top} E_P(p)
+$$
+where \(E_P(\cdot)\) maps any text passage to a \(d\)-dimentional vectors, and \(E_Q(\cdot)\) maps the input question to a vector.</p>
+<p>Each instance consists of one question \(q_i\) and one relevant passage \(p^+\), along with \(n\) irrelevant passages \(p_{i,j}^-\).
+The loss for an instance is defined as \(L(q_i,p^+_i,p^-_{i,1}\dots,p^-_{i,n})\), the negative log likelihood of the positive passage:
+$$
+L(q_i,p^+_i,p^-_{i,1}\dots,p^-_{i,n})=-\log\frac{e^{\text{sim}(q_i,p^+_i)}}{e^{\text{sim}(q_i,p^+_i)}+\sum^n_{j=1}e^{\text{sim}(q_i,p^-_{i,j})}}
+$$</p>
   </div>
 </main>
 
@@ -94,17 +105,11 @@ During the partition recovery process, techniques like version vectors and CRDTs
 <ul class="pagination">
     
     <li>
-      <a href="/en/posts/wide-and-deep-learning-for-recommender-systems/">
+      <a href="/en/posts/cap-twelve-years-later-how-the-rules-have-changed/">
 	<i class="fa-solid fa-xl fa-angle-left"></i>
       </a>
     </li>
     
-    
-    <li>
-      <a href="/en/posts/dense-passage-retrieval-for-open-domain-question-answering/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
     
 </ul>
 

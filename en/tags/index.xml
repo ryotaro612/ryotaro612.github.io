@@ -6,8 +6,15 @@
     <description>Recent content in Tags on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 23 Dec 2023 11:47:05 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 30 Dec 2023 00:42:11 -0500</lastBuildDate>
     <atom:link href="https://nryotaro.dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Question answering</title>
+      <link>https://nryotaro.dev/en/tags/question-answering/</link>
+      <pubDate>Sat, 30 Dec 2023 00:42:11 -0500</pubDate>
+      <guid>https://nryotaro.dev/en/tags/question-answering/</guid>
+      <description></description>
+    </item>
     <item>
       <title>CAP theorem</title>
       <link>https://nryotaro.dev/en/tags/cap-theorem/</link>

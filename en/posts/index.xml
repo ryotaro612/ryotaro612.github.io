@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 23 Dec 2023 11:47:05 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 30 Dec 2023 00:42:11 -0500</lastBuildDate>
     <atom:link href="https://nryotaro.dev/en/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dense Passage Retrieval for Open-Domain Question Answering (2020)</title>
+      <link>https://nryotaro.dev/en/posts/dense-passage-retrieval-for-open-domain-question-answering/</link>
+      <pubDate>Sat, 30 Dec 2023 00:42:11 -0500</pubDate>
+      <guid>https://nryotaro.dev/en/posts/dense-passage-retrieval-for-open-domain-question-answering/</guid>
+      <description>&lt;p&gt;Open-domain question answering (QA) involves answering fact-based questions using documents.&#xA;An open-domain QA system can be divided into two components: one that retrieves relevant passages and another that extracts the answer spans from those passages &lt;a href=&#34;https://arxiv.org/abs/1704.00051&#34;&gt;(Chen et al., 2017)&lt;/a&gt;.&#xA;While traditional approaches use sparse vector space models like BM25 for the retrieval step, &lt;a href=&#34;https://aclanthology.org/2020.emnlp-main.550/&#34;&gt;Dense Passage Retrieval for Open-Domain Question Answering&lt;/a&gt; shows that dense representations can also be practically implemented using dense representations.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;The embeddings are learned from the training dataset, optimizing for maximizing inner products between question and relevant passage vectors.&#xA;The training is essentially metric learning, and each question needs irrelvant passages.&#xA;In experiments, it was found that utilizing both the top passages returned by BM25, excluding the answer, and positive passages paired with other questions as negatives yielded best performance.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
     <item>
       <title>CAP Twelve Years Later: How the &#34;Rules&#34; Have Changed (2012)</title>
       <link>https://nryotaro.dev/en/posts/cap-twelve-years-later-how-the-rules-have-changed/</link>

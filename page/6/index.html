@@ -63,6 +63,38 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/">Brewer&#39;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web (2002)</a></h3>
+        <div class="summary"><p>分散システムは一貫性、可用性、分断耐性を同時に満たすことができない。
+この予想は、2000年のPODCでBrewerが発表したCAP定理として知られている。
+しかし、Brewerの<a href="https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf">講演</a>では厳密な定義や証明はない。
+そこで、それを補うために、ある2つの計算モデルでCAPが成立することを証明する。
+計算モデルは、asynchronous network modelとpartially synchhronous modelである。
+asynchronouse network modelでは、モデルのノードは、クロックをもたず、受信したメッセージとノード内の計算のみで出力を決定する。
+partially synchronous modelでは、各ノードは、一定間隔で単調増加するクロックをもち、処理をタイムアウトしたり、スケジューリングしたりできる。
+ただし、ノード間でクロックが同期されているとは限らない。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/cap/">
+		#CAP
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+		#分散システム
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">January 17, 2023</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/learning_to_rank_using_gradient_descent/">抄訳 Learning to Rank using Gradient Descent (2005)</a></h3>
         <div class="summary"><p>ランキング学習のニューラルネットワークRankNetを提案する。
 RankNetは、ベクトルから実数を出力し、その出力が大きいほどランキングが高いと予測する。
@@ -285,29 +317,6 @@ AdaBoostを借りることで、単分類の難しい少数クラスのサンプ
 	  </ul>
 	  
           <span class="date">November 13, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/graphchi_large_scale_graph_computation_on_just_a_pc/">抄訳 GraphChi: Large-Scale Graph Computation on Just a PC(2012)</a></h3>
-        <div class="summary"><p>GraphChiは、商業規模の有向グラフをコンシューマPCで計算できるとうたうデータ構造とプログラミングモデルである。
-そのためには、任意のひとつのノードとそのノードに接続する全てのエッジを読み込めるメモリがあればよい。
-順序つきのノードを互いに素なP個の集合に分け、それぞれをintervalをよぶ。
-interval内のノードに向うエッジを根のノード順にソートし、エッジをP個のshardに分けて保存する。
-1つのshardをディスクの連続領域に保存することで、あるノードとノードに接続するエッジを、高々P回のディスクへのアクセスでメモリに読み込める。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%A2%E3%83%87%E3%83%AB/">
-		#プログラミングモデル
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">November 12, 2022</span>
         </div>
     </article>
     
