@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>Dense Passage Retrieval for Open-Domain Question Answering (2020)</title>
+    <title>Conflict-free Replicated Data Types (2011)</title>
   </head>
 
   <body>
@@ -53,51 +53,59 @@
           <li><a href="https://nryotaro.dev/en/posts">Posts</a></li>
           <li><a href="https://nryotaro.dev/en/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/posts/dense-passage-retrieval-for-open-domain-question-answering/">ja</a></li>
+	  <li><a href="https://nryotaro.dev/posts/conflict-free-replicated-data-types/">ja</a></li>
 	  
         </ul>
       </nav>
     </header>
     
 <main>
-  <h1>Dense Passage Retrieval for Open-Domain Question Answering (2020)</h1>
+  <h1>Conflict-free Replicated Data Types (2011)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://nryotaro.dev/en/tags/question-answering/">
-	#Question answering
+      <a href="https://nryotaro.dev/en/tags/conflict-free-replicated-data-types/">
+	#Conflict-free Replicated Data Types
       </a>
     </li>
     
   </ul>  
-  <span class="date">December 30, 2023</span>    
+  <span class="date">December 31, 2023</span>    
   <div>
-    <p>Open-domain question answering (QA) involves answering fact-based questions using documents.
-An open-domain QA system can be divided into two components: one that retrieves relevant passages and another that extracts the answer spans from those passages <a href="https://arxiv.org/abs/1704.00051">(Chen et al., 2017)</a>.
-While traditional approaches use sparse vector space models like BM25 for the retrieval step, <a href="https://aclanthology.org/2020.emnlp-main.550/">Dense Passage Retrieval for Open-Domain Question Answering</a> shows that dense representations can also be practically implemented using dense representations.</p>
+    <p>In a distributed system with replicated objects distributed across processes interconnected by an asynchronous network, updating a replica without synchronization can lead to conflicts when the update is sent to other replicas.
+<a href="https://pages.lip6.fr/Marc.Shapiro/papers/RR-7687.pdf">Conflict-free Replicated Data Types</a> (CRDTs) are data structures whose states form a join semilattice and monotonically non-decreasing across updates.
+The replicas of CRDTs that have delivered the same updates eventually reach the same state if clents stop submitting updates.</p>
+<p>The processes in this system are assumed to be non-Byzantine and may crash silently, remaining crashed forever or recovering.</p>
+<p>Clients can read the state of an object using queries (\(q\)) and modify it using updates (\(u\)). The merge operation (\(m\)) combines the state of a remote replica.
+Queries are side-effect-free.
+The \(k^{\text{th}}\) method execution at replica \(i\) is denoted as \(f^k_i(a)\), where \(f\) is either \(q,\ u\ \) or \(m\), and \(a\). \(a\) denotes the arguments.
+Replica \(i\) has initial state \(s^0_i\), and \(f^k_i(a)\) make a transition from \(s^{k-1}_i\) to \(s^k_i\).
+This transition is noted as \(s^{k-1}_i\bullet f^k_i(a)=s_i^k\).</p>
+<p>There are two types of CRDTs: State-based Convergent Replicated Data Types (CvRDTs) and Operation-based Commutative Replicated Data Types (CmRDTs).
+CvRDTs and CmRDTs are equivalent, meaning any CvRDT can be emulated by a CmRDT, and vice versa.</p>
+<p>CvRDTs use merge methods, whereas CmRDTs do not.
+A join semilattice is a partial order \(\le\) with a least upper bound \(\sqcup\) for all pairs of states \((s, s&rsquo;)\).
+It follows that \(\sqcup\) is commutative \((s\sqcup s&rsquo; = s&rsquo;\sqcup s)\), idempotent \((s \sqcup s = s)\) and associative \(((s\sqcup s&rsquo;)\sqcup s&rsquo;&rsquo; = s\sqcup (s&rsquo; \sqcup s&rsquo;&rsquo;))\).
+Merging state \(s\) with remote state \(s&rsquo;\) computes the least upper bound of the two states, i.e., \(s\bullet m(s&rsquo;) = s\sqcup s&rsquo;\), and any states are monotonically non-decreasing across updates, i.e., \(s\le s\bullet u\).
+In that case, correct replicas that have delivered the same updates have equivalent state.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<p>The embeddings are learned from the training dataset, optimizing for maximizing inner products between question and relevant passage vectors.
-The training is essentially metric learning, and each question needs irrelvant passages.
-In experiments, it was found that utilizing both the top passages returned by BM25, excluding the answer, and positive passages paired with other questions as negatives yielded best performance.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<p>Each passage \(p_i\) is a sequence of tokens,\(w_1^{(i)},w_2^{(i)}, \dots , w_{|p_i|}^{(i)}\), extracted from a document.
-Given a question \(q\), the task is to find a span \(s_s^{(i)}, w_{s+1}^{(i)},\dots ,w_{e}^{(i)}\) from one of the passage \(p_i\) that can answer the question.</p>
-<p>The proposed approach employs BERT as an encoder.
-The similarity between the question and passage is computed using the dot product of their vectors:
-$$
-\text{sim}(q, p) = E_Q(q)^{\top} E_P(p)
-$$
-where \(E_P(\cdot)\) maps any text passage to a \(d\)-dimentional vectors, and \(E_Q(\cdot)\) maps the input question to a vector.</p>
-<p>Each instance consists of one question \(q_i\) and one relevant passage \(p^+\), along with \(n\) irrelevant passages \(p_{i,j}^-\).
-The loss for an instance is defined as \(L(q_i,p^+_i,p^-_{i,1}\dots,p^-_{i,n})\), the negative log likelihood of the positive passage:
-$$
-L(q_i,p^+_i,p^-_{i,1}\dots,p^-_{i,n})=-\log\frac{e^{\text{sim}(q_i,p^+_i)}}{e^{\text{sim}(q_i,p^+_i)}+\sum^n_{j=1}e^{\text{sim}(q_i,p^-_{i,j})}}
-$$</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
   </div>
 </main>
 
@@ -105,17 +113,11 @@ $$</p>
 <ul class="pagination">
     
     <li>
-      <a href="/en/posts/cap-twelve-years-later-how-the-rules-have-changed/">
+      <a href="/en/posts/dense-passage-retrieval-for-open-domain-question-answering/">
 	<i class="fa-solid fa-xl fa-angle-left"></i>
       </a>
     </li>
     
-    
-    <li>
-      <a href="/en/posts/conflict-free-replicated-data-types/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
     
 </ul>
 

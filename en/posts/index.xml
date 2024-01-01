@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 30 Dec 2023 00:42:11 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 31 Dec 2023 14:31:58 -0500</lastBuildDate>
     <atom:link href="https://nryotaro.dev/en/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Conflict-free Replicated Data Types (2011)</title>
+      <link>https://nryotaro.dev/en/posts/conflict-free-replicated-data-types/</link>
+      <pubDate>Sun, 31 Dec 2023 14:31:58 -0500</pubDate>
+      <guid>https://nryotaro.dev/en/posts/conflict-free-replicated-data-types/</guid>
+      <description>In a distributed system with replicated objects distributed across processes interconnected by an asynchronous network, updating a replica without synchronization can lead to conflicts when the update is sent to other replicas. Conflict-free Replicated Data Types (CRDTs) are data structures whose states form a join semilattice and monotonically non-decreasing across updates. The replicas of CRDTs that have delivered the same updates eventually reach the same state if clents stop submitting updates.</description>
+    </item>
     <item>
       <title>Dense Passage Retrieval for Open-Domain Question Answering (2020)</title>
       <link>https://nryotaro.dev/en/posts/dense-passage-retrieval-for-open-domain-question-answering/</link>

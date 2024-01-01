@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Conflict-free Replicated Data Types (2011)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://nryotaro.dev/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://nryotaro.dev/about">About</a></li>
+          <li><a href="https://nryotaro.dev/posts">Posts</a></li>
+          <li><a href="https://nryotaro.dev/tags">Tags</a></li>
+	  
+	  <li><a href="https://nryotaro.dev/en/posts/conflict-free-replicated-data-types/">en</a></li>
+	  
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>Conflict-free Replicated Data Types (2011)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/conflict-free-replicated-data-types/">
+	#Conflict-free Replicated Data Types
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">December 31, 2023</span>    
+  <div>
+    <p>オブジェクトのレプリカを複数のノードに分散するシステムにおいて、レプリカが非同期に更新された場合、後の同期で更新内容が衝突しうる。
+<a href="https://pages.lip6.fr/Marc.Shapiro/papers/RR-7687.pdf">Conflict-free Replicated Data Types</a> (CRDTs) は、結び半束の関係にある状態をもつオブジェクトである。
+オブジェクトに対する操作が非単調減少であれば、受理した操作の集合が等しいレプリカ同士を、受理した順番によらず同一の状態にでき、衝突を回避できる。</p>
+<p>プロセス\(\prod=\{p_0,\dots ,p_{n-1}\}\)は、非同期なネットワークで接続され、ビザンチン故障はないと仮定する。
+クラッシュしたプロセスはが回復しても、以降クラッシュしたままでもよい。</p>
+<p>クライアントはオブジェクトに、クエリ\(q\), 更新\(u\), マージ\(m\)のいずれかの操作を実行できる。
+クエリは副作用がなくオブジェクトの状態を変更せず、更新は状態を変更する。
+マージは、別の1つのレプリカを引数にとり、自分の状態を変更する。
+レプリカ\(i\)に対して引数\(a\)を渡した\(k\)番目の操作を\(f^k_i(a)\)とおき、
+レプリカ\(i\)の初期状態を\(s_i^0\), \(k\)番目の操作後の状態を\(s_i^k\)とおくと、操作による状態遷移を\(s^{k-1}_i\bullet f^k_i(a)=s_i^k\)と表せる。
+このとき\(f\)がクエリであれば、\(s\bullet q \equiv s\)になる。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>CRDTsを定義する方法は、状態に着目する方法と操作に着目する方法の2通りがある。
+状態に主眼を置く方法はState-based Convergent Replicated Data Type (CvRDT) といい、操作に沿うものをOp-based Commutative Replicated Data Type (CmRDT) という。
+どちらの様式でもCRDTsとして備わる性質は変わらないため、定義しやすい方を採用してよい。</p>
+<p>CvRDTの定義はマージ操作に着目する。
+CRDTsの任意の2つの状態\(s, s&rsquo;\)には上限\(s\sqcup s&rsquo;\)が存在し、\(\sqcup\)は交換法則 \((s\sqcup s&rsquo; = s&rsquo;\sqcup s)\), 羃等性 \((s \sqcup s = s)\), 結合法則\(((s\sqcup s&rsquo;)\sqcup s&rsquo;&rsquo; = s\sqcup (s&rsquo; \sqcup s&rsquo;&rsquo;))\) が成立する。
+CvRDTは、マージ後に2つの状態の上限になり\((s\bullet m(s&rsquo;)=s\sqcup s&rsquo;)\), 更新によって半順序関係\(\le\)が単調減少することはない\((s\le s\bullet u)\)。
+このとき、受理した更新の集合が等しいレプリカであれば、受理した更新の順序によらず、両者の状態は等しくなる。</p>
+<p>CmRDTの定義は、更新を、副作用のない\(\textit{prepear-update}\) \((t)\)と副作用のある\(\textit{effect-update}\) \((u)\)のペア\((t, u)\)に分ける。
+\(i\)において、\(t\)は\(u\)の直前の操作であり\(f^{k-1}_i=t\Rightarrow f^k_i=u\)が成立する。
+\(u\)は全てのレプリカで実行され、任意の2つの\(\text{effect-update}\) \(u, u&rsquo;\)について\(s\bullet u \bullet u&rsquo;\equiv s\bullet u&rsquo;\bullet u\)が成りたつとき、CvRDTと等しい整合性が成立する。</p>
+<h2 id="雑記">雑記</h2>
+<p>メッセージの配信がexactly onceでないと、重複して受信したメッセージを無視し、操作の集合を等しくしなければならない。</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/dense-passage-retrieval-for-open-domain-question-answering/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="https://nryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

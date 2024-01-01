@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://nryotaro.dev/en/</loc>
-    <lastmod>2023-12-30T00:42:11-05:00</lastmod>
+    <lastmod>2023-12-31T14:31:58-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -13,6 +13,58 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://nryotaro.dev/en/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/en/tags/conflict-free-replicated-data-types/</loc>
+    <lastmod>2023-12-31T14:31:58-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/tags/conflict-free-replicated-data-types/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/tags/conflict-free-replicated-data-types/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/en/posts/conflict-free-replicated-data-types/</loc>
+    <lastmod>2023-12-31T14:31:58-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/conflict-free-replicated-data-types/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/conflict-free-replicated-data-types/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/en/posts/</loc>
+    <lastmod>2023-12-31T14:31:58-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/en/tags/</loc>
+    <lastmod>2023-12-31T14:31:58-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/tags/"
                 />
   </url><url>
     <loc>https://nryotaro.dev/en/posts/dense-passage-retrieval-for-open-domain-question-answering/</loc>
@@ -28,34 +80,8 @@
                 href="https://nryotaro.dev/en/posts/dense-passage-retrieval-for-open-domain-question-answering/"
                 />
   </url><url>
-    <loc>https://nryotaro.dev/en/posts/</loc>
-    <lastmod>2023-12-30T00:42:11-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/posts/"
-                />
-  </url><url>
     <loc>https://nryotaro.dev/en/tags/question-answering/</loc>
     <lastmod>2023-12-30T00:42:11-05:00</lastmod>
-  </url><url>
-    <loc>https://nryotaro.dev/en/tags/</loc>
-    <lastmod>2023-12-30T00:42:11-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/tags/"
-                />
   </url><url>
     <loc>https://nryotaro.dev/en/tags/cap-theorem/</loc>
     <lastmod>2023-12-23T11:47:05-05:00</lastmod>

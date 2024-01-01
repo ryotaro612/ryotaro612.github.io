@@ -63,6 +63,29 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/an_incremental_approach_to_compiler_construction/">An Incremental Approach to Compiler Construction (2006)</a></h3>
+        <div class="summary"><p><a href="http://scheme2006.cs.uchicago.edu/11-ghuloum.pdf">An Incremental Approach to Compiler Construction</a>は、コンパイラの学習を目的としたSchemeのコンパイラの実装方法の解説である。
+コンパイラの実装に使用する言語もSchemeであり、コンパイラは、Intel-x86のアセンブリコードを出力する。
+プログラマが普段使用しているコンパイラは、教育用の教材としてのコンパイラと比べて複雑であり、学習には向かない。
+この商用と学習用のコンパイラの溝を埋めるために、Schemeの仕様の大部分を満たす規模のコンパイラの実装例が示されている。
+実装手順は24ステップからなり、最後のステップまで実装しなくても、各ステップにある実装を完了すれば、コンパイラが正常に動作するように実装することができる。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9/">
+		#コンパイラ
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">October 23, 2023</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/gaussian_error_linear_units/">GAUSSIAN ERROR LINEAR UNITS (GELUs) 2016</a></h3>
         <div class="summary"><p><a href="https://arxiv.org/abs/1606.08415">GAUSSIAN ERROR LINEAR UNITS (GELUs)</a>は、標準正規分布の累積分布関数を\(\Phi(x)\)とおくと、\(\text{GELU}(x)=x\Phi(x)\)で定義される活性化関数である。
 GELUsは、Dropout, <a href="https://openreview.net/pdf?id=rJqBEPcxe">Zoneout</a>, \(\text{ReLU}(x)=\max(0, x)\)の性質を兼ね備える。
@@ -285,35 +308,6 @@ BERTの事前学習がMasked Language ModelとNext Sentence Predictionの2タス
 	  </ul>
 	  
           <span class="date">August 26, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/self_attention_with_relative_position_representations/">Self-Attention with Relative Position Representations(2018)</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/pdf/1803.02155.pdf">Self-Attention with Relative Position Representations</a>は、<a href="https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">Transformer</a>のQKV注意機構に系列の要素間の相対位置をあたえる手法である。
-Transformerは、RNNやCNNとはちがい、要素の位置をモデルにあたえる決まった方法をもたない。
-Transformerの原論文は、正弦関数で要素の位置からベクトルを計算し、それを埋め込みベクトルに加算することで、位置情報をエンコードする。
-正弦関数を使う理由は、訓練データにない長さの系列に対する汎化性能を周期性で上げられると仮定したからである。
-提案手法は、この仮定を継承し、要素間の相対位置で位置情報をエンコードすることで、訓練データにない系列長の入力に対する汎化性能の向上をはかる。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/attention/">
-		#Attention
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/transformer/">
-		#Transformer
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">August 19, 2023</span>
         </div>
     </article>
     

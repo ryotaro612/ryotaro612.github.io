@@ -63,6 +63,35 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/self_attention_with_relative_position_representations/">Self-Attention with Relative Position Representations(2018)</a></h3>
+        <div class="summary"><p><a href="https://arxiv.org/pdf/1803.02155.pdf">Self-Attention with Relative Position Representations</a>は、<a href="https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">Transformer</a>のQKV注意機構に系列の要素間の相対位置をあたえる手法である。
+Transformerは、RNNやCNNとはちがい、要素の位置をモデルにあたえる決まった方法をもたない。
+Transformerの原論文は、正弦関数で要素の位置からベクトルを計算し、それを埋め込みベクトルに加算することで、位置情報をエンコードする。
+正弦関数を使う理由は、訓練データにない長さの系列に対する汎化性能を周期性で上げられると仮定したからである。
+提案手法は、この仮定を継承し、要素間の相対位置で位置情報をエンコードすることで、訓練データにない系列長の入力に対する汎化性能の向上をはかる。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/attention/">
+		#Attention
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/transformer/">
+		#Transformer
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">August 19, 2023</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/self_adjusting_binary_search_trees/">Self-Adjusting Binary Search Trees(1985)</a></h3>
         <div class="summary"><p><a href="https://www.cs.cmu.edu/~sleator/papers/self-adjusting.pdf">Self-Adjusting Binary Search Tree</a>は、スプレー木といい、ノードを参照するたびに、ノードを木のルートに移動させる抽象データ構造である。
 参照、挿入、削除の償却時間計算量は、ノード数\(n\)の木であれば\(\log(n)\)である。
@@ -246,33 +275,6 @@ LampleとConneauの手法を含む従来の多言語の言語モデルの評価�
 	  </ul>
 	  
           <span class="date">May 27, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/word_translation_without_parallel_data/">WORD TRANSLATION WITHOUT PARALLEL DATA(2018)</a></h3>
-        <div class="summary"><p>対訳コーパスを使わずに、ある言語のエンベディングから別の言語のエンベディングへの写像を学習する。
-はじめに、敵対的生成ネットワークで写像を学習する。
-次に、出現頻度の高い単語について、写像されたエンベディングと目的言語のエンベディングにプロクラステス分析を適用し、より正確な写像関数を求める。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/embedding/">
-		#Embedding
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E6%A9%9F%E6%A2%B0%E7%BF%BB%E8%A8%B3/">
-		#機械翻訳
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">May 21, 2023</span>
         </div>
     </article>
     

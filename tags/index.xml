@@ -6,8 +6,15 @@
     <description>Recent content in Tags on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 30 Dec 2023 00:42:11 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 31 Dec 2023 14:31:58 -0500</lastBuildDate>
     <atom:link href="https://nryotaro.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Conflict-free Replicated Data Types</title>
+      <link>https://nryotaro.dev/tags/conflict-free-replicated-data-types/</link>
+      <pubDate>Sun, 31 Dec 2023 14:31:58 -0500</pubDate>
+      <guid>https://nryotaro.dev/tags/conflict-free-replicated-data-types/</guid>
+      <description></description>
+    </item>
     <item>
       <title>質問応答</title>
       <link>https://nryotaro.dev/tags/%E8%B3%AA%E5%95%8F%E5%BF%9C%E7%AD%94/</link>
