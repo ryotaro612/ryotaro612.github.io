@@ -63,6 +63,30 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/">概要 Improving Language Understanding by Generative Pre-Training</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>GPTの略称で知られる教師なしの事前学習である。
+評価実験では、全結合層を1層追加したファインチューニングで、12の自然言語処理タスクのうち9つについて、当時のSoTAを上まわる性能を発揮した。
+ネットワークには<a href="https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">Transformer</a>のデコーダー部分が使われている。
+ファインチューニング時には、事前学習の効果を生かすために、特徴の入力をモデルのアーキテクチャに合わせ、アーキテクチャの変更を最小限におさえる。
+推論タスクであれば前提や仮定、テキストの類似性判定であれば比較する2つのテキストといった異種の特徴をデリミタで連結した系列を作り、モデルに入力する。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/">
+		#言語モデル
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">August 7, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/a_tale_from_the_trenches/">論文メモ A Tale from the Trenches: Cognitive Biases and Software Development</a></h3>
         <div class="summary"><p>エンジニア10人の普段の開発状況から、認知バイアスが開発者にあたえる影響やバイアスの頻度、対策方法について調査した。</p></div>
         <div class="article-footer">
@@ -161,18 +185,6 @@ Pytorchは、4つの設計原則として、PythonらしいAPI、機械学習の
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/automatic_differentiation_in_pytorch/">論文メモ Automatic differentiation in Pytorch</a></h3>
-        <div class="summary"><p>Pytorchの自動微分を解説したプレプリントのショートペーパである。
-Pytorchの自動微分特徴として、in-placeアルゴリズム、微分の導出に不要な計算を省く仕組みのあるテープ、C++による実装をあげている。
-<a href="https://pytorch.org/blog/pytorch-0_4_0-migration-guide/">0.4.0での仕様変更</a>によって<code>Tensors</code>と<code>Variables</code>がマージされたことや<code>volatile</code>が非推奨になったことをふまえていない。
-読むときは、以上の点をはじめとする現在のAPIとの差異に注意する必要がある。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">July 4, 2020</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -197,7 +209,7 @@ Pytorchの自動微分特徴として、in-placeアルゴリズム、微分の�
       </a>
     </li>
     <li>
-      <a href="/page/30/">
+      <a href="/page/31/">
 	<i class="fa-solid fa-xl fa-angles-right"></i>
       </a>
     </li>

@@ -63,6 +63,20 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/beyond_accuracy/">論文メモ Beyond Accuracy: Behavioral Testing of NLP Models with CHECKLIST</a></h3>
+        <div class="summary"><p>ホールドアウト法にかわる自然言語処理モデルの汎化性能を評価するための手法CHECKLISTを提案した。
+テストデータと訓練データが同じ方法で集められたときなど、ホールドアウト法はモデルを過大評価することがある。
+CHECKLISTは、ソフトウェア開発のブラックボックステストにならい、半自動生成したテストデータで汎化性能を評価する。
+CHECKLISTの汎用性と性能を評価するために、感情分析、Quoraの重複質問検出、読解の3タスクについて、商用やSoTAに近いモデルを学習させ、CHECKLISTでモデルがあつかえない入力パターンをどれだけ生成できるか実験した。
+感情分析の評価には、Microsoft, Google, AmazonのAPIとBERT, RoBERTaを使い、重複検出にはBERTとRoBERTa, 読解にはBERTを使用した。
+CHECKLISTはOSSとして<a href="https://github.com/marcotcr/checklist">公開</a>されている。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">September 4, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/why_good_developers_write_bad_code/">Why Good Developers Write Bad Code: An Observational Case Study of the Impacts of Organizational Factors on Software Quality</a></h3>
         <div class="summary"><p>創立40年以上の電気通信系企業における内製システムのリプレースプロジェクトを観察し、コードに悪影響をおよぼす10の組織的な要因をまとめた。
 表題には、&ldquo;Good Developers&quot;とあるが、開発者のスキルの高さは議論されていない。
@@ -158,30 +172,6 @@ Ladder Networkは、2015年に、著者の一人Valpolaによって教師なし�
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/">概要 Improving Language Understanding by Generative Pre-Training</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>GPTの略称で知られる教師なしの事前学習である。
-評価実験では、全結合層を1層追加したファインチューニングで、12の自然言語処理タスクのうち9つについて、当時のSoTAを上まわる性能を発揮した。
-ネットワークには<a href="https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">Transformer</a>のデコーダー部分が使われている。
-ファインチューニング時には、事前学習の効果を生かすために、特徴の入力をモデルのアーキテクチャに合わせ、アーキテクチャの変更を最小限におさえる。
-推論タスクであれば前提や仮定、テキストの類似性判定であれば比較する2つのテキストといった異種の特徴をデリミタで連結した系列を作り、モデルに入力する。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/">
-		#言語モデル
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">August 7, 2020</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -206,7 +196,7 @@ Ladder Networkは、2015年に、著者の一人Valpolaによって教師なし�
       </a>
     </li>
     <li>
-      <a href="/page/30/">
+      <a href="/page/31/">
 	<i class="fa-solid fa-xl fa-angles-right"></i>
       </a>
     </li>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Billion Scale Similarity Search With GPUs (2017)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://nryotaro.dev/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://nryotaro.dev/about">About</a></li>
+          <li><a href="https://nryotaro.dev/posts">Posts</a></li>
+          <li><a href="https://nryotaro.dev/tags">Tags</a></li>
+	  
+	  <li><a href="https://nryotaro.dev/en/posts/billion-scale-similarity-search-with-gpus/">en</a></li>
+	  
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>Billion Scale Similarity Search With GPUs (2017)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/%E8%BF%91%E4%BC%BC%E6%9C%80%E8%BF%91%E5%82%8D%E6%8E%A2%E7%B4%A2/">
+	#近似最近傍探索
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">January 1, 2024</span>    
+  <div>
+    <p><a href="https://arxiv.org/abs/1702.08734">Billion-scale-similarity search with GPUs</a>は、<a href="https://inria.hal.science/inria-00514462v2/document">IVFADC</a>による量子化と<a href="https://www.cs.kent.edu/~batcher/sort.pdf">Batcherのバイトニックソート</a>を利用したGPUで実行するL2ノルムの近似最近傍探索である。
+実装は、OSSの<a href="https://github.com/facebookresearch/faiss">faiss</a>として公開されている。</p>
+<!-- raw HTML omitted -->
+<p>\(l\)個のデータベースにあるベクトル\([y_i]_{i=0:l}\)の中からクエリ\(x\in\mathbb{R}^d\)の最近傍にある\(k\)個の集合\(L\)に近い要素を、近似的に求める。
+$$
+L=\text{k-}\argmin_{i=0:l}||x-y_i||_2
+$$</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>IVFADCは、\(\mathbb{R}^d\)から\(\mathbb{R}^d\)の真部分集合に写す2つの関数でデータベースベクトルを量子化する。
+$$
+y\approx q(y) = q_1(y) + q_2(y-q_1(y))
+$$
+関数\(q_1\): \(\mathbb{R}^d\rightarrow \mathcal{C}_1\subset \mathbb{R}^d\)はcoarse quantizer, 関数\(q_2\): \(\mathbb{R}^d\rightarrow \mathcal{C}_2\subset \mathbb{R}^d\)はfine quantizerとよばれる。
+\(q_2\)は\(q_1\)を適用した結果と\(y\)の残差をエンコードする。
+IVFADCは、\(q_1\)で\(y\)の近傍にある\(\mathcal{C}_1\)で写されるデータベースベクトルのみを検索対象に限定する。
+まず、\(y\)の最近傍にある\(\tau\)個の\(\mathcal{C}_1\)の部分集合\(L_{\text{IVF}}\)を求める。
+$$
+L_{\text{IVF}}=\tau-\argmin_{c\in\mathcal{C}_1}||x-c||_2
+$$
+次に、\(L_\text{IVF}\)にあるデータベースベクトルの量子化された値とクエリ\(x\)を比較し、\(k\)個の最近傍の集合\(L_{\text{IVFADC}}\)を求める。
+$$
+L_{\text{IVFADC}}=k-\argmin_{i=0:l\ \text{s.t.}\ q_1(y_i)\in L_{\text{IVF}}}||x-q(y_i)||_2
+$$</p>
+<p>\(q_1\)は\(|\mathcal{C}_1|\approx \sqrt{l}\)に設定したk-meansで決められ、\(q_2\)にはproduct quantizerが使われる。
+Product quantizerは、\(y\)を\(d\)の偶数の約数\(b\)単位に分割\((y=[y^0\dots y^{b-1}])\)し、分割したサブベクトルごとに量子化する。
+サブベクトルは1バイトに収まる\([0,255]\)の値に変換され、量子化された値をビットシフトすることで、\(q_2(y)\)の値\(q_2(y)=q^0(y^0)+256\times q^1(y^1)+\dots + 256^{b-1}\times q^{b-1}(y^{b-1})\)が求まる。</p>
+<p>量子化されたデータベースベクトルとクエリ間の距離を求めたら、Batcherのバイトニックソートでクエリの最近傍にある\(k\)個のベクトルを見つける。
+以下の論文から引用した図はソートの様子を示す。
+<img src="/billion-scale-similarity-search-with-gpus.png" alt="fig">
+\([a_i]_{i=0:l}\)はソート対象であり、\([T^j_i]_{i=0:t}\)は降順の優先度付きキュー(\(T^j_{i}\ge T^j_{i+1}\))を示す。
+\([W_i]_{i=0:k}\)は調べた中で最も距離の小さい\(k\)個の要素を表す。
+\(a\)が\(T^j_0\)より大きければ\(a\)が\(k\)個の最近傍ではないように、\(T^j_0\)は任意の\(W_i\)よりも大きくなるように管理される。</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/conflict-free-replicated-data-types/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="https://nryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

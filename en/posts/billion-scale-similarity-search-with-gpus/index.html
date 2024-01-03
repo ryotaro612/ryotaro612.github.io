@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>Conflict-free Replicated Data Types (2011)</title>
+    <title>Billion Scale Similarity Search With GPUs (2017)</title>
   </head>
 
   <body>
@@ -53,41 +53,54 @@
           <li><a href="https://nryotaro.dev/en/posts">Posts</a></li>
           <li><a href="https://nryotaro.dev/en/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/posts/conflict-free-replicated-data-types/">ja</a></li>
+	  <li><a href="https://nryotaro.dev/posts/billion-scale-similarity-search-with-gpus/">ja</a></li>
 	  
         </ul>
       </nav>
     </header>
     
 <main>
-  <h1>Conflict-free Replicated Data Types (2011)</h1>
+  <h1>Billion Scale Similarity Search With GPUs (2017)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://nryotaro.dev/en/tags/conflict-free-replicated-data-types/">
-	#Conflict-free Replicated Data Types
+      <a href="https://nryotaro.dev/en/tags/approximate-nearest-neighbors/">
+	#Approximate Nearest Neighbors
       </a>
     </li>
     
   </ul>  
-  <span class="date">December 31, 2023</span>    
+  <span class="date">January 1, 2024</span>    
   <div>
-    <p>In a distributed system with replicated objects distributed across processes interconnected by an asynchronous network, updating a replica without synchronization can lead to conflicts when the update is sent to other replicas.
-<a href="https://pages.lip6.fr/Marc.Shapiro/papers/RR-7687.pdf">Conflict-free Replicated Data Types</a> (CRDTs) are data structures whose states form a join semilattice and monotonically non-decreasing across updates.
-The replicas of CRDTs that have delivered the same updates eventually reach the same state if clents stop submitting updates.</p>
-<p>The processes in this system are assumed to be non-Byzantine and may crash silently, remaining crashed forever or recovering.</p>
-<p>Clients can read the state of an object using queries (\(q\)) and modify it using updates (\(u\)). The merge operation (\(m\)) combines the state of a remote replica.
-Queries are side-effect-free.
-The \(k^{\text{th}}\) method execution at replica \(i\) is denoted as \(f^k_i(a)\), where \(f\) is either \(q,\ u\ \) or \(m\), and \(a\). \(a\) denotes the arguments.
-Replica \(i\) has initial state \(s^0_i\), and \(f^k_i(a)\) make a transition from \(s^{k-1}_i\) to \(s^k_i\).
-This transition is noted as \(s^{k-1}_i\bullet f^k_i(a)=s_i^k\).</p>
-<p>There are two types of CRDTs: State-based Convergent Replicated Data Types (CvRDTs) and Operation-based Commutative Replicated Data Types (CmRDTs).
-CvRDTs and CmRDTs are equivalent, meaning any CvRDT can be emulated by a CmRDT, and vice versa.</p>
-<p>CvRDTs use merge methods, whereas CmRDTs do not.
-A join semilattice is a partial order \(\le\) with a least upper bound \(\sqcup\) for all pairs of states \((s, s&rsquo;)\).
-It follows that \(\sqcup\) is commutative \((s\sqcup s&rsquo; = s&rsquo;\sqcup s)\), idempotent \((s \sqcup s = s)\) and associative \(((s\sqcup s&rsquo;)\sqcup s&rsquo;&rsquo; = s\sqcup (s&rsquo; \sqcup s&rsquo;&rsquo;))\).
-Merging state \(s\) with remote state \(s&rsquo;\) computes the least upper bound of the two states, i.e., \(s\bullet m(s&rsquo;) = s\sqcup s&rsquo;\), and any states are monotonically non-decreasing across updates, i.e., \(s\le s\bullet u\).
-In that case, correct replicas that have delivered the same updates have equivalent state.</p>
+    <p>The paper <a href="https://arxiv.org/abs/1702.08734">Billion-scale-similarity search with GPUs</a> presents an approximate nearest-neighbor search method that uses GPUs and combines the <a href="https://inria.hal.science/inria-00514462v2/document">IVFADC</a> indexing structure with <a href="https://www.cs.kent.edu/~batcher/sort.pdf">Batcher&rsquo;s bitonic sorting network</a>.
+The authors have implemented this method in a library called <a href="https://github.com/facebookresearch/faiss">faiss</a>.</p>
+<p>This search method aims to find the \(k\) nearest neighbors of a query vector \(x \in R^d\) among a set of database vectors \([y_i]_{i=0:l}\), based on the L2 distance. Instead of providing an exact result, it returns a suboptimal solution.
+$$
+L=\text{k-}\argmin_{i=0:l}||x-y_i||_2
+$$</p>
+<p>The IVFADC indexing structure consists of two levels of quantization.
+$$
+y\approx q(y) = q_1(y) + q_2(y-q_1(y))
+$$
+The first-level quantizer \(q_1\): \(\mathbb{R}^d\rightarrow \mathcal{C}_1\subset \mathbb{R}^d\) maps each vector \(y\) to a coarse centroid \(c \in \mathcal{C_1}\), while the second-level quantizer: \(\mathbb{R}^d\rightarrow \mathcal{C}_2\subset \mathbb{R}^d\) encodes the residual vector after the first level.
+The database vectors are filtered based on their coarse-level centroids, and the search is then performed on the resulting subset using the second-level quantizer.
+$$
+L_{\text{IVF}}=\tau-\argmin_{c\in\mathcal{C}_1}||x-c||_2
+$$
+\(\tau\) is the number of coarse-level centroids, and typically \(|C_1|\approx \sqrt{l}\) trained via \(k\)-means.
+For the second level, it computes the distances for the database vectors in \(L_{\text{IVF}}\).
+$$
+L_{\text{IVFADC}}=k-\argmin_{i=0:l\ \text{s.t.}\ q_1(y_i)\in L_{\text{IVF}}}||x-q(y_i)||_2
+$$</p>
+<p>The second-level quantization \(q_2\) is done using a <a href="https://inria.hal.science/inria-00514462v2/document">product quantizer</a>, which divides the vector \(y\) into \(b\) sub-vectors \((y=[y^0\dots y^{b-1}])\) and quantizes each sub-vector independently.
+\(b\) is an even divisor of the dimension \(d\).
+The sub-quantizers typically have 256 reproduction values, and the quantization value of the product quantizer is then \(q_2(y)=q^0(y^0)+256\times q^1(y^1)+\dots + 256^{b-1}\times q^{b-1}(y^{b-1})\).</p>
+<p>The search uses Batcher&rsquo;s bitonic sorting network to determine the exact distances in the set of reproduction values. The figure below, cited from the paper, displays the sorting network.
+<img src="/billion-scale-similarity-search-with-gpus.png" alt="fig">
+\([a_i]_{i=0:l}\) is provided for selection and \([T^j_i]_{i=0:t}\) represents a priority queue where the elements are ordered from largest to smallest (\(T^j_{i}\ge T^j_{i+1}\)).
+\([a_i]_{i=0:l}\) are the sequence provided fro selection, and \([T^j_i]_{i=0:t}\) is a priority queue where the elements are ordered from largest to smallest (\(T^j_{i}\ge T^j_{i+1}\)).
+\([W_i]_{i=0:k}\) is the array of \(k\) smallest seen elements.
+If a new candidate vector \(a\) is greater than the largest key currently in the queue \(T^j_0\), it is guaranteed that it won&rsquo;t be included in the final set of \(k\) smallest results.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
@@ -105,7 +118,18 @@ In that case, correct replicas that have delivered the same updates have equival
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
   </div>
 </main>
 
@@ -113,17 +137,11 @@ In that case, correct replicas that have delivered the same updates have equival
 <ul class="pagination">
     
     <li>
-      <a href="/en/posts/dense-passage-retrieval-for-open-domain-question-answering/">
+      <a href="/en/posts/conflict-free-replicated-data-types/">
 	<i class="fa-solid fa-xl fa-angle-left"></i>
       </a>
     </li>
     
-    
-    <li>
-      <a href="/en/posts/billion-scale-similarity-search-with-gpus/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
     
 </ul>
 
