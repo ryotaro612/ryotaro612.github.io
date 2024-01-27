@@ -63,6 +63,29 @@
     
     
     <article>
+        <h3><a href="https://nryotaro.dev/posts/sorting-networks-and-their-applications/">Sorting networks and their applications (1968)</a></h3>
+        <div class="summary"><p>ソーティングネットワークは、入次数と出次数が2のノードからなるグラフを理論にしたソートのアルゴリズムである。
+ノードは、別々の辺から入力された値の大小関係を比較し、大きい方を一方、小さい方を他方の辺に出力する。
+<a href="https://www.cs.kent.edu/~batcher/sort.pdf">Sorting networks and their applications</a>で提案された奇偶マージソートとバイトニックソートは、値によらず配列上の位置で比較する要素が決まるソーティングネットワークなので、<a href="https://developer.nvidia.com/gpugems/gpugems2/part-vi-simulation-and-numerical-algorithms/chapter-46-improved-gpu-sorting">並列計算に利用される</a>。
+どちらも長さ\(2^p\)の配列を\(\ln (\frac{1}{2})p(p+1)\)ステップでソートできる。</p>
+<!-- raw HTML omitted --></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://nryotaro.dev/tags/sorting-algorithm/">
+		#Sorting algorithm
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">January 14, 2024</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://nryotaro.dev/posts/billion-scale-similarity-search-with-gpus/">Billion Scale Similarity Search With GPUs (2017)</a></h3>
         <div class="summary"><p><a href="https://arxiv.org/abs/1702.08734">Billion-scale-similarity search with GPUs</a>は、<a href="https://inria.hal.science/inria-00514462v2/document">IVFADC</a>による量子化と<a href="https://www.cs.kent.edu/~batcher/sort.pdf">Batcherのバイトニックソート</a>を利用したGPUで実行するL2ノルムの近似最近傍探索である。
 実装は、OSSの<a href="https://github.com/facebookresearch/faiss">faiss</a>として公開されている。</p>
@@ -259,26 +282,6 @@ LLMの重みを\(W_0\in\mathbb{R}^{d\times k}\)とすると、\(W_0+BA\ (B\in\ma
 	  </ul>
 	  
           <span class="date">November 18, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://nryotaro.dev/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/">Pastry: Scalable Decentralized Object Location and Routing for Large Scale Peer to Peer Systems (2001)</a></h3>
-        <div class="summary"><p><a href="https://rowstron.azurewebsites.net/PAST/pastry.pdf">Pastry</a>は、広域ネットーワーク規模のPeer-to-Peerなルーティングのアルゴリズムであり、メッセージをメッセージのキーに最も近いIDをもつノードに転送する。
-Pastryに参加するノードは対称的で、すべてのノードは同じアルゴリズムにしたがう。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://nryotaro.dev/tags/peer-to-peer/">
-		#Peer-to-peer
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">November 7, 2023</span>
         </div>
     </article>
     

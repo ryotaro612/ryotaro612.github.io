@@ -2,6 +2,71 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://nryotaro.dev/en/</loc>
+    <lastmod>2024-01-14T23:32:24-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/en/posts/</loc>
+    <lastmod>2024-01-14T23:32:24-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/en/tags/sorting-algorithm/</loc>
+    <lastmod>2024-01-14T23:32:24-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/tags/sorting-algorithm/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/tags/sorting-algorithm/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/en/posts/sorting-networks-and-their-applications/</loc>
+    <lastmod>2024-01-14T23:32:24-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/posts/sorting-networks-and-their-applications/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/posts/sorting-networks-and-their-applications/"
+                />
+  </url><url>
+    <loc>https://nryotaro.dev/en/tags/</loc>
+    <lastmod>2024-01-14T23:32:24-05:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://nryotaro.dev/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://nryotaro.dev/en/tags/"
+                />
+  </url><url>
     <loc>https://nryotaro.dev/en/tags/approximate-nearest-neighbors/</loc>
     <lastmod>2024-01-01T22:21:29-05:00</lastmod>
   </url><url>
@@ -16,45 +81,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://nryotaro.dev/en/posts/billion-scale-similarity-search-with-gpus/"
-                />
-  </url><url>
-    <loc>https://nryotaro.dev/en/</loc>
-    <lastmod>2024-01-01T22:21:29-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/"
-                />
-  </url><url>
-    <loc>https://nryotaro.dev/en/posts/</loc>
-    <lastmod>2024-01-01T22:21:29-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/posts/"
-                />
-  </url><url>
-    <loc>https://nryotaro.dev/en/tags/</loc>
-    <lastmod>2024-01-01T22:21:29-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://nryotaro.dev/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://nryotaro.dev/en/tags/"
                 />
   </url><url>
     <loc>https://nryotaro.dev/en/tags/conflict-free-replicated-data-types/</loc>

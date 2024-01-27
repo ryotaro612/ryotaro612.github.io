@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Sorting networks and their applications (1968)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://nryotaro.dev/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://nryotaro.dev/about">About</a></li>
+          <li><a href="https://nryotaro.dev/posts">Posts</a></li>
+          <li><a href="https://nryotaro.dev/tags">Tags</a></li>
+	  
+	  <li><a href="https://nryotaro.dev/en/posts/sorting-networks-and-their-applications/">en</a></li>
+	  
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>Sorting networks and their applications (1968)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/tags/sorting-algorithm/">
+	#Sorting algorithm
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">January 14, 2024</span>    
+  <div>
+    <p>ソーティングネットワークは、入次数と出次数が2のノードからなるグラフを理論にしたソートのアルゴリズムである。
+ノードは、別々の辺から入力された値の大小関係を比較し、大きい方を一方、小さい方を他方の辺に出力する。
+<a href="https://www.cs.kent.edu/~batcher/sort.pdf">Sorting networks and their applications</a>で提案された奇偶マージソートとバイトニックソートは、値によらず配列上の位置で比較する要素が決まるソーティングネットワークなので、<a href="https://developer.nvidia.com/gpugems/gpugems2/part-vi-simulation-and-numerical-algorithms/chapter-46-improved-gpu-sorting">並列計算に利用される</a>。
+どちらも長さ\(2^p\)の配列を\(\ln (\frac{1}{2})p(p+1)\)ステップでソートできる。</p>
+<!-- raw HTML omitted -->
+<p>奇遇マージソートは、昇順にソートされた2つの配列をマージする。
+以下の図は配列\(a, b\)をマージする様子を示す。
+<img src="/sorting-networks/odd-even.png" alt="odd-even.png">
+図の右にあるA, B, L, Hを囲む枠がノードであり、入力A, Bのうち、大きい方をHに、小さい方をLに出力する。
+ODD-MERGEとEVEN-MERGEは\(a, b\)の奇数または偶数番目の位置にある要素のみからなる配列を再帰的にソートする。
+ODD-MERGEの出力の先頭要素は\(a, b\)の最小値となる。
+ODD-MERGEの\(i (&gt; 1)\)番目の要素とEVEN-MERGEの\(i-1\)番目の要素の前後関係はノードによって振り分けられる。</p>
+<p>昇順の配列と降順の配列を連結してできる配列をバイトニックという。
+バイトニックソートは、長さ\(2n\)のバイトニックな配列\(a\)を受けとり、\(a_i\)と\(a_{n+1}\)を比較し、以下の2つのバイトニックな配列を再帰的に生成する。
+$$
+\begin{align*}
+\min(a_1, a_{n+1}), \min (a_2, a_{n+2}), \dots , \min (a_n, a_{2n})\\
+\max(a_1, a_{n+1}), \max (a_2, a_{n+2}), \dots , \max (a_n, a_{2n})
+\end{align*}
+$$
+任意の\(\min(a_i, a_{n+i})\)は任意の\(\max(a_i, a_{n+i})\)以下になるので、2つの配列にそれぞれバイトニックソートを適用した後、連結すればソートされた長さ\(2n\)の配列になる。
+以下の図はバイトニックソートの様子を示す。
+<img src="/sorting-networks/bitonic.png" alt="bitonic"></p>
+<p>図は論文より引用しました。</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/billion-scale-similarity-search-with-gpus/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="https://nryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

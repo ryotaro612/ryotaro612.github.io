@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 01 Jan 2024 22:21:29 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jan 2024 23:32:24 -0500</lastBuildDate>
     <atom:link href="https://nryotaro.dev/en/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sorting networks and their applications (1968)</title>
+      <link>https://nryotaro.dev/en/posts/sorting-networks-and-their-applications/</link>
+      <pubDate>Sun, 14 Jan 2024 23:32:24 -0500</pubDate>
+      <guid>https://nryotaro.dev/en/posts/sorting-networks-and-their-applications/</guid>
+      <description>&lt;p&gt;A sorting network is a network of comparison elements with 2 indegree and 2 outdegree that sorts a list in ascending or descending order.&#xA;A comparison element receives two numbers and outputs the smaller one to one output and the larger one to the other output.&#xA;Odd-even merging networks and Bitonic sorters are sorting networks proposed in &lt;a href=&#34;https://www.cs.kent.edu/~batcher/sort.pdf&#34;&gt;Sorting networks and their applications&lt;/a&gt;.&#xA;They can sort \(2^p\) elements with \(\ln (\frac{1}{2})p(p+1)\) steps.&#xA;Their processing is independent of the values and is easy to run on the GPU because it does not change the output location in memory based on input data values.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
     <item>
       <title>Billion Scale Similarity Search With GPUs (2017)</title>
       <link>https://nryotaro.dev/en/posts/billion-scale-similarity-search-with-gpus/</link>

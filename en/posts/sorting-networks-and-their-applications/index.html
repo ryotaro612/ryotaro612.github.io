@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
+    
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+
+<link rel="stylesheet" href="https://nryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Sorting networks and their applications (1968)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://nryotaro.dev/en/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://nryotaro.dev/en/about">About</a></li>
+          <li><a href="https://nryotaro.dev/en/posts">Posts</a></li>
+          <li><a href="https://nryotaro.dev/en/tags">Tags</a></li>
+	  
+	  <li><a href="https://nryotaro.dev/posts/sorting-networks-and-their-applications/">ja</a></li>
+	  
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>Sorting networks and their applications (1968)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://nryotaro.dev/en/tags/sorting-algorithm/">
+	#Sorting algorithm
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">January 14, 2024</span>    
+  <div>
+    <p>A sorting network is a network of comparison elements with 2 indegree and 2 outdegree that sorts a list in ascending or descending order.
+A comparison element receives two numbers and outputs the smaller one to one output and the larger one to the other output.
+Odd-even merging networks and Bitonic sorters are sorting networks proposed in <a href="https://www.cs.kent.edu/~batcher/sort.pdf">Sorting networks and their applications</a>.
+They can sort \(2^p\) elements with \(\ln (\frac{1}{2})p(p+1)\) steps.
+Their processing is independent of the values and is easy to run on the GPU because it does not change the output location in memory based on input data values.</p>
+<!-- raw HTML omitted -->
+<p>Odd-even merging networks arrange two ascendingly-ordered numbers into one ascending-ordered list.
+In the following figure, the odd-even merging network merges \(a\) and \(b\) into \(c\).
+<img src="/sorting-networks/odd-even.png" alt="odd-even.png">
+The rectangle enclosing A, B, L, H is a comparison element.
+It receives two numbers over A and B and emits their minimum on L and their maximum on H.
+In the figure, <code>ODD-MERGE</code> (<code>EVEN-MERGE</code>) takes the odd-indexed (even-indexed) numbers of the two input lists and sorts them using a small odd-even merging network.
+The &ldquo;s by t&rdquo; merging network then compares the outputs of these small merges.
+The lowest output of the odd merge becomes the lowest number of the final list.
+The \(i^{\textit{th}}\) output of the even merge is compared with the \(i+1^{\textit{th}}\) output of the odd merge to form the \(2i^{\textit{th}}\) and \(2i+1^{\textit{th}}\) numberos of the final list.
+A list is bitonic if the first elements are sorted in ascending order and the remaining elements are sorted in descending order.
+When the bitonic sort receives a bitonic list of \(2n\) elements, \(a_1, a_2,\dots ,a_{2n}\), it constructs the following two bitonic lists of \(n\) elements by comparing \(a_i\) with \(a_{n+i}\).
+$$
+\begin{align*}
+\min(a_1, a_{n+1}), \min (a_2, a_{n+2}), \dots , \min (a_n, a_{2n})\\
+\max(a_1, a_{n+1}), \max (a_2, a_{n+2}), \dots , \max (a_n, a_{2n})
+\end{align*}
+$$
+Any \(\min(a_i, a_{n+i})\) is smaller than any \(\max(a_i, a_{n+i})\), and the botonic sorter constructs the final list by concatenating the two smaller lists of \(n\) elements.
+The following figure illustrates a bitonic sorter with \(2n\) elements.
+<img src="/sorting-networks/bitonic.png" alt="bitonic"></p>
+<p>The figures are cited from <a href="https://www.cs.kent.edu/~batcher/sort.pdf">Sorting networks and their applications</a>.</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/en/posts/billion-scale-similarity-search-with-gpus/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/nryotaro">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="https://nryotaro.dev/en/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>
