@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Retrieval Augmented Generation on Blanket</title>
+    <link>https://nryotaro.dev/en/tags/retrieval-augmented-generation/</link>
+    <description>Recent content in Retrieval Augmented Generation on Blanket</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 27 Jan 2024 16:44:55 -0500</lastBuildDate>
+    <atom:link href="https://nryotaro.dev/en/tags/retrieval-augmented-generation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Retrieval Augmented Generation for Knowledge Intensive NLP Tasks (2021)</title>
+      <link>https://nryotaro.dev/en/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/</link>
+      <pubDate>Sat, 27 Jan 2024 16:44:55 -0500</pubDate>
+      <guid>https://nryotaro.dev/en/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/</guid>
+      <description>&lt;p&gt;While large pre-trained language models (LLMs) can implicitly store factual knowledge in their parameters, their ability to access explicit encyclopedic and commonsense is knowledge still limited.&#xA;Retrieval Augmented Generation (RAG) is a method to improve language generation by providing external explicit knowledge to LLMs.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

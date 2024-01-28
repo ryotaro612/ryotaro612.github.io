@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>Sorting networks and their applications (1968)</title>
+    <title>Retrieval Augmented Generation for Knowledge Intensive NLP Tasks (2021)</title>
   </head>
 
   <body>
@@ -53,52 +53,53 @@
           <li><a href="https://nryotaro.dev/en/posts">Posts</a></li>
           <li><a href="https://nryotaro.dev/en/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/posts/sorting-networks-and-their-applications/">ja</a></li>
+	  <li><a href="https://nryotaro.dev/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/">ja</a></li>
 	  
         </ul>
       </nav>
     </header>
     
 <main>
-  <h1>Sorting networks and their applications (1968)</h1>
+  <h1>Retrieval Augmented Generation for Knowledge Intensive NLP Tasks (2021)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://nryotaro.dev/en/tags/sorting-algorithm/">
-	#Sorting algorithm
+      <a href="https://nryotaro.dev/en/tags/retrieval-augmented-generation/">
+	#Retrieval Augmented Generation
       </a>
     </li>
     
   </ul>  
-  <span class="date">January 14, 2024</span>    
+  <span class="date">January 27, 2024</span>    
   <div>
-    <p>A sorting network is a network of comparison elements with 2 indegree and 2 outdegree that sorts a list in ascending or descending order.
-A comparison element receives two numbers and outputs the smaller one to one output and the larger one to the other output.
-Odd-even merging networks and Bitonic sorters are sorting networks proposed in <a href="https://www.cs.kent.edu/~batcher/sort.pdf">Sorting networks and their applications</a>.
-They can sort \(2^p\) elements with \(\ln (\frac{1}{2})p(p+1)\) steps.
-Their processing is independent of the values and is easy to run on the GPU because it does not change the output location in memory based on input data values.</p>
-<!-- raw HTML omitted -->
-<p>Odd-even merging networks arrange two ascendingly-ordered numbers into one ascending-ordered list.
-In the following figure, the odd-even merging network merges \(a\) and \(b\) into \(c\).
-<img src="/sorting-networks/odd-even.png" alt="odd-even.png">
-The rectangle enclosing A, B, L, H is a comparison element.
-It receives two numbers over A and B and emits their minimum on L and their maximum on H.
-In the figure, <code>ODD-MERGE</code> (<code>EVEN-MERGE</code>) takes the odd-indexed (even-indexed) numbers of the two input lists and sorts them using a small odd-even merging network.
-The &ldquo;s by t&rdquo; merging network then compares the outputs of these small merges.
-The lowest output of the odd merge becomes the lowest number of the final list.
-The \(i^{\textit{th}}\) output of the even merge is compared with the \(i+1^{\textit{th}}\) output of the odd merge to form the \(2i^{\textit{th}}\) and \(2i+1^{\textit{th}}\) numberos of the final list.
-A list is bitonic if the first elements are sorted in ascending order and the remaining elements are sorted in descending order.
-When the bitonic sort receives a bitonic list of \(2n\) elements, \(a_1, a_2,\dots ,a_{2n}\), it constructs the following two bitonic lists of \(n\) elements by comparing \(a_i\) with \(a_{n+i}\).
+    <p>While large pre-trained language models (LLMs) can implicitly store factual knowledge in their parameters, their ability to access explicit encyclopedic and commonsense is knowledge still limited.
+Retrieval Augmented Generation (RAG) is a method to improve language generation by providing external explicit knowledge to LLMs.</p>
+<p>In <a href="https://arxiv.org/abs/2005.11401">Retrieval Augmented Generation for Knowledge Intensive NLP Tasks</a>, two RAG models are introduced: RAG-Token model and RAG-Sequence Model.
+They use dense vectors index of Wikipedia as external knowledge.
+They combine <a href="https://aclanthology.org/2020.emnlp-main.550/">Dense Passage Retriever</a> (DPR) and seq2seq.
+DPR is a neural retriever that encodes documents and an input sequence using <a href="https://arxiv.org/abs/1810.04805">BERTs</a>, and then computes inner products of the embeddings of a document and the input sequence.
+The two RAG models run DPR to find the dense vectors of the top-k documents that are relevant to an input sequence.
+The dense vector of the found document and the input sequence are concatenated and then passed to the seq2seq model.</p>
+<p>The RAG models leverage the DPR component \(p_{\eta}(z|x)\) and seq2seq component \(p_{\theta}(y_i|x, z, y_{1:i-1})\).
+The DPR retrieve documents \(z\) that are relevant to the input sequence \(x\).
+seq2seq uses \(x\) and \(z\) as additional context to generate the target seqeuence \(y\).
+\(\eta\) and \(\theta\) represent the model parameters.
+\(y_i\) denotes the \(i^{\text{th}}\) token in the target sequence.</p>
+<p>In the RAG-Token, the seq2seq produces a distribution for the next output token for each retrieved document and then marginalize the documents:
 $$
-\begin{align*}
-\min(a_1, a_{n+1}), \min (a_2, a_{n+2}), \dots , \min (a_n, a_{2n})\\
-\max(a_1, a_{n+1}), \max (a_2, a_{n+2}), \dots , \max (a_n, a_{2n})
-\end{align*}
+p_{\text{RAG-Token}}(y|x) \approx\prod^N_i \sum_{z\in \text{top-k}(p(\cdot|x))}p_\eta (z|x)p_{\theta}(y_i|x,z,y_{1:i-1})
 $$
-Any \(\min(a_i, a_{n+i})\) is smaller than any \(\max(a_i, a_{n+i})\), and the botonic sorter constructs the final list by concatenating the two smaller lists of \(n\) elements.
-The following figure illustrates a bitonic sorter with \(2n\) elements.
-<img src="/sorting-networks/bitonic.png" alt="bitonic"></p>
-<p>The figures are cited from <a href="https://www.cs.kent.edu/~batcher/sort.pdf">Sorting networks and their applications</a>.</p>
+where \(N\) is the length of the target sequence.
+The decoding uses a standard beam search to approximate \(\argmax_y p(y|x)\).</p>
+<p>The RAG-Sequence Model uses the same retrieved document to generate the target sequence:
+$$
+p_{\text{RAG-Sequence}}(y|x)\approx\sum_{z\in \text{top-k}(p(\cdot |x))}p_{\eta}(z|x)p_{\theta}(y|x,z) = \sum_{z\in\text{top-k}(p(\cdot|x))}p_{\eta}(z|x)\prod^N_i p_{\theta}(y_i|x,z,y_{1:i-1})
+$$
+The decoding runs beam search for each document \(z\) to yield a set of hypotheses.
+Some of which may not have appeared in the beams of all documents.
+In that case,\(p_{\theta}(y|x,z_i)\approx 0\) can be used for efficient decoding.</p>
+<p>The DPR and the seq2seq components can be trained jointly.
+Given a training dataset of pairs \((x_i, y_i)\), the parameters are updated to minimize the negative marginal log-likelihood of each target, \(\sum_i-\log p(y_i|x_i)\).</p>
   </div>
 </main>
 
@@ -106,17 +107,11 @@ The following figure illustrates a bitonic sorter with \(2n\) elements.
 <ul class="pagination">
     
     <li>
-      <a href="/en/posts/billion-scale-similarity-search-with-gpus/">
+      <a href="/en/posts/sorting-networks-and-their-applications/">
 	<i class="fa-solid fa-xl fa-angle-left"></i>
       </a>
     </li>
     
-    
-    <li>
-      <a href="/en/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
     
 </ul>
 

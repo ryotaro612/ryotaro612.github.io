@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 14 Jan 2024 23:32:24 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jan 2024 16:44:55 -0500</lastBuildDate>
     <atom:link href="https://nryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Retrieval Augmented Generation for Knowledge Intensive NLP Tasks (2021)</title>
+      <link>https://nryotaro.dev/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/</link>
+      <pubDate>Sat, 27 Jan 2024 16:44:55 -0500</pubDate>
+      <guid>https://nryotaro.dev/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/</guid>
+      <description>&lt;p&gt;問題文から推論できない知識を必要とする自然言語処理のタスクの場合、Large Language Model (LLM) の事前学習による効果は限定的になる。&#xA;LLMのパラメタに知識がなければ回答できず、また、パラメタは正確な知識を記録する仕組みではない。&#xA;Retrieval Augmented Generation (RAG) は、LLMの外部から提供された知識を利用し、入力から推論できない知識にもとづく文書を生成する。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/2005.11401&#34;&gt;Retrieval Augmented Generation for Knowledge Intensive NLP Tasks&lt;/a&gt;は、文書の埋め込みベクトルを外部の知識に使うRAGであり、入力文で埋め込みベクトルを検索し、検索結果の上位の文書と入力文から文書を生成する。&#xA;文書の検索には&lt;a href=&#34;https://aclanthology.org/2020.emnlp-main.550/&#34;&gt;Dense Passage Retriever&lt;/a&gt; (DPR) を、後の文書の生成にはseq2seqを使う。&#xA;DPRは、質問と文書を別々のBERTで埋め込みベクトルに変換し、質問に関係する文書と質問のベクトル間の内積を最大にするように学習する。&#xA;&lt;a href=&#34;https://github.com/facebookresearch/faiss&#34;&gt;Faiss&lt;/a&gt;などの近似最近傍探索を利用すれば、実用可能な速度で推論できる。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Sorting networks and their applications (1968)</title>
       <link>https://nryotaro.dev/posts/sorting-networks-and-their-applications/</link>
