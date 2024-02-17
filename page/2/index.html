@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.121.0">
+	<meta name="generator" content="Hugo 0.121.2">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -18,12 +18,12 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
     
-    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
 
-<link rel="stylesheet" href="https://nryotaro.dev/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -45,14 +45,14 @@
     
         
     <header class="navigation">
-      <h2><a href="https://nryotaro.dev/">Blanket</a></h2>
+      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
       <nav>
         <ul>
-          <li><a href="https://nryotaro.dev/about">About</a></li>
-          <li><a href="https://nryotaro.dev/posts">Posts</a></li>
-          <li><a href="https://nryotaro.dev/tags">Tags</a></li>
+          <li><a href="https://ryotaro.dev/about">About</a></li>
+          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/en/">en</a></li>
+	  <li><a href="https://ryotaro.dev/en/">en</a></li>
 	  
         </ul>
       </nav>
@@ -63,7 +63,7 @@
     
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/lora-low-rank-adaptation-of-large-language-models/">LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS</a></h3>
+        <h3><a href="https://ryotaro.dev/posts/lora-low-rank-adaptation-of-large-language-models/">LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS</a></h3>
         <div class="summary"><p><a href="https://arxiv.org/pdf/1804.08838.pdf">Li et al. (2018)</a>と<a href="https://arxiv.org/pdf/2012.13255.pdf">Aghajanyan et al. (2020)</a>は、Large Language Models (LLM)のファインチューニングにかかる計算資源は大きいが、下流タスクに必要なパラメータ数はLLMのパラメタ数よりもはるかに少ないと主張した。
 <a href="https://arxiv.org/pdf/2106.09685.pdf">LoRA</a>は、この仮説によりファインチューニングを避け、LLMの重みと線形結合すると下流タスクに最適な重みに近似できる小さな行列を求める。
 LLMの重みを\(W_0\in\mathbb{R}^{d\times k}\)とすると、\(W_0+BA\ (B\in\mathbb{R}^{d\times r}, A\in\mathbb{R}^{r\times k}, r \ll\min (d, k))\)が下流タスクに最適な重みに近づくように、ファインチューニングにかわって\(W_0\)を更新せず\(B,\ A\)のみを更新する。
@@ -74,7 +74,7 @@ LLMの重みを\(W_0\in\mathbb{R}^{d\times k}\)とすると、\(W_0+BA\ (B\in\ma
 	  <ul class="tags">
 	    
             <li class="tag">
-	      <a href="https://nryotaro.dev/tags/large-language-model/">
+	      <a href="https://ryotaro.dev/tags/large-language-model/">
 		#Large language model
 	      </a>
 	    </li>
@@ -86,7 +86,7 @@ LLMの重みを\(W_0\in\mathbb{R}^{d\times k}\)とすると、\(W_0+BA\ (B\in\ma
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/">Pastry: Scalable Decentralized Object Location and Routing for Large Scale Peer to Peer Systems (2001)</a></h3>
+        <h3><a href="https://ryotaro.dev/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/">Pastry: Scalable Decentralized Object Location and Routing for Large Scale Peer to Peer Systems (2001)</a></h3>
         <div class="summary"><p><a href="https://rowstron.azurewebsites.net/PAST/pastry.pdf">Pastry</a>は、広域ネットーワーク規模のPeer-to-Peerなルーティングのアルゴリズムであり、メッセージをメッセージのキーに最も近いIDをもつノードに転送する。
 Pastryに参加するノードは対称的で、すべてのノードは同じアルゴリズムにしたがう。</p></div>
         <div class="article-footer">
@@ -94,7 +94,7 @@ Pastryに参加するノードは対称的で、すべてのノードは同じ�
 	  <ul class="tags">
 	    
             <li class="tag">
-	      <a href="https://nryotaro.dev/tags/peer-to-peer/">
+	      <a href="https://ryotaro.dev/tags/peer-to-peer/">
 		#Peer-to-peer
 	      </a>
 	    </li>
@@ -106,7 +106,7 @@ Pastryに参加するノードは対称的で、すべてのノードは同じ�
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/distilbert-a-distilled-version-of-bert-smaller-fastercheater-and-lighter/">DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter (2019)</a></h3>
+        <h3><a href="https://ryotaro.dev/posts/distilbert-a-distilled-version-of-bert-smaller-fastercheater-and-lighter/">DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter (2019)</a></h3>
         <div class="summary"><p><a href="https://arxiv.org/abs/1910.01108">DistilBERT</a>は、<a href="https://arxiv.org/abs/1810.04805">BERT</a>の事前学習に<a href="https://arxiv.org/pdf/1503.02531.pdf">知識の蒸留</a>を適用したモデルである。
 DistilBERTの事前学習の損失関数は、BERTの学習に使われるMasked language model, BERTとDistilBERTの隠れ状態のコサイン類似度、BERTとDistil BERTの交差エントロピーの線形結合である。
 学習時は温度付きソフトマックスを\(T&gt;1\)に設定し、推論時には\(T=1\)として通常のソフトマックスをもちいる。
@@ -116,13 +116,13 @@ DistilBERTのアーキテクチャは、セグメントエンベディング、�
 	  <ul class="tags">
 	    
             <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E7%9F%A5%E8%AD%98%E8%92%B8%E7%95%99/">
+	      <a href="https://ryotaro.dev/tags/%E7%9F%A5%E8%AD%98%E8%92%B8%E7%95%99/">
 		#知識蒸留
 	      </a>
 	    </li>
 	    
             <li class="tag">
-	      <a href="https://nryotaro.dev/tags/bert/">
+	      <a href="https://ryotaro.dev/tags/bert/">
 		#BERT
 	      </a>
 	    </li>
@@ -134,7 +134,7 @@ DistilBERTのアーキテクチャは、セグメントエンベディング、�
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/an_incremental_approach_to_compiler_construction/">An Incremental Approach to Compiler Construction (2006)</a></h3>
+        <h3><a href="https://ryotaro.dev/posts/an_incremental_approach_to_compiler_construction/">An Incremental Approach to Compiler Construction (2006)</a></h3>
         <div class="summary"><p><a href="http://scheme2006.cs.uchicago.edu/11-ghuloum.pdf">An Incremental Approach to Compiler Construction</a>は、コンパイラの学習を目的としたSchemeのコンパイラの実装方法の解説である。
 コンパイラの実装に使用する言語もSchemeであり、コンパイラは、Intel-x86のアセンブリコードを出力する。
 プログラマが普段使用しているコンパイラは、教育用の教材としてのコンパイラと比べて複雑であり、学習には向かない。
@@ -145,7 +145,7 @@ DistilBERTのアーキテクチャは、セグメントエンベディング、�
 	  <ul class="tags">
 	    
             <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9/">
+	      <a href="https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9/">
 		#コンパイラ
 	      </a>
 	    </li>
@@ -157,7 +157,7 @@ DistilBERTのアーキテクチャは、セグメントエンベディング、�
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/gaussian_error_linear_units/">GAUSSIAN ERROR LINEAR UNITS (GELUs) 2016</a></h3>
+        <h3><a href="https://ryotaro.dev/posts/gaussian_error_linear_units/">GAUSSIAN ERROR LINEAR UNITS (GELUs) 2016</a></h3>
         <div class="summary"><p><a href="https://arxiv.org/abs/1606.08415">GAUSSIAN ERROR LINEAR UNITS (GELUs)</a>は、標準正規分布の累積分布関数を\(\Phi(x)\)とおくと、\(\text{GELU}(x)=x\Phi(x)\)で定義される活性化関数である。
 GELUsは、Dropout, <a href="https://openreview.net/pdf?id=rJqBEPcxe">Zoneout</a>, \(\text{ReLU}(x)=\max(0, x)\)の性質を兼ね備える。
 Zoneoutは、RNNむけの正則化であり、ユニットが一つ前の状態を確率的に維持するしくみである。
@@ -170,7 +170,7 @@ GELUsは、確率\(\Phi(x)\)で1をとるベルヌーイ分布にしたがう0-1
 	  <ul class="tags">
 	    
             <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E6%B4%BB%E6%80%A7%E5%8C%96%E9%96%A2%E6%95%B0/">
+	      <a href="https://ryotaro.dev/tags/%E6%B4%BB%E6%80%A7%E5%8C%96%E9%96%A2%E6%95%B0/">
 		#活性化関数
 	      </a>
 	    </li>
@@ -182,7 +182,7 @@ GELUsは、確率\(\Phi(x)\)で1をとるベルヌーイ分布にしたがう0-1
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/a_design_methodology_for_reliable_software_systems/">A design methodology for reliable software systems (1972)</a></h3>
+        <h3><a href="https://ryotaro.dev/posts/a_design_methodology_for_reliable_software_systems/">A design methodology for reliable software systems (1972)</a></h3>
         <div class="summary"><p>スタンフォードで数学の博士号を取得した<a href="https://computerhistory.org/profile/barbara-liskov/">Liskov</a>は以前勤めていたMitre Corporationに戻った後、最初にVenusとよばれるタイムシェアリングシステムの開発プロジェクトを担当し、その次にソフトウェア危機に対処する開発手法の研究に取り組んだ。
 <a href="https://dl.acm.org/doi/pdf/10.1145/1479992.1480018">A design methodology for reliable software systems</a>は、Venusの開発から得られた構造化プログラミングの方法論である。</p></div>
         <div class="article-footer">
@@ -190,7 +190,7 @@ GELUsは、確率\(\Phi(x)\)で1をとるベルヌーイ分布にしたがう0-1
 	  <ul class="tags">
 	    
             <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E6%A7%8B%E9%80%A0%E5%8C%96%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/">
+	      <a href="https://ryotaro.dev/tags/%E6%A7%8B%E9%80%A0%E5%8C%96%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/">
 		#構造化プログラミング
 	      </a>
 	    </li>
@@ -202,7 +202,7 @@ GELUsは、確率\(\Phi(x)\)で1をとるベルヌーイ分布にしたがう0-1
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/">BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension (2019)</a></h3>
+        <h3><a href="https://ryotaro.dev/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/">BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension (2019)</a></h3>
         <div class="summary"><p><a href="https://arxiv.org/abs/1910.13461">BART</a>は<a href="https://browse.arxiv.org/pdf/1706.03762.pdf">Transformer</a>をみちいた系列変換モデルの事前学習である。
 多くのTransformerモデルとおなじように、ノイズを入れたテキストからもとのテキストを復元できるようにモデルを訓練するが、BARTの特徴は、ノイズの作り方に制限がないところにある。
 比較したノイズの作り方は、ランダムに選んだトークンから文書を始めることで回転する、BERTとおなじトークンのマスキング、トークンの一部の削除、文書中の文の順序の入れ換え、ある区間中にあるトークンをまとめて1つの<code>[MASK]</code>に置き換える方法の5種類である。
@@ -213,7 +213,7 @@ GELUsは、確率\(\Phi(x)\)で1をとるベルヌーイ分布にしたがう0-1
 	  <ul class="tags">
 	    
             <li class="tag">
-	      <a href="https://nryotaro.dev/tags/transformer/">
+	      <a href="https://ryotaro.dev/tags/transformer/">
 		#Transformer
 	      </a>
 	    </li>
@@ -225,7 +225,7 @@ GELUsは、確率\(\Phi(x)\)で1をとるベルヌーイ分布にしたがう0-1
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/communicating_sequential_processes/">Communicating Sequential Processes (1978)</a></h3>
+        <h3><a href="https://ryotaro.dev/posts/communicating_sequential_processes/">Communicating Sequential Processes (1978)</a></h3>
         <div class="summary"><p><a href="https://www.cs.cmu.edu/~crary/819-f09/Hoare78.pdf">Communicating Sequential Processes (CSP)</a>は、あるプロセスの出力を別のプロセスの入力に渡し、入出力のあるプロセスを並行実行するプログラミングモデルである。
 たとえば、GoのgoroutinesはCSPに<a href="https://www.cs.princeton.edu/courses/archive/fall16/cos418/docs/P1-concurrency.pdf">もとづく</a>軽量スレッドである。</p></div>
         <div class="article-footer">
@@ -233,13 +233,13 @@ GELUsは、確率\(\Phi(x)\)で1をとるベルヌーイ分布にしたがう0-1
 	  <ul class="tags">
 	    
             <li class="tag">
-	      <a href="https://nryotaro.dev/tags/communicating-sequential-processes/">
+	      <a href="https://ryotaro.dev/tags/communicating-sequential-processes/">
 		#Communicating Sequential Processes
 	      </a>
 	    </li>
 	    
             <li class="tag">
-	      <a href="https://nryotaro.dev/tags/concurrent-programming/">
+	      <a href="https://ryotaro.dev/tags/concurrent-programming/">
 		#Concurrent Programming
 	      </a>
 	    </li>
@@ -251,7 +251,7 @@ GELUsは、確率\(\Phi(x)\)で1をとるベルヌーイ分布にしたがう0-1
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/">Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks</a></h3>
+        <h3><a href="https://ryotaro.dev/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/">Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks</a></h3>
         <div class="summary"><p><a href="https://arxiv.org/abs/1908.10084">Sentence-BERT</a>は、テキストをコサイン類似度で意味の類似度を比較できる固定長のベクトルに変換できる。
 <a href="https://arxiv.org/abs/1810.04805">BERT</a>を2つのテキストを入力し類似度を出力するように訓練できるが、あるテキストに類似するテキストを求めたい場合には組合せ爆発が生じる。
 Sentence-BERTは、類似度が定義されたテキストの組から、類似するテキスト同士を近い位置に写像できるように学習する。
@@ -264,19 +264,19 @@ Sentence-BERTは、類似度が定義されたテキストの組から、類似�
 	  <ul class="tags">
 	    
             <li class="tag">
-	      <a href="https://nryotaro.dev/tags/bert/">
+	      <a href="https://ryotaro.dev/tags/bert/">
 		#BERT
 	      </a>
 	    </li>
 	    
             <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E3%82%B3%E3%82%B5%E3%82%A4%E3%83%B3%E9%A1%9E%E4%BC%BC%E5%BA%A6/">
+	      <a href="https://ryotaro.dev/tags/%E3%82%B3%E3%82%B5%E3%82%A4%E3%83%B3%E9%A1%9E%E4%BC%BC%E5%BA%A6/">
 		#コサイン類似度
 	      </a>
 	    </li>
 	    
             <li class="tag">
-	      <a href="https://nryotaro.dev/tags/transformer/">
+	      <a href="https://ryotaro.dev/tags/transformer/">
 		#Transformer
 	      </a>
 	    </li>
@@ -288,7 +288,7 @@ Sentence-BERTは、類似度が定義されたテキストの組から、類似�
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/">A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning(2008)</a></h3>
+        <h3><a href="https://ryotaro.dev/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/">A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning(2008)</a></h3>
         <div class="summary"><p><a href="http://machinelearning.org/archive/icml2008/papers/391.pdf">A Unified Architecture for Natural Language Processing</a>は、複数のタスクの訓練データで重みの更新を繰り返すマルチタスクの深層学習である。
 複数のタスクから順にあるタスクを選び、選んだタスクからランダムに取り出したサンプルで重みを更新するオンライン学習である。
 ネットワークの層は、入力に近い方から、Word embedding、時間遅延ニューラルネットワーク(Time-Delay Neural Networks, TDNN)層、TDNN層の全時刻にわたる各ユニットの最大値を出力するMax Layer, 全結合層、ソフトマックスからなる。
@@ -298,7 +298,7 @@ Word embeddingのみタスク間で重みを共有し、後続の層の重みは
 	  <ul class="tags">
 	    
             <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E3%83%9E%E3%83%AB%E3%83%81%E3%82%BF%E3%82%B9%E3%82%AF%E5%AD%A6%E7%BF%92/">
+	      <a href="https://ryotaro.dev/tags/%E3%83%9E%E3%83%AB%E3%83%81%E3%82%BF%E3%82%B9%E3%82%AF%E5%AD%A6%E7%BF%92/">
 		#マルチタスク学習
 	      </a>
 	    </li>
@@ -344,22 +344,22 @@ Word embeddingのみタスク間で重みを共有し、後続の層の重みは
       <ul>
         
         <li>
-          <a href="https://github.com/nryotaro">
+          <a href="https://github.com/ryotaro612">
             <i class="fab fa-github"></i>
           </a>
         </li>
         
         
         <li>
-          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+          <a href="https://www.linkedin.com/in/ryotaro612/">
             <i class="fab fa-linkedin-in"></i>
           </a>
         </li>
         
-        <li><a href="https://nryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        <li><a href="https://ryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
         
       </ul>
-      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+      <small>© Ryotaro. All Rights Reserved.</small>
     </footer>
   </body>
 

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Large language model on Blanket</title>
-    <link>https://nryotaro.dev/tags/large-language-model/</link>
+    <link>https://ryotaro.dev/tags/large-language-model/</link>
     <description>Recent content in Large language model on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 18 Nov 2023 12:21:20 -0500</lastBuildDate>
-    <atom:link href="https://nryotaro.dev/tags/large-language-model/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/large-language-model/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS</title>
-      <link>https://nryotaro.dev/posts/lora-low-rank-adaptation-of-large-language-models/</link>
+      <link>https://ryotaro.dev/posts/lora-low-rank-adaptation-of-large-language-models/</link>
       <pubDate>Sat, 18 Nov 2023 12:21:20 -0500</pubDate>
-      <guid>https://nryotaro.dev/posts/lora-low-rank-adaptation-of-large-language-models/</guid>
+      <guid>https://ryotaro.dev/posts/lora-low-rank-adaptation-of-large-language-models/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1804.08838.pdf&#34;&gt;Li et al. (2018)&lt;/a&gt;と&lt;a href=&#34;https://arxiv.org/pdf/2012.13255.pdf&#34;&gt;Aghajanyan et al. (2020)&lt;/a&gt;は、Large Language Models (LLM)のファインチューニングにかかる計算資源は大きいが、下流タスクに必要なパラメータ数はLLMのパラメタ数よりもはるかに少ないと主張した。&#xA;&lt;a href=&#34;https://arxiv.org/pdf/2106.09685.pdf&#34;&gt;LoRA&lt;/a&gt;は、この仮説によりファインチューニングを避け、LLMの重みと線形結合すると下流タスクに最適な重みに近似できる小さな行列を求める。&#xA;LLMの重みを\(W_0\in\mathbb{R}^{d\times k}\)とすると、\(W_0+BA\ (B\in\mathbb{R}^{d\times r}, A\in\mathbb{R}^{r\times k}, r \ll\min (d, k))\)が下流タスクに最適な重みに近づくように、ファインチューニングにかわって\(W_0\)を更新せず\(B,\ A\)のみを更新する。&#xA;\(r\)が\(d, k\)よりも小さいので、ファインチューニングよりも学習時間は短い。&#xA;また、複数の下流タスクを入力に適用する場合、\(W_0x\)を共有できるので、推論に必要な計算も\(W_0\)を更新するファインチューニングより少ない。&lt;/p&gt;</description>
     </item>
   </channel>

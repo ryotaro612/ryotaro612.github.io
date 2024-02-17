@@ -62,12 +62,247 @@
     <h1>Posts</h1>
     
     
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/">Retrieval Augmented Generation for Knowledge Intensive NLP Tasks (2021)</a></h3>
+        <div class="summary"><p>While large pre-trained language models (LLMs) can implicitly store factual knowledge in their parameters, their ability to access explicit encyclopedic and commonsense is knowledge still limited.
+Retrieval Augmented Generation (RAG) is a method to improve language generation by providing external explicit knowledge to LLMs.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/retrieval-augmented-generation/">
+		#Retrieval Augmented Generation
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">January 27, 2024</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/sorting-networks-and-their-applications/">Sorting networks and their applications (1968)</a></h3>
+        <div class="summary"><p>A sorting network is a network of comparison elements with 2 indegree and 2 outdegree that sorts a list in ascending or descending order.
+A comparison element receives two numbers and outputs the smaller one to one output and the larger one to the other output.
+Odd-even merging networks and Bitonic sorters are sorting networks proposed in <a href="https://www.cs.kent.edu/~batcher/sort.pdf">Sorting networks and their applications</a>.
+They can sort \(2^p\) elements with \(\ln (\frac{1}{2})p(p+1)\) steps.
+Their processing is independent of the values and is easy to run on the GPU because it does not change the output location in memory based on input data values.</p>
+<!-- raw HTML omitted --></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/sorting-algorithm/">
+		#Sorting algorithm
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">January 14, 2024</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/billion-scale-similarity-search-with-gpus/">Billion Scale Similarity Search With GPUs (2017)</a></h3>
+        <div class="summary"><p>The paper <a href="https://arxiv.org/abs/1702.08734">Billion-scale-similarity search with GPUs</a> presents an approximate nearest-neighbor search method that uses GPUs and combines the <a href="https://inria.hal.science/inria-00514462v2/document">IVFADC</a> indexing structure with <a href="https://www.cs.kent.edu/~batcher/sort.pdf">Batcher&rsquo;s bitonic sorting network</a>.
+The authors have implemented this method in a library called <a href="https://github.com/facebookresearch/faiss">faiss</a>.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/approximate-nearest-neighbors/">
+		#Approximate Nearest Neighbors
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">January 1, 2024</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/conflict-free-replicated-data-types/">Conflict-free Replicated Data Types (2011)</a></h3>
+        <div class="summary">In a distributed system with replicated objects distributed across processes interconnected by an asynchronous network, updating a replica without synchronization can lead to conflicts when the update is sent to other replicas. Conflict-free Replicated Data Types (CRDTs) are data structures whose states form a join semilattice and monotonically non-decreasing across updates. The replicas of CRDTs that have delivered the same updates eventually reach the same state if clents stop submitting updates.</div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/conflict-free-replicated-data-types/">
+		#Conflict-free Replicated Data Types
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 31, 2023</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/dense-passage-retrieval-for-open-domain-question-answering/">Dense Passage Retrieval for Open-Domain Question Answering (2020)</a></h3>
+        <div class="summary"><p>Open-domain question answering (QA) involves answering fact-based questions using documents.
+An open-domain QA system can be divided into two components: one that retrieves relevant passages and another that extracts the answer spans from those passages <a href="https://arxiv.org/abs/1704.00051">(Chen et al., 2017)</a>.
+While traditional approaches use sparse vector space models like BM25 for the retrieval step, <a href="https://aclanthology.org/2020.emnlp-main.550/">Dense Passage Retrieval for Open-Domain Question Answering</a> shows that dense representations can also be practically implemented using dense representations.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>The embeddings are learned from the training dataset, optimizing for maximizing inner products between question and relevant passage vectors.
+The training is essentially metric learning, and each question needs irrelvant passages.
+In experiments, it was found that utilizing both the top passages returned by BM25, excluding the answer, and positive passages paired with other questions as negatives yielded best performance.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted --></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/question-answering/">
+		#Question answering
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 30, 2023</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/cap-twelve-years-later-how-the-rules-have-changed/">CAP Twelve Years Later: How the &#34;Rules&#34; Have Changed (2012)</a></h3>
+        <div class="summary">The CAP theorem, coined by Eric Brewer, states that in a shared-data system, you can have either Consistency (C), Availability (A), or Parition tolerance (P), but not all three simultaneously. However, Martin Kleppmann challenges the CAP theorem and discusses its limitations in Designing Data-Intensive Applications, and A Critique of the CAP Theorem. In CAP Twelve Years Later: How the “Rules” Have Changed, Brewer clarifies that the notion of &ldquo;2 of 3&rdquo; is misleading.</div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/cap-theorem/">
+		#CAP theorem
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 23, 2023</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/wide-and-deep-learning-for-recommender-systems/">Wide and Deep Learning for Recommender Systems (2016)</a></h3>
+        <div class="summary"><p>Generalized linear models are widely used for large-scale regression and classification problems with sparse inputs because they are simple, scale and interpretable.
+One limitation of interactions or cross-prodcution transformations in generalized linear models is that they do not generalize to query-item feature pairs that have not appeared in the training data.
+Compared with generalized linear models, deep neural networks can improve the diversity of the recommendations.
+Howerver it is difficult to learn effective low-dimentional dense embedding vectors.
+<a href="https://arxiv.org/abs/1606.07792">Wide &amp; Deep Learning for Recommender Systems</a> jointly trains a generalized linear model and a feed-forward neural network (FFN) to combines their benefits.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/recommendation/">
+		#Recommendation
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 16, 2023</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/a_protocol_for_packet_network_intercommunication/">A Protocol for Packet Network Intercommunication (1974)</a></h3>
+        <div class="summary"><p>Vinton Cerf and Robert Kahn presented a protocol that supports packet communication between hosts in different packet switching networks in <a href="https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf">A Protocol for Packet Network Intercommunication</a>.
+The protocol assumes that a Transmission Control Program (TCP) in a host handles the transmission and acceptance of messages on behalf of processes.
+Later, the program was divided into the Transmission Control Protocol (TCP) and the Internet Protocol (IP).
+At that time, several protocols that supported exchanging packets between computers were developed, but they assumed the computers were on the same network.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/tcp/">
+		#TCP
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 9, 2023</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/probabilistic_latent_semantic_indexing/">Probablistic Latent Semantic Indexing (1999)</a></h3>
+        <div class="summary"><p><a href="http://wordvec.colorado.edu/papers/Deerwester_1990.pdf">Latent Semantic Analysis</a> approximates an original term-document matrix by singular value decomposition (SVD).
+The components consist of the frequencies with which each term occurred in each document.
+The Latent Semantic Analysis thresholds all but the largest \(K\) singular values to zero.
+The left singular vectors are a \(t \times K\) matrix, and the transpose of the right singular vectors are a \(K\times d\) matrix where \(t\) is the number of the terms and \(d\) is the number of the documents.</p>
+<p><a href="https://sigir.org/wp-content/uploads/2017/06/p211.pdf">Probabilistic Latent Semantic Indexing</a> (PLSI) is a generative model that associates each term and document with an unobserved class variable \(z \in \mathcal{Z} = \{z_1,\dots , z_K\}\).
+The likelihoods of the documents and terms are estimated by the Expectation Maximization (EM) algorithm, and the joint probability model \(\textbf{P}\) can be written as \(\textbf{P}=\hat{\textbf{U}}\hat{\Sigma}\hat{\textbf{V}}^t\) where \(\hat{\textbf{U}}=(P(d_i|z_k))_{i, k}\), \(\hat{\textbf{V}}=(P(w_j|z_k))_{j, k}\), \(\hat{\Sigma}=\text{diag} (P(z_k))_k\).
+Compared to the Latent Semantic Analysis, the components of \(\textbf{P}\) have a clear probabilistic meaning in terms of mixture component distributions.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/latent-semantic-analysis/">
+		#Latent Semantic Analysis
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 2, 2023</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/">Chord: A Scalable Peer-to-peer Lookup Service for Internet Applications (2001)</a></h3>
+        <div class="summary"><p><a href="https://pdos.csail.mit.edu/papers/ton:chord/paper-ton.pdf">Chord</a> is a distributed lookup protocol that supports just one operation: mapping a given key onto a node in a Chord cluster.
+If an \(N\)-node system is in the steady state, each node resolves all the queries via \(O(\log N)\) messages to other nodes.
+Chord uses <a href="https://www.cs.princeton.edu/courses/archive/fall09/cos518/papers/chash.pdf">consistent hashing</a> to assign keys to Chord nodes.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/peer-to-peer/">
+		#Peer-to-peer
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">November 23, 2023</span>
+        </div>
+    </article>
+    
 </main>
 
     
 
 <ul class="pagination">  
     
+    
+    <li>
+      <a href="/en/page/2/">
+	<i class="fa-solid fa-xl fa-angle-right"></i>
+      </a>
+    </li>
+    <li>
+      <a href="/en/page/3/">
+	<i class="fa-solid fa-xl fa-angles-right"></i>
+      </a>
+    </li>
     
 </ul>
 

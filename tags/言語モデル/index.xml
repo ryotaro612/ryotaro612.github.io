@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>言語モデル on Blanket</title>
-    <link>https://nryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/</link>
+    <link>https://ryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/</link>
     <description>Recent content in 言語モデル on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 03 Jun 2023 12:32:35 -0400</lastBuildDate>
-    <atom:link href="https://nryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unsupervised Cross-lingual Representation Learning at Scale(2020)</title>
-      <link>https://nryotaro.dev/posts/unsupervised_cross_lingual_representation_learning_at_scale/</link>
+      <link>https://ryotaro.dev/posts/unsupervised_cross_lingual_representation_learning_at_scale/</link>
       <pubDate>Sat, 03 Jun 2023 12:32:35 -0400</pubDate>
-      <guid>https://nryotaro.dev/posts/unsupervised_cross_lingual_representation_learning_at_scale/</guid>
+      <guid>https://ryotaro.dev/posts/unsupervised_cross_lingual_representation_learning_at_scale/</guid>
       <description>&lt;p&gt;多言語モデルを大規模なコーパスで訓練し、含意関係認識、質問応答、固有表現抽出において、多言語版の&lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt;を上まわる予測性能を実現した。&#xA;モデルのアーキテクチャは&lt;a href=&#34;https://arxiv.org/abs/1907.11692&#34;&gt;RoBERTa&lt;/a&gt;で、&lt;a href=&#34;https://arxiv.org/abs/1901.07291&#34;&gt;Lample and Conneau, 2019&lt;/a&gt;に近い方法でモデルを訓練する。&#xA;LampleとConneauの手法を含む従来の多言語の言語モデルの評価実験では、wipediaやwikipediaと同程度の大きさのコーパスが使われていた。&#xA;従来の訓練データに対し、100言語からなる2.5TBのCommonCrawlをコーパスに使い、コーパスを大規模化することによるモデルへの影響を分析した。&#xA;パラメタ数などのモデル大きさを固定し、言語の種類数を30まで増やしたところ、コーパスの小さい言語の性能が向上したが、それ以上増やすと逆に予測性能が低下した。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Generating Long Sequences with Sparse Transformers(2019)</title>
-      <link>https://nryotaro.dev/posts/generating_long_sequences_with_sparse_transformers/</link>
+      <link>https://ryotaro.dev/posts/generating_long_sequences_with_sparse_transformers/</link>
       <pubDate>Sat, 15 Apr 2023 10:59:43 -0400</pubDate>
-      <guid>https://nryotaro.dev/posts/generating_long_sequences_with_sparse_transformers/</guid>
+      <guid>https://ryotaro.dev/posts/generating_long_sequences_with_sparse_transformers/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1706.03762&#34;&gt;Transformer&lt;/a&gt;のQKV注意機構に入力するベクトルを限定し、長さ\(n\)の系列をQKV注意機構に入力したときの空間計算量を\(\mathcal{O}(n\sqrt{n})\)まで減らした&lt;a href=&#34;https://arxiv.org/abs/1904.10509&#34;&gt;研究&lt;/a&gt;である。&#xA;Transformerであれば、系列の要素は、要素自体の位置と以前の要素すべてを注意し、時間と空間計算量は\(\mathcal{O}(n^2)\)になる。&#xA;Sparse Transformerは、\(p\)個のパターンを用意し、パターンに該当する要素のみを各注意機構に入力し、\(p\)個の注意を生成する。&#xA;そして、\(p\)個の注意を合成し、1つの注意に変換する。&#xA;パターンは、画像やテキストなど、入力するデータの種類によって決めておく規則であり、たとえば、直近にある一定数の要素や等間隔に離れた要素を指定するパターンがありえある。&#xA;パターンが\(p\)であれば、計算量は\(\mathcal{O}\sqrt[p]{n}\)になる。実験の設定は\(p=2\)である。&lt;/p&gt;</description>
     </item>
     <item>
       <title>概要 Language Models are Unsupervised Mmultitask Learners(2018)</title>
-      <link>https://nryotaro.dev/posts/language_models_are_unsupervised_multitask_learners/</link>
+      <link>https://ryotaro.dev/posts/language_models_are_unsupervised_multitask_learners/</link>
       <pubDate>Sat, 01 Apr 2023 09:39:17 -0400</pubDate>
-      <guid>https://nryotaro.dev/posts/language_models_are_unsupervised_multitask_learners/</guid>
+      <guid>https://ryotaro.dev/posts/language_models_are_unsupervised_multitask_learners/</guid>
       <description>&lt;p&gt;Zero-shotかつマルチタスク用のモデルとして&lt;a href=&#34;https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf&#34;&gt;GPT-1&lt;/a&gt;の後経のGPT-2を提案した。&#xA;&lt;a href=&#34;https://www.semanticscholar.org/paper/Multitask-Learning-Caruana/161ffb54a3fdf0715b198bb57bd22f910242eb49&#34;&gt;マルチタスク学習&lt;/a&gt;は、複数のタスクむけにモデルを訓練する手法である。&#xA;特徴の入力形式はタスクによらず同じであり、タスク間で知識を補うことで各タスクの汎化性能を向上させる。&#xA;GPT-1の用途がファインチューニングであるため、GPT-1とGPT-2では解けるタスクが違う。&#xA;学習のために、45,000,000件のリンクを含む高品質なコーパスであるWebTextを人の手もかりて用意した。&#xA;GPT-2のアーキテクチャは、GPT-1に層正規化の位置を変え、residual layerの重みをスケールしただけであり、GPT-1と大きな違いはない。&lt;/p&gt;</description>
     </item>
     <item>
       <title>概要 Improving Language Understanding by Generative Pre-Training</title>
-      <link>https://nryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/</link>
+      <link>https://ryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/</link>
       <pubDate>Fri, 07 Aug 2020 16:45:55 +0900</pubDate>
-      <guid>https://nryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/</guid>
+      <guid>https://ryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;GPTの略称で知られる教師なしの事前学習である。&#xA;評価実験では、全結合層を1層追加したファインチューニングで、12の自然言語処理タスクのうち9つについて、当時のSoTAを上まわる性能を発揮した。&#xA;ネットワークには&lt;a href=&#34;https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;Transformer&lt;/a&gt;のデコーダー部分が使われている。&#xA;ファインチューニング時には、事前学習の効果を生かすために、特徴の入力をモデルのアーキテクチャに合わせ、アーキテクチャの変更を最小限におさえる。&#xA;推論タスクであれば前提や仮定、テキストの類似性判定であれば比較する2つのテキストといった異種の特徴をデリミタで連結した系列を作り、モデルに入力する。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Semi-supervised Sequence Learning(2015)</title>
-      <link>https://nryotaro.dev/posts/semi_supervised_sequence_learning/</link>
+      <link>https://ryotaro.dev/posts/semi_supervised_sequence_learning/</link>
       <pubDate>Sat, 14 Mar 2020 23:46:31 +0900</pubDate>
-      <guid>https://nryotaro.dev/posts/semi_supervised_sequence_learning/</guid>
+      <guid>https://ryotaro.dev/posts/semi_supervised_sequence_learning/</guid>
       <description>&lt;p&gt;系列データの教師あり学習において、ラベルのないデータを学習した言語モデルやオートエンコーダーの重みでLSTMを初期化することの有用性を実験的に示した。&lt;/p&gt;</description>
     </item>
     <item>
       <title>The Annotated Transformer (2018)</title>
-      <link>https://nryotaro.dev/posts/the_annotated_transformer/</link>
+      <link>https://ryotaro.dev/posts/the_annotated_transformer/</link>
       <pubDate>Mon, 01 Jul 2019 12:57:09 +0900</pubDate>
-      <guid>https://nryotaro.dev/posts/the_annotated_transformer/</guid>
+      <guid>https://ryotaro.dev/posts/the_annotated_transformer/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1706.03762&#34;&gt;Attention Is All You Need&lt;/a&gt;で提案されたTransformerのアーキテクチャを、サンプルコードとオリジナルの論文の引用を交えて解説している。 PyTorchで実装されている。&lt;/p&gt;</description>
     </item>
     <item>
       <title>抄訳 Regularizing and Optimizing LSTM Language Models(2017)</title>
-      <link>https://nryotaro.dev/posts/regularizing_and_optimizing_lstm_language_models/</link>
+      <link>https://ryotaro.dev/posts/regularizing_and_optimizing_lstm_language_models/</link>
       <pubDate>Fri, 23 Nov 2018 19:27:00 +0900</pubDate>
-      <guid>https://nryotaro.dev/posts/regularizing_and_optimizing_lstm_language_models/</guid>
+      <guid>https://ryotaro.dev/posts/regularizing_and_optimizing_lstm_language_models/</guid>
       <description>&lt;p&gt;LSTMをつかった言語モデルに正規化と最適化を適用し、実験でperplexityを評価した。&#xA;LSTMの実装に変更を加えない手法なので、NVIDIAやcuDNNなどの高速でブラックボックスなライブラリで実装できる。&lt;/p&gt;</description>
     </item>
   </channel>

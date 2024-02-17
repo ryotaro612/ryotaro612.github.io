@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>画像認識 on Blanket</title>
-    <link>https://nryotaro.dev/tags/%E7%94%BB%E5%83%8F%E8%AA%8D%E8%AD%98/</link>
+    <link>https://ryotaro.dev/tags/%E7%94%BB%E5%83%8F%E8%AA%8D%E8%AD%98/</link>
     <description>Recent content in 画像認識 on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 29 Apr 2023 12:12:11 -0400</lastBuildDate>
-    <atom:link href="https://nryotaro.dev/tags/%E7%94%BB%E5%83%8F%E8%AA%8D%E8%AD%98/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/%E7%94%BB%E5%83%8F%E8%AA%8D%E8%AD%98/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AN IMAGE IS WORTH 16x16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE(2021)</title>
-      <link>https://nryotaro.dev/posts/an_image_is_worth_16x16_words_transformers_for_image_recognition_at_scale/</link>
+      <link>https://ryotaro.dev/posts/an_image_is_worth_16x16_words_transformers_for_image_recognition_at_scale/</link>
       <pubDate>Sat, 29 Apr 2023 12:12:11 -0400</pubDate>
-      <guid>https://nryotaro.dev/posts/an_image_is_worth_16x16_words_transformers_for_image_recognition_at_scale/</guid>
+      <guid>https://ryotaro.dev/posts/an_image_is_worth_16x16_words_transformers_for_image_recognition_at_scale/</guid>
       <description>&lt;p&gt;画像認識に&lt;a href=&#34;https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;Transformer&lt;/a&gt;を使う手法を提案し、&lt;a href=&#34;https://arxiv.org/abs/1912.11370&#34;&gt;Big Transfer&lt;/a&gt;と&lt;a href=&#34;https://arxiv.org/abs/1911.04252&#34;&gt;Noisy Student&lt;/a&gt;と比較した。&#xA;論文が発表された2021年でも、画像認識にニューラルネットワークを使う場合、畳込みニューラルネット(CNN)が基本の選択肢になる。&#xA;自己注意機構を使った画像処理の&lt;a href=&#34;https://arxiv.org/abs/2003.07853&#34;&gt;先行研究&lt;/a&gt;はあるが、スケールするアーキテクチャではない。&lt;/p&gt;&#xA;&lt;p&gt;AN IMAGE IS WORTH 16x16 WORDSは、分割した画像をトークン（単語）のようにTransformerへ入力することで、Transformerを画像認識へ応用できるこを示した。&#xA;TransformerはCNNのように画像の向きや局所性を帰納バイアスにもたず、データが不十分でないと汎化性能は低い。&#xA;しかし、学習データを14M-300Mまで増やすと、CNNを越える汎化性能を発揮した。&lt;/p&gt;</description>
     </item>
   </channel>

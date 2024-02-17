@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.121.0">
+	<meta name="generator" content="Hugo 0.121.2">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -18,12 +18,12 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
     
-    <link rel="stylesheet" href="https://nryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
 
-<link rel="stylesheet" href="https://nryotaro.dev/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -45,14 +45,14 @@
     
         
     <header class="navigation">
-      <h2><a href="https://nryotaro.dev/">Blanket</a></h2>
+      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
       <nav>
         <ul>
-          <li><a href="https://nryotaro.dev/about">About</a></li>
-          <li><a href="https://nryotaro.dev/posts">Posts</a></li>
-          <li><a href="https://nryotaro.dev/tags">Tags</a></li>
+          <li><a href="https://ryotaro.dev/about">About</a></li>
+          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
 	  
-	  <li><a href="https://nryotaro.dev/en/">en</a></li>
+	  <li><a href="https://ryotaro.dev/en/">en</a></li>
 	  
         </ul>
       </nav>
@@ -63,7 +63,7 @@
     
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/a_structured_self_attentivesentence_embedding/">論文メモ A STRUCTURED SELF-ATTENTIVE SENTENCE EMBEDDING</a></h3>
+        <h3><a href="https://ryotaro.dev/posts/a_structured_self_attentivesentence_embedding/">論文メモ A STRUCTURED SELF-ATTENTIVE SENTENCE EMBEDDING</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>自己注意機構をもちいて、可変長の文を埋め込み行列に変換するアーキテクチャを発表した論文である。
 埋め込み行列の各行は、それぞれ文中の異なる箇所の意味を反映する。
@@ -78,7 +78,7 @@
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/poincare_embeddings/">論文メモ Poincaré Embeddings for Learning Hierarchical Representations</a></h3>
+        <h3><a href="https://ryotaro.dev/posts/poincare_embeddings/">論文メモ Poincaré Embeddings for Learning Hierarchical Representations</a></h3>
         <div class="summary">概要 単語のように上位下位関係のある記号を、ポアンカレ球体模型という双曲空間に埋め込む手法を発表した論文である。 ユークリッド空間よりも、記号間の類似度や上位下位関係が保たれていることを実験的に示した。 記号を木のノードとして配置し関係を表現するとき、ノード数は深さ\(l\)対して指数関数的に増加する。 双曲幾何学では、円板の面積や周は半径\(r\)に対して指数関数的に増大するため、木を2次元でモデル化できる。 たとえば、深さ\(l\)以下のノードを半径\(r \varpropto l \)の空間に配置することができる。 一方、2次元のユークリッド空間の場合、半径\(r\)に対する円周は線形、円の面積は2次関数的であるため、モデル化が難しい。 実験では、次元数が少ないほど、ポアンカレ球体模型とユークリッド空間の間で、上下関係や類似度の表現力に差があった。
 損失関数 埋め込みたい上下関係\(\mathcal{D}=\{(u, v)\}\)を記号の数を\(n\)として入力すると、アルゴリズムは、埋め込みベクトルの集合\({\rm \Theta}=\{\boldsymbol{\theta}_i\}^n_{i=1}\)を出力する。 ただし、\(\boldsymbol{\theta}\in \mathcal{B}^d\), \(\mathcal{B}^d=\{\boldsymbol{x}\in \mathbb{R}^d\mid ||\boldsymbol{x}||&lt;1\}\)とする。 学習では、次の損失関数\(\mathcal{L}(\Theta)\)をもちいる。
 $$ \mathcal{L}(\Theta)=\sum_{(u, v)\in \mathcal{D}}\log\frac{e^{-d(\boldsymbol{u}, \boldsymbol{v})}}{\sum_{\boldsymbol{v}&rsquo;\in \mathcal{N}(u)}e^{-d(\boldsymbol{u}, \boldsymbol{v}&rsquo;)}} $$ \(\mathcal{N}(u)=\{v&rsquo;\mid (u, v&rsquo;)\notin \mathcal{D}\} \cup \{v\}\)は\(v\)を含んだ\(u\)に対する負例である。 実験では、正例に対して10の負例をサンプリングしていた。 \(d\)は、\(\boldsymbol{u}, \boldsymbol{v}\in \mathcal{B}^d\)の距離であり、次の式であたえらえる。
@@ -94,7 +94,7 @@ $$ \mathrm{proj}(\boldsymbol{\theta})= \begin{cases} \boldsymbol{\theta}/||\bold
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/learning_joint_multilingual_sentence_representations_with_neural_machine_translation/">論文 メモ Learning Joint Multilingual Sentence Representations with Neural Machine Translation</a></h3>
+        <h3><a href="https://ryotaro.dev/posts/learning_joint_multilingual_sentence_representations_with_neural_machine_translation/">論文 メモ Learning Joint Multilingual Sentence Representations with Neural Machine Translation</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>多言語の文をあつかう分散表現モデルを発表した論文である。
 異なる言語の文であっても、意味が同じであれば、同様の分散表現に変換される。
@@ -108,7 +108,7 @@ $$ \mathrm{proj}(\boldsymbol{\theta})= \begin{cases} \boldsymbol{\theta}/||\bold
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/albert/">論文メモ ALBERT: A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS</a></h3>
+        <h3><a href="https://ryotaro.dev/posts/albert/">論文メモ ALBERT: A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS</a></h3>
         <div class="summary"><p>BERTのパラメタ数を削減し、学習時間の短縮と正則化による予測性能の向上を両立したモデルALBERTを提案し、GLUE, RACE, SQuADでSoTAを実現した。
 BERT-largeと比べると、ALBERT-largeのパラメタ数は約5.3%の18Mであり、学習時間は1.7倍速い。
 パラメタを削減するために、単語のOne-hotベクトルをあたえられる単語埋め込み行列の次元を減らし、隠れ層の順伝播ネットワークや注意機構のパラメタを層の間で共有した。
@@ -120,7 +120,7 @@ BERT-largeと比べると、ALBERT-largeのパラメタ数は約5.3%の18Mであ
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/random_walks_in_recommender_systems/">論文メモ Random Walks in recommender Systems: Exact Computation and Simulations</a></h3>
+        <h3><a href="https://ryotaro.dev/posts/random_walks_in_recommender_systems/">論文メモ Random Walks in recommender Systems: Exact Computation and Simulations</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p><a href="https://ieeexplore.ieee.org/document/4072747">F. Foussら</a>や<a href="https://www.aaai.org/Papers/IJCAI/2007/IJCAI07-444.pdf">M. Goriら</a>のランダムウォークによる推薦システムの先行研究を、質や計算量について比較した論文である。
 比較対象には、著者らの用意したも含まれる。
@@ -133,7 +133,7 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/domain_adversarial_training_of_neural_networks/">論文メモ Domain Adversarial Training of Neural Networks</a></h3>
+        <h3><a href="https://ryotaro.dev/posts/domain_adversarial_training_of_neural_networks/">論文メモ Domain Adversarial Training of Neural Networks</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>ニューラルネットワークをもちいたドメイン適用の論文である。
 ソースドメインのラベルつきデータと目標ドメインのラベルのないデータでモデルを訓練し、目標ドメインに対する分類性能を引きあげる。
@@ -149,7 +149,7 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/character_aware_neural_language_models/">論文メモ Character-Aware Neural Language Models</a></h3>
+        <h3><a href="https://ryotaro.dev/posts/character_aware_neural_language_models/">論文メモ Character-Aware Neural Language Models</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>文字単位の入力から次に出現する単語を予測するニューラル言語モデルの論文である。
 アーキテクチャは入力から近い順にCNN, highway network, LSTMからなる。
@@ -162,7 +162,7 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/deep_contextualized_word_representations/">論文メモ Deep contextualized word representations</a></h3>
+        <h3><a href="https://ryotaro.dev/posts/deep_contextualized_word_representations/">論文メモ Deep contextualized word representations</a></h3>
         <div class="summary"><p>文脈をふまえた単語の分散表現を生成する手法を提案し、教師あり学習に応用することで評価した論文である。
 文字単位の学習済み双方向LSTM言語モデルへの入力と各層の出力から分散表現をつくる。
 言語モデルの入力やどの層をどれだけ重視するかは、教師あり学習のときに更新するパラメタのひとつになる。
@@ -175,7 +175,7 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/the_seven_sins/">論文メモ The Seven Sins: Security Smells in Infrastructure as Code Scripts</a></h3>
+        <h3><a href="https://ryotaro.dev/posts/the_seven_sins/">論文メモ The Seven Sins: Security Smells in Infrastructure as Code Scripts</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>OSSの調査にもとづき、Infrastrucure as Code(IaC)スクリプトに潜む主要なセキュリティ上の不吉な匂い(Security Smells)を7つ列挙し、これらを検出するツールを実装した論文である。
 論文のねらいは、開発者がIaCスクリプトに不吉な匂いを混ぜないようにすることにある。
@@ -187,14 +187,14 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
     </article>
     
     <article>
-        <h3><a href="https://nryotaro.dev/posts/semi_supervised_sequence_learning/">Semi-supervised Sequence Learning(2015)</a></h3>
+        <h3><a href="https://ryotaro.dev/posts/semi_supervised_sequence_learning/">Semi-supervised Sequence Learning(2015)</a></h3>
         <div class="summary"><p>系列データの教師あり学習において、ラベルのないデータを学習した言語モデルやオートエンコーダーの重みでLSTMを初期化することの有用性を実験的に示した。</p></div>
         <div class="article-footer">
 	  	  
 	  <ul class="tags">
 	    
             <li class="tag">
-	      <a href="https://nryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/">
+	      <a href="https://ryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/">
 		#言語モデル
 	      </a>
 	    </li>
@@ -240,22 +240,22 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
       <ul>
         
         <li>
-          <a href="https://github.com/nryotaro">
+          <a href="https://github.com/ryotaro612">
             <i class="fab fa-github"></i>
           </a>
         </li>
         
         
         <li>
-          <a href="https://www.linkedin.com/in/nakamura-ryotaro/">
+          <a href="https://www.linkedin.com/in/ryotaro612/">
             <i class="fab fa-linkedin-in"></i>
           </a>
         </li>
         
-        <li><a href="https://nryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        <li><a href="https://ryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
         
       </ul>
-      <small>© Nakamura, Ryotaro. All Rights Reserved.</small>
+      <small>© Ryotaro. All Rights Reserved.</small>
     </footer>
   </body>
 

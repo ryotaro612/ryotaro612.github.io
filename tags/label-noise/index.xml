@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Label noise on Blanket</title>
-    <link>https://nryotaro.dev/tags/label-noise/</link>
+    <link>https://ryotaro.dev/tags/label-noise/</link>
     <description>Recent content in Label noise on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Mon, 30 Dec 2019 16:07:40 +0900</lastBuildDate>
-    <atom:link href="https://nryotaro.dev/tags/label-noise/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/label-noise/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Classification in the Presence of Label Noise: a Survey(2013)</title>
-      <link>https://nryotaro.dev/posts/classification_in_the_presence_of_label_noise/</link>
+      <link>https://ryotaro.dev/posts/classification_in_the_presence_of_label_noise/</link>
       <pubDate>Mon, 30 Dec 2019 16:07:40 +0900</pubDate>
-      <guid>https://nryotaro.dev/posts/classification_in_the_presence_of_label_noise/</guid>
+      <guid>https://ryotaro.dev/posts/classification_in_the_presence_of_label_noise/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;ノイズのある教師データによるクラス分類の&lt;a href=&#34;https://romisatriawahono.net/lecture/rm/survey/machine%20learning/Frenay%20-%20Classification%20in%20the%20Presence%20of%20Label%20Noise%20-%202014.pdf&#34;&gt;サーベイ論文&lt;/a&gt;である。発表時期は、&lt;a href=&#34;https://ieeexplore.ieee.org/document/6685834&#34;&gt;2013年の12月&lt;/a&gt;である。&#xA;主な内容は、ノイズの分類、ノイズが分類に及ぼす影響、ノイズへの対策である。&lt;/p&gt;</description>
     </item>
   </channel>

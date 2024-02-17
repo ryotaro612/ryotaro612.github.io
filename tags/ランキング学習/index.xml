@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ランキング学習 on Blanket</title>
-    <link>https://nryotaro.dev/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/</link>
+    <link>https://ryotaro.dev/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/</link>
     <description>Recent content in ランキング学習 on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Fri, 03 Feb 2023 16:55:53 -0500</lastBuildDate>
-    <atom:link href="https://nryotaro.dev/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>From RankNet to LambdaRank to LambdaMART: An Overview(2010)</title>
-      <link>https://nryotaro.dev/posts/from_ranknet_to_lambdarank_to_lambdamart_an_overview/</link>
+      <link>https://ryotaro.dev/posts/from_ranknet_to_lambdarank_to_lambdamart_an_overview/</link>
       <pubDate>Fri, 03 Feb 2023 16:55:53 -0500</pubDate>
-      <guid>https://nryotaro.dev/posts/from_ranknet_to_lambdarank_to_lambdamart_an_overview/</guid>
-      <description>&lt;p&gt;LambdaMARTは、勾配ブースティング決定木(MART)の訓練に、&lt;a href=&#34;https://icml.cc/2015/wp-content/uploads/2015/06/icml_ranking.pdf&#34;&gt;RankNet&lt;/a&gt;と&lt;a href=&#34;https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/lambdarank.pdf&#34;&gt;LambdaRank&lt;/a&gt;を応用したランキング学習である。&#xA;RankNetとLambdaRankを以前抄訳で解説した(&lt;a href=&#34;https://nryotaro.dev/posts/learning_to_rank_using_gradient_descent/&#34;&gt;RankNet&lt;/a&gt;, &lt;a href=&#34;https://nryotaro.dev/posts/learning_to_rank_with_nonsmooth_cost_functions/&#34;&gt;LambdaRank&lt;/a&gt;)。&#xA;RankNetは、名前にNetがついているが、RankNetの論文で提案されたものは、ネットワークアーキテクチャではなくランキング学習のための損失関数である。&#xA;入力されたベクトルをモデルが実数に写像することができれば、ニューラルネットワークでなくてもよい。&#xA;RankNetの学習は、モデルの出力する実数をスコアとみなし、あるクエリに該当する2つの事例のうち、より該当する事例に高いスコアを与えられるようにモデルを訓練する。&#xA;各訓練データはランキングの異なる2つの特徴とランキングの高い方を示すラベルであり、2つのスコアの差をシグモイドに与えたときの出力を、一方のサンプルが他方よりもランキングが高い確率とみなす。&#xA;そして、交差エントロピーが最小になるようにモデルを訓練する。&#xA;LambdaRankは、損失の計算を省き、スコアと損失の勾配で重みを更新することで、RankNetの学習を高速化する。&#xA;LambdaMARTは、RankNetに勾配ブースティング決定木を使い、残差の計算にLambdaRankを応用したランキング学習のモデルである。&lt;/p&gt;</description>
+      <guid>https://ryotaro.dev/posts/from_ranknet_to_lambdarank_to_lambdamart_an_overview/</guid>
+      <description>&lt;p&gt;LambdaMARTは、勾配ブースティング決定木(MART)の訓練に、&lt;a href=&#34;https://icml.cc/2015/wp-content/uploads/2015/06/icml_ranking.pdf&#34;&gt;RankNet&lt;/a&gt;と&lt;a href=&#34;https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/lambdarank.pdf&#34;&gt;LambdaRank&lt;/a&gt;を応用したランキング学習である。&#xA;RankNetとLambdaRankを以前抄訳で解説した(&lt;a href=&#34;https://ryotaro.dev/posts/learning_to_rank_using_gradient_descent/&#34;&gt;RankNet&lt;/a&gt;, &lt;a href=&#34;https://ryotaro.dev/posts/learning_to_rank_with_nonsmooth_cost_functions/&#34;&gt;LambdaRank&lt;/a&gt;)。&#xA;RankNetは、名前にNetがついているが、RankNetの論文で提案されたものは、ネットワークアーキテクチャではなくランキング学習のための損失関数である。&#xA;入力されたベクトルをモデルが実数に写像することができれば、ニューラルネットワークでなくてもよい。&#xA;RankNetの学習は、モデルの出力する実数をスコアとみなし、あるクエリに該当する2つの事例のうち、より該当する事例に高いスコアを与えられるようにモデルを訓練する。&#xA;各訓練データはランキングの異なる2つの特徴とランキングの高い方を示すラベルであり、2つのスコアの差をシグモイドに与えたときの出力を、一方のサンプルが他方よりもランキングが高い確率とみなす。&#xA;そして、交差エントロピーが最小になるようにモデルを訓練する。&#xA;LambdaRankは、損失の計算を省き、スコアと損失の勾配で重みを更新することで、RankNetの学習を高速化する。&#xA;LambdaMARTは、RankNetに勾配ブースティング決定木を使い、残差の計算にLambdaRankを応用したランキング学習のモデルである。&lt;/p&gt;</description>
     </item>
     <item>
       <title>抄訳 Learning to Rank using Gradient Descent (2005)</title>
-      <link>https://nryotaro.dev/posts/learning_to_rank_using_gradient_descent/</link>
+      <link>https://ryotaro.dev/posts/learning_to_rank_using_gradient_descent/</link>
       <pubDate>Sat, 07 Jan 2023 20:59:34 -0500</pubDate>
-      <guid>https://nryotaro.dev/posts/learning_to_rank_using_gradient_descent/</guid>
+      <guid>https://ryotaro.dev/posts/learning_to_rank_using_gradient_descent/</guid>
       <description>&lt;p&gt;ランキング学習のニューラルネットワークRankNetを提案する。&#xA;RankNetは、ベクトルから実数を出力し、その出力が大きいほどランキングが高いと予測する。&#xA;損失関数には、ある2つのベクトルのうち片方が他方よりもランキングが高い確率をあたえる。&#xA;確率とみなす値は、両ベクトルのモデルの出力の差をシグモイド関数に入力したときの出力である。&#xA;RankNetの学習は、モデルの出力と訓練データの確率分布の交差エントロピーを最小化する。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Active Learning for Ranking through Expected Loss Optimization</title>
-      <link>https://nryotaro.dev/posts/active_learning_for_ranking_through_expected_loss_optimization/</link>
+      <link>https://ryotaro.dev/posts/active_learning_for_ranking_through_expected_loss_optimization/</link>
       <pubDate>Sun, 19 Jan 2020 18:23:41 +0900</pubDate>
-      <guid>https://nryotaro.dev/posts/active_learning_for_ranking_through_expected_loss_optimization/</guid>
+      <guid>https://ryotaro.dev/posts/active_learning_for_ranking_through_expected_loss_optimization/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;Yahoo! Labsで開発されたランキングのための能動学習の論文である。&#xA;提案手法は、Yahoo!検索エンジンでの&lt;a href=&#34;https://www.kdd.org/kdd2016/papers/files/adf0361-yinA.pdf&#34;&gt;採用実績&lt;/a&gt;がある。&#xA;手法は、Expected Loss Optimization(ELO)とよばれ、ベイズ決定則によって識別したときの損失の期待値が最大になるデータを選ぶ。&#xA;ELOに用いる損失関数にDCGを採用したExpected DCG Loss Optimization(ELO-DCG)を提案し、実験で評価した。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Learning Deep Structured Semantic Models for Web Search using Clickthrough Data(2013)</title>
-      <link>https://nryotaro.dev/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/</link>
+      <link>https://ryotaro.dev/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/</link>
       <pubDate>Sat, 04 Jan 2020 23:25:20 +0900</pubDate>
-      <guid>https://nryotaro.dev/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/</guid>
+      <guid>https://ryotaro.dev/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;クエリと文書を同じ低次元の空間に射影する深層学習のモデルを提案した論文である。&#xA;クエリと文書は、適合度合いが高いほど、近くに配置される。&#xA;教師データは、クエリと文書の組からなる教師データである。&#xA;実験では、商用検索エンジンから抽出した16510件のクエリと対応するWeサイトのタイトルがつかわれる。&#xA;Web文書の大量の語彙をあつかうために、語彙の増加に対して次元数を抑えるbag-of-wordsの手法、word hasingも提案した。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ranking Relevance In Yahoo Search(2016)</title>
-      <link>https://nryotaro.dev/posts/ranking_relevance_in_yahoo_search/</link>
+      <link>https://ryotaro.dev/posts/ranking_relevance_in_yahoo_search/</link>
       <pubDate>Sat, 07 Dec 2019 15:10:51 +0900</pubDate>
-      <guid>https://nryotaro.dev/posts/ranking_relevance_in_yahoo_search/</guid>
+      <guid>https://ryotaro.dev/posts/ranking_relevance_in_yahoo_search/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;Yahooの検索エンジンを解説するKDD16の論文である。&#xA;論文におけるランキングの課題は、クエリと文書の語彙がことなること、ほとんどのクエリは滅多に入力されないこと、クエリの意味の解釈が難しいことである。&#xA;これらの課題に対する手法として、ランキングのモデル、特徴のつくりかた、クエリを文書によせる翻訳モデルを解説する。&lt;/p&gt;</description>
     </item>
     <item>
       <title>A Dual Embedding Space Model for Document Ranking</title>
-      <link>https://nryotaro.dev/posts/a_dual_embedding_space_model_for_document_ranking/</link>
+      <link>https://ryotaro.dev/posts/a_dual_embedding_space_model_for_document_ranking/</link>
       <pubDate>Sat, 30 Nov 2019 08:18:06 +0900</pubDate>
-      <guid>https://nryotaro.dev/posts/a_dual_embedding_space_model_for_document_ranking/</guid>
+      <guid>https://ryotaro.dev/posts/a_dual_embedding_space_model_for_document_ranking/</guid>
       <description>&lt;p&gt;Dual Embedding Space Model(DESM)は、word2vecによるランキング学習である。&#xA;word2vecは、単語ごとに、入力と出力それぞれに近い重みから、2つの分散表現を生成できる。&#xA;DESMは、入力側の重みでクエリを、出力側の重みで文書を、それぞれ分散表現に変換する。&lt;/p&gt;&#xA;&lt;p&gt;実験では、BM25と比較して評価した。&#xA;DESMだけで順位づけをすると偽陽性が高くなるが、DESMとBM25の加重平均をとるとBM25よりも高いNDCG値になった。&#xA;アルゴリズムを実装し&lt;a href=&#34;https://github.com/nryotaro/desm&#34;&gt;公開&lt;/a&gt;した。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Applying Deep Learning To Airbnb Search</title>
-      <link>https://nryotaro.dev/posts/applying_deep_learning_to_airbnb_search/</link>
+      <link>https://ryotaro.dev/posts/applying_deep_learning_to_airbnb_search/</link>
       <pubDate>Fri, 31 Aug 2018 19:21:10 +0900</pubDate>
-      <guid>https://nryotaro.dev/posts/applying_deep_learning_to_airbnb_search/</guid>
+      <guid>https://ryotaro.dev/posts/applying_deep_learning_to_airbnb_search/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;論文では、Airbnbが深層学習を宿泊先検索に適用した時の試行錯誤と結果を紹介している。&#xA;採用したモデルのアルゴリズムと特徴量エンジニアリングの説明が本稿の大部分を占める。&#xA;深層学習を試す以前はGBDTを採用おり、以下の順にアルゴリズムを変えていった。&#xA;当初は、アルゴリズムを段階的に高度にしていくつもりはなく、1.以前には複雑なアルゴリズムをいきなり試したが、失敗に終わっている。&lt;/p&gt;</description>
     </item>
   </channel>
