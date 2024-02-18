@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>THE DESIGN OF POSTGRES (1986)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://ryotaro.dev/about">About</a></li>
+          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+	  
+	  <li><a href="https://ryotaro.dev/en/posts/the-design-of-postgres/">en</a></li>
+	  
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>THE DESIGN OF POSTGRES (1986)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/rdbms/">
+	#RDBMS
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">February 17, 2024</span>    
+  <div>
+    <p>最初期におけるPOSTGRESの設計は、<a href="https://dsf.berkeley.edu/papers/ERL-M85-95.pdf">THE DESIGN OF POSTGRES</a>で発表された。
+<a href="https://www.postgresql.jp/document/8.3/html/history.html">POSTGRES少史</a>によると、データモデルは<a href="https://apps.dtic.mil/sti/tr/pdf/ADA184251.pdf">The POSTGRES data model</a>で、ルールは<a href="https://apps.dtic.mil/sti/tr/pdf/ADA179161.pdf">The design of the POSTGRES rules system</a>で、ストレージは<a href="https://dsf.berkeley.edu/papers/ERL-M87-06.pdf">THE DESIGN OF THE POSTGRES STORAGE SYSTEM</a>で同時期に個別に論じられている。
+THE DESIGN OF POSTGRESはPOSTGRESの全体像を解説する位置にある。</p>
+<p>POSTGRESは、関係データベースINGRESの後継として開発された。
+POSTGRESの目標は、複雑な型のオブジェクトやtriggerを扱え、クラッシュから回復する実装を単純化でき、光ディスクを利用できるようにしつつも、リレーショナルモデルから逸脱しないデータベースを維持することにある。</p>
+<p>POSTGRESの複雑なデータ型は、今日でいうところの複数の基本型からなる<a href="https://pgsql-jp.github.io/current/html/rowtypes.html">複合型</a>に相当する。
+複合型の各フィールドやtriggerの宣言には問い合せ言語POSTQUELが使われていたが、POSTQUELはPostgres95でSQLに<a href="https://en.wikipedia.org/wiki/PostgreSQL#History">置き換えられた</a>。</p>
+<p>POSTQUELのデフォルトの削除や更新処理はレコードを変更せずに新しいバージョンを作成するため、クラッシュからの回復処理が単純になる。
+POSTQUELでは、過去のバージョンのレコードにもアクセスできる。</p>
+<p>THE DESIGN OF POSTGRESは、<a href="http://www.redbook.io/ch2-importantdbms.html">Red Book 5版の第2章</a>で、歴史上重要なRDBMSとしてPOSTGRESを参照するために引用されている。
+Red Bookでは、POSTGRESの重要な功績として複合型データ構造をあげる一方、POSTQUELによる過去のバージョンのレコードを参照する機能は成功したとはいえない評価をしている。
+過去のレコードの上書きを禁じる方針は、ストレージが高速になれば、日の目を見るだろうという見方である。</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/ryotaro612">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/ryotaro612/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="https://ryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

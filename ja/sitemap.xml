@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ryotaro.dev/</loc>
-    <lastmod>2024-01-27T16:44:55-05:00</lastmod>
+    <lastmod>2024-02-17T17:44:38+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://ryotaro.dev/posts/</loc>
-    <lastmod>2024-01-27T16:44:55-05:00</lastmod>
+    <lastmod>2024-02-17T17:44:38+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -26,6 +26,45 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://ryotaro.dev/posts/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/tags/rdbms/</loc>
+    <lastmod>2024-02-17T17:44:38+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/rdbms/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/rdbms/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/tags/</loc>
+    <lastmod>2024-02-17T17:44:38+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/posts/the-design-of-postgres/</loc>
+    <lastmod>2024-02-17T17:44:38+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/the-design-of-postgres/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/the-design-of-postgres/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/tags/retrieval-augmented-generation/</loc>
@@ -52,19 +91,6 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://ryotaro.dev/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/tags/</loc>
-    <lastmod>2024-01-27T16:44:55-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/tags/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/tags/sorting-algorithm/</loc>
@@ -697,9 +723,6 @@
     <lastmod>2023-03-04T18:27:24+09:00</lastmod>
   </url><url>
     <loc>https://ryotaro.dev/posts/aries/</loc>
-    <lastmod>2023-02-26T01:47:13-05:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/rdbms/</loc>
     <lastmod>2023-02-26T01:47:13-05:00</lastmod>
   </url><url>
     <loc>https://ryotaro.dev/posts/scatter_gather_a_cluster_based_approach_to_browsing_large_document_collections/</loc>

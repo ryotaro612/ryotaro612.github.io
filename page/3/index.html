@@ -63,6 +63,28 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/">A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning(2008)</a></h3>
+        <div class="summary"><p><a href="http://machinelearning.org/archive/icml2008/papers/391.pdf">A Unified Architecture for Natural Language Processing</a>は、複数のタスクの訓練データで重みの更新を繰り返すマルチタスクの深層学習である。
+複数のタスクから順にあるタスクを選び、選んだタスクからランダムに取り出したサンプルで重みを更新するオンライン学習である。
+ネットワークの層は、入力に近い方から、Word embedding、時間遅延ニューラルネットワーク(Time-Delay Neural Networks, TDNN)層、TDNN層の全時刻にわたる各ユニットの最大値を出力するMax Layer, 全結合層、ソフトマックスからなる。
+Word embeddingのみタスク間で重みを共有し、後続の層の重みはタスクごとに異なる。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E3%83%9E%E3%83%AB%E3%83%81%E3%82%BF%E3%82%B9%E3%82%AF%E5%AD%A6%E7%BF%92/">
+		#マルチタスク学習
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">September 16, 2023</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/transmission_of_information/">Transmission of Information(1927)</a></h3>
         <div class="summary"><p>Hartleyは、<a href="https://monoskop.org/images/a/a6/Hartley_Ralph_VL_1928_Transmission_of_Information.pdf">Transmission of Information</a>で、通信システムの情報伝達性能を評価するために、情報の定量的な尺度を提唱した。
 シャノンが1948年に情報エントロピーを<a href="https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf">発表</a>する21年前である。
@@ -254,29 +276,6 @@ decoderは、ASTの生成規則にある記号に対応するモジュールを�
         <div class="article-footer">
 	  
           <span class="date">June 24, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/layer_normalization/">Layer Normalization</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/abs/1607.06450">層正規化</a>(Layer Normalization)は、ユニットへの入力の重みつきの和を正規化し、学習時間を短縮する手法である。
-各層ごとにユニットへの入力の和の平均と標準偏差を求め、この2つの統計量で、その層にあるユニットへの入力を正規化する。
-先行研究には<a href="https://arxiv.org/abs/1502.03167">バッチ正規化</a>がある。
-バッチ正規化では、各ミニバッチにおいて、ユニットごとに入力の重みつき和の平均と分散を計算し、正規化する。
-バッチ正規化でも学習時間を短縮できるが、その効果はミニバッチのサイズに依存し、また、RNNに簡単に応用することはできない欠点がある。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E6%AD%A3%E8%A6%8F%E5%8C%96/">
-		#正規化
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">June 17, 2023</span>
         </div>
     </article>
     

@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>Retrieval Augmented Generation for Knowledge Intensive NLP Tasks (2021)</title>
+    <title>THE DESIGN OF POSTGRES (1986)</title>
   </head>
 
   <body>
@@ -53,53 +53,37 @@
           <li><a href="https://ryotaro.dev/en/posts">Posts</a></li>
           <li><a href="https://ryotaro.dev/en/tags">Tags</a></li>
 	  
-	  <li><a href="https://ryotaro.dev/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/">ja</a></li>
+	  <li><a href="https://ryotaro.dev/posts/the-design-of-postgres/">ja</a></li>
 	  
         </ul>
       </nav>
     </header>
     
 <main>
-  <h1>Retrieval Augmented Generation for Knowledge Intensive NLP Tasks (2021)</h1>
+  <h1>THE DESIGN OF POSTGRES (1986)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://ryotaro.dev/en/tags/retrieval-augmented-generation/">
-	#Retrieval Augmented Generation
+      <a href="https://ryotaro.dev/en/tags/rdbms/">
+	#RDBMS
       </a>
     </li>
     
   </ul>  
-  <span class="date">January 27, 2024</span>    
+  <span class="date">February 17, 2024</span>    
   <div>
-    <p>While large pre-trained language models (LLMs) can implicitly store factual knowledge in their parameters, their ability to access explicit encyclopedic and commonsense is knowledge still limited.
-Retrieval Augmented Generation (RAG) is a method to improve language generation by providing external explicit knowledge to LLMs.</p>
-<p>In <a href="https://arxiv.org/abs/2005.11401">Retrieval Augmented Generation for Knowledge Intensive NLP Tasks</a>, two RAG models are introduced: RAG-Token model and RAG-Sequence Model.
-They use dense vectors index of Wikipedia as external knowledge.
-They combine <a href="https://aclanthology.org/2020.emnlp-main.550/">Dense Passage Retriever</a> (DPR) and seq2seq.
-DPR is a neural retriever that encodes documents and an input sequence using <a href="https://arxiv.org/abs/1810.04805">BERTs</a>, and then computes inner products of the embeddings of a document and the input sequence.
-The two RAG models run DPR to find the dense vectors of the top-k documents that are relevant to an input sequence.
-The dense vector of the found document and the input sequence are concatenated and then passed to the seq2seq model.</p>
-<p>The RAG models leverage the DPR component \(p_{\eta}(z|x)\) and seq2seq component \(p_{\theta}(y_i|x, z, y_{1:i-1})\).
-The DPR retrieve documents \(z\) that are relevant to the input sequence \(x\).
-seq2seq uses \(x\) and \(z\) as additional context to generate the target seqeuence \(y\).
-\(\eta\) and \(\theta\) represent the model parameters.
-\(y_i\) denotes the \(i^{\text{th}}\) token in the target sequence.</p>
-<p>In the RAG-Token, the seq2seq produces a distribution for the next output token for each retrieved document and then marginalize the documents:
-$$
-p_{\text{RAG-Token}}(y|x) \approx\prod^N_i \sum_{z\in \text{top-k}(p(\cdot|x))}p_\eta (z|x)p_{\theta}(y_i|x,z,y_{1:i-1})
-$$
-where \(N\) is the length of the target sequence.
-The decoding uses a standard beam search to approximate \(\argmax_y p(y|x)\).</p>
-<p>The RAG-Sequence Model uses the same retrieved document to generate the target sequence:
-$$
-p_{\text{RAG-Sequence}}(y|x)\approx\sum_{z\in \text{top-k}(p(\cdot |x))}p_{\eta}(z|x)p_{\theta}(y|x,z) = \sum_{z\in\text{top-k}(p(\cdot|x))}p_{\eta}(z|x)\prod^N_i p_{\theta}(y_i|x,z,y_{1:i-1})
-$$
-The decoding runs beam search for each document \(z\) to yield a set of hypotheses.
-Some of which may not have appeared in the beams of all documents.
-In that case,\(p_{\theta}(y|x,z_i)\approx 0\) can be used for efficient decoding.</p>
-<p>The DPR and the seq2seq components can be trained jointly.
-Given a training dataset of pairs \((x_i, y_i)\), the parameters are updated to minimize the negative marginal log-likelihood of each target, \(\sum_i-\log p(y_i|x_i)\).</p>
+    <p>The preliminary design of POSTGRES was presented in <a href="https://dsf.berkeley.edu/papers/ERL-M85-95.pdf">The Design of Postgres</a>.
+According to <a href="https://www.postgresql.jp/document/8.3/html/history.html">Brief History of Postgres</a>, the data model, rules, and storage system were separately described in different papers: <a href="https://apps.dtic.mil/sti/tr/pdf/ADA184251.pdf">The Postgres Data Model</a>, <a href="https://apps.dtic.mil/sti/tr/pdf/ADA179161.pdf">The Design of the Postgres Rule System</a>, and <a href="https://dsf.berkeley.edu/papers/ERL-M87-06.pdf">The Design of the Postgres Storage System</a>.</p>
+<p>POSTGRES is the successor to the INGRES relational database system.
+The main design goals of POSTGRES were to support complex objects, simplify the DBMS code for crash recovery, and utilize optical disks while making as few changes as possible to the relational model.</p>
+<p>The complex objects in the paper are equivalent to <a href="https://www.postgresql.org/docs/current/rowtypes.html">composite types</a> in the current POSTGRES.
+While the fields of complex objects and the body of the triggers were defined in POSTQUEL, POSTQUEL was <a href="https://en.wikipedia.org/wiki/PostgreSQL#History">replaced</a> by SQL in POSTGRES 95.</p>
+<p>Crash recovery is simplified by not overwriting data.
+By default, data in a relation is never deleted or updated.
+Moreover, historical data and versions can be accessed by indicating the desired time in POSTQUEL.</p>
+<p>The Design of POSTGRES is referenced in <a href="http://www.redbook.io/ch2-importantdbms.html">the 2nd chapter of the Red Book</a> to highlight POSTGRES as a remarkable RDBMS.
+While the Red Book acknowledges the composite type as an achievement of POSTGRES, it offers a less favorable evaluation of the feature to access past versions of tuples using POSTQUEL.
+The author of the Red Book believes that no-overwrite storage will become more relevant as faster storage technology changes the economics of data management.</p>
   </div>
 </main>
 
@@ -107,17 +91,11 @@ Given a training dataset of pairs \((x_i, y_i)\), the parameters are updated to 
 <ul class="pagination">
     
     <li>
-      <a href="/en/posts/sorting-networks-and-their-applications/">
+      <a href="/en/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/">
 	<i class="fa-solid fa-xl fa-angle-left"></i>
       </a>
     </li>
     
-    
-    <li>
-      <a href="/en/posts/the-design-of-postgres/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
     
 </ul>
 

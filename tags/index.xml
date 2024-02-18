@@ -6,8 +6,15 @@
     <description>Recent content in Tags on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 27 Jan 2024 16:44:55 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 17 Feb 2024 17:44:38 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RDBMS</title>
+      <link>https://ryotaro.dev/tags/rdbms/</link>
+      <pubDate>Sat, 17 Feb 2024 17:44:38 +0900</pubDate>
+      <guid>https://ryotaro.dev/tags/rdbms/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Retrieval Augmented Generation</title>
       <link>https://ryotaro.dev/tags/retrieval-augmented-generation/</link>
@@ -286,13 +293,6 @@
       <link>https://ryotaro.dev/tags/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/</link>
       <pubDate>Wed, 15 Mar 2023 11:04:07 +0900</pubDate>
       <guid>https://ryotaro.dev/tags/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>RDBMS</title>
-      <link>https://ryotaro.dev/tags/rdbms/</link>
-      <pubDate>Sun, 26 Feb 2023 01:47:13 -0500</pubDate>
-      <guid>https://ryotaro.dev/tags/rdbms/</guid>
       <description></description>
     </item>
     <item>

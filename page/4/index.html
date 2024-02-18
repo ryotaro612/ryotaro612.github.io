@@ -63,6 +63,29 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/layer_normalization/">Layer Normalization</a></h3>
+        <div class="summary"><p><a href="https://arxiv.org/abs/1607.06450">層正規化</a>(Layer Normalization)は、ユニットへの入力の重みつきの和を正規化し、学習時間を短縮する手法である。
+各層ごとにユニットへの入力の和の平均と標準偏差を求め、この2つの統計量で、その層にあるユニットへの入力を正規化する。
+先行研究には<a href="https://arxiv.org/abs/1502.03167">バッチ正規化</a>がある。
+バッチ正規化では、各ミニバッチにおいて、ユニットごとに入力の重みつき和の平均と分散を計算し、正規化する。
+バッチ正規化でも学習時間を短縮できるが、その効果はミニバッチのサイズに依存し、また、RNNに簡単に応用することはできない欠点がある。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E6%AD%A3%E8%A6%8F%E5%8C%96/">
+		#正規化
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">June 17, 2023</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/universal_classes_of_hash_functions/">Universal Classes of Hash Functions(1977)</a></h3>
         <div class="summary"><p>値の保存と参照からなる任意のリクエストの系列を、系列長の時間計算量で処理できるハッシュ関数と連想配列を示す。
 求めるハッシュ関数の集合があるとき、各ハッシュ関数の時間計算量の平均がリクエストの系列長に等しくなる。</p></div>
@@ -287,30 +310,6 @@ Sparse Transformerは、\(p\)個のパターンを用意し、パターンに該
 	  </ul>
 	  
           <span class="date">April 8, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/language_models_are_unsupervised_multitask_learners/">概要 Language Models are Unsupervised Mmultitask Learners(2018)</a></h3>
-        <div class="summary"><p>Zero-shotかつマルチタスク用のモデルとして<a href="https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf">GPT-1</a>の後経のGPT-2を提案した。
-<a href="https://www.semanticscholar.org/paper/Multitask-Learning-Caruana/161ffb54a3fdf0715b198bb57bd22f910242eb49">マルチタスク学習</a>は、複数のタスクむけにモデルを訓練する手法である。
-特徴の入力形式はタスクによらず同じであり、タスク間で知識を補うことで各タスクの汎化性能を向上させる。
-GPT-1の用途がファインチューニングであるため、GPT-1とGPT-2では解けるタスクが違う。
-学習のために、45,000,000件のリンクを含む高品質なコーパスであるWebTextを人の手もかりて用意した。
-GPT-2のアーキテクチャは、GPT-1に層正規化の位置を変え、residual layerの重みをスケールしただけであり、GPT-1と大きな違いはない。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/">
-		#言語モデル
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">April 1, 2023</span>
         </div>
     </article>
     

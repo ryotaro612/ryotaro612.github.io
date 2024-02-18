@@ -63,6 +63,27 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/en/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/">Chord: A Scalable Peer-to-peer Lookup Service for Internet Applications (2001)</a></h3>
+        <div class="summary"><p><a href="https://pdos.csail.mit.edu/papers/ton:chord/paper-ton.pdf">Chord</a> is a distributed lookup protocol that supports just one operation: mapping a given key onto a node in a Chord cluster.
+If an \(N\)-node system is in the steady state, each node resolves all the queries via \(O(\log N)\) messages to other nodes.
+Chord uses <a href="https://www.cs.princeton.edu/courses/archive/fall09/cos518/papers/chash.pdf">consistent hashing</a> to assign keys to Chord nodes.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/peer-to-peer/">
+		#Peer-to-peer
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">November 23, 2023</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/en/posts/lora-low-rank-adaptation-of-large-language-models/">LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS</a></h3>
         <div class="summary">LoRA is inspired by Li et al. (2018) and Aghajanyan et al. (2020) which show that the learned over-parameterized models reside on a low intrinsic dimension. An intrinsic dimension is the minimum number of parameters needed to reach a satisfactory solution to the objective. LoRA injects weight matrices into each attention layer of the Transformer architecture instead of fine-tuning the pre-trained model weights. The injected weight matrices are rank decomposition matrices, and LoRA can reduce the number of trainable parameters for downstream tasks.</div>
         <div class="article-footer">
@@ -275,35 +296,6 @@ Hartley stated that information should be proportional to the number of selectio
 	  </ul>
 	  
           <span class="date">September 9, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/roberta/">RoBERTa: A Robustly Optimized BERT Pretraining Approach(2019)</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/pdf/1907.11692.pdf">RoBERTa</a>(Robusty optimized BERT approach) is an improved recipe for training <a href="https://arxiv.org/pdf/1810.04805.pdf">BERT</a> models.
-BERT uses two objectives, masked language modeling and next sequence prediction (NSP), during pretraining.
-RoBERTa uses masked language modeling only.
-The authors increased the batch size and Byte-Pair Encoding (BPE) vocabulary size.
-RobERTa is trained with byte-level BPE, which uses bytes instead of unicode characters as the base subword units.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/bert/">
-		#BERT
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/byte-pair-encoding/">
-		#Byte Pair Encoding
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">August 27, 2023</span>
         </div>
     </article>
     

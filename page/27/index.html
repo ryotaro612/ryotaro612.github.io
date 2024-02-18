@@ -63,6 +63,36 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/a_dual_embedding_space_model_for_document_ranking/">A Dual Embedding Space Model for Document Ranking</a></h3>
+        <div class="summary"><p>Dual Embedding Space Model(DESM)は、word2vecによるランキング学習である。
+word2vecは、単語ごとに、入力と出力それぞれに近い重みから、2つの分散表現を生成できる。
+DESMは、入力側の重みでクエリを、出力側の重みで文書を、それぞれ分散表現に変換する。</p>
+<p>実験では、BM25と比較して評価した。
+DESMだけで順位づけをすると偽陽性が高くなるが、DESMとBM25の加重平均をとるとBM25よりも高いNDCG値になった。
+アルゴリズムを実装し<a href="https://github.com/nryotaro/desm">公開</a>した。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/">
+		#ランキング学習
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/embedding/">
+		#Embedding
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">November 30, 2019</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/on_calibration_of_modern_neural_networks/">論文メモ On Calibration of Modern Neural Networks(2017)</a></h3>
         <div class="summary"><p>ネットワークの複雑化、バッチ正則化、重み減衰を使わない、負の対数尤度の過学習が汎化精度を上げるが、予測確率と精度のズレを大きくすることを実験的に示した。
 予測確率を補正する6つの手法を19種類のクラス分類のデータセットに適用した結果、
@@ -273,25 +303,6 @@ Snorkel DryBellは、Snorkelのアルゴリズムをスケールさせるため�
 	  </ul>
 	  
           <span class="date">October 5, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/training_complex_models_with_multi_task_weak_supervision/">メモ Training Complex Models with Multi-Task Weak Supervision(2018)</a></h3>
-        <div class="summary"><p>ソース間の粒度や精度が揃っていることを前提とせず、<a href="https://arxiv.org/pdf/1212.0478.pdf">LohとWainwrightらの手法</a>でソースの精度を推定し、ソースのラベルよりも精度が高いラベルをデータに与えるWeak supervsionの手法である。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/weak-supervision/">
-		#Weak supervision
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">September 28, 2019</span>
         </div>
     </article>
     

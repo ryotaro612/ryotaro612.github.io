@@ -6,8 +6,15 @@
     <description>Recent content in Tags on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 27 Jan 2024 16:44:55 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 17 Feb 2024 17:44:38 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RDBMS</title>
+      <link>https://ryotaro.dev/en/tags/rdbms/</link>
+      <pubDate>Sat, 17 Feb 2024 17:44:38 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/rdbms/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Retrieval Augmented Generation</title>
       <link>https://ryotaro.dev/en/tags/retrieval-augmented-generation/</link>

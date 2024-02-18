@@ -6,8 +6,15 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 27 Jan 2024 16:44:55 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 17 Feb 2024 17:44:38 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>THE DESIGN OF POSTGRES (1986)</title>
+      <link>https://ryotaro.dev/posts/the-design-of-postgres/</link>
+      <pubDate>Sat, 17 Feb 2024 17:44:38 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/the-design-of-postgres/</guid>
+      <description>&lt;p&gt;最初期におけるPOSTGRESの設計は、&lt;a href=&#34;https://dsf.berkeley.edu/papers/ERL-M85-95.pdf&#34;&gt;THE DESIGN OF POSTGRES&lt;/a&gt;で発表された。&#xA;&lt;a href=&#34;https://www.postgresql.jp/document/8.3/html/history.html&#34;&gt;POSTGRES少史&lt;/a&gt;によると、データモデルは&lt;a href=&#34;https://apps.dtic.mil/sti/tr/pdf/ADA184251.pdf&#34;&gt;The POSTGRES data model&lt;/a&gt;で、ルールは&lt;a href=&#34;https://apps.dtic.mil/sti/tr/pdf/ADA179161.pdf&#34;&gt;The design of the POSTGRES rules system&lt;/a&gt;で、ストレージは&lt;a href=&#34;https://dsf.berkeley.edu/papers/ERL-M87-06.pdf&#34;&gt;THE DESIGN OF THE POSTGRES STORAGE SYSTEM&lt;/a&gt;で同時期に個別に論じられている。&#xA;THE DESIGN OF POSTGRESはPOSTGRESの全体像を解説する位置にある。&lt;/p&gt;&#xA;&lt;p&gt;POSTGRESは、関係データベースINGRESの後継として開発された。&#xA;POSTGRESの目標は、複雑な型のオブジェクトやtriggerを扱え、クラッシュから回復する実装を単純化でき、光ディスクを利用できるようにしつつも、リレーショナルモデルから逸脱しないデータベースを維持することにある。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Retrieval Augmented Generation for Knowledge Intensive NLP Tasks (2021)</title>
       <link>https://ryotaro.dev/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/</link>
