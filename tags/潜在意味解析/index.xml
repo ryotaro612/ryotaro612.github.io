@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>潜在意味解析 on Blanket</title>
-    <link>https://ryotaro.dev/tags/%E6%BD%9C%E5%9C%A8%E6%84%8F%E5%91%B3%E8%A7%A3%E6%9E%90/</link>
+    <link>http://localhost:38897/tags/%E6%BD%9C%E5%9C%A8%E6%84%8F%E5%91%B3%E8%A7%A3%E6%9E%90/</link>
     <description>Recent content in 潜在意味解析 on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 02 Dec 2023 11:27:38 -0500</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/%E6%BD%9C%E5%9C%A8%E6%84%8F%E5%91%B3%E8%A7%A3%E6%9E%90/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:38897/tags/%E6%BD%9C%E5%9C%A8%E6%84%8F%E5%91%B3%E8%A7%A3%E6%9E%90/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Probablistic Latent Semantic Indexing (1999)</title>
-      <link>https://ryotaro.dev/posts/probabilistic_latent_semantic_indexing/</link>
+      <link>http://localhost:38897/posts/probabilistic_latent_semantic_indexing/</link>
       <pubDate>Sat, 02 Dec 2023 11:27:38 -0500</pubDate>
-      <guid>https://ryotaro.dev/posts/probabilistic_latent_semantic_indexing/</guid>
+      <guid>http://localhost:38897/posts/probabilistic_latent_semantic_indexing/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://wordvec.colorado.edu/papers/Deerwester_1990.pdf&#34;&gt;Latent Semantic Analysis&lt;/a&gt;は、単語の出現頻度の列ベクトルで文書をあらわす行列を、特異値分解し、潜在的な意味を反映した低ランクな行列を求める方法である。&#xA;特異値を大きい順に\(k\)個えらぶとき、単語の数を\(t\), 文書数を\(d\)とすれば、左特異ベクトルのサイズは、\(t\times k\), 右特異ベクトルの転置行列のサイズは\(k\times d\)になる。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://sigir.org/wp-content/uploads/2017/06/p211.pdf&#34;&gt;Probabilistic Latent Smantic Indexing&lt;/a&gt;は、各文書が1つのクラスに分類されると仮定し、クラスを示すベクトルを隠れ変数とみなしたEMアルゴリズムで、文書や単語の尤度、クラスの生起確率を求める。&#xA;これにより、クラス\(z_k\)についての文書\(d_i\)と単語\(w_j\)の尤度を\(P(d_i|z_k)\), \(P(w_j|z_k)\), また\(\hat{\textbf{U}}=(P(d_i|z_k))_{i, k}\), \(\hat{\textbf{V}}=(P(w_j|z_k))_{j, k}\), \(\hat{\Sigma}=\text{diag} (P(z_k))_k\)とすると、同時確率モデルを特異値分解の形式\(P=\hat{\textbf{U}}\hat{\Sigma}\hat{\textbf{V}}^t\)で表すことができる。&#xA;Latent Semantic Analysisと違い、\(P\)の固有値や特異ベクトルの要素から確率モデル上の意味を読みとることができる。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Indexing by Latent Semantic Analysis (1990)</title>
-      <link>https://ryotaro.dev/posts/indexing_by_latent_semantic_analysis/</link>
+      <link>http://localhost:38897/posts/indexing_by_latent_semantic_analysis/</link>
       <pubDate>Sat, 04 Mar 2023 18:27:24 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/indexing_by_latent_semantic_analysis/</guid>
+      <guid>http://localhost:38897/posts/indexing_by_latent_semantic_analysis/</guid>
       <description>&lt;p&gt;特異値分解を応用した潜在的な意味にもとづく文書検索の手法である。&#xA;文書を、単語の出現回数が成分の列ベクトルとしてあつかう。&#xA;その列ベクトルからなる文書集合の行列に特異値分解(Singular Value Decomposition, SVD)を適用する。&#xA;大きい順に\(k\)個の特異値とその特異ベクトルを選んで、低ランクの行列をつくり、もとの行列を近似する。&#xA;単語の数が\(t\), 文書数が\(d\)のとき、低ランクの行列の左特異ベクトルの行列\(T\)と右特異ベクトルの転置行列\(D&amp;rsquo;\)のサイズは、それぞれ、\(t\times k\), \(k \times d\)になる。&lt;/p&gt;</description>
     </item>
   </channel>

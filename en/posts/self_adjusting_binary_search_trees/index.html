@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=38897&amp;path=livereload" data-no-instant defer></script>
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,14 +17,14 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
     
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+<link rel="stylesheet" href="http://localhost:38897/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+<link rel="stylesheet" href="http://localhost:38897/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -46,14 +46,14 @@
     
         
     <header class="navigation">
-      <h2><a href="https://ryotaro.dev/en/">Blanket</a></h2>
+      <h2><a href="http://localhost:38897/en/">Blanket</a></h2>
       <nav>
         <ul>
-          <li><a href="https://ryotaro.dev/en/about">About</a></li>
-          <li><a href="https://ryotaro.dev/en/posts">Posts</a></li>
-          <li><a href="https://ryotaro.dev/en/tags">Tags</a></li>
+          <li><a href="http://localhost:38897/en/about">About</a></li>
+          <li><a href="http://localhost:38897/en/posts">Posts</a></li>
+          <li><a href="http://localhost:38897/en/tags">Tags</a></li>
 	  
-	  <li><a href="https://ryotaro.dev/posts/self_adjusting_binary_search_trees/">ja</a></li>
+	  <li><a href="http://localhost:38897/posts/self_adjusting_binary_search_trees/">ja</a></li>
 	  
         </ul>
       </nav>
@@ -64,8 +64,8 @@
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://ryotaro.dev/en/tags/splay-tree/">
-	#Splay tree
+      <a href="http://localhost:38897/en/tags/splay-tree/">
+	#Splay Tree
       </a>
     </li>
     
@@ -79,7 +79,7 @@ In addition, for sufficiently long access sequences, splay trees are as efficien
 If we want to splay a tree at a node \(x\) and \(p(x)\), the parent of x, is the root, rotate the edge joining \(x\) with \(p(x)\)(Figure a).
 If \(p(x)\) is not the root and \(x\) and \(p(x)\) are both left or both right children, rotate the edge joining \(p(x)\) with its grandparent and then rotate the edge joining \(x\) with p(x)(Figure b).
 If \(p\) is not the root and \(x\) is a left child and \(p(x)\) a right child, or vice versa, rotate the edge joining \(x\) with \(p(x)\) and then rotate the edge joining \(x\) with the new \(p(x)\).
-<img src="/splay/splay.png" alt="splay"></p>
+<img alt="splay" src="/splay/splay.png"></p>
 <p>We can implement the insertion, join, and deletion using splaying.
 To carry out \(insert(i, t)\), inserting item \(i\) in a tree \(t\), we search for \(i\), then replace the pointer to null reached during the search by a pointer to a new node containing \(i\), and finally splay the tree at the new node.
 \(join(t_1, t_2)\) is combining trees \(t_1\) and \(t_2\) into a single tree. This operation assumes that all items in \(t_1\) are less than all those in \(t_2\).
@@ -89,7 +89,7 @@ We finally make \(t_2\) the right subtree of the root.
 To carry out \(delete(i, t)\), we search for the node containing \(i\), say \(x\), and let its parent be \(y\).
 We replace \(x\) as a child of \(y\) by the join of the left and right subtrees of \(x\), and then we splay at \(y\).
 The following figure illustrates insertion of 80 followed by deletion of 30.
-<img src="/splay/mod.png" alt="mod"></p>
+<img alt="mod" src="/splay/mod.png"></p>
 <p>The figures were cited from the paper.</p>
   </div>
 </main>
@@ -129,7 +129,7 @@ The following figure illustrates insertion of 80 followed by deletion of 30.
           </a>
         </li>
         
-        <li><a href="https://ryotaro.dev/en/index.xml"><i class="fas fa-rss"></i></a></li>
+        <li><a href="http://localhost:38897/en/index.xml"><i class="fas fa-rss"></i></a></li>
         
       </ul>
       <small>© Ryotaro. All Rights Reserved.</small>

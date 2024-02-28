@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>強化学習 on Blanket</title>
-    <link>https://ryotaro.dev/tags/%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92/</link>
+    <link>http://localhost:38897/tags/%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92/</link>
     <description>Recent content in 強化学習 on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Mon, 20 Mar 2023 11:54:48 -0400</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:38897/tags/%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>概要 Deep Reinforcement Learing from Human Preferences (2017)</title>
-      <link>https://ryotaro.dev/posts/deep_reinforcement_learning_from_human_preferences/</link>
+      <link>http://localhost:38897/posts/deep_reinforcement_learning_from_human_preferences/</link>
       <pubDate>Mon, 20 Mar 2023 11:54:48 -0400</pubDate>
-      <guid>https://ryotaro.dev/posts/deep_reinforcement_learning_from_human_preferences/</guid>
+      <guid>http://localhost:38897/posts/deep_reinforcement_learning_from_human_preferences/</guid>
       <description>&lt;p&gt;エージェントの行動を撮影した2つのビデオクリップから良い方を人間に選ばせ、報酬関数の学習データを生成する。&#xA;テーブルを掃除するロボットの制御などは、報酬関数の設計が難しい。&#xA;そこで、2つのビデオクリップとその選好を1つのサンプルとする訓練データで、モデルに報酬関数を学習させる。&lt;/p&gt;&#xA;&lt;p&gt;環境の状態と状態下での行動のペアの系列を生成し、1秒から2秒間のビデオクリップとして記録する。&#xA;そして、人間に、2つのビデオクリップをうち良い方を選んでもらう。&#xA;2つのビデオクップのうち一方が他方よりも良い確率を出力できるようにモデルを訓練する。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Playing Atari with Deep Reinforcement Learning(2013)</title>
-      <link>https://ryotaro.dev/posts/playing_atari_with_deep_reinforcement_learning/</link>
+      <link>http://localhost:38897/posts/playing_atari_with_deep_reinforcement_learning/</link>
       <pubDate>Sun, 09 Feb 2020 17:05:30 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/playing_atari_with_deep_reinforcement_learning/</guid>
+      <guid>http://localhost:38897/posts/playing_atari_with_deep_reinforcement_learning/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;深層強化学習をAtari2600の7つのゲームに応用し、うち6つについて先行手法の性能を超えたDeep Q-Networks(DQN)を提案した論文である。&#xA;ピクセルデータを直接入力として与え、深層学習で方策を学習する手法としては初めて提案された。&lt;/p&gt;</description>
     </item>
   </channel>

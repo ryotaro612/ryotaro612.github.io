@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Zookeeper on Blanket</title>
-    <link>https://ryotaro.dev/tags/zookeeper/</link>
+    <link>http://localhost:38897/tags/zookeeper/</link>
     <description>Recent content in Zookeeper on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 12 Feb 2023 15:47:06 -0500</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/zookeeper/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:38897/tags/zookeeper/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Zookeeper: Wait-free coordination for Internet-scale systems (2010)</title>
-      <link>https://ryotaro.dev/posts/zookeeper_wait_free_coordination_for_internat_scale_systems/</link>
+      <link>http://localhost:38897/posts/zookeeper_wait_free_coordination_for_internat_scale_systems/</link>
       <pubDate>Sun, 12 Feb 2023 15:47:06 -0500</pubDate>
-      <guid>https://ryotaro.dev/posts/zookeeper_wait_free_coordination_for_internat_scale_systems/</guid>
+      <guid>http://localhost:38897/posts/zookeeper_wait_free_coordination_for_internat_scale_systems/</guid>
       <description>&lt;p&gt;ZooKeeperは、リーダ選出と構成管理の機能を提供するためのインメモリーデータベースである。&#xA;データーベースは、ファイルシステムのような階層構造のwait-freeな抽象データ型であり、各ノードにはデフォルトで最大1MBの少量のデータを保存できる。&#xA;たとえば、ノードに設定を保存して共有することも、設定ファイルが編集中でないことを示すフラグ代わりのファイルを置くこともできる。&lt;/p&gt;</description>
     </item>
   </channel>

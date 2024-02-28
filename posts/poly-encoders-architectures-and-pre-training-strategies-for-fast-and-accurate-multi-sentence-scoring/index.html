@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=38897&amp;path=livereload" data-no-instant defer></script>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    
+
+<link rel="stylesheet" href="http://localhost:38897/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+
+<link rel="stylesheet" href="http://localhost:38897/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Poly-Encoders: Architectures and Pre-Training Strategies for Fast and Accurate Multi-Sentence Scoring (2019)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="http://localhost:38897/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="http://localhost:38897/about">About</a></li>
+          <li><a href="http://localhost:38897/posts">Posts</a></li>
+          <li><a href="http://localhost:38897/tags">Tags</a></li>
+	  
+	  <li><a href="http://localhost:38897/en/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/">en</a></li>
+	  
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>Poly-Encoders: Architectures and Pre-Training Strategies for Fast and Accurate Multi-Sentence Scoring (2019)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="http://localhost:38897/tags/transformer/">
+	#Transformer
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">February 24, 2024</span>    
+  <div>
+    <p>入力系列のラベルを推定できるようにTransformerのエンコーダーをファインチューニングするとき、エンコーディングの仕方に、Cross encoder (<a href="https://arxiv.org/abs/1901.08149">Wolf et al.</a>) とBi-encoder (<a href="https://arxiv.org/abs/1809.01984">Mazaré et al.</a>) がある。
+Cross-encoderは、入力系列とラベルを連結した系列をエンコーダーに入力し、入力系列とラベルのペアのエンベディングからスコアを求める。
+Bi-encoderは、入力系列とラベルを別のエンコーダーに入力し、それぞれのエンベディングの内積をスコアとする。</p>
+<p>Cross-encoderは予測性能に長け、Bi-encoderは処理速度に優れる。
+Cross-encoderは、入力とラベルを連結した系列をエンコーダーに入力するので、Bi-encodersよりも両者の関係をとらえたスコアを出力できる。
+Bi-encoderは、ラベルのエンベディングを入力系列ごとに計算しなくてよい。</p>
+<p><a href="https://arxiv.org/abs/1905.01969">Poly-encoder</a>は、Cross-encoderの予測性能とBi-encoderの速度の両立するためのエンコーディング法である。
+Bi-encoderとおなじように、ラベルを入力系列とは別のエンコーダーでエンコードする。
+一方、長さ\(N\)の入力系列をエンコードするときは、まず、エンコーダーの出力した\(N\)個のベクトルをキーとして\(m\ (&lt;N)\) 個の注意機構に入力する。
+同時に、ランダムな値で初期化したクエリ\(c_i\)を各注意機構に入力する。
+その結果、えられた\(m\)個のエンベディングをキー、ラベルのエンベディングをクエリとして後続の注意機構に入力し、その出力をラベルの候補に対する入力系列のエンベディングとしてあつかう。
+そして、ラベルのエンベディングと入力系列のエンベディングの内積をスコアとみなす。
+以上のように、入力系列とラベルの候補の両方を入力する注意機構を減らすことで、計算量が削減されている。</p>
+<p>Cross-encoderは、事前学習とおなじく、<a href="https://arxiv.org/abs/1810.04805">BERT</a>の<code>[SEP]</code>に相当する区切りのトークンを入力系列 \(\textit{ctxt}\) とラベルの候補\(\textit{cand}\)の間に挿入し、エンコーダに入力する。
+以下の図は、<a href="https://arxiv.org/abs/1905.01969">論文</a>にあるCross-encoder, Bi-encoder, Poly-encoderのアーキテクチャを表す。
+<img alt="poly-encoders" src="/poly-encoder.png">
+長さ\(N\)の入力系列をエンコーダー\(T\)に入力したときの出力を\(h_1,\dots h_N\)とすると、BERTの<code>CLS</code>とおなじように、先頭のトークンのベクトル\(h_1\)を入力系列とラベルのペアのエンベディングとしてあつかう。
+\(\textit{first}\)をベクトルの系列から最初のベクトルを取り出す関数とすると、以上の手順を以下の式で表せる。
+$$
+y_{\textit{ctxt,cand}}=h_1=\textit{first}(T(\textit{ctxt}, \textit{cand}))
+$$
+そして、入力系列とラベル候補のエンベディング \(y_{\textit{ctxt,cand}}\)に全結合層\(W\)を適用した結果をスコアとみなす。
+$$
+s(\textit{ctxt}, \textit{cand}_i) = y_{\textit{ctxt}, \textit{cand}_i}W
+$$
+損失関数には交差エントロピーをつかい、\(\textit{cand}_1\)を\(\textit{ctxt}\)の正解ラベル、それ以外の\(\textit{cand}_i\)を負例のラベルとして、\(s(\textit{ctxt}, \textit{cand}_1), \dots , s(\textit{ctxt}, \textit{cand}_n)\)を入力する。</p>
+<p>Bi-encoderは入力系列とラベルの候補を別のエンコーダーに入力するので、事前学習時とファインチューニングでエンコーダーへの入力の仕方がことなる。
+その上で事前学習と入力を似せるように、入力系列とラベルの候補をどちらも区切のトークン<code>SEP</code>で囲む。
+また、トークンが系列とラベルのどちらかを示すBERTのセグメントには、事前学習時の系列に利用した値を指定する。</p>
+<p>Cross-encoderとおなじく、Bi-encoderも、エンコーダーの出力するベクトルの系列の先頭ベクトルを、入力系列やラベルのエンベディングとみなす。
+そして、両者のエンベディングの内積をスコアとみなす。</p>
+<p>Poly-encoderは、エンコーダーが出力する長さ\(N\)のベクトルの系列\(h_1,\dots h_N\)をキーとして、\(m\)個の注意機構に入力する。また、注意機構\(i\)には、ランダムな値で初期化された\((c_1,\dots,c_m)\)のうち\(c_i\)もクエリとして入力される。
+クエリは図のCode \(i\)に該当する。
+$$
+y^i_{\textit{ctxt}}=\sum_jw^{c_i}_jh_j\ \ \ \ \text{where}\ \ \ \ (w_1^{c_i},\dots , w_N^{c_i}) = \text{softmax}(c_i\cdot h_1,\dots , c_i\cdot h_N)
+$$
+次に、\(m\)個の注意機構の出力\(y^i_{\textit{ctxt}}\)をキー、ラベルのベクトルをクエリとして後続の注意機構に入力する。</p>
+<p>$$
+y_{\textit{ctxt}}=\sum_iw_iy^i_{\textit{ctxt}}\ \ \ \ \text{where}\ \ \ \ (w_1,\dots ,w_m) = \text{softmax}(y_{\textit{cand}_i}\cdot y^1_{\textit{ctxt}}, \dots , y_{\textit{cand}_i}\cdot y^m_{\textit{ctxt}})
+$$
+そして、注意機構の出力\(y_{\textit{ctxt}}\)とラベルの候補\(y_{\textit{cand}_i}\)の内積\(y_{\textit{ctxt}}\cdot y_{\textit{cand}_i}\)をスコアとする。</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/recipes-for-building-an-open-domain-chatbot/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/ryotaro612">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/ryotaro612/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="http://localhost:38897/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Large language model on Blanket</title>
-    <link>https://ryotaro.dev/en/tags/large-language-model/</link>
-    <description>Recent content in Large language model on Blanket</description>
+    <title>Large Language Model on Blanket</title>
+    <link>http://localhost:38897/en/tags/large-language-model/</link>
+    <description>Recent content in Large Language Model on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 18 Nov 2023 12:21:20 -0500</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/en/tags/large-language-model/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:38897/en/tags/large-language-model/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS</title>
-      <link>https://ryotaro.dev/en/posts/lora-low-rank-adaptation-of-large-language-models/</link>
+      <link>http://localhost:38897/en/posts/lora-low-rank-adaptation-of-large-language-models/</link>
       <pubDate>Sat, 18 Nov 2023 12:21:20 -0500</pubDate>
-      <guid>https://ryotaro.dev/en/posts/lora-low-rank-adaptation-of-large-language-models/</guid>
+      <guid>http://localhost:38897/en/posts/lora-low-rank-adaptation-of-large-language-models/</guid>
       <description>LoRA is inspired by Li et al. (2018) and Aghajanyan et al. (2020) which show that the learned over-parameterized models reside on a low intrinsic dimension. An intrinsic dimension is the minimum number of parameters needed to reach a satisfactory solution to the objective. LoRA injects weight matrices into each attention layer of the Transformer architecture instead of fine-tuning the pre-trained model weights. The injected weight matrices are rank decomposition matrices, and LoRA can reduce the number of trainable parameters for downstream tasks.</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>文書分類 on Blanket</title>
-    <link>https://ryotaro.dev/tags/%E6%96%87%E6%9B%B8%E5%88%86%E9%A1%9E/</link>
+    <link>http://localhost:38897/tags/%E6%96%87%E6%9B%B8%E5%88%86%E9%A1%9E/</link>
     <description>Recent content in 文書分類 on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 08 Jul 2018 01:23:49 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/%E6%96%87%E6%9B%B8%E5%88%86%E9%A1%9E/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:38897/tags/%E6%96%87%E6%9B%B8%E5%88%86%E9%A1%9E/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>概要 Text Classification from Labeled and Unlabeled Documents using EM</title>
-      <link>https://ryotaro.dev/posts/text_cls_from_lbl_and_unlbl_doc_em/</link>
+      <link>http://localhost:38897/posts/text_cls_from_lbl_and_unlbl_doc_em/</link>
       <pubDate>Sun, 08 Jul 2018 01:23:49 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/text_cls_from_lbl_and_unlbl_doc_em/</guid>
+      <guid>http://localhost:38897/posts/text_cls_from_lbl_and_unlbl_doc_em/</guid>
       <description>&lt;h3 id=&#34;アルゴリズム&#34;&gt;アルゴリズム&lt;/h3&gt;&#xA;&lt;p&gt;提案手法は、Naive BayesとEMアルゴリズムを組み合わせたもの。&#xA;ラベル付きデータが\(D^l\)でラベルなしデータが\(D^u\)で表されるとき、対数尤度\(\log P(D^l)P(D^u)\)を最大化する問題を解く。&lt;/p&gt;</description>
     </item>
   </channel>

@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Word embedding on Blanket</title>
-    <link>https://ryotaro.dev/tags/word-embedding/</link>
-    <description>Recent content in Word embedding on Blanket</description>
+    <title>Word Embedding on Blanket</title>
+    <link>http://localhost:38897/tags/word-embedding/</link>
+    <description>Recent content in Word Embedding on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Fri, 28 Sep 2018 16:29:46 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/word-embedding/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:38897/tags/word-embedding/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>抄訳 Contextual String Embeddings for Sequence Labeling(2018)</title>
-      <link>https://ryotaro.dev/posts/context_string_embeddings_for_sequence_labeling/</link>
+      <link>http://localhost:38897/posts/context_string_embeddings_for_sequence_labeling/</link>
       <pubDate>Fri, 28 Sep 2018 16:29:46 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/context_string_embeddings_for_sequence_labeling/</guid>
+      <guid>http://localhost:38897/posts/context_string_embeddings_for_sequence_labeling/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;表題の論文は、&lt;a href=&#34;https://github.com/flairNLP/flair&#34;&gt;flair&lt;/a&gt;のアルゴリズムを提案、評価したもの。&#xA;論文は、テキストの系列ラベリングに向いた単語の分散表現モデルを提案し、&#xA;提案手法が予測性能において既存手法より優れいたことを実験的に示した。&#xA;本手法における単語の分散表現は、単語の字面だけでなく、文中における単語の出現位置によって決まる。&#xA;いいかえると、同じ単語であっても、文中における出現位置が異なれば、単語は異なる分散表現に変換される。&#xA;著者らは、分散表現に文脈の情報を含められることを強調して、提案手法をContextual String Embeddingsと名付けた。&lt;/p&gt;</description>
     </item>
     <item>
       <title>メモ Enriching Word Vectors with Subword Information</title>
-      <link>https://ryotaro.dev/posts/enriching_word_vectors_with_subword_information/</link>
+      <link>http://localhost:38897/posts/enriching_word_vectors_with_subword_information/</link>
       <pubDate>Fri, 10 Aug 2018 17:29:44 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/enriching_word_vectors_with_subword_information/</guid>
+      <guid>http://localhost:38897/posts/enriching_word_vectors_with_subword_information/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;Fasttextの論文。&#xA;Character n-gramsを入力としてskip-gramのモデルを作る方法を提案、評価した。&#xA;単語の部分文字列（subword）を使わない手法や形態素解析に頼る手法よりも提案手法が優れていることを実験で示した。&#xA;単語のベクトルは部分文字列のベクトルの和である。&#xA;実験の考察では、そのために、未知語の部分文字列が学習データにあれば、未知語に対しても妥当な分散表現を与えることができるとあった。&lt;/p&gt;</description>
     </item>
   </channel>

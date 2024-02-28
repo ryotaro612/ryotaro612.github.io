@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Early Programming on Blanket</title>
-    <link>https://ryotaro.dev/tags/early-programming/</link>
+    <link>http://localhost:38897/tags/early-programming/</link>
     <description>Recent content in Early Programming on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 26 Aug 2023 10:46:18 -0400</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/early-programming/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:38897/tags/early-programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go To Statement Considered Harmful (1968)</title>
-      <link>https://ryotaro.dev/posts/go_to_statement_considered_harmful/</link>
+      <link>http://localhost:38897/posts/go_to_statement_considered_harmful/</link>
       <pubDate>Sat, 26 Aug 2023 10:46:18 -0400</pubDate>
-      <guid>https://ryotaro.dev/posts/go_to_statement_considered_harmful/</guid>
+      <guid>http://localhost:38897/posts/go_to_statement_considered_harmful/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf&#34;&gt;Go To Statement Considered Harmful&lt;/a&gt;でEdger Dijkstraは機械語以外でのGO TO文の使用を批判した。&#xA;ソースコードは機械語にコンパイルされ、プログラムとして実行される。&#xA;ソースコードは静的な成果物であるが、プログラムは時間とともに変化する。&#xA;プログラマが理解しやすいのは、動的に変化する実行中のプログラムよりも静的なソースコードの方である。&#xA;したがって、ソースコードからプログラムの実行状態を予測できることがのぞましい。&lt;/p&gt;</description>
     </item>
   </channel>

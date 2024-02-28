@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Active Learning on Blanket</title>
-    <link>https://ryotaro.dev/tags/active-learning/</link>
+    <link>http://localhost:38897/tags/active-learning/</link>
     <description>Recent content in Active Learning on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 31 Aug 2019 02:05:53 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/active-learning/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:38897/tags/active-learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>概要 Learning on the Border: Active Learning in Imbalanced Data Classification(2007)</title>
-      <link>https://ryotaro.dev/posts/learning_on_border/</link>
+      <link>http://localhost:38897/posts/learning_on_border/</link>
       <pubDate>Sat, 31 Aug 2019 02:05:53 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/learning_on_border/</guid>
+      <guid>http://localhost:38897/posts/learning_on_border/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;不均衡データに対する二値分類の予測性能を能動学習で改善する。&#xA;学習器のマージン付近では正例と負例がよりバランスしていると仮定し、&#xA;マージン付近にあるデータを集めることで、均衡のとれたデータセットをあつめる。&#xA;具体的には、ラベルづけしたデータでSVMをオンライン学習し、無作為に抽出されたラベルのないデータの中で最も超平面に近いデータにラベルをつける手順をマージンの中にあるデータ数が変わらなくなるまでくりかえす。&lt;/p&gt;</description>
     </item>
     <item>
       <title>抄訳 Learning Active Learning from Data(2017)</title>
-      <link>https://ryotaro.dev/posts/learning_active_learning_from_data/</link>
+      <link>http://localhost:38897/posts/learning_active_learning_from_data/</link>
       <pubDate>Sat, 27 Jul 2019 16:40:43 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/learning_active_learning_from_data/</guid>
+      <guid>http://localhost:38897/posts/learning_active_learning_from_data/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;能動学習は、できるだけ少数のサンプルでモデルの予測性能を向上できる学習データセットを集める技術である。&#xA;論文は、2値分類問題のための能動学習で、サンプルを教師データに追加したときの汎化誤差の減少値を予測し、追加すべきサンプルを推定する。&lt;/p&gt;</description>
     </item>
   </channel>

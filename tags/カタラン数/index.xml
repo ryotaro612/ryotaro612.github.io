@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>カタラン数 on Blanket</title>
-    <link>https://ryotaro.dev/tags/%E3%82%AB%E3%82%BF%E3%83%A9%E3%83%B3%E6%95%B0/</link>
+    <link>http://localhost:38897/tags/%E3%82%AB%E3%82%BF%E3%83%A9%E3%83%B3%E6%95%B0/</link>
     <description>Recent content in カタラン数 on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 29 Jul 2023 15:24:15 -0400</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/%E3%82%AB%E3%82%BF%E3%83%A9%E3%83%B3%E6%95%B0/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:38897/tags/%E3%82%AB%E3%82%BF%E3%83%A9%E3%83%B3%E6%95%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Catalan Numbers(2016)</title>
-      <link>https://ryotaro.dev/posts/catalan_number/</link>
+      <link>http://localhost:38897/posts/catalan_number/</link>
       <pubDate>Sat, 29 Jul 2023 15:24:15 -0400</pubDate>
-      <guid>https://ryotaro.dev/posts/catalan_number/</guid>
+      <guid>http://localhost:38897/posts/catalan_number/</guid>
       <description>&lt;p&gt;カタラン数は、いくつかの組合せの問題の解で知られる自然数の系列である。&#xA;\(n\)個の対応する括弧&amp;quot;(, )&amp;ldquo;からなる文字列の組合せの数や、一辺の長さが\(n\)の格子の左上から右下への対角線より上を通る最短経路の数は、\(n\)番目のカタラン数である。&#xA;このページでは、この2つの問題の解がカタラン数であるとして、漸化式と二項係数の2つの形式によるカタラン数の一般項を求める。&lt;/p&gt;</description>
     </item>
   </channel>

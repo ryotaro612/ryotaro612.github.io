@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=38897&amp;path=livereload" data-no-instant defer></script>
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,14 +17,14 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+<link rel="stylesheet" href="http://localhost:38897/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+<link rel="stylesheet" href="http://localhost:38897/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -46,12 +46,12 @@
     
         
     <header class="navigation">
-      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+      <h2><a href="http://localhost:38897/">Blanket</a></h2>
       <nav>
         <ul>
-          <li><a href="https://ryotaro.dev/about">About</a></li>
-          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
-          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+          <li><a href="http://localhost:38897/about">About</a></li>
+          <li><a href="http://localhost:38897/posts">Posts</a></li>
+          <li><a href="http://localhost:38897/tags">Tags</a></li>
 	  
         </ul>
       </nav>
@@ -76,7 +76,7 @@ Dirty Readは、トランザクションT1がデータを編集し、T1のコミ
 このとき、T1がロールバックしたらT2は未来から見ると存在しないデータを読んだようにみえる。
 Fuzzy Readだと、T1がデータを読み、T2がデータを変更か削除すると、T1が再びデータを読んだときに前の読み込みと同じ結果にならない。
 Phantomでは、T1が条件を満たすデータを読んだ後にT2が条件を満たすデータを追加するとT1が同じ条件で読み込んだときに追加されたデータも読み込んでしまう。
-<img src="/critique/ansi.png" alt="ansi"></p>
+<img alt="ansi" src="/critique/ansi.png"></p>
 <p>規格のDirty Read, Fuzzy Read, Phantomは自然言語で定義されており、解釈の余地がある。
 たとえば、これらの3つの現象を以下のように定義できる。
 数字はトランザクションを区別し、aはabort, cはcommitを意味する。</p>
@@ -89,7 +89,7 @@ A3 : r1[P]...w2[y in P]...c2....r1[P]...c1 (Phantom)
 </code></pre>
 <p>提唱するトランザクション分離レベルは、ANSI規格の現象を厳しく現象列を操作列するように解釈し、新たにDirty Writeを現象にくわえる。
 トランザクション分離レベルと現象の対応と現象の形式的な定義を以下にのせる。
-<img src="/critique/table3.png" alt="table3"></p>
+<img alt="table3" src="/critique/table3.png"></p>
 <pre><code>P0: w1[x]...w2[x]...(c1 or a1) (Dirty Write)
 P1: w1[x]...r2[x]...(c1 or a1) (Dirty Read)
 P2: r1[x]...w2[x]...(c1 or a1) (Fuzzy Read)
@@ -107,7 +107,7 @@ Start-TimestampとCommit-Timestampの間に、同じデータを変更した別�
 Write Skewは、制約のある2つのデータを2つのトランザクションが対称的に読み書きすることで発生する。</p>
 <pre><code>r1[x]...r2[y]...w1[y]...w2[x]...(c1 and c2 occur) (Write Skew)
 </code></pre>
-<p>論文を<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.884.4056&amp;rep=rep1&amp;type=pdf">こちら</a>からダウンロードできます。</p>
+<p>論文を<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.884.4056&rep=rep1&type=pdf">こちら</a>からダウンロードできます。</p>
   </div>
 </main>
 
@@ -146,7 +146,7 @@ Write Skewは、制約のある2つのデータを2つのトランザクショ�
           </a>
         </li>
         
-        <li><a href="https://ryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        <li><a href="http://localhost:38897/index.xml"><i class="fas fa-rss"></i></a></li>
         
       </ul>
       <small>© Ryotaro. All Rights Reserved.</small>

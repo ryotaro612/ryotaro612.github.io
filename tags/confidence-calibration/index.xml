@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Confidence calibration on Blanket</title>
-    <link>https://ryotaro.dev/tags/confidence-calibration/</link>
-    <description>Recent content in Confidence calibration on Blanket</description>
+    <title>Confidence Calibration on Blanket</title>
+    <link>http://localhost:38897/tags/confidence-calibration/</link>
+    <description>Recent content in Confidence Calibration on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 23 Nov 2019 14:37:30 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/confidence-calibration/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:38897/tags/confidence-calibration/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>論文メモ On Calibration of Modern Neural Networks(2017)</title>
-      <link>https://ryotaro.dev/posts/on_calibration_of_modern_neural_networks/</link>
+      <link>http://localhost:38897/posts/on_calibration_of_modern_neural_networks/</link>
       <pubDate>Sat, 23 Nov 2019 14:37:30 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/on_calibration_of_modern_neural_networks/</guid>
+      <guid>http://localhost:38897/posts/on_calibration_of_modern_neural_networks/</guid>
       <description>&lt;p&gt;ネットワークの複雑化、バッチ正則化、重み減衰を使わない、負の対数尤度の過学習が汎化精度を上げるが、予測確率と精度のズレを大きくすることを実験的に示した。&#xA;予測確率を補正する6つの手法を19種類のクラス分類のデータセットに適用した結果、&#xA;最も補正できたものは、温度つきソフトマックスの出力を予測確率にする場合であった。&lt;/p&gt;</description>
     </item>
   </channel>

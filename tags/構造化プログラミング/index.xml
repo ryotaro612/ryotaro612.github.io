@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>構造化プログラミング on Blanket</title>
-    <link>https://ryotaro.dev/tags/%E6%A7%8B%E9%80%A0%E5%8C%96%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/</link>
+    <link>http://localhost:38897/tags/%E6%A7%8B%E9%80%A0%E5%8C%96%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/</link>
     <description>Recent content in 構造化プログラミング on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 08 Oct 2023 09:38:50 -0400</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/%E6%A7%8B%E9%80%A0%E5%8C%96%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:38897/tags/%E6%A7%8B%E9%80%A0%E5%8C%96%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A design methodology for reliable software systems (1972)</title>
-      <link>https://ryotaro.dev/posts/a_design_methodology_for_reliable_software_systems/</link>
+      <link>http://localhost:38897/posts/a_design_methodology_for_reliable_software_systems/</link>
       <pubDate>Sun, 08 Oct 2023 09:38:50 -0400</pubDate>
-      <guid>https://ryotaro.dev/posts/a_design_methodology_for_reliable_software_systems/</guid>
+      <guid>http://localhost:38897/posts/a_design_methodology_for_reliable_software_systems/</guid>
       <description>&lt;p&gt;スタンフォードで数学の博士号を取得した&lt;a href=&#34;https://computerhistory.org/profile/barbara-liskov/&#34;&gt;Liskov&lt;/a&gt;は以前勤めていたMitre Corporationに戻った後、最初にVenusとよばれるタイムシェアリングシステムの開発プロジェクトを担当し、その次にソフトウェア危機に対処する開発手法の研究に取り組んだ。&#xA;&lt;a href=&#34;https://dl.acm.org/doi/pdf/10.1145/1479992.1480018&#34;&gt;A design methodology for reliable software systems&lt;/a&gt;は、Venusの開発から得られた構造化プログラミングの方法論である。&lt;/p&gt;</description>
     </item>
   </channel>

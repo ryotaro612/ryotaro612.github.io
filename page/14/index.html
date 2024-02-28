@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.121.2">
+	<meta name="generator" content="Hugo 0.123.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=38897&amp;path=livereload" data-no-instant defer></script>
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -18,12 +18,12 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
+<link rel="stylesheet" href="http://localhost:38897/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -45,14 +45,14 @@
     
         
     <header class="navigation">
-      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+      <h2><a href="http://localhost:38897/">Blanket</a></h2>
       <nav>
         <ul>
-          <li><a href="https://ryotaro.dev/about">About</a></li>
-          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
-          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+          <li><a href="http://localhost:38897/about">About</a></li>
+          <li><a href="http://localhost:38897/posts">Posts</a></li>
+          <li><a href="http://localhost:38897/tags">Tags</a></li>
 	  
-	  <li><a href="https://ryotaro.dev/en/">en</a></li>
+	  <li><a href="http://localhost:38897/en/">en</a></li>
 	  
         </ul>
       </nav>
@@ -63,7 +63,61 @@
     
     
     <article>
-        <h3><a href="https://ryotaro.dev/posts/what_helped_and_what_did_not/">What helped, and what did not? An Evaluation of the Strategies to Improve Continuous Integration</a></h3>
+        <h3><a href="http://localhost:38897/posts/is_rust_used_safely_by_software_developers/">Is Rust Used Safely by Software Developers?</a></h3>
+        <div class="summary"><p><a href="https://crates.io/">crates.io</a>に登録された15,097個のクレートにおける<code>unsafe</code>キーワードの使用状況を調べた。
+調査したクレートは、調査を開始した2018年9月時点で<a href="https://crates.io/">crates.io</a>に登録された全クレートの81%にあたる。
+<code>unsafe</code>を含むクレートは、そのうちの29%だったが、依存するクレートにある<code>unsafe</code>も対象にすると、50%におよぶ。
+<a href="https://crates.io/">crates.io</a>の総ダウンロード数のうち90%を占める473個の有名なクレートに限定すると、60%のクレート<code>unsafe</code>が含まれる。
+2018年9月から2019年6月までの10ヶ月間で<code>unsafe</code>の使用傾向に変化はなく、<code>unsafe</code>の数が少し増えただけであった。
+<code>unsafe</code>の用途の大半は<code>unsafe</code>で修飾されたRustの関数を呼び出すためだった。
+なお、コンパイラで生成された<code>unsafe</code>キーワードは集計に含まれていない。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">August 27, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="http://localhost:38897/posts/design_tradeoffs_for_ssd_performance/">Design Tradeoffs for SSD Performance</a></h3>
+        <div class="summary"><p>HDDの処理性能を測定するシミュレーションソフト<a href="https://www.pdl.cmu.edu/DiskSim/index.shtml">DiskSim</a>をSSD向けに改造し、SSDの設計における選択肢の分類と選択にともなうトレードオフを報告した。
+主要な選択肢は、論理アドレスと物理アドレスのマッピング、ページサイズ、オーバープロビジョニング、複数のpackageでcontrollerに接続するピンを共有するgangingがある。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">August 23, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="http://localhost:38897/posts/program_comprehension_and_code_complexity_metrics/">Program Comprehension and Code Complexity Metrics: An fMRI Study</a></h3>
+        <div class="summary"><p>コードの複雑さのメトリクスがコードを理解する難しさの指標になるかは疑問視されてきた。
+19人の被験者に16個のソースコードを読ませ、関数の返り値を回答してもらい、作業中の脳の状態をfMRIで観察することで、メトリクスと回答時間、正答率、脳の活性状態の相関関係を調べた。
+メトリクスと主観的な評価を比較するために、回答後に被験者にコードの複雑さを評価してもらった。
+調べたメトリクスは、41種類あり、コードの行数(LOC), 語彙の多さ(Halstead), とりえる実行パスの数(McCabe), 依存するデータの数(DepDegree)の4種類に大別できる。
+相関関係をケンドールの順位相関係数\(\tau\)で評価し、相関なし(\(\tau &lt;0.1\)), 弱い(\(0.1 &lt; \tau &lt; 0.3\)), 中(\(0.3 &lt; \tau &lt;0.5\)), 強い(\(0.5&lt;\tau\))とみなす。</p>
+<p>回答と脳の活性状態と相関関係にあったメトリクスはDepDegreeだったが、被験者の主観的な評価のほうが強い相関がみられた。
+LOC, Halstead, DepDeegreeは回答時間や正答率と弱い〜中程度の相関があった。
+この3つのメトリクスは脳の活性度合いと弱から中の相関があり、活性度合いと正答率には強い相関、回答時間には弱から中の相関があった。
+一方、主観的な評価は、メトリクスと弱い相関があり、問題の正答率や脳の活性状態と強い相関関係があった。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">August 21, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="http://localhost:38897/posts/the_unix_time_sharing_system/">The UNIX Time-Sharing System</a></h3>
+        <div class="summary"><p>デニス・リッチーとケン・トンプソンによるPDP-11/40, /45, /70で採用されたUnixのファイルシステムとコマンドラインインターフェースの解説である。
+PDP-11は1971年2月から運用がはじまり、当初はアセンブリ言語で実装されていたが、1973年の夏にCで再実装された。
+ファイルシステムは、UNIXの最も重要な役割に位置づけられ、特殊ファイルによるI/Oデバイスの抽象化、外部ディスクのマウント、ファイルの権限、i-nodeをふくむ多くの特徴が今日まで引き継がれている。
+2人は、UNIXの設計に影響したものとして、プログラマとして対話的なインターフェースを望んでいたこと、ハードウェアの低い性能ゆえにソフトウェアの設計を洗練させる必要があったこと、ソースコードをUNIX上で編集し簡単にプログラムを変更できたことをあげている。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">August 21, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="http://localhost:38897/posts/what_helped_and_what_did_not/">What helped, and what did not? An Evaluation of the Strategies to Improve Continuous Integration</a></h3>
         <div class="summary"><p><a href="https://travistorrent.testroots.org/">TravisTorrent</a>にある100件のプロジェクトで10種類のCIのテクニックを定量評価した。
 テクニックは、不要なビルドやテストをスキップするか、実行順序を優先づけるものかに分かれる。
 前者は計算資源の消費を減らすこと、後者は失敗するケースを早めに実行することを目的にする。
@@ -76,7 +130,7 @@
     </article>
     
     <article>
-        <h3><a href="https://ryotaro.dev/posts/dont_do_that/">Don&#39;t Do That! Hunting Down Visual Design Smells in Complex UIs against Design Guidelines</a></h3>
+        <h3><a href="http://localhost:38897/posts/dont_do_that/">Don&#39;t Do That! Hunting Down Visual Design Smells in Complex UIs against Design Guidelines</a></h3>
         <div class="summary"><p>2020年5月時点のマテリアルデザインの公式ドキュメントから93種類の不吉な匂いを洗い出し、71種類の匂いを検出するツールUIS-Hunterを開発した。
 文中に&quot;don&rsquo;t&quot;や&quot;caution&quot;があることとUIの画像があることを条件に不吉な匂いを選び、9,286個のアンドロイドアプリにある7,497のUIを調べたところ、2,587個のアプリから1つ以上の不吉な匂いのあるUIが見つかった。
 UIS-Hunterは、FigmaやAndroid Studio Layout EditorなどのモックアップやAndroid UI AutomatorやSeleniumのスクリーンショットから不吉な匂いを解析し、UIのソースコードを必要としない。
@@ -88,7 +142,7 @@ UIS-Hunterは、FigmaやAndroid Studio Layout Editorなどのモックアップ�
     </article>
     
     <article>
-        <h3><a href="https://ryotaro.dev/posts/an_empirical_analysis_of_ui-based_flaky_tests/">An Empirical Analysis of UI-based Flaky Tests</a></h3>
+        <h3><a href="http://localhost:38897/posts/an_empirical_analysis_of_ui-based_flaky_tests/">An Empirical Analysis of UI-based Flaky Tests</a></h3>
         <div class="summary">GitHub上の5つのWebアプリケーションと37のAndroidアプリケーションから集めた235件のUIのflaky tests（何度か実行すると成功する不安定なテスト）を調査し、原因と修正を分類した。
 大きく原因を、非同期処理の待機、環境依存の動作、DOMのセレクタやテストライブラリの誤用、テスト対象の事前条件を満たしていないテストスクリプトの4つに大別した。 具体例をあげると、環境依存の動作には、IE固有のバグや予期していないレイアウトで画面が表示される場合、テストの事前条件については、テストの実行順序次第で誤ったテストデータが作られる場合がある。 最も多くのテストが分類され、全体の45%を占めたのは、非同期処理の不適切な待機方法だった。
 修正のパターンには、待機時間の追加、テスト用APIの誤用の修正やAPIのアップグレード、テストスクリプトのリファクタリング、アニメーションの削除、不要なテストの削除がある。
@@ -100,7 +154,7 @@ UIS-Hunterは、FigmaやAndroid Studio Layout Editorなどのモックアップ�
     </article>
     
     <article>
-        <h3><a href="https://ryotaro.dev/posts/a_case_study_of_onboarding_in_software_teams/">A Case Study of Onboarding in Software Teams: Tasks and Strategies</a></h3>
+        <h3><a href="http://localhost:38897/posts/a_case_study_of_onboarding_in_software_teams/">A Case Study of Onboarding in Software Teams: Tasks and Strategies</a></h3>
         <div class="summary"><p>オンボーディングのためのタスクの選び方とタスクの効果を調査するために、マイクロソフトのエンジニアとマネージャーにインタビューした。
 まず、新しいチームに入った32人のエンジニアとエンジニアを迎えた15人のマネージャーにインタビューし、特に、チームのことを知る、担当する役割を果たせる自信の醸成、メンバーとの交流の3つを重視し、これらに対するタスクの影響を調査した。
 タスクの選び方は、大きく、割り当てるタスクを少しずつ複雑にする、優先度の高いものを選ぶ、曖昧なタスクを選ぶ、の3つがあった。
@@ -113,7 +167,7 @@ UIS-Hunterは、FigmaやAndroid Studio Layout Editorなどのモックアップ�
     </article>
     
     <article>
-        <h3><a href="https://ryotaro.dev/posts/a_differential_testing_approach_for_evaluating_ast_mapping_algorithms/">A Differential Testing Approach for Evaluating Abstract Syntax Tree Mapping Algorithms</a></h3>
+        <h3><a href="http://localhost:38897/posts/a_differential_testing_approach_for_evaluating_ast_mapping_algorithms/">A Differential Testing Approach for Evaluating Abstract Syntax Tree Mapping Algorithms</a></h3>
         <div class="summary"><p>AST mappingは、コードの変更前後のASTを比べてノードの対応関係を見つける手法であり、変更差分検出に使われる。 現状、対応関係の精度を自動で評価する有効な方法はなく、評価には人手による手間がかかる。 多くのノードに1対1の対応関係があることに着目し、異なる2つのAST mappingを同じ変更に適用した結果を比べ、個別の文やトークンごとに、より正確な方を推定するアルゴリズムを提案した。 これを応用し、複数のAST mappingアルゴリズムに同じファイルの変更差分を入力し、アルゴリズムごとの不正確に検出した箇所を自動で推定できることを示した。 特定性能は、Precisionが0.98-1.00, Recallは0.65-0.75だった。</p></div>
         <div class="article-footer">
 	  
@@ -122,72 +176,11 @@ UIS-Hunterは、FigmaやAndroid Studio Layout Editorなどのモックアップ�
     </article>
     
     <article>
-        <h3><a href="https://ryotaro.dev/posts/ignorance_and_prejudice_in_software_fairness/">“Ignorance and Prejudice” in Software Fairness</a></h3>
+        <h3><a href="http://localhost:38897/posts/ignorance_and_prejudice_in_software_fairness/">“Ignorance and Prejudice” in Software Fairness</a></h3>
         <div class="summary"><p>特徴の種類を増やすと、機械学習の予測の公平性と精度を改善できることを5つのデータセットで例示した。 データセットのタスク内容は、性別、人種、年齢を特徴に含み、経済的な裕福さや再犯率を予測するもの。 他方、教師データの数を増やしても公平性は改善されなかった。</p></div>
         <div class="article-footer">
 	  
           <span class="date">August 14, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/time_clocks_and_the_ordering_of_events_in_a_distributed_system/">Time, Clocks, and the Ordering of Events in a Distributed System</a></h3>
-        <div class="summary"><p>分散システムの各プロセスにおける送受信の半順序関係をすべてのプロセスで起きた送受信の全順序関係に拡張するアルゴリズムを提案し、アルゴリズムを同期処理に応用できることを例示した。
-分散システムではプロセスの時刻が同期しているとはかぎらない。
-各プロセスで起きたメッセージの送受信をプロセスでの時刻順に並べられても、その計測時刻を信じて全プロセスで起きたイベントを正しく発生順に並べることはできない。</p>
-<p>アルゴリズムは、プロセスごとに論理的なクロックをもたせる。
-クロックは、メッセージを送信するときに時を進める。
-メッセージを送信するプロセスは、送信時刻をメッセージにふくめる。
-受信したプロセスは現在の時刻とメッセージにある送信元の時刻より先の時刻に時を進める。
-以上の手続きで、異なるプロセス間の送受信であっても送信時刻が受信時刻より必ず前になり、全プロセスの送受信イベントに全順序関係を定義できる。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
-		#分散システム
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">August 14, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/dataflow/">The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-Scale, unbounded, Out-of-Order Data Processing</a></h3>
-        <div class="summary"><p>データ処理サービスは、処理の正確さ、遅延、システムの複雑さの間にトレードオフを抱える。
-ストリーミング処理サービスのStorm, Samza, Pulsarは、(論文が発表された2015年時点では)メッセージ配信がexactly-onceではなく欠損や重複する。
-MapReduceやSparkなどのバッチ処理サービスは、バッチ処理の単位までデータが集まらなければバッチ実行できない。
-Lambda architectureは、システムの複雑化を許容し、2つのアーキテクチャを使い分けることで、処理の正確さと遅延のバランスをとる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">August 7, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/playing_planning_poker_in_crowds/">Playing Planning Poker in Crowds: Human Computation of Software Effort Estimates</a></h3>
-        <div class="summary"><p>プランニングポーカーのように、ソフトウェア開発の工数を見積もる手法の前提には、プロジェクトに一定期間在籍する専門家がいることがある。
-しかし、OSS開発はその限りではなく、見積りの対象になるイシューの数は多い。
-各イシューの見積りに5分から10分時間をかけるなら、Linux Kernelのバックログを見積りきるのに半年がかかる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">August 6, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/the_byzantine_generals_problem/">The Byzantine Generals Problem</a></h3>
-        <div class="summary"><p>ビザンチン将軍問題は、故障したコンポーネントがほかのコンポーネントに誤ったメッセージを送りうるとき、コンポーネント間でメッセージを交換した結果、すべてのコンポーネントが一つの正しいメッセージを合意する問題をあつかう。
-アルゴリズムは、署名付きメッセージを使うものと使わないものの2つがある。
-署名付きメッセージを使うと、受信したメッセージが改ざんされたかをコンポーネントが判断できる。
-署名を使わない場合、3分の2より多くのコンポーネントが正常でなければシステム全体が正しい1つのメッセージについて合意にできないことを示した。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">July 31, 2021</span>
         </div>
     </article>
     
@@ -238,7 +231,7 @@ Lambda architectureは、システムの複雑化を許容し、2つのアーキ
           </a>
         </li>
         
-        <li><a href="https://ryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        <li><a href="http://localhost:38897/index.xml"><i class="fas fa-rss"></i></a></li>
         
       </ul>
       <small>© Ryotaro. All Rights Reserved.</small>

@@ -2,248 +2,248 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gallery on Blanket</title>
-    <link>https://ryotaro.dev/gallery/</link>
+    <link>http://localhost:38897/gallery/</link>
     <description>Recent content in Gallery on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 15 Aug 2021 23:00:06 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/gallery/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:38897/gallery/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rumors Roble Bodegas Rumors</title>
-      <link>https://ryotaro.dev/gallery/rumors/</link>
+      <link>http://localhost:38897/gallery/rumors/</link>
       <pubDate>Sun, 15 Aug 2021 23:00:06 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/rumors/</guid>
+      <guid>http://localhost:38897/gallery/rumors/</guid>
       <description>渋い。</description>
     </item>
     <item>
       <title>Villa Yambol Cabernet Sauvignon</title>
-      <link>https://ryotaro.dev/gallery/villa_yambol/</link>
+      <link>http://localhost:38897/gallery/villa_yambol/</link>
       <pubDate>Wed, 04 Aug 2021 13:09:11 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/villa_yambol/</guid>
+      <guid>http://localhost:38897/gallery/villa_yambol/</guid>
       <description>渋みがなく、飲みやすい。飲みやすくて、記憶に残りにくいけどおいしい。</description>
     </item>
     <item>
       <title>Chateau La Croix Blanche</title>
-      <link>https://ryotaro.dev/gallery/chateau_la_croix_blanche2/</link>
+      <link>http://localhost:38897/gallery/chateau_la_croix_blanche2/</link>
       <pubDate>Mon, 26 Jul 2021 10:04:27 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/chateau_la_croix_blanche2/</guid>
+      <guid>http://localhost:38897/gallery/chateau_la_croix_blanche2/</guid>
       <description>酸味はあまりない。少し渋い。</description>
     </item>
     <item>
       <title>Casal di Serra</title>
-      <link>https://ryotaro.dev/gallery/casal_di_serra2/</link>
+      <link>http://localhost:38897/gallery/casal_di_serra2/</link>
       <pubDate>Mon, 19 Jul 2021 23:19:41 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/casal_di_serra2/</guid>
+      <guid>http://localhost:38897/gallery/casal_di_serra2/</guid>
       <description>やっぱり記憶に残らない。</description>
     </item>
     <item>
       <title>Goose Bump</title>
-      <link>https://ryotaro.dev/gallery/goose_bump/</link>
+      <link>http://localhost:38897/gallery/goose_bump/</link>
       <pubDate>Sat, 10 Jul 2021 15:02:05 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/goose_bump/</guid>
+      <guid>http://localhost:38897/gallery/goose_bump/</guid>
       <description>甘い。この一言につきる。こんなに甘い赤ワインがあるんだって驚き。</description>
     </item>
     <item>
       <title>Casal di Serra</title>
-      <link>https://ryotaro.dev/gallery/casal_di_serra/</link>
+      <link>http://localhost:38897/gallery/casal_di_serra/</link>
       <pubDate>Sat, 03 Jul 2021 23:51:51 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/casal_di_serra/</guid>
+      <guid>http://localhost:38897/gallery/casal_di_serra/</guid>
       <description>辛くもなく、樽香もないワイン。抑揚のないワインで、嫌いではないが、記憶に残らないのでまた買いたいという気にはならない。</description>
     </item>
     <item>
       <title>Chateau La Croix Blanche</title>
-      <link>https://ryotaro.dev/gallery/chateau_la_croix_blanche/</link>
+      <link>http://localhost:38897/gallery/chateau_la_croix_blanche/</link>
       <pubDate>Sat, 03 Jul 2021 23:43:55 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/chateau_la_croix_blanche/</guid>
+      <guid>http://localhost:38897/gallery/chateau_la_croix_blanche/</guid>
       <description>なぜかまとめて２つ買ってしまったやつ。酸味と渋みのどちらにも偏りがなくて飲みやすい。 飲みやすくておいしいのは分かるけど、あまりに個性がなくて「これを飲みたい」みたいな気にならないのが残念。 ただ、美味しいのは確か。</description>
     </item>
     <item>
       <title>Navaelus Bodega Inurrieta</title>
-      <link>https://ryotaro.dev/gallery/navaelus_bodega_inurrieta/</link>
+      <link>http://localhost:38897/gallery/navaelus_bodega_inurrieta/</link>
       <pubDate>Sat, 19 Jun 2021 14:39:38 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/navaelus_bodega_inurrieta/</guid>
+      <guid>http://localhost:38897/gallery/navaelus_bodega_inurrieta/</guid>
       <description>すごい飲みやすい。また買いたい。</description>
     </item>
     <item>
       <title>Vine In Flames Chardonnay Ville</title>
-      <link>https://ryotaro.dev/gallery/vine_in_flames_chardonnay_ville/</link>
+      <link>http://localhost:38897/gallery/vine_in_flames_chardonnay_ville/</link>
       <pubDate>Sat, 19 Jun 2021 14:32:27 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/vine_in_flames_chardonnay_ville/</guid>
+      <guid>http://localhost:38897/gallery/vine_in_flames_chardonnay_ville/</guid>
       <description>辛口でもなく、樽香をつけてもないシャルドネそのままの感じがする。辛口ではないシャルドネの中では一番好きかもしれない。</description>
     </item>
     <item>
       <title>Aves Del Sur</title>
-      <link>https://ryotaro.dev/gallery/aves_del_sur/</link>
+      <link>http://localhost:38897/gallery/aves_del_sur/</link>
       <pubDate>Sat, 12 Jun 2021 17:11:25 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/aves_del_sur/</guid>
+      <guid>http://localhost:38897/gallery/aves_del_sur/</guid>
       <description>樽香が効いたチリワイン。開けたときの香りですぐにオークドシャルドネと分かるくらい香りがある。 美味しかった。</description>
     </item>
     <item>
       <title>Ilpasso</title>
-      <link>https://ryotaro.dev/gallery/ilpasso/</link>
+      <link>http://localhost:38897/gallery/ilpasso/</link>
       <pubDate>Sat, 05 Jun 2021 17:03:10 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/ilpasso/</guid>
+      <guid>http://localhost:38897/gallery/ilpasso/</guid>
       <description>こういうモノクロの単純なラベルの赤に惹かれる。少し渋い感じがちょうどよくて好き。 寝る前の夜中の3時にあけて味わわずに飲んでしまったのが惜しい。</description>
     </item>
     <item>
       <title>C tes Du Roussillon Mas Las Cabes Domaine Gardi s</title>
-      <link>https://ryotaro.dev/gallery/c_tes_du_roussillon_mas_las_cabes_domaine_gardi_s/</link>
+      <link>http://localhost:38897/gallery/c_tes_du_roussillon_mas_las_cabes_domaine_gardi_s/</link>
       <pubDate>Sat, 29 May 2021 20:51:22 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/c_tes_du_roussillon_mas_las_cabes_domaine_gardi_s/</guid>
+      <guid>http://localhost:38897/gallery/c_tes_du_roussillon_mas_las_cabes_domaine_gardi_s/</guid>
       <description>シラー。今までのんだシラーの中で一番好きかも。普段飲んでいるものより少し高いのが残念。</description>
     </item>
     <item>
       <title>Barista Chardonnay Bertus Fourie</title>
-      <link>https://ryotaro.dev/gallery/barista_chardonnay_bertus_fourie/</link>
+      <link>http://localhost:38897/gallery/barista_chardonnay_bertus_fourie/</link>
       <pubDate>Sat, 22 May 2021 19:05:11 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/barista_chardonnay_bertus_fourie/</guid>
+      <guid>http://localhost:38897/gallery/barista_chardonnay_bertus_fourie/</guid>
       <description>樽香のあるシャルドネ。でもそこまで香りがきつくない。ちょうどいい。このくらいの香りがだめな人なら香りのついたシャルドネはダメかも。</description>
     </item>
     <item>
       <title>Reserva Dos Amigos Touriga Nacional Vidigal Wines</title>
-      <link>https://ryotaro.dev/gallery/reserva_dos_amigos_touriga_nacional_vidigal_wines/</link>
+      <link>http://localhost:38897/gallery/reserva_dos_amigos_touriga_nacional_vidigal_wines/</link>
       <pubDate>Sun, 16 May 2021 01:39:11 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/reserva_dos_amigos_touriga_nacional_vidigal_wines/</guid>
+      <guid>http://localhost:38897/gallery/reserva_dos_amigos_touriga_nacional_vidigal_wines/</guid>
       <description>ラベルは渋そうな感じだけど、少しスパイシーで果実味がある。おいしい。また買いたい。でもラベルがそんなに好みじゃない。</description>
     </item>
     <item>
       <title>リトル　ジェームズ　バスケット　プレス　ホワイト</title>
-      <link>https://ryotaro.dev/gallery/little_james_basket_press_white/</link>
+      <link>http://localhost:38897/gallery/little_james_basket_press_white/</link>
       <pubDate>Sun, 09 May 2021 11:09:09 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/little_james_basket_press_white/</guid>
+      <guid>http://localhost:38897/gallery/little_james_basket_press_white/</guid>
       <description>辛口の白。変な樽香のない感じでおいしい。 ただ辛口の白で香りのないものはみんな同じ味に感じる。 そうなると値段で選んだほうがいいのかな。</description>
     </item>
     <item>
       <title>Honoro Vera Organically Bodegas Juan Gil</title>
-      <link>https://ryotaro.dev/gallery/honoro_vera_organically_bodegas_juan_gil/</link>
+      <link>http://localhost:38897/gallery/honoro_vera_organically_bodegas_juan_gil/</link>
       <pubDate>Wed, 05 May 2021 13:03:39 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/honoro_vera_organically_bodegas_juan_gil/</guid>
+      <guid>http://localhost:38897/gallery/honoro_vera_organically_bodegas_juan_gil/</guid>
       <description>オーガニックななんちゃらかんちゃら。少し渋い。</description>
     </item>
     <item>
       <title>50° Riesling trocken</title>
-      <link>https://ryotaro.dev/gallery/50_riesling_trocken/</link>
+      <link>http://localhost:38897/gallery/50_riesling_trocken/</link>
       <pubDate>Mon, 03 May 2021 15:59:35 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/50_riesling_trocken/</guid>
+      <guid>http://localhost:38897/gallery/50_riesling_trocken/</guid>
       <description>リースリングだけど辛すぎない。辛いのが好きな人には物足りないかも。見かけによらず炭酸はない。</description>
     </item>
     <item>
       <title>ドメーヌ・ダンデゾン　コート・デュ・ローヌ・ルージュ　ヴィエイユ・ヴィーニュ　2018</title>
-      <link>https://ryotaro.dev/gallery/cotes_du_rhone_rouge/</link>
+      <link>http://localhost:38897/gallery/cotes_du_rhone_rouge/</link>
       <pubDate>Mon, 19 Apr 2021 15:04:04 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/cotes_du_rhone_rouge/</guid>
+      <guid>http://localhost:38897/gallery/cotes_du_rhone_rouge/</guid>
       <description>コルクが割れたけど、割れた位置が浅かったから深く刺しなおして、まっすぐ上にひっぱったらきれいに抜けた。 渋みも酸味もなく、果実の味がそのままする。</description>
     </item>
     <item>
       <title>ドメーヌ・ポール・マス・シェ・マス・赤[2019]</title>
-      <link>https://ryotaro.dev/gallery/domaine_paul_mas_chai_mas_rouge2019/</link>
+      <link>http://localhost:38897/gallery/domaine_paul_mas_chai_mas_rouge2019/</link>
       <pubDate>Sat, 10 Apr 2021 16:41:50 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/domaine_paul_mas_chai_mas_rouge2019/</guid>
+      <guid>http://localhost:38897/gallery/domaine_paul_mas_chai_mas_rouge2019/</guid>
       <description>派手なラベルを裏切るような感じ。最近飲んだものの中で一番酸味と渋みがバランスがとれてピーキーな感じがしなかった。</description>
     </item>
     <item>
       <title>La Vie Pinot Noir Domeniile Sahateni</title>
-      <link>https://ryotaro.dev/gallery/lavie20210403/</link>
+      <link>http://localhost:38897/gallery/lavie20210403/</link>
       <pubDate>Sat, 03 Apr 2021 23:12:57 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/lavie20210403/</guid>
+      <guid>http://localhost:38897/gallery/lavie20210403/</guid>
       <description>4回目。でもいつも買っているリアルワインガイドの通販で売り切れていたからしばらく飲めない。あと1本だけ家にある。</description>
     </item>
     <item>
       <title>シャトー・プティ・フレロン・キュヴェ・サラ[2016]</title>
-      <link>https://ryotaro.dev/gallery/chateau_petit_freylon/</link>
+      <link>http://localhost:38897/gallery/chateau_petit_freylon/</link>
       <pubDate>Sun, 28 Mar 2021 21:48:00 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/chateau_petit_freylon/</guid>
+      <guid>http://localhost:38897/gallery/chateau_petit_freylon/</guid>
       <description>ラベルの高級感のとおり、ちょっと渋い。また飲んでもいい。</description>
     </item>
     <item>
       <title>ピノ・グリ（白） [&#39;20] ボートシェッド・ベイ</title>
-      <link>https://ryotaro.dev/gallery/2020_boatshed_bay_marlborugh_pinot_gris/</link>
+      <link>http://localhost:38897/gallery/2020_boatshed_bay_marlborugh_pinot_gris/</link>
       <pubDate>Sun, 28 Mar 2021 21:43:43 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/2020_boatshed_bay_marlborugh_pinot_gris/</guid>
+      <guid>http://localhost:38897/gallery/2020_boatshed_bay_marlborugh_pinot_gris/</guid>
       <description>炭酸入り。味をあまり覚えていない。嫌いじゃないけどまた飲みたいという感じじゃない。 多分、炭酸そんなに好きじゃないのかも。</description>
     </item>
     <item>
       <title>ベルフォンテーヌ Bellefontaine Pays d&#39;Oc Rouge</title>
-      <link>https://ryotaro.dev/gallery/bellefontaine_rouge/</link>
+      <link>http://localhost:38897/gallery/bellefontaine_rouge/</link>
       <pubDate>Fri, 19 Mar 2021 19:22:31 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/bellefontaine_rouge/</guid>
+      <guid>http://localhost:38897/gallery/bellefontaine_rouge/</guid>
       <description>かなり好き。果実味が強く、渋みのない味でLa Vieと似た感じ。La Vieが1300円くらいで、こっちは800円くらい。すごい。また飲みたい。</description>
     </item>
     <item>
       <title>エリソン マラン 2019</title>
-      <link>https://ryotaro.dev/gallery/herisson_malin/</link>
+      <link>http://localhost:38897/gallery/herisson_malin/</link>
       <pubDate>Sat, 13 Mar 2021 02:40:32 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/herisson_malin/</guid>
+      <guid>http://localhost:38897/gallery/herisson_malin/</guid>
       <description>シャルドネの辛口。樽香で変な香りをつけておらず、少し炭酸があって、辛口。のみやすくて好き。</description>
     </item>
     <item>
       <title>Coteaux du Pont du Gard Cuvee des Galets</title>
-      <link>https://ryotaro.dev/gallery/coteaux_du_pont_du_gard_cuvee_des_galets/</link>
+      <link>http://localhost:38897/gallery/coteaux_du_pont_du_gard_cuvee_des_galets/</link>
       <pubDate>Sun, 07 Mar 2021 13:04:28 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/coteaux_du_pont_du_gard_cuvee_des_galets/</guid>
+      <guid>http://localhost:38897/gallery/coteaux_du_pont_du_gard_cuvee_des_galets/</guid>
       <description>ラベルがかわいい。味はLa Vieに似てた。好き。</description>
     </item>
     <item>
       <title>La Vie その3</title>
-      <link>https://ryotaro.dev/gallery/lavie3/</link>
+      <link>http://localhost:38897/gallery/lavie3/</link>
       <pubDate>Sun, 07 Mar 2021 13:03:32 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/lavie3/</guid>
+      <guid>http://localhost:38897/gallery/lavie3/</guid>
       <description>おいしかったので、3回目。</description>
     </item>
     <item>
       <title>Feudo Arancio Inzolia</title>
-      <link>https://ryotaro.dev/gallery/feudo_arancio_inzolia/</link>
+      <link>http://localhost:38897/gallery/feudo_arancio_inzolia/</link>
       <pubDate>Sun, 28 Feb 2021 12:16:50 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/feudo_arancio_inzolia/</guid>
+      <guid>http://localhost:38897/gallery/feudo_arancio_inzolia/</guid>
       <description>辛口で変な香りのない素直な感じ。ラベルがいいよね。好き。</description>
     </item>
     <item>
       <title>La Vie その2</title>
-      <link>https://ryotaro.dev/gallery/la_vie2/</link>
+      <link>http://localhost:38897/gallery/la_vie2/</link>
       <pubDate>Sat, 20 Feb 2021 13:33:48 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/la_vie2/</guid>
+      <guid>http://localhost:38897/gallery/la_vie2/</guid>
       <description>おいしかったので、2回目。</description>
     </item>
     <item>
       <title>ヴィニウス・ヴィンヤーズ IGP ペイ・ドック・シャルドネ（白） [&#39;19] ジャン・クロード・マス　エステーツ＆ブランズ</title>
-      <link>https://ryotaro.dev/gallery/vinus/</link>
+      <link>http://localhost:38897/gallery/vinus/</link>
       <pubDate>Sat, 20 Feb 2021 13:33:43 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/vinus/</guid>
+      <guid>http://localhost:38897/gallery/vinus/</guid>
       <description>香りがついた感じ。たぶん香りのつけられたシャルドネあまりすきじゃない。</description>
     </item>
     <item>
       <title>IGP ドック・dA・メルロ[2017] ドメーヌ・アストラック</title>
-      <link>https://ryotaro.dev/gallery/d_a_merlot/</link>
+      <link>http://localhost:38897/gallery/d_a_merlot/</link>
       <pubDate>Sun, 14 Feb 2021 11:31:47 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/d_a_merlot/</guid>
+      <guid>http://localhost:38897/gallery/d_a_merlot/</guid>
       <description>前回飲んだものの赤の方。 最後に飲んだ赤がLa Vieの薄めの飲みやすいものだったけど、こっちは別に薄くない。 おいしい。</description>
     </item>
     <item>
       <title>IGP ドック・dA・シャルドネ（白）[2018] </title>
-      <link>https://ryotaro.dev/gallery/d_a_chardonnay/</link>
+      <link>http://localhost:38897/gallery/d_a_chardonnay/</link>
       <pubDate>Sun, 07 Feb 2021 13:33:13 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/d_a_chardonnay/</guid>
+      <guid>http://localhost:38897/gallery/d_a_chardonnay/</guid>
       <description>IGP ドック・dA・シャルドネ（白）[2018] ドメーヌ・アストラック。 前回飲んだ白のDARK HORSEがわざとらしく香りをつけていたのに対して、妙な自己主張のない自然な辛口の白。 こっちのほうが断然おいしい。自分は変に樽香をつけたシャルドネが苦手かもしれない。 これはまた買うつもり。</description>
     </item>
     <item>
       <title>La Vie PINOT NOIR 2018</title>
-      <link>https://ryotaro.dev/gallery/la_vie/</link>
+      <link>http://localhost:38897/gallery/la_vie/</link>
       <pubDate>Sun, 31 Jan 2021 00:58:40 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/la_vie/</guid>
+      <guid>http://localhost:38897/gallery/la_vie/</guid>
       <description>某所でおすすめされたワイン。香りがよく、飲みやすい。 1300円とは信じられないくらいおいしい。 明日3本くらい追加で買うつもり。</description>
     </item>
     <item>
       <title>DARK HORSE CHARDONNAY 2018</title>
-      <link>https://ryotaro.dev/gallery/darkhorse/</link>
+      <link>http://localhost:38897/gallery/darkhorse/</link>
       <pubDate>Tue, 26 Jan 2021 01:04:56 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/darkhorse/</guid>
+      <guid>http://localhost:38897/gallery/darkhorse/</guid>
       <description>アメリカのシャネルドネ。1本自宅近くのスーパーで買ったあとに、飲んでもないのに、Amazonでもう一本買った。 飲んだ瞬間、シャルドネらしからぬ強い香りがした。商品説明には濃いとあったが、ここまで強いと思っておらず、正直きついと感じた。たぶん二度と買わない。</description>
     </item>
     <item>
       <title>大砲ラーメン</title>
-      <link>https://ryotaro.dev/gallery/taihoh/</link>
+      <link>http://localhost:38897/gallery/taihoh/</link>
       <pubDate>Sun, 05 Jan 2020 13:25:04 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/taihoh/</guid>
+      <guid>http://localhost:38897/gallery/taihoh/</guid>
       <description>帰省して食べに行きました。 中高校生から食べに行っていました。 そのころは、ラーメン大が600円くらいだった記憶でしたが、帰省の度に高くなって今は800円くらいしました。 隔世の感があります。</description>
     </item>
   </channel>

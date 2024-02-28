@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>TCP on Blanket</title>
-    <link>https://ryotaro.dev/en/tags/tcp/</link>
+    <link>http://localhost:38897/en/tags/tcp/</link>
     <description>Recent content in TCP on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 09 Dec 2023 12:24:23 -0500</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/en/tags/tcp/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:38897/en/tags/tcp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Protocol for Packet Network Intercommunication (1974)</title>
-      <link>https://ryotaro.dev/en/posts/a_protocol_for_packet_network_intercommunication/</link>
+      <link>http://localhost:38897/en/posts/a_protocol_for_packet_network_intercommunication/</link>
       <pubDate>Sat, 09 Dec 2023 12:24:23 -0500</pubDate>
-      <guid>https://ryotaro.dev/en/posts/a_protocol_for_packet_network_intercommunication/</guid>
+      <guid>http://localhost:38897/en/posts/a_protocol_for_packet_network_intercommunication/</guid>
       <description>&lt;p&gt;Vinton Cerf and Robert Kahn presented a protocol that supports packet communication between hosts in different packet switching networks in &lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf&#34;&gt;A Protocol for Packet Network Intercommunication&lt;/a&gt;.&#xA;The protocol assumes that a Transmission Control Program (TCP) in a host handles the transmission and acceptance of messages on behalf of processes.&#xA;Later, the program was divided into the Transmission Control Protocol (TCP) and the Internet Protocol (IP).&#xA;At that time, several protocols that supported exchanging packets between computers were developed, but they assumed the computers were on the same network.&lt;/p&gt;</description>
     </item>
   </channel>

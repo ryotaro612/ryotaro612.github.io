@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Attention on Blanket</title>
-    <link>https://ryotaro.dev/tags/attention/</link>
+    <link>http://localhost:38897/tags/attention/</link>
     <description>Recent content in Attention on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 19 Aug 2023 10:02:50 -0400</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/attention/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:38897/tags/attention/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Self-Attention with Relative Position Representations(2018)</title>
-      <link>https://ryotaro.dev/posts/self_attention_with_relative_position_representations/</link>
+      <link>http://localhost:38897/posts/self_attention_with_relative_position_representations/</link>
       <pubDate>Sat, 19 Aug 2023 10:02:50 -0400</pubDate>
-      <guid>https://ryotaro.dev/posts/self_attention_with_relative_position_representations/</guid>
+      <guid>http://localhost:38897/posts/self_attention_with_relative_position_representations/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1803.02155.pdf&#34;&gt;Self-Attention with Relative Position Representations&lt;/a&gt;は、&lt;a href=&#34;https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;Transformer&lt;/a&gt;のQKV注意機構に系列の要素間の相対位置をあたえる手法である。&#xA;Transformerは、RNNやCNNとはちがい、要素の位置をモデルにあたえる決まった方法をもたない。&#xA;Transformerの原論文は、正弦関数で要素の位置からベクトルを計算し、それを埋め込みベクトルに加算することで、位置情報をエンコードする。&#xA;正弦関数を使う理由は、訓練データにない長さの系列に対する汎化性能を周期性で上げられると仮定したからである。&#xA;提案手法は、この仮定を継承し、要素間の相対位置で位置情報をエンコードすることで、訓練データにない系列長の入力に対する汎化性能の向上をはかる。&lt;/p&gt;</description>
     </item>
     <item>
       <title>NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE(2015)</title>
-      <link>https://ryotaro.dev/posts/neural_machine_translation_by_jointly_learning_to_align_and_translate/</link>
+      <link>http://localhost:38897/posts/neural_machine_translation_by_jointly_learning_to_align_and_translate/</link>
       <pubDate>Sat, 01 Feb 2020 17:21:41 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/neural_machine_translation_by_jointly_learning_to_align_and_translate/</guid>
+      <guid>http://localhost:38897/posts/neural_machine_translation_by_jointly_learning_to_align_and_translate/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;Decoderに注意機構を採用したencoder-decoderモデルを提案したICLR2015の論文である。&#xA;論文の発表当時、encoder-decoderモデルによる翻訳の多くは、encoderが入力文を固定長ベクトルに変換し、固定長ベクトルから翻訳された文を出力していた。&#xA;著者らは、固定長ベクトルへの変換が長い文の翻訳性能を下げていると考え、固定長ベクトルを注意機構におきかえたencoder-decoderモデルを提案した。&#xA;モデルは、翻訳に加え、生成する単語と入力文の箇所の関係を学習する。&#xA;推定時には、まず、次に生成する単語に関係する入力文の箇所を推定する。&#xA;次に、推定された箇所と生成済の単語列をもとに、単語を生成する。&#xA;特に長い文書の翻訳において、固定長ベクトルをつかうモデルよりも、提案手法が優れていることを実験的に示した。&lt;/p&gt;</description>
     </item>
   </channel>

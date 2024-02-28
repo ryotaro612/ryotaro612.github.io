@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=38897&amp;path=livereload" data-no-instant defer></script>
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,14 +17,14 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+<link rel="stylesheet" href="http://localhost:38897/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+<link rel="stylesheet" href="http://localhost:38897/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -46,14 +46,14 @@
     
         
     <header class="navigation">
-      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+      <h2><a href="http://localhost:38897/">Blanket</a></h2>
       <nav>
         <ul>
-          <li><a href="https://ryotaro.dev/about">About</a></li>
-          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
-          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+          <li><a href="http://localhost:38897/about">About</a></li>
+          <li><a href="http://localhost:38897/posts">Posts</a></li>
+          <li><a href="http://localhost:38897/tags">Tags</a></li>
 	  
-	  <li><a href="https://ryotaro.dev/en/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/">en</a></li>
+	  <li><a href="http://localhost:38897/en/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/">en</a></li>
 	  
         </ul>
       </nav>
@@ -64,7 +64,7 @@
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://ryotaro.dev/tags/transformer/">
+      <a href="http://localhost:38897/tags/transformer/">
 	#Transformer
       </a>
     </li>
@@ -81,7 +81,7 @@
 エンコーダーとデコーダーはどちらも、活性化関数をReLUのかわりに<a href="https://browse.arxiv.org/pdf/1606.08415.pdf">GeLU</a>をつかった6層のTransformerである。
 著者は、BARTを、Transformerのエンコーダ部をもちいたBERTとデコーダ部をもちいたGPTを組み合わせた一般的なモデルとして位置づけている。
 BERTと比べると、単語の予測前にある全結合層がなく、以下の図のようにデコーダー部の2つ目のQKV注意機構がエンコーダの出力を\(K, V\)につかうクロス注意機構になっている。
-<img src="/bart.png" alt="bart"></p>
+<img alt="bart" src="/bart.png"></p>
 <p>下流タスクが分類であれば、エンコーダとデコーダに同じ入力を与え、デコーダの出力を線形分類器に入力する。
 BARTには特別なトークンを文末につけた文を入力し、そのトークンに対応する最後のデコーダの状態を線形分類器に入力する。
 これは、BERTが文頭に<code>[CLS]</code>を付与し、<code>[CLS]</code>に対応する最終層の出力を使うことに相当する。</p>
@@ -124,7 +124,7 @@ BARTには特別なトークンを文末につけた文を入力し、そのト�
           </a>
         </li>
         
-        <li><a href="https://ryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        <li><a href="http://localhost:38897/index.xml"><i class="fas fa-rss"></i></a></li>
         
       </ul>
       <small>© Ryotaro. All Rights Reserved.</small>

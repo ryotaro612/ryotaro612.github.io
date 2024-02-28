@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=38897&amp;path=livereload" data-no-instant defer></script>
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,14 +17,14 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+<link rel="stylesheet" href="http://localhost:38897/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+<link rel="stylesheet" href="http://localhost:38897/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -46,12 +46,12 @@
     
         
     <header class="navigation">
-      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+      <h2><a href="http://localhost:38897/">Blanket</a></h2>
       <nav>
         <ul>
-          <li><a href="https://ryotaro.dev/about">About</a></li>
-          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
-          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+          <li><a href="http://localhost:38897/about">About</a></li>
+          <li><a href="http://localhost:38897/posts">Posts</a></li>
+          <li><a href="http://localhost:38897/tags">Tags</a></li>
 	  
         </ul>
       </nav>
@@ -82,7 +82,7 @@
 葉ページでは子ページのポインタは未定義になる。</li>
 </ul>
 <p>以下に性質をみたすページを図示する。
-<img src="/btree/page.png" alt="page"></p>
+<img alt="page" src="/btree/page.png"></p>
 <p>\(P(p_i)\)をポインタ\(p_i\)がさすページとし、\(K(p_i)\)を、\(P(p_i)\)をルートとする最大の部分木に含まれるキーの集合とする。
 このとき、B木は次の3つの性質をみたす。
 $$
@@ -93,7 +93,7 @@ $$
 \end{align}
 $$
 以下に、これらの性質をみたすB木を例示する。
-<img src="/btree/tree.png" alt="tree"></p>
+<img alt="tree" src="/btree/tree.png"></p>
 <p>キーを挿入するとき、挿入先のページ\(P\)が満杯であればページを分割する。
 はじめに、キーとポインタからなる次の配列をつくる。
 $$
@@ -114,7 +114,7 @@ $$
 これをくりかえし、分割がルートまで及ぶ場合、\(p\)と\((x_{k+1}, p&rsquo;)\)をふくむルートページ\(Q\)をつくる。
 \(p\)と\(p&rsquo;\)は、ページ\(P, P&rsquo;\)をさす。
 例えば、\(k=2\)とすると、以下のB木にキー9を挿入すると、上のB木になる。
-<img src="/btree/tree2.png" alt="tree2"></p>
+<img alt="tree2" src="/btree/tree2.png"></p>
 <p>キーを削除するとき、そのキーが葉になければ、単に削除するだけでなく、\(P(p_i)\)をルートページとする木の中の最小のキーと置きかえなければならない。
 この最小のキー\(x_1\)が存在するページを\(L\)とすると、\(x_1\)を消すことで\(L\)にあるキーの数が\(k\)より少くなりうる。
 その場合、ページ\(L\)をさすポインタと隣接するポインタによって参照される兄弟ページと\(L\)の間でcatenationまたはunderflowという操作をおこなう。</p>
@@ -162,7 +162,7 @@ $$
           </a>
         </li>
         
-        <li><a href="https://ryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        <li><a href="http://localhost:38897/index.xml"><i class="fas fa-rss"></i></a></li>
         
       </ul>
       <small>© Ryotaro. All Rights Reserved.</small>

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Conflict-free Replicated Data Types on Blanket</title>
-    <link>https://ryotaro.dev/en/tags/conflict-free-replicated-data-types/</link>
-    <description>Recent content in Conflict-free Replicated Data Types on Blanket</description>
+    <title>Conflict-Free Replicated Data Types on Blanket</title>
+    <link>http://localhost:38897/en/tags/conflict-free-replicated-data-types/</link>
+    <description>Recent content in Conflict-Free Replicated Data Types on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 31 Dec 2023 14:31:58 -0500</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/en/tags/conflict-free-replicated-data-types/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:38897/en/tags/conflict-free-replicated-data-types/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Conflict-free Replicated Data Types (2011)</title>
-      <link>https://ryotaro.dev/en/posts/conflict-free-replicated-data-types/</link>
+      <link>http://localhost:38897/en/posts/conflict-free-replicated-data-types/</link>
       <pubDate>Sun, 31 Dec 2023 14:31:58 -0500</pubDate>
-      <guid>https://ryotaro.dev/en/posts/conflict-free-replicated-data-types/</guid>
+      <guid>http://localhost:38897/en/posts/conflict-free-replicated-data-types/</guid>
       <description>In a distributed system with replicated objects distributed across processes interconnected by an asynchronous network, updating a replica without synchronization can lead to conflicts when the update is sent to other replicas. Conflict-free Replicated Data Types (CRDTs) are data structures whose states form a join semilattice and monotonically non-decreasing across updates. The replicas of CRDTs that have delivered the same updates eventually reach the same state if clents stop submitting updates.</description>
     </item>
   </channel>

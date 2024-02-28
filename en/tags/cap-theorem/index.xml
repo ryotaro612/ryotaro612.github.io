@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CAP theorem on Blanket</title>
-    <link>https://ryotaro.dev/en/tags/cap-theorem/</link>
-    <description>Recent content in CAP theorem on Blanket</description>
+    <title>CAP Theorem on Blanket</title>
+    <link>http://localhost:38897/en/tags/cap-theorem/</link>
+    <description>Recent content in CAP Theorem on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 23 Dec 2023 11:47:05 -0500</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/en/tags/cap-theorem/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:38897/en/tags/cap-theorem/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CAP Twelve Years Later: How the &#34;Rules&#34; Have Changed (2012)</title>
-      <link>https://ryotaro.dev/en/posts/cap-twelve-years-later-how-the-rules-have-changed/</link>
+      <link>http://localhost:38897/en/posts/cap-twelve-years-later-how-the-rules-have-changed/</link>
       <pubDate>Sat, 23 Dec 2023 11:47:05 -0500</pubDate>
-      <guid>https://ryotaro.dev/en/posts/cap-twelve-years-later-how-the-rules-have-changed/</guid>
+      <guid>http://localhost:38897/en/posts/cap-twelve-years-later-how-the-rules-have-changed/</guid>
       <description>The CAP theorem, coined by Eric Brewer, states that in a shared-data system, you can have either Consistency (C), Availability (A), or Parition tolerance (P), but not all three simultaneously. However, Martin Kleppmann challenges the CAP theorem and discusses its limitations in Designing Data-Intensive Applications, and A Critique of the CAP Theorem. In CAP Twelve Years Later: How the “Rules” Have Changed, Brewer clarifies that the notion of &amp;ldquo;2 of 3&amp;rdquo; is misleading.</description>
     </item>
   </channel>

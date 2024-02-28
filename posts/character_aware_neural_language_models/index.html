@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=38897&amp;path=livereload" data-no-instant defer></script>
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,14 +17,14 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+<link rel="stylesheet" href="http://localhost:38897/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+<link rel="stylesheet" href="http://localhost:38897/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -46,12 +46,12 @@
     
         
     <header class="navigation">
-      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+      <h2><a href="http://localhost:38897/">Blanket</a></h2>
       <nav>
         <ul>
-          <li><a href="https://ryotaro.dev/about">About</a></li>
-          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
-          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+          <li><a href="http://localhost:38897/about">About</a></li>
+          <li><a href="http://localhost:38897/posts">Posts</a></li>
+          <li><a href="http://localhost:38897/tags">Tags</a></li>
 	  
         </ul>
       </nav>
@@ -73,7 +73,7 @@
 <p>モデルは、文字列を単位とする入力をうけつける。
 モデルのアーキテクチャを図に示す。
 入力に近い層から順にCNN, highway network, LSTMの順に説明していく。
-<img src="/character_aware_neural_language_models.png" alt="img"></p>
+<img alt="img" src="/character_aware_neural_language_models.png"></p>
 <h4 id="cnn">CNN</h4>
 <p>\(d\)を文字の分散表現の次元として、長さ\(l\)の単語\(k\)は\({\rm C}^{d\times l}\in \mathbb{R}^{d \times l}\)の分散表現としてモデルに入力される。
 入力された分散表現に幅\(w\)のフィルタ\(\boldsymbol{\rm H}\in \mathbb{R}^{d \times w}\)を適用しnarrow conlovutionによって、特徴マップ\(\boldsymbol{\rm f}^k\in \mathbb{R}^{l-w+1}\)を求める。
@@ -127,7 +127,7 @@ NLL = - \sum_{t=1}^T \log \text{Pr}(w_t\mid w_{1:t-1})
 $$</p>
 <h3 id="備考">備考</h3>
 <p>提案された言語モデルは、<a href="https://arxiv.org/abs/1802.05365">ELMo</a>で応用された。
-以前、<a href="./deep_contextualized_word_representations/">こちら</a>にELMoの内容をまとめた。</p>
+以前、<a href="/posts/deep_contextualized_word_representations/">こちら</a>にELMoの内容をまとめた。</p>
 <h3 id="感想">感想</h3>
 <p>初学者が勉強のために読むにはいい論文だと思った。
 LSTM, CNN, 階層的ソフトマックス, Perplexityなどの広く応用されている手法を多く導入しているだけでなく、数式を含めた説明が十分にある。</p>
@@ -174,7 +174,7 @@ LSTM, CNN, 階層的ソフトマックス, Perplexityなどの広く応用され
           </a>
         </li>
         
-        <li><a href="https://ryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        <li><a href="http://localhost:38897/index.xml"><i class="fas fa-rss"></i></a></li>
         
       </ul>
       <small>© Ryotaro. All Rights Reserved.</small>

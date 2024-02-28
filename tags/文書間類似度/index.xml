@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>文書間類似度 on Blanket</title>
-    <link>https://ryotaro.dev/tags/%E6%96%87%E6%9B%B8%E9%96%93%E9%A1%9E%E4%BC%BC%E5%BA%A6/</link>
+    <link>http://localhost:38897/tags/%E6%96%87%E6%9B%B8%E9%96%93%E9%A1%9E%E4%BC%BC%E5%BA%A6/</link>
     <description>Recent content in 文書間類似度 on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Tue, 13 Dec 2022 13:38:46 -0500</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/%E6%96%87%E6%9B%B8%E9%96%93%E9%A1%9E%E4%BC%BC%E5%BA%A6/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:38897/tags/%E6%96%87%E6%9B%B8%E9%96%93%E9%A1%9E%E4%BC%BC%E5%BA%A6/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>抄訳 Syntactic Clustering of the Web(1997)</title>
-      <link>https://ryotaro.dev/posts/syntactic_clustering_of_the_web/</link>
+      <link>http://localhost:38897/posts/syntactic_clustering_of_the_web/</link>
       <pubDate>Tue, 13 Dec 2022 13:38:46 -0500</pubDate>
-      <guid>https://ryotaro.dev/posts/syntactic_clustering_of_the_web/</guid>
+      <guid>http://localhost:38897/posts/syntactic_clustering_of_the_web/</guid>
       <description>&lt;p&gt;2つのWeb文書から抽出したn-gramの集合を比較し、文書の包含関係と類似度を測定する。&#xA;はじめに、大文字をすべて小文字にしたり、htmlタグを除外したりして文書に前処理をかける。&#xA;次に文書\(A\)からnグラムの集合\(S(A)\)を抽出する。&#xA;このとき、文書\(A\)と\(B\)間の類似度を\(|S(A)\cap S(B)|/|S(A) \cup S(B)|\)、\(A\)の\(B\)への包含の度合いを\(|S(A) \cap S(B)|/|S(A)|\)と定義する。&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>競技プログラミング on Blanket</title>
-    <link>https://ryotaro.dev/tags/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/</link>
+    <link>http://localhost:38897/tags/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/</link>
     <description>Recent content in 競技プログラミング on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Wed, 15 Mar 2023 11:04:07 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:38897/tags/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AtCoder Regular Contest 049 B - 高橋ノルム君</title>
-      <link>https://ryotaro.dev/posts/arc049b/</link>
+      <link>http://localhost:38897/posts/arc049b/</link>
       <pubDate>Wed, 15 Mar 2023 11:04:07 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/arc049b/</guid>
+      <guid>http://localhost:38897/posts/arc049b/</guid>
       <description>&lt;p&gt;XとYは互いに干渉しないので、独立してX, Yを考えることができる。&#xA;\(x_i, x_{i+1}\)の間に最適な\(X\)があるとすると、\(X\)の位置を\(x_i, x_{i+1}\)を境界として三分探索で求めることができる。&#xA;これをすべての\(i\)について試行すればいい。&lt;/p&gt;</description>
     </item>
   </channel>

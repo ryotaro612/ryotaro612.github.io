@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=38897&amp;path=livereload" data-no-instant defer></script>
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,14 +17,14 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+<link rel="stylesheet" href="http://localhost:38897/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+<link rel="stylesheet" href="http://localhost:38897/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -46,12 +46,12 @@
     
         
     <header class="navigation">
-      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+      <h2><a href="http://localhost:38897/">Blanket</a></h2>
       <nav>
         <ul>
-          <li><a href="https://ryotaro.dev/about">About</a></li>
-          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
-          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+          <li><a href="http://localhost:38897/about">About</a></li>
+          <li><a href="http://localhost:38897/posts">Posts</a></li>
+          <li><a href="http://localhost:38897/tags">Tags</a></li>
 	  
         </ul>
       </nav>
@@ -72,10 +72,10 @@ UB木は、B木をベースにしたインデックスで、B木のキーの生�
 <p>UB木は、Z階数曲線で多次元空間を1次元に写像する。
 以下の図は、2次元空間を1次元に写像した様子をあらわす。
 (b)のマスには(a)の曲線にそったアドレスがあり、写像後も局所的な位置関係が一定保存されている。
-<img src="/ubtree/z-addresses.png" alt="z-addresses"></p>
+<img alt="z-addresses" src="/ubtree/z-addresses.png"></p>
 <p>UB木は、レコードであるタプルの値からキー(Z-value)を生成する。
 以下のアルゴリズムからなるUBKEYは、Z階数曲線の写像関数であり、キーを生成する。
-<img src="/ubtree/ubkey.png" alt="z-addresses">
+<img alt="z-addresses" src="/ubtree/ubkey.png">
 はじめに、タプルの\(d\)個の要素を\(\texttt{TransformAttribute}\)でビット列に変換する。
 変換後も要素の順序関係は保存される。
 タプルの要素を\(a\), \(\textit{bitstr}: A \rightarrow\{b\mid b\in[0,1]^{*}\} \)とすると
@@ -85,18 +85,18 @@ $$
 が成立する。
 ビット列の先頭は\(0\)で埋められ、連続する末尾の\(0\)はデータサイズを抑えるために省かれる。
 下方の2重のfor文は下図のように各ビット列の先頭から順にビットを選び、キーの末尾にビットをたす。
-<img src="/ubtree/z-value.png" alt="z-value"></p>
+<img alt="z-value" src="/ubtree/z-value.png"></p>
 <p>ページ分割とUBKEYによるキーの生成を除けば、挿入、更新、削除のアルゴリズムは、B木と変わらない。
 UB木は、範囲クエリと重なる図のZで示されるクラスタの数を減らすために、できるだけクラスタが収まるようにページを分割する。
 これを満たすには、分割するページの中で最も短いキー、すなはち末尾の0が最も長いキーを境界として分割するとよい。</p>
 <p>タプル\(\textit{ql},\textit{qh}\)で範囲を指定したクエリがあたえられると、\(\textit{ql}\)から\(\textit{ql}\)を含むページの末尾までにある目的のタプルを探す。
 これは、以下のアルゴリズムのwhile文の最初の処理にあたる。
-<img src="/ubtree/rq_algo.png" alt="q">
+<img alt="q" src="/ubtree/rq_algo.png">
 \(\texttt{getNextZvalue}\)は、ページの走行を追えたカーソルが次に進むべきキー\(\)を返す。
 ページの末尾が下図の点線で囲まれた範囲クエリ内であれば、隣接するページに移動し、先頭から末尾までを調べる。
-<img src="/ubtree/q.png" alt="q">
+<img alt="q" src="/ubtree/q.png">
 他方、下図のようにページ末尾が範囲クエリの枠外に出たのならば、下図のように、連続するベージを飛び越え、範囲クエリの境界を含むページにカーソルを移動し、検索を続ける。
-<img src="/ubtree/q2.png" alt="q2"></p>
+<img alt="q2" src="/ubtree/q2.png"></p>
 <p>論文を<a href="http://www.vldb.org/conf/2000/P263.pdf">こちら</a>からダウンロードできます。
 画像は論文から引用されています。</p>
   </div>
@@ -137,7 +137,7 @@ UB木は、範囲クエリと重なる図のZで示されるクラスタの数�
           </a>
         </li>
         
-        <li><a href="https://ryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        <li><a href="http://localhost:38897/index.xml"><i class="fas fa-rss"></i></a></li>
         
       </ul>
       <small>© Ryotaro. All Rights Reserved.</small>

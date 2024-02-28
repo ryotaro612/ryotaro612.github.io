@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=38897&amp;path=livereload" data-no-instant defer></script>
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,14 +17,14 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+<link rel="stylesheet" href="http://localhost:38897/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+<link rel="stylesheet" href="http://localhost:38897/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -46,12 +46,12 @@
     
         
     <header class="navigation">
-      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+      <h2><a href="http://localhost:38897/">Blanket</a></h2>
       <nav>
         <ul>
-          <li><a href="https://ryotaro.dev/about">About</a></li>
-          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
-          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+          <li><a href="http://localhost:38897/about">About</a></li>
+          <li><a href="http://localhost:38897/posts">Posts</a></li>
+          <li><a href="http://localhost:38897/tags">Tags</a></li>
 	  
         </ul>
       </nav>
@@ -62,8 +62,8 @@
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://ryotaro.dev/tags/empirical-research/">
-	#Empirical research
+      <a href="http://localhost:38897/tags/empirical-research/">
+	#Empirical Research
       </a>
     </li>
     
@@ -77,13 +77,13 @@
 <p>調査方法は雪だるま式標本法による開発者へのアンケートであり、質問内容は14名の管理職のエンジニアへのヒアリングに基づいて設計された。質問形式は、リッカート法であり、4195名に配布された後、551名のエンジニアが質問に回答した。</p>
 <p>ステージに分解した開発のスコープは、機械学習で実装する要件を決める要件定義の段階から、本番環境での予測性能の監視である運用段階にまでおよぶ。
 次の図は、開発段階を9のステージに分割した様子を表す。
-<img src="/software_engineering_for_machine_learning/9stages.png" alt="9stages">
+<img alt="9stages" src="/software_engineering_for_machine_learning/9stages.png">
 細い矢印は前のステージに戻る可能性があることを示し、太い矢印は以前のどんなステージにも戻ることがある可能性があることを意味する。</p>
 <p>ベストプラクティスの内容は多岐にわたり、End-to-endのパイプラインの構築をはじめとして全部で7つの観点について考えられている。その中で最も詳細に分析されていた観点は、機械学習の経験の長さ次第で困難と考える領域が変わることを指摘したものである。以下の図は、機械学習の経験の長さによってエンジニアを長い順にHigh, Midum, Lowの集団に分け、各集団が機械学習のどの領域に困難を抱えているかを示す。
 Rankは、どの課題に感じる領域のランキングを示し、1は集団が最も困難に感じていることを示す。
 図より、経験の長さによらずデータの収集・クレンジング・管理を最も課題に感じていることが読みとれる。
 他方、経験を重ねるにつれ、AI Tools, Scale, Model Evolution, Evaluation, and Deploymentに対する関心が集めることもわかる。
-<img src="/software_engineering_for_machine_learning/table2.png" alt="table2"></p>
+<img alt="table2" src="/software_engineering_for_machine_learning/table2.png"></p>
 <p>機械学習を応用するアプリケーションの開発に固有の課題として、データの収集・処理・版管理の扱いが難しいこと、モデルを開発するにはソフトウェアエンジニアリング以外の知識が必要になること、機械学習関連のコンポーネントは密結合になりやすいことが列挙されている。</p>
 <h3 id="感想">感想</h3>
 <p>論文ではCMMやSix Sigmaを参照して機械学習開発プロセスの成熟度を評価するメトリクスを提案していた。論文中でも今後の展望の扱いになっていたように、そのメトリクス自体が本当に開発プロセスを評価するものとして妥当なのか、なぜCMMやSix Sigmaを参照したかなどの考察が薄かったように感じる。
@@ -131,7 +131,7 @@ Rankは、どの課題に感じる領域のランキングを示し、1は集団
           </a>
         </li>
         
-        <li><a href="https://ryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        <li><a href="http://localhost:38897/index.xml"><i class="fas fa-rss"></i></a></li>
         
       </ul>
       <small>© Ryotaro. All Rights Reserved.</small>

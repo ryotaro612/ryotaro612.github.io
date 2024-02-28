@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=38897&amp;path=livereload" data-no-instant defer></script>
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,14 +17,14 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+<link rel="stylesheet" href="http://localhost:38897/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+<link rel="stylesheet" href="http://localhost:38897/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -46,12 +46,12 @@
     
         
     <header class="navigation">
-      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+      <h2><a href="http://localhost:38897/">Blanket</a></h2>
       <nav>
         <ul>
-          <li><a href="https://ryotaro.dev/about">About</a></li>
-          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
-          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+          <li><a href="http://localhost:38897/about">About</a></li>
+          <li><a href="http://localhost:38897/posts">Posts</a></li>
+          <li><a href="http://localhost:38897/tags">Tags</a></li>
 	  
         </ul>
       </nav>
@@ -73,7 +73,7 @@
 <h3 id="アーキテクチャ">アーキテクチャ</h3>
 <p>seq2seqを使う点は同じであるものの、ミニバッチごとの言語の入れ換え方や、一度に入力する言語の数の違いによって、複数のパターンがある。
 パターンの違いを以下に図示する。
-<img src="/learning_joint_multilingual_sentence_representations_with_nmt/patterns.png" alt="fig"></p>
+<img alt="fig" src="/learning_joint_multilingual_sentence_representations_with_nmt/patterns.png"></p>
 <p>入力と出力の数によって、大きく1:1, M:1, 1:N, M:Nの4パターンに分かれる。
 1:1では、ミニバッチごとに入力と出力の言語のペアをいれかえる。
 M:1では、複数の言語の文をencoderに入力し、平均などで、その各言語の出力から計算した値をdecoderに入力し、1種類の言語の文への変換を試みる。
@@ -83,7 +83,7 @@ N:Mは、以上3つを組み合わせたものである。</p>
 <p>encoderとdecoderにLSTMをもちいたseq2seqをもちい、学習に適したパターンやLSTMを評価した。
 評価指標には、著者らが提案したものを使用した。
 これは、同じ意味で言語の異なる文における分散表現間の距離の近さで、性能を評価する。
-<img src="/learning_joint_multilingual_sentence_representations_with_nmt/algorithm.png" alt="fig">
+<img alt="fig" src="/learning_joint_multilingual_sentence_representations_with_nmt/algorithm.png">
 実験では、<a href="https://conferences.unite.un.org/uncorpus/">UN Corpus</a>をもちいて、英語、フランス語、スペイン語、ロシア語、アラビア語、中国語での性能を評価した。
 隠れ層のサイズが512次元の双方向のLSTMと、その後の層にmax-pool層を採用した1:Nパターンが最も良い結果となり、上のアルゴリズムでのエラー値は1.20%であった。</p>
 <hr>
@@ -129,7 +129,7 @@ N:Mは、以上3つを組み合わせたものである。</p>
           </a>
         </li>
         
-        <li><a href="https://ryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        <li><a href="http://localhost:38897/index.xml"><i class="fas fa-rss"></i></a></li>
         
       </ul>
       <small>© Ryotaro. All Rights Reserved.</small>

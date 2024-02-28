@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CAP定理 on Blanket</title>
-    <link>https://ryotaro.dev/tags/cap%E5%AE%9A%E7%90%86/</link>
+    <link>http://localhost:38897/tags/cap%E5%AE%9A%E7%90%86/</link>
     <description>Recent content in CAP定理 on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 23 Dec 2023 11:47:05 -0500</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/cap%E5%AE%9A%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:38897/tags/cap%E5%AE%9A%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CAP Twelve Years Later: How the &#34;Rules&#34; Have Changed (2012)</title>
-      <link>https://ryotaro.dev/posts/cap-twelve-years-later-how-the-rules-have-changed/</link>
+      <link>http://localhost:38897/posts/cap-twelve-years-later-how-the-rules-have-changed/</link>
       <pubDate>Sat, 23 Dec 2023 11:47:05 -0500</pubDate>
-      <guid>https://ryotaro.dev/posts/cap-twelve-years-later-how-the-rules-have-changed/</guid>
+      <guid>http://localhost:38897/posts/cap-twelve-years-later-how-the-rules-have-changed/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf&#34;&gt;CAP定理&lt;/a&gt;は、データベースが一貫性 (Consistency), 可用性 (Availability), 分断耐性 (Partition Tolerance) から2つしか選択できない定理として知られる。&#xA;この定理は、Martin Kleppmannによって、その著書&lt;a href=&#34;https://dataintensive.net/&#34;&gt;Designing Data-Intensive Applications&lt;/a&gt;や&lt;a href=&#34;https://www.cl.cam.ac.uk/research/dtg/archived/files/publications/public/mk428/cap-critique.pdf&#34;&gt;A Critique of the CAP Theorem&lt;/a&gt; で批判されている。&#xA;CAP定理をなづけたBrewerは、&lt;a href=&#34;https://sites.cs.ucsb.edu/~rich/class/cs293b-cloud/papers/brewer-cap.pdf&#34;&gt;CAP Twelve Years Later: How the “Rules” Have Changed&lt;/a&gt;で、2つを選択するという表現は誤解をまねく表現であると認め、現実的にはデータベースはネットワークの分断時に一貫性と可用性のトレードオフにさまられると主張した。&#xA;CAP定理の発表された12年後の今日では、分断時における一貫性と可用性の最適化に、各ノードの操作履歴を記録するversion verctorsや&lt;a href=&#34;https://arxiv.org/pdf/1805.06358.pdf&#34;&gt;Commutative Replicated Data Types (CRDTs)&lt;/a&gt; を利用できる。&lt;/p&gt;</description>
     </item>
   </channel>

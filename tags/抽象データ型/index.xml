@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>抽象データ型 on Blanket</title>
-    <link>https://ryotaro.dev/tags/%E6%8A%BD%E8%B1%A1%E3%83%87%E3%83%BC%E3%82%BF%E5%9E%8B/</link>
+    <link>http://localhost:38897/tags/%E6%8A%BD%E8%B1%A1%E3%83%87%E3%83%BC%E3%82%BF%E5%9E%8B/</link>
     <description>Recent content in 抽象データ型 on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Wed, 28 Dec 2022 12:52:36 -0500</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/%E6%8A%BD%E8%B1%A1%E3%83%87%E3%83%BC%E3%82%BF%E5%9E%8B/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:38897/tags/%E6%8A%BD%E8%B1%A1%E3%83%87%E3%83%BC%E3%82%BF%E5%9E%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>抄訳 PROGRAMMING WITH ABSTRACT DATA TYPES (1974)</title>
-      <link>https://ryotaro.dev/posts/programming_with_abstract_data_types/</link>
+      <link>http://localhost:38897/posts/programming_with_abstract_data_types/</link>
       <pubDate>Wed, 28 Dec 2022 12:52:36 -0500</pubDate>
-      <guid>https://ryotaro.dev/posts/programming_with_abstract_data_types/</guid>
+      <guid>http://localhost:38897/posts/programming_with_abstract_data_types/</guid>
       <description>&lt;p&gt;高水準言語は、実装の詳細を意識せずに使える操作、データ構造、while文などの制御構造を提供する。&#xA;この3つを抽象とよぶ。&#xA;プログラミング言語から提供される抽象だけではプログラムを実装できないので、開発者は、足りない抽象を実装しなければならない。&#xA;抽象データ型は、言語から提供される抽象を組合せて作るデータ構造である。&#xA;抽象データ型に対する操作の実装は外部に公開されず、抽象データ型の特徴は抽象データ型に可能な操作によって決まる。&#xA;構造化プログラミングと抽象データ型を提供するプログラミング言語を開発し、抽象データ型を使うプログラムのソースコードを例示することで、ほとんどの処理が抽象データ型だけで実装可能なことを示唆した。&lt;/p&gt;</description>
     </item>
   </channel>

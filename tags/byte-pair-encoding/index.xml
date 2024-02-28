@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Byte Pair Encoding on Blanket</title>
-    <link>https://ryotaro.dev/tags/byte-pair-encoding/</link>
+    <link>http://localhost:38897/tags/byte-pair-encoding/</link>
     <description>Recent content in Byte Pair Encoding on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 27 Aug 2023 13:13:39 -0400</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/byte-pair-encoding/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:38897/tags/byte-pair-encoding/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>RoBERTa: A Robustly Optimized BERT Pretraining Approach(2019)</title>
-      <link>https://ryotaro.dev/posts/roberta/</link>
+      <link>http://localhost:38897/posts/roberta/</link>
       <pubDate>Sun, 27 Aug 2023 13:13:39 -0400</pubDate>
-      <guid>https://ryotaro.dev/posts/roberta/</guid>
+      <guid>http://localhost:38897/posts/roberta/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1907.11692.pdf&#34;&gt;RoBERTa&lt;/a&gt;は、&lt;a href=&#34;https://arxiv.org/pdf/1810.04805.pdf&#34;&gt;BERT&lt;/a&gt;のアーキテクチャを変えずに、事前学習の改善によって性能を向上をはかる。&#xA;BERTの事前学習がMasked Language ModelとNext Sentence Predictionの2タスクでパラメータを更新する一方で、RoBERTaはMasked Language Modelのみを採用する。&#xA;また、Byte Pair Encodingのサブワードの単位を文字からバイトに変更し、語彙集合数を50,000にまで増加した。&#xA;ミニバッチのサイズもまたBERTより大きい。&lt;/p&gt;</description>
     </item>
   </channel>

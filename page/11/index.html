@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.121.2">
+	<meta name="generator" content="Hugo 0.123.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=38897&amp;path=livereload" data-no-instant defer></script>
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -18,12 +18,12 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
+<link rel="stylesheet" href="http://localhost:38897/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -45,14 +45,14 @@
     
         
     <header class="navigation">
-      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+      <h2><a href="http://localhost:38897/">Blanket</a></h2>
       <nav>
         <ul>
-          <li><a href="https://ryotaro.dev/about">About</a></li>
-          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
-          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+          <li><a href="http://localhost:38897/about">About</a></li>
+          <li><a href="http://localhost:38897/posts">Posts</a></li>
+          <li><a href="http://localhost:38897/tags">Tags</a></li>
 	  
-	  <li><a href="https://ryotaro.dev/en/">en</a></li>
+	  <li><a href="http://localhost:38897/en/">en</a></li>
 	  
         </ul>
       </nav>
@@ -63,7 +63,54 @@
     
     
     <article>
-        <h3><a href="https://ryotaro.dev/posts/regularization_paths_for_generalized_liner_models_via_coordinate_descent/">Regularization Paths for Generalized Linear Models via Coordinate Descent</a></h3>
+        <h3><a href="http://localhost:38897/posts/classifier_chains_for_multi-label_classification/">Classifier Chains for Multi-label Classification</a></h3>
+        <div class="summary"><p>scikit-learnの<a href="https://scikit-learn.org/stable/modules/generated/sklearn.multioutput.ClassifierChain.html?highlight=chain#sklearn-multioutput-classifierchain">Classifier Chain</a>で実装されたClassifier Chainsは、ラベルの相関関係を特徴につかうマルチラベル分類のモデルで、相関関係をもちいる既存手法よりも計算量がすくない。
+より細かくみれば、Classifier Chainsは、Classifier Chain Model(CC)とCCのアンサンブル学習であるEnsembles of Classifier Chains(ECC)の2つにわかれる。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">March 22, 2022</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="http://localhost:38897/posts/effective_multi-label_active_learning_for_text_classification/">Effective Multi-Label Active Learning for Text Classification</a></h3>
+        <div class="summary"><p>SVMをつかったマルチラベル文書分類のための能動学習である。
+ラベルをつければモデルの損失を最も小さくできるデータをさがす。
+ラベルつきデータでSVMを学習し、さらに、その識別関数の値を特徴としてラベルの数を予測するロジスティック回帰を学習する。
+ラベルのないデータを両モデルに入力し、ロジスティック回帰が予測するラベルの数だけ、識別関数の値の高い順にラベルを選び、そのデータのマルチラベルとみなす。
+このとき、その推定したマルチラベルと識別関数の値がほど、損失関数を最も小さくできるデータとみなす。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">March 12, 2022</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="http://localhost:38897/posts/pegasos/">Pegasos: Primal Estimated sub-GrAdient SOlver for SVM</a></h3>
+        <div class="summary"><p>Pegasosは、SVMの学習のための反復的なアルゴリズムであり、2022年3月現在、scikit-learnの<a href="https://scikit-learn.org/stable/modules/sgd.html#implementation-details">SGDClassifier</a>で学習率を更新に採用されている。
+Pegasosは、目的関数の最小値の近似値をもとめる。
+求める最小値との誤差を\(\epsilon\), SVMの正則化パラメタを\(\lambda\), 各サンプルの説明変数の0でない要素数の上限を\(d\)とすると、線形カーネルをつかうSVMの時間計算量は、\(\tilde{O}(d/\lambda \epsilon)\)になる。
+訓練データの数が計算量に影響しないので、教師データの数に対してスケールする。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">March 12, 2022</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="http://localhost:38897/posts/an_interior_point_method_for_large_scale_l1_regularized_least_squares/">An Interior-Point Method for Large-Scale L1-Regularized Least Squares</a></h3>
+        <div class="summary"><p>前処理付共役勾配法により、スパースな説明変数をもつリッジ回帰の学習を高速化する。
+リッジ回帰の目的関数は、凸関数だが微分可能ではない。
+また、リッジ回帰の係数はスパースになりやすい。
+そこで、目的関数を最小化する係数の探索を、線形不等式制約つきの凸二次計画問題とらえ、前処理付共役勾配法をつかった内点法で係数の更新方向を探索する。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">March 5, 2022</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="http://localhost:38897/posts/regularization_paths_for_generalized_liner_models_via_coordinate_descent/">Regularization Paths for Generalized Linear Models via Coordinate Descent</a></h3>
         <div class="summary"><p>ラッソ、リッジ、またはその両方をくみあわせるelastictnetを正則化項とする一般化線形モデルの学習を高速化した座標降下法である。
 座標降下法を単純に実装すると、スパースで次元数の多い特徴だと学習に時間がかかる。
 表題の手法は、その単純なパラメタの更新式の一部を、説明変数の内積におきかえ、学習データの数や次元数に対して学習時間を短縮する。</p></div>
@@ -74,7 +121,7 @@
     </article>
     
     <article>
-        <h3><a href="https://ryotaro.dev/posts/using_tfidf_to_determine_word_relevance_in_document_queries/">Using TF-IDF to Determine Word Relevance in Document Queries(2003)</a></h3>
+        <h3><a href="http://localhost:38897/posts/using_tfidf_to_determine_word_relevance_in_document_queries/">Using TF-IDF to Determine Word Relevance in Document Queries(2003)</a></h3>
         <div class="summary"><p>自然言語による文書検索で、TF-IDFをベースラインにつかう利点と欠点を調べた。
 クエリにある各単語のTF-IDF値の総和が最大の文書を最も関連する文書とみなす。
 実験では、TFのみで検索する手法よりも予測性能がよかったが、類義語同士の同一判定をできない問題があった。</p></div>
@@ -85,7 +132,7 @@
     </article>
     
     <article>
-        <h3><a href="https://ryotaro.dev/posts/an_algorithm_for_suffix_stripping/">An algorithm for suffix stripping (1980)</a></h3>
+        <h3><a href="http://localhost:38897/posts/an_algorithm_for_suffix_stripping/">An algorithm for suffix stripping (1980)</a></h3>
         <div class="summary"><p>Poterのステミングで知られる。
 アルゴリズムが単純で、辞書を必要としないところに特徴がある。
 規則にしたがって単語の接尾辞を段階的に変換し、変換後の文字列を語幹とみなす。</p></div>
@@ -96,7 +143,7 @@
     </article>
     
     <article>
-        <h3><a href="https://ryotaro.dev/posts/bringing_gnu_emacs_to_native_code/">Bringing GNU Emacs to Native Code</a></h3>
+        <h3><a href="http://localhost:38897/posts/bringing_gnu_emacs_to_native_code/">Bringing GNU Emacs to Native Code</a></h3>
         <div class="summary"><p>Emacs 28から利用できる<a href="https://gcc.gnu.org/onlinedocs/jit/">libgccjit</a>によるネイティブコンパイルの解説である。
 パッケージアーカイブELPAにあるelisp-benchmarksによる比較ではバイトコンパイルよりも2.3倍から42倍の高速化を実現した。
 ネイティブコンパイル時は、はじめに、Emacs Lispのコードをバイトコンパイラで、Emacs VM(Lisp Assembly Program, LAP)の中間表現に変換する。
@@ -110,7 +157,7 @@ LIMPLEは、GCCの中間表現GIMPLEに由来し、ネイティブコンパイ�
     </article>
     
     <article>
-        <h3><a href="https://ryotaro.dev/posts/data_structure_for_text_sequence/">Data Structure for Text Sequences</a></h3>
+        <h3><a href="http://localhost:38897/posts/data_structure_for_text_sequence/">Data Structure for Text Sequences</a></h3>
         <div class="summary"><p>テキストエディタのためのデータ構造として、array, gap, list, line pointers, fixed size buffers, piece tablesを評価する。
 とくに、Piece tablesを評価し詳しく解説する。
 Piece tableはテキストを2つのバッファに記録する。
@@ -125,7 +172,7 @@ Piece tableはテキストを2つのバッファに記録する。
     </article>
     
     <article>
-        <h3><a href="https://ryotaro.dev/posts/semi_supervised_classification_with_graph_convolutional_networks/">SEMI-SUPERVISED CLASSIFICATION WITH GRAPH CONVOLUTIONAL NETWORKS</a></h3>
+        <h3><a href="http://localhost:38897/posts/semi_supervised_classification_with_graph_convolutional_networks/">SEMI-SUPERVISED CLASSIFICATION WITH GRAPH CONVOLUTIONAL NETWORKS</a></h3>
         <div class="summary"><p>文書の特徴を点、引用などの文書間の関係を辺であらわすグラフ構造に畳込みニューラルネットワークを適用する。
 半教師あり学習であり、ラベルのない文書は近くにある文書とおなじラベルになると仮定する。
 <a href="https://mlg.eng.cam.ac.uk/zoubin/papers/zgl.pdf">Zhu et al.</a>の先行研究は、辺の情報をネットワークにあたず、文書の特徴のみを入力する。
@@ -134,54 +181,6 @@ Piece tableはテキストを2つのバッファに記録する。
         <div class="article-footer">
 	  
           <span class="date">January 21, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/dynamic_routing_between_capsules/">Dynamic Routing Between Capsules (2017)</a></h3>
-        <div class="summary"><p>カプセルはおなじ層にあるニューロン(ユニット)のグループであり、カプセルの出力するベクトルは入力にある特定のエンティティの分散表現になる。
-表題のdynamic routingは、カプセルの出力ベクトルを1つ上の層のどのカプセルに渡すべきかを学習する手法である。
-これにより、プーリング層で失われるエンティティの空間上の位置情報をカプセルの出力するベクトルで表現する。
-実験では、2層の畳み込み層と1層の全結合層からなる浅いニューラルネットワークをMNISTに適用し、長さでエンティティが存在する確率を、向きでエンティティの特徴を表現できるベクトルを学習できることを示した。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">December 26, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/hierarchical_attention_networks_for_document_classification/">Hierarchical Attention Networks for Document Classification (2016)</a></h3>
-        <div class="summary"><p>Hierarchical Attention Network(HAN)は、単語は文から文書は文からなる文書の構造をアーキテクチャに反映し、単語の注意から文の注意を、文の注意から文書の注意を計算する。
-順方向と逆方向の2つのGRUでエンコードした単語の分散表現から注意を計算し、文ごとに、単語の注意の重みつき和を計算し文の分散表現とする。
-さらに、文の分散表現を別の順、逆方向GRUにあたえ、単語とおなじように各文の注意を計算し、その重みつき和を文書の分散表現としてあつかう。
-最後に、文書の分散表現を全結合層に入力し、ソフトマックス関数で文書のクラスを推定する。
-単語の文の注意を推定できるため、単語と文の2つの粒度で文書の重要な箇所を可視化することができる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">December 26, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/effective_approaches_to_attention_based_neural_machine_translation/">Effective Approaches to Attention-based Neural Machine Translation (2015)</a></h3>
-        <div class="summary"><p>注意機構をつかった翻訳用のニューラルネットワークを2つ例示し、翻訳における効果的な注意機構の使い方を提案した。
-どちらもスタッキングしたLSTMを使うが、注意の計算で参照するLSTMの隠れ状態が違う。
-ひとつは、1単語を出力するときに、すべての単語のLSTMの隠れ状態から注意を算出するグローバルなアプローチで、もうひとつは一部の単語の状態だけから注意を算出するローカルなアプローチである。
-英語とドイツ語の双方への翻訳タスクに適用したところ、ローカルなアプローチで注意機構をつかわない手法と比べてBLEUスコアを5.0ポイントできた。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">December 26, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/deep_learning_based_text_classification/">Deep Learning Based Text Classification: A Comprehensive Review (2020)</a></h3>
-        <div class="summary"><p>深層学習によるテキスト分類のサーベイで、調査したモデル数の多さで論文の貢献を主張している。
-文章の構成は、150個のモデル、40件のデータセット、定量的な評価指標の解説がつづく。
-文書分類を広くとらえ、典型的なテキスト分類だけでなくQAやテキスト含意への言及もある。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">December 25, 2021</span>
         </div>
     </article>
     
@@ -232,7 +231,7 @@ Piece tableはテキストを2つのバッファに記録する。
           </a>
         </li>
         
-        <li><a href="https://ryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        <li><a href="http://localhost:38897/index.xml"><i class="fas fa-rss"></i></a></li>
         
       </ul>
       <small>© Ryotaro. All Rights Reserved.</small>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.121.2">
+	<meta name="generator" content="Hugo 0.123.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=38897&amp;path=livereload" data-no-instant defer></script>
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -18,12 +18,12 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
+<link rel="stylesheet" href="http://localhost:38897/scss/articles.min.ad090cad4f6d9fadf06a509c7ea790bd1fc13b24802f351ad71342659fdebf9f.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -45,14 +45,14 @@
     
         
     <header class="navigation">
-      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+      <h2><a href="http://localhost:38897/">Blanket</a></h2>
       <nav>
         <ul>
-          <li><a href="https://ryotaro.dev/about">About</a></li>
-          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
-          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+          <li><a href="http://localhost:38897/about">About</a></li>
+          <li><a href="http://localhost:38897/posts">Posts</a></li>
+          <li><a href="http://localhost:38897/tags">Tags</a></li>
 	  
-	  <li><a href="https://ryotaro.dev/en/">en</a></li>
+	  <li><a href="http://localhost:38897/en/">en</a></li>
 	  
         </ul>
       </nav>
@@ -63,7 +63,68 @@
     
     
     <article>
-        <h3><a href="https://ryotaro.dev/posts/browsemaps/">The Browsemaps: Collaborative Filtering at LinkedIn</a></h3>
+        <h3><a href="http://localhost:38897/posts/time_clocks_and_the_ordering_of_events_in_a_distributed_system/">Time, Clocks, and the Ordering of Events in a Distributed System</a></h3>
+        <div class="summary"><p>分散システムの各プロセスにおける送受信の半順序関係をすべてのプロセスで起きた送受信の全順序関係に拡張するアルゴリズムを提案し、アルゴリズムを同期処理に応用できることを例示した。
+分散システムではプロセスの時刻が同期しているとはかぎらない。
+各プロセスで起きたメッセージの送受信をプロセスでの時刻順に並べられても、その計測時刻を信じて全プロセスで起きたイベントを正しく発生順に並べることはできない。</p>
+<p>アルゴリズムは、プロセスごとに論理的なクロックをもたせる。
+クロックは、メッセージを送信するときに時を進める。
+メッセージを送信するプロセスは、送信時刻をメッセージにふくめる。
+受信したプロセスは現在の時刻とメッセージにある送信元の時刻より先の時刻に時を進める。
+以上の手続きで、異なるプロセス間の送受信であっても送信時刻が受信時刻より必ず前になり、全プロセスの送受信イベントに全順序関係を定義できる。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="http://localhost:38897/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+		#分散システム
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">August 14, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="http://localhost:38897/posts/dataflow/">The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-Scale, unbounded, Out-of-Order Data Processing</a></h3>
+        <div class="summary"><p>データ処理サービスは、処理の正確さ、遅延、システムの複雑さの間にトレードオフを抱える。
+ストリーミング処理サービスのStorm, Samza, Pulsarは、(論文が発表された2015年時点では)メッセージ配信がexactly-onceではなく欠損や重複する。
+MapReduceやSparkなどのバッチ処理サービスは、バッチ処理の単位までデータが集まらなければバッチ実行できない。
+Lambda architectureは、システムの複雑化を許容し、2つのアーキテクチャを使い分けることで、処理の正確さと遅延のバランスをとる。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">August 7, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="http://localhost:38897/posts/playing_planning_poker_in_crowds/">Playing Planning Poker in Crowds: Human Computation of Software Effort Estimates</a></h3>
+        <div class="summary"><p>プランニングポーカーのように、ソフトウェア開発の工数を見積もる手法の前提には、プロジェクトに一定期間在籍する専門家がいることがある。
+しかし、OSS開発はその限りではなく、見積りの対象になるイシューの数は多い。
+各イシューの見積りに5分から10分時間をかけるなら、Linux Kernelのバックログを見積りきるのに半年がかかる。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">August 6, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="http://localhost:38897/posts/the_byzantine_generals_problem/">The Byzantine Generals Problem</a></h3>
+        <div class="summary"><p>ビザンチン将軍問題は、故障したコンポーネントがほかのコンポーネントに誤ったメッセージを送りうるとき、コンポーネント間でメッセージを交換した結果、すべてのコンポーネントが一つの正しいメッセージを合意する問題をあつかう。
+アルゴリズムは、署名付きメッセージを使うものと使わないものの2つがある。
+署名付きメッセージを使うと、受信したメッセージが改ざんされたかをコンポーネントが判断できる。
+署名を使わない場合、3分の2より多くのコンポーネントが正常でなければシステム全体が正しい1つのメッセージについて合意にできないことを示した。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">July 31, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="http://localhost:38897/posts/browsemaps/">The Browsemaps: Collaborative Filtering at LinkedIn</a></h3>
         <div class="summary"><p>Browsemapsは、LinkedInのアイテムベースで水平型の協調フィルタリングである。
 Browsemapは、LinkedInの画面上にある推薦するコンテンツを並べたコンポーネントを意味する。
 ここでの水平型は特徴の種類の違いによらず異なるエンティティを統一的に扱えることであり、実際に、人、仕事、会社など複数のエンティティをBrowsemapsでユーザに推薦している。</p></div>
@@ -74,7 +135,7 @@ Browsemapは、LinkedInの画面上にある推薦するコンテンツを並べ
     </article>
     
     <article>
-        <h3><a href="https://ryotaro.dev/posts/linearizability/">Linearizability: A Correctness Condition for Concurrent Objects</a></h3>
+        <h3><a href="http://localhost:38897/posts/linearizability/">Linearizability: A Correctness Condition for Concurrent Objects</a></h3>
         <div class="summary"><p>オブジェクトを読み書きする並行プロセスの実行系列があるとき、読み書き操作がアトミックであるように観測でき、かつ、プロセスの実行を仮に直列化したときと同じ実行結果をえられる条件を示し、これを線形化可能性とよんだ。
 線形化可能性は、直列化可能性と同様に安全性の条件だが、直列化可能性にはないローカル性がある。
 いいかえると、各オブジェクトが線形化可能かつそのとき限り、システム全体が線形化可能になる。
@@ -86,7 +147,7 @@ Browsemapは、LinkedInの画面上にある推薦するコンテンツを並べ
     </article>
     
     <article>
-        <h3><a href="https://ryotaro.dev/posts/end_to_end_arguments_in_system_design/">END-TO-END ARGUMENTS IN SYSTEM DESIGN</a></h3>
+        <h3><a href="http://localhost:38897/posts/end_to_end_arguments_in_system_design/">END-TO-END ARGUMENTS IN SYSTEM DESIGN</a></h3>
         <div class="summary"><p>分散システムのあるシステムから発せられた通信は、システムより低いレイヤーのネットワークを通り、ほかのシステムに到達する。
 論文の発表当時から、分散システムの信頼性にかかわる機能には、途中の低レイヤーではなく高レイヤーの終端におくべきものがあると知られていた。
 表題の論文は、それらを列挙し、END-TO-END ARGUMENTSと名付け、原則として提示する。
@@ -100,7 +161,7 @@ Browsemapは、LinkedInの画面上にある推薦するコンテンツを並べ
     </article>
     
     <article>
-        <h3><a href="https://ryotaro.dev/posts/a_history_and_evaluation_of_systemr/">A History and Evaluation of System R</a></h3>
+        <h3><a href="http://localhost:38897/posts/a_history_and_evaluation_of_systemr/">A History and Evaluation of System R</a></h3>
         <div class="summary"><p>System Rは、1970年に発表されたリレーショナルモデルを実装した初めてのリレーショナルデータベースである。
 1981年に発表された表題の論文は、System Rの開発プロジェクトを3つのフェーズに分け各フェーズごとにえられた知見をまとめている。
 Phase 0は、74年から75年にかけて、シングルユーザ向けにSQLサブセットと対話的なインターフェースを開発した期間にあたる。
@@ -113,7 +174,7 @@ Phase 2は、78年から79年にSan Jose Research Laboratoryなどでの実用�
     </article>
     
     <article>
-        <h3><a href="https://ryotaro.dev/posts/rei/">beamerのスタイルファイル rei.sty</a></h3>
+        <h3><a href="http://localhost:38897/posts/rei/">beamerのスタイルファイル rei.sty</a></h3>
         <div class="summary"><p>日本語用のbeamerスライドのデザインを作った。
 飽きないように単純なデザインにした。
 デモは<a href="/rei.pdf">こっち</a></p></div>
@@ -124,52 +185,11 @@ Phase 2は、78年から79年にSan Jose Research Laboratoryなどでの実用�
     </article>
     
     <article>
-        <h3><a href="https://ryotaro.dev/posts/atcoder_abc206d/">AtCoder Beginner Contest 206 D KAIBUNsyo</a></h3>
+        <h3><a href="http://localhost:38897/posts/atcoder_abc206d/">AtCoder Beginner Contest 206 D KAIBUNsyo</a></h3>
         <div class="summary"><p>Union Findを使うと通せる。すべての\(A_i\)と\(A_{N+1-i}\)が同じグループに所属するために必要なunionの回数を答えればいい。</p></div>
         <div class="article-footer">
 	  
           <span class="date">June 20, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/consistent_hashing_and_random_trees/">Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web</a></h3>
-        <div class="summary"><p>各サーバーがネットワーク全体の情報を保持しない分散キャッシュネットワークにホットスポットを生まないためのキャッシュプロトコルを開発した。
-表題のconsistent hashingは、プロトコルの基礎になるハッシュ関数で、関数の写像が値域の違いに影響されにくい。
-この影響しにくさは、クライアントから見えるアクティブなサーバが入れ替わる可能性に対して機能する。
-また、クライアントは一部のキャッシュサーバーにアクセスできればよく、クライアントごとにアクセス可能なキャッシュサーバーの集合は違ってよい。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">June 19, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/abc051d/">AtCoder Begineer Contest 051 D - Candidates of No Shortest Paths</a></h3>
-        <div class="summary"><p>ワーシャルフロイト法で全ての2頂点間の最短距離を求めた後、隣接する2頂点の辺のうち、2頂点の最短距離が辺の重みと異なる辺を数えれば通る。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">June 14, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/abc205d/">AtCoder Beginner Contest 205 D - Kth Excluded</a></h3>
-        <div class="summary"><p>\(K_q\)ごとに二部探索で答えを直接検索しても通すことができる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">June 14, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/windows_azure_storage/">Windows Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency</a></h3>
-        <div class="summary"><p>AzureのクラウドストレージサービスWindows Azure Storage(WAS) は、2008年の11月から本番運用されている。
-保存できるデータの形式には、単なるファイル(Blob)だけでなく、テーブルのレコードとキューのメッセージがある。
-ハードウェアの故障に備えたローカルでのレプリケーションだけでなく、地理的に離れたデータセンタにもレプリケーションを分散し、災害復旧にも備える。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">June 12, 2021</span>
         </div>
     </article>
     
@@ -220,7 +240,7 @@ Phase 2は、78年から79年にSan Jose Research Laboratoryなどでの実用�
           </a>
         </li>
         
-        <li><a href="https://ryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        <li><a href="http://localhost:38897/index.xml"><i class="fas fa-rss"></i></a></li>
         
       </ul>
       <small>© Ryotaro. All Rights Reserved.</small>

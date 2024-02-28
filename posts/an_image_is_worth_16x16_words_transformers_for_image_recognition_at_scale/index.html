@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=38897&amp;path=livereload" data-no-instant defer></script>
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,14 +17,14 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    <link rel="stylesheet" href="http://localhost:38897/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+<link rel="stylesheet" href="http://localhost:38897/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+<link rel="stylesheet" href="http://localhost:38897/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -46,12 +46,12 @@
     
         
     <header class="navigation">
-      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+      <h2><a href="http://localhost:38897/">Blanket</a></h2>
       <nav>
         <ul>
-          <li><a href="https://ryotaro.dev/about">About</a></li>
-          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
-          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+          <li><a href="http://localhost:38897/about">About</a></li>
+          <li><a href="http://localhost:38897/posts">Posts</a></li>
+          <li><a href="http://localhost:38897/tags">Tags</a></li>
 	  
         </ul>
       </nav>
@@ -62,13 +62,13 @@
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://ryotaro.dev/tags/%E7%94%BB%E5%83%8F%E8%AA%8D%E8%AD%98/">
+      <a href="http://localhost:38897/tags/%E7%94%BB%E5%83%8F%E8%AA%8D%E8%AD%98/">
 	#画像認識
       </a>
     </li>
     
     <li class="tag">
-      <a href="https://ryotaro.dev/tags/transformer/">
+      <a href="http://localhost:38897/tags/transformer/">
 	#Transformer
       </a>
     </li>
@@ -82,10 +82,10 @@
 <p>AN IMAGE IS WORTH 16x16 WORDSは、分割した画像をトークン（単語）のようにTransformerへ入力することで、Transformerを画像認識へ応用できるこを示した。
 TransformerはCNNのように画像の向きや局所性を帰納バイアスにもたず、データが不十分でないと汎化性能は低い。
 しかし、学習データを14M-300Mまで増やすと、CNNを越える汎化性能を発揮した。</p>
-<p>画像をパッチに分割し、画像の断片を単語のように<a href="(https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)">Transformer</a>へ入力する。
+<p>画像をパッチに分割し、画像の断片を単語のように<a href="https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">Transformer</a>へ入力する。
 ただし、単語とは異なり、一次元ではなく二次元のデータに画像を変換し、Transformerに入力する。
 以下は、論文にある学習時の様子である。
-<img src="/an_image_is_worth_16x16_words.png" alt="image">
+<img alt="image" src="/an_image_is_worth_16x16_words.png">
 解像度を\(H\times W\), チャネルを\(C\), パッチの解像度を\((P\times P)\)として、画像\({\rm x}\in\mathbb{R}^{H\times W\times C}\)をパッチ\({\rm x}_p\in\mathbb{R}^{N\times (P^2\cdot C)}\)に分割する。
 \(N=HW/P^2\)である。</p>
 <p>Transformerは後続の層に入力データを流すために、長さ\(D\)の固定長の潜在ベクトルにパッチを変換する。
@@ -146,7 +146,7 @@ $$
           </a>
         </li>
         
-        <li><a href="https://ryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        <li><a href="http://localhost:38897/index.xml"><i class="fas fa-rss"></i></a></li>
         
       </ul>
       <small>© Ryotaro. All Rights Reserved.</small>
