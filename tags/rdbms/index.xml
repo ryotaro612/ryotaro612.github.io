@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>RDBMS on Blanket</title>
-    <link>http://localhost:38897/tags/rdbms/</link>
+    <link>https://ryotaro.dev/tags/rdbms/</link>
     <description>Recent content in RDBMS on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 17 Feb 2024 17:44:38 +0900</lastBuildDate>
-    <atom:link href="http://localhost:38897/tags/rdbms/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/rdbms/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>THE DESIGN OF POSTGRES (1986)</title>
-      <link>http://localhost:38897/posts/the-design-of-postgres/</link>
+      <link>https://ryotaro.dev/posts/the-design-of-postgres/</link>
       <pubDate>Sat, 17 Feb 2024 17:44:38 +0900</pubDate>
-      <guid>http://localhost:38897/posts/the-design-of-postgres/</guid>
+      <guid>https://ryotaro.dev/posts/the-design-of-postgres/</guid>
       <description>&lt;p&gt;最初期におけるPOSTGRESの設計は、&lt;a href=&#34;https://dsf.berkeley.edu/papers/ERL-M85-95.pdf&#34;&gt;THE DESIGN OF POSTGRES&lt;/a&gt;で発表された。&#xA;&lt;a href=&#34;https://www.postgresql.jp/document/8.3/html/history.html&#34;&gt;POSTGRES少史&lt;/a&gt;によると、データモデルは&lt;a href=&#34;https://apps.dtic.mil/sti/tr/pdf/ADA184251.pdf&#34;&gt;The POSTGRES data model&lt;/a&gt;で、ルールは&lt;a href=&#34;https://apps.dtic.mil/sti/tr/pdf/ADA179161.pdf&#34;&gt;The design of the POSTGRES rules system&lt;/a&gt;で、ストレージは&lt;a href=&#34;https://dsf.berkeley.edu/papers/ERL-M87-06.pdf&#34;&gt;THE DESIGN OF THE POSTGRES STORAGE SYSTEM&lt;/a&gt;で同時期に個別に論じられている。&#xA;THE DESIGN OF POSTGRESはPOSTGRESの全体像を解説する位置にある。&lt;/p&gt;&#xA;&lt;p&gt;POSTGRESは、関係データベースINGRESの後継として開発された。&#xA;POSTGRESの目標は、複雑な型のオブジェクトやtriggerを扱え、クラッシュから回復する実装を単純化でき、光ディスクを利用できるようにしつつも、リレーショナルモデルから逸脱しないデータベースを維持することにある。&lt;/p&gt;</description>
     </item>
     <item>
       <title>ARIES: A Transaction Recovery Method Supporting Fine-Granularity Locking and Partial Rollbacks Using Write-Ahead Logging(1992)</title>
-      <link>http://localhost:38897/posts/aries/</link>
+      <link>https://ryotaro.dev/posts/aries/</link>
       <pubDate>Sun, 26 Feb 2023 01:47:13 -0500</pubDate>
-      <guid>http://localhost:38897/posts/aries/</guid>
+      <guid>https://ryotaro.dev/posts/aries/</guid>
       <description>&lt;p&gt;ARIES(Algorithm for Recovery and Isolation Exploiting Semantics)は、ログ先行書き込み(write-ahead-logging, WAL)によるSAVEPOINTまでの部分的なトランザクションのロールバック、レコード単位のロック、回復のためのアルゴリズムである。&#xA;ログの対象と粒度はページの更新であり、レコードには単調増加するLSN(Log Sequence number)をわりあてる。&#xA;レコードは直前の更新のレコードへのポインタであるPrevLSNも含み、あるレコードから以前の更新のレコードへ遡行できる。&lt;/p&gt;&#xA;&lt;p&gt;ロールバックやリスタート時の更新は、通常時の更新とは別に、保証ログレコード(compensation log record, CLR)に記録される。&#xA;ARIESのCLSに記録された更新はUNDOされない。&#xA;一方、IMS, AS/400, DB2のCLSは、あるトランザクションが何度もロールバックされると、対応するCLSの更新をUNDOすることがある。&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
     <item>
       <title>Principles of Transaction-Oriented Database Recovery(1983)</title>
-      <link>http://localhost:38897/posts/principles_of_transaction_oriented_database_recovery/</link>
+      <link>https://ryotaro.dev/posts/principles_of_transaction_oriented_database_recovery/</link>
       <pubDate>Sun, 29 Jan 2023 15:14:29 -0500</pubDate>
-      <guid>http://localhost:38897/posts/principles_of_transaction_oriented_database_recovery/</guid>
+      <guid>https://ryotaro.dev/posts/principles_of_transaction_oriented_database_recovery/</guid>
       <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;クラッシュしたRDMSのディスクとバッファの状態をクラッシュ前の状態にもどす手法を体系化する。&#xA;体系は、Propagation, Buffer handling, EOT Processing, Checkpointingの4要素に着目して技術を分類する。&lt;/p&gt;</description>
     </item>
   </channel>

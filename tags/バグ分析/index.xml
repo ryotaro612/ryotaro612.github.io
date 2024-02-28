@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>バグ分析 on Blanket</title>
-    <link>http://localhost:38897/tags/%E3%83%90%E3%82%B0%E5%88%86%E6%9E%90/</link>
+    <link>https://ryotaro.dev/tags/%E3%83%90%E3%82%B0%E5%88%86%E6%9E%90/</link>
     <description>Recent content in バグ分析 on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Fri, 03 Aug 2018 21:47:03 +0900</lastBuildDate>
-    <atom:link href="http://localhost:38897/tags/%E3%83%90%E3%82%B0%E5%88%86%E6%9E%90/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/%E3%83%90%E3%82%B0%E5%88%86%E6%9E%90/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>概要 When Do Changes Induce Fixes?</title>
-      <link>http://localhost:38897/posts/when_do_changes_induce_fixes/</link>
+      <link>https://ryotaro.dev/posts/when_do_changes_induce_fixes/</link>
       <pubDate>Fri, 03 Aug 2018 21:47:03 +0900</pubDate>
-      <guid>http://localhost:38897/posts/when_do_changes_induce_fixes/</guid>
+      <guid>https://ryotaro.dev/posts/when_do_changes_induce_fixes/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;バージョン管理ツールで追跡されている変更とバグを紐付ける手法を提案した。&lt;/p&gt;</description>
     </item>
   </channel>

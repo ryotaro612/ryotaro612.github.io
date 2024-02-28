@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>情報量 on Blanket</title>
-    <link>http://localhost:38897/tags/%E6%83%85%E5%A0%B1%E9%87%8F/</link>
+    <link>https://ryotaro.dev/tags/%E6%83%85%E5%A0%B1%E9%87%8F/</link>
     <description>Recent content in 情報量 on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 09 Sep 2023 12:10:45 -0400</lastBuildDate>
-    <atom:link href="http://localhost:38897/tags/%E6%83%85%E5%A0%B1%E9%87%8F/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/%E6%83%85%E5%A0%B1%E9%87%8F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Transmission of Information(1927)</title>
-      <link>http://localhost:38897/posts/transmission_of_information/</link>
+      <link>https://ryotaro.dev/posts/transmission_of_information/</link>
       <pubDate>Sat, 09 Sep 2023 12:10:45 -0400</pubDate>
-      <guid>http://localhost:38897/posts/transmission_of_information/</guid>
+      <guid>https://ryotaro.dev/posts/transmission_of_information/</guid>
       <description>&lt;p&gt;Hartleyは、&lt;a href=&#34;https://monoskop.org/images/a/a6/Hartley_Ralph_VL_1928_Transmission_of_Information.pdf&#34;&gt;Transmission of Information&lt;/a&gt;で、通信システムの情報伝達性能を評価するために、情報の定量的な尺度を提唱した。&#xA;シャノンが1948年に情報エントロピーを&lt;a href=&#34;https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf&#34;&gt;発表&lt;/a&gt;する21年前である。&#xA;Hartleyは、通信内容の意味や解釈を捨象し、記号列の有限な候補からある記号列を選ぶことを情報みなした。&#xA;シャノンは、有限の候補から記号列を選択する考えを継承し、さらに、記号が順に確率的に選ばれるとみなすことでHartleyの情報量の定義を情報エントロピーに発展させた。&lt;/p&gt;</description>
     </item>
   </channel>

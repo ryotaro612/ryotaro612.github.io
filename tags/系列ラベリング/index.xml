@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>系列ラベリング on Blanket</title>
-    <link>http://localhost:38897/tags/%E7%B3%BB%E5%88%97%E3%83%A9%E3%83%99%E3%83%AA%E3%83%B3%E3%82%B0/</link>
+    <link>https://ryotaro.dev/tags/%E7%B3%BB%E5%88%97%E3%83%A9%E3%83%99%E3%83%AA%E3%83%B3%E3%82%B0/</link>
     <description>Recent content in 系列ラベリング on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Fri, 05 Oct 2018 18:46:36 +0900</lastBuildDate>
-    <atom:link href="http://localhost:38897/tags/%E7%B3%BB%E5%88%97%E3%83%A9%E3%83%99%E3%83%AA%E3%83%B3%E3%82%B0/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/%E7%B3%BB%E5%88%97%E3%83%A9%E3%83%99%E3%83%AA%E3%83%B3%E3%82%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>抄訳 Bidirectional LSTM-CRF Models for Sequence Tagging(2015)</title>
-      <link>http://localhost:38897/posts/bidirectional_lstm_crf_models_for_sequence_tagging/</link>
+      <link>https://ryotaro.dev/posts/bidirectional_lstm_crf_models_for_sequence_tagging/</link>
       <pubDate>Fri, 05 Oct 2018 18:46:36 +0900</pubDate>
-      <guid>http://localhost:38897/posts/bidirectional_lstm_crf_models_for_sequence_tagging/</guid>
+      <guid>https://ryotaro.dev/posts/bidirectional_lstm_crf_models_for_sequence_tagging/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;NLPにおける系列ラベリングためのニューラルネットワークアーキテクチャの提案と評価がなされている。&#xA;このアーキテクチャは、当サイトで以前紹介した&lt;a href=&#34;https://aclweb.org/anthology/papers/C/C18/C18-1139/&#34;&gt;Contextual String Embeddings for Sequence Labeling&lt;/a&gt;で応用されている。&lt;/p&gt;</description>
     </item>
   </channel>

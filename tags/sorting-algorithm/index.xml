@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sorting Algorithm on Blanket</title>
-    <link>http://localhost:38897/tags/sorting-algorithm/</link>
+    <link>https://ryotaro.dev/tags/sorting-algorithm/</link>
     <description>Recent content in Sorting Algorithm on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 14 Jan 2024 23:32:24 -0500</lastBuildDate>
-    <atom:link href="http://localhost:38897/tags/sorting-algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/sorting-algorithm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sorting networks and their applications (1968)</title>
-      <link>http://localhost:38897/posts/sorting-networks-and-their-applications/</link>
+      <link>https://ryotaro.dev/posts/sorting-networks-and-their-applications/</link>
       <pubDate>Sun, 14 Jan 2024 23:32:24 -0500</pubDate>
-      <guid>http://localhost:38897/posts/sorting-networks-and-their-applications/</guid>
+      <guid>https://ryotaro.dev/posts/sorting-networks-and-their-applications/</guid>
       <description>&lt;p&gt;ソーティングネットワークは、入次数と出次数が2のノードからなるグラフを理論にしたソートのアルゴリズムである。&#xA;ノードは、別々の辺から入力された値の大小関係を比較し、大きい方を一方、小さい方を他方の辺に出力する。&#xA;&lt;a href=&#34;https://www.cs.kent.edu/~batcher/sort.pdf&#34;&gt;Sorting networks and their applications&lt;/a&gt;で提案された奇偶マージソートとバイトニックソートは、値によらず配列上の位置で比較する要素が決まるソーティングネットワークなので、&lt;a href=&#34;https://developer.nvidia.com/gpugems/gpugems2/part-vi-simulation-and-numerical-algorithms/chapter-46-improved-gpu-sorting&#34;&gt;並列計算に利用される&lt;/a&gt;。&#xA;どちらも長さ\(2^p\)の配列を\(\ln (\frac{1}{2})p(p+1)\)ステップでソートできる。&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
   </channel>

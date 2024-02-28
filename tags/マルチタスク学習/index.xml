@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>マルチタスク学習 on Blanket</title>
-    <link>http://localhost:38897/tags/%E3%83%9E%E3%83%AB%E3%83%81%E3%82%BF%E3%82%B9%E3%82%AF%E5%AD%A6%E7%BF%92/</link>
+    <link>https://ryotaro.dev/tags/%E3%83%9E%E3%83%AB%E3%83%81%E3%82%BF%E3%82%B9%E3%82%AF%E5%AD%A6%E7%BF%92/</link>
     <description>Recent content in マルチタスク学習 on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 16 Sep 2023 08:59:45 -0400</lastBuildDate>
-    <atom:link href="http://localhost:38897/tags/%E3%83%9E%E3%83%AB%E3%83%81%E3%82%BF%E3%82%B9%E3%82%AF%E5%AD%A6%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/%E3%83%9E%E3%83%AB%E3%83%81%E3%82%BF%E3%82%B9%E3%82%AF%E5%AD%A6%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning(2008)</title>
-      <link>http://localhost:38897/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/</link>
+      <link>https://ryotaro.dev/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/</link>
       <pubDate>Sat, 16 Sep 2023 08:59:45 -0400</pubDate>
-      <guid>http://localhost:38897/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/</guid>
+      <guid>https://ryotaro.dev/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://machinelearning.org/archive/icml2008/papers/391.pdf&#34;&gt;A Unified Architecture for Natural Language Processing&lt;/a&gt;は、複数のタスクの訓練データで重みの更新を繰り返すマルチタスクの深層学習である。&#xA;複数のタスクから順にあるタスクを選び、選んだタスクからランダムに取り出したサンプルで重みを更新するオンライン学習である。&#xA;ネットワークの層は、入力に近い方から、Word embedding、時間遅延ニューラルネットワーク(Time-Delay Neural Networks, TDNN)層、TDNN層の全時刻にわたる各ユニットの最大値を出力するMax Layer, 全結合層、ソフトマックスからなる。&#xA;Word embeddingのみタスク間で重みを共有し、後続の層の重みはタスクごとに異なる。&lt;/p&gt;</description>
     </item>
   </channel>

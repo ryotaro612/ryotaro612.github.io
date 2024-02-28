@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ハッシュテーブル on Blanket</title>
-    <link>http://localhost:38897/tags/%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB/</link>
+    <link>https://ryotaro.dev/tags/%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB/</link>
     <description>Recent content in ハッシュテーブル on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 08 Apr 2023 12:38:44 -0400</lastBuildDate>
-    <atom:link href="http://localhost:38897/tags/%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Storing a Sparse Table with O(1) Worst Case Access Time(1984)</title>
-      <link>http://localhost:38897/posts/storing_a_sparse_table_with_o1_worst_case_access_time/</link>
+      <link>https://ryotaro.dev/posts/storing_a_sparse_table_with_o1_worst_case_access_time/</link>
       <pubDate>Sat, 08 Apr 2023 12:38:44 -0400</pubDate>
-      <guid>http://localhost:38897/posts/storing_a_sparse_table_with_o1_worst_case_access_time/</guid>
+      <guid>https://ryotaro.dev/posts/storing_a_sparse_table_with_o1_worst_case_access_time/</guid>
       <description>&lt;p&gt;単射のハッシュ関数は完全である。完全ハッシュ関数により、衝突することのないハッシュテーブルのデータ構造と計算時間量の証明を示す。&#xA;データ構造は、はじめに、\(U(|U|=m)\)の部分集合\(S\)(\(|S|=n\))の要素\(x\)をハッシュテーブルに格納するとき、ある\(U\)の要素\(k\)を使った関数\(f(x)=(kx\mod p)\mod n\)で\(x\)を格納するブロック\(W_j(0\le j &amp;lt; n)\)を決める。&#xA;\(p\)は\(p=m+1\)の素数である。&#xA;次に\(U\)の要素\(k&amp;rsquo;_j\)をもちいた関数\(g(x) = ((k&amp;rsquo;_jx) \mod p)\mod |W_j|^2\)で、\(x\)のエントリを特定する。&#xA;データ構造の証明は、\(f, g\)によって重複なくエントリを特定できる\(k\), \(k&amp;rsquo;_j\)があることを示す。&lt;/p&gt;</description>
     </item>
   </channel>

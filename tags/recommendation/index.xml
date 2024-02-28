@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Recommendation on Blanket</title>
-    <link>http://localhost:38897/tags/recommendation/</link>
+    <link>https://ryotaro.dev/tags/recommendation/</link>
     <description>Recent content in Recommendation on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 16 Dec 2023 09:48:32 -0500</lastBuildDate>
-    <atom:link href="http://localhost:38897/tags/recommendation/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/recommendation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Wide and Deep Learning for Recommender Systems (2016)</title>
-      <link>http://localhost:38897/posts/wide-and-deep-learning-for-recommender-systems/</link>
+      <link>https://ryotaro.dev/posts/wide-and-deep-learning-for-recommender-systems/</link>
       <pubDate>Sat, 16 Dec 2023 09:48:32 -0500</pubDate>
-      <guid>http://localhost:38897/posts/wide-and-deep-learning-for-recommender-systems/</guid>
+      <guid>https://ryotaro.dev/posts/wide-and-deep-learning-for-recommender-systems/</guid>
       <description>&lt;p&gt;推薦システムに一般化線形モデルや深層学習を応用する場合、両者には一長一短がある。&#xA;一般線形化モデルは、学習データに忠実かつ解釈しやすい推測を出力するが、交互作用では学習データにないアイテムを推薦できない。&#xA;深層学習は、汎化性能にすぐれるが、疎で高ランクな行列を学習しがたい。&#xA;&lt;a href=&#34;https://arxiv.org/abs/1606.07792&#34;&gt;Wide &amp;amp; Deep Learning for Recommender Systems&lt;/a&gt;は、一般線形化モデルとフィードフォワードニューラルネットワーク (FFN) の出力の重みつき和をロジスティック関数に適用し、両者の利点を生かし欠点をおぎなうモデルである。&lt;/p&gt;</description>
     </item>
   </channel>

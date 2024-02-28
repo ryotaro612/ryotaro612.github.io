@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>トピックモデル on Blanket</title>
-    <link>http://localhost:38897/tags/%E3%83%88%E3%83%94%E3%83%83%E3%82%AF%E3%83%A2%E3%83%87%E3%83%AB/</link>
+    <link>https://ryotaro.dev/tags/%E3%83%88%E3%83%94%E3%83%83%E3%82%AF%E3%83%A2%E3%83%87%E3%83%AB/</link>
     <description>Recent content in トピックモデル on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 23 Feb 2020 21:54:59 +0900</lastBuildDate>
-    <atom:link href="http://localhost:38897/tags/%E3%83%88%E3%83%94%E3%83%83%E3%82%AF%E3%83%A2%E3%83%87%E3%83%AB/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/%E3%83%88%E3%83%94%E3%83%83%E3%82%AF%E3%83%A2%E3%83%87%E3%83%AB/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Latent Dirichlet Allocation(2003)</title>
-      <link>http://localhost:38897/posts/latent_dirichlet_allocation/</link>
+      <link>https://ryotaro.dev/posts/latent_dirichlet_allocation/</link>
       <pubDate>Sun, 23 Feb 2020 21:54:59 +0900</pubDate>
-      <guid>http://localhost:38897/posts/latent_dirichlet_allocation/</guid>
+      <guid>https://ryotaro.dev/posts/latent_dirichlet_allocation/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;トピックモデルの潜在的ディリクレ配分法(LDA)の原論文である。&#xA;LDAは、テキストコーパスのような離散データの確率的生成モデルである。&#xA;意味のあるデータのまとまりに対する端的な説明を与える情報を見つけることを目的としている。&#xA;3つの階層からなる階層ベイズモデルである。&#xA;データの要素は、各トピックを表すモデルの混合モデルから生成される。&#xA;トピックもまた混合モデルから確率的に生成される。&#xA;推論にはベイズ変分法を、パラメタの推定にはEMアルゴリズムをもちいる。&lt;/p&gt;</description>
     </item>
   </channel>

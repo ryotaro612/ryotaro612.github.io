@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Catalan Numbers on Blanket</title>
-    <link>http://localhost:38897/en/tags/catalan-numbers/</link>
+    <link>https://ryotaro.dev/en/tags/catalan-numbers/</link>
     <description>Recent content in Catalan Numbers on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 29 Jul 2023 15:24:15 -0400</lastBuildDate>
-    <atom:link href="http://localhost:38897/en/tags/catalan-numbers/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/en/tags/catalan-numbers/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Catalan Numbers(2016)</title>
-      <link>http://localhost:38897/en/posts/catalan_number/</link>
+      <link>https://ryotaro.dev/en/posts/catalan_number/</link>
       <pubDate>Sat, 29 Jul 2023 15:24:15 -0400</pubDate>
-      <guid>http://localhost:38897/en/posts/catalan_number/</guid>
+      <guid>https://ryotaro.dev/en/posts/catalan_number/</guid>
       <description>The Catalan numbers are a sequence of natural numbers that occur in various problems in combinatorial mathematics. For example, the number of expressions containing \(n\) valid pairs of parentheses is the \(n\)th Catalan number. Suppose you have a grid of \(n \times n\) squares, the \(n\)th Catalan number represents the number of paths with a length of \(2n\) that lead from the upper left corner to the lower right corner without intersecting the diagonal dotted line running from the upper left to the lower right.</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Under Sampling on Blanket</title>
-    <link>http://localhost:38897/tags/under-sampling/</link>
+    <link>https://ryotaro.dev/tags/under-sampling/</link>
     <description>Recent content in Under Sampling on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 13 Nov 2022 12:18:12 -0500</lastBuildDate>
-    <atom:link href="http://localhost:38897/tags/under-sampling/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/under-sampling/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>抄訳 RUSBoost: A Hybrid Approach to Alleviating Class Imbalance(2010)</title>
-      <link>http://localhost:38897/posts/rusboost_a_hybrid_approach_to_alleviating_class_imbalance/</link>
+      <link>https://ryotaro.dev/posts/rusboost_a_hybrid_approach_to_alleviating_class_imbalance/</link>
       <pubDate>Sun, 13 Nov 2022 12:18:12 -0500</pubDate>
-      <guid>http://localhost:38897/posts/rusboost_a_hybrid_approach_to_alleviating_class_imbalance/</guid>
+      <guid>https://ryotaro.dev/posts/rusboost_a_hybrid_approach_to_alleviating_class_imbalance/</guid>
       <description>&lt;p&gt;RUSBoostは、random undersampling(RUS)とAdaBoostを応用し、不均衡データの予測性能を改善する。&#xA;類似の先行研究である&lt;a href=&#34;http://www.datascienceassn.org/sites/default/files/SMOTEBoost%20Improving%20Prediction%20of%20the%20Minority%20Class%20in%20Boosting%20.pdf&#34;&gt;SMOTEBoost&lt;/a&gt;よりも学習時間が短く、アルゴリズムが単純である。&#xA;アンダーサンプリングで学習データを減らせば、学習時間を短くできるが、学習器に与える情報が減る。&#xA;一方、AdaBoostは、前に訓練した弱学習器が誤分類したデータに高い重みを与え、次の弱学習器を学習し、予測性能を上げる。&#xA;AdaBoostを借りることで、単分類の難しい少数クラスのサンプルに高い重みを単純に与えられる。&lt;/p&gt;</description>
     </item>
   </channel>

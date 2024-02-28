@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>半教師学習 on Blanket</title>
-    <link>http://localhost:38897/tags/%E5%8D%8A%E6%95%99%E5%B8%AB%E5%AD%A6%E7%BF%92/</link>
+    <link>https://ryotaro.dev/tags/%E5%8D%8A%E6%95%99%E5%B8%AB%E5%AD%A6%E7%BF%92/</link>
     <description>Recent content in 半教師学習 on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Tue, 17 Jul 2018 12:51:29 +0900</lastBuildDate>
-    <atom:link href="http://localhost:38897/tags/%E5%8D%8A%E6%95%99%E5%B8%AB%E5%AD%A6%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/%E5%8D%8A%E6%95%99%E5%B8%AB%E5%AD%A6%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>要約 A Simple Semi-supervised Algorithm For Named Entity Recognition</title>
-      <link>http://localhost:38897/posts/a_simple_semi_supervised_for_ner/</link>
+      <link>https://ryotaro.dev/posts/a_simple_semi_supervised_for_ner/</link>
       <pubDate>Tue, 17 Jul 2018 12:51:29 +0900</pubDate>
-      <guid>http://localhost:38897/posts/a_simple_semi_supervised_for_ner/</guid>
+      <guid>https://ryotaro.dev/posts/a_simple_semi_supervised_for_ner/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;CRFに入力する学習データを集めるための半教師学習の手法を提案と評価した論文。&#xA;本手法はCRFに与える学習データを集めるための手法であり、CRFのアルゴリズム自体に変更を加えることはない。&lt;/p&gt;</description>
     </item>
     <item>
       <title>概要 Text Classification from Labeled and Unlabeled Documents using EM</title>
-      <link>http://localhost:38897/posts/text_cls_from_lbl_and_unlbl_doc_em/</link>
+      <link>https://ryotaro.dev/posts/text_cls_from_lbl_and_unlbl_doc_em/</link>
       <pubDate>Sun, 08 Jul 2018 01:23:49 +0900</pubDate>
-      <guid>http://localhost:38897/posts/text_cls_from_lbl_and_unlbl_doc_em/</guid>
+      <guid>https://ryotaro.dev/posts/text_cls_from_lbl_and_unlbl_doc_em/</guid>
       <description>&lt;h3 id=&#34;アルゴリズム&#34;&gt;アルゴリズム&lt;/h3&gt;&#xA;&lt;p&gt;提案手法は、Naive BayesとEMアルゴリズムを組み合わせたもの。&#xA;ラベル付きデータが\(D^l\)でラベルなしデータが\(D^u\)で表されるとき、対数尤度\(\log P(D^l)P(D^u)\)を最大化する問題を解く。&lt;/p&gt;</description>
     </item>
   </channel>

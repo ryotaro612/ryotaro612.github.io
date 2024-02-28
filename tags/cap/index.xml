@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CAP on Blanket</title>
-    <link>http://localhost:38897/tags/cap/</link>
+    <link>https://ryotaro.dev/tags/cap/</link>
     <description>Recent content in CAP on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Tue, 17 Jan 2023 11:42:12 -0500</lastBuildDate>
-    <atom:link href="http://localhost:38897/tags/cap/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/cap/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Brewer&#39;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web (2002)</title>
-      <link>http://localhost:38897/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/</link>
+      <link>https://ryotaro.dev/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/</link>
       <pubDate>Tue, 17 Jan 2023 11:42:12 -0500</pubDate>
-      <guid>http://localhost:38897/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/</guid>
+      <guid>https://ryotaro.dev/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/</guid>
       <description>&lt;p&gt;分散システムは一貫性、可用性、分断耐性を同時に満たすことができない。&#xA;この予想は、2000年のPODCでBrewerが発表したCAP定理として知られている。&#xA;しかし、Brewerの&lt;a href=&#34;https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf&#34;&gt;講演&lt;/a&gt;では厳密な定義や証明はない。&#xA;そこで、それを補うために、ある2つの計算モデルでCAPが成立することを証明する。&#xA;計算モデルは、asynchronous network modelとpartially synchhronous modelである。&#xA;asynchronouse network modelでは、モデルのノードは、クロックをもたず、受信したメッセージとノード内の計算のみで出力を決定する。&#xA;partially synchronous modelでは、各ノードは、一定間隔で単調増加するクロックをもち、処理をタイムアウトしたり、スケジューリングしたりできる。&#xA;ただし、ノード間でクロックが同期されているとは限らない。&lt;/p&gt;</description>
     </item>
   </channel>

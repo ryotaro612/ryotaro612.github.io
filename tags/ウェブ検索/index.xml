@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ウェブ検索 on Blanket</title>
-    <link>http://localhost:38897/tags/%E3%82%A6%E3%82%A7%E3%83%96%E6%A4%9C%E7%B4%A2/</link>
+    <link>https://ryotaro.dev/tags/%E3%82%A6%E3%82%A7%E3%83%96%E6%A4%9C%E7%B4%A2/</link>
     <description>Recent content in ウェブ検索 on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Fri, 23 Dec 2022 22:44:46 -0500</lastBuildDate>
-    <atom:link href="http://localhost:38897/tags/%E3%82%A6%E3%82%A7%E3%83%96%E6%A4%9C%E7%B4%A2/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/%E3%82%A6%E3%82%A7%E3%83%96%E6%A4%9C%E7%B4%A2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>抄訳 A taxonomy of web search(2002)</title>
-      <link>http://localhost:38897/posts/a_taxonomy_of_web_search/</link>
+      <link>https://ryotaro.dev/posts/a_taxonomy_of_web_search/</link>
       <pubDate>Fri, 23 Dec 2022 22:44:46 -0500</pubDate>
-      <guid>http://localhost:38897/posts/a_taxonomy_of_web_search/</guid>
+      <guid>https://ryotaro.dev/posts/a_taxonomy_of_web_search/</guid>
       <description>&lt;p&gt;Web検索をnavigational, informational, transactionalの3つに分類する。&#xA;Navigationalは、ユーザーに訪問したい特定のサイトがあり、そのサイトを開くための検索である。&#xA;Informationalは、ユーザーに収集したい情報があり、その情報があると思われるサイトを検索する。&#xA;情報が断片的であれば、複数のサイトを訪問することもある。&#xA;Transactionalは、検索や種々のダウンロードなどインタラクションを要するサイトを訪問するための検索である。&#xA;ユーザーは、最終的な目的の情報のために訪問先のサイトでさらに検索をする。&#xA;たとえばECサイトへの検索が該当する。&lt;/p&gt;</description>
     </item>
   </channel>

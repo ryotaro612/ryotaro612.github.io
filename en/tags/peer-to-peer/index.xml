@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Peer-to-Peer on Blanket</title>
-    <link>http://localhost:38897/en/tags/peer-to-peer/</link>
+    <link>https://ryotaro.dev/en/tags/peer-to-peer/</link>
     <description>Recent content in Peer-to-Peer on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 23 Nov 2023 12:31:01 -0500</lastBuildDate>
-    <atom:link href="http://localhost:38897/en/tags/peer-to-peer/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/en/tags/peer-to-peer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Chord: A Scalable Peer-to-peer Lookup Service for Internet Applications (2001)</title>
-      <link>http://localhost:38897/en/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/</link>
+      <link>https://ryotaro.dev/en/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/</link>
       <pubDate>Thu, 23 Nov 2023 12:31:01 -0500</pubDate>
-      <guid>http://localhost:38897/en/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/</guid>
+      <guid>https://ryotaro.dev/en/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://pdos.csail.mit.edu/papers/ton:chord/paper-ton.pdf&#34;&gt;Chord&lt;/a&gt; is a distributed lookup protocol that supports just one operation: mapping a given key onto a node in a Chord cluster.&#xA;If an \(N\)-node system is in the steady state, each node resolves all the queries via \(O(\log N)\) messages to other nodes.&#xA;Chord uses &lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall09/cos518/papers/chash.pdf&#34;&gt;consistent hashing&lt;/a&gt; to assign keys to Chord nodes.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Pastry: Scalable Decentralized Object Location and Routing for Large Scale Peer to Peer Systems (2001)</title>
-      <link>http://localhost:38897/en/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/</link>
+      <link>https://ryotaro.dev/en/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/</link>
       <pubDate>Tue, 07 Nov 2023 02:04:06 -0500</pubDate>
-      <guid>http://localhost:38897/en/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/</guid>
+      <guid>https://ryotaro.dev/en/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://rowstron.azurewebsites.net/PAST/pastry.pdf&#34;&gt;Pastry&lt;/a&gt; is a decentralized peer-to-peer object location and routing system based on nodes connected via the Internet.&#xA;When each node in the Pastry network receives a message and a numeric key, it routes them to the node with a nodeId that is numerically close to the key.&#xA;If a node is not the final destination of a message, it forwards the message to another node with a nodeId that is numerically closer to the key than the nodeId of the present node.&#xA;The nodeId ranges from 0 to \(2^{128}-1\).&lt;/p&gt;</description>
     </item>
   </channel>

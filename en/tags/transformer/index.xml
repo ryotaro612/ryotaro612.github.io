@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Transformer on Blanket</title>
-    <link>http://localhost:38897/en/tags/transformer/</link>
+    <link>https://ryotaro.dev/en/tags/transformer/</link>
     <description>Recent content in Transformer on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 24 Feb 2024 23:11:51 +0900</lastBuildDate>
-    <atom:link href="http://localhost:38897/en/tags/transformer/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/en/tags/transformer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Poly-Encoders: Architectures and Pre-Training Strategies for Fast and Accurate Multi-Sentence Scoring (2019)</title>
-      <link>http://localhost:38897/en/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/</link>
+      <link>https://ryotaro.dev/en/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/</link>
       <pubDate>Sat, 24 Feb 2024 23:11:51 +0900</pubDate>
-      <guid>http://localhost:38897/en/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/</guid>
+      <guid>https://ryotaro.dev/en/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/</guid>
       <description>&lt;p&gt;For tasks matching input sequences with labels, current state-of-the-art approaches focus on using &lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt; models for pre-training.&#xA;Two common encoding approaches are Cross-encoders (&lt;a href=&#34;https://arxiv.org/abs/1901.08149&#34;&gt;Wolf et al.&lt;/a&gt;), which concatenate input sequences and candidate labels into a single vector, and produce candidate-sensitive embeddings, and Bi-encoders (&lt;a href=&#34;https://arxiv.org/abs/1809.01984&#34;&gt;Mazaré et al.&lt;/a&gt;), which encode input sequences and candidate labels separately.&#xA;In Bi-encoders, the score is the dot-product of the two embeddings.&#xA;While Cross-encoders are more accurate than Bi-encoders, Bi-encoders are faster.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
     <item>
       <title>BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension (2019)</title>
-      <link>http://localhost:38897/en/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/</link>
+      <link>https://ryotaro.dev/en/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/</link>
       <pubDate>Sat, 07 Oct 2023 10:28:13 -0400</pubDate>
-      <guid>http://localhost:38897/en/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/</guid>
+      <guid>https://ryotaro.dev/en/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1910.13461&#34;&gt;BART&lt;/a&gt; is a denoising autoencoder for Pretraining sequence-to-sequence models.&#xA;BART is trained on corrupted text, and updates the parameters to reconstruct the original text.&#xA;The authors experimented with several noising functions that corrupt text like token masking, token deletion, text infilling, sentence permutation, and document rotation.&#xA;BART with text infilling, where text spans are sampled with span lengths drawn from a Poisson distribution(\(\lambda = 3\)), demonstrated the most consistently strong performance.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks(2019)</title>
-      <link>http://localhost:38897/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</link>
+      <link>https://ryotaro.dev/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</link>
       <pubDate>Sat, 23 Sep 2023 10:21:03 -0400</pubDate>
-      <guid>http://localhost:38897/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</guid>
+      <guid>https://ryotaro.dev/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1908.10084&#34;&gt;Sentence-BERT&lt;/a&gt; derives semantically meaningful sentence embedding that can be compared using cosine-similarity.&#xA;&lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt; achieved new state-of-the art performance on various sentence-pair regression tasks using a cross-encoder.&#xA;A cross-encoder accepts two sentences as input to the transformer network and the target value is predicted.&#xA;Semantic textual similarity is one of the sentence-pair regression tasks.&#xA;However, this setup is often not scalable for various pair regression tasks due to many possible combinations.&#xA;The semantic search that maps each sentence to a vector space where semantically similar sentences are close alleviates the combinatorial explosion.&#xA;Sentence-BERT uses a siamese network in which the two BERT networks have tied weights such that the produced sentence embeddings can be semantically compared using cosine-similarity.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Self-Attention with Relative Position Representations(2018)</title>
-      <link>http://localhost:38897/en/posts/self_attention_with_relative_position_representations/</link>
+      <link>https://ryotaro.dev/en/posts/self_attention_with_relative_position_representations/</link>
       <pubDate>Sat, 19 Aug 2023 10:02:50 -0400</pubDate>
-      <guid>http://localhost:38897/en/posts/self_attention_with_relative_position_representations/</guid>
+      <guid>https://ryotaro.dev/en/posts/self_attention_with_relative_position_representations/</guid>
       <description>&lt;p&gt;The authors of &lt;a href=&#34;https://arxiv.org/pdf/1803.02155.pdf&#34;&gt;Self-Attention with Relative Position Representations&lt;/a&gt; presented a way of injecting relative position representations in the self-attention mechanism of the &lt;a href=&#34;https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;Transformer&lt;/a&gt;.&#xA;In contrast to recurrent and convolutional neural networks, Transformer does not explicitly model position information in its structure.&#xA;&lt;a href=&#34;https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;The original position encoding&lt;/a&gt; employs sine and cosine functions of different frequencies.&#xA;The authors of Transformer hypothesized that sinusoidal position encodings would help Transformer to generalize to sequence lengths unseen during training.&#xA;Positional encodings are added to the input embeddings at the bottoms of the encoder and decoder stacks of Transformer.&#xA;This hypothesis was shared by the relative position representations.&#xA;In contrast to absolute position representations, the relative position representations are invariant to the total sequence length.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer(2020)</title>
-      <link>http://localhost:38897/en/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/</link>
+      <link>https://ryotaro.dev/en/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/</link>
       <pubDate>Sat, 05 Aug 2023 13:27:09 -0400</pubDate>
-      <guid>http://localhost:38897/en/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/</guid>
+      <guid>https://ryotaro.dev/en/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/</guid>
       <description>The authors of Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer performed experiments with Text-to-Text Transfer Transformer(T5), a unified framework for NLP. The basic idea underlying T5 is to treat various NLP problems as taking text as input and producing new text as output. Their goal is to explore general language learning abilities instead of providing new methods. They are interested in exploring the limits of transfer learning for NLP by scaling up models and data sets beyond what has previously been considered.</description>
     </item>
   </channel>

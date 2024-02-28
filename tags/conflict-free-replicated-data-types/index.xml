@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Conflict-Free Replicated Data Types on Blanket</title>
-    <link>http://localhost:38897/tags/conflict-free-replicated-data-types/</link>
+    <link>https://ryotaro.dev/tags/conflict-free-replicated-data-types/</link>
     <description>Recent content in Conflict-Free Replicated Data Types on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 31 Dec 2023 14:31:58 -0500</lastBuildDate>
-    <atom:link href="http://localhost:38897/tags/conflict-free-replicated-data-types/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/conflict-free-replicated-data-types/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Conflict-free Replicated Data Types (2011)</title>
-      <link>http://localhost:38897/posts/conflict-free-replicated-data-types/</link>
+      <link>https://ryotaro.dev/posts/conflict-free-replicated-data-types/</link>
       <pubDate>Sun, 31 Dec 2023 14:31:58 -0500</pubDate>
-      <guid>http://localhost:38897/posts/conflict-free-replicated-data-types/</guid>
+      <guid>https://ryotaro.dev/posts/conflict-free-replicated-data-types/</guid>
       <description>&lt;p&gt;オブジェクトのレプリカを複数のノードに分散するシステムにおいて、レプリカが非同期に更新された場合、後の同期で更新内容が衝突しうる。&#xA;&lt;a href=&#34;https://pages.lip6.fr/Marc.Shapiro/papers/RR-7687.pdf&#34;&gt;Conflict-free Replicated Data Types&lt;/a&gt; (CRDTs) は、結び半束の関係にある状態をもつオブジェクトである。&#xA;オブジェクトに対する操作が非単調減少であれば、受理した操作の集合が等しいレプリカ同士を、受理した順番によらず同一の状態にでき、衝突を回避できる。&lt;/p&gt;</description>
     </item>
   </channel>

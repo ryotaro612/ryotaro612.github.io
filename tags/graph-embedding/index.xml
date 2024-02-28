@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Graph Embedding on Blanket</title>
-    <link>http://localhost:38897/tags/graph-embedding/</link>
+    <link>https://ryotaro.dev/tags/graph-embedding/</link>
     <description>Recent content in Graph Embedding on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Fri, 07 Sep 2018 18:31:47 +0900</lastBuildDate>
-    <atom:link href="http://localhost:38897/tags/graph-embedding/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/graph-embedding/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>メモ metapath2vec: Scalable Representation Learning for Heterogeneous Networks</title>
-      <link>http://localhost:38897/posts/metapath2vec/</link>
+      <link>https://ryotaro.dev/posts/metapath2vec/</link>
       <pubDate>Fri, 07 Sep 2018 18:31:47 +0900</pubDate>
-      <guid>http://localhost:38897/posts/metapath2vec/</guid>
+      <guid>https://ryotaro.dev/posts/metapath2vec/</guid>
       <description>&lt;p&gt;異種混合ネットワークから、ノード数x次元数の分散表現を獲得するための手法。&#xA;異種混合とは、企業、業界、ニュースなど複数の種類の概念がグラフのノードとして扱われていることを意味する。&#xA;獲得した分散表現を訓練データとして分類、クラスタリング、検索に応用し、既存手法と比較している。&lt;/p&gt;</description>
     </item>
   </channel>
