@@ -15,6 +15,19 @@
                 href="https://ryotaro.dev/"
                 />
   </url><url>
+    <loc>https://ryotaro.dev/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/</loc>
+    <lastmod>2024-02-24T23:11:48+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/"
+                />
+  </url><url>
     <loc>https://ryotaro.dev/posts/</loc>
     <lastmod>2024-02-24T23:11:48+09:00</lastmod>
     <xhtml:link
@@ -28,6 +41,32 @@
                 href="https://ryotaro.dev/posts/"
                 />
   </url><url>
+    <loc>https://ryotaro.dev/tags/</loc>
+    <lastmod>2024-02-24T23:11:48+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/tags/transformer/</loc>
+    <lastmod>2024-02-24T23:11:48+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/transformer/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/transformer/"
+                />
+  </url><url>
     <loc>https://ryotaro.dev/tags/rdbms/</loc>
     <lastmod>2024-02-17T17:44:38+09:00</lastmod>
     <xhtml:link
@@ -39,19 +78,6 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://ryotaro.dev/tags/rdbms/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/tags/</loc>
-    <lastmod>2024-02-17T17:44:38+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/tags/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/posts/the-design-of-postgres/</loc>
@@ -404,19 +430,6 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://ryotaro.dev/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/tags/transformer/</loc>
-    <lastmod>2023-10-07T10:28:13-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/tags/transformer/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/tags/transformer/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/tags/communicating-sequential-processes/</loc>

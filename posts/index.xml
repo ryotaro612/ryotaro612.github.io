@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 17 Feb 2024 17:44:38 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 24 Feb 2024 23:11:48 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Poly-Encoders: Architectures and Pre-Training Strategies for Fast and Accurate Multi-Sentence Scoring (2019)</title>
+      <link>https://ryotaro.dev/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/</link>
+      <pubDate>Sat, 24 Feb 2024 23:11:48 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/</guid>
+      <description>&lt;p&gt;入力系列のラベルを推定できるようにTransformerのエンコーダーをファインチューニングするとき、エンコーディングの仕方に、Cross encoder (&lt;a href=&#34;https://arxiv.org/abs/1901.08149&#34;&gt;Wolf et al.&lt;/a&gt;) とBi-encoder (&lt;a href=&#34;https://arxiv.org/abs/1809.01984&#34;&gt;Mazaré et al.&lt;/a&gt;) がある。&#xA;Cross-encoderは、入力系列とラベルを連結した系列をエンコーダーに入力し、入力系列とラベルのペアのエンベディングからスコアを求める。&#xA;Bi-encoderは、入力系列とラベルを別のエンコーダーに入力し、それぞれのエンベディングの内積をスコアとする。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>THE DESIGN OF POSTGRES (1986)</title>
       <link>https://ryotaro.dev/posts/the-design-of-postgres/</link>

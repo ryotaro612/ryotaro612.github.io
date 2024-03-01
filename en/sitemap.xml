@@ -17,6 +17,16 @@
   </url><url>
     <loc>https://ryotaro.dev/en/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/</loc>
     <lastmod>2024-02-24T23:11:51+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/"
+                />
   </url><url>
     <loc>https://ryotaro.dev/en/posts/</loc>
     <lastmod>2024-02-24T23:11:51+09:00</lastmod>
