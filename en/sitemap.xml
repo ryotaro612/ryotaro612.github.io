@@ -2,8 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ryotaro.dev/en/tags/association-rule-mining/</loc>
+    <lastmod>2024-03-02T15:58:07+09:00</lastmod>
+  </url><url>
     <loc>https://ryotaro.dev/en/</loc>
-    <lastmod>2024-02-24T23:11:51+09:00</lastmod>
+    <lastmod>2024-03-02T15:58:07+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -13,6 +16,45 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ryotaro.dev/en/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/posts/mining-association-rules-between-sets-of-items-in-large-databases/</loc>
+    <lastmod>2024-03-02T15:58:07+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/mining-association-rules-between-sets-of-items-in-large-databases/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/mining-association-rules-between-sets-of-items-in-large-databases/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/posts/</loc>
+    <lastmod>2024-03-02T15:58:07+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/tags/</loc>
+    <lastmod>2024-03-02T15:58:07+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/</loc>
@@ -26,32 +68,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ryotaro.dev/en/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/en/posts/</loc>
-    <lastmod>2024-02-24T23:11:51+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/posts/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/en/tags/</loc>
-    <lastmod>2024-02-24T23:11:51+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/tags/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/tags/transformer/</loc>

@@ -63,6 +63,23 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/program_comprehension_and_code_complexity_metrics/">Program Comprehension and Code Complexity Metrics: An fMRI Study</a></h3>
+        <div class="summary"><p>コードの複雑さのメトリクスがコードを理解する難しさの指標になるかは疑問視されてきた。
+19人の被験者に16個のソースコードを読ませ、関数の返り値を回答してもらい、作業中の脳の状態をfMRIで観察することで、メトリクスと回答時間、正答率、脳の活性状態の相関関係を調べた。
+メトリクスと主観的な評価を比較するために、回答後に被験者にコードの複雑さを評価してもらった。
+調べたメトリクスは、41種類あり、コードの行数(LOC), 語彙の多さ(Halstead), とりえる実行パスの数(McCabe), 依存するデータの数(DepDegree)の4種類に大別できる。
+相関関係をケンドールの順位相関係数\(\tau\)で評価し、相関なし(\(\tau &lt;0.1\)), 弱い(\(0.1 &lt; \tau &lt; 0.3\)), 中(\(0.3 &lt; \tau &lt;0.5\)), 強い(\(0.5&lt;\tau\))とみなす。</p>
+<p>回答と脳の活性状態と相関関係にあったメトリクスはDepDegreeだったが、被験者の主観的な評価のほうが強い相関がみられた。
+LOC, Halstead, DepDeegreeは回答時間や正答率と弱い〜中程度の相関があった。
+この3つのメトリクスは脳の活性度合いと弱から中の相関があり、活性度合いと正答率には強い相関、回答時間には弱から中の相関があった。
+一方、主観的な評価は、メトリクスと弱い相関があり、問題の正答率や脳の活性状態と強い相関関係があった。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">August 21, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/the_unix_time_sharing_system/">The UNIX Time-Sharing System</a></h3>
         <div class="summary"><p>デニス・リッチーとケン・トンプソンによるPDP-11/40, /45, /70で採用されたUnixのファイルシステムとコマンドラインインターフェースの解説である。
 PDP-11は1971年2月から運用がはじまり、当初はアセンブリ言語で実装されていたが、1973年の夏にCで再実装された。
@@ -177,17 +194,6 @@ Lambda architectureは、システムの複雑化を許容し、2つのアーキ
         <div class="article-footer">
 	  
           <span class="date">August 7, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/playing_planning_poker_in_crowds/">Playing Planning Poker in Crowds: Human Computation of Software Effort Estimates</a></h3>
-        <div class="summary"><p>プランニングポーカーのように、ソフトウェア開発の工数を見積もる手法の前提には、プロジェクトに一定期間在籍する専門家がいることがある。
-しかし、OSS開発はその限りではなく、見積りの対象になるイシューの数は多い。
-各イシューの見積りに5分から10分時間をかけるなら、Linux Kernelのバックログを見積りきるのに半年がかかる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">August 6, 2021</span>
         </div>
     </article>
     

@@ -63,6 +63,31 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/en/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/">A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning(2008)</a></h3>
+        <div class="summary"><p><a href="http://machinelearning.org/archive/icml2008/papers/391.pdf">A Unified Architecture for Natural Language Processing</a> is an instance of multitask learning.
+The first layer is a lookup table that stores embeddings of a fixed dictionary and size.
+The second layer is a <a href="https://www.cs.toronto.edu/~hinton/absps/waibelTDNN.pdf">Time-Delay Neural Networks</a> layer.
+It extracts features from the sentence treating it as a sequence with local structure.
+The third layer takes the maximum value for each of the output features of the second layer over time.
+The following layers are classical NN layers.
+The lookup-table is shared among the tasks, and the other layers can be task specific to each task.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/multitask-learning/">
+		#Multitask Learning
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">September 16, 2023</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/en/posts/transmission_of_information/">Transmission of Information(1927)</a></h3>
         <div class="summary">In Transmission of Information, Hartley developed a quantitative measure of &ldquo;information&rdquo; in 1927. Hartley claims that information is the outcome of a selection among a finite set of possible messages. Shannon&rsquo;s &ldquo;A mathematical theory of communication&rdquo;, which is based in part on Hartley&rsquo;s ideas, published in 1947. Hartley did not model the source of information probabilistically. Shannon modeled the source of information as a random process.
 Hartley stated that information should be proportional to the number of selections for practical engineering value.</div>

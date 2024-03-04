@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.87b8f4076c47000c129b0c8b240a71216448e3aedd7144174c55776680a783b0.css">
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.6706f2a051a6ab63f5377cb6e9a19e35f0265340ff70caf700b282f1962c59e1.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.c8bed992e3e72febf0bd227ae4d39d51e4a5a169e0a19ca4cef950e3ab79cfe0.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Mining Association Rules between Sets of Items in Large Databases (1993)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://ryotaro.dev/about">About</a></li>
+          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+	  
+	  <li><a href="https://ryotaro.dev/en/posts/mining-association-rules-between-sets-of-items-in-large-databases/">en</a></li>
+	  
+        </ul>
+      </nav>
+    </header>
+    
+<main>
+  <h1>Mining Association Rules between Sets of Items in Large Databases (1993)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/%E3%82%A2%E3%82%BD%E3%82%B7%E3%82%A8%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%88%86%E6%9E%90/">
+	#アソシエーション分析
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">March 2, 2024</span>    
+  <div>
+    <p>ある商品と一緒に買われやすい商品を小売の購買履歴から分析する初期の手法に<a href="https://dl.acm.org/doi/10.1145/170036.170072">Mining Association Rules between Sets of Items in Large Databases</a>がある。
+抽出される規則は、商品の集合と1つの商品のペアからなり、集合のすべての商品を買われるときに他方の商品も買われやすいことを意味する。
+アルゴリズムは、規則を抽出するだけでなく、規則の確信度と支持度も計算する。
+確信度は、規則の前提にある商品の集合を含むトランザクションのうち規則を満たすものの割合であり、規則の信憑性を意味する。
+支持度は、すべてのトランザクションに対する規則に表れる商品を含むトランザクションの割合であり、規則を適用できる機会の多さを意味する。
+アルゴリズムは、しきい値以下の支持度の規則を無視することで、現実的な速度で実行できる。</p>
+<p>アルゴリズムはトランザクションの集合と支持度のしきい値を引数にとり、しきい値より大きい規則の集合を返す。
+以下にアルゴリズム LargeItemsets の疑似コードを示す。
+アルゴリズムにおけるlargeはしきい値の支持度よりも大きいことを意味する。</p>
+<pre tabindex="0"><code>procedure LargeItemsets(database tuples, minsupport)	
+    let L = {} // Large set
+    let F = {{}} // Frontier set
+  
+    while F != {}:
+      // make a pass over the database
+      let C = {} // Candidate set
+      for t in database tuples:
+        for f in F:
+          if t.contains(f):
+            let C_f = []
+            Extend(f, t, C_f)
+            for c_f in C_f:
+              if c_f in C:
+                c_f.count++
+              else:
+                c_f.count = 0
+                C += c_f
+      // consolidate
+      let F = {}
+      for c in C:
+        if c.count / size(database tuples) &gt; minsupport:
+          L += c
+        if c should be used as a frontier in the next pass:
+          F += c
+
+    return L
+
+procedure Extend(X: itemset, t: tuple, results: List[itemset])
+    let item I_j such that forall I_l in X, I_j &gt;= I_l
+    for t in I_k such that I_k &gt; I_j:
+	  results.append([X, I_k])
+	  if (XI_k) is exptected to be large:
+	    Extend(XI_k, t, results)
+</code></pre><p>Frontier set <code>F</code>は、商品を追加すれば規則になりえる商品の集合を<code>f</code>とすると、<code>f</code>の集合であり、最初は空集合で初期化される。
+<code>f</code>を真部分集合とするトランザクション <code>t</code>があれば、<code>t</code>にあり<code>f</code> にない商品を1つ追加された商品の集合<code>c_f</code>の支持度を計算する。
+その支持度がしきい値より大きければ、返り値になる規則の集合 <code>L</code> に加える。</p>
+<p>すべてのトランザクションを調べた後は、直前に見つけた規則よりも1つ商品の数が多い規則のためのFrontier setをつくる。
+支持度の期待値<code>s</code>がしきい値より低いが実際の支持度がしきい値よりも大きい<code>c_f</code>の集合が次のFrontier setになる。
+トランザクションに商品が含まれる確率は互いに独立であると仮定し、<code>c_f</code>の期待値<code>s</code>を、<code>f</code>を含むトランザクションの割合と<code>c_f</code>の1つ追加された商品を含むトランザクションの割合の積とみなす。
+その結果Frontier setが空集合であれば、アルゴリズムを終了する。</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/ryotaro612">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/ryotaro612/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        <li><a href="https://ryotaro.dev/index.xml"><i class="fas fa-rss"></i></a></li>
+        
+      </ul>
+      <small>© Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

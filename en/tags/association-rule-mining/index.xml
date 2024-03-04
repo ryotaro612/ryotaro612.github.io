@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Association Rule Mining on Blanket</title>
+    <link>https://ryotaro.dev/en/tags/association-rule-mining/</link>
+    <description>Recent content in Association Rule Mining on Blanket</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 02 Mar 2024 15:58:07 +0900</lastBuildDate>
+    <atom:link href="https://ryotaro.dev/en/tags/association-rule-mining/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mining Association Rules Between Sets of Items in Large Databases (1993)</title>
+      <link>https://ryotaro.dev/en/posts/mining-association-rules-between-sets-of-items-in-large-databases/</link>
+      <pubDate>Sat, 02 Mar 2024 15:58:07 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/mining-association-rules-between-sets-of-items-in-large-databases/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://dl.acm.org/doi/10.1145/170036.170072&#34;&gt;Mining Association Rules between Sets of Items in Large Databases&lt;/a&gt; presents one of the earliest approaches for association rules mining.&#xA;An association rule is an implication of the form \(X \Rightarrow I_j\) where \(X\) is a set of some items, and \(I_j\) is an item that is not in \(X\).&#xA;For instance, if transactions buying bread and butter also buy milk, that forms an association rule.&#xA;The paper introduces a method to find association rules and measure confidence and support factors from transactions.&#xA;The confidence factor measures how many transactions that satisfy \(X\) also satisfy \(I_j\).&#xA;The support factor of an association rule is defined to be the fraction of transactions that contain the union of items in the rule.&#xA;The support factor implies statistical significance of the association rule.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
