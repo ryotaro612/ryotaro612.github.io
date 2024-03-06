@@ -636,18 +636,6 @@
                 href="https://ryotaro.dev/en/posts/catalan_number/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/en/about/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/about/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/about/"
-                />
-  </url><url>
     <loc>https://ryotaro.dev/en/posts/an_incremental_approach_to_compiler_construction/</loc>
     <xhtml:link
                 rel="alternate"
@@ -661,5 +649,17 @@
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/tags/compiler/</loc>
+  </url><url>
+    <loc>https://ryotaro.dev/en/about/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/about/"
+                />
   </url>
 </urlset>
