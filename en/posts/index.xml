@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 02 Mar 2024 15:58:07 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 10 Mar 2024 10:44:18 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apache Calcite a Foundational Framework for Optimized Query Processing Over Heterogeneous Data Sources</title>
+      <link>https://ryotaro.dev/en/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/</link>
+      <pubDate>Sun, 10 Mar 2024 10:44:18 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/</guid>
+      <description>&lt;p&gt;Michael StonebrakerとUğur Çetintemel presented &lt;a href=&#34;https://cs.brown.edu/~ugur/fits_all.pdf&#34;&gt;One Size Fits All&lt;/a&gt; in 2005.&#xA;The title refers to the fact that traditional RDBMS had been used to implement a variety of data-centric applications.&#xA;Tn the paper, they argued that the phrase was no longer applicable and predicted the rise of domain-specific database engines.&#xA;Indeed, organizations leverage various domain-specific database engines such as column stores and text search engines today.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Mining Association Rules Between Sets of Items in Large Databases (1993)</title>
       <link>https://ryotaro.dev/en/posts/mining-association-rules-between-sets-of-items-in-large-databases/</link>

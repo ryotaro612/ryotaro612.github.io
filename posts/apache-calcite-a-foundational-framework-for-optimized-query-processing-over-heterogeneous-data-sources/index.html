@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.ac39fd9b1999326c116cd551ce035fd4eaf2801f6bfc13a90241a1d9275b21ec.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Apache Calcite: A Foundational Framework for Optimized Query Processing Over Heterogeneous Data Sources (2018)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://ryotaro.dev/about">About</a></li>
+          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+	  
+	  <li><a href="https://ryotaro.dev/en/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/">en</a></li>
+	  
+        </ul>	
+	<ul>
+          
+          <li>
+            <a href="https://github.com/ryotaro612">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="https://www.linkedin.com/in/ryotaro612/">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          
+          <li>
+	    <a href="https://ryotaro.dev/index.xml">
+	      <i class="fas fa-rss"></i>
+            </a>
+	  </li>
+          
+        </ul>	
+      </nav>
+    </header>
+    
+<main>
+  <h1>Apache Calcite: A Foundational Framework for Optimized Query Processing Over Heterogeneous Data Sources (2018)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/apache-calcite/">
+	#Apache Calcite
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">March 10, 2024</span>    
+  <div>
+    <p>Michael StonebrakerとUğur Çetintemelは、2005年に<a href="https://cs.brown.edu/~ugur/fits_all.pdf">One size fits all</a>で、データウェアハウスとストリーミング処理をとりあげ、すべてのデータをRDBMSで管理する時代の終わりを主張した。
+組織はデータベースを特定の用途ごとに使い分けるようになった。
+しかし同時に、データベースの開発者は、どんなデータベースでも必要な仕組みをデータベースごとに実装しなければならなくなった。
+どのようなクエリ言語を採用するデーターベースにもクエリ最適化が求められる。
+一方、組織は複数のデータベースに分散したデータを統合しなければならなくなった。</p>
+<p><a href="https://calcite.apache.org/">Apache Calcite</a>は、SQLの解釈、最適化、実行のためのフレームワークであり、複数のデータベースに分散したデータへのANSI標準のSQLでの問い合せを実現する。
+データが複数のデータベースに分散していても、クライアントはデータが1つのRDBMSにあるかのようにSQLでCalciteに問い合せられる。</p>
+<!-- raw HTML omitted -->
+<p>Calcite自体はデータを保存するストレージをもたない。
+かわりに、モデルとよばれるファイルで指定した外部のデータベースからデータを取得し、クライアントには各データベースがRDBMSのスキーマのように見せる。
+以下にCalciteの<a href="https://calcite.apache.org/docs/tutorial.html#schema-discovery">Tutorial</a>にあるモデルの例を示す。
+クライアントからは、<code>sales</code>ディレクトリにあるCSVファイルがsalesスキーマにあるテーブルのように見える。
+モデルで指定されるfactoryは、<a href="https://calcite.apache.org/javadocAggregate/org/apache/calcite/schema/SchemaFactory.html">SchemaFactory</a>を実装したクラスであり、RDBMSのスキーマの役割をもつ<a href="https://calcite.apache.org/javadocAggregate/org/apache/calcite/schema/Schema.html">Shcema</a>のインスタンスを生成する。</p>
+<pre><code>{
+  version: '1.0',
+  defaultSchema: 'SALES',
+  schemas: [
+    {
+      name: 'SALES',
+      type: 'custom',
+      factory: 'org.apache.calcite.adapter.csv.CsvSchemaFactory',
+      operand: {
+        directory: 'sales'
+      }
+    }
+  ]
+}
+</code></pre>
+<p>集合に対する操作は演算子 (Operator) とよばれる。
+たとえばfilter, project, joinなどがある。
+Schemaが参照するテーブルクラスはレコードをスキャンする演算子を実装し、SQLクエリは演算子の式に変換される。
+物理演算子には、トレイトとよばれる属性が定義されている。
+データを処理するバックエンドを指定する仕組みはトレイトが担っており、たとえば、spark convention, jdbc-mysqlトレイトをもつ演算子はSparkやMySQLでデータを処理する。</p>
+<p>Optimizerは、もとのクエリの式の意味を保存したまま、より高速に実行できる別の式への変換をくりかえす。
+ある式を別の式に変換する規則をplanner rulesといい、独自のplanner ruleを定義することができる。
+Optimizerはトレイトをもとに実行計画のコストを評価する。
+たとえば、トレイトから操作対象のデータが特定のバックエンドのみにあるとわかれば、そのバックエンド上で操作を実行するように式を変換する。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/mining-association-rules-between-sets-of-items-in-large-databases/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <small>© Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

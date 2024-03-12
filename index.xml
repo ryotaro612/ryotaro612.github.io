@@ -6,8 +6,15 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 02 Mar 2024 15:58:04 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 10 Mar 2024 10:44:15 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apache Calcite: A Foundational Framework for Optimized Query Processing Over Heterogeneous Data Sources (2018)</title>
+      <link>https://ryotaro.dev/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/</link>
+      <pubDate>Sun, 10 Mar 2024 10:44:15 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/</guid>
+      <description>&lt;p&gt;Michael StonebrakerとUğur Çetintemelは、2005年に&lt;a href=&#34;https://cs.brown.edu/~ugur/fits_all.pdf&#34;&gt;One size fits all&lt;/a&gt;で、データウェアハウスとストリーミング処理をとりあげ、すべてのデータをRDBMSで管理する時代の終わりを主張した。&#xA;組織はデータベースを特定の用途ごとに使い分けるようになった。&#xA;しかし同時に、データベースの開発者は、どんなデータベースでも必要な仕組みをデータベースごとに実装しなければならなくなった。&#xA;どのようなクエリ言語を採用するデーターベースにもクエリ最適化が求められる。&#xA;一方、組織は複数のデータベースに分散したデータを統合しなければならなくなった。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://calcite.apache.org/&#34;&gt;Apache Calcite&lt;/a&gt;は、SQLの解釈、最適化、実行のためのフレームワークであり、複数のデータベースに分散したデータへのANSI標準のSQLでの問い合せを実現する。&#xA;データが複数のデータベースに分散していても、クライアントはデータが1つのRDBMSにあるかのようにSQLでCalciteに問い合せられる。&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
+    </item>
     <item>
       <title>Mining Association Rules between Sets of Items in Large Databases (1993)</title>
       <link>https://ryotaro.dev/posts/mining-association-rules-between-sets-of-items-in-large-databases/</link>
@@ -1556,11 +1563,11 @@
       <description>&lt;p&gt;AWSで提供されるRDBM, Amazon Auroraのアーキテクチャを解説した論文。&#xA;分散システムをクラウドにおく場合、計算やIOはノードに分散され、ボトルネックではなくなる。&#xA;そして、ボトルネックは、DBインスタンスとストレージ間のネットワークになる。&#xA;この仮説もと、プライマリインスタンスが、別テナントのストレージに直接Redoログを送ることで、レプリカインスタンスとストレージ間の負荷を減らし、処理性能の向上をはかる。&#xA;また、レプリケーションのために、MySQLがRedoログだけでなくバイナリログなど複数種類のログをスレーブに送るのに対し、AuroraはRedoログだけを転送する。&#xA;これにより、リカバリや縮退、フェールオーバの性能も向上している。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>論文メモ &#34;One Size Fits All&#34;: An Idea Whose Time Has Come and Gone</title>
-      <link>https://ryotaro.dev/posts/one_size_fit_all/</link>
+      <title>&#34;One Size Fits All&#34;: An Idea Whose Time Has Come and Gone (2005)</title>
+      <link>https://ryotaro.dev/posts/one-size-fits-all-an-idea-whose-time-has-come-and-gone/</link>
       <pubDate>Fri, 13 Nov 2020 16:05:23 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/one_size_fit_all/</guid>
-      <description>&lt;p&gt;2011年に発表された論文で、これまでのようにDBMSを様々なデータ中心のアプリケーションに利用することがデータベース市場で受け入れられなくなったと主張する。&#xA;データウェアハウスとストリーミング処理を例にとり、これらに特化したデータベースをDBMSで代用することの限界が説明されている。&#xA;表題の&amp;quot;One Size Fits All&amp;quot;はフリーサイズ、転じて、万能、汎用的を意味する。&lt;/p&gt;</description>
+      <guid>https://ryotaro.dev/posts/one-size-fits-all-an-idea-whose-time-has-come-and-gone/</guid>
+      <description>&lt;p&gt;2005年に発表された論文で、これまでのようにDBMSを様々なデータ中心のアプリケーションに利用することがデータベース市場で受け入れられなくなったと主張する。&#xA;データウェアハウスとストリーミング処理を例にとり、これらに特化したデータベースをDBMSで代用することの限界が説明されている。&#xA;表題の&amp;quot;One Size Fits All&amp;quot;はフリーサイズ、転じて、万能、汎用的を意味する。&lt;/p&gt;</description>
     </item>
     <item>
       <title>論文メモ Dynamo: Amazon&#39;s Highly Available Key-value Store</title>

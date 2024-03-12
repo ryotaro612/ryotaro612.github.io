@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.123.0">
+	<meta name="generator" content="Hugo 0.123.7">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -83,6 +83,16 @@
 <main>
     <h1>Posts</h1>
     
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/design_tradeoffs_for_ssd_performance/">Design Tradeoffs for SSD Performance</a></h3>
+        <div class="summary"><p>HDDの処理性能を測定するシミュレーションソフト<a href="https://www.pdl.cmu.edu/DiskSim/index.shtml">DiskSim</a>をSSD向けに改造し、SSDの設計における選択肢の分類と選択にともなうトレードオフを報告した。
+主要な選択肢は、論理アドレスと物理アドレスのマッピング、ページサイズ、オーバープロビジョニング、複数のpackageでcontrollerに接続するピンを共有するgangingがある。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">August 23, 2021</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://ryotaro.dev/posts/program_comprehension_and_code_complexity_metrics/">Program Comprehension and Code Complexity Metrics: An fMRI Study</a></h3>
@@ -204,18 +214,6 @@ UIS-Hunterは、FigmaやAndroid Studio Layout Editorなどのモックアップ�
 	  </ul>
 	  
           <span class="date">August 14, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/dataflow/">The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-Scale, unbounded, Out-of-Order Data Processing</a></h3>
-        <div class="summary"><p>データ処理サービスは、処理の正確さ、遅延、システムの複雑さの間にトレードオフを抱える。
-ストリーミング処理サービスのStorm, Samza, Pulsarは、(論文が発表された2015年時点では)メッセージ配信がexactly-onceではなく欠損や重複する。
-MapReduceやSparkなどのバッチ処理サービスは、バッチ処理の単位までデータが集まらなければバッチ実行できない。
-Lambda architectureは、システムの複雑化を許容し、2つのアーキテクチャを使い分けることで、処理の正確さと遅延のバランスをとる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">August 7, 2021</span>
         </div>
     </article>
     

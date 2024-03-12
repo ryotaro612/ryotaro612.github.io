@@ -6,8 +6,15 @@
     <description>Recent content in Tags on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 02 Mar 2024 15:58:07 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 10 Mar 2024 10:44:18 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apache Calcite</title>
+      <link>https://ryotaro.dev/en/tags/apache-calcite/</link>
+      <pubDate>Sun, 10 Mar 2024 10:44:18 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/apache-calcite/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Association Rule Mining</title>
       <link>https://ryotaro.dev/en/tags/association-rule-mining/</link>

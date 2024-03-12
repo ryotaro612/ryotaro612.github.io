@@ -2,8 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ryotaro.dev/tags/apache-calcite/</loc>
+    <lastmod>2024-03-10T10:44:15+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/apache-calcite/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/apache-calcite/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/</loc>
+    <lastmod>2024-03-10T10:44:15+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/"
+                />
+  </url><url>
     <loc>https://ryotaro.dev/</loc>
-    <lastmod>2024-03-02T15:58:04+09:00</lastmod>
+    <lastmod>2024-03-10T10:44:15+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -13,6 +39,32 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://ryotaro.dev/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/posts/</loc>
+    <lastmod>2024-03-10T10:44:15+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/tags/</loc>
+    <lastmod>2024-03-10T10:44:15+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/posts/mining-association-rules-between-sets-of-items-in-large-databases/</loc>
@@ -26,32 +78,6 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://ryotaro.dev/posts/mining-association-rules-between-sets-of-items-in-large-databases/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/posts/</loc>
-    <lastmod>2024-03-02T15:58:04+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/posts/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/tags/</loc>
-    <lastmod>2024-03-02T15:58:04+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/tags/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/tags/%E3%82%A2%E3%82%BD%E3%82%B7%E3%82%A8%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%88%86%E6%9E%90/</loc>
@@ -1306,7 +1332,7 @@
     <loc>https://ryotaro.dev/posts/amazon_aurora/</loc>
     <lastmod>2020-11-13T17:51:53+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/one_size_fit_all/</loc>
+    <loc>https://ryotaro.dev/posts/one-size-fits-all-an-idea-whose-time-has-come-and-gone/</loc>
     <lastmod>2020-11-13T16:05:23+09:00</lastmod>
   </url><url>
     <loc>https://ryotaro.dev/posts/dynamo_amazons_highly_available_key_value_store/</loc>

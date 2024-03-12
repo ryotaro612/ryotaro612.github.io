@@ -2,11 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ryotaro.dev/en/tags/association-rule-mining/</loc>
-    <lastmod>2024-03-02T15:58:07+09:00</lastmod>
+    <loc>https://ryotaro.dev/en/tags/apache-calcite/</loc>
+    <lastmod>2024-03-10T10:44:18+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/apache-calcite/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/apache-calcite/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/</loc>
+    <lastmod>2024-03-10T10:44:18+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/"
+                />
   </url><url>
     <loc>https://ryotaro.dev/en/</loc>
-    <lastmod>2024-03-02T15:58:07+09:00</lastmod>
+    <lastmod>2024-03-10T10:44:18+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -18,21 +41,8 @@
                 href="https://ryotaro.dev/en/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/en/posts/mining-association-rules-between-sets-of-items-in-large-databases/</loc>
-    <lastmod>2024-03-02T15:58:07+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/posts/mining-association-rules-between-sets-of-items-in-large-databases/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/posts/mining-association-rules-between-sets-of-items-in-large-databases/"
-                />
-  </url><url>
     <loc>https://ryotaro.dev/en/posts/</loc>
-    <lastmod>2024-03-02T15:58:07+09:00</lastmod>
+    <lastmod>2024-03-10T10:44:18+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -45,7 +55,7 @@
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/tags/</loc>
-    <lastmod>2024-03-02T15:58:07+09:00</lastmod>
+    <lastmod>2024-03-10T10:44:18+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -55,6 +65,22 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ryotaro.dev/en/tags/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/tags/association-rule-mining/</loc>
+    <lastmod>2024-03-02T15:58:07+09:00</lastmod>
+  </url><url>
+    <loc>https://ryotaro.dev/en/posts/mining-association-rules-between-sets-of-items-in-large-databases/</loc>
+    <lastmod>2024-03-02T15:58:07+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/mining-association-rules-between-sets-of-items-in-large-databases/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/mining-association-rules-between-sets-of-items-in-large-databases/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/</loc>

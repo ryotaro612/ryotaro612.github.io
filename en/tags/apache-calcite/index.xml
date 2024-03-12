@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apache Calcite on Blanket</title>
+    <link>https://ryotaro.dev/en/tags/apache-calcite/</link>
+    <description>Recent content in Apache Calcite on Blanket</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 10 Mar 2024 10:44:18 +0900</lastBuildDate>
+    <atom:link href="https://ryotaro.dev/en/tags/apache-calcite/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apache Calcite a Foundational Framework for Optimized Query Processing Over Heterogeneous Data Sources</title>
+      <link>https://ryotaro.dev/en/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/</link>
+      <pubDate>Sun, 10 Mar 2024 10:44:18 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/</guid>
+      <description>&lt;p&gt;Michael StonebrakerとUğur Çetintemel presented &lt;a href=&#34;https://cs.brown.edu/~ugur/fits_all.pdf&#34;&gt;One Size Fits All&lt;/a&gt; in 2005.&#xA;The title refers to the fact that traditional RDBMS had been used to implement a variety of data-centric applications.&#xA;Tn the paper, they argued that the phrase was no longer applicable and predicted the rise of domain-specific database engines.&#xA;Indeed, organizations leverage various domain-specific database engines such as column stores and text search engines today.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
