@@ -188,7 +188,7 @@ BPSは、並列計算用のハードウェアと高水準な並列計算のプ�
     </article>
     
     <article>
-        <h3><a href="https://ryotaro.dev/posts/a_critique_of_ansi_sql_isolation_levels/">A Critique of ANSI SQL Isolation Levels</a></h3>
+        <h3><a href="https://ryotaro.dev/posts/a-critique-of-ansi-sql-isolation-levels/">A Critique of ANSI SQL Isolation Levels (1995)</a></h3>
         <div class="summary"><p>ANSI SQL-92規格は、トランザクション分離レベルを、Dirty Read, Non-Repeatable Reads, Phantomが発生する可能性で定義する。
 著者は、トランザクション分離レベルを禁止する現象で定義する理由を、ロックなどの実装手段で定義すると規格が実装依存になるからだと考えている。
 表題の論文は、規格の現象による定義があいまいであり、3つの異常が起きなくても望まない結果になる実行があることを例示した。
@@ -196,6 +196,16 @@ BPSは、並列計算用のハードウェアと高水準な並列計算のプ�
 禁止する現象にDirty Writeを規格に加え、厳しく実行列を制限するように現象の定義を解釈し、現象の説明を自然言語から形式的な記述に変えることを提唱した。
 さらに、規格がデータの版が単一であることを前提としていることを指摘した上で、多版型のトランザクションであるSnaphot Isolationを提案した。</p></div>
         <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/sql/">
+		#SQL
+	      </a>
+	    </li>
+	    
+	  </ul>
 	  
           <span class="date">November 13, 2021</span>
         </div>

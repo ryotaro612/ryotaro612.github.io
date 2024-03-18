@@ -1027,7 +1027,10 @@
     <loc>https://ryotaro.dev/posts/live_migration_of_virtual_machines/</loc>
     <lastmod>2021-11-20T19:53:45+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/a_critique_of_ansi_sql_isolation_levels/</loc>
+    <loc>https://ryotaro.dev/posts/a-critique-of-ansi-sql-isolation-levels/</loc>
+    <lastmod>2021-11-13T19:34:24+09:00</lastmod>
+  </url><url>
+    <loc>https://ryotaro.dev/tags/sql/</loc>
     <lastmod>2021-11-13T19:34:24+09:00</lastmod>
   </url><url>
     <loc>https://ryotaro.dev/posts/an_overview_of_data_warehousing_and_olap_technology/</loc>

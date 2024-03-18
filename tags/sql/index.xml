@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SQL on Blanket</title>
+    <link>https://ryotaro.dev/tags/sql/</link>
+    <description>Recent content in SQL on Blanket</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sat, 13 Nov 2021 19:34:24 +0900</lastBuildDate>
+    <atom:link href="https://ryotaro.dev/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Critique of ANSI SQL Isolation Levels (1995)</title>
+      <link>https://ryotaro.dev/posts/a-critique-of-ansi-sql-isolation-levels/</link>
+      <pubDate>Sat, 13 Nov 2021 19:34:24 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/a-critique-of-ansi-sql-isolation-levels/</guid>
+      <description>&lt;p&gt;ANSI SQL-92規格は、トランザクション分離レベルを、Dirty Read, Non-Repeatable Reads, Phantomが発生する可能性で定義する。&#xA;著者は、トランザクション分離レベルを禁止する現象で定義する理由を、ロックなどの実装手段で定義すると規格が実装依存になるからだと考えている。&#xA;表題の論文は、規格の現象による定義があいまいであり、3つの異常が起きなくても望まない結果になる実行があることを例示した。&#xA;また、規格のトランザクション分離レベルが、商用データベースで採用されているトランザクション分離レベルにあてはまらない問題もある。&#xA;禁止する現象にDirty Writeを規格に加え、厳しく実行列を制限するように現象の定義を解釈し、現象の説明を自然言語から形式的な記述に変えることを提唱した。&#xA;さらに、規格がデータの版が単一であることを前提としていることを指摘した上で、多版型のトランザクションであるSnaphot Isolationを提案した。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

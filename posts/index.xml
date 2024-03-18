@@ -835,10 +835,10 @@
       <description>&lt;p&gt;XenのハイパーバイザーにOSのライブマグレーションを統合し、約60msのダウンタイムでのOSのライブマイグレーションを実現した。&#xA;手法の焦点は、どれだけ短いダウンタイムや移行時間で、移行元と移行先のメモリの状態を同等にできるかにある。&#xA;ネットワークアドレスや物理デバイスの移行はあつかわない。&#xA;移行元と移行先は同じローカルネットワークにあり、マイグレーションによるIPアドレスのホストの移動を主にARP replyで通知でき、NASにデータを保存することを前提にし、ネットワークや物理デバイスの移行を考えなくてよいものとしている。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>A Critique of ANSI SQL Isolation Levels</title>
-      <link>https://ryotaro.dev/posts/a_critique_of_ansi_sql_isolation_levels/</link>
+      <title>A Critique of ANSI SQL Isolation Levels (1995)</title>
+      <link>https://ryotaro.dev/posts/a-critique-of-ansi-sql-isolation-levels/</link>
       <pubDate>Sat, 13 Nov 2021 19:34:24 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/a_critique_of_ansi_sql_isolation_levels/</guid>
+      <guid>https://ryotaro.dev/posts/a-critique-of-ansi-sql-isolation-levels/</guid>
       <description>&lt;p&gt;ANSI SQL-92規格は、トランザクション分離レベルを、Dirty Read, Non-Repeatable Reads, Phantomが発生する可能性で定義する。&#xA;著者は、トランザクション分離レベルを禁止する現象で定義する理由を、ロックなどの実装手段で定義すると規格が実装依存になるからだと考えている。&#xA;表題の論文は、規格の現象による定義があいまいであり、3つの異常が起きなくても望まない結果になる実行があることを例示した。&#xA;また、規格のトランザクション分離レベルが、商用データベースで採用されているトランザクション分離レベルにあてはまらない問題もある。&#xA;禁止する現象にDirty Writeを規格に加え、厳しく実行列を制限するように現象の定義を解釈し、現象の説明を自然言語から形式的な記述に変えることを提唱した。&#xA;さらに、規格がデータの版が単一であることを前提としていることを指摘した上で、多版型のトランザクションであるSnaphot Isolationを提案した。&lt;/p&gt;</description>
     </item>
     <item>
