@@ -23,7 +23,7 @@
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1706.03762&#34;&gt;Transformer&lt;/a&gt;のQKV注意機構に入力するベクトルを限定し、長さ\(n\)の系列をQKV注意機構に入力したときの空間計算量を\(\mathcal{O}(n\sqrt{n})\)まで減らした&lt;a href=&#34;https://arxiv.org/abs/1904.10509&#34;&gt;研究&lt;/a&gt;である。&#xA;Transformerであれば、系列の要素は、要素自体の位置と以前の要素すべてを注意し、時間と空間計算量は\(\mathcal{O}(n^2)\)になる。&#xA;Sparse Transformerは、\(p\)個のパターンを用意し、パターンに該当する要素のみを各注意機構に入力し、\(p\)個の注意を生成する。&#xA;そして、\(p\)個の注意を合成し、1つの注意に変換する。&#xA;パターンは、画像やテキストなど、入力するデータの種類によって決めておく規則であり、たとえば、直近にある一定数の要素や等間隔に離れた要素を指定するパターンがありえある。&#xA;パターンが\(p\)であれば、計算量は\(\mathcal{O}\sqrt[p]{n}\)になる。実験の設定は\(p=2\)である。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>概要 Language Models are Unsupervised Mmultitask Learners(2018)</title>
+      <title>Language Models are Unsupervised Multitask Learners (2018)</title>
       <link>https://ryotaro.dev/posts/language_models_are_unsupervised_multitask_learners/</link>
       <pubDate>Sat, 01 Apr 2023 09:39:17 -0400</pubDate>
       <guid>https://ryotaro.dev/posts/language_models_are_unsupervised_multitask_learners/</guid>

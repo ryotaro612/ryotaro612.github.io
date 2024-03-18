@@ -6,8 +6,15 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 10 Mar 2024 10:44:18 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 14 Mar 2024 14:41:48 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LLaMA Open and Efficient Foundation Language Models (2023)</title>
+      <link>https://ryotaro.dev/en/posts/llama-open-and-efficient-foundation-language-models/</link>
+      <pubDate>Thu, 14 Mar 2024 14:41:48 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/llama-open-and-efficient-foundation-language-models/</guid>
+      <description>Scaling Laws for Neural Language Models refers to empirical observations that model test performance has a power-law relationship with each of the three scale factors: the number of model parameters, the dataset size in tokens, and the amount of compute used for training, when not bottlenecked by the other two. Hoffmann et al. (2022) investigated the bottleneck and found that, given a fixed FLOPs budget, the number of model parameters and the training tokens should be scaled equally to minimize pre-training loss.</description>
+    </item>
     <item>
       <title>Apache Calcite a Foundational Framework for Optimized Query Processing Over Heterogeneous Data Sources</title>
       <link>https://ryotaro.dev/en/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/</link>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.123.7">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -23,7 +22,9 @@
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
     
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/articles.min.3ceb81a62f07e7057aa63e938b7f0479d4643c093f1c72984a82a68278ddbba3.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.ac39fd9b1999326c116cd551ce035fd4eaf2801f6bfc13a90241a1d9275b21ec.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -33,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>Blanket</title>
+    <title>LLaMA Open and Efficient Foundation Language Models (2023)</title>
   </head>
 
   <body>
@@ -52,7 +53,7 @@
           <li><a href="https://ryotaro.dev/en/posts">Posts</a></li>
           <li><a href="https://ryotaro.dev/en/tags">Tags</a></li>
 	  
-	  <li><a href="https://ryotaro.dev/">ja</a></li>
+	  <li><a href="https://ryotaro.dev/posts/llama-open-and-efficient-foundation-language-models/">ja</a></li>
 	  
         </ul>	
 	<ul>
@@ -81,52 +82,47 @@
     </header>
     
 <main>
-    <h1>Posts</h1>
+  <h1>LLaMA Open and Efficient Foundation Language Models (2023)</h1>
+  <ul class="tags">
     
+    <li class="tag">
+      <a href="https://ryotaro.dev/en/tags/large-language-model/">
+	#Large Language Model
+      </a>
+    </li>
     
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/an_incremental_approach_to_compiler_construction/">An Incremental Approach to Compiler Construction (2006)</a></h3>
-        <div class="summary"><p><a href="http://scheme2006.cs.uchicago.edu/11-ghuloum.pdf">An Incremental Approach to Compiler Construction</a> shows an incremental approach to build a compiler that accepts a large subset of the Scheme programming language.
-The compiler produces assembly code for the Intel-X86 architecture.
-Because real-life compilers are too complex to serve as an educational tool, the gap between real-life compilers and the educational toy compilers is too wide.</p>
-<p>The goal of the paper is to break the barrier.
-The development of the compiler is broken down into 24 incremental steps.
-Every step yields a fully working compiler for progressively expanding a subset of Scheme.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/compiler/">
-		#Compiler
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">January 1, 0001</span>
-        </div>
-    </article>
-    
+  </ul>  
+  <span class="date">March 14, 2024</span>    
+  <div>
+    <p><a href="https://arxiv.org/pdf/2001.08361.pdf">Scaling Laws for Neural Language Models</a> refers to empirical observations that model test performance has a power-law relationship with each of the three scale factors: the number of model parameters, the dataset size in tokens, and the amount of compute used for training, when not bottlenecked by the other two.
+<a href="https://arxiv.org/abs/2203.15556">Hoffmann et al. (2022)</a> investigated the bottleneck and found that, given a fixed FLOPs budget, the number of model parameters and the training tokens should be scaled equally to minimize pre-training loss.
+They trained a predicted compute-optimal model, Chinchilla, with 80B parameters, at the same compute budget as Gopher (280B) and with 4 times more data.
+Chinchilla outperformed Gopher and GPT-3 (175B) on a large range of downstream evaluation tasks.</p>
+<p>Hoffmann et al. (2022) focused on how to best scale the dataset and model sizes given a particular training compute budget.
+In this context, given a target level of performance, larger models can be preferred to smaller ones, whereas larger models are less compute-efficient at inference.</p>
+<p><a href="https://arxiv.org/abs/2302.13971">LLaMA</a> aims to investigate the best possible performance at various inference budgets by training a variety of models with different numbers of parameters on more tokens than what is typically used.
+Although Hoffmann et al. (2022) recommended training a 10B model on 200B tokens, they found that the performance of a 7B model continues to improve even after training on 1T tokens.</p>
+<p>Unlike Chinchilla, PaLM, or GPT-3, LLaMAs are trained only on publicly available data.</p>
+<p>The main differences from the original <a href="https://arxiv.org/abs/1706.03762">Transformer</a> are in pre-normalization, the activation function, and embeddings.
+The input, but not the output, of each transformer sub-layer is normalized by the <a href="https://arxiv.org/abs/1910.07467">RMSNorm</a> normalizing function.
+<a href="https://arxiv.org/abs/2002.05202">SwiGLU</a> is employed instead of ReLU.
+The absolute positional embeddings are replaced with <a href="https://arxiv.org/abs/2104.09864">rotary positional embeddings (RoPE)</a> at each layer of the network.</p>
+
+  </div>
 </main>
 
     
-
-<ul class="pagination">  
+<ul class="pagination">
     
     <li>
-      <a href="/en/">
-	<i class="fa-solid fa-xl fa-angles-left"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/en/page/3/">
+      <a href="/en/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/">
 	<i class="fa-solid fa-xl fa-angle-left"></i>
       </a>
     </li>
     
     
 </ul>
+
 
     <footer>
       <small>© Ryotaro. All Rights Reserved.</small>

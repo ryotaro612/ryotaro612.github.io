@@ -6,8 +6,15 @@
     <description>Recent content in Tags on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 10 Mar 2024 10:44:18 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 14 Mar 2024 14:41:48 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Large Language Model</title>
+      <link>https://ryotaro.dev/en/tags/large-language-model/</link>
+      <pubDate>Thu, 14 Mar 2024 14:41:48 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/large-language-model/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Apache Calcite</title>
       <link>https://ryotaro.dev/en/tags/apache-calcite/</link>
@@ -104,13 +111,6 @@
       <link>https://ryotaro.dev/en/tags/peer-to-peer/</link>
       <pubDate>Thu, 23 Nov 2023 12:31:01 -0500</pubDate>
       <guid>https://ryotaro.dev/en/tags/peer-to-peer/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Large Language Model</title>
-      <link>https://ryotaro.dev/en/tags/large-language-model/</link>
-      <pubDate>Sat, 18 Nov 2023 12:21:20 -0500</pubDate>
-      <guid>https://ryotaro.dev/en/tags/large-language-model/</guid>
       <description></description>
     </item>
     <item>

@@ -6,8 +6,15 @@
     <description>Recent content in Large Language Model on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 18 Nov 2023 12:21:20 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 14 Mar 2024 14:41:45 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/tags/large-language-model/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LLaMA Open and Efficient Foundation Language Models (2023)</title>
+      <link>https://ryotaro.dev/posts/llama-open-and-efficient-foundation-language-models/</link>
+      <pubDate>Thu, 14 Mar 2024 14:41:45 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/llama-open-and-efficient-foundation-language-models/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/2001.08361.pdf&#34;&gt;スケーリング則&lt;/a&gt;によれば、&lt;a href=&#34;https://arxiv.org/abs/1706.03762&#34;&gt;Transformer&lt;/a&gt;型モデルのテストデータに対する交差エントロピーの損失は、のこり2つの要素がボトルネックにならないかぎり、パラメタ数、データ量、訓練時間とべき乗の関係にある。&#xA;パラメタをふやすほど損失を下げることができる。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/2203.15556&#34;&gt;Hoffmann et al. (2022)&lt;/a&gt; は、訓練に使えるFlop数が一定のときに、事前学習時の損失を効果的に下げるには、訓練時に参照するトークン数、パラメタ数を等しい比率でスケールすべきと結論づけた。&#xA;実験のために開発されたパラメタ数70BのモデルChinchillaはパラメタ数175BのGPT-3の性能を上回った。&lt;/p&gt;&#xA;&lt;p&gt;しかし、訓練時の損失を目標まで下げるまでにかかるFlop数が少ないモデルほど、推論時もプロセッサの利用効率がよいとはかぎらない。&#xA;たとえば、パラメタ数の大きいモデルが小さいモデルよりも高いプロセッサの利用効率で訓練時の損失を目標以下にできても、推論に必要なFlop数はパラメタ数が多いモデルのほうが大きい。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS</title>
       <link>https://ryotaro.dev/posts/lora-low-rank-adaptation-of-large-language-models/</link>
