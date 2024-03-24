@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ryotaro.dev/</loc>
-    <lastmod>2024-03-14T14:41:45+09:00</lastmod>
+    <lastmod>2024-03-22T15:35:16+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -13,6 +13,71 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://ryotaro.dev/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/tags/postgresql/</loc>
+    <lastmod>2024-03-22T15:35:16+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/postgresql/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/postgresql/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/posts/</loc>
+    <lastmod>2024-03-22T15:35:16+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/tags/streaming-data/</loc>
+    <lastmod>2024-03-22T15:35:16+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/streaming-data/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/streaming-data/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/tags/</loc>
+    <lastmod>2024-03-22T15:35:16+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/</loc>
+    <lastmod>2024-03-22T15:35:16+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/tags/large-language-model/</loc>
@@ -39,32 +104,6 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://ryotaro.dev/posts/llama-open-and-efficient-foundation-language-models/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/posts/</loc>
-    <lastmod>2024-03-14T14:41:45+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/posts/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/tags/</loc>
-    <lastmod>2024-03-14T14:41:45+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/tags/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/tags/apache-calcite/</loc>
@@ -904,7 +943,7 @@
     <loc>https://ryotaro.dev/posts/smote_synthetic_minority_over_sampling_technique/</loc>
     <lastmod>2022-08-31T19:07:55+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/kafka_a_distributed_messaging_system_for_log_processing/</loc>
+    <loc>https://ryotaro.dev/posts/kafka-a-distributed-messaging-system-for-log-processing/</loc>
     <lastmod>2022-08-22T19:30:19+09:00</lastmod>
   </url><url>
     <loc>https://ryotaro.dev/posts/pregel_a_system_for_large_scale_graph_processing/</loc>

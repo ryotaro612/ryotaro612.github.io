@@ -16,7 +16,7 @@
       <description>&lt;p&gt;最初期におけるPOSTGRESの設計は、&lt;a href=&#34;https://dsf.berkeley.edu/papers/ERL-M85-95.pdf&#34;&gt;THE DESIGN OF POSTGRES&lt;/a&gt;で発表された。&#xA;&lt;a href=&#34;https://www.postgresql.jp/document/8.3/html/history.html&#34;&gt;POSTGRES少史&lt;/a&gt;によると、データモデルは&lt;a href=&#34;https://apps.dtic.mil/sti/tr/pdf/ADA184251.pdf&#34;&gt;The POSTGRES data model&lt;/a&gt;で、ルールは&lt;a href=&#34;https://apps.dtic.mil/sti/tr/pdf/ADA179161.pdf&#34;&gt;The design of the POSTGRES rules system&lt;/a&gt;で、ストレージは&lt;a href=&#34;https://dsf.berkeley.edu/papers/ERL-M87-06.pdf&#34;&gt;THE DESIGN OF THE POSTGRES STORAGE SYSTEM&lt;/a&gt;で同時期に個別に論じられている。&#xA;THE DESIGN OF POSTGRESはPOSTGRESの全体像を解説する位置にある。&lt;/p&gt;&#xA;&lt;p&gt;POSTGRESは、関係データベースINGRESの後継として開発された。&#xA;POSTGRESの目標は、複雑な型のオブジェクトやtriggerを扱え、クラッシュから回復する実装を単純化でき、光ディスクを利用できるようにしつつも、リレーショナルモデルから逸脱しないデータベースを維持することにある。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>ARIES: A Transaction Recovery Method Supporting Fine-Granularity Locking and Partial Rollbacks Using Write-Ahead Logging(1992)</title>
+      <title>ARIES: A Transaction Recovery Method Supporting Fine-Granularity Locking and Partial Rollbacks Using Write-Ahead Logging (1992)</title>
       <link>https://ryotaro.dev/posts/aries/</link>
       <pubDate>Sun, 26 Feb 2023 01:47:13 -0500</pubDate>
       <guid>https://ryotaro.dev/posts/aries/</guid>
@@ -28,6 +28,13 @@
       <pubDate>Sun, 29 Jan 2023 15:14:29 -0500</pubDate>
       <guid>https://ryotaro.dev/posts/principles_of_transaction_oriented_database_recovery/</guid>
       <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;クラッシュしたRDMSのディスクとバッファの状態をクラッシュ前の状態にもどす手法を体系化する。&#xA;体系は、Propagation, Buffer handling, EOT Processing, Checkpointingの4要素に着目して技術を分類する。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>&#34;One Size Fits All&#34;: An Idea Whose Time Has Come and Gone (2005)</title>
+      <link>https://ryotaro.dev/posts/one-size-fits-all-an-idea-whose-time-has-come-and-gone/</link>
+      <pubDate>Fri, 13 Nov 2020 16:05:23 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/one-size-fits-all-an-idea-whose-time-has-come-and-gone/</guid>
+      <description>&lt;p&gt;2005年に発表された論文で、これまでのようにDBMSを様々なデータ中心のアプリケーションに利用することがデータベース市場で受け入れられなくなったと主張する。&#xA;データウェアハウスとストリーミング処理を例にとり、これらに特化したデータベースをDBMSで代用することの限界が説明されている。&#xA;表題の&amp;quot;One Size Fits All&amp;quot;はフリーサイズ、転じて、万能、汎用的を意味する。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

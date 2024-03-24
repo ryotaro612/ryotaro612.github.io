@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Streaming Data on Blanket</title>
+    <link>https://ryotaro.dev/en/tags/streaming-data/</link>
+    <description>Recent content in Streaming Data on Blanket</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 22 Mar 2024 15:35:16 +0900</lastBuildDate>
+    <atom:link href="https://ryotaro.dev/en/tags/streaming-data/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TelegraphCQ: Continuous Dataflow Processing for an Uncertain World (2003)</title>
+      <link>https://ryotaro.dev/en/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/</link>
+      <pubDate>Fri, 22 Mar 2024 15:35:16 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/</guid>
+      <description>&lt;p&gt;Stonebraker and Çetintemel presented &lt;a href=&#34;https://cs.brown.edu/~ugur/fits_all.pdf&#34;&gt;&amp;ldquo;One Size Fits All&amp;rdquo;&lt;/a&gt; in 2005.&#xA;The phrase refers to the fact that various data-centric applications use traditional DMBMS architectures to store data regardless of the characteristics and requirements of the data.&#xA;In the paper, they argued that this approach was no longer applicable, with examples of streaing processing.&#xA;&lt;a href=&#34;https://cs.brown.edu/courses/cs227/archives/2015/papers/ss-telegraphcq.pdf&#34;&gt;TelegraphCQ&lt;/a&gt;, presented in 2003, is the first generation of databases for streamingffff data from the early 2000s.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

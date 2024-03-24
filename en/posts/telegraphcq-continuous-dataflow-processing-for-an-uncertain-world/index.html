@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
+    
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.ac39fd9b1999326c116cd551ce035fd4eaf2801f6bfc13a90241a1d9275b21ec.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>TelegraphCQ: Continuous Dataflow Processing for an Uncertain World (2003)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://ryotaro.dev/en/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://ryotaro.dev/en/about">About</a></li>
+          <li><a href="https://ryotaro.dev/en/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/en/tags">Tags</a></li>
+	  
+	  <li><a href="https://ryotaro.dev/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/">ja</a></li>
+	  
+        </ul>	
+	<ul>
+          
+          <li>
+            <a href="https://github.com/ryotaro612">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="https://www.linkedin.com/in/ryotaro612/">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          
+          <li>
+	    <a href="https://ryotaro.dev/en/index.xml">
+	      <i class="fas fa-rss"></i>
+            </a>
+	  </li>
+          
+        </ul>	
+      </nav>
+    </header>
+    
+<main>
+  <h1>TelegraphCQ: Continuous Dataflow Processing for an Uncertain World (2003)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/en/tags/streaming-data/">
+	#Streaming Data
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/en/tags/postgresql/">
+	#PostgreSQL
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">March 22, 2024</span>    
+  <div>
+    <p>Stonebraker and Çetintemel presented <a href="https://cs.brown.edu/~ugur/fits_all.pdf">&ldquo;One Size Fits All&rdquo;</a> in 2005.
+The phrase refers to the fact that various data-centric applications use traditional DMBMS architectures to store data regardless of the characteristics and requirements of the data.
+In the paper, they argued that this approach was no longer applicable, with examples of streaing processing.
+<a href="https://cs.brown.edu/courses/cs227/archives/2015/papers/ss-telegraphcq.pdf">TelegraphCQ</a>, presented in 2003, is the first generation of databases for streamingffff data from the early 2000s.</p>
+<p>Streming data is emitted at high volume in a continuous and unpredictable manner.
+Some dataflow processing applications, such as sensor monitoring systems, can be real-time systems with continuously active queries.
+In such systems, when new data arrives, it should be routed to active queries.
+Traditional RDBMS cannot daptively handle streaming data because the queries in RDBMS process data in the storage, and rely on statistics of the storage for optimization.</p>
+<p>TelegraphCQ was developed by leveraging PostgreSQL code base to address problems of <a href="https://dl.acm.org/doi/10.1145/604264.604282">Telegraph</a>.
+The following figure shows the basic process structure of PostgreSQL.
+<img alt="postgresql" src="/telegraphcq/postgresql.png">
+the components shaded in gray were changed for TelegraphCQ.
+The Postmaster foks new server processes in response to new client connections.
+A Listener accepts requests on a connection and returns processed data to the client.
+When a new query arrives, it is parsed, optimized, compiled into an access plan.
+The query Executor processes the access plan.</p>
+<p>The three processes, FrontEnd, Executor, and Wrapper comprise TelegraphCQ, as shown in the following figure.
+These processes are connected using a shared memory infrastructure.
+<img alt="telegraphcql" src="/telegraphcq/telegrphcq.png">
+The Postmaster forks a FrontEnd process for each new connection.
+Since each connection can have multiple open cursors, it depends on a proxy service to collect individual requests from clients.
+The FrondEnd and the Executor exchange query plans and output of queries through queues in the shared memory infrastructure.
+The Wrapper receives streaming data with less blocking operations and disk space.
+It allows the Executor to access newsly arriving streamed data using mechanisims similar to those used for previously arrived tr even static data.</p>
+<p>The above images are cited from <a href="https://cs.brown.edu/courses/cs227/archives/2015/papers/ss-telegraphcq.pdf">TelegraphCQ: Continuous Dataflow Processing for an Uncertain World</a>.</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/en/posts/llama-open-and-efficient-foundation-language-models/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <small>© Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

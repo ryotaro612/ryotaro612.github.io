@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
 	<meta name="generator" content="Hugo 0.123.7">
     
@@ -83,6 +83,33 @@
 <main>
     <h1>Posts</h1>
     
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/">TelegraphCQ: Continuous Dataflow Processing for an Uncertain World (2003)</a></h3>
+        <div class="summary"><p>2005年、StonebrakerとÇetintemelは、<a href="https://cs.brown.edu/~ugur/fits_all.pdf">&ldquo;One Size Fits All&rdquo;</a>で、ストリーミングデータを例に、あらゆる種類のデータをDMBSで管理できなくなったと主張した。
+&ldquo;One Size Fits All&quot;については<a href="https://ryotaro.dev/posts/one-size-fits-all-an-idea-whose-time-has-come-and-gone/">過去の記事</a>で紹介した。
+2003年に発表された<a href="https://cs.brown.edu/courses/cs227/archives/2015/papers/ss-telegraphcq.pdf">TelegraphCQ</a>は、そのようなドメイン特化のデータベースが必要とされはじめた初期のストリーミングデータのためのデータベースである。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/streaming-data/">
+		#Streaming Data
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/postgresql/">
+		#PostgreSQL
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">March 22, 2024</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://ryotaro.dev/posts/llama-open-and-efficient-foundation-language-models/">LLaMA Open and Efficient Foundation Language Models (2023)</a></h3>
@@ -196,6 +223,12 @@ POSTGRESの目標は、複雑な型のオブジェクトやtriggerを扱え、�
 	      </a>
 	    </li>
 	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/postgresql/">
+		#PostgreSQL
+	      </a>
+	    </li>
+	    
 	  </ul>
 	  
           <span class="date">February 17, 2024</span>
@@ -289,28 +322,6 @@ DPRは、質問と文書を別々のBERTで埋め込みベクトルに変換し�
 	  </ul>
 	  
           <span class="date">December 31, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/dense-passage-retrieval-for-open-domain-question-answering/">Dense Passage Retrieval for Open-Domain Question Answering (2020)</a></h3>
-        <div class="summary"><p>あたえられた文書集合から事実についての質問に答えるオープンドメイン質問応答は、もとの集合から質問に関連する少数の文書集合を選び、選ばれた集合から解答を特定する二段階の手順に分けられる <a href="https://arxiv.org/abs/1704.00051">(Chen et al., 2017)</a>。
-<a href="https://aclanthology.org/2020.emnlp-main.550/">Dense Passage Retrieval for Open-Domain Question Answering</a>は、最初の文書候補を限定する手順に、従来より使われているBM25のような疎なベクトルを出力するモデルにかわって、BERTが出力する密で次元数の少ないベクトルを応用する。</p>
-<p>訓練方法は距離学習であり、質問と解答のベクトルの内積が大きく、解答以外の文章と質問の内積が小さくになるように、BERTの重みを更新する。
-負例を集めるために、無作為に選ばれた文章、BM25が最も高い文章、別の正例の文章を負例の文章に利用し比較したところ、BM25の高い文章と別の正例の文章を負例にするときに最もよい結果になった。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E8%B3%AA%E5%95%8F%E5%BF%9C%E7%AD%94/">
-		#質問応答
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 30, 2023</span>
         </div>
     </article>
     

@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 14 Mar 2024 14:41:45 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 22 Mar 2024 15:35:16 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TelegraphCQ: Continuous Dataflow Processing for an Uncertain World (2003)</title>
+      <link>https://ryotaro.dev/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/</link>
+      <pubDate>Fri, 22 Mar 2024 15:35:16 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/</guid>
+      <description>&lt;p&gt;2005年、StonebrakerとÇetintemelは、&lt;a href=&#34;https://cs.brown.edu/~ugur/fits_all.pdf&#34;&gt;&amp;ldquo;One Size Fits All&amp;rdquo;&lt;/a&gt;で、ストリーミングデータを例に、あらゆる種類のデータをDMBSで管理できなくなったと主張した。&#xA;&amp;ldquo;One Size Fits All&amp;quot;については&lt;a href=&#34;https://ryotaro.dev/posts/one-size-fits-all-an-idea-whose-time-has-come-and-gone/&#34;&gt;過去の記事&lt;/a&gt;で紹介した。&#xA;2003年に発表された&lt;a href=&#34;https://cs.brown.edu/courses/cs227/archives/2015/papers/ss-telegraphcq.pdf&#34;&gt;TelegraphCQ&lt;/a&gt;は、そのようなドメイン特化のデータベースが必要とされはじめた初期のストリーミングデータのためのデータベースである。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>LLaMA Open and Efficient Foundation Language Models (2023)</title>
       <link>https://ryotaro.dev/posts/llama-open-and-efficient-foundation-language-models/</link>
@@ -359,7 +366,7 @@
       <description>&lt;p&gt;特異値分解を応用した潜在的な意味にもとづく文書検索の手法である。&#xA;文書を、単語の出現回数が成分の列ベクトルとしてあつかう。&#xA;その列ベクトルからなる文書集合の行列に特異値分解(Singular Value Decomposition, SVD)を適用する。&#xA;大きい順に\(k\)個の特異値とその特異ベクトルを選んで、低ランクの行列をつくり、もとの行列を近似する。&#xA;単語の数が\(t\), 文書数が\(d\)のとき、低ランクの行列の左特異ベクトルの行列\(T\)と右特異ベクトルの転置行列\(D&amp;rsquo;\)のサイズは、それぞれ、\(t\times k\), \(k \times d\)になる。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>ARIES: A Transaction Recovery Method Supporting Fine-Granularity Locking and Partial Rollbacks Using Write-Ahead Logging(1992)</title>
+      <title>ARIES: A Transaction Recovery Method Supporting Fine-Granularity Locking and Partial Rollbacks Using Write-Ahead Logging (1992)</title>
       <link>https://ryotaro.dev/posts/aries/</link>
       <pubDate>Sun, 26 Feb 2023 01:47:13 -0500</pubDate>
       <guid>https://ryotaro.dev/posts/aries/</guid>
@@ -548,10 +555,10 @@
       <description>&lt;p&gt;SMOTEはオーバーサンプリングで不均衡データの予測性能の向上をはかる。&#xA;少数クラスのサンプルからk近傍にあるサンプルのうち1つをランダムに選ぶ。&#xA;もとのサンプルと選ばれたサンプルの各特徴の差に[0,1]区間のランダムな値を掛け、その値をもとのサンプルに足して、少数クラスのサンプルを合成する。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>抄訳 Kafka: a Distributed Messaging System for Log Processing (2011)</title>
-      <link>https://ryotaro.dev/posts/kafka_a_distributed_messaging_system_for_log_processing/</link>
+      <title>Kafka: a Distributed Messaging System for Log Processing (2011)</title>
+      <link>https://ryotaro.dev/posts/kafka-a-distributed-messaging-system-for-log-processing/</link>
       <pubDate>Mon, 22 Aug 2022 19:30:19 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/kafka_a_distributed_messaging_system_for_log_processing/</guid>
+      <guid>https://ryotaro.dev/posts/kafka-a-distributed-messaging-system-for-log-processing/</guid>
       <description>&lt;p&gt;Kafkaは、LinkedInで開発された分散メッセージングサービスである。&#xA;配信モデルはpullベースであり、consumerが、メッセージをリクエストし、メッセージを消費するスループットを制御する。&#xA;consumerは、関心のあるメッセージのストリームであるトピックを作る。&#xA;producerは、トピックつきのメッセージをborkerに送り、brokerがメッセージを保持する。&#xA;consumerは、brokerのトピックからメッセージを取得する。&lt;/p&gt;</description>
     </item>
     <item>

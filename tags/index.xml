@@ -6,8 +6,22 @@
     <description>Recent content in Tags on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 14 Mar 2024 14:41:45 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 22 Mar 2024 15:35:16 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PostgreSQL</title>
+      <link>https://ryotaro.dev/tags/postgresql/</link>
+      <pubDate>Fri, 22 Mar 2024 15:35:16 +0900</pubDate>
+      <guid>https://ryotaro.dev/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Streaming Data</title>
+      <link>https://ryotaro.dev/tags/streaming-data/</link>
+      <pubDate>Fri, 22 Mar 2024 15:35:16 +0900</pubDate>
+      <guid>https://ryotaro.dev/tags/streaming-data/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Large Language Model</title>
       <link>https://ryotaro.dev/tags/large-language-model/</link>

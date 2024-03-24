@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
 	<meta name="generator" content="Hugo 0.123.7">
     
@@ -83,6 +83,34 @@
 <main>
     <h1>Posts</h1>
     
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/">TelegraphCQ: Continuous Dataflow Processing for an Uncertain World (2003)</a></h3>
+        <div class="summary"><p>Stonebraker and Çetintemel presented <a href="https://cs.brown.edu/~ugur/fits_all.pdf">&ldquo;One Size Fits All&rdquo;</a> in 2005.
+The phrase refers to the fact that various data-centric applications use traditional DMBMS architectures to store data regardless of the characteristics and requirements of the data.
+In the paper, they argued that this approach was no longer applicable, with examples of streaing processing.
+<a href="https://cs.brown.edu/courses/cs227/archives/2015/papers/ss-telegraphcq.pdf">TelegraphCQ</a>, presented in 2003, is the first generation of databases for streamingffff data from the early 2000s.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/streaming-data/">
+		#Streaming Data
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/postgresql/">
+		#PostgreSQL
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">March 22, 2024</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://ryotaro.dev/en/posts/llama-open-and-efficient-foundation-language-models/">LLaMA Open and Efficient Foundation Language Models (2023)</a></h3>
@@ -193,6 +221,12 @@ The main design goals of POSTGRES were to support complex objects, simplify the 
 	      </a>
 	    </li>
 	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/postgresql/">
+		#PostgreSQL
+	      </a>
+	    </li>
+	    
 	  </ul>
 	  
           <span class="date">February 17, 2024</span>
@@ -279,37 +313,6 @@ The authors have implemented this method in a library called <a href="https://gi
 	  </ul>
 	  
           <span class="date">December 31, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/dense-passage-retrieval-for-open-domain-question-answering/">Dense Passage Retrieval for Open-Domain Question Answering (2020)</a></h3>
-        <div class="summary"><p>Open-domain question answering (QA) involves answering fact-based questions using documents.
-An open-domain QA system can be divided into two components: one that retrieves relevant passages and another that extracts the answer spans from those passages <a href="https://arxiv.org/abs/1704.00051">(Chen et al., 2017)</a>.
-While traditional approaches use sparse vector space models like BM25 for the retrieval step, <a href="https://aclanthology.org/2020.emnlp-main.550/">Dense Passage Retrieval for Open-Domain Question Answering</a> shows that dense representations can also be practically implemented using dense representations.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>The embeddings are learned from the training dataset, optimizing for maximizing inner products between question and relevant passage vectors.
-The training is essentially metric learning, and each question needs irrelvant passages.
-In experiments, it was found that utilizing both the top passages returned by BM25, excluding the answer, and positive passages paired with other questions as negatives yielded best performance.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted --></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/question-answering/">
-		#Question Answering
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 30, 2023</span>
         </div>
     </article>
     

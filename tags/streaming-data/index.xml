@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Streaming Data on Blanket</title>
+    <link>https://ryotaro.dev/tags/streaming-data/</link>
+    <description>Recent content in Streaming Data on Blanket</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Fri, 22 Mar 2024 15:35:16 +0900</lastBuildDate>
+    <atom:link href="https://ryotaro.dev/tags/streaming-data/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TelegraphCQ: Continuous Dataflow Processing for an Uncertain World (2003)</title>
+      <link>https://ryotaro.dev/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/</link>
+      <pubDate>Fri, 22 Mar 2024 15:35:16 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/</guid>
+      <description>&lt;p&gt;2005年、StonebrakerとÇetintemelは、&lt;a href=&#34;https://cs.brown.edu/~ugur/fits_all.pdf&#34;&gt;&amp;ldquo;One Size Fits All&amp;rdquo;&lt;/a&gt;で、ストリーミングデータを例に、あらゆる種類のデータをDMBSで管理できなくなったと主張した。&#xA;&amp;ldquo;One Size Fits All&amp;quot;については&lt;a href=&#34;https://ryotaro.dev/posts/one-size-fits-all-an-idea-whose-time-has-come-and-gone/&#34;&gt;過去の記事&lt;/a&gt;で紹介した。&#xA;2003年に発表された&lt;a href=&#34;https://cs.brown.edu/courses/cs227/archives/2015/papers/ss-telegraphcq.pdf&#34;&gt;TelegraphCQ&lt;/a&gt;は、そのようなドメイン特化のデータベースが必要とされはじめた初期のストリーミングデータのためのデータベースである。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kafka: a Distributed Messaging System for Log Processing (2011)</title>
+      <link>https://ryotaro.dev/posts/kafka-a-distributed-messaging-system-for-log-processing/</link>
+      <pubDate>Mon, 22 Aug 2022 19:30:19 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/kafka-a-distributed-messaging-system-for-log-processing/</guid>
+      <description>&lt;p&gt;Kafkaは、LinkedInで開発された分散メッセージングサービスである。&#xA;配信モデルはpullベースであり、consumerが、メッセージをリクエストし、メッセージを消費するスループットを制御する。&#xA;consumerは、関心のあるメッセージのストリームであるトピックを作る。&#xA;producerは、トピックつきのメッセージをborkerに送り、brokerがメッセージを保持する。&#xA;consumerは、brokerのトピックからメッセージを取得する。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>&#34;One Size Fits All&#34;: An Idea Whose Time Has Come and Gone (2005)</title>
+      <link>https://ryotaro.dev/posts/one-size-fits-all-an-idea-whose-time-has-come-and-gone/</link>
+      <pubDate>Fri, 13 Nov 2020 16:05:23 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/one-size-fits-all-an-idea-whose-time-has-come-and-gone/</guid>
+      <description>&lt;p&gt;2005年に発表された論文で、これまでのようにDBMSを様々なデータ中心のアプリケーションに利用することがデータベース市場で受け入れられなくなったと主張する。&#xA;データウェアハウスとストリーミング処理を例にとり、これらに特化したデータベースをDBMSで代用することの限界が説明されている。&#xA;表題の&amp;quot;One Size Fits All&amp;quot;はフリーサイズ、転じて、万能、汎用的を意味する。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

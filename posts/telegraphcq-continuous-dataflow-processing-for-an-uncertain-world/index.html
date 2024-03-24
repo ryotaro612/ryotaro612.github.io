@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.ac39fd9b1999326c116cd551ce035fd4eaf2801f6bfc13a90241a1d9275b21ec.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>TelegraphCQ: Continuous Dataflow Processing for an Uncertain World (2003)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://ryotaro.dev/about">About</a></li>
+          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+	  
+	  <li><a href="https://ryotaro.dev/en/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/">en</a></li>
+	  
+        </ul>	
+	<ul>
+          
+          <li>
+            <a href="https://github.com/ryotaro612">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="https://www.linkedin.com/in/ryotaro612/">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          
+          <li>
+	    <a href="https://ryotaro.dev/index.xml">
+	      <i class="fas fa-rss"></i>
+            </a>
+	  </li>
+          
+        </ul>	
+      </nav>
+    </header>
+    
+<main>
+  <h1>TelegraphCQ: Continuous Dataflow Processing for an Uncertain World (2003)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/streaming-data/">
+	#Streaming Data
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/postgresql/">
+	#PostgreSQL
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">March 22, 2024</span>    
+  <div>
+    <p>2005年、StonebrakerとÇetintemelは、<a href="https://cs.brown.edu/~ugur/fits_all.pdf">&ldquo;One Size Fits All&rdquo;</a>で、ストリーミングデータを例に、あらゆる種類のデータをDMBSで管理できなくなったと主張した。
+&ldquo;One Size Fits All&quot;については<a href="https://ryotaro.dev/posts/one-size-fits-all-an-idea-whose-time-has-come-and-gone/">過去の記事</a>で紹介した。
+2003年に発表された<a href="https://cs.brown.edu/courses/cs227/archives/2015/papers/ss-telegraphcq.pdf">TelegraphCQ</a>は、そのようなドメイン特化のデータベースが必要とされはじめた初期のストリーミングデータのためのデータベースである。</p>
+<p>RDBMSがストリーミングデータを苦手とする理由は、ストリーミングデータが継続的かつ不定期に発生することにある。
+センサーデータを監視するアプリケーションなどは、ストリーミングデータを遅滞なく処理しなければならない。
+到着したデータをリアクティブに処理するために、到着したばかりのデータを既存のクエリに適用するようにデータを転送する必要がある。
+また、遅延のないように、複数のクエリ間に共通の処理を個別に処理せず、処理の結果を共有するほうが望ましい。
+RDBMSのクエリは、クエリ発行以前からあるデータを処理し、また、データの統計情報やインデックスで最適化されるので、ストリーミングデータには適さない。</p>
+<p>以上の背景から開発されたTelegraphCQは、<a href="https://dl.acm.org/doi/10.1145/604264.604282">Telegraph</a>のアーキテクチャ上の課題を解決するために、PostgresSQLを再利用して実装された。
+以下の図は、当時のPostgreSQLのアーキテクチャであり、灰色の箇所がTelegraph CQのために改造されたモジュールを示す。
+濃い灰色のほうが薄い灰色よりも手を加えられている。
+<img alt="postgresql" src="/telegraphcq/postgresql.png">
+Postmasterは、クライアントのコネクションに応じてサーバのプロセスをフォークする。
+Listenerは、コネクションを通したリクエストに対してクライアントにデータを返す。
+到着したクエリは、パース、最適化、コンパイル後に実行計画され、Executerで処理される。</p>
+<p>TelegraphCQは、メモリを共有したFrontend, Executor, Wrapperの3プロセスかなる。
+以下に、TelegraphCQのアーキテクチャの図を示す。
+<img alt="telegraphcql" src="/telegraphcq/telegrphcq.png">
+Postmasterは、新しいコネクションをうけつけると、FrontEndプロセスをフォークする。
+各コネクションにある複数のカーソルを同時にあうために、proxy serviceを利用する。
+FrontendとExecutorは、共有メモリ空間にあるキューを介して、リクエストと結果を交換する。
+Frontendはクエリを実行計画に相当するAdaptive planにまで解析したあと、adaptive planをQuery Plansに入力する。
+Executorは、クエリの結果をOutput Queueに追加し、Listnerに結果を返す。
+Wrapperは、ストリーミングデータを受信するプロセスであり、ブロッキング操作やディスクへのアクセスを避けつつ、Executorにデータを供給する。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><a href="https://cs.brown.edu/courses/cs227/archives/2015/papers/ss-telegraphcq.pdf">画像</a>は論文中より引用しました。</p>
+<h2 id="雑記">雑記</h2>
+<p>RDBMSは高機能なストレージ機能とクエリ(=処理)の機能を提供し、TelegraphCQはPostgreSQLを改造することで両方の機能をそなえる。
+一方、今日のストリーミングデータの処理においては、データの保存にKafkaのようなキューイングシステム、その処理にSparkやStormのようなストレージ機能のない分散処理フレームワークを使用し、2つの機能を別々のミドルウェアにまかせている。
+DMBSを改造すればドメイン特化のデータベースを実装できると期待しTelegraphCQが開発されたは、今日からみれば、まだOne Size Fits Allの考えがどこか残っていたかのように感じる。</p>
+<!-- raw HTML omitted -->
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/llama-open-and-efficient-foundation-language-models/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <small>© Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>
