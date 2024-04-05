@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ryotaro.dev/en/</loc>
-    <lastmod>2024-03-22T15:35:16+09:00</lastmod>
+    <lastmod>2024-03-25T16:56:51+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -13,6 +13,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ryotaro.dev/en/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/posts/</loc>
+    <lastmod>2024-03-25T16:56:51+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/tags/postgresql/</loc>
@@ -26,19 +39,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ryotaro.dev/en/tags/postgresql/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/en/posts/</loc>
-    <lastmod>2024-03-22T15:35:16+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/posts/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/tags/streaming-data/</loc>

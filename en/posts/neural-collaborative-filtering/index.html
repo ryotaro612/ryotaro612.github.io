@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="http://localhost:1313/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    
+    <link rel="stylesheet" href="http://localhost:1313/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
+    
+
+<link rel="stylesheet" href="http://localhost:1313/scss/single.min.ac39fd9b1999326c116cd551ce035fd4eaf2801f6bfc13a90241a1d9275b21ec.css">
+
+<link rel="stylesheet" href="http://localhost:1313/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Neural Collaborative Filtering (2017)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="http://localhost:1313/en/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="http://localhost:1313/en/about">About</a></li>
+          <li><a href="http://localhost:1313/en/posts">Posts</a></li>
+          <li><a href="http://localhost:1313/en/tags">Tags</a></li>
+	  
+	  <li><a href="http://localhost:1313/posts/neural-collaborative-filtering/">ja</a></li>
+	  
+        </ul>	
+	<ul>
+          
+          <li>
+            <a href="https://github.com/ryotaro612">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="https://www.linkedin.com/in/ryotaro612/">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          
+          <li>
+	    <a href="http://localhost:1313/en/index.xml">
+	      <i class="fas fa-rss"></i>
+            </a>
+	  </li>
+          
+        </ul>	
+      </nav>
+    </header>
+    
+<main>
+  <h1>Neural Collaborative Filtering (2017)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="http://localhost:1313/en/tags/collaborative-filtering/">
+	#Collaborative Filtering
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">March 25, 2024</span>    
+  <div>
+    <p>In collaborative filtering, Matrix Factorization (MF) approximates the user-item interaction matrix by multiplying the latent matrices for users and items.
+An estimated iteraction is the inner product of the latent vectors for the user and the item.
+<a href="https://arxiv.org/pdf/1708.05031.pdf">Neural Collaborative Filtering (NCF)</a> replaces the inner product with a neural neural network to capture the complex structure of user interaction data.
+There are three instances of NFC: Generalized Matrix Factorization (GMF), Multi-Layer Perceptron (MLP), Neural Matrix Factoriation (NeuMF).</p>
+<p>GMF inputs the element-wise product of a user&rsquo;s and an item&rsquo;s latent vectors into a linear layer.
+MF can be seen as a special case of GMF.
+Let \(\textbf{v}^U_u\) and \(\textbf{v}^I_{i}\) be the one-hot encoding of a user and an item, and \(\textbf{P}^\top\) and \(\textbf{Q}^\top\) be latent feature matrices.
+GMF estimates the interaction between user \(u\) and item \(i\) by projecting the element-wise product of latent vectors:<br>
+$$
+\hat{y}_{ui}=a_{\text{out}}(\textbf{h}^\top (\textbf{p}_u \odot \textbf{q}_i))
+$$
+where \(\textbf{p}_u\) is \(\textbf{P}^\top \textbf{v}_u^U\) and \(\textbf{q}_i\) is \(\textbf{Q}^\top \textbf{v}_i^I\).</p>
+<p>MLP concatenates the latent vectors of a user and an item, and inputs the vector to a MLP network:
+$$
+\begin{align*}
+\textbf{z}_1&amp;=\phi_1(\textbf{p}_u, \textbf{q}_i)=\begin{bmatrix}\textbf{p}_u\\\textbf{q}_i\end{bmatrix}\\
+\phi_2(\textbf{z}_1)&amp;=a_2(\textbf{W}^\top_2\textbf{z}_1+\textbf{b}_2)\\
+&amp;\dots\\
+\phi_L(\textbf{z}_{L-1})&amp;=a_L(\textbf{W}^\top_L\textbf{z}_{L-1}+\textbf{b}_L)\\
+\hat{y}_{ui}&amp;=\sigma(\textbf{h}^\top \phi_L(\textbf{z}_{L-1}))
+\end{align*}
+$$</p>
+<p>NeuMF concatenates the outputs of GMP and MLP, then feeds the concatnated vectors to a linear layer:</p>
+<p>$$
+\begin{align*}
+\phi^{\text{GMF}}&amp;=\textbf{p}^G_u\odot \textbf{q}^G_i\\
+\phi^{\text{MLP}}&amp;=a_L(\textbf{W}^T_L(a_{L-1} (\dots a_2(\textbf{W}^\top_2\begin{bmatrix}\textbf{p}^M_u\\\textbf{q}^M_i\end{bmatrix}+\textbf{b}_2)\dots)) + \textbf{b}_L)\\
+\hat{y}_{ui}&amp;=\sigma (\textbf{h}^\top \begin{bmatrix}\phi^{\text{GMF}}\\\phi^{\text{MLP}}\end{bmatrix})
+\end{align*}
+$$</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/en/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <small>© Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="http://localhost:1313/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    
+    <link rel="stylesheet" href="http://localhost:1313/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    
+
+<link rel="stylesheet" href="http://localhost:1313/scss/single.min.ac39fd9b1999326c116cd551ce035fd4eaf2801f6bfc13a90241a1d9275b21ec.css">
+
+<link rel="stylesheet" href="http://localhost:1313/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Neural Collaborative Filtering (2017)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="http://localhost:1313/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="http://localhost:1313/about">About</a></li>
+          <li><a href="http://localhost:1313/posts">Posts</a></li>
+          <li><a href="http://localhost:1313/tags">Tags</a></li>
+	  
+	  <li><a href="http://localhost:1313/en/posts/neural-collaborative-filtering/">en</a></li>
+	  
+        </ul>	
+	<ul>
+          
+          <li>
+            <a href="https://github.com/ryotaro612">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="https://www.linkedin.com/in/ryotaro612/">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          
+          <li>
+	    <a href="http://localhost:1313/index.xml">
+	      <i class="fas fa-rss"></i>
+            </a>
+	  </li>
+          
+        </ul>	
+      </nav>
+    </header>
+    
+<main>
+  <h1>Neural Collaborative Filtering (2017)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="http://localhost:1313/tags/%E5%8D%94%E8%AA%BF%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/">
+	#協調フィルタリング
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">March 25, 2024</span>    
+  <div>
+    <p>行列分解による協調フィルタリングは、ユーザとアイテムの評価値行列を近似するユーザとアイテムの潜在因子行列の積を学習する。
+<a href="https://arxiv.org/pdf/1708.05031.pdf">Neural Collaborative Filtering (NCF)</a> は、行列分解のかわりにニューラルネットワークで、パラメータを更新する。
+NCFは3種類あり、Generalized Matrix Factorization (GMF) と Multi-Layer Perceptron (MLP)、GMFとMLPを組み合わせたNeural Matrix Factorization (NeuMF) がある。</p>
+<p>GMFは、ユーザとアイテムの潜在ベクトルのアダマール積を、1層の全結合層と活性化関数のネットワークに入力する。
+ユーザ\(u\)とアイテム\(i\)の潜在ベクトルを\(\textbf{p}_u\), \(\textbf{q}_i\), 活性化関数を\(a_{\text{out}}\), 重みを\(\textbf{h}^\top\)とおくとき、評価値を
+$$
+\hat{y}_{ui}=a_{\text{out}}(\textbf{h}^\top(\textbf{p}_u\odot \textbf{q}_i))
+$$
+と推定する。
+GMFにおいては、行列分解を、重みの要素が1、活性化関数が恒等写像、バイアス項がない1層の全結合層とみなせる。</p>
+<p>MLPにおきかえる場合、\(\textbf{p}_u\), \(\textbf{q}_i\)を連結してできるベクトルをMLPに入力する。
+$$
+\begin{align*}
+\textbf{z}_1&amp;=\phi_1(\textbf{p}_u, \textbf{q}_i)=\begin{bmatrix}\textbf{p}_u\\\textbf{q}_i\end{bmatrix}\\
+\phi_2(\textbf{z}_1)&amp;=a_2(\textbf{W}^\top_2\textbf{z}_1+\textbf{b}_2)\\
+&amp;\dots\\
+\phi_L(\textbf{z}_{L-1})&amp;=a_L(\textbf{W}^\top_L\textbf{z}_{L-1}+\textbf{b}_L)\\
+\hat{y}_{ui}&amp;=\sigma(\textbf{h}^\top \phi_L(\textbf{z}_{L-1}))
+\end{align*}
+$$</p>
+<p>NeuMFは、GMPとMLP出力を1層の全結合層に入力する。
+$$
+\begin{align*}
+\phi^{\text{GMF}}&amp;=\textbf{p}^G_u\odot \textbf{q}^G_i\\
+\phi^{\text{MLP}}&amp;=a_L(\textbf{W}^T_L(a_{L-1} (\dots a_2(\textbf{W}^\top_2\begin{bmatrix}\textbf{p}^M_u\\\textbf{q}^M_i\end{bmatrix}+\textbf{b}_2)\dots)) + \textbf{b}_L)\\
+\hat{y}_{ui}&amp;=\sigma (\textbf{h}^\top \begin{bmatrix}\phi^{\text{GMF}}\\\phi^{\text{MLP}}\end{bmatrix})
+\end{align*}
+$$</p>
+<h2 id="雑記">雑記</h2>
+<p>論文では、潜在ベクトルを、ユーザやアイテムのインデックスを示すone-hotベクトルと重みの積から生成していた。
+テスト時に推定したいユーザとアイテムの評価値は、訓練時には0.5とするのだろうか。</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <small>© Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>
