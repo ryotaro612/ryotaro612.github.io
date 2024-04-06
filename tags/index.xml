@@ -6,8 +6,15 @@
     <description>Recent content in Tags on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 22 Mar 2024 15:35:16 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 25 Mar 2024 16:56:51 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>協調フィルタリング</title>
+      <link>https://ryotaro.dev/tags/%E5%8D%94%E8%AA%BF%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/</link>
+      <pubDate>Mon, 25 Mar 2024 16:56:51 +0900</pubDate>
+      <guid>https://ryotaro.dev/tags/%E5%8D%94%E8%AA%BF%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/</guid>
+      <description></description>
+    </item>
     <item>
       <title>PostgreSQL</title>
       <link>https://ryotaro.dev/tags/postgresql/</link>

@@ -85,6 +85,36 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/unsupervised_pretraining_for_sequence_to_sequence_learning/">Unsupervised Pretraining for Sequence to Sequence Learning(2017)</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>事前学習とファインチューニングにより<a href="https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf">seq2seq</a>の汎化性能を改善する手法を提案した論文である。
+encoderの重みを学習済み言語モデルの重みで初期化する。
+decoderについても、encoderと別の言語モデルを用意し、その重みで初期化する。
+ただし、工夫のないファインチューニングをすると<a href="https://arxiv.org/pdf/1312.6211.pdf">破滅的忘却</a>が生じてしまう。
+そこで、ファインチューニングでは言語モデルとseq2seqの目的関数の両方を学習につかうことで、過学習をさけ、汎化性能を確保する。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/seq2seq/">
+		#Seq2seq
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/pretraining/">
+		#Pretraining
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">February 16, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/playing_atari_with_deep_reinforcement_learning/">Playing Atari with Deep Reinforcement Learning(2013)</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>深層強化学習をAtari2600の7つのゲームに応用し、うち6つについて先行手法の性能を超えたDeep Q-Networks(DQN)を提案した論文である。
@@ -297,33 +327,6 @@ Web文書の大量の語彙をあつかうために、語彙の増加に対し�
 	  </ul>
 	  
           <span class="date">January 4, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/classification_in_the_presence_of_label_noise/">Classification in the Presence of Label Noise: a Survey(2013)</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>ノイズのある教師データによるクラス分類の<a href="https://romisatriawahono.net/lecture/rm/survey/machine%20learning/Frenay%20-%20Classification%20in%20the%20Presence%20of%20Label%20Noise%20-%202014.pdf">サーベイ論文</a>である。発表時期は、<a href="https://ieeexplore.ieee.org/document/6685834">2013年の12月</a>である。
-主な内容は、ノイズの分類、ノイズが分類に及ぼす影響、ノイズへの対策である。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/label-noise/">
-		#Label Noise
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E3%82%B5%E3%83%BC%E3%83%99%E3%82%A4%E8%AB%96%E6%96%87/">
-		#サーベイ論文
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 30, 2019</span>
         </div>
     </article>
     

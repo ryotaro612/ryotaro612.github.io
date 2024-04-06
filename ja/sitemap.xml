@@ -15,6 +15,19 @@
                 href="https://ryotaro.dev/"
                 />
   </url><url>
+    <loc>https://ryotaro.dev/posts/neural-collaborative-filtering/</loc>
+    <lastmod>2024-03-25T16:56:51+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/neural-collaborative-filtering/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/neural-collaborative-filtering/"
+                />
+  </url><url>
     <loc>https://ryotaro.dev/posts/</loc>
     <lastmod>2024-03-25T16:56:51+09:00</lastmod>
     <xhtml:link
@@ -27,6 +40,22 @@
                 hreflang="ja"
                 href="https://ryotaro.dev/posts/"
                 />
+  </url><url>
+    <loc>https://ryotaro.dev/tags/</loc>
+    <lastmod>2024-03-25T16:56:51+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/tags/%E5%8D%94%E8%AA%BF%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/</loc>
+    <lastmod>2024-03-25T16:56:51+09:00</lastmod>
   </url><url>
     <loc>https://ryotaro.dev/tags/postgresql/</loc>
     <lastmod>2024-03-22T15:35:16+09:00</lastmod>
@@ -52,19 +81,6 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://ryotaro.dev/tags/streaming-data/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/tags/</loc>
-    <lastmod>2024-03-22T15:35:16+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/tags/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/</loc>

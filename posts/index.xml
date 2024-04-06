@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 22 Mar 2024 15:35:16 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 25 Mar 2024 16:56:51 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Neural Collaborative Filtering (2017)</title>
+      <link>https://ryotaro.dev/posts/neural-collaborative-filtering/</link>
+      <pubDate>Mon, 25 Mar 2024 16:56:51 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/neural-collaborative-filtering/</guid>
+      <description>&lt;p&gt;行列分解による協調フィルタリングは、ユーザとアイテムの評価値行列を近似するユーザとアイテムの潜在因子行列の積を学習する。&#xA;&lt;a href=&#34;https://arxiv.org/pdf/1708.05031.pdf&#34;&gt;Neural Collaborative Filtering (NCF)&lt;/a&gt; は、行列分解のかわりにニューラルネットワークで、パラメータを更新する。&#xA;NCFは3種類あり、Generalized Matrix Factorization (GMF) と Multi-Layer Perceptron (MLP)、GMFとMLPを組み合わせたNeural Matrix Factorization (NeuMF) がある。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>TelegraphCQ: Continuous Dataflow Processing for an Uncertain World (2003)</title>
       <link>https://ryotaro.dev/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/</link>

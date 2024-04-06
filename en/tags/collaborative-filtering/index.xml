@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Collaborative Filtering on Blanket</title>
-    <link>http://localhost:1313/en/tags/collaborative-filtering/</link>
+    <link>https://ryotaro.dev/en/tags/collaborative-filtering/</link>
     <description>Recent content in Collaborative Filtering on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 25 Mar 2024 16:56:51 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/en/tags/collaborative-filtering/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/en/tags/collaborative-filtering/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Neural Collaborative Filtering (2017)</title>
-      <link>http://localhost:1313/en/posts/neural-collaborative-filtering/</link>
+      <link>https://ryotaro.dev/en/posts/neural-collaborative-filtering/</link>
       <pubDate>Mon, 25 Mar 2024 16:56:51 +0900</pubDate>
-      <guid>http://localhost:1313/en/posts/neural-collaborative-filtering/</guid>
+      <guid>https://ryotaro.dev/en/posts/neural-collaborative-filtering/</guid>
       <description>&lt;p&gt;In collaborative filtering, Matrix Factorization (MF) approximates the user-item interaction matrix by multiplying the latent matrices for users and items.&#xA;An estimated iteraction is the inner product of the latent vectors for the user and the item.&#xA;&lt;a href=&#34;https://arxiv.org/pdf/1708.05031.pdf&#34;&gt;Neural Collaborative Filtering (NCF)&lt;/a&gt; replaces the inner product with a neural neural network to capture the complex structure of user interaction data.&#xA;There are three instances of NFC: Generalized Matrix Factorization (GMF), Multi-Layer Perceptron (MLP), Neural Matrix Factoriation (NeuMF).&lt;/p&gt;</description>
     </item>
   </channel>
