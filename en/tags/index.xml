@@ -6,10 +6,24 @@
     <description>Recent content in Tags on Blanket</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 25 Mar 2024 16:56:51 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 14 Apr 2024 14:08:04 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Collaborative Filtering</title>
+      <title>Spark</title>
+      <link>https://ryotaro.dev/en/tags/spark/</link>
+      <pubDate>Sun, 14 Apr 2024 14:08:04 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/spark/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SQL</title>
+      <link>https://ryotaro.dev/en/tags/sql/</link>
+      <pubDate>Sun, 14 Apr 2024 14:08:04 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/sql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Collaborative filtering</title>
       <link>https://ryotaro.dev/en/tags/collaborative-filtering/</link>
       <pubDate>Mon, 25 Mar 2024 16:56:51 +0900</pubDate>
       <guid>https://ryotaro.dev/en/tags/collaborative-filtering/</guid>
@@ -23,7 +37,7 @@
       <description></description>
     </item>
     <item>
-      <title>Streaming Data</title>
+      <title>Streaming data</title>
       <link>https://ryotaro.dev/en/tags/streaming-data/</link>
       <pubDate>Fri, 22 Mar 2024 15:35:16 +0900</pubDate>
       <guid>https://ryotaro.dev/en/tags/streaming-data/</guid>
@@ -44,7 +58,7 @@
       <description></description>
     </item>
     <item>
-      <title>Association Rule Mining</title>
+      <title>Association rule mining</title>
       <link>https://ryotaro.dev/en/tags/association-rule-mining/</link>
       <pubDate>Sat, 02 Mar 2024 15:58:07 +0900</pubDate>
       <guid>https://ryotaro.dev/en/tags/association-rule-mining/</guid>
@@ -72,7 +86,7 @@
       <description></description>
     </item>
     <item>
-      <title>Sorting Algorithm</title>
+      <title>Sorting algorithm</title>
       <link>https://ryotaro.dev/en/tags/sorting-algorithm/</link>
       <pubDate>Sun, 14 Jan 2024 23:32:24 -0500</pubDate>
       <guid>https://ryotaro.dev/en/tags/sorting-algorithm/</guid>
@@ -86,21 +100,21 @@
       <description></description>
     </item>
     <item>
-      <title>Conflict-Free Replicated Data Types</title>
+      <title>Conflict-free Replicated Data Types</title>
       <link>https://ryotaro.dev/en/tags/conflict-free-replicated-data-types/</link>
       <pubDate>Sun, 31 Dec 2023 14:31:58 -0500</pubDate>
       <guid>https://ryotaro.dev/en/tags/conflict-free-replicated-data-types/</guid>
       <description></description>
     </item>
     <item>
-      <title>Question Answering</title>
+      <title>Question answering</title>
       <link>https://ryotaro.dev/en/tags/question-answering/</link>
       <pubDate>Sat, 30 Dec 2023 00:42:11 -0500</pubDate>
       <guid>https://ryotaro.dev/en/tags/question-answering/</guid>
       <description></description>
     </item>
     <item>
-      <title>CAP Theorem</title>
+      <title>CAP theorem</title>
       <link>https://ryotaro.dev/en/tags/cap-theorem/</link>
       <pubDate>Sat, 23 Dec 2023 11:47:05 -0500</pubDate>
       <guid>https://ryotaro.dev/en/tags/cap-theorem/</guid>
@@ -128,21 +142,21 @@
       <description></description>
     </item>
     <item>
-      <title>Peer-to-Peer</title>
+      <title>Peer-to-peer</title>
       <link>https://ryotaro.dev/en/tags/peer-to-peer/</link>
       <pubDate>Thu, 23 Nov 2023 12:31:01 -0500</pubDate>
       <guid>https://ryotaro.dev/en/tags/peer-to-peer/</guid>
       <description></description>
     </item>
     <item>
-      <title>Activation Function</title>
+      <title>Activation function</title>
       <link>https://ryotaro.dev/en/tags/activation-function/</link>
       <pubDate>Sat, 21 Oct 2023 10:00:49 -0400</pubDate>
       <guid>https://ryotaro.dev/en/tags/activation-function/</guid>
       <description></description>
     </item>
     <item>
-      <title>Structured Programming</title>
+      <title>Structured programming</title>
       <link>https://ryotaro.dev/en/tags/structured-programming/</link>
       <pubDate>Sun, 08 Oct 2023 09:38:50 -0400</pubDate>
       <guid>https://ryotaro.dev/en/tags/structured-programming/</guid>
@@ -170,14 +184,14 @@
       <description></description>
     </item>
     <item>
-      <title>Cosine Similarity</title>
+      <title>cosine similarity</title>
       <link>https://ryotaro.dev/en/tags/cosine-similarity/</link>
       <pubDate>Sat, 23 Sep 2023 10:21:03 -0400</pubDate>
       <guid>https://ryotaro.dev/en/tags/cosine-similarity/</guid>
       <description></description>
     </item>
     <item>
-      <title>Multitask Learning</title>
+      <title>Multitask learning</title>
       <link>https://ryotaro.dev/en/tags/multitask-learning/</link>
       <pubDate>Sat, 16 Sep 2023 08:59:45 -0400</pubDate>
       <guid>https://ryotaro.dev/en/tags/multitask-learning/</guid>
@@ -212,14 +226,14 @@
       <description></description>
     </item>
     <item>
-      <title>Splay Tree</title>
+      <title>Splay tree</title>
       <link>https://ryotaro.dev/en/tags/splay-tree/</link>
       <pubDate>Sat, 12 Aug 2023 13:49:56 -0400</pubDate>
       <guid>https://ryotaro.dev/en/tags/splay-tree/</guid>
       <description></description>
     </item>
     <item>
-      <title>Catalan Numbers</title>
+      <title>Catalan numbers</title>
       <link>https://ryotaro.dev/en/tags/catalan-numbers/</link>
       <pubDate>Sat, 29 Jul 2023 15:24:15 -0400</pubDate>
       <guid>https://ryotaro.dev/en/tags/catalan-numbers/</guid>
