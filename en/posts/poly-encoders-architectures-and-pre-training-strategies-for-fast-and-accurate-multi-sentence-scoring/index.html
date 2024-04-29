@@ -106,7 +106,7 @@ While Cross-encoders are more accurate than Bi-encoders, Bi-encoders are faster.
 <p><a href="https://arxiv.org/abs/1905.01969">Poly-encoders</a> aim to balance speed and accuracy. The following architecture comparison figure is cited from the paper.
 <a href="https://arxiv.org/abs/1905.01969">Poly-encoders</a> aim to attain the balance between inference speed and accuracies.</p>
 <!-- raw HTML omitted -->
-<p><img src="/poly-encoder.png" alt="poly-encoders"></p>
+<p><img alt="poly-encoders" src="/poly-encoder.png"></p>
 <p>The Poly-encoder generates candidate label embeddings without input sequences like Bi-encoders.
 A Bi-encoder uses special tokens <code>[S]</code> and segment tokens like BERT.
 To resemble the procedure of pre-training, Bi-encoders surround the input and label by the special token <code>[S]</code>, and assign the segment token for features with them.</p>

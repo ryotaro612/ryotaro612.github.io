@@ -94,9 +94,14 @@ arch-chroot /mnt/gentoo だと マウントからchrootまでやてくれる。<
 <p>useフラグが何につかわれているかわかる
 <a href="https://packages.gentoo.org/useflags/search?q=branding">https://packages.gentoo.org/useflags/search?q=branding</a></p>
 <p>loginctlのsuspendはかたまるので、s2ramをインストールする。u+sでsudoをつかわずに。</p>
-<p>less=$less +wにしないと行頭にならない</p>
+<p>.profileで修正する。
+less=$less +wにしないと行頭にならない</p>
 <p>~/.local/share/themesにGTKのテーマを入れたらGTK_THEME=に名前を入ればいい</p>
-<p>wpa_cliはrootでないとそのままでは、つかえない ctrl_interfance_groupを指定する。
+<p>/etc/wpa_supplicant/wp_supplicant.confをかく。
+/etc/conf.d/wpa_supplicantの引数も指定する。
+/etc/conf.d/netにもwpa_supplicantの設定が必要。
+dhcpdとwpa_supplicantのドキュメントに書いある。
+wpa_cliはrootでないとそのままでは、つかえない ctrl_interfance_groupを指定する。
 update_config=1はwpa_cli guiに編集を許可する。
 <code>/etc/wpa_supplicant/wpa_supplicant.conf</code>
 ctrl_interface_group=wheel
@@ -117,6 +122,25 @@ grub-install コマンドではefi-directoryを/boot/efiにする。</p>
 modをアップグレードして、ユーザをvideoに登録する。</p>
 <p><a href="https://github.com/node-fetch/node-fetch/issues/1624">https://github.com/node-fetch/node-fetch/issues/1624</a>
 /etc/hostsの1 127.0.0.1をコメントアウトしないとnodeのe2eが動かない</p>
+<p>use.confにはrust flagをいれる</p>
+<h1 id="httpswikigentooorgwikirust"><a href="https://wiki.gentoo.org/wiki/Rust">https://wiki.gentoo.org/wiki/Rust</a></h1>
+<h1 id="target-cpunative-is-the-equivalent-of--marchnative-in-ccxxflags">target-cpu=native is the equivalent of -march=native in C/CXXFLAGS:</h1>
+<p>RUSTFLAGS=&quot;-C target-cpu=native&quot;</p>
+<h1 id="enable-target-cpunative-and-dt_relr">enable target-cpu=native and DT_RELR</h1>
+<p>RUSTFLAGS=&quot;-C target-cpu=native -C link-arg=-Wl,-z,pack-relative-relocs&quot;</p>
+<h1 id="opt-level-is-similar-to-clangs-optimization-options">opt-level is similar to Clang&rsquo;s optimization options</h1>
+<p>RUSTFLAGS=&quot;-C opt-level=3&quot;</p>
+<h1 id="wifi">wifi</h1>
+<p>soundカードが見付からない場合
+emerge &ndash;ask sys-firmware/sof-firmware
+emerge &ndash;ask @module-rebuild
+emerge &ndash;config sys-kernel/gentoo-kernel
+emerge &ndash;config sys-kernel/gentoo-kernel-bin</p>
+<p>日本語
+app-i18n/fcitx-gtkが必要。configtoolsとは他に
+fcitの環境変数の設定だけでなく、.config以下にgsettingsを置く必要がある。
+GTK_IM_MODULE=fcitxは推奨されていないが、これがないとnautilusで日本語を入力できない。</p>
+<p>Evinceで日本語を表示するにはapp-text/popler-dataをインストールする必要がある。</p>
 
   </div>
 </main>

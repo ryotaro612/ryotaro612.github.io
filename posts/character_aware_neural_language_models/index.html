@@ -95,7 +95,7 @@
 <p>モデルは、文字列を単位とする入力をうけつける。
 モデルのアーキテクチャを図に示す。
 入力に近い層から順にCNN, highway network, LSTMの順に説明していく。
-<img src="/character_aware_neural_language_models.png" alt="img"></p>
+<img alt="img" src="/character_aware_neural_language_models.png"></p>
 <h4 id="cnn">CNN</h4>
 <p>\(d\)を文字の分散表現の次元として、長さ\(l\)の単語\(k\)は\({\rm C}^{d\times l}\in \mathbb{R}^{d \times l}\)の分散表現としてモデルに入力される。
 入力された分散表現に幅\(w\)のフィルタ\(\boldsymbol{\rm H}\in \mathbb{R}^{d \times w}\)を適用しnarrow conlovutionによって、特徴マップ\(\boldsymbol{\rm f}^k\in \mathbb{R}^{l-w+1}\)を求める。
@@ -149,7 +149,7 @@ NLL = - \sum_{t=1}^T \log \text{Pr}(w_t\mid w_{1:t-1})
 $$</p>
 <h3 id="備考">備考</h3>
 <p>提案された言語モデルは、<a href="https://arxiv.org/abs/1802.05365">ELMo</a>で応用された。
-以前、<a href="./deep_contextualized_word_representations/">こちら</a>にELMoの内容をまとめた。</p>
+以前、<a href="/posts/deep_contextualized_word_representations/">こちら</a>にELMoの内容をまとめた。</p>
 <h3 id="感想">感想</h3>
 <p>初学者が勉強のために読むにはいい論文だと思った。
 LSTM, CNN, 階層的ソフトマックス, Perplexityなどの広く応用されている手法を多く導入しているだけでなく、数式を含めた説明が十分にある。</p>
