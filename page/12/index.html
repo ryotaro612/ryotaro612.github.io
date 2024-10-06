@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-	<meta name="generator" content="Hugo 0.124.1">
+	<meta name="generator" content="Hugo 0.127.0">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -18,7 +18,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -83,6 +83,28 @@
 <main>
     <h1>Posts</h1>
     
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/regularization_paths_for_generalized_liner_models_via_coordinate_descent/">Regularization Paths for Generalized Linear Models via Coordinate Descent</a></h3>
+        <div class="summary"><p>ラッソ、リッジ、またはその両方をくみあわせるelastictnetを正則化項とする一般化線形モデルの学習を高速化した座標降下法である。
+座標降下法を単純に実装すると、スパースで次元数の多い特徴だと学習に時間がかかる。
+表題の手法は、その単純なパラメタの更新式の一部を、説明変数の内積におきかえ、学習データの数や次元数に対して学習時間を短縮する。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">February 19, 2022</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/using_tfidf_to_determine_word_relevance_in_document_queries/">Using TF-IDF to Determine Word Relevance in Document Queries(2003)</a></h3>
+        <div class="summary"><p>自然言語による文書検索で、TF-IDFをベースラインにつかう利点と欠点を調べた。
+クエリにある各単語のTF-IDF値の総和が最大の文書を最も関連する文書とみなす。
+実験では、TFのみで検索する手法よりも予測性能がよかったが、類義語同士の同一判定をできない問題があった。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">February 19, 2022</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://ryotaro.dev/posts/an_algorithm_for_suffix_stripping/">An algorithm for suffix stripping (1980)</a></h3>
@@ -182,35 +204,6 @@ Piece tableはテキストを2つのバッファに記録する。
         <div class="article-footer">
 	  
           <span class="date">December 25, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/monitoring_streams/">Monitoring Streams - A New Class of Data Management Applications (2002)</a></h3>
-        <div class="summary"><p>常時発生するセンサー情報などのストリームデータの監視にむいたDBMS, Auroraの設計の解説。
-既存のDBMSは人の行動で起きるトランザクションを想定している。
-一方、ストリームデータは、人の能動的な活動によらず絶えず発生し、異常値があればアラートを出す必要がある。
-また、時系列に長期的なデータをとり、リアルタイムに応答するために不要なデータを切り捨て負荷を下げる必要もある。
-Auroraは、以上のストリーミング、トリガー、不正確なデータ、リアルタイム性の4特性を扱えるモデルとして、ストリームデータの出力元をソース、ノードをストリームデータの計算、シンクをアプリケーションとするDAGで抽象化されたアーキテクチャをもつ。
-ノードが計算には、ストリームをウィンドウに区切る、フィルタ、リサンプリングなどの8つがある。
-DAGで表せる計算をAurora内部で実行し、その結果が接続するアプリケーションにわたる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">December 11, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/a_bridging_model_for_parallel_computation/">A Bridging Model for parallel Computation (1990)</a></h3>
-        <div class="summary"><p>バッチ処理グラフの最適化を目的として演算処理のバルク同期並列（bulk synchronous parallel、 BSP）を提唱した。
-BPSは、Apache Giraph, Spark の GraphX API, Gelly APIで採用され、なかでもGoogleのPregelで知られるようになった<a href="https://www.oreilly.co.jp/books/9784873118703/">*1</a>。
-BPSの目的は、ハードウェアと並列計算の高水準なプログラミングモデルがどちらもBPSに準ずることで、高水準なプログラミングモデルで実装された並列計算を多様なハードウェア上で動かすことにある。
-フォン・ノイマンモデル型のコンピュータであれば、ハードウェアの種類を意識することなく、その上で逐次計算をおこなう多様なソフトウェアを動かせる。
-フォン・ノイマンモデルは、多様なハードウェアと多様なソフトウェアをつなぐ。
-BPSは、並列計算用のハードウェアと高水準な並列計算のプログラミングモデルをつなぐためにある。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">December 11, 2021</span>
         </div>
     </article>
     

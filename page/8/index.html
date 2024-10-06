@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-	<meta name="generator" content="Hugo 0.124.1">
+	<meta name="generator" content="Hugo 0.127.0">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -18,7 +18,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -83,6 +83,52 @@
 <main>
     <h1>Posts</h1>
     
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/syntactic_clustering_of_the_web/">抄訳 Syntactic Clustering of the Web(1997)</a></h3>
+        <div class="summary"><p>2つのWeb文書から抽出したn-gramの集合を比較し、文書の包含関係と類似度を測定する。
+はじめに、大文字をすべて小文字にしたり、htmlタグを除外したりして文書に前処理をかける。
+次に文書\(A\)からnグラムの集合\(S(A)\)を抽出する。
+このとき、文書\(A\)と\(B\)間の類似度を\(|S(A)\cap S(B)|/|S(A) \cup S(B)|\)、\(A\)の\(B\)への包含の度合いを\(|S(A) \cap S(B)|/|S(A)|\)と定義する。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E6%96%87%E6%9B%B8%E9%96%93%E9%A1%9E%E4%BC%BC%E5%BA%A6/">
+		#文書間類似度
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 13, 2022</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/an_improved_data_stream_summary_the_count_min_sketch_and_its_application/">An Improved Data Stream Summary: The Count-Min Sketch and its Applications(2005)</a></h3>
+        <div class="summary"><p>Count-Min Sketch(CM Sketch)は、単位時間ごとに1要素ずつ更新される\(n\)次元のベクトルの要素を\(n\)の劣線形の計算量で集計できるデータ構造である。
+空間の大きさはパラメタで指定する誤差大きさと誤差の生じる確率に依存する。
+誤差と確率のパラメタを\(\epsilon\)と\(\delta\)とすると、CM sketchは\(\lceil{\ln \frac{1}{\delta}\rceil}\times \lceil\frac{e}{\epsilon}\rceil\)の二次元行列である。
+\(\ln\)の底は\(e\)である。
+要素の値、ベクトルの内積、ある範囲の要素の和を劣線形の計算量で求めることができる。
+また、これらと二分探索を応用すれば、指定した値よりも大きい要素のみからなる範囲や分位数も計算できる。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+		#分散システム
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 7, 2022</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://ryotaro.dev/posts/lof_identifying_density_based_local_outliners/">抄訳 LOF: Identifying Density-Based Local Outliers(2000)</a></h3>
@@ -235,28 +281,6 @@ borderline-SMOTE2は多数クラスのサンプルを選ぶこともある。</p
         <div class="article-footer">
 	  
           <span class="date">October 15, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/adasyn_adaptive_syntetic_samping_approach_for_imbalanced_learning/">抄訳 ADASYN: Adaptive Synthetic Sampling Approach for Imbalanced Learning(2008)</a></h3>
-        <div class="summary"><p>ADASYNはオーバーサンプリングで不均衡データの予測性能を向上させる。
-以前<a href="/smote_synthetic_minority_over_sampling_technique/">抄訳</a>した<a href="https://arxiv.org/pdf/1106.1813.pdf">SMOTE</a>とおなじく、既存の学習データからサンプルを合成する。
-SMOTEとの違いは、K近傍に多数クラスのサンプルの多い少数クラスのサンプルから、より多くのサンプルを合成する点にある。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">September 11, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/sagas/">抄訳 Sagas(1987)</a></h3>
-        <div class="summary"><p>データベースのトランザクションが長くなるほど、ほかのトランザクションを待たせてしまう。
-トランザクションの時間は短いほどよい。
-トランザクションを短い複数のトランザクションに分割でき、そのトランザクションの間にほかのトランザクションを実行できるなら、そのトランザクションをsagaと呼ぶ。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">September 4, 2022</span>
         </div>
     </article>
     

@@ -4,10 +4,17 @@
     <title>Retrieval Augmented Generation on Blanket</title>
     <link>https://ryotaro.dev/en/tags/retrieval-augmented-generation/</link>
     <description>Recent content in Retrieval Augmented Generation on Blanket</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 27 Jan 2024 16:44:55 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 27 May 2024 22:28:20 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/tags/retrieval-augmented-generation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>REALM Retrieval Augmented Language Model Pre Training (2020)</title>
+      <link>https://ryotaro.dev/en/posts/realm-retrieval-augmented-language-model-pre-training/</link>
+      <pubDate>Mon, 27 May 2024 22:28:20 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/realm-retrieval-augmented-language-model-pre-training/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/2002.08909&#34;&gt;REALM&lt;/a&gt; is a language model for open-domain question answering.&#xA;REALM is composed of two components: the neural knowledge retriever and the knowledge-augmented encoder.&#xA;The neural knowledge retriever finds documents related to the input.&#xA;The knowledge-augmented encoder generates responses from the found documents and the input.&#xA;In pre-training, the REALM employs masked language modeling, and it is trained to predict the original tokens that are maked in the given sentences.&#xA;In fine-tuning, the model is trained to produce the answer of the given input.&#xA;The authors experimented the model with Open-domain QA tasks under the assumption that the answer can be found as a contiguous sequence of tokens in some documents.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Retrieval Augmented Generation for Knowledge Intensive NLP Tasks (2021)</title>
       <link>https://ryotaro.dev/en/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/</link>

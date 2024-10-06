@@ -4,10 +4,24 @@
     <title>Posts on Blanket</title>
     <link>https://ryotaro.dev/en/posts/</link>
     <description>Recent content in Posts on Blanket</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 07 May 2024 11:49:13 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 24 Sep 2024 02:14:15 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Back of Envelope Calculations</title>
+      <link>https://ryotaro.dev/en/posts/back-of-envelope-calculations/</link>
+      <pubDate>Tue, 24 Sep 2024 02:14:15 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/back-of-envelope-calculations/</guid>
+      <description>&lt;p&gt;In system design interviews, back of envelope calculation is a task to estimate required comuputing resources based on the given requirement.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>REALM Retrieval Augmented Language Model Pre Training (2020)</title>
+      <link>https://ryotaro.dev/en/posts/realm-retrieval-augmented-language-model-pre-training/</link>
+      <pubDate>Mon, 27 May 2024 22:28:20 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/realm-retrieval-augmented-language-model-pre-training/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/2002.08909&#34;&gt;REALM&lt;/a&gt; is a language model for open-domain question answering.&#xA;REALM is composed of two components: the neural knowledge retriever and the knowledge-augmented encoder.&#xA;The neural knowledge retriever finds documents related to the input.&#xA;The knowledge-augmented encoder generates responses from the found documents and the input.&#xA;In pre-training, the REALM employs masked language modeling, and it is trained to predict the original tokens that are maked in the given sentences.&#xA;In fine-tuning, the model is trained to produce the answer of the given input.&#xA;The authors experimented the model with Open-domain QA tasks under the assumption that the answer can be found as a contiguous sequence of tokens in some documents.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Distributed GraphLab: a Framework for Machine Learning and Data Mining in the Cloud (2012)</title>
       <link>https://ryotaro.dev/en/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/</link>

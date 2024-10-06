@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Back of the Envelope Estimation on Blanket</title>
+    <link>https://ryotaro.dev/en/tags/back-of-the-envelope-estimation/</link>
+    <description>Recent content in Back of the Envelope Estimation on Blanket</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 24 Sep 2024 02:14:15 +0900</lastBuildDate>
+    <atom:link href="https://ryotaro.dev/en/tags/back-of-the-envelope-estimation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Back of Envelope Calculations</title>
+      <link>https://ryotaro.dev/en/posts/back-of-envelope-calculations/</link>
+      <pubDate>Tue, 24 Sep 2024 02:14:15 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/back-of-envelope-calculations/</guid>
+      <description>&lt;p&gt;In system design interviews, back of envelope calculation is a task to estimate required comuputing resources based on the given requirement.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

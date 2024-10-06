@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.124.1">
+	<meta name="generator" content="Hugo 0.127.0">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -18,7 +18,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
     
@@ -83,6 +83,56 @@
 <main>
     <h1>Posts</h1>
     
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/back-of-envelope-calculations/">Back of Envelope Calculations</a></h3>
+        <div class="summary"><p>In system design interviews, back of envelope calculation is a task to estimate required comuputing resources based on the given requirement.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/back-of-the-envelope-estimation/">
+		#Back of the Envelope Estimation
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/system-design-interview/">
+		#System Design Interview
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">September 24, 2024</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/realm-retrieval-augmented-language-model-pre-training/">REALM Retrieval Augmented Language Model Pre Training (2020)</a></h3>
+        <div class="summary"><p><a href="https://arxiv.org/abs/2002.08909">REALM</a> is a language model for open-domain question answering.
+REALM is composed of two components: the neural knowledge retriever and the knowledge-augmented encoder.
+The neural knowledge retriever finds documents related to the input.
+The knowledge-augmented encoder generates responses from the found documents and the input.
+In pre-training, the REALM employs masked language modeling, and it is trained to predict the original tokens that are maked in the given sentences.
+In fine-tuning, the model is trained to produce the answer of the given input.
+The authors experimented the model with Open-domain QA tasks under the assumption that the answer can be found as a contiguous sequence of tokens in some documents.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/retrieval-augmented-generation/">
+		#Retrieval Augmented Generation
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">May 27, 2024</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://ryotaro.dev/en/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/">Distributed GraphLab: a Framework for Machine Learning and Data Mining in the Cloud (2012)</a></h3>
@@ -273,61 +323,6 @@ The support factor implies statistical significance of the association rule.</p>
 	  </ul>
 	  
           <span class="date">March 2, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/">Poly-Encoders: Architectures and Pre-Training Strategies for Fast and Accurate Multi-Sentence Scoring (2019)</a></h3>
-        <div class="summary"><p>For tasks matching input sequences with labels, current state-of-the-art approaches focus on using <a href="https://arxiv.org/abs/1810.04805">BERT</a> models for pre-training.
-Two common encoding approaches are Cross-encoders (<a href="https://arxiv.org/abs/1901.08149">Wolf et al.</a>), which concatenate input sequences and candidate labels into a single vector, and produce candidate-sensitive embeddings, and Bi-encoders (<a href="https://arxiv.org/abs/1809.01984">Mazaré et al.</a>), which encode input sequences and candidate labels separately.
-In Bi-encoders, the score is the dot-product of the two embeddings.
-While Cross-encoders are more accurate than Bi-encoders, Bi-encoders are faster.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted --></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/transformer/">
-		#Transformer
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">February 24, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/the-design-of-postgres/">THE DESIGN OF POSTGRES (1986)</a></h3>
-        <div class="summary"><p>The preliminary design of POSTGRES was presented in <a href="https://dsf.berkeley.edu/papers/ERL-M85-95.pdf">The Design of Postgres</a>.
-According to <a href="https://www.postgresql.jp/document/8.3/html/history.html">Brief History of Postgres</a>, the data model, rules, and storage system were separately described in different papers: <a href="https://apps.dtic.mil/sti/tr/pdf/ADA184251.pdf">The Postgres Data Model</a>, <a href="https://apps.dtic.mil/sti/tr/pdf/ADA179161.pdf">The Design of the Postgres Rule System</a>, and <a href="https://dsf.berkeley.edu/papers/ERL-M87-06.pdf">The Design of the Postgres Storage System</a>.</p>
-<p>POSTGRES is the successor to the INGRES relational database system.
-The main design goals of POSTGRES were to support complex objects, simplify the DBMS code for crash recovery, and utilize optical disks while making as few changes as possible to the relational model.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/rdbms/">
-		#RDBMS
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/postgresql/">
-		#PostgreSQL
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">February 17, 2024</span>
         </div>
     </article>
     

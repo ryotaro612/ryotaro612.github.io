@@ -2,8 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ryotaro.dev/posts/back-of-envelope-calculations/</loc>
+    <lastmod>2024-09-24T02:14:15+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/back-of-envelope-calculations/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/back-of-envelope-calculations/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/tags/back-of-the-envelope-estimation/</loc>
+    <lastmod>2024-09-24T02:14:15+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/back-of-the-envelope-estimation/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/back-of-the-envelope-estimation/"
+                />
+  </url><url>
     <loc>https://ryotaro.dev/</loc>
-    <lastmod>2024-05-07T11:49:13+09:00</lastmod>
+    <lastmod>2024-09-24T02:14:15+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -13,6 +39,58 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://ryotaro.dev/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/posts/</loc>
+    <lastmod>2024-09-24T02:14:15+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/tags/</loc>
+    <lastmod>2024-09-24T02:14:15+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/posts/realm-retrieval-augmented-language-model-pre-training/</loc>
+    <lastmod>2024-05-27T22:28:20+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/realm-retrieval-augmented-language-model-pre-training/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/realm-retrieval-augmented-language-model-pre-training/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/tags/retrieval-augmented-generation/</loc>
+    <lastmod>2024-05-27T22:28:20+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/retrieval-augmented-generation/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/retrieval-augmented-generation/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/</loc>
@@ -39,32 +117,6 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://ryotaro.dev/tags/distributed-system/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/posts/</loc>
-    <lastmod>2024-05-07T11:49:13+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/posts/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/tags/</loc>
-    <lastmod>2024-05-07T11:49:13+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/tags/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/tags/spark/</loc>
@@ -279,19 +331,6 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://ryotaro.dev/posts/the-design-of-postgres/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/tags/retrieval-augmented-generation/</loc>
-    <lastmod>2024-01-27T16:44:55-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/tags/retrieval-augmented-generation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/tags/retrieval-augmented-generation/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/</loc>

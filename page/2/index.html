@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-	<meta name="generator" content="Hugo 0.124.1">
+	<meta name="generator" content="Hugo 0.127.0">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -18,7 +18,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -83,6 +83,60 @@
 <main>
     <h1>Posts</h1>
     
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/the-design-of-postgres/">THE DESIGN OF POSTGRES (1986)</a></h3>
+        <div class="summary"><p>最初期におけるPOSTGRESの設計は、<a href="https://dsf.berkeley.edu/papers/ERL-M85-95.pdf">THE DESIGN OF POSTGRES</a>で発表された。
+<a href="https://www.postgresql.jp/document/8.3/html/history.html">POSTGRES少史</a>によると、データモデルは<a href="https://apps.dtic.mil/sti/tr/pdf/ADA184251.pdf">The POSTGRES data model</a>で、ルールは<a href="https://apps.dtic.mil/sti/tr/pdf/ADA179161.pdf">The design of the POSTGRES rules system</a>で、ストレージは<a href="https://dsf.berkeley.edu/papers/ERL-M87-06.pdf">THE DESIGN OF THE POSTGRES STORAGE SYSTEM</a>で同時期に個別に論じられている。
+THE DESIGN OF POSTGRESはPOSTGRESの全体像を解説する位置にある。</p>
+<p>POSTGRESは、関係データベースINGRESの後継として開発された。
+POSTGRESの目標は、複雑な型のオブジェクトやtriggerを扱え、クラッシュから回復する実装を単純化でき、光ディスクを利用できるようにしつつも、リレーショナルモデルから逸脱しないデータベースを維持することにある。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/rdbms/">
+		#RDBMS
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/postgresql/">
+		#PostgreSQL
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">February 17, 2024</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/">Retrieval Augmented Generation for Knowledge Intensive NLP Tasks (2021)</a></h3>
+        <div class="summary"><p>問題文から推論できない知識を必要とする自然言語処理のタスクの場合、Large Language Model (LLM) の事前学習による効果は限定的になる。
+LLMのパラメタに知識がなければ回答できず、また、パラメタは正確な知識を記録する仕組みではない。
+Retrieval Augmented Generation (RAG) は、LLMの外部から提供された知識を利用し、入力から推論できない知識にもとづく文書を生成する。</p>
+<p><a href="https://arxiv.org/abs/2005.11401">Retrieval Augmented Generation for Knowledge Intensive NLP Tasks</a>は、文書の埋め込みベクトルを外部の知識に使うRAGであり、入力文で埋め込みベクトルを検索し、検索結果の上位の文書と入力文から文書を生成する。
+文書の検索には<a href="https://aclanthology.org/2020.emnlp-main.550/">Dense Passage Retriever</a> (DPR) を、後の文書の生成にはseq2seqを使う。
+DPRは、質問と文書を別々のBERTで埋め込みベクトルに変換し、質問に関係する文書と質問のベクトル間の内積を最大にするように学習する。
+<a href="https://github.com/facebookresearch/faiss">Faiss</a>などの近似最近傍探索を利用すれば、実用可能な速度で推論できる。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/retrieval-augmented-generation/">
+		#Retrieval Augmented Generation
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">January 27, 2024</span>
+        </div>
+    </article>
     
     <article>
         <h3><a href="https://ryotaro.dev/posts/sorting-networks-and-their-applications/">Sorting networks and their applications (1968)</a></h3>
@@ -255,55 +309,6 @@ Latent Semantic Analysisと違い、\(P\)の固有値や特異ベクトルの要
 	  </ul>
 	  
           <span class="date">December 2, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/">Chord: A Scalable Peer-to-peer Lookup Service for Internet Applications (2001)</a></h3>
-        <div class="summary"><p>\(N\)個のノードからなる<a href="https://pdos.csail.mit.edu/papers/ton:chord/paper-ton.pdf">Chord</a>のクラスタは、キーによるノードの問い合せに、\(O(\log N)\)のノードを介して応答できるPeer-to-peerのプロトコルである。
-<a href="https://www.cs.princeton.edu/courses/archive/fall09/cos518/papers/chash.pdf">Consistent Hashing</a>を応用しており、\(2^{m-1}+1\)以上\(2^m\)以下のノードが参加するconsistent hashingクラスタは、\(\mod(2^m)\)の非負の整数をIDとしてキーとノードを管理し、IDの空間上で隣接するノードにキーをわりあてる。
-Consistent hashingはキーをほぼ均等に配置でき、ノードの参加、離脱時に移動すべきキー数は\(O(1/N)\)に収まる。</p>
-<p>参加、離脱するノードと隣接するノード間でのみキーの移動が生じる。
-Chordは、多くのノードが参加できるように、各ノードにもたせるルーティング情報を\(m\)個のほかのノードのみに限定する。
-クライアントや別のノードからキーを受信したノードは、ルーティング情報にあるノードと自分のID \(\textit{n}\)をキー\(\textit{key}\)と比較する。
-このとき、\(\textit{key} + x \equiv n_i\mod 2^m\)をみたす最小の非負の整数\(x\)に対応する\(n_i\)が自分のIDであれば、そのノードがキーに対応する。
-それ以外の場合は、最小の値になるIDをもつノードにキーを転送する。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/peer-to-peer/">
-		#Peer-to-Peer
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">November 23, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/lora-low-rank-adaptation-of-large-language-models/">LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/pdf/1804.08838.pdf">Li et al. (2018)</a>と<a href="https://arxiv.org/pdf/2012.13255.pdf">Aghajanyan et al. (2020)</a>は、Large Language Models (LLM)のファインチューニングにかかる計算資源は大きいが、下流タスクに必要なパラメータ数はLLMのパラメタ数よりもはるかに少ないと主張した。
-<a href="https://arxiv.org/pdf/2106.09685.pdf">LoRA</a>は、この仮説によりファインチューニングを避け、LLMの重みと線形結合すると下流タスクに最適な重みに近似できる小さな行列を求める。
-LLMの重みを\(W_0\in\mathbb{R}^{d\times k}\)とすると、\(W_0+BA\ (B\in\mathbb{R}^{d\times r}, A\in\mathbb{R}^{r\times k}, r \ll\min (d, k))\)が下流タスクに最適な重みに近づくように、ファインチューニングにかわって\(W_0\)を更新せず\(B,\ A\)のみを更新する。
-\(r\)が\(d, k\)よりも小さいので、ファインチューニングよりも学習時間は短い。
-また、複数の下流タスクを入力に適用する場合、\(W_0x\)を共有できるので、推論に必要な計算も\(W_0\)を更新するファインチューニングより少ない。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/large-language-model/">
-		#Large Language Model
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">November 18, 2023</span>
         </div>
     </article>
     
