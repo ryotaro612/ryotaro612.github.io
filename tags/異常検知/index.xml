@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>異常検知 on Blanket</title>
-    <link>https://ryotaro.dev/tags/%E7%95%B0%E5%B8%B8%E6%A4%9C%E7%9F%A5/</link>
+    <link>http://localhost:1313/tags/%E7%95%B0%E5%B8%B8%E6%A4%9C%E7%9F%A5/</link>
     <description>Recent content in 異常検知 on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Mon, 28 Nov 2022 12:22:20 -0500</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/%E7%95%B0%E5%B8%B8%E6%A4%9C%E7%9F%A5/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E7%95%B0%E5%B8%B8%E6%A4%9C%E7%9F%A5/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>抄訳 LOF: Identifying Density-Based Local Outliers(2000)</title>
-      <link>https://ryotaro.dev/posts/lof_identifying_density_based_local_outliners/</link>
+      <link>http://localhost:1313/posts/lof_identifying_density_based_local_outliners/</link>
       <pubDate>Mon, 28 Nov 2022 12:22:20 -0500</pubDate>
-      <guid>https://ryotaro.dev/posts/lof_identifying_density_based_local_outliners/</guid>
+      <guid>http://localhost:1313/posts/lof_identifying_density_based_local_outliners/</guid>
       <description>&lt;p&gt;局所外れ値因子法(LOF)は、あるインスタンスが外れ値であるかを、その周囲のインスタンスとの距離から判定する。&#xA;異常検知の手法の中には異常か正常かの二値を出力するものがあるが、LOFは[0,1]区間の値を出力する。&#xA;1に近いほど正常とみなす。&#xA;要素間の距離が近くて密度の高いクラスタと低いクラスタがあり、密度の高いクラスタの少し遠くに外れ値とみなすべきインスタンスがあるとする。&#xA;このとき、密度の低いクラスタのインスタンス間の距離を基準にすると、密度の高いクラスタのインスタンスと外れ値のインスタンス間の距離は大きいとみなせない。&lt;/p&gt;&#xA;&lt;p&gt;他方で、外れ値のインスタンスのそばの密度の高いクラスタの距離を基準にすれば、外れ値のインスタンスは周囲のインスタンスから遠いとみなせる。&#xA;このように、密度の違うクラスタがあるデータセットでも、インスタンスに近いサンプル間の距離を基準にすることで、他のクラスタの密度で測れば正常なインタンスと判定される外れ値を検出できる。&lt;/p&gt;</description>
     </item>
   </channel>

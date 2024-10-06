@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SQL on Blanket</title>
-    <link>https://ryotaro.dev/tags/sql/</link>
+    <link>http://localhost:1313/tags/sql/</link>
     <description>Recent content in SQL on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 14 Apr 2024 14:08:04 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/sql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spark SQL: Relational Data Processing in Spark (2015)</title>
-      <link>https://ryotaro.dev/posts/spark-sql-relational-data-processing-in-spark/</link>
+      <link>http://localhost:1313/posts/spark-sql-relational-data-processing-in-spark/</link>
       <pubDate>Sun, 14 Apr 2024 14:08:04 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/spark-sql-relational-data-processing-in-spark/</guid>
+      <guid>http://localhost:1313/posts/spark-sql-relational-data-processing-in-spark/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://dl.acm.org/doi/10.1145/2723372.2742797&#34;&gt;Spark SQL&lt;/a&gt;は、関係データベースのテーブルにあたる抽象データ構造のDataFrameを公開し、Spark上で関係代数によるデータ処理を実現する。&#xA;DataFrameに対する操作は、&lt;code&gt;save&lt;/code&gt;のような出力まで遅延される。&#xA;遅延により蓄積したクエリは、最適化器Catalystで最適化された後にバイトコードにコンパイルされる。&lt;/p&gt;</description>
     </item>
     <item>
       <title>A Critique of ANSI SQL Isolation Levels (1995)</title>
-      <link>https://ryotaro.dev/posts/a-critique-of-ansi-sql-isolation-levels/</link>
+      <link>http://localhost:1313/posts/a-critique-of-ansi-sql-isolation-levels/</link>
       <pubDate>Sat, 13 Nov 2021 19:34:24 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/a-critique-of-ansi-sql-isolation-levels/</guid>
+      <guid>http://localhost:1313/posts/a-critique-of-ansi-sql-isolation-levels/</guid>
       <description>&lt;p&gt;ANSI SQL-92規格は、トランザクション分離レベルを、Dirty Read, Non-Repeatable Reads, Phantomが発生する可能性で定義する。&#xA;著者は、トランザクション分離レベルを禁止する現象で定義する理由を、ロックなどの実装手段で定義すると規格が実装依存になるからだと考えている。&#xA;表題の論文は、規格の現象による定義があいまいであり、3つの異常が起きなくても望まない結果になる実行があることを例示した。&#xA;また、規格のトランザクション分離レベルが、商用データベースで採用されているトランザクション分離レベルにあてはまらない問題もある。&#xA;禁止する現象にDirty Writeを規格に加え、厳しく実行列を制限するように現象の定義を解釈し、現象の説明を自然言語から形式的な記述に変えることを提唱した。&#xA;さらに、規格がデータの版が単一であることを前提としていることを指摘した上で、多版型のトランザクションであるSnaphot Isolationを提案した。&lt;/p&gt;</description>
     </item>
   </channel>

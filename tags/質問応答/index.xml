@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>質問応答 on Blanket</title>
-    <link>https://ryotaro.dev/tags/%E8%B3%AA%E5%95%8F%E5%BF%9C%E7%AD%94/</link>
+    <link>http://localhost:1313/tags/%E8%B3%AA%E5%95%8F%E5%BF%9C%E7%AD%94/</link>
     <description>Recent content in 質問応答 on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 30 Dec 2023 00:42:11 -0500</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/%E8%B3%AA%E5%95%8F%E5%BF%9C%E7%AD%94/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E8%B3%AA%E5%95%8F%E5%BF%9C%E7%AD%94/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dense Passage Retrieval for Open-Domain Question Answering (2020)</title>
-      <link>https://ryotaro.dev/posts/dense-passage-retrieval-for-open-domain-question-answering/</link>
+      <link>http://localhost:1313/posts/dense-passage-retrieval-for-open-domain-question-answering/</link>
       <pubDate>Sat, 30 Dec 2023 00:42:11 -0500</pubDate>
-      <guid>https://ryotaro.dev/posts/dense-passage-retrieval-for-open-domain-question-answering/</guid>
+      <guid>http://localhost:1313/posts/dense-passage-retrieval-for-open-domain-question-answering/</guid>
       <description>&lt;p&gt;あたえられた文書集合から事実についての質問に答えるオープンドメイン質問応答は、もとの集合から質問に関連する少数の文書集合を選び、選ばれた集合から解答を特定する二段階の手順に分けられる &lt;a href=&#34;https://arxiv.org/abs/1704.00051&#34;&gt;(Chen et al., 2017)&lt;/a&gt;。&#xA;&lt;a href=&#34;https://aclanthology.org/2020.emnlp-main.550/&#34;&gt;Dense Passage Retrieval for Open-Domain Question Answering&lt;/a&gt;は、最初の文書候補を限定する手順に、従来より使われているBM25のような疎なベクトルを出力するモデルにかわって、BERTが出力する密で次元数の少ないベクトルを応用する。&lt;/p&gt;&#xA;&lt;p&gt;訓練方法は距離学習であり、質問と解答のベクトルの内積が大きく、解答以外の文章と質問の内積が小さくになるように、BERTの重みを更新する。&#xA;負例を集めるために、無作為に選ばれた文章、BM25が最も高い文章、別の正例の文章を負例の文章に利用し比較したところ、BM25の高い文章と別の正例の文章を負例にするときに最もよい結果になった。&lt;/p&gt;</description>
     </item>
   </channel>

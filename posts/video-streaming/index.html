@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>ビデオストリーミングサービスの例題</title>
+    <title>動画配信プラットフォームの例</title>
   </head>
 
   <body>
@@ -80,7 +80,7 @@
     </header>
     
 <main>
-  <h1>ビデオストリーミングサービスの例題</h1>
+  <h1>動画配信プラットフォームの例</h1>
   <ul class="tags">
     
     <li class="tag">
@@ -92,8 +92,54 @@
   </ul>  
   <span class="date">September 18, 2024</span>    
   <div>
-    <p>ビデオストリーミングサービスの例題。</p>
+    <p>システム設計面接におけるNetflixやYoutubeのような動画サービスの問題における要点を整理する。</p>
 <h2 id="機能要件">機能要件</h2>
+<p>参考文献では以下の要件があたえられていた。
+どの文献でも視聴とアップロードは求められていた。</p>
+<ul>
+<li>ストリーミング配信される動画の視聴
+<ul>
+<li>対応クライアント
+<ul>
+<li>ブラウザ</li>
+<li>モバイル</li>
+<li>スマートTV</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>動画をアップロードできる</li>
+<li>ビデオの品質を変更できる</li>
+<li>ビデオの検索</li>
+<li>評価をつけられる
+<ul>
+<li>コメントの種類
+<ul>
+<li>Like</li>
+<li>Dislike</li>
+<li>Comment</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="back-of-the-envelope-estimation">Back of the envelope estimation</h2>
+<p>Back of the envelope estimationでは、以下の数が与えられていた。</p>
+<ul>
+<li>DAUユーザ数</li>
+<li>ユーザが視聴する動画の平均数</li>
+<li>アップロードされる動画の数</li>
+<li>アップロードれる動画の平均サイズ</li>
+</ul>
+<h2 id="アーキテクチャ">アーキテクチャ</h2>
+<p>どの参考文献でも、</p>
+<h2 id="参考">参考</h2>
+<ul>
+<li><a href="https://www.educative.io/courses/grokking-the-system-design-interview/system-design-youtube">Grokking the Modern System Design Interview</a></li>
+<li><a href="https://leetcode.com/explore/learn/card/system-design/690/system-design-case-studies/4388/">LeetCode: Netflix System Design</a></li>
+<li><a href="https://bytebytego.com/courses/system-design-interview/design-youtube">System Design Interview: An Insider&rsquo;s Guide</a></li>
+</ul>
+<h2 id="機能要件-1">機能要件</h2>
 <ul>
 <li>動画のストリーミング</li>
 <li>動画のアップロード</li>
@@ -112,7 +158,14 @@
 <li>性能・拡張性</li>
 <li>完全性</li>
 </ul>
-<h2 id="アーキテクチャ">アーキテクチャ</h2>
+<h2 id="質問">質問</h2>
+<ul>
+<li>DAU,</li>
+<li>一人が使う時間の平均</li>
+<li>対応端末</li>
+</ul>
+<p>アップロードは安定させてほうがいい。</p>
+<h2 id="アーキテクチャ-1">アーキテクチャ</h2>
 <p><a href="/video-streaming/arch.drawio">Draw IO</a>のファイル。</p>
 <p>BigTableの使い道
 Grokking interviewに評価ポイントがあった。</p>

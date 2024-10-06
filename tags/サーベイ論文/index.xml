@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>サーベイ論文 on Blanket</title>
-    <link>https://ryotaro.dev/tags/%E3%82%B5%E3%83%BC%E3%83%99%E3%82%A4%E8%AB%96%E6%96%87/</link>
+    <link>http://localhost:1313/tags/%E3%82%B5%E3%83%BC%E3%83%99%E3%82%A4%E8%AB%96%E6%96%87/</link>
     <description>Recent content in サーベイ論文 on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Mon, 30 Dec 2019 16:07:40 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/%E3%82%B5%E3%83%BC%E3%83%99%E3%82%A4%E8%AB%96%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E3%82%B5%E3%83%BC%E3%83%99%E3%82%A4%E8%AB%96%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Classification in the Presence of Label Noise: a Survey(2013)</title>
-      <link>https://ryotaro.dev/posts/classification_in_the_presence_of_label_noise/</link>
+      <link>http://localhost:1313/posts/classification_in_the_presence_of_label_noise/</link>
       <pubDate>Mon, 30 Dec 2019 16:07:40 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/classification_in_the_presence_of_label_noise/</guid>
+      <guid>http://localhost:1313/posts/classification_in_the_presence_of_label_noise/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;ノイズのある教師データによるクラス分類の&lt;a href=&#34;https://romisatriawahono.net/lecture/rm/survey/machine%20learning/Frenay%20-%20Classification%20in%20the%20Presence%20of%20Label%20Noise%20-%202014.pdf&#34;&gt;サーベイ論文&lt;/a&gt;である。発表時期は、&lt;a href=&#34;https://ieeexplore.ieee.org/document/6685834&#34;&gt;2013年の12月&lt;/a&gt;である。&#xA;主な内容は、ノイズの分類、ノイズが分類に及ぼす影響、ノイズへの対策である。&lt;/p&gt;</description>
     </item>
     <item>
       <title>メモ A Survey on Data Collection for Machine Learning(2018)</title>
-      <link>https://ryotaro.dev/posts/a_survey_on_data_collection_for_machine_learning/</link>
+      <link>http://localhost:1313/posts/a_survey_on_data_collection_for_machine_learning/</link>
       <pubDate>Sat, 26 Oct 2019 14:27:10 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/a_survey_on_data_collection_for_machine_learning/</guid>
+      <guid>http://localhost:1313/posts/a_survey_on_data_collection_for_machine_learning/</guid>
       <description>&lt;p&gt;機械学習に使う教師データに関するサーベイ論文であり、機械学習や自然言語処理などのデータの応用分野だけでなく、データの管理にまつわる分野の調査も含まれているところに特徴がある。&#xA;データの管理に着目している理由は、深層学習の発展によって必要な教師データが増えたことで、データの管理の課題が顕在化してきたからである。&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>RDBMS on Blanket</title>
-    <link>https://ryotaro.dev/en/tags/rdbms/</link>
+    <link>http://localhost:1313/en/tags/rdbms/</link>
     <description>Recent content in RDBMS on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sat, 17 Feb 2024 17:44:38 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/en/tags/rdbms/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/en/tags/rdbms/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>THE DESIGN OF POSTGRES (1986)</title>
-      <link>https://ryotaro.dev/en/posts/the-design-of-postgres/</link>
+      <link>http://localhost:1313/en/posts/the-design-of-postgres/</link>
       <pubDate>Sat, 17 Feb 2024 17:44:38 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/the-design-of-postgres/</guid>
+      <guid>http://localhost:1313/en/posts/the-design-of-postgres/</guid>
       <description>&lt;p&gt;The preliminary design of POSTGRES was presented in &lt;a href=&#34;https://dsf.berkeley.edu/papers/ERL-M85-95.pdf&#34;&gt;The Design of Postgres&lt;/a&gt;.&#xA;According to &lt;a href=&#34;https://www.postgresql.jp/document/8.3/html/history.html&#34;&gt;Brief History of Postgres&lt;/a&gt;, the data model, rules, and storage system were separately described in different papers: &lt;a href=&#34;https://apps.dtic.mil/sti/tr/pdf/ADA184251.pdf&#34;&gt;The Postgres Data Model&lt;/a&gt;, &lt;a href=&#34;https://apps.dtic.mil/sti/tr/pdf/ADA179161.pdf&#34;&gt;The Design of the Postgres Rule System&lt;/a&gt;, and &lt;a href=&#34;https://dsf.berkeley.edu/papers/ERL-M87-06.pdf&#34;&gt;The Design of the Postgres Storage System&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;POSTGRES is the successor to the INGRES relational database system.&#xA;The main design goals of POSTGRES were to support complex objects, simplify the DBMS code for crash recovery, and utilize optical disks while making as few changes as possible to the relational model.&lt;/p&gt;</description>
     </item>
   </channel>

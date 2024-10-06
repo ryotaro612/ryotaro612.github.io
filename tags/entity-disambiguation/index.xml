@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Entity Disambiguation on Blanket</title>
-    <link>https://ryotaro.dev/tags/entity-disambiguation/</link>
+    <link>http://localhost:1313/tags/entity-disambiguation/</link>
     <description>Recent content in Entity Disambiguation on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Fri, 09 Nov 2018 21:11:50 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/entity-disambiguation/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/entity-disambiguation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>抄訳 Deep Joint Entity Disambiguation with Local Neural Attention(2017)</title>
-      <link>https://ryotaro.dev/posts/deep_joint_entity_disambiguation/</link>
+      <link>http://localhost:1313/posts/deep_joint_entity_disambiguation/</link>
       <pubDate>Fri, 09 Nov 2018 21:11:50 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/deep_joint_entity_disambiguation/</guid>
+      <guid>http://localhost:1313/posts/deep_joint_entity_disambiguation/</guid>
       <description>&lt;p&gt;当ページで紹介した&lt;a href=&#34;https://aclweb.org/anthology/K18-1050&#34;&gt;End-to-End Neural Entity Linking&lt;/a&gt;(End-to-End) の著者らの先行研究にあたる。&#xA;End-to-EndがEntity LinkingのMention Detection(MD)とEntity Disambiguation(ED)の両方をアプローチの対象にしているのに対し、今回の論文はEDのみが対象となっている。&#xA;したがって、文章からmention（参照表現）が抽出されていることが前提にあり、提案の中心は、参照表現に対応するエンティティを候補の中から正しく求める手法にある。&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SQL on Blanket</title>
-    <link>https://ryotaro.dev/en/tags/sql/</link>
+    <link>http://localhost:1313/en/tags/sql/</link>
     <description>Recent content in SQL on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 14 Apr 2024 14:08:04 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/en/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/en/tags/sql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spark SQL: Relational Data Processing in Spark (2015)</title>
-      <link>https://ryotaro.dev/en/posts/spark-sql-relational-data-processing-in-spark/</link>
+      <link>http://localhost:1313/en/posts/spark-sql-relational-data-processing-in-spark/</link>
       <pubDate>Sun, 14 Apr 2024 14:08:04 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/spark-sql-relational-data-processing-in-spark/</guid>
+      <guid>http://localhost:1313/en/posts/spark-sql-relational-data-processing-in-spark/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://dl.acm.org/doi/10.1145/2723372.2742797&#34;&gt;Spark SQL&lt;/a&gt; provides a DataFrame API, an abstract data type equivalent to a table in a relational database. The DataFrame objects can be manipulated in a manner consistent with relational algebra. For example, the API includes various relational operators such as &lt;code&gt;where&lt;/code&gt; and &lt;code&gt;group by&lt;/code&gt;, similar to data frames in R and Python. The DataFrame objects are evaluated lazily, meaning they are not evaluated until certain output operations, like &lt;code&gt;count&lt;/code&gt;, are performed. Catalyst, an optimizer written in Scala, optimizes these lazy queries and then compiles them into Java bytecode.&lt;/p&gt;</description>
     </item>
   </channel>
