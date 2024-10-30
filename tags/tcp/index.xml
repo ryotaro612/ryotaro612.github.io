@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>TCP on Blanket</title>
-    <link>http://localhost:1313/tags/tcp/</link>
+    <link>https://ryotaro.dev/tags/tcp/</link>
     <description>Recent content in TCP on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 09 Dec 2023 12:24:23 -0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/tcp/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/tcp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Protocol for Packet Network Intercommunication (1974)</title>
-      <link>http://localhost:1313/posts/a_protocol_for_packet_network_intercommunication/</link>
+      <link>https://ryotaro.dev/posts/a_protocol_for_packet_network_intercommunication/</link>
       <pubDate>Sat, 09 Dec 2023 12:24:23 -0500</pubDate>
-      <guid>http://localhost:1313/posts/a_protocol_for_packet_network_intercommunication/</guid>
+      <guid>https://ryotaro.dev/posts/a_protocol_for_packet_network_intercommunication/</guid>
       <description>&lt;p&gt;TCPの起源はヴィントン・サーフとロバート・カーンが1974年に出版した&lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf&#34;&gt;A Protocol for Packet Network Intercommunication&lt;/a&gt;にまでさかのぼる。&#xA;当時、ローカルネットワーク内のコンピュータ同士で通信するためのプロトコルはあったが、ネットワークを横断して通信できるプロコトルはなかった。&lt;/p&gt;</description>
     </item>
   </channel>

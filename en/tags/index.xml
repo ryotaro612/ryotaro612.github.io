@@ -2,290 +2,283 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Blanket</title>
-    <link>http://localhost:1313/en/tags/</link>
+    <link>https://ryotaro.dev/en/tags/</link>
     <description>Recent content in Tags on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 24 Sep 2024 02:14:15 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Back of the Envelope Estimation</title>
-      <link>http://localhost:1313/en/tags/back-of-the-envelope-estimation/</link>
+      <link>https://ryotaro.dev/en/tags/back-of-the-envelope-estimation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/back-of-the-envelope-estimation/</guid>
+      <guid>https://ryotaro.dev/en/tags/back-of-the-envelope-estimation/</guid>
       <description></description>
     </item>
     <item>
       <title>System Design Interview</title>
-      <link>http://localhost:1313/en/tags/system-design-interview/</link>
+      <link>https://ryotaro.dev/en/tags/system-design-interview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/system-design-interview/</guid>
+      <guid>https://ryotaro.dev/en/tags/system-design-interview/</guid>
       <description></description>
     </item>
     <item>
       <title>Retrieval Augmented Generation</title>
-      <link>http://localhost:1313/en/tags/retrieval-augmented-generation/</link>
+      <link>https://ryotaro.dev/en/tags/retrieval-augmented-generation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/retrieval-augmented-generation/</guid>
+      <guid>https://ryotaro.dev/en/tags/retrieval-augmented-generation/</guid>
       <description></description>
     </item>
     <item>
       <title>Distributed System</title>
-      <link>http://localhost:1313/en/tags/distributed-system/</link>
+      <link>https://ryotaro.dev/en/tags/distributed-system/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/distributed-system/</guid>
+      <guid>https://ryotaro.dev/en/tags/distributed-system/</guid>
       <description></description>
     </item>
     <item>
       <title>Policy Gradient Method</title>
-      <link>http://localhost:1313/en/tags/policy-gradient-method/</link>
+      <link>https://ryotaro.dev/en/tags/policy-gradient-method/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/policy-gradient-method/</guid>
+      <guid>https://ryotaro.dev/en/tags/policy-gradient-method/</guid>
       <description></description>
     </item>
     <item>
       <title>Reinforcement Learning</title>
-      <link>http://localhost:1313/en/tags/reinforcement-learning/</link>
+      <link>https://ryotaro.dev/en/tags/reinforcement-learning/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/reinforcement-learning/</guid>
+      <guid>https://ryotaro.dev/en/tags/reinforcement-learning/</guid>
       <description></description>
     </item>
     <item>
       <title>Spark</title>
-      <link>http://localhost:1313/en/tags/spark/</link>
+      <link>https://ryotaro.dev/en/tags/spark/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/spark/</guid>
+      <guid>https://ryotaro.dev/en/tags/spark/</guid>
       <description></description>
     </item>
     <item>
       <title>SQL</title>
-      <link>http://localhost:1313/en/tags/sql/</link>
+      <link>https://ryotaro.dev/en/tags/sql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/sql/</guid>
+      <guid>https://ryotaro.dev/en/tags/sql/</guid>
       <description></description>
     </item>
     <item>
       <title>Collaborative Filtering</title>
-      <link>http://localhost:1313/en/tags/collaborative-filtering/</link>
+      <link>https://ryotaro.dev/en/tags/collaborative-filtering/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/collaborative-filtering/</guid>
+      <guid>https://ryotaro.dev/en/tags/collaborative-filtering/</guid>
       <description></description>
     </item>
     <item>
       <title>PostgreSQL</title>
-      <link>http://localhost:1313/en/tags/postgresql/</link>
+      <link>https://ryotaro.dev/en/tags/postgresql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/postgresql/</guid>
+      <guid>https://ryotaro.dev/en/tags/postgresql/</guid>
       <description></description>
     </item>
     <item>
       <title>Streaming Data</title>
-      <link>http://localhost:1313/en/tags/streaming-data/</link>
+      <link>https://ryotaro.dev/en/tags/streaming-data/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/streaming-data/</guid>
+      <guid>https://ryotaro.dev/en/tags/streaming-data/</guid>
       <description></description>
     </item>
     <item>
       <title>Large Language Model</title>
-      <link>http://localhost:1313/en/tags/large-language-model/</link>
+      <link>https://ryotaro.dev/en/tags/large-language-model/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/large-language-model/</guid>
+      <guid>https://ryotaro.dev/en/tags/large-language-model/</guid>
       <description></description>
     </item>
     <item>
       <title>Apache Calcite</title>
-      <link>http://localhost:1313/en/tags/apache-calcite/</link>
+      <link>https://ryotaro.dev/en/tags/apache-calcite/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/apache-calcite/</guid>
+      <guid>https://ryotaro.dev/en/tags/apache-calcite/</guid>
       <description></description>
     </item>
     <item>
       <title>Association Rule Mining</title>
-      <link>http://localhost:1313/en/tags/association-rule-mining/</link>
+      <link>https://ryotaro.dev/en/tags/association-rule-mining/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/association-rule-mining/</guid>
+      <guid>https://ryotaro.dev/en/tags/association-rule-mining/</guid>
       <description></description>
     </item>
     <item>
       <title>Transformer</title>
-      <link>http://localhost:1313/en/tags/transformer/</link>
+      <link>https://ryotaro.dev/en/tags/transformer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/transformer/</guid>
+      <guid>https://ryotaro.dev/en/tags/transformer/</guid>
       <description></description>
     </item>
     <item>
       <title>RDBMS</title>
-      <link>http://localhost:1313/en/tags/rdbms/</link>
+      <link>https://ryotaro.dev/en/tags/rdbms/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/rdbms/</guid>
+      <guid>https://ryotaro.dev/en/tags/rdbms/</guid>
       <description></description>
     </item>
     <item>
       <title>Sorting Algorithm</title>
-      <link>http://localhost:1313/en/tags/sorting-algorithm/</link>
+      <link>https://ryotaro.dev/en/tags/sorting-algorithm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/sorting-algorithm/</guid>
+      <guid>https://ryotaro.dev/en/tags/sorting-algorithm/</guid>
       <description></description>
     </item>
     <item>
       <title>Approximate Nearest Neighbors</title>
-      <link>http://localhost:1313/en/tags/approximate-nearest-neighbors/</link>
+      <link>https://ryotaro.dev/en/tags/approximate-nearest-neighbors/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/approximate-nearest-neighbors/</guid>
+      <guid>https://ryotaro.dev/en/tags/approximate-nearest-neighbors/</guid>
       <description></description>
     </item>
     <item>
       <title>Conflict-Free Replicated Data Types</title>
-      <link>http://localhost:1313/en/tags/conflict-free-replicated-data-types/</link>
+      <link>https://ryotaro.dev/en/tags/conflict-free-replicated-data-types/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/conflict-free-replicated-data-types/</guid>
+      <guid>https://ryotaro.dev/en/tags/conflict-free-replicated-data-types/</guid>
       <description></description>
     </item>
     <item>
       <title>Question Answering</title>
-      <link>http://localhost:1313/en/tags/question-answering/</link>
+      <link>https://ryotaro.dev/en/tags/question-answering/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/question-answering/</guid>
+      <guid>https://ryotaro.dev/en/tags/question-answering/</guid>
       <description></description>
     </item>
     <item>
       <title>CAP Theorem</title>
-      <link>http://localhost:1313/en/tags/cap-theorem/</link>
+      <link>https://ryotaro.dev/en/tags/cap-theorem/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/cap-theorem/</guid>
+      <guid>https://ryotaro.dev/en/tags/cap-theorem/</guid>
       <description></description>
     </item>
     <item>
       <title>Recommendation</title>
-      <link>http://localhost:1313/en/tags/recommendation/</link>
+      <link>https://ryotaro.dev/en/tags/recommendation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/recommendation/</guid>
+      <guid>https://ryotaro.dev/en/tags/recommendation/</guid>
       <description></description>
     </item>
     <item>
       <title>TCP</title>
-      <link>http://localhost:1313/en/tags/tcp/</link>
+      <link>https://ryotaro.dev/en/tags/tcp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/tcp/</guid>
+      <guid>https://ryotaro.dev/en/tags/tcp/</guid>
       <description></description>
     </item>
     <item>
       <title>Latent Semantic Analysis</title>
-      <link>http://localhost:1313/en/tags/latent-semantic-analysis/</link>
+      <link>https://ryotaro.dev/en/tags/latent-semantic-analysis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/latent-semantic-analysis/</guid>
+      <guid>https://ryotaro.dev/en/tags/latent-semantic-analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>Peer-to-Peer</title>
-      <link>http://localhost:1313/en/tags/peer-to-peer/</link>
+      <link>https://ryotaro.dev/en/tags/peer-to-peer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/peer-to-peer/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>BERT</title>
-      <link>http://localhost:1313/en/tags/bert/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/bert/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Knowledge Distillation</title>
-      <link>http://localhost:1313/en/tags/knowledge-distillation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/knowledge-distillation/</guid>
+      <guid>https://ryotaro.dev/en/tags/peer-to-peer/</guid>
       <description></description>
     </item>
     <item>
       <title>Activation Function</title>
-      <link>http://localhost:1313/en/tags/activation-function/</link>
+      <link>https://ryotaro.dev/en/tags/activation-function/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/activation-function/</guid>
+      <guid>https://ryotaro.dev/en/tags/activation-function/</guid>
       <description></description>
     </item>
     <item>
       <title>Structured Programming</title>
-      <link>http://localhost:1313/en/tags/structured-programming/</link>
+      <link>https://ryotaro.dev/en/tags/structured-programming/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/structured-programming/</guid>
+      <guid>https://ryotaro.dev/en/tags/structured-programming/</guid>
       <description></description>
     </item>
     <item>
       <title>Communicating Sequential Processes</title>
-      <link>http://localhost:1313/en/tags/communicating-sequential-processes/</link>
+      <link>https://ryotaro.dev/en/tags/communicating-sequential-processes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/communicating-sequential-processes/</guid>
+      <guid>https://ryotaro.dev/en/tags/communicating-sequential-processes/</guid>
       <description></description>
     </item>
     <item>
       <title>Concurrent Programming</title>
-      <link>http://localhost:1313/en/tags/concurrent-programming/</link>
+      <link>https://ryotaro.dev/en/tags/concurrent-programming/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/concurrent-programming/</guid>
+      <guid>https://ryotaro.dev/en/tags/concurrent-programming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>BERT</title>
+      <link>https://ryotaro.dev/en/tags/bert/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ryotaro.dev/en/tags/bert/</guid>
       <description></description>
     </item>
     <item>
       <title>Cosine Similarity</title>
-      <link>http://localhost:1313/en/tags/cosine-similarity/</link>
+      <link>https://ryotaro.dev/en/tags/cosine-similarity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/cosine-similarity/</guid>
+      <guid>https://ryotaro.dev/en/tags/cosine-similarity/</guid>
       <description></description>
     </item>
     <item>
       <title>Multitask Learning</title>
-      <link>http://localhost:1313/en/tags/multitask-learning/</link>
+      <link>https://ryotaro.dev/en/tags/multitask-learning/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/multitask-learning/</guid>
+      <guid>https://ryotaro.dev/en/tags/multitask-learning/</guid>
       <description></description>
     </item>
     <item>
       <title>Entropy</title>
-      <link>http://localhost:1313/en/tags/entropy/</link>
+      <link>https://ryotaro.dev/en/tags/entropy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/entropy/</guid>
+      <guid>https://ryotaro.dev/en/tags/entropy/</guid>
       <description></description>
     </item>
     <item>
       <title>Byte Pair Encoding</title>
-      <link>http://localhost:1313/en/tags/byte-pair-encoding/</link>
+      <link>https://ryotaro.dev/en/tags/byte-pair-encoding/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/byte-pair-encoding/</guid>
+      <guid>https://ryotaro.dev/en/tags/byte-pair-encoding/</guid>
       <description></description>
     </item>
     <item>
       <title>Early Programming</title>
-      <link>http://localhost:1313/en/tags/early-programming/</link>
+      <link>https://ryotaro.dev/en/tags/early-programming/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/early-programming/</guid>
+      <guid>https://ryotaro.dev/en/tags/early-programming/</guid>
       <description></description>
     </item>
     <item>
       <title>Attention</title>
-      <link>http://localhost:1313/en/tags/attention/</link>
+      <link>https://ryotaro.dev/en/tags/attention/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/attention/</guid>
+      <guid>https://ryotaro.dev/en/tags/attention/</guid>
       <description></description>
     </item>
     <item>
       <title>Splay Tree</title>
-      <link>http://localhost:1313/en/tags/splay-tree/</link>
+      <link>https://ryotaro.dev/en/tags/splay-tree/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/splay-tree/</guid>
+      <guid>https://ryotaro.dev/en/tags/splay-tree/</guid>
       <description></description>
     </item>
     <item>
       <title>Catalan Numbers</title>
-      <link>http://localhost:1313/en/tags/catalan-numbers/</link>
+      <link>https://ryotaro.dev/en/tags/catalan-numbers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/catalan-numbers/</guid>
+      <guid>https://ryotaro.dev/en/tags/catalan-numbers/</guid>
       <description></description>
     </item>
     <item>
       <title>Compiler</title>
-      <link>http://localhost:1313/en/tags/compiler/</link>
+      <link>https://ryotaro.dev/en/tags/compiler/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/compiler/</guid>
+      <guid>https://ryotaro.dev/en/tags/compiler/</guid>
       <description></description>
     </item>
   </channel>

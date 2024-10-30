@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>レプリケーション on Blanket</title>
-    <link>http://localhost:1313/tags/%E3%83%AC%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/</link>
+    <link>https://ryotaro.dev/tags/%E3%83%AC%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/</link>
     <description>Recent content in レプリケーション on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Mon, 19 Dec 2022 11:07:49 -0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E3%83%AC%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/%E3%83%AC%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Epidemic Algorithm for Replicated Database Maintenance(1987)</title>
-      <link>http://localhost:1313/posts/epidemic_algorithms_for_replicated_database_maintenance/</link>
+      <link>https://ryotaro.dev/posts/epidemic_algorithms_for_replicated_database_maintenance/</link>
       <pubDate>Mon, 19 Dec 2022 11:07:49 -0500</pubDate>
-      <guid>http://localhost:1313/posts/epidemic_algorithms_for_replicated_database_maintenance/</guid>
+      <guid>https://ryotaro.dev/posts/epidemic_algorithms_for_replicated_database_maintenance/</guid>
       <description>&lt;p&gt;Epidemic Algorithmは、データベース間の差分を解消するために、データベースがランダムに選んだ別のデータベースと同期する手法である。&#xA;Epidemicを邦訳すると伝染性である。&#xA;ここではデータベースにはマスタースレーブの区別はなく、任意のサーバーがレコードの変更リクエストを受理できる。&#xA;Epidemic Algorithmには、定期的にデーターベース全体を同期する手法と、変更を受理したときに当該の変更のみを別のデータベースに伝搬させる手法の2つがある。&#xA;前者は、データベース全体を同期するので変更のとりこぼしがいずれは解消されるが、同期に時間がかかる。&#xA;後者は、時間はかからないが、伝搬を終えるまでに同期できなかった変更があれば、その齟齬が残りつづける。&#xA;データベースがある時点で最新の変更をもたない確率を仮定し、その確率で次の同期で変更を取得できる確率を表し、手法間の同期する収束の速さを比較した。&lt;/p&gt;</description>
     </item>
   </channel>

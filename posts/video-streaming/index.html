@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,14 +17,14 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="http://localhost:1313/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
-    <link rel="stylesheet" href="http://localhost:1313/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
 
-<link rel="stylesheet" href="http://localhost:1313/scss/single.min.ac39fd9b1999326c116cd551ce035fd4eaf2801f6bfc13a90241a1d9275b21ec.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.ac39fd9b1999326c116cd551ce035fd4eaf2801f6bfc13a90241a1d9275b21ec.css">
 
-<link rel="stylesheet" href="http://localhost:1313/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -46,12 +46,14 @@
     
         
     <header class="navigation">
-      <h2><a href="http://localhost:1313/">Blanket</a></h2>
+      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
       <nav>
         <ul>
-          <li><a href="http://localhost:1313/about">About</a></li>
-          <li><a href="http://localhost:1313/posts">Posts</a></li>
-          <li><a href="http://localhost:1313/tags">Tags</a></li>
+          <li><a href="https://ryotaro.dev/about">About</a></li>
+          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+	  
+	  <li><a href="https://ryotaro.dev/en/posts/video-streaming/">en</a></li>
 	  
         </ul>	
 	<ul>
@@ -70,7 +72,7 @@
           </li>
           
           <li>
-	    <a href="http://localhost:1313/index.xml">
+	    <a href="https://ryotaro.dev/index.xml">
 	      <i class="fas fa-rss"></i>
             </a>
 	  </li>
@@ -84,7 +86,7 @@
   <ul class="tags">
     
     <li class="tag">
-      <a href="http://localhost:1313/tags/system-design-interview/">
+      <a href="https://ryotaro.dev/tags/system-design-interview/">
 	#System Design Interview
       </a>
     </li>
@@ -93,9 +95,12 @@
   <span class="date">September 18, 2024</span>    
   <div>
     <p>システム設計面接におけるNetflixやYoutubeのような動画サービスの問題における要点を整理する。</p>
-<h2 id="機能要件">機能要件</h2>
-<p>参考文献では以下の要件があたえられていた。
-どの文献でも視聴とアップロードは求められていた。</p>
+<h2 id="要件">要件</h2>
+<p>どの<a href="/posts/video-streaming/#参考文献">参考文献</a>でも視聴とアップロードが機能要件にある。
+また非機能要件については、解答例のシステム設計はすべてマイクロサービスであり、性能・拡張性を重視し、一貫性モデルを妥協してBASE (Basically available, Soft state, Eventual consistency) を認めている。
+参考文献では、以下の要件が目にとまった。</p>
+<ul>
+<li>機能要件
 <ul>
 <li>ストリーミング配信される動画の視聴
 <ul>
@@ -108,18 +113,23 @@
 </li>
 </ul>
 </li>
-<li>動画をアップロードできる</li>
-<li>ビデオの品質を変更できる</li>
-<li>ビデオの検索</li>
-<li>評価をつけられる
-<ul>
-<li>コメントの種類
+<li>動画のアップロード</li>
+<li>動画の品質の変更</li>
+<li>動画の検索</li>
+<li>動画の評価
 <ul>
 <li>Like</li>
 <li>Dislike</li>
-<li>Comment</li>
+<li>コメント</li>
 </ul>
 </li>
+</ul>
+</li>
+<li>非機能要件
+<ul>
+<li>高可用性</li>
+<li>性能・拡張性</li>
+<li>完全性</li>
 </ul>
 </li>
 </ul>
@@ -132,82 +142,46 @@
 <li>アップロードれる動画の平均サイズ</li>
 </ul>
 <h2 id="アーキテクチャ">アーキテクチャ</h2>
-<p>どの参考文献でも、</p>
-<h2 id="参考">参考</h2>
+<p>参考文献の複数の解答例が、動画のアップロードして保存するまでの処理を分割して非同期にし、動画をCDNで配信している。
+この2点が動画配信の問題の要点になるのだろう。</p>
+<h3 id="アップロードされた動画の処理">アップロードされた動画の処理</h3>
+<p>解答例は、動画のアップロードから保存までの処理を小さな処理に分割し、Kafkaなどのキューで各処理を個別にスケールできるように実装している。
+キューを介してマシン間のデータの受け渡すことで、エンキュー後はマシン同士が依存しなくなり、非同期にマシンの数をスケールできるようになる。
+ある参考文献は処理を以下の処理のように分割し、分割した処理の実行を非同期化する。</p>
 <ul>
+<li>動画のダウンロード</li>
+<li>動画のサムネイル作成</li>
+<li>コンテンツフィルダリング</li>
+<li>ウォーターマークの追加</li>
+<li>動画のエンコード</li>
+<li>動画のアップロード</li>
+</ul>
+<p>動画のエンコードと動画へのタグづけをキューで非同期するなら下図の構成になりえる。
+<img alt="queue" src="/video-streaming/queue.drawio.svg"></p>
+<p>メッセージキューシステムにエンキューできるメッセージのサイズには上限があり、処理対象のデータ自体をメッセージとしてキューに入れられないことがある。
+たとえば、<a href="https://docs.aws.amazon.com/ja_jp/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">SQSのメッセージの最大サイズは256KB</a>であり、<a href="https://kafka.apache.org/08/documentation.html">Kafkaであれば1MB</a>の制限がある。
+あつかえる動画のサイズの要件が1MBを超える場合、図のように処理中のファイルを外に置く必要がありそうだ。</p>
+<p>どの解答例もメッセージキューシステムの選定基準について詳しく議論していない。
+たとえば、代表的なメッセージキューシステムにPull型のKafkaやPush型のRabbitMQがある。
+RabbitMQは優先度つきメッセージなどでKafkaよりも細かいルーティング制御ができ、KafkaはRabbitMQよりも処理性能が高いように、実装ごとに異なる一長一短がある。
+AWSであれば、RabbitMQのかわりに<a href="https://aws.amazon.com/amazon-mq/?nc1=h_ls">Amazon MQ</a>や<a href="https://aws.amazon.com/msk/?nc1=h_ls">マネージド型のKafka</a>, <a href="https://aws.amazon.com/sns/?nc1=h_ls">SNS</a>が選択肢になるだろう。</p>
+<p>ストリーミング配信できない形式の動画ファイルをアップロードできるようにする場合、動画ファイルをストリーミング配信できる形式に変換する必要がある。
+試したことはないが、OSSであれば<a href="https://www.ffmpeg.org/">FFmpeg</a>や<a href="https://aws.amazon.com/jp/mediaconvert/">AWS Elemental MediaConvert</a>で変換できそうだ。
+配信プロトコルには<a href="https://ffmpeg.org/ffmpeg-formats.html#hls-1">HLS</a>や<a href="https://ffmpeg.org/ffmpeg-formats.html#dash-1">DASH</a>がある。</p>
+<h3 id="cdnでの動画配信">CDNでの動画配信</h3>
+<p>動画をCDNで配信しダウンロード速度を高速化する場合、動画を認証やWAFで保護しなければならない。
+AWSであれば、CDNの<a href="https://aws.amazon.com/cloudfront/?nc1=h_ls">CloudFront</a>を<a href="https://aws.amazon.com/waf/?nc1=h_ls">WAF</a>で保護できる。
+また、CloudFrontはS3にある静的ファイルを配信できる。
+ファイルへのCRUD操作を認証されたユーザのみに許可したい場合、認証したユーザに<a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-signed-urls.html">署名つきURL</a>や<a href="https://docs.aws.amazon.com/ja_jp/AmazonCloudFront/latest/DeveloperGuide/private-content-signed-cookies.html">署名つきCookie</a>を発行する。
+1つのURLだけを制限する場合は署名つきURLを、複数のURLを制限する場合は署名つきCookieを<a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-choosing-signed-urls-cookies.html">選ぶとよい</a>。
+署名つきURLでアップロード先を指定する場合、サーバーを中継せずにファイルをS3に送ることで、サーバーにかかるアップロード処理の負荷を下げることができる。</p>
+<h2 id="参考文献">参考文献</h2>
+<ul>
+<li><a href="https://aws.amazon.com/compare/the-difference-between-rabbitmq-and-kafka/?nc1=h_ls">What’s the Difference Between Kafka and RabbitMQ?</a></li>
 <li><a href="https://www.educative.io/courses/grokking-the-system-design-interview/system-design-youtube">Grokking the Modern System Design Interview</a></li>
 <li><a href="https://leetcode.com/explore/learn/card/system-design/690/system-design-case-studies/4388/">LeetCode: Netflix System Design</a></li>
 <li><a href="https://bytebytego.com/courses/system-design-interview/design-youtube">System Design Interview: An Insider&rsquo;s Guide</a></li>
 </ul>
-<h2 id="機能要件-1">機能要件</h2>
-<ul>
-<li>動画のストリーミング</li>
-<li>動画のアップロード</li>
-<li>タイトルでの動画検索</li>
-<li>動画の評価
-<ul>
-<li>動画にLike Dislikeをつける</li>
-<li>コンメントを残す</li>
-</ul>
-</li>
-<li>サムネイルの表示</li>
-</ul>
-<h2 id="非機能要件">非機能要件</h2>
-<ul>
-<li>高可用性</li>
-<li>性能・拡張性</li>
-<li>完全性</li>
-</ul>
-<h2 id="質問">質問</h2>
-<ul>
-<li>DAU,</li>
-<li>一人が使う時間の平均</li>
-<li>対応端末</li>
-</ul>
-<p>アップロードは安定させてほうがいい。</p>
-<h2 id="アーキテクチャ-1">アーキテクチャ</h2>
-<p><a href="/video-streaming/arch.drawio">Draw IO</a>のファイル。</p>
-<p>BigTableの使い道
-Grokking interviewに評価ポイントがあった。</p>
-<h2 id="疑問">疑問</h2>
-<p>CDN認証できるか</p>
-<ul>
-<li>アプリ対応いるか</li>
-<li>Responsiveでいいか</li>
-<li>分散ストレージにCephがある。</li>
-<li>オンプレで実装する場合に使えるOSSを知っておく。</li>
-<li>RDBMSで処理できるリクエスト量を知る</li>
-</ul>
-<h2 id="システム設計の例題">システム設計の例題</h2>
-<h2 id="想定するリクエスト量">想定するリクエスト量</h2>
-<p>毎分500時間の動画がアップロードされる。
-5
-マーメイド</p>
-<pre class="mermaid">sequenceDiagram
-    participant Alice
-    participant Bob
-    Alice->>John: Hello John, how are you?
-    loop Healthcheck
-        John->>John: Fight against hypochondria
-    end
-    Note right of John: Rational thoughts <br/>prevail!
-    John-->>Alice: Great!
-    John->>Bob: How about you?
-    Bob-->>John: Jolly good!
-</pre>
-
-<pre class="mermaid">architecture-beta
-    group api(logos:aws-lambda)[API]
-
-    service db(logos:aws-aurora)[Database] in api
-    service disk1(logos:aws-glacier)[Storage] in api
-    service disk2(logos:aws-s3)[Storage] in api
-    service server(logos:aws-ec2)[Server] in api
-
-    db:L -- R:server
-    disk1:T -- B:server
-    disk2:T -- B:db
-</pre>
   </div>
 </main>
 
@@ -234,23 +208,5 @@ Grokking interviewに評価ポイントがあった。</p>
       <small>© Ryotaro. All Rights Reserved.</small>
     </footer>
   </body>
-
-  <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
-    mermaid.registerIconPacks([
-		{
-			name: 'logos',
-			loader: () =>
-			fetch('https://unpkg.com/@iconify-json/logos/icons.json').then((res) => res.json()),
-		},
-		{
-			name: 'carbon',
-			loader: () =>
-			fetch('https://unpkg.com/@iconify-json/carbon/icons.json').then((res) => res.json()),
-		},		
-	]);	
-    mermaid.initialize({ startOnLoad: true });
-	
-  </script>
 
 </html>

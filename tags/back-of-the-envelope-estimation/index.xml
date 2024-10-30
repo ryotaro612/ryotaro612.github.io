@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Back of the Envelope Estimation on Blanket</title>
-    <link>http://localhost:1313/tags/back-of-the-envelope-estimation/</link>
+    <link>https://ryotaro.dev/tags/back-of-the-envelope-estimation/</link>
     <description>Recent content in Back of the Envelope Estimation on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Tue, 24 Sep 2024 02:14:15 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/back-of-the-envelope-estimation/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/back-of-the-envelope-estimation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Back of Envelope Calculations</title>
-      <link>http://localhost:1313/posts/back-of-envelope-calculations/</link>
+      <link>https://ryotaro.dev/posts/back-of-envelope-calculations/</link>
       <pubDate>Tue, 24 Sep 2024 02:14:15 +0900</pubDate>
-      <guid>http://localhost:1313/posts/back-of-envelope-calculations/</guid>
+      <guid>https://ryotaro.dev/posts/back-of-envelope-calculations/</guid>
       <description>&lt;p&gt;システム設計の面接では、与えられた情報からシステムに求められるシステムリソースを試算することを、back of the envelope calculations (estimation)という。&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>スプレー木 on Blanket</title>
-    <link>http://localhost:1313/tags/%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC%E6%9C%A8/</link>
+    <link>https://ryotaro.dev/tags/%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC%E6%9C%A8/</link>
     <description>Recent content in スプレー木 on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 12 Aug 2023 13:49:56 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC%E6%9C%A8/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC%E6%9C%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Self-Adjusting Binary Search Trees(1985)</title>
-      <link>http://localhost:1313/posts/self_adjusting_binary_search_trees/</link>
+      <link>https://ryotaro.dev/posts/self_adjusting_binary_search_trees/</link>
       <pubDate>Sat, 12 Aug 2023 13:49:56 -0400</pubDate>
-      <guid>http://localhost:1313/posts/self_adjusting_binary_search_trees/</guid>
+      <guid>https://ryotaro.dev/posts/self_adjusting_binary_search_trees/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.cs.cmu.edu/~sleator/papers/self-adjusting.pdf&#34;&gt;Self-Adjusting Binary Search Tree&lt;/a&gt;は、スプレー木といい、ノードを参照するたびに、ノードを木のルートに移動させる抽象データ構造である。&#xA;参照、挿入、削除の償却時間計算量は、ノード数\(n\)の木であれば\(\log(n)\)である。&#xA;さらに、十分な数の参照にかかる時間計算量は、その参照の系列に最適化された二分探索木の計算量の定数倍におさまる。&lt;/p&gt;</description>
     </item>
   </channel>

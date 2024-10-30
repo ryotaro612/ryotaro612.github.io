@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CRF on Blanket</title>
-    <link>http://localhost:1313/tags/crf/</link>
+    <link>https://ryotaro.dev/tags/crf/</link>
     <description>Recent content in CRF on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Fri, 12 Oct 2018 18:39:08 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/crf/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/crf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>メモ Conditional Random Fields: Probabilistic Models for Segmenting and Labeling Sequence Data</title>
-      <link>http://localhost:1313/posts/conditional_random_fields_probabilistic_models_for_segmenting_and_labeling_sequence/</link>
+      <link>https://ryotaro.dev/posts/conditional_random_fields_probabilistic_models_for_segmenting_and_labeling_sequence/</link>
       <pubDate>Fri, 12 Oct 2018 18:39:08 +0900</pubDate>
-      <guid>http://localhost:1313/posts/conditional_random_fields_probabilistic_models_for_segmenting_and_labeling_sequence/</guid>
+      <guid>https://ryotaro.dev/posts/conditional_random_fields_probabilistic_models_for_segmenting_and_labeling_sequence/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;条件付き確率場（Conditional Random Fields, CRF）を提案し、品詞タグづけにおけるerror rateをもとに評価した。&#xA;評価の比較対象には、Maximum entropy Markov models(MEMMs)が採用されている。&lt;/p&gt;</description>
     </item>
     <item>
       <title>要約 A Simple Semi-supervised Algorithm For Named Entity Recognition</title>
-      <link>http://localhost:1313/posts/a_simple_semi_supervised_for_ner/</link>
+      <link>https://ryotaro.dev/posts/a_simple_semi_supervised_for_ner/</link>
       <pubDate>Tue, 17 Jul 2018 12:51:29 +0900</pubDate>
-      <guid>http://localhost:1313/posts/a_simple_semi_supervised_for_ner/</guid>
+      <guid>https://ryotaro.dev/posts/a_simple_semi_supervised_for_ner/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;CRFに入力する学習データを集めるための半教師学習の手法を提案と評価した論文。&#xA;本手法はCRFに与える学習データを集めるための手法であり、CRFのアルゴリズム自体に変更を加えることはない。&lt;/p&gt;</description>
     </item>
   </channel>

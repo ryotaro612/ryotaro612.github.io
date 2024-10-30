@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Reinforcement Learning on Blanket</title>
-    <link>http://localhost:1313/en/tags/reinforcement-learning/</link>
+    <link>https://ryotaro.dev/en/tags/reinforcement-learning/</link>
     <description>Recent content in Reinforcement Learning on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sat, 27 Apr 2024 14:49:30 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/en/tags/reinforcement-learning/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/en/tags/reinforcement-learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Policy Gradient Methods for Reinforcement Learning With Function Approximation (1999)</title>
-      <link>http://localhost:1313/en/posts/policy-gradient-methods-for-reinforcement-learning-with-function-approximation/</link>
+      <link>https://ryotaro.dev/en/posts/policy-gradient-methods-for-reinforcement-learning-with-function-approximation/</link>
       <pubDate>Sat, 27 Apr 2024 14:49:30 +0900</pubDate>
-      <guid>http://localhost:1313/en/posts/policy-gradient-methods-for-reinforcement-learning-with-function-approximation/</guid>
+      <guid>https://ryotaro.dev/en/posts/policy-gradient-methods-for-reinforcement-learning-with-function-approximation/</guid>
       <description>&lt;p&gt;Policy gradient methods approximate stochastic policies using function approximators, which are independent of value functions.&#xA;They update the policies according to the gradient of expected reward with respect to the policy parameters.&#xA;&lt;a href=&#34;https://proceedings.neurips.cc/paper/1999/file/464d828b85b0bed98e80ade0a5c43b0f-Paper.pdf&#34;&gt;Policy Gradient Methods for Reinforcement Learning With Function Approximation&lt;/a&gt; shows that a form of policy iteration with function approximation converges to a locally optimal policy.&lt;/p&gt;</description>
     </item>
   </channel>

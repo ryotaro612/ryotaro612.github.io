@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Concurrent Programming on Blanket</title>
-    <link>http://localhost:1313/tags/concurrent-programming/</link>
+    <link>https://ryotaro.dev/tags/concurrent-programming/</link>
     <description>Recent content in Concurrent Programming on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 30 Sep 2023 11:34:47 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/concurrent-programming/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/concurrent-programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Communicating Sequential Processes (1978)</title>
-      <link>http://localhost:1313/posts/communicating_sequential_processes/</link>
+      <link>https://ryotaro.dev/posts/communicating_sequential_processes/</link>
       <pubDate>Sat, 30 Sep 2023 11:34:47 -0400</pubDate>
-      <guid>http://localhost:1313/posts/communicating_sequential_processes/</guid>
+      <guid>https://ryotaro.dev/posts/communicating_sequential_processes/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.cs.cmu.edu/~crary/819-f09/Hoare78.pdf&#34;&gt;Communicating Sequential Processes (CSP)&lt;/a&gt;は、あるプロセスの出力を別のプロセスの入力に渡し、入出力のあるプロセスを並行実行するプログラミングモデルである。&#xA;たとえば、GoのgoroutinesはCSPに&lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall16/cos418/docs/P1-concurrency.pdf&#34;&gt;もとづく&lt;/a&gt;軽量スレッドである。&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MLOps on Blanket</title>
-    <link>http://localhost:1313/tags/mlops/</link>
+    <link>https://ryotaro.dev/tags/mlops/</link>
     <description>Recent content in MLOps on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 14 Dec 2019 13:25:04 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/mlops/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/mlops/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>150 Successful Machine Learning Models: 6 Lessons Learned at Booking.com(2019)</title>
-      <link>http://localhost:1313/posts/150_successfuly_machine_learning_modes/</link>
+      <link>https://ryotaro.dev/posts/150_successfuly_machine_learning_modes/</link>
       <pubDate>Sat, 14 Dec 2019 13:25:04 +0900</pubDate>
-      <guid>http://localhost:1313/posts/150_successfuly_machine_learning_modes/</guid>
+      <guid>https://ryotaro.dev/posts/150_successfuly_machine_learning_modes/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;宿泊予約サービス&lt;a href=&#34;http://booking.com/&#34;&gt;Booking.com&lt;/a&gt;におけるモデルの開発運用でえられた教訓を6つにまとめたKDD2019の論文である。&#xA;教訓の主眼を収益におき、6つの教訓を通して、実運用環境における仮説と実験を反復する重要性を強調する。&lt;/p&gt;</description>
     </item>
   </channel>
