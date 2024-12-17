@@ -2,6 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ryotaro.dev/</loc>
+    <lastmod>2024-12-08T18:51:20+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/posts/</loc>
+    <lastmod>2024-12-08T18:51:20+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/"
+                />
+  </url><url>
     <loc>https://ryotaro.dev/posts/back-of-envelope-calculations/</loc>
     <lastmod>2024-09-24T02:14:15+09:00</lastmod>
     <xhtml:link
@@ -26,32 +52,6 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://ryotaro.dev/tags/back-of-the-envelope-estimation/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/</loc>
-    <lastmod>2024-09-24T02:14:15+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/posts/</loc>
-    <lastmod>2024-09-24T02:14:15+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/posts/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/tags/</loc>
