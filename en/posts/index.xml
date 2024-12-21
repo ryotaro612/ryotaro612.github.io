@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 24 Sep 2024 02:14:15 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 08 Dec 2024 18:51:20 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Implementation of runc as of November 2024</title>
+      <link>https://ryotaro.dev/en/posts/runc/</link>
+      <pubDate>Sun, 08 Dec 2024 18:51:20 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/runc/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/opencontainers/runc&#34;&gt;runc&lt;/a&gt; is a container runtime with a command-line interface tool.&#xA;Although runc was separated from Docker in 2015, Docker still uses runc because the Docker Engine is built on top of containerd, which incorporates runc.&#xA;In this post, I will explain some Linux features used in the implementation of runc.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Back of Envelope Calculations</title>
       <link>https://ryotaro.dev/en/posts/back-of-envelope-calculations/</link>

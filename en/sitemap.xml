@@ -15,6 +15,32 @@
                 href="https://ryotaro.dev/en/"
                 />
   </url><url>
+    <loc>https://ryotaro.dev/en/tags/container/</loc>
+    <lastmod>2024-12-08T18:51:20+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/container/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/container/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/posts/runc/</loc>
+    <lastmod>2024-12-08T18:51:20+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/runc/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/runc/"
+                />
+  </url><url>
     <loc>https://ryotaro.dev/en/posts/</loc>
     <lastmod>2024-12-08T18:51:20+09:00</lastmod>
     <xhtml:link
@@ -26,6 +52,32 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ryotaro.dev/en/posts/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/tags/runc/</loc>
+    <lastmod>2024-12-08T18:51:20+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/runc/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/runc/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/tags/</loc>
+    <lastmod>2024-12-08T18:51:20+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/posts/back-of-envelope-calculations/</loc>
@@ -65,19 +117,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ryotaro.dev/en/tags/system-design-interview/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/en/tags/</loc>
-    <lastmod>2024-09-24T02:14:15+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/tags/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/posts/video-streaming/</loc>
