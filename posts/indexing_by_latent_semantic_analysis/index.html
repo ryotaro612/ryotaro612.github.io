@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -104,14 +104,35 @@
 このとき、\(\textit{Xhihat}\textit{Xhihat}&rsquo;=TS^2T&rsquo;\)は、各単語のペアの類似度を示す行列になる。
 同様に、文書同士であれば、\(\textit{Xhihat}&rsquo;\textit{Xhihat}=DS^2D&rsquo;\)を求めればよい。
 単語と文書の関係であれば、\(t\times d\)のサイズの行列\(\textit{Xhihat}\)の成分そのものが、文書と単語の関係を示す。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- 選ばれた特異値に対応する\\(k\\)個の単語について、単語同士、文書同士、単語と文書間の潜在的な意味を、低ランク行列で比べることができる。
+
+クエリを
+SVDで求めた直交ベクトルの線形変換でもとの文書を近似し、
+もとの文書は、
+お
+文書と用語の関係、
+文書はsemantic structure
+singular value decompostionをつかう。 ca 100 orthogonal factorに分解する
+分解されたら線形に合成できる。
+
+文書は役100のおもみ。
+
+supra threshold consine
+-->
 <h2 id="雑記">雑記</h2>
 <p>直交行列\(P\)では\(P^{-1}=P&rsquo;\)がなりたつので、\(D_q=X_q&rsquo;TS^{-1}\)となる。
 単語の出現回数を成分にするので、同じ話題の文書でも、文書の長さが違うと類似とみなされない気がした。</p>
 <p>論文の<a href="http://wordvec.colorado.edu/papers/Deerwester_1990.pdf">リンク</a></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!---
+Lingo では、検索結果のすべてのドキュメントと単語に対して単語ドキュメ
+# 32667c84ea67d6393910cf62fb39ac9df13b3282374c83fa0dcaa1dc56f48bc8
+231232
+第 10 章 クエリ提案とドメイン理解の支援
+ント行列を作成し、この行列に対して特異値分解を実行して基底ベクトルを得ます。
+このような特異値分解によって得られる単語ドキュメント行列の基底ベクトルは、一
+般に、潜在的な関係で結ばれた関連する単語の集まり（トピック）の近似値を表して
+いると考えられ、検索の世界で広く用いられています
+-->
   </div>
 </main>
 

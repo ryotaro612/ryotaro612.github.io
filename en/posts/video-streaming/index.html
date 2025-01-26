@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
+    
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.ac39fd9b1999326c116cd551ce035fd4eaf2801f6bfc13a90241a1d9275b21ec.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>System design case study: video streaming service</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://ryotaro.dev/en/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://ryotaro.dev/en/about">About</a></li>
+          <li><a href="https://ryotaro.dev/en/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/en/tags">Tags</a></li>
+	  
+	  <li><a href="https://ryotaro.dev/posts/video-streaming/">ja</a></li>
+	  
+        </ul>	
+	<ul>
+          
+          <li>
+            <a href="https://github.com/ryotaro612">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="https://www.linkedin.com/in/ryotaro612/">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          
+          <li>
+	    <a href="https://ryotaro.dev/en/index.xml">
+	      <i class="fas fa-rss"></i>
+            </a>
+	  </li>
+          
+        </ul>	
+      </nav>
+    </header>
+    
+<main>
+  <h1>System design case study: video streaming service</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/en/tags/system-design-interview/">
+	#System Design Interview
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">September 18, 2024</span>    
+  <div>
+    <p>Youtube is an example of a video streaming service where users upload, stream, search, and review videos.
+This post presents common designs for processing and hosting uploaded videos across several case studies of video streaming services for system design interviews.</p>
+<h2 id="requirements">Requirements</h2>
+<p>Most of <a href="/en/posts/video-streaming/#References">the referred case studies</a> include streaming and uploading videos as functional requirements.
+Because the case studies propose microservice architecture, system design intervews for video streaming services expects high availability, scalability and a loosely consistent model like BASE (Basically Available, Soft state, Eventual consistentcy).
+Excerpted requrirements from the case studies are below:</p>
+<ul>
+<li>
+<p>Functional requirements:</p>
+<ul>
+<li>Stream videos
+<ul>
+<li>Supported clients:
+<ul>
+<li>Browser</li>
+<li>Mobile</li>
+<li>Smart TV</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Upload videos</li>
+<li>Ability to change video quality</li>
+<li>Search videos</li>
+<li>Rate videos:
+<ul>
+<li>Like</li>
+<li>Dislike</li>
+<li>Comments</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Non-functional requirements:</p>
+<ul>
+<li>High availability</li>
+<li>Scalability</li>
+<li>Reliability</li>
+</ul>
+</li>
+</ul>
+<h2 id="back-of-the-envelope-estimation">Back of the Envelope Estimation</h2>
+<p>The estimation computes actual numbers around resources based on given assumptions such as:</p>
+<ul>
+<li>Number of Daily Active Users (DAU)</li>
+<li>Average number of videos watched by a user</li>
+<li>Number of videos uploaded</li>
+<li>Average size of uploaded videos</li>
+</ul>
+<h2 id="architecture">Architecture</h2>
+<p>Two patterns are common among these case studies.
+First, processing uploaded videos is divided into several tasks.
+Message queues are introduced to make the tasks loosely decoupled.
+Second, the encoded videos are hosted on a CDN.</p>
+<h3 id="loosely-coupled-tasks">Loosely coupled tasks</h3>
+<p>Case studies process uploaded videos in tasks that are loosely coupled by a message queues.
+One case study employs Kafka.
+Workers for a task exchange messages with other workers via queues, enabling asynchronous processing where the number can be scaled independently.
+Examples of divided tasks include:</p>
+<ul>
+<li>Thumbnail generator</li>
+<li>Content filter</li>
+<li>Content tagger</li>
+<li>Video encoder</li>
+</ul>
+<p>The following figure illustrates a design where encoding and tagging videos are asyncrhonous.
+<img alt="queue" src="/video-streaming/queue.drawio.svg"></p>
+<p>The maximum size of the message that can be equeued is limited.
+For example, the max size of the SQS messages is <a href="https://docs.aws.amazon.com/en_us/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">256KB</a>, while Kafka&rsquo;s is <a href="https://kafka.apache.org/08/documentation.html">1MB</a>.
+Generally speaking, the size of a video exceeds 1MB, and videos cannot be enqueued.</p>
+<p>The choice of message queuing system is not discussed in the case studies.
+Kafka is a pull-based system, and RabbitMQ is a push-based system.
+While Kafka generally offers better performance, Rabbit MQ supports complex routing, like handling priority messages.</p>
+<p>If function requirements allows users to upload videos that are not enconded for video streaming, the proposed system must transcode them.
+<a href="https://www.ffmpeg.org/">FFmpeg</a> and <a href="https://aws.amazon.com/jp/mediaconvert/">AWS Elemental MediaConvert</a> can convert some video formats to <a href="https://ffmpeg.org/ffmpeg-formats.html#hls-1">HLS</a> or <a href="https://ffmpeg.org/ffmpeg-formats.html#dash-1">DASH</a>, which are streaming protocols.</p>
+<h3 id="the-content-delivery-network-cdn">The Content Delivery Network (CDN)</h3>
+<p>If the videos are served through CDN to reduce latency and save bandwidth, authentication, authorization, WAF should be introduced.
+On AWS, <a href="https://aws.amazon.com/cloudfront/?nc1=h_ls">CloudFront</a> can be protected with <a href="https://aws.amazon.com/waf/?nc1=h_ls">WAF</a>.
+CloudFront serves static files on S3.
+HTTP requests to the file can be restricted by <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-signed-urls.html">signed URLs</a> and <a href="https://docs.aws.amazon.com/ja_jp/AmazonCloudFront/latest/DeveloperGuide/private-content-signed-cookies.html">signed cookies</a>.
+<a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-choosing-signed-urls-cookies.html">A developer guide</a> states taht signed URLs should be used to restrict access to individual files, while signed cookies are better suited for controlling access to multiple files.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://aws.amazon.com/compare/the-difference-between-rabbitmq-and-kafka/?nc1=h_ls">What’s the Difference Between Kafka and RabbitMQ?</a></li>
+<li><a href="https://www.educative.io/courses/grokking-the-system-design-interview/system-design-youtube">Grokking the Modern System Design Interview</a></li>
+<li><a href="https://leetcode.com/explore/learn/card/system-design/690/system-design-case-studies/4388/">LeetCode: Netflix System Design</a></li>
+<li><a href="https://bytebytego.com/courses/system-design-interview/design-youtube">System Design Interview: An Insider&rsquo;s Guide</a></li>
+</ul>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/en/posts/realm-retrieval-augmented-language-model-pre-training/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+    <li>
+      <a href="/en/posts/back-of-envelope-calculations/">
+	<i class="fa-solid fa-xl fa-angle-right"></i>
+      </a>
+    </li>
+    
+</ul>
+
+
+    <footer>
+      <small>© Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

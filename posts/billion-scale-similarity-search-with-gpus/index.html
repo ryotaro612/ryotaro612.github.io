@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -96,14 +96,14 @@
   <div>
     <p><a href="https://arxiv.org/abs/1702.08734">Billion-scale-similarity search with GPUs</a>は、<a href="https://inria.hal.science/inria-00514462v2/document">IVFADC</a>による量子化と<a href="https://www.cs.kent.edu/~batcher/sort.pdf">Batcherのバイトニックソート</a>を利用したGPUで実行するL2ノルムの近似最近傍探索である。
 実装は、OSSの<a href="https://github.com/facebookresearch/faiss">faiss</a>として公開されている。</p>
-<!-- raw HTML omitted -->
+<!-- クエリの分散表現である密なベクトルの最も近傍にある\\(k\\)個のデータベースあるベクトルを近似的に求める。 -->
 <p>\(l\)個のデータベースにあるベクトル\([y_i]_{i=0:l}\)の中からクエリ\(x\in\mathbb{R}^d\)の最近傍にある\(k\)個の集合\(L\)に近い要素を、近似的に求める。
 $$
 L=\text{k-}\argmin_{i=0:l}||x-y_i||_2
 $$</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- \\(||x-y\_i||^2\_2\\)を展開すると\\(||x-y\_i||^2\_2=||x||^2+||y\_i||^2-2\langle x,y\_i\rangle\\)になる。 -->
+<!-- クエリに影響されないので第1, 2項は事前に計算できる。 -->
+<!-- しかし、第三項の内積はクエリに依存するため、クエリが確定するまで計算できない。 -->
 <p>IVFADCは、\(\mathbb{R}^d\)から\(\mathbb{R}^d\)の真部分集合に写す2つの関数でデータベースベクトルを量子化する。
 $$
 y\approx q(y) = q_1(y) + q_2(y-q_1(y))

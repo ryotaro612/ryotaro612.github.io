@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
+    
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.ac39fd9b1999326c116cd551ce035fd4eaf2801f6bfc13a90241a1d9275b21ec.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Distributed GraphLab: a Framework for Machine Learning and Data Mining in the Cloud (2012)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://ryotaro.dev/en/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://ryotaro.dev/en/about">About</a></li>
+          <li><a href="https://ryotaro.dev/en/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/en/tags">Tags</a></li>
+	  
+	  <li><a href="https://ryotaro.dev/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/">ja</a></li>
+	  
+        </ul>	
+	<ul>
+          
+          <li>
+            <a href="https://github.com/ryotaro612">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="https://www.linkedin.com/in/ryotaro612/">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          
+          <li>
+	    <a href="https://ryotaro.dev/en/index.xml">
+	      <i class="fas fa-rss"></i>
+            </a>
+	  </li>
+          
+        </ul>	
+      </nav>
+    </header>
+    
+<main>
+  <h1>Distributed GraphLab: a Framework for Machine Learning and Data Mining in the Cloud (2012)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/en/tags/distributed-system/">
+	#Distributed System
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">May 7, 2024</span>    
+  <div>
+    <p><a href="https://arxiv.org/pdf/1408.2041">GraphLab</a> is a programming model for machine learning and data mining.
+GraphLab takes a direct graph, a set of vertices, and update functions as input.
+Every update function accepts a vertex and returns a set of vertices.
+GraphLab selects a vertex from the set, applies a function to it, and adds the resulting set of vertices back intothe set, repeating this process until the set is empty.
+GraphLab supports parallel execution of update functions on multi-processor machines.
+<a href="https://arxiv.org/pdf/1408.2041">Distributed GraphLab</a> extends GraphLab by distributing parts of a graph across machines that are memory, utilizing <a href="https://lamport.azurewebsites.net/pubs/chandy.pdf">Chandy-Lamport</a>&rsquo;s snapshot algorithm for fault tolerance.</p>
+<p>The GraphLab graph is a directed one where arbitrary data, such as model parameters, can be associated each vertex and edge.
+The update functions receive a vertex, its adjacent vertices, and its adjacent edges - collectively referred to as the scope.
+while a function can update date within its scope, it cannot alter the structure of the graph.
+Given a set of vertices, GraphLab selects a vertex, applies the relevant update function to the scope of that vertex, then adds any resulting vertices back into the set, repeating until the set is empty.</p>
+<p>There are three consistency models to ensure serializability.
+The full consisntency model prevents the scopes of concurrently running update functions from overlapping.
+The edge consistency model allows update functions to have exclusive read-write access to their vertex and the adjacent edges, but read only access to adjacent vertices.
+The vertex consistency model permits all update functions to run in parallel.
+The following figure, cited from the paper, compares the lock scopes of the consistency models.
+<img alt="consistency" src="/distributed-graphlab/consistency.png"></p>
+<p>Distributed GraphLab divides the GraphLab graph into the subgraphs, and distributes them to machines.
+Each subgraph is stored as a separete file, referred to as an atom, oin a distributed storage system.
+Each atom file contains a binary compressed journal of graph-genrating commands, such as <code>AddEdge(42-&gt;314, edata)</code>, <code>AddVertex(500, vdata)</code>.</p>
+<p>The Distributed GraphLab engine ensures that the execution of update functions follows the consistency model.
+There are two engines, the chromatic engine and the distributed locking engine.
+The chromatic engine limits parallel execution of update functions  by constructing a vetex coloring that assigns a color to each vertex such taht no adjacent vertices share the same color.
+While the chormatic engine satisfies the distributed GraphLab abstraction, it does not provide sufficient scheduling flexibility for many applications.
+The distributed locking engine adresses the limitations through distributed mutual exclusion, associating a readers-wrtier lock with each vertex in shared memory.</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/en/posts/policy-gradient-methods-for-reinforcement-learning-with-function-approximation/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+    <li>
+      <a href="/en/posts/realm-retrieval-augmented-language-model-pre-training/">
+	<i class="fa-solid fa-xl fa-angle-right"></i>
+      </a>
+    </li>
+    
+</ul>
+
+
+    <footer>
+      <small>© Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -87,38 +87,38 @@
   <span class="date">June 14, 2021</span>    
   <div>
     <p>ワーシャルフロイト法で全ての2頂点間の最短距離を求めた後、隣接する2頂点の辺のうち、2頂点の最短距離が辺の重みと異なる辺を数えれば通る。</p>
-<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#78787e">#include</span> <span style="color:#78787e">&lt;bits/stdc++.h&gt;</span><span style="color:#78787e">
-</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#ff6ac1">using</span> <span style="color:#ff6ac1">namespace</span> std;
-</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">typedef</span> <span style="color:#9aedfe">long</span> <span style="color:#9aedfe">long</span> ll;
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">#include</span> <span style="color:#6c7086;font-weight:bold;font-style:italic">&lt;bits/stdc++.h&gt;</span><span style="color:#6c7086;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"></span><span style="color:#cba6f7">using</span> <span style="color:#cba6f7">namespace</span> std;
+</span></span><span style="display:flex;"><span><span style="color:#cba6f7">typedef</span> <span style="color:#f38ba8">long</span> <span style="color:#f38ba8">long</span> ll;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">const</span> ll INF <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">100000000000ll</span>;
+</span></span><span style="display:flex;"><span><span style="color:#cba6f7">const</span> ll INF <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#fab387">100000000000ll</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#9aedfe">int</span> <span style="color:#57c7ff">main</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#9aedfe">int</span> n, m;
-</span></span><span style="display:flex;"><span>    cin <span style="color:#ff6ac1">&gt;&gt;</span> n <span style="color:#ff6ac1">&gt;&gt;</span> m;
-</span></span><span style="display:flex;"><span>    vector<span style="color:#ff6ac1">&lt;</span>ll<span style="color:#ff6ac1">&gt;</span> a(m), b(m), c(m);
-</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">for</span>(<span style="color:#9aedfe">int</span> i <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>; i <span style="color:#ff6ac1">&lt;</span> m; i<span style="color:#ff6ac1">++</span>) {
-</span></span><span style="display:flex;"><span>        cin <span style="color:#ff6ac1">&gt;&gt;</span> a[i] <span style="color:#ff6ac1">&gt;&gt;</span> b[i] <span style="color:#ff6ac1">&gt;&gt;</span> c[i];
-</span></span><span style="display:flex;"><span>        a[i]<span style="color:#ff6ac1">--</span>;
-</span></span><span style="display:flex;"><span>        b[i]<span style="color:#ff6ac1">--</span>;
+</span></span><span style="display:flex;"><span><span style="color:#f38ba8">int</span> <span style="color:#89b4fa">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#f38ba8">int</span> n, m;
+</span></span><span style="display:flex;"><span>    cin <span style="color:#89dceb;font-weight:bold">&gt;&gt;</span> n <span style="color:#89dceb;font-weight:bold">&gt;&gt;</span> m;
+</span></span><span style="display:flex;"><span>    vector<span style="color:#89dceb;font-weight:bold">&lt;</span>ll<span style="color:#89dceb;font-weight:bold">&gt;</span> a(m), b(m), c(m);
+</span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">for</span>(<span style="color:#f38ba8">int</span> i <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#fab387">0</span>; i <span style="color:#89dceb;font-weight:bold">&lt;</span> m; i<span style="color:#89dceb;font-weight:bold">++</span>) {
+</span></span><span style="display:flex;"><span>        cin <span style="color:#89dceb;font-weight:bold">&gt;&gt;</span> a[i] <span style="color:#89dceb;font-weight:bold">&gt;&gt;</span> b[i] <span style="color:#89dceb;font-weight:bold">&gt;&gt;</span> c[i];
+</span></span><span style="display:flex;"><span>        a[i]<span style="color:#89dceb;font-weight:bold">--</span>;
+</span></span><span style="display:flex;"><span>        b[i]<span style="color:#89dceb;font-weight:bold">--</span>;
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    vector<span style="color:#ff6ac1">&lt;</span>vector<span style="color:#ff6ac1">&lt;</span>ll<span style="color:#ff6ac1">&gt;&gt;</span> d(n, vector<span style="color:#ff6ac1">&lt;</span>ll<span style="color:#ff6ac1">&gt;</span>(n, INF));
-</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">for</span>(<span style="color:#9aedfe">int</span> i <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>; i <span style="color:#ff6ac1">&lt;</span> m; i<span style="color:#ff6ac1">++</span>) {
-</span></span><span style="display:flex;"><span>        d[a[i]][b[i]] <span style="color:#ff6ac1">=</span> d[b[i]][a[i]] <span style="color:#ff6ac1">=</span> c[i];
+</span></span><span style="display:flex;"><span>    vector<span style="color:#89dceb;font-weight:bold">&lt;</span>vector<span style="color:#89dceb;font-weight:bold">&lt;</span>ll<span style="color:#89dceb;font-weight:bold">&gt;&gt;</span> d(n, vector<span style="color:#89dceb;font-weight:bold">&lt;</span>ll<span style="color:#89dceb;font-weight:bold">&gt;</span>(n, INF));
+</span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">for</span>(<span style="color:#f38ba8">int</span> i <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#fab387">0</span>; i <span style="color:#89dceb;font-weight:bold">&lt;</span> m; i<span style="color:#89dceb;font-weight:bold">++</span>) {
+</span></span><span style="display:flex;"><span>        d[a[i]][b[i]] <span style="color:#89dceb;font-weight:bold">=</span> d[b[i]][a[i]] <span style="color:#89dceb;font-weight:bold">=</span> c[i];
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">for</span>(<span style="color:#9aedfe">int</span> k <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>; k <span style="color:#ff6ac1">&lt;</span> n; k<span style="color:#ff6ac1">++</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">for</span>(<span style="color:#9aedfe">int</span> i <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>; i <span style="color:#ff6ac1">&lt;</span> n; i<span style="color:#ff6ac1">++</span>)
-</span></span><span style="display:flex;"><span>            <span style="color:#ff6ac1">for</span>(<span style="color:#9aedfe">int</span> j <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>; j <span style="color:#ff6ac1">&lt;</span> n; j<span style="color:#ff6ac1">++</span>)
-</span></span><span style="display:flex;"><span>                d[i][j] <span style="color:#ff6ac1">=</span> min(d[i][j], d[i][k] <span style="color:#ff6ac1">+</span> d[k][j]);
+</span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">for</span>(<span style="color:#f38ba8">int</span> k <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#fab387">0</span>; k <span style="color:#89dceb;font-weight:bold">&lt;</span> n; k<span style="color:#89dceb;font-weight:bold">++</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#cba6f7">for</span>(<span style="color:#f38ba8">int</span> i <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#fab387">0</span>; i <span style="color:#89dceb;font-weight:bold">&lt;</span> n; i<span style="color:#89dceb;font-weight:bold">++</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#cba6f7">for</span>(<span style="color:#f38ba8">int</span> j <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#fab387">0</span>; j <span style="color:#89dceb;font-weight:bold">&lt;</span> n; j<span style="color:#89dceb;font-weight:bold">++</span>)
+</span></span><span style="display:flex;"><span>                d[i][j] <span style="color:#89dceb;font-weight:bold">=</span> min(d[i][j], d[i][k] <span style="color:#89dceb;font-weight:bold">+</span> d[k][j]);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#9aedfe">int</span> ans <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>;
-</span></span><span style="display:flex;"><span>	<span style="color:#ff6ac1">for</span>(<span style="color:#9aedfe">int</span> i<span style="color:#ff6ac1">=</span><span style="color:#ff9f43">0</span>;i<span style="color:#ff6ac1">&lt;</span>m;i<span style="color:#ff6ac1">++</span>) {
-</span></span><span style="display:flex;"><span>		<span style="color:#ff6ac1">if</span>(d[a[i]][b[i]] <span style="color:#ff6ac1">!=</span> c[i])
-</span></span><span style="display:flex;"><span>			ans<span style="color:#ff6ac1">++</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#f38ba8">int</span> ans <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#fab387">0</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#cba6f7">for</span>(<span style="color:#f38ba8">int</span> i<span style="color:#89dceb;font-weight:bold">=</span><span style="color:#fab387">0</span>;i<span style="color:#89dceb;font-weight:bold">&lt;</span>m;i<span style="color:#89dceb;font-weight:bold">++</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#cba6f7">if</span>(d[a[i]][b[i]] <span style="color:#89dceb;font-weight:bold">!=</span> c[i])
+</span></span><span style="display:flex;"><span>			ans<span style="color:#89dceb;font-weight:bold">++</span>;
 </span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	cout <span style="color:#ff6ac1">&lt;&lt;</span> ans <span style="color:#ff6ac1">&lt;&lt;</span> endl;
-</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">return</span> <span style="color:#ff9f43">0</span>;
+</span></span><span style="display:flex;"><span>	cout <span style="color:#89dceb;font-weight:bold">&lt;&lt;</span> ans <span style="color:#89dceb;font-weight:bold">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">return</span> <span style="color:#fab387">0</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>
   </div>

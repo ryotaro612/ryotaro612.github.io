@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -121,8 +121,16 @@ Leaderは、引数のバージョンが最新のバージョンと一致する�
 <p>Zabは、リーダー選出だけでなく、メッセージを送られた順番にブロードキャストする機能がある。
 また、新しく選ばれたリーダーのところには、リーダがブロードキャストを始める前に、以前のリーダーが送信したメッセージが届いていることが保証される。
 このブロードキャストのプロトコルによって、follower同士のレプリケーションデータベースの状態を統一することで、followerが読み込みリクエストを処理できるようになっている。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+Chubbyは、Chubby
+paxos correct zab compare and swap?
+
+バージョン通知
+ZooKeeperを使うことで、分散システムのプロセスをZooKeeperで協調することができる。
+構造分散システムのプロセスを協調して動かすための
+wait-freeはなにか
+linearizable
+-->
 <p>論文の<a href="https://www.usenix.org/legacy/event/atc10/tech/full_papers/Hunt.pdf">リンク</a></p>
 <p>図は論文から引用されています。</p>
 <h2 id="雑記">雑記</h2>

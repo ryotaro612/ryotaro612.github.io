@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-	<meta name="generator" content="Hugo 0.123.7">
+	<meta name="generator" content="Hugo 0.131.0">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -18,7 +18,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -85,6 +85,89 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/a_comparision_of_fractal_trees_to_lsm_trees/">論文メモ A comparison of Fractal Trees to Log-Structured Merge (LSM) Trees</a></h3>
+        <div class="summary"><p>Fractal Treeは、B+木のルートと節にバッファをもたせるデータ構造にあたる。
+そのFractal TreeのamplificationをB+木やLSM Treeのそれと比較した。
+議論になるamplificationは、write, read, spaceの3つで、write amplificationはアプリケーションが書き込むデータ量に対して実際にストレージに書き込まれたデータ量を表す。
+read amplificationはクエリの実行に必要なI/Oの回数、space amplificationは仕組み上避けられない断片化や一時的なデータのコピーに該当する。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">April 19, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/fast_intersection_algorithms_for_sorted_sequences/">論文メモ Fast Intersection Algorithms for Sorted Sequences</a></h3>
+        <div class="summary"><p>ソートされたシーケンスの直積を高速に求めるアルゴリズム Double Binary Searchを示した。
+2つのシーケンス\(D\), \(Q\)があり、\(\mid D\mid=n\), \(\mid Q\mid=m\), \(n &gt;= m\)であれば、平均と最悪時間計算量が、それぞれ、\(\mathcal{O}(m\log(n/m))\), \(m\)になる。
+本アルゴリズムは、Web検索エンジンで大きなシーケンスの直積を高速に求めるために開発された。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">April 12, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/lsmtree/">論文メモ The Log-Structured Merge-Tree (LSM-Tree)</a></h3>
+        <div class="summary"><p>LSM-Treeは、検索より挿入や削除が多い用途に向いたインデックス構造であり、例えば履歴テーブルやログの保存につかえる。
+メモリにある1つ木とディスク上の1つ以上の木からなり、直近の挿入や削除をメモリの木で管理する。
+メモリの木の大きさがしきい値を超えたとき、メモリの木の葉をディスクの木に移す。
+移動時は、ディスク上の木の葉とメモリの葉をマージソートの要領でソートし、ソートした葉をディスクの新しい連続領域に書き込む。
+連続領域に書き込み、アームの移動やディスクの回転を減らすことで、高速に挿入や削除ができる。
+一方、検索速度は、複数の木を探索しなければならないために、1つの木でインデックスを構成するB木に劣る。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">April 3, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/the_design_and_implementation_of_a_log_structured_file_system/">論文メモ The Design and Implementation of a Log-Structured File System</a></h3>
+        <div class="summary"><p>Log-structured file system(LFS)は、91年に提唱されたHDD向けのファイルシステムであり、バッファリングした変更をディスクの連続領域に一度に書き込むことで、小さなファイルを大量に高速で書き込める。
+また、クラッシュからのリカバリも、ディスク全体ではなくチェックポイント以降に追記された箇所だけを検査すればよいので、高速になる。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">March 29, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/ariesim/">論文メモ ARIES/IM: An Efficient and High Concurrency Index Management Method Using Write-Ahead Logging</a></h3>
+        <div class="summary"><p>ARIES/IMは、B+木への直列化可能性のある並行処理とログ先行書き込み(Write-Ahead Logging, WAL)による復元を実現する。
+ARIES/IMのベースには、先行研究の<a href="https://web.stanford.edu/class/cs345d-01/rl/aries.pdf">ARIES</a>がある。
+復元手順はARIESとほとんど変わらない。
+キーの参照先にあるデータのレコードとキーを同じロックで保護したり、ロックの代わりにラッチを使ったりすることで、ロックの頻度を下げ、B+木の高速化を実現する。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">March 21, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/the_ubiquitous_b_tree/">論文メモ The Ubiquitous B-Tree</a></h3>
+        <div class="summary"><p>B木とその派生データ構造のサーベイ論文で、とくにB+木に重点がおかれている。
+B+木は、全てのキーを葉におき、葉を隣接リストでつなぐことで、B木が不得手なシーケンシャルなアクセスを改善する。
+これにより、定数オーダーの時間と空間計算量で逐次的にキーにアクセスにできる。
+ランダムな検索、挿入、削除にかかる時間、空間計算量はB木と変わらない。
+以降はB木のデータ構造を前提としてB+木の概要を説明する。B木について知りたい場合は、<a href="/posts/organization_and_maintenance_of_large_orderred_indexes/">B木のオリジナル論文の解説記事</a>を見てほしい。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">March 19, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/robust_random_cut_forest_based_anomaly_detection_on_streams/">論文メモ Robust Random Cut Forest Based Anomaly Detection On Streams</a></h3>
+        <div class="summary"><p>Robust Random Cut Forest(RRCT)はストリームデータ向きの異常検知の手法で、<a href="https://www.aclweb.org/anthology/P16-1162/">Amazon SageMaker</a>から提供されている。
+バッチデータと違い、ストリームデータは新たなデータが随時追加、修正される。
+RRCTは、特徴の値でデータを2分するノードからなる木の集合であり、データを追加したときに木の集合であるモデルを大きく複雑するものを異常と判定する。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">March 12, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/organization_and_maintenance_of_large_orderred_indexes/">論文メモ Organization and Maintenance of Large Ordered indexes</a></h3>
         <div class="summary"><p>1972年に発表されたB木のオリジナルの論文。
 \(I\)をインデックスの大きさ、\(k\)をハードウェア依存の値とすると、検索、挿入、削除の時間計算量は\(\log_kI\)になる。
@@ -118,85 +201,6 @@ FD-treeのエントリ数が\(n\), ページサイズが\(B\)であれば、ラ�
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/isolation_forest/">論文メモ Isolation Forest</a></h3>
-        <div class="summary"><p>Isolation Forestは、完全二分木による異常検知の手法で、iForestともよばれる。時間計算量が線形で、ハイパーパラメタがわずか2つで、メモリ効率がよい。
-時間、空間計算量が少なく高次元のデータに向く。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">February 13, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/tao_facebooks_distributed_data_store_for_social_graph/">論文メモ TAO: Facebook&#39;s Distributed Data Store for the Social Graph</a></h3>
-        <div class="summary"><p>TAOは、Facebookで開発されたソーシャルグラフのためのマルチリージョンの分散システムで、秒間10億件の読み込みと数百万件の書き込みの性能を発揮する。
-Facebookは、もともとソーシャルグラフを、MySQLに保存し、memcacheでキャッシュし、PHPで問いあわせるシステムで構成していた。
-TAOは、そのシステムの現状を引きつぎ、MySQLをストレージに採用している。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">February 4, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/the_daily_life_of_software_engineers_during_the_covid_19_pandemic/">論文メモ The Daily Life of Software Engineers during the COVID-19 Pandemic</a></h3>
-        <div class="summary"><p>COVID19でソフトウェア開発者が在宅稼動(WFH)をはじめたことによる稼動時間の使い方、良好性(Well-being), 生産性の変化を調査した。
-ロックダウンを実施した国々のエンジニア500名の中から、2020年4月20日から26日の一波について192名、2020年5月4日から10日の二波について184名を選び、サンプルを集めた。
-結果、会社での勤務とWFHの間で、稼動時間の使い方はほぼ変わっていないかった。
-また、一波において休憩と生産性の間に負の相関がみられたが、それ以外では良好性、生産性、社会性、心理の4つと特定の業務内容の間に相関関係はみられなかった。
-結果、組織やエンジニアにとってWFHそれ自体が課題になるわけではないと結論づけている。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">January 30, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/dapper/">論文メモ Dapper, a Large-Scale Distributed Systems Tracing Infrastructure</a></h3>
-        <div class="summary"><p>分散トレーシングシステムDapperをGoogle社内で開発、デプロイ、運用した知見がまとめられている。
-運用期間は2年にわたる。
-Dapperをもとに、TwitterはZipkinを、UberはJaegerを<a href="https://www.oreilly.co.jp/books/9784873119038/">開発した</a>。
-Dapper以前に開発された<a href="https://www.usenix.org/legacy/publications/library/proceedings/hotos03/tech/full_papers/barham/barham_html/paper.html">Magpie</a>や<a href="https://www.usenix.org/conference/nsdi-07/x-trace-pervasive-network-tracing-framework">X-Trace</a>との違いは、サンプリングされたリクエストのみをトレースし負荷を下げるられたり、少数の共通ライブラリだけを測定対象したりする点にある。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">January 23, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/convolutional_2d_knowledge_graph_embeddings/">論文メモ Convolutional 2D Knowledge Graph Embeddings</a></h3>
-        <div class="summary"><p>ナレッジグラフの未知のリンクを予測するモデルは、一般に大きなグラフをあつかえるようにネットワークを浅くし、処理性能の高速化をはかる。一方、代償として層の深いモデルと比べて表現力を欠く。
-提唱されるネットワークConvEは、畳み込み層をつかった深めのネットワークで予測性能の向上をはかる。
-層が深くなると計算コストの増加や過学習が課題になるが、先行研究の<a href="https://arxiv.org/abs/1412.6575">DistMult</a>や<a href="https://arxiv.org/abs/1703.06103">R-GCN</a>と比べたConvEのパラメタ数は1/8や1/17であり、パラメタ効率がよい。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">January 11, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/mvcc/">論文メモ Multiversion Concurrency Control - Theory and Algorithms</a></h3>
-        <div class="summary"><p>データベースのトランザクション制御Multiversion Concurrency Control(MVCC, 多版型同時実行制御) 下のトランザクションが逐次実行と等価な結果になる条件を定義した。
-また、その定義を既存のMVCCのアルゴリズム3つにあてはめ、アルゴリズムの正しさを確かめた。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">January 6, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/paxos_made_simple/">論文メモ Paxos Made Simple</a></h3>
-        <div class="summary"><p><a href="https://lamport.azurewebsites.net/pubs/lamport-paxos.pdf">The Part-Time Parliament</a>で提唱された分散含意アルゴリズムPaxosをLamport自身が平易に解説した。
-エージェントの処理速度やメッセージが配信されるまでの長さに仮定はない。
-メッセージは複製、喪失してもよい。
-他方で、ビザンチン将軍問題は扱わず、メッセージが壊れることは考えない。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">December 31, 2020</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -221,7 +225,7 @@ Dapper以前に開発された<a href="https://www.usenix.org/legacy/publication
       </a>
     </li>
     <li>
-      <a href="/page/31/">
+      <a href="/page/32/">
 	<i class="fa-solid fa-xl fa-angles-right"></i>
       </a>
     </li>

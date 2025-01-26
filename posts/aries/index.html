@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -98,7 +98,7 @@
 <p>ロールバックやリスタート時の更新は、通常時の更新とは別に、保証ログレコード(compensation log record, CLR)に記録される。
 ARIESのCLSに記録された更新はUNDOされない。
 一方、IMS, AS/400, DB2のCLSは、あるトランザクションが何度もロールバックされると、対応するCLSの更新をUNDOすることがある。</p>
-<!-- raw HTML omitted -->
+<!-- リカバリ時には、トランザクションをUNDOする前に、永続化されていない更新をログから再実行する。-->
 <p>WALに記録された更新をUNDOすると、UNDO対象のWALレコードより1つ前のレコードへのポインタ(UndoNxtLSN)も、UNDO時の更新と一緒に、CLRに追加される。
 以下の図は、ポインタによって繋がれたレコードを示す。
 1, 2, 3は通常のトランザクションで生じたレコードで、2&rsquo;, 3&rsquo;は2, 3のためのCLRのレコードである。

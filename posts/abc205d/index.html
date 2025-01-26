@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -87,35 +87,35 @@
   <span class="date">June 14, 2021</span>    
   <div>
     <p>\(K_q\)ごとに二部探索で答えを直接検索しても通すことができる。</p>
-<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#78787e">#include</span> <span style="color:#78787e">&lt;bits/stdc++.h&gt;</span><span style="color:#78787e">
-</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#ff6ac1">using</span> <span style="color:#ff6ac1">namespace</span> std;
-</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">typedef</span> <span style="color:#9aedfe">long</span> <span style="color:#9aedfe">long</span> ll;
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">#include</span> <span style="color:#6c7086;font-weight:bold;font-style:italic">&lt;bits/stdc++.h&gt;</span><span style="color:#6c7086;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"></span><span style="color:#cba6f7">using</span> <span style="color:#cba6f7">namespace</span> std;
+</span></span><span style="display:flex;"><span><span style="color:#cba6f7">typedef</span> <span style="color:#f38ba8">long</span> <span style="color:#f38ba8">long</span> ll;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#9aedfe">int</span> <span style="color:#57c7ff">main</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#9aedfe">int</span> n, q;
-</span></span><span style="display:flex;"><span>    cin <span style="color:#ff6ac1">&gt;&gt;</span> n <span style="color:#ff6ac1">&gt;&gt;</span> q;
-</span></span><span style="display:flex;"><span>    vector<span style="color:#ff6ac1">&lt;</span>ll<span style="color:#ff6ac1">&gt;</span> a(n), k(q);
-</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">for</span>(<span style="color:#9aedfe">int</span> i <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>; i <span style="color:#ff6ac1">&lt;</span> n; i<span style="color:#ff6ac1">++</span>)
-</span></span><span style="display:flex;"><span>        cin <span style="color:#ff6ac1">&gt;&gt;</span> a[i];
-</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">for</span>(<span style="color:#9aedfe">int</span> i <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>; i <span style="color:#ff6ac1">&lt;</span> q; i<span style="color:#ff6ac1">++</span>)
-</span></span><span style="display:flex;"><span>        cin <span style="color:#ff6ac1">&gt;&gt;</span> k[i];
+</span></span><span style="display:flex;"><span><span style="color:#f38ba8">int</span> <span style="color:#89b4fa">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#f38ba8">int</span> n, q;
+</span></span><span style="display:flex;"><span>    cin <span style="color:#89dceb;font-weight:bold">&gt;&gt;</span> n <span style="color:#89dceb;font-weight:bold">&gt;&gt;</span> q;
+</span></span><span style="display:flex;"><span>    vector<span style="color:#89dceb;font-weight:bold">&lt;</span>ll<span style="color:#89dceb;font-weight:bold">&gt;</span> a(n), k(q);
+</span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">for</span>(<span style="color:#f38ba8">int</span> i <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#fab387">0</span>; i <span style="color:#89dceb;font-weight:bold">&lt;</span> n; i<span style="color:#89dceb;font-weight:bold">++</span>)
+</span></span><span style="display:flex;"><span>        cin <span style="color:#89dceb;font-weight:bold">&gt;&gt;</span> a[i];
+</span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">for</span>(<span style="color:#f38ba8">int</span> i <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#fab387">0</span>; i <span style="color:#89dceb;font-weight:bold">&lt;</span> q; i<span style="color:#89dceb;font-weight:bold">++</span>)
+</span></span><span style="display:flex;"><span>        cin <span style="color:#89dceb;font-weight:bold">&gt;&gt;</span> k[i];
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">for</span>(<span style="color:#ff6ac1">auto</span> <span style="color:#ff5c57">kk</span> : k) {
+</span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">for</span>(<span style="color:#cba6f7">auto</span> <span style="color:#89dceb">kk</span> : k) {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        ll lb <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0ll</span>, ub <span style="color:#ff6ac1">=</span> numeric_limits<span style="color:#ff6ac1">&lt;</span>ll<span style="color:#ff6ac1">&gt;::</span>max();
-</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">while</span>(ub <span style="color:#ff6ac1">-</span> lb <span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">1</span>) {
-</span></span><span style="display:flex;"><span>            ll mid <span style="color:#ff6ac1">=</span> (ub <span style="color:#ff6ac1">+</span> lb) <span style="color:#ff6ac1">/</span> <span style="color:#ff9f43">2ll</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#ff6ac1">auto</span> it <span style="color:#ff6ac1">=</span> lower_bound(a.begin(), a.end(), mid);
-</span></span><span style="display:flex;"><span>            ll index <span style="color:#ff6ac1">=</span> it <span style="color:#ff6ac1">-</span> a.begin();
-</span></span><span style="display:flex;"><span>            <span style="color:#ff6ac1">if</span>(kk <span style="color:#ff6ac1">&lt;</span> mid <span style="color:#ff6ac1">-</span> index) {
-</span></span><span style="display:flex;"><span>                ub <span style="color:#ff6ac1">=</span> mid;
-</span></span><span style="display:flex;"><span>            } <span style="color:#ff6ac1">else</span> {
-</span></span><span style="display:flex;"><span>                lb <span style="color:#ff6ac1">=</span> mid;
+</span></span><span style="display:flex;"><span>        ll lb <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#fab387">0ll</span>, ub <span style="color:#89dceb;font-weight:bold">=</span> numeric_limits<span style="color:#89dceb;font-weight:bold">&lt;</span>ll<span style="color:#89dceb;font-weight:bold">&gt;::</span>max();
+</span></span><span style="display:flex;"><span>        <span style="color:#cba6f7">while</span>(ub <span style="color:#89dceb;font-weight:bold">-</span> lb <span style="color:#89dceb;font-weight:bold">&gt;</span> <span style="color:#fab387">1</span>) {
+</span></span><span style="display:flex;"><span>            ll mid <span style="color:#89dceb;font-weight:bold">=</span> (ub <span style="color:#89dceb;font-weight:bold">+</span> lb) <span style="color:#89dceb;font-weight:bold">/</span> <span style="color:#fab387">2ll</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#cba6f7">auto</span> it <span style="color:#89dceb;font-weight:bold">=</span> lower_bound(a.begin(), a.end(), mid);
+</span></span><span style="display:flex;"><span>            ll index <span style="color:#89dceb;font-weight:bold">=</span> it <span style="color:#89dceb;font-weight:bold">-</span> a.begin();
+</span></span><span style="display:flex;"><span>            <span style="color:#cba6f7">if</span>(kk <span style="color:#89dceb;font-weight:bold">&lt;</span> mid <span style="color:#89dceb;font-weight:bold">-</span> index) {
+</span></span><span style="display:flex;"><span>                ub <span style="color:#89dceb;font-weight:bold">=</span> mid;
+</span></span><span style="display:flex;"><span>            } <span style="color:#cba6f7">else</span> {
+</span></span><span style="display:flex;"><span>                lb <span style="color:#89dceb;font-weight:bold">=</span> mid;
 </span></span><span style="display:flex;"><span>            }
 </span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        cout <span style="color:#ff6ac1">&lt;&lt;</span> lb <span style="color:#ff6ac1">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>        cout <span style="color:#89dceb;font-weight:bold">&lt;&lt;</span> lb <span style="color:#89dceb;font-weight:bold">&lt;&lt;</span> endl;
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">return</span> <span style="color:#ff9f43">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">return</span> <span style="color:#fab387">0</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>
   </div>

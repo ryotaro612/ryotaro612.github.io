@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -89,42 +89,42 @@
     <p>文字数を\(n\)とすると複数のテレビを組合せたときの視聴パターンの重ね方は\(2^n\)個ある。
 最大文字数は整数型のビット数より数分の1しかないので、ビット操作ですべての重ね方を試行することを考える。
 各重ね方について、パターンを十分に連結した値の論理和に最大文字数以上連続する1があれば、その試行は要件を満たす。</p>
-<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#78787e">#include</span> <span style="color:#78787e">&lt;bits/stdc++.h&gt;</span><span style="color:#78787e">
-</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#ff6ac1">using</span> <span style="color:#ff6ac1">namespace</span> std;
-</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">using</span> ll <span style="color:#ff6ac1">=</span> <span style="color:#9aedfe">long</span> <span style="color:#9aedfe">long</span>;
-</span></span><span style="display:flex;"><span><span style="color:#78787e">#define rep(i, n) for (int i = 0; i &lt; (int)(n); i++)
-</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#78787e">#ifdef ONLINE_JUDGE
-</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#9aedfe">int</span> <span style="color:#57c7ff">main</span>() {
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">#include</span> <span style="color:#6c7086;font-weight:bold;font-style:italic">&lt;bits/stdc++.h&gt;</span><span style="color:#6c7086;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"></span><span style="color:#cba6f7">using</span> <span style="color:#cba6f7">namespace</span> std;
+</span></span><span style="display:flex;"><span><span style="color:#cba6f7">using</span> ll <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#f38ba8">long</span> <span style="color:#f38ba8">long</span>;
+</span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">#define rep(i, n) for (int i = 0; i &lt; (int)(n); i++)
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">#ifdef ONLINE_JUDGE
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"></span><span style="color:#f38ba8">int</span> <span style="color:#89b4fa">main</span>() {
 </span></span><span style="display:flex;"><span>  string s;
-</span></span><span style="display:flex;"><span>  cin <span style="color:#ff6ac1">&gt;&gt;</span> s;
-</span></span><span style="display:flex;"><span>  ll mask <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#9aedfe">int</span> n <span style="color:#ff6ac1">=</span> s.size();
-</span></span><span style="display:flex;"><span>  <span style="color:#ff6ac1">for</span> (<span style="color:#9aedfe">int</span> i <span style="color:#ff6ac1">=</span> n <span style="color:#ff6ac1">-</span> <span style="color:#ff9f43">1</span>; i <span style="color:#ff6ac1">&gt;=</span> <span style="color:#ff9f43">0</span>; i<span style="color:#ff6ac1">--</span>) {
-</span></span><span style="display:flex;"><span>    mask <span style="color:#ff6ac1">=</span> mask <span style="color:#ff6ac1">&lt;&lt;</span> <span style="color:#ff9f43">1</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">if</span> (s[i] <span style="color:#ff6ac1">==</span> <span style="color:#5af78e">&#39;o&#39;</span>)
-</span></span><span style="display:flex;"><span>      mask <span style="color:#ff6ac1">+=</span> <span style="color:#ff9f43">1</span>;
+</span></span><span style="display:flex;"><span>  cin <span style="color:#89dceb;font-weight:bold">&gt;&gt;</span> s;
+</span></span><span style="display:flex;"><span>  ll mask <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#fab387">0</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#f38ba8">int</span> n <span style="color:#89dceb;font-weight:bold">=</span> s.size();
+</span></span><span style="display:flex;"><span>  <span style="color:#cba6f7">for</span> (<span style="color:#f38ba8">int</span> i <span style="color:#89dceb;font-weight:bold">=</span> n <span style="color:#89dceb;font-weight:bold">-</span> <span style="color:#fab387">1</span>; i <span style="color:#89dceb;font-weight:bold">&gt;=</span> <span style="color:#fab387">0</span>; i<span style="color:#89dceb;font-weight:bold">--</span>) {
+</span></span><span style="display:flex;"><span>    mask <span style="color:#89dceb;font-weight:bold">=</span> mask <span style="color:#89dceb;font-weight:bold">&lt;&lt;</span> <span style="color:#fab387">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">if</span> (s[i] <span style="color:#89dceb;font-weight:bold">==</span> <span style="color:#a6e3a1">&#39;o&#39;</span>)
+</span></span><span style="display:flex;"><span>      mask <span style="color:#89dceb;font-weight:bold">+=</span> <span style="color:#fab387">1</span>;
 </span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>  mask <span style="color:#ff6ac1">=</span> (mask <span style="color:#ff6ac1">&lt;&lt;</span> (<span style="color:#ff9f43">2</span> <span style="color:#ff6ac1">*</span> n)) <span style="color:#ff6ac1">|</span> (mask <span style="color:#ff6ac1">&lt;&lt;</span> n) <span style="color:#ff6ac1">|</span> mask;
-</span></span><span style="display:flex;"><span>  <span style="color:#9aedfe">int</span> result <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">10</span>;
-</span></span><span style="display:flex;"><span>  rep(i, <span style="color:#ff9f43">1</span> <span style="color:#ff6ac1">&lt;&lt;</span> n) {
-</span></span><span style="display:flex;"><span>    ll temp <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#9aedfe">int</span> count <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>;
+</span></span><span style="display:flex;"><span>  mask <span style="color:#89dceb;font-weight:bold">=</span> (mask <span style="color:#89dceb;font-weight:bold">&lt;&lt;</span> (<span style="color:#fab387">2</span> <span style="color:#89dceb;font-weight:bold">*</span> n)) <span style="color:#89dceb;font-weight:bold">|</span> (mask <span style="color:#89dceb;font-weight:bold">&lt;&lt;</span> n) <span style="color:#89dceb;font-weight:bold">|</span> mask;
+</span></span><span style="display:flex;"><span>  <span style="color:#f38ba8">int</span> result <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#fab387">10</span>;
+</span></span><span style="display:flex;"><span>  rep(i, <span style="color:#fab387">1</span> <span style="color:#89dceb;font-weight:bold">&lt;&lt;</span> n) {
+</span></span><span style="display:flex;"><span>    ll temp <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#fab387">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f38ba8">int</span> count <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#fab387">0</span>;
 </span></span><span style="display:flex;"><span>    rep(j, n) {
-</span></span><span style="display:flex;"><span>      <span style="color:#ff6ac1">if</span> (i <span style="color:#ff6ac1">&amp;</span> (<span style="color:#ff9f43">1</span> <span style="color:#ff6ac1">&lt;&lt;</span> j)) {
-</span></span><span style="display:flex;"><span>        count<span style="color:#ff6ac1">++</span>;
-</span></span><span style="display:flex;"><span>        temp <span style="color:#ff6ac1">|=</span> (mask <span style="color:#ff6ac1">&lt;&lt;</span> j);
+</span></span><span style="display:flex;"><span>      <span style="color:#cba6f7">if</span> (i <span style="color:#89dceb;font-weight:bold">&amp;</span> (<span style="color:#fab387">1</span> <span style="color:#89dceb;font-weight:bold">&lt;&lt;</span> j)) {
+</span></span><span style="display:flex;"><span>        count<span style="color:#89dceb;font-weight:bold">++</span>;
+</span></span><span style="display:flex;"><span>        temp <span style="color:#89dceb;font-weight:bold">|=</span> (mask <span style="color:#89dceb;font-weight:bold">&lt;&lt;</span> j);
 </span></span><span style="display:flex;"><span>      }
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">if</span> (((temp <span style="color:#ff6ac1">&gt;&gt;</span> (n <span style="color:#ff6ac1">*</span> <span style="color:#ff9f43">2</span>)) <span style="color:#ff6ac1">&amp;</span> ((<span style="color:#ff9f43">1</span> <span style="color:#ff6ac1">&lt;&lt;</span> n) <span style="color:#ff6ac1">-</span> <span style="color:#ff9f43">1</span>)) <span style="color:#ff6ac1">==</span> (<span style="color:#ff9f43">1</span> <span style="color:#ff6ac1">&lt;&lt;</span> n) <span style="color:#ff6ac1">-</span> <span style="color:#ff9f43">1</span>) {
-</span></span><span style="display:flex;"><span>      result <span style="color:#ff6ac1">=</span> min(result, count);
+</span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">if</span> (((temp <span style="color:#89dceb;font-weight:bold">&gt;&gt;</span> (n <span style="color:#89dceb;font-weight:bold">*</span> <span style="color:#fab387">2</span>)) <span style="color:#89dceb;font-weight:bold">&amp;</span> ((<span style="color:#fab387">1</span> <span style="color:#89dceb;font-weight:bold">&lt;&lt;</span> n) <span style="color:#89dceb;font-weight:bold">-</span> <span style="color:#fab387">1</span>)) <span style="color:#89dceb;font-weight:bold">==</span> (<span style="color:#fab387">1</span> <span style="color:#89dceb;font-weight:bold">&lt;&lt;</span> n) <span style="color:#89dceb;font-weight:bold">-</span> <span style="color:#fab387">1</span>) {
+</span></span><span style="display:flex;"><span>      result <span style="color:#89dceb;font-weight:bold">=</span> min(result, count);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>  cout <span style="color:#ff6ac1">&lt;&lt;</span> result <span style="color:#ff6ac1">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>  cout <span style="color:#89dceb;font-weight:bold">&lt;&lt;</span> result <span style="color:#89dceb;font-weight:bold">&lt;&lt;</span> endl;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#ff6ac1">return</span> <span style="color:#ff9f43">0</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#cba6f7">return</span> <span style="color:#fab387">0</span>;
 </span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="color:#78787e">#endif
+</span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">#endif
 </span></span></span></code></pre></div><p>問題の<a href="https://atcoder.jp/contests/arc007/tasks/arc007_3">リンク</a></p>
   </div>
 </main>

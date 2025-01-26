@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -108,7 +108,7 @@ $$
 とすることで、leakageを避けて濃度の高いカテゴリカル特徴量の濃度を下げることができる。</p>
 <p>学習においても、leakageを避けるために訓練データに順序を与える。例えば、損失関数を\(\frac{1}{2}[y_i-f(x_i)]^2\)とすると、勾配\(-\partial L(y_i,f(x_i))/\partial f(x_i)\)は\(y_i - f(x_i)\)となる。このとき、\(m\)ステップで勾配を計算するときに使われる弱識別器\(f_{m-1}\)の学習に\((x_i, y_i)\)が訓練データに含まれているとleakageが生じる。そこで、<em>Algorithm 1</em> では、訓練データに順列を設定し、leakageが生じないようにしている。なお、\(I\)は決定木の数をさす。
 <em>Algorithm 1</em> は訓練データの数以上のモデルを学習する必要があるのでスケールしない。論文中ではこれを近似するアルゴリズムも提案されており、実験や評価ではそちらが使われている。</p>
-<figure class="center"><img src="/catboost.png" width="320"/>
+<figure class="center"><img src="/catboost.png" width="320">
 </figure>
 
 <h3 id="感想">感想</h3>

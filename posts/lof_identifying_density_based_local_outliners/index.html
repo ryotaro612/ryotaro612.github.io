@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -111,8 +111,21 @@ $$
 $$
 となる。</p>
 <p>論文への<a href="https://www.dbs.ifi.lmu.de/Publikationen/Papers/LOF.pdf">リンク</a></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+インスタンスが外れ値
+
+サンプルに外れ値の度合いを割りあてる。
+割り当てる基準は、サンプルが近傍とどの程度離れているかできまる。
+
+外れ値のクラスタがあれば溜めかも。
+先行研究は、異常か正常かの二値を出力し、連続的な値を返さない。
+
+MinPtsは近傍の範囲を指定する。nearest neighborsの数
+はずれ値の定義は、Hawkins outliner
+
+適切な距離のとりかたをしないといけない。
+dminより大きいとダメ
+-->
 <h2 id="雑記">雑記</h2>
 <p>到達可能性距離は対称性を満たさなそうなので、厳密には距離ではなさそう。
 密度がほぼ同じクラスタが複数あり、1つのクラスタだけ他のクラスタから遠く離れている場合には、遠く離れたクラスタの要素を外れ値とみなすことはできないようだ。</p>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Runc on Blanket</title>
+    <link>https://ryotaro.dev/tags/runc/</link>
+    <description>Recent content in Runc on Blanket</description>
+    <generator>Hugo</generator>
+    <language>ja</language>
+    <lastBuildDate>Sun, 08 Dec 2024 18:51:20 +0900</lastBuildDate>
+    <atom:link href="https://ryotaro.dev/tags/runc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2024年11月のruncの実装</title>
+      <link>https://ryotaro.dev/posts/runc/</link>
+      <pubDate>Sun, 08 Dec 2024 18:51:20 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/runc/</guid>
+      <description>&lt;p&gt;runcは抽象度の低いコンテナのランタイムであると同時に、そのランタイムを操作するCLIでもある。&#xA;もともとruncはdockerの一部だったが、2015年にdockerからのスピンアウトされた。&#xA;containerdがruncでコンテナの操作するので、今でもdockerはruncでコンテナを操作していることになる。&#xA;この記事は、runcの実装に使われているLinuxの機能を紹介する。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

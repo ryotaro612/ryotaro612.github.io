@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -92,7 +92,7 @@
 ルート階層にあるノードはいずれも親をもたない。
 そのほかにも、削除時に使用されるboolean型の変数がノードごとに1つある。
 ヒープにある要素の数\(n\)に対して、要素を償却時間計算量\(O(\log n)\)でき、また、定数の償却時間計算量でほかの主要な操作を行える。</p>
-<!-- raw HTML omitted -->
+<!-- Fibonacchi heapsは、Vuilleminによる[binomial queues](https://dl.acm.org/doi/pdf/10.1145/359460.359478)を拡張した -->
 <p>Fibonacchi heapsは、値の追加や削除の後でも、常に子ノードにある値が親ノードにある値以上になるように木構造を維持する。
 初期状態のヒープは、nullへのポインタに等しい。
 空でないFibonacci heapsであれば、ポインタは最小の値をもつノードをさす。

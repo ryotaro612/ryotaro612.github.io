@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -118,8 +118,84 @@ MillWheelは、ノードごとにlow watermarkを設定し、low watermarkより
 <p>MillWheelは、<a href="https://storage.googleapis.com/pub-tools-public-publication-data/pdf/43864.pdf">Dataflow</a>に<a href="https://cloud.google.com/blog/ja/products/data-analytics/how-cloud-batch-and-stream-data-processing-works">影響</a>を与えた。
 Dataflowはウィンドウサイズの幅を変えることでバッチ処理もストリーミング処理も統一的に実装できる。</p>
 <p>low watermarkは前のノード以上の時刻になるので、例えば深い有向グラフだと、一部のレコードの遅延で全体のlow watermarkが大きくなりそう。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+グラフ
+低レンテンシー
+
+ユーザはノードを定義
+システムは状態の永続化とデータのフローを管理する。フォールトトレランスを実現。
+
+プログラミングモデルを説明する。
+
+論理的な時間を導入して、時間を基準にしたデータの集約を単純にする。
+
+
+任意のノードや辺あ失敗がプログラム全体の失敗につながらない。
+
+
+コンシューマに流れることを保証する。
+
+レコードがながれる。
+
+recorの処理はべきとう。
+
+recordの配信はユーザから見ればexactly once.
+
+
+checkpointある。
+
+流入データに最低水準を設けて、データの発生時期のboundaryを設ける。
+low watermarkがあることで、データの到着が遅れているのか、記録されていないかを区別する。
+
+computations: グラフ全体をさす。
+
+
+入力と出力は(key, value, timestamp)の三組
+keyはメタデータ
+valueはバイト文字列でレコードに相当。
+
+keyごとに違うユーザのコードを実行する。
+任意の値を開発者は、timestampにつけることができる。
+wall clockにじつようじょうはちかいが。
+millwheelは、timestampをもとにlow watermaerkをきめる。
+
+グラフを動的に変更できる。
+failureやretryを隠蔽してくれる。
+
+
+millwheelの外部とノードが接続して計算するならユーザの責任でべきとうにしなければならない。
+computationはsingle keyのためにする。
+keyは集約や比較のために使う。
+consumerはkey extract 関数をつかい、keyをレコードにはる。
+コードはkeyのスコープの状態にしかさわれない。
+
+streamはedge
+consumerはstreamごとにkey-extraction関数を指定して、streamのなかの関心のあるレコードをとりよせる。
+
+recordを生成するのをprodutionという。
+
+keyごとに、永続化する。永続化はバイト文字列にしてbig tableやspannerをつかう。kj
+
+computationのlow waterマークは入力のwater markよりも必ず小さい。
+
+injectorsは外部のlow watermarkのシード
+zeitgeistはlow waterマークよりデータが遅れることはさけられない。
+すてる。
+
+timestampをrecordにわりあてるとき、ソースよりも古いtimestampをあててはいけない。
+
+時間の順番に処理するわけではない。
+
+timerはフック。keyごと。オプショナル。
+walltimeやlow watermarkで発火する。任意のコードを実行する。
+
+recordにはunique idをふって、ackまえにreciverがしんでもさいそうをとめる。
+handerは順序なく、決定てき でない。
+
+weakにできる。
+後続になると遅そう。
+きったときのパフォーマンス
+-->
   </div>
 </main>
 

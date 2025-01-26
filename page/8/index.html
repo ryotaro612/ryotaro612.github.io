@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-	<meta name="generator" content="Hugo 0.123.7">
+	<meta name="generator" content="Hugo 0.131.0">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -18,7 +18,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -85,6 +85,186 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/programming_with_abstract_data_types/">抄訳 PROGRAMMING WITH ABSTRACT DATA TYPES (1974)</a></h3>
+        <div class="summary"><p>高水準言語は、実装の詳細を意識せずに使える操作、データ構造、while文などの制御構造を提供する。
+この3つを抽象とよぶ。
+プログラミング言語から提供される抽象だけではプログラムを実装できないので、開発者は、足りない抽象を実装しなければならない。
+抽象データ型は、言語から提供される抽象を組合せて作るデータ構造である。
+抽象データ型に対する操作の実装は外部に公開されず、抽象データ型の特徴は抽象データ型に可能な操作によって決まる。
+構造化プログラミングと抽象データ型を提供するプログラミング言語を開発し、抽象データ型を使うプログラムのソースコードを例示することで、ほとんどの処理が抽象データ型だけで実装可能なことを示唆した。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E6%8A%BD%E8%B1%A1%E3%83%87%E3%83%BC%E3%82%BF%E5%9E%8B/">
+		#抽象データ型
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 28, 2022</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/a_taxonomy_of_web_search/">抄訳 A taxonomy of web search(2002)</a></h3>
+        <div class="summary"><p>Web検索をnavigational, informational, transactionalの3つに分類する。
+Navigationalは、ユーザーに訪問したい特定のサイトがあり、そのサイトを開くための検索である。
+Informationalは、ユーザーに収集したい情報があり、その情報があると思われるサイトを検索する。
+情報が断片的であれば、複数のサイトを訪問することもある。
+Transactionalは、検索や種々のダウンロードなどインタラクションを要するサイトを訪問するための検索である。
+ユーザーは、最終的な目的の情報のために訪問先のサイトでさらに検索をする。
+たとえばECサイトへの検索が該当する。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E3%82%A6%E3%82%A7%E3%83%96%E6%A4%9C%E7%B4%A2/">
+		#ウェブ検索
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 23, 2022</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/epidemic_algorithms_for_replicated_database_maintenance/">Epidemic Algorithm for Replicated Database Maintenance(1987)</a></h3>
+        <div class="summary"><p>Epidemic Algorithmは、データベース間の差分を解消するために、データベースがランダムに選んだ別のデータベースと同期する手法である。
+Epidemicを邦訳すると伝染性である。
+ここではデータベースにはマスタースレーブの区別はなく、任意のサーバーがレコードの変更リクエストを受理できる。
+Epidemic Algorithmには、定期的にデーターベース全体を同期する手法と、変更を受理したときに当該の変更のみを別のデータベースに伝搬させる手法の2つがある。
+前者は、データベース全体を同期するので変更のとりこぼしがいずれは解消されるが、同期に時間がかかる。
+後者は、時間はかからないが、伝搬を終えるまでに同期できなかった変更があれば、その齟齬が残りつづける。
+データベースがある時点で最新の変更をもたない確率を仮定し、その確率で次の同期で変更を取得できる確率を表し、手法間の同期する収束の速さを比較した。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E3%83%AC%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/">
+		#レプリケーション
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+		#分散システム
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 19, 2022</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/syntactic_clustering_of_the_web/">抄訳 Syntactic Clustering of the Web(1997)</a></h3>
+        <div class="summary"><p>2つのWeb文書から抽出したn-gramの集合を比較し、文書の包含関係と類似度を測定する。
+はじめに、大文字をすべて小文字にしたり、htmlタグを除外したりして文書に前処理をかける。
+次に文書\(A\)からnグラムの集合\(S(A)\)を抽出する。
+このとき、文書\(A\)と\(B\)間の類似度を\(|S(A)\cap S(B)|/|S(A) \cup S(B)|\)、\(A\)の\(B\)への包含の度合いを\(|S(A) \cap S(B)|/|S(A)|\)と定義する。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E6%96%87%E6%9B%B8%E9%96%93%E9%A1%9E%E4%BC%BC%E5%BA%A6/">
+		#文書間類似度
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 13, 2022</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/an_improved_data_stream_summary_the_count_min_sketch_and_its_application/">An Improved Data Stream Summary: The Count-Min Sketch and its Applications(2005)</a></h3>
+        <div class="summary"><p>Count-Min Sketch(CM Sketch)は、単位時間ごとに1要素ずつ更新される\(n\)次元のベクトルの要素を\(n\)の劣線形の計算量で集計できるデータ構造である。
+空間の大きさはパラメタで指定する誤差大きさと誤差の生じる確率に依存する。
+誤差と確率のパラメタを\(\epsilon\)と\(\delta\)とすると、CM sketchは\(\lceil{\ln \frac{1}{\delta}\rceil}\times \lceil\frac{e}{\epsilon}\rceil\)の二次元行列である。
+\(\ln\)の底は\(e\)である。
+要素の値、ベクトルの内積、ある範囲の要素の和を劣線形の計算量で求めることができる。
+また、これらと二分探索を応用すれば、指定した値よりも大きい要素のみからなる範囲や分位数も計算できる。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+		#分散システム
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 7, 2022</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/lof_identifying_density_based_local_outliners/">抄訳 LOF: Identifying Density-Based Local Outliers(2000)</a></h3>
+        <div class="summary"><p>局所外れ値因子法(LOF)は、あるインスタンスが外れ値であるかを、その周囲のインスタンスとの距離から判定する。
+異常検知の手法の中には異常か正常かの二値を出力するものがあるが、LOFは[0,1]区間の値を出力する。
+1に近いほど正常とみなす。
+要素間の距離が近くて密度の高いクラスタと低いクラスタがあり、密度の高いクラスタの少し遠くに外れ値とみなすべきインスタンスがあるとする。
+このとき、密度の低いクラスタのインスタンス間の距離を基準にすると、密度の高いクラスタのインスタンスと外れ値のインスタンス間の距離は大きいとみなせない。</p>
+<p>他方で、外れ値のインスタンスのそばの密度の高いクラスタの距離を基準にすれば、外れ値のインスタンスは周囲のインスタンスから遠いとみなせる。
+このように、密度の違うクラスタがあるデータセットでも、インスタンスに近いサンプル間の距離を基準にすることで、他のクラスタの密度で測れば正常なインタンスと判定される外れ値を検出できる。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E7%95%B0%E5%B8%B8%E6%A4%9C%E7%9F%A5/">
+		#異常検知
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">November 28, 2022</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/millwheel_fault_tolerant_stream_processing_at_internet_scale/">MillWheel: Fault-Tolerant Stream Processing at Internet Scale(2013)</a></h3>
+        <div class="summary"><p>MillWheelはGoogleで開発されたストリーミング処理のフレームワークである。
+開発者が羃等な処理をノードとする有向グラフを実装すれば、MillWheelがデータをノードに正確に一回だけ配信する。
+ただし、転送が遅延しているデータは破棄される。
+データは、キー、値、論理的な時刻の3組からなるレコードを単位として、ノードからノードに出力される。
+向き先のノードは、レコードからキーへの関数を、根のノードから出力されるレコードに適用し、期待するキーに対応するレコードをノードに集約する。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%A2%E3%83%87%E3%83%AB/">
+		#プログラミングモデル
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+		#分散システム
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">November 23, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/rusboost_a_hybrid_approach_to_alleviating_class_imbalance/">抄訳 RUSBoost: A Hybrid Approach to Alleviating Class Imbalance(2010)</a></h3>
         <div class="summary"><p>RUSBoostは、random undersampling(RUS)とAdaBoostを応用し、不均衡データの予測性能を改善する。
 類似の先行研究である<a href="http://www.datascienceassn.org/sites/default/files/SMOTEBoost%20Improving%20Prediction%20of%20the%20Minority%20Class%20in%20Boosting%20.pdf">SMOTEBoost</a>よりも学習時間が短く、アルゴリズムが単純である。
@@ -146,100 +326,6 @@ interval内のノードに向うエッジを根のノード順にソートし、
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/defining_liveness/">抄訳 DEFINING LIVENESS(1985)</a></h3>
-        <div class="summary"><p>L.Lamportは、<a href="https://lamport.azurewebsites.net/pubs/proving.pdf">Proving the Correctness of Multiprocess Programs</a>で、安全性と活性を導入し、並行プログラミングの正しさを議論した。
-そこでは、安全性は、実行中に「よくないこと」が起きない性質であり、活性は「よいこと」が起きる性質である。
-後に、Lamportは安全性を形式的に<a href="https://link.springer.com/book/10.1007/3-540-15216-4#toc">定義</a>したが、活性には与えていない。
-そこで、DEFINING LIVENESSは、並行プログラムの実行を状態系列とみなし、活性を形式的な定義した。
-プログラムの一部である任意の有限長系列\(\alpha\)について、\(\alpha\)に後続する無限長の系列を\(\beta\)とするとき、性質\(P\)をみたす連結\(\alpha\beta\)が存在し、また、そのときに限り、\(\alpha\)は\(P\)の活性がある。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">October 29, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/borderline-smote_a_new_over-sampling_method_inbalanced_data_sets_learning/">抄訳 Borderline-SMOTE: A New Over-Sampling Method in Imbalanced Data Sets Learning(2005)</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/pdf/1106.1813.pdf">SMOTE</a>は不均衡データに対するオーバーサンプリングを使う手法である。
-少数側のクラスのサンプルと近傍のサンプルから少数クラスのサンプルを合成する。
-SMOTEはすべての少数クラスのサンプルが合成の材料になりえる。
-対して、borderline-SMOTE1とborderline-SMOTE2は、境界から遠い少数クラスのサンプルを使わず、近いサンプルのみから合成する。
-borderline-SMOTE1は合成の相手側として常に少数クラスのサンプルを選ぶ。
-borderline-SMOTE2は多数クラスのサンプルを選ぶこともある。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">October 22, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/data_cube_a_relational_aggregation_operator_generalizing_group_by_cross_tab_and_sub_totals/">抄訳 Data Cube: A Relational Aggregation Operator Generalizing Group-By, Cross-Tab, and Sub-Totals(1997)</a></h3>
-        <div class="summary"><p>SQLのGROUP BYと集約関数を組み合わせて0次元や1次元の値を出力できる。
-一方、ピボットテーブルのように、ある属性値の同じレコードの別の属性値を集計し、さらに集計値の集計値を求めたいことがある。
-(DATA) CUBEは、GROUP BYを多次元に拡張した演算子であり、ヒストグラム、ピボットテーブル、ロールアップ、ドリルダウンの計算に使える。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">October 15, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/adasyn_adaptive_syntetic_samping_approach_for_imbalanced_learning/">抄訳 ADASYN: Adaptive Synthetic Sampling Approach for Imbalanced Learning(2008)</a></h3>
-        <div class="summary"><p>ADASYNはオーバーサンプリングで不均衡データの予測性能を向上させる。
-以前<a href="/smote_synthetic_minority_over_sampling_technique/">抄訳</a>した<a href="https://arxiv.org/pdf/1106.1813.pdf">SMOTE</a>とおなじく、既存の学習データからサンプルを合成する。
-SMOTEとの違いは、K近傍に多数クラスのサンプルの多い少数クラスのサンプルから、より多くのサンプルを合成する点にある。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">September 11, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/sagas/">抄訳 Sagas(1987)</a></h3>
-        <div class="summary"><p>データベースのトランザクションが長くなるほど、ほかのトランザクションを待たせてしまう。
-トランザクションの時間は短いほどよい。
-トランザクションを短い複数のトランザクションに分割でき、そのトランザクションの間にほかのトランザクションを実行できるなら、そのトランザクションをsagaと呼ぶ。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">September 4, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/smote_synthetic_minority_over_sampling_technique/">抄訳 SMOTE: Synthetic Minority Over-sampling Technique(2002)</a></h3>
-        <div class="summary"><p>SMOTEはオーバーサンプリングで不均衡データの予測性能の向上をはかる。
-少数クラスのサンプルからk近傍にあるサンプルのうち1つをランダムに選ぶ。
-もとのサンプルと選ばれたサンプルの各特徴の差に[0,1]区間のランダムな値を掛け、その値をもとのサンプルに足して、少数クラスのサンプルを合成する。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">August 31, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/kafka-a-distributed-messaging-system-for-log-processing/">Kafka: a Distributed Messaging System for Log Processing (2011)</a></h3>
-        <div class="summary"><p>Kafkaは、LinkedInで開発された分散メッセージングサービスである。
-配信モデルはpullベースであり、consumerが、メッセージをリクエストし、メッセージを消費するスループットを制御する。
-consumerは、関心のあるメッセージのストリームであるトピックを作る。
-producerは、トピックつきのメッセージをborkerに送り、brokerがメッセージを保持する。
-consumerは、brokerのトピックからメッセージを取得する。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/streaming-data/">
-		#Streaming Data
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">August 22, 2022</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -264,7 +350,7 @@ consumerは、brokerのトピックからメッセージを取得する。</p></
       </a>
     </li>
     <li>
-      <a href="/page/31/">
+      <a href="/page/32/">
 	<i class="fa-solid fa-xl fa-angles-right"></i>
       </a>
     </li>

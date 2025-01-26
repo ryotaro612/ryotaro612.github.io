@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -139,8 +139,16 @@ FLP不可能性は、プロセスがクラッシュしうる場合には常に�
 <p>線形化可能性はかなり強い制約で、PostgreSQLをはじめとするRDMSでも、<a href="https://www.postgresql.org/docs/current/transaction-iso.html">デフォルト</a>のトランザクション分離レベルでサポートしていない。
 また、CAP定理の可用性は、1つのノードだけに着目した性質であって、ノードが故障したときにシステム全体が正常に機能するかを問うていない。
 Nancy Linchの論文のなかで、後者について分析したものに<a href="https://groups.csail.mit.edu/tds/papers/Lynch/jacm88.pdf">Consensus in the Presence of Patial Synchrony</a>がある。これは、partial synchronousとよばれる環境でシステムが正常に機能するために必要なプロセッサ数と障害を許容できるプロセッサ数の関係を示した。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+Aysncの証明は、線形化可能性に限られる。
+
+Nancy LynchはFLPのLynch
+CAPの批判をデータ指向に記載する。
+招待講演によるもの。
+
+abstractにあるpartially synchronousの説明。別の論文の引用
+consistecyはかならず守るものだから、consistencyを犠牲にすることは何も守っていない。
+-->
   </div>
 </main>
 

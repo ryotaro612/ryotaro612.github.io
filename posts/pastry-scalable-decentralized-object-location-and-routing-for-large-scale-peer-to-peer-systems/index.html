@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -118,29 +118,29 @@ leaf set \(L\)はノードIDの空間上の最近傍の集合であり、その�
 その後\(X\)は自分の状態をルーティングテーブル、neighborhood set, leaf setにあるノードにコピーする。</p>
 <p>leaf setの最近傍のノードと通信できないければ、最近傍のノードがPastryから除外されたとみなす。このとき、欠けたleaf setの要素を補うために、通信できないノードのIDが自身のIDよりも小さいならば、leaf setのノードのうちIDが最小のノードにleaf setをリクエストし、大きければ最大のノードにリクエストする。
 通信できなくなったノードがルーティングテーブルの\(l\)行\(d\)列にある場合、同じ行にある別のノードに\(l\)行\(d\)を問い合わせ、\(l\)行\(d\)列を上書きする。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- good route locality properties -->
+<!-- nodeIdは数次として大小を比較できるキー -->
+<!-- ノードIDとメッセージキーは、2^bを基数とする数字のシーケンスとみなしてルーティングする。 -->
+<!-- ノードはメッセージを、キーの先頭1文字を共有する -->
+<!-- ルーティング回数の計算量はlogN(Nはノード数)。正確にはlog_2^bNの切り上げ回数。bは通常4。 -->
+<!-- 隣接するL/2の切り捨て個のノードが同時に失敗しない限り、いずれは配信が成功する。 -->
+<!-- Lは16か32に通常設定するパラメータ -->
+<!-- ノードIDはランダムに割り当てられる。ノードのIDは128ビット。0から2^{128}-1。暗号に使う公開鍵にハッシュ関数を適用するかIPアドレスにハッシュ関数を適用するのが生成の例。。 -->
+<!-- ノードはrouting table R, neighborhood set, leaf setを管理する。 -->
+<!-- leaf setLは|L|/2がノードIDよりも大きく、残りが小さいノード -->
+<!-- h -->
+<!-- ネットワーク上近いノードを見つけられる。IPのルーティングのホップ数のような距離を使える。 -->
+<!-- 参加するノードはすべて対称的 -->
+<!-- 近くにあるk個のノードのうちの1つにルーティングする。 -->
+<!-- 自分のノードの近くにファイルを置くのではない？ -->
+<!-- 新しくPastryに参加するノードXは、ある近隣のノードAを知っていると仮定する。 -->
+<!-- IPマルチキャストとかで実現できる。 -->
+<!-- Xは、Aにjoinという特殊なメッセージを送る。 -->
+<!-- Aは、通常のメッセージ同様の仕組みでルーティングし、XのIDに最も近いIDをもつZ -->
+<!-- にメッセージがやがて届く。 -->
+<!-- AからZにメッセージが届くまでの経路にあるノードは、stateテーブルをXに送り、 -->
+<!-- Xは自分のテーブルを作る。 -->
+<!-- 近いk個のノードに情報を共有することで、冗長化もできる。 -->
   </div>
 </main>
 

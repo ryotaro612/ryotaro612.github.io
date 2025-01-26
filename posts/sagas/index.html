@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -93,11 +93,24 @@
 そのため、サーガは、各トランザクションを取り消す補償トランザクションをもつ。
 トランザクションを\(T_i\), その補償トランザクションを\(C_i\)とするとき、全てのトランザクションが成功するときの系列は\(T_1, T_2, \dots T_n\), Saga全体を取り消す系列は\(T_1, T_2, \dots T_j, C_j, \dots C_2, C_1\)になる。
 トランザクションが有効でない間に、システムの状態を記録できるチェックポイントを設けられるなら、\(T_1, T_2, C_2, T_2, T_3, T_4\)のように補償トランザクションを実行し、失敗したトランザクションを再実行して、sagaを進められる。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+長いトランザクションは他の短いトランザクションを待たせる。
+これを解決するのがsaga
+sagaは長いトランザクションがトランザクションの系列に書きかえられ、それによりほかのトランザクションが割りこめる。
+失敗したら打ちけせる。
+実装の問題を考察する。
+-->
+<!--more-->
+<!--
+システムが止まった場合はむり
+LLT Long lived transaction
+
+飛行機の予約を複数とるLLTなら、短くするばあいに一部の予約のみをとれている状態を避けたい。
+
+ロールバックではないが個別のトランザクションをうちけせる補償トランザクションを容易する。(ほかのトランザクションが変更をかけてたら前の状態には戻せない。)
+
+T1t2tnかt1t2,cjc2かどうか
+-->
 <h2 id="雑記">雑記</h2>
 <p>論文は1つのDBMSを参照することを想定しているが、<a href="https://docs.aws.amazon.com/ja_jp/prescriptive-guidance/latest/modernization-data-persistence/saga-pattern.html">AWS</a>や<a href="https://docs.microsoft.com/ja-jp/azure/architecture/reference-architectures/saga/saga">Azure</a>の解説では、マイクロサービス間の整合性をとるための手法としてsagaが扱われている。
 今日では、長いトランザクションが別のトランザクションを妨げないようにするためではなく、分散トランザクションの目的で使われている。

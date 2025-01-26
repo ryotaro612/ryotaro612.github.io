@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>型理論 on Blanket</title>
+    <link>https://ryotaro.dev/tags/%E5%9E%8B%E7%90%86%E8%AB%96/</link>
+    <description>Recent content in 型理論 on Blanket</description>
+    <generator>Hugo</generator>
+    <language>ja</language>
+    <lastBuildDate>Mon, 30 Dec 2024 22:45:30 +0900</lastBuildDate>
+    <atom:link href="https://ryotaro.dev/tags/%E5%9E%8B%E7%90%86%E8%AB%96/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>型理論のはじまり</title>
+      <link>https://ryotaro.dev/posts/origin-of-type-theory/</link>
+      <pubDate>Mon, 30 Dec 2024 22:45:30 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/origin-of-type-theory/</guid>
+      <description>&lt;p&gt;型理論の起源はラッセルのパラドクスにある。&#xA;ただし、厳密な起源となる出来事は何かという問いになると、意見は分かれると思う。&#xA;名前の通り、ラッセルのパラドクスはラッセルが見つけたものだが、集合論を確立したカントールも同時期に独立して同等のパラドクスを発見した。&#xA;またラッセルとフレーゲの往復書簡の中で、フレーゲは、彼の概念記法における述語は述語を引数にとらないと回答した。&#xA;ラッセルが概念記法の要素の階層関係を発展させてパラドクスの解消を試みたことを考えれば、フレーゲの述語論理を型理論の起源とみなすこともできるだろう。&lt;/p&gt;&#xA;&lt;p&gt;型理論のなりたちに興味があり、調べたことをスライドにまとめた。&#xA;興味があった理由は、その過程にコンピュータ科学以外の分野も関与していることにある。&#xA;カントールは数学者であり、フレーゲやラッセルは言語哲学でも参照される。&#xA;コンピュータ科学に関心がある人がコンピュータ科学に関連する分野を持ち、また、関連分野の知識をコンピュータ科学にどう活用できるかということに興味がある。&#xA;具体的には、数学、言語哲学、記号論などの抽象的な分野が日々のプログラミングに役立つのか、役立つのであれば、どのように関連分野に興味をもつことができるのかということが知りたかった。&#xA;そのため、歴史上の出来事の因果関係を慎重に議論するよりも、コンピュータ科学とほかの分野との関係に焦点をあててスライドを作った。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

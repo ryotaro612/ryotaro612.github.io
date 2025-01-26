@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-	<meta name="generator" content="Hugo 0.123.7">
+	<meta name="generator" content="Hugo 0.131.0">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -18,7 +18,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -85,6 +85,91 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/dataflow/">The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-Scale, unbounded, Out-of-Order Data Processing</a></h3>
+        <div class="summary"><p>データ処理サービスは、処理の正確さ、遅延、システムの複雑さの間にトレードオフを抱える。
+ストリーミング処理サービスのStorm, Samza, Pulsarは、(論文が発表された2015年時点では)メッセージ配信がexactly-onceではなく欠損や重複する。
+MapReduceやSparkなどのバッチ処理サービスは、バッチ処理の単位までデータが集まらなければバッチ実行できない。
+Lambda architectureは、システムの複雑化を許容し、2つのアーキテクチャを使い分けることで、処理の正確さと遅延のバランスをとる。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">August 7, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/playing_planning_poker_in_crowds/">Playing Planning Poker in Crowds: Human Computation of Software Effort Estimates</a></h3>
+        <div class="summary"><p>プランニングポーカーのように、ソフトウェア開発の工数を見積もる手法の前提には、プロジェクトに一定期間在籍する専門家がいることがある。
+しかし、OSS開発はその限りではなく、見積りの対象になるイシューの数は多い。
+各イシューの見積りに5分から10分時間をかけるなら、Linux Kernelのバックログを見積りきるのに半年がかかる。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">August 6, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/the_byzantine_generals_problem/">The Byzantine Generals Problem</a></h3>
+        <div class="summary"><p>ビザンチン将軍問題は、故障したコンポーネントがほかのコンポーネントに誤ったメッセージを送りうるとき、コンポーネント間でメッセージを交換した結果、すべてのコンポーネントが一つの正しいメッセージを合意する問題をあつかう。
+アルゴリズムは、署名付きメッセージを使うものと使わないものの2つがある。
+署名付きメッセージを使うと、受信したメッセージが改ざんされたかをコンポーネントが判断できる。
+署名を使わない場合、3分の2より多くのコンポーネントが正常でなければシステム全体が正しい1つのメッセージについて合意にできないことを示した。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">July 31, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/browsemaps/">The Browsemaps: Collaborative Filtering at LinkedIn</a></h3>
+        <div class="summary"><p>Browsemapsは、LinkedInのアイテムベースで水平型の協調フィルタリングである。
+Browsemapは、LinkedInの画面上にある推薦するコンテンツを並べたコンポーネントを意味する。
+ここでの水平型は特徴の種類の違いによらず異なるエンティティを統一的に扱えることであり、実際に、人、仕事、会社など複数のエンティティをBrowsemapsでユーザに推薦している。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">July 22, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/linearizability/">Linearizability: A Correctness Condition for Concurrent Objects</a></h3>
+        <div class="summary"><p>オブジェクトを読み書きする並行プロセスの実行系列があるとき、読み書き操作がアトミックであるように観測でき、かつ、プロセスの実行を仮に直列化したときと同じ実行結果をえられる条件を示し、これを線形化可能性とよんだ。
+線形化可能性は、直列化可能性と同様に安全性の条件だが、直列化可能性にはないローカル性がある。
+いいかえると、各オブジェクトが線形化可能かつそのとき限り、システム全体が線形化可能になる。
+また、ローカル性だけでなく、ノンブロッキング性もあり、操作がオブジェクトの任意の状態において定義されていれば、受信したリクエストの操作を保留しているオブジェクトは別オブジェクトの保留した操作の完了を待たずに自分の操作を進行できる。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">July 17, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/end_to_end_arguments_in_system_design/">END-TO-END ARGUMENTS IN SYSTEM DESIGN</a></h3>
+        <div class="summary"><p>分散システムのあるシステムから発せられた通信は、システムより低いレイヤーのネットワークを通り、ほかのシステムに到達する。
+論文の発表当時から、分散システムの信頼性にかかわる機能には、途中の低レイヤーではなく高レイヤーの終端におくべきものがあると知られていた。
+表題の論文は、それらを列挙し、END-TO-END ARGUMENTSと名付け、原則として提示する。
+例えば、データの完全性の保証、メッセージの重複対応、メッセージが到達したことの保証が原則にあてはまる。
+これらの機能を途中の低レイヤーにおくと、検証後の経路でメッセージが壊れた場合、送信元が重複メッセージをおくる場合、対向システムが受信したメッセージを処理できない場合に対処できない。
+分散システム全体の信頼性をあげるのであれば、信頼性を上げる機能を低レイヤーではなく終端の高レイヤーにおくほうが効率がよい。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">July 10, 2021</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/a_history_and_evaluation_of_systemr/">A History and Evaluation of System R</a></h3>
+        <div class="summary"><p>System Rは、1970年に発表されたリレーショナルモデルを実装した初めてのリレーショナルデータベースである。
+1981年に発表された表題の論文は、System Rの開発プロジェクトを3つのフェーズに分け各フェーズごとにえられた知見をまとめている。
+Phase 0は、74年から75年にかけて、シングルユーザ向けにSQLサブセットと対話的なインターフェースを開発した期間にあたる。
+Phase 1は、76年から77年の、Phase 0のコードを破棄し、マルチユーザに対応しSystem Rの機能を完全に実装するまでの期間である。
+Phase 2は、78年から79年にSan Jose Research Laboratoryなどでの実用にもとづく評価期間にあたる。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">July 3, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/rei/">beamerのスタイルファイル rei.sty</a></h3>
         <div class="summary"><p>日本語用のbeamerスライドのデザインを作った。
 飽きないように単純なデザインにした。
@@ -116,84 +201,6 @@
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/abc051d/">AtCoder Begineer Contest 051 D - Candidates of No Shortest Paths</a></h3>
-        <div class="summary"><p>ワーシャルフロイト法で全ての2頂点間の最短距離を求めた後、隣接する2頂点の辺のうち、2頂点の最短距離が辺の重みと異なる辺を数えれば通る。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">June 14, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/abc205d/">AtCoder Beginner Contest 205 D - Kth Excluded</a></h3>
-        <div class="summary"><p>\(K_q\)ごとに二部探索で答えを直接検索しても通すことができる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">June 14, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/windows_azure_storage/">Windows Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency</a></h3>
-        <div class="summary"><p>AzureのクラウドストレージサービスWindows Azure Storage(WAS) は、2008年の11月から本番運用されている。
-保存できるデータの形式には、単なるファイル(Blob)だけでなく、テーブルのレコードとキューのメッセージがある。
-ハードウェアの故障に備えたローカルでのレプリケーションだけでなく、地理的に離れたデータセンタにもレプリケーションを分散し、災害復旧にも備える。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">June 12, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/thrift/">Thrift: Scalable Cross-Language Services Implementation</a></h3>
-        <div class="summary"><p>ThriftはFacebookで開発されたRPCライブラリで、IDLからクライアントとサーバのコードを生成する。
-Thrift自体は、大きくType, Transport, Protocol, Versioning, Processorの5つのコンポーネントからなる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">May 30, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/the_end_of_an_architectural_era/">The End of an Architectural Era (It&#39;s Time for a Complete Rewrite)</a></h3>
-        <div class="summary"><p>発表時期は2007年で、RDBMSの源流であるSystem Rが開発された70年代からハードウェアの性能や価格が変わったことを背景に、RDMSのアーキテクチャを既存技術の延長ではなく抜本から刷新し、いわゆるNoSQLを開発する必要性を主張している。
-第一著者のMichael Stonebrakerは、後の2011年に今日全てのデータベースの要件をRDMSだけでは満たすことができないと主張する論文<a href="https://cs.brown.edu/~ugur/fits_all.pdf">&ldquo;One Size Fits All&rdquo;</a>を出している。
-表題の論文では、OLTPに特化したデータベースH-Storeを実装し、TPC-Cをベンチマークとして商用データベースと比較したところ、H-Storeの方が82倍高速だった。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">May 29, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/burst_tries/">Burst Tries: A Fast, Efficient Data Structure for String Keys</a></h3>
-        <div class="summary"><p>trie木の一種のburst trieは、2分木よりもメモリ効率がよく、trie木と同じくらい速い。
-内部は2種類のデータ構造からなり、trie木のほかに別のデータ構造もつかう。
-どのデータ構造を使うかは要件次第で、実験では、連結リスト、二分探索木、スプレー木をつかった。
-Burst trie内の別のデータ構造はcontainerとよばれる。
-初期状態のburst trieは、1つのcontainerからなり、別のデータ構造そのものに等しい。
-その後、containerの要素のアクセス頻度やヒット率にもとづくヒューリスティックな基準が満たされると、containerの要素をtrie木のノードにおきかえ、ノードの下に新しいcontainerをつくる。
-新しくできたcontainerにも基準を適用し、適宜containerをtrieのノードにおきかえる。
-以上の手続きより、与えられる文字列の頻度に合わせてtrie木と別のデータ構造を使い分けることができる。
-性能はデータ分布の歪度に依存する。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">May 22, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/suffix_arrays/">Suffix Arrays: A New Method for On-Line String Searches</a></h3>
-        <div class="summary"><p>接尾辞配列 Suffix Arrayは、長さ\(P\)の文字列が長さ\(W\)の文字列のどこに出現するかを時間計算量\(\mathcal{O}(P + \log N)\)で判定できるデータ構造で、接尾辞木 suffix treeよりもメモリ効率が3-5倍よい。
-一方、検索の準備にかかる最悪時間計算量はsuffix treeよりも大きい。
-suffix arrayの構築にかかる最悪時間計算量が\(\mathcal{O}(N\log N)\)に対して、suffix treeは\(\mathcal{O}(N)\)しかかからない。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">May 16, 2021</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -218,7 +225,7 @@ suffix arrayの構築にかかる最悪時間計算量が\(\mathcal{O}(N\log N)\
       </a>
     </li>
     <li>
-      <a href="/page/31/">
+      <a href="/page/32/">
 	<i class="fa-solid fa-xl fa-angles-right"></i>
       </a>
     </li>

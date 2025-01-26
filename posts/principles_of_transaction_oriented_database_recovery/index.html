@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -92,8 +92,10 @@
   </ul>  
   <span class="date">January 29, 2023</span>    
   <div>
-    <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+    <!---
+RDBMSを障害から復旧する技術はあるが、用語や概念が統一されていない。
+RDBMSのフォールトトレラントを評価するために、そのための技術を体系化する。
+-->
 <p>クラッシュしたRDMSのディスクとバッファの状態をクラッシュ前の状態にもどす手法を体系化する。
 体系は、Propagation, Buffer handling, EOT Processing, Checkpointingの4要素に着目して技術を分類する。</p>
 <p>Propagationは、ブロックにページ上のデータを書き込むことである。
@@ -122,8 +124,21 @@ TCCの開始時点で実行中のトランザクションがすべて完了す�
 生成が完了するまで、新しいトランザクションの開始を延期する。
 ACCは、TCCと同じく、複数のトランザクションを対象にする。TCCとの違いは、ページを更新する処理と処理に実行する点にあり、ACCは実行中のトランザクションもチェックポイントの対象する。
 fuzzy checkpointは、バッファの状態をログに記録しておき、復元時には、ログからクラッシュ時点のバッファの状態を復元する。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+Propagationはmaterialized DBにないページをmaterialized dbに反映すること。
+
+redo クラッシュ後に成功したトランザクションを再度実行するかしないか
+
+Propagation,
+
+Buffer Handling
+
+EOT Processing
+Checkpointing
+の4要素が大事。
+
+cbuffonsistencyはトランザクションの終了状態がlegalであること。
+-->
 <p>論文の<a href="http://www.cs.cmu.edu/~dga/15-712/F07/papers/haerder83.pdf">リンク</a></p>
   </div>
 </main>

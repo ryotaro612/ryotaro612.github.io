@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -113,11 +113,33 @@ C4には、<a href="https://commoncrawl.org/">Common Crawl</a>から抽出され
 <p>訓練データやパラメタ数を増やすだけでなく、アンサンブルでも性能を向上できた。
 学習データを4倍に増やすよりも、パラメタ数や学習時間を倍にするほうが効果的だった。
 また、アンサンブル学習のときは、事前学習とファインチューニングが両方違うモデルを組合せるほうが、事前学習が同じでファインチューニングのみ異なるモデルを組み合わせる場合よりも、性能が高かった。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- エンコーダーとデコーダーでパラメタを共有し、パラメタの総数を減らしたところ、大きな性能の低下がみられなかった。-->
+<!--
+
+違いは、Peter Shawらの手法と同様に相対 層正規化でバイアス項を使わないこと、
+
+layeer norma bias, layou redidual pathの外、 embedding schemeが違う
+T5の実験上の性能は、タスク固有のアーキテクチャに匹敵した。
+
+エンコーダーとデコーダのパラメタを共有してもそれほど下らない。
+
+
+最大尤度を使う。
+
+Text-to-text
+
+Architectures
+
+Unsupervised objectives
+
+Data sets
+
+Tranining strategires
+
+Scaling
+-->
+<!-- ## 感想 -->
+<!-- テストデータセットは小さい -->
   </div>
 </main>
 

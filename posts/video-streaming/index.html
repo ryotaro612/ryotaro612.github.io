@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.ac39fd9b1999326c116cd551ce035fd4eaf2801f6bfc13a90241a1d9275b21ec.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>動画配信プラットフォームの例</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://ryotaro.dev/about">About</a></li>
+          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+	  
+	  <li><a href="https://ryotaro.dev/en/posts/video-streaming/">en</a></li>
+	  
+        </ul>	
+	<ul>
+          
+          <li>
+            <a href="https://github.com/ryotaro612">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="https://www.linkedin.com/in/ryotaro612/">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          
+          <li>
+	    <a href="https://ryotaro.dev/index.xml">
+	      <i class="fas fa-rss"></i>
+            </a>
+	  </li>
+          
+        </ul>	
+      </nav>
+    </header>
+    
+<main>
+  <h1>動画配信プラットフォームの例</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/system-design-interview/">
+	#System Design Interview
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">September 18, 2024</span>    
+  <div>
+    <p>システム設計面接におけるNetflixやYoutubeのような動画サービスの問題における要点を整理する。</p>
+<h2 id="要件">要件</h2>
+<p>どの<a href="/posts/video-streaming/#参考文献">参考文献</a>でも視聴とアップロードが機能要件にある。
+また非機能要件については、解答例のシステム設計はすべてマイクロサービスであり、性能・拡張性を重視し、一貫性モデルを妥協してBASE (Basically available, Soft state, Eventual consistency) を認めている。
+参考文献では、以下の要件が目にとまった。</p>
+<ul>
+<li>機能要件
+<ul>
+<li>ストリーミング配信される動画の視聴
+<ul>
+<li>対応クライアント
+<ul>
+<li>ブラウザ</li>
+<li>モバイル</li>
+<li>スマートTV</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>動画のアップロード</li>
+<li>動画の品質の変更</li>
+<li>動画の検索</li>
+<li>動画の評価
+<ul>
+<li>Like</li>
+<li>Dislike</li>
+<li>コメント</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>非機能要件
+<ul>
+<li>高可用性</li>
+<li>性能・拡張性</li>
+<li>完全性</li>
+</ul>
+</li>
+</ul>
+<h2 id="back-of-the-envelope-estimation">Back of the envelope estimation</h2>
+<p>Back of the envelope estimationでは、以下の数が与えられていた。</p>
+<ul>
+<li>DAUユーザ数</li>
+<li>ユーザが視聴する動画の平均数</li>
+<li>アップロードされる動画の数</li>
+<li>アップロードれる動画の平均サイズ</li>
+</ul>
+<h2 id="アーキテクチャ">アーキテクチャ</h2>
+<p>参考文献の複数の解答例が、動画のアップロードして保存するまでの処理を分割して非同期にし、動画をCDNで配信している。
+この2点が動画配信の問題の要点になるのだろう。</p>
+<h3 id="アップロードされた動画の処理">アップロードされた動画の処理</h3>
+<p>解答例は、動画のアップロードから保存までの処理を小さな処理に分割し、Kafkaなどのキューで各処理を個別にスケールできるように実装している。
+キューを介してマシン間のデータの受け渡すことで、エンキュー後はマシン同士が依存しなくなり、非同期にマシンの数をスケールできるようになる。
+ある参考文献は処理を以下の処理のように分割し、分割した処理の実行を非同期化する。</p>
+<ul>
+<li>動画のダウンロード</li>
+<li>動画のサムネイル作成</li>
+<li>コンテンツフィルダリング</li>
+<li>ウォーターマークの追加</li>
+<li>動画のエンコード</li>
+<li>動画のアップロード</li>
+</ul>
+<p>動画のエンコードと動画へのタグづけをキューで非同期するなら下図の構成になりえる。
+<img alt="queue" src="/video-streaming/queue.drawio.svg"></p>
+<p>メッセージキューシステムにエンキューできるメッセージのサイズには上限があり、処理対象のデータ自体をメッセージとしてキューに入れられないことがある。
+たとえば、<a href="https://docs.aws.amazon.com/ja_jp/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">SQSのメッセージの最大サイズは256KB</a>であり、<a href="https://kafka.apache.org/08/documentation.html">Kafkaであれば1MB</a>の制限がある。
+あつかえる動画のサイズの要件が1MBを超える場合、図のように処理中のファイルを外に置く必要がありそうだ。</p>
+<p>どの解答例もメッセージキューシステムの選定基準について詳しく議論していない。
+たとえば、代表的なメッセージキューシステムにPull型のKafkaやPush型のRabbitMQがある。
+RabbitMQは優先度つきメッセージなどでKafkaよりも細かいルーティング制御ができ、KafkaはRabbitMQよりも処理性能が高いように、実装ごとに異なる一長一短がある。
+AWSであれば、RabbitMQのかわりに<a href="https://aws.amazon.com/amazon-mq/?nc1=h_ls">Amazon MQ</a>や<a href="https://aws.amazon.com/msk/?nc1=h_ls">マネージド型のKafka</a>, <a href="https://aws.amazon.com/sns/?nc1=h_ls">SNS</a>が選択肢になるだろう。</p>
+<p>ストリーミング配信できない形式の動画ファイルをアップロードできるようにする場合、動画ファイルをストリーミング配信できる形式に変換する必要がある。
+試したことはないが、OSSであれば<a href="https://www.ffmpeg.org/">FFmpeg</a>や<a href="https://aws.amazon.com/jp/mediaconvert/">AWS Elemental MediaConvert</a>で変換できそうだ。
+配信プロトコルには<a href="https://ffmpeg.org/ffmpeg-formats.html#hls-1">HLS</a>や<a href="https://ffmpeg.org/ffmpeg-formats.html#dash-1">DASH</a>がある。</p>
+<h3 id="cdnでの動画配信">CDNでの動画配信</h3>
+<p>動画をCDNで配信しダウンロード速度を高速化する場合、動画を認証やWAFで保護しなければならない。
+AWSであれば、CDNの<a href="https://aws.amazon.com/cloudfront/?nc1=h_ls">CloudFront</a>を<a href="https://aws.amazon.com/waf/?nc1=h_ls">WAF</a>で保護できる。
+また、CloudFrontはS3にある静的ファイルを配信できる。
+ファイルへのCRUD操作を認証されたユーザのみに許可したい場合、認証したユーザに<a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-signed-urls.html">署名つきURL</a>や<a href="https://docs.aws.amazon.com/ja_jp/AmazonCloudFront/latest/DeveloperGuide/private-content-signed-cookies.html">署名つきCookie</a>を発行する。
+1つのURLだけを制限する場合は署名つきURLを、複数のURLを制限する場合は署名つきCookieを<a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-choosing-signed-urls-cookies.html">選ぶとよい</a>。
+署名つきURLでアップロード先を指定する場合、サーバーを中継せずにファイルをS3に送ることで、サーバーにかかるアップロード処理の負荷を下げることができる。</p>
+<h2 id="参考文献">参考文献</h2>
+<ul>
+<li><a href="https://aws.amazon.com/compare/the-difference-between-rabbitmq-and-kafka/?nc1=h_ls">What’s the Difference Between Kafka and RabbitMQ?</a></li>
+<li><a href="https://www.educative.io/courses/grokking-the-system-design-interview/system-design-youtube">Grokking the Modern System Design Interview</a></li>
+<li><a href="https://leetcode.com/explore/learn/card/system-design/690/system-design-case-studies/4388/">LeetCode: Netflix System Design</a></li>
+<li><a href="https://bytebytego.com/courses/system-design-interview/design-youtube">System Design Interview: An Insider&rsquo;s Guide</a></li>
+</ul>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/realm-retrieval-augmented-language-model-pre-training/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+    <li>
+      <a href="/posts/back-of-envelope-calculations/">
+	<i class="fa-solid fa-xl fa-angle-right"></i>
+      </a>
+    </li>
+    
+</ul>
+
+
+    <footer>
+      <small>© Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

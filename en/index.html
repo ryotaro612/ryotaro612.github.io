@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.123.7">
+	<meta name="generator" content="Hugo 0.131.0">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -18,7 +18,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
     
@@ -85,6 +85,201 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/en/posts/origin-of-type-theory/">The Origins of Type Theory</a></h3>
+        <div class="summary"><p>Type theory began as an effort to resolve Russell&rsquo;s Paradox, an issue discovered by Bertrand Russell.
+The precise events that mark the origin of type theory can be a matter of debate.
+Cantor, who developed set theory, independently discovered a similar paradox around the same time. In correspondence with Russell, Frege replied that in his conceptual notation, predicates do not take other predicates as arguments.
+Considering Russell&rsquo;s approach that employs the hierarchical elements in the conceptual notation to resolve the paradox, one might argue that Frege&rsquo;s predicate logic can be seen as an origin of type theory.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/type-theory/">
+		#Type Theory
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 30, 2024</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/runc/">Implementation of runc as of November 2024</a></h3>
+        <div class="summary"><p><a href="https://github.com/opencontainers/runc">runc</a> is a container runtime with a command-line interface tool.
+Although runc was separated from Docker in 2015, Docker still uses runc because the Docker Engine is built on top of containerd, which incorporates runc.
+In this post, I will explain some Linux features used in the implementation of runc.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/runc/">
+		#Runc
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/container/">
+		#Container
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 8, 2024</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/back-of-envelope-calculations/">Back of Envelope Calculations</a></h3>
+        <div class="summary"><p>In system design interviews, back of envelope calculation is a task to estimate required comuputing resources based on the given requirement.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/back-of-the-envelope-estimation/">
+		#Back of the Envelope Estimation
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/system-design-interview/">
+		#System Design Interview
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">September 24, 2024</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/video-streaming/">System design case study: video streaming service</a></h3>
+        <div class="summary"><p>Youtube is an example of a video streaming service where users upload, stream, search, and review videos.
+This post presents common designs for processing and hosting uploaded videos across several case studies of video streaming services for system design interviews.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/system-design-interview/">
+		#System Design Interview
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">September 18, 2024</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/realm-retrieval-augmented-language-model-pre-training/">REALM Retrieval Augmented Language Model Pre Training (2020)</a></h3>
+        <div class="summary"><p><a href="https://arxiv.org/abs/2002.08909">REALM</a> is a language model for open-domain question answering.
+REALM is composed of two components: the neural knowledge retriever and the knowledge-augmented encoder.
+The neural knowledge retriever finds documents related to the input.
+The knowledge-augmented encoder generates responses from the found documents and the input.
+In pre-training, the REALM employs masked language modeling, and it is trained to predict the original tokens that are maked in the given sentences.
+In fine-tuning, the model is trained to produce the answer of the given input.
+The authors experimented the model with Open-domain QA tasks under the assumption that the answer can be found as a contiguous sequence of tokens in some documents.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/retrieval-augmented-generation/">
+		#Retrieval Augmented Generation
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">May 27, 2024</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/">Distributed GraphLab: a Framework for Machine Learning and Data Mining in the Cloud (2012)</a></h3>
+        <div class="summary"><p><a href="https://arxiv.org/pdf/1408.2041">GraphLab</a> is a programming model for machine learning and data mining.
+GraphLab takes a direct graph, a set of vertices, and update functions as input.
+Every update function accepts a vertex and returns a set of vertices.
+GraphLab selects a vertex from the set, applies a function to it, and adds the resulting set of vertices back intothe set, repeating this process until the set is empty.
+GraphLab supports parallel execution of update functions on multi-processor machines.
+<a href="https://arxiv.org/pdf/1408.2041">Distributed GraphLab</a> extends GraphLab by distributing parts of a graph across machines that are memory, utilizing <a href="https://lamport.azurewebsites.net/pubs/chandy.pdf">Chandy-Lamport</a>&rsquo;s snapshot algorithm for fault tolerance.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/distributed-system/">
+		#Distributed System
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">May 7, 2024</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/policy-gradient-methods-for-reinforcement-learning-with-function-approximation/">Policy Gradient Methods for Reinforcement Learning With Function Approximation (1999)</a></h3>
+        <div class="summary"><p>Policy gradient methods approximate stochastic policies using function approximators, which are independent of value functions.
+They update the policies according to the gradient of expected reward with respect to the policy parameters.
+<a href="https://proceedings.neurips.cc/paper/1999/file/464d828b85b0bed98e80ade0a5c43b0f-Paper.pdf">Policy Gradient Methods for Reinforcement Learning With Function Approximation</a> shows that a form of policy iteration with function approximation converges to a locally optimal policy.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/policy-gradient-method/">
+		#Policy Gradient Method
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/reinforcement-learning/">
+		#Reinforcement Learning
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">April 27, 2024</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/spark-sql-relational-data-processing-in-spark/">Spark SQL: Relational Data Processing in Spark (2015)</a></h3>
+        <div class="summary"><p><a href="https://dl.acm.org/doi/10.1145/2723372.2742797">Spark SQL</a> provides a DataFrame API, an abstract data type equivalent to a table in a relational database. The DataFrame objects can be manipulated in a manner consistent with relational algebra. For example, the API includes various relational operators such as <code>where</code> and <code>group by</code>, similar to data frames in R and Python. The DataFrame objects are evaluated lazily, meaning they are not evaluated until certain output operations, like <code>count</code>, are performed. Catalyst, an optimizer written in Scala, optimizes these lazy queries and then compiles them into Java bytecode.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/sql/">
+		#SQL
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/spark/">
+		#Spark
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">April 14, 2024</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/en/posts/neural-collaborative-filtering/">Neural Collaborative Filtering (2017)</a></h3>
         <div class="summary"><p>In collaborative filtering, Matrix Factorization (MF) approximates the user-item interaction matrix by multiplying the latent matrices for users and items.
 An estimated iteraction is the inner product of the latent vectors for the user and the item.
@@ -134,191 +329,6 @@ In the paper, they argued that this approach was no longer applicable, with exam
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/llama-open-and-efficient-foundation-language-models/">LLaMA Open and Efficient Foundation Language Models (2023)</a></h3>
-        <div class="summary">Scaling Laws for Neural Language Models refers to empirical observations that model test performance has a power-law relationship with each of the three scale factors: the number of model parameters, the dataset size in tokens, and the amount of compute used for training, when not bottlenecked by the other two. Hoffmann et al. (2022) investigated the bottleneck and found that, given a fixed FLOPs budget, the number of model parameters and the training tokens should be scaled equally to minimize pre-training loss.</div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/large-language-model/">
-		#Large Language Model
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">March 14, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/">Apache Calcite a Foundational Framework for Optimized Query Processing Over Heterogeneous Data Sources</a></h3>
-        <div class="summary"><p>Michael StonebrakerとUğur Çetintemel presented <a href="https://cs.brown.edu/~ugur/fits_all.pdf">One Size Fits All</a> in 2005.
-The title refers to the fact that traditional RDBMS had been used to implement a variety of data-centric applications.
-Tn the paper, they argued that the phrase was no longer applicable and predicted the rise of domain-specific database engines.
-Indeed, organizations leverage various domain-specific database engines such as column stores and text search engines today.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/apache-calcite/">
-		#Apache Calcite
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">March 10, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/mining-association-rules-between-sets-of-items-in-large-databases/">Mining Association Rules Between Sets of Items in Large Databases (1993)</a></h3>
-        <div class="summary"><p><a href="https://dl.acm.org/doi/10.1145/170036.170072">Mining Association Rules between Sets of Items in Large Databases</a> presents one of the earliest approaches for association rules mining.
-An association rule is an implication of the form \(X \Rightarrow I_j\) where \(X\) is a set of some items, and \(I_j\) is an item that is not in \(X\).
-For instance, if transactions buying bread and butter also buy milk, that forms an association rule.
-The paper introduces a method to find association rules and measure confidence and support factors from transactions.
-The confidence factor measures how many transactions that satisfy \(X\) also satisfy \(I_j\).
-The support factor of an association rule is defined to be the fraction of transactions that contain the union of items in the rule.
-The support factor implies statistical significance of the association rule.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/association-rule-mining/">
-		#Association Rule Mining
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">March 2, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/">Poly-Encoders: Architectures and Pre-Training Strategies for Fast and Accurate Multi-Sentence Scoring (2019)</a></h3>
-        <div class="summary"><p>For tasks matching input sequences with labels, current state-of-the-art approaches focus on using <a href="https://arxiv.org/abs/1810.04805">BERT</a> models for pre-training.
-Two common encoding approaches are Cross-encoders (<a href="https://arxiv.org/abs/1901.08149">Wolf et al.</a>), which concatenate input sequences and candidate labels into a single vector, and produce candidate-sensitive embeddings, and Bi-encoders (<a href="https://arxiv.org/abs/1809.01984">Mazaré et al.</a>), which encode input sequences and candidate labels separately.
-In Bi-encoders, the score is the dot-product of the two embeddings.
-While Cross-encoders are more accurate than Bi-encoders, Bi-encoders are faster.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted --></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/transformer/">
-		#Transformer
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">February 24, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/the-design-of-postgres/">THE DESIGN OF POSTGRES (1986)</a></h3>
-        <div class="summary"><p>The preliminary design of POSTGRES was presented in <a href="https://dsf.berkeley.edu/papers/ERL-M85-95.pdf">The Design of Postgres</a>.
-According to <a href="https://www.postgresql.jp/document/8.3/html/history.html">Brief History of Postgres</a>, the data model, rules, and storage system were separately described in different papers: <a href="https://apps.dtic.mil/sti/tr/pdf/ADA184251.pdf">The Postgres Data Model</a>, <a href="https://apps.dtic.mil/sti/tr/pdf/ADA179161.pdf">The Design of the Postgres Rule System</a>, and <a href="https://dsf.berkeley.edu/papers/ERL-M87-06.pdf">The Design of the Postgres Storage System</a>.</p>
-<p>POSTGRES is the successor to the INGRES relational database system.
-The main design goals of POSTGRES were to support complex objects, simplify the DBMS code for crash recovery, and utilize optical disks while making as few changes as possible to the relational model.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/rdbms/">
-		#RDBMS
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/postgresql/">
-		#PostgreSQL
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">February 17, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/">Retrieval Augmented Generation for Knowledge Intensive NLP Tasks (2021)</a></h3>
-        <div class="summary"><p>While large pre-trained language models (LLMs) can implicitly store factual knowledge in their parameters, their ability to access explicit encyclopedic and commonsense is knowledge still limited.
-Retrieval Augmented Generation (RAG) is a method to improve language generation by providing external explicit knowledge to LLMs.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/retrieval-augmented-generation/">
-		#Retrieval Augmented Generation
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">January 27, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/sorting-networks-and-their-applications/">Sorting networks and their applications (1968)</a></h3>
-        <div class="summary"><p>A sorting network is a network of comparison elements with 2 indegree and 2 outdegree that sorts a list in ascending or descending order.
-A comparison element receives two numbers and outputs the smaller one to one output and the larger one to the other output.
-Odd-even merging networks and Bitonic sorters are sorting networks proposed in <a href="https://www.cs.kent.edu/~batcher/sort.pdf">Sorting networks and their applications</a>.
-They can sort \(2^p\) elements with \(\ln (\frac{1}{2})p(p+1)\) steps.
-Their processing is independent of the values and is easy to run on the GPU because it does not change the output location in memory based on input data values.</p>
-<!-- raw HTML omitted --></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/sorting-algorithm/">
-		#Sorting Algorithm
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">January 14, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/billion-scale-similarity-search-with-gpus/">Billion Scale Similarity Search With GPUs (2017)</a></h3>
-        <div class="summary"><p>The paper <a href="https://arxiv.org/abs/1702.08734">Billion-scale-similarity search with GPUs</a> presents an approximate nearest-neighbor search method that uses GPUs and combines the <a href="https://inria.hal.science/inria-00514462v2/document">IVFADC</a> indexing structure with <a href="https://www.cs.kent.edu/~batcher/sort.pdf">Batcher&rsquo;s bitonic sorting network</a>.
-The authors have implemented this method in a library called <a href="https://github.com/facebookresearch/faiss">faiss</a>.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/approximate-nearest-neighbors/">
-		#Approximate Nearest Neighbors
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">January 1, 2024</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -332,7 +342,7 @@ The authors have implemented this method in a library called <a href="https://gi
       </a>
     </li>
     <li>
-      <a href="/en/page/4/">
+      <a href="/en/page/5/">
 	<i class="fa-solid fa-xl fa-angles-right"></i>
       </a>
     </li>

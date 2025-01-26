@@ -4,10 +4,59 @@
     <title>Blanket</title>
     <link>https://ryotaro.dev/</link>
     <description>Recent content on Blanket</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 25 Mar 2024 16:56:51 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 30 Dec 2024 22:45:30 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>型理論のはじまり</title>
+      <link>https://ryotaro.dev/posts/origin-of-type-theory/</link>
+      <pubDate>Mon, 30 Dec 2024 22:45:30 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/origin-of-type-theory/</guid>
+      <description>&lt;p&gt;型理論の起源はラッセルのパラドクスにある。&#xA;ただし、厳密な起源となる出来事は何かという問いになると、意見は分かれると思う。&#xA;名前の通り、ラッセルのパラドクスはラッセルが見つけたものだが、集合論を確立したカントールも同時期に独立して同等のパラドクスを発見した。&#xA;またラッセルとフレーゲの往復書簡の中で、フレーゲは、彼の概念記法における述語は述語を引数にとらないと回答した。&#xA;ラッセルが概念記法の要素の階層関係を発展させてパラドクスの解消を試みたことを考えれば、フレーゲの述語論理を型理論の起源とみなすこともできるだろう。&lt;/p&gt;&#xA;&lt;p&gt;型理論のなりたちに興味があり、調べたことをスライドにまとめた。&#xA;興味があった理由は、その過程にコンピュータ科学以外の分野も関与していることにある。&#xA;カントールは数学者であり、フレーゲやラッセルは言語哲学でも参照される。&#xA;コンピュータ科学に関心がある人がコンピュータ科学に関連する分野を持ち、また、関連分野の知識をコンピュータ科学にどう活用できるかということに興味がある。&#xA;具体的には、数学、言語哲学、記号論などの抽象的な分野が日々のプログラミングに役立つのか、役立つのであれば、どのように関連分野に興味をもつことができるのかということが知りたかった。&#xA;そのため、歴史上の出来事の因果関係を慎重に議論するよりも、コンピュータ科学とほかの分野との関係に焦点をあててスライドを作った。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2024年11月のruncの実装</title>
+      <link>https://ryotaro.dev/posts/runc/</link>
+      <pubDate>Sun, 08 Dec 2024 18:51:20 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/runc/</guid>
+      <description>&lt;p&gt;runcは抽象度の低いコンテナのランタイムであると同時に、そのランタイムを操作するCLIでもある。&#xA;もともとruncはdockerの一部だったが、2015年にdockerからのスピンアウトされた。&#xA;containerdがruncでコンテナの操作するので、今でもdockerはruncでコンテナを操作していることになる。&#xA;この記事は、runcの実装に使われているLinuxの機能を紹介する。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Back of Envelope Calculations</title>
+      <link>https://ryotaro.dev/posts/back-of-envelope-calculations/</link>
+      <pubDate>Tue, 24 Sep 2024 02:14:15 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/back-of-envelope-calculations/</guid>
+      <description>&lt;p&gt;システム設計の面接では、与えられた情報からシステムに求められるシステムリソースを試算することを、back of the envelope calculations (estimation)という。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>動画配信プラットフォームの例</title>
+      <link>https://ryotaro.dev/posts/video-streaming/</link>
+      <pubDate>Wed, 18 Sep 2024 01:13:19 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/video-streaming/</guid>
+      <description>&lt;p&gt;システム設計面接におけるNetflixやYoutubeのような動画サービスの問題における要点を整理する。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>REALM Retrieval Augmented Language Model Pre Training (2020)</title>
+      <link>https://ryotaro.dev/posts/realm-retrieval-augmented-language-model-pre-training/</link>
+      <pubDate>Mon, 27 May 2024 22:28:20 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/realm-retrieval-augmented-language-model-pre-training/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/2002.08909&#34;&gt;REALM&lt;/a&gt;は、オープンドメイン質問応答向けの言語モデルであり、入力文に関連する文書をみつけるknowledge retrieverと見つけた文書と入力文から応答を生成するknowledge-augmented encoderで構成されている。&#xA;事前学習はmasked language modelingによる教師なし学習であり、一部のトークンがマスクされた入力文をあたえたときに、もとのマスクされた単語を出力できるように訓練する。&#xA;オープンドメイン質問応答のファインチューニングでは、質問文を入力したときに、回答を出力できるようにモデルを訓練する。&#xA;評価実験では、期待する回答がknowledge retrieverの学習に使うコーパスに文字通りにあることが前提にされている。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Distributed GraphLab: a Framework for Machine Learning and Data Mining in the Cloud (2012)</title>
+      <link>https://ryotaro.dev/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/</link>
+      <pubDate>Tue, 07 May 2024 11:49:13 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://vldb.org/pvldb/vol5/p716_yuchenglow_vldb2012.pdf&#34;&gt;Distributed GraphLab&lt;/a&gt;は、機械学習とデータマイニング向けのプログラミングモデルの&lt;a href=&#34;https://arxiv.org/pdf/1408.2041&#34;&gt;GraphLab&lt;/a&gt;を、クラスタ上で実行できるように発展させた。&#xA;GraphLabは、グラフの一部から点の集合を返す関数を、反復的にグラフに適用する。&#xA;関数から返された点は再び関数に渡され、渡すべき点がなくなるとアルゴリズムは終了する。&#xA;Distributed GraphLabは、GraphLabをメモリ共有するノードからなるクラスタで実行できるように、&lt;a href=&#34;https://lamport.azurewebsites.net/pubs/chandy.pdf&#34;&gt;Chandy-Lamport&lt;/a&gt;のスナップショットとロックを導入した。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Spark SQL: Relational Data Processing in Spark (2015)</title>
+      <link>https://ryotaro.dev/posts/spark-sql-relational-data-processing-in-spark/</link>
+      <pubDate>Sun, 14 Apr 2024 14:08:04 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/spark-sql-relational-data-processing-in-spark/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://dl.acm.org/doi/10.1145/2723372.2742797&#34;&gt;Spark SQL&lt;/a&gt;は、関係データベースのテーブルにあたる抽象データ構造のDataFrameを公開し、Spark上で関係代数によるデータ処理を実現する。&#xA;DataFrameに対する操作は、&lt;code&gt;save&lt;/code&gt;のような出力まで遅延される。&#xA;遅延により蓄積したクエリは、最適化器Catalystで最適化された後にバイトコードにコンパイルされる。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Neural Collaborative Filtering (2017)</title>
       <link>https://ryotaro.dev/posts/neural-collaborative-filtering/</link>
@@ -34,7 +83,7 @@
       <link>https://ryotaro.dev/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/</link>
       <pubDate>Sun, 10 Mar 2024 10:44:15 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/</guid>
-      <description>&lt;p&gt;Michael StonebrakerとUğur Çetintemelは、2005年に&lt;a href=&#34;https://cs.brown.edu/~ugur/fits_all.pdf&#34;&gt;One size fits all&lt;/a&gt;で、データウェアハウスとストリーミング処理をとりあげ、すべてのデータをRDBMSで管理する時代の終わりを主張した。&#xA;組織はデータベースを特定の用途ごとに使い分けるようになった。&#xA;しかし同時に、データベースの開発者は、どんなデータベースでも必要な仕組みをデータベースごとに実装しなければならなくなった。&#xA;どのようなクエリ言語を採用するデーターベースにもクエリ最適化が求められる。&#xA;一方、組織は複数のデータベースに分散したデータを統合しなければならなくなった。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://calcite.apache.org/&#34;&gt;Apache Calcite&lt;/a&gt;は、SQLの解釈、最適化、実行のためのフレームワークであり、複数のデータベースに分散したデータへのANSI標準のSQLでの問い合せを実現する。&#xA;データが複数のデータベースに分散していても、クライアントはデータが1つのRDBMSにあるかのようにSQLでCalciteに問い合せられる。&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
+      <description>&lt;p&gt;Michael StonebrakerとUğur Çetintemelは、2005年に&lt;a href=&#34;https://cs.brown.edu/~ugur/fits_all.pdf&#34;&gt;One size fits all&lt;/a&gt;で、データウェアハウスとストリーミング処理をとりあげ、すべてのデータをRDBMSで管理する時代の終わりを主張した。&#xA;組織はデータベースを特定の用途ごとに使い分けるようになった。&#xA;しかし同時に、データベースの開発者は、どんなデータベースでも必要な仕組みをデータベースごとに実装しなければならなくなった。&#xA;どのようなクエリ言語を採用するデーターベースにもクエリ最適化が求められる。&#xA;一方、組織は複数のデータベースに分散したデータを統合しなければならなくなった。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://calcite.apache.org/&#34;&gt;Apache Calcite&lt;/a&gt;は、SQLの解釈、最適化、実行のためのフレームワークであり、複数のデータベースに分散したデータへのANSI標準のSQLでの問い合せを実現する。&#xA;データが複数のデータベースに分散していても、クライアントはデータが1つのRDBMSにあるかのようにSQLでCalciteに問い合せられる。&lt;/p&gt;&#xA;&lt;!-- クライアントは、複数のデータベースに分散するデータが1つのRDBMSにあるかのように、SQLでCalciteに問い合せられる。 --&gt;</description>
     </item>
     <item>
       <title>Mining Association Rules between Sets of Items in Large Databases (1993)</title>
@@ -69,14 +118,14 @@
       <link>https://ryotaro.dev/posts/sorting-networks-and-their-applications/</link>
       <pubDate>Sun, 14 Jan 2024 23:32:24 -0500</pubDate>
       <guid>https://ryotaro.dev/posts/sorting-networks-and-their-applications/</guid>
-      <description>&lt;p&gt;ソーティングネットワークは、入次数と出次数が2のノードからなるグラフを理論にしたソートのアルゴリズムである。&#xA;ノードは、別々の辺から入力された値の大小関係を比較し、大きい方を一方、小さい方を他方の辺に出力する。&#xA;&lt;a href=&#34;https://www.cs.kent.edu/~batcher/sort.pdf&#34;&gt;Sorting networks and their applications&lt;/a&gt;で提案された奇偶マージソートとバイトニックソートは、値によらず配列上の位置で比較する要素が決まるソーティングネットワークなので、&lt;a href=&#34;https://developer.nvidia.com/gpugems/gpugems2/part-vi-simulation-and-numerical-algorithms/chapter-46-improved-gpu-sorting&#34;&gt;並列計算に利用される&lt;/a&gt;。&#xA;どちらも長さ\(2^p\)の配列を\(\ln (\frac{1}{2})p(p+1)\)ステップでソートできる。&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
+      <description>&lt;p&gt;ソーティングネットワークは、入次数と出次数が2のノードからなるグラフを理論にしたソートのアルゴリズムである。&#xA;ノードは、別々の辺から入力された値の大小関係を比較し、大きい方を一方、小さい方を他方の辺に出力する。&#xA;&lt;a href=&#34;https://www.cs.kent.edu/~batcher/sort.pdf&#34;&gt;Sorting networks and their applications&lt;/a&gt;で提案された奇偶マージソートとバイトニックソートは、値によらず配列上の位置で比較する要素が決まるソーティングネットワークなので、&lt;a href=&#34;https://developer.nvidia.com/gpugems/gpugems2/part-vi-simulation-and-numerical-algorithms/chapter-46-improved-gpu-sorting&#34;&gt;並列計算に利用される&lt;/a&gt;。&#xA;どちらも長さ\(2^p\)の配列を\(\ln (\frac{1}{2})p(p+1)\)ステップでソートできる。&lt;/p&gt;&#xA;&lt;!-- たとえば、密ベクトル近似最近傍探索のライブラリ[Faiss](https://github.com/facebookresearch/faiss)のもとになる[Billion-scale similarity search with GPUs](https://arxiv.org/abs/1702.08734)はクエリとデータベースにあるベクトルを --&gt;</description>
     </item>
     <item>
       <title>Billion Scale Similarity Search With GPUs (2017)</title>
       <link>https://ryotaro.dev/posts/billion-scale-similarity-search-with-gpus/</link>
       <pubDate>Mon, 01 Jan 2024 22:21:27 -0500</pubDate>
       <guid>https://ryotaro.dev/posts/billion-scale-similarity-search-with-gpus/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1702.08734&#34;&gt;Billion-scale-similarity search with GPUs&lt;/a&gt;は、&lt;a href=&#34;https://inria.hal.science/inria-00514462v2/document&#34;&gt;IVFADC&lt;/a&gt;による量子化と&lt;a href=&#34;https://www.cs.kent.edu/~batcher/sort.pdf&#34;&gt;Batcherのバイトニックソート&lt;/a&gt;を利用したGPUで実行するL2ノルムの近似最近傍探索である。&#xA;実装は、OSSの&lt;a href=&#34;https://github.com/facebookresearch/faiss&#34;&gt;faiss&lt;/a&gt;として公開されている。&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1702.08734&#34;&gt;Billion-scale-similarity search with GPUs&lt;/a&gt;は、&lt;a href=&#34;https://inria.hal.science/inria-00514462v2/document&#34;&gt;IVFADC&lt;/a&gt;による量子化と&lt;a href=&#34;https://www.cs.kent.edu/~batcher/sort.pdf&#34;&gt;Batcherのバイトニックソート&lt;/a&gt;を利用したGPUで実行するL2ノルムの近似最近傍探索である。&#xA;実装は、OSSの&lt;a href=&#34;https://github.com/facebookresearch/faiss&#34;&gt;faiss&lt;/a&gt;として公開されている。&lt;/p&gt;&#xA;&lt;!-- クエリの分散表現である密なベクトルの最も近傍にある\\(k\\)個のデータベースあるベクトルを近似的に求める。 --&gt;</description>
     </item>
     <item>
       <title>Conflict-free Replicated Data Types (2011)</title>
@@ -188,7 +237,7 @@
       <link>https://ryotaro.dev/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</link>
       <pubDate>Sat, 23 Sep 2023 10:21:03 -0400</pubDate>
       <guid>https://ryotaro.dev/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1908.10084&#34;&gt;Sentence-BERT&lt;/a&gt;は、テキストをコサイン類似度で意味の類似度を比較できる固定長のベクトルに変換できる。&#xA;&lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt;を2つのテキストを入力し類似度を出力するように訓練できるが、あるテキストに類似するテキストを求めたい場合には組合せ爆発が生じる。&#xA;Sentence-BERTは、類似度が定義されたテキストの組から、類似するテキスト同士を近い位置に写像できるように学習する。&#xA;ネットワークは、BERTを使ったシャムネットワークであり、重みを共有した2つのBERTに1つずつテキストを入力し、両方の出力を目的関数に入力する。&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1908.10084&#34;&gt;Sentence-BERT&lt;/a&gt;は、テキストをコサイン類似度で意味の類似度を比較できる固定長のベクトルに変換できる。&#xA;&lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt;を2つのテキストを入力し類似度を出力するように訓練できるが、あるテキストに類似するテキストを求めたい場合には組合せ爆発が生じる。&#xA;Sentence-BERTは、類似度が定義されたテキストの組から、類似するテキスト同士を近い位置に写像できるように学習する。&#xA;ネットワークは、BERTを使ったシャムネットワークであり、重みを共有した2つのBERTに1つずつテキストを入力し、両方の出力を目的関数に入力する。&lt;/p&gt;&#xA;&lt;!-- Siamese Networkとテキスロ --&gt;&#xA;&lt;!-- 重みを共有するネットワークにBERTを採用したSiamese Networkである。 --&gt;&#xA;&lt;!-- Sentence-BERTは、Sentence-BERTはテキストを --&gt;</description>
     </item>
     <item>
       <title>A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning(2008)</title>
@@ -258,7 +307,7 @@
       <link>https://ryotaro.dev/posts/fibonacci_heaps_and_their_uses_in_improving_network_optimization_algorithms/</link>
       <pubDate>Sat, 24 Jun 2023 10:38:25 -0400</pubDate>
       <guid>https://ryotaro.dev/posts/fibonacci_heaps_and_their_uses_in_improving_network_optimization_algorithms/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://web.eecs.umich.edu/~pettie/matching/Fredman-Tarjan-Fibonacci-Heaps.pdf&#34;&gt;Fibonacci heaps&lt;/a&gt;(F-heaps)は、ダイクストラアルゴリズムの高速化ために開発された木構造の抽象データ型である。&#xA;ノードは、1つの値を保存し、親へのポインタをもつ。&#xA;また、2つのポインタによって、同じ階層にある兄弟ノードからなる双方向リストに組み込まれる。&#xA;ルート階層にあるノードはいずれも親をもたない。&#xA;そのほかにも、削除時に使用されるboolean型の変数がノードごとに1つある。&#xA;ヒープにある要素の数\(n\)に対して、要素を償却時間計算量\(O(\log n)\)でき、また、定数の償却時間計算量でほかの主要な操作を行える。&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://web.eecs.umich.edu/~pettie/matching/Fredman-Tarjan-Fibonacci-Heaps.pdf&#34;&gt;Fibonacci heaps&lt;/a&gt;(F-heaps)は、ダイクストラアルゴリズムの高速化ために開発された木構造の抽象データ型である。&#xA;ノードは、1つの値を保存し、親へのポインタをもつ。&#xA;また、2つのポインタによって、同じ階層にある兄弟ノードからなる双方向リストに組み込まれる。&#xA;ルート階層にあるノードはいずれも親をもたない。&#xA;そのほかにも、削除時に使用されるboolean型の変数がノードごとに1つある。&#xA;ヒープにある要素の数\(n\)に対して、要素を償却時間計算量\(O(\log n)\)でき、また、定数の償却時間計算量でほかの主要な操作を行える。&lt;/p&gt;&#xA;&lt;!-- Fibonacchi heapsは、Vuilleminによる[binomial queues](https://dl.acm.org/doi/pdf/10.1145/359460.359478)を拡張した --&gt;</description>
     </item>
     <item>
       <title>Layer Normalization</title>
@@ -377,7 +426,7 @@
       <link>https://ryotaro.dev/posts/aries/</link>
       <pubDate>Sun, 26 Feb 2023 01:47:13 -0500</pubDate>
       <guid>https://ryotaro.dev/posts/aries/</guid>
-      <description>&lt;p&gt;ARIES(Algorithm for Recovery and Isolation Exploiting Semantics)は、ログ先行書き込み(write-ahead-logging, WAL)によるSAVEPOINTまでの部分的なトランザクションのロールバック、レコード単位のロック、回復のためのアルゴリズムである。&#xA;ログの対象と粒度はページの更新であり、レコードには単調増加するLSN(Log Sequence number)をわりあてる。&#xA;レコードは直前の更新のレコードへのポインタであるPrevLSNも含み、あるレコードから以前の更新のレコードへ遡行できる。&lt;/p&gt;&#xA;&lt;p&gt;ロールバックやリスタート時の更新は、通常時の更新とは別に、保証ログレコード(compensation log record, CLR)に記録される。&#xA;ARIESのCLSに記録された更新はUNDOされない。&#xA;一方、IMS, AS/400, DB2のCLSは、あるトランザクションが何度もロールバックされると、対応するCLSの更新をUNDOすることがある。&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
+      <description>&lt;p&gt;ARIES(Algorithm for Recovery and Isolation Exploiting Semantics)は、ログ先行書き込み(write-ahead-logging, WAL)によるSAVEPOINTまでの部分的なトランザクションのロールバック、レコード単位のロック、回復のためのアルゴリズムである。&#xA;ログの対象と粒度はページの更新であり、レコードには単調増加するLSN(Log Sequence number)をわりあてる。&#xA;レコードは直前の更新のレコードへのポインタであるPrevLSNも含み、あるレコードから以前の更新のレコードへ遡行できる。&lt;/p&gt;&#xA;&lt;p&gt;ロールバックやリスタート時の更新は、通常時の更新とは別に、保証ログレコード(compensation log record, CLR)に記録される。&#xA;ARIESのCLSに記録された更新はUNDOされない。&#xA;一方、IMS, AS/400, DB2のCLSは、あるトランザクションが何度もロールバックされると、対応するCLSの更新をUNDOすることがある。&lt;/p&gt;&#xA;&lt;!-- リカバリ時には、トランザクションをUNDOする前に、永続化されていない更新をログから再実行する。--&gt;</description>
     </item>
     <item>
       <title>Scatter/Gather: A Cluster-based Approach to Browsing Large Document Collections(1992)</title>
@@ -426,7 +475,7 @@
       <link>https://ryotaro.dev/posts/principles_of_transaction_oriented_database_recovery/</link>
       <pubDate>Sun, 29 Jan 2023 15:14:29 -0500</pubDate>
       <guid>https://ryotaro.dev/posts/principles_of_transaction_oriented_database_recovery/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;クラッシュしたRDMSのディスクとバッファの状態をクラッシュ前の状態にもどす手法を体系化する。&#xA;体系は、Propagation, Buffer handling, EOT Processing, Checkpointingの4要素に着目して技術を分類する。&lt;/p&gt;</description>
+      <description>&lt;!---&#xA;RDBMSを障害から復旧する技術はあるが、用語や概念が統一されていない。&#xA;RDBMSのフォールトトレラントを評価するために、そのための技術を体系化する。&#xA;--&gt;&#xA;&lt;p&gt;クラッシュしたRDMSのディスクとバッファの状態をクラッシュ前の状態にもどす手法を体系化する。&#xA;体系は、Propagation, Buffer handling, EOT Processing, Checkpointingの4要素に着目して技術を分類する。&lt;/p&gt;</description>
     </item>
     <item>
       <title>抄訳 Learning to Rank with Nonsmooth Cost Functions (2006)</title>
@@ -594,7 +643,7 @@
       <link>https://ryotaro.dev/posts/the_transaction_concept/</link>
       <pubDate>Sat, 30 Jul 2022 16:29:35 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/the_transaction_concept/</guid>
-      <description>&lt;p&gt;トランザクションのコミットとロールバックの2通りの実装方針を提案している。&#xA;1つは、オブジェクトの値とその値の有効期間を記録し、値の履歴を管理する。&#xA;もうひとつは、ログとロックを利用した実装で、操作時にUNDOログとREDOログを出力する。&#xA;ロールバック時には、ログをもとにコミット開始前の状態にシステムを復元する。&#xA;UNDOやREDOを再実行可能でなければならず、そのためにオブジェクトにしばしばバージョンをつけることがある。&#xA;2つの実装方針は異なるように見えるが、内部の実装は似かよったものになる。&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
+      <description>&lt;p&gt;トランザクションのコミットとロールバックの2通りの実装方針を提案している。&#xA;1つは、オブジェクトの値とその値の有効期間を記録し、値の履歴を管理する。&#xA;もうひとつは、ログとロックを利用した実装で、操作時にUNDOログとREDOログを出力する。&#xA;ロールバック時には、ログをもとにコミット開始前の状態にシステムを復元する。&#xA;UNDOやREDOを再実行可能でなければならず、そのためにオブジェクトにしばしばバージョンをつけることがある。&#xA;2つの実装方針は異なるように見えるが、内部の実装は似かよったものになる。&lt;/p&gt;&#xA;&lt;!--&#xA;https://dspace.mit.edu/handle/1721.1/16279&#xA;--&gt;</description>
     </item>
     <item>
       <title>On Spectral Clustering: Analysis and an algorithm</title>
@@ -2008,7 +2057,7 @@
       <link>https://ryotaro.dev/posts/context2vec/</link>
       <pubDate>Sun, 02 Feb 2020 19:19:46 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/context2vec/</guid>
-      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;文書の文脈の分散表現を獲得するニューラルネットワークのアーキテクチャ&lt;em&gt;context2vec&lt;/em&gt;を提案、評価した論文である。&#xA;アーキテクチャの基本構造は&lt;a href=&#34;https://arxiv.org/pdf/1301.3781.pdf&#34;&gt;CBOW&lt;/a&gt;と同様で、周辺の単語から中心の単語を当てられるようにコーパスをもとにモデルを訓練する。&#xA;CBOWとの違いは、文脈の算出方法にある。&#xA;CBOWは、ウィンドウ内のベクトルの平均値で文脈の分散表現を求める。&#xA;一方、&lt;em&gt;context2vec&lt;/em&gt;では、双方向LSTMの出力をもとに算出する。&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;文書の文脈の分散表現を獲得するニューラルネットワークのアーキテクチャ&lt;em&gt;context2vec&lt;/em&gt;を提案、評価した論文である。&#xA;アーキテクチャの基本構造は&lt;a href=&#34;https://arxiv.org/pdf/1301.3781.pdf&#34;&gt;CBOW&lt;/a&gt;と同様で、周辺の単語から中心の単語を当てられるようにコーパスをもとにモデルを訓練する。&#xA;CBOWとの違いは、文脈の算出方法にある。&#xA;CBOWは、ウィンドウ内のベクトルの平均値で文脈の分散表現を求める。&#xA;一方、&lt;em&gt;context2vec&lt;/em&gt;では、双方向LSTMの出力をもとに算出する。&lt;/p&gt;&#xA;&lt;!-- 分散表現を汎用的に利用できることを想定しており、獲得した分散表現をsentence comp --&gt;</description>
     </item>
     <item>
       <title>NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE(2015)</title>

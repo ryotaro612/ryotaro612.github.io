@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -123,8 +123,35 @@ push operation(s: rep, v:s.e_type);
 SIMULA67は、クラス内の属性と関数がクラスを宣言したブロック内部からアクセスできる。</p>
 <p>抽象データ型と構造化プログラミングは、ソースコードの理解に役立つが、時に実行速度を劣化させる。
 ソースコードの構造化と実行速度のトレードオフはコンパイラが解決すべき課題とみなされている。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+PASCAL
+
+抽象とは操作、データ構造、制御。抽象、プログラミング言語の基本型ではない。
+
+構造化プログラミングの目的は、プログラムの信頼と理解を高めること。
+well structuredであるために、規律をあたえる。規律とは問題が連続するdecmompositionによって解かれること。
+
+abstraction(操作、データ構造、制御).ユーザはどのように実装されたか気にする必要がない。彼の関心に関わらない詳細を無視できる。
+
+構造化プログラミングも高級言語をつかう理由もおなじくプログラマが解きたい問題から解放すること。
+
+目的は、abstractionを構築するアプローチを示すこと。
+
+抽象データタイプは、抽象オブジェクトのクラスを礼儀する。操作だけで定義される。これは定義としてよい。
+operation clusterはadtに適用できる操作のこと。
+
+抽象データ構造で実装すれば、ほとんどが抽象データ構造になる。
+
+functional abstractionどのADTにも所属していない。
+
+polish gen infixをpolishのpostfixにかえる。
+
+オブジェクトの呼出
+operation call
+
+インターフェースの概念はない？
+1つのADTに複数の実装をつくることはできない。
+-->
 <p>論文の<a href="https://dl.acm.org/doi/pdf/10.1145/942572.807045#:~:text=An%20abstract%20data%20type%20defines,characterizing%20operations%20for%20that%20type.">リンク</a></p>
 <h2 id="雑記">雑記</h2>
 <p>抽象データ型の原点になる論文であり、著者は、リスコフ置換原則で知られるリスコフ。

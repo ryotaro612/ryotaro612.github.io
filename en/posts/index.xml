@@ -4,10 +4,66 @@
     <title>Posts on Blanket</title>
     <link>https://ryotaro.dev/en/posts/</link>
     <description>Recent content in Posts on Blanket</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 25 Mar 2024 16:56:51 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 30 Dec 2024 22:45:30 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Origins of Type Theory</title>
+      <link>https://ryotaro.dev/en/posts/origin-of-type-theory/</link>
+      <pubDate>Mon, 30 Dec 2024 22:45:30 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/origin-of-type-theory/</guid>
+      <description>&lt;p&gt;Type theory began as an effort to resolve Russell&amp;rsquo;s Paradox, an issue discovered by Bertrand Russell.&#xA;The precise events that mark the origin of type theory can be a matter of debate.&#xA;Cantor, who developed set theory, independently discovered a similar paradox around the same time. In correspondence with Russell, Frege replied that in his conceptual notation, predicates do not take other predicates as arguments.&#xA;Considering Russell&amp;rsquo;s approach that employs the hierarchical elements in the conceptual notation to resolve the paradox, one might argue that Frege&amp;rsquo;s predicate logic can be seen as an origin of type theory.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Implementation of runc as of November 2024</title>
+      <link>https://ryotaro.dev/en/posts/runc/</link>
+      <pubDate>Sun, 08 Dec 2024 18:51:20 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/runc/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/opencontainers/runc&#34;&gt;runc&lt;/a&gt; is a container runtime with a command-line interface tool.&#xA;Although runc was separated from Docker in 2015, Docker still uses runc because the Docker Engine is built on top of containerd, which incorporates runc.&#xA;In this post, I will explain some Linux features used in the implementation of runc.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Back of Envelope Calculations</title>
+      <link>https://ryotaro.dev/en/posts/back-of-envelope-calculations/</link>
+      <pubDate>Tue, 24 Sep 2024 02:14:15 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/back-of-envelope-calculations/</guid>
+      <description>&lt;p&gt;In system design interviews, back of envelope calculation is a task to estimate required comuputing resources based on the given requirement.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>System design case study: video streaming service</title>
+      <link>https://ryotaro.dev/en/posts/video-streaming/</link>
+      <pubDate>Wed, 18 Sep 2024 01:13:19 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/video-streaming/</guid>
+      <description>&lt;p&gt;Youtube is an example of a video streaming service where users upload, stream, search, and review videos.&#xA;This post presents common designs for processing and hosting uploaded videos across several case studies of video streaming services for system design interviews.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>REALM Retrieval Augmented Language Model Pre Training (2020)</title>
+      <link>https://ryotaro.dev/en/posts/realm-retrieval-augmented-language-model-pre-training/</link>
+      <pubDate>Mon, 27 May 2024 22:28:20 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/realm-retrieval-augmented-language-model-pre-training/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/2002.08909&#34;&gt;REALM&lt;/a&gt; is a language model for open-domain question answering.&#xA;REALM is composed of two components: the neural knowledge retriever and the knowledge-augmented encoder.&#xA;The neural knowledge retriever finds documents related to the input.&#xA;The knowledge-augmented encoder generates responses from the found documents and the input.&#xA;In pre-training, the REALM employs masked language modeling, and it is trained to predict the original tokens that are maked in the given sentences.&#xA;In fine-tuning, the model is trained to produce the answer of the given input.&#xA;The authors experimented the model with Open-domain QA tasks under the assumption that the answer can be found as a contiguous sequence of tokens in some documents.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Distributed GraphLab: a Framework for Machine Learning and Data Mining in the Cloud (2012)</title>
+      <link>https://ryotaro.dev/en/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/</link>
+      <pubDate>Tue, 07 May 2024 11:49:13 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1408.2041&#34;&gt;GraphLab&lt;/a&gt; is a programming model for machine learning and data mining.&#xA;GraphLab takes a direct graph, a set of vertices, and update functions as input.&#xA;Every update function accepts a vertex and returns a set of vertices.&#xA;GraphLab selects a vertex from the set, applies a function to it, and adds the resulting set of vertices back intothe set, repeating this process until the set is empty.&#xA;GraphLab supports parallel execution of update functions on multi-processor machines.&#xA;&lt;a href=&#34;https://arxiv.org/pdf/1408.2041&#34;&gt;Distributed GraphLab&lt;/a&gt; extends GraphLab by distributing parts of a graph across machines that are memory, utilizing &lt;a href=&#34;https://lamport.azurewebsites.net/pubs/chandy.pdf&#34;&gt;Chandy-Lamport&lt;/a&gt;&amp;rsquo;s snapshot algorithm for fault tolerance.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Policy Gradient Methods for Reinforcement Learning With Function Approximation (1999)</title>
+      <link>https://ryotaro.dev/en/posts/policy-gradient-methods-for-reinforcement-learning-with-function-approximation/</link>
+      <pubDate>Sat, 27 Apr 2024 14:49:30 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/policy-gradient-methods-for-reinforcement-learning-with-function-approximation/</guid>
+      <description>&lt;p&gt;Policy gradient methods approximate stochastic policies using function approximators, which are independent of value functions.&#xA;They update the policies according to the gradient of expected reward with respect to the policy parameters.&#xA;&lt;a href=&#34;https://proceedings.neurips.cc/paper/1999/file/464d828b85b0bed98e80ade0a5c43b0f-Paper.pdf&#34;&gt;Policy Gradient Methods for Reinforcement Learning With Function Approximation&lt;/a&gt; shows that a form of policy iteration with function approximation converges to a locally optimal policy.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Spark SQL: Relational Data Processing in Spark (2015)</title>
+      <link>https://ryotaro.dev/en/posts/spark-sql-relational-data-processing-in-spark/</link>
+      <pubDate>Sun, 14 Apr 2024 14:08:04 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/spark-sql-relational-data-processing-in-spark/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://dl.acm.org/doi/10.1145/2723372.2742797&#34;&gt;Spark SQL&lt;/a&gt; provides a DataFrame API, an abstract data type equivalent to a table in a relational database. The DataFrame objects can be manipulated in a manner consistent with relational algebra. For example, the API includes various relational operators such as &lt;code&gt;where&lt;/code&gt; and &lt;code&gt;group by&lt;/code&gt;, similar to data frames in R and Python. The DataFrame objects are evaluated lazily, meaning they are not evaluated until certain output operations, like &lt;code&gt;count&lt;/code&gt;, are performed. Catalyst, an optimizer written in Scala, optimizes these lazy queries and then compiles them into Java bytecode.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Neural Collaborative Filtering (2017)</title>
       <link>https://ryotaro.dev/en/posts/neural-collaborative-filtering/</link>
@@ -48,7 +104,7 @@
       <link>https://ryotaro.dev/en/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/</link>
       <pubDate>Sat, 24 Feb 2024 23:11:51 +0900</pubDate>
       <guid>https://ryotaro.dev/en/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/</guid>
-      <description>&lt;p&gt;For tasks matching input sequences with labels, current state-of-the-art approaches focus on using &lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt; models for pre-training.&#xA;Two common encoding approaches are Cross-encoders (&lt;a href=&#34;https://arxiv.org/abs/1901.08149&#34;&gt;Wolf et al.&lt;/a&gt;), which concatenate input sequences and candidate labels into a single vector, and produce candidate-sensitive embeddings, and Bi-encoders (&lt;a href=&#34;https://arxiv.org/abs/1809.01984&#34;&gt;Mazaré et al.&lt;/a&gt;), which encode input sequences and candidate labels separately.&#xA;In Bi-encoders, the score is the dot-product of the two embeddings.&#xA;While Cross-encoders are more accurate than Bi-encoders, Bi-encoders are faster.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
+      <description>&lt;p&gt;For tasks matching input sequences with labels, current state-of-the-art approaches focus on using &lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt; models for pre-training.&#xA;Two common encoding approaches are Cross-encoders (&lt;a href=&#34;https://arxiv.org/abs/1901.08149&#34;&gt;Wolf et al.&lt;/a&gt;), which concatenate input sequences and candidate labels into a single vector, and produce candidate-sensitive embeddings, and Bi-encoders (&lt;a href=&#34;https://arxiv.org/abs/1809.01984&#34;&gt;Mazaré et al.&lt;/a&gt;), which encode input sequences and candidate labels separately.&#xA;In Bi-encoders, the score is the dot-product of the two embeddings.&#xA;While Cross-encoders are more accurate than Bi-encoders, Bi-encoders are faster.&lt;/p&gt;&#xA;&lt;!-- For the tasks that match an input sequence with a corresponding label, current state-of-the-art approaches focuse on using [BERT](https://arxiv.org/abs/1810.04805) models for pre-training, and two encoding approaches are common: Cross-encoders ([Wolf et al.](https://arxiv.org/abs/1901.08149)) and Bi-encoders ([Mazaré et al.](https://arxiv.org/abs/1809.01984)). --&gt;&#xA;&lt;!-- Cross-encoders concatenate an input seqeuence and a candidate label into a single vector, and produce a candidate-sensitive input embedding from the vector. --&gt;&#xA;&lt;!-- Bi-encoders encde an input sequence and a candidate label separately. --&gt;&#xA;&lt;!-- The score is  the dot-product of the two embeddings. --&gt;&#xA;&lt;!-- While Cross-encoders are more accurate than Bi-encoders, Bi-encoders are faster than the other. --&gt;</description>
     </item>
     <item>
       <title>THE DESIGN OF POSTGRES (1986)</title>
@@ -69,7 +125,7 @@
       <link>https://ryotaro.dev/en/posts/sorting-networks-and-their-applications/</link>
       <pubDate>Sun, 14 Jan 2024 23:32:24 -0500</pubDate>
       <guid>https://ryotaro.dev/en/posts/sorting-networks-and-their-applications/</guid>
-      <description>&lt;p&gt;A sorting network is a network of comparison elements with 2 indegree and 2 outdegree that sorts a list in ascending or descending order.&#xA;A comparison element receives two numbers and outputs the smaller one to one output and the larger one to the other output.&#xA;Odd-even merging networks and Bitonic sorters are sorting networks proposed in &lt;a href=&#34;https://www.cs.kent.edu/~batcher/sort.pdf&#34;&gt;Sorting networks and their applications&lt;/a&gt;.&#xA;They can sort \(2^p\) elements with \(\ln (\frac{1}{2})p(p+1)\) steps.&#xA;Their processing is independent of the values and is easy to run on the GPU because it does not change the output location in memory based on input data values.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
+      <description>&lt;p&gt;A sorting network is a network of comparison elements with 2 indegree and 2 outdegree that sorts a list in ascending or descending order.&#xA;A comparison element receives two numbers and outputs the smaller one to one output and the larger one to the other output.&#xA;Odd-even merging networks and Bitonic sorters are sorting networks proposed in &lt;a href=&#34;https://www.cs.kent.edu/~batcher/sort.pdf&#34;&gt;Sorting networks and their applications&lt;/a&gt;.&#xA;They can sort \(2^p\) elements with \(\ln (\frac{1}{2})p(p+1)\) steps.&#xA;Their processing is independent of the values and is easy to run on the GPU because it does not change the output location in memory based on input data values.&lt;/p&gt;&#xA;&lt;!-- https://developer.nvidia.com/gpugems/gpugems2/part-vi-simulation-and-numerical-algorithms/chapter-46-improved-gpu-sorting --&gt;</description>
     </item>
     <item>
       <title>Billion Scale Similarity Search With GPUs (2017)</title>
@@ -90,7 +146,7 @@
       <link>https://ryotaro.dev/en/posts/dense-passage-retrieval-for-open-domain-question-answering/</link>
       <pubDate>Sat, 30 Dec 2023 00:42:11 -0500</pubDate>
       <guid>https://ryotaro.dev/en/posts/dense-passage-retrieval-for-open-domain-question-answering/</guid>
-      <description>&lt;p&gt;Open-domain question answering (QA) involves answering fact-based questions using documents.&#xA;An open-domain QA system can be divided into two components: one that retrieves relevant passages and another that extracts the answer spans from those passages &lt;a href=&#34;https://arxiv.org/abs/1704.00051&#34;&gt;(Chen et al., 2017)&lt;/a&gt;.&#xA;While traditional approaches use sparse vector space models like BM25 for the retrieval step, &lt;a href=&#34;https://aclanthology.org/2020.emnlp-main.550/&#34;&gt;Dense Passage Retrieval for Open-Domain Question Answering&lt;/a&gt; shows that dense representations can also be practically implemented using dense representations.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;The embeddings are learned from the training dataset, optimizing for maximizing inner products between question and relevant passage vectors.&#xA;The training is essentially metric learning, and each question needs irrelvant passages.&#xA;In experiments, it was found that utilizing both the top passages returned by BM25, excluding the answer, and positive passages paired with other questions as negatives yielded best performance.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
+      <description>&lt;p&gt;Open-domain question answering (QA) involves answering fact-based questions using documents.&#xA;An open-domain QA system can be divided into two components: one that retrieves relevant passages and another that extracts the answer spans from those passages &lt;a href=&#34;https://arxiv.org/abs/1704.00051&#34;&gt;(Chen et al., 2017)&lt;/a&gt;.&#xA;While traditional approaches use sparse vector space models like BM25 for the retrieval step, &lt;a href=&#34;https://aclanthology.org/2020.emnlp-main.550/&#34;&gt;Dense Passage Retrieval for Open-Domain Question Answering&lt;/a&gt; shows that dense representations can also be practically implemented using dense representations.&lt;/p&gt;&#xA;&lt;!-- Open-domain question answering (QA) is a task that answers factorid questions using documents. --&gt;&#xA;&lt;!-- If the answers are spans appearing in passages of the documents, an open-domain QA system can be decomposed into 2 components. --&gt;&#xA;&lt;!-- The first component retrieves a small set of passages relevant to the question, and the second one extract the span from the filter set [(Chen et al., 2017)](https://arxiv.org/abs/1704.00051). --&gt;&#xA;&lt;!-- While traditional approaches use sparse vector space models such as BM25 for the first module, [Dense Passage Retrieval for Open-Domain Question Answering](https://aclanthology.org/2020.emnlp-main.550/) demonstrates that the first retrieval step can be implemented using dense representations. --&gt;&#xA;&lt;p&gt;The embeddings are learned from the training dataset, optimizing for maximizing inner products between question and relevant passage vectors.&#xA;The training is essentially metric learning, and each question needs irrelvant passages.&#xA;In experiments, it was found that utilizing both the top passages returned by BM25, excluding the answer, and positive passages paired with other questions as negatives yielded best performance.&lt;/p&gt;&#xA;&lt;!-- The embeddings are learned from the questions and passages in a training dataset, and optimized for maximizing inner products of the question and relevant passage vectors. --&gt;&#xA;&lt;!-- The training is essentially metric learning, and each question needs irrelvant passages. --&gt;&#xA;&lt;!-- Using both the top passages returned by BM25 except the answer and positive passages paired with other questions as negatives outperformed in experiments. --&gt;</description>
     </item>
     <item>
       <title>CAP Twelve Years Later: How the &#34;Rules&#34; Have Changed (2012)</title>

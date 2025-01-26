@@ -4,10 +4,87 @@
     <title>Tags on Blanket</title>
     <link>https://ryotaro.dev/en/tags/</link>
     <description>Recent content in Tags on Blanket</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 25 Mar 2024 16:56:51 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 30 Dec 2024 22:45:30 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Type Theory</title>
+      <link>https://ryotaro.dev/en/tags/type-theory/</link>
+      <pubDate>Mon, 30 Dec 2024 22:45:30 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/type-theory/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Container</title>
+      <link>https://ryotaro.dev/en/tags/container/</link>
+      <pubDate>Sun, 08 Dec 2024 18:51:20 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/container/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Runc</title>
+      <link>https://ryotaro.dev/en/tags/runc/</link>
+      <pubDate>Sun, 08 Dec 2024 18:51:20 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/runc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Back of the Envelope Estimation</title>
+      <link>https://ryotaro.dev/en/tags/back-of-the-envelope-estimation/</link>
+      <pubDate>Tue, 24 Sep 2024 02:14:15 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/back-of-the-envelope-estimation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>System Design Interview</title>
+      <link>https://ryotaro.dev/en/tags/system-design-interview/</link>
+      <pubDate>Tue, 24 Sep 2024 02:14:15 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/system-design-interview/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Retrieval Augmented Generation</title>
+      <link>https://ryotaro.dev/en/tags/retrieval-augmented-generation/</link>
+      <pubDate>Mon, 27 May 2024 22:28:20 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/retrieval-augmented-generation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Distributed System</title>
+      <link>https://ryotaro.dev/en/tags/distributed-system/</link>
+      <pubDate>Tue, 07 May 2024 11:49:13 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/distributed-system/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Policy Gradient Method</title>
+      <link>https://ryotaro.dev/en/tags/policy-gradient-method/</link>
+      <pubDate>Sat, 27 Apr 2024 14:49:30 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/policy-gradient-method/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reinforcement Learning</title>
+      <link>https://ryotaro.dev/en/tags/reinforcement-learning/</link>
+      <pubDate>Sat, 27 Apr 2024 14:49:30 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/reinforcement-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spark</title>
+      <link>https://ryotaro.dev/en/tags/spark/</link>
+      <pubDate>Sun, 14 Apr 2024 14:08:04 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/spark/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SQL</title>
+      <link>https://ryotaro.dev/en/tags/sql/</link>
+      <pubDate>Sun, 14 Apr 2024 14:08:04 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/sql/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Collaborative Filtering</title>
       <link>https://ryotaro.dev/en/tags/collaborative-filtering/</link>
@@ -62,13 +139,6 @@
       <link>https://ryotaro.dev/en/tags/rdbms/</link>
       <pubDate>Sat, 17 Feb 2024 17:44:38 +0900</pubDate>
       <guid>https://ryotaro.dev/en/tags/rdbms/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Retrieval Augmented Generation</title>
-      <link>https://ryotaro.dev/en/tags/retrieval-augmented-generation/</link>
-      <pubDate>Sat, 27 Jan 2024 16:44:55 -0500</pubDate>
-      <guid>https://ryotaro.dev/en/tags/retrieval-augmented-generation/</guid>
       <description></description>
     </item>
     <item>

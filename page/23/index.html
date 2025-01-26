@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-	<meta name="generator" content="Hugo 0.123.7">
+	<meta name="generator" content="Hugo 0.131.0">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -18,7 +18,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -85,6 +85,95 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/extensible_effects/">論文メモ Extensible Effects An Alternative to Monad Transformers</a></h3>
+        <div class="summary"><p>モナド変換子にかわるモナドの合成方法Extensible Effectsの実装を示す。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">August 23, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/when_and_why_your_code_starts_to_smell_bad/">論文メモ When and Why Your Code Starts to Smell Bad</a></h3>
+        <div class="summary"><p>200件のAndroid, Apache, EclipseのOSSプロジェクトのコミット履歴を調査し、不吉な匂いが生じる原因と理由を調査した。
+常識では、改修の繰返しによって匂いのない既存のコードに匂いが生じると考えられているが、これに反して、不吉な匂いのするコードのほとんどが作成時点で不吉な匂いを出していたことを明らかにした。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">August 21, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/extracting_and_composing_robust_features_with_denoising_autoencoders/">論文メモ Extracting and Composing Robust Features with Denoising Autoencoders</a></h3>
+        <div class="summary"><p>ノイズを含む入力からノイズのない入力を復元するように学習すると、次元圧縮の性能を向上できることを示した。
+層の深いautoencoderを学習するには、良い初期値を与えなければらないことが知られていた。
+<a href="https://www.cs.toronto.edu/~hinton/science.pdf">先行研究</a>は、各中間層を個別に学習することで、良い初期値を求められることを示した。
+具体的には、各中間層について、前の層の入力から次の層の出力を推定できるよう個別に学習させる。
+一方で、何が良い初期値をなすのかは知られていなかった。
+表題の論文は、その条件は入力に含まれるノイズに対して頑強であると仮説をおき、ノイズを除去できるように目的関数を設定することで、次元圧縮の性能が上がることを示し、仮説の正しさを確かめた。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">August 21, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/statistical_errors_in_software_engineering_experiments/">論文メモ Statistical Errors in Software Engineering Experiments: A Preliminary Literature Review</a></h3>
+        <div class="summary"><p>ソフトウェア工学の実験において、統計をもちいた手法がどれだけ誤用されているかを調査した。
+薬学や心理学の実験では、統計による手法が時に誤って使われていることが知られている。
+一方で、ソフトウェア工学では、どの程度誤用がみられるのかは分かっていない。
+著者らは、2006から2015年のソフトウェア工学のトップ会議ICSEで発表された論文770件から、実験や評価に統計的手法をもちいたものを選び、10の観点からなる判断基準で、手法の妥当性を評価した。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">August 14, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/semi-supervised_learning_with_ladder_networks/">論文メモ Semi Supervised Learning with Ladder Networks</a></h3>
+        <div class="summary"><p>Ladder Networkを半教師あり学習に応用する。
+Ladder Networkは、2015年に、著者の一人Valpolaによって教師なし学習のためのネットワークとして発表されている<a href="https://arxiv.org/abs/1411.7783">*</a>。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">August 14, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/an_empirical_study_on_program_failures_on_deep_learning_jobs/">論文メモ An Empirical Study On Program Failures On Deep Learning Jobs</a></h3>
+        <div class="summary"><p>Microsoftの社内では深層学習のプラットフォームPhillyが運用されており、そこで起きた4960件のジョブの失敗原因を調査した。
+調査では、失敗の原因を20のカテゴリに分類し、カテゴリごとに失敗の件数を集計した。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">August 7, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/">概要 Improving Language Understanding by Generative Pre-Training</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>GPTの略称で知られる教師なしの事前学習である。
+評価実験では、全結合層を1層追加したファインチューニングで、12の自然言語処理タスクのうち9つについて、当時のSoTAを上まわる性能を発揮した。
+ネットワークには<a href="https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">Transformer</a>のデコーダー部分が使われている。
+ファインチューニング時には、事前学習の効果を生かすために、特徴の入力をモデルのアーキテクチャに合わせ、アーキテクチャの変更を最小限におさえる。
+推論タスクであれば前提や仮定、テキストの類似性判定であれば比較する2つのテキストといった異種の特徴をデリミタで連結した系列を作り、モデルに入力する。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/">
+		#言語モデル
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">August 7, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/a_tale_from_the_trenches/">論文メモ A Tale from the Trenches: Cognitive Biases and Software Development</a></h3>
         <div class="summary"><p>エンジニア10人の普段の開発状況から、認知バイアスが開発者にあたえる影響やバイアスの頻度、対策方法について調査した。</p></div>
         <div class="article-footer">
@@ -117,84 +206,6 @@ Factorizatiom Machineは、両者の利点をそなえており、疎な任意�
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/deep_learning_recommendation_model_for_personalization_and_recommendation_systems/">論文メモ Deep Learning Recommendation Model for Personalization and Recoomendation Systems</a></h3>
-        <div class="summary"><p>協調フィルタリングのような推薦システムのためのネットワークアーキテクチャを提案した。
-特徴の疎・密にかかわらず入力として与えることができる。
-論文の例題では、個人の選好を示すアイテムとユーザからなる疎な行列を受け取り、ユーザがアイテムをクリックする確率を推定するタスクが使われている。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">July 24, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/explaining_pair_programming_session_dynamics_from_knowledge_gaps/">論文メモ Explaining Pair Programming Session Dynamics from Knowledge Gaps</a></h3>
-        <div class="summary"><p>ペアプログラミングによる知識移転の効果を知るために、9社の社員からなる26組のペアプログラミングを、グラウンデッド・セオリーで調査した。
-従来は、熟練度合いで開発者を分けて、ペアプログラミングを分析・評価することが多い。
-今回の調査では、システムの要件・仕様のようなシステム固有の知識と、言語、デザインパターン、開発ツールなどの開発全般の知識の2軸で、開発者と知識を分ける重要性を定性的に示した。
-一方がシステム固有の知識に欠け、他方が開発全般の知識に欠けるときに、最も知識の伝達が活発だった。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">July 17, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/bag_of_trics_for_efficient_text_classification/">論文メモ Bag of Tricks for Efficient Text Classification</a></h3>
-        <div class="summary"><p>2016年における分類のSOTAと互角の精度でありながら、格段に高速に学習、推定可能なモデルを<code>fastText</code>で構築できることを示した。
-評価実験には、<a href="http://projects.dfki.uni-kl.de/yfcc100m/">YFCC100M</a>のキャプションとタイトルからタグを予測するタスク、8つのデータセットによる感情分析が採用された。
-タグの予測では、312116個のユニークなタグをつかい、大きなクラス数でもモデルがうまくはたらくことが確かめられた。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">July 17, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/recognizing_developers_emotions_while_programming/">論文メモ Recognizing Developers&#39; Emotions while Programming</a></h3>
-        <div class="summary"><p>23人の被検者に30分間のプログラミングをさせ、その間5分ごとに進捗と感情を自己申告してもらい、その結果から感情と進捗の関係を調査した。
-作業後にインタービューを実施し、感情が変化する要因と良くない感情への対処法をヒアリングした。
-感情を測定するため最低限必要な非侵襲的器具を調べるために、被検者には、脳波、皮膚電位、脈波、心拍数を測定する器具を装着して開発してもらった。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">July 11, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/pytorch_an_imperative_style_high_performance_deep_learning_library/">論文メモ Pytorch: An Imperative Style, High-Performance Deep Learning Library</a></h3>
-        <div class="summary"><p>Pytorchの使い勝手と実行速度について解説した論文である。
-ここでの使い勝手は、命令型かつPythonらしいコードでPytorchのAPIを呼びだせることを意味する。
-Pytorchは、4つの設計原則として、PythonらしいAPI、機械学習の複雑な処理をPytorch内に隠蔽する、使い勝手のために過度にパフォーマンスを犠牲にしない、完璧な解決策よりも実装の単純さを重視する、をかかげる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">July 11, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/here_we_go_again/">論文メモ Here We Go Again: Why Is It Difficult for Developers to Learn Another Programming Language?</a></h3>
-        <div class="summary"><p>既知のプログラミング言語の知識は新しい言語を覚える役に立つ。
-一方で、新しい言語の学習の妨げにもなることをStack Overflowの質問とプログラマへのインタビューで明らかにした。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">July 4, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/automatic_differentiation_in_pytorch/">論文メモ Automatic differentiation in Pytorch</a></h3>
-        <div class="summary"><p>Pytorchの自動微分を解説したプレプリントのショートペーパである。
-Pytorchの自動微分特徴として、in-placeアルゴリズム、微分の導出に不要な計算を省く仕組みのあるテープ、C++による実装をあげている。
-<a href="https://pytorch.org/blog/pytorch-0_4_0-migration-guide/">0.4.0での仕様変更</a>によって<code>Tensors</code>と<code>Variables</code>がマージされたことや<code>volatile</code>が非推奨になったことをふまえていない。
-読むときは、以上の点をはじめとする現在のAPIとの差異に注意する必要がある。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">July 4, 2020</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -219,7 +230,7 @@ Pytorchの自動微分特徴として、in-placeアルゴリズム、微分の�
       </a>
     </li>
     <li>
-      <a href="/page/31/">
+      <a href="/page/32/">
 	<i class="fa-solid fa-xl fa-angles-right"></i>
       </a>
     </li>

@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
     
@@ -110,23 +110,23 @@ A join semilattice is a partial order \(\le\) with a least upper bound \(\sqcup\
 It follows that \(\sqcup\) is commutative \((s\sqcup s&rsquo; = s&rsquo;\sqcup s)\), idempotent \((s \sqcup s = s)\) and associative \(((s\sqcup s&rsquo;)\sqcup s&rsquo;&rsquo; = s\sqcup (s&rsquo; \sqcup s&rsquo;&rsquo;))\).
 Merging state \(s\) with remote state \(s&rsquo;\) computes the least upper bound of the two states, i.e., \(s\bullet m(s&rsquo;) = s\sqcup s&rsquo;\), and any states are monotonically non-decreasing across updates, i.e., \(s\le s\bullet u\).
 In that case, correct replicas that have delivered the same updates have equivalent state.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- Considering replicated objects distributed over processes interconnected by an asynchronous network, an update at a replica without synchronization can cause conflict when it is sent to other replicas. -->
+<!-- [Conflict-free Replicated Data Types](https://pages.lip6.fr/Marc.Shapiro/papers/RR-7687.pdf) (CRDTs) is a data structure whose states forms join semilattice and are monotonically nonotonically non-decreasing across updates. -->
+<!-- The replicas of CRDTs that have delivered the same updates eventually reach the same state if clents stop submitting updates. -->
+<!-- <\!--more-\-> -->
+<!-- The processes are assumed to be non-byzantine and may crash silently. -->
+<!-- A crashed process may remain crashed forever, or may recover. -->
+<!-- A client of the object may read the state of the object via query \\(q\\) and modify it via update \\(u\\). -->
+<!-- Merge \\(m\\) merges the state from a remote replica. -->
+<!-- The queries don't have side-effect. -->
+<!-- The \\(k^{\text{th}}\\) method execution at replica \\(i\\) will be noted \\(f^k\_i(a)\\), where \\(f\\)  is either \\(q,\ u\ \\) or \\(m\\), and \\(a\\) denotes the arguments. -->
+<!-- Replica \\(i\\) has initial state \\(s^0\_i\\), and \\(f^k\_i(a)\\) transits \\(s^{k-1}\_i\\) to \\(s^k\_i\\). This transition is noted as \\(s^{k-1}\_i\bullet f^k\_i(a)=s\_i^k\\). -->
+<!-- CRDTs can be defined in two ways: State-based Convergent Replicated Data Type (CvRDT) and Op-based Commutative Replicated Data Type (CmRDT). -->
+<!-- CvRDTs adn CmRDTs are equivanet, and any CvRDTs can be emulated by CmRDTs, and vice versa. -->
+<!-- CvRDT uses merge methods while CmRDT does not. -->
+<!-- A join semilattice is a partial order \\(\le\\) equipped with a least upper bound \\(\sqcup\\) for all pairs of states \\((s, s')\\). -->
+<!-- It follows that \\(\sqcup\\) is commutative \\(s\sqcup s' = s'\sqcup s\\), idempotent \\((s \sqcup s = s)\\) and associative \\((s\sqcup s')\sqcup s'' = s\sqcup (s' \sqcup s'')\\). -->
+<!-- Merging state \\(s\\) with remote state \\(s'\\) computes the least upper bound of the two states, i.e., \\(s\bullet m(s') = s\sqcup s'\\), and state is monotonically non-decreasing across updates, i.e., \\(s\le s\bullet u\\), then correct replicas that have delivered the same updates have equivalent state. -->
 
   </div>
 </main>

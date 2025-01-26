@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -124,14 +124,14 @@ FrontendとExecutorは、共有メモリ空間にあるキューを介して、�
 Frontendはクエリを実行計画に相当するAdaptive planにまで解析したあと、adaptive planをQuery Plansに入力する。
 Executorは、クエリの結果をOutput Queueに追加し、Listnerに結果を返す。
 Wrapperは、ストリーミングデータを受信するプロセスであり、ブロッキング操作やディスクへのアクセスを避けつつ、Executorにデータを供給する。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- 次々に到着するデータを遅滞なく処理できる事前に登録したクエリを到着したデータに適用しなければならない。 -->
+<!-- RDBMSであればストレージにあるデータの統計情報をもとに処理を最適化すればよいが、ストリーミングデータの場合、データの到着が不安定 -->
 <p><a href="https://cs.brown.edu/courses/cs227/archives/2015/papers/ss-telegraphcq.pdf">画像</a>は論文中より引用しました。</p>
 <h2 id="雑記">雑記</h2>
 <p>RDBMSは高機能なストレージ機能とクエリ(=処理)の機能を提供し、TelegraphCQはPostgreSQLを改造することで両方の機能をそなえる。
 一方、今日のストリーミングデータの処理においては、データの保存にKafkaのようなキューイングシステム、その処理にSparkやStormのようなストレージ機能のない分散処理フレームワークを使用し、2つの機能を別々のミドルウェアにまかせている。
 DMBSを改造すればドメイン特化のデータベースを実装できると期待しTelegraphCQが開発されたは、今日からみれば、まだOne Size Fits Allの考えがどこか残っていたかのように感じる。</p>
-<!-- raw HTML omitted -->
+<!-- [Red Book第5版](http://www.redbook.io/all-chapters.html)よれば、 -->
   </div>
 </main>
 

@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -110,8 +110,17 @@ K近傍の少数クラスのサンプルをランダムに1つ\(\boldsymbol{x}_{
 <p>$$
 \boldsymbol{s}_i = \boldsymbol{x}_i + (\boldsymbol{z_{zi}}-\boldsymbol{x}_i)\times \lambda
 $$</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+不均衡データに対処する
+オーバーサンプリングによる不均衡データの予測性能を向上するアローチ
+重みつき分布をつかう。
+学習が難しいサンプルほど、オーバーサンプリングする数を増やす
+これにより、クラスの不均衡によるバイアスをなくす。
+決定公開を分類の難しい方向にうつす。
+
+どうやって学習の難しさを定義するのか？
+不均衡だとどうしてバイアスを生むのか
+-->
 <p>論文の<a href="https://ieeexplore.ieee.org/document/4633969">リンク</a></p>
 <h2 id="雑記">雑記</h2>
 <p>少数クラスと多数クラスの境界面に多くのサンプルが生成されるため、少数クラスが期待よりも予測されがちな場合は避けたほうがよさそう。</p>

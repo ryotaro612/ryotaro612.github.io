@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.ac39fd9b1999326c116cd551ce035fd4eaf2801f6bfc13a90241a1d9275b21ec.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>2024年11月のruncの実装</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://ryotaro.dev/about">About</a></li>
+          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+	  
+	  <li><a href="https://ryotaro.dev/en/posts/runc/">en</a></li>
+	  
+        </ul>	
+	<ul>
+          
+          <li>
+            <a href="https://github.com/ryotaro612">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="https://www.linkedin.com/in/ryotaro612/">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          
+          <li>
+	    <a href="https://ryotaro.dev/index.xml">
+	      <i class="fas fa-rss"></i>
+            </a>
+	  </li>
+          
+        </ul>	
+      </nav>
+    </header>
+    
+<main>
+  <h1>2024年11月のruncの実装</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/runc/">
+	#Runc
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/container/">
+	#Container
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">December 8, 2024</span>    
+  <div>
+    <p>runcは抽象度の低いコンテナのランタイムであると同時に、そのランタイムを操作するCLIでもある。
+もともとruncはdockerの一部だったが、2015年にdockerからのスピンアウトされた。
+containerdがruncでコンテナの操作するので、今でもdockerはruncでコンテナを操作していることになる。
+この記事は、runcの実装に使われているLinuxの機能を紹介する。</p>
+<h2 id="runcの使い方">runcの使い方</h2>
+<p><code>runc</code>でコンテナを起動する場合、イメージはいらず、コンテナの<code>/</code>以下がホストにあればよい。
+たとえば、次のコマンドでコンテナを起動できる。</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mkdir rootfs
+</span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"># copy the / in the busybox to rootfs</span>
+</span></span><span style="display:flex;"><span>docker <span style="color:#89dceb">export</span> <span style="color:#cba6f7">$(</span>docker create busybox<span style="color:#cba6f7">)</span> | tar -C rootfs -xvf -
+</span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"># generate ./config.json</span>
+</span></span><span style="display:flex;"><span>runc spec
+</span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"># create the container and attach to the launched /bin/sh in the container</span>
+</span></span><span style="display:flex;"><span>runc --root /tmp/runc run
+</span></span></code></pre></div><p>コンテナを起動する前にbusyboxから<code>/</code>をローカルにコピーし、コンテナ内の<code>/bin/sh</code>にアタッチしている。</p>
+<h2 id="runcのrunの実装">runcのrunの実装</h2>
+<p><code>runc</code>には複数のサブコマンドがあり、<code>run</code>はコンテナを作り、そのコンテナを起動する。
+前述のコマンドを実行するときの<code>runc</code>の様子を以下の図示する。
+<code>run</code>は非同期に<code>runc init</code>コマンドを実行し、このプロセスが<code>execve</code>でコンテナのPID 1のプロセスになる。
+<img alt="overview" src="/runc/overview.drawio.svg"></p>
+<h3 id="ホストとコンテナ間の標準io">ホストとコンテナ間の標準IO</h3>
+<p>ホストとコンテナ間の標準IOの通信は疑似端末(<a href="https://man7.org/linux/man-pages/man7/pty.7.html"><code>pty</code></a>)で実装されている。
+<code>pty</code>の実体は、一方の書き込みが他方の読み込みになる双方向通信可能なキャラクターデバイスのペアであり、ペアの要素はマスターとスレーブとよばれる。
+マスターは<code>/dev/ptmx</code>であり、このファイルを開くと<code>/dev/pts</code>の下にキャラクターデバイスがスレーブとして作られる。</p>
+<!-- ホストはマスターから、コンテナはスレーブからメッセージを読み書きする。 -->
+<p><code>init</code>が、マスターとスレーブを作り、<a href="https://man7.org/linux/man-pages/man2/socketpair.2.html"><code>socketpair</code></a>で作られたソケットの組を介してマスターをホストに送る。
+ソケットの作るのはホストであり、<a href="https://github.com/opencontainers/runc/blob/7cb363254b69e10320360b63fb73e0ffb5da7bf2/utils_linux.go#L107"><code>setupIO</code>関数</a>の以下の箇所でソケットの組を作る。</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>parent, child, err <span style="color:#89dceb;font-weight:bold">:=</span> utils.<span style="color:#89b4fa">NewSockPair</span>(<span style="color:#a6e3a1">&#34;console&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#cba6f7">if</span> err <span style="color:#89dceb;font-weight:bold">!=</span> <span style="color:#fab387">nil</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">return</span> <span style="color:#fab387">nil</span>, err
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><code>child</code>ソケットを<code>init</code>に渡すために、<code>run</code>はソケットを<code>init</code>を実行する<a href="https://pkg.go.dev/os/exec@go1.24rc1#Cmd"><code>Cmd</code></a>構造体の<code>ExtraFiles</code>の配列に入れる。
+<code>Cmd</code>で呼びだされたプロセスは<code>ExtraFiles</code>で指定されたファイルを開いた状態で開始し、<code>ExtraFiles</code>の<code>i</code>番目の要素のファイル記述子は<code>3+i</code>になる。
+<a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/libcontainer/container_linux.go#L519">newParentProcess</a>関数の以下の箇所で、<code>child</code>ソケットに束縛された<code>p.ConsoleSocket</code>を<code>ExtraFiles</code>に入れ、環境変数<code>_LIBCONTAINER_CONSOLE</code>で<code>init</code>プロセスにファイル記述子を伝える。</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>cmd.ExtraFiles = <span style="color:#89dceb">append</span>(cmd.ExtraFiles, p.ExtraFiles<span style="color:#89dceb;font-weight:bold">...</span>)
+</span></span><span style="display:flex;"><span><span style="color:#cba6f7">if</span> p.ConsoleSocket <span style="color:#89dceb;font-weight:bold">!=</span> <span style="color:#fab387">nil</span> {
+</span></span><span style="display:flex;"><span>	cmd.ExtraFiles = <span style="color:#89dceb">append</span>(cmd.ExtraFiles, p.ConsoleSocket)
+</span></span><span style="display:flex;"><span>	cmd.Env = <span style="color:#89dceb">append</span>(cmd.Env,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e3a1">&#34;_LIBCONTAINER_CONSOLE=&#34;</span><span style="color:#89dceb;font-weight:bold">+</span>strconv.<span style="color:#89b4fa">Itoa</span>(stdioFdCount<span style="color:#89dceb;font-weight:bold">+</span><span style="color:#89dceb">len</span>(cmd.ExtraFiles)<span style="color:#89dceb;font-weight:bold">-</span><span style="color:#fab387">1</span>),
+</span></span><span style="display:flex;"><span>	)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><code>init</code>は、<code>/dev/ptmx</code>を開き、以下の<a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/libcontainer/utils/cmsg.go#L116"><code>SendRawFd</code></a>関数の中で、マスターのファイル記述子を<code>child</code>ソケットに書き込む。</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">// SendRawFd sends a specific file descriptor over the given AF_UNIX socket.
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"></span><span style="color:#f38ba8">func</span> <span style="color:#89b4fa">SendRawFd</span>(socket <span style="color:#89dceb;font-weight:bold">*</span>os.File, msg <span style="color:#f38ba8">string</span>, fd <span style="color:#f38ba8">uintptr</span>) <span style="color:#f38ba8">error</span> {
+</span></span><span style="display:flex;"><span>	oob <span style="color:#89dceb;font-weight:bold">:=</span> unix.<span style="color:#89b4fa">UnixRights</span>(<span style="color:#89dceb">int</span>(fd))
+</span></span><span style="display:flex;"><span>	<span style="color:#cba6f7">return</span> unix.<span style="color:#89b4fa">Sendmsg</span>(<span style="color:#89dceb">int</span>(socket.<span style="color:#89b4fa">Fd</span>()), []<span style="color:#89dceb">byte</span>(msg), oob, <span style="color:#fab387">nil</span>, <span style="color:#fab387">0</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><code>init</code>はスレーブを以下の<a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/libcontainer/console_linux.go#L28"><code>dupStdio</code></a>関数で標準IOとエラー出力に複製する。</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">// dupStdio opens the slavePath for the console and dups the fds to the current
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">// processes stdio, fd 0,1,2.
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"></span><span style="color:#f38ba8">func</span> <span style="color:#89b4fa">dupStdio</span>(slavePath <span style="color:#f38ba8">string</span>) <span style="color:#f38ba8">error</span> {
+</span></span><span style="display:flex;"><span>	fd, err <span style="color:#89dceb;font-weight:bold">:=</span> unix.<span style="color:#89b4fa">Open</span>(slavePath, unix.O_RDWR, <span style="color:#fab387">0</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#cba6f7">if</span> err <span style="color:#89dceb;font-weight:bold">!=</span> <span style="color:#fab387">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#cba6f7">return</span> <span style="color:#89dceb;font-weight:bold">&amp;</span>os.PathError{
+</span></span><span style="display:flex;"><span>			Op:   <span style="color:#a6e3a1">&#34;open&#34;</span>,
+</span></span><span style="display:flex;"><span>			Path: slavePath,
+</span></span><span style="display:flex;"><span>			Err:  err,
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#cba6f7">for</span> _, i <span style="color:#89dceb;font-weight:bold">:=</span> <span style="color:#cba6f7">range</span> []<span style="color:#f38ba8">int</span>{<span style="color:#fab387">0</span>, <span style="color:#fab387">1</span>, <span style="color:#fab387">2</span>} {
+</span></span><span style="display:flex;"><span>		<span style="color:#cba6f7">if</span> err <span style="color:#89dceb;font-weight:bold">:=</span> unix.<span style="color:#89b4fa">Dup3</span>(fd, i, <span style="color:#fab387">0</span>); err <span style="color:#89dceb;font-weight:bold">!=</span> <span style="color:#fab387">nil</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#cba6f7">return</span> err
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#cba6f7">return</span> <span style="color:#fab387">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>また、<code>init</code>は次の<a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/libcontainer/system/linux.go#L120"><code>Setctty</code></a>関数でスレーブを制御端末にする。</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f38ba8">func</span> <span style="color:#89b4fa">Setctty</span>() <span style="color:#f38ba8">error</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#cba6f7">if</span> err <span style="color:#89dceb;font-weight:bold">:=</span> unix.<span style="color:#89b4fa">IoctlSetInt</span>(<span style="color:#fab387">0</span>, unix.TIOCSCTTY, <span style="color:#fab387">0</span>); err <span style="color:#89dceb;font-weight:bold">!=</span> <span style="color:#fab387">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#cba6f7">return</span> err
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#cba6f7">return</span> <span style="color:#fab387">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>他方、<code>run</code>プロセスは<a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/tty.go#L102"><code>recvtty</code></a>関数で
+<code>recvmsg</code>で受け取ったマスターを<code>epoll</code>で監視し、<code>recvtty</code>関数の以下のコードで、マスターから読みとったストリームを標準出力にコピーし、ホストの標準出力をマスターにコピーする。</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#cba6f7">go</span> <span style="color:#f38ba8">func</span>() { _ = epoller.<span style="color:#89b4fa">Wait</span>() }()
+</span></span><span style="display:flex;"><span><span style="color:#cba6f7">go</span> <span style="color:#f38ba8">func</span>() { _, _ = io.<span style="color:#89b4fa">Copy</span>(epollConsole, os.Stdin) }()
+</span></span><span style="display:flex;"><span>t.wg.<span style="color:#89b4fa">Add</span>(<span style="color:#fab387">1</span>)
+</span></span><span style="display:flex;"><span><span style="color:#cba6f7">go</span> t.<span style="color:#89b4fa">copyIO</span>(os.Stdout, epollConsole)
+</span></span></code></pre></div><h3 id="名前空間">名前空間</h3>
+<p>コンテナ同士やホストとコンテナ間でネットワークやマウントポイントなどのリソースを隔離、共有する機能は、名前空間で実装されている。
+おなじ名前空間にあるプロセス同士で端末のリソースを共有し、プロセスは別の名前空間で消費されるリソースの影響を受けない。
+プロセスからは、おなじ名前空間にあるプロセスだけで端末のリソースを占有しているようにみえる。
+たとえば、2つの名前空間のプロセスに同じPIDが割りあてることができる。</p>
+<p>プロセスの名前空間を変更するAPIに<code>clone</code>, <code>setns</code>, <code>unshare</code>がある。
+<code>clone</code>は新しいプロセスを作る関数であり、新しい名前空間を作り、子プロセスをその名前空間の中に生成する。
+<code>setns</code>は、<code>setns</code>を呼びだしたスレッドを既存の名前空間に移動する。
+<code>unshare</code>は、新しく名前空間を作って呼出したプロセスをその名前空間に移す。</p>
+<p>Cの<code>nsexec</code>関数で<code>init</code>プロセスの名前空間が変更される。
+<code>nsexec</code>は、以下の<a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/libcontainer/nsenter/nsenter.go#L9"><code>nsenter.go</code></a>でGoのランタイムが始まる前に呼び出される。</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">//go:build linux &amp;&amp; !gccgo
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#94e2d5">package</span> nsenter
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">#cgo CFLAGS: -Wall
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">extern void nsexec();
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">void __attribute__((constructor)) init(void) {
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">	nsexec();
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">}
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#94e2d5">import</span> <span style="color:#a6e3a1">&#34;C&#34;</span>
+</span></span></code></pre></div><p><a href="https://github.com/opencontainers/runc/tree/v1.2.3/libcontainer/nsenter">README.md</a>にはGoがマルチスレッドだからCで名前空間を切り換えると書かれてある。
+これは、<code>setns</code>は呼出元のスレッドの名前空間を切り換えるが、スレッドが複数あると、すべてのスレッドで<code>setns</code>を呼ぶ必要があるということだろう。</p>
+<p><code>nsexec</code>は、2度<code>clone</code>を呼出し、<code>init</code>の名前空間を変更する。
+以下に<code>nsexec</code>の処理を図示する。
+<img alt="nsenter" src="/runc/nsenter.drawio.png">
+最後に生成されたプロセスのみ<code>return</code>文を実行し、Goの<code>main</code>関数が続き、残るプロセスはGoのランタイムを開始することなく終了する。
+<code>nsexec</code>は、ある名前空間の中で<code>init</code>プロセスにPID1を割り当てるために<code>clone</code>を実行する。
+<code>unshare</code>も新しい名前空間を作成する関数であるが、<code>unshare</code>は呼出元のプロセス名前空間を変更できないために<code>clone</code>が使わているのだろう。</p>
+<p><code>clone</code>には<code>CLONE_PARENT</code>フラグを渡し、新しい子<code>init</code>の親プロセスを<code>clone</code>を呼出したプロセスの親プロセスにする。
+左の<code>init</code>プロセスの親は<code>run</code>なので、<code>return</code>文を実行し、Goの<code>main</code>関数に続く最後の<code>init</code>プロセスの親も<code>run</code>になる。
+最後の<code>init</code>の親を<code>run</code>にすることで、<code>init</code>の<code>SIGCHLD</code>を<code>run</code>に届けることができる。</p>
+<p>最初に<code>clone</code>された図の真ん中にある<code>init</code>プロセスは、<code>setns</code>で既存の名前空間に参加したり、<code>unshare</code>で新しく作った名前空間に移動したりする。
+<code>/proc/&lt;pid&gt;/uid_map</code>, <code>/proc/&lt;pid&gt;/gid_map</code>は<code>init</code>のユーザID, グループIDに対応するホストのユーザIDグループIDを定義したファイルであり、<code>init</code>のユーザーやグループは、ホストからはファイルが対応づけたホストのユーザやグループのようにみえる。</p>
+<h3 id="ルートファイルシステム">ルートファイルシステム</h3>
+<p><code>pivot_root</code>で<code>init</code>のルートファイルシステムをコンテナのディレクトリのルートに置き換える。
+以下のコードは<code>pivot_root</code>の実行例であり、<code>rootfs</code>のトップディレクトリをルートファイルシステムに設定している。</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#89dceb">cd</span> rootfs <span style="color:#89dceb;font-weight:bold">&amp;&amp;</span> mkdir put_old
+</span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"># run /bin/sh in a a new namespace</span>
+</span></span><span style="display:flex;"><span>unshare -mpfr /bin/sh
+</span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"># the first argument of pivot_root must be a mount point</span>
+</span></span><span style="display:flex;"><span>mount --bind <span style="color:#cba6f7">$(</span><span style="color:#89dceb">pwd</span><span style="color:#cba6f7">)</span> <span style="color:#cba6f7">$(</span><span style="color:#89dceb">pwd</span><span style="color:#cba6f7">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"># Place the original root in put_old. Can be unmounted later</span>
+</span></span><span style="display:flex;"><span>pivot_root <span style="color:#cba6f7">$(</span><span style="color:#89dceb">pwd</span><span style="color:#cba6f7">)</span> <span style="color:#cba6f7">$(</span><span style="color:#89dceb">pwd</span><span style="color:#cba6f7">)</span>/put_old
+</span></span></code></pre></div><h2 id="ホストのプロセスとコンテナの違い">ホストのプロセスとコンテナの違い</h2>
+<p>ここまでで、ほかのプロセスとコンテナを隔離するために使われた技術は名前空間と<code>pivot_root</code>があった。
+ほかにもcgroupなどのコンテナを隔離するために使わている技術があるが、cgroupも名前空間や<code>pivot_root</code>と同様にコンテナに用途を限定した技術ではない。
+<code>runc</code>の実装をみれば、コンテナの実体は、通常のプロセスとは全く違う特殊なプロセスではなく、cgroup, 名前空間, <code>pivot_root</code>でほかのプロセスから隔離されたプロセスにすぎないと思えてくるだろう。</p>
+<h2 id="参考資料">参考資料</h2>
+<ul>
+<li><a href="https://github.com/opencontainers/runc/tree/v1.2.2">runc</a></li>
+<li><a href="https://www.docker.com/blog/runc/">Introducing runC: a lightweight universal container runtime</a></li>
+<li><a href="https://www.docker.com/blog/containerd-vs-docker/">containerd vs. Docker: Understanding Their Relationship and How They Work Together</a></li>
+<li><a href="https://dl.acm.org/doi/10.1145/2532780.2532798">Advanced programming in the unix environment, third edition by w. richard stevens and stephen a. rago</a></li>
+<li><a href="https://man7.org/linux/man-pages/man7/namespaces.7.html">namespaces(7) - Linux manual page</a></li>
+</ul>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/back-of-envelope-calculations/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+    <li>
+      <a href="/posts/origin-of-type-theory/">
+	<i class="fa-solid fa-xl fa-angle-right"></i>
+      </a>
+    </li>
+    
+</ul>
+
+
+    <footer>
+      <small>© Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

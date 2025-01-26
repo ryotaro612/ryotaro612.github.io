@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-	<meta name="generator" content="Hugo 0.123.7">
+	<meta name="generator" content="Hugo 0.131.0">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -18,7 +18,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -85,6 +85,175 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/">Apache Calcite: A Foundational Framework for Optimized Query Processing Over Heterogeneous Data Sources (2018)</a></h3>
+        <div class="summary"><p>Michael StonebrakerとUğur Çetintemelは、2005年に<a href="https://cs.brown.edu/~ugur/fits_all.pdf">One size fits all</a>で、データウェアハウスとストリーミング処理をとりあげ、すべてのデータをRDBMSで管理する時代の終わりを主張した。
+組織はデータベースを特定の用途ごとに使い分けるようになった。
+しかし同時に、データベースの開発者は、どんなデータベースでも必要な仕組みをデータベースごとに実装しなければならなくなった。
+どのようなクエリ言語を採用するデーターベースにもクエリ最適化が求められる。
+一方、組織は複数のデータベースに分散したデータを統合しなければならなくなった。</p>
+<p><a href="https://calcite.apache.org/">Apache Calcite</a>は、SQLの解釈、最適化、実行のためのフレームワークであり、複数のデータベースに分散したデータへのANSI標準のSQLでの問い合せを実現する。
+データが複数のデータベースに分散していても、クライアントはデータが1つのRDBMSにあるかのようにSQLでCalciteに問い合せられる。</p>
+<!-- クライアントは、複数のデータベースに分散するデータが1つのRDBMSにあるかのように、SQLでCalciteに問い合せられる。 --></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/apache-calcite/">
+		#Apache Calcite
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">March 10, 2024</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/mining-association-rules-between-sets-of-items-in-large-databases/">Mining Association Rules between Sets of Items in Large Databases (1993)</a></h3>
+        <div class="summary"><p>ある商品と一緒に買われやすい商品を小売の購買履歴から分析する初期の手法に<a href="https://dl.acm.org/doi/10.1145/170036.170072">Mining Association Rules between Sets of Items in Large Databases</a>がある。
+抽出される規則は、商品の集合と1つの商品のペアからなり、集合のすべての商品を買われるときに他方の商品も買われやすいことを意味する。
+アルゴリズムは、規則を抽出するだけでなく、規則の確信度と支持度も計算する。
+確信度は、規則の前提にある商品の集合を含むトランザクションのうち規則を満たすものの割合であり、規則の信憑性を意味する。
+支持度は、すべてのトランザクションに対する規則に表れる商品を含むトランザクションの割合であり、規則を適用できる機会の多さを意味する。
+アルゴリズムは、しきい値以下の支持度の規則を無視することで、現実的な速度で実行できる。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E3%82%A2%E3%82%BD%E3%82%B7%E3%82%A8%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%88%86%E6%9E%90/">
+		#アソシエーション分析
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">March 2, 2024</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/">Poly-Encoders: Architectures and Pre-Training Strategies for Fast and Accurate Multi-Sentence Scoring (2019)</a></h3>
+        <div class="summary"><p>入力系列のラベルを推定できるようにTransformerのエンコーダーをファインチューニングするとき、エンコーディングの仕方に、Cross encoder (<a href="https://arxiv.org/abs/1901.08149">Wolf et al.</a>) とBi-encoder (<a href="https://arxiv.org/abs/1809.01984">Mazaré et al.</a>) がある。
+Cross-encoderは、入力系列とラベルを連結した系列をエンコーダーに入力し、入力系列とラベルのペアのエンベディングからスコアを求める。
+Bi-encoderは、入力系列とラベルを別のエンコーダーに入力し、それぞれのエンベディングの内積をスコアとする。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/transformer/">
+		#Transformer
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">February 24, 2024</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/the-design-of-postgres/">THE DESIGN OF POSTGRES (1986)</a></h3>
+        <div class="summary"><p>最初期におけるPOSTGRESの設計は、<a href="https://dsf.berkeley.edu/papers/ERL-M85-95.pdf">THE DESIGN OF POSTGRES</a>で発表された。
+<a href="https://www.postgresql.jp/document/8.3/html/history.html">POSTGRES少史</a>によると、データモデルは<a href="https://apps.dtic.mil/sti/tr/pdf/ADA184251.pdf">The POSTGRES data model</a>で、ルールは<a href="https://apps.dtic.mil/sti/tr/pdf/ADA179161.pdf">The design of the POSTGRES rules system</a>で、ストレージは<a href="https://dsf.berkeley.edu/papers/ERL-M87-06.pdf">THE DESIGN OF THE POSTGRES STORAGE SYSTEM</a>で同時期に個別に論じられている。
+THE DESIGN OF POSTGRESはPOSTGRESの全体像を解説する位置にある。</p>
+<p>POSTGRESは、関係データベースINGRESの後継として開発された。
+POSTGRESの目標は、複雑な型のオブジェクトやtriggerを扱え、クラッシュから回復する実装を単純化でき、光ディスクを利用できるようにしつつも、リレーショナルモデルから逸脱しないデータベースを維持することにある。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/rdbms/">
+		#RDBMS
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/postgresql/">
+		#PostgreSQL
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">February 17, 2024</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/">Retrieval Augmented Generation for Knowledge Intensive NLP Tasks (2021)</a></h3>
+        <div class="summary"><p>問題文から推論できない知識を必要とする自然言語処理のタスクの場合、Large Language Model (LLM) の事前学習による効果は限定的になる。
+LLMのパラメタに知識がなければ回答できず、また、パラメタは正確な知識を記録する仕組みではない。
+Retrieval Augmented Generation (RAG) は、LLMの外部から提供された知識を利用し、入力から推論できない知識にもとづく文書を生成する。</p>
+<p><a href="https://arxiv.org/abs/2005.11401">Retrieval Augmented Generation for Knowledge Intensive NLP Tasks</a>は、文書の埋め込みベクトルを外部の知識に使うRAGであり、入力文で埋め込みベクトルを検索し、検索結果の上位の文書と入力文から文書を生成する。
+文書の検索には<a href="https://aclanthology.org/2020.emnlp-main.550/">Dense Passage Retriever</a> (DPR) を、後の文書の生成にはseq2seqを使う。
+DPRは、質問と文書を別々のBERTで埋め込みベクトルに変換し、質問に関係する文書と質問のベクトル間の内積を最大にするように学習する。
+<a href="https://github.com/facebookresearch/faiss">Faiss</a>などの近似最近傍探索を利用すれば、実用可能な速度で推論できる。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/retrieval-augmented-generation/">
+		#Retrieval Augmented Generation
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">January 27, 2024</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/sorting-networks-and-their-applications/">Sorting networks and their applications (1968)</a></h3>
+        <div class="summary"><p>ソーティングネットワークは、入次数と出次数が2のノードからなるグラフを理論にしたソートのアルゴリズムである。
+ノードは、別々の辺から入力された値の大小関係を比較し、大きい方を一方、小さい方を他方の辺に出力する。
+<a href="https://www.cs.kent.edu/~batcher/sort.pdf">Sorting networks and their applications</a>で提案された奇偶マージソートとバイトニックソートは、値によらず配列上の位置で比較する要素が決まるソーティングネットワークなので、<a href="https://developer.nvidia.com/gpugems/gpugems2/part-vi-simulation-and-numerical-algorithms/chapter-46-improved-gpu-sorting">並列計算に利用される</a>。
+どちらも長さ\(2^p\)の配列を\(\ln (\frac{1}{2})p(p+1)\)ステップでソートできる。</p>
+<!-- たとえば、密ベクトル近似最近傍探索のライブラリ[Faiss](https://github.com/facebookresearch/faiss)のもとになる[Billion-scale similarity search with GPUs](https://arxiv.org/abs/1702.08734)はクエリとデータベースにあるベクトルを --></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/sorting-algorithm/">
+		#Sorting Algorithm
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">January 14, 2024</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/billion-scale-similarity-search-with-gpus/">Billion Scale Similarity Search With GPUs (2017)</a></h3>
+        <div class="summary"><p><a href="https://arxiv.org/abs/1702.08734">Billion-scale-similarity search with GPUs</a>は、<a href="https://inria.hal.science/inria-00514462v2/document">IVFADC</a>による量子化と<a href="https://www.cs.kent.edu/~batcher/sort.pdf">Batcherのバイトニックソート</a>を利用したGPUで実行するL2ノルムの近似最近傍探索である。
+実装は、OSSの<a href="https://github.com/facebookresearch/faiss">faiss</a>として公開されている。</p>
+<!-- クエリの分散表現である密なベクトルの最も近傍にある\\(k\\)個のデータベースあるベクトルを近似的に求める。 --></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E8%BF%91%E4%BC%BC%E6%9C%80%E8%BF%91%E5%82%8D%E6%8E%A2%E7%B4%A2/">
+		#近似最近傍探索
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">January 1, 2024</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/conflict-free-replicated-data-types/">Conflict-free Replicated Data Types (2011)</a></h3>
         <div class="summary"><p>オブジェクトのレプリカを複数のノードに分散するシステムにおいて、レプリカが非同期に更新された場合、後の同期で更新内容が衝突しうる。
 <a href="https://pages.lip6.fr/Marc.Shapiro/papers/RR-7687.pdf">Conflict-free Replicated Data Types</a> (CRDTs) は、結び半束の関係にある状態をもつオブジェクトである。
@@ -149,168 +318,6 @@ CAP定理の発表された12年後の今日では、分断時における一貫
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/wide-and-deep-learning-for-recommender-systems/">Wide and Deep Learning for Recommender Systems (2016)</a></h3>
-        <div class="summary"><p>推薦システムに一般化線形モデルや深層学習を応用する場合、両者には一長一短がある。
-一般線形化モデルは、学習データに忠実かつ解釈しやすい推測を出力するが、交互作用では学習データにないアイテムを推薦できない。
-深層学習は、汎化性能にすぐれるが、疎で高ランクな行列を学習しがたい。
-<a href="https://arxiv.org/abs/1606.07792">Wide &amp; Deep Learning for Recommender Systems</a>は、一般線形化モデルとフィードフォワードニューラルネットワーク (FFN) の出力の重みつき和をロジスティック関数に適用し、両者の利点を生かし欠点をおぎなうモデルである。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/recommendation/">
-		#Recommendation
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 16, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/a_protocol_for_packet_network_intercommunication/">A Protocol for Packet Network Intercommunication (1974)</a></h3>
-        <div class="summary"><p>TCPの起源はヴィントン・サーフとロバート・カーンが1974年に出版した<a href="https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf">A Protocol for Packet Network Intercommunication</a>にまでさかのぼる。
-当時、ローカルネットワーク内のコンピュータ同士で通信するためのプロトコルはあったが、ネットワークを横断して通信できるプロコトルはなかった。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/tcp/">
-		#TCP
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 9, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/probabilistic_latent_semantic_indexing/">Probablistic Latent Semantic Indexing (1999)</a></h3>
-        <div class="summary"><p><a href="http://wordvec.colorado.edu/papers/Deerwester_1990.pdf">Latent Semantic Analysis</a>は、単語の出現頻度の列ベクトルで文書をあらわす行列を、特異値分解し、潜在的な意味を反映した低ランクな行列を求める方法である。
-特異値を大きい順に\(k\)個えらぶとき、単語の数を\(t\), 文書数を\(d\)とすれば、左特異ベクトルのサイズは、\(t\times k\), 右特異ベクトルの転置行列のサイズは\(k\times d\)になる。</p>
-<p><a href="https://sigir.org/wp-content/uploads/2017/06/p211.pdf">Probabilistic Latent Smantic Indexing</a>は、各文書が1つのクラスに分類されると仮定し、クラスを示すベクトルを隠れ変数とみなしたEMアルゴリズムで、文書や単語の尤度、クラスの生起確率を求める。
-これにより、クラス\(z_k\)についての文書\(d_i\)と単語\(w_j\)の尤度を\(P(d_i|z_k)\), \(P(w_j|z_k)\), また\(\hat{\textbf{U}}=(P(d_i|z_k))_{i, k}\), \(\hat{\textbf{V}}=(P(w_j|z_k))_{j, k}\), \(\hat{\Sigma}=\text{diag} (P(z_k))_k\)とすると、同時確率モデルを特異値分解の形式\(P=\hat{\textbf{U}}\hat{\Sigma}\hat{\textbf{V}}^t\)で表すことができる。
-Latent Semantic Analysisと違い、\(P\)の固有値や特異ベクトルの要素から確率モデル上の意味を読みとることができる。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E6%BD%9C%E5%9C%A8%E6%84%8F%E5%91%B3%E8%A7%A3%E6%9E%90/">
-		#潜在意味解析
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 2, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/">Chord: A Scalable Peer-to-peer Lookup Service for Internet Applications (2001)</a></h3>
-        <div class="summary"><p>\(N\)個のノードからなる<a href="https://pdos.csail.mit.edu/papers/ton:chord/paper-ton.pdf">Chord</a>のクラスタは、キーによるノードの問い合せに、\(O(\log N)\)のノードを介して応答できるPeer-to-peerのプロトコルである。
-<a href="https://www.cs.princeton.edu/courses/archive/fall09/cos518/papers/chash.pdf">Consistent Hashing</a>を応用しており、\(2^{m-1}+1\)以上\(2^m\)以下のノードが参加するconsistent hashingクラスタは、\(\mod(2^m)\)の非負の整数をIDとしてキーとノードを管理し、IDの空間上で隣接するノードにキーをわりあてる。
-Consistent hashingはキーをほぼ均等に配置でき、ノードの参加、離脱時に移動すべきキー数は\(O(1/N)\)に収まる。</p>
-<p>参加、離脱するノードと隣接するノード間でのみキーの移動が生じる。
-Chordは、多くのノードが参加できるように、各ノードにもたせるルーティング情報を\(m\)個のほかのノードのみに限定する。
-クライアントや別のノードからキーを受信したノードは、ルーティング情報にあるノードと自分のID \(\textit{n}\)をキー\(\textit{key}\)と比較する。
-このとき、\(\textit{key} + x \equiv n_i\mod 2^m\)をみたす最小の非負の整数\(x\)に対応する\(n_i\)が自分のIDであれば、そのノードがキーに対応する。
-それ以外の場合は、最小の値になるIDをもつノードにキーを転送する。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/peer-to-peer/">
-		#Peer-to-Peer
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">November 23, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/lora-low-rank-adaptation-of-large-language-models/">LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/pdf/1804.08838.pdf">Li et al. (2018)</a>と<a href="https://arxiv.org/pdf/2012.13255.pdf">Aghajanyan et al. (2020)</a>は、Large Language Models (LLM)のファインチューニングにかかる計算資源は大きいが、下流タスクに必要なパラメータ数はLLMのパラメタ数よりもはるかに少ないと主張した。
-<a href="https://arxiv.org/pdf/2106.09685.pdf">LoRA</a>は、この仮説によりファインチューニングを避け、LLMの重みと線形結合すると下流タスクに最適な重みに近似できる小さな行列を求める。
-LLMの重みを\(W_0\in\mathbb{R}^{d\times k}\)とすると、\(W_0+BA\ (B\in\mathbb{R}^{d\times r}, A\in\mathbb{R}^{r\times k}, r \ll\min (d, k))\)が下流タスクに最適な重みに近づくように、ファインチューニングにかわって\(W_0\)を更新せず\(B,\ A\)のみを更新する。
-\(r\)が\(d, k\)よりも小さいので、ファインチューニングよりも学習時間は短い。
-また、複数の下流タスクを入力に適用する場合、\(W_0x\)を共有できるので、推論に必要な計算も\(W_0\)を更新するファインチューニングより少ない。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/large-language-model/">
-		#Large Language Model
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">November 18, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/">Pastry: Scalable Decentralized Object Location and Routing for Large Scale Peer to Peer Systems (2001)</a></h3>
-        <div class="summary"><p><a href="https://rowstron.azurewebsites.net/PAST/pastry.pdf">Pastry</a>は、広域ネットーワーク規模のPeer-to-Peerなルーティングのアルゴリズムであり、メッセージをメッセージのキーに最も近いIDをもつノードに転送する。
-Pastryに参加するノードは対称的で、すべてのノードは同じアルゴリズムにしたがう。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/peer-to-peer/">
-		#Peer-to-Peer
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">November 7, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/distilbert-a-distilled-version-of-bert-smaller-fastercheater-and-lighter/">DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter (2019)</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/abs/1910.01108">DistilBERT</a>は、<a href="https://arxiv.org/abs/1810.04805">BERT</a>の事前学習に<a href="https://arxiv.org/pdf/1503.02531.pdf">知識の蒸留</a>を適用したモデルである。
-DistilBERTの事前学習の損失関数は、BERTの学習に使われるMasked language model, BERTとDistilBERTの隠れ状態のコサイン類似度、BERTとDistil BERTの交差エントロピーの線形結合である。
-学習時は温度付きソフトマックスを\(T&gt;1\)に設定し、推論時には\(T=1\)として通常のソフトマックスをもちいる。
-DistilBERTのアーキテクチャは、セグメントエンベディング、下流タスクにCLSトークンのエンベディングを渡す層、半数の層をBERTから取り除いてできている。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E7%9F%A5%E8%AD%98%E8%92%B8%E7%95%99/">
-		#知識蒸留
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/bert/">
-		#BERT
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">November 4, 2023</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -335,7 +342,7 @@ DistilBERTのアーキテクチャは、セグメントエンベディング、�
       </a>
     </li>
     <li>
-      <a href="/page/31/">
+      <a href="/page/32/">
 	<i class="fa-solid fa-xl fa-angles-right"></i>
       </a>
     </li>

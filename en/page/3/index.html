@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.123.7">
+	<meta name="generator" content="Hugo 0.131.0">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -18,7 +18,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
     
@@ -85,6 +85,182 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/en/posts/cap-twelve-years-later-how-the-rules-have-changed/">CAP Twelve Years Later: How the &#34;Rules&#34; Have Changed (2012)</a></h3>
+        <div class="summary">The CAP theorem, coined by Eric Brewer, states that in a shared-data system, you can have either Consistency (C), Availability (A), or Parition tolerance (P), but not all three simultaneously. However, Martin Kleppmann challenges the CAP theorem and discusses its limitations in Designing Data-Intensive Applications, and A Critique of the CAP Theorem. In CAP Twelve Years Later: How the “Rules” Have Changed, Brewer clarifies that the notion of &ldquo;2 of 3&rdquo; is misleading.</div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/cap-theorem/">
+		#CAP Theorem
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 23, 2023</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/wide-and-deep-learning-for-recommender-systems/">Wide and Deep Learning for Recommender Systems (2016)</a></h3>
+        <div class="summary"><p>Generalized linear models are widely used for large-scale regression and classification problems with sparse inputs because they are simple, scale and interpretable.
+One limitation of interactions or cross-prodcution transformations in generalized linear models is that they do not generalize to query-item feature pairs that have not appeared in the training data.
+Compared with generalized linear models, deep neural networks can improve the diversity of the recommendations.
+Howerver it is difficult to learn effective low-dimentional dense embedding vectors.
+<a href="https://arxiv.org/abs/1606.07792">Wide &amp; Deep Learning for Recommender Systems</a> jointly trains a generalized linear model and a feed-forward neural network (FFN) to combines their benefits.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/recommendation/">
+		#Recommendation
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 16, 2023</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/a_protocol_for_packet_network_intercommunication/">A Protocol for Packet Network Intercommunication (1974)</a></h3>
+        <div class="summary"><p>Vinton Cerf and Robert Kahn presented a protocol that supports packet communication between hosts in different packet switching networks in <a href="https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf">A Protocol for Packet Network Intercommunication</a>.
+The protocol assumes that a Transmission Control Program (TCP) in a host handles the transmission and acceptance of messages on behalf of processes.
+Later, the program was divided into the Transmission Control Protocol (TCP) and the Internet Protocol (IP).
+At that time, several protocols that supported exchanging packets between computers were developed, but they assumed the computers were on the same network.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/tcp/">
+		#TCP
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 9, 2023</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/probabilistic_latent_semantic_indexing/">Probablistic Latent Semantic Indexing (1999)</a></h3>
+        <div class="summary"><p><a href="http://wordvec.colorado.edu/papers/Deerwester_1990.pdf">Latent Semantic Analysis</a> approximates an original term-document matrix by singular value decomposition (SVD).
+The components consist of the frequencies with which each term occurred in each document.
+The Latent Semantic Analysis thresholds all but the largest \(K\) singular values to zero.
+The left singular vectors are a \(t \times K\) matrix, and the transpose of the right singular vectors are a \(K\times d\) matrix where \(t\) is the number of the terms and \(d\) is the number of the documents.</p>
+<p><a href="https://sigir.org/wp-content/uploads/2017/06/p211.pdf">Probabilistic Latent Semantic Indexing</a> (PLSI) is a generative model that associates each term and document with an unobserved class variable \(z \in \mathcal{Z} = \{z_1,\dots , z_K\}\).
+The likelihoods of the documents and terms are estimated by the Expectation Maximization (EM) algorithm, and the joint probability model \(\textbf{P}\) can be written as \(\textbf{P}=\hat{\textbf{U}}\hat{\Sigma}\hat{\textbf{V}}^t\) where \(\hat{\textbf{U}}=(P(d_i|z_k))_{i, k}\), \(\hat{\textbf{V}}=(P(w_j|z_k))_{j, k}\), \(\hat{\Sigma}=\text{diag} (P(z_k))_k\).
+Compared to the Latent Semantic Analysis, the components of \(\textbf{P}\) have a clear probabilistic meaning in terms of mixture component distributions.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/latent-semantic-analysis/">
+		#Latent Semantic Analysis
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 2, 2023</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/">Chord: A Scalable Peer-to-peer Lookup Service for Internet Applications (2001)</a></h3>
+        <div class="summary"><p><a href="https://pdos.csail.mit.edu/papers/ton:chord/paper-ton.pdf">Chord</a> is a distributed lookup protocol that supports just one operation: mapping a given key onto a node in a Chord cluster.
+If an \(N\)-node system is in the steady state, each node resolves all the queries via \(O(\log N)\) messages to other nodes.
+Chord uses <a href="https://www.cs.princeton.edu/courses/archive/fall09/cos518/papers/chash.pdf">consistent hashing</a> to assign keys to Chord nodes.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/peer-to-peer/">
+		#Peer-to-Peer
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">November 23, 2023</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/lora-low-rank-adaptation-of-large-language-models/">LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS</a></h3>
+        <div class="summary">LoRA is inspired by Li et al. (2018) and Aghajanyan et al. (2020) which show that the learned over-parameterized models reside on a low intrinsic dimension. An intrinsic dimension is the minimum number of parameters needed to reach a satisfactory solution to the objective. LoRA injects weight matrices into each attention layer of the Transformer architecture instead of fine-tuning the pre-trained model weights. The injected weight matrices are rank decomposition matrices, and LoRA can reduce the number of trainable parameters for downstream tasks.</div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/large-language-model/">
+		#Large Language Model
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">November 18, 2023</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/">Pastry: Scalable Decentralized Object Location and Routing for Large Scale Peer to Peer Systems (2001)</a></h3>
+        <div class="summary"><p><a href="https://rowstron.azurewebsites.net/PAST/pastry.pdf">Pastry</a> is a decentralized peer-to-peer object location and routing system based on nodes connected via the Internet.
+When each node in the Pastry network receives a message and a numeric key, it routes them to the node with a nodeId that is numerically close to the key.
+If a node is not the final destination of a message, it forwards the message to another node with a nodeId that is numerically closer to the key than the nodeId of the present node.
+The nodeId ranges from 0 to \(2^{128}-1\).</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/peer-to-peer/">
+		#Peer-to-Peer
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">November 7, 2023</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/en/posts/gaussian_error_linear_units/">GAUSSIAN ERROR LINEAR UNITS (GELUs) (2016)</a></h3>
+        <div class="summary"><p>The <a href="https://arxiv.org/abs/1606.08415">GAUSSIAN ERROR LINEAR UNITS (GELUs)</a>, a neural network activation function,is \(x\Phi(s)\), where \(\Phi(x)\) the standard Gaussian cumulative distribution function.
+GELUs have properties of Dropout, <a href="https://openreview.net/pdf?id=rJqBEPcxe">Zoneout</a>, and ReLUs.
+Zoneout is a method for regularizing RNNs, and stochastically forces some hidden units to maintain their previous values.
+ReLUs introduce nonlinearity to neural networks.
+Dropout is a regularizer.
+GELUs merge the both functionalities by multipling the neuron input \(x\) by \(m \sim \text{Bernoulli}(\Phi (x))\) , where \(\Phi(x)=P(X\le x), X\sim \mathcal{N}(0, 1)\).
+GELU is the expected transformation on an input \(x\), which is \(\Phi(x) \times Ix + (1-\Phi(x))\times 0x = x\Phi(x)\)</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/activation-function/">
+		#Activation Function
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">October 21, 2023</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/en/posts/a_design_methodology_for_reliable_software_systems/">A design methodology for reliable software systems (1972)</a></h3>
         <div class="summary">After earning her PhD in computer Science at Stanford University, Liskov worked again for MITRE Corporation. She was involved in the development of a time-sharing system called Venus, then was involved in finding ways to address the &ldquo;software crisis.&rdquo; at MITRE. A design methodology for reliable software systems describes a design methodology of structured programming developed as part of the second project.
 The methodology uses testing to guarantee reliability. To test a program, it is necessary to identify relevant test cases, and the set of them must be small enough to implement.</div>
@@ -126,216 +302,6 @@ BART with text infilling, where text spans are sampled with span lengths drawn f
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/communicating_sequential_processes/">Communicating Sequential Processes (1978)</a></h3>
-        <div class="summary"><p><a href="https://www.cs.cmu.edu/~crary/819-f09/Hoare78.pdf">Communicating Sequential Processes (CSP)</a> is a program structuring method that constructs a program as a parallel composition of a fixed number of sequential processes.
-A process is a sequence of commands.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/communicating-sequential-processes/">
-		#Communicating Sequential Processes
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/concurrent-programming/">
-		#Concurrent Programming
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">September 30, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/">Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks(2019)</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/abs/1908.10084">Sentence-BERT</a> derives semantically meaningful sentence embedding that can be compared using cosine-similarity.
-<a href="https://arxiv.org/abs/1810.04805">BERT</a> achieved new state-of-the art performance on various sentence-pair regression tasks using a cross-encoder.
-A cross-encoder accepts two sentences as input to the transformer network and the target value is predicted.
-Semantic textual similarity is one of the sentence-pair regression tasks.
-However, this setup is often not scalable for various pair regression tasks due to many possible combinations.
-The semantic search that maps each sentence to a vector space where semantically similar sentences are close alleviates the combinatorial explosion.
-Sentence-BERT uses a siamese network in which the two BERT networks have tied weights such that the produced sentence embeddings can be semantically compared using cosine-similarity.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/bert/">
-		#BERT
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/cosine-similarity/">
-		#Cosine Similarity
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/transformer/">
-		#Transformer
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">September 23, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/">A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning(2008)</a></h3>
-        <div class="summary"><p><a href="http://machinelearning.org/archive/icml2008/papers/391.pdf">A Unified Architecture for Natural Language Processing</a> is an instance of multitask learning.
-The first layer is a lookup table that stores embeddings of a fixed dictionary and size.
-The second layer is a <a href="https://www.cs.toronto.edu/~hinton/absps/waibelTDNN.pdf">Time-Delay Neural Networks</a> layer.
-It extracts features from the sentence treating it as a sequence with local structure.
-The third layer takes the maximum value for each of the output features of the second layer over time.
-The following layers are classical NN layers.
-The lookup-table is shared among the tasks, and the other layers can be task specific to each task.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/multitask-learning/">
-		#Multitask Learning
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">September 16, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/transmission_of_information/">Transmission of Information(1927)</a></h3>
-        <div class="summary">In Transmission of Information, Hartley developed a quantitative measure of &ldquo;information&rdquo; in 1927. Hartley claims that information is the outcome of a selection among a finite set of possible messages. Shannon&rsquo;s &ldquo;A mathematical theory of communication&rdquo;, which is based in part on Hartley&rsquo;s ideas, published in 1947. Hartley did not model the source of information probabilistically. Shannon modeled the source of information as a random process.
-Hartley stated that information should be proportional to the number of selections for practical engineering value.</div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/entropy/">
-		#Entropy
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">September 9, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/roberta/">RoBERTa: A Robustly Optimized BERT Pretraining Approach(2019)</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/pdf/1907.11692.pdf">RoBERTa</a>(Robusty optimized BERT approach) is an improved recipe for training <a href="https://arxiv.org/pdf/1810.04805.pdf">BERT</a> models.
-BERT uses two objectives, masked language modeling and next sequence prediction (NSP), during pretraining.
-RoBERTa uses masked language modeling only.
-The authors increased the batch size and Byte-Pair Encoding (BPE) vocabulary size.
-RobERTa is trained with byte-level BPE, which uses bytes instead of unicode characters as the base subword units.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/bert/">
-		#BERT
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/byte-pair-encoding/">
-		#Byte Pair Encoding
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">August 27, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/go_to_statement_considered_harmful/">Go To Statement Considered Harmful (1968)</a></h3>
-        <div class="summary"><p>Edgar Djkstra criticized the excessive use of the go to statement in <a href="https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf">Go To Statement Considered Harmful</a>.
-While the source code is static, the process taking place under the control of the source code is dynamic.
-The programmers should aim to shorten the conceptual gap between the source code and its process to describe the progress.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/early-programming/">
-		#Early Programming
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">August 26, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/self_attention_with_relative_position_representations/">Self-Attention with Relative Position Representations(2018)</a></h3>
-        <div class="summary"><p>The authors of <a href="https://arxiv.org/pdf/1803.02155.pdf">Self-Attention with Relative Position Representations</a> presented a way of injecting relative position representations in the self-attention mechanism of the <a href="https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">Transformer</a>.
-In contrast to recurrent and convolutional neural networks, Transformer does not explicitly model position information in its structure.
-<a href="https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">The original position encoding</a> employs sine and cosine functions of different frequencies.
-The authors of Transformer hypothesized that sinusoidal position encodings would help Transformer to generalize to sequence lengths unseen during training.
-Positional encodings are added to the input embeddings at the bottoms of the encoder and decoder stacks of Transformer.
-This hypothesis was shared by the relative position representations.
-In contrast to absolute position representations, the relative position representations are invariant to the total sequence length.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/attention/">
-		#Attention
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/transformer/">
-		#Transformer
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">August 19, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/self_adjusting_binary_search_trees/">Self-Adjusting Binary Search Trees(1985)</a></h3>
-        <div class="summary"><p><a href="https://www.cs.cmu.edu/~sleator/papers/self-adjusting.pdf">The splay tree</a>, a self-adjusting form of a binary search tree, is a binary search tree that moves an accessed node to the root after each access.
-On an \(n\)-node splay tree, accessing, inserting and deleting have an amortized time bound of \(O(\log n)\) per operation.
-In addition, for sufficiently long access sequences, splay trees are as efficient, to within a constant factor, as static optimum search trees.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/splay-tree/">
-		#Splay Tree
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">August 12, 2023</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -360,7 +326,7 @@ In addition, for sufficiently long access sequences, splay trees are as efficien
       </a>
     </li>
     <li>
-      <a href="/en/page/4/">
+      <a href="/en/page/5/">
 	<i class="fa-solid fa-xl fa-angles-right"></i>
       </a>
     </li>

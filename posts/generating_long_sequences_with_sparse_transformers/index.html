@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -107,7 +107,7 @@ Sparse Transformerは、\(p\)個のパターンを用意し、パターンに該
 <p>パターンに該当する要素のみを注意機構に入力する以外は、Transformerの注意機構とおなじである。
 パターン\(m\)が\(i\)番目位置にある要素が注意する位置の集合を\(A^{(m)}_{i}\)とする。
 このとき、パターン\(A^{(m)}\)の注意機構が再構成するクエリ\(\text{Attend}(X,A^{(m)})=\left(a({\rm x}_i,A^{(m)}_i)\right)_{i\in\{1,\dots,n\}}\)は、</p>
-<!-- raw HTML omitted -->
+<!--\\(S\_i\in \\{S\_1,\dots , S\_n\\}\\)を\\(i\\)にある要素が注意する要素の集合とすると、再構成したクエリ\\(a({\rm x}\_i,S\_i)\\)は、-->
 <p>$$
 \begin{align}
 a({\rm x}_i,A^{(m)}_i)&amp;=\text{softmax} \left(\frac{(W_q{\rm x}_i)K^T_{A^{(m)}_i}}{\sqrt{d}}\right)V_{A^{(m)}_i}\\

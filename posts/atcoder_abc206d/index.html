@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -87,60 +87,60 @@
   <span class="date">June 20, 2021</span>    
   <div>
     <p>Union Findを使うと通せる。すべての\(A_i\)と\(A_{N+1-i}\)が同じグループに所属するために必要なunionの回数を答えればいい。</p>
-<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#78787e">#include</span> <span style="color:#78787e">&lt;bits/stdc++.h&gt;</span><span style="color:#78787e">
-</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#ff6ac1">using</span> <span style="color:#ff6ac1">namespace</span> std;
-</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">typedef</span> <span style="color:#9aedfe">long</span> <span style="color:#9aedfe">long</span> ll;
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">#include</span> <span style="color:#6c7086;font-weight:bold;font-style:italic">&lt;bits/stdc++.h&gt;</span><span style="color:#6c7086;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"></span><span style="color:#cba6f7">using</span> <span style="color:#cba6f7">namespace</span> std;
+</span></span><span style="display:flex;"><span><span style="color:#cba6f7">typedef</span> <span style="color:#f38ba8">long</span> <span style="color:#f38ba8">long</span> ll;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>vector<span style="color:#ff6ac1">&lt;</span><span style="color:#9aedfe">int</span><span style="color:#ff6ac1">&gt;</span> par;
+</span></span><span style="display:flex;"><span>vector<span style="color:#89dceb;font-weight:bold">&lt;</span><span style="color:#f38ba8">int</span><span style="color:#89dceb;font-weight:bold">&gt;</span> par;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#9aedfe">void</span> <span style="color:#57c7ff">init</span>(<span style="color:#9aedfe">int</span> n) {
-</span></span><span style="display:flex;"><span>    par.resize(n <span style="color:#ff6ac1">+</span> <span style="color:#ff9f43">1</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">for</span>(<span style="color:#9aedfe">int</span> i <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>; i <span style="color:#ff6ac1">&lt;=</span> n; i<span style="color:#ff6ac1">++</span>) {
-</span></span><span style="display:flex;"><span>        par[i] <span style="color:#ff6ac1">=</span> i;
+</span></span><span style="display:flex;"><span><span style="color:#f38ba8">void</span> <span style="color:#89b4fa">init</span>(<span style="color:#f38ba8">int</span> n) {
+</span></span><span style="display:flex;"><span>    par.resize(n <span style="color:#89dceb;font-weight:bold">+</span> <span style="color:#fab387">1</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">for</span>(<span style="color:#f38ba8">int</span> i <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#fab387">0</span>; i <span style="color:#89dceb;font-weight:bold">&lt;=</span> n; i<span style="color:#89dceb;font-weight:bold">++</span>) {
+</span></span><span style="display:flex;"><span>        par[i] <span style="color:#89dceb;font-weight:bold">=</span> i;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#9aedfe">int</span> <span style="color:#57c7ff">find</span>(<span style="color:#9aedfe">int</span> x) {
-</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">if</span>(par[x] <span style="color:#ff6ac1">==</span> x)
-</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">return</span> x;
-</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">return</span> par[x] <span style="color:#ff6ac1">=</span> find(par[x]);
+</span></span><span style="display:flex;"><span><span style="color:#f38ba8">int</span> <span style="color:#89b4fa">find</span>(<span style="color:#f38ba8">int</span> x) {
+</span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">if</span>(par[x] <span style="color:#89dceb;font-weight:bold">==</span> x)
+</span></span><span style="display:flex;"><span>        <span style="color:#cba6f7">return</span> x;
+</span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">return</span> par[x] <span style="color:#89dceb;font-weight:bold">=</span> find(par[x]);
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#9aedfe">void</span> <span style="color:#57c7ff">unite</span>(<span style="color:#9aedfe">int</span> a, <span style="color:#9aedfe">int</span> b) {
-</span></span><span style="display:flex;"><span>    <span style="color:#9aedfe">int</span> g_a <span style="color:#ff6ac1">=</span> find(a), g_b <span style="color:#ff6ac1">=</span> find(b);
-</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">if</span>(g_a <span style="color:#ff6ac1">==</span> g_b)
-</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">return</span>;
-</span></span><span style="display:flex;"><span>    par[g_a] <span style="color:#ff6ac1">=</span> g_b;
+</span></span><span style="display:flex;"><span><span style="color:#f38ba8">void</span> <span style="color:#89b4fa">unite</span>(<span style="color:#f38ba8">int</span> a, <span style="color:#f38ba8">int</span> b) {
+</span></span><span style="display:flex;"><span>    <span style="color:#f38ba8">int</span> g_a <span style="color:#89dceb;font-weight:bold">=</span> find(a), g_b <span style="color:#89dceb;font-weight:bold">=</span> find(b);
+</span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">if</span>(g_a <span style="color:#89dceb;font-weight:bold">==</span> g_b)
+</span></span><span style="display:flex;"><span>        <span style="color:#cba6f7">return</span>;
+</span></span><span style="display:flex;"><span>    par[g_a] <span style="color:#89dceb;font-weight:bold">=</span> g_b;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#9aedfe">bool</span> <span style="color:#57c7ff">is_same</span>(<span style="color:#9aedfe">int</span> a, <span style="color:#9aedfe">int</span> b) { <span style="color:#ff6ac1">return</span> find(a) <span style="color:#ff6ac1">==</span> find(b); }
+</span></span><span style="display:flex;"><span><span style="color:#f38ba8">bool</span> <span style="color:#89b4fa">is_same</span>(<span style="color:#f38ba8">int</span> a, <span style="color:#f38ba8">int</span> b) { <span style="color:#cba6f7">return</span> find(a) <span style="color:#89dceb;font-weight:bold">==</span> find(b); }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#9aedfe">int</span> <span style="color:#57c7ff">solve</span>(<span style="color:#9aedfe">int</span> n, vector<span style="color:#ff6ac1">&lt;</span><span style="color:#9aedfe">int</span><span style="color:#ff6ac1">&gt;</span> a) {
-</span></span><span style="display:flex;"><span>    <span style="color:#9aedfe">int</span> mx <span style="color:#ff6ac1">=</span> <span style="color:#ff6ac1">-</span><span style="color:#ff9f43">1</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">for</span>(<span style="color:#ff6ac1">auto</span> <span style="color:#ff5c57">aa</span> : a)
-</span></span><span style="display:flex;"><span>        mx <span style="color:#ff6ac1">=</span> max(aa, mx);
+</span></span><span style="display:flex;"><span><span style="color:#f38ba8">int</span> <span style="color:#89b4fa">solve</span>(<span style="color:#f38ba8">int</span> n, vector<span style="color:#89dceb;font-weight:bold">&lt;</span><span style="color:#f38ba8">int</span><span style="color:#89dceb;font-weight:bold">&gt;</span> a) {
+</span></span><span style="display:flex;"><span>    <span style="color:#f38ba8">int</span> mx <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#89dceb;font-weight:bold">-</span><span style="color:#fab387">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">for</span>(<span style="color:#cba6f7">auto</span> <span style="color:#89dceb">aa</span> : a)
+</span></span><span style="display:flex;"><span>        mx <span style="color:#89dceb;font-weight:bold">=</span> max(aa, mx);
 </span></span><span style="display:flex;"><span>    init(mx);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#9aedfe">int</span> ans <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">for</span>(<span style="color:#9aedfe">int</span> i <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>; i <span style="color:#ff6ac1">&lt;</span> n <span style="color:#ff6ac1">/</span> <span style="color:#ff9f43">2</span>; i<span style="color:#ff6ac1">++</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">if</span>(find(a[i]) <span style="color:#ff6ac1">==</span> find(a[n <span style="color:#ff6ac1">-</span> <span style="color:#ff9f43">1</span> <span style="color:#ff6ac1">-</span> i])) {
-</span></span><span style="display:flex;"><span>            <span style="color:#ff6ac1">continue</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#f38ba8">int</span> ans <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#fab387">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">for</span>(<span style="color:#f38ba8">int</span> i <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#fab387">0</span>; i <span style="color:#89dceb;font-weight:bold">&lt;</span> n <span style="color:#89dceb;font-weight:bold">/</span> <span style="color:#fab387">2</span>; i<span style="color:#89dceb;font-weight:bold">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#cba6f7">if</span>(find(a[i]) <span style="color:#89dceb;font-weight:bold">==</span> find(a[n <span style="color:#89dceb;font-weight:bold">-</span> <span style="color:#fab387">1</span> <span style="color:#89dceb;font-weight:bold">-</span> i])) {
+</span></span><span style="display:flex;"><span>            <span style="color:#cba6f7">continue</span>;
 </span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        ans<span style="color:#ff6ac1">++</span>;
-</span></span><span style="display:flex;"><span>        unite(a[i], a[n <span style="color:#ff6ac1">-</span> <span style="color:#ff9f43">1</span> <span style="color:#ff6ac1">-</span> i]);
+</span></span><span style="display:flex;"><span>        ans<span style="color:#89dceb;font-weight:bold">++</span>;
+</span></span><span style="display:flex;"><span>        unite(a[i], a[n <span style="color:#89dceb;font-weight:bold">-</span> <span style="color:#fab387">1</span> <span style="color:#89dceb;font-weight:bold">-</span> i]);
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">return</span> ans;
+</span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">return</span> ans;
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#9aedfe">int</span> <span style="color:#57c7ff">main</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#9aedfe">int</span> n;
-</span></span><span style="display:flex;"><span>    cin <span style="color:#ff6ac1">&gt;&gt;</span> n;
-</span></span><span style="display:flex;"><span>    vector<span style="color:#ff6ac1">&lt;</span><span style="color:#9aedfe">int</span><span style="color:#ff6ac1">&gt;</span> a(n);
-</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">for</span>(<span style="color:#9aedfe">int</span> i <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>; i <span style="color:#ff6ac1">&lt;</span> n; i<span style="color:#ff6ac1">++</span>)
-</span></span><span style="display:flex;"><span>        cin <span style="color:#ff6ac1">&gt;&gt;</span> a[i];
-</span></span><span style="display:flex;"><span>    cout <span style="color:#ff6ac1">&lt;&lt;</span> solve(n, a) <span style="color:#ff6ac1">&lt;&lt;</span> endl;
-</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">return</span> <span style="color:#ff9f43">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#f38ba8">int</span> <span style="color:#89b4fa">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#f38ba8">int</span> n;
+</span></span><span style="display:flex;"><span>    cin <span style="color:#89dceb;font-weight:bold">&gt;&gt;</span> n;
+</span></span><span style="display:flex;"><span>    vector<span style="color:#89dceb;font-weight:bold">&lt;</span><span style="color:#f38ba8">int</span><span style="color:#89dceb;font-weight:bold">&gt;</span> a(n);
+</span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">for</span>(<span style="color:#f38ba8">int</span> i <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#fab387">0</span>; i <span style="color:#89dceb;font-weight:bold">&lt;</span> n; i<span style="color:#89dceb;font-weight:bold">++</span>)
+</span></span><span style="display:flex;"><span>        cin <span style="color:#89dceb;font-weight:bold">&gt;&gt;</span> a[i];
+</span></span><span style="display:flex;"><span>    cout <span style="color:#89dceb;font-weight:bold">&lt;&lt;</span> solve(n, a) <span style="color:#89dceb;font-weight:bold">&lt;&lt;</span> endl;
+</span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">return</span> <span style="color:#fab387">0</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>
   </div>

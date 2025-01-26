@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -101,7 +101,7 @@
 一方、組織は複数のデータベースに分散したデータを統合しなければならなくなった。</p>
 <p><a href="https://calcite.apache.org/">Apache Calcite</a>は、SQLの解釈、最適化、実行のためのフレームワークであり、複数のデータベースに分散したデータへのANSI標準のSQLでの問い合せを実現する。
 データが複数のデータベースに分散していても、クライアントはデータが1つのRDBMSにあるかのようにSQLでCalciteに問い合せられる。</p>
-<!-- raw HTML omitted -->
+<!-- クライアントは、複数のデータベースに分散するデータが1つのRDBMSにあるかのように、SQLでCalciteに問い合せられる。 -->
 <p>Calcite自体はデータを保存するストレージをもたない。
 かわりに、モデルとよばれるファイルで指定した外部のデータベースからデータを取得し、クライアントには各データベースがRDBMSのスキーマのように見せる。
 以下にCalciteの<a href="https://calcite.apache.org/docs/tutorial.html#schema-discovery">Tutorial</a>にあるモデルの例を示す。
@@ -131,11 +131,11 @@ Schemaが参照するテーブルクラスはレコードをスキャンする�
 ある式を別の式に変換する規則をplanner rulesといい、独自のplanner ruleを定義することができる。
 Optimizerはトレイトをもとに実行計画のコストを評価する。
 たとえば、トレイトから操作対象のデータが特定のバックエンドのみにあるとわかれば、そのバックエンド上で操作を実行するように式を変換する。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- ## 雑記 -->
+<!-- クエリの最適化 -->
+<!-- 外部のデータベースへの接続方法を知るAdapterというコンポーネントで、外部のデータベースをRDBMSのスキーマのようにクライアントに見せる。 -->
+<!-- Adapterは、モデル、スキーマ、スキーマファクトリからなる。 -->
+<!-- A schema adapter allows Calcite to read particular kind of data, presenting the data as tables within a schema. -->
   </div>
 </main>
 

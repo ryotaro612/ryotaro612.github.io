@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-	<meta name="generator" content="Hugo 0.123.7">
+	<meta name="generator" content="Hugo 0.131.0">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -18,7 +18,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -85,6 +85,89 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/how_much_up-front/">論文メモ How much Up-Front? A Grounded Theory of Agile Architecture</a></h3>
+        <div class="summary"><p>「アジャイル開発において、実装前のアーキテクチャ設計にどれだけ工数を割くべきか？」という問いの回答指針を、44名のソフトウェア開発者に面接し、その結果からグラウンデッド・セオリーで提案した。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">September 25, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/character_level_convolutional_networks_for_text_classification/">論文メモ Character-level Convolutional Networks for Text Classification</a></h3>
+        <div class="summary"><p>文字単位のCNNによる文書の分類を、ほかのモデルと比較して評価した。
+先行研究より、CNNを訓練するときは大量の教師データが必要になると分かっている。
+のため、比較のためのデータセットは大きく、訓練データの事例数は最低でも12万件におよぶ。
+文字単位のCNNに大量の訓練データをあたえれば、別途単語の意味をモデルにあたえずとも性能を発揮することを示した。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">September 25, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/what_makes_a_great_software_engineer/">論文メモ What Makes A Great Software Engineer?</a></h3>
+        <div class="summary"><p>優れたエンジニアの特徴を知るために、マイクロソフト社のアーキテクト59名と半構造化された面接をし、グラウンデッドセオリーで内容から特徴を抽出した。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">September 18, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/maml/">論文メモ Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks</a></h3>
+        <div class="summary"><p>表題の略称MAMLで知られるメタ学習であり、少ない教師データで新しいタスクに対応することを目的としている。
+Model-Agnosticとあるように、MAMLの汎用性は高く、勾配法をもちいるモデルであえば適用可能である。
+論文には、教師あり学習だけでなく強化学習の事例もある。
+さまざまなタスクに適した初期パラメタを見つけ、データ件数の削減をねらう。
+目的のパラメタを求めるためには、複数のタスクを用意し、これらの損失関数の合計値を最小にするように勾配法でパラメタの更新を繰り返す。
+最後に更新されたパラメタをモデルの初期値に設定する。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">September 18, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/truth_in_advertising/">論文メモ Truth in Advertising: The Hidden Cost of Mobile Ads for Software Developers</a></h3>
+        <div class="summary"><p>モバイルアプリを無料で提供し、アプリ内の広告で収益をえるビジネスが普及している。
+このビジネスモデルでは、一見、ユーザには、画面に広告を表示されること以外のコストがないように思える。
+表題の論文は、それ以外のコストを確かめるために、CPU, 電力, ネットワーク, 広告関連のためのリリース, アプリケーションへのユーザからの評価へ広告が及ぼす影響を調査した。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">September 11, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/skip_thought_vectors/">論文メモ Skip-Thought Vectors</a></h3>
+        <div class="summary"><p>様々なタスクで性能を発揮できる文の分散表現を生成するモデルSkip-Thougtを提案した。
+表題のSkip-Tought Vectorsは、Skip-Toughtで生成されるベクトルである。
+Skip-Thoughtは、文書を入力とする教師なし学習であり、与えられた文から隣接する左右の文を推定できるようにパラメタを学習する。
+学習後は、語彙を増やすために、Word2Vecの単語のベクトルからSkip-Toughtのベクトルを推定するための正則化なしの回帰モデルを学習させる。
+学習データにない単語のベクトルを回帰モデルの推定結果で代用し、未知の単語を含む文の分散表現もつくれるようにする。
+Skip-Toughtを8タスクに適用し、汎用性を確かめた。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">September 11, 2020</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/beyond_accuracy/">論文メモ Beyond Accuracy: Behavioral Testing of NLP Models with CHECKLIST</a></h3>
+        <div class="summary"><p>ホールドアウト法にかわる自然言語処理モデルの汎化性能を評価するための手法CHECKLISTを提案した。
+テストデータと訓練データが同じ方法で集められたときなど、ホールドアウト法はモデルを過大評価することがある。
+CHECKLISTは、ソフトウェア開発のブラックボックステストにならい、半自動生成したテストデータで汎化性能を評価する。
+CHECKLISTの汎用性と性能を評価するために、感情分析、Quoraの重複質問検出、読解の3タスクについて、商用やSoTAに近いモデルを学習させ、CHECKLISTでモデルがあつかえない入力パターンをどれだけ生成できるか実験した。
+感情分析の評価には、Microsoft, Google, AmazonのAPIとBERT, RoBERTaを使い、重複検出にはBERTとRoBERTa, 読解にはBERTを使用した。
+CHECKLISTはOSSとして<a href="https://github.com/marcotcr/checklist">公開</a>されている。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">September 4, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/why_good_developers_write_bad_code/">Why Good Developers Write Bad Code: An Observational Case Study of the Impacts of Organizational Factors on Software Quality</a></h3>
         <div class="summary"><p>創立40年以上の電気通信系企業における内製システムのリプレースプロジェクトを観察し、コードに悪影響をおよぼす10の組織的な要因をまとめた。
 表題には、&ldquo;Good Developers&quot;とあるが、開発者のスキルの高さは議論されていない。
@@ -115,95 +198,6 @@
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/extensible_effects/">論文メモ Extensible Effects An Alternative to Monad Transformers</a></h3>
-        <div class="summary"><p>モナド変換子にかわるモナドの合成方法Extensible Effectsの実装を示す。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">August 23, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/when_and_why_your_code_starts_to_smell_bad/">論文メモ When and Why Your Code Starts to Smell Bad</a></h3>
-        <div class="summary"><p>200件のAndroid, Apache, EclipseのOSSプロジェクトのコミット履歴を調査し、不吉な匂いが生じる原因と理由を調査した。
-常識では、改修の繰返しによって匂いのない既存のコードに匂いが生じると考えられているが、これに反して、不吉な匂いのするコードのほとんどが作成時点で不吉な匂いを出していたことを明らかにした。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">August 21, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/extracting_and_composing_robust_features_with_denoising_autoencoders/">論文メモ Extracting and Composing Robust Features with Denoising Autoencoders</a></h3>
-        <div class="summary"><p>ノイズを含む入力からノイズのない入力を復元するように学習すると、次元圧縮の性能を向上できることを示した。
-層の深いautoencoderを学習するには、良い初期値を与えなければらないことが知られていた。
-<a href="https://www.cs.toronto.edu/~hinton/science.pdf">先行研究</a>は、各中間層を個別に学習することで、良い初期値を求められることを示した。
-具体的には、各中間層について、前の層の入力から次の層の出力を推定できるよう個別に学習させる。
-一方で、何が良い初期値をなすのかは知られていなかった。
-表題の論文は、その条件は入力に含まれるノイズに対して頑強であると仮説をおき、ノイズを除去できるように目的関数を設定することで、次元圧縮の性能が上がることを示し、仮説の正しさを確かめた。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">August 21, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/statistical_errors_in_software_engineering_experiments/">論文メモ Statistical Errors in Software Engineering Experiments: A Preliminary Literature Review</a></h3>
-        <div class="summary"><p>ソフトウェア工学の実験において、統計をもちいた手法がどれだけ誤用されているかを調査した。
-薬学や心理学の実験では、統計による手法が時に誤って使われていることが知られている。
-一方で、ソフトウェア工学では、どの程度誤用がみられるのかは分かっていない。
-著者らは、2006から2015年のソフトウェア工学のトップ会議ICSEで発表された論文770件から、実験や評価に統計的手法をもちいたものを選び、10の観点からなる判断基準で、手法の妥当性を評価した。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">August 14, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/semi-supervised_learning_with_ladder_networks/">論文メモ Semi Supervised Learning with Ladder Networks</a></h3>
-        <div class="summary"><p>Ladder Networkを半教師あり学習に応用する。
-Ladder Networkは、2015年に、著者の一人Valpolaによって教師なし学習のためのネットワークとして発表されている<a href="https://arxiv.org/abs/1411.7783">*</a>。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">August 14, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/an_empirical_study_on_program_failures_on_deep_learning_jobs/">論文メモ An Empirical Study On Program Failures On Deep Learning Jobs</a></h3>
-        <div class="summary"><p>Microsoftの社内では深層学習のプラットフォームPhillyが運用されており、そこで起きた4960件のジョブの失敗原因を調査した。
-調査では、失敗の原因を20のカテゴリに分類し、カテゴリごとに失敗の件数を集計した。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">August 7, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/">概要 Improving Language Understanding by Generative Pre-Training</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>GPTの略称で知られる教師なしの事前学習である。
-評価実験では、全結合層を1層追加したファインチューニングで、12の自然言語処理タスクのうち9つについて、当時のSoTAを上まわる性能を発揮した。
-ネットワークには<a href="https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">Transformer</a>のデコーダー部分が使われている。
-ファインチューニング時には、事前学習の効果を生かすために、特徴の入力をモデルのアーキテクチャに合わせ、アーキテクチャの変更を最小限におさえる。
-推論タスクであれば前提や仮定、テキストの類似性判定であれば比較する2つのテキストといった異種の特徴をデリミタで連結した系列を作り、モデルに入力する。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/">
-		#言語モデル
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">August 7, 2020</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -228,7 +222,7 @@ Ladder Networkは、2015年に、著者の一人Valpolaによって教師なし�
       </a>
     </li>
     <li>
-      <a href="/page/31/">
+      <a href="/page/32/">
 	<i class="fa-solid fa-xl fa-angles-right"></i>
       </a>
     </li>

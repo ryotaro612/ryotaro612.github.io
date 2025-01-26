@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -110,9 +110,9 @@
 <a href="https://arxiv.org/abs/1810.04805">BERT</a>を2つのテキストを入力し類似度を出力するように訓練できるが、あるテキストに類似するテキストを求めたい場合には組合せ爆発が生じる。
 Sentence-BERTは、類似度が定義されたテキストの組から、類似するテキスト同士を近い位置に写像できるように学習する。
 ネットワークは、BERTを使ったシャムネットワークであり、重みを共有した2つのBERTに1つずつテキストを入力し、両方の出力を目的関数に入力する。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- Siamese Networkとテキスロ -->
+<!-- 重みを共有するネットワークにBERTを採用したSiamese Networkである。 -->
+<!-- Sentence-BERTは、Sentence-BERTはテキストを -->
 <p>テキストをベクトル空間に配置するために、BERTの出力は固定長のベクトルに変換される。
 変換方法は、2つのテキストの先頭につけられるBERTのCLSトークンの出力、出力のされるすべてのベクトルの平均値、または最大値の3つがある。
 平均値がデフォルトである。</p>

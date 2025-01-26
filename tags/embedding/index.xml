@@ -4,7 +4,7 @@
     <title>Embedding on Blanket</title>
     <link>https://ryotaro.dev/tags/embedding/</link>
     <description>Recent content in Embedding on Blanket</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 21 May 2023 14:43:39 -0400</lastBuildDate>
     <atom:link href="https://ryotaro.dev/tags/embedding/index.xml" rel="self" type="application/rss+xml" />
@@ -20,7 +20,7 @@
       <link>https://ryotaro.dev/posts/context2vec/</link>
       <pubDate>Sun, 02 Feb 2020 19:19:46 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/context2vec/</guid>
-      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;文書の文脈の分散表現を獲得するニューラルネットワークのアーキテクチャ&lt;em&gt;context2vec&lt;/em&gt;を提案、評価した論文である。&#xA;アーキテクチャの基本構造は&lt;a href=&#34;https://arxiv.org/pdf/1301.3781.pdf&#34;&gt;CBOW&lt;/a&gt;と同様で、周辺の単語から中心の単語を当てられるようにコーパスをもとにモデルを訓練する。&#xA;CBOWとの違いは、文脈の算出方法にある。&#xA;CBOWは、ウィンドウ内のベクトルの平均値で文脈の分散表現を求める。&#xA;一方、&lt;em&gt;context2vec&lt;/em&gt;では、双方向LSTMの出力をもとに算出する。&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
+      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;文書の文脈の分散表現を獲得するニューラルネットワークのアーキテクチャ&lt;em&gt;context2vec&lt;/em&gt;を提案、評価した論文である。&#xA;アーキテクチャの基本構造は&lt;a href=&#34;https://arxiv.org/pdf/1301.3781.pdf&#34;&gt;CBOW&lt;/a&gt;と同様で、周辺の単語から中心の単語を当てられるようにコーパスをもとにモデルを訓練する。&#xA;CBOWとの違いは、文脈の算出方法にある。&#xA;CBOWは、ウィンドウ内のベクトルの平均値で文脈の分散表現を求める。&#xA;一方、&lt;em&gt;context2vec&lt;/em&gt;では、双方向LSTMの出力をもとに算出する。&lt;/p&gt;&#xA;&lt;!-- 分散表現を汎用的に利用できることを想定しており、獲得した分散表現をsentence comp --&gt;</description>
     </item>
     <item>
       <title>Distributed Representations of Sentences and Documents(2014)</title>

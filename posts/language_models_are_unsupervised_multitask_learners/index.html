@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -119,8 +119,24 @@ BPEは、文を文字列に分解し、次に最も出現回数の高い隣接�
 変更点は、層正規化の位置と、残差結合層の重みのスケールである。
 既存の層正規化を各ブロックの入力部分に移し、最後の注意機構の後に新たな層正規化を追加した。
 また、残差層の数を\(N\)とすると、残差結合層の重みを\(1/\sqrt(N)\)だけスケールし初期化する。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+タスクによらない入力形式でモデルに特徴を入力し、
+Multitask Learning is an approach to inductive transfer that improves generalization by using the domain information contained in the training signals of related tasks as an inductive bias. It does this by learning tasks in parallel while using a shared representation; what is learned for each task can help other tasks be learned better
+GPT-1
+明確な教師あり学習なしで、zero shotのベンチマークこえた。学習はWebTextとよばれる数百万のwebpagesで。
+GPT-2 1.5BパラメタのTransformer
+
+人によるラベルづけのいらない汎用システムをつくりたい。
+
+結論 大きく多様なデータセットで学習すれば、多くのドメインやデータで性能を発揮できる。
+
+表題のマルチタスクとは何か
+
+GPT-1と比べてzero-shotに向けた
+
+多少の意識はある。
+wikiの除外
+-->
 <p>論文の<a href="https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf">リンク</a></p>
 <h2 id="雑記">雑記</h2>
 <p>モデル自体ではなく、モデルに入力するデータの品質を用意したことが貢献になったのだろう。

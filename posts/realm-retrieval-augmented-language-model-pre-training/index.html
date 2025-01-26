@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.ac39fd9b1999326c116cd551ce035fd4eaf2801f6bfc13a90241a1d9275b21ec.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>REALM Retrieval Augmented Language Model Pre Training (2020)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://ryotaro.dev/about">About</a></li>
+          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+	  
+	  <li><a href="https://ryotaro.dev/en/posts/realm-retrieval-augmented-language-model-pre-training/">en</a></li>
+	  
+        </ul>	
+	<ul>
+          
+          <li>
+            <a href="https://github.com/ryotaro612">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="https://www.linkedin.com/in/ryotaro612/">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          
+          <li>
+	    <a href="https://ryotaro.dev/index.xml">
+	      <i class="fas fa-rss"></i>
+            </a>
+	  </li>
+          
+        </ul>	
+      </nav>
+    </header>
+    
+<main>
+  <h1>REALM Retrieval Augmented Language Model Pre Training (2020)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/retrieval-augmented-generation/">
+	#Retrieval Augmented Generation
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">May 27, 2024</span>    
+  <div>
+    <p><a href="https://arxiv.org/abs/2002.08909">REALM</a>は、オープンドメイン質問応答向けの言語モデルであり、入力文に関連する文書をみつけるknowledge retrieverと見つけた文書と入力文から応答を生成するknowledge-augmented encoderで構成されている。
+事前学習はmasked language modelingによる教師なし学習であり、一部のトークンがマスクされた入力文をあたえたときに、もとのマスクされた単語を出力できるように訓練する。
+オープンドメイン質問応答のファインチューニングでは、質問文を入力したときに、回答を出力できるようにモデルを訓練する。
+評価実験では、期待する回答がknowledge retrieverの学習に使うコーパスに文字通りにあることが前提にされている。</p>
+<p>Knowedge retrieverが参照するコーパスを\(\mathcal{x}\)とすると、REALMの学習する確率分布\(p(y|x)\)を、\(x\)に関連する文書\(z\)を収集する部分と、\(x\)と\(z\)から\(y\)を予測する部分に分けられる。
+\(p(y|x)\)を分解すると次の式になる。
+$$
+p(y|x) = \sum_{z\in \mathcal{Z}}p(y|z, x)p(z|x)
+$$</p>
+<p>Knowledge retriverは、入力\(x\)と文書の関連度\(f(x, z)\)をソフトマックス関数に入力したときの値を\(p(z|x)\)とみなす。
+$$
+p(z|x)=\frac{\exp f(x, z)}{\sum_{z&rsquo;}\exp f(x, z&rsquo;)}
+$$
+\(f(x, z)\)は\(x\)と\(z\)の次元\(d\)のエンベディング\(\texttt{Embed}_{\texttt{input}}(x), \texttt{Embed}_{\texttt{doc}}(z)\)の内積であり、BERTの<code>[CLS]</code>トークンのベクトルを入力や文書のエンベディングとしてあつかう。
+$$
+\begin{align*}
+f(x, z) &amp;= \texttt{Embed}_{\texttt{input}}(x)^\top \texttt{Embed}_{\texttt{doc}}(z)\\
+\texttt{Embed}_{\texttt{input}}(x)&amp;={\rm \bf{W}}_{\texttt{input}}\texttt{BERT}_{\texttt{CLS}}(\texttt{[CLS]}x\texttt{[SEP]} )\\
+\texttt{Embed}_{\texttt{doc}}(z)
+&amp;={\rm \bf{W}}_{\texttt{doc}}\texttt{BERT}_{\texttt{CLS}}(\texttt{join}_{\texttt{BERT}}(z_\text{title}, z_{\text{body}}))\\
+&amp;={\rm \bf{W}}_{\texttt{doc}}\texttt{BERT}_{\texttt{CLS}}(\texttt{[CLS]}z_{\text{title}}\texttt{[SEP]}z_\text{body}\texttt{[SEP]})\\
+\end{align*}
+$$</p>
+<p>Augmented encoderは、\(p(y|z, x)\)にあたり、\(z\)と\(x\)を連結した系列をTransformerに入力する。
+事前学習では、\(x\)と文書の本文\(\text{z}_{\text{body}}\)から\(J_x\)個の\(\texttt{[MASK]}\)を含む入力\(x\)の系列のマスクの中身を推定できるように訓練する。
+$$
+\begin{align*}
+p(y|z, x) &amp;= \prod^{J_x}_{j=1}p(y_j|z, x)\\
+p(y_j|z, x) &amp;\propto\exp (w_j^\top \texttt{BERT}_{\texttt{MASK}(j)}(\texttt{join}_{\texttt{BERT}}(x, z_{\text{body}})))
+\end{align*}
+$$
+ある文書\(z\)の連続するトークン列が正解\(y\)になることを前提にしたオープン質問応答のファインチューニングでは、\(S(z, y)\)を\(y\)にマッチする区間の集合、\(\texttt{BERT}_{\texttt{START}(s)}, \texttt{BERT}_{\texttt{END}(s)}\)を区間\(s\)の最初と最後の区間として、\(p(y|z, x)\)を以下のように定める。
+$$
+\begin{align*}
+p(y|z, x)&amp;\propto \sum_{s\in S(z, y)}\exp (\texttt{MLP}([h_{\texttt{START}(s)}; h_{\texttt{END}(s)}]))\\
+h_{\texttt{START}(s)}&amp;=\texttt{BERT}_{\texttt{START}(s)}(\texttt{join}_{\texttt{BERT}}(x, z_{\text{body}}))\\
+h_{\texttt{END}(s)}&amp;=\texttt{BERT}_{\texttt{END}(s)}(\texttt{join}_{\texttt{BERT}}(x, z_{\text{body}}))
+\end{align*}
+$$</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+    <li>
+      <a href="/posts/video-streaming/">
+	<i class="fa-solid fa-xl fa-angle-right"></i>
+      </a>
+    </li>
+    
+</ul>
+
+
+    <footer>
+      <small>© Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -151,8 +151,51 @@ $$
 <h2 id="雑記">雑記</h2>
 <p>レコード同士の依存関係によらずデータを更新できるデータベースが想定されているので、今日でいえばRDMSよりKVSに近いものが想定されている。
 Epidemic Algorithmを、ランダム性に頼らず変更を受信したデータベースがほかの全てのデータベースに変更を伝搬させる手法と比較している。後者について、通信が失敗する場合に変更が伝搬しきれない問題が指摘されている。Epidemic Algorithmにも通信が失敗する可能性があるので、後者に対して通信の失敗を指摘するのであれば、変更を待機するデータベースの確率のモデルには通信が失敗する確率をモデルに含めるべきではないだろうか。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+ランダムな手法に頼らず、たとえば変更を受理したデータベースが残りのデータベースに変更を伝搬するならば、変更が確実に全てのデータベースに到達することを保証しなければならない。
+
+同期
+変更を受理したサーバーがほかの全てのサーバーに伝搬する、ランダムに選んだサーバーとの差分を定期的に調べて同期する、レコードが更新されると一定の
+データベースのデータを複製するいくつかのランダムな手法
+伝染病のアナロジーでいける。
+
+要件が少ない。
+手法が単純
+
+siteが増えても、スケールするアルゴリズムを目指す。
+削除などのデータの整合性を考えているか。
+
+direct mailはサーバがほかのすべてのさーばの場所を知っているわけではない。
+
+anti-entrpoyは信頼できるが、direct mailより遅い。
+
+rumor mongeringはすべてのサイトにいきわたらない可能性がある。しかし、anti-entropyよりもリソースはいらない。
+susceptible updateをうけとっていない。
+
+removed updateをうけたが、それ以上シェアしたくない。
+
+決定的で複雑なプロトコるをおきかえられる。
+
+s.ValueOfはデータベースをコピーする行為
+
+サーバ間の時刻の同期は必要か
+
+direct mailは遅延やメッセージの消失を仮定していないところがむずかしい。
+
+anti-entropyはデータの差分で
+
+pushは収束がおそい。
+
+差分の計算に時間がかかる。
+
+
+susceptive: updateをしらない
+infective upateをしり、伝搬させている
+removed updateをしっているが、伝搬さていない。
+
+
+blind1/kの確立で受信がわの状態によらずremovedになる
+-->
   </div>
 </main>
 

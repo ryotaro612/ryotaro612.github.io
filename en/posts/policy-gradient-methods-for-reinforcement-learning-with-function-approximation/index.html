@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
+    
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.ac39fd9b1999326c116cd551ce035fd4eaf2801f6bfc13a90241a1d9275b21ec.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Policy Gradient Methods for Reinforcement Learning With Function Approximation (1999)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://ryotaro.dev/en/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://ryotaro.dev/en/about">About</a></li>
+          <li><a href="https://ryotaro.dev/en/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/en/tags">Tags</a></li>
+	  
+        </ul>	
+	<ul>
+          
+          <li>
+            <a href="https://github.com/ryotaro612">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="https://www.linkedin.com/in/ryotaro612/">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          
+          <li>
+	    <a href="https://ryotaro.dev/en/index.xml">
+	      <i class="fas fa-rss"></i>
+            </a>
+	  </li>
+          
+        </ul>	
+      </nav>
+    </header>
+    
+<main>
+  <h1>Policy Gradient Methods for Reinforcement Learning With Function Approximation (1999)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/en/tags/policy-gradient-method/">
+	#Policy Gradient Method
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/en/tags/reinforcement-learning/">
+	#Reinforcement Learning
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">April 27, 2024</span>    
+  <div>
+    <p>Policy gradient methods approximate stochastic policies using function approximators, which are independent of value functions.
+They update the policies according to the gradient of expected reward with respect to the policy parameters.
+<a href="https://proceedings.neurips.cc/paper/1999/file/464d828b85b0bed98e80ade0a5c43b0f-Paper.pdf">Policy Gradient Methods for Reinforcement Learning With Function Approximation</a> shows that a form of policy iteration with function approximation converges to a locally optimal policy.</p>
+<p>In the standard reinforcement learning framework, where a learning agent interacts with a Markov decision process, with \(\theta\) as the parameter vector, \(\rho\) as the objective function, and \(\alpha\) as the learning rate, policy gradient methods update the policy parameters approximately proportional to the gradient:
+$$
+\Delta\theta \approx \alpha \frac{\partial \rho}{\partial \theta}
+$$</p>
+<p>The paper considers two objectives.
+One is a function that maps a policy to the long-term average reward:
+$$
+\rho(\pi)=\lim_{t\rightarrow\infty}\frac{1}{t}E\{r_1+r_2+\cdots+r_t|\pi\}=\sum_sd^\pi(s)\sum_a\pi(s, a)\mathcal{R}^a_s
+$$
+where \(d^\pi(s) = \lim_{t\rightarrow\infty}\textit{Pr}\{s_t=s|s_0, \pi\}\) is the stationary distribution of states under \(\pi\), which is assumed to exist and independent of \(s_0\) for all policies.
+The corresponding state-action pair is defined as
+$$
+Q^\pi(s, a)=\sum^\infty_{t=1}E\{r_t-\rho(\pi)|s_0=s, a_0 = a, \pi\}
+$$</p>
+<p>The second covered formulation is an objective with a discount rate \(\gamma\in[0, 1]\):
+$$
+\begin{align*}
+\rho(\pi) &amp;= E\left\{\sum^\infty_{t=1}\gamma^{t-1}r_t|s_0,\pi \right\}\\
+Q^\pi(s, a) &amp;= E\left\{\sum^\infty_{k=1}\gamma^{k-1}r_{t+k}|s_t=s, a_t=a, \pi\right\}
+\end{align*}
+$$</p>
+<p>If \(d^\pi(s)\) is defined as a discounted weighting of states encountered starting at \(s_0\) and then following \(d^\pi(s)=\sum^\infty_{t=0}\gamma^tPr\{s_t=s|s_0,\pi\}\), for any MDP, the partial differentiation with respect to the policy parameter of the above two objectives is:
+$$
+\begin{equation}
+\frac{\partial\rho}{\partial\theta}=\sum_sd^\pi(s)\sum_a\frac{\partial\pi(s, a)}{\partial\theta}Q^\pi(s, a)
+\end{equation}
+$$</p>
+<p>\(Q^\pi(s, a)\) is typically unknown and must be estimated.
+Let \(f_w: \mathcal{S}\times \mathcal{A}\rightarrow\mathbb{R}\) with parameter \(w\) be an approximation to \(Q^\pi\), and \(\hat{Q}(s_t, a_t)\) be some unbiased estimator of \(Q^\pi (s_t, a_t)\), perhaps \(R_t\), \(f_w\) can be learnd by updating \(w\) by \(\Delta w_t\propto\frac{\partial}{\partial w}[\hat{Q}^\pi(s_t, a_t)-f_w(s_t, a_t)]^2\propto [\hat{Q}^\pi(s_t, a_t)-f_w(s_t, a_t)]\frac{\partial f_w(s_t, a_t)}{\partial w}\).
+When the objective converges to a local optimum, then
+$$
+\begin{equation}
+\sum_s d^\pi(s)\sum_a\pi(s, a)[Q^\pi(s, a)-f_w(s, a)]\frac{\partial f_w(s, a)}{\partial w} = 0
+\end{equation}
+$$</p>
+<p>To express \(\frac{\partial\rho}{\partial\theta}\) with \(f_w(s, a)\), let us assume \(f_w\) satisfies (2) and is compatible with the policy parameterization in the sense that
+$$
+\begin{equation}
+\frac{\partial f_w(s, a)}{\partial w}=\frac{\partial \pi (s, a)}{\partial \theta}\frac{1}{\pi (s, a)}
+\end{equation}
+$$
+Combining (2), (3) gives
+$$
+\sum_s d^\pi(s)\sum_a\frac{\partial\pi(s, a)}{\partial \theta}[Q^\pi(s, a)-f_w(s, a)] = 0
+$$
+This expression above is zero, and it can be subtracted from the policy gradient theorem (1) to yield
+$$
+\begin{align*}
+\frac{\partial\rho}{\partial\theta}&amp;=\sum_sd^\pi(s)\sum_a\frac{\partial\pi(s, a)}{\partial\theta}Q^\pi(s, a) - \sum_s d^\pi(s)\sum_a\frac{\partial\pi(s, a)}{\partial \theta}[Q^\pi(s, a)-f_w(s, a)]\\
+&amp;=\sum_sd^\pi(s)\sum_a\frac{\partial\pi(s, a)}{\partial\theta}[Q^\pi(s, a)-Q^\pi(s, a)+f_w(s, a)]
+\end{align*}
+$$
+Finally, if \(f_w\) satisfies (2) and (3), then
+$$
+\begin{equation}
+\frac{\partial \rho}{\partial \theta}=\sum_s d^\pi(s)\sum_a\frac{\partial \pi(s, a)}{\partial \theta}f_w(s, a)
+\end{equation}
+$$</p>
+<p>In additon to (3), if there is a bound \(B\) such that \(\max_{\theta s, a, i, j|\frac{\partial^2 \pi(s, a)}{\partial \theta_i\partial \theta_j}|}&lt;B&lt;\infty\), \(\frac{\partial^2\rho}{\partial \theta_i\partial\theta_j}\) is also bounded.
+If \(B\) exists and assuming the learning rate fulfills  \(\lim_{k\rightarrow\infty}\alpha_k=0, \sum_k\alpha_k=\infty\),
+$$
+\begin{align*}
+w_k&amp;= w\ \text{such that} \sum_s d^\pi(s)\sum_a\pi(s, a)[Q^\pi(s, a)-f_w(s, a)]\frac{\partial f_w(s, a)}{\partial w} = 0\\
+\theta_{k+1}&amp;=\theta_k+\alpha_k\sum_sd^{\pi_k}(s)\sum_a\frac{\partial \pi_k(s, a)}{\partial\theta}f_{w_k}(s, a)
+\end{align*}
+$$
+converges such that \(\lim_{k\rightarrow\infty}\frac{\partial\rho(\pi_k)}{\partial\theta}=0\).</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/en/posts/spark-sql-relational-data-processing-in-spark/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+    <li>
+      <a href="/en/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/">
+	<i class="fa-solid fa-xl fa-angle-right"></i>
+      </a>
+    </li>
+    
+</ul>
+
+
+    <footer>
+      <small>© Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

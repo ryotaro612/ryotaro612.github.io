@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -170,9 +170,9 @@ addl  $8,   %esi
 </code></pre>
 <p>コンパイラは、まず、<code>lvar</code>ごとにユーニークなラベルを出力し、<code>let</code>式のコンパイルの実装にある<code>env</code>のような環境をラベルごとに用意する。
 次に以下の図のようにリターンアドレス、ローカルアドレス、実引数をスタック上に配置する。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- `code`の引数をアドレスの高い位置から低い位置に順に配置し、ESPレジスタに最後の引数の1つ上のアドレスを代入してから、本体を評価する。 -->
+<!-- 関数の呼び出しの場合、`labelcall`の実引数と呼び出し元の関数の次の命令のアドレスを格納し、ESPレジスタに命令を格納したアドレスを代入する。 -->
+<!-- 以下は、関数呼し出し時のスタックの様子である。 -->
 <p><img alt="fig" src="/an_incremental_approach_to_compiler_construction.png"></p>
 <p>論文中より図を引用しました。</p>
   </div>

@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -105,8 +105,8 @@
 レプリカ\(i\)に対して引数\(a\)を渡した\(k\)番目の操作を\(f^k_i(a)\)とおき、
 レプリカ\(i\)の初期状態を\(s_i^0\), \(k\)番目の操作後の状態を\(s_i^k\)とおくと、操作による状態遷移を\(s^{k-1}_i\bullet f^k_i(a)=s_i^k\)と表せる。
 このとき\(f\)がクエリであれば、\(s\bullet q \equiv s\)になる。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- , そして\\(K\_i(f)\\)を\\(i\\)に対する操作から\\(i\\)で起きた操作の順列における順番を返す関数とする。 -->
+<!-- ただし、\\(i=j\\)のときのみ\\(K\_i(f^k\_j(a))=k\\)が成立し、それ以外では未定義とする。 -->
 <p>CRDTsを定義する方法は、状態に着目する方法と操作に着目する方法の2通りがある。
 状態に主眼を置く方法はState-based Convergent Replicated Data Type (CvRDT) といい、操作に沿うものをOp-based Commutative Replicated Data Type (CmRDT) という。
 どちらの様式でもCRDTsとして備わる性質は変わらないため、定義しやすい方を採用してよい。</p>

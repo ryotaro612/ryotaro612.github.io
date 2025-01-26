@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
     
@@ -123,35 +123,35 @@ The sub-quantizers typically have 256 reproduction values, and the quantization 
 \([a_i]_{i=0:l}\) are the sequence provided fro selection, and \([T^j_i]_{i=0:t}\) is a priority queue where the elements are ordered from largest to smallest (\(T^j_{i}\ge T^j_{i+1}\)).
 \([W_i]_{i=0:k}\) is the array of \(k\) smallest seen elements.
 If a new candidate vector \(a\) is greater than the largest key currently in the queue \(T^j_0\), it is guaranteed that it won&rsquo;t be included in the final set of \(k\) smallest results.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- [Billion-scale-similarity search with GPUs](https://arxiv.org/abs/1702.08734) is an approximate nearest-neighbor search that utilizes [IVFADC](https://inria.hal.science/inria-00514462v2/document) and [Batcher's bitonic sroting network](https://www.cs.kent.edu/~batcher/sort.pdf) on GPUs. -->
+<!-- The authors published its implementation as [faiss](https://github.com/facebookresearch/faiss). -->
+<!-- Given the query vector \\(x\in R^d\\) and the vectors in a database \\([y\_i]\_{i=0:l}\\), the search returns a suboptimal result for finding the \\(k\\) nearest neighbors of \\(x\\) in tehrms of L2. -->
+<!-- $$ -->
+<!-- L=\text{k-}\argmin\_{i=0:l}||x-y\_i||\_2 -->
+<!-- $$ -->
+<!-- The IVFADC is an indexing structure that relies on two level quantization. -->
+<!-- $$ -->
+<!-- y\approx q(y) = q\_1(y) + q\_2(y-q\_1(y)) -->
+<!-- $$ -->
+<!-- The first-level quantizer \\(q\_1\\): \\(\mathbb{R}^d\rightarrow \mathcal{C}\_1\subset \mathbb{R}^d\\) is a coarse quantizer, and the second level \\(q\_2\\): \\(\mathbb{R}^d\rightarrow \mathcal{C}\_2\subset \mathbb{R}^d\\) is a fine quantizer. -->
+<!-- The fine quantizer encodes the residual vector after the first level. -->
+<!-- For the first level, the IVFADC filters the database vectors based on their coarse-level centroids. -->
+<!-- $$ -->
+<!-- L\_{\text{IVF}}=\tau-\argmin\_{c\in\mathcal{C}\_1}||x-c||\_2 -->
+<!-- $$ -->
+<!-- \\(\tau\\) is the number of coarse-level centroids, and typically \\(|C\_1\approx \sqrt{l}\\) trained via \\(k\\)-means. -->
+<!-- For the second level, it computes the distances for the database vectors in \\(L\_{\text{IVF}}\\). -->
+<!-- $$ -->
+<!-- L\_{\text{IVFADC}}=k-\argmin\_{i=0:l\ \text{s.t.}\ q\_1(y\_i)\in L\_{\text{IVF}}}||x-q(y\_i)||\_2 -->
+<!-- $$ -->
+<!-- \\(q\_2\\) is a [product quantizer](https://inria.hal.science/inria-00514462v2/document). -->
+<!-- It divides the vector \\(y\\) into \\(b\\) sub-vectors \\((y=[y^0\dots y^{b-1}])\\) where \\(b\\) is an even divisor of the dimension \\(d\\). -->
+<!-- The sub-quantizers typically have 256 reproduction values, and the quantization value of the product quantizer is then \\(q\_2(y)=q^0(y^0)+256\times q^1(y^1)+\dots + 256^{b-1}\times q^{b-1}(y^{b-1})\\). -->
+<!-- The search operates Batcher's bitonic sorting network with exact distances in the set of reproduction values. -->
+<!-- ![fig](/billion-scale-similarity-search-with-gpus.png) -->
+<!-- \\([a\_i]\_{i=0:l}\\) are the aequence provided fro selection, and \\([T^j\_i]\_{i=0:t}\\) is a priority queue where the elements are ordered from largest to smallest (\\(T^j\_{i}\ge T^j\_{i+1}\\)). -->
+<!-- \\([W\_i]\_{i=0:k}\\) is the array of \\(k\\) smallest seen elements. -->
+<!-- If a new \\(a\\) is greater than the largest key currently in the queue, \\(T^j\_0\\), it is guaranteed that it won't be in the \\(k\\) smallest final results. -->
   </div>
 </main>
 

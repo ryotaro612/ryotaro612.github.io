@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-	<meta name="generator" content="Hugo 0.123.7">
+	<meta name="generator" content="Hugo 0.131.0">
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -18,7 +18,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -85,6 +85,100 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/the_transaction_concept/">抄訳 The Transaction Concept: Virtues and Limitations(1981)</a></h3>
+        <div class="summary"><p>トランザクションのコミットとロールバックの2通りの実装方針を提案している。
+1つは、オブジェクトの値とその値の有効期間を記録し、値の履歴を管理する。
+もうひとつは、ログとロックを利用した実装で、操作時にUNDOログとREDOログを出力する。
+ロールバック時には、ログをもとにコミット開始前の状態にシステムを復元する。
+UNDOやREDOを再実行可能でなければならず、そのためにオブジェクトにしばしばバージョンをつけることがある。
+2つの実装方針は異なるように見えるが、内部の実装は似かよったものになる。</p>
+<!--
+https://dspace.mit.edu/handle/1721.1/16279
+--></div>
+        <div class="article-footer">
+	  
+          <span class="date">July 30, 2022</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/on_spectral_clustering_analysis_and_an_algorithm/">On Spectral Clustering: Analysis and an algorithm</a></h3>
+        <div class="summary"><p>スペクトラルクラスタリングは、類似度を辺の重みとするグラフをデータから構築し、重みをもとにカットする辺を決めて、データをクラスタに分ける。
+グラフラプラシアンのようなグラフを表現した行列をつくり、その固有ベクトルを求め、固有ベクトルを列ベクトルとして並べた行列にK-meansを適用する。
+もとのデータに二重丸のような凸集合でないクラスタがあるときに、最初からK-meansを適用するよりも良い結果を期待できる。
+また、データ分布に確率モデルにあてはめ、どのクラスタにデータを割りあてるか確率的に決めるクラスタリングと違い、データの分布を仮定しなくてよい。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">July 23, 2022</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/how_to_make_a_multiprocessor_computer_that_correctly_executes_multiprocess_programs/">How to Make a Multiprocessor Computer That Correctly Executes Multiprocess Programs(1979)</a></h3>
+        <div class="summary"><p>プロセッサは、高速化のためにソースコードと違う順序で命令を実行することがある。
+順序の入れ換えが実行結果に影響しなければ、プロセッサは逐次的であるという。
+マルチプロセッサに期待する実行結果は、各プロセッサがソースコードの順序で命令を実行し、かつ、全プロセッサの命令がある順序で逐次的に実行されるときの結果である。
+任意のプログラムで実行結果が等しいならば、そのマルチプロセッサには逐次一貫性がある。
+プロセッサがメモリ上のデータを共有する場合、各プロセッサが逐次的でも、マルチプロセッサが逐次一貫になるとは限らない。
+マルチプロセッサが逐次一貫であるには、各プロセッサがソースコード通りの順序でメモリにリクエストを送り、メモリは各セルへのリクエストを到着順(FIFO)に処理しなければならない。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">July 16, 2022</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/a_min-max_cut_algorithm_for_graph_partitioning_and_data_clustering/">A Min-max Cut Algorithm for Graph Partitioning and Data Clustering</a></h3>
+        <div class="summary"><p>重みつき隣接行列で表した無向グラフを2分割するクラスタリングであり、グラフ間の類似を最小化し、グラフ内のノードの類似の最大化をはかる。
+隣接行列を\(W_{uv}\), \(\text{cut}(A, B)=W(A, B)\), \(W(A, B) = \sum_{u\in A, v\in B}W_{uv}\)として、以下の目的関数を最小化する分割を探索する。
+ノードを2つに分ける最適解はNP完全であるため、近似解をもとめる。
+$$
+\text{Mcut} = \frac{\text{cut}(A, B)}{W(A)} + \frac{\text{cut}(A, B)}{W(B)}
+$$</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">July 9, 2022</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/implementing_fault-tolerant_services_using_the_state_machine_approach_a_tutorial/">Implementing Fault-Tolerant Services Using the State Machine Approach: A Tutorial</a></h3>
+        <div class="summary"><p>サーバのレプリケーションによってフォールトトレランスを高めることができるが、レプリケーション間の合意形成のプロトコルが必要になる。
+そこで、ステートマシンをモデルにプロトコルを定義する手法を、Fail Stopとビザンチン将軍問題で例示する。
+ステートマシンは、状態変数を決定的に変更するコマンドからなり、入力系列のみから出力が決まる。
+モデルは、複数のステートマシンを同じ初期状態から開始し、同じ入力を与え、出力の合意をはかる。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">June 26, 2022</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/least_angle_regression/">LEAST ANGLE REGRESSION</a></h3>
+        <div class="summary">Least Angle Regression(LARS)はLASSO回帰のアルゴリズムで、目的変数の値とモデルの推定値の残差と相関の大きい入力変数をひとつずつモデルに取り込む。 ベクトル間の相関が大きいほど間の角度が小さくなるため、least angle(最小角)と名がつく。
+初期状態のモデルは説明変数をもたず推定値は0である。 そのため、目的変数との相関が最大の説明変数を最初にモデルに取り込む。 次に、別の説明変数と残差の相関が取り込んだ説明変数の相関と等しくなるまで、取り込んだ説明変数の方向に、出力する推定値を更新する。 以降は、取り込んだすべての説明変数から等角度の方向に、取り込んでいない説明変数と残差の相関が取り込んだ説明変数との相関と等しくなるまで、モデルの推定値を更新する。
+説明変数\(\boldsymbol{x}_1\), \(\boldsymbol{x}_2\)と目的変数\(\boldsymbol{y}\)で更新の様子を説明する。 初期状態の推定値\(\hat{\boldsymbol{\eta}}_0\)では、\(\boldsymbol{x}_2\)よりも\(\boldsymbol{x}_1\)のほうが\(\boldsymbol{y}-\boldsymbol{\hat{\eta}}_0\)と相関がある。そこで、\(\boldsymbol{x}_1\)を最初にモデルに取り込む。 \(\boldsymbol{x}_1\)の方向に\(\boldsymbol{\hat{\eta}_1}\)まで更新すると、\(\boldsymbol{x}_1\)と\(\boldsymbol{x}_2\)は、残差\(\boldsymbol{y}-\boldsymbol{\hat{\eta}}_1\)との相関が等しくなる。 そして今度は、\(\boldsymbol{x}_1\)と\(\boldsymbol{x}_2\)と等角度の方向に\(\boldsymbol{\eta}_2\)まで更新する。
+論文へのリンク
+引用元の画像が荒いため、画像は、スモールデータ解析と機械学習から引用しました。</div>
+        <div class="article-footer">
+	  
+          <span class="date">June 25, 2022</span>
+        </div>
+    </article>
+    
+    <article>
+        <h3><a href="https://ryotaro.dev/posts/consensus_in_the_presence_of_partial_synchrony/">Consensus in the Presence of Patial Synchrony (1988)</a></h3>
+        <div class="summary"><p>同期的なシステムには、プロセッサ間のメッセージの到達時間や時刻の誤差に有界がある。
+非同期的なシステムには、どちらの有界もない。
+表題のpartial synchronousは、同期、非同期の中間的な環境である。
+到達時間や時刻の誤差の有界について、存在するが値が分からない環境と、値が分かっているがどの時刻から値が保証されるか分からない環境を意味する。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">June 18, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/regression_shrinkage_and_selection_via_the_lasso/">Regression Shrinkage and Selection via the Lasso</a></h3>
         <div class="summary"><p>Lasso(least absolute shrinkage and selection operator)を提案した論文で、特定の回帰係数を0にする正則化項により、モデルを解釈しやすくする。
 Subset selectionはデータの変化に敏感で、学習結果が安定しない。
@@ -123,93 +217,6 @@ NIPALSでは、潜在変数が、デフレーションされた説明変数の�
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/experience_report_the_wycash_portfolio_management_system/">The WyCach Portfolio Management System(1992)</a></h3>
-        <div class="summary"><p>Ward Cunninghamが証券ポートフォリオ管理システムWyCASH+を開発したときの事例報告で、92年のオブジェクト指向の国際会議OOPSLAで発表された。
-この発表が技術的負債の典拠であるが、文中には技術的(technical)はなく単に負債(debt)と書かれている。
-アジャイルソフトウェア開発宣言が発表された2001年以前に、ウォーターフォールよりもインクリメンタルな開発のほうが最短で適当な品質のソフトウェアを構築できると主張した。
-しかし、インクリメンタルな開発では、全ての知識が十分に揃っていない状態でコーディングするため、システムの部分的な修正を重ねる必要がある。
-そして、オブジェクト指向言語のメッセージパッシングによって漸進的な修正が可能になるというのが発表の骨子である。
-負債で会社の成長を早められるように、コードをリリースすることで後に修正する必要があるかもしれないが、よい設計を早く知ることができるため、Cunninghamは最初にリリースするコードを負債と形容した。
-負債と対比されているのはプログラミングの前に設計を熟考することであり、こちらが前払い、全額払いと表現されている。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">May 28, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/pls_regression_a_basic_tool_of_chemometrics/">PLS-regression: a basic tool of chemometrics</a></h3>
-        <div class="summary"><p>重回帰分析は、説明変数の行列がフルランクでないとき、多重共線性により出力が不安定になる。
-そのため、説明変数の数を減らし、説明変数間に相関関係がないようにする必要がある。
-PLS（部分的最小二乗法）は、入力変数の線形結合で表わせる潜在変数を求め、潜在変数の線形結合で目的変数を表す。
-説明変数の数より少ない数の潜在変数を求めることで、説明変数間の相関関係をとりのぞく。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">May 21, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/statistics_and_causal_inference/">Statistics and Causal Inference(1986)</a></h3>
-        <div class="summary"><p>ルービンの因果モデルによる統計的因果推定では、群\(U\)の要素を\(u\), 処置を\(t\), \(c\), \(Y\)を潜在的結果変数とすると、\(u\)に対して処置\(c\)を適用するときの処置\(t\)の因果効果を、\(T = Y_t(u) - Y_c(u)\)とみなす。
-たとえば、\(u\)を人、\(t\), \(c\)を運動をする、しない、\(Y\)をコレステロールの値とすれば、運動とコレステロール値の関係になる。
-おなじ\(u\)に対して\(Y_t(u)\)と\(Y_c(u)\)を両方観測することはできない。
-因果効果は、観測するものではなく、推定するものになる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">May 14, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/a_family_of_experiments_on_test_driven_development/">A Family of Experiments on Test-Driven Development</a></h3>
-        <div class="summary"><p>TDDがコードに及ぼす影響を調べた先行研究はあるが、研究手法、被検者、プログラミング環境などの実験条件は様々、結論は違い、明確な結論はない。
-表題の論文は、個別のTDDの実験結果の精度と汎化性を上げるために、実験結果に影響するとみられる実験条件をかえ、TDDとITL(iterative test-last development)を比較する12の実験を実施した。
-被検者は4大学と企業12社で、5つのトイタスクを解かせ、通ったテストオラクルの割合で実装の品質を評価した。
-結果、TDD初心者の被検者はITLによる実装のほうが品質が高かった。
-エディタや言語、ITLとTDDの実験の被験順序、TDDとITLをどちらを先に学んだかは品質に影響しなかった。
-学生よりも企業に所属するプロフェッショナルのほうがTDD、ITL両方で品質がよかったが、TDDで実装したときの品質の下がり幅は学生の下がり幅の2倍に及んだ。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">April 29, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/simcse/">SimCSE: Simple Contrastive Learning of Sentence Embeddings</a></h3>
-        <div class="summary"><p>対照学習は、意味の近い要素同士を近くに、異なる要素を遠くに配置する分散表現を獲得する。
-SimCSEは、文の分散表現のための対照学習であり、教師なしと教師ありの2つの学習方法を提供する。
-教師なし学習は、Dropout層を通したサンプルが近くに配置されるように、Dropout層の出力2つからなるペアを教師データにする。
-教師あり学習は、自然言語推論(含意関係認識)の教師データをつかい、前提と含意の分散表現が近くになるように学習する。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">April 29, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/stochastic_gradient_boosting/">Stochastic Gradient Boosting</a></h3>
-        <div class="summary"><p>Gradient Boostingは、反復的に、モデルの予測と正解の残差に弱識別器をあてはめ、弱識別器をモデルに追加する。
-Stochastic Gradient Boostingは、弱識別器の学習に非復元抽出したデータの部分集合をつかい、精度と学習速度を向上する。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">April 23, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/lightgbm/">LightGBM: A Highly Efficient Gradient Boosting Decision Tree</a></h3>
-        <div class="summary"><p>LightGBMは、GBDTを高速化したアルゴリズムであり、XGBoostよりも必要な計算時間と消費メモリが少ない。
-GBDTの処理時間のボトルネックは決定木の分岐を決めるところである。
-その前処理で特徴の値をソートする場合は、ソートがボトルネックになる。
-勾配の小さいサンプルを除外することでデータを減らし、また、同時に0でない値にならない排他的な特徴をマージすることで特徴の種類を減らし、ソートを高速化した。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">April 16, 2022</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -234,7 +241,7 @@ GBDTの処理時間のボトルネックは決定木の分岐を決めるとこ�
       </a>
     </li>
     <li>
-      <a href="/page/31/">
+      <a href="/page/32/">
 	<i class="fa-solid fa-xl fa-angles-right"></i>
       </a>
     </li>

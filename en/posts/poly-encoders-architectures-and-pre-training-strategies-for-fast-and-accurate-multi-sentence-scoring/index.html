@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
     
@@ -98,21 +98,21 @@
 Two common encoding approaches are Cross-encoders (<a href="https://arxiv.org/abs/1901.08149">Wolf et al.</a>), which concatenate input sequences and candidate labels into a single vector, and produce candidate-sensitive embeddings, and Bi-encoders (<a href="https://arxiv.org/abs/1809.01984">Mazaré et al.</a>), which encode input sequences and candidate labels separately.
 In Bi-encoders, the score is the dot-product of the two embeddings.
 While Cross-encoders are more accurate than Bi-encoders, Bi-encoders are faster.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- For the tasks that match an input sequence with a corresponding label, current state-of-the-art approaches focuse on using [BERT](https://arxiv.org/abs/1810.04805) models for pre-training, and two encoding approaches are common: Cross-encoders ([Wolf et al.](https://arxiv.org/abs/1901.08149)) and Bi-encoders ([Mazaré et al.](https://arxiv.org/abs/1809.01984)). -->
+<!-- Cross-encoders concatenate an input seqeuence and a candidate label into a single vector, and produce a candidate-sensitive input embedding from the vector. -->
+<!-- Bi-encoders encde an input sequence and a candidate label separately. -->
+<!-- The score is  the dot-product of the two embeddings. -->
+<!-- While Cross-encoders are more accurate than Bi-encoders, Bi-encoders are faster than the other. -->
 <p><a href="https://arxiv.org/abs/1905.01969">Poly-encoders</a> aim to balance speed and accuracy. The following architecture comparison figure is cited from the paper.
 <a href="https://arxiv.org/abs/1905.01969">Poly-encoders</a> aim to attain the balance between inference speed and accuracies.</p>
-<!-- raw HTML omitted -->
+<!-- The following figure that is cited from [the paper](https://arxiv.org/abs/1905.01969) shows the architectures of a Bi-encoder, a Cross-encoder and a Poly-encoder. -->
 <p><img alt="poly-encoders" src="/poly-encoder.png"></p>
 <p>The Poly-encoder generates candidate label embeddings without input sequences like Bi-encoders.
 A Bi-encoder uses special tokens <code>[S]</code> and segment tokens like BERT.
 To resemble the procedure of pre-training, Bi-encoders surround the input and label by the special token <code>[S]</code>, and assign the segment token for features with them.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- The Poly-encoder produces the embeddings of the candidate labels without the input sequences as Bi-encoders. -->
+<!-- A Bi-encoder employs the special token `[S]` and the segment token as [BERT](https://arxiv.org/abs/1810.04805). -->
+<!-- To resemble the procedure of pre-training, Bi-encoders surround the input and label by the special token `[S]`, and assign the segment token for features with them. -->
 <p>The Poly-encoder represents an input sequence with \(m\) vectors \((y^1_{\textit{ctxt}}\dots y^m_{\textit{ctxt}})\) using \(m\) attention mechanisms.
 $$
 \begin{align*}

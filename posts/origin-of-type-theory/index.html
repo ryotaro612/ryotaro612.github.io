@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.ac39fd9b1999326c116cd551ce035fd4eaf2801f6bfc13a90241a1d9275b21ec.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>型理論のはじまり</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://ryotaro.dev/about">About</a></li>
+          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+	  
+	  <li><a href="https://ryotaro.dev/en/posts/origin-of-type-theory/">en</a></li>
+	  
+        </ul>	
+	<ul>
+          
+          <li>
+            <a href="https://github.com/ryotaro612">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="https://www.linkedin.com/in/ryotaro612/">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          
+          <li>
+	    <a href="https://ryotaro.dev/index.xml">
+	      <i class="fas fa-rss"></i>
+            </a>
+	  </li>
+          
+        </ul>	
+      </nav>
+    </header>
+    
+<main>
+  <h1>型理論のはじまり</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/%E5%9E%8B%E7%90%86%E8%AB%96/">
+	#型理論
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">December 30, 2024</span>    
+  <div>
+    <p>型理論の起源はラッセルのパラドクスにある。
+ただし、厳密な起源となる出来事は何かという問いになると、意見は分かれると思う。
+名前の通り、ラッセルのパラドクスはラッセルが見つけたものだが、集合論を確立したカントールも同時期に独立して同等のパラドクスを発見した。
+またラッセルとフレーゲの往復書簡の中で、フレーゲは、彼の概念記法における述語は述語を引数にとらないと回答した。
+ラッセルが概念記法の要素の階層関係を発展させてパラドクスの解消を試みたことを考えれば、フレーゲの述語論理を型理論の起源とみなすこともできるだろう。</p>
+<p>型理論のなりたちに興味があり、調べたことをスライドにまとめた。
+興味があった理由は、その過程にコンピュータ科学以外の分野も関与していることにある。
+カントールは数学者であり、フレーゲやラッセルは言語哲学でも参照される。
+コンピュータ科学に関心がある人がコンピュータ科学に関連する分野を持ち、また、関連分野の知識をコンピュータ科学にどう活用できるかということに興味がある。
+具体的には、数学、言語哲学、記号論などの抽象的な分野が日々のプログラミングに役立つのか、役立つのであれば、どのように関連分野に興味をもつことができるのかということが知りたかった。
+そのため、歴史上の出来事の因果関係を慎重に議論するよりも、コンピュータ科学とほかの分野との関係に焦点をあててスライドを作った。</p>
+<iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/95b3f5800a9447f591d0499c41e7d395" title="型理論のはじまり" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 314;" data-ratio="1.78343949044586"></iframe>
+作成した資料は上のスライドであり、章立ては非ユークリッド幾何学の発見、素朴集合論、数理論理学になっている。
+非ユークリッド幾何学の発見によって、すべての数学の対象は公理から構築されるものという見方がはじまった。
+それから、カントールとデデキントが確立した集合論で数学の対象を定義するようになった。
+フレーゲは、述語論理を提案した概念記法と集合論をもちいた論理学を数学を基礎にしようとした。
+しかし、フレーゲの公理系からラッセルのパラドックスを導けるので、フレーゲの方法を見直す必要があることがわかった。
+ラッセルは、概念記法のobject、述語、述語の述語という階層関係を発展してパラドクスを解消できないか考え、その草案をプリンキピア・マテマティカに記した。
+今日、この述語論理の階層関係が型理論のはじまりと考えられている。
+<h2 id="参考文献">参考文献</h2>
+<ul>
+<li><a href="https://plato.stanford.edu/entries/type-theory/">Stanford Encyclopedia of Philosophy, Type Theory</a></li>
+<li><a href="https://plato.stanford.edu/entries/russell-paradox/">Stanford Encyclopedia of Philosophy, Russell’s Paradox</a></li>
+<li><a href="https://danielwharris.com/teaching/380/readings/Frege-Russell.pdf">Letter to Frege</a></li>
+</ul>
+<!-- 作ったスライドのねらいは、他の分野との関係を考える動機をつくることにある。 -->
+<!-- どの史実が型理論の起源にふさわしいかを議論することは目的ではない。 -->
+<!-- コンピュータ科学に関心がある人がどうすれば関連する分野を持ち、また、関連分野の知識をコンピュータ科学にどう活用できるかということに興味があった。 -->
+<!-- 具体的には、数学、言語哲学、記号論などの抽象的かつコンピュータ科学に関連する分野が日々のプログラミングに役にたつのか、役に立つのであれば、それらの分野に関心をもてるような物語があるのかということになる。 -->
+<!-- 型理論はラッセルのパラドクスを解消するために考えはじめられた。 -->
+<!-- より厳密な起源にについては、人によって意見が変わるだろう。 -->
+<!-- ラッセルのパラドクスは、名前の通りラッセルが見つけたものであるが、同時期に集合論を確立したカントールも見つけている。 -->
+<!-- また、ラッセルのパラドクスをフレーゲに伝えたラッセルからの手紙への返信にあるフレーゲの概念記法にある述語は述語を引数にとらないという回答を尊重すれば、フレーゲの述語論理を型理論の起源と主張することもできるだろう。 -->
+<!-- 型理論のうまれた背景に関心があって、それを説明するために作ったスライドを補足するために、この投稿を書いた。 -->
+<!-- 型理論ができる経緯に関心がある理由は、その経緯にコンピュータ科学以外の分野も関係することにある。 -->
+<!-- カントールは数学者であり、フレーゲやラッセルの仕事はコンピュータ科学だけでなく言語哲学でも参照される。 -->
+<!-- 動機がコンピュータ科学の関連分野に興味をもってもらうことなので、作ったスライドは物語にすぎない。 -->
+<!-- たとえば、どの史実が型理論の起源にふさわしいかを知りたいわけではなかった。 -->
+<!-- それよりも、ほかの分野の歴史的な出来事がコンピュータ科学に与えた影響を知り、その分野とコンピュータ科学の関係について考える動機をつくることが目的にあった。 -->
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/runc/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <small>© Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

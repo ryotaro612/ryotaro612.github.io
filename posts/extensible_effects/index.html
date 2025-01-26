@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
@@ -99,10 +99,19 @@
 計算量は、合成されたモナドの総数ではなく、各モナドを処理するハンドラの順序で決まる。
 実行順序の工夫によって、オーバーヘッドを抑えることができる。</p>
 <p>Web上に公開されたコードは現在のHaskellのbaseライブラリと互換性がないため、現在のbaseでコンパイルできるExtensible Effectsの実装例を以下に示す。</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+論文前半にある実装には省略があり、また、Web上に公開されたコードは現在のHaskellのbaseライブラリと互換性がないため、以下に論文前半の実装例と、現在のbaseでコンパイルできるExtensible Effectsの実装例を示す。
+-->
+<!--
+また、合成するモナドの数が増えても
+
+
+Extensible Effectsは、 Effectをopen-unionという直和型の値の要素に加え、単一の直和型のモナドでモナド変換子を置きかえる。
+open-unionによって、モナドの上下関係でコードブロックの意味が変わることを避けたり、また、open-unionには動的に要素内容を変換できたりする。
+同時に、モナドの数が1つになるため、オーバヘッドを抑えることができる。
+
+論文の前半部分の完全な実装がなく、Web上に公開された付録のコードは現在のHaskellと互換性がないため、Extensible Effectsの実装例を以下に示す。
+-->
 <pre><code>{-# LANGUAGE FlexibleContexts #-}
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE GADTs #-}

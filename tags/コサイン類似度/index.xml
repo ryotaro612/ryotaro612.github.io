@@ -4,7 +4,7 @@
     <title>コサイン類似度 on Blanket</title>
     <link>https://ryotaro.dev/tags/%E3%82%B3%E3%82%B5%E3%82%A4%E3%83%B3%E9%A1%9E%E4%BC%BC%E5%BA%A6/</link>
     <description>Recent content in コサイン類似度 on Blanket</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 23 Sep 2023 10:21:03 -0400</lastBuildDate>
     <atom:link href="https://ryotaro.dev/tags/%E3%82%B3%E3%82%B5%E3%82%A4%E3%83%B3%E9%A1%9E%E4%BC%BC%E5%BA%A6/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>https://ryotaro.dev/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</link>
       <pubDate>Sat, 23 Sep 2023 10:21:03 -0400</pubDate>
       <guid>https://ryotaro.dev/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1908.10084&#34;&gt;Sentence-BERT&lt;/a&gt;は、テキストをコサイン類似度で意味の類似度を比較できる固定長のベクトルに変換できる。&#xA;&lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt;を2つのテキストを入力し類似度を出力するように訓練できるが、あるテキストに類似するテキストを求めたい場合には組合せ爆発が生じる。&#xA;Sentence-BERTは、類似度が定義されたテキストの組から、類似するテキスト同士を近い位置に写像できるように学習する。&#xA;ネットワークは、BERTを使ったシャムネットワークであり、重みを共有した2つのBERTに1つずつテキストを入力し、両方の出力を目的関数に入力する。&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1908.10084&#34;&gt;Sentence-BERT&lt;/a&gt;は、テキストをコサイン類似度で意味の類似度を比較できる固定長のベクトルに変換できる。&#xA;&lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt;を2つのテキストを入力し類似度を出力するように訓練できるが、あるテキストに類似するテキストを求めたい場合には組合せ爆発が生じる。&#xA;Sentence-BERTは、類似度が定義されたテキストの組から、類似するテキスト同士を近い位置に写像できるように学習する。&#xA;ネットワークは、BERTを使ったシャムネットワークであり、重みを共有した2つのBERTに1つずつテキストを入力し、両方の出力を目的関数に入力する。&lt;/p&gt;&#xA;&lt;!-- Siamese Networkとテキスロ --&gt;&#xA;&lt;!-- 重みを共有するネットワークにBERTを採用したSiamese Networkである。 --&gt;&#xA;&lt;!-- Sentence-BERTは、Sentence-BERTはテキストを --&gt;</description>
     </item>
   </channel>
 </rss>

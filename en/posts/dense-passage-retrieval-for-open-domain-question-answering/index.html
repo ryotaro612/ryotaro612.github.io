@@ -17,7 +17,7 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
     
@@ -97,16 +97,16 @@
     <p>Open-domain question answering (QA) involves answering fact-based questions using documents.
 An open-domain QA system can be divided into two components: one that retrieves relevant passages and another that extracts the answer spans from those passages <a href="https://arxiv.org/abs/1704.00051">(Chen et al., 2017)</a>.
 While traditional approaches use sparse vector space models like BM25 for the retrieval step, <a href="https://aclanthology.org/2020.emnlp-main.550/">Dense Passage Retrieval for Open-Domain Question Answering</a> shows that dense representations can also be practically implemented using dense representations.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- Open-domain question answering (QA) is a task that answers factorid questions using documents. -->
+<!-- If the answers are spans appearing in passages of the documents, an open-domain QA system can be decomposed into 2 components. -->
+<!-- The first component retrieves a small set of passages relevant to the question, and the second one extract the span from the filter set [(Chen et al., 2017)](https://arxiv.org/abs/1704.00051). -->
+<!-- While traditional approaches use sparse vector space models such as BM25 for the first module, [Dense Passage Retrieval for Open-Domain Question Answering](https://aclanthology.org/2020.emnlp-main.550/) demonstrates that the first retrieval step can be implemented using dense representations. -->
 <p>The embeddings are learned from the training dataset, optimizing for maximizing inner products between question and relevant passage vectors.
 The training is essentially metric learning, and each question needs irrelvant passages.
 In experiments, it was found that utilizing both the top passages returned by BM25, excluding the answer, and positive passages paired with other questions as negatives yielded best performance.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- The embeddings are learned from the questions and passages in a training dataset, and optimized for maximizing inner products of the question and relevant passage vectors. -->
+<!-- The training is essentially metric learning, and each question needs irrelvant passages. -->
+<!-- Using both the top passages returned by BM25 except the answer and positive passages paired with other questions as negatives outperformed in experiments. -->
 <p>Each passage \(p_i\) is a sequence of tokens,\(w_1^{(i)},w_2^{(i)}, \dots , w_{|p_i|}^{(i)}\), extracted from a document.
 Given a question \(q\), the task is to find a span \(s_s^{(i)}, w_{s+1}^{(i)},\dots ,w_{e}^{(i)}\) from one of the passage \(p_i\) that can answer the question.</p>
 <p>The proposed approach employs BERT as an encoder.

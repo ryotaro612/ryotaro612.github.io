@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
+    
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.ac39fd9b1999326c116cd551ce035fd4eaf2801f6bfc13a90241a1d9275b21ec.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Implementation of runc as of November 2024</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://ryotaro.dev/en/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://ryotaro.dev/en/about">About</a></li>
+          <li><a href="https://ryotaro.dev/en/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/en/tags">Tags</a></li>
+	  
+	  <li><a href="https://ryotaro.dev/posts/runc/">ja</a></li>
+	  
+        </ul>	
+	<ul>
+          
+          <li>
+            <a href="https://github.com/ryotaro612">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="https://www.linkedin.com/in/ryotaro612/">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          
+          <li>
+	    <a href="https://ryotaro.dev/en/index.xml">
+	      <i class="fas fa-rss"></i>
+            </a>
+	  </li>
+          
+        </ul>	
+      </nav>
+    </header>
+    
+<main>
+  <h1>Implementation of runc as of November 2024</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/en/tags/runc/">
+	#Runc
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/en/tags/container/">
+	#Container
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">December 8, 2024</span>    
+  <div>
+    <p><a href="https://github.com/opencontainers/runc">runc</a> is a container runtime with a command-line interface tool.
+Although runc was separated from Docker in 2015, Docker still uses runc because the Docker Engine is built on top of containerd, which incorporates runc.
+In this post, I will explain some Linux features used in the implementation of runc.</p>
+<h2 id="using-runc">Using runc</h2>
+<p>runc doesn&rsquo;t require any Docker images to start a container.
+It can use local directories as the root file systems for containers.
+For example, you can start a container with the following commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mkdir rootfs
+</span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"># export busybox from Docker into the rootfs directory</span>
+</span></span><span style="display:flex;"><span>docker <span style="color:#89dceb">export</span> <span style="color:#cba6f7">$(</span>docker create busybox<span style="color:#cba6f7">)</span> | tar -C rootfs -xvf -
+</span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"># generate a specification in the format of ./config.json</span>
+</span></span><span style="display:flex;"><span>runc spec
+</span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"># create the container and attach to the launched /bin/sh in the container</span>
+</span></span><span style="display:flex;"><span>runc --root /tmp/runc run
+</span></span></code></pre></div><p>Before starting the container, the root directory, <code>/</code>, in the busybox has been copied into the host.
+Then runc attaches to <code>sh</code>, which is defined as the entry point in <code>config.json</code>.</p>
+<h2 id="implementation-of-runc-run">Implementation of <code>runc run</code></h2>
+<p><code>run</code> is one of the <code>runc</code> subcommands, and creates then starts a container.
+The following diagram shows the procedure of the <code>runc run</code> process.
+<code>run</code> asynchronously executes the <code>runc init</code> command.
+The invoked <code>init</code> process eventually becomes the PID 1 process of <code>args</code> in <code>config.json</code> by <code>execve</code>.
+<img alt="overview" src="/runc/overview.drawio.svg"></p>
+<h3 id="tty-of-a-container">tty of a container</h3>
+<p>A pseudoterminal (<a href="https://man7.org/linux/man-pages/man7/pty.7.html"><code>pty</code></a>) is a pair of bidirectionally communicable virtual character devices.
+One is the master, with its path being <code>/dev/ptmx</code>, and the other is the slave.
+When a process opens <code>/dev/ptmx</code>, the slave is created in <code>/dev/pts</code> directory.</p>
+<p>the <code>init</code> process creates a master and slave and sends the file descriptor of the master through a socket pair.
+The <code>run</code> process calls <a href="https://github.com/opencontainers/runc/blob/7cb363254b69e10320360b63fb73e0ffb5da7bf2/utils_linux.go#L107"><code>setupIO</code></a> to create the socket pair by <a href="https://man7.org/linux/man-pages/man2/socketpair.2.html"><code>socketpair</code></a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>parent, child, err <span style="color:#89dceb;font-weight:bold">:=</span> utils.<span style="color:#89b4fa">NewSockPair</span>(<span style="color:#a6e3a1">&#34;console&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#cba6f7">if</span> err <span style="color:#89dceb;font-weight:bold">!=</span> <span style="color:#fab387">nil</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">return</span> <span style="color:#fab387">nil</span>, err
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>run</code> process places the <code>child</code> socket in the <code>ExtraFiles</code> field of [<code>Cmd</code>] which starts the <code>init</code> process. It binds <code>p.ConsoleSocket</code> to the <code>child</code> socket in the <code>ExtraFiles</code>, assigning the file descriptor with <code>_LIBCONTAINER_CONSOLE</code> as shown in the part of the <a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/libcontainer/container_linux.go#L519">newParentProcess</a> function:</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>cmd.ExtraFiles = <span style="color:#89dceb">append</span>(cmd.ExtraFiles, p.ExtraFiles<span style="color:#89dceb;font-weight:bold">...</span>)
+</span></span><span style="display:flex;"><span><span style="color:#cba6f7">if</span> p.ConsoleSocket <span style="color:#89dceb;font-weight:bold">!=</span> <span style="color:#fab387">nil</span> {
+</span></span><span style="display:flex;"><span>	cmd.ExtraFiles = <span style="color:#89dceb">append</span>(cmd.ExtraFiles, p.ConsoleSocket)
+</span></span><span style="display:flex;"><span>	cmd.Env = <span style="color:#89dceb">append</span>(cmd.Env,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e3a1">&#34;_LIBCONTAINER_CONSOLE=&#34;</span><span style="color:#89dceb;font-weight:bold">+</span>strconv.<span style="color:#89b4fa">Itoa</span>(stdioFdCount<span style="color:#89dceb;font-weight:bold">+</span><span style="color:#89dceb">len</span>(cmd.ExtraFiles)<span style="color:#89dceb;font-weight:bold">-</span><span style="color:#fab387">1</span>),
+</span></span><span style="display:flex;"><span>	)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>init</code> process opens the <code>/dev/ptmx</code> and writes its file descriptor to the <code>child</code> socket in the <a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/libcontainer/utils/cmsg.go#L116"><code>SendRawFd</code></a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">// SendRawFd sends a specific file descriptor over the given AF_UNIX socket.
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"></span><span style="color:#f38ba8">func</span> <span style="color:#89b4fa">SendRawFd</span>(socket <span style="color:#89dceb;font-weight:bold">*</span>os.File, msg <span style="color:#f38ba8">string</span>, fd <span style="color:#f38ba8">uintptr</span>) <span style="color:#f38ba8">error</span> {
+</span></span><span style="display:flex;"><span>	oob <span style="color:#89dceb;font-weight:bold">:=</span> unix.<span style="color:#89b4fa">UnixRights</span>(<span style="color:#89dceb">int</span>(fd))
+</span></span><span style="display:flex;"><span>	<span style="color:#cba6f7">return</span> unix.<span style="color:#89b4fa">Sendmsg</span>(<span style="color:#89dceb">int</span>(socket.<span style="color:#89b4fa">Fd</span>()), []<span style="color:#89dceb">byte</span>(msg), oob, <span style="color:#fab387">nil</span>, <span style="color:#fab387">0</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>init</code> process duplicates the slave to  standard IO and standard error in the following <a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/libcontainer/console_linux.go#L28"><code>dupStdio</code></a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">// dupStdio opens the slavePath for the console and dups the fds to the current
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">// processes stdio, fd 0,1,2.
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"></span><span style="color:#f38ba8">func</span> <span style="color:#89b4fa">dupStdio</span>(slavePath <span style="color:#f38ba8">string</span>) <span style="color:#f38ba8">error</span> {
+</span></span><span style="display:flex;"><span>	fd, err <span style="color:#89dceb;font-weight:bold">:=</span> unix.<span style="color:#89b4fa">Open</span>(slavePath, unix.O_RDWR, <span style="color:#fab387">0</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#cba6f7">if</span> err <span style="color:#89dceb;font-weight:bold">!=</span> <span style="color:#fab387">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#cba6f7">return</span> <span style="color:#89dceb;font-weight:bold">&amp;</span>os.PathError{
+</span></span><span style="display:flex;"><span>			Op:   <span style="color:#a6e3a1">&#34;open&#34;</span>,
+</span></span><span style="display:flex;"><span>			Path: slavePath,
+</span></span><span style="display:flex;"><span>			Err:  err,
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#cba6f7">for</span> _, i <span style="color:#89dceb;font-weight:bold">:=</span> <span style="color:#cba6f7">range</span> []<span style="color:#f38ba8">int</span>{<span style="color:#fab387">0</span>, <span style="color:#fab387">1</span>, <span style="color:#fab387">2</span>} {
+</span></span><span style="display:flex;"><span>		<span style="color:#cba6f7">if</span> err <span style="color:#89dceb;font-weight:bold">:=</span> unix.<span style="color:#89b4fa">Dup3</span>(fd, i, <span style="color:#fab387">0</span>); err <span style="color:#89dceb;font-weight:bold">!=</span> <span style="color:#fab387">nil</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#cba6f7">return</span> err
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#cba6f7">return</span> <span style="color:#fab387">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>init</code> process also makes the slave the controlling terminal through <a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/libcontainer/system/linux.go#L120"><code>Setctty</code></a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f38ba8">func</span> <span style="color:#89b4fa">Setctty</span>() <span style="color:#f38ba8">error</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#cba6f7">if</span> err <span style="color:#89dceb;font-weight:bold">:=</span> unix.<span style="color:#89b4fa">IoctlSetInt</span>(<span style="color:#fab387">0</span>, unix.TIOCSCTTY, <span style="color:#fab387">0</span>); err <span style="color:#89dceb;font-weight:bold">!=</span> <span style="color:#fab387">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#cba6f7">return</span> err
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#cba6f7">return</span> <span style="color:#fab387">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Meanwhile, the <code>run</code> process monitors the master by <code>epoll</code> in the <a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/tty.go#L102"><code>recvtty</code></a>.
+It receives messages by the <code>recvmsg</code>, copies the stream read from the master to standard output, and transferring standard input of the <code>run</code> process to the master:</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#cba6f7">go</span> <span style="color:#f38ba8">func</span>() { _ = epoller.<span style="color:#89b4fa">Wait</span>() }()
+</span></span><span style="display:flex;"><span><span style="color:#cba6f7">go</span> <span style="color:#f38ba8">func</span>() { _, _ = io.<span style="color:#89b4fa">Copy</span>(epollConsole, os.Stdin) }()
+</span></span><span style="display:flex;"><span>t.wg.<span style="color:#89b4fa">Add</span>(<span style="color:#fab387">1</span>)
+</span></span><span style="display:flex;"><span><span style="color:#cba6f7">go</span> t.<span style="color:#89b4fa">copyIO</span>(os.Stdout, epollConsole)
+</span></span></code></pre></div><h3 id="namespaces">Namespaces</h3>
+<p>A <a href="https://man7.org/linux/man-pages/man7/namespaces.7.html">namespace</a> is an abstraction that makes it appear to the processes within the namespace that they own the global system resource.
+Processes in the same namespace share resources, and are not affected by resource consumption by the processes in other namespaces.
+For instance, the same PID can be assigned to processes in two different namespaces.</p>
+<p><code>clone</code>, <code>setns</code> and <code>unshare</code> are the APIs to change the namespaces of the processes.
+<code>clone</code> creates a new process and forms a new namespace, placing the child process within that namespace.
+<code>setns</code> moves the thread that has called <code>setns</code> into an existing namespace.
+<code>unshare</code> creates a new namespace and moves the calling process into it.</p>
+<p>The <code>nsexec</code> function, written in C, changes the namespace of the <code>init</code> process.
+It is invoked before the Go runtime starts by the following snippet in the <a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/libcontainer/nsenter/nsenter.go#L9"><code>nsenter.go</code></a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">//go:build linux &amp;&amp; !gccgo
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#94e2d5">package</span> nsenter
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">#cgo CFLAGS: -Wall
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">extern void nsexec();
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">void __attribute__((constructor)) init(void) {
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">	nsexec();
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">}
+</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#94e2d5">import</span> <span style="color:#a6e3a1">&#34;C&#34;</span>
+</span></span></code></pre></div><p>The <a href="https://github.com/opencontainers/runc/tree/v1.2.3/libcontainer/nsenter">README.md</a> of <code>nsenter</code> explains that managing the namespaces of the <code>init</code> process is is implemented in C runtime because there can be more than one thread in the Go runtime.
+<code>setns</code> switches only the calling thread’s namespace, so it needs to be called on all threads if there are multiple.</p>
+<p><code>nsexec</code> calls <code>clone</code> twice to alter the namespace of the <code>init</code> process.
+The following diagram illustrates the procedure of the <code>nsexec</code> function:
+<img alt="nsenter" src="/runc/nsenter.drawio.png"></p>
+<p>Only the process created last executes the <code>return</code> statement, leading to the Go <code>main</code> function.
+The rest of the precedent <code>init</code> processes terminate without starting the Go runtime.
+<code>nsexec</code> executes <code>clone</code> to assign PID 1 to the <code>init</code> process within a namespace.
+<code>unshare</code> can create a new namespace, but cannot alter the calling process&rsquo;s pid_namespace.</p>
+<p>Passing the <code>CLONE_PARENT</code> flag to <code>clone</code> makes the new child <code>init</code> process’s parent the parent process of the caller.
+Since <code>run</code> is the parent of the leftmost <code>init</code> process in the diagram, the last created <code>init</code> process that executes the <code>return</code> statement and are followed by the Go <code>main</code> function has the <code>run</code> process as a parent.
+Consequently the <code>SIGCHLD</code> of the <code>init</code> process will be delivered to the <code>run</code> process that waits for the signal.</p>
+<p>The second <code>init</code> process in the diaram join exsisting namespaces using <code>setns</code> or moves to new namespaces by <code>unshare</code>.
+The <code>/proc/&lt;pid&gt;/uid_map</code> and <code>/proc/&lt;pid&gt;/gid_map</code> define the mapping of the UID and GID between the namespace of the <code>run</code> process and that of the <code>init</code> process.
+The centrally positioned <code>init</code> process, initially cloned, participates in existing namespaces using <code>setns</code> or moves to newly created namespaces via <code>unshare</code>.
+For instance the file owner of a file created by the <code>init</code> process can be seen as the corresponding user defined in the mapping from the processes in the <code>run</code> processe&rsquo;s namespace.</p>
+<h3 id="root-filesystem">Root Filesystem</h3>
+<p><code>pivot_root</code> changes the <code>init</code> process&rsquo;s root filesystem.
+Below is a code snippet illustrating the execution of the <code>pivot_root</code>, setting the top directory of <code>rootfs</code> as the root filesystem:</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#89dceb">cd</span> rootfs <span style="color:#89dceb;font-weight:bold">&amp;&amp;</span> mkdir put_old
+</span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"># run /bin/sh in a new namespace</span>
+</span></span><span style="display:flex;"><span>unshare -mpfr /bin/sh
+</span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"># the first argument of pivot_root must be a mount point</span>
+</span></span><span style="display:flex;"><span>mount --bind <span style="color:#cba6f7">$(</span><span style="color:#89dceb">pwd</span><span style="color:#cba6f7">)</span> <span style="color:#cba6f7">$(</span><span style="color:#89dceb">pwd</span><span style="color:#cba6f7">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"># Place the original root in put_old. Can be unmounted later</span>
+</span></span><span style="display:flex;"><span>pivot_root <span style="color:#cba6f7">$(</span><span style="color:#89dceb">pwd</span><span style="color:#cba6f7">)</span> <span style="color:#cba6f7">$(</span><span style="color:#89dceb">pwd</span><span style="color:#cba6f7">)</span>/put_old
+</span></span></code></pre></div><h2 id="differences-between-host-processes-and-containers">Differences Between Host Processes and Containers</h2>
+<p>The <code>init</code> process is created by the <code>run</code> process, and transforms into a container.
+Containers can beee seen as just processes that are isolated by namespaces and <code>pivot_root</code>.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://github.com/opencontainers/runc/tree/v1.2.2">runc</a></li>
+<li><a href="https://www.docker.com/blog/runc/">Introducing runC: a lightweight universal container runtime</a></li>
+<li><a href="https://www.docker.com/blog/containerd-vs-docker/">containerd vs. Docker: Understanding Their Relationship and How They Work Together</a></li>
+<li><a href="https://dl.acm.org/doi/10.1145/2532780.2532798">Advanced programming in the unix environment, third edition by W. Richard Stevens and Stephen A. Rago</a></li>
+<li><a href="https://man7.org/linux/man-pages/man7/namespaces.7.html">namespaces(7) - Linux manual page</a></li>
+</ul>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/en/posts/back-of-envelope-calculations/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+    <li>
+      <a href="/en/posts/origin-of-type-theory/">
+	<i class="fa-solid fa-xl fa-angle-right"></i>
+      </a>
+    </li>
+    
+</ul>
+
+
+    <footer>
+      <small>© Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

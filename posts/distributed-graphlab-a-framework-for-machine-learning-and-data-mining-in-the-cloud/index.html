@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.ac39fd9b1999326c116cd551ce035fd4eaf2801f6bfc13a90241a1d9275b21ec.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Distributed GraphLab: a Framework for Machine Learning and Data Mining in the Cloud (2012)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://ryotaro.dev/about">About</a></li>
+          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+	  
+	  <li><a href="https://ryotaro.dev/en/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/">en</a></li>
+	  
+        </ul>	
+	<ul>
+          
+          <li>
+            <a href="https://github.com/ryotaro612">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="https://www.linkedin.com/in/ryotaro612/">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          
+          <li>
+	    <a href="https://ryotaro.dev/index.xml">
+	      <i class="fas fa-rss"></i>
+            </a>
+	  </li>
+          
+        </ul>	
+      </nav>
+    </header>
+    
+<main>
+  <h1>Distributed GraphLab: a Framework for Machine Learning and Data Mining in the Cloud (2012)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/distributed-system/">
+	#Distributed System
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">May 7, 2024</span>    
+  <div>
+    <p><a href="https://vldb.org/pvldb/vol5/p716_yuchenglow_vldb2012.pdf">Distributed GraphLab</a>は、機械学習とデータマイニング向けのプログラミングモデルの<a href="https://arxiv.org/pdf/1408.2041">GraphLab</a>を、クラスタ上で実行できるように発展させた。
+GraphLabは、グラフの一部から点の集合を返す関数を、反復的にグラフに適用する。
+関数から返された点は再び関数に渡され、渡すべき点がなくなるとアルゴリズムは終了する。
+Distributed GraphLabは、GraphLabをメモリ共有するノードからなるクラスタで実行できるように、<a href="https://lamport.azurewebsites.net/pubs/chandy.pdf">Chandy-Lamport</a>のスナップショットとロックを導入した。</p>
+<p>GraphLabのグラフは、点や辺にデータの割り当てられた有向グラフからなる。
+たとえば、モデルの重みやアルゴリズムの状態を点や辺に割り当てられる。
+関数は、1つの点、点に隣接する点、その両方を結ぶ辺を引数にとり、点の集合を返す。
+引数として受けとる点と辺の集合はスコープとよばれる。
+関数はスコープ内のデータを更新できるが、グラフの構造を変更することはできない。
+GraphLabは、初期値としてあたえられる関数に適用する点の集合\(\tau\)から点を選び、点のスコープに関数を適用する。
+適用した点は\(\tau\)から取り除かれ、関数から返された点の集合\(\tau&rsquo;\)は\(\tau\)に追加される。
+関数の適用をくりかえし、\(\tau\)が空集合になるとGraphLabは終了する。</p>
+<p>関数は、3種類ある一貫性の規則のいづれかにしたがって並列実行する。
+3種類の一貫性は、full consistency, edge consistency, vertex consistencyであり、順に一貫性が高いかわりに並列性が低い。
+Full consistencyでは、スコープが重複しない関数同士しか並列に実行できない。
+Edge consistencyでは、関数は、スコープの中心にある点と辺にあるデータを排他的に読み書きでき、隣接する点のデータには、読み込みのみを行える。
+Vertex consistencyでは、すべての関数を並列できる。
+以下の図は、3つの一貫性の排他的なロックの範囲と一貫性と並列性のトレードオフを比較を示す。
+図は論文から引用したものである。
+<img alt="consistency" src="/distributed-graphlab/consistency.png"></p>
+<p>Distributed GraphLabは、実行するアルゴリズムに適した仕方でグラフを分割し、atomというファイル形式で複数のノードにグラフの一部を配置する。
+分割数はノードの数よりも大きく設定されるので、1つのノードに複数のatomファイルが置かれる。
+atomファイルには、<code>AddEdge(42-&gt;314, edata)</code>, <code>AddVertex(500, vdata)</code>のようなグラフを構築する命令の系列が書かれている。</p>
+<p>分散したグラフで一貫性を守るためのスケジューリングのアルゴリズムは、Chromatic EngineとDistributed Locking Engineの2つがある。
+Chromatic Engineは、グラフの彩色問題を解くことで、並列実行できる関数を特定する。
+ただし、グラフの中には彩色問題で関数を容易に特定できない構造をもつものもある。
+一方、Distributed Locking Engineは、グラフの点にreaders-writerロックをかける排他制御で並列実行できる関数を制限する。</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/spark-sql-relational-data-processing-in-spark/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+    <li>
+      <a href="/posts/realm-retrieval-augmented-language-model-pre-training/">
+	<i class="fa-solid fa-xl fa-angle-right"></i>
+      </a>
+    </li>
+    
+</ul>
+
+
+    <footer>
+      <small>© Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

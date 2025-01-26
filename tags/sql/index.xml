@@ -4,10 +4,17 @@
     <title>SQL on Blanket</title>
     <link>https://ryotaro.dev/tags/sql/</link>
     <description>Recent content in SQL on Blanket</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 13 Nov 2021 19:34:24 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 14 Apr 2024 14:08:04 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spark SQL: Relational Data Processing in Spark (2015)</title>
+      <link>https://ryotaro.dev/posts/spark-sql-relational-data-processing-in-spark/</link>
+      <pubDate>Sun, 14 Apr 2024 14:08:04 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/spark-sql-relational-data-processing-in-spark/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://dl.acm.org/doi/10.1145/2723372.2742797&#34;&gt;Spark SQL&lt;/a&gt;は、関係データベースのテーブルにあたる抽象データ構造のDataFrameを公開し、Spark上で関係代数によるデータ処理を実現する。&#xA;DataFrameに対する操作は、&lt;code&gt;save&lt;/code&gt;のような出力まで遅延される。&#xA;遅延により蓄積したクエリは、最適化器Catalystで最適化された後にバイトコードにコンパイルされる。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>A Critique of ANSI SQL Isolation Levels (1995)</title>
       <link>https://ryotaro.dev/posts/a-critique-of-ansi-sql-isolation-levels/</link>
