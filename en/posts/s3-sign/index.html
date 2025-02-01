@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
   <head>
     
         
@@ -19,7 +19,7 @@
     
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
-    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
     
 
 <link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>署名つきURLでS3オブジェクトを公開する</title>
+    <title>Publishing S3 Objects with Signed URLs</title>
   </head>
 
   <body>
@@ -46,14 +46,14 @@
     
         
     <header class="navigation">
-      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+      <h2><a href="https://ryotaro.dev/en/">Blanket</a></h2>
       <nav>
         <ul>
-          <li><a href="https://ryotaro.dev/about">About</a></li>
-          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
-          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+          <li><a href="https://ryotaro.dev/en/about">About</a></li>
+          <li><a href="https://ryotaro.dev/en/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/en/tags">Tags</a></li>
 	  
-	  <li><a href="https://ryotaro.dev/en/posts/s3-sign/">en</a></li>
+	  <li><a href="https://ryotaro.dev/posts/s3-sign/">ja</a></li>
 	  
         </ul>	
 	<ul>
@@ -72,7 +72,7 @@
           </li>
           
           <li>
-	    <a href="https://ryotaro.dev/index.xml">
+	    <a href="https://ryotaro.dev/en/index.xml">
 	      <i class="fas fa-rss"></i>
             </a>
 	  </li>
@@ -82,11 +82,11 @@
     </header>
     
 <main>
-  <h1>署名つきURLでS3オブジェクトを公開する</h1>
+  <h1>Publishing S3 Objects with Signed URLs</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://ryotaro.dev/tags/s3/">
+      <a href="https://ryotaro.dev/en/tags/s3/">
 	#S3
       </a>
     </li>
@@ -94,18 +94,21 @@
   </ul>  
   <span class="date">January 30, 2025</span>    
   <div>
-    <p>S3バケットにあるプライベートオブジェクトの署名つきURLを発行すれば、URLを知るユーザーのみにオブジェクトを公開できる。
-発行方法は<a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html">AWSの記事</a>で紹介されている。</p>
-<p>記事にしたがってURLを発行してみたところ、バケットとファイル手間がかかった。
-また、URLを発行するクライアントを生成する方法が記事になく、別途調査する必要があった。</p>
-<p>これまでに何度かURLを発行する方法を調べたことがあるので、今後のために、バケットとファイルを用意するterraformのコードと、ファイルのURLを発行するGoのコードをGitHubの<a href="https://github.com/ryotaro612/s3-signin">リポジトリ</a>に公開した。</p>
-<p>リポジトリのルートにある<code>Makefile</code>の<code>run</code>ターゲットで、S3オブジェクトを配置し、配置したオブジェクトの署名つきURLを発行できる。
-コマンドの実行例を以下に示す。</p>
+    <p>The owner of an S3 bucket can share an object by creating a presigned URL for it. The <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html">AWS Documentation</a> provides a user guide on how to generate presigned URLs.</p>
+<p>When I tried generating a presigned URL using the document, I found that preparing the bucket and file was a bit cumbersome.
+Additionally, the guide doesn&rsquo;t cover how to instantiate a client to generate the URL, so I had to look for another guide to learn how to do this.</p>
+<p>I&rsquo;ve researched generating presigned URLs a couple of times before and eventually implemented Terraform scripts and a Go script for future reference.
+The Terraform scripts create an S3 bucket and upload a file to it.
+The Go script generates a presigned URL for the file using the AWS SDK.
+These resources are available in this <a href="https://github.com/ryotaro612/s3-signin">GitHub repository</a>.</p>
+<p>In the root directory of the repository, there&rsquo;s a <code>Makefile</code> with a <code>run</code> target.
+This target creates a S3 bucket, uploads an object to the bucket, and generates its signed URL
+Here’s an example command:</p>
 <div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>make <span style="color:#f5e0dc">AWS_REGION</span><span style="color:#89dceb;font-weight:bold">=</span>&lt;aws_region&gt; <span style="color:#f5e0dc">AWS_PROFILE</span><span style="color:#89dceb;font-weight:bold">=</span>&lt;profile&gt; <span style="color:#f5e0dc">BUCKET_NAME</span><span style="color:#89dceb;font-weight:bold">=</span>&lt;bucket_name&gt;
-</span></span></code></pre></div><p>自分の環境では、terraformで作成直後のS3バケットにファイルを置こうとするとエラーになった。
-その場合、再度上のコマンドを実行すれば、あらてめてファイルを置き、URLを発行することができる。
-発行されたURLは標準出力に表示される。
-S3バケットを削除する場合、<code>remove-aws</code>コマンドを実行すればいい。</p>
+</span></span></code></pre></div><p>When I ran the target, I encountered an error on the first execution, but the second attempt succeeded.
+It seems Terraform cannot create an S3 bucket and upload an object to it at the same time.
+Eventually, the target prints a presigned URL to the standard output.
+The <code>Makefile</code> provides <code>remove-aws</code> target that removes the stacks created by the Terraform scripts.</p>
   </div>
 </main>
 
@@ -113,7 +116,7 @@ S3バケットを削除する場合、<code>remove-aws</code>コマンドを実�
 <ul class="pagination">
     
     <li>
-      <a href="/posts/highly-available-transactions-virtues-and-limitations/">
+      <a href="/en/posts/highly-available-transactions-virtues-and-limitations/">
 	<i class="fa-solid fa-xl fa-angle-left"></i>
       </a>
     </li>

@@ -22,9 +22,7 @@
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
-
-<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/list.min.77915db2c7e22353f139086e8007e836c0943b636d1285b13737de98af7c5e56.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -34,7 +32,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>署名つきURLでS3オブジェクトを公開する</title>
+    <title>S3</title>
   </head>
 
   <body>
@@ -53,7 +51,7 @@
           <li><a href="https://ryotaro.dev/posts">Posts</a></li>
           <li><a href="https://ryotaro.dev/tags">Tags</a></li>
 	  
-	  <li><a href="https://ryotaro.dev/en/posts/s3-sign/">en</a></li>
+	  <li><a href="https://ryotaro.dev/en/tags/s3/">en</a></li>
 	  
         </ul>	
 	<ul>
@@ -82,46 +80,19 @@
     </header>
     
 <main>
-  <h1>署名つきURLでS3オブジェクトを公開する</h1>
-  <ul class="tags">
-    
-    <li class="tag">
-      <a href="https://ryotaro.dev/tags/s3/">
-	#S3
-      </a>
-    </li>
-    
-  </ul>  
-  <span class="date">January 30, 2025</span>    
-  <div>
-    <p>S3バケットにあるプライベートオブジェクトの署名つきURLを発行すれば、URLを知るユーザーのみにオブジェクトを公開できる。
-発行方法は<a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html">AWSの記事</a>で紹介されている。</p>
-<p>記事にしたがってURLを発行してみたところ、バケットとファイル手間がかかった。
-また、URLを発行するクライアントを生成する方法が記事になく、別途調査する必要があった。</p>
-<p>これまでに何度かURLを発行する方法を調べたことがあるので、今後のために、バケットとファイルを用意するterraformのコードと、ファイルのURLを発行するGoのコードをGitHubの<a href="https://github.com/ryotaro612/s3-signin">リポジトリ</a>に公開した。</p>
-<p>リポジトリのルートにある<code>Makefile</code>の<code>run</code>ターゲットで、S3オブジェクトを配置し、配置したオブジェクトの署名つきURLを発行できる。
-コマンドの実行例を以下に示す。</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>make <span style="color:#f5e0dc">AWS_REGION</span><span style="color:#89dceb;font-weight:bold">=</span>&lt;aws_region&gt; <span style="color:#f5e0dc">AWS_PROFILE</span><span style="color:#89dceb;font-weight:bold">=</span>&lt;profile&gt; <span style="color:#f5e0dc">BUCKET_NAME</span><span style="color:#89dceb;font-weight:bold">=</span>&lt;bucket_name&gt;
-</span></span></code></pre></div><p>自分の環境では、terraformで作成直後のS3バケットにファイルを置こうとするとエラーになった。
-その場合、再度上のコマンドを実行すれば、あらてめてファイルを置き、URLを発行することができる。
-発行されたURLは標準出力に表示される。
-S3バケットを削除する場合、<code>remove-aws</code>コマンドを実行すればいい。</p>
-  </div>
+    <h1>S3</h1>
+    <div>
+        
+        <div class="entry">
+            <h2><a href="https://ryotaro.dev/posts/s3-sign/">署名つきURLでS3オブジェクトを公開する</a></h2>
+            <span class="date">January 30, 2025</span>
+        </div>
+        
+    </div>
 </main>
 
     
-<ul class="pagination">
     
-    <li>
-      <a href="/posts/highly-available-transactions-virtues-and-limitations/">
-	<i class="fa-solid fa-xl fa-angle-left"></i>
-      </a>
-    </li>
-    
-    
-</ul>
-
-
     <footer>
       <small>© Ryotaro. All Rights Reserved.</small>
     </footer>

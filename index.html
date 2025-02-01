@@ -85,6 +85,29 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/s3-sign/">署名つきURLでS3オブジェクトを公開する</a></h3>
+        <div class="summary"><p>S3バケットにあるプライベートオブジェクトの署名つきURLを発行すれば、URLを知るユーザーのみにオブジェクトを公開できる。
+発行方法は<a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html">AWSの記事</a>で紹介されている。</p>
+<p>記事にしたがってURLを発行してみたところ、バケットとファイル手間がかかった。
+また、URLを発行するクライアントを生成する方法が記事になく、別途調査する必要があった。</p>
+<p>これまでに何度かURLを発行する方法を調べたことがあるので、今後のために、バケットとファイルを用意するterraformのコードと、ファイルのURLを発行するGoのコードをGitHubの<a href="https://github.com/ryotaro612/s3-signin">リポジトリ</a>に公開した。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/s3/">
+		#S3
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">January 30, 2025</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/highly-available-transactions-virtues-and-limitations/">Highly Available Transactions Virtues and Limitations (2013)</a></h3>
         <div class="summary"><h2 id="概要">概要</h2>
 <p>CAP定理の一貫性、可用性、ネットワークの分断耐性のトリレンマは、1つを完全に切り捨てるのではなく、現実には、3つの性質の優先順位をつける問題になる。
@@ -296,33 +319,6 @@ NCFは3種類あり、Generalized Matrix Factorization (GMF) と Multi-Layer Per
 	  </ul>
 	  
           <span class="date">March 25, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/">TelegraphCQ: Continuous Dataflow Processing for an Uncertain World (2003)</a></h3>
-        <div class="summary"><p>2005年、StonebrakerとÇetintemelは、<a href="https://cs.brown.edu/~ugur/fits_all.pdf">&ldquo;One Size Fits All&rdquo;</a>で、ストリーミングデータを例に、あらゆる種類のデータをDMBSで管理できなくなったと主張した。
-&ldquo;One Size Fits All&quot;については<a href="https://ryotaro.dev/posts/one-size-fits-all-an-idea-whose-time-has-come-and-gone/">過去の記事</a>で紹介した。
-2003年に発表された<a href="https://cs.brown.edu/courses/cs227/archives/2015/papers/ss-telegraphcq.pdf">TelegraphCQ</a>は、そのようなドメイン特化のデータベースが必要とされはじめた初期のストリーミングデータのためのデータベースである。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/streaming-data/">
-		#Streaming Data
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/postgresql/">
-		#PostgreSQL
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">March 22, 2024</span>
         </div>
     </article>
     

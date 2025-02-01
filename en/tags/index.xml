@@ -6,8 +6,15 @@
     <description>Recent content in Tags on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 30 Jan 2025 03:01:31 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jan 2025 03:01:59 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>S3</title>
+      <link>https://ryotaro.dev/en/tags/s3/</link>
+      <pubDate>Thu, 30 Jan 2025 03:01:59 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/s3/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Availability</title>
       <link>https://ryotaro.dev/en/tags/availability/</link>

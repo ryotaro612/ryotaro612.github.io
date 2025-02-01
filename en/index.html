@@ -85,6 +85,31 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/en/posts/s3-sign/">Publishing S3 Objects with Signed URLs</a></h3>
+        <div class="summary"><p>The owner of an S3 bucket can share an object by creating a presigned URL for it. The <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html">AWS Documentation</a> provides a user guide on how to generate presigned URLs.</p>
+<p>When I tried generating a presigned URL using the document, I found that preparing the bucket and file was a bit cumbersome.
+Additionally, the guide doesn&rsquo;t cover how to instantiate a client to generate the URL, so I had to look for another guide to learn how to do this.</p>
+<p>I&rsquo;ve researched generating presigned URLs a couple of times before and eventually implemented Terraform scripts and a Go script for future reference.
+The Terraform scripts create an S3 bucket and upload a file to it.
+The Go script generates a presigned URL for the file using the AWS SDK.
+These resources are available in this <a href="https://github.com/ryotaro612/s3-signin">GitHub repository</a>.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/s3/">
+		#S3
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">January 30, 2025</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/en/posts/highly-available-transactions-virtues-and-limitations/">Highly Available Transactions: Virtues and Limitations (2013)</a></h3>
         <div class="summary"><h2 id="overview">Overview</h2>
 <p>The CAP theorem’s trilemma of consistency, availability, and partition tolerance does not require sacrificing one property entirely but rather prioritizing among the three.
@@ -310,28 +335,6 @@ They update the policies according to the gradient of expected reward with respe
 	  </ul>
 	  
           <span class="date">April 14, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/neural-collaborative-filtering/">Neural Collaborative Filtering (2017)</a></h3>
-        <div class="summary"><p>In collaborative filtering, Matrix Factorization (MF) approximates the user-item interaction matrix by multiplying the latent matrices for users and items.
-An estimated iteraction is the inner product of the latent vectors for the user and the item.
-<a href="https://arxiv.org/pdf/1708.05031.pdf">Neural Collaborative Filtering (NCF)</a> replaces the inner product with a neural neural network to capture the complex structure of user interaction data.
-There are three instances of NFC: Generalized Matrix Factorization (GMF), Multi-Layer Perceptron (MLP), Neural Matrix Factoriation (NeuMF).</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/collaborative-filtering/">
-		#Collaborative Filtering
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">March 25, 2024</span>
         </div>
     </article>
     

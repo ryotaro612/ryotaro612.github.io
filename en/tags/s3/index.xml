@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>S3 on Blanket</title>
+    <link>https://ryotaro.dev/en/tags/s3/</link>
+    <description>Recent content in S3 on Blanket</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 30 Jan 2025 03:01:59 +0900</lastBuildDate>
+    <atom:link href="https://ryotaro.dev/en/tags/s3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Publishing S3 Objects with Signed URLs</title>
+      <link>https://ryotaro.dev/en/posts/s3-sign/</link>
+      <pubDate>Thu, 30 Jan 2025 03:01:59 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/s3-sign/</guid>
+      <description>&lt;p&gt;The owner of an S3 bucket can share an object by creating a presigned URL for it. The &lt;a href=&#34;https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html&#34;&gt;AWS Documentation&lt;/a&gt; provides a user guide on how to generate presigned URLs.&lt;/p&gt;&#xA;&lt;p&gt;When I tried generating a presigned URL using the document, I found that preparing the bucket and file was a bit cumbersome.&#xA;Additionally, the guide doesn&amp;rsquo;t cover how to instantiate a client to generate the URL, so I had to look for another guide to learn how to do this.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve researched generating presigned URLs a couple of times before and eventually implemented Terraform scripts and a Go script for future reference.&#xA;The Terraform scripts create an S3 bucket and upload a file to it.&#xA;The Go script generates a presigned URL for the file using the AWS SDK.&#xA;These resources are available in this &lt;a href=&#34;https://github.com/ryotaro612/s3-signin&#34;&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

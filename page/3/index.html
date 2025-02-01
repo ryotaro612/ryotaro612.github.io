@@ -85,6 +85,28 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/dense-passage-retrieval-for-open-domain-question-answering/">Dense Passage Retrieval for Open-Domain Question Answering (2020)</a></h3>
+        <div class="summary"><p>あたえられた文書集合から事実についての質問に答えるオープンドメイン質問応答は、もとの集合から質問に関連する少数の文書集合を選び、選ばれた集合から解答を特定する二段階の手順に分けられる <a href="https://arxiv.org/abs/1704.00051">(Chen et al., 2017)</a>。
+<a href="https://aclanthology.org/2020.emnlp-main.550/">Dense Passage Retrieval for Open-Domain Question Answering</a>は、最初の文書候補を限定する手順に、従来より使われているBM25のような疎なベクトルを出力するモデルにかわって、BERTが出力する密で次元数の少ないベクトルを応用する。</p>
+<p>訓練方法は距離学習であり、質問と解答のベクトルの内積が大きく、解答以外の文章と質問の内積が小さくになるように、BERTの重みを更新する。
+負例を集めるために、無作為に選ばれた文章、BM25が最も高い文章、別の正例の文章を負例の文章に利用し比較したところ、BM25の高い文章と別の正例の文章を負例にするときに最もよい結果になった。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E8%B3%AA%E5%95%8F%E5%BF%9C%E7%AD%94/">
+		#質問応答
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 30, 2023</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/cap-twelve-years-later-how-the-rules-have-changed/">CAP Twelve Years Later: How the &#34;Rules&#34; Have Changed (2012)</a></h3>
         <div class="summary"><p><a href="https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf">CAP定理</a>は、データベースが一貫性 (Consistency), 可用性 (Availability), 分断耐性 (Partition Tolerance) から2つしか選択できない定理として知られる。
 この定理は、Martin Kleppmannによって、その著書<a href="https://dataintensive.net/">Designing Data-Intensive Applications</a>や<a href="https://www.cl.cam.ac.uk/research/dtg/archived/files/publications/public/mk428/cap-critique.pdf">A Critique of the CAP Theorem</a> で批判されている。
@@ -288,31 +310,6 @@ DistilBERTのアーキテクチャは、セグメントエンベディング、�
 	  </ul>
 	  
           <span class="date">October 23, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/gaussian_error_linear_units/">GAUSSIAN ERROR LINEAR UNITS (GELUs) 2016</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/abs/1606.08415">GAUSSIAN ERROR LINEAR UNITS (GELUs)</a>は、標準正規分布の累積分布関数を\(\Phi(x)\)とおくと、\(\text{GELU}(x)=x\Phi(x)\)で定義される活性化関数である。
-GELUsは、Dropout, <a href="https://openreview.net/pdf?id=rJqBEPcxe">Zoneout</a>, \(\text{ReLU}(x)=\max(0, x)\)の性質を兼ね備える。
-Zoneoutは、RNNむけの正則化であり、ユニットが一つ前の状態を確率的に維持するしくみである。
-ReLUは、非線形性により、ニューラルネットワークを非線形関数に近似できる。
-ZoneoutやDropoutは正則化の役割をはたす。
-ReLUsの出力が入力に依存する一方で、Dropoutの出力は入力に依存しない。
-GELUsは、確率\(\Phi(x)\)で1をとるベルヌーイ分布にしたがう0-1マスクを人工ニューロンへの入力に適用することで、非線形関数への近似と正則化の両方を実現する。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E6%B4%BB%E6%80%A7%E5%8C%96%E9%96%A2%E6%95%B0/">
-		#活性化関数
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">October 21, 2023</span>
         </div>
     </article>
     
