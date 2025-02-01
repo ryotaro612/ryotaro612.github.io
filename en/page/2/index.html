@@ -85,6 +85,34 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/en/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/">TelegraphCQ: Continuous Dataflow Processing for an Uncertain World (2003)</a></h3>
+        <div class="summary"><p>Stonebraker and Çetintemel presented <a href="https://cs.brown.edu/~ugur/fits_all.pdf">&ldquo;One Size Fits All&rdquo;</a> in 2005.
+The phrase refers to the fact that various data-centric applications use traditional DMBMS architectures to store data regardless of the characteristics and requirements of the data.
+In the paper, they argued that this approach was no longer applicable, with examples of streaing processing.
+<a href="https://cs.brown.edu/courses/cs227/archives/2015/papers/ss-telegraphcq.pdf">TelegraphCQ</a>, presented in 2003, is the first generation of databases for streamingffff data from the early 2000s.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/streaming-data/">
+		#Streaming Data
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/postgresql/">
+		#PostgreSQL
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">March 22, 2024</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/en/posts/llama-open-and-efficient-foundation-language-models/">LLaMA Open and Efficient Foundation Language Models (2023)</a></h3>
         <div class="summary">Scaling Laws for Neural Language Models refers to empirical observations that model test performance has a power-law relationship with each of the three scale factors: the number of model parameters, the dataset size in tokens, and the amount of compute used for training, when not bottlenecked by the other two. Hoffmann et al. (2022) investigated the bottleneck and found that, given a fixed FLOPs budget, the number of model parameters and the training tokens should be scaled equally to minimize pre-training loss.</div>
         <div class="article-footer">
@@ -285,37 +313,6 @@ The authors have implemented this method in a library called <a href="https://gi
 	  </ul>
 	  
           <span class="date">December 31, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/dense-passage-retrieval-for-open-domain-question-answering/">Dense Passage Retrieval for Open-Domain Question Answering (2020)</a></h3>
-        <div class="summary"><p>Open-domain question answering (QA) involves answering fact-based questions using documents.
-An open-domain QA system can be divided into two components: one that retrieves relevant passages and another that extracts the answer spans from those passages <a href="https://arxiv.org/abs/1704.00051">(Chen et al., 2017)</a>.
-While traditional approaches use sparse vector space models like BM25 for the retrieval step, <a href="https://aclanthology.org/2020.emnlp-main.550/">Dense Passage Retrieval for Open-Domain Question Answering</a> shows that dense representations can also be practically implemented using dense representations.</p>
-<!-- Open-domain question answering (QA) is a task that answers factorid questions using documents. -->
-<!-- If the answers are spans appearing in passages of the documents, an open-domain QA system can be decomposed into 2 components. -->
-<!-- The first component retrieves a small set of passages relevant to the question, and the second one extract the span from the filter set [(Chen et al., 2017)](https://arxiv.org/abs/1704.00051). -->
-<!-- While traditional approaches use sparse vector space models such as BM25 for the first module, [Dense Passage Retrieval for Open-Domain Question Answering](https://aclanthology.org/2020.emnlp-main.550/) demonstrates that the first retrieval step can be implemented using dense representations. -->
-<p>The embeddings are learned from the training dataset, optimizing for maximizing inner products between question and relevant passage vectors.
-The training is essentially metric learning, and each question needs irrelvant passages.
-In experiments, it was found that utilizing both the top passages returned by BM25, excluding the answer, and positive passages paired with other questions as negatives yielded best performance.</p>
-<!-- The embeddings are learned from the questions and passages in a training dataset, and optimized for maximizing inner products of the question and relevant passage vectors. -->
-<!-- The training is essentially metric learning, and each question needs irrelvant passages. -->
-<!-- Using both the top passages returned by BM25 except the answer and positive passages paired with other questions as negatives outperformed in experiments. --></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/question-answering/">
-		#Question Answering
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 30, 2023</span>
         </div>
     </article>
     

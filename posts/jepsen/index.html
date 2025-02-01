@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="http://localhost:1313/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+    
+    <link rel="stylesheet" href="http://localhost:1313/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    
+
+<link rel="stylesheet" href="http://localhost:1313/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+
+<link rel="stylesheet" href="http://localhost:1313/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>分散システム向けのフォールトインジェクションフレームワーク Jepsen</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="http://localhost:1313/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="http://localhost:1313/about">About</a></li>
+          <li><a href="http://localhost:1313/posts">Posts</a></li>
+          <li><a href="http://localhost:1313/tags">Tags</a></li>
+	  
+        </ul>	
+	<ul>
+          
+          <li>
+            <a href="https://github.com/ryotaro612">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="https://www.linkedin.com/in/ryotaro612/">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          
+          <li>
+	    <a href="http://localhost:1313/index.xml">
+	      <i class="fas fa-rss"></i>
+            </a>
+	  </li>
+          
+        </ul>	
+      </nav>
+    </header>
+    
+<main>
+  <h1>分散システム向けのフォールトインジェクションフレームワーク Jepsen</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="http://localhost:1313/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+	#分散システム
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">January 26, 2025</span>    
+  <div>
+    <h2 id="概要">概要</h2>
+<p><a href="https://jepsen.io/">Jepsen</a>は、分散システムに障害を起こすクライアントをClojureで実装するためのフレームワークである。
+システムへの操作、操作後のシステムに期待する状態、障害と操作のスケジューリングを実装すれば、分散システムに操作と障害を与えた後に、システムの応答が定義した期待通りか確認できる。
+Jepsenの公式サイトには<a href="https://jepsen.io/analyses">多くな分散システムのテスト結果</a>があり、また、<a href="https://kubernetes.io/ja/docs/tasks/administer-cluster/configure-upgrade-etcd/">Kubernetes使わているetcd</a>の<a href="https://etcd.io/blog/2020/jepsen-343-results/">サイト</a>にもJepsenのテスト結果が報告されていることから、分散システムのテストフレームワークのスタンダードに近い地位にあるように見える。</p>
+<p>すこし使ってみたところ、著名のようだが、参考資料は十分に整備されていない印象だった。
+たとえば、チュートリアルはetcdを対象にしたテストを例題にしてJepsenの使い方を解説している。
+しか、etcdのクライアントライブラリが古く、チュートリアルどおりに実装しても、クライアントを動かすことはできない。</p>
+<p>そこで投稿では、分散システムをテストしたいがJepsenやClojureに詳しくない方向けにJepsenの基本的な使い方を紹介する。</p>
+<h2 id="テストケース">テストケース</h2>
+<p>Jepsenのテストケースは、<a href="https://github.com/jepsen-io/jepsen/blob/v0.3.7/jepsen/src/jepsen/core.clj#L322"><code>jepsen.core/run!</code></a>関数が受けとれるマップであり、マップの定義は関数のドキュメントにある。
+名前の通り<code>jepsen.core/run!</code>はテストケースを実行する関数であり、<a href="https://github.com/jepsen-io/jepsen/blob/v0.3.7/doc/tutorial/01-scaffolding.md">チュートリアル</a>で使われている<code>jepsen.cli/run!</code>と違い、呼び出し後にプロセスを終了しない。</p>
+<p>以下は<code>jepsen.core/run!</code>のドキュメントから引用したマップの定義であり、以降の節で主要なキーを説明する。</p>
+<pre><code>  :nodes      A sequence of string node names involved in the test
+  :concurrency  (optional) How many processes to run concurrently
+  :ssh        SSH credential information: a map containing...
+    :username           The username to connect with   (root)
+    :password           The password to use
+    :sudo-password      The password to use for sudo, if needed
+    :port               SSH listening port (22)
+    :private-key-path   A path to an SSH identity file (~/.ssh/id_rsa)
+    :strict-host-key-checking  Whether or not to verify host keys
+  :logging    Logging options; see jepsen.store/start-logging!
+  :os         The operating system; given by the OS protocol
+  :db         The database to configure: given by the DB protocol
+  :remote     The remote to use for control actions. Try, for example,
+              (jepsen.control.sshj/remote).
+  :client     A client for the database
+  :nemesis    A client for failures
+  :generator  A generator of operations to apply to the DB
+  :checker    Verifies that the history is valid
+  :log-files  A list of paths to logfiles/dirs which should be captured at
+              the end of the test.
+  :nonserializable-keys   A collection of top-level keys in the test which
+                          shouldn't be serialized to disk.
+  :leave-db-running? Whether to leave the DB running at the end of the test.
+
+Jepsen automatically adds some additional keys during the run
+
+  :start-time     When the test began
+  :history        The operations the clients and nemesis performed
+  :results        The results from the checker, once the test is completed
+
+In addition, tests have some fields added by Jepsen which are present during
+their execution, but not persisted.
+
+  :barrier        A CyclicBarrier, mainly used for synchronizing DB setup
+  :store          State used for reading and writing data to and from disk
+  :sessions       Connected sessions used by jepsen.control to talk to nodes
+</code></pre>
+<h3 id="分散システムとの通信">分散システムとの通信</h3>
+<p>クライアントは、<code>:remote</code>で指定した方法で分散システムに接続する。
+<code>:remote</code>の値はプロトコル<a href="https://github.com/jepsen-io/jepsen/blob/ce07779ca3b81feb8553276581faa73d963a95b7/jepsen/src/jepsen/control/core.clj#L9"><code>jepsen.control.core/Remote</code></a>の実装であり、この実装で<code>:nodes</code>で指定された分散システムのノードに接続する。</p>
+<p>マップに<code>:ssh</code>キーがあることから読みとれるように、デフォルトではSSHでノードに接続する。
+<code>:strict-host-key-checking</code>が有効であれば、前回公開鍵で接続した端末とIPが同じだが異なる端末に接続した場合に、接続を中断する。</p>
+<p>SSHのほかにも
+time skewは利用できない。
+<a href="https://github.com/jepsen-io/jepsen/blob/ce07779ca3b81feb8553276581faa73d963a95b7/jepsen/src/jepsen/control/docker.clj#L77">https://github.com/jepsen-io/jepsen/blob/ce07779ca3b81feb8553276581faa73d963a95b7/jepsen/src/jepsen/control/docker.clj#L77</a>
+マップの<code>:nodes</code>は分散システムのノード</p>
+<h2 id="参考文献">参考文献</h2>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/origin-of-type-theory/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+    <li>
+      <a href="/posts/highly-available-transactions-virtues-and-limitations/">
+	<i class="fa-solid fa-xl fa-angle-right"></i>
+      </a>
+    </li>
+    
+</ul>
+
+
+    <footer>
+      <small>© Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

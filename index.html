@@ -85,18 +85,46 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/highly-available-transactions-virtues-and-limitations/">Highly Available Transactions Virtues and Limitations (2013)</a></h3>
+        <div class="summary"><h2 id="概要">概要</h2>
+<p>CAP定理の一貫性、可用性、ネットワークの分断耐性のトリレンマは、1つを完全に切り捨てるのではなく、現実には、3つの性質の優先順位をつける問題になる。
+システムの一貫性と可用性の均衡を設計するときは、求める一貫性に対して実現できる可用性を知らないといけない。
+<a href="https://www.vldb.org/pvldb/vol7/p181-bailis.pdf">Highly Available Transactions Virtues and Limitations</a> は、既存の一貫性を両立できる可用性の水準と対応させ、両性質の強さで一貫性と可用性のペアを半順序関係に整理した。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+		#分散システム
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B6%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/">
+		#トランザクション
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E5%8F%AF%E7%94%A8%E6%80%A7/">
+		#可用性
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">January 30, 2025</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/origin-of-type-theory/">型理論のはじまり</a></h3>
         <div class="summary"><p>型理論の起源はラッセルのパラドクスにある。
 ただし、厳密な起源となる出来事は何かという問いになると、意見は分かれると思う。
 名前の通り、ラッセルのパラドクスはラッセルが見つけたものだが、集合論を確立したカントールも同時期に独立して同等のパラドクスを発見した。
 またラッセルとフレーゲの往復書簡の中で、フレーゲは、彼の概念記法における述語は述語を引数にとらないと回答した。
-ラッセルが概念記法の要素の階層関係を発展させてパラドクスの解消を試みたことを考えれば、フレーゲの述語論理を型理論の起源とみなすこともできるだろう。</p>
-<p>型理論のなりたちに興味があり、調べたことをスライドにまとめた。
-興味があった理由は、その過程にコンピュータ科学以外の分野も関与していることにある。
-カントールは数学者であり、フレーゲやラッセルは言語哲学でも参照される。
-コンピュータ科学に関心がある人がコンピュータ科学に関連する分野を持ち、また、関連分野の知識をコンピュータ科学にどう活用できるかということに興味がある。
-具体的には、数学、言語哲学、記号論などの抽象的な分野が日々のプログラミングに役立つのか、役立つのであれば、どのように関連分野に興味をもつことができるのかということが知りたかった。
-そのため、歴史上の出来事の因果関係を慎重に議論するよりも、コンピュータ科学とほかの分野との関係に焦点をあててスライドを作った。</p></div>
+ラッセルが概念記法の要素の階層関係を発展させてパラドクスの解消を試みたことを考えれば、フレーゲの述語論理を型理論の起源とみなすこともできるだろう。</p></div>
         <div class="article-footer">
 	  	  
 	  <ul class="tags">
@@ -295,30 +323,6 @@ NCFは3種類あり、Generalized Matrix Factorization (GMF) と Multi-Layer Per
 	  </ul>
 	  
           <span class="date">March 22, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/llama-open-and-efficient-foundation-language-models/">LLaMA Open and Efficient Foundation Language Models (2023)</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/pdf/2001.08361.pdf">スケーリング則</a>によれば、<a href="https://arxiv.org/abs/1706.03762">Transformer</a>型モデルのテストデータに対する交差エントロピーの損失は、のこり2つの要素がボトルネックにならないかぎり、パラメタ数、データ量、訓練時間とべき乗の関係にある。
-パラメタをふやすほど損失を下げることができる。</p>
-<p><a href="https://arxiv.org/abs/2203.15556">Hoffmann et al. (2022)</a> は、訓練に使えるFlop数が一定のときに、事前学習時の損失を効果的に下げるには、訓練時に参照するトークン数、パラメタ数を等しい比率でスケールすべきと結論づけた。
-実験のために開発されたパラメタ数70BのモデルChinchillaはパラメタ数175BのGPT-3の性能を上回った。</p>
-<p>しかし、訓練時の損失を目標まで下げるまでにかかるFlop数が少ないモデルほど、推論時もプロセッサの利用効率がよいとはかぎらない。
-たとえば、パラメタ数の大きいモデルが小さいモデルよりも高いプロセッサの利用効率で訓練時の損失を目標以下にできても、推論に必要なFlop数はパラメタ数が多いモデルのほうが大きい。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/large-language-model/">
-		#Large Language Model
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">March 14, 2024</span>
         </div>
     </article>
     

@@ -6,14 +6,21 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 30 Dec 2024 22:45:30 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jan 2025 03:01:31 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Highly Available Transactions Virtues and Limitations (2013)</title>
+      <link>https://ryotaro.dev/posts/highly-available-transactions-virtues-and-limitations/</link>
+      <pubDate>Thu, 30 Jan 2025 03:01:31 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/highly-available-transactions-virtues-and-limitations/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;&#xA;&lt;p&gt;CAP定理の一貫性、可用性、ネットワークの分断耐性のトリレンマは、1つを完全に切り捨てるのではなく、現実には、3つの性質の優先順位をつける問題になる。&#xA;システムの一貫性と可用性の均衡を設計するときは、求める一貫性に対して実現できる可用性を知らないといけない。&#xA;&lt;a href=&#34;https://www.vldb.org/pvldb/vol7/p181-bailis.pdf&#34;&gt;Highly Available Transactions Virtues and Limitations&lt;/a&gt; は、既存の一貫性を両立できる可用性の水準と対応させ、両性質の強さで一貫性と可用性のペアを半順序関係に整理した。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>型理論のはじまり</title>
       <link>https://ryotaro.dev/posts/origin-of-type-theory/</link>
       <pubDate>Mon, 30 Dec 2024 22:45:30 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/origin-of-type-theory/</guid>
-      <description>&lt;p&gt;型理論の起源はラッセルのパラドクスにある。&#xA;ただし、厳密な起源となる出来事は何かという問いになると、意見は分かれると思う。&#xA;名前の通り、ラッセルのパラドクスはラッセルが見つけたものだが、集合論を確立したカントールも同時期に独立して同等のパラドクスを発見した。&#xA;またラッセルとフレーゲの往復書簡の中で、フレーゲは、彼の概念記法における述語は述語を引数にとらないと回答した。&#xA;ラッセルが概念記法の要素の階層関係を発展させてパラドクスの解消を試みたことを考えれば、フレーゲの述語論理を型理論の起源とみなすこともできるだろう。&lt;/p&gt;&#xA;&lt;p&gt;型理論のなりたちに興味があり、調べたことをスライドにまとめた。&#xA;興味があった理由は、その過程にコンピュータ科学以外の分野も関与していることにある。&#xA;カントールは数学者であり、フレーゲやラッセルは言語哲学でも参照される。&#xA;コンピュータ科学に関心がある人がコンピュータ科学に関連する分野を持ち、また、関連分野の知識をコンピュータ科学にどう活用できるかということに興味がある。&#xA;具体的には、数学、言語哲学、記号論などの抽象的な分野が日々のプログラミングに役立つのか、役立つのであれば、どのように関連分野に興味をもつことができるのかということが知りたかった。&#xA;そのため、歴史上の出来事の因果関係を慎重に議論するよりも、コンピュータ科学とほかの分野との関係に焦点をあててスライドを作った。&lt;/p&gt;</description>
+      <description>&lt;p&gt;型理論の起源はラッセルのパラドクスにある。&#xA;ただし、厳密な起源となる出来事は何かという問いになると、意見は分かれると思う。&#xA;名前の通り、ラッセルのパラドクスはラッセルが見つけたものだが、集合論を確立したカントールも同時期に独立して同等のパラドクスを発見した。&#xA;またラッセルとフレーゲの往復書簡の中で、フレーゲは、彼の概念記法における述語は述語を引数にとらないと回答した。&#xA;ラッセルが概念記法の要素の階層関係を発展させてパラドクスの解消を試みたことを考えれば、フレーゲの述語論理を型理論の起源とみなすこともできるだろう。&lt;/p&gt;</description>
     </item>
     <item>
       <title>2024年11月のruncの実装</title>

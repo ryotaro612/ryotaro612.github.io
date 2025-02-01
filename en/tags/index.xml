@@ -6,8 +6,29 @@
     <description>Recent content in Tags on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 30 Dec 2024 22:45:30 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jan 2025 03:01:31 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Availability</title>
+      <link>https://ryotaro.dev/en/tags/availability/</link>
+      <pubDate>Thu, 30 Jan 2025 03:01:31 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/availability/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Distributed Systems</title>
+      <link>https://ryotaro.dev/en/tags/distributed-systems/</link>
+      <pubDate>Thu, 30 Jan 2025 03:01:31 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/distributed-systems/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Transactions</title>
+      <link>https://ryotaro.dev/en/tags/transactions/</link>
+      <pubDate>Thu, 30 Jan 2025 03:01:31 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/transactions/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Type Theory</title>
       <link>https://ryotaro.dev/en/tags/type-theory/</link>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Highly Available Transactions Virtues and Limitations (2013)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://ryotaro.dev/about">About</a></li>
+          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+	  
+	  <li><a href="https://ryotaro.dev/en/posts/highly-available-transactions-virtues-and-limitations/">en</a></li>
+	  
+        </ul>	
+	<ul>
+          
+          <li>
+            <a href="https://github.com/ryotaro612">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="https://www.linkedin.com/in/ryotaro612/">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          
+          <li>
+	    <a href="https://ryotaro.dev/index.xml">
+	      <i class="fas fa-rss"></i>
+            </a>
+	  </li>
+          
+        </ul>	
+      </nav>
+    </header>
+    
+<main>
+  <h1>Highly Available Transactions Virtues and Limitations (2013)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+	#分散システム
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B6%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/">
+	#トランザクション
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/%E5%8F%AF%E7%94%A8%E6%80%A7/">
+	#可用性
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">January 30, 2025</span>    
+  <div>
+    <h2 id="概要">概要</h2>
+<p>CAP定理の一貫性、可用性、ネットワークの分断耐性のトリレンマは、1つを完全に切り捨てるのではなく、現実には、3つの性質の優先順位をつける問題になる。
+システムの一貫性と可用性の均衡を設計するときは、求める一貫性に対して実現できる可用性を知らないといけない。
+<a href="https://www.vldb.org/pvldb/vol7/p181-bailis.pdf">Highly Available Transactions Virtues and Limitations</a> は、既存の一貫性を両立できる可用性の水準と対応させ、両性質の強さで一貫性と可用性のペアを半順序関係に整理した。</p>
+<h2 id="可用性">可用性</h2>
+<p>可用性をhigh availabilityとstickey availablityの二種類に分け、この2つを一貫性と対応させる。
+どちらの可用性も無期限のネットワーク分断を想定する。</p>
+<p>High availablityは、サーバー間で任意かつ無期限のネットワークの分断がありえる場合でも、すべてのクライアントがリクエストの送り先の正常なサーバから応答を受けとれることを保証する。
+応答にかかる時間は問わない。また、この定義は<a href="https://ryotaro.dev/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/">過去に紹介</a>した<a href="https://users.ece.cmu.edu/~adrian/731-sp04/readings/GL-cap.pdf">Brewer&rsquo;s conjecture and the feasibility of consistent, available, partition-tolerant web services</a>に由来する。</p>
+<p>Stickey availabilityは、あるクライアントによる以前の全操作を反映したレプリカがあり、そのレプリカにトランザクションを実行したとき、やがてクライアントに応答が返ることを保証する。
+Stickey availabilityをみたすために、クライアントに読み書きをキャッシュさせて、クライアントをサーバーとみなしてもよい。</p>
+<h2 id="一貫性と可用性のペアの半順序関係">一貫性と可用性のペアの半順序関係</h2>
+<p>High availabilityとsticky avaiabilityには順序関係がある。
+High availabilityを備えるシステムは、stickey availabilityも満たす。
+しかし、逆は成立するとは限らない。
+以下に文献から引用した半順序関係の図を示す。
+<img alt="hat" src="/hat/hat.png">
+単語は一貫性を、枠は可用性を意味する。
+枠がない一貫性はhigh availabilityを満たし、 四角で囲まれた一貫性はsticky availabilityを意味する。
+楕円の一貫性はavailabilityを保証しない。
+一貫性と可用性はトレードオフの関係にあるので、より上にあるほど一貫性は強いが可用性は低く、下にあるほど高可用性はあるが一貫性は弱い。</p>
+<p>文献よりも、分散システム向けのフォールトインジェクションフレームワークjepsenの<a href="https://jepsen.io/consistency/models">ウェブサイト</a>にある半順序関係と一貫性の非形式的な説明が参考になるかもしれない。
+文献にも以下の表や一貫性の説明はあるが、ウェブサイトほど解説に紙面が割かれておらず、また、解説を原典の文献にゆずる箇所が多い。
+<img alt="description" src="/hat/description.png"></p>
+<p>ウェブサイトが更新されたときのために、1段階ごとに可用性が上下するパス、WFR (Writes Follow Reads), causal, linearizableで半順序関係の簡潔な説明を残す。
+WFRは、プロセスがトランザクション\(T_1\)の後にトランザクション\(T_2\)をコミットした場合に、別のプロセスは、\(T_2\)の結果を\(T_1\)の結果よりも先に参照できないことを保証する。
+causal consistencyは、すべてのプロセスが因果関係のあるの操作の同一な前後関係を観察していることを保証する。
+一方、因果関係のない操作間はプロセスごとに異なる順序で観測されうる。
+線形化可能性は、読み書き操作がアトミックであるように観測でき、かつ、すべてのプロセスの実行を仮に直列化したときと同じ実行結果になることを保証する。</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/origin-of-type-theory/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <small>© Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

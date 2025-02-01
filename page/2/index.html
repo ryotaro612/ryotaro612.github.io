@@ -85,6 +85,30 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/llama-open-and-efficient-foundation-language-models/">LLaMA Open and Efficient Foundation Language Models (2023)</a></h3>
+        <div class="summary"><p><a href="https://arxiv.org/pdf/2001.08361.pdf">スケーリング則</a>によれば、<a href="https://arxiv.org/abs/1706.03762">Transformer</a>型モデルのテストデータに対する交差エントロピーの損失は、のこり2つの要素がボトルネックにならないかぎり、パラメタ数、データ量、訓練時間とべき乗の関係にある。
+パラメタをふやすほど損失を下げることができる。</p>
+<p><a href="https://arxiv.org/abs/2203.15556">Hoffmann et al. (2022)</a> は、訓練に使えるFlop数が一定のときに、事前学習時の損失を効果的に下げるには、訓練時に参照するトークン数、パラメタ数を等しい比率でスケールすべきと結論づけた。
+実験のために開発されたパラメタ数70BのモデルChinchillaはパラメタ数175BのGPT-3の性能を上回った。</p>
+<p>しかし、訓練時の損失を目標まで下げるまでにかかるFlop数が少ないモデルほど、推論時もプロセッサの利用効率がよいとはかぎらない。
+たとえば、パラメタ数の大きいモデルが小さいモデルよりも高いプロセッサの利用効率で訓練時の損失を目標以下にできても、推論に必要なFlop数はパラメタ数が多いモデルのほうが大きい。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/large-language-model/">
+		#Large Language Model
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">March 14, 2024</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/">Apache Calcite: A Foundational Framework for Optimized Query Processing Over Heterogeneous Data Sources (2018)</a></h3>
         <div class="summary"><p>Michael StonebrakerとUğur Çetintemelは、2005年に<a href="https://cs.brown.edu/~ugur/fits_all.pdf">One size fits all</a>で、データウェアハウスとストリーミング処理をとりあげ、すべてのデータをRDBMSで管理する時代の終わりを主張した。
 組織はデータベースを特定の用途ごとに使い分けるようになった。
@@ -293,28 +317,6 @@ DPRは、質問と文書を別々のBERTで埋め込みベクトルに変換し�
 	  </ul>
 	  
           <span class="date">December 30, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/cap-twelve-years-later-how-the-rules-have-changed/">CAP Twelve Years Later: How the &#34;Rules&#34; Have Changed (2012)</a></h3>
-        <div class="summary"><p><a href="https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf">CAP定理</a>は、データベースが一貫性 (Consistency), 可用性 (Availability), 分断耐性 (Partition Tolerance) から2つしか選択できない定理として知られる。
-この定理は、Martin Kleppmannによって、その著書<a href="https://dataintensive.net/">Designing Data-Intensive Applications</a>や<a href="https://www.cl.cam.ac.uk/research/dtg/archived/files/publications/public/mk428/cap-critique.pdf">A Critique of the CAP Theorem</a> で批判されている。
-CAP定理をなづけたBrewerは、<a href="https://sites.cs.ucsb.edu/~rich/class/cs293b-cloud/papers/brewer-cap.pdf">CAP Twelve Years Later: How the “Rules” Have Changed</a>で、2つを選択するという表現は誤解をまねく表現であると認め、現実的にはデータベースはネットワークの分断時に一貫性と可用性のトレードオフにさまられると主張した。
-CAP定理の発表された12年後の今日では、分断時における一貫性と可用性の最適化に、各ノードの操作履歴を記録するversion verctorsや<a href="https://arxiv.org/pdf/1805.06358.pdf">Commutative Replicated Data Types (CRDTs)</a> を利用できる。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/cap%E5%AE%9A%E7%90%86/">
-		#CAP定理
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 23, 2023</span>
         </div>
     </article>
     

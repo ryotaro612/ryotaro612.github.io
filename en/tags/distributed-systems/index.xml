@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Distributed Systems on Blanket</title>
+    <link>https://ryotaro.dev/en/tags/distributed-systems/</link>
+    <description>Recent content in Distributed Systems on Blanket</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 30 Jan 2025 03:01:31 +0900</lastBuildDate>
+    <atom:link href="https://ryotaro.dev/en/tags/distributed-systems/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Highly Available Transactions: Virtues and Limitations (2013)</title>
+      <link>https://ryotaro.dev/en/posts/highly-available-transactions-virtues-and-limitations/</link>
+      <pubDate>Thu, 30 Jan 2025 03:01:31 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/highly-available-transactions-virtues-and-limitations/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;The CAP theorem’s trilemma of consistency, availability, and partition tolerance does not require sacrificing one property entirely but rather prioritizing among the three.&#xA;Given a specific consistency model, how much availability is feasible?&#xA;The paper &lt;a href=&#34;https://www.vldb.org/pvldb/vol7/p181-bailis.pdf&#34;&gt;Highly Available Transactions: Virtues and Limitations&lt;/a&gt; explores the relationship between consistency models and their achievable availability. It organizes each consistency-availability pair into a partial order based on their strengths.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

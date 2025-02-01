@@ -17,12 +17,12 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="http://localhost:1313/scss/base.min.f8a99dd3f789195bfd81b52097b297ecbaab3f3ad6aa9a7211c0c406af1d94ff.css">
+    <link rel="stylesheet" href="http://localhost:1313/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
     <link rel="stylesheet" href="http://localhost:1313/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
 
-<link rel="stylesheet" href="http://localhost:1313/scss/single.min.ac39fd9b1999326c116cd551ce035fd4eaf2801f6bfc13a90241a1d9275b21ec.css">
+<link rel="stylesheet" href="http://localhost:1313/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
 
 <link rel="stylesheet" href="http://localhost:1313/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
 
@@ -94,9 +94,14 @@ arch-chroot /mnt/gentoo だと マウントからchrootまでやてくれる。<
 <p>useフラグが何につかわれているかわかる
 <a href="https://packages.gentoo.org/useflags/search?q=branding">https://packages.gentoo.org/useflags/search?q=branding</a></p>
 <p>loginctlのsuspendはかたまるので、s2ramをインストールする。u+sでsudoをつかわずに。</p>
-<p>less=$less +wにしないと行頭にならない</p>
+<p>.profileで修正する。
+less=$less +wにしないと行頭にならない</p>
 <p>~/.local/share/themesにGTKのテーマを入れたらGTK_THEME=に名前を入ればいい</p>
-<p>wpa_cliはrootでないとそのままでは、つかえない ctrl_interfance_groupを指定する。
+<p>/etc/wpa_supplicant/wp_supplicant.confをかく。
+/etc/conf.d/wpa_supplicantの引数も指定する。
+/etc/conf.d/netにもwpa_supplicantの設定が必要。
+dhcpdとwpa_supplicantのドキュメントに書いある。
+wpa_cliはrootでないとそのままでは、つかえない ctrl_interfance_groupを指定する。
 update_config=1はwpa_cli guiに編集を許可する。
 <code>/etc/wpa_supplicant/wpa_supplicant.conf</code>
 ctrl_interface_group=wheel
@@ -117,6 +122,27 @@ grub-install コマンドではefi-directoryを/boot/efiにする。</p>
 modをアップグレードして、ユーザをvideoに登録する。</p>
 <p><a href="https://github.com/node-fetch/node-fetch/issues/1624">https://github.com/node-fetch/node-fetch/issues/1624</a>
 /etc/hostsの1 127.0.0.1をコメントアウトしないとnodeのe2eが動かない</p>
+<p>use.confにはrust flagをいれる</p>
+<h1 id="httpswikigentooorgwikirust"><a href="https://wiki.gentoo.org/wiki/Rust">https://wiki.gentoo.org/wiki/Rust</a></h1>
+<h1 id="target-cpunative-is-the-equivalent-of--marchnative-in-ccxxflags">target-cpu=native is the equivalent of -march=native in C/CXXFLAGS:</h1>
+<p>RUSTFLAGS=&quot;-C target-cpu=native&quot;</p>
+<h1 id="enable-target-cpunative-and-dt_relr">enable target-cpu=native and DT_RELR</h1>
+<p>RUSTFLAGS=&quot;-C target-cpu=native -C link-arg=-Wl,-z,pack-relative-relocs&quot;</p>
+<h1 id="opt-level-is-similar-to-clangs-optimization-options">opt-level is similar to Clang&rsquo;s optimization options</h1>
+<p>RUSTFLAGS=&quot;-C opt-level=3&quot;</p>
+<h1 id="wifi">wifi</h1>
+<p>soundカードが見付からない場合
+emerge &ndash;ask sys-firmware/sof-firmware
+emerge &ndash;ask @module-rebuild
+emerge &ndash;config sys-kernel/gentoo-kernel
+emerge &ndash;config sys-kernel/gentoo-kernel-bin</p>
+<p>日本語
+app-i18n/fcitx-gtkが必要。configtoolsとは他に
+fcitの環境変数の設定だけでなく、.config以下にgsettingsを置く必要がある。
+GTK_IM_MODULE=fcitxは推奨されていないが、これがないとnautilusで日本語を入力できない。</p>
+<p>Evinceで日本語を表示するにはapp-text/popler-dataをインストールする必要がある。</p>
+<p>virt-managerで音が聞けないのは、
+<audio id="1" type="spice"/>がないから。</p>
 
   </div>
 </main>
