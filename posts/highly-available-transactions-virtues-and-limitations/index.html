@@ -111,15 +111,15 @@
 システムの一貫性と可用性の均衡を設計するときは、求める一貫性に対して実現できる可用性を知らないといけない。
 <a href="https://www.vldb.org/pvldb/vol7/p181-bailis.pdf">Highly Available Transactions Virtues and Limitations</a> は、既存の一貫性を両立できる可用性の水準と対応させ、両性質の強さで一貫性と可用性のペアを半順序関係に整理した。</p>
 <h2 id="可用性">可用性</h2>
-<p>可用性をhigh availabilityとstickey availablityの二種類に分け、この2つを一貫性と対応させる。
+<p>可用性をhigh availabilityとsticky availabilityの二種類に分け、この2つを一貫性と対応させる。
 どちらの可用性も無期限のネットワーク分断を想定する。</p>
 <p>High availablityは、サーバー間で任意かつ無期限のネットワークの分断がありえる場合でも、すべてのクライアントがリクエストの送り先の正常なサーバから応答を受けとれることを保証する。
 応答にかかる時間は問わない。また、この定義は<a href="https://ryotaro.dev/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/">過去に紹介</a>した<a href="https://users.ece.cmu.edu/~adrian/731-sp04/readings/GL-cap.pdf">Brewer&rsquo;s conjecture and the feasibility of consistent, available, partition-tolerant web services</a>に由来する。</p>
-<p>Stickey availabilityは、あるクライアントによる以前の全操作を反映したレプリカがあり、そのレプリカにトランザクションを実行したとき、やがてクライアントに応答が返ることを保証する。
-Stickey availabilityをみたすために、クライアントに読み書きをキャッシュさせて、クライアントをサーバーとみなしてもよい。</p>
+<p>Sticky availabilityは、あるクライアントによる以前の全操作を反映したレプリカがあり、そのレプリカにトランザクションを実行したとき、やがてクライアントに応答が返ることを保証する。
+Sticky availabilityをみたすために、クライアントに読み書きをキャッシュさせて、クライアントをサーバーとみなしてもよい。</p>
 <h2 id="一貫性と可用性のペアの半順序関係">一貫性と可用性のペアの半順序関係</h2>
-<p>High availabilityとsticky avaiabilityには順序関係がある。
-High availabilityを備えるシステムは、stickey availabilityも満たす。
+<p>High availabilityとsticky availabilityには順序関係がある。
+High availabilityを備えるシステムは、sticky availabilityも満たす。
 しかし、逆は成立するとは限らない。
 以下に文献から引用した半順序関係の図を示す。
 <img alt="hat" src="/hat/hat.png">
