@@ -113,7 +113,7 @@
 <h2 id="可用性">可用性</h2>
 <p>可用性をhigh availabilityとsticky availabilityの二種類に分け、この2つを一貫性と対応させる。
 どちらの可用性も無期限のネットワーク分断を想定する。</p>
-<p>High availablityは、サーバー間で任意かつ無期限のネットワークの分断がありえる場合でも、すべてのクライアントがリクエストの送り先の正常なサーバから応答を受けとれることを保証する。
+<p>High availabilityは、サーバー間で任意かつ無期限のネットワークの分断がありえる場合でも、すべてのクライアントがリクエストの送り先の正常なサーバから応答を受けとれることを保証する。
 応答にかかる時間は問わない。また、この定義は<a href="https://ryotaro.dev/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/">過去に紹介</a>した<a href="https://users.ece.cmu.edu/~adrian/731-sp04/readings/GL-cap.pdf">Brewer&rsquo;s conjecture and the feasibility of consistent, available, partition-tolerant web services</a>に由来する。</p>
 <p>Sticky availabilityは、あるクライアントによる以前の全操作を反映したレプリカがあり、そのレプリカにトランザクションを実行したとき、やがてクライアントに応答が返ることを保証する。
 Sticky availabilityをみたすために、クライアントに読み書きをキャッシュさせて、クライアントをサーバーとみなしてもよい。</p>
