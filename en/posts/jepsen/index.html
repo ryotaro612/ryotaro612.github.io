@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
+    
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Jepsen: A framework for distributed systems verification, with fault injection</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://ryotaro.dev/en/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://ryotaro.dev/en/about">About</a></li>
+          <li><a href="https://ryotaro.dev/en/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/en/tags">Tags</a></li>
+	  
+	  <li><a href="https://ryotaro.dev/posts/jepsen/">ja</a></li>
+	  
+        </ul>	
+	<ul>
+          
+          <li>
+            <a href="https://github.com/ryotaro612">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="https://www.linkedin.com/in/ryotaro612/">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          
+          <li>
+	    <a href="https://ryotaro.dev/en/index.xml">
+	      <i class="fas fa-rss"></i>
+            </a>
+	  </li>
+          
+        </ul>	
+      </nav>
+    </header>
+    
+<main>
+  <h1>Jepsen: A framework for distributed systems verification, with fault injection</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/en/tags/distributed-systems/">
+	#Distributed Systems
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/en/tags/jepsen/">
+	#Jepsen
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">January 26, 2025</span>    
+  <div>
+    <h2 id="overview">Overview</h2>
+<p>Jepsen is a Clojure testing framework for distributed systems.
+A Jepsen test case defines operations on a system, expected responses to the operations, and a schedule for injecting faults to inject and the operations.
+The test case executes the operations, introduces faults as scheduled, and validates whether the system&rsquo;s response meets expectations.</p>
+<p>Jepsen appears to be well-regarded in the field of distributed systems.
+Tests results for <a href="https://jepsen.io/analyses">major distributed systems</a> using Jepsen are published on its official website.
+Additionally, A Jepsen test result for <a href="https://kubernetes.io/ja/docs/tasks/administer-cluster/configure-upgrade-etcd/">etcd</a>, a key-value store used within Kubernetes, is available on its <a href="https://etcd.io/blog/2020/jepsen-343-results/">official website</a>.</p>
+<p>Despite its recognition, <a href="https://github.com/jepsen-io/jepsen/blob/main/doc/tutorial/index.md">the tutorial of Jepsen</a> wasn&rsquo;t informative enough for me to learn the basic usage of Jepsen.
+For instance, while the tutorial uses etcd as an example, the client library for etcd is outdated, making it impossible to execute the tutorial as instructed.
+Instead, by researching Jepsen&rsquo;s source code, I implemented an application with two-phase commits and a test case for it.
+The implemented application and test caseare available in <a href="https://github.com/ryotaro612/jepsen-tutorial-xa">one of my GitHub repository</a>.</p>
+<p>Despite of the insufficent reference, using Jepsen to implement test cases is still more efficient than building them from scratch.
+For a future reference, I will explore an advanced usage of Jepsen compared with the tutorial.</p>
+<h2 id="test-cases">Test Cases</h2>
+<p>A Jepsen test case is a map acceptedby <a href="https://github.com/jepsen-io/jepsen/blob/v0.3.7/jepsen/src/jepsen/core.clj#L322"><code>jepsen.core/run!</code></a>.
+The map description is explained in the function&rsquo;s documentation.
+As the name implies, the <code>jepsen.core/run!</code> function executes a test case.
+Unlike the <code>jepsen.cli/run!</code> function used in the <a href="https://github.com/jepsen-io/jepsen/blob/v0.3.7/doc/tutorial/01-scaffolding.md">tutorial</a>, <code>jepsen.core/run!</code> does not terminate the test case process after invocation.
+The following text is cited from the description of <a href="https://github.com/jepsen-io/jepsen/blob/v0.3.7/jepsen/src/jepsen/core.clj#L322"><code>jepsen.core/run!</code></a>:</p>
+<pre><code>  :nodes      A sequence of string node names involved in the test
+  :concurrency  (optional) How many processes to run concurrently
+  :ssh        SSH credential information: a map containing...
+    :username           The username to connect with   (root)
+    :password           The password to use
+    :sudo-password      The password to use for sudo, if needed
+    :port               SSH listening port (22)
+    :private-key-path   A path to an SSH identity file (~/.ssh/id_rsa)
+    :strict-host-key-checking  Whether or not to verify host keys
+  :logging    Logging options; see jepsen.store/start-logging!
+  :os         The operating system; given by the OS protocol
+  :db         The database to configure: given by the DB protocol
+  :remote     The remote to use for control actions. Try, for example,
+              (jepsen.control.sshj/remote).
+  :client     A client for the database
+  :nemesis    A client for failures
+  :generator  A generator of operations to apply to the DB
+  :checker    Verifies that the history is valid
+  :log-files  A list of paths to logfiles/dirs which should be captured at
+              the end of the test.
+  :nonserializable-keys   A collection of top-level keys in the test which
+                          shouldn't be serialized to disk.
+  :leave-db-running? Whether to leave the DB running at the end of the test.
+
+Jepsen automatically adds some additional keys during the run
+
+  :start-time     When the test began
+  :history        The operations the clients and nemesis performed
+  :results        The results from the checker, once the test is completed
+
+In addition, tests have some fields added by Jepsen which are present during
+their execution, but not persisted.
+
+  :barrier        A CyclicBarrier, mainly used for synchronizing DB setup
+  :store          State used for reading and writing data to and from disk
+  :sessions       Connected sessions used by jepsen.control to talk to nodes
+</code></pre>
+<h3 id="communication-between-a-test-case-an-a-system-under-test">Communication Between a Test Case an a System Under Test</h3>
+<p>The value of <code>:remote</code> indicates the method to connect to the nodes defined by <code>:nodes</code>.
+It is an implementation of the <a href="https://github.com/jepsen-io/jepsen/blob/ce07779ca3b81feb8553276581faa73d963a95b7/jepsen/src/jepsen/control/core.clj#L9"><code>Remote</code></a> protocol.
+Protocols in Clojure are abstract data structures similar to the interfaces in Java and Go.</p>
+<p>By default, a test case connects to the nodes using SSH as specified by <code>:ssh</code>.
+If <code>:strict-host-key-checking</code> is enabled, the connection attempt will stop if the node&rsquo;s secret key at the IP has changed since the last execution.
+In the systems running as Docker containers, <code>:strict-host-key-checking</code> should be disabled.</p>
+<p>In addition to the SSH implementation <a href="https://github.com/jepsen-io/jepsen/blob/ce07779ca3b81feb8553276581faa73d963a95b7/jepsen/src/jepsen/control/clj_ssh.clj#L44"><code>clj_ssh</code></a>, Jepsen provides other implementations like <a href="https://github.com/jepsen-io/jepsen/blob/ce07779ca3b81feb8553276581faa73d963a95b7/jepsen/src/jepsen/control/docker.clj#L77"><code>DockerRemote</code></a>.
+Note that when the distributed system runs on Docker and the test case on the host, <code>DockerRemote</code> may not be usable, requiring a custom <code>Remote</code> implementation.
+When using <code>DockerRemote</code>, nodes need to be specified in <code>&lt;ipv4&gt;:&lt;port&gt;</code> format.
+In such cases, <code>DockerRemote</code> passes the location of a node in <code>&lt;ipv4&gt;:&lt;port&gt;</code> format as an argument to <code>iptables</code>, leading to resolution errors due to unresolvable hosts.</p>
+<h3 id="initialization-of-nodes">Initialization of Nodes</h3>
+<p>The value of <code>:os</code> is should be be an implementation of the <a href="https://github.com/jepsen-io/jepsen/blob/5f5d8ffb18aad17d1c59e08266e65b7885643528/jepsen/src/jepsen/os.clj#L4"><code>OS</code></a> protocol, installing necessary resources on nodes for test cases.
+For instance, the <a href="https://github.com/jepsen-io/jepsen/blob/5f5d8ffb18aad17d1c59e08266e65b7885643528/jepsen/src/jepsen/os/debian.clj#L163">Debian</a> implementation provided by Jepsen installs programs like <code>iptables</code> on the nodes.</p>
+<p>While <code>:os</code> serves to install resources for the test case, the value of <code>:db</code> is responsible for initializing the system.
+Like preceeding keywords, the value of <code>:db</code> is also an implementation of a <a href="https://github.com/jepsen-io/jepsen/blob/5f5d8ffb18aad17d1c59e08266e65b7885643528/jepsen/src/jepsen/db.clj#L12"><code>DB</code></a> protocol.</p>
+<h3 id="operations-on-systems">Operations on Systems</h3>
+<p><code>:generator</code> is responsible for scheduling outage, network partitions, and operations.
+The value of <code>:client</code> defines operations, while <code>:nemesis</code> defines failures.
+They are implementations of the protocols <a href="https://github.com/jepsen-io/jepsen/blob/ce07779ca3b81feb8553276581faa73d963a95b7/jepsen/src/jepsen/generator.clj#L408">Generator</a>, <a href="https://github.com/jepsen-io/jepsen/blob/ce07779ca3b81feb8553276581faa73d963a95b7/jepsen/src/jepsen/client.clj#L9"><code>Client</code></a>, and <a href="https://github.com/jepsen-io/jepsen/blob/ce07779ca3b81feb8553276581faa73d963a95b7/jepsen/src/jepsen/nemesis.clj#L12"><code>Nemesis</code></a> respectively.</p>
+<h3 id="verification-of-execution">Verification of Execution</h3>
+<p>Once the scheduled events conclude, a value of <code>:checker</code> that implements <a href="https://github.com/jepsen-io/jepsen/blob/ce07779ca3b81feb8553276581faa73d963a95b7/jepsen/src/jepsen/checker.clj#L58"><code>Checker</code></a> validates the history of the events.
+Besides protocols, Jepsen also provides implementations.
+Particularly for <code>Nemesis</code>, <code>Generator</code>, and <code>Checker</code>, composable functions are available.</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/en/posts/origin-of-type-theory/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+    <li>
+      <a href="/en/posts/highly-available-transactions-virtues-and-limitations/">
+	<i class="fa-solid fa-xl fa-angle-right"></i>
+      </a>
+    </li>
+    
+</ul>
+
+
+    <footer>
+      <small>© Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

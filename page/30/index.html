@@ -85,6 +85,29 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/learning_on_border/">概要 Learning on the Border: Active Learning in Imbalanced Data Classification(2007)</a></h3>
+        <div class="summary"><h3 id="概要">概要</h3>
+<p>不均衡データに対する二値分類の予測性能を能動学習で改善する。
+学習器のマージン付近では正例と負例がよりバランスしていると仮定し、
+マージン付近にあるデータを集めることで、均衡のとれたデータセットをあつめる。
+具体的には、ラベルづけしたデータでSVMをオンライン学習し、無作為に抽出されたラベルのないデータの中で最も超平面に近いデータにラベルをつける手順をマージンの中にあるデータ数が変わらなくなるまでくりかえす。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/active-learning/">
+		#Active Learning
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">August 31, 2019</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/distilling_the_knowledge_in_a_neural_network/">Distilling the Knowledge in a Neural Network (2015)</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p>蒸留(Distilling)は、既存のモデルの予測性能をできるだけ落とさずに、より小さいモデルを作るための手法である。
@@ -284,33 +307,6 @@ TextRankは、PageRankと違い、辺ごとに重みを設定できる。</p></d
 	  </ul>
 	  
           <span class="date">July 20, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/subword_regularization/">概要 Subword Regularization: Improving Neural Network Translation Models with Multiple Subword Candidates</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>過去に<a href="../neural_machine_translation_of_rate_words/">紹介</a>した<a href="https://www.aclweb.org/anthology/P16-1162">論文</a>と同様、SentencePiece（ニューラルネットワークを用いた言語処理向けのトークナイザ・脱トークナイザ）の元になった論文である。
-ノイズに対するロバストさを上げるために、単語のサブワード（部分文字列）を生成するユニグラム言語モデルの学習方法と、モデルから生成されたサブワード列を入力とする機械翻訳モデルの学習方法を提案した。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E6%A9%9F%E6%A2%B0%E7%BF%BB%E8%A8%B3/">
-		#機械翻訳
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/sentencepiece/">
-		#SentencePiece
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">July 17, 2019</span>
         </div>
     </article>
     

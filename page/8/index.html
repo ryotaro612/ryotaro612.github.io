@@ -85,6 +85,19 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/learning_to_rank_with_nonsmooth_cost_functions/">抄訳 Learning to Rank with Nonsmooth Cost Functions (2006)</a></h3>
+        <div class="summary"><p>情報検索の指標は、モデルの返す文書の順序を評価する。
+指標の関数自体を損失関数にできれば、重みの更新を指標に最適化できる。
+ところが、文書の順序を評価する指標は、重みによる微分が未定義や0になりえるので、損失関数には使えない。
+LambdaRankは損失関数に直接は使えない関数を学習に応用するアルゴリズムである。
+RankNetをLambdaRankで学習することで、学習時間を短縮し、NDCGを向上できた。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">January 23, 2023</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/">Brewer&#39;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web (2002)</a></h3>
         <div class="summary"><p>分散システムは一貫性、可用性、分断耐性を同時に満たすことができない。
 この予想は、2000年のPODCでBrewerが発表したCAP定理として知られている。
@@ -316,29 +329,6 @@ Epidemic Algorithmには、定期的にデーターベース全体を同期す�
 	  </ul>
 	  
           <span class="date">November 23, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/rusboost_a_hybrid_approach_to_alleviating_class_imbalance/">抄訳 RUSBoost: A Hybrid Approach to Alleviating Class Imbalance(2010)</a></h3>
-        <div class="summary"><p>RUSBoostは、random undersampling(RUS)とAdaBoostを応用し、不均衡データの予測性能を改善する。
-類似の先行研究である<a href="http://www.datascienceassn.org/sites/default/files/SMOTEBoost%20Improving%20Prediction%20of%20the%20Minority%20Class%20in%20Boosting%20.pdf">SMOTEBoost</a>よりも学習時間が短く、アルゴリズムが単純である。
-アンダーサンプリングで学習データを減らせば、学習時間を短くできるが、学習器に与える情報が減る。
-一方、AdaBoostは、前に訓練した弱学習器が誤分類したデータに高い重みを与え、次の弱学習器を学習し、予測性能を上げる。
-AdaBoostを借りることで、単分類の難しい少数クラスのサンプルに高い重みを単純に与えられる。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/under-sampling/">
-		#Under Sampling
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">November 13, 2022</span>
         </div>
     </article>
     

@@ -144,6 +144,43 @@ The paper <a href="https://www.vldb.org/pvldb/vol7/p181-bailis.pdf">Highly Avail
     </article>
     
     <article>
+        <h3><a href="https://ryotaro.dev/en/posts/jepsen/">Jepsen: A framework for distributed systems verification, with fault injection</a></h3>
+        <div class="summary"><h2 id="overview">Overview</h2>
+<p>Jepsen is a Clojure testing framework for distributed systems.
+A Jepsen test case defines operations on a system, expected responses to the operations, and a schedule for injecting faults to inject and the operations.
+The test case executes the operations, introduces faults as scheduled, and validates whether the system&rsquo;s response meets expectations.</p>
+<p>Jepsen appears to be well-regarded in the field of distributed systems.
+Tests results for <a href="https://jepsen.io/analyses">major distributed systems</a> using Jepsen are published on its official website.
+Additionally, A Jepsen test result for <a href="https://kubernetes.io/ja/docs/tasks/administer-cluster/configure-upgrade-etcd/">etcd</a>, a key-value store used within Kubernetes, is available on its <a href="https://etcd.io/blog/2020/jepsen-343-results/">official website</a>.</p>
+<p>Despite its recognition, <a href="https://github.com/jepsen-io/jepsen/blob/main/doc/tutorial/index.md">the tutorial of Jepsen</a> wasn&rsquo;t informative enough for me to learn the basic usage of Jepsen.
+For instance, while the tutorial uses etcd as an example, the client library for etcd is outdated, making it impossible to execute the tutorial as instructed.
+Instead, by researching Jepsen&rsquo;s source code, I implemented an application with two-phase commits and a test case for it.
+The implemented application and test caseare available in <a href="https://github.com/ryotaro612/jepsen-tutorial-xa">one of my GitHub repository</a>.</p>
+<p>Despite of the insufficent reference, using Jepsen to implement test cases is still more efficient than building them from scratch.
+For a future reference, I will explore an advanced usage of Jepsen compared with the tutorial.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/distributed-systems/">
+		#Distributed Systems
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/jepsen/">
+		#Jepsen
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">January 26, 2025</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/en/posts/origin-of-type-theory/">The Origins of Type Theory</a></h3>
         <div class="summary"><p>Type theory began as an effort to resolve Russell&rsquo;s Paradox, an issue discovered by Bertrand Russell.
 The precise events that mark the origin of type theory can be a matter of debate.
@@ -310,31 +347,6 @@ They update the policies according to the gradient of expected reward with respe
 	  </ul>
 	  
           <span class="date">April 27, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/spark-sql-relational-data-processing-in-spark/">Spark SQL: Relational Data Processing in Spark (2015)</a></h3>
-        <div class="summary"><p><a href="https://dl.acm.org/doi/10.1145/2723372.2742797">Spark SQL</a> provides a DataFrame API, an abstract data type equivalent to a table in a relational database. The DataFrame objects can be manipulated in a manner consistent with relational algebra. For example, the API includes various relational operators such as <code>where</code> and <code>group by</code>, similar to data frames in R and Python. The DataFrame objects are evaluated lazily, meaning they are not evaluated until certain output operations, like <code>count</code>, are performed. Catalyst, an optimizer written in Scala, optimizes these lazy queries and then compiles them into Java bytecode.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/sql/">
-		#SQL
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/spark/">
-		#Spark
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">April 14, 2024</span>
         </div>
     </article>
     

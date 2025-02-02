@@ -89,6 +89,22 @@
     <loc>https://ryotaro.dev/en/tags/transactions/</loc>
     <lastmod>2025-01-30T03:01:31+09:00</lastmod>
   </url><url>
+    <loc>https://ryotaro.dev/en/tags/jepsen/</loc>
+    <lastmod>2025-01-26T23:12:54+09:00</lastmod>
+  </url><url>
+    <loc>https://ryotaro.dev/en/posts/jepsen/</loc>
+    <lastmod>2025-01-26T23:12:54+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/jepsen/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/jepsen/"
+                />
+  </url><url>
     <loc>https://ryotaro.dev/en/posts/origin-of-type-theory/</loc>
     <lastmod>2024-12-30T22:45:30+09:00</lastmod>
     <xhtml:link

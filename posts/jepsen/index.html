@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,14 +17,14 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="http://localhost:1313/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
-    <link rel="stylesheet" href="http://localhost:1313/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
 
-<link rel="stylesheet" href="http://localhost:1313/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
 
-<link rel="stylesheet" href="http://localhost:1313/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -46,12 +46,14 @@
     
         
     <header class="navigation">
-      <h2><a href="http://localhost:1313/">Blanket</a></h2>
+      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
       <nav>
         <ul>
-          <li><a href="http://localhost:1313/about">About</a></li>
-          <li><a href="http://localhost:1313/posts">Posts</a></li>
-          <li><a href="http://localhost:1313/tags">Tags</a></li>
+          <li><a href="https://ryotaro.dev/about">About</a></li>
+          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+	  
+	  <li><a href="https://ryotaro.dev/en/posts/jepsen/">en</a></li>
 	  
         </ul>	
 	<ul>
@@ -70,7 +72,7 @@
           </li>
           
           <li>
-	    <a href="http://localhost:1313/index.xml">
+	    <a href="https://ryotaro.dev/index.xml">
 	      <i class="fas fa-rss"></i>
             </a>
 	  </li>
@@ -84,7 +86,7 @@
   <ul class="tags">
     
     <li class="tag">
-      <a href="http://localhost:1313/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+      <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
 	#分散システム
       </a>
     </li>
@@ -93,17 +95,23 @@
   <span class="date">January 26, 2025</span>    
   <div>
     <h2 id="概要">概要</h2>
-<p><a href="https://jepsen.io/">Jepsen</a>は、分散システムに障害を起こすクライアントをClojureで実装するためのフレームワークである。
-システムへの操作、操作後のシステムに期待する状態、障害と操作のスケジューリングを実装すれば、分散システムに操作と障害を与えた後に、システムの応答が定義した期待通りか確認できる。
-Jepsenの公式サイトには<a href="https://jepsen.io/analyses">多くな分散システムのテスト結果</a>があり、また、<a href="https://kubernetes.io/ja/docs/tasks/administer-cluster/configure-upgrade-etcd/">Kubernetes使わているetcd</a>の<a href="https://etcd.io/blog/2020/jepsen-343-results/">サイト</a>にもJepsenのテスト結果が報告されていることから、分散システムのテストフレームワークのスタンダードに近い地位にあるように見える。</p>
-<p>すこし使ってみたところ、著名のようだが、参考資料は十分に整備されていない印象だった。
-たとえば、チュートリアルはetcdを対象にしたテストを例題にしてJepsenの使い方を解説している。
-しか、etcdのクライアントライブラリが古く、チュートリアルどおりに実装しても、クライアントを動かすことはできない。</p>
-<p>そこで投稿では、分散システムをテストしたいがJepsenやClojureに詳しくない方向けにJepsenの基本的な使い方を紹介する。</p>
+<p>分散システムのテストをClojureで実装するためのフレームワークに<a href="https://jepsen.io/">Jepsen</a>がある。
+Jepsenのテストケースは、システムへの操作、操作後のシステムに期待する状態、障害と操作のスケジューリングの3要素からなる。
+テストケースは、スケジューリング通りに操作と障害を起こし、最後にシステムの応答が期待通りか確認する。
+Jepsenの公式サイトにはJepsenによる<a href="https://jepsen.io/analyses">主要な分散システムのテスト結果</a>が公開されている。
+また、Kubernetes内部で使わているKVSの<a href="https://kubernetes.io/ja/docs/tasks/administer-cluster/configure-upgrade-etcd/">etcd</a>の<a href="https://etcd.io/blog/2020/jepsen-343-results/">公式ウェブサイト</a>にもJepsenのテスト結果が公開されている。
+分散システムの開発側からも参照されているので、分散システムにおけるJepsenの認知度は高いように思える。</p>
+<p>その一方で、公式ドキュメントは整備されていないようだった。
+たとえば、チュートリアルはetcdを例題にJepsenの使い方を解説しているが、etcdのクライアントライブラリが古く、実際に実装してもチュートリアル通りに実行できない。
+かわりに、2相コミットするアプリケーションとテストケースを実装したが、実装のためにJepsenのソースコードを調べる必要があった。
+実装したアプリケーションとテストケースは<a href="https://github.com/ryotaro612/jepsen-tutorial-xa">GitHubのリポジトリ</a>に公開してある。</p>
+<p>それでも、依然として、Jepsenを使ってテストケース実装するほうが、スクラッチからテストケースを実装するよりも効率的ではあると思う。
+そこで、今後の備忘録をかねて、Jepsenを試すにあたって、チュートリアルに不足を感じた部分を書き留めておく。</p>
 <h2 id="テストケース">テストケース</h2>
-<p>Jepsenのテストケースは、<a href="https://github.com/jepsen-io/jepsen/blob/v0.3.7/jepsen/src/jepsen/core.clj#L322"><code>jepsen.core/run!</code></a>関数が受けとれるマップであり、マップの定義は関数のドキュメントにある。
-名前の通り<code>jepsen.core/run!</code>はテストケースを実行する関数であり、<a href="https://github.com/jepsen-io/jepsen/blob/v0.3.7/doc/tutorial/01-scaffolding.md">チュートリアル</a>で使われている<code>jepsen.cli/run!</code>と違い、呼び出し後にプロセスを終了しない。</p>
-<p>以下は<code>jepsen.core/run!</code>のドキュメントから引用したマップの定義であり、以降の節で主要なキーを説明する。</p>
+<p>Jepsenのテストケースは、<a href="https://github.com/jepsen-io/jepsen/blob/v0.3.7/jepsen/src/jepsen/core.clj#L322"><code>jepsen.core/run!</code></a>関数が受けとれるマップであり、マップの定義は<code>jepsen.core/run!</code>関数のドキュメントにある。
+名前の通り<code>jepsen.core/run!</code>関数はテストケースを実行する。
+<code>jepsen.core/run!</code>は、<a href="https://github.com/jepsen-io/jepsen/blob/v0.3.7/doc/tutorial/01-scaffolding.md">チュートリアル</a>にある<code>jepsen.cli/run!</code>と違い、呼び出し後にテストケースのプロセスを終了しない。
+REPLでテストケースを試すなら<code>jepsen.core/run!</code>を使うといいだろう。</p>
 <pre><code>  :nodes      A sequence of string node names involved in the test
   :concurrency  (optional) How many processes to run concurrently
   :ssh        SSH credential information: a map containing...
@@ -143,14 +151,30 @@ their execution, but not persisted.
 </code></pre>
 <h3 id="分散システムとの通信">分散システムとの通信</h3>
 <p>クライアントは、<code>:remote</code>で指定した方法で分散システムに接続する。
-<code>:remote</code>の値はプロトコル<a href="https://github.com/jepsen-io/jepsen/blob/ce07779ca3b81feb8553276581faa73d963a95b7/jepsen/src/jepsen/control/core.clj#L9"><code>jepsen.control.core/Remote</code></a>の実装であり、この実装で<code>:nodes</code>で指定された分散システムのノードに接続する。</p>
-<p>マップに<code>:ssh</code>キーがあることから読みとれるように、デフォルトではSSHでノードに接続する。
-<code>:strict-host-key-checking</code>が有効であれば、前回公開鍵で接続した端末とIPが同じだが異なる端末に接続した場合に、接続を中断する。</p>
-<p>SSHのほかにも
-time skewは利用できない。
-<a href="https://github.com/jepsen-io/jepsen/blob/ce07779ca3b81feb8553276581faa73d963a95b7/jepsen/src/jepsen/control/docker.clj#L77">https://github.com/jepsen-io/jepsen/blob/ce07779ca3b81feb8553276581faa73d963a95b7/jepsen/src/jepsen/control/docker.clj#L77</a>
-マップの<code>:nodes</code>は分散システムのノード</p>
-<h2 id="参考文献">参考文献</h2>
+<code>:remote</code>の値はプロトコル<a href="https://github.com/jepsen-io/jepsen/blob/ce07779ca3b81feb8553276581faa73d963a95b7/jepsen/src/jepsen/control/core.clj#L9"><code>Remote</code></a>の実装であり、この実装で<code>:nodes</code>で指定された分散システムのノードに接続する。
+プロトコルはClojureの抽象データ構造であり、JavaやGoのインターフェースに相当する。</p>
+<p>マップの<code>:ssh</code>から推測できるように、デフォルトではSSHでノードに接続する。
+<code>:strict-host-key-checking</code>が有効であれば、IPにあるノードの秘密鍵が前回のテストケースから変わった場合に、接続を中断する。
+コンテナ技術を使う場合などのテスト用のノードが永続的でない環境では、無効にしておく必要があるだろう。</p>
+<p>SSH接続のための実装<a href="https://github.com/jepsen-io/jepsen/blob/ce07779ca3b81feb8553276581faa73d963a95b7/jepsen/src/jepsen/control/clj_ssh.clj#L44"><code>clj_ssh</code></a>に加え、Dockerコンテナのノードに接続するための接続するための実装<a href="https://github.com/jepsen-io/jepsen/blob/ce07779ca3b81feb8553276581faa73d963a95b7/jepsen/src/jepsen/control/docker.clj#L77"><code>DockerRemote</code></a>もある。
+ところが、分散システムをDockerで、テストケースをホストで実行したときには、<code>DockerRemote</code>を使えず、<code>Remote</code>を実装することになった。
+<code>DockerRemote</code>を使うときは<code>&lt;ipv4&gt;:&lt;port&gt;</code>形式でノードを指定する必要がある。
+その場合、ネットワークを分断するためにコンテナ内部で実行される<code>iptables</code>の引数に<code>&lt;ipv4&gt;:&lt;port&gt;</code>が使われ、ホストを解決できずにエラーになった。
+<code>ssh</code>のときはポートを指定しなくてよい。</p>
+<h3 id="ノードの初期設定">ノードの初期設定</h3>
+<p><code>:os</code>の値は、<a href="https://github.com/jepsen-io/jepsen/blob/5f5d8ffb18aad17d1c59e08266e65b7885643528/jepsen/src/jepsen/os.clj#L4"><code>OS</code></a>プロトコルの実装であり、テストに必要なリソースをノードに配置する。
+たとえば、Jepsenから提供されている<a href="https://github.com/jepsen-io/jepsen/blob/5f5d8ffb18aad17d1c59e08266e65b7885643528/jepsen/src/jepsen/os/debian.clj#L163">Debianの実装</a>は、<code>iptables</code>などのプログラムをノードにインストールする。</p>
+<p><code>:os</code>の役割がテストケースに必要なリソースの準備にあるのに対し、<code>:db</code>の値はテスト対象のシステム自体の初期化を担う。
+<code>:db</code>の値も、これまでに紹介したエントリと同様に、プロトコルの実装であり、<a href="https://github.com/jepsen-io/jepsen/blob/5f5d8ffb18aad17d1c59e08266e65b7885643528/jepsen/src/jepsen/db.clj#L12"><code>DB</code></a>にプロトコルの宣言がある。</p>
+<h3 id="システムへの操作">システムへの操作</h3>
+<p>テスト対象に対する操作のスケジューリングは<code>:generator</code>、システムへの操作は<code>:client</code>, システムへの障害は<code>:nemesis</code>の値で定義される。
+それぞれ、プロトコル<a href="https://github.com/jepsen-io/jepsen/blob/ce07779ca3b81feb8553276581faa73d963a95b7/jepsen/src/jepsen/generator.clj#L408">Generator</a>, <a href="https://github.com/jepsen-io/jepsen/blob/ce07779ca3b81feb8553276581faa73d963a95b7/jepsen/src/jepsen/client.clj#L9"><code>Client</code></a>, <a href="https://github.com/jepsen-io/jepsen/blob/ce07779ca3b81feb8553276581faa73d963a95b7/jepsen/src/jepsen/nemesis.clj#L12"><code>Nemesis</code></a>の実装であり、<code>:generator</code>の定めるスケジュール通りに<code>:client</code>, <code>:nemesis</code>の関数が呼び出される。</p>
+<h3 id="実行結果の確認">実行結果の確認</h3>
+<p>最後に<code>:checker</code>の値になる<a href="https://github.com/jepsen-io/jepsen/blob/ce07779ca3b81feb8553276581faa73d963a95b7/jepsen/src/jepsen/checker.clj#L58"><code>Checker</code></a>の実装で実行結果を確認する。
+実装は実行履歴を受けとり、<code>:valid?</code>キーの真偽値でテストの妥当性を示すマップを返す。</p>
+<p>プロトコルだけでなく、実装もJepsenから提供されている。
+とくに<code>Nemesis</code>, <code>Generator</code>, <code>Checker</code>については、関数合成可能な実装が公開されている。
+うまく組み合わせると実装の手間を省けるだろう。</p>
   </div>
 </main>
 

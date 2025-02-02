@@ -16,6 +16,13 @@
       <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;&#xA;&lt;p&gt;CAP定理の一貫性、可用性、ネットワークの分断耐性のトリレンマは、1つを完全に切り捨てるのではなく、現実には、3つの性質の優先順位をつける問題になる。&#xA;システムの一貫性と可用性の均衡を設計するときは、求める一貫性に対して実現できる可用性を知らないといけない。&#xA;&lt;a href=&#34;https://www.vldb.org/pvldb/vol7/p181-bailis.pdf&#34;&gt;Highly Available Transactions Virtues and Limitations&lt;/a&gt; は、既存の一貫性を両立できる可用性の水準と対応させ、両性質の強さで一貫性と可用性のペアを半順序関係に整理した。&lt;/p&gt;</description>
     </item>
     <item>
+      <title>分散システム向けのフォールトインジェクションフレームワーク Jepsen</title>
+      <link>https://ryotaro.dev/posts/jepsen/</link>
+      <pubDate>Sun, 26 Jan 2025 23:12:54 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/jepsen/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;&#xA;&lt;p&gt;分散システムのテストをClojureで実装するためのフレームワークに&lt;a href=&#34;https://jepsen.io/&#34;&gt;Jepsen&lt;/a&gt;がある。&#xA;Jepsenのテストケースは、システムへの操作、操作後のシステムに期待する状態、障害と操作のスケジューリングの3要素からなる。&#xA;テストケースは、スケジューリング通りに操作と障害を起こし、最後にシステムの応答が期待通りか確認する。&#xA;Jepsenの公式サイトにはJepsenによる&lt;a href=&#34;https://jepsen.io/analyses&#34;&gt;主要な分散システムのテスト結果&lt;/a&gt;が公開されている。&#xA;また、Kubernetes内部で使わているKVSの&lt;a href=&#34;https://kubernetes.io/ja/docs/tasks/administer-cluster/configure-upgrade-etcd/&#34;&gt;etcd&lt;/a&gt;の&lt;a href=&#34;https://etcd.io/blog/2020/jepsen-343-results/&#34;&gt;公式ウェブサイト&lt;/a&gt;にもJepsenのテスト結果が公開されている。&#xA;分散システムの開発側からも参照されているので、分散システムにおけるJepsenの認知度は高いように思える。&lt;/p&gt;&#xA;&lt;p&gt;その一方で、公式ドキュメントは整備されていないようだった。&#xA;たとえば、チュートリアルはetcdを例題にJepsenの使い方を解説しているが、etcdのクライアントライブラリが古く、実際に実装してもチュートリアル通りに実行できない。&#xA;かわりに、2相コミットするアプリケーションとテストケースを実装したが、実装のためにJepsenのソースコードを調べる必要があった。&#xA;実装したアプリケーションとテストケースは&lt;a href=&#34;https://github.com/ryotaro612/jepsen-tutorial-xa&#34;&gt;GitHubのリポジトリ&lt;/a&gt;に公開してある。&lt;/p&gt;&#xA;&lt;p&gt;それでも、依然として、Jepsenを使ってテストケース実装するほうが、スクラッチからテストケースを実装するよりも効率的ではあると思う。&#xA;そこで、今後の備忘録をかねて、Jepsenを試すにあたって、チュートリアルに不足を感じた部分を書き留めておく。&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>A Majority Consensus Approach to Concurrency Control for Multiple Copy Databases(1979)</title>
       <link>https://ryotaro.dev/posts/a_mojority_consensus_approach_to_concurrency_control_for_multiple_copy_databases/</link>
       <pubDate>Sat, 27 May 2023 13:41:06 -0400</pubDate>

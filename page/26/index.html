@@ -85,6 +85,18 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/albert/">論文メモ ALBERT: A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS</a></h3>
+        <div class="summary"><p>BERTのパラメタ数を削減し、学習時間の短縮と正則化による予測性能の向上を両立したモデルALBERTを提案し、GLUE, RACE, SQuADでSoTAを実現した。
+BERT-largeと比べると、ALBERT-largeのパラメタ数は約5.3%の18Mであり、学習時間は1.7倍速い。
+パラメタを削減するために、単語のOne-hotベクトルをあたえられる単語埋め込み行列の次元を減らし、隠れ層の順伝播ネットワークや注意機構のパラメタを層の間で共有した。
+また、Next Sentence Prediction(NSP)による学習を、与えられた2文の前後関係を判定する学習Sentence Order Prediction(SOP)におきかえ、主タスクの予測性能を向上をはかった。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">April 25, 2020</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/random_walks_in_recommender_systems/">論文メモ Random Walks in recommender Systems: Exact Computation and Simulations</a></h3>
         <div class="summary"><h3 id="概要">概要</h3>
 <p><a href="https://ieeexplore.ieee.org/document/4072747">F. Foussら</a>や<a href="https://www.aaai.org/Papers/IJCAI/2007/IJCAI07-444.pdf">M. Goriら</a>のランダムウォークによる推薦システムの先行研究を、質や計算量について比較した論文である。
@@ -243,36 +255,6 @@ LDAは、テキストコーパスのような離散データの確率的生成�
 	  </ul>
 	  
           <span class="date">February 23, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/unsupervised_pretraining_for_sequence_to_sequence_learning/">Unsupervised Pretraining for Sequence to Sequence Learning(2017)</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>事前学習とファインチューニングにより<a href="https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf">seq2seq</a>の汎化性能を改善する手法を提案した論文である。
-encoderの重みを学習済み言語モデルの重みで初期化する。
-decoderについても、encoderと別の言語モデルを用意し、その重みで初期化する。
-ただし、工夫のないファインチューニングをすると<a href="https://arxiv.org/pdf/1312.6211.pdf">破滅的忘却</a>が生じてしまう。
-そこで、ファインチューニングでは言語モデルとseq2seqの目的関数の両方を学習につかうことで、過学習をさけ、汎化性能を確保する。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/seq2seq/">
-		#Seq2seq
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/pretraining/">
-		#Pretraining
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">February 16, 2020</span>
         </div>
     </article>
     
