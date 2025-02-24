@@ -1276,7 +1276,7 @@
       <description>&lt;p&gt;1972年に発表されたB木のオリジナルの論文。&#xA;\(I\)をインデックスの大きさ、\(k\)をハードウェア依存の値とすると、検索、挿入、削除の時間計算量は\(\log_kI\)になる。&#xA;ここでのインデックスは、固定長の\((x, \alpha)\)を要素とする連想配列で、最大\(2k\)個のキーを格納できる連続したページ上にある。&#xA;\(\alpha\)には、データを保存した1つ以上のレコードへのポインタが格納される。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>論文メモ Space/Time Trade-offs in Hash Coding with Allowable Errors</title>
+      <title>Space/Time Trade-offs in Hash Coding with Allowable Errors</title>
       <link>https://ryotaro.dev/posts/space_time_trade-offs_in_hash_coding_with_allowable_errors/</link>
       <pubDate>Sat, 20 Feb 2021 16:46:44 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/space_time_trade-offs_in_hash_coding_with_allowable_errors/</guid>

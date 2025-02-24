@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>論文メモ Space/Time Trade-offs in Hash Coding with Allowable Errors</title>
+    <title>Space/Time Trade-offs in Hash Coding with Allowable Errors</title>
   </head>
 
   <body>
@@ -80,8 +80,14 @@
     </header>
     
 <main>
-  <h1>論文メモ Space/Time Trade-offs in Hash Coding with Allowable Errors</h1>
+  <h1>Space/Time Trade-offs in Hash Coding with Allowable Errors</h1>
   <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/bloom-filter/">
+	#Bloom Filter
+      </a>
+    </li>
     
   </ul>  
   <span class="date">February 20, 2021</span>    
@@ -91,7 +97,7 @@
 例えば、<a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/">データベースのストレージで使われており</a>、検索するキーがデータベースに存在するか事前に確かめ、存在しないキーのための不要なディスクの読み取りを省いている。
 偽陰性の誤りはない。</p>
 <p>ハッシュ空間には\(0\)から\(N-1\)までのアドレスをもつ\(N\)ビットの空間をつかう。
-要素のない初期状態では、すべて\(0\)に初期化される。
+要素のない初期状態では、すべてのビットが\(0\)に初期化されている。
 ある要素を空間に追加するときは、ハッシュコーディングで\(0\)から\(N-1\)までの値をとりえる\(d\)個の値を要素から計算し、その\(d\)個のアドレスに1を格納する。
 要素が空間に含まれるか確かめるときは、追加時と同様、\(d\)個のアドレスを求める。
 そして、\(d\)個のアドレスにある全ての値が\(1\)であれば要素が存在し、それ以外は存在しないとみなす。</p>
