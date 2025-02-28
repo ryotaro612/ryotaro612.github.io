@@ -85,6 +85,20 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/bringing_gnu_emacs_to_native_code/">Bringing GNU Emacs to Native Code</a></h3>
+        <div class="summary"><p>Emacs 28から利用できる<a href="https://gcc.gnu.org/onlinedocs/jit/">libgccjit</a>によるネイティブコンパイルの解説である。
+パッケージアーカイブELPAにあるelisp-benchmarksによる比較ではバイトコンパイルよりも2.3倍から42倍の高速化を実現した。
+ネイティブコンパイル時は、はじめに、Emacs Lispのコードをバイトコンパイラで、Emacs VM(Lisp Assembly Program, LAP)の中間表現に変換する。
+つぎに、LAPをS式で静的単一代入形式の中間表現LIMPLEに変換する。
+LIMPLEは、GCCの中間表現GIMPLEに由来し、ネイティブコンパイルの中核技術にあたる。
+さいごに、LIMPLEをlibgccjitの中間表現に変換し、GCCでネイティブに実行可能なプログラムにコンパイルする。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">January 30, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/data_structure_for_text_sequence/">Data Structure for Text Sequences</a></h3>
         <div class="summary"><p>テキストエディタのためのデータ構造として、array, gap, list, line pointers, fixed size buffers, piece tablesを評価する。
 とくに、Piece tablesを評価し詳しく解説する。
@@ -203,18 +217,6 @@ BPSは、並列計算用のハードウェアと高水準な並列計算のプ�
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/live_migration_of_virtual_machines/">Live Migration of Virtual Machines</a></h3>
-        <div class="summary"><p>XenのハイパーバイザーにOSのライブマグレーションを統合し、約60msのダウンタイムでのOSのライブマイグレーションを実現した。
-手法の焦点は、どれだけ短いダウンタイムや移行時間で、移行元と移行先のメモリの状態を同等にできるかにある。
-ネットワークアドレスや物理デバイスの移行はあつかわない。
-移行元と移行先は同じローカルネットワークにあり、マイグレーションによるIPアドレスのホストの移動を主にARP replyで通知でき、NASにデータを保存することを前提にし、ネットワークや物理デバイスの移行を考えなくてよいものとしている。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">November 20, 2021</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -239,7 +241,7 @@ BPSは、並列計算用のハードウェアと高水準な並列計算のプ�
       </a>
     </li>
     <li>
-      <a href="/page/32/">
+      <a href="/page/33/">
 	<i class="fa-solid fa-xl fa-angles-right"></i>
       </a>
     </li>

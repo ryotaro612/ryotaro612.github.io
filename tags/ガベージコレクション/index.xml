@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Go on Blanket</title>
-    <link>https://ryotaro.dev/tags/go/</link>
-    <description>Recent content in Go on Blanket</description>
+    <title>ガベージコレクション on Blanket</title>
+    <link>https://ryotaro.dev/tags/%E3%82%AC%E3%83%99%E3%83%BC%E3%82%B8%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/</link>
+    <description>Recent content in ガベージコレクション on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Tue, 11 Feb 2025 15:16:30 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/%E3%82%AC%E3%83%99%E3%83%BC%E3%82%B8%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GoのGCあるいはOn the Fly Garbage Collection an Exercise in Cooperation (1978)</title>
       <link>https://ryotaro.dev/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/</link>

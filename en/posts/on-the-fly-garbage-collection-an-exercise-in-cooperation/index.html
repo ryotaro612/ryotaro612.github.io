@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+    
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
+    
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>On the Fly Garbage Collection an Exercise in Cooperation (1978)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="https://ryotaro.dev/en/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="https://ryotaro.dev/en/about">About</a></li>
+          <li><a href="https://ryotaro.dev/en/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/en/tags">Tags</a></li>
+	  
+	  <li><a href="https://ryotaro.dev/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/">ja</a></li>
+	  
+        </ul>	
+	<ul>
+          
+          <li>
+            <a href="https://github.com/ryotaro612">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="https://www.linkedin.com/in/ryotaro612/">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          
+          <li>
+	    <a href="https://ryotaro.dev/en/index.xml">
+	      <i class="fas fa-rss"></i>
+            </a>
+	  </li>
+          
+        </ul>	
+      </nav>
+    </header>
+    
+<main>
+  <h1>On the Fly Garbage Collection an Exercise in Cooperation (1978)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/en/tags/garbage-collection/">
+	#Garbage Collection
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/en/tags/go/">
+	#Go
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">February 28, 2025</span>    
+  <div>
+    <p>In Go 1.5, the algorithm of the garbage collector (GC) changed to a concurrent, tri-color, mark-sweep collector, which was first proposed by <a href="https://lamport.azurewebsites.net/pubs/garbage.pdf">Dijkstra et al.</a> in 1978.
+The algorithm proposed by Dijkstra et al. alternates a marking phase and an appending phase.
+In the marking phase, the garbage collector colors reachable objects in gray or black.
+In the appending phase, it collects white objects that are unreachable from things on the stack and global variables.
+The algorithm prioritizes minimizing the atomic operations of the garbage collector to reduce overhead on the application.</p>
+<p>A post on The Go Blog, <a href="https://go.dev/blog/go15gc">Go GC: Prioritizing low latency and simplicity</a>, states that the algorithm deliberately diverges from most “enterprise” grade garbage collectors of today.
+While this may be true, <a href="https://typeset.io/pdf/deep-dive-into-zgc-a-modern-garbage-collector-in-openjdk-2aa9ffwc.pdf">ZGC</a>, one of Java&rsquo;s garbage collectors, employs the concept of the tri-color marking.</p>
+<p>Rich Hudson, a member of Google’s Go team, explained why the algorithm suited for Go&rsquo;s runtime in <a href="https://go.dev/talks/2015/go-gc.pdf">Rick HudsonのGo GC: Latency Problem Solved</a> and its <a href="https://www.youtube.com/watch?v=aiv1JOfMjm0&ab_channel=GopherAcademy">video</a>.
+He emphasized the importance of memory allocation locality in the presentation and another <a href="https://go.dev/blog/ismmkeynote">talk</a>.
+First, the fields are embedded in their structs and  allocated sequentially in the heap.
+Second, as long as an interior pointer refers to a member of a struct, the struct remains alive.</p>
+<p>The algorithm abstracts the heap as a directed graph, where nodes represent pieces of heap memory, and edges represent references.
+The number of the nodes is fixed.
+The objects referred to by globals and variables on the stack are root nodes.
+The algorithm collects free nodes in lists, using root nodes as their heads.
+Note that a root node can also be a target from another node by definition.</p>
+<p>In the context of the directed graph, the application is referred to as the mutator, and the garbage collector is called the collector.
+The nodes unreachable from any root nodes are garbage.
+The collector appends them to the free list.</p>
+<p>The goal of the algorithm is to identify all the garbage nodes and add them to the free list within a finite number of steps.
+If a garbage node exists at the beginning of an appending phase, it is appended to the free list by the end of the next appending phase.</p>
+<p>There are some restrictions on the structure of the directed graph to simplify the proof without loss of generality.
+Each node has two outgoing edges.
+There is a special node, <code>NIL</code>, whose two outgoing edges points itself.
+An edge targeting <code>NIL</code> represents a source node with fewer than two outgoing edges.</p>
+<p>The algorithm uses colors to distinguish between live and garbage nodes and alternates between the two phases in a fnite number of steps.
+Nodes can be colored white, gray, or black.
+White is lighter than gray, and gray is lighter than black.
+During the marking phase, no node becomes a lighter color.
+In the appending phase, white nodes are considered garbage, and the collector appends them to the free list.
+If the target of a previously redirected edge is white, the mutator makes it gray before redirecting the edge toward another node or itself.
+Coloring and redirection are distinct atomic operations.</p>
+<p>The marking phase continues until there are no gray nodes except for the root nodes.
+The following pseudocode represents the marking phase, assuming initially no nodes are black.</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#cba6f7">for</span> root <span style="color:#89dceb;font-weight:bold">in</span> roots:
+</span></span><span style="display:flex;"><span>  <span style="color:#cba6f7">if</span> root<span style="color:#89dceb;font-weight:bold">.</span>color <span style="color:#89dceb;font-weight:bold">==</span> WHITE:
+</span></span><span style="display:flex;"><span>    root<span style="color:#89dceb;font-weight:bold">.</span>color <span style="color:#89dceb;font-weight:bold">=</span> GRAY
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>i, k <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#fab387">0</span>, M <span style="color:#6c7086;font-style:italic"># M is the number of the nodes.</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span><span style="color:#cba6f7">while</span> k <span style="color:#89dceb;font-weight:bold">&gt;</span> <span style="color:#fab387">0</span>:
+</span></span><span style="display:flex;"><span>  c <span style="color:#89dceb;font-weight:bold">=</span> nodes[i]<span style="color:#89dceb;font-weight:bold">.</span>color <span style="color:#89dceb;font-weight:bold">//</span> atomic
+</span></span><span style="display:flex;"><span>  <span style="color:#cba6f7">if</span> c <span style="color:#89dceb;font-weight:bold">==</span> GRAY:
+</span></span><span style="display:flex;"><span>    k <span style="color:#89dceb;font-weight:bold">=</span> M
+</span></span><span style="display:flex;"><span>	<span style="color:#cba6f7">for</span> side <span style="color:#89dceb;font-weight:bold">in</span> <span style="color:#89dceb">range</span>(<span style="color:#fab387">2</span>):
+</span></span><span style="display:flex;"><span>      succ <span style="color:#89dceb;font-weight:bold">:=</span> nodes[i]<span style="color:#89dceb;font-weight:bold">.</span>successors[side] <span style="color:#89dceb;font-weight:bold">//</span> atomic
+</span></span><span style="display:flex;"><span>	  <span style="color:#89dceb;font-weight:bold">//</span> begin atomic
+</span></span><span style="display:flex;"><span>      <span style="color:#cba6f7">if</span> succ<span style="color:#89dceb;font-weight:bold">.</span>color <span style="color:#89dceb;font-weight:bold">==</span> WHITE:
+</span></span><span style="display:flex;"><span>	    succ<span style="color:#89dceb;font-weight:bold">.</span>color <span style="color:#89dceb;font-weight:bold">=</span> GRAY
+</span></span><span style="display:flex;"><span>	  <span style="color:#89dceb;font-weight:bold">//</span> end atomic
+</span></span><span style="display:flex;"><span>	nodes[i]<span style="color:#89dceb;font-weight:bold">.</span>color <span style="color:#89dceb;font-weight:bold">=</span> BLACK <span style="color:#89dceb;font-weight:bold">//</span> atomic
+</span></span><span style="display:flex;"><span>  <span style="color:#cba6f7">else</span>:
+</span></span><span style="display:flex;"><span>    k <span style="color:#89dceb;font-weight:bold">-=</span> <span style="color:#fab387">1</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>  i <span style="color:#89dceb;font-weight:bold">=</span> (i <span style="color:#89dceb;font-weight:bold">+</span> <span style="color:#fab387">1</span>) <span style="color:#89dceb;font-weight:bold">%</span> M
+</span></span></code></pre></div><p>At the beginning of the marking phase, the collector colors any white root nodes gray.
+Afterwards, the collector sequentially processes each node, turning white successors gray and then turning the source node black.
+The marking phase ends if the collector does not find any gray nodes for <code>M</code> times in a row.
+Because the root node of the free list is gray at the beginning, the free nodes eventually turn black by the end of the marking phase.</p>
+<p>In the appending phase, the collector appends the white nodes to the free list, and colors black nodes white.
+During this phase, there are no gray nodes except for the root nodes.
+The following pseudocode shows the appending phase.</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#cba6f7">for</span> i <span style="color:#89dceb;font-weight:bold">in</span> <span style="color:#89dceb">range</span>(m):
+</span></span><span style="display:flex;"><span>  color <span style="color:#89dceb;font-weight:bold">:=</span> nodes[i]<span style="color:#89dceb;font-weight:bold">.</span>color <span style="color:#89dceb;font-weight:bold">//</span> atomic
+</span></span><span style="display:flex;"><span>  <span style="color:#cba6f7">if</span> color <span style="color:#89dceb;font-weight:bold">==</span> WHITE:
+</span></span><span style="display:flex;"><span>    free_list<span style="color:#89dceb;font-weight:bold">.</span>append(nodes[i]) <span style="color:#89dceb;font-weight:bold">//</span> atomic
+</span></span><span style="display:flex;"><span>  <span style="color:#cba6f7">else</span>: <span style="color:#89dceb;font-weight:bold">//</span> color <span style="color:#89dceb;font-weight:bold">==</span> BLACK
+</span></span><span style="display:flex;"><span>    nodes[i]<span style="color:#89dceb;font-weight:bold">.</span>color <span style="color:#89dceb;font-weight:bold">=</span> WHITE <span style="color:#89dceb;font-weight:bold">//</span> atomic
+</span></span></code></pre></div><p>Note that Go&rsquo;s garbage collection is not implemented literally as described above.
+&ldquo;Go GC: Prioritizing low latency and simplicity&rdquo;, mentioned previously, states that Go&rsquo;s GC is turned off after the sweep phase.
+Additionally, the Go&rsquo;s GC introduces stop-the-world pauses to simplify the marking phase&rsquo;s termination.</p>
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/en/posts/s3-sign/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <small>© Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,14 +17,14 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="http://localhost:1313/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
-    <link rel="stylesheet" href="http://localhost:1313/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
 
-<link rel="stylesheet" href="http://localhost:1313/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
 
-<link rel="stylesheet" href="http://localhost:1313/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>On the Fly Garbage Collection an Exercise in Cooperation (1978)</title>
+    <title>GoのGCあるいはOn the Fly Garbage Collection an Exercise in Cooperation (1978)</title>
   </head>
 
   <body>
@@ -46,12 +46,14 @@
     
         
     <header class="navigation">
-      <h2><a href="http://localhost:1313/">Blanket</a></h2>
+      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
       <nav>
         <ul>
-          <li><a href="http://localhost:1313/about">About</a></li>
-          <li><a href="http://localhost:1313/posts">Posts</a></li>
-          <li><a href="http://localhost:1313/tags">Tags</a></li>
+          <li><a href="https://ryotaro.dev/about">About</a></li>
+          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+	  
+	  <li><a href="https://ryotaro.dev/en/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/">en</a></li>
 	  
         </ul>	
 	<ul>
@@ -70,7 +72,7 @@
           </li>
           
           <li>
-	    <a href="http://localhost:1313/index.xml">
+	    <a href="https://ryotaro.dev/index.xml">
 	      <i class="fas fa-rss"></i>
             </a>
 	  </li>
@@ -80,17 +82,17 @@
     </header>
     
 <main>
-  <h1>On the Fly Garbage Collection an Exercise in Cooperation (1978)</h1>
+  <h1>GoのGCあるいはOn the Fly Garbage Collection an Exercise in Cooperation (1978)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="http://localhost:1313/tags/garbage-collection/">
-	#Garbage Collection
+      <a href="https://ryotaro.dev/tags/%E3%82%AC%E3%83%99%E3%83%BC%E3%82%B8%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/">
+	#ガベージコレクション
       </a>
     </li>
     
     <li class="tag">
-      <a href="http://localhost:1313/tags/go/">
+      <a href="https://ryotaro.dev/tags/go/">
 	#Go
       </a>
     </li>
@@ -100,107 +102,152 @@
   <div>
     <p>Go1.5で、ガベージコレクション (GC) のアルゴリズムが3色マーキングによるコンカレント マーク&amp;スイープに変わった。
 このアルゴリズムの起源を辿ると、1978年の<a href="https://lamport.azurewebsites.net/pubs/garbage.pdf">On the Fly Garbage Collection an Exercise in Cooperation</a>にいきつく。
-ポインタをたどってヒープを白、黒、灰色に着色するマーキングフェーズと、解放してよい白のヒープを解放するアペンディングフェーズ、この2つのフェーズを繰り返す。
-アルゴリズムの目的は、スタックやグローバルから参照されないヒープを有限時間で解放するためのStop The World (STW)を抑えることにある。</p>
+ポインタをたどってヒープを黒や灰色に着色するマーキングフェーズと、解放してよい白のヒープを解放するアペンディングフェーズ、この2つのフェーズを繰り返す。
+アルゴリズムはStop The World (STW)を抑制することを主眼におく。</p>
 <p>2015年に書かれたThe Go Blogの<a href="https://go.dev/blog/go15gc">Go GC: Prioritizing low latency and simplicity</a>によれば、3色マーキングのコンカレント マーク&amp;スイープはエンタープライズ向けのGCではない。
 それでも、3色マーキングの考え自体はJavaのZGCなど他のガベージコレクションで<a href="https://typeset.io/pdf/deep-dive-into-zgc-a-modern-garbage-collector-in-openjdk-2aa9ffwc.pdf">採用されている</a>。</p>
+<p><a href="https://go.dev/talks/2015/go-gc.pdf">Rick HudsonのGo GC: Latency Problem Solved</a>や、その<a href="https://www.youtube.com/watch?v=aiv1JOfMjm0&ab_channel=GopherAcademy">動画</a>では、JavaとGoのランタイムを対比させて、Goのランタイムに適したGCのアルゴリズムを採用する必要性が説明されている。
+動画で最も強調されていた理由は、構造体の内部を指すポインタ interior pointerがフィールドを参照する間は構造体全体がメモリに残ることだった。
+また、Rick Hudsonのほかの<a href="https://go.dev/blog/ismmkeynote">資料</a>によると、構造体のメンバーは連続する領域に割り当てられるため、関連のあるデータを構造体にまとめることで、キャッシュ効率を改善できる。</p>
 <p>On the Fly Garbage Collection an Exercise in Cooperationは、ヒープをノード数が固定の有向グラフとみなしてノードを白、灰色、黒色に着色する。
-ノード数が固定であることは、最大ヒープサイズが決まっている現実と対応するのだろう。
-スタックや大域のオブジェクトからの直接参照されているメモリ空間を、有向グラフのルートノードとみなす。
-ルートノードは複数あってよい。
-また、割り当てできるヒープを線形リストで管理するためにもルートノードも用意する。</p>
-<p>ヒープの確保、解放中の領域が変わるように、グラフの構造もまた一定ではない。
-有向グラフを操作する主体として、mutatorとcollectorをおく。
-それぞれ、ソースコードの処理とガベージコレクタに対応する。
-mutatorとcollectorは有向辺を追加、更新、削除する。
+スタックや大域のオブジェクトから直接参照されるメモリ空間をルートノードとみなす。
+また、割り当て可能なヒープをリストで管理し、そのリストの先頭にもルートノードをつかう。
+ルートノードは複数あってよい。</p>
+<p>有向グラフにおけるソースコードの処理をmutator, ガベージコレクタをcollectorという。
+mutatorとcollectorは有向辺の追加、更新、削除をくりかえす。
 collectorは、ルートから辿れないガベージノードだけを、線形リストに追加し、ルートから参照できるノードと区別する。</p>
-<p>有向グラフをつかうと、アルゴリズムの目的を、collectorの最小限のアトミックな操作でガベージノードをすべて有限のステップ数で線形リストに加えると言いかえられる。
-具体的な有限のステップ数は、スイープ開始時からスイープフェーズの終わりまでを意味する。</p>
-<p>有向グラフの構造を限定しても、アルゴリズムを任意のデータ構造に適用できる一般性を失わずに、証明を簡単にできる。
+<p>有向グラフにおけるアルゴリズムの目的は、すべてのガベージノードを有限のステップ数で線形リストに加えることに言いかえられる。
+具体的な有限のステップ数として、アルゴリズムは、アペンディグ開始時にあるガベージノードが次のアペンディングフェーズの終わりまでに解放されることを保証する。
+また、STWの最小化はcollectorのアトミックな操作の最小化と言いかえられる。</p>
+<p>証明を簡単にするために有向グラフに制約があたえられている。
+制約を導入しても、アルゴリズムを任意のプログラムに適用できる一般性は失われない。
 有向辺を削除ないし追加するのかを考えると、操作に対する証明の場合分けが増える。
 この場合分けを減らすために、すべてのノードの出次数を2にし、本来無い有向辺を特別なルート<code>NIL</code>への有向辺で表現する。
 <code>NIL</code>の2つ有向辺は<code>NIL</code>自身を指す。</p>
-<!--
-図をいれる 
--->
-<p>出次数が2以下の固定数のノードの有向グラフ</p>
-<p>ガベージ</p>
-<p>javaGCは11でリリース
-エンタープライズ向けの典型的なGCとは何だろうか。</p>
-<p>世代別GCだろうか。
-本当に3色マーキングお</p>
-<p>gcの仕組みは仕様にない。
-<a href="https://tip.golang.org/doc/gc-guide">https://tip.golang.org/doc/gc-guide</a></p>
-<p>これを防ぐために、「新たに参照されるオブジェクトが白色であれば灰色にすぐ変える」ようにすればマーク漏れを防げます。
-これがtri-color markingにおけるライトバリアです。
-<a href="https://qiita.com/gold-kou/items/4431d3dd41606d41732b">https://qiita.com/gold-kou/items/4431d3dd41606d41732b</a></p>
-<p>concurrent, tri-color, mark-sweep collector, an idea first proposed by Dijkstra in 1978.で知られる。
-エンタープライズから逸脱</p>
-<p>黒白、灰色、ヒープをグラフとみる</p>
-<p>GCの最初は、すべて白</p>
-<p>ルートは複数ある。
-ルートは、グローバル変数やスタックの変数
-ルートを灰色に着色する</p>
-<p>GCは灰色を黒にする</p>
-<p>黒にしたら隣接ノードを探してグレーにする</p>
-<p>以上あ、mutator(アプリの実行)と並行に。</p>
-<p>問題は mutatorが黒から白を参照しないこと (gcがすでに満たトラックを失う)
-この普遍条件を守るのがwrite barrier</p>
-<p>pointerが修正されるときに実行される。
-write barrierは、今の色が白なら、到達可能なオブジェクトをグレーにかえる。</p>
-<p>これ以上並行処理がむずかしかければ、stwをする。
-グレーオブジェクトのソースをさがす。</p>
-<!--more-->
-<p>ここからは論文
-プロセス間の排他と同期をできるだけ小さくすることが目的</p>
-<p>ノードの数が有限の有効グラフを想定
-出力は高々2つ
-性格には各ノードは、左と右のエッジがある</p>
-<p>ルートの集合は固定&lt;ー固定でいいのか</p>
-<p>到達可能とは、1つ以上のルートからっどっていけること。</p>
-<p>データ構造は、reachable nodesとそれらをつなぐパス。</p>
-<p>到達可能でないものは、garbageノード</p>
-<p>garbage collectorはフリーリストを管理
-garbase とみなされたリスト
-data structureに追加できる</p>
-<p>目的はストップ the worldを減らしたい</p>
-<p>mutatorの操作にかかるオーバヘッドをへらしたい。</p>
-<p>&lt;&gt;はアトミック
-shared variableへの参照はatomic operation</p>
-<p>問題は、mark and sweepのクリティカルセクションを減らす</p>
-<p>やはりgcのアルゴリズムも半順序な</p>
-<p>粒度の評価は2つ以上のatomicな操作にわけられるか</p>
-<p>簡単にしたい
-nil: 2つのエッジはnil自身をさす</p>
-<p>エッジがないノードは、nilをっっしているとみなす</p>
-<p>free listはgarbaseであなくデータストラクチャとみなす。
-fre
-1つ以上のspecial root nodeを導入して、
-special root nodesからfree nodesかnilだけにつながるよにする。</p>
-<p>(2) reachableノードの出力を到達できず出力のないnodeに向ける</p>
-<p>(1)に集約</p>
-<p>mutatorは、到達できるout edgeをとうたつできる nodeにむける
-collector mark add free list amrk</p>
-<p>正しい条件
-cc</p>
-<p>atomic operation:
-edgeの向きをかえる。
-隣をさがす
-属性をかえる。
-ア</p>
-<p>ノードの挿入は後</p>
-<p>free listへのノードの挿入はアトミックできれば</p>
-<p>すべてのノードはしろ
-marking phase
-mutatorはreachableを黒にぬる</p>
-<p>invariant 黒から白にならない
-ligterにならない</p>
-<p>P1 黒から白を参照しない
-mutatorが黒にすると次の次が白なら違反する</p>
-<p>shade 白はあら灰色にする
-黒から白にのばすとき</p>
-<p><a href="https://www.youtube.com/watch?v=aiv1JOfMjm0&ab_channel=GopherAcademy">https://www.youtube.com/watch?v=aiv1JOfMjm0&ab_channel=GopherAcademy</a>
-<a href="https://forum.golangbridge.org/t/how-gc-handles-interior-pointer/36195/8">https://forum.golangbridge.org/t/how-gc-handles-interior-pointer/36195/8</a></p>
+<p>ノードの色には、参照されるノードとガベージノードの区別、と、有限のステップ数でフェーズを終了させる役割がある。
+白、灰色、黒の順に濃い色だとすると、マーキングフェーズにおいて、ノードの色が薄くなることはない。
+アペンディングフェーズでは、collectorが、白のノードをガベージノードとみなし、線形リストに追加する。
+mutatorは、有向辺をはじめて変更する場合を除き、前回変えた有向辺の向き先のノードの色が白であれば灰色に着色し、有向辺の向き先を変更する。
+着色と向き先の変更はそれぞれ別のアトミックな操作でよい。</p>
+<p>マーキングフェーズは、ルートノード以外の灰色のノードがなくなるまで続く。
+以下の疑似コードはマーキングフェーズを表す。
+ただし、初期状態では黒のノードがないことを前提とし、ノードの数を<code>M</code>とおく。</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#cba6f7">for</span> root <span style="color:#89dceb;font-weight:bold">in</span> roots:
+</span></span><span style="display:flex;"><span>  <span style="color:#cba6f7">if</span> root<span style="color:#89dceb;font-weight:bold">.</span>color <span style="color:#89dceb;font-weight:bold">==</span> WHITE:
+</span></span><span style="display:flex;"><span>    root<span style="color:#89dceb;font-weight:bold">.</span>color <span style="color:#89dceb;font-weight:bold">=</span> GRAY
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>i, k <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#fab387">0</span>, M
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span><span style="color:#cba6f7">while</span> k <span style="color:#89dceb;font-weight:bold">&gt;</span> <span style="color:#fab387">0</span>:
+</span></span><span style="display:flex;"><span>  c <span style="color:#89dceb;font-weight:bold">=</span> nodes[i]<span style="color:#89dceb;font-weight:bold">.</span>color <span style="color:#89dceb;font-weight:bold">//</span> atomic
+</span></span><span style="display:flex;"><span>  <span style="color:#cba6f7">if</span> c <span style="color:#89dceb;font-weight:bold">==</span> GRAY:
+</span></span><span style="display:flex;"><span>    k <span style="color:#89dceb;font-weight:bold">=</span> M
+</span></span><span style="display:flex;"><span>	<span style="color:#cba6f7">for</span> side <span style="color:#89dceb;font-weight:bold">in</span> <span style="color:#89dceb">range</span>(<span style="color:#fab387">2</span>):
+</span></span><span style="display:flex;"><span>      succ <span style="color:#89dceb;font-weight:bold">:=</span> nodes[i]<span style="color:#89dceb;font-weight:bold">.</span>successors[side] <span style="color:#89dceb;font-weight:bold">//</span> atomic
+</span></span><span style="display:flex;"><span>	  <span style="color:#89dceb;font-weight:bold">//</span> begin atomic
+</span></span><span style="display:flex;"><span>      <span style="color:#cba6f7">if</span> succ<span style="color:#89dceb;font-weight:bold">.</span>color <span style="color:#89dceb;font-weight:bold">==</span> WHITE:
+</span></span><span style="display:flex;"><span>	    succ<span style="color:#89dceb;font-weight:bold">.</span>color <span style="color:#89dceb;font-weight:bold">=</span> GRAY
+</span></span><span style="display:flex;"><span>	  <span style="color:#89dceb;font-weight:bold">//</span> end atomic
+</span></span><span style="display:flex;"><span>	nodes[i]<span style="color:#89dceb;font-weight:bold">.</span>color <span style="color:#89dceb;font-weight:bold">=</span> BLACK <span style="color:#89dceb;font-weight:bold">//</span> atomic
+</span></span><span style="display:flex;"><span>  <span style="color:#cba6f7">else</span>:
+</span></span><span style="display:flex;"><span>    k <span style="color:#89dceb;font-weight:bold">-=</span> <span style="color:#fab387">1</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>  i <span style="color:#89dceb;font-weight:bold">=</span> (i <span style="color:#89dceb;font-weight:bold">+</span> <span style="color:#fab387">1</span>) <span style="color:#89dceb;font-weight:bold">%</span> M
+</span></span></code></pre></div><p>はじめに、collectorはすべての白のルートノードを灰色に着色する。
+そして、すべてのノードの色を順番に確認し、後続の白のノードを灰色にし、ノードを黒にする。
+一巡するまでに灰色を一度でも見かけなければ、マーキングフェースは終了する。
+線形リストのルートノードが灰色なので、mutatorが新たに線形リストに割当られたノードの色はマーキングフェーズが終わるまでには黒になる。</p>
+<p>アペンディングフェーズは、白のノードを線形リストに追加し、黒のノードを白に着色する。
+その間、ルートノード以外に灰色のノードはない。
+以下疑似コードでアペンディングコードを示す。</p>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#cba6f7">for</span> i <span style="color:#89dceb;font-weight:bold">in</span> <span style="color:#89dceb">range</span>(m):
+</span></span><span style="display:flex;"><span>  color <span style="color:#89dceb;font-weight:bold">:=</span> nodes[i]<span style="color:#89dceb;font-weight:bold">.</span>color <span style="color:#89dceb;font-weight:bold">//</span> atomic
+</span></span><span style="display:flex;"><span>  <span style="color:#cba6f7">if</span> color <span style="color:#89dceb;font-weight:bold">==</span> WHITE:
+</span></span><span style="display:flex;"><span>    free_list<span style="color:#89dceb;font-weight:bold">.</span>append(nodes[i]) <span style="color:#89dceb;font-weight:bold">//</span> atomic
+</span></span><span style="display:flex;"><span>  <span style="color:#cba6f7">else</span>: <span style="color:#89dceb;font-weight:bold">//</span> color <span style="color:#89dceb;font-weight:bold">==</span> BLACK
+</span></span><span style="display:flex;"><span>    nodes[i]<span style="color:#89dceb;font-weight:bold">.</span>color <span style="color:#89dceb;font-weight:bold">=</span> WHITE <span style="color:#89dceb;font-weight:bold">//</span> atomic
+</span></span></code></pre></div><p>ただし、Goのガベージコレクションは文献どおり実装されているわけではない。
+先述の<a href="https://go.dev/talks/2015/go-gc.pdf">資料</a>によると、ガベージコレクションが無効の期間がある。
+また、理論上は並行実行可能であるが実装を単純にするために、マーキングフェーズの終了処理時にSTWが起きる。</p>
+<!-- 以下に疑似コードを示す。 -->
+<!-- 出次数が2以下の固定数のノードの有向グラフ -->
+<!-- ガベージ -->
+<!-- javaGCは11でリリース -->
+<!-- エンタープライズ向けの典型的なGCとは何だろうか。 -->
+<!-- 世代別GCだろうか。 -->
+<!-- 本当に3色マーキングお -->
+<!-- gcの仕組みは仕様にない。 -->
+<!-- https://tip.golang.org/doc/gc-guide -->
+<!-- これを防ぐために、「新たに参照されるオブジェクトが白色であれば灰色にすぐ変える」ようにすればマーク漏れを防げます。 -->
+<!-- これがtri-color markingにおけるライトバリアです。 -->
+<!-- https://qiita.com/gold-kou/items/4431d3dd41606d41732b -->
+<!-- concurrent, tri-color, mark-sweep collector, an idea first proposed by Dijkstra in 1978.で知られる。 -->
+<!-- エンタープライズから逸脱 -->
+<!-- 黒白、灰色、ヒープをグラフとみる -->
+<!-- GCの最初は、すべて白 -->
+<!-- ルートは複数ある。 -->
+<!-- ルートは、グローバル変数やスタックの変数 -->
+<!-- ルートを灰色に着色する -->
+<!-- GCは灰色を黒にする -->
+<!-- 黒にしたら隣接ノードを探してグレーにする -->
+<!-- 以上あ、mutator(アプリの実行)と並行に。 -->
+<!-- 問題は mutatorが黒から白を参照しないこと (gcがすでに満たトラックを失う) -->
+<!-- この普遍条件を守るのがwrite barrier -->
+<!-- pointerが修正されるときに実行される。 -->
+<!-- write barrierは、今の色が白なら、到達可能なオブジェクトをグレーにかえる。 -->
+<!-- これ以上並行処理がむずかしかければ、stwをする。 -->
+<!-- グレーオブジェクトのソースをさがす。 -->
+<!-- <\!--more-\-> -->
+<!-- ここからは論文 -->
+<!-- プロセス間の排他と同期をできるだけ小さくすることが目的 -->
+<!-- ノードの数が有限の有効グラフを想定 -->
+<!-- 出力は高々2つ -->
+<!-- 性格には各ノードは、左と右のエッジがある -->
+<!-- ルートの集合は固定<ー固定でいいのか -->
+<!-- 到達可能とは、1つ以上のルートからっどっていけること。 -->
+<!-- データ構造は、reachable nodesとそれらをつなぐパス。 -->
+<!-- 到達可能でないものは、garbageノード -->
+<!-- garbage collectorはフリーリストを管理 -->
+<!-- garbase とみなされたリスト -->
+<!-- data structureに追加できる -->
+<!-- 目的はストップ the worldを減らしたい -->
+<!-- mutatorの操作にかかるオーバヘッドをへらしたい。 -->
+<!-- <>はアトミック -->
+<!-- shared variableへの参照はatomic operation -->
+<!-- 問題は、mark and sweepのクリティカルセクションを減らす -->
+<!-- やはりgcのアルゴリズムも半順序な -->
+<!-- 粒度の評価は2つ以上のatomicな操作にわけられるか -->
+<!-- 簡単にしたい -->
+<!-- nil: 2つのエッジはnil自身をさす -->
+<!-- エッジがないノードは、nilをっっしているとみなす -->
+<!-- free listはgarbaseであなくデータストラクチャとみなす。 -->
+<!-- fre -->
+<!-- 1つ以上のspecial root nodeを導入して、 -->
+<!-- special root nodesからfree nodesかnilだけにつながるよにする。 -->
+<!-- (2) reachableノードの出力を到達できず出力のないnodeに向ける -->
+<!-- (1)に集約 -->
+<!-- mutatorは、到達できるout edgeをとうたつできる nodeにむける -->
+<!-- collector mark add free list amrk -->
+<!-- 正しい条件 -->
+<!-- cc -->
+<!-- atomic operation:  -->
+<!-- edgeの向きをかえる。 -->
+<!-- 隣をさがす -->
+<!-- 属性をかえる。 -->
+<!-- ア -->
+<!-- ノードの挿入は後 -->
+<!-- free listへのノードの挿入はアトミックできれば -->
+<!-- すべてのノードはしろ -->
+<!-- marking phase -->
+<!-- mutatorはreachableを黒にぬる -->
+<!-- invariant 黒から白にならない -->
+<!-- ligterにならない -->
+<!-- P1 黒から白を参照しない -->
+<!-- mutatorが黒にすると次の次が白なら違反する -->
+<!-- shade 白はあら灰色にする -->
+<!-- 黒から白にのばすとき -->
+<!-- https://www.youtube.com/watch?v=aiv1JOfMjm0&ab_channel=GopherAcademy -->
+<!-- https://forum.golangbridge.org/t/how-gc-handles-interior-pointer/36195/8 -->
   </div>
 </main>
 

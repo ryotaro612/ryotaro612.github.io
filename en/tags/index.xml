@@ -6,8 +6,22 @@
     <description>Recent content in Tags on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 30 Jan 2025 03:01:59 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 28 Feb 2025 15:16:30 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Garbage Collection</title>
+      <link>https://ryotaro.dev/en/tags/garbage-collection/</link>
+      <pubDate>Fri, 28 Feb 2025 15:16:30 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/garbage-collection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Go</title>
+      <link>https://ryotaro.dev/en/tags/go/</link>
+      <pubDate>Fri, 28 Feb 2025 15:16:30 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/go/</guid>
+      <description></description>
+    </item>
     <item>
       <title>S3</title>
       <link>https://ryotaro.dev/en/tags/s3/</link>

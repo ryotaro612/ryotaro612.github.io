@@ -85,6 +85,30 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/en/posts/sorting-networks-and-their-applications/">Sorting networks and their applications (1968)</a></h3>
+        <div class="summary"><p>A sorting network is a network of comparison elements with 2 indegree and 2 outdegree that sorts a list in ascending or descending order.
+A comparison element receives two numbers and outputs the smaller one to one output and the larger one to the other output.
+Odd-even merging networks and Bitonic sorters are sorting networks proposed in <a href="https://www.cs.kent.edu/~batcher/sort.pdf">Sorting networks and their applications</a>.
+They can sort \(2^p\) elements with \(\ln (\frac{1}{2})p(p+1)\) steps.
+Their processing is independent of the values and is easy to run on the GPU because it does not change the output location in memory based on input data values.</p>
+<!-- https://developer.nvidia.com/gpugems/gpugems2/part-vi-simulation-and-numerical-algorithms/chapter-46-improved-gpu-sorting --></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/sorting-algorithm/">
+		#Sorting Algorithm
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">January 14, 2024</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/en/posts/billion-scale-similarity-search-with-gpus/">Billion Scale Similarity Search With GPUs (2017)</a></h3>
         <div class="summary"><p>The paper <a href="https://arxiv.org/abs/1702.08734">Billion-scale-similarity search with GPUs</a> presents an approximate nearest-neighbor search method that uses GPUs and combines the <a href="https://inria.hal.science/inria-00514462v2/document">IVFADC</a> indexing structure with <a href="https://www.cs.kent.edu/~batcher/sort.pdf">Batcher&rsquo;s bitonic sorting network</a>.
 The authors have implemented this method in a library called <a href="https://github.com/facebookresearch/faiss">faiss</a>.</p></div>
@@ -280,28 +304,6 @@ Chord uses <a href="https://www.cs.princeton.edu/courses/archive/fall09/cos518/p
 	  </ul>
 	  
           <span class="date">November 18, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/">Pastry: Scalable Decentralized Object Location and Routing for Large Scale Peer to Peer Systems (2001)</a></h3>
-        <div class="summary"><p><a href="https://rowstron.azurewebsites.net/PAST/pastry.pdf">Pastry</a> is a decentralized peer-to-peer object location and routing system based on nodes connected via the Internet.
-When each node in the Pastry network receives a message and a numeric key, it routes them to the node with a nodeId that is numerically close to the key.
-If a node is not the final destination of a message, it forwards the message to another node with a nodeId that is numerically closer to the key than the nodeId of the present node.
-The nodeId ranges from 0 to \(2^{128}-1\).</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/peer-to-peer/">
-		#Peer-to-Peer
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">November 7, 2023</span>
         </div>
     </article>
     

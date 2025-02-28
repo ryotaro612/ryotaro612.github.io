@@ -6,8 +6,15 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 30 Jan 2025 03:01:59 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 28 Feb 2025 15:16:30 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>On the Fly Garbage Collection an Exercise in Cooperation (1978)</title>
+      <link>https://ryotaro.dev/en/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/</link>
+      <pubDate>Fri, 28 Feb 2025 15:16:30 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/</guid>
+      <description>&lt;p&gt;In Go 1.5, the algorithm of the garbage collector (GC) changed to a concurrent, tri-color, mark-sweep collector, which was first proposed by &lt;a href=&#34;https://lamport.azurewebsites.net/pubs/garbage.pdf&#34;&gt;Dijkstra et al.&lt;/a&gt; in 1978.&#xA;The algorithm proposed by Dijkstra et al. alternates a marking phase and an appending phase.&#xA;In the marking phase, the garbage collector colors reachable objects in gray or black.&#xA;In the appending phase, it collects white objects that are unreachable from things on the stack and global variables.&#xA;The algorithm prioritizes minimizing the atomic operations of the garbage collector to reduce overhead on the application.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Publishing S3 Objects with Signed URLs</title>
       <link>https://ryotaro.dev/en/posts/s3-sign/</link>

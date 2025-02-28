@@ -85,6 +85,36 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/">GoのGCあるいはOn the Fly Garbage Collection an Exercise in Cooperation (1978)</a></h3>
+        <div class="summary"><p>Go1.5で、ガベージコレクション (GC) のアルゴリズムが3色マーキングによるコンカレント マーク&amp;スイープに変わった。
+このアルゴリズムの起源を辿ると、1978年の<a href="https://lamport.azurewebsites.net/pubs/garbage.pdf">On the Fly Garbage Collection an Exercise in Cooperation</a>にいきつく。
+ポインタをたどってヒープを黒や灰色に着色するマーキングフェーズと、解放してよい白のヒープを解放するアペンディングフェーズ、この2つのフェーズを繰り返す。
+アルゴリズムはStop The World (STW)を抑制することを主眼におく。</p>
+<p>2015年に書かれたThe Go Blogの<a href="https://go.dev/blog/go15gc">Go GC: Prioritizing low latency and simplicity</a>によれば、3色マーキングのコンカレント マーク&amp;スイープはエンタープライズ向けのGCではない。
+それでも、3色マーキングの考え自体はJavaのZGCなど他のガベージコレクションで<a href="https://typeset.io/pdf/deep-dive-into-zgc-a-modern-garbage-collector-in-openjdk-2aa9ffwc.pdf">採用されている</a>。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E3%82%AC%E3%83%99%E3%83%BC%E3%82%B8%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/">
+		#ガベージコレクション
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/go/">
+		#Go
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">February 11, 2025</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/s3-sign/">署名つきURLでS3オブジェクトを公開する</a></h3>
         <div class="summary"><p>S3バケットにあるプライベートオブジェクトの署名つきURLを発行すれば、URLを知るユーザーのみにオブジェクトを公開できる。
 発行方法は<a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html">AWSの記事</a>で紹介されている。</p>
@@ -305,33 +335,6 @@ Distributed GraphLabは、GraphLabをメモリ共有するノードからなる�
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/spark-sql-relational-data-processing-in-spark/">Spark SQL: Relational Data Processing in Spark (2015)</a></h3>
-        <div class="summary"><p><a href="https://dl.acm.org/doi/10.1145/2723372.2742797">Spark SQL</a>は、関係データベースのテーブルにあたる抽象データ構造のDataFrameを公開し、Spark上で関係代数によるデータ処理を実現する。
-DataFrameに対する操作は、<code>save</code>のような出力まで遅延される。
-遅延により蓄積したクエリは、最適化器Catalystで最適化された後にバイトコードにコンパイルされる。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/spark/">
-		#Spark
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/sql/">
-		#SQL
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">April 14, 2024</span>
-        </div>
-    </article>
-    
 </main>
 
     
@@ -345,7 +348,7 @@ DataFrameに対する操作は、<code>save</code>のような出力まで遅延
       </a>
     </li>
     <li>
-      <a href="/page/32/">
+      <a href="/page/33/">
 	<i class="fa-solid fa-xl fa-angles-right"></i>
       </a>
     </li>
