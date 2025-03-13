@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Code Coverage on Blanket</title>
+    <link>http://localhost:1313/en/tags/code-coverage/</link>
+    <description>Recent content in Code Coverage on Blanket</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 03 Mar 2025 21:55:26 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/tags/code-coverage/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Coverage Is Not Strongly Correlated With Test Suite Effectiveness (2014)</title>
+      <link>http://localhost:1313/en/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/</link>
+      <pubDate>Mon, 03 Mar 2025 21:55:26 +0900</pubDate>
+      <guid>http://localhost:1313/en/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/</guid>
+      <description>&lt;p&gt;There is doubt that code coverage can measure efficiency of a test suites.&#xA;For instance, Winters et al. claimed that an objective code coverage cannnot lead developers to write tests to meet the threashold in a note on code coverage, secition 11.2.4 in &lt;a href=&#34;https://www.oreilly.com/library/view/software-engineering-at/9781492082781/&#34;&gt;Software Engineering at Google&lt;/a&gt;.&#xA;Additionally, they also claimed code coverage of a test suite cannot ensure the ability of the test suits to detect faults under the tested code.&lt;/p&gt;&#xA;&lt;p&gt;The above statements are&lt;/p&gt;&#xA;&lt;!--ここまで --&gt;</description>
+    </item>
+  </channel>
+</rss>

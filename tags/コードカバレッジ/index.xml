@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>コードカバレッジ on Blanket</title>
+    <link>http://localhost:1313/tags/%E3%82%B3%E3%83%BC%E3%83%89%E3%82%AB%E3%83%90%E3%83%AC%E3%83%83%E3%82%B8/</link>
+    <description>Recent content in コードカバレッジ on Blanket</description>
+    <generator>Hugo</generator>
+    <language>ja</language>
+    <lastBuildDate>Mon, 03 Mar 2025 21:55:22 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E3%82%B3%E3%83%BC%E3%83%89%E3%82%AB%E3%83%90%E3%83%AC%E3%83%83%E3%82%B8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Coverage Is Not Strongly Correlated With Test Suite Effectiveness (2014)</title>
+      <link>http://localhost:1313/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/</link>
+      <pubDate>Mon, 03 Mar 2025 21:55:22 +0900</pubDate>
+      <guid>http://localhost:1313/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/</guid>
+      <description>&lt;p&gt;コードカバレッジに対する批判を散見する。&#xA;たとえば、&lt;a href=&#34;https://www.oreilly.com/library/view/software-engineering-at/9781492082781/&#34;&gt;Googleのソフトウェアエンジニアリング&lt;/a&gt;の11.2.4節「コードカバレッジについてもメモ」には、コードカバレッジに対する2つの批判がある。&#xA;まず、最低限満たすべきコードカバレッジを設定すると、すぐに水準を下回るコードがすぐにリポジトリに取り込まれはじめる。&#xA;次に、テストカバレッジは、テストがコードが実行することだけを意味するだけであり、実行したコードにあるバグを見つけられることを保証しない。&lt;/p&gt;&#xA;&lt;p&gt;このような経験則や論理による批判にくらべて、実験にもとづく批判を見聞することは少ないだろう。&#xA;&lt;a href=&#34;https://www.cs.ubc.ca/~rtholmes/papers/icse_2014_inozemtseva.pdf&#34;&gt;Coverage Is Not Strongly Correlated With Test Suite Effectiveness&lt;/a&gt;は、ICSE 2024でMost influential paper ICSE N-10に&lt;a href=&#34;https://conf.researchr.org/info/icse-2024/awards&#34;&gt;選ばれた&lt;/a&gt;文献で、OSSのテストカバレッジとテストの有効性の相関を調べた。&#xA;&lt;a href=&#34;https://poi.apache.org/devel/subversion.html&#34;&gt;Apache POI&lt;/a&gt;, &lt;a href=&#34;https://github.com/google/closure-compiler&#34;&gt;Closure&lt;/a&gt;, &lt;a href=&#34;https://hsqldb.org/&#34;&gt;HSQLDB&lt;/a&gt;, &lt;a href=&#34;https://www.jfree.org/jfreechart/&#34;&gt;JFreeChart&lt;/a&gt;, &lt;a href=&#34;https://www.joda.org/joda-time/&#34;&gt;Joda Time&lt;/a&gt;のコードベースをミューテーション解析し、テストケースの有効性を、テストケースを失敗させた変異体の数で定量化した。&#xA;テストケースの数とテストスイートのカバレッジは、有効性との間に中から高の相関があった。&#xA;一方、テストケースの数を固定すると、カバレッジと有効性の相関は低から中に減少した。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

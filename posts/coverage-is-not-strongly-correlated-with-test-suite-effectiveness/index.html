@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+        
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		    })(window,document,'script','dataLayer','GTM-W5TDG76');
+    </script>
+        
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=300,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+          integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+          crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="http://localhost:1313/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+    
+    <link rel="stylesheet" href="http://localhost:1313/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    
+
+<link rel="stylesheet" href="http://localhost:1313/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+
+<link rel="stylesheet" href="http://localhost:1313/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+    <title>Coverage Is Not Strongly Correlated With Test Suite Effectiveness (2014)</title>
+  </head>
+
+  <body>
+        
+    
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0" style="display:none;visibility:hidden"/>
+    </noscript>
+    
+        
+    <header class="navigation">
+      <h2><a href="http://localhost:1313/">Blanket</a></h2>
+      <nav>
+        <ul>
+          <li><a href="http://localhost:1313/about">About</a></li>
+          <li><a href="http://localhost:1313/posts">Posts</a></li>
+          <li><a href="http://localhost:1313/tags">Tags</a></li>
+	  
+	  <li><a href="http://localhost:1313/en/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/">en</a></li>
+	  
+        </ul>	
+	<ul>
+          
+          <li>
+            <a href="https://github.com/ryotaro612">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          
+          
+          <li>
+            <a href="https://www.linkedin.com/in/ryotaro612/">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          
+          <li>
+	    <a href="http://localhost:1313/index.xml">
+	      <i class="fas fa-rss"></i>
+            </a>
+	  </li>
+          
+        </ul>	
+      </nav>
+    </header>
+    
+<main>
+  <h1>Coverage Is Not Strongly Correlated With Test Suite Effectiveness (2014)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="http://localhost:1313/tags/%E3%82%B3%E3%83%BC%E3%83%89%E3%82%AB%E3%83%90%E3%83%AC%E3%83%83%E3%82%B8/">
+	#コードカバレッジ
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">March 3, 2025</span>    
+  <div>
+    <p>コードカバレッジに対する批判を散見する。
+たとえば、<a href="https://www.oreilly.com/library/view/software-engineering-at/9781492082781/">Googleのソフトウェアエンジニアリング</a>の11.2.4節「コードカバレッジについてもメモ」には、コードカバレッジに対する2つの批判がある。
+まず、最低限満たすべきコードカバレッジを設定すると、すぐに水準を下回るコードがすぐにリポジトリに取り込まれはじめる。
+次に、テストカバレッジは、テストがコードが実行することだけを意味するだけであり、実行したコードにあるバグを見つけられることを保証しない。</p>
+<p>このような経験則や論理による批判にくらべて、実験にもとづく批判を見聞することは少ないだろう。
+<a href="https://www.cs.ubc.ca/~rtholmes/papers/icse_2014_inozemtseva.pdf">Coverage Is Not Strongly Correlated With Test Suite Effectiveness</a>は、ICSE 2024でMost influential paper ICSE N-10に<a href="https://conf.researchr.org/info/icse-2024/awards">選ばれた</a>文献で、OSSのテストカバレッジとテストの有効性の相関を調べた。
+<a href="https://poi.apache.org/devel/subversion.html">Apache POI</a>, <a href="https://github.com/google/closure-compiler">Closure</a>, <a href="https://hsqldb.org/">HSQLDB</a>, <a href="https://www.jfree.org/jfreechart/">JFreeChart</a>, <a href="https://www.joda.org/joda-time/">Joda Time</a>のコードベースをミューテーション解析し、テストケースの有効性を、テストケースを失敗させた変異体の数で定量化した。
+テストケースの数とテストスイートのカバレッジは、有効性との間に中から高の相関があった。
+一方、テストケースの数を固定すると、カバレッジと有効性の相関は低から中に減少した。</p>
+<p>調査結果の新規性と一般性のために、5つのプロジェクトはコードベースの大きさと開発の活発状況から選ばれた。
+大きさの目安は、100,000行以上のソースコード、1,000以上のテストケースだった。
+また、データ収集の自動化のために、ビルドツールにAnt, テストフレームワークにJUnitが使わていることも条件にあった。
+Apache POIは、MicrosoftのドキュメントのためのAPI, ClosureはJavascriptを最適化するコンパイラ、HSQLDBはRDBMS, JFreeChartはチャート描画のライブラリ、Joda-TimeはJava8以前に日付と時刻のクラスの代用として使われていたライブラリである。</p>
+<p>テスト数を固定したときのカバレッジと有効性の相関を測るために、JUnitの<code>@Test</code>がついたメソッドを非復元抽出した。
+抽出したテストケースの集合をテストスイートとみなし、3, 10, 30, 100, 300, 1000, 3000個のテストケースからなるテストスイートを組成した。</p>
+<p>有効性と比較するカバレッジは、C0, C1, MCCの3種類で、後者ほど充足条件が厳しい。
+C0は、命令網羅率ともいい、テストスイートが実行した文の割合でカバレッジとする。
+C1は、分岐網羅率であり、実行した分岐の割合でカバレッジを測定する。
+MCCは、\(n\)個の真偽値型の変数からなる条件式に対して\(2^n\)個のテストケースを充足に求める測定方法で、航空機搭載システムの品質保証規格DO-178Bで使われる。</p>
+<p>テストケースの有効性を評価するために、ミューテーション解析のツール<a href="https://pitest.org/">PIT</a>で人工的な欠陥をコードベースに注入した。
+<a href="https://research.google/pubs/state-of-mutation-testing-at-google/">ミューテーション解析</a>は、定数や不等式の変更などの小さな欠陥をコードに加える。
+欠陥を注入されたコードベースは変異体 (mutator) とよばれる。
+テストケースを変異体に対して実行し、テストケースが失敗できるかでテストスイートを評価する。</p>
+<p>実験における有効性の測り方は2つある。
+ひとつは、組成したすべての変異体の数に対してテストスイートが検知できた変異体の数の割合であり、これを非正規化された有効性とよんだ。
+もうひとつは、正規化された測定方法であり、テストスイートが実行した行に欠陥が注入された変異体の数に対して検知できた変異体の数の割合を測る。</p>
+<p>テストケースの数と正規化された有効性の相関を単回帰分析で求めた。
+以下に、Rの<a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/lm">lm関数</a>の計算結果をプロットした図を示す。
+\(R^2\)は自由度調整済み決定係数を表す。
+文献には、自由度調整済み決定係数とあるが、同時に、\(R\)を相関係数と述べており、また、単回帰分析であるため、\(R^2\)は決定係数ととらえてよいだろう。
+HSQLDBを除けば、テストケースの数と正規化された有効性には中から高い相関がみられた。
+<img alt="test-size" src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/test-size.png"></p>
+<p>カバレッジと有効性の相関には、<a href="https://www.rdocumentation.org/packages/Kendall/versions/2.2.1/topics/Kendall">ケンドールの順位相関係数\(\tau\)</a>を使う。
+\(i\)番目のテストスイートのカバレッジを\(x_i\), 有効性を\(y_i\)とする\(n\)個のサンプルがあるとき、\(\textit{sgn}\)を符号関数とすると、\(\tau\)は
+$$
+\tau = \frac{n\sum_{i&lt;j}\left(\textit{sgn}(x_j-x_i)\textit{sgn}(y_j-y_i)\right)}{n(n-1)}
+$$
+になる。</p>
+<p>いずれのカバレッジを採用しても、カバレッジと有効性の間に相関に顕著な違いはなかった。
+以下の表は、文献からにあるカバレッジと有効性の相関係数を示す。
+上が正規化された有効性であり、下が正規化されていない有効性との相関に対応する。
+Joda Timeの相関係数は正規、非正規どちらにおいても、すべてのカバレッジで等しい。
+カバレッジを厳密にしても、テストの有効性の測定精度の改善にはならない結果になった。
+<img alt="normalized" src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/normalized.png">
+<img alt="non-normaized" src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/non-normalized.png"></p>
+<p>テストケースの数を揃えたテストスイート間では、カバレッジと正規化した有効性の間の正の相関が減少した。
+文献から引用した下の図は、テストケースの数ごとに、カバレッジと正規化した有効性の相関を示す。
+テストケースを固定した1から7行目の図には、正の相関を示す右方上がりのプロットはみられない。
+<img alt="grid" src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/grid.png"></p>
+<p>冒頭で紹介したGoogleのソフトウェアエンジニアリングの節は、カバレッジの高さがテストスイートの有効性の高さを含意しないことで、カバレッジに対して論理的に批判的な態度であった。
+同じ論理で、テストケースの数の多さからもテストスイートの有効性を主張することはできない。
+しかし、単回帰分析の結果では、テストケースの数と有効性の間に中から高い相関がみられた。
+論理よりもデータの傾向を尊重するなら、テストスイートの効率性を定量的に測りたいなら、カバレッジよりも、テストケースの数で測るべきなのだろう。</p>
+<p>The above text is a summary of the attaced file. Tranlate the summary into English. Prefer natural translation to literal translation.</p>
+<!-- テストスイートの評価には、ミューテーション -->
+<!-- テストスイートで検出すべき変更を組成するために、ミュー -->
+<!-- ミューテーション解析でテストスイートの効率性は効率性を測るために必要なバグは -->
+<!-- カバレッジのとり方は洞察の役にたたない ー> 相関に変化がない -->
+<!-- カバレッジはテスト数と相関がある。 -->
+<!-- master suiteが検出できなかったmutatntはequivalentとみなす。 -->
+<!-- 
+note
+
+テストを31000のテストを生成
+
+statement coverage, decision coverage, modified condition coverage
+
+カベレッジの種類は、効率性の洞察に貢献しなかった。
+
+結論は、特定につかえるが、質の評価には使えない。abstract
+
+-->
+  </div>
+</main>
+
+    
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+    <footer>
+      <small>© Ryotaro. All Rights Reserved.</small>
+    </footer>
+  </body>
+
+</html>

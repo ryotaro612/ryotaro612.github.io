@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>GoのGCあるいはOn the Fly Garbage Collection an Exercise in Cooperation (1978)</title>
+    <title>On the Fly Garbage Collection an Exercise in Cooperation (1978)</title>
   </head>
 
   <body>
@@ -82,7 +82,7 @@
     </header>
     
 <main>
-  <h1>GoのGCあるいはOn the Fly Garbage Collection an Exercise in Cooperation (1978)</h1>
+  <h1>On the Fly Garbage Collection an Exercise in Cooperation (1978)</h1>
   <ul class="tags">
     
     <li class="tag">
@@ -106,6 +106,7 @@
 アルゴリズムはStop The World (STW)を抑制することを主眼におく。</p>
 <p>2015年に書かれたThe Go Blogの<a href="https://go.dev/blog/go15gc">Go GC: Prioritizing low latency and simplicity</a>によれば、3色マーキングのコンカレント マーク&amp;スイープはエンタープライズ向けのGCではない。
 それでも、3色マーキングの考え自体はJavaのZGCなど他のガベージコレクションで<a href="https://typeset.io/pdf/deep-dive-into-zgc-a-modern-garbage-collector-in-openjdk-2aa9ffwc.pdf">採用されている</a>。</p>
+<script defer class="speakerdeck-embed" data-id="8f824f9493eb46e5b47202fdd6ff1f9b" data-ratio="1.7784313725490195" src="//speakerdeck.com/assets/embed.js"></script>
 <p><a href="https://go.dev/talks/2015/go-gc.pdf">Rick HudsonのGo GC: Latency Problem Solved</a>や、その<a href="https://www.youtube.com/watch?v=aiv1JOfMjm0&ab_channel=GopherAcademy">動画</a>では、JavaとGoのランタイムを対比させて、Goのランタイムに適したGCのアルゴリズムを採用する必要性が説明されている。
 動画で最も強調されていた理由は、構造体の内部を指すポインタ interior pointerがフィールドを参照する間は構造体全体がメモリに残ることだった。
 また、Rick Hudsonのほかの<a href="https://go.dev/blog/ismmkeynote">資料</a>によると、構造体のメンバーは連続する領域に割り当てられるため、関連のあるデータを構造体にまとめることで、キャッシュ効率を改善できる。</p>
@@ -117,7 +118,7 @@
 mutatorとcollectorは有向辺の追加、更新、削除をくりかえす。
 collectorは、ルートから辿れないガベージノードだけを、線形リストに追加し、ルートから参照できるノードと区別する。</p>
 <p>有向グラフにおけるアルゴリズムの目的は、すべてのガベージノードを有限のステップ数で線形リストに加えることに言いかえられる。
-具体的な有限のステップ数として、アルゴリズムは、アペンディグ開始時にあるガベージノードが次のアペンディングフェーズの終わりまでに解放されることを保証する。
+具体的な有限のステップ数として、アルゴリズムは、アペンディング開始時にあるガベージノードが次のアペンディングフェーズの終わりまでに解放されることを保証する。
 また、STWの最小化はcollectorのアトミックな操作の最小化と言いかえられる。</p>
 <p>証明を簡単にするために有向グラフに制約があたえられている。
 制約を導入しても、アルゴリズムを任意のプログラムに適用できる一般性は失われない。
@@ -157,7 +158,7 @@ mutatorは、有向辺をはじめて変更する場合を除き、前回変え�
 そして、すべてのノードの色を順番に確認し、後続の白のノードを灰色にし、ノードを黒にする。
 一巡するまでに灰色を一度でも見かけなければ、マーキングフェースは終了する。
 線形リストのルートノードが灰色なので、mutatorが新たに線形リストに割当られたノードの色はマーキングフェーズが終わるまでには黒になる。</p>
-<p>アペンディングフェーズは、白のノードを線形リストに追加し、黒のノードを白に着色する。
+<p>アペンディングフェーズは、白のノードをリストに追加し、黒のノードを白に着色する。
 その間、ルートノード以外に灰色のノードはない。
 以下疑似コードでアペンディングコードを示す。</p>
 <div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#cba6f7">for</span> i <span style="color:#89dceb;font-weight:bold">in</span> <span style="color:#89dceb">range</span>(m):
