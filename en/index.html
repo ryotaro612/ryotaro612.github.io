@@ -85,6 +85,33 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/en/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/">Coverage is Not Strongly Correlated with Test Suite Effectiveness (2014)</a></h3>
+        <div class="summary"><p>There are debates concerning the ability of code coverage to measure the effectiveness of test suites.
+For instance, Winters et al. argued that setting an objective coverage threshold does not necessarily lead developers to write meaningful tests, as discussed in &lsquo;A Note on Code Coverage&rsquo; (Section 11.2.4) in <a href="https://www.oreilly.com/library/view/software-engineering-at/9781492082781/"><em>Software Engineering at Google</em></a>.
+They also claimed that coverage percentage does not guarantee fault detection ability.</p>
+<p>compared with the abundance of rational arguments and anecdotal experiences, empirical studies on this topic are relatively rare.
+<a href="https://www.cs.ubc.ca/~rtholmes/papers/icse_2014_inozemtseva.pdf">Coverage Is Not Strongly Correlated With Test Suite Effectiveness</a> (ICSE 2014) is an empirical study that was awarded the <a href="https://conf.researchr.org/info/icse-2024/awards">most influential paper ICSE N-10 at ICSE 2024</a>.
+The paper investigated correlation between test suite size, coverage and effectiveness.
+The authors applied mutation testing to <a href="https://poi.apache.org/devel/subversion.html">Apache POI</a>, <a href="https://github.com/google/closure-compiler">Closure</a>, <a href="https://hsqldb.org/">HSQLDB</a>, <a href="https://www.jfree.org/jfreechart/">JFreeChart</a>, and <a href="https://www.joda.org/joda-time/">Joda Time</a>.
+They found a moderate to high correlation between the effectiveness and coverage of a test suite when ignoring the influence of the number of test cases.
+However, the correlation dropped when suite size was controlled for.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/code-coverage/">
+		#Code Coverage
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">March 3, 2025</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/en/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/">On the Fly Garbage Collection an Exercise in Cooperation (1978)</a></h3>
         <div class="summary"><p>In Go 1.5, the algorithm of the garbage collector (GC) changed to a concurrent, tri-color, mark-sweep collector, which was first proposed by <a href="https://lamport.azurewebsites.net/pubs/garbage.pdf">Dijkstra et al.</a> in 1978.
 The algorithm proposed by Dijkstra et al. alternates a marking phase and an appending phase.
@@ -325,30 +352,6 @@ The authors experimented the model with Open-domain QA tasks under the assumptio
 	  </ul>
 	  
           <span class="date">May 27, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/">Distributed GraphLab: a Framework for Machine Learning and Data Mining in the Cloud (2012)</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/pdf/1408.2041">GraphLab</a> is a programming model for machine learning and data mining.
-GraphLab takes a direct graph, a set of vertices, and update functions as input.
-Every update function accepts a vertex and returns a set of vertices.
-GraphLab selects a vertex from the set, applies a function to it, and adds the resulting set of vertices back intothe set, repeating this process until the set is empty.
-GraphLab supports parallel execution of update functions on multi-processor machines.
-<a href="https://arxiv.org/pdf/1408.2041">Distributed GraphLab</a> extends GraphLab by distributing parts of a graph across machines that are memory, utilizing <a href="https://lamport.azurewebsites.net/pubs/chandy.pdf">Chandy-Lamport</a>&rsquo;s snapshot algorithm for fault tolerance.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/distributed-system/">
-		#Distributed System
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">May 7, 2024</span>
         </div>
     </article>
     

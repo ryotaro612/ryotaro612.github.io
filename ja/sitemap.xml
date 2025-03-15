@@ -17,6 +17,16 @@
   </url><url>
     <loc>https://ryotaro.dev/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/</loc>
     <lastmod>2025-03-03T21:55:22+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/"
+                />
   </url><url>
     <loc>https://ryotaro.dev/posts/</loc>
     <lastmod>2025-03-03T21:55:22+09:00</lastmod>

@@ -6,8 +6,15 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 28 Feb 2025 15:16:30 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 03 Mar 2025 21:55:26 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Coverage is Not Strongly Correlated with Test Suite Effectiveness (2014)</title>
+      <link>https://ryotaro.dev/en/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/</link>
+      <pubDate>Mon, 03 Mar 2025 21:55:26 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/</guid>
+      <description>&lt;p&gt;There are debates concerning the ability of code coverage to measure the effectiveness of test suites.&#xA;For instance, Winters et al. argued that setting an objective coverage threshold does not necessarily lead developers to write meaningful tests, as discussed in &amp;lsquo;A Note on Code Coverage&amp;rsquo; (Section 11.2.4) in &lt;a href=&#34;https://www.oreilly.com/library/view/software-engineering-at/9781492082781/&#34;&gt;&lt;em&gt;Software Engineering at Google&lt;/em&gt;&lt;/a&gt;.&#xA;They also claimed that coverage percentage does not guarantee fault detection ability.&lt;/p&gt;&#xA;&lt;p&gt;compared with the abundance of rational arguments and anecdotal experiences, empirical studies on this topic are relatively rare.&#xA;&lt;a href=&#34;https://www.cs.ubc.ca/~rtholmes/papers/icse_2014_inozemtseva.pdf&#34;&gt;Coverage Is Not Strongly Correlated With Test Suite Effectiveness&lt;/a&gt; (ICSE 2014) is an empirical study that was awarded the &lt;a href=&#34;https://conf.researchr.org/info/icse-2024/awards&#34;&gt;most influential paper ICSE N-10 at ICSE 2024&lt;/a&gt;.&#xA;The paper investigated correlation between test suite size, coverage and effectiveness.&#xA;The authors applied mutation testing to &lt;a href=&#34;https://poi.apache.org/devel/subversion.html&#34;&gt;Apache POI&lt;/a&gt;, &lt;a href=&#34;https://github.com/google/closure-compiler&#34;&gt;Closure&lt;/a&gt;, &lt;a href=&#34;https://hsqldb.org/&#34;&gt;HSQLDB&lt;/a&gt;, &lt;a href=&#34;https://www.jfree.org/jfreechart/&#34;&gt;JFreeChart&lt;/a&gt;, and &lt;a href=&#34;https://www.joda.org/joda-time/&#34;&gt;Joda Time&lt;/a&gt;.&#xA;They found a moderate to high correlation between the effectiveness and coverage of a test suite when ignoring the influence of the number of test cases.&#xA;However, the correlation dropped when suite size was controlled for.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>On the Fly Garbage Collection an Exercise in Cooperation (1978)</title>
       <link>https://ryotaro.dev/en/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/</link>

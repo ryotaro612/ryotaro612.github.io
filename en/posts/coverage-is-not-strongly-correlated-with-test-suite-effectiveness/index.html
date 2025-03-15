@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,14 +17,14 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="http://localhost:1313/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
-    <link rel="stylesheet" href="http://localhost:1313/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
     
 
-<link rel="stylesheet" href="http://localhost:1313/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
 
-<link rel="stylesheet" href="http://localhost:1313/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -34,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>Coverage Is Not Strongly Correlated With Test Suite Effectiveness (2014)</title>
+    <title>Coverage is Not Strongly Correlated with Test Suite Effectiveness (2014)</title>
   </head>
 
   <body>
@@ -46,14 +46,14 @@
     
         
     <header class="navigation">
-      <h2><a href="http://localhost:1313/en/">Blanket</a></h2>
+      <h2><a href="https://ryotaro.dev/en/">Blanket</a></h2>
       <nav>
         <ul>
-          <li><a href="http://localhost:1313/en/about">About</a></li>
-          <li><a href="http://localhost:1313/en/posts">Posts</a></li>
-          <li><a href="http://localhost:1313/en/tags">Tags</a></li>
+          <li><a href="https://ryotaro.dev/en/about">About</a></li>
+          <li><a href="https://ryotaro.dev/en/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/en/tags">Tags</a></li>
 	  
-	  <li><a href="http://localhost:1313/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/">ja</a></li>
+	  <li><a href="https://ryotaro.dev/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/">ja</a></li>
 	  
         </ul>	
 	<ul>
@@ -72,7 +72,7 @@
           </li>
           
           <li>
-	    <a href="http://localhost:1313/en/index.xml">
+	    <a href="https://ryotaro.dev/en/index.xml">
 	      <i class="fas fa-rss"></i>
             </a>
 	  </li>
@@ -82,11 +82,11 @@
     </header>
     
 <main>
-  <h1>Coverage Is Not Strongly Correlated With Test Suite Effectiveness (2014)</h1>
+  <h1>Coverage is Not Strongly Correlated with Test Suite Effectiveness (2014)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="http://localhost:1313/en/tags/code-coverage/">
+      <a href="https://ryotaro.dev/en/tags/code-coverage/">
 	#Code Coverage
       </a>
     </li>
@@ -94,39 +94,46 @@
   </ul>  
   <span class="date">March 3, 2025</span>    
   <div>
-    <p>There is doubt that code coverage can measure efficiency of a test suites.
-For instance, Winters et al. claimed that an objective code coverage cannnot lead developers to write tests to meet the threashold in a note on code coverage, secition 11.2.4 in <a href="https://www.oreilly.com/library/view/software-engineering-at/9781492082781/">Software Engineering at Google</a>.
-Additionally, they also claimed code coverage of a test suite cannot ensure the ability of the test suits to detect faults under the tested code.</p>
-<p>The above statements are</p>
-<!--ここまで --> 
-<p>While such criticisms are often based on logic or anecdotal experience, empirical studies questioning the correlation between test coverage and effectiveness are relatively rare.
-Coverage Is Not Strongly Correlated With Test Suite Effectiveness (ICSE 2014) is one such study that was awarded the Most Influential Paper ICSE N-10 at ICSE 2024.
-The study investigates the correlation between test coverage and effectiveness in open-source software.</p>
-<p>Using mutation analysis, the study evaluated the effectiveness of test cases by measuring how many artificially injected faults they could detect.
-The researchers analyzed five large Java projects—Apache POI, Closure Compiler, HSQLDB, JFreeChart, and Joda Time. The study found a moderate to high correlation between test suite size and effectiveness.
-However, when the number of test cases was controlled, the correlation between coverage and effectiveness dropped to low to moderate levels.</p>
-<p>To conduct this analysis, the researchers selected projects with at least 100,000 lines of code and over 1,000 test cases.
-Additionally, they required projects to use Ant as the build system and JUnit as the testing framework to facilitate automated data collection.</p>
-<p>To measure coverage, three types were considered:</p>
-<p>C0 (Statement Coverage): The percentage of executed statements.
-C1 (Branch Coverage): The percentage of executed branches.
-MCC (Modified Condition Coverage): A stricter coverage metric used in aviation safety standards like DO-178B.
-Mutation analysis was performed using PIT, which introduces small changes (mutants) to the code, such as modifying constants or logical conditions, to check whether the test suite detects them.</p>
-<p>The study measured effectiveness in two ways:</p>
-<p>Raw effectiveness: The proportion of all mutants that a test suite detected.
-Normalized effectiveness: The proportion of covered mutants that a test suite detected.
-A regression analysis using R&rsquo;s lm function showed that test suite size had a moderate to high correlation with effectiveness (adjusted</p>
-<p>2
-R
-2
-values ranging from 0.26 to 0.97).
-However, when controlling for test suite size, the correlation between coverage and effectiveness significantly dropped.
-The correlation coefficients (Kendall’s 𝜏τ) for normalized effectiveness and various coverage metrics showed little variation, suggesting that stricter coverage criteria do not improve the accuracy of effectiveness measurements.</p>
-<p>When test suite size was held constant, the correlation between coverage and effectiveness further weakened.
-The study&rsquo;s findings indicate that coverage should not be used as a primary measure of test suite effectiveness.
-Instead, if developers want a quantitative measure of test suite effectiveness, they should focus on the number of test cases rather than coverage metrics.</p>
-<p>This conclusion aligns with the logical critique of coverage mentioned in Software Engineering at Google: just as high coverage does not guarantee effectiveness, having more test cases does not inherently mean better effectiveness.
-However, empirical data suggests that test suite size is a better predictor of effectiveness than coverage.</p>
+    <p>There are debates concerning the ability of code coverage to measure the effectiveness of test suites.
+For instance, Winters et al. argued that setting an objective coverage threshold does not necessarily lead developers to write meaningful tests, as discussed in &lsquo;A Note on Code Coverage&rsquo; (Section 11.2.4) in <a href="https://www.oreilly.com/library/view/software-engineering-at/9781492082781/"><em>Software Engineering at Google</em></a>.
+They also claimed that coverage percentage does not guarantee fault detection ability.</p>
+<p>compared with the abundance of rational arguments and anecdotal experiences, empirical studies on this topic are relatively rare.
+<a href="https://www.cs.ubc.ca/~rtholmes/papers/icse_2014_inozemtseva.pdf">Coverage Is Not Strongly Correlated With Test Suite Effectiveness</a> (ICSE 2014) is an empirical study that was awarded the <a href="https://conf.researchr.org/info/icse-2024/awards">most influential paper ICSE N-10 at ICSE 2024</a>.
+The paper investigated correlation between test suite size, coverage and effectiveness.
+The authors applied mutation testing to <a href="https://poi.apache.org/devel/subversion.html">Apache POI</a>, <a href="https://github.com/google/closure-compiler">Closure</a>, <a href="https://hsqldb.org/">HSQLDB</a>, <a href="https://www.jfree.org/jfreechart/">JFreeChart</a>, and <a href="https://www.joda.org/joda-time/">Joda Time</a>.
+They found a moderate to high correlation between the effectiveness and coverage of a test suite when ignoring the influence of the number of test cases.
+However, the correlation dropped when suite size was controlled for.</p>
+<p>They selected reasonably large projects with at least 100,000 lines of code and approximately 1,000 test cases to enhance the study&rsquo;s novelty and generalizability.
+They also required the projects to use Ant as a build system and JUnit as a test harness to facilitate automated data collection.
+Apache POI is an API for Microsoft Documents, Closure is a Javascript optimizer, HSQLDB is an RDBMS written in Java, JFreeChart is a Java chart library, and Joda Time is a date and time library for Java prior to Java SE 8.</p>
+<p>They generated test suites of fixed size by randomly selecting methods annotated with <code>@Test</code>, ensuring no method was selected more than once.
+<code>@Test</code> is the Junit annotation that marks annotated method as a test case.
+They created test suites with fixed sizes, ranging from 3 to 3,000 methods.
+They generated at most 1,000 test suites for each size.</p>
+<p>They used C0, C1, and MCC coverage metrics.
+C0, or statement coverage, measures the fraction of executable statements executed by the test suite. C1, or decision coverage, measures the fraction of branches executed by the test suite. MCC (modified condition coverage) is the most difficult to achieve and is not commonly used in practice.</p>
+<p>The study performed <a href="https://research.google/pubs/state-of-mutation-testing-at-google/">mutation testing</a> using <a href="https://pitest.org/">PIT</a>, a mutation testing framework.
+In mutation testing, faults are seeded into the program before a test suite runs. A program with seeded faults is called a mutant.
+The quality of the test suite was gauged by the number of mutants or faults it detected.</p>
+<p>Effectiveness was measured in two ways: raw effectiveness and normalized effectiveness. The raw value is the number of mutants a test suite detected divided by the total number of mutants generated for the program under test. The normalized effectiveness is the number of mutants detected divided by the number of mutants the test suite covers.</p>
+<p>They used <a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/lm">R&rsquo;s <code>lm</code></a> to fit a linear model to correlate normalized effectiveness with the number of test cases in a test suite.
+The resulting fit is shown in the following figure.
+The $R^2$ denotes the coefficient of determination.
+There was a moderate to very high correlation for all projects except HSQLDB.
+<img alt="test-size" src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/test-size.png"></p>
+<p>They computed <a href="https://www.rdocumentation.org/packages/Kendall/versions/2.2.1/topics/Kendall">Kendall&rsquo;s \(\tau\)</a> to measure how the effectiveness of a test suite correlates with its coverage when ignoring suite size influence. Let \(x_i\) \(i\)th test suite&rsquo;s coverage, \(y_i\) its effectiveness, \(n\) the number of test suites, \(\textit{sgn}\) the signum function:
+$$
+\tau = \frac{n\sum_{i&lt;j}\left(\textit{sgn}(x_j-x_i)\textit{sgn}(y_j-y_i)\right)}{n(n-1)}
+$$</p>
+<p>Kendall&rsquo;s \(\tau\) indicated that stronger forms of code coverage did not improve the measurement of effectiveness.
+The following two figures show Kendall&rsquo;s \(tau\) for each kind of code coverage. The first figure represents normalized effectiveness, and the second shows raw effectiveness.
+The \(\tau\) values did not vary among the kinds of code coverage.
+<img alt="normalized" src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/normalized.png">
+<img alt="non-normalized" src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/non-normalized.png"></p>
+<p>Comparing the correlation between normalized effectiveness and coverage among test suites of the same size, a drop in correlation was observed. The following figures plot normalized effectiveness against coverage, with numbers on the right indicating the number of test cases in a suite.
+<img alt="grid" src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/grid.png"></p>
+<p>While a large number of test cases does not necessarily ensure high effectiveness, the empirical study shows a moderate to high correlation between the size of a test suite and its effectiveness.
+Is the number of test cases a better indicator of effectiveness than code coverage?</p>
   </div>
 </main>
 
