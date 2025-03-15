@@ -85,6 +85,28 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/">Distributed GraphLab: a Framework for Machine Learning and Data Mining in the Cloud (2012)</a></h3>
+        <div class="summary"><p><a href="https://vldb.org/pvldb/vol5/p716_yuchenglow_vldb2012.pdf">Distributed GraphLab</a>は、機械学習とデータマイニング向けのプログラミングモデルの<a href="https://arxiv.org/pdf/1408.2041">GraphLab</a>を、クラスタ上で実行できるように発展させた。
+GraphLabは、グラフの一部から点の集合を返す関数を、反復的にグラフに適用する。
+関数から返された点は再び関数に渡され、渡すべき点がなくなるとアルゴリズムは終了する。
+Distributed GraphLabは、GraphLabをメモリ共有するノードからなるクラスタで実行できるように、<a href="https://lamport.azurewebsites.net/pubs/chandy.pdf">Chandy-Lamport</a>のスナップショットとロックを導入した。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/distributed-system/">
+		#Distributed System
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">May 7, 2024</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/spark-sql-relational-data-processing-in-spark/">Spark SQL: Relational Data Processing in Spark (2015)</a></h3>
         <div class="summary"><p><a href="https://dl.acm.org/doi/10.1145/2723372.2742797">Spark SQL</a>は、関係データベースのテーブルにあたる抽象データ構造のDataFrameを公開し、Spark上で関係代数によるデータ処理を実現する。
 DataFrameに対する操作は、<code>save</code>のような出力まで遅延される。
@@ -305,29 +327,6 @@ DPRは、質問と文書を別々のBERTで埋め込みベクトルに変換し�
 	  </ul>
 	  
           <span class="date">January 27, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/sorting-networks-and-their-applications/">Sorting networks and their applications (1968)</a></h3>
-        <div class="summary"><p>ソーティングネットワークは、入次数と出次数が2のノードからなるグラフを理論にしたソートのアルゴリズムである。
-ノードは、別々の辺から入力された値の大小関係を比較し、大きい方を一方、小さい方を他方の辺に出力する。
-<a href="https://www.cs.kent.edu/~batcher/sort.pdf">Sorting networks and their applications</a>で提案された奇偶マージソートとバイトニックソートは、値によらず配列上の位置で比較する要素が決まるソーティングネットワークなので、<a href="https://developer.nvidia.com/gpugems/gpugems2/part-vi-simulation-and-numerical-algorithms/chapter-46-improved-gpu-sorting">並列計算に利用される</a>。
-どちらも長さ\(2^p\)の配列を\(\ln (\frac{1}{2})p(p+1)\)ステップでソートできる。</p>
-<!-- たとえば、密ベクトル近似最近傍探索のライブラリ[Faiss](https://github.com/facebookresearch/faiss)のもとになる[Billion-scale similarity search with GPUs](https://arxiv.org/abs/1702.08734)はクエリとデータベースにあるベクトルを --></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/sorting-algorithm/">
-		#Sorting Algorithm
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">January 14, 2024</span>
         </div>
     </article>
     

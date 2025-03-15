@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     
         
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,14 +17,14 @@
           integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
           crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="http://localhost:1313/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
     
-    <link rel="stylesheet" href="http://localhost:1313/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+    <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
     
 
-<link rel="stylesheet" href="http://localhost:1313/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
 
-<link rel="stylesheet" href="http://localhost:1313/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -46,14 +46,12 @@
     
         
     <header class="navigation">
-      <h2><a href="http://localhost:1313/">Blanket</a></h2>
+      <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
       <nav>
         <ul>
-          <li><a href="http://localhost:1313/about">About</a></li>
-          <li><a href="http://localhost:1313/posts">Posts</a></li>
-          <li><a href="http://localhost:1313/tags">Tags</a></li>
-	  
-	  <li><a href="http://localhost:1313/en/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/">en</a></li>
+          <li><a href="https://ryotaro.dev/about">About</a></li>
+          <li><a href="https://ryotaro.dev/posts">Posts</a></li>
+          <li><a href="https://ryotaro.dev/tags">Tags</a></li>
 	  
         </ul>	
 	<ul>
@@ -72,7 +70,7 @@
           </li>
           
           <li>
-	    <a href="http://localhost:1313/index.xml">
+	    <a href="https://ryotaro.dev/index.xml">
 	      <i class="fas fa-rss"></i>
             </a>
 	  </li>
@@ -86,7 +84,7 @@
   <ul class="tags">
     
     <li class="tag">
-      <a href="http://localhost:1313/tags/%E3%82%B3%E3%83%BC%E3%83%89%E3%82%AB%E3%83%90%E3%83%AC%E3%83%83%E3%82%B8/">
+      <a href="https://ryotaro.dev/tags/%E3%82%B3%E3%83%BC%E3%83%89%E3%82%AB%E3%83%90%E3%83%AC%E3%83%83%E3%82%B8/">
 	#コードカバレッジ
       </a>
     </li>
@@ -97,8 +95,8 @@
     <p>コードカバレッジに対する批判を散見する。
 たとえば、<a href="https://www.oreilly.com/library/view/software-engineering-at/9781492082781/">Googleのソフトウェアエンジニアリング</a>の11.2.4節「コードカバレッジについてもメモ」には、コードカバレッジに対する2つの批判がある。
 まず、最低限満たすべきコードカバレッジを設定すると、すぐに水準を下回るコードがすぐにリポジトリに取り込まれはじめる。
-次に、テストカバレッジは、テストがコードが実行することだけを意味するだけであり、実行したコードにあるバグを見つけられることを保証しない。</p>
-<p>このような経験則や論理による批判にくらべて、実験にもとづく批判を見聞することは少ないだろう。
+次に、テストカバレッジが保証するのはテストがコードが実行することだけであり、実行したコードにあるバグを見つけるとは限らない。</p>
+<p>このような経験則や論理による批判にくらべると、実験にもとづく批判を見聞することは少ないだろう。
 <a href="https://www.cs.ubc.ca/~rtholmes/papers/icse_2014_inozemtseva.pdf">Coverage Is Not Strongly Correlated With Test Suite Effectiveness</a>は、ICSE 2024でMost influential paper ICSE N-10に<a href="https://conf.researchr.org/info/icse-2024/awards">選ばれた</a>文献で、OSSのテストカバレッジとテストの有効性の相関を調べた。
 <a href="https://poi.apache.org/devel/subversion.html">Apache POI</a>, <a href="https://github.com/google/closure-compiler">Closure</a>, <a href="https://hsqldb.org/">HSQLDB</a>, <a href="https://www.jfree.org/jfreechart/">JFreeChart</a>, <a href="https://www.joda.org/joda-time/">Joda Time</a>のコードベースをミューテーション解析し、テストケースの有効性を、テストケースを失敗させた変異体の数で定量化した。
 テストケースの数とテストスイートのカバレッジは、有効性との間に中から高の相関があった。
@@ -123,7 +121,8 @@ MCCは、\(n\)個の真偽値型の変数からなる条件式に対して\(2^n\
 <p>テストケースの数と正規化された有効性の相関を単回帰分析で求めた。
 以下に、Rの<a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/lm">lm関数</a>の計算結果をプロットした図を示す。
 \(R^2\)は自由度調整済み決定係数を表す。
-文献には、自由度調整済み決定係数とあるが、同時に、\(R\)を相関係数と述べており、また、単回帰分析であるため、\(R^2\)は決定係数ととらえてよいだろう。
+文献には、自由度調整済み決定係数とあるが、同時に、\(R\)を相関係数とも書いている。
+また、単回帰分析であるため、\(R^2\)は決定係数ととらえてよいだろう。
 HSQLDBを除けば、テストケースの数と正規化された有効性には中から高い相関がみられた。
 <img alt="test-size" src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/test-size.png"></p>
 <p>カバレッジと有効性の相関には、<a href="https://www.rdocumentation.org/packages/Kendall/versions/2.2.1/topics/Kendall">ケンドールの順位相関係数\(\tau\)</a>を使う。
@@ -146,8 +145,8 @@ Joda Timeの相関係数は正規、非正規どちらにおいても、すべ�
 <p>冒頭で紹介したGoogleのソフトウェアエンジニアリングの節は、カバレッジの高さがテストスイートの有効性の高さを含意しないことで、カバレッジに対して論理的に批判的な態度であった。
 同じ論理で、テストケースの数の多さからもテストスイートの有効性を主張することはできない。
 しかし、単回帰分析の結果では、テストケースの数と有効性の間に中から高い相関がみられた。
-論理よりもデータの傾向を尊重するなら、テストスイートの効率性を定量的に測りたいなら、カバレッジよりも、テストケースの数で測るべきなのだろう。</p>
-<p>The above text is a summary of the attaced file. Tranlate the summary into English. Prefer natural translation to literal translation.</p>
+論理よりもデータの傾向を尊重するとしたら、テストスイートの効率性を定量的に測りたければ、カバレッジよりもテストケースの数で測るべきなのだろう。</p>
+<!-- The above text is a summary of the attaced file. Tranlate the summary into English. Prefer natural translation to literal translation. -->
 <!-- テストスイートの評価には、ミューテーション -->
 <!-- テストスイートで検出すべき変更を組成するために、ミュー -->
 <!-- ミューテーション解析でテストスイートの効率性は効率性を測るために必要なバグは -->

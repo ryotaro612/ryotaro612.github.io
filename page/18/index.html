@@ -85,6 +85,23 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/burst_tries/">Burst Tries: A Fast, Efficient Data Structure for String Keys</a></h3>
+        <div class="summary"><p>trie木の一種のburst trieは、2分木よりもメモリ効率がよく、trie木と同じくらい速い。
+内部は2種類のデータ構造からなり、trie木のほかに別のデータ構造もつかう。
+どのデータ構造を使うかは要件次第で、実験では、連結リスト、二分探索木、スプレー木をつかった。
+Burst trie内の別のデータ構造はcontainerとよばれる。
+初期状態のburst trieは、1つのcontainerからなり、別のデータ構造そのものに等しい。
+その後、containerの要素のアクセス頻度やヒット率にもとづくヒューリスティックな基準が満たされると、containerの要素をtrie木のノードにおきかえ、ノードの下に新しいcontainerをつくる。
+新しくできたcontainerにも基準を適用し、適宜containerをtrieのノードにおきかえる。
+以上の手続きより、与えられる文字列の頻度に合わせてtrie木と別のデータ構造を使い分けることができる。
+性能はデータ分布の歪度に依存する。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">May 22, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/suffix_arrays/">Suffix Arrays: A New Method for On-Line String Searches</a></h3>
         <div class="summary"><p>接尾辞配列 Suffix Arrayは、長さ\(P\)の文字列が長さ\(W\)の文字列のどこに出現するかを時間計算量\(\mathcal{O}(P + \log N)\)で判定できるデータ構造で、接尾辞木 suffix treeよりもメモリ効率が3-5倍よい。
 一方、検索の準備にかかる最悪時間計算量はsuffix treeよりも大きい。
@@ -186,19 +203,6 @@ ARIES/IMのベースには、先行研究の<a href="https://web.stanford.edu/cl
         <div class="article-footer">
 	  
           <span class="date">March 21, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/the_ubiquitous_b_tree/">論文メモ The Ubiquitous B-Tree</a></h3>
-        <div class="summary"><p>B木とその派生データ構造のサーベイ論文で、とくにB+木に重点がおかれている。
-B+木は、全てのキーを葉におき、葉を隣接リストでつなぐことで、B木が不得手なシーケンシャルなアクセスを改善する。
-これにより、定数オーダーの時間と空間計算量で逐次的にキーにアクセスにできる。
-ランダムな検索、挿入、削除にかかる時間、空間計算量はB木と変わらない。
-以降はB木のデータ構造を前提としてB+木の概要を説明する。B木について知りたい場合は、<a href="/posts/organization_and_maintenance_of_large_orderred_indexes/">B木のオリジナル論文の解説記事</a>を見てほしい。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">March 19, 2021</span>
         </div>
     </article>
     

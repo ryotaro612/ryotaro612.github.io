@@ -85,6 +85,33 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/">Coverage Is Not Strongly Correlated With Test Suite Effectiveness (2014)</a></h3>
+        <div class="summary"><p>コードカバレッジに対する批判を散見する。
+たとえば、<a href="https://www.oreilly.com/library/view/software-engineering-at/9781492082781/">Googleのソフトウェアエンジニアリング</a>の11.2.4節「コードカバレッジについてもメモ」には、コードカバレッジに対する2つの批判がある。
+まず、最低限満たすべきコードカバレッジを設定すると、すぐに水準を下回るコードがすぐにリポジトリに取り込まれはじめる。
+次に、テストカバレッジが保証するのはテストがコードが実行することだけであり、実行したコードにあるバグを見つけるとは限らない。</p>
+<p>このような経験則や論理による批判にくらべると、実験にもとづく批判を見聞することは少ないだろう。
+<a href="https://www.cs.ubc.ca/~rtholmes/papers/icse_2014_inozemtseva.pdf">Coverage Is Not Strongly Correlated With Test Suite Effectiveness</a>は、ICSE 2024でMost influential paper ICSE N-10に<a href="https://conf.researchr.org/info/icse-2024/awards">選ばれた</a>文献で、OSSのテストカバレッジとテストの有効性の相関を調べた。
+<a href="https://poi.apache.org/devel/subversion.html">Apache POI</a>, <a href="https://github.com/google/closure-compiler">Closure</a>, <a href="https://hsqldb.org/">HSQLDB</a>, <a href="https://www.jfree.org/jfreechart/">JFreeChart</a>, <a href="https://www.joda.org/joda-time/">Joda Time</a>のコードベースをミューテーション解析し、テストケースの有効性を、テストケースを失敗させた変異体の数で定量化した。
+テストケースの数とテストスイートのカバレッジは、有効性との間に中から高の相関があった。
+一方、テストケースの数を固定すると、カバレッジと有効性の相関は低から中に減少した。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E3%82%B3%E3%83%BC%E3%83%89%E3%82%AB%E3%83%90%E3%83%AC%E3%83%83%E3%82%B8/">
+		#コードカバレッジ
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">March 3, 2025</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/">On the Fly Garbage Collection an Exercise in Cooperation (1978)</a></h3>
         <div class="summary"><p>Go1.5で、ガベージコレクション (GC) のアルゴリズムが3色マーキングによるコンカレント マーク&amp;スイープに変わった。
 このアルゴリズムの起源を辿ると、1978年の<a href="https://lamport.azurewebsites.net/pubs/garbage.pdf">On the Fly Garbage Collection an Exercise in Cooperation</a>にいきつく。
@@ -310,28 +337,6 @@ containerdがruncでコンテナの操作するので、今でもdockerはrunc�
 	  </ul>
 	  
           <span class="date">May 27, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/">Distributed GraphLab: a Framework for Machine Learning and Data Mining in the Cloud (2012)</a></h3>
-        <div class="summary"><p><a href="https://vldb.org/pvldb/vol5/p716_yuchenglow_vldb2012.pdf">Distributed GraphLab</a>は、機械学習とデータマイニング向けのプログラミングモデルの<a href="https://arxiv.org/pdf/1408.2041">GraphLab</a>を、クラスタ上で実行できるように発展させた。
-GraphLabは、グラフの一部から点の集合を返す関数を、反復的にグラフに適用する。
-関数から返された点は再び関数に渡され、渡すべき点がなくなるとアルゴリズムは終了する。
-Distributed GraphLabは、GraphLabをメモリ共有するノードからなるクラスタで実行できるように、<a href="https://lamport.azurewebsites.net/pubs/chandy.pdf">Chandy-Lamport</a>のスナップショットとロックを導入した。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/distributed-system/">
-		#Distributed System
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">May 7, 2024</span>
         </div>
     </article>
     
