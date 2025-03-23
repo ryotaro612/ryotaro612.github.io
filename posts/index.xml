@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 03 Mar 2025 21:55:22 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 18 Mar 2025 13:18:51 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web</title>
+      <link>https://ryotaro.dev/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/</link>
+      <pubDate>Tue, 18 Mar 2025 13:18:51 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/</guid>
+      <description>&lt;p&gt;コンシステントハッシュ法は、Content Delivery Network (CDN) 規模のキャッシュシステムの負荷分散に&lt;a href=&#34;https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/&#34;&gt;使われている&lt;/a&gt;。&#xA;コンシステントハッシュ法を提案した&lt;a href=&#34;https://dl.acm.org/doi/10.1145/258533.258660&#34;&gt;Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web&lt;/a&gt;は、特定のキャッシュサーバーへのリクエストの集中を避けることを目的にする。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Coverage Is Not Strongly Correlated With Test Suite Effectiveness (2014)</title>
       <link>https://ryotaro.dev/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/</link>

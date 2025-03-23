@@ -85,6 +85,31 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/">Retrieval Augmented Generation for Knowledge Intensive NLP Tasks (2021)</a></h3>
+        <div class="summary"><p>問題文から推論できない知識を必要とする自然言語処理のタスクの場合、Large Language Model (LLM) の事前学習による効果は限定的になる。
+LLMのパラメタに知識がなければ回答できず、また、パラメタは正確な知識を記録する仕組みではない。
+Retrieval Augmented Generation (RAG) は、LLMの外部から提供された知識を利用し、入力から推論できない知識にもとづく文書を生成する。</p>
+<p><a href="https://arxiv.org/abs/2005.11401">Retrieval Augmented Generation for Knowledge Intensive NLP Tasks</a>は、文書の埋め込みベクトルを外部の知識に使うRAGであり、入力文で埋め込みベクトルを検索し、検索結果の上位の文書と入力文から文書を生成する。
+文書の検索には<a href="https://aclanthology.org/2020.emnlp-main.550/">Dense Passage Retriever</a> (DPR) を、後の文書の生成にはseq2seqを使う。
+DPRは、質問と文書を別々のBERTで埋め込みベクトルに変換し、質問に関係する文書と質問のベクトル間の内積を最大にするように学習する。
+<a href="https://github.com/facebookresearch/faiss">Faiss</a>などの近似最近傍探索を利用すれば、実用可能な速度で推論できる。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/retrieval-augmented-generation/">
+		#Retrieval Augmented Generation
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">January 27, 2024</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/sorting-networks-and-their-applications/">Sorting networks and their applications (1968)</a></h3>
         <div class="summary"><p>ソーティングネットワークは、入次数と出次数が2のノードからなるグラフを理論にしたソートのアルゴリズムである。
 ノードは、別々の辺から入力された値の大小関係を比較し、大きい方を一方、小さい方を他方の辺に出力する。
@@ -281,29 +306,6 @@ Chordは、多くのノードが参加できるように、各ノードにもた
 	  </ul>
 	  
           <span class="date">November 23, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/lora-low-rank-adaptation-of-large-language-models/">LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/pdf/1804.08838.pdf">Li et al. (2018)</a>と<a href="https://arxiv.org/pdf/2012.13255.pdf">Aghajanyan et al. (2020)</a>は、Large Language Models (LLM)のファインチューニングにかかる計算資源は大きいが、下流タスクに必要なパラメータ数はLLMのパラメタ数よりもはるかに少ないと主張した。
-<a href="https://arxiv.org/pdf/2106.09685.pdf">LoRA</a>は、この仮説によりファインチューニングを避け、LLMの重みと線形結合すると下流タスクに最適な重みに近似できる小さな行列を求める。
-LLMの重みを\(W_0\in\mathbb{R}^{d\times k}\)とすると、\(W_0+BA\ (B\in\mathbb{R}^{d\times r}, A\in\mathbb{R}^{r\times k}, r \ll\min (d, k))\)が下流タスクに最適な重みに近づくように、ファインチューニングにかわって\(W_0\)を更新せず\(B,\ A\)のみを更新する。
-\(r\)が\(d, k\)よりも小さいので、ファインチューニングよりも学習時間は短い。
-また、複数の下流タスクを入力に適用する場合、\(W_0x\)を共有できるので、推論に必要な計算も\(W_0\)を更新するファインチューニングより少ない。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/large-language-model/">
-		#Large Language Model
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">November 18, 2023</span>
         </div>
     </article>
     
