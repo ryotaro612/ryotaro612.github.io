@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Consistent Hashing on Blanket</title>
+    <link>https://ryotaro.dev/en/tags/consistent-hashing/</link>
+    <description>Recent content in Consistent Hashing on Blanket</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 18 Mar 2025 13:18:53 +0900</lastBuildDate>
+    <atom:link href="https://ryotaro.dev/en/tags/consistent-hashing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web</title>
+      <link>https://ryotaro.dev/en/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/</link>
+      <pubDate>Tue, 18 Mar 2025 13:18:53 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/</guid>
+      <description>&lt;p&gt;Consistent hashing is used for load balancing in cache systems at the scale of a Content Delivery Network (CDN), as &lt;a href=&#34;https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/&#34;&gt;discussed&lt;/a&gt;.&#xA;The paper &lt;a href=&#34;https://dl.acm.org/doi/10.1145/258533.258660&#34;&gt;Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web&lt;/a&gt; proposed the hashing algorithm to decrease or eliminate the occurrence of hot spots in the network.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

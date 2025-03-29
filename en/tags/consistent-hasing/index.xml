@@ -13,7 +13,7 @@
       <link>http://localhost:1313/en/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/</link>
       <pubDate>Tue, 18 Mar 2025 13:18:53 +0900</pubDate>
       <guid>http://localhost:1313/en/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/</guid>
-      <description></description>
+      <description>&lt;p&gt;Consistent hashing is used for load balancing in cache systems at the scale of a Content Delivery Network (CDN), as &lt;a href=&#34;https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/&#34;&gt;discussed&lt;/a&gt;.&#xA;The paper &lt;a href=&#34;https://dl.acm.org/doi/10.1145/258533.258660&#34;&gt;Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web&lt;/a&gt; aims to prevent requests from concentrating on specific cache servers.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

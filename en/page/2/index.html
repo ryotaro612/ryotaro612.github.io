@@ -85,6 +85,31 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/en/posts/realm-retrieval-augmented-language-model-pre-training/">REALM Retrieval Augmented Language Model Pre Training (2020)</a></h3>
+        <div class="summary"><p><a href="https://arxiv.org/abs/2002.08909">REALM</a> is a language model for open-domain question answering.
+REALM is composed of two components: the neural knowledge retriever and the knowledge-augmented encoder.
+The neural knowledge retriever finds documents related to the input.
+The knowledge-augmented encoder generates responses from the found documents and the input.
+In pre-training, the REALM employs masked language modeling, and it is trained to predict the original tokens that are maked in the given sentences.
+In fine-tuning, the model is trained to produce the answer of the given input.
+The authors experimented the model with Open-domain QA tasks under the assumption that the answer can be found as a contiguous sequence of tokens in some documents.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/retrieval-augmented-generation/">
+		#Retrieval Augmented Generation
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">May 27, 2024</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/en/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/">Distributed GraphLab: a Framework for Machine Learning and Data Mining in the Cloud (2012)</a></h3>
         <div class="summary"><p><a href="https://arxiv.org/pdf/1408.2041">GraphLab</a> is a programming model for machine learning and data mining.
 GraphLab takes a direct graph, a set of vertices, and update functions as input.
@@ -300,34 +325,6 @@ While Cross-encoders are more accurate than Bi-encoders, Bi-encoders are faster.
 	  </ul>
 	  
           <span class="date">February 24, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/the-design-of-postgres/">THE DESIGN OF POSTGRES (1986)</a></h3>
-        <div class="summary"><p>The preliminary design of POSTGRES was presented in <a href="https://dsf.berkeley.edu/papers/ERL-M85-95.pdf">The Design of Postgres</a>.
-According to <a href="https://www.postgresql.jp/document/8.3/html/history.html">Brief History of Postgres</a>, the data model, rules, and storage system were separately described in different papers: <a href="https://apps.dtic.mil/sti/tr/pdf/ADA184251.pdf">The Postgres Data Model</a>, <a href="https://apps.dtic.mil/sti/tr/pdf/ADA179161.pdf">The Design of the Postgres Rule System</a>, and <a href="https://dsf.berkeley.edu/papers/ERL-M87-06.pdf">The Design of the Postgres Storage System</a>.</p>
-<p>POSTGRES is the successor to the INGRES relational database system.
-The main design goals of POSTGRES were to support complex objects, simplify the DBMS code for crash recovery, and utilize optical disks while making as few changes as possible to the relational model.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/rdbms/">
-		#RDBMS
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/postgresql/">
-		#PostgreSQL
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">February 17, 2024</span>
         </div>
     </article>
     
