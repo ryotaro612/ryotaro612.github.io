@@ -352,11 +352,11 @@
       <description>&lt;p&gt;&lt;a href=&#34;https://web.eecs.umich.edu/~pettie/matching/Fredman-Tarjan-Fibonacci-Heaps.pdf&#34;&gt;Fibonacci heaps&lt;/a&gt;(F-heaps)は、ダイクストラアルゴリズムの高速化ために開発された木構造の抽象データ型である。&#xA;ノードは、1つの値を保存し、親へのポインタをもつ。&#xA;また、2つのポインタによって、同じ階層にある兄弟ノードからなる双方向リストに組み込まれる。&#xA;ルート階層にあるノードはいずれも親をもたない。&#xA;そのほかにも、削除時に使用されるboolean型の変数がノードごとに1つある。&#xA;ヒープにある要素の数\(n\)に対して、要素を償却時間計算量\(O(\log n)\)でき、また、定数の償却時間計算量でほかの主要な操作を行える。&lt;/p&gt;&#xA;&lt;!-- Fibonacchi heapsは、Vuilleminによる[binomial queues](https://dl.acm.org/doi/pdf/10.1145/359460.359478)を拡張した --&gt;</description>
     </item>
     <item>
-      <title>Layer Normalization</title>
+      <title>Layer Normalization (2016)</title>
       <link>https://ryotaro.dev/posts/layer_normalization/</link>
       <pubDate>Sat, 17 Jun 2023 10:18:51 -0400</pubDate>
       <guid>https://ryotaro.dev/posts/layer_normalization/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1607.06450&#34;&gt;層正規化&lt;/a&gt;(Layer Normalization)は、ユニットへの入力の重みつきの和を正規化し、学習時間を短縮する手法である。&#xA;各層ごとにユニットへの入力の和の平均と標準偏差を求め、この2つの統計量で、その層にあるユニットへの入力を正規化する。&#xA;先行研究には&lt;a href=&#34;https://arxiv.org/abs/1502.03167&#34;&gt;バッチ正規化&lt;/a&gt;がある。&#xA;バッチ正規化では、各ミニバッチにおいて、ユニットごとに入力の重みつき和の平均と分散を計算し、正規化する。&#xA;バッチ正規化でも学習時間を短縮できるが、その効果はミニバッチのサイズに依存し、また、RNNに簡単に応用することはできない欠点がある。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1607.06450&#34;&gt;層正規化&lt;/a&gt; (Layer Normalization) はニューラルネットワークのユニットへの入力の重みつきの和を正規化し、学習時間を短縮する。&#xA;各層ごとの重みを掛けた入力の総和の平均と標準偏差を求め、この2つの統計量で層の各ユニットの総入力を正規化する&#xA;先行研究の&lt;a href=&#34;https://arxiv.org/abs/1502.03167&#34;&gt;バッチ正規化&lt;/a&gt;は、ミニバッチごとに、各ユニットの入力の重みつき和の平均と分散を計算し、ユニットの総入力を正規化する。&#xA;バッチ正規化でも学習時間を短縮できるが、その効果はミニバッチのサイズに依存する。また、単純にはRNNに適用できない。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Universal Classes of Hash Functions(1977)</title>

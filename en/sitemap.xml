@@ -1049,6 +1049,22 @@
                 href="https://ryotaro.dev/en/posts/catalan_number/"
                 />
   </url><url>
+    <loc>https://ryotaro.dev/en/tags/layer-normalization/</loc>
+    <lastmod>2023-06-17T10:18:51-04:00</lastmod>
+  </url><url>
+    <loc>https://ryotaro.dev/en/posts/layer_normalization/</loc>
+    <lastmod>2023-06-17T10:18:51-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/layer_normalization/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/layer_normalization/"
+                />
+  </url><url>
     <loc>https://ryotaro.dev/en/posts/an_incremental_approach_to_compiler_construction/</loc>
     <xhtml:link
                 rel="alternate"

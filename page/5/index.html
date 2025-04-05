@@ -280,19 +280,18 @@ decoderは、ASTの生成規則にある記号に対応するモジュールを�
     </article>
     
     <article>
-        <h3><a href="https://ryotaro.dev/posts/layer_normalization/">Layer Normalization</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/abs/1607.06450">層正規化</a>(Layer Normalization)は、ユニットへの入力の重みつきの和を正規化し、学習時間を短縮する手法である。
-各層ごとにユニットへの入力の和の平均と標準偏差を求め、この2つの統計量で、その層にあるユニットへの入力を正規化する。
-先行研究には<a href="https://arxiv.org/abs/1502.03167">バッチ正規化</a>がある。
-バッチ正規化では、各ミニバッチにおいて、ユニットごとに入力の重みつき和の平均と分散を計算し、正規化する。
-バッチ正規化でも学習時間を短縮できるが、その効果はミニバッチのサイズに依存し、また、RNNに簡単に応用することはできない欠点がある。</p></div>
+        <h3><a href="https://ryotaro.dev/posts/layer_normalization/">Layer Normalization (2016)</a></h3>
+        <div class="summary"><p><a href="https://arxiv.org/abs/1607.06450">層正規化</a> (Layer Normalization) はニューラルネットワークのユニットへの入力の重みつきの和を正規化し、学習時間を短縮する。
+各層ごとの重みを掛けた入力の総和の平均と標準偏差を求め、この2つの統計量で層の各ユニットの総入力を正規化する
+先行研究の<a href="https://arxiv.org/abs/1502.03167">バッチ正規化</a>は、ミニバッチごとに、各ユニットの入力の重みつき和の平均と分散を計算し、ユニットの総入力を正規化する。
+バッチ正規化でも学習時間を短縮できるが、その効果はミニバッチのサイズに依存する。また、単純にはRNNに適用できない。</p></div>
         <div class="article-footer">
 	  	  
 	  <ul class="tags">
 	    
             <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E6%AD%A3%E8%A6%8F%E5%8C%96/">
-		#正規化
+	      <a href="https://ryotaro.dev/tags/%E5%B1%A4%E6%AD%A3%E8%A6%8F%E5%8C%96/">
+		#層正規化
 	      </a>
 	    </li>
 	    
