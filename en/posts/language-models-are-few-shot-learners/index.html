@@ -22,7 +22,9 @@
     <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
     
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/list.min.77915db2c7e22353f139086e8007e836c0943b636d1285b13737de98af7c5e56.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -32,7 +34,7 @@
     
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
             onload="renderMathInElement(document.body);"></script>
-    <title>Large Language Model</title>
+    <title>Language Models Are Few Shot Learners (2020)</title>
   </head>
 
   <body>
@@ -51,7 +53,7 @@
           <li><a href="https://ryotaro.dev/en/posts">Posts</a></li>
           <li><a href="https://ryotaro.dev/en/tags">Tags</a></li>
 	  
-	  <li><a href="https://ryotaro.dev/tags/large-language-model/">ja</a></li>
+	  <li><a href="https://ryotaro.dev/posts/language-models-are-few-shot-learners/">ja</a></li>
 	  
         </ul>	
 	<ul>
@@ -80,29 +82,45 @@
     </header>
     
 <main>
-    <h1>Large Language Model</h1>
-    <div>
-        
-        <div class="entry">
-            <h2><a href="https://ryotaro.dev/en/posts/language-models-are-few-shot-learners/">Language Models Are Few Shot Learners (2020)</a></h2>
-            <span class="date">April 12, 2025</span>
-        </div>
-        
-        <div class="entry">
-            <h2><a href="https://ryotaro.dev/en/posts/llama-open-and-efficient-foundation-language-models/">LLaMA Open and Efficient Foundation Language Models (2023)</a></h2>
-            <span class="date">March 14, 2024</span>
-        </div>
-        
-        <div class="entry">
-            <h2><a href="https://ryotaro.dev/en/posts/lora-low-rank-adaptation-of-large-language-models/">LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS</a></h2>
-            <span class="date">November 18, 2023</span>
-        </div>
-        
-    </div>
+  <h1>Language Models Are Few Shot Learners (2020)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/en/tags/few-shot-learning/">
+	#Few-Shot Learning
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/en/tags/large-language-model/">
+	#Large Language Model
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">April 12, 2025</span>    
+  <div>
+    <p>In <a href="https://arxiv.org/abs/2005.14165">Language Models are Few-Shot Learners</a>, it is shown that increasing the number of parameters of <a href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf">GPT-2</a> improves few-shot performance across various tasks.
+The proposed model, GPT-3, is an autoregressive language model with 175 billion parameters.
+Its architecture mirrors that of GPT-2, except that GPT-3 uses alternating dense and locally banded sparse attention patterns, similar to the <a href="https://arxiv.org/pdf/1904.10509">Sparse Transformer</a>.</p>
+<p>The evaluation tasks include predicting tokens of a document, question answering, translation, determining the antecedent of a pronoun, common sense reasoning, reading comprehension, natural language inference, and computing arithmetic operations.
+GPT-3 improves the state of the art on LAMBADA, a task that asks model to predict the last word of sentences which require reading a paragraph of context.</p>
+  </div>
 </main>
 
     
+<ul class="pagination">
     
+    <li>
+      <a href="/en/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
     <footer>
       <small>© Ryotaro. All Rights Reserved.</small>
     </footer>

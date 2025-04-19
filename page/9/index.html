@@ -85,6 +85,28 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/syntactic_clustering_of_the_web/">抄訳 Syntactic Clustering of the Web(1997)</a></h3>
+        <div class="summary"><p>2つのWeb文書から抽出したn-gramの集合を比較し、文書の包含関係と類似度を測定する。
+はじめに、大文字をすべて小文字にしたり、htmlタグを除外したりして文書に前処理をかける。
+次に文書\(A\)からnグラムの集合\(S(A)\)を抽出する。
+このとき、文書\(A\)と\(B\)間の類似度を\(|S(A)\cap S(B)|/|S(A) \cup S(B)|\)、\(A\)の\(B\)への包含の度合いを\(|S(A) \cap S(B)|/|S(A)|\)と定義する。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E6%96%87%E6%9B%B8%E9%96%93%E9%A1%9E%E4%BC%BC%E5%BA%A6/">
+		#文書間類似度
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">December 13, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/an_improved_data_stream_summary_the_count_min_sketch_and_its_application/">An Improved Data Stream Summary: The Count-Min Sketch and its Applications(2005)</a></h3>
         <div class="summary"><p>Count-Min Sketch(CM Sketch)は、単位時間ごとに1要素ずつ更新される\(n\)次元のベクトルの要素を\(n\)の劣線形の計算量で集計できるデータ構造である。
 空間の大きさはパラメタで指定する誤差大きさと誤差の生じる確率に依存する。
@@ -259,17 +281,6 @@ borderline-SMOTE2は多数クラスのサンプルを選ぶこともある。</p
         <div class="article-footer">
 	  
           <span class="date">October 15, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/adasyn_adaptive_syntetic_samping_approach_for_imbalanced_learning/">抄訳 ADASYN: Adaptive Synthetic Sampling Approach for Imbalanced Learning(2008)</a></h3>
-        <div class="summary"><p>ADASYNはオーバーサンプリングで不均衡データの予測性能を向上させる。
-以前<a href="/smote_synthetic_minority_over_sampling_technique/">抄訳</a>した<a href="https://arxiv.org/pdf/1106.1813.pdf">SMOTE</a>とおなじく、既存の学習データからサンプルを合成する。
-SMOTEとの違いは、K近傍に多数クラスのサンプルの多い少数クラスのサンプルから、より多くのサンプルを合成する点にある。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">September 11, 2022</span>
         </div>
     </article>
     

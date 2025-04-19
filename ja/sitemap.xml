@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ryotaro.dev/</loc>
-    <lastmod>2025-03-18T13:18:51+09:00</lastmod>
+    <lastmod>2025-04-12T14:01:19+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -13,6 +13,71 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://ryotaro.dev/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/tags/few-shot-learning/</loc>
+    <lastmod>2025-04-12T14:01:19+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/few-shot-learning/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/few-shot-learning/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/posts/language-models-are-few-shot-learners/</loc>
+    <lastmod>2025-04-12T14:01:19+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/language-models-are-few-shot-learners/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/language-models-are-few-shot-learners/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/tags/large-language-model/</loc>
+    <lastmod>2025-04-12T14:01:19+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/large-language-model/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/large-language-model/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/posts/</loc>
+    <lastmod>2025-04-12T14:01:19+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/tags/</loc>
+    <lastmod>2025-04-12T14:01:19+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/</loc>
@@ -26,32 +91,6 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://ryotaro.dev/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/posts/</loc>
-    <lastmod>2025-03-18T13:18:51+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/posts/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/tags/</loc>
-    <lastmod>2025-03-18T13:18:51+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/tags/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%B3%E3%83%88%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E6%B3%95/</loc>
@@ -414,19 +453,6 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://ryotaro.dev/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/tags/large-language-model/</loc>
-    <lastmod>2024-03-14T14:41:45+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/tags/large-language-model/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/tags/large-language-model/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/posts/llama-open-and-efficient-foundation-language-models/</loc>

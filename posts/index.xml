@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 18 Mar 2025 13:18:51 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 12 Apr 2025 14:01:19 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Language Models Are Few Shot Learners (2020)</title>
+      <link>https://ryotaro.dev/posts/language-models-are-few-shot-learners/</link>
+      <pubDate>Sat, 12 Apr 2025 14:01:19 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/language-models-are-few-shot-learners/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/2005.14165&#34;&gt;Language Models are Few-Shot Learners&lt;/a&gt;は、Few-shot learningで学習したGPT-3とパラメタ数の少ないファインチューニングしたモデルのタスク処理を比較し、パラメタ数を大幅に増やすことでも予測性能を向上できることを示した。&#xA;GPT-3のパラメタ数は1750億であり、その数は、比較対象のファインチューニングされたモデルよりも10倍ほど大きい。&#xA;GPT-3のネットワークアーキテクチャは&lt;a href=&#34;https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf&#34;&gt;GPT-2&lt;/a&gt;と大きく変わらないが、&lt;a href=&#34;https://arxiv.org/pdf/1904.10509&#34;&gt;Sparse Transformer&lt;/a&gt;に似た注意機構を導入したところが異なる。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web</title>
       <link>https://ryotaro.dev/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/</link>

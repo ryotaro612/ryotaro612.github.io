@@ -85,6 +85,16 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/the_design_and_implementation_of_a_log_structured_file_system/">論文メモ The Design and Implementation of a Log-Structured File System</a></h3>
+        <div class="summary"><p>Log-structured file system(LFS)は、91年に提唱されたHDD向けのファイルシステムであり、バッファリングした変更をディスクの連続領域に一度に書き込むことで、小さなファイルを大量に高速で書き込める。
+また、クラッシュからのリカバリも、ディスク全体ではなくチェックポイント以降に追記された箇所だけを検査すればよいので、高速になる。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">March 29, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/ariesim/">論文メモ ARIES/IM: An Efficient and High Concurrency Index Management Method Using Write-Ahead Logging</a></h3>
         <div class="summary"><p>ARIES/IMは、B+木への直列化可能性のある並行処理とログ先行書き込み(Write-Ahead Logging, WAL)による復元を実現する。
 ARIES/IMのベースには、先行研究の<a href="https://web.stanford.edu/class/cs345d-01/rl/aries.pdf">ARIES</a>がある。
@@ -195,18 +205,6 @@ TAOは、そのシステムの現状を引きつぎ、MySQLをストレージに
         <div class="article-footer">
 	  
           <span class="date">January 30, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/dapper/">論文メモ Dapper, a Large-Scale Distributed Systems Tracing Infrastructure</a></h3>
-        <div class="summary"><p>分散トレーシングシステムDapperをGoogle社内で開発、デプロイ、運用した知見がまとめられている。
-運用期間は2年にわたる。
-Dapperをもとに、TwitterはZipkinを、UberはJaegerを<a href="https://www.oreilly.co.jp/books/9784873119038/">開発した</a>。
-Dapper以前に開発された<a href="https://www.usenix.org/legacy/publications/library/proceedings/hotos03/tech/full_papers/barham/barham_html/paper.html">Magpie</a>や<a href="https://www.usenix.org/conference/nsdi-07/x-trace-pervasive-network-tracing-framework">X-Trace</a>との違いは、サンプリングされたリクエストのみをトレースし負荷を下げるられたり、少数の共通ライブラリだけを測定対象したりする点にある。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">January 23, 2021</span>
         </div>
     </article>
     
