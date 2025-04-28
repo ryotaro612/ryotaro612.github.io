@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+  
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-W5TDG76');
+  </script>
+  
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=300,initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+    crossorigin="anonymous" />
+  
+  <link rel="stylesheet" href="http://localhost:1313/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+  
+  <link rel="stylesheet" href="http://localhost:1313/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+  
+
+<link rel="stylesheet" href="http://localhost:1313/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+
+<link rel="stylesheet" href="http://localhost:1313/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+    crossorigin="anonymous"></script>
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+  <title>Reading Wikipedia to Answer Open Domain Questions</title>
+</head>
+
+<body>
+  
+  
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0"
+      style="display:none;visibility:hidden" />
+  </noscript>
+  
+  
+  <header class="navigation">
+    <h2><a href="http://localhost:1313/">Blanket</a></h2>
+    <nav>
+      <ul>
+        <li><a href="http://localhost:1313/%20about">About</a></li>
+        <li><a href="http://localhost:1313/%20posts">Posts</a></li>
+        <li><a href="http://localhost:1313/%20tags">Tags</a></li>
+        
+        <li><a href="http://localhost:1313/en/posts/reading-wikipedia-to-answer-open-domain-questions/">en</a></li>
+        
+      </ul>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/ryotaro612">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/ryotaro612/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://speakerdeck.com/ryotaro612/">
+            <i class="fa-brands fa-speaker-deck"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a href="http://localhost:1313/%20index.xml">
+            <i class="fas fa-rss"></i>
+          </a>
+        </li>
+        
+      </ul>
+    </nav>
+  </header>
+  
+<main>
+  <h1>Reading Wikipedia to Answer Open Domain Questions</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="http://localhost:1313/tags/open-domain-questions/">
+	#Open Domain Questions
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="http://localhost:1313/tags/tf-idf/">
+	#TF-IDF
+      </a>
+    </li>
+    
+  </ul>  
+  <span class="date">April 26, 2025</span>    
+  <div>
+    <p><a href="https://aclanthology.org/P17-1171/">Reading Wikipedia to Answer Open Domain Questions</a>で提案されたDrQAは、ドメインを問わない事実を問う質問に対して、Wikipediaの文書のある文字列区間を解答とみなして出力する。
+DrQAは質問に関係する文書を収集するDocument RetrieverとDocument Readerから構成される。
+Document Retrieverは、バイグラムのTF-IDFで質問と類似するWikipediaを検索し、上位5位の文書をDocument Readerに渡す。
+Document Readerは、Document Retrieverから渡された質問と応答を別の方法で分散表現に変換する。
+最後に質問と応答の分散表現を比較し、応答の解答と推定した区間を出力する。</p>
+<p>Document Retrieverは段落単位で文書を分散表現に変換する。
+まず、単語\(p_i\)を分散表現\(\tilde{{\rm \boldsymbol{p}}_i}\)に変換し、\(\tilde{{\rm \boldsymbol{p}}_i}\)を含む\(m\)個の単語からなる段落\(\{\tilde{{\rm \boldsymbol{p}}}_1,\dots \tilde{{\rm \boldsymbol{p}}}_m\}\)を双方向LSTMに入力する。
+そして、各層の隠れ状態を結合したベクトルを単語\(p_i\)の最終的な分散表現としてあつかう。</p>
+<p>LSTMの入力になる\(\tilde{{p}}_i\)は、Gloveによる分散表現\(\mathbf{E}(p_i)\), 質問文に含まれるかを示す真偽値、品詞、固有表現、正規化されたTerm frequency, aligned question embedding \(f_{\textit{align}}(p_i)\)から構成される。
+最後のalign question embeddingは\(\alpha(\cdot)\)を全結合層とReLU, \(q\)を質問とすると以下の式に対応する。
+$$
+f_{\textit{align}}(p_i)=\sum_j \frac{\exp(\alpha(\mathbf{E}(p_i))\cdot \alpha (\mathbf{E}(q_j)))}{\sum_{j&rsquo;}\exp \left(\alpha (\mathbf{E}(p_i))\cdot \alpha (\mathbf{E}(q_{j&rsquo;}))\right)} \mathbf{E}(q_j)
+$$</p>
+<p>質問は、段落よりも単純な方法で分散表現に変換される。
+トークン数\(l\)の質問の単語\(q_j\)の分散表現をRNNに入力する。
+そして、RNNの隠れ状態\(\mathbf{q}_i\)から質問の分散表現\(\mathbf{q]}\)を\(\mathbf{w}\)を重みとして以下の式で求める。
+$$
+\mathbf{q}=\sum_j\frac{\exp(\mathbf{w}\cdot \mathbf{q}_j)}{\sum_{j&rsquo;}\exp(\mathbf{w}\cdot\mathbf{q}_{j&rsquo;})}\mathbf{q}_j
+$$</p>
+<p>段落\(\{\mathbf{p}_1,\dots \mathbf{p}_m\}\)と質問\(\mathbf{q}\)の分散表現から、解答の開始と終了の区間を別々のモデルで推定する。
+\(\mathbf{W}_s, \mathbf{W}_e\)を重みとして、\(i\le i&rsquo;\le i+15\)のうち\(P_{\text{start}}(i)\times P_{\text{end}}(i&rsquo;)\)を最大化する区間を解答とみなす。</p>
+<p>$$
+\begin{align*}
+P_{\text{sftart}}(i)&amp;\propto \exp(\mathbf{p}_i\mathbf{W}_s\mathbf{q})\\
+P_{\text{end}}(i)&amp;\propto \exp(\mathbf{p}_i\mathbf{W}_e\mathbf{q})
+\end{align*}
+$$</p>
+  </div>
+</main>
+
+  
+<ul class="pagination">
+    
+    <li>
+      <a href="/posts/language-models-are-few-shot-learners/">
+	<i class="fa-solid fa-xl fa-angle-left"></i>
+      </a>
+    </li>
+    
+    
+</ul>
+
+
+  <footer>
+    <small>© Ryotaro. All Rights Reserved.</small>
+  </footer>
+</body>
+
+
+</html>
