@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Apr 2025 14:01:19 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 26 Apr 2025 13:49:53 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reading Wikipedia to Answer Open Domain Questions (2017)</title>
+      <link>https://ryotaro.dev/posts/reading-wikipedia-to-answer-open-domain-questions/</link>
+      <pubDate>Sat, 26 Apr 2025 13:49:53 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/reading-wikipedia-to-answer-open-domain-questions/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://aclanthology.org/P17-1171/&#34;&gt;Reading Wikipedia to Answer Open Domain Questions&lt;/a&gt;で提案されたDrQAは、ドメインを問わない事実を問う質問に対して、Wikipediaの文書のある文字列区間を解答とみなして出力する。&#xA;DrQAは質問に関係する文書を収集するDocument RetrieverとDocument Readerから構成される。&#xA;Document Retrieverは、バイグラムのTF-IDFで質問と類似するWikipediaを検索し、上位5位の文書をDocument Readerに渡す。&#xA;Document Readerは、Document Retrieverから渡された質問と応答を別の方法で分散表現に変換する。&#xA;最後に質問と応答の分散表現を比較し、応答の解答と推定した区間を出力する。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Language Models Are Few Shot Learners (2020)</title>
       <link>https://ryotaro.dev/posts/language-models-are-few-shot-learners/</link>

@@ -101,6 +101,33 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/zookeeper_wait_free_coordination_for_internat_scale_systems/">Zookeeper: Wait-free coordination for Internet-scale systems (2010)</a></h3>
+        <div class="summary"><p>ZooKeeperは、リーダ選出と構成管理の機能を提供するためのインメモリーデータベースである。
+データーベースは、ファイルシステムのような階層構造のwait-freeな抽象データ型であり、各ノードにはデフォルトで最大1MBの少量のデータを保存できる。
+たとえば、ノードに設定を保存して共有することも、設定ファイルが編集中でないことを示すフラグ代わりのファイルを置くこともできる。</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/zookeeper/">
+		#Zookeeper
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+		#分散システム
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">February 12, 2023</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/arc007/">AtCoder Regular Contest 007 C - 節約生活</a></h3>
         <div class="summary"><p>文字数を\(n\)とすると複数のテレビを組合せたときの視聴パターンの重ね方は\(2^n\)個ある。
 最大文字数は整数型のビット数より数分の1しかないので、ビット操作ですべての重ね方を試行することを考える。
@@ -287,37 +314,6 @@ Transactionalは、検索や種々のダウンロードなどインタラクシ�
 	  </ul>
 	  
           <span class="date">December 23, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/epidemic_algorithms_for_replicated_database_maintenance/">Epidemic Algorithm for Replicated Database Maintenance(1987)</a></h3>
-        <div class="summary"><p>Epidemic Algorithmは、データベース間の差分を解消するために、データベースがランダムに選んだ別のデータベースと同期する手法である。
-Epidemicを邦訳すると伝染性である。
-ここではデータベースにはマスタースレーブの区別はなく、任意のサーバーがレコードの変更リクエストを受理できる。
-Epidemic Algorithmには、定期的にデーターベース全体を同期する手法と、変更を受理したときに当該の変更のみを別のデータベースに伝搬させる手法の2つがある。
-前者は、データベース全体を同期するので変更のとりこぼしがいずれは解消されるが、同期に時間がかかる。
-後者は、時間はかからないが、伝搬を終えるまでに同期できなかった変更があれば、その齟齬が残りつづける。
-データベースがある時点で最新の変更をもたない確率を仮定し、その確率で次の同期で変更を取得できる確率を表し、手法間の同期する収束の速さを比較した。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E3%83%AC%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/">
-		#レプリケーション
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
-		#分散システム
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 19, 2022</span>
         </div>
     </article>
     

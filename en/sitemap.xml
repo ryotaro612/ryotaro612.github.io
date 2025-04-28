@@ -15,6 +15,19 @@
                 href="https://ryotaro.dev/en/"
                 />
   </url><url>
+    <loc>https://ryotaro.dev/en/tags/open-domain-questions/</loc>
+    <lastmod>2025-04-26T13:49:53+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/open-domain-questions/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/open-domain-questions/"
+                />
+  </url><url>
     <loc>https://ryotaro.dev/en/posts/</loc>
     <lastmod>2025-04-26T13:49:53+09:00</lastmod>
     <xhtml:link
@@ -26,6 +39,45 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ryotaro.dev/en/posts/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/posts/reading-wikipedia-to-answer-open-domain-questions/</loc>
+    <lastmod>2025-04-26T13:49:53+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/reading-wikipedia-to-answer-open-domain-questions/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/reading-wikipedia-to-answer-open-domain-questions/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/tags/</loc>
+    <lastmod>2025-04-26T13:49:53+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/tags/tf-idf/</loc>
+    <lastmod>2025-04-26T13:49:53+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/tf-idf/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/tf-idf/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/tags/few-shot-learning/</loc>
@@ -65,19 +117,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ryotaro.dev/en/tags/large-language-model/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/en/tags/</loc>
-    <lastmod>2025-04-12T14:01:19+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/tags/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/tags/consistent-hashing/</loc>

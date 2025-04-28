@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   
   
   <script>(function (w, d, s, l, i) {
@@ -21,14 +21,14 @@
     integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
     crossorigin="anonymous" />
   
-  <link rel="stylesheet" href="http://localhost:1313/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+  <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
   
-  <link rel="stylesheet" href="http://localhost:1313/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
+  <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
   
 
-<link rel="stylesheet" href="http://localhost:1313/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
 
-<link rel="stylesheet" href="http://localhost:1313/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -42,7 +42,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
     integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
-  <title>Reading Wikipedia to Answer Open Domain Questions</title>
+  <title>Reading Wikipedia to Answer Open Domain Questions (2017)</title>
 </head>
 
 <body>
@@ -55,14 +55,14 @@
   
   
   <header class="navigation">
-    <h2><a href="http://localhost:1313/en/">Blanket</a></h2>
+    <h2><a href="https://ryotaro.dev/en/">Blanket</a></h2>
     <nav>
       <ul>
-        <li><a href="http://localhost:1313/en/%20about">About</a></li>
-        <li><a href="http://localhost:1313/en/%20posts">Posts</a></li>
-        <li><a href="http://localhost:1313/en/%20tags">Tags</a></li>
+        <li><a href="https://ryotaro.dev/en/%20about">About</a></li>
+        <li><a href="https://ryotaro.dev/en/%20posts">Posts</a></li>
+        <li><a href="https://ryotaro.dev/en/%20tags">Tags</a></li>
         
-        <li><a href="http://localhost:1313/posts/reading-wikipedia-to-answer-open-domain-questions/">ja</a></li>
+        <li><a href="https://ryotaro.dev/posts/reading-wikipedia-to-answer-open-domain-questions/">ja</a></li>
         
       </ul>
       <ul>
@@ -88,7 +88,7 @@
         </li>
         
         <li>
-          <a href="http://localhost:1313/en/%20index.xml">
+          <a href="https://ryotaro.dev/en/%20index.xml">
             <i class="fas fa-rss"></i>
           </a>
         </li>
@@ -98,17 +98,17 @@
   </header>
   
 <main>
-  <h1>Reading Wikipedia to Answer Open Domain Questions</h1>
+  <h1>Reading Wikipedia to Answer Open Domain Questions (2017)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="http://localhost:1313/en/tags/open-domain-questions/">
+      <a href="https://ryotaro.dev/en/tags/open-domain-questions/">
 	#Open Domain Questions
       </a>
     </li>
     
     <li class="tag">
-      <a href="http://localhost:1313/en/tags/tf-idf/">
+      <a href="https://ryotaro.dev/en/tags/tf-idf/">
 	#TF-IDF
       </a>
     </li>
@@ -116,7 +116,40 @@
   </ul>  
   <span class="date">April 26, 2025</span>    
   <div>
-    
+    <p><a href="https://aclanthology.org/P17-1171/">Reading Wikipedia to Answer Open Domain Questions</a> proposes DrQA, a system for open-domain question answering.
+DrQA consists of two components: Document Retriever and Document Reader.</p>
+<p>Given a question, the Document Retriever uses bigram TF-IDF matching to search Wikipedia and retrieve the five most relevant articles.
+These articles, along with the question, are then passed to the Document Reader, a neural network model that embeds the question and the paragraphs into vector representations.
+The model then compares the paragraph embeddings with the question embedding to identify the most salient text span that likely contains the answer.</p>
+<p>The Document Retriever splits each article into paragraphs and produces embeddings for each paragraph.
+Let \(p_i\) denote the \(i\)th token in a paragraph of \(m\) tokens.
+Each token \(p_i\) is first mapped to a feature vector \(\tilde{\mathbf{p}}_i\), resulting in the sequence \(\{\tilde{{\rm \mathbf{p}}}_1,\dots \tilde{{\rm \mathbf{p}}}_m\}\).
+A multi-layer bidirectional LSTM processes this sequence, and for each token \(p_i\), the concatenated hidden states across all layers form its final embedding \(\mathbf{p}_i\).</p>
+<p>The input embedding \(\tilde{\mathbf{p}}_i\) is constructed from several features: the Glove word embedding \(\mathbf{E}(p_i)\), a binary feature indicating whether \(p_i\) appears in the question, part-of-speech (POS) tags, named entity recognition (NER) tags, normalized term frequency, and an aligned question embedding \(f_{\textit{align}}(p_i)\).
+The aligned question embedding \(f_{\textit{align}}(p_i)\) is calculated as follows.
+Let \(\alpha(\cdot)\) represent a single dense layer followed by a ReLU activation.
+Given a question \(q\), the aligned embedding is computed by:
+$$
+f_{\textit{align}}(p_i)=\sum_j \frac{\exp(\alpha(\mathbf{E}(p_i))\cdot \alpha (\mathbf{E}(q_j)))}{\sum_{j&rsquo;}\exp \left(\alpha (\mathbf{E}(p_i))\cdot \alpha (\mathbf{E}(q_{j&rsquo;}))\right)} \mathbf{E}(q_j)
+$$</p>
+<p>To encode the question, a slightly different method is used.
+Let \(l\) be the number of tokens in the question.
+The embeddings of the tokens \(q_j\) are passed through an RNN, producing hidden vectors \(\mathbf{q}_j\).
+The final question embedding \(\mathbf{q}\) is obtained by a weighted sum:
+$$
+\mathbf{q}=\sum_j\frac{\exp(\mathbf{w}\cdot \mathbf{q}_j)}{\sum_{j&rsquo;}\exp(\mathbf{w}\cdot\mathbf{q}_{j&rsquo;})}\mathbf{q}_j
+$$
+where \(\mathbf{w}\) is a learnable weight vector.</p>
+<p>Using these paragraph and question embeddings, DrQA predicts the start and end positions of the answer span independently.
+Let \(\mathbf{W}_s, \mathbf{W}_e\) be learned weight matrices.
+For each token \(p_i\), the probabilities for the start and end positions are given by:
+$$
+\begin{align*}
+P_{\text{start}}(i)&amp;\propto \exp(\mathbf{p}_i\mathbf{W}_s\mathbf{q})\\
+P_{\text{end}}(i)&amp;\propto \exp(\mathbf{p}_i\mathbf{W}_e\mathbf{q})
+\end{align*}
+$$
+The model selects the span \((i, i&rsquo;)\) that maximizes \(P_{\text{start}}(i)\times P_{\text{end}}(i&rsquo;)\) under the constraint \(i \le i&rsquo; \le i+15\).</p>
   </div>
 </main>
 

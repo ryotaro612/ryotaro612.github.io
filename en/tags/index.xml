@@ -6,8 +6,22 @@
     <description>Recent content in Tags on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 12 Apr 2025 14:01:19 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 26 Apr 2025 13:49:53 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Open Domain Questions</title>
+      <link>https://ryotaro.dev/en/tags/open-domain-questions/</link>
+      <pubDate>Sat, 26 Apr 2025 13:49:53 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/open-domain-questions/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>TF-IDF</title>
+      <link>https://ryotaro.dev/en/tags/tf-idf/</link>
+      <pubDate>Sat, 26 Apr 2025 13:49:53 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/tf-idf/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Few-Shot Learning</title>
       <link>https://ryotaro.dev/en/tags/few-shot-learning/</link>

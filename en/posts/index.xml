@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 12 Apr 2025 14:01:19 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 26 Apr 2025 13:49:53 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reading Wikipedia to Answer Open Domain Questions (2017)</title>
+      <link>https://ryotaro.dev/en/posts/reading-wikipedia-to-answer-open-domain-questions/</link>
+      <pubDate>Sat, 26 Apr 2025 13:49:53 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/reading-wikipedia-to-answer-open-domain-questions/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://aclanthology.org/P17-1171/&#34;&gt;Reading Wikipedia to Answer Open Domain Questions&lt;/a&gt; proposes DrQA, a system for open-domain question answering.&#xA;DrQA consists of two components: Document Retriever and Document Reader.&lt;/p&gt;&#xA;&lt;p&gt;Given a question, the Document Retriever uses bigram TF-IDF matching to search Wikipedia and retrieve the five most relevant articles.&#xA;These articles, along with the question, are then passed to the Document Reader, a neural network model that embeds the question and the paragraphs into vector representations.&#xA;The model then compares the paragraph embeddings with the question embedding to identify the most salient text span that likely contains the answer.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Language Models Are Few Shot Learners (2020)</title>
       <link>https://ryotaro.dev/en/posts/language-models-are-few-shot-learners/</link>

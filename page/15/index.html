@@ -101,6 +101,22 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/the_chubby_lock_service_for_loosely_coupled_distributed_systems/">The Chubby lock service for loosely-coupled distributed systems</a></h3>
+        <div class="summary"><p>Chubbyは、ファイルに助言ロックをかけられる低容量のストレージで、開発元のGoogleは分散システム向けのロックサービスとして使っている。
+処理性能よりも高可用性と信頼性を重視し、ロックを保持する期間は数時間から数日にわたる長いものを想定する。
+ロックされたファイルで情報を共有でき、例えばリーダーの選出に使える。
+Chubbyは既存のアルゴリズムを集積であり、表題の論文は、新しいアルゴリズムよりも、Chubbyの設計や想定していた使用方法や想定外の使われ方に重点をおく。
+Chubbyはロックサービスとして作られたが、ネームサーバとして最もよく使われる。
+数千規模の互いに依存するプロセスがあり、プロセスが落ちたら新しいプロセスに置き換えるとする。
+このとき、ネームサーバにDNSをつかうと、DNSは時間で失効するキャッシュ方式なので、TTLを短くし、落ちたプロセスにリクエストが届かないようにすると、DNSへの負荷が増える。
+一方、Chubbyのキャッシュは時間ではなくファイルに変更されたときに無効になるので、Chubbyをネームサーバに使うことで、名前解決の負荷を減らすことができる。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">October 16, 2021</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/congestion_avoidance_and_control/">Congestion Avoidance and Control</a></h3>
         <div class="summary"><p>86年の10月におきたインターネットの世界規模の輻輳の反省から、4BSDに7つのTCPの輻輳制御のアルゴリズムが導入された。
 うち5つは、送信したパケットが到達や消失でネットワークに流れなくなるまで、ウィンドウサイズ以上の新しいパケットを送らない原則を守るためにある。
@@ -204,18 +220,6 @@ Dremelは、サーバーのクラスタを木構造に組織し、ルートで�
 LOC, Halstead, DepDeegreeは回答時間や正答率と弱い〜中程度の相関があった。
 この3つのメトリクスは脳の活性度合いと弱から中の相関があり、活性度合いと正答率には強い相関、回答時間には弱から中の相関があった。
 一方、主観的な評価は、メトリクスと弱い相関があり、問題の正答率や脳の活性状態と強い相関関係があった。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">August 21, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/the_unix_time_sharing_system/">The UNIX Time-Sharing System</a></h3>
-        <div class="summary"><p>デニス・リッチーとケン・トンプソンによるPDP-11/40, /45, /70で採用されたUnixのファイルシステムとコマンドラインインターフェースの解説である。
-PDP-11は1971年2月から運用がはじまり、当初はアセンブリ言語で実装されていたが、1973年の夏にCで再実装された。
-ファイルシステムは、UNIXの最も重要な役割に位置づけられ、特殊ファイルによるI/Oデバイスの抽象化、外部ディスクのマウント、ファイルの権限、i-nodeをふくむ多くの特徴が今日まで引き継がれている。
-2人は、UNIXの設計に影響したものとして、プログラマとして対話的なインターフェースを望んでいたこと、ハードウェアの低い性能ゆえにソフトウェアの設計を洗練させる必要があったこと、ソースコードをUNIX上で編集し簡単にプログラムを変更できたことをあげている。</p></div>
         <div class="article-footer">
 	  
           <span class="date">August 21, 2021</span>
