@@ -1073,13 +1073,6 @@
       <description>&lt;p&gt;&lt;a href=&#34;https://travistorrent.testroots.org/&#34;&gt;TravisTorrent&lt;/a&gt;にある100件のプロジェクトで10種類のCIのテクニックを定量評価した。&#xA;テクニックは、不要なビルドやテストをスキップするか、実行順序を優先づけるものかに分かれる。&#xA;前者は計算資源の消費を減らすこと、後者は失敗するケースを早めに実行することを目的にする。&#xA;もっとも成功するテストやビルドをスキップできたテクニックは、コードに変更のないケースをスキップするものだったが、同時に失敗するテストを多く見落とした。&#xA;実行順序を優先付ける手法で最も性能のよかったテクニックは、&lt;a href=&#34;https://www.semanticscholar.org/paper/Static-test-case-prioritization-using-topic-models-Thomas-Hemmati/ad77a2776733c7fdc10c0b043f7504a14fce3b6e&#34;&gt;Thomasら&lt;/a&gt;のもので、シグネチャやコメントで学習したトピックモデルを使い直前に実行したテストと違うトピックのテストを実行する。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Rumors Roble Bodegas Rumors</title>
-      <link>https://ryotaro.dev/gallery/rumors/</link>
-      <pubDate>Sun, 15 Aug 2021 23:00:06 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/rumors/</guid>
-      <description>渋い。</description>
-    </item>
-    <item>
       <title>Don&#39;t Do That! Hunting Down Visual Design Smells in Complex UIs against Design Guidelines</title>
       <link>https://ryotaro.dev/posts/dont_do_that/</link>
       <pubDate>Sat, 14 Aug 2021 16:40:58 +0900</pubDate>
@@ -1136,13 +1129,6 @@
       <description>&lt;p&gt;プランニングポーカーのように、ソフトウェア開発の工数を見積もる手法の前提には、プロジェクトに一定期間在籍する専門家がいることがある。&#xA;しかし、OSS開発はその限りではなく、見積りの対象になるイシューの数は多い。&#xA;各イシューの見積りに5分から10分時間をかけるなら、Linux Kernelのバックログを見積りきるのに半年がかかる。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Villa Yambol Cabernet Sauvignon</title>
-      <link>https://ryotaro.dev/gallery/villa_yambol/</link>
-      <pubDate>Wed, 04 Aug 2021 13:09:11 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/villa_yambol/</guid>
-      <description>渋みがなく、飲みやすい。飲みやすくて、記憶に残りにくいけどおいしい。</description>
-    </item>
-    <item>
       <title>The Byzantine Generals Problem</title>
       <link>https://ryotaro.dev/posts/the_byzantine_generals_problem/</link>
       <pubDate>Sat, 31 Jul 2021 11:07:42 +0900</pubDate>
@@ -1150,25 +1136,11 @@
       <description>&lt;p&gt;ビザンチン将軍問題は、故障したコンポーネントがほかのコンポーネントに誤ったメッセージを送りうるとき、コンポーネント間でメッセージを交換した結果、すべてのコンポーネントが一つの正しいメッセージを合意する問題をあつかう。&#xA;アルゴリズムは、署名付きメッセージを使うものと使わないものの2つがある。&#xA;署名付きメッセージを使うと、受信したメッセージが改ざんされたかをコンポーネントが判断できる。&#xA;署名を使わない場合、3分の2より多くのコンポーネントが正常でなければシステム全体が正しい1つのメッセージについて合意にできないことを示した。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Chateau La Croix Blanche</title>
-      <link>https://ryotaro.dev/gallery/chateau_la_croix_blanche2/</link>
-      <pubDate>Mon, 26 Jul 2021 10:04:27 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/chateau_la_croix_blanche2/</guid>
-      <description>酸味はあまりない。少し渋い。</description>
-    </item>
-    <item>
       <title>The Browsemaps: Collaborative Filtering at LinkedIn</title>
       <link>https://ryotaro.dev/posts/browsemaps/</link>
       <pubDate>Thu, 22 Jul 2021 13:01:15 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/browsemaps/</guid>
       <description>&lt;p&gt;Browsemapsは、LinkedInのアイテムベースで水平型の協調フィルタリングである。&#xA;Browsemapは、LinkedInの画面上にある推薦するコンテンツを並べたコンポーネントを意味する。&#xA;ここでの水平型は特徴の種類の違いによらず異なるエンティティを統一的に扱えることであり、実際に、人、仕事、会社など複数のエンティティをBrowsemapsでユーザに推薦している。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Casal di Serra</title>
-      <link>https://ryotaro.dev/gallery/casal_di_serra2/</link>
-      <pubDate>Mon, 19 Jul 2021 23:19:41 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/casal_di_serra2/</guid>
-      <description>やっぱり記憶に残らない。</description>
     </item>
     <item>
       <title>Linearizability: A Correctness Condition for Concurrent Objects</title>
@@ -1183,27 +1155,6 @@
       <pubDate>Sat, 10 Jul 2021 15:15:39 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/end_to_end_arguments_in_system_design/</guid>
       <description>&lt;p&gt;分散システムのあるシステムから発せられた通信は、システムより低いレイヤーのネットワークを通り、ほかのシステムに到達する。&#xA;論文の発表当時から、分散システムの信頼性にかかわる機能には、途中の低レイヤーではなく高レイヤーの終端におくべきものがあると知られていた。&#xA;表題の論文は、それらを列挙し、END-TO-END ARGUMENTSと名付け、原則として提示する。&#xA;例えば、データの完全性の保証、メッセージの重複対応、メッセージが到達したことの保証が原則にあてはまる。&#xA;これらの機能を途中の低レイヤーにおくと、検証後の経路でメッセージが壊れた場合、送信元が重複メッセージをおくる場合、対向システムが受信したメッセージを処理できない場合に対処できない。&#xA;分散システム全体の信頼性をあげるのであれば、信頼性を上げる機能を低レイヤーではなく終端の高レイヤーにおくほうが効率がよい。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Goose Bump</title>
-      <link>https://ryotaro.dev/gallery/goose_bump/</link>
-      <pubDate>Sat, 10 Jul 2021 15:02:05 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/goose_bump/</guid>
-      <description>甘い。この一言につきる。こんなに甘い赤ワインがあるんだって驚き。</description>
-    </item>
-    <item>
-      <title>Casal di Serra</title>
-      <link>https://ryotaro.dev/gallery/casal_di_serra/</link>
-      <pubDate>Sat, 03 Jul 2021 23:51:51 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/casal_di_serra/</guid>
-      <description>辛くもなく、樽香もないワイン。抑揚のないワインで、嫌いではないが、記憶に残らないのでまた買いたいという気にはならない。</description>
-    </item>
-    <item>
-      <title>Chateau La Croix Blanche</title>
-      <link>https://ryotaro.dev/gallery/chateau_la_croix_blanche/</link>
-      <pubDate>Sat, 03 Jul 2021 23:43:55 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/chateau_la_croix_blanche/</guid>
-      <description>なぜかまとめて２つ買ってしまったやつ。酸味と渋みのどちらにも偏りがなくて飲みやすい。 飲みやすくておいしいのは分かるけど、あまりに個性がなくて「これを飲みたい」みたいな気にならないのが残念。 ただ、美味しいのは確か。</description>
     </item>
     <item>
       <title>A History and Evaluation of System R</title>
@@ -1234,20 +1185,6 @@
       <description>&lt;p&gt;各サーバーがネットワーク全体の情報を保持しない分散キャッシュネットワークにホットスポットを生まないためのキャッシュプロトコルを開発した。&#xA;表題のconsistent hashingは、プロトコルの基礎になるハッシュ関数で、関数の写像が値域の違いに影響されにくい。&#xA;この影響しにくさは、クライアントから見えるアクティブなサーバが入れ替わる可能性に対して機能する。&#xA;また、クライアントは一部のキャッシュサーバーにアクセスできればよく、クライアントごとにアクセス可能なキャッシュサーバーの集合は違ってよい。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Navaelus Bodega Inurrieta</title>
-      <link>https://ryotaro.dev/gallery/navaelus_bodega_inurrieta/</link>
-      <pubDate>Sat, 19 Jun 2021 14:39:38 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/navaelus_bodega_inurrieta/</guid>
-      <description>すごい飲みやすい。また買いたい。</description>
-    </item>
-    <item>
-      <title>Vine In Flames Chardonnay Ville</title>
-      <link>https://ryotaro.dev/gallery/vine_in_flames_chardonnay_ville/</link>
-      <pubDate>Sat, 19 Jun 2021 14:32:27 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/vine_in_flames_chardonnay_ville/</guid>
-      <description>辛口でもなく、樽香をつけてもないシャルドネそのままの感じがする。辛口ではないシャルドネの中では一番好きかもしれない。</description>
-    </item>
-    <item>
       <title>AtCoder Begineer Contest 051 D - Candidates of No Shortest Paths</title>
       <link>https://ryotaro.dev/posts/abc051d/</link>
       <pubDate>Mon, 14 Jun 2021 11:04:07 +0900</pubDate>
@@ -1269,20 +1206,6 @@
       <description>&lt;p&gt;AzureのクラウドストレージサービスWindows Azure Storage(WAS) は、2008年の11月から本番運用されている。&#xA;保存できるデータの形式には、単なるファイル(Blob)だけでなく、テーブルのレコードとキューのメッセージがある。&#xA;ハードウェアの故障に備えたローカルでのレプリケーションだけでなく、地理的に離れたデータセンタにもレプリケーションを分散し、災害復旧にも備える。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Aves Del Sur</title>
-      <link>https://ryotaro.dev/gallery/aves_del_sur/</link>
-      <pubDate>Sat, 12 Jun 2021 17:11:25 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/aves_del_sur/</guid>
-      <description>樽香が効いたチリワイン。開けたときの香りですぐにオークドシャルドネと分かるくらい香りがある。 美味しかった。</description>
-    </item>
-    <item>
-      <title>Ilpasso</title>
-      <link>https://ryotaro.dev/gallery/ilpasso/</link>
-      <pubDate>Sat, 05 Jun 2021 17:03:10 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/ilpasso/</guid>
-      <description>こういうモノクロの単純なラベルの赤に惹かれる。少し渋い感じがちょうどよくて好き。 寝る前の夜中の3時にあけて味わわずに飲んでしまったのが惜しい。</description>
-    </item>
-    <item>
       <title>Thrift: Scalable Cross-Language Services Implementation</title>
       <link>https://ryotaro.dev/posts/thrift/</link>
       <pubDate>Sun, 30 May 2021 19:59:48 +0900</pubDate>
@@ -1295,20 +1218,6 @@
       <pubDate>Sat, 29 May 2021 20:54:27 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/the_end_of_an_architectural_era/</guid>
       <description>&lt;p&gt;発表時期は2007年で、RDBMSの源流であるSystem Rが開発された70年代からハードウェアの性能や価格が変わったことを背景に、RDMSのアーキテクチャを既存技術の延長ではなく抜本から刷新し、いわゆるNoSQLを開発する必要性を主張している。&#xA;第一著者のMichael Stonebrakerは、後の2011年に今日全てのデータベースの要件をRDMSだけでは満たすことができないと主張する論文&lt;a href=&#34;https://cs.brown.edu/~ugur/fits_all.pdf&#34;&gt;&amp;ldquo;One Size Fits All&amp;rdquo;&lt;/a&gt;を出している。&#xA;表題の論文では、OLTPに特化したデータベースH-Storeを実装し、TPC-Cをベンチマークとして商用データベースと比較したところ、H-Storeの方が82倍高速だった。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>C tes Du Roussillon Mas Las Cabes Domaine Gardi s</title>
-      <link>https://ryotaro.dev/gallery/c_tes_du_roussillon_mas_las_cabes_domaine_gardi_s/</link>
-      <pubDate>Sat, 29 May 2021 20:51:22 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/c_tes_du_roussillon_mas_las_cabes_domaine_gardi_s/</guid>
-      <description>シラー。今までのんだシラーの中で一番好きかも。普段飲んでいるものより少し高いのが残念。</description>
-    </item>
-    <item>
-      <title>Barista Chardonnay Bertus Fourie</title>
-      <link>https://ryotaro.dev/gallery/barista_chardonnay_bertus_fourie/</link>
-      <pubDate>Sat, 22 May 2021 19:05:11 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/barista_chardonnay_bertus_fourie/</guid>
-      <description>樽香のあるシャルドネ。でもそこまで香りがきつくない。ちょうどいい。このくらいの香りがだめな人なら香りのついたシャルドネはダメかも。</description>
     </item>
     <item>
       <title>Burst Tries: A Fast, Efficient Data Structure for String Keys</title>
@@ -1325,39 +1234,11 @@
       <description>&lt;p&gt;接尾辞配列 Suffix Arrayは、長さ\(P\)の文字列が長さ\(W\)の文字列のどこに出現するかを時間計算量\(\mathcal{O}(P + \log N)\)で判定できるデータ構造で、接尾辞木 suffix treeよりもメモリ効率が3-5倍よい。&#xA;一方、検索の準備にかかる最悪時間計算量はsuffix treeよりも大きい。&#xA;suffix arrayの構築にかかる最悪時間計算量が\(\mathcal{O}(N\log N)\)に対して、suffix treeは\(\mathcal{O}(N)\)しかかからない。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Reserva Dos Amigos Touriga Nacional Vidigal Wines</title>
-      <link>https://ryotaro.dev/gallery/reserva_dos_amigos_touriga_nacional_vidigal_wines/</link>
-      <pubDate>Sun, 16 May 2021 01:39:11 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/reserva_dos_amigos_touriga_nacional_vidigal_wines/</guid>
-      <description>ラベルは渋そうな感じだけど、少しスパイシーで果実味がある。おいしい。また買いたい。でもラベルがそんなに好みじゃない。</description>
-    </item>
-    <item>
-      <title>リトル　ジェームズ　バスケット　プレス　ホワイト</title>
-      <link>https://ryotaro.dev/gallery/little_james_basket_press_white/</link>
-      <pubDate>Sun, 09 May 2021 11:09:09 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/little_james_basket_press_white/</guid>
-      <description>辛口の白。変な樽香のない感じでおいしい。 ただ辛口の白で香りのないものはみんな同じ味に感じる。 そうなると値段で選んだほうがいいのかな。</description>
-    </item>
-    <item>
       <title>論文メモ HyperDex: A Distribute, searchable Key-Value Store</title>
       <link>https://ryotaro.dev/posts/hyperdex/</link>
       <pubDate>Fri, 07 May 2021 18:10:27 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/hyperdex/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://dbdb.io/db/hyperdex&#34;&gt;HyperDex&lt;/a&gt;はキー以外の要素で値を検索できるキーバリューストアで、このキー以外の要素による検索速度がCassandraやMongoDBと比べて12-13倍速い。&#xA;キーバリューストアは、RDBMSとくらべて、処理速度は速く、検索条件の機能に乏しい。&#xA;HyperDexは、要素数と同数の次元からなるユークリッド空間を構成し、要素のハッシュ値で決まる座標に値をおくことで、キー以外でも高速に検索することを可能にする。&#xA;もとのドメインの順序関係を保持するハッシュ関数を使うため、範囲検索もあつかえる。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Honoro Vera Organically Bodegas Juan Gil</title>
-      <link>https://ryotaro.dev/gallery/honoro_vera_organically_bodegas_juan_gil/</link>
-      <pubDate>Wed, 05 May 2021 13:03:39 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/honoro_vera_organically_bodegas_juan_gil/</guid>
-      <description>オーガニックななんちゃらかんちゃら。少し渋い。</description>
-    </item>
-    <item>
-      <title>50° Riesling trocken</title>
-      <link>https://ryotaro.dev/gallery/50_riesling_trocken/</link>
-      <pubDate>Mon, 03 May 2021 15:59:35 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/50_riesling_trocken/</guid>
-      <description>リースリングだけど辛すぎない。辛いのが好きな人には物足りないかも。見かけによらず炭酸はない。</description>
     </item>
     <item>
       <title>論文メモ Integrating the UB-Tree into a Database System Kernel</title>
@@ -1374,13 +1255,6 @@
       <description>&lt;p&gt;データ構造は読み込み(Read, R), 更新(Update, U), 所要メモリ容量(Memory, M)にトリレンマを抱え、いかなるデータ構造でも、2つを最適化すると残る1つのオーバヘッドが悪化すると予想した。&#xA;Read, Update, Memoryの頭文字から、これをRUM Conjectureと名付けた。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>ドメーヌ・ダンデゾン　コート・デュ・ローヌ・ルージュ　ヴィエイユ・ヴィーニュ　2018</title>
-      <link>https://ryotaro.dev/gallery/cotes_du_rhone_rouge/</link>
-      <pubDate>Mon, 19 Apr 2021 15:04:04 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/cotes_du_rhone_rouge/</guid>
-      <description>コルクが割れたけど、割れた位置が浅かったから深く刺しなおして、まっすぐ上にひっぱったらきれいに抜けた。 渋みも酸味もなく、果実の味がそのままする。</description>
-    </item>
-    <item>
       <title>論文メモ A comparison of Fractal Trees to Log-Structured Merge (LSM) Trees</title>
       <link>https://ryotaro.dev/posts/a_comparision_of_fractal_trees_to_lsm_trees/</link>
       <pubDate>Mon, 19 Apr 2021 14:59:31 +0900</pubDate>
@@ -1393,20 +1267,6 @@
       <pubDate>Mon, 12 Apr 2021 13:27:26 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/fast_intersection_algorithms_for_sorted_sequences/</guid>
       <description>&lt;p&gt;ソートされたシーケンスの直積を高速に求めるアルゴリズム Double Binary Searchを示した。&#xA;2つのシーケンス\(D\), \(Q\)があり、\(\mid D\mid=n\), \(\mid Q\mid=m\), \(n &amp;gt;= m\)であれば、平均と最悪時間計算量が、それぞれ、\(\mathcal{O}(m\log(n/m))\), \(m\)になる。&#xA;本アルゴリズムは、Web検索エンジンで大きなシーケンスの直積を高速に求めるために開発された。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>ドメーヌ・ポール・マス・シェ・マス・赤[2019]</title>
-      <link>https://ryotaro.dev/gallery/domaine_paul_mas_chai_mas_rouge2019/</link>
-      <pubDate>Sat, 10 Apr 2021 16:41:50 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/domaine_paul_mas_chai_mas_rouge2019/</guid>
-      <description>派手なラベルを裏切るような感じ。最近飲んだものの中で一番酸味と渋みがバランスがとれてピーキーな感じがしなかった。</description>
-    </item>
-    <item>
-      <title>La Vie Pinot Noir Domeniile Sahateni</title>
-      <link>https://ryotaro.dev/gallery/lavie20210403/</link>
-      <pubDate>Sat, 03 Apr 2021 23:12:57 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/lavie20210403/</guid>
-      <description>4回目。でもいつも買っているリアルワインガイドの通販で売り切れていたからしばらく飲めない。あと1本だけ家にある。</description>
     </item>
     <item>
       <title>論文メモ The Log-Structured Merge-Tree (LSM-Tree)</title>
@@ -1423,32 +1283,11 @@
       <description>&lt;p&gt;Log-structured file system(LFS)は、91年に提唱されたHDD向けのファイルシステムであり、バッファリングした変更をディスクの連続領域に一度に書き込むことで、小さなファイルを大量に高速で書き込める。&#xA;また、クラッシュからのリカバリも、ディスク全体ではなくチェックポイント以降に追記された箇所だけを検査すればよいので、高速になる。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>シャトー・プティ・フレロン・キュヴェ・サラ[2016]</title>
-      <link>https://ryotaro.dev/gallery/chateau_petit_freylon/</link>
-      <pubDate>Sun, 28 Mar 2021 21:48:00 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/chateau_petit_freylon/</guid>
-      <description>ラベルの高級感のとおり、ちょっと渋い。また飲んでもいい。</description>
-    </item>
-    <item>
-      <title>ピノ・グリ（白） [&#39;20] ボートシェッド・ベイ</title>
-      <link>https://ryotaro.dev/gallery/2020_boatshed_bay_marlborugh_pinot_gris/</link>
-      <pubDate>Sun, 28 Mar 2021 21:43:43 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/2020_boatshed_bay_marlborugh_pinot_gris/</guid>
-      <description>炭酸入り。味をあまり覚えていない。嫌いじゃないけどまた飲みたいという感じじゃない。 多分、炭酸そんなに好きじゃないのかも。</description>
-    </item>
-    <item>
       <title>論文メモ ARIES/IM: An Efficient and High Concurrency Index Management Method Using Write-Ahead Logging</title>
       <link>https://ryotaro.dev/posts/ariesim/</link>
       <pubDate>Sun, 21 Mar 2021 12:08:11 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/ariesim/</guid>
       <description>&lt;p&gt;ARIES/IMは、B+木への直列化可能性のある並行処理とログ先行書き込み(Write-Ahead Logging, WAL)による復元を実現する。&#xA;ARIES/IMのベースには、先行研究の&lt;a href=&#34;https://web.stanford.edu/class/cs345d-01/rl/aries.pdf&#34;&gt;ARIES&lt;/a&gt;がある。&#xA;復元手順はARIESとほとんど変わらない。&#xA;キーの参照先にあるデータのレコードとキーを同じロックで保護したり、ロックの代わりにラッチを使ったりすることで、ロックの頻度を下げ、B+木の高速化を実現する。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>ベルフォンテーヌ Bellefontaine Pays d&#39;Oc Rouge</title>
-      <link>https://ryotaro.dev/gallery/bellefontaine_rouge/</link>
-      <pubDate>Fri, 19 Mar 2021 19:22:31 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/bellefontaine_rouge/</guid>
-      <description>かなり好き。果実味が強く、渋みのない味でLa Vieと似た感じ。La Vieが1300円くらいで、こっちは800円くらい。すごい。また飲みたい。</description>
     </item>
     <item>
       <title>論文メモ The Ubiquitous B-Tree</title>
@@ -1458,39 +1297,11 @@
       <description>&lt;p&gt;B木とその派生データ構造のサーベイ論文で、とくにB+木に重点がおかれている。&#xA;B+木は、全てのキーを葉におき、葉を隣接リストでつなぐことで、B木が不得手なシーケンシャルなアクセスを改善する。&#xA;これにより、定数オーダーの時間と空間計算量で逐次的にキーにアクセスにできる。&#xA;ランダムな検索、挿入、削除にかかる時間、空間計算量はB木と変わらない。&#xA;以降はB木のデータ構造を前提としてB+木の概要を説明する。B木について知りたい場合は、&lt;a href=&#34;https://ryotaro.dev/posts/organization_and_maintenance_of_large_orderred_indexes/&#34;&gt;B木のオリジナル論文の解説記事&lt;/a&gt;を見てほしい。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>エリソン マラン 2019</title>
-      <link>https://ryotaro.dev/gallery/herisson_malin/</link>
-      <pubDate>Sat, 13 Mar 2021 02:40:32 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/herisson_malin/</guid>
-      <description>シャルドネの辛口。樽香で変な香りをつけておらず、少し炭酸があって、辛口。のみやすくて好き。</description>
-    </item>
-    <item>
       <title>論文メモ Robust Random Cut Forest Based Anomaly Detection On Streams</title>
       <link>https://ryotaro.dev/posts/robust_random_cut_forest_based_anomaly_detection_on_streams/</link>
       <pubDate>Fri, 12 Mar 2021 20:30:31 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/robust_random_cut_forest_based_anomaly_detection_on_streams/</guid>
       <description>&lt;p&gt;Robust Random Cut Forest(RRCT)はストリームデータ向きの異常検知の手法で、&lt;a href=&#34;https://www.aclweb.org/anthology/P16-1162/&#34;&gt;Amazon SageMaker&lt;/a&gt;から提供されている。&#xA;バッチデータと違い、ストリームデータは新たなデータが随時追加、修正される。&#xA;RRCTは、特徴の値でデータを2分するノードからなる木の集合であり、データを追加したときに木の集合であるモデルを大きく複雑するものを異常と判定する。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Coteaux du Pont du Gard Cuvee des Galets</title>
-      <link>https://ryotaro.dev/gallery/coteaux_du_pont_du_gard_cuvee_des_galets/</link>
-      <pubDate>Sun, 07 Mar 2021 13:04:28 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/coteaux_du_pont_du_gard_cuvee_des_galets/</guid>
-      <description>ラベルがかわいい。味はLa Vieに似てた。好き。</description>
-    </item>
-    <item>
-      <title>La Vie その3</title>
-      <link>https://ryotaro.dev/gallery/lavie3/</link>
-      <pubDate>Sun, 07 Mar 2021 13:03:32 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/lavie3/</guid>
-      <description>おいしかったので、3回目。</description>
-    </item>
-    <item>
-      <title>Feudo Arancio Inzolia</title>
-      <link>https://ryotaro.dev/gallery/feudo_arancio_inzolia/</link>
-      <pubDate>Sun, 28 Feb 2021 12:16:50 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/feudo_arancio_inzolia/</guid>
-      <description>辛口で変な香りのない素直な感じ。ラベルがいいよね。好き。</description>
     </item>
     <item>
       <title>論文メモ Organization and Maintenance of Large Ordered indexes</title>
@@ -1507,32 +1318,11 @@
       <description>&lt;p&gt;要素がハッシュ空間にあるかを高速に調べる手法で、ブルームフィルタの名で知られる。&#xA;偽陽性を許容し、ハッシュ値の保持に必要な空間を小さすることで、管理できるデータ件数を増やす。&#xA;例えば、&lt;a href=&#34;https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/&#34;&gt;データベースのストレージで使われており&lt;/a&gt;、検索するキーがデータベースに存在するか事前に確かめ、存在しないキーのための不要なディスクの読み取りを省いている。&#xA;偽陰性の誤りはない。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>La Vie その2</title>
-      <link>https://ryotaro.dev/gallery/la_vie2/</link>
-      <pubDate>Sat, 20 Feb 2021 13:33:48 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/la_vie2/</guid>
-      <description>おいしかったので、2回目。</description>
-    </item>
-    <item>
-      <title>ヴィニウス・ヴィンヤーズ IGP ペイ・ドック・シャルドネ（白） [&#39;19] ジャン・クロード・マス　エステーツ＆ブランズ</title>
-      <link>https://ryotaro.dev/gallery/vinus/</link>
-      <pubDate>Sat, 20 Feb 2021 13:33:43 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/vinus/</guid>
-      <description>香りがついた感じ。たぶん香りのつけられたシャルドネあまりすきじゃない。</description>
-    </item>
-    <item>
       <title>論文メモ Tree Indexing on Solid State Drives</title>
       <link>https://ryotaro.dev/posts/tree_index_on_solid_state_drives/</link>
       <pubDate>Mon, 15 Feb 2021 15:53:09 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/tree_index_on_solid_state_drives/</guid>
       <description>&lt;p&gt;SSDのランダムな書き込みを高速化するために、インデックスのためのデータ構造FD-treeを提案した。&#xA;FD-treeのエントリ数が\(n\), ページサイズが\(B\)であれば、ランダムな読み込みと書き込みの計算量はともに\(\mathcal{O}(\log_B(n))\)になる。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>IGP ドック・dA・メルロ[2017] ドメーヌ・アストラック</title>
-      <link>https://ryotaro.dev/gallery/d_a_merlot/</link>
-      <pubDate>Sun, 14 Feb 2021 11:31:47 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/d_a_merlot/</guid>
-      <description>前回飲んだものの赤の方。 最後に飲んだ赤がLa Vieの薄めの飲みやすいものだったけど、こっちは別に薄くない。 おいしい。</description>
     </item>
     <item>
       <title>論文メモ Isolation Forest</title>
@@ -1542,13 +1332,6 @@
       <description>&lt;p&gt;Isolation Forestは、完全二分木による異常検知の手法で、iForestともよばれる。時間計算量が線形で、ハイパーパラメタがわずか2つで、メモリ効率がよい。&#xA;時間、空間計算量が少なく高次元のデータに向く。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>IGP ドック・dA・シャルドネ（白）[2018] </title>
-      <link>https://ryotaro.dev/gallery/d_a_chardonnay/</link>
-      <pubDate>Sun, 07 Feb 2021 13:33:13 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/d_a_chardonnay/</guid>
-      <description>IGP ドック・dA・シャルドネ（白）[2018] ドメーヌ・アストラック。 前回飲んだ白のDARK HORSEがわざとらしく香りをつけていたのに対して、妙な自己主張のない自然な辛口の白。 こっちのほうが断然おいしい。自分は変に樽香をつけたシャルドネが苦手かもしれない。 これはまた買うつもり。</description>
-    </item>
-    <item>
       <title>論文メモ TAO: Facebook&#39;s Distributed Data Store for the Social Graph</title>
       <link>https://ryotaro.dev/posts/tao_facebooks_distributed_data_store_for_social_graph/</link>
       <pubDate>Thu, 04 Feb 2021 18:47:38 +0900</pubDate>
@@ -1556,25 +1339,11 @@
       <description>&lt;p&gt;TAOは、Facebookで開発されたソーシャルグラフのためのマルチリージョンの分散システムで、秒間10億件の読み込みと数百万件の書き込みの性能を発揮する。&#xA;Facebookは、もともとソーシャルグラフを、MySQLに保存し、memcacheでキャッシュし、PHPで問いあわせるシステムで構成していた。&#xA;TAOは、そのシステムの現状を引きつぎ、MySQLをストレージに採用している。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>La Vie PINOT NOIR 2018</title>
-      <link>https://ryotaro.dev/gallery/la_vie/</link>
-      <pubDate>Sun, 31 Jan 2021 00:58:40 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/la_vie/</guid>
-      <description>某所でおすすめされたワイン。香りがよく、飲みやすい。 1300円とは信じられないくらいおいしい。 明日3本くらい追加で買うつもり。</description>
-    </item>
-    <item>
       <title>論文メモ The Daily Life of Software Engineers during the COVID-19 Pandemic</title>
       <link>https://ryotaro.dev/posts/the_daily_life_of_software_engineers_during_the_covid_19_pandemic/</link>
       <pubDate>Sat, 30 Jan 2021 13:19:49 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/the_daily_life_of_software_engineers_during_the_covid_19_pandemic/</guid>
       <description>&lt;p&gt;COVID19でソフトウェア開発者が在宅稼動(WFH)をはじめたことによる稼動時間の使い方、良好性(Well-being), 生産性の変化を調査した。&#xA;ロックダウンを実施した国々のエンジニア500名の中から、2020年4月20日から26日の一波について192名、2020年5月4日から10日の二波について184名を選び、サンプルを集めた。&#xA;結果、会社での勤務とWFHの間で、稼動時間の使い方はほぼ変わっていないかった。&#xA;また、一波において休憩と生産性の間に負の相関がみられたが、それ以外では良好性、生産性、社会性、心理の4つと特定の業務内容の間に相関関係はみられなかった。&#xA;結果、組織やエンジニアにとってWFHそれ自体が課題になるわけではないと結論づけている。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>DARK HORSE CHARDONNAY 2018</title>
-      <link>https://ryotaro.dev/gallery/darkhorse/</link>
-      <pubDate>Tue, 26 Jan 2021 01:04:56 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/darkhorse/</guid>
-      <description>アメリカのシャネルドネ。1本自宅近くのスーパーで買ったあとに、飲んでもないのに、Amazonでもう一本買った。 飲んだ瞬間、シャルドネらしからぬ強い香りがした。商品説明には濃いとあったが、ここまで強いと思っておらず、正直きついと感じた。たぶん二度と買わない。</description>
     </item>
     <item>
       <title>論文メモ Dapper, a Large-Scale Distributed Systems Tracing Infrastructure</title>
@@ -2156,13 +1925,6 @@
       <pubDate>Mon, 06 Jan 2020 22:27:05 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/multilabel_classification_with_label_correlations_and_missing_labels/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;ラベルの相関関係を学習し推論に利用するマルチラベルの線形モデルを提案した論文である。&#xA;相関関係のあるラベル集合を相関関係のないラベル集合に変換し、ラベルごとに分けて学習する手法、Label transformationを応用する。&#xA;分類器は、相関関係だけなく、学習データに与えられていないラベルを推定するように拡張できる。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>大砲ラーメン</title>
-      <link>https://ryotaro.dev/gallery/taihoh/</link>
-      <pubDate>Sun, 05 Jan 2020 13:25:04 +0900</pubDate>
-      <guid>https://ryotaro.dev/gallery/taihoh/</guid>
-      <description>帰省して食べに行きました。 中高校生から食べに行っていました。 そのころは、ラーメン大が600円くらいだった記憶でしたが、帰省の度に高くなって今は800円くらいしました。 隔世の感があります。</description>
     </item>
     <item>
       <title>Learning Deep Structured Semantic Models for Web Search using Clickthrough Data(2013)</title>
