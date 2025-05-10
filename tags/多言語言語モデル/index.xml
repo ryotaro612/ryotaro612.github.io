@@ -9,11 +9,11 @@
     <lastBuildDate>Sat, 03 Jun 2023 12:32:35 -0400</lastBuildDate>
     <atom:link href="https://ryotaro.dev/tags/%E5%A4%9A%E8%A8%80%E8%AA%9E%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Unsupervised Cross-lingual Representation Learning at Scale(2020)</title>
+      <title>Unsupervised Cross-lingual Representation Learning at Scale (2020)</title>
       <link>https://ryotaro.dev/posts/unsupervised_cross_lingual_representation_learning_at_scale/</link>
       <pubDate>Sat, 03 Jun 2023 12:32:35 -0400</pubDate>
       <guid>https://ryotaro.dev/posts/unsupervised_cross_lingual_representation_learning_at_scale/</guid>
-      <description>&lt;p&gt;多言語モデルを大規模なコーパスで訓練し、含意関係認識、質問応答、固有表現抽出において、多言語版の&lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt;を上まわる予測性能を実現した。&#xA;モデルのアーキテクチャは&lt;a href=&#34;https://arxiv.org/abs/1907.11692&#34;&gt;RoBERTa&lt;/a&gt;で、&lt;a href=&#34;https://arxiv.org/abs/1901.07291&#34;&gt;Lample and Conneau, 2019&lt;/a&gt;に近い方法でモデルを訓練する。&#xA;LampleとConneauの手法を含む従来の多言語の言語モデルの評価実験では、wipediaやwikipediaと同程度の大きさのコーパスが使われていた。&#xA;従来の訓練データに対し、100言語からなる2.5TBのCommonCrawlをコーパスに使い、コーパスを大規模化することによるモデルへの影響を分析した。&#xA;パラメタ数などのモデル大きさを固定し、言語の種類数を30まで増やしたところ、コーパスの小さい言語の性能が向上したが、それ以上増やすと逆に予測性能が低下した。&lt;/p&gt;</description>
+      <description>&lt;p&gt;多言語モデルを大規模なコーパスで訓練し、含意関係認識、質問応答、固有表現抽出において、多言語版の&lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt;を上まわる予測性能を実現した。&#xA;モデルのアーキテクチャは&lt;a href=&#34;https://arxiv.org/abs/1907.11692&#34;&gt;RoBERTa&lt;/a&gt;で、&lt;a href=&#34;https://arxiv.org/abs/1901.07291&#34;&gt;Lample and Conneau, 2019&lt;/a&gt;に近い方法でモデルを訓練する。&#xA;LampleとConneauの手法を含む従来の多言語の言語モデルの評価実験では、WikipediaやWikipediaと同程度の大きさのコーパスが使われていた。&#xA;従来の訓練データに対し、100言語からなる2.5TBのCommonCrawlをコーパスに使い、コーパスを大規模化することによるモデルへの影響を分析した。&#xA;パラメタ数などのモデル大きさを固定し、言語の種類数を30まで増やしたところ、コーパスの小さい言語の性能が向上したが、それ以上増やすと逆に予測性能が低下した。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

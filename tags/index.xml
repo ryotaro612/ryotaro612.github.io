@@ -6,8 +6,22 @@
     <description>Recent content in Tags on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 26 Apr 2025 13:49:53 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 07 May 2025 02:41:24 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Instruction Finetuning</title>
+      <link>https://ryotaro.dev/tags/instruction-finetuning/</link>
+      <pubDate>Wed, 07 May 2025 02:41:24 +0900</pubDate>
+      <guid>https://ryotaro.dev/tags/instruction-finetuning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Large Language Models</title>
+      <link>https://ryotaro.dev/tags/large-language-models/</link>
+      <pubDate>Wed, 07 May 2025 02:41:24 +0900</pubDate>
+      <guid>https://ryotaro.dev/tags/large-language-models/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Open Domain Questions</title>
       <link>https://ryotaro.dev/tags/open-domain-questions/</link>

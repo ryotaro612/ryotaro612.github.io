@@ -101,6 +101,18 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/on_spectral_clustering_analysis_and_an_algorithm/">On Spectral Clustering: Analysis and an algorithm</a></h3>
+        <div class="summary"><p>スペクトラルクラスタリングは、類似度を辺の重みとするグラフをデータから構築し、重みをもとにカットする辺を決めて、データをクラスタに分ける。
+グラフラプラシアンのようなグラフを表現した行列をつくり、その固有ベクトルを求め、固有ベクトルを列ベクトルとして並べた行列にK-meansを適用する。
+もとのデータに二重丸のような凸集合でないクラスタがあるときに、最初からK-meansを適用するよりも良い結果を期待できる。
+また、データ分布に確率モデルにあてはめ、どのクラスタにデータを割りあてるか確率的に決めるクラスタリングと違い、データの分布を仮定しなくてよい。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">July 23, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/how_to_make_a_multiprocessor_computer_that_correctly_executes_multiprocess_programs/">How to Make a Multiprocessor Computer That Correctly Executes Multiprocess Programs(1979)</a></h3>
         <div class="summary"><p>プロセッサは、高速化のためにソースコードと違う順序で命令を実行することがある。
 順序の入れ換えが実行結果に影響しなければ、プロセッサは逐次的であるという。
@@ -216,18 +228,6 @@ NIPALSでは、潜在変数が、デフレーションされた説明変数の�
         <div class="article-footer">
 	  
           <span class="date">May 28, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/pls_regression_a_basic_tool_of_chemometrics/">PLS-regression: a basic tool of chemometrics</a></h3>
-        <div class="summary"><p>重回帰分析は、説明変数の行列がフルランクでないとき、多重共線性により出力が不安定になる。
-そのため、説明変数の数を減らし、説明変数間に相関関係がないようにする必要がある。
-PLS（部分的最小二乗法）は、入力変数の線形結合で表わせる潜在変数を求め、潜在変数の線形結合で目的変数を表す。
-説明変数の数より少ない数の潜在変数を求めることで、説明変数間の相関関係をとりのぞく。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">May 21, 2022</span>
         </div>
     </article>
     

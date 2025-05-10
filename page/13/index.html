@@ -101,6 +101,18 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/pegasos/">Pegasos: Primal Estimated sub-GrAdient SOlver for SVM</a></h3>
+        <div class="summary"><p>Pegasosは、SVMの学習のための反復的なアルゴリズムであり、2022年3月現在、scikit-learnの<a href="https://scikit-learn.org/stable/modules/sgd.html#implementation-details">SGDClassifier</a>で学習率を更新に採用されている。
+Pegasosは、目的関数の最小値の近似値をもとめる。
+求める最小値との誤差を\(\epsilon\), SVMの正則化パラメタを\(\lambda\), 各サンプルの説明変数の0でない要素数の上限を\(d\)とすると、線形カーネルをつかうSVMの時間計算量は、\(\tilde{O}(d/\lambda \epsilon)\)になる。
+訓練データの数が計算量に影響しないので、教師データの数に対してスケールする。</p></div>
+        <div class="article-footer">
+	  
+          <span class="date">March 12, 2022</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/an_interior_point_method_for_large_scale_l1_regularized_least_squares/">An Interior-Point Method for Large-Scale L1-Regularized Least Squares</a></h3>
         <div class="summary"><p>前処理付共役勾配法により、スパースな説明変数をもつリッジ回帰の学習を高速化する。
 リッジ回帰の目的関数は、凸関数だが微分可能ではない。
@@ -206,18 +218,6 @@ Piece tableはテキストを2つのバッファに記録する。
 さらに、文の分散表現を別の順、逆方向GRUにあたえ、単語とおなじように各文の注意を計算し、その重みつき和を文書の分散表現としてあつかう。
 最後に、文書の分散表現を全結合層に入力し、ソフトマックス関数で文書のクラスを推定する。
 単語の文の注意を推定できるため、単語と文の2つの粒度で文書の重要な箇所を可視化することができる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">December 26, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/effective_approaches_to_attention_based_neural_machine_translation/">Effective Approaches to Attention-based Neural Machine Translation (2015)</a></h3>
-        <div class="summary"><p>注意機構をつかった翻訳用のニューラルネットワークを2つ例示し、翻訳における効果的な注意機構の使い方を提案した。
-どちらもスタッキングしたLSTMを使うが、注意の計算で参照するLSTMの隠れ状態が違う。
-ひとつは、1単語を出力するときに、すべての単語のLSTMの隠れ状態から注意を算出するグローバルなアプローチで、もうひとつは一部の単語の状態だけから注意を算出するローカルなアプローチである。
-英語とドイツ語の双方への翻訳タスクに適用したところ、ローカルなアプローチで注意機構をつかわない手法と比べてBLEUスコアを5.0ポイントできた。</p></div>
         <div class="article-footer">
 	  
           <span class="date">December 26, 2021</span>
