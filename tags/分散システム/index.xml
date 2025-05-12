@@ -92,12 +92,5 @@
       <guid>https://ryotaro.dev/posts/time_clocks_and_the_ordering_of_events_in_a_distributed_system/</guid>
       <description>&lt;p&gt;分散システムの各プロセスにおける送受信の半順序関係をすべてのプロセスで起きた送受信の全順序関係に拡張するアルゴリズムを提案し、アルゴリズムを同期処理に応用できることを例示した。&#xA;分散システムではプロセスの時刻が同期しているとはかぎらない。&#xA;各プロセスで起きたメッセージの送受信をプロセスでの時刻順に並べられても、その計測時刻を信じて全プロセスで起きたイベントを正しく発生順に並べることはできない。&lt;/p&gt;&#xA;&lt;p&gt;アルゴリズムは、プロセスごとに論理的なクロックをもたせる。&#xA;クロックは、メッセージを送信するときに時を進める。&#xA;メッセージを送信するプロセスは、送信時刻をメッセージにふくめる。&#xA;受信したプロセスは現在の時刻とメッセージにある送信元の時刻より先の時刻に時を進める。&#xA;以上の手続きで、異なるプロセス間の送受信であっても送信時刻が受信時刻より必ず前になり、全プロセスの送受信イベントに全順序関係を定義できる。&lt;/p&gt;</description>
     </item>
-    <item>
-      <title>In Search of an Understandable Consensus Algorithm(2014)</title>
-      <link>https://ryotaro.dev/posts/raft/</link>
-      <pubDate>Mon, 09 Mar 2020 02:17:22 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/raft/</guid>
-      <description>&lt;p&gt;コンセンサスアルゴリズムRaftを提案した論文である。&#xA;Raftは、Multi Paxosと同様の実行結果をもたらす。&#xA;実行するコマンドのログをサーバ間で交換することで、状態を同期し、サーバの一部が落ちてもシステムを継続することができる。&lt;/p&gt;</description>
-    </item>
   </channel>
 </rss>

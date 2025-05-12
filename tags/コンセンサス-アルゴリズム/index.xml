@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Raft on Blanket</title>
-    <link>https://ryotaro.dev/tags/raft/</link>
-    <description>Recent content in Raft on Blanket</description>
+    <title>コンセンサス アルゴリズム on Blanket</title>
+    <link>https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%B5%E3%82%B9-%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0/</link>
+    <description>Recent content in コンセンサス アルゴリズム on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Mon, 09 Mar 2020 02:17:22 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/raft/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%B5%E3%82%B9-%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>In Search of an Understandable Consensus Algorithm (2014)</title>
       <link>https://ryotaro.dev/posts/raft/</link>

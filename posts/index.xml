@@ -1850,7 +1850,7 @@
       <description>&lt;p&gt;系列データの教師あり学習において、ラベルのないデータを学習した言語モデルやオートエンコーダーの重みでLSTMを初期化することの有用性を実験的に示した。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>In Search of an Understandable Consensus Algorithm(2014)</title>
+      <title>In Search of an Understandable Consensus Algorithm (2014)</title>
       <link>https://ryotaro.dev/posts/raft/</link>
       <pubDate>Mon, 09 Mar 2020 02:17:22 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/raft/</guid>
