@@ -42,7 +42,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
     integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
-  <title>Reading Wikipedia to Answer Open Domain Questions (2017)</title>
+  <title>Scaling Instruction Finetuned Language Models (2022)</title>
 </head>
 
 <body>
@@ -62,7 +62,7 @@
         <li><a href="https://ryotaro.dev/en/posts">Posts</a></li>
         <li><a href="https://ryotaro.dev/en/tags">Tags</a></li>
         
-        <li><a href="https://ryotaro.dev/posts/reading-wikipedia-to-answer-open-domain-questions/">ja</a></li>
+        <li><a href="https://ryotaro.dev/posts/scaling-instruction-finetuned-language-models/">ja</a></li>
         
       </ul>
       <ul>
@@ -98,58 +98,51 @@
   </header>
   
 <main>
-  <h1>Reading Wikipedia to Answer Open Domain Questions (2017)</h1>
+  <h1>Scaling Instruction Finetuned Language Models (2022)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://ryotaro.dev/en/tags/open-domain-questions/">
-	#Open Domain Questions
+      <a href="https://ryotaro.dev/en/tags/large-language-models/">
+	#Large Language Models
       </a>
     </li>
     
     <li class="tag">
-      <a href="https://ryotaro.dev/en/tags/tf-idf/">
-	#TF-IDF
+      <a href="https://ryotaro.dev/en/tags/instruction-finetuning/">
+	#Instruction Finetuning
       </a>
     </li>
     
   </ul>  
-  <span class="date">April 26, 2025</span>    
+  <span class="date">May 7, 2025</span>    
   <div>
-    <p><a href="https://aclanthology.org/P17-1171/">Reading Wikipedia to Answer Open Domain Questions</a> proposes DrQA, a system for open-domain question answering.
-DrQA consists of two components: Document Retriever and Document Reader.</p>
-<p>Given a question, the Document Retriever uses bigram TF-IDF matching to search Wikipedia and retrieve the five most relevant articles.
-These articles, along with the question, are then passed to the Document Reader, a neural network model that embeds the question and the paragraphs into vector representations.
-The model then compares the paragraph embeddings with the question embedding to identify the most salient text span that likely contains the answer.</p>
-<p>The Document Retriever splits each article into paragraphs and produces embeddings for each paragraph.
-Let \(p_i\) denote the \(i\)th token in a paragraph of \(m\) tokens.
-Each token \(p_i\) is first mapped to a feature vector \(\tilde{\mathbf{p}}_i\), resulting in the sequence \(\{\tilde{{\rm \mathbf{p}}}_1,\dots \tilde{{\rm \mathbf{p}}}_m\}\).
-A multi-layer bidirectional LSTM processes this sequence, and for each token \(p_i\), the concatenated hidden states across all layers form its final embedding \(\mathbf{p}_i\).</p>
-<p>The input embedding \(\tilde{\mathbf{p}}_i\) is constructed from several features: the Glove word embedding \(\mathbf{E}(p_i)\), a binary feature indicating whether \(p_i\) appears in the question, part-of-speech (POS) tags, named entity recognition (NER) tags, normalized term frequency, and an aligned question embedding \(f_{\textit{align}}(p_i)\).
-The aligned question embedding \(f_{\textit{align}}(p_i)\) is calculated as follows.
-Let \(\alpha(\cdot)\) represent a single dense layer followed by a ReLU activation.
-Given a question \(q\), the aligned embedding is computed by:
-$$
-f_{\textit{align}}(p_i)=\sum_j \frac{\exp(\alpha(\mathbf{E}(p_i))\cdot \alpha (\mathbf{E}(q_j)))}{\sum_{j&rsquo;}\exp \left(\alpha (\mathbf{E}(p_i))\cdot \alpha (\mathbf{E}(q_{j&rsquo;}))\right)} \mathbf{E}(q_j)
-$$</p>
-<p>To encode the question, a slightly different method is used.
-Let \(l\) be the number of tokens in the question.
-The embeddings of the tokens \(q_j\) are passed through an RNN, producing hidden vectors \(\mathbf{q}_j\).
-The final question embedding \(\mathbf{q}\) is obtained by a weighted sum:
-$$
-\mathbf{q}=\sum_j\frac{\exp(\mathbf{w}\cdot \mathbf{q}_j)}{\sum_{j&rsquo;}\exp(\mathbf{w}\cdot\mathbf{q}_{j&rsquo;})}\mathbf{q}_j
-$$
-where \(\mathbf{w}\) is a learnable weight vector.</p>
-<p>Using these paragraph and question embeddings, DrQA predicts the start and end positions of the answer span independently.
-Let \(\mathbf{W}_s, \mathbf{W}_e\) be learned weight matrices.
-For each token \(p_i\), the probabilities for the start and end positions are given by:
-$$
-\begin{align*}
-P_{\text{start}}(i)&amp;\propto \exp(\mathbf{p}_i\mathbf{W}_s\mathbf{q})\\
-P_{\text{end}}(i)&amp;\propto \exp(\mathbf{p}_i\mathbf{W}_e\mathbf{q})
-\end{align*}
-$$
-The model selects the span \((i, i&rsquo;)\) that maximizes \(P_{\text{start}}(i)\times P_{\text{end}}(i&rsquo;)\) under the constraint \(i \le i&rsquo; \le i+15\).</p>
+    <p>Instruction finetuning is a technique for enhancing the zero-shot performance of large language models (LLMs). The seminal work, <a href="https://arxiv.org/pdf/2109.01652">Finetuned Language Models Are Zero-Shot Learners</a>, refers to this method as instruction tuning.
+Building on this, <a href="https://arxiv.org/abs/2210.11416">Scaling Instruction-Finetuned Language Models</a> explored scaling the number of tasks, model sizes, and the incorporation of chain-of-thought (CoT) data. Their findings demonstrate that instruction finetuning can significantly improve LLM performance across a wide range of settings.</p>
+<p>Instruction finetuning is grounded in the insight that many NLP tasks can be framed as natural language instructions—examples include translation, sentiment analysis, and question answering. Notably, the original paper introduced instruction tuning through examples rather than formal definitions. Two representative examples in the paper are:</p>
+<blockquote>
+<p>INPUT<br>
+Jane knocked on Susan’s door, but there was no answer.<br>
+OPTIONS:<br>
+Jane was out.<br>
+Susan was out.<br>
+TARGET<br>
+Susan was out.</p>
+</blockquote>
+<blockquote>
+<p>INPUT<br>
+Question: who is the girl in more than you know??<br>
+Answer:<br>
+TARGET<br>
+Romi Van Renterghe</p>
+</blockquote>
+<p>In their work, the authors reformatted datasets into instruction-style prompts and trained LLMs to evaluate the impact of this finetuning strategy under zero-shot conditions. Models trained in this manner were referred to as FLAN (Finetuned Language Net).</p>
+<p>The <em>Scaling Instruction-Finetuned Language Models</em> paper extended this line of research by focusing on three main areas: scaling the number of instruction tasks, scaling the size of the models, incorporating chain-of-thought annotations into training data.</p>
+<p>Their experiments utilized <a href="https://arxiv.org/pdf/2204.02311">PaLM</a> models with 8B, 62B, and 540B parameters, trained on progressively larger sets of tasks—specifically, 0, 9, 89, 282, and 1,836 tasks.
+Here, a task is defined as a specific pairing of a dataset and a task category, such as extractive question answering or query generation. A dataset can be associated with multiple task categories. For example, the SQuAD dataset supports extractive question answering, query generation, and context generation.</p>
+<p>Across all model sizes, increasing the number of tasks up to 282 led to substantial improvements. However, adding more tasks beyond this threshold yielded only marginal gains. The authors propose two explanations for this observation.
+First, the additional tasks likely offer limited new information for models already trained on 282 tasks.
+Second, instruction finetuning predominantly enhances the model’s capacity to express knowledge acquired during pre-training, rather than providing entirely new knowledge not seen in the pre-training corpus.</p>
+<p>In contrast, incorporating chain-of-thought annotations into the training datasets resulted in significant performance improvements on previously unseen reasoning tasks, highlighting the value of CoT data for enhancing models&rsquo; reasoning abilities.</p>
   </div>
 </main>
 
@@ -157,17 +150,11 @@ The model selects the span \((i, i&rsquo;)\) that maximizes \(P_{\text{start}}(i
 <ul class="pagination">
     
     <li>
-      <a href="/en/posts/language-models-are-few-shot-learners/">
+      <a href="/en/posts/reading-wikipedia-to-answer-open-domain-questions/">
 	<i class="fa-solid fa-xl fa-angle-left"></i>
       </a>
     </li>
     
-    
-    <li>
-      <a href="/en/posts/scaling-instruction-finetuned-language-models/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
     
 </ul>
 

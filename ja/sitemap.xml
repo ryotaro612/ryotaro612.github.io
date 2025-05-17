@@ -17,9 +17,29 @@
   </url><url>
     <loc>https://ryotaro.dev/tags/instruction-finetuning/</loc>
     <lastmod>2025-05-07T02:41:24+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/instruction-finetuning/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/instruction-finetuning/"
+                />
   </url><url>
     <loc>https://ryotaro.dev/tags/large-language-models/</loc>
     <lastmod>2025-05-07T02:41:24+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/large-language-models/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/large-language-models/"
+                />
   </url><url>
     <loc>https://ryotaro.dev/posts/</loc>
     <lastmod>2025-05-07T02:41:24+09:00</lastmod>
@@ -36,6 +56,16 @@
   </url><url>
     <loc>https://ryotaro.dev/posts/scaling-instruction-finetuned-language-models/</loc>
     <lastmod>2025-05-07T02:41:24+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/scaling-instruction-finetuned-language-models/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/scaling-instruction-finetuned-language-models/"
+                />
   </url><url>
     <loc>https://ryotaro.dev/tags/</loc>
     <lastmod>2025-05-07T02:41:24+09:00</lastmod>

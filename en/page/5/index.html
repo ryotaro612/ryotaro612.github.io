@@ -101,6 +101,43 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/">Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks(2019)</a></h3>
+        <div class="summary"><p><a href="https://arxiv.org/abs/1908.10084">Sentence-BERT</a> derives semantically meaningful sentence embedding that can be compared using cosine-similarity.
+<a href="https://arxiv.org/abs/1810.04805">BERT</a> achieved new state-of-the art performance on various sentence-pair regression tasks using a cross-encoder.
+A cross-encoder accepts two sentences as input to the transformer network and the target value is predicted.
+Semantic textual similarity is one of the sentence-pair regression tasks.
+However, this setup is often not scalable for various pair regression tasks due to many possible combinations.
+The semantic search that maps each sentence to a vector space where semantically similar sentences are close alleviates the combinatorial explosion.
+Sentence-BERT uses a siamese network in which the two BERT networks have tied weights such that the produced sentence embeddings can be semantically compared using cosine-similarity.</p></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/bert/">
+		#BERT
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/cosine-similarity/">
+		#Cosine Similarity
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/en/tags/transformer/">
+		#Transformer
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">September 23, 2023</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/en/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/">A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning(2008)</a></h3>
         <div class="summary"><p><a href="http://machinelearning.org/archive/icml2008/papers/391.pdf">A Unified Architecture for Natural Language Processing</a> is an instance of multitask learning.
 The first layer is a lookup table that stores embeddings of a fixed dictionary and size.
@@ -306,30 +343,6 @@ While Batch Normalization can accelerate training, it depends on mini-batch size
         </div>
     </article>
     
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/an_incremental_approach_to_compiler_construction/">An Incremental Approach to Compiler Construction (2006)</a></h3>
-        <div class="summary"><p><a href="http://scheme2006.cs.uchicago.edu/11-ghuloum.pdf">An Incremental Approach to Compiler Construction</a> shows an incremental approach to build a compiler that accepts a large subset of the Scheme programming language.
-The compiler produces assembly code for the Intel-X86 architecture.
-Because real-life compilers are too complex to serve as an educational tool, the gap between real-life compilers and the educational toy compilers is too wide.</p>
-<p>The goal of the paper is to break the barrier.
-The development of the compiler is broken down into 24 incremental steps.
-Every step yields a fully working compiler for progressively expanding a subset of Scheme.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/compiler/">
-		#Compiler
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">January 1, 0001</span>
-        </div>
-    </article>
-    
 </main>
 
   
@@ -347,6 +360,17 @@ Every step yields a fully working compiler for progressively expanding a subset 
       </a>
     </li>
     
+    
+    <li>
+      <a href="/en/page/6/">
+	<i class="fa-solid fa-xl fa-angle-right"></i>
+      </a>
+    </li>
+    <li>
+      <a href="/en/page/6/">
+	<i class="fa-solid fa-xl fa-angles-right"></i>
+      </a>
+    </li>
     
 </ul>
 

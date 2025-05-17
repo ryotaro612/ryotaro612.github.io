@@ -13,7 +13,7 @@
       <link>https://ryotaro.dev/posts/scaling-instruction-finetuned-language-models/</link>
       <pubDate>Wed, 07 May 2025 02:41:24 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/scaling-instruction-finetuned-language-models/</guid>
-      <description>&lt;p&gt;Instruction Finetuningは訓練データにない種類のタスクのゼロショットの性能を改善するためのファインチューニングの一種で、&lt;a href=&#34;https://arxiv.org/pdf/2109.01652&#34;&gt;Finetuned Language Models Are Zero-Shot Learners&lt;/a&gt;で知られるようになった。&#xA;もとの文献ではInstruction tuningと呼ばれている。&#xA;&lt;a href=&#34;https://arxiv.org/abs/2210.11416&#34;&gt;Scaling Instruction-Finetuned Language Models&lt;/a&gt;は、学習データ、モデルのパラメタの数、chain-of-thoughtのデータを追加することで、instruction tuningで学習したモデルの性能を向上できることを示した。&lt;/p&gt;</description>
+      <description>&lt;p&gt;Instruction Finetuningは訓練データにない種類のタスクのゼロショットを改善するファインチューニングの一種で、&lt;a href=&#34;https://arxiv.org/pdf/2109.01652&#34;&gt;Finetuned Language Models Are Zero-Shot Learners&lt;/a&gt;で知られるようになった。&#xA;もとの文献ではInstruction tuningと呼ばれている。&#xA;&lt;a href=&#34;https://arxiv.org/abs/2210.11416&#34;&gt;Scaling Instruction-Finetuned Language Models&lt;/a&gt;は、学習データ、モデルのパラメタの数、chain-of-thoughtのデータを増やすと、instruction tuningで学習したモデルの性能を向上できることを示した。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Reading Wikipedia to Answer Open Domain Questions (2017)</title>

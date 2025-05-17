@@ -62,6 +62,8 @@
         <li><a href="https://ryotaro.dev/posts">Posts</a></li>
         <li><a href="https://ryotaro.dev/tags">Tags</a></li>
         
+        <li><a href="https://ryotaro.dev/en/posts/scaling-instruction-finetuned-language-models/">en</a></li>
+        
       </ul>
       <ul>
         
@@ -114,20 +116,39 @@
   </ul>  
   <span class="date">May 7, 2025</span>    
   <div>
-    <p>Instruction Finetuningは訓練データにない種類のタスクのゼロショットの性能を改善するためのファインチューニングの一種で、<a href="https://arxiv.org/pdf/2109.01652">Finetuned Language Models Are Zero-Shot Learners</a>で知られるようになった。
+    <p>Instruction Finetuningは訓練データにない種類のタスクのゼロショットを改善するファインチューニングの一種で、<a href="https://arxiv.org/pdf/2109.01652">Finetuned Language Models Are Zero-Shot Learners</a>で知られるようになった。
 もとの文献ではInstruction tuningと呼ばれている。
-<a href="https://arxiv.org/abs/2210.11416">Scaling Instruction-Finetuned Language Models</a>は、学習データ、モデルのパラメタの数、chain-of-thoughtのデータを追加することで、instruction tuningで学習したモデルの性能を向上できることを示した。</p>
-<p>Instruction tuningは、学習データに追加する異なる種類のタスクを、統一的な文章の形式に揃える。
-この統一的な文章がinsturctionであるが、<a href="https://arxiv.org/pdf/2109.01652">Finetuned Language Models Are Zero-Shot Learners</a>には厳密な定義はなく、感情分析のclosed questionや翻訳にみられる指示に対する形式を問わない文書での応答のようなものとして説明されている。</p>
+<a href="https://arxiv.org/abs/2210.11416">Scaling Instruction-Finetuned Language Models</a>は、学習データ、モデルのパラメタの数、chain-of-thoughtのデータを増やすと、instruction tuningで学習したモデルの性能を向上できることを示した。</p>
+<p>Instruction tuningは、学習データに追加する異なる種類のタスクの指示と正解の表現形式を揃える。
+この統一的な文章がinsturctionであるが、<a href="https://arxiv.org/pdf/2109.01652">Finetuned Language Models Are Zero-Shot Learners</a>には厳密な定義はない。
+感情分析や翻訳のようなものと説明されている。
+文献には以下の例がある。</p>
+<blockquote>
+<p>INPUT<br>
+Jane knocked on Susan’s door, but there was no answer.<br>
+OPTIONS:<br>
+Jane was out.<br>
+Susan was out.<br>
+TARGET<br>
+Susan was out.</p>
+</blockquote>
+<blockquote>
+<p>INPUT<br>
+Question: who is the girl in more than you know??<br>
+Answer:<br>
+TARGET<br>
+Romi Van Renterghe</p>
+</blockquote>
 <p>Finetuned Language Models Are Zero-Shot Learnersは、既存のデータセットをinstruction形式に書き換えた学習データでモデルを訓練し、訓練データにない種類のタスクの性能を測定することで、ゼロショットに対するinstructionの効果を示した。
 Instructionを学習したモデルはFLAN (Finetuned Language Net) とよばれる。</p>
 <p>Scaling Instruction-Finetuned Language Modelsで実験したモデルはパラメタ数が8B, 62B, 540Bの<a href="https://arxiv.org/pdf/2204.02311">PaLM</a>であり、0, 9, 89, 282, 1836件のタスクで学習したときの性能が比較された。
-タスクは、データセット名と、データセットのカテゴリのペアを意味する。
+タスクは、データセットの名前とデータセットのカテゴリのペアを意味する。
 カテゴリには、TranslationやQuestion Answeringなどがある。
-SQuADがextractive question answering, query generation, and context generationのカテゴリに分類されるように、1つのデータセットが複数のカテゴリに分類されることもある。
-どのパラメタ数のモデルも、282以上のタスクを増やしてもほとんど性能の向上がみられなかった。
+1つのデータセットが複数のカテゴリに分類される場合がある。
+たとえば、SQuADがextractive question answering, query generation, context generationのカテゴリに分類される。
+どのパラメタ数のモデルでも、282種類以上タスクを増やしても、ほとんど性能の向上がみられなかった。
 追加するタスクと既存のタスクの差分が小さいことや、事前学習で訓練した内容を表出する性能だけをファインチューニングで向上していることが原因と考察されている。</p>
-<p>他方、chain-of-thoughtのタスクにはファインチューニングの顕著な効果がみられた。
+<p>他方、chain-of-thoughtのタスクを学習データに含めることには顕著な効果がみられた。
 Instructionに特定のフレーズ&quot;step-by-step&quot;を含めることで訓練データにないタスクに対する推論が改善された。</p>
   </div>
 </main>
