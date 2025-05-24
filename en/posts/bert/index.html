@@ -42,7 +42,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
     integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
-  <title>BERT: Pre-training of Deep Bidirectional Transformers for Lnaguages Understaing (2018)</title>
+  <title>BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)</title>
 </head>
 
 <body>
@@ -98,7 +98,7 @@
   </header>
   
 <main>
-  <h1>BERT: Pre-training of Deep Bidirectional Transformers for Lnaguages Understaing (2018)</h1>
+  <h1>BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)</h1>
   <ul class="tags">
     
     <li class="tag">
@@ -116,16 +116,17 @@
   </ul>  
   <span class="date">December 14, 2019</span>    
   <div>
-    <p><a href="https://arxiv.org/pdf/1810.04805">BERT</a>は、Bidirectional Encoder Representations from Transformersの略称で、<a href="https://arxiv.org/pdf/1706.03762.pdf">Transformer</a>のエンコーダー部で、順方向と逆方向のテキストからテキストの分散表現を生成する。
-事前学習では、周辺のトークンからマスクされたトークンを推定する教師なしタスクのMaksed Language Model (MLM) と2つの文が隣接した箇所から抜きだされたかを判定するタスクのNext Sentence Prediction (NSP) でモデルを訓練する。</p>
-<p>Transformerのエンコーダー部とほぼ同じであることから、ネットワークアーキテクチャの新規性はない。
-文献では、<a href="https://arxiv.org/pdf/1706.03762.pdf">Attention Is All You Need</a>や<a href="http://nlp.seas.harvard.edu/2018/04/03/attention.html">The Annotated Transformer</a>に細部の解説が譲られている。</p>
-<p>様々なタスクをファインチューニングできるように、BERTの入力は高々2つの文字列という緩やかな形式になっている。
-BERTに与える埋め込みベクトルの系列を生成するには、まず、トークン<code>[CLS]</code>を入力の先頭、トークン<code>[SEP]</code>を文字列の最後に挿入する。
-そして、WordPieceのトークン、系列中のトークンの位置、文字列のペアの前後を示す3種類の埋め込みベクトルの和を計算し、各トークンの埋め込みベクトルとする。
-分類タスクでは、<code>[CLS]</code>の最後の隠れ状態を文字列全体の埋め込みベクトルとみなす。</p>
-<p>実験ではNext Sentence Preidictionの有効性が示されているが、NSPの効果に懐疑的な研究もある。
-たとえば、BERTの事前学習を改善した<a href="https://arxiv.org/pdf/1907.11692">RoBERTa</a>はMasked Language Modelだけを採用した。</p>
+    <p><a href="https://arxiv.org/pdf/1810.04805">BERT</a>, <em>B</em>idirectional <em>E</em>ncoder <em>R</em>epresentations from <em>T</em>ransformers, is a language model based on the Transformer encoder architecture.
+During pre-training, BERT learns bidirectional representations from unlabeled text using two tasks: Masked Language Modeling (MLM) and Next Sentence Prediction (NSP).
+MLM involves predicting randomly masked tokens in a sequence using surrounding context.
+NSP trains the model to predict whether the second sentence in a pair follows the first in the original document.</p>
+<p>The architecture of BERT is not described in detail here, as its novelty lies primarily in its training methodology.
+For more information, refer to the original paper or <a href="http://nlp.seas.harvard.edu/2018/04/03/attention.html">The Annotated Transformer</a>.</p>
+<p>To support a wide range of downstream tasks, BERT can take either a single sentence or a pair of sentences as input.
+Each input sequence begins with the special token <code>[CLS]</code>, and sentences are separated and terminated with <code>[SEP]</code>.
+Each token’s embedding is the sum of its WordPiece embedding, segment embedding (to distinguish sentence A from sentence B), and positional embedding (indicating its index in the sequence).
+The final hidden state corresponding to the <code>[CLS]</code> token is used as the aggregate representation of the entire input.</p>
+<p>Although experiments show that NSP contributes to BERT’s performance, subsequent research—such as <a href="https://arxiv.org/pdf/1907.11692">RoBERTa</a>—has questioned its effectiveness and omitted it in favor of training solely with MLM.</p>
   </div>
 </main>
 

@@ -1962,7 +1962,7 @@
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.aclweb.org/anthology/D14-1162.pdf&#34;&gt;GloVe&lt;/a&gt;は,コーパスに出現する単語の共起回数を学習するニューラル言語モデルである。&#xA;既存手法を単語の出現頻度の統計値つかう手法と対数双線形モデルに分類し、両者の長所を備え短所を補う手法として、GloVeを提案する。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>BERT: Pre-training of Deep Bidirectional Transformers for Lnaguages Understaing (2018)</title>
+      <title>BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)</title>
       <link>https://ryotaro.dev/posts/bert/</link>
       <pubDate>Sat, 14 Dec 2019 17:39:09 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/bert/</guid>

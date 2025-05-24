@@ -30,7 +30,7 @@
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1907.11692.pdf&#34;&gt;RoBERTa&lt;/a&gt;は、&lt;a href=&#34;https://arxiv.org/pdf/1810.04805.pdf&#34;&gt;BERT&lt;/a&gt;のアーキテクチャを変えずに、事前学習の改善によって性能を向上をはかる。&#xA;BERTの事前学習がMasked Language ModelとNext Sentence Predictionの2タスクでパラメータを更新する一方で、RoBERTaはMasked Language Modelのみを採用する。&#xA;また、Byte Pair Encodingのサブワードの単位を文字からバイトに変更し、語彙集合数を50,000にまで増加した。&#xA;ミニバッチのサイズもまたBERTより大きい。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>BERT: Pre-training of Deep Bidirectional Transformers for Lnaguages Understaing (2018)</title>
+      <title>BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)</title>
       <link>https://ryotaro.dev/posts/bert/</link>
       <pubDate>Sat, 14 Dec 2019 17:39:09 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/bert/</guid>
