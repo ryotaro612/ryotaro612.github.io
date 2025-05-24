@@ -13,7 +13,7 @@
       <link>https://ryotaro.dev/posts/scaling-instruction-finetuned-language-models/</link>
       <pubDate>Wed, 07 May 2025 02:41:24 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/scaling-instruction-finetuned-language-models/</guid>
-      <description>&lt;p&gt;Instruction Finetuningは訓練データにない種類のタスクのゼロショットを改善するファインチューニングの一種で、&lt;a href=&#34;https://arxiv.org/pdf/2109.01652&#34;&gt;Finetuned Language Models Are Zero-Shot Learners&lt;/a&gt;で知られるようになった。&#xA;もとの文献ではInstruction tuningと呼ばれている。&#xA;&lt;a href=&#34;https://arxiv.org/abs/2210.11416&#34;&gt;Scaling Instruction-Finetuned Language Models&lt;/a&gt;は、学習データ、モデルのパラメタの数、chain-of-thoughtのデータを増やすと、instruction tuningで学習したモデルの性能を向上できることを示した。&lt;/p&gt;</description>
+      <description>&lt;p&gt;Instruction Finetuningは訓練データにない種類のタスクのゼロショットを改善するファインチューニングの一種で、&lt;a href=&#34;https://arxiv.org/pdf/2109.01652&#34;&gt;Finetuned Language Models Are Zero-Shot Learners&lt;/a&gt;で知られるようになった。&#xA;もとの文献ではInstruction tuningと呼ばれている。&#xA;&lt;a href=&#34;https://arxiv.org/pdf/2210.11416&#34;&gt;Scaling Instruction-Finetuned Language Models&lt;/a&gt;は、学習データ、モデルのパラメタの数、chain-of-thoughtのデータを増やすと、instruction tuningで学習したモデルの性能を向上できることを示した。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Reading Wikipedia to Answer Open Domain Questions (2017)</title>
@@ -104,7 +104,7 @@
       <link>https://ryotaro.dev/posts/realm-retrieval-augmented-language-model-pre-training/</link>
       <pubDate>Mon, 27 May 2024 22:28:20 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/realm-retrieval-augmented-language-model-pre-training/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/2002.08909&#34;&gt;REALM&lt;/a&gt;は、オープンドメイン質問応答向けの言語モデルであり、入力文に関連する文書をみつけるknowledge retrieverと見つけた文書と入力文から応答を生成するknowledge-augmented encoderで構成されている。&#xA;事前学習はmasked language modelingによる教師なし学習であり、一部のトークンがマスクされた入力文をあたえたときに、もとのマスクされた単語を出力できるように訓練する。&#xA;オープンドメイン質問応答のファインチューニングでは、質問文を入力したときに、回答を出力できるようにモデルを訓練する。&#xA;評価実験では、期待する回答がknowledge retrieverの学習に使うコーパスに文字通りにあることが前提にされている。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/2002.08909&#34;&gt;REALM&lt;/a&gt;は、オープンドメイン質問応答向けの言語モデルであり、入力文に関連する文書をみつけるknowledge retrieverと見つけた文書と入力文から応答を生成するknowledge-augmented encoderで構成されている。&#xA;事前学習はmasked language modelingによる教師なし学習であり、一部のトークンがマスクされた入力文をあたえたときに、もとのマスクされた単語を出力できるように訓練する。&#xA;オープンドメイン質問応答のファインチューニングでは、質問文を入力したときに、回答を出力できるようにモデルを訓練する。&#xA;評価実験では、期待する回答がknowledge retrieverの学習に使うコーパスに文字通りにあることが前提にされている。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Distributed GraphLab: a Framework for Machine Learning and Data Mining in the Cloud (2012)</title>
@@ -153,7 +153,7 @@
       <link>https://ryotaro.dev/posts/mining-association-rules-between-sets-of-items-in-large-databases/</link>
       <pubDate>Sat, 02 Mar 2024 15:58:04 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/mining-association-rules-between-sets-of-items-in-large-databases/</guid>
-      <description>&lt;p&gt;ある商品と一緒に買われやすい商品を小売の購買履歴から分析する初期の手法に&lt;a href=&#34;https://dl.acm.org/doi/10.1145/170036.170072&#34;&gt;Mining Association Rules between Sets of Items in Large Databases&lt;/a&gt;がある。&#xA;抽出される規則は、商品の集合と1つの商品のペアからなり、集合のすべての商品を買われるときに他方の商品も買われやすいことを意味する。&#xA;アルゴリズムは、規則を抽出するだけでなく、規則の確信度と支持度も計算する。&#xA;確信度は、規則の前提にある商品の集合を含むトランザクションのうち規則を満たすものの割合であり、規則の信憑性を意味する。&#xA;支持度は、すべてのトランザクションに対する規則に表れる商品を含むトランザクションの割合であり、規則を適用できる機会の多さを意味する。&#xA;アルゴリズムは、しきい値以下の支持度の規則を無視することで、現実的な速度で実行できる。&lt;/p&gt;</description>
+      <description>&lt;p&gt;ある商品と一緒に買われやすい商品を小売の購買履歴から分析する初期の手法に&lt;a href=&#34;https://dl.acm.org/doi/pdf/10.1145/170035.170072&#34;&gt;Mining Association Rules between Sets of Items in Large Databases&lt;/a&gt;がある。&#xA;抽出される規則は、商品の集合と1つの商品のペアからなり、集合のすべての商品を買われるときに他方の商品も買われやすいことを意味する。&#xA;アルゴリズムは、規則を抽出するだけでなく、規則の確信度と支持度も計算する。&#xA;確信度は、規則の前提にある商品の集合を含むトランザクションのうち規則を満たすものの割合であり、規則の信憑性を意味する。&#xA;支持度は、すべてのトランザクションに対する規則に表れる商品を含むトランザクションの割合であり、規則を適用できる機会の多さを意味する。&#xA;アルゴリズムは、しきい値以下の支持度の規則を無視することで、現実的な速度で実行できる。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Poly-Encoders: Architectures and Pre-Training Strategies for Fast and Accurate Multi-Sentence Scoring (2019)</title>
@@ -300,7 +300,7 @@
       <link>https://ryotaro.dev/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</link>
       <pubDate>Sat, 23 Sep 2023 10:21:03 -0400</pubDate>
       <guid>https://ryotaro.dev/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1908.10084&#34;&gt;Sentence-BERT&lt;/a&gt;は、テキストをコサイン類似度で意味の類似度を比較できる固定長のベクトルに変換できる。&#xA;&lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt;を2つのテキストを入力し類似度を出力するように訓練できるが、あるテキストに類似するテキストを求めたい場合には組合せ爆発が生じる。&#xA;Sentence-BERTは、類似度が定義されたテキストの組から、類似するテキスト同士を近い位置に写像できるように学習する。&#xA;ネットワークは、BERTを使ったシャムネットワークであり、重みを共有した2つのBERTに1つずつテキストを入力し、両方の出力を目的関数に入力する。&lt;/p&gt;&#xA;&lt;!-- Siamese Networkとテキスロ --&gt;&#xA;&lt;!-- 重みを共有するネットワークにBERTを採用したSiamese Networkである。 --&gt;&#xA;&lt;!-- Sentence-BERTは、Sentence-BERTはテキストを --&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1908.10084&#34;&gt;Sentence-BERT&lt;/a&gt;は、テキストをコサイン類似度で意味の類似度を比較できる固定長のベクトルに変換できる。&#xA;&lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt;を2つのテキストを入力し類似度を出力するように訓練できるが、あるテキストに類似するテキストを求めたい場合には組合せ爆発が生じる。&#xA;Sentence-BERTは、類似度が定義されたテキストの組から、類似するテキスト同士を近い位置に写像できるように学習する。&#xA;ネットワークは、BERTを使ったシャムネットワークであり、重みを共有した2つのBERTに1つずつテキストを入力し、両方の出力を目的関数に入力する。&lt;/p&gt;&#xA;&lt;!-- Siamese Networkとテキスロ --&gt;&#xA;&lt;!-- 重みを共有するネットワークにBERTを採用したSiamese Networkである。 --&gt;&#xA;&lt;!-- Sentence-BERTは、Sentence-BERTはテキストを --&gt;</description>
     </item>
     <item>
       <title>A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning(2008)</title>
@@ -317,7 +317,7 @@
       <description>&lt;p&gt;Hartleyは、&lt;a href=&#34;https://monoskop.org/images/a/a6/Hartley_Ralph_VL_1928_Transmission_of_Information.pdf&#34;&gt;Transmission of Information&lt;/a&gt;で、通信システムの情報伝達性能を評価するために、情報の定量的な尺度を提唱した。&#xA;シャノンが1948年に情報エントロピーを&lt;a href=&#34;https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf&#34;&gt;発表&lt;/a&gt;する21年前である。&#xA;Hartleyは、通信内容の意味や解釈を捨象し、記号列の有限な候補からある記号列を選ぶことを情報みなした。&#xA;シャノンは、有限の候補から記号列を選択する考えを継承し、さらに、記号が順に確率的に選ばれるとみなすことでHartleyの情報量の定義を情報エントロピーに発展させた。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>RoBERTa: A Robustly Optimized BERT Pretraining Approach(2019)</title>
+      <title>RoBERTa: A Robustly Optimized BERT Pretraining Approach (2019)</title>
       <link>https://ryotaro.dev/posts/roberta/</link>
       <pubDate>Sun, 27 Aug 2023 13:13:39 -0400</pubDate>
       <guid>https://ryotaro.dev/posts/roberta/</guid>
@@ -419,7 +419,7 @@
       <link>https://ryotaro.dev/posts/an_image_is_worth_16x16_words_transformers_for_image_recognition_at_scale/</link>
       <pubDate>Sat, 29 Apr 2023 12:12:11 -0400</pubDate>
       <guid>https://ryotaro.dev/posts/an_image_is_worth_16x16_words_transformers_for_image_recognition_at_scale/</guid>
-      <description>&lt;p&gt;画像認識に&lt;a href=&#34;https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;Transformer&lt;/a&gt;を使う手法を提案し、&lt;a href=&#34;https://arxiv.org/abs/1912.11370&#34;&gt;Big Transfer&lt;/a&gt;と&lt;a href=&#34;https://arxiv.org/abs/1911.04252&#34;&gt;Noisy Student&lt;/a&gt;と比較した。&#xA;論文が発表された2021年でも、画像認識にニューラルネットワークを使う場合、畳込みニューラルネット(CNN)が基本の選択肢になる。&#xA;自己注意機構を使った画像処理の&lt;a href=&#34;https://arxiv.org/abs/2003.07853&#34;&gt;先行研究&lt;/a&gt;はあるが、スケールするアーキテクチャではない。&lt;/p&gt;&#xA;&lt;p&gt;AN IMAGE IS WORTH 16x16 WORDSは、分割した画像をトークン（単語）のようにTransformerへ入力することで、Transformerを画像認識へ応用できるこを示した。&#xA;TransformerはCNNのように画像の向きや局所性を帰納バイアスにもたず、データが不十分でないと汎化性能は低い。&#xA;しかし、学習データを14M-300Mまで増やすと、CNNを越える汎化性能を発揮した。&lt;/p&gt;</description>
+      <description>&lt;p&gt;画像認識に&lt;a href=&#34;https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;Transformer&lt;/a&gt;を使う手法を提案し、&lt;a href=&#34;https://arxiv.org/abs/1912.11370&#34;&gt;Big Transfer&lt;/a&gt;と&lt;a href=&#34;https://arxiv.org/abs/1911.04252&#34;&gt;Noisy Student&lt;/a&gt;と比較した。&#xA;論文が発表された2021年でも、画像認識にニューラルネットワークを使う場合、畳込みニューラルネット(CNN)が基本の選択肢になる。&#xA;自己注意機構を使った画像処理の&lt;a href=&#34;https://arxiv.org/abs/2003.07853&#34;&gt;先行研究&lt;/a&gt;はあるが、スケールするアーキテクチャではない。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/2010.11929&#34;&gt;AN IMAGE IS WORTH 16x16 WORDS&lt;/a&gt;は、分割した画像をトークン（単語）のようにTransformerへ入力することで、Transformerを画像認識へ応用できるこを示した。&#xA;TransformerはCNNのように画像の向きや局所性を帰納バイアスにもたず、データが不十分でないと汎化性能は低い。&#xA;しかし、学習データを14M-300Mまで増やすと、CNNを越える汎化性能を発揮した。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Virtual Time and Global States of Distributed Systems(1988)</title>
@@ -429,7 +429,7 @@
       <description>&lt;p&gt;分散システムのプロセス間で時刻が常に同期しているとは限らない。&#xA;プロセスの時刻から判断すると、プロセスでは、ほかのプロセスのイベントと比べてどちらが先に起きたか分からないイベントが起きえる。&#xA;&lt;a href=&#34;https://lamport.azurewebsites.net/pubs/time-clocks.pdf&#34;&gt;Lamport&lt;/a&gt;は、各プロセスに単調増加する論理的な時刻をもたせ、メッセージとともに時刻をプロセス間で交換することで、イベントの依存関係と矛盾せずにイベントを全順序に並べる手法を提案した。&#xA;先行するイベントは、必ず後続のイベントよりも小さい時刻をもつ。&#xA;しかし、逆は必ずしも成り立たない。&#xA;先行する場合もあれば、前後関係がないこともある。&#xA;&lt;a href=&#34;http://www.vs.inf.ethz.ch/publ/papers/VirtTimeGlobStates.pdf&#34;&gt;Virtual Time and Global States of Distributed Systems&lt;/a&gt;は、各プロセスの時刻を、プロセス数とおなじ数の長さの配列で表現する。&#xA;これにより、時刻の前後関係が定義されていることがイベント間に前後関係があることの必要十分条件であることを可能にした。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Generating Long Sequences with Sparse Transformers(2019)</title>
+      <title>Generating Long Sequences with Sparse Transformers (2019)</title>
       <link>https://ryotaro.dev/posts/generating_long_sequences_with_sparse_transformers/</link>
       <pubDate>Sat, 15 Apr 2023 10:59:43 -0400</pubDate>
       <guid>https://ryotaro.dev/posts/generating_long_sequences_with_sparse_transformers/</guid>
@@ -527,7 +527,7 @@
       <description>&lt;p&gt;ダイクストラ法を使えば、スタート地点から各区画への最短距離を求められる。&#xA;塀に移動にかかる時間を十分に大きい値、かりに\(HM+1\)として、ダイクストラ法適用すると、&#xA;ゴール地点が\(3(HM+1)\)以下未満であり、そのときに限り、塀を壊す回数が2回以下でゴール地点に到達できる。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>From RankNet to LambdaRank to LambdaMART: An Overview(2010)</title>
+      <title>From RankNet to LambdaRank to LambdaMART: An Overview (2010)</title>
       <link>https://ryotaro.dev/posts/from_ranknet_to_lambdarank_to_lambdamart_an_overview/</link>
       <pubDate>Fri, 03 Feb 2023 16:55:53 -0500</pubDate>
       <guid>https://ryotaro.dev/posts/from_ranknet_to_lambdarank_to_lambdamart_an_overview/</guid>
@@ -569,7 +569,7 @@
       <description>&lt;p&gt;高水準言語は、実装の詳細を意識せずに使える操作、データ構造、while文などの制御構造を提供する。&#xA;この3つを抽象とよぶ。&#xA;プログラミング言語から提供される抽象だけではプログラムを実装できないので、開発者は、足りない抽象を実装しなければならない。&#xA;抽象データ型は、言語から提供される抽象を組合せて作るデータ構造である。&#xA;抽象データ型に対する操作の実装は外部に公開されず、抽象データ型の特徴は抽象データ型に可能な操作によって決まる。&#xA;構造化プログラミングと抽象データ型を提供するプログラミング言語を開発し、抽象データ型を使うプログラムのソースコードを例示することで、ほとんどの処理が抽象データ型だけで実装可能なことを示唆した。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>抄訳 A taxonomy of web search(2002)</title>
+      <title>抄訳 A taxonomy of web search (2002)</title>
       <link>https://ryotaro.dev/posts/a_taxonomy_of_web_search/</link>
       <pubDate>Fri, 23 Dec 2022 22:44:46 -0500</pubDate>
       <guid>https://ryotaro.dev/posts/a_taxonomy_of_web_search/</guid>
@@ -583,7 +583,7 @@
       <description>&lt;p&gt;Epidemic Algorithmは、データベース間の差分を解消するために、データベースがランダムに選んだ別のデータベースと同期する手法である。&#xA;Epidemicを邦訳すると伝染性である。&#xA;ここではデータベースにはマスタースレーブの区別はなく、任意のサーバーがレコードの変更リクエストを受理できる。&#xA;Epidemic Algorithmには、定期的にデーターベース全体を同期する手法と、変更を受理したときに当該の変更のみを別のデータベースに伝搬させる手法の2つがある。&#xA;前者は、データベース全体を同期するので変更のとりこぼしがいずれは解消されるが、同期に時間がかかる。&#xA;後者は、時間はかからないが、伝搬を終えるまでに同期できなかった変更があれば、その齟齬が残りつづける。&#xA;データベースがある時点で最新の変更をもたない確率を仮定し、その確率で次の同期で変更を取得できる確率を表し、手法間の同期する収束の速さを比較した。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>抄訳 Syntactic Clustering of the Web(1997)</title>
+      <title>抄訳 Syntactic Clustering of the Web (1997)</title>
       <link>https://ryotaro.dev/posts/syntactic_clustering_of_the_web/</link>
       <pubDate>Tue, 13 Dec 2022 13:38:46 -0500</pubDate>
       <guid>https://ryotaro.dev/posts/syntactic_clustering_of_the_web/</guid>
@@ -1962,11 +1962,11 @@
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.aclweb.org/anthology/D14-1162.pdf&#34;&gt;GloVe&lt;/a&gt;は,コーパスに出現する単語の共起回数を学習するニューラル言語モデルである。&#xA;既存手法を単語の出現頻度の統計値つかう手法と対数双線形モデルに分類し、両者の長所を備え短所を補う手法として、GloVeを提案する。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>BERT: Pre-training of Deep Bidirectional Transformers for Lnaguages Understaing(2018)</title>
+      <title>BERT: Pre-training of Deep Bidirectional Transformers for Lnaguages Understaing (2018)</title>
       <link>https://ryotaro.dev/posts/bert/</link>
       <pubDate>Sat, 14 Dec 2019 17:39:09 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/bert/</guid>
-      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;BERTは&lt;a href=&#34;https://arxiv.org/pdf/1706.03762.pdf&#34;&gt;Attention Is All You Need&lt;/a&gt;にあるTransformerをアーキテクチャに導入した分散表現のモデルであり、本稿は、事前学習済みのBERTにファインチューニングを適用しQAタスクや自然言語推論のベンチマークにおいて既存研究を上回る結果を示している。&#xA;なお、アーキテクチャに関する説明は少なく、子細に知りたい場合は&lt;a href=&#34;https://arxiv.org/pdf/1706.03762.pdf&#34;&gt;Attention Is All You Need&lt;/a&gt;や&lt;a href=&#34;http://nlp.seas.harvard.edu/2018/04/03/attention.html&#34;&gt;The Annotated Transformer&lt;/a&gt;を参照するように案内されている。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1810.04805&#34;&gt;BERT&lt;/a&gt;は、Bidirectional Encoder Representations from Transformersの略称で、&lt;a href=&#34;https://arxiv.org/pdf/1706.03762.pdf&#34;&gt;Transformer&lt;/a&gt;のエンコーダー部で、順方向と逆方向のテキストからテキストの分散表現を生成する。&#xA;事前学習では、周辺のトークンからマスクされたトークンを推定する教師なしタスクのMaksed Language Model (MLM) と2つの文が隣接した箇所から抜きだされたかを判定するタスクのNext Sentence Prediction (NSP) でモデルを訓練する。&lt;/p&gt;</description>
     </item>
     <item>
       <title>150 Successful Machine Learning Models: 6 Lessons Learned at Booking.com(2019)</title>
@@ -2032,7 +2032,7 @@
       <description>&lt;p&gt;機械学習に使う教師データに関するサーベイ論文であり、機械学習や自然言語処理などのデータの応用分野だけでなく、データの管理にまつわる分野の調査も含まれているところに特徴がある。&#xA;データの管理に着目している理由は、深層学習の発展によって必要な教師データが増えたことで、データの管理の課題が顕在化してきたからである。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>概要 Structure estimation for discrete graphical models: Generalized covariance matrices and their inverses(2012)</title>
+      <title>概要 Structure estimation for discrete graphical models: Generalized covariance matrices and their inverses (2012)</title>
       <link>https://ryotaro.dev/posts/structure_estimation_for_dscrete_graphical_models/</link>
       <pubDate>Sat, 19 Oct 2019 16:21:31 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/structure_estimation_for_dscrete_graphical_models/</guid>
@@ -2102,14 +2102,14 @@
       <description>&lt;p&gt;Extreme multi-label classificationの手法である。&#xA;Extreme multi-label classificationは、大量のラベルの候補からデータに関連する複数のラベルを推定するタスクである。&#xA;FastXMLは、決定木を弱学習器にしたアンサンブル学習であり、ノードを分割するための評価関数にnDCGを採用することで、学習時間を短縮し、予測精度を向上させた。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>メモ Advantages and Disadvantages of a Monolithic Repository(2018)</title>
+      <title>Advantages and Disadvantages of a Monolithic Repository (2018)</title>
       <link>https://ryotaro.dev/posts/advantages_and_disadvantages_of_a_monolithic_repository/</link>
       <pubDate>Sat, 17 Aug 2019 14:49:48 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/advantages_and_disadvantages_of_a_monolithic_repository/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;マルチリポジトリと比べたときのモノリシックリポジトリの長所と短所を調査した。&#xA;論文は2018年のICSEでGoogleから発表された。&#xA;調査方法はGoogle社のエンジニアへのアンケートとエンジニアの行動ログの分析が採用されている。&#xA;Googleではモノリシックリポジトリが採用されており、エンジニアがこれまで経験したマルチリポジトリが比較対象となっている。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>抄訳 CatBoost: unbaiased boosting with categorical features(2017)</title>
+      <title>抄訳 CatBoost: unbaiased boosting with categorical features (2017)</title>
       <link>https://ryotaro.dev/posts/cat_boost/</link>
       <pubDate>Sat, 10 Aug 2019 23:27:29 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/cat_boost/</guid>
@@ -2179,7 +2179,7 @@
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;一階述語論理式で表現されたクエリを満たすノードを、分散表現に変換し、ナレッジグラフの中から計算時間上効率よく見つけるアルゴリズムを提案した。&#xA;クエリに現れるエッジの数に対して計算時間が線形であることが特徴。&#xA;ただし、クエリには、存在量化と連接を使えるが、全称量化、選択、否定を使うことができない制約がある。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>抄訳 Regularizing and Optimizing LSTM Language Models(2017)</title>
+      <title>抄訳 Regularizing and Optimizing LSTM Language Models (2017)</title>
       <link>https://ryotaro.dev/posts/regularizing_and_optimizing_lstm_language_models/</link>
       <pubDate>Fri, 23 Nov 2018 19:27:00 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/regularizing_and_optimizing_lstm_language_models/</guid>
@@ -2249,7 +2249,7 @@
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;論文では、Airbnbが深層学習を宿泊先検索に適用した時の試行錯誤と結果を紹介している。&#xA;採用したモデルのアルゴリズムと特徴量エンジニアリングの説明が本稿の大部分を占める。&#xA;深層学習を試す以前はGBDTを採用おり、以下の順にアルゴリズムを変えていった。&#xA;当初は、アルゴリズムを段階的に高度にしていくつもりはなく、1.以前には複雑なアルゴリズムをいきなり試したが、失敗に終わっている。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>メモ The Relationship Between Precision-Recall and ROC Curve</title>
+      <title>The Relationship Between Precision-Recall and ROC Curves</title>
       <link>https://ryotaro.dev/posts/the_relationship_between_precision_recall_and_roc_curve/</link>
       <pubDate>Sat, 25 Aug 2018 00:56:13 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/the_relationship_between_precision_recall_and_roc_curve/</guid>

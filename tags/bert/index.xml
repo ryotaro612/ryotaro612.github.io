@@ -20,14 +20,21 @@
       <link>https://ryotaro.dev/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</link>
       <pubDate>Sat, 23 Sep 2023 10:21:03 -0400</pubDate>
       <guid>https://ryotaro.dev/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1908.10084&#34;&gt;Sentence-BERT&lt;/a&gt;は、テキストをコサイン類似度で意味の類似度を比較できる固定長のベクトルに変換できる。&#xA;&lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt;を2つのテキストを入力し類似度を出力するように訓練できるが、あるテキストに類似するテキストを求めたい場合には組合せ爆発が生じる。&#xA;Sentence-BERTは、類似度が定義されたテキストの組から、類似するテキスト同士を近い位置に写像できるように学習する。&#xA;ネットワークは、BERTを使ったシャムネットワークであり、重みを共有した2つのBERTに1つずつテキストを入力し、両方の出力を目的関数に入力する。&lt;/p&gt;&#xA;&lt;!-- Siamese Networkとテキスロ --&gt;&#xA;&lt;!-- 重みを共有するネットワークにBERTを採用したSiamese Networkである。 --&gt;&#xA;&lt;!-- Sentence-BERTは、Sentence-BERTはテキストを --&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1908.10084&#34;&gt;Sentence-BERT&lt;/a&gt;は、テキストをコサイン類似度で意味の類似度を比較できる固定長のベクトルに変換できる。&#xA;&lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt;を2つのテキストを入力し類似度を出力するように訓練できるが、あるテキストに類似するテキストを求めたい場合には組合せ爆発が生じる。&#xA;Sentence-BERTは、類似度が定義されたテキストの組から、類似するテキスト同士を近い位置に写像できるように学習する。&#xA;ネットワークは、BERTを使ったシャムネットワークであり、重みを共有した2つのBERTに1つずつテキストを入力し、両方の出力を目的関数に入力する。&lt;/p&gt;&#xA;&lt;!-- Siamese Networkとテキスロ --&gt;&#xA;&lt;!-- 重みを共有するネットワークにBERTを採用したSiamese Networkである。 --&gt;&#xA;&lt;!-- Sentence-BERTは、Sentence-BERTはテキストを --&gt;</description>
     </item>
     <item>
-      <title>RoBERTa: A Robustly Optimized BERT Pretraining Approach(2019)</title>
+      <title>RoBERTa: A Robustly Optimized BERT Pretraining Approach (2019)</title>
       <link>https://ryotaro.dev/posts/roberta/</link>
       <pubDate>Sun, 27 Aug 2023 13:13:39 -0400</pubDate>
       <guid>https://ryotaro.dev/posts/roberta/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1907.11692.pdf&#34;&gt;RoBERTa&lt;/a&gt;は、&lt;a href=&#34;https://arxiv.org/pdf/1810.04805.pdf&#34;&gt;BERT&lt;/a&gt;のアーキテクチャを変えずに、事前学習の改善によって性能を向上をはかる。&#xA;BERTの事前学習がMasked Language ModelとNext Sentence Predictionの2タスクでパラメータを更新する一方で、RoBERTaはMasked Language Modelのみを採用する。&#xA;また、Byte Pair Encodingのサブワードの単位を文字からバイトに変更し、語彙集合数を50,000にまで増加した。&#xA;ミニバッチのサイズもまたBERTより大きい。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>BERT: Pre-training of Deep Bidirectional Transformers for Lnaguages Understaing (2018)</title>
+      <link>https://ryotaro.dev/posts/bert/</link>
+      <pubDate>Sat, 14 Dec 2019 17:39:09 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/bert/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1810.04805&#34;&gt;BERT&lt;/a&gt;は、Bidirectional Encoder Representations from Transformersの略称で、&lt;a href=&#34;https://arxiv.org/pdf/1706.03762.pdf&#34;&gt;Transformer&lt;/a&gt;のエンコーダー部で、順方向と逆方向のテキストからテキストの分散表現を生成する。&#xA;事前学習では、周辺のトークンからマスクされたトークンを推定する教師なしタスクのMaksed Language Model (MLM) と2つの文が隣接した箇所から抜きだされたかを判定するタスクのNext Sentence Prediction (NSP) でモデルを訓練する。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -29,5 +29,12 @@
       <guid>https://ryotaro.dev/posts/lora-low-rank-adaptation-of-large-language-models/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1804.08838.pdf&#34;&gt;Li et al. (2018)&lt;/a&gt;と&lt;a href=&#34;https://arxiv.org/pdf/2012.13255.pdf&#34;&gt;Aghajanyan et al. (2020)&lt;/a&gt;は、Large Language Models (LLM)のファインチューニングにかかる計算資源は大きいが、下流タスクに必要なパラメータ数はLLMのパラメタ数よりもはるかに少ないと主張した。&#xA;&lt;a href=&#34;https://arxiv.org/pdf/2106.09685.pdf&#34;&gt;LoRA&lt;/a&gt;は、この仮説によりファインチューニングを避け、LLMの重みと線形結合すると下流タスクに最適な重みに近似できる小さな行列を求める。&#xA;LLMの重みを\(W_0\in\mathbb{R}^{d\times k}\)とすると、\(W_0+BA\ (B\in\mathbb{R}^{d\times r}, A\in\mathbb{R}^{r\times k}, r \ll\min (d, k))\)が下流タスクに最適な重みに近づくように、ファインチューニングにかわって\(W_0\)を更新せず\(B,\ A\)のみを更新する。&#xA;\(r\)が\(d, k\)よりも小さいので、ファインチューニングよりも学習時間は短い。&#xA;また、複数の下流タスクを入力に適用する場合、\(W_0x\)を共有できるので、推論に必要な計算も\(W_0\)を更新するファインチューニングより少ない。&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>BERT: Pre-training of Deep Bidirectional Transformers for Lnaguages Understaing (2018)</title>
+      <link>https://ryotaro.dev/posts/bert/</link>
+      <pubDate>Sat, 14 Dec 2019 17:39:09 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/bert/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1810.04805&#34;&gt;BERT&lt;/a&gt;は、Bidirectional Encoder Representations from Transformersの略称で、&lt;a href=&#34;https://arxiv.org/pdf/1706.03762.pdf&#34;&gt;Transformer&lt;/a&gt;のエンコーダー部で、順方向と逆方向のテキストからテキストの分散表現を生成する。&#xA;事前学習では、周辺のトークンからマスクされたトークンを推定する教師なしタスクのMaksed Language Model (MLM) と2つの文が隣接した箇所から抜きだされたかを判定するタスクのNext Sentence Prediction (NSP) でモデルを訓練する。&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

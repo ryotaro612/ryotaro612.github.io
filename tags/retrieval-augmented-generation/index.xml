@@ -13,7 +13,7 @@
       <link>https://ryotaro.dev/posts/realm-retrieval-augmented-language-model-pre-training/</link>
       <pubDate>Mon, 27 May 2024 22:28:20 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/realm-retrieval-augmented-language-model-pre-training/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/2002.08909&#34;&gt;REALM&lt;/a&gt;は、オープンドメイン質問応答向けの言語モデルであり、入力文に関連する文書をみつけるknowledge retrieverと見つけた文書と入力文から応答を生成するknowledge-augmented encoderで構成されている。&#xA;事前学習はmasked language modelingによる教師なし学習であり、一部のトークンがマスクされた入力文をあたえたときに、もとのマスクされた単語を出力できるように訓練する。&#xA;オープンドメイン質問応答のファインチューニングでは、質問文を入力したときに、回答を出力できるようにモデルを訓練する。&#xA;評価実験では、期待する回答がknowledge retrieverの学習に使うコーパスに文字通りにあることが前提にされている。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/2002.08909&#34;&gt;REALM&lt;/a&gt;は、オープンドメイン質問応答向けの言語モデルであり、入力文に関連する文書をみつけるknowledge retrieverと見つけた文書と入力文から応答を生成するknowledge-augmented encoderで構成されている。&#xA;事前学習はmasked language modelingによる教師なし学習であり、一部のトークンがマスクされた入力文をあたえたときに、もとのマスクされた単語を出力できるように訓練する。&#xA;オープンドメイン質問応答のファインチューニングでは、質問文を入力したときに、回答を出力できるようにモデルを訓練する。&#xA;評価実験では、期待する回答がknowledge retrieverの学習に使うコーパスに文字通りにあることが前提にされている。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Retrieval Augmented Generation for Knowledge Intensive NLP Tasks (2021)</title>

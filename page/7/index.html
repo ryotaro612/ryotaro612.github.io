@@ -101,7 +101,7 @@
     
     
     <article>
-        <h3><a href="https://ryotaro.dev/posts/generating_long_sequences_with_sparse_transformers/">Generating Long Sequences with Sparse Transformers(2019)</a></h3>
+        <h3><a href="https://ryotaro.dev/posts/generating_long_sequences_with_sparse_transformers/">Generating Long Sequences with Sparse Transformers (2019)</a></h3>
         <div class="summary"><p><a href="https://arxiv.org/abs/1706.03762">Transformer</a>のQKV注意機構に入力するベクトルを限定し、長さ\(n\)の系列をQKV注意機構に入力したときの空間計算量を\(\mathcal{O}(n\sqrt{n})\)まで減らした<a href="https://arxiv.org/abs/1904.10509">研究</a>である。
 Transformerであれば、系列の要素は、要素自体の位置と以前の要素すべてを注意し、時間と空間計算量は\(\mathcal{O}(n^2)\)になる。
 Sparse Transformerは、\(p\)個のパターンを用意し、パターンに該当する要素のみを各注意機構に入力し、\(p\)個の注意を生成する。

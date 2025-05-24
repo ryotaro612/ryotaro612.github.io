@@ -296,7 +296,7 @@
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1908.10084&#34;&gt;Sentence-BERT&lt;/a&gt; derives semantically meaningful sentence embedding that can be compared using cosine-similarity.&#xA;&lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt; achieved new state-of-the art performance on various sentence-pair regression tasks using a cross-encoder.&#xA;A cross-encoder accepts two sentences as input to the transformer network and the target value is predicted.&#xA;Semantic textual similarity is one of the sentence-pair regression tasks.&#xA;However, this setup is often not scalable for various pair regression tasks due to many possible combinations.&#xA;The semantic search that maps each sentence to a vector space where semantically similar sentences are close alleviates the combinatorial explosion.&#xA;Sentence-BERT uses a siamese network in which the two BERT networks have tied weights such that the produced sentence embeddings can be semantically compared using cosine-similarity.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning(2008)</title>
+      <title>A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning (2008)</title>
       <link>https://ryotaro.dev/en/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/</link>
       <pubDate>Sat, 16 Sep 2023 08:59:45 -0400</pubDate>
       <guid>https://ryotaro.dev/en/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/</guid>

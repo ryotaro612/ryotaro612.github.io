@@ -310,11 +310,26 @@ Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文�
     </article>
     
     <article>
-        <h3><a href="https://ryotaro.dev/posts/bert/">BERT: Pre-training of Deep Bidirectional Transformers for Lnaguages Understaing(2018)</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
-<p>BERTは<a href="https://arxiv.org/pdf/1706.03762.pdf">Attention Is All You Need</a>にあるTransformerをアーキテクチャに導入した分散表現のモデルであり、本稿は、事前学習済みのBERTにファインチューニングを適用しQAタスクや自然言語推論のベンチマークにおいて既存研究を上回る結果を示している。
-なお、アーキテクチャに関する説明は少なく、子細に知りたい場合は<a href="https://arxiv.org/pdf/1706.03762.pdf">Attention Is All You Need</a>や<a href="http://nlp.seas.harvard.edu/2018/04/03/attention.html">The Annotated Transformer</a>を参照するように案内されている。</p></div>
+        <h3><a href="https://ryotaro.dev/posts/bert/">BERT: Pre-training of Deep Bidirectional Transformers for Lnaguages Understaing (2018)</a></h3>
+        <div class="summary"><p><a href="https://arxiv.org/pdf/1810.04805">BERT</a>は、Bidirectional Encoder Representations from Transformersの略称で、<a href="https://arxiv.org/pdf/1706.03762.pdf">Transformer</a>のエンコーダー部で、順方向と逆方向のテキストからテキストの分散表現を生成する。
+事前学習では、周辺のトークンからマスクされたトークンを推定する教師なしタスクのMaksed Language Model (MLM) と2つの文が隣接した箇所から抜きだされたかを判定するタスクのNext Sentence Prediction (NSP) でモデルを訓練する。</p></div>
         <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/large-language-model/">
+		#Large Language Model
+	      </a>
+	    </li>
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/bert/">
+		#BERT
+	      </a>
+	    </li>
+	    
+	  </ul>
 	  
           <span class="date">December 14, 2019</span>
         </div>

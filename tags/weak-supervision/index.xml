@@ -23,7 +23,7 @@
       <description>&lt;p&gt;ActiveCleanは、教師データの誤りを修正し、モデルの精度を改善する手法である。&#xA;優先して修正すべきデータを推定し、データが修正されたら修正されたデータでモデルを学習する。&#xA;この修正と学習を条件を満たすまでくりかえす。&#xA;反復的な学習で大域的最適解をえられるモデルであれば、最適解への収束が保証される。&#xA;データの修正件数が等しい場合に、先行研究と比べて最大2.5倍の精度改善を達成した。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>概要 Structure estimation for discrete graphical models: Generalized covariance matrices and their inverses(2012)</title>
+      <title>概要 Structure estimation for discrete graphical models: Generalized covariance matrices and their inverses (2012)</title>
       <link>https://ryotaro.dev/posts/structure_estimation_for_dscrete_graphical_models/</link>
       <pubDate>Sat, 19 Oct 2019 16:21:31 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/structure_estimation_for_dscrete_graphical_models/</guid>
