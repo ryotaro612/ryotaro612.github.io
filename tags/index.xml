@@ -6,8 +6,15 @@
     <description>Recent content in Tags on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 07 May 2025 02:41:24 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 30 May 2025 14:52:18 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sentence Embedding</title>
+      <link>https://ryotaro.dev/tags/sentence-embedding/</link>
+      <pubDate>Fri, 30 May 2025 14:52:18 +0900</pubDate>
+      <guid>https://ryotaro.dev/tags/sentence-embedding/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Instruction Finetuning</title>
       <link>https://ryotaro.dev/tags/instruction-finetuning/</link>
@@ -328,13 +335,6 @@
       <link>https://ryotaro.dev/tags/concurrent-programming/</link>
       <pubDate>Sat, 30 Sep 2023 11:34:47 -0400</pubDate>
       <guid>https://ryotaro.dev/tags/concurrent-programming/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Sentence Embedding</title>
-      <link>https://ryotaro.dev/tags/sentence-embedding/</link>
-      <pubDate>Sat, 23 Sep 2023 10:21:03 -0400</pubDate>
-      <guid>https://ryotaro.dev/tags/sentence-embedding/</guid>
       <description></description>
     </item>
     <item>

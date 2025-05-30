@@ -101,6 +101,32 @@
     
     
     <article>
+        <h3><a href="https://ryotaro.dev/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/">Apache Calcite: A Foundational Framework for Optimized Query Processing Over Heterogeneous Data Sources (2018)</a></h3>
+        <div class="summary"><p>Michael StonebrakerとUğur Çetintemelは、2005年に<a href="https://cs.brown.edu/~ugur/fits_all.pdf">One size fits all</a>で、データウェアハウスとストリーミング処理をとりあげ、すべてのデータをRDBMSで管理する時代の終わりを主張した。
+組織はデータベースを特定の用途ごとに使い分けるようになった。
+しかし同時に、データベースの開発者は、どんなデータベースでも必要な仕組みをデータベースごとに実装しなければならなくなった。
+どのようなクエリ言語を採用するデーターベースにもクエリ最適化が求められる。
+一方、組織は複数のデータベースに分散したデータを統合しなければならなくなった。</p>
+<p><a href="https://calcite.apache.org/">Apache Calcite</a>は、SQLの解釈、最適化、実行のためのフレームワークであり、複数のデータベースに分散したデータへのANSI標準のSQLでの問い合せを実現する。
+データが複数のデータベースに分散していても、クライアントはデータが1つのRDBMSにあるかのようにSQLでCalciteに問い合せられる。</p>
+<!-- クライアントは、複数のデータベースに分散するデータが1つのRDBMSにあるかのように、SQLでCalciteに問い合せられる。 --></div>
+        <div class="article-footer">
+	  	  
+	  <ul class="tags">
+	    
+            <li class="tag">
+	      <a href="https://ryotaro.dev/tags/apache-calcite/">
+		#Apache Calcite
+	      </a>
+	    </li>
+	    
+	  </ul>
+	  
+          <span class="date">March 10, 2024</span>
+        </div>
+    </article>
+    
+    <article>
         <h3><a href="https://ryotaro.dev/posts/mining-association-rules-between-sets-of-items-in-large-databases/">Mining Association Rules between Sets of Items in Large Databases (1993)</a></h3>
         <div class="summary"><p>ある商品と一緒に買われやすい商品を小売の購買履歴から分析する初期の手法に<a href="https://dl.acm.org/doi/pdf/10.1145/170035.170072">Mining Association Rules between Sets of Items in Large Databases</a>がある。
 抽出される規則は、商品の集合と1つの商品のペアからなり、集合のすべての商品を買われるときに他方の商品も買われやすいことを意味する。
@@ -305,28 +331,6 @@ CAP定理の発表された12年後の今日では、分断時における一貫
 	  </ul>
 	  
           <span class="date">December 23, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/wide-and-deep-learning-for-recommender-systems/">Wide and Deep Learning for Recommender Systems (2016)</a></h3>
-        <div class="summary"><p>推薦システムに一般化線形モデルや深層学習を応用する場合、両者には一長一短がある。
-一般線形化モデルは、学習データに忠実かつ解釈しやすい推測を出力するが、交互作用では学習データにないアイテムを推薦できない。
-深層学習は、汎化性能にすぐれるが、疎で高ランクな行列を学習しがたい。
-<a href="https://arxiv.org/abs/1606.07792">Wide &amp; Deep Learning for Recommender Systems</a>は、一般線形化モデルとフィードフォワードニューラルネットワーク (FFN) の出力の重みつき和をロジスティック関数に適用し、両者の利点を生かし欠点をおぎなうモデルである。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/recommendation/">
-		#Recommendation
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 16, 2023</span>
         </div>
     </article>
     

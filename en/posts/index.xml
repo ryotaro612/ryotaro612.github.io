@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 07 May 2025 02:41:24 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 30 May 2025 14:52:18 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Supervised Learning of Universal Sentence Representations From Natural Language Inference Data (2017)</title>
+      <link>https://ryotaro.dev/en/posts/supervised-learning-of-universal-sentence-representations-from-natural-language-inference-data/</link>
+      <pubDate>Fri, 30 May 2025 14:52:18 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/supervised-learning-of-universal-sentence-representations-from-natural-language-inference-data/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1705.02364&#34;&gt;Supervised Learning of Universal Sentence Representations From Natural Language Inference Data&lt;/a&gt; proposes a supervised approach to train neural networks on the Stanford Natural Language Inference (SNLI) dataset to produce general-purpose sentence embeddings applicable to a wide range of downstream tasks.&#xA;The authors evaluated seven different encoder architectures across twelve NLP tasks and found that a bidirectional LSTM with max pooling achieved the best performance.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Scaling Instruction Finetuned Language Models (2022)</title>
       <link>https://ryotaro.dev/en/posts/scaling-instruction-finetuned-language-models/</link>
