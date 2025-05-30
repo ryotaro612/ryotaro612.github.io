@@ -985,6 +985,19 @@
     <loc>https://ryotaro.dev/en/tags/cosine-similarity/</loc>
     <lastmod>2023-09-23T10:21:03-04:00</lastmod>
   </url><url>
+    <loc>https://ryotaro.dev/en/tags/sentence-embedding/</loc>
+    <lastmod>2023-09-23T10:21:03-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/sentence-embedding/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/sentence-embedding/"
+                />
+  </url><url>
     <loc>https://ryotaro.dev/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</loc>
     <lastmod>2023-09-23T10:21:03-04:00</lastmod>
     <xhtml:link
