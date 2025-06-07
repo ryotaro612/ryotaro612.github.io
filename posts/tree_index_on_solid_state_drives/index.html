@@ -116,7 +116,7 @@ FD-treeは読み込み性能を維持しつつ書き込み性能の向上を実�
 <p>FD-treeは、ことなる2層のデータ構造からなる。最上位\(L_0\)がHead TreeとよばれるB+-treeで、以下の階層\(L_1, L_2, \dots\)は連続するページに格納されたsorted runとよばれる。
 runは、主記憶に収まるほど小さなファイルの一部を意味する。
 以下にFD-treeの例を図示する。
-<img alt="fd-tree" src="/fd-tree.png"></p>
+<img src="/fd-tree.png" alt="fd-tree"></p>
 <p>ページの要素にはIndex EntryとFenceの2種類があり、どちらも図中の数字がしめすキーをもつ。
 Index EntryはレコードのIDをもち、さらに、Filter EntryとNormal Entryの2種類にわかれる。
 Filter Entryは、削除でFD-treeに挿入され、対応するレコードとIndex Entryが論理的に削除されたことをあらわす。

@@ -111,7 +111,7 @@
 <p>モデルは、文字列を単位とする入力をうけつける。
 モデルのアーキテクチャを図に示す。
 入力に近い層から順にCNN, highway network, LSTMの順に説明していく。
-<img alt="img" src="/character_aware_neural_language_models.png"></p>
+<img src="/character_aware_neural_language_models.png" alt="img"></p>
 <h4 id="cnn">CNN</h4>
 <p>\(d\)を文字の分散表現の次元として、長さ\(l\)の単語\(k\)は\({\rm C}^{d\times l}\in \mathbb{R}^{d \times l}\)の分散表現としてモデルに入力される。
 入力された分散表現に幅\(w\)のフィルタ\(\boldsymbol{\rm H}\in \mathbb{R}^{d \times w}\)を適用しnarrow conlovutionによって、特徴マップ\(\boldsymbol{\rm f}^k\in \mathbb{R}^{l-w+1}\)を求める。

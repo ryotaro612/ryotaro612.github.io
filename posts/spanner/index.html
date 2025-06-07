@@ -109,7 +109,7 @@
 APIは、次のインターフェースを備え、返す現在時刻の誤差が一定値以下であることを保証する。
 クラスタ内の正確な時刻が\(\texttt{TT.now()}\)の\(\texttt{earliest, latest}\)の範囲にあることを保証する。
 TrueTime APIは、GPSと原子時計によって時刻の精度を確保している。</p>
-<p><img alt="truetimeapi" src="/spanner/truetimeapi.png"></p>
+<p><img src="/spanner/truetimeapi.png" alt="truetimeapi"></p>
 <p>Spannerは、スナップショットトランザクション、スナップショット読み込み、読み込み書き込みトランザクションを提供する。
 最初の2つは、読み込み専用のロックフリーなトランザクションであり、スナップショットトランザクションはスナップショット分離を実現し、Spannerが決めたある時点の状態のデータを読み込む。
 スナップショット読み込みは、ユーザの指定した時刻のデータを読み込むことができる。

@@ -124,7 +124,7 @@ Assoc.: (id1, atype, id2) -&gt; (time, (key -&gt; value)*)
 永続層にシャーディング化されたMySQLがあり、キャッシュ層にはLeader, Followerの2種類のキャッシュサーバがある。
 また、TAOは複数のデータセンタ上に展開されており、データセンタのまとまりをregionといい、regionはMasterとSlaveで区別される。
 以下の図は、TAOの全体像をしめす。
-<img alt="tao" src="/tao.png"></p>
+<img src="/tao.png" alt="tao"></p>
 <p>objectを格納するシャードはobject <code>id</code>で、assiciationは<code>id1</code>できまる。
 これらのIDは、保存先のシャードを特定するID <code>shard_id</code>をふくむ。</p>
 <p>複数のキャッシュサーバのまとまりをtierという。

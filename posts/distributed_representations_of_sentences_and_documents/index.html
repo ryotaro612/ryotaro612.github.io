@@ -119,7 +119,7 @@ PV-DMだけでも期待できる予測性能をだせるが、両者のモデル
 <h3 id="pv-dm">PV-DM</h3>
 <p>PV-DMは、パラグラフとパラグラフ内の文脈から文脈の中心にある単語を予測できるように学習する。
 学習の様子を以下の図に示す。
-<img alt="pvdm" src="/distributed_representations_of_sentences_and_documents/pvdm.png">
+<img src="/distributed_representations_of_sentences_and_documents/pvdm.png" alt="pvdm">
 \(D\)と\(W\)は、それぞれ、パラグラフや単語と1対1に対応する。
 \(T_i\)をパラグラフ\(d_i\)の単語数、\(N\)をパラグラフの総数、\(w_{i,t}\)を\(d_i\)の\(t\)番目に出現する単語とおくと、最大化すべき目的関数を次の式で表せる。</p>
 <p>$$
@@ -142,7 +142,7 @@ $$
 <h3 id="pv-dbow">PV-DBOW</h3>
 <p>PV-DBOWは、パラグラフから無作為に選ばれた単語を、パラグラフだけから推定できるよう学習する。
 アーキテクチャを次の図に示す。SGDの各ステップでは、文脈を選び、その中から無作為に選んだ単語を推定し、勾配を計算する。
-<img alt="pv-dbow" src="/distributed_representations_of_sentences_and_documents/pv-dbow.png"></p>
+<img src="/distributed_representations_of_sentences_and_documents/pv-dbow.png" alt="pv-dbow"></p>
 <hr>
 <ul>
 <li>論文への<a href="https://arxiv.org/pdf/1405.4053v2.pdf">リンク</a></li>

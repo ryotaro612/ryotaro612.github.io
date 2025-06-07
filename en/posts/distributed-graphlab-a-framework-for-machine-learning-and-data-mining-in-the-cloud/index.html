@@ -125,7 +125,7 @@ The full consisntency model prevents the scopes of concurrently running update f
 The edge consistency model allows update functions to have exclusive read-write access to their vertex and the adjacent edges, but read only access to adjacent vertices.
 The vertex consistency model permits all update functions to run in parallel.
 The following figure, cited from the paper, compares the lock scopes of the consistency models.
-<img alt="consistency" src="/distributed-graphlab/consistency.png"></p>
+<img src="/distributed-graphlab/consistency.png" alt="consistency"></p>
 <p>Distributed GraphLab divides the GraphLab graph into the subgraphs, and distributes them to machines.
 Each subgraph is stored as a separete file, referred to as an atom, oin a distributed storage system.
 Each atom file contains a binary compressed journal of graph-genrating commands, such as <code>AddEdge(42-&gt;314, edata)</code>, <code>AddVertex(500, vdata)</code>.</p>

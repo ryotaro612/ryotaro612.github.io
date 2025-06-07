@@ -130,7 +130,7 @@ seq2seqには3層のLSTMが使われる。
 <p>decoderの2層目以降は無作為に初期化されるため、ソフトマックス層へ入力されるベクトルは無作為になる。
 これを避けるために、以下の図(a)のように、1層目のLSTMの出力からソウトマックス層へのresidual connectionを設ける。
 青の背景は、事前学習でえられた重みで初期化された範囲を示す。
-<img alt="fig1" src="/unsupervised_pretraining_for_sequence_to_sequence_learning/fig1.png"></p>
+<img src="/unsupervised_pretraining_for_sequence_to_sequence_learning/fig1.png" alt="fig1"></p>
 <h4 id="multi-layer-attention">Multi-layer attention</h4>
 <p>図の(b)のように、encoderにおけるLSTMの最初と最後の層の状態とdecoderのソフトマックスへの入力ベクトル\(q_t\)から文脈ベクトルをつくる。
 encoderの1層目の状態を\(h^{1}_1 , \dots , h^1_{T}\), 最後の層の状態を\(h^{L}_1 , \dots , h^L_{T}\)とすると文脈ベクトル\(c_t\)を次のように算出する。

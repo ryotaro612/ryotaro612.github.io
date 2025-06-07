@@ -126,7 +126,7 @@ In such systems, when new data arrives, it should be routed to active queries.
 Traditional RDBMS cannot daptively handle streaming data because the queries in RDBMS process data in the storage, and rely on statistics of the storage for optimization.</p>
 <p>TelegraphCQ was developed by leveraging PostgreSQL code base to address problems of <a href="https://dl.acm.org/doi/10.1145/604264.604282">Telegraph</a>.
 The following figure shows the basic process structure of PostgreSQL.
-<img alt="postgresql" src="/telegraphcq/postgresql.png">
+<img src="/telegraphcq/postgresql.png" alt="postgresql">
 the components shaded in gray were changed for TelegraphCQ.
 The Postmaster foks new server processes in response to new client connections.
 A Listener accepts requests on a connection and returns processed data to the client.
@@ -134,7 +134,7 @@ When a new query arrives, it is parsed, optimized, compiled into an access plan.
 The query Executor processes the access plan.</p>
 <p>The three processes, FrontEnd, Executor, and Wrapper comprise TelegraphCQ, as shown in the following figure.
 These processes are connected using a shared memory infrastructure.
-<img alt="telegraphcql" src="/telegraphcq/telegrphcq.png">
+<img src="/telegraphcq/telegrphcq.png" alt="telegraphcql">
 The Postmaster forks a FrontEnd process for each new connection.
 Since each connection can have multiple open cursors, it depends on a proxy service to collect individual requests from clients.
 The FrondEnd and the Executor exchange query plans and output of queries through queues in the shared memory infrastructure.

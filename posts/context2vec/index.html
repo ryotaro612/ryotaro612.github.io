@@ -118,7 +118,7 @@ CBOWは、ウィンドウ内のベクトルの平均値で文脈の分散表現�
 <h3 id="アーキテクチャ">アーキテクチャ</h3>
 <p><em>context2vec</em>は、CBOWのようなウィンドウ幅をきめず、文書全体から文脈の分散表現を算出する。
 context2vecのアーキテクチャを次に示す。
-<img alt="fig2" src="/context2vec/fig2.png"></p>
+<img src="/context2vec/fig2.png" alt="fig2"></p>
 <p>\(n\)単語からなる文を\(w_{1:n}\)とおき、単語列を順方向に受理するLSTMをlLS, 逆方向のをrLSとすると、両LSTMの出力の連結ベクトルで単語\(w_i\)の「浅い」文脈の分散表現をつくる。
 $$
 \text{biLS}(w_{1:n}, i) = \text{lLS}(l_{1:i-1})\oplus\text{rLS}(r_{n:i+1})

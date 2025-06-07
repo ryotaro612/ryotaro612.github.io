@@ -108,8 +108,8 @@
 下の図は、想定するSSDとflash packageである。
 packageの2つのダイは、同時にそれぞれ別の処理を実行できる。
 連続する論理アドレスを複数のパッケージをまたいで割り当てれば負荷分散できるが、複数のダイにアクセスする操作の数が増える。
-<img alt="logic" src="/design_tradeoffs_for_ssd_performance/ssd_logic.png">
-<img alt="package" src="/design_tradeoffs_for_ssd_performance/package.png"></p>
+<img src="/design_tradeoffs_for_ssd_performance/ssd_logic.png" alt="logic">
+<img src="/design_tradeoffs_for_ssd_performance/package.png" alt="package"></p>
 <p>論理的なページサイズの大きさの幅は、flashのページサイズの4分の1からブロックまである。
 論理的なページサイズをflashのブロックと同サイズに大きくとれば、書き込み前に消去するサイズと書き込みの単位が同じになり、消去処理を単純にできる。
 しかし、ページより小さい書き込みのケースが増え、そのときに変更されていないデータのread-modify-writeが発生する。</p>

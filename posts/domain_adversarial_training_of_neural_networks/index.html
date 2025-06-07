@@ -121,7 +121,7 @@ $$
 となる。</p>
 <p>アーキテクチャは、\(D\)次元の特徴を抽出するfeature extractor \(G_f: X\rightarrow \mathbb{R}^D\), label predictor \(G_y: \mathbb{R}^D \rightarrow [0, 1]^L\), 隠れ層の出力からドメインを識別するdomain classifier \(G_d: \mathbb{R}^D \rightarrow [0, 1]\)から構成される。
 アーキテクチャの全体像を次の図に示す。
-<img alt="architecture" src="/domain_adversarial_training_of_neural_networks.png"></p>
+<img src="/domain_adversarial_training_of_neural_networks.png" alt="architecture"></p>
 <p>パラメタを\(\theta\), label predictorとdomain classifierの損失関数を\(\mathcal{L}_y, \mathcal{L}_d\), ハイパーパラメタを\(\lambda\)とすると、目的関数は次のようになる。\(d_i\)は\(i\)番目の標本のドメインを示す。</p>
 <p>$$
 \begin{align}

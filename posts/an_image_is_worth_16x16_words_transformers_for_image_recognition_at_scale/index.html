@@ -123,7 +123,7 @@ TransformerはCNNのように画像の向きや局所性を帰納バイアスに
 <p>画像をパッチに分割し、画像の断片を単語のように<a href="https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">Transformer</a>へ入力する。
 ただし、単語とは異なり、一次元ではなく二次元のデータに画像を変換し、Transformerに入力する。
 以下は、論文にある学習時の様子である。
-<img alt="image" src="/an_image_is_worth_16x16_words.png">
+<img src="/an_image_is_worth_16x16_words.png" alt="image">
 解像度を\(H\times W\), チャネルを\(C\), パッチの解像度を\((P\times P)\)として、画像\({\rm x}\in\mathbb{R}^{H\times W\times C}\)をパッチ\({\rm x}_p\in\mathbb{R}^{N\times (P^2\cdot C)}\)に分割する。
 \(N=HW/P^2\)である。</p>
 <p>Transformerは後続の層に入力データを流すために、長さ\(D\)の固定長の潜在ベクトルにパッチを変換する。

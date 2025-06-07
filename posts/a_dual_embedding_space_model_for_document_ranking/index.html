@@ -135,7 +135,7 @@ $$
 \(\boldsymbol{c}\)からなる重み行列を\(\boldsymbol{W}_{IN}\), \(\boldsymbol{w}\)からなる重み行列を\(\boldsymbol{W}_{OUT}\)と表記する。</p>
 <p>通常のword2vecは、\(\boldsymbol{W}_{IN}\)だけで単語埋め込みベクトルを作るが、DESMは、クエリと文書にそれぞれ\(\boldsymbol{W}_{IN}\)と\(\boldsymbol{W}_{OUT}\)をあてがう。
 以下の表は、Bingのクエリ2,748,230単語で学習したyaleのベクトルにコサイン類似度で最も近いベクトルの単語である。
-<img alt="table1" src="/desm_tab1.png">
+<img src="/desm_tab1.png" alt="table1">
 IN-IN同士のベクトルでは「大学」という同じ機能をもった単語同士が近くに配置されている。
 論文の洞察は、このような単語の存在をクエリと文書の関連度の手がかりにすることにある。</p>
 <p>\(q_i\)をクエリ\(Q\)に含まれる単語埋め込みベクトル、\(d_j\)を文書\(D\)に含まれる単語埋め込みベクトルとすると、

@@ -129,7 +129,7 @@ $$</p>
 The total number of paths through an \(n\times n\) grid is \(\binom{2n}{n}\) because every path from the upper left corner to the lower right corner contains \(n\) steps to the right and \(n\) steps down.</p>
 <p>We will count the number of diagonal-avoiding paths by counting the total number of paths through the grid and then subtract the number of paths that hit the diagonal.
 The following figure illustrates a path that crosses the dotted diagonal line.
-<img alt="grid" src="/catalan.png"></p>
+<img src="/catalan.png" alt="grid"></p>
 <p>A point \(P\) is the first grid point it touches on the wrong side of the diagonal.
 Every diagonal-avoiding path has the first grid point.
 If you swap steps to the right and steps down that are in a sub path begins at P, the swapped path contains \(n-1\) steps to the right and \(n+1\) steps down:

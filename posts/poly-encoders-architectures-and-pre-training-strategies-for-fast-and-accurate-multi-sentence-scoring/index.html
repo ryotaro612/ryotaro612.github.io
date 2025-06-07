@@ -125,7 +125,7 @@ Bi-encoderとおなじように、ラベルを入力系列とは別のエンコ�
 以上のように、入力系列とラベルの候補の両方を入力する注意機構を減らすことで、計算量が削減されている。</p>
 <p>Cross-encoderは、事前学習とおなじく、<a href="https://arxiv.org/abs/1810.04805">BERT</a>の<code>[SEP]</code>に相当する区切りのトークンを入力系列 \(\textit{ctxt}\) とラベルの候補\(\textit{cand}\)の間に挿入し、エンコーダに入力する。
 以下の図は、<a href="https://arxiv.org/abs/1905.01969">論文</a>にあるCross-encoder, Bi-encoder, Poly-encoderのアーキテクチャを表す。
-<img alt="poly-encoders" src="/poly-encoder.png">
+<img src="/poly-encoder.png" alt="poly-encoders">
 長さ\(N\)の入力系列をエンコーダー\(T\)に入力したときの出力を\(h_1,\dots h_N\)とすると、BERTの<code>CLS</code>とおなじように、先頭のトークンのベクトル\(h_1\)を入力系列とラベルのペアのエンベディングとしてあつかう。
 \(\textit{first}\)をベクトルの系列から最初のベクトルを取り出す関数とすると、以上の手順を以下の式で表せる。
 $$

@@ -114,8 +114,8 @@ $$
 p(y_t\mid y_{&lt;t}, x) &amp;= \text{softmax}(\boldsymbol{W}_\boldsymbol{s}\tilde{\boldsymbol{h}}_t)
 \end{align}
 $$
-<img alt="global" src="/effective_approach_to_attention_based_nmt/global.png">
-<img alt="local" src="/effective_approach_to_attention_based_nmt/local.png"></p>
+<img src="/effective_approach_to_attention_based_nmt/global.png" alt="global">
+<img src="/effective_approach_to_attention_based_nmt/local.png" alt="local"></p>
 <p>グローバルなアプローチでは、原文の各単語の注意\(\boldsymbol{a}_t\)の重みつき平均を、文脈\(\boldsymbol{c}_t\)としてあつかう。
 原文のある状態\(s\)の注意\(\boldsymbol{a}_t(s)\)は、現在の出力側の隠れ状態\(\boldsymbol{h}_t\)と隠れ状態\(\bar{\boldsymbol{h}}_s\)から次のように算出できる。
 $$

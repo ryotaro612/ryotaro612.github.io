@@ -112,7 +112,7 @@ DAGで表せる計算をAurora内部で実行し、その結果が接続する�
 <p>AuroraのDAGにあるのは、以下に図示するように、ストリームデータのソースや計算に限らない。
 図中のbは計算のノードにあたる。
 DAGは動的に変更することもでき、変更で追加、削除される黒い点、connection pointは、DAGを分岐させるだけでなく、ストレージにノード時点の計算結果をキャッシュする。
-<img alt="a" src="/monitoring_streams/model.png">
+<img src="/monitoring_streams/model.png" alt="a">
 出力の種類であるcontinuous query, view, ad-hoc queryは、別の名前がついているが、DAG内部の仕組みに違いはない。
 continous queryは、一度処理されたデータを再び再処理する必要のないリアルタイム処理に使われる。
 viewはアプリケーションが接続されていない状態であり、ad-hoc queryはconnection pointにいつでも接続できる出力先で、connection pointにキャッシュされたデータのみを参照できる。</p>

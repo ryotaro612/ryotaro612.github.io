@@ -136,7 +136,7 @@ The quality of the test suite was gauged by the number of mutants or faults it d
 The resulting fit is shown in the following figure.
 The $R^2$ denotes the coefficient of determination.
 There was a moderate to very high correlation for all projects except HSQLDB.
-<img alt="test-size" src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/test-size.png"></p>
+<img src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/test-size.png" alt="test-size"></p>
 <p>They computed <a href="https://www.rdocumentation.org/packages/Kendall/versions/2.2.1/topics/Kendall">Kendall&rsquo;s \(\tau\)</a> to measure how the effectiveness of a test suite correlates with its coverage when ignoring suite size influence. Let \(x_i\) \(i\)th test suite&rsquo;s coverage, \(y_i\) its effectiveness, \(n\) the number of test suites, \(\textit{sgn}\) the signum function:
 $$
 \tau = \frac{n\sum_{i&lt;j}\left(\textit{sgn}(x_j-x_i)\textit{sgn}(y_j-y_i)\right)}{n(n-1)}
@@ -144,10 +144,10 @@ $$</p>
 <p>Kendall&rsquo;s \(\tau\) indicated that stronger forms of code coverage did not improve the measurement of effectiveness.
 The following two figures show Kendall&rsquo;s \(tau\) for each kind of code coverage. The first figure represents normalized effectiveness, and the second shows raw effectiveness.
 The \(\tau\) values did not vary among the kinds of code coverage.
-<img alt="normalized" src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/normalized.png">
-<img alt="non-normalized" src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/non-normalized.png"></p>
+<img src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/normalized.png" alt="normalized">
+<img src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/non-normalized.png" alt="non-normalized"></p>
 <p>Comparing the correlation between normalized effectiveness and coverage among test suites of the same size, a drop in correlation was observed. The following figures plot normalized effectiveness against coverage, with numbers on the right indicating the number of test cases in a suite.
-<img alt="grid" src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/grid.png"></p>
+<img src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/grid.png" alt="grid"></p>
 <p>While a large number of test cases does not necessarily ensure high effectiveness, the empirical study shows a moderate to high correlation between the size of a test suite and its effectiveness.
 Is the number of test cases a better indicator of effectiveness than code coverage?</p>
   </div>

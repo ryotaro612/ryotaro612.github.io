@@ -138,14 +138,14 @@ Sticky availabilityをみたすために、クライアントに読み書きを�
 High availabilityを備えるシステムは、sticky availabilityも満たす。
 しかし、逆は成立するとは限らない。
 以下に文献から引用した半順序関係の図を示す。
-<img alt="hat" src="/hat/hat.png">
+<img src="/hat/hat.png" alt="hat">
 単語は一貫性を、枠は可用性を意味する。
 枠がない一貫性はhigh availabilityを満たし、 四角で囲まれた一貫性はsticky availabilityを意味する。
 楕円の一貫性はavailabilityを保証しない。
 一貫性と可用性はトレードオフの関係にあるので、より上にあるほど一貫性は強いが可用性は低く、下にあるほど高可用性はあるが一貫性は弱い。</p>
 <p>文献よりも、分散システム向けのフォールトインジェクションフレームワークjepsenの<a href="https://jepsen.io/consistency/models">ウェブサイト</a>にある半順序関係と一貫性の非形式的な説明が参考になるかもしれない。
 文献にも以下の表や一貫性の説明はあるが、ウェブサイトほど解説に紙面が割かれておらず、また、解説を原典の文献にゆずる箇所が多い。
-<img alt="description" src="/hat/description.png"></p>
+<img src="/hat/description.png" alt="description"></p>
 <p>ウェブサイトが更新されたときのために、1段階ごとに可用性が上下するパス、WFR (Writes Follow Reads), causal, linearizableで半順序関係の簡潔な説明を残す。
 WFRは、プロセスがトランザクション\(T_1\)の後にトランザクション\(T_2\)をコミットした場合に、別のプロセスは、\(T_2\)の結果を\(T_1\)の結果よりも先に参照できないことを保証する。
 causal consistencyは、すべてのプロセスが因果関係のあるの操作の同一な前後関係を観察していることを保証する。

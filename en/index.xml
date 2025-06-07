@@ -153,7 +153,7 @@
       <link>https://ryotaro.dev/en/posts/llama-open-and-efficient-foundation-language-models/</link>
       <pubDate>Thu, 14 Mar 2024 14:41:48 +0900</pubDate>
       <guid>https://ryotaro.dev/en/posts/llama-open-and-efficient-foundation-language-models/</guid>
-      <description>Scaling Laws for Neural Language Models refers to empirical observations that model test performance has a power-law relationship with each of the three scale factors: the number of model parameters, the dataset size in tokens, and the amount of compute used for training, when not bottlenecked by the other two. Hoffmann et al. (2022) investigated the bottleneck and found that, given a fixed FLOPs budget, the number of model parameters and the training tokens should be scaled equally to minimize pre-training loss.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/2001.08361.pdf&#34;&gt;Scaling Laws for Neural Language Models&lt;/a&gt; refers to empirical observations that model test performance has a power-law relationship with each of the three scale factors: the number of model parameters, the dataset size in tokens, and the amount of compute used for training, when not bottlenecked by the other two.&#xA;&lt;a href=&#34;https://arxiv.org/abs/2203.15556&#34;&gt;Hoffmann et al. (2022)&lt;/a&gt; investigated the bottleneck and found that, given a fixed FLOPs budget, the number of model parameters and the training tokens should be scaled equally to minimize pre-training loss.&#xA;They trained a predicted compute-optimal model, Chinchilla, with 80B parameters, at the same compute budget as Gopher (280B) and with 4 times more data.&#xA;Chinchilla outperformed Gopher and GPT-3 (175B) on a large range of downstream evaluation tasks.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Apache Calcite a Foundational Framework for Optimized Query Processing Over Heterogeneous Data Sources</title>
@@ -209,7 +209,7 @@
       <link>https://ryotaro.dev/en/posts/conflict-free-replicated-data-types/</link>
       <pubDate>Sun, 31 Dec 2023 14:31:58 -0500</pubDate>
       <guid>https://ryotaro.dev/en/posts/conflict-free-replicated-data-types/</guid>
-      <description>In a distributed system with replicated objects distributed across processes interconnected by an asynchronous network, updating a replica without synchronization can lead to conflicts when the update is sent to other replicas. Conflict-free Replicated Data Types (CRDTs) are data structures whose states form a join semilattice and monotonically non-decreasing across updates. The replicas of CRDTs that have delivered the same updates eventually reach the same state if clents stop submitting updates.</description>
+      <description>&lt;p&gt;In a distributed system with replicated objects distributed across processes interconnected by an asynchronous network, updating a replica without synchronization can lead to conflicts when the update is sent to other replicas.&#xA;&lt;a href=&#34;https://pages.lip6.fr/Marc.Shapiro/papers/RR-7687.pdf&#34;&gt;Conflict-free Replicated Data Types&lt;/a&gt; (CRDTs) are data structures whose states form a join semilattice and monotonically non-decreasing across updates.&#xA;The replicas of CRDTs that have delivered the same updates eventually reach the same state if clents stop submitting updates.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Dense Passage Retrieval for Open-Domain Question Answering (2020)</title>
@@ -223,7 +223,7 @@
       <link>https://ryotaro.dev/en/posts/cap-twelve-years-later-how-the-rules-have-changed/</link>
       <pubDate>Sat, 23 Dec 2023 11:47:05 -0500</pubDate>
       <guid>https://ryotaro.dev/en/posts/cap-twelve-years-later-how-the-rules-have-changed/</guid>
-      <description>The CAP theorem, coined by Eric Brewer, states that in a shared-data system, you can have either Consistency (C), Availability (A), or Parition tolerance (P), but not all three simultaneously. However, Martin Kleppmann challenges the CAP theorem and discusses its limitations in Designing Data-Intensive Applications, and A Critique of the CAP Theorem. In CAP Twelve Years Later: How the “Rules” Have Changed, Brewer clarifies that the notion of &amp;ldquo;2 of 3&amp;rdquo; is misleading.</description>
+      <description>&lt;p&gt;The &lt;a href=&#34;https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf&#34;&gt;CAP theorem&lt;/a&gt;, coined by Eric Brewer, states that in a shared-data system, you can have either Consistency (C), Availability (A), or Parition tolerance (P), but not all three simultaneously.&#xA;However, Martin Kleppmann challenges the CAP theorem and discusses its limitations in &lt;a href=&#34;https://dataintensive.net/&#34;&gt;Designing Data-Intensive Applications&lt;/a&gt;, and &lt;a href=&#34;https://www.cl.cam.ac.uk/research/dtg/archived/files/publications/public/mk428/cap-critique.pdf&#34;&gt;A Critique of the CAP Theorem&lt;/a&gt;.&#xA;In &lt;a href=&#34;https://sites.cs.ucsb.edu/~rich/class/cs293b-cloud/papers/brewer-cap.pdf&#34;&gt;CAP Twelve Years Later: How the “Rules” Have Changed&lt;/a&gt;, Brewer clarifies that the notion of &amp;ldquo;2 of 3&amp;rdquo; is misleading.&#xA;In practice, designers cannot forfeit P and have a choice between C and A.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Wide and Deep Learning for Recommender Systems (2016)</title>
@@ -254,11 +254,11 @@
       <description>&lt;p&gt;&lt;a href=&#34;https://pdos.csail.mit.edu/papers/ton:chord/paper-ton.pdf&#34;&gt;Chord&lt;/a&gt; is a distributed lookup protocol that supports just one operation: mapping a given key onto a node in a Chord cluster.&#xA;If an \(N\)-node system is in the steady state, each node resolves all the queries via \(O(\log N)\) messages to other nodes.&#xA;Chord uses &lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall09/cos518/papers/chash.pdf&#34;&gt;consistent hashing&lt;/a&gt; to assign keys to Chord nodes.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS</title>
+      <title>LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS (2021)</title>
       <link>https://ryotaro.dev/en/posts/lora-low-rank-adaptation-of-large-language-models/</link>
       <pubDate>Sat, 18 Nov 2023 12:21:20 -0500</pubDate>
       <guid>https://ryotaro.dev/en/posts/lora-low-rank-adaptation-of-large-language-models/</guid>
-      <description>LoRA is inspired by Li et al. (2018) and Aghajanyan et al. (2020) which show that the learned over-parameterized models reside on a low intrinsic dimension. An intrinsic dimension is the minimum number of parameters needed to reach a satisfactory solution to the objective. LoRA injects weight matrices into each attention layer of the Transformer architecture instead of fine-tuning the pre-trained model weights. The injected weight matrices are rank decomposition matrices, and LoRA can reduce the number of trainable parameters for downstream tasks.</description>
+      <description>&lt;p&gt;LoRA is motivated by the findings of &lt;a href=&#34;https://arxiv.org/pdf/1804.08838.pdf&#34;&gt;Li et al. (2018)&lt;/a&gt; and &lt;a href=&#34;https://arxiv.org/pdf/2012.13255.pdf&#34;&gt;Aghajanyan et al. (2020)&lt;/a&gt;, which show that overparameterized models tend to converge to solutions that lie within a low-dimensional intrinsic subspace.&lt;/p&gt;&#xA;&lt;p&gt;The intrinsic dimension refers to the minimum number of trainable parameters needed to reach satisfactory performance on a given task.&lt;/p&gt;&#xA;&lt;p&gt;LoRA introduces low-rank adaptation by decomposing the weight matrices in dense layers. Instead of fine-tuning all parameters of a pre-trained model, LoRA freezes the original weights and learns two low-rank matrices during training.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Pastry: Scalable Decentralized Object Location and Routing for Large Scale Peer to Peer Systems (2001)</title>
@@ -266,6 +266,13 @@
       <pubDate>Tue, 07 Nov 2023 02:04:06 -0500</pubDate>
       <guid>https://ryotaro.dev/en/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://rowstron.azurewebsites.net/PAST/pastry.pdf&#34;&gt;Pastry&lt;/a&gt; is a decentralized peer-to-peer object location and routing system based on nodes connected via the Internet.&#xA;When each node in the Pastry network receives a message and a numeric key, it routes them to the node with a nodeId that is numerically close to the key.&#xA;If a node is not the final destination of a message, it forwards the message to another node with a nodeId that is numerically closer to the key than the nodeId of the present node.&#xA;The nodeId ranges from 0 to \(2^{128}-1\).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>An Incremental Approach to Compiler Construction (2006)</title>
+      <link>https://ryotaro.dev/en/posts/an_incremental_approach_to_compiler_construction/</link>
+      <pubDate>Mon, 23 Oct 2023 13:49:48 -0400</pubDate>
+      <guid>https://ryotaro.dev/en/posts/an_incremental_approach_to_compiler_construction/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://scheme2006.cs.uchicago.edu/11-ghuloum.pdf&#34;&gt;An Incremental Approach to Compiler Construction&lt;/a&gt; shows an incremental approach to build a compiler that accepts a large subset of the Scheme programming language.&#xA;The compiler produces assembly code for the Intel-X86 architecture.&#xA;Because real-life compilers are too complex to serve as an educational tool, the gap between real-life compilers and the educational toy compilers is too wide.&lt;/p&gt;&#xA;&lt;p&gt;The goal of the paper is to break the barrier.&#xA;The development of the compiler is broken down into 24 incremental steps.&#xA;Every step yields a fully working compiler for progressively expanding a subset of Scheme.&lt;/p&gt;</description>
     </item>
     <item>
       <title>GAUSSIAN ERROR LINEAR UNITS (GELUs) (2016)</title>
@@ -279,7 +286,7 @@
       <link>https://ryotaro.dev/en/posts/a_design_methodology_for_reliable_software_systems/</link>
       <pubDate>Sun, 08 Oct 2023 09:38:50 -0400</pubDate>
       <guid>https://ryotaro.dev/en/posts/a_design_methodology_for_reliable_software_systems/</guid>
-      <description>After earning her PhD in computer Science at Stanford University, Liskov worked again for MITRE Corporation. She was involved in the development of a time-sharing system called Venus, then was involved in finding ways to address the &amp;ldquo;software crisis.&amp;rdquo; at MITRE. A design methodology for reliable software systems describes a design methodology of structured programming developed as part of the second project.&#xA;The methodology uses testing to guarantee reliability. To test a program, it is necessary to identify relevant test cases, and the set of them must be small enough to implement.</description>
+      <description>&lt;p&gt;After earning her PhD in computer Science at Stanford University, Liskov worked again for MITRE Corporation.&#xA;She was involved in the development of a time-sharing system called Venus, then was involved in finding ways to address the &amp;ldquo;software crisis.&amp;rdquo; at MITRE.&#xA;&lt;a href=&#34;https://dl.acm.org/doi/pdf/10.1145/1479992.1480018&#34;&gt;A design methodology for reliable software systems&lt;/a&gt; describes a design methodology of structured programming developed as part of the second project.&lt;/p&gt;&#xA;&lt;p&gt;The methodology uses testing to guarantee reliability.&#xA;To test a program, it is necessary to identify relevant test cases, and the set of them must be small enough to implement.&#xA;Structured programming helps to identify the relevant test cases and reduce the number of required test cases by dividing a system into modules.&lt;/p&gt;</description>
     </item>
     <item>
       <title>BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension (2019)</title>
@@ -314,7 +321,7 @@
       <link>https://ryotaro.dev/en/posts/transmission_of_information/</link>
       <pubDate>Sat, 09 Sep 2023 12:10:45 -0400</pubDate>
       <guid>https://ryotaro.dev/en/posts/transmission_of_information/</guid>
-      <description>In Transmission of Information, Hartley developed a quantitative measure of &amp;ldquo;information&amp;rdquo; in 1927. Hartley claims that information is the outcome of a selection among a finite set of possible messages. Shannon&amp;rsquo;s &amp;ldquo;A mathematical theory of communication&amp;rdquo;, which is based in part on Hartley&amp;rsquo;s ideas, published in 1947. Hartley did not model the source of information probabilistically. Shannon modeled the source of information as a random process.&#xA;Hartley stated that information should be proportional to the number of selections for practical engineering value.</description>
+      <description>&lt;p&gt;In &lt;a href=&#34;https://monoskop.org/images/a/a6/Hartley_Ralph_VL_1928_Transmission_of_Information.pdf&#34;&gt;Transmission of Information&lt;/a&gt;, Hartley developed a quantitative measure of &amp;ldquo;information&amp;rdquo; in 1927.&#xA;Hartley claims that information is the outcome of a selection among a finite set of possible messages.&#xA;Shannon&amp;rsquo;s &amp;ldquo;A mathematical theory of communication&amp;rdquo;, which is based in part on Hartley&amp;rsquo;s ideas, published in 1947.&#xA;Hartley did not model the source of information probabilistically.&#xA;Shannon modeled the source of information as a random process.&lt;/p&gt;&#xA;&lt;p&gt;Hartley stated that information should be proportional to the number of selections for practical engineering value.&#xA;He uses the letter \(H\) to denote the amount of information associated with \(n\) selections.&#xA;$$&#xA;H=Kn&#xA;$$&#xA;where \(K\) is a constant which depends on the number \(s\) of symbols available at each selection.&#xA;Let us consider two systems with \(s_1, s_2, K_1, K_2\).&#xA;We then define \(K_1, K_2\) by the condition that whenever the number of possible sequences is the same for both systems, then the amount of information is also the same for both:&#xA;$$&#xA;s_1^{n_1} = s_2^{n_2}&#xA;$$&#xA;$$&#xA;H=K_1n_1=K_2n_2&#xA;$$&#xA;$$&#xA;\frac{K_1}{\log s_1}=\frac{K_2}{\log s_2}&#xA;$$&lt;/p&gt;</description>
     </item>
     <item>
       <title>RoBERTa: A Robustly Optimized BERT Pretraining Approach(2019)</title>
@@ -349,14 +356,14 @@
       <link>https://ryotaro.dev/en/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/</link>
       <pubDate>Sat, 05 Aug 2023 13:27:09 -0400</pubDate>
       <guid>https://ryotaro.dev/en/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/</guid>
-      <description>The authors of Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer performed experiments with Text-to-Text Transfer Transformer(T5), a unified framework for NLP. The basic idea underlying T5 is to treat various NLP problems as taking text as input and producing new text as output. Their goal is to explore general language learning abilities instead of providing new methods. They are interested in exploring the limits of transfer learning for NLP by scaling up models and data sets beyond what has previously been considered.</description>
+      <description>&lt;p&gt;The authors of &lt;a href=&#34;https://arxiv.org/abs/1910.10683&#34;&gt;Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer&lt;/a&gt; performed experiments with &lt;em&gt;T&lt;/em&gt;ext-&lt;em&gt;t&lt;/em&gt;o-&lt;em&gt;T&lt;/em&gt;ext &lt;em&gt;T&lt;/em&gt;ransfer &lt;em&gt;T&lt;/em&gt;ransformer(T5), a unified framework for NLP.&#xA;The basic idea underlying T5 is to treat various NLP problems as taking text as input and producing new text as output.&#xA;Their goal is to explore general language learning abilities instead of providing new methods.&#xA;They are interested in exploring the limits of transfer learning for NLP by scaling up models and data sets beyond what has previously been considered.&#xA;To perform experiments at scale, they created Colossal Clean Crawled Corpus (C4), a dataset consisting of hundreds of gigabytes of clean English text scraped from the web.&#xA;They leveraged &lt;a href=&#34;https://commoncrawl.org/&#34;&gt;Common Crawl&lt;/a&gt; to create C4.&#xA;They used heuristic for cleaning up Common Crawl web-extracted text, and used &lt;code&gt;langdetect&lt;/code&gt; to filter out any pages that are not classified as English documents.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Catalan Numbers(2016)</title>
       <link>https://ryotaro.dev/en/posts/catalan_number/</link>
       <pubDate>Sat, 29 Jul 2023 15:24:15 -0400</pubDate>
       <guid>https://ryotaro.dev/en/posts/catalan_number/</guid>
-      <description>The Catalan numbers are a sequence of natural numbers that occur in various problems in combinatorial mathematics. For example, the number of expressions containing \(n\) valid pairs of parentheses is the \(n\)th Catalan number. Suppose you have a grid of \(n \times n\) squares, the \(n\)th Catalan number represents the number of paths with a length of \(2n\) that lead from the upper left corner to the lower right corner without intersecting the diagonal dotted line running from the upper left to the lower right.</description>
+      <description>&lt;p&gt;The Catalan numbers are a sequence of natural numbers that occur in various problems in combinatorial mathematics.&#xA;For example, the number of expressions containing \(n\) valid pairs of parentheses is the \(n\)th Catalan number.&#xA;Suppose you have a grid of \(n \times n\) squares, the \(n\)th Catalan number represents the number of paths with a length of \(2n\) that lead from the upper left corner to the lower right corner without intersecting the diagonal dotted line running from the upper left to the lower right.&#xA;Later in the page, we will derive explicit formulas for the Catalan numbers in two different ways.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Layer Normalization (2016)</title>
@@ -366,18 +373,11 @@
       <description>&lt;p&gt;Layer Normalization, introduced in the 2016 paper &lt;a href=&#34;https://arxiv.org/abs/1607.06450&#34;&gt;Layer Normalization&lt;/a&gt;, is a technique used to normalize the summed inputs to the neurons in a layer by using the mean and standard deviation of those inputs within that layer.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1502.03167&#34;&gt;Batch Normalization&lt;/a&gt; uses the mean and the standard deviation of the summed inputs of a neuron in a mini-batch to normalize the summed inputs to it.&#xA;While Batch Normalization can accelerate training, it depends on mini-batch size and is challenging to implement in RNNs.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>An Incremental Approach to Compiler Construction (2006)</title>
-      <link>https://ryotaro.dev/en/posts/an_incremental_approach_to_compiler_construction/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ryotaro.dev/en/posts/an_incremental_approach_to_compiler_construction/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://scheme2006.cs.uchicago.edu/11-ghuloum.pdf&#34;&gt;An Incremental Approach to Compiler Construction&lt;/a&gt; shows an incremental approach to build a compiler that accepts a large subset of the Scheme programming language.&#xA;The compiler produces assembly code for the Intel-X86 architecture.&#xA;Because real-life compilers are too complex to serve as an educational tool, the gap between real-life compilers and the educational toy compilers is too wide.&lt;/p&gt;&#xA;&lt;p&gt;The goal of the paper is to break the barrier.&#xA;The development of the compiler is broken down into 24 incremental steps.&#xA;Every step yields a fully working compiler for progressively expanding a subset of Scheme.&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>Disclaimer</title>
       <link>https://ryotaro.dev/en/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ryotaro.dev/en/about/</guid>
-      <description>All the information on this website is published in good faith and for general information purpose only. This website does not make any warranties about the completeness, reliability and accuracy of this information. Any action you take upon the information you find on this website, is strictly at your own risk. Ryotaro Nakamura will not be liable for any losses and/or damages in connection with the use of this website.</description>
+      <description>&lt;!-- ## Disclaimer --&gt;&#xA;&lt;p&gt;All the information on this website is published in good faith and for general information purpose only.&#xA;This website does not make any warranties about the completeness, reliability and accuracy of this information.&#xA;Any action you take upon the information you find on this website, is strictly at your own risk.&#xA;Ryotaro Nakamura will not be liable for any losses and/or damages in connection with the use of this website.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

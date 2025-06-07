@@ -122,34 +122,34 @@ As far as I know, most of system design interview preparation books and websites
 Since back of envelope calulation is a rough estimation and the exact values depend on hardwares where the computation executes, the values varies among books and websites.
 Additionaly, it was difficult for me to remember all of the items at once, and I selected following items that looks important to remember:</p>
 <table>
-<thead>
-<tr>
-<th>Operation name</th>
-<th style="text-align:right">Time</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Compress 1kb with <a href="https://github.com/google/snappy/tree/main">snappy</a></td>
-<td style="text-align:right">10µs</td>
-</tr>
-<tr>
-<td>Read 1MB sequentially from memory</td>
-<td style="text-align:right">250µs</td>
-</tr>
-<tr>
-<td>Round trip within the same data center</td>
-<td style="text-align:right">500µs</td>
-</tr>
-<tr>
-<td>Read 1MB sequentially from SSD</td>
-<td style="text-align:right">1ms</td>
-</tr>
-<tr>
-<td>Round trip of a packet between California and the Netherlands</td>
-<td style="text-align:right">150ms</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Operation name</th>
+          <th style="text-align: right">Time</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Compress 1kb with <a href="https://github.com/google/snappy/tree/main">snappy</a></td>
+          <td style="text-align: right">10µs</td>
+      </tr>
+      <tr>
+          <td>Read 1MB sequentially from memory</td>
+          <td style="text-align: right">250µs</td>
+      </tr>
+      <tr>
+          <td>Round trip within the same data center</td>
+          <td style="text-align: right">500µs</td>
+      </tr>
+      <tr>
+          <td>Read 1MB sequentially from SSD</td>
+          <td style="text-align: right">1ms</td>
+      </tr>
+      <tr>
+          <td>Round trip of a packet between California and the Netherlands</td>
+          <td style="text-align: right">150ms</td>
+      </tr>
+  </tbody>
 </table>
 <p>An easy one to remember is reading 1MB of data from an SSD — it&rsquo;s 1ms.
 If I remember it and how many times longer or shorter the operation times of other items are compared to the SSD&rsquo;s read time, I&rsquo;ll be able to calculate the processing times of those other items.</p>

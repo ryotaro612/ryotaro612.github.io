@@ -117,7 +117,7 @@
 <!-- たとえば、密ベクトル近似最近傍探索のライブラリ[Faiss](https://github.com/facebookresearch/faiss)のもとになる[Billion-scale similarity search with GPUs](https://arxiv.org/abs/1702.08734)はクエリとデータベースにあるベクトルを -->
 <p>奇遇マージソートは、昇順にソートされた2つの配列をマージする。
 以下の図は配列\(a, b\)をマージする様子を示す。
-<img alt="odd-even.png" src="/sorting-networks/odd-even.png">
+<img src="/sorting-networks/odd-even.png" alt="odd-even.png">
 図の右にあるA, B, L, Hを囲む枠がノードであり、入力A, Bのうち、大きい方をHに、小さい方をLに出力する。
 ODD-MERGEとEVEN-MERGEは\(a, b\)の奇数または偶数番目の位置にある要素のみからなる配列を再帰的にソートする。
 ODD-MERGEの出力の先頭要素は\(a, b\)の最小値となる。
@@ -132,7 +132,7 @@ $$
 $$
 任意の\(\min(a_i, a_{n+i})\)は任意の\(\max(a_i, a_{n+i})\)以下になるので、2つの配列にそれぞれバイトニックソートを適用した後、連結すればソートされた長さ\(2n\)の配列になる。
 以下の図はバイトニックソートの様子を示す。
-<img alt="bitonic" src="/sorting-networks/bitonic.png"></p>
+<img src="/sorting-networks/bitonic.png" alt="bitonic"></p>
 <p>図は論文より引用しました。</p>
   </div>
 </main>

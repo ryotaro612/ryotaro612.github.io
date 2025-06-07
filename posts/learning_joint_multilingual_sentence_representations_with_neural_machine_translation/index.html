@@ -111,7 +111,7 @@
 <h3 id="アーキテクチャ">アーキテクチャ</h3>
 <p>seq2seqを使う点は同じであるものの、ミニバッチごとの言語の入れ換え方や、一度に入力する言語の数の違いによって、複数のパターンがある。
 パターンの違いを以下に図示する。
-<img alt="fig" src="/learning_joint_multilingual_sentence_representations_with_nmt/patterns.png"></p>
+<img src="/learning_joint_multilingual_sentence_representations_with_nmt/patterns.png" alt="fig"></p>
 <p>入力と出力の数によって、大きく1:1, M:1, 1:N, M:Nの4パターンに分かれる。
 1:1では、ミニバッチごとに入力と出力の言語のペアをいれかえる。
 M:1では、複数の言語の文をencoderに入力し、平均などで、その各言語の出力から計算した値をdecoderに入力し、1種類の言語の文への変換を試みる。
@@ -121,7 +121,7 @@ N:Mは、以上3つを組み合わせたものである。</p>
 <p>encoderとdecoderにLSTMをもちいたseq2seqをもちい、学習に適したパターンやLSTMを評価した。
 評価指標には、著者らが提案したものを使用した。
 これは、同じ意味で言語の異なる文における分散表現間の距離の近さで、性能を評価する。
-<img alt="fig" src="/learning_joint_multilingual_sentence_representations_with_nmt/algorithm.png">
+<img src="/learning_joint_multilingual_sentence_representations_with_nmt/algorithm.png" alt="fig">
 実験では、<a href="https://conferences.unite.un.org/uncorpus/">UN Corpus</a>をもちいて、英語、フランス語、スペイン語、ロシア語、アラビア語、中国語での性能を評価した。
 隠れ層のサイズが512次元の双方向のLSTMと、その後の層にmax-pool層を採用した1:Nパターンが最も良い結果となり、上のアルゴリズムでのエラー値は1.20%であった。</p>
 <hr>

@@ -110,7 +110,7 @@
 このストレージをストライプと呼び、チャンクというコードブロックを冗長にもつことで、誤りを訂正すると仮定する。
 ストライプに\(s\)個のチャンクがあり、ストライプの復元に必要な正常なチャンクの数が\(r\)のとき、\(s,s-1, \dots , r, r-1\)のように、復元可能なときのチャンク数と復元不能を示す記号で状態を作る。
 以下の図は、\(s=2, r=2\)のモデルを表す。</p>
-<p><img alt="markov" src="/availability_in_globally_distributed_storage_systems.png"></p>
+<p><img src="/availability_in_globally_distributed_storage_systems.png" alt="markov"></p>
 <p>チャンクが一度に一つしか壊れないとして、故障する確率を\(\lambda\)、復元する確率を\(\rho\)おくと、Gambler&rsquo;s Ruinより、\(s\)から\(s-r\)に遷移するまでの遷移回数は次の式になる。</p>
 <p>$$
 \frac{1}{\lambda}\left(\sum^{s-r}_{k=0}\sum^k_{i=0}\frac{\rho^i}{\lambda^i}\frac{1}{(s-k+i)_{(i+1)}}\right)

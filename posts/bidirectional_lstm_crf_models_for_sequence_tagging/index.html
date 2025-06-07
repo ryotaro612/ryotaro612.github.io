@@ -119,9 +119,9 @@ Bidirectional LSTMは、先頭から入力される系列と後方から入力�
 CRFは入力に加えて以前のタグもタグの予測に使われる。
 本手法の着想は、Bidirectional LSTMとCRFではタグの予測に使う情報が異なることに注目したことにある。
 アーキテクチャを流れる系列の様子を以下に示す。</p>
-<p><img alt="1" src="/bidirectional_lstm/1.png">
-<img alt="2" src="/bidirectional_lstm/2.png">
-<img alt="3" src="/bidirectional_lstm/3.png"></p>
+<p><img src="/bidirectional_lstm/1.png" alt="1">
+<img src="/bidirectional_lstm/2.png" alt="2">
+<img src="/bidirectional_lstm/3.png" alt="3"></p>
 <h3 id="感想">感想</h3>
 <p>意外だったのは、評価で比較されたアーキテクチャにBLSTM-CRF, LSTMなど深層学習に属するものが含まれる中で最も精度の高いベースラインとなったのはCRFだったこと。
 ただし、単語のみを入力した場合、CRFは他のアーキテクチャと比べて大幅に精度が落ちており、著者らはCRFの精度は特徴量エンジニアリングによるものだと評価している。

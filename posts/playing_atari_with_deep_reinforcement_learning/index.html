@@ -119,7 +119,7 @@
 そこで、経験データを一様に乱択する経験再生で選ばれた経験データで重みを更新する。
 DQNのアルゴリズムを以下に示す。方策モデルには、\(\epsilon\)貪欲方策が採用されている。
 ただし、\(x_i\)は画面のイメージ、CNNに入力するために可変長の履歴データを固定長に変換する関数を\(\phi\)とする。
-<img alt="algorithm" src="/playing_atari_with_deep_reinforcement_learning/algorithm.png">
+<img src="/playing_atari_with_deep_reinforcement_learning/algorithm.png" alt="algorithm">
 図の方程式3は、ベルマン方程式のQ関数を重みを\(\theta\)とする関数近似噐\(Q(s,a;\theta_i)\)で近似したときの損失関数\(L_i(\theta_i)\)を
 $$
 L_i(\theta_i)=\mathbb{E}_{s,a\sim \rho (\cdot) }\big[(y_i - Q(s,a;\theta_i))^2\big]

@@ -112,7 +112,7 @@
   <div>
     <p>システム設計面接におけるNetflixやYoutubeのような動画サービスの問題における要点を整理する。</p>
 <h2 id="要件">要件</h2>
-<p>どの<a href="/posts/video-streaming/#参考文献">参考文献</a>でも視聴とアップロードが機能要件にある。
+<p>どの<a href="/posts/video-streaming/#%e5%8f%82%e8%80%83%e6%96%87%e7%8c%ae">参考文献</a>でも視聴とアップロードが機能要件にある。
 また非機能要件については、解答例のシステム設計はすべてマイクロサービスであり、性能・拡張性を重視し、一貫性モデルを妥協してBASE (Basically available, Soft state, Eventual consistency) を認めている。
 参考文献では、以下の要件が目にとまった。</p>
 <ul>
@@ -173,7 +173,7 @@
 <li>動画のアップロード</li>
 </ul>
 <p>動画のエンコードと動画へのタグづけをキューで非同期するなら下図の構成になりえる。
-<img alt="queue" src="/video-streaming/queue.drawio.svg"></p>
+<img src="/video-streaming/queue.drawio.svg" alt="queue"></p>
 <p>メッセージキューシステムにエンキューできるメッセージのサイズには上限があり、処理対象のデータ自体をメッセージとしてキューに入れられないことがある。
 たとえば、<a href="https://docs.aws.amazon.com/ja_jp/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">SQSのメッセージの最大サイズは256KB</a>であり、<a href="https://kafka.apache.org/08/documentation.html">Kafkaであれば1MB</a>の制限がある。
 あつかえる動画のサイズの要件が1MBを超える場合、図のように処理中のファイルを外に置く必要がありそうだ。</p>

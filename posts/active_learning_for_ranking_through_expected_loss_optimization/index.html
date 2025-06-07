@@ -136,7 +136,7 @@ $$
 \text{EL}(q)=\int_Y \underset{\pi}{\operatorname{max}}\text{DCG}(\pi, Y)P(Y\mid X_q , D)dY -  \underset{\pi}{\operatorname{max}}\int_Y\text{DCG}(\pi, Y)P(Y\mid X_q , D)dY
 $$
 となる。\(\pi(i)\)を\(i\)番目の文書における順位、利得関数\(G\)を\(G(s)=2^s-1\), \(&lt;\cdot&gt;\)を平均、\(\text{BDCG}\)を利得の集合\(\{g_j\}\)でつくれる最も高いDCGの値を返す関数とすると、Query level ELO-DCGを次のアルゴリズムで実装できる。
-<img alt="algo1" src="/active_learning_for_ranking_through_expected_loss_optimization/algo1.png"></p>
+<img src="/active_learning_for_ranking_through_expected_loss_optimization/algo1.png" alt="algo1"></p>
 <h3 id="document-level-active-learning">Document level Active Learning</h3>
 <p>学習すべき文書を選ぶ場合、クエリ\(q\)に関連する\(i\)番目の文書を選んだときの損失の期待値\(\text{EL}(q,i)\)を
 $$
@@ -147,7 +147,7 @@ $$
 $$
 とする。ただし、\(Y^i\)は\(Y\)から\(y^i\)を除いたベクトルである。
 このとき、Document Level ELO-DCGを次のアルゴリズムで実装できる。
-<img alt="algo2" src="/active_learning_for_ranking_through_expected_loss_optimization/algo2.png"></p>
+<img src="/active_learning_for_ranking_through_expected_loss_optimization/algo2.png" alt="algo2"></p>
 <h3 id="備考">備考</h3>
 <p>Uncertaintyによる能動学習をはじめて提案した<a href="https://www.semanticscholar.org/paper/Training-text-classifiers-by-uncertainty-sampling-Lewis-Gale/d9d4c586b985af2ec42e4fec24cd1806d9aefaff">論文</a>と能動学習の<a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.167.4245">サーベイ論文</a>が参考文献にある。</p>
 <hr>

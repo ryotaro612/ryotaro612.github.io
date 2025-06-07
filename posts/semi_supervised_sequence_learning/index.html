@@ -113,35 +113,35 @@
 系列データとして想定されているのはテキストであり、実験では4種類のデータセットがもちいられた。
 オートエンコーダーで事前学習したLSTM(SA-LSTM)と発表当時における最高の性能をもつモデルで比較した結果を次に示す。</p>
 <table>
-<thead>
-<tr>
-<th>データ</th>
-<th style="text-align:right">SA-LSTM</th>
-<th style="text-align:right">Previous best result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>IMDB</td>
-<td style="text-align:right">7.24%</td>
-<td style="text-align:right">7.42%</td>
-</tr>
-<tr>
-<td>Rotten Tomatoes</td>
-<td style="text-align:right">16.7%</td>
-<td style="text-align:right">18.5%</td>
-</tr>
-<tr>
-<td>20 Newsgroups</td>
-<td style="text-align:right">15.6%</td>
-<td style="text-align:right">17.1%</td>
-</tr>
-<tr>
-<td>DBpedia</td>
-<td style="text-align:right">1.19%</td>
-<td style="text-align:right">1.74%</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>データ</th>
+          <th style="text-align: right">SA-LSTM</th>
+          <th style="text-align: right">Previous best result</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>IMDB</td>
+          <td style="text-align: right">7.24%</td>
+          <td style="text-align: right">7.42%</td>
+      </tr>
+      <tr>
+          <td>Rotten Tomatoes</td>
+          <td style="text-align: right">16.7%</td>
+          <td style="text-align: right">18.5%</td>
+      </tr>
+      <tr>
+          <td>20 Newsgroups</td>
+          <td style="text-align: right">15.6%</td>
+          <td style="text-align: right">17.1%</td>
+      </tr>
+      <tr>
+          <td>DBpedia</td>
+          <td style="text-align: right">1.19%</td>
+          <td style="text-align: right">1.74%</td>
+      </tr>
+  </tbody>
 </table>
 <p>LSTMは長い文書の扱うときにハイパーパラメタに性能が影響されやすいが、オートエンコーダーの重みで初期化すると安定することがIMDBの実験で分かった。
 IMDBの各テキストの平均の単語数は241である。</p>

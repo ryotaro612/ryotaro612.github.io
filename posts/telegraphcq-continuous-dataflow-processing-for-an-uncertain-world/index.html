@@ -127,13 +127,13 @@ RDBMSのクエリは、クエリ発行以前からあるデータを処理し、
 <p>以上の背景から開発されたTelegraphCQは、<a href="https://dl.acm.org/doi/10.1145/604264.604282">Telegraph</a>のアーキテクチャ上の課題を解決するために、PostgresSQLを再利用して実装された。
 以下の図は、当時のPostgreSQLのアーキテクチャであり、灰色の箇所がTelegraph CQのために改造されたモジュールを示す。
 濃い灰色のほうが薄い灰色よりも手を加えられている。
-<img alt="postgresql" src="/telegraphcq/postgresql.png">
+<img src="/telegraphcq/postgresql.png" alt="postgresql">
 Postmasterは、クライアントのコネクションに応じてサーバのプロセスをフォークする。
 Listenerは、コネクションを通したリクエストに対してクライアントにデータを返す。
 到着したクエリは、パース、最適化、コンパイル後に実行計画され、Executerで処理される。</p>
 <p>TelegraphCQは、メモリを共有したFrontend, Executor, Wrapperの3プロセスかなる。
 以下に、TelegraphCQのアーキテクチャの図を示す。
-<img alt="telegraphcql" src="/telegraphcq/telegrphcq.png">
+<img src="/telegraphcq/telegrphcq.png" alt="telegraphcql">
 Postmasterは、新しいコネクションをうけつけると、FrontEndプロセスをフォークする。
 各コネクションにある複数のカーソルを同時にあうために、proxy serviceを利用する。
 FrontendとExecutorは、共有メモリ空間にあるキューを介して、リクエストと結果を交換する。

@@ -109,7 +109,7 @@
 文字単位の分散表現はCNNで生成される。
 単語については、実験では、GloVeやWord2Vecが採用された。
 下図は、アーキテクチャの全体像をしめす。</p>
-<p><img alt="arch" src="/end_to_end_sequence_labeling_via_bi_directional_lstm_cnns_crf/arch.png"></p>
+<p><img src="/end_to_end_sequence_labeling_via_bi_directional_lstm_cnns_crf/arch.png" alt="arch"></p>
 <h3 id="crf">CRF</h3>
 <p>双方向LSTMからの入力を\(\boldsymbol{\mathrm{z}}=\{\boldsymbol{\mathrm{z}}_1,\cdots ,\boldsymbol{\mathrm{z}}_n\}\), \(i\)番目の単語のラベルを\(y_i\)とする正解の系列を\(\boldsymbol{\mathrm{y}}=\{y_1,\cdots ,y_n\}\), \(\boldsymbol{\mathrm{z}}\)がとりえるラベルの系列の集合を\(\mathcal{Y}(\boldsymbol{\mathrm{z}})\)とすると、CRFは、次の条件付き確率分布で\(p(\boldsymbol{y}\mid\boldsymbol{\mathrm{z}};\boldsymbol{\mathrm{W}},\boldsymbol{\mathrm{b}})\)で系列を推定する。
 ただし、\(\psi_i(y&rsquo;,y,\boldsymbol{\mathrm{z}})=\exp (\boldsymbol{\mathrm{W}}^T_{y&rsquo;,y}\boldsymbol{\mathrm{z}}_i+\boldsymbol{\mathrm{b}}_{y&rsquo;,y})\)であり、\(\mathrm{\boldsymbol{W}}^T_{y&rsquo;,y}\)と\(\boldsymbol{\mathrm{b}}_{y&rsquo;,y}\)は\((y&rsquo;,y)\)に対応する重みとバイアスである。</p>

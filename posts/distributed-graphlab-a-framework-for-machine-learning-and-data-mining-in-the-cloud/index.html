@@ -129,7 +129,7 @@ Edge consistencyでは、関数は、スコープの中心にある点と辺に�
 Vertex consistencyでは、すべての関数を並列できる。
 以下の図は、3つの一貫性の排他的なロックの範囲と一貫性と並列性のトレードオフを比較を示す。
 図は論文から引用したものである。
-<img alt="consistency" src="/distributed-graphlab/consistency.png"></p>
+<img src="/distributed-graphlab/consistency.png" alt="consistency"></p>
 <p>Distributed GraphLabは、実行するアルゴリズムに適した仕方でグラフを分割し、atomというファイル形式で複数のノードにグラフの一部を配置する。
 分割数はノードの数よりも大きく設定されるので、1つのノードに複数のatomファイルが置かれる。
 atomファイルには、<code>AddEdge(42-&gt;314, edata)</code>, <code>AddVertex(500, vdata)</code>のようなグラフを構築する命令の系列が書かれている。</p>

@@ -137,7 +137,7 @@ Then runc attaches to <code>sh</code>, which is defined as the entry point in <c
 The following diagram shows the procedure of the <code>runc run</code> process.
 <code>run</code> asynchronously executes the <code>runc init</code> command.
 The invoked <code>init</code> process eventually becomes the PID 1 process of <code>args</code> in <code>config.json</code> by <code>execve</code>.
-<img alt="overview" src="/runc/overview.drawio.svg"></p>
+<img src="/runc/overview.drawio.svg" alt="overview"></p>
 <h3 id="tty-of-a-container">tty of a container</h3>
 <p>A pseudoterminal (<a href="https://man7.org/linux/man-pages/man7/pty.7.html"><code>pty</code></a>) is a pair of bidirectionally communicable virtual character devices.
 One is the master, with its path being <code>/dev/ptmx</code>, and the other is the slave.
@@ -157,15 +157,15 @@ The <code>run</code> process calls <a href="https://github.com/opencontainers/ru
 </span></span><span style="display:flex;"><span>	)
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The <code>init</code> process opens the <code>/dev/ptmx</code> and writes its file descriptor to the <code>child</code> socket in the <a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/libcontainer/utils/cmsg.go#L116"><code>SendRawFd</code></a>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">// SendRawFd sends a specific file descriptor over the given AF_UNIX socket.
-</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"></span><span style="color:#f38ba8">func</span> <span style="color:#89b4fa">SendRawFd</span>(socket <span style="color:#89dceb;font-weight:bold">*</span>os.File, msg <span style="color:#f38ba8">string</span>, fd <span style="color:#f38ba8">uintptr</span>) <span style="color:#f38ba8">error</span> {
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">// SendRawFd sends a specific file descriptor over the given AF_UNIX socket.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f38ba8">func</span> <span style="color:#89b4fa">SendRawFd</span>(socket <span style="color:#89dceb;font-weight:bold">*</span>os.File, msg <span style="color:#f38ba8">string</span>, fd <span style="color:#f38ba8">uintptr</span>) <span style="color:#f38ba8">error</span> {
 </span></span><span style="display:flex;"><span>	oob <span style="color:#89dceb;font-weight:bold">:=</span> unix.<span style="color:#89b4fa">UnixRights</span>(<span style="color:#89dceb">int</span>(fd))
 </span></span><span style="display:flex;"><span>	<span style="color:#cba6f7">return</span> unix.<span style="color:#89b4fa">Sendmsg</span>(<span style="color:#89dceb">int</span>(socket.<span style="color:#89b4fa">Fd</span>()), []<span style="color:#89dceb">byte</span>(msg), oob, <span style="color:#fab387">nil</span>, <span style="color:#fab387">0</span>)
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The <code>init</code> process duplicates the slave to  standard IO and standard error in the following <a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/libcontainer/console_linux.go#L28"><code>dupStdio</code></a>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">// dupStdio opens the slavePath for the console and dups the fds to the current
-</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">// processes stdio, fd 0,1,2.
-</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"></span><span style="color:#f38ba8">func</span> <span style="color:#89b4fa">dupStdio</span>(slavePath <span style="color:#f38ba8">string</span>) <span style="color:#f38ba8">error</span> {
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">// dupStdio opens the slavePath for the console and dups the fds to the current</span>
+</span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">// processes stdio, fd 0,1,2.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f38ba8">func</span> <span style="color:#89b4fa">dupStdio</span>(slavePath <span style="color:#f38ba8">string</span>) <span style="color:#f38ba8">error</span> {
 </span></span><span style="display:flex;"><span>	fd, err <span style="color:#89dceb;font-weight:bold">:=</span> unix.<span style="color:#89b4fa">Open</span>(slavePath, unix.O_RDWR, <span style="color:#fab387">0</span>)
 </span></span><span style="display:flex;"><span>	<span style="color:#cba6f7">if</span> err <span style="color:#89dceb;font-weight:bold">!=</span> <span style="color:#fab387">nil</span> {
 </span></span><span style="display:flex;"><span>		<span style="color:#cba6f7">return</span> <span style="color:#89dceb;font-weight:bold">&amp;</span>os.PathError{
@@ -204,8 +204,8 @@ For instance, the same PID can be assigned to processes in two different namespa
 <code>unshare</code> creates a new namespace and moves the calling process into it.</p>
 <p>The <code>nsexec</code> function, written in C, changes the namespace of the <code>init</code> process.
 It is invoked before the Go runtime starts by the following snippet in the <a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/libcontainer/nsenter/nsenter.go#L9"><code>nsenter.go</code></a>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">//go:build linux &amp;&amp; !gccgo
-</span></span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"></span>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">//go:build linux &amp;&amp; !gccgo</span>
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#94e2d5">package</span> nsenter
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">/*
@@ -220,7 +220,7 @@ It is invoked before the Go runtime starts by the following snippet in the <a hr
 <code>setns</code> switches only the calling thread’s namespace, so it needs to be called on all threads if there are multiple.</p>
 <p><code>nsexec</code> calls <code>clone</code> twice to alter the namespace of the <code>init</code> process.
 The following diagram illustrates the procedure of the <code>nsexec</code> function:
-<img alt="nsenter" src="/runc/nsenter.drawio.png"></p>
+<img src="/runc/nsenter.drawio.png" alt="nsenter"></p>
 <p>Only the process created last executes the <code>return</code> statement, leading to the Go <code>main</code> function.
 The rest of the precedent <code>init</code> processes terminate without starting the Go runtime.
 <code>nsexec</code> executes <code>clone</code> to assign PID 1 to the <code>init</code> process within a namespace.

@@ -142,7 +142,7 @@ MCCは、\(n\)個の真偽値型の変数からなる条件式に対して\(2^n\
 文献には、自由度調整済み決定係数とあるが、同時に、\(R\)を相関係数とも書いている。
 また、単回帰分析であるため、\(R^2\)は決定係数ととらえてよいだろう。
 HSQLDBを除けば、テストケースの数と正規化された有効性には中から高い相関がみられた。
-<img alt="test-size" src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/test-size.png"></p>
+<img src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/test-size.png" alt="test-size"></p>
 <p>カバレッジと有効性の相関には、<a href="https://www.rdocumentation.org/packages/Kendall/versions/2.2.1/topics/Kendall">ケンドールの順位相関係数\(\tau\)</a>を使う。
 \(i\)番目のテストスイートのカバレッジを\(x_i\), 有効性を\(y_i\)とする\(n\)個のサンプルがあるとき、\(\textit{sgn}\)を符号関数とすると、\(\tau\)は
 $$
@@ -154,12 +154,12 @@ $$
 上が正規化された有効性であり、下が正規化されていない有効性との相関に対応する。
 Joda Timeの相関係数は正規、非正規どちらにおいても、すべてのカバレッジで等しい。
 カバレッジを厳密にしても、テストの有効性の測定精度の改善にはならない結果になった。
-<img alt="normalized" src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/normalized.png">
-<img alt="non-normaized" src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/non-normalized.png"></p>
+<img src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/normalized.png" alt="normalized">
+<img src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/non-normalized.png" alt="non-normaized"></p>
 <p>テストケースの数を揃えたテストスイート間では、カバレッジと正規化した有効性の間の正の相関が減少した。
 文献から引用した下の図は、テストケースの数ごとに、カバレッジと正規化した有効性の相関を示す。
 テストケースを固定した1から7行目の図には、正の相関を示す右方上がりのプロットはみられない。
-<img alt="grid" src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/grid.png"></p>
+<img src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/grid.png" alt="grid"></p>
 <p>冒頭で紹介したGoogleのソフトウェアエンジニアリングの節は、カバレッジの高さがテストスイートの有効性の高さを含意しないことで、カバレッジに対して論理的に批判的な態度であった。
 同じ論理で、テストケースの数の多さからもテストスイートの有効性を主張することはできない。
 しかし、単回帰分析の結果では、テストケースの数と有効性の間に中から高い相関がみられた。

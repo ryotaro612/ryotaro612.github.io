@@ -114,8 +114,8 @@ Burst trie内の別のデータ構造はcontainerとよばれる。
 <p>データ構造に2分探索木をつかい、containerの一部がtrieノードに変わるburst状態を例示する。
 下の2つの図は、右下のcontainerのburstを示し、containerの各要素の先頭文字がtrie木のノードにおきかえられる。
 新しくできるcontainerの各要素は、前のcontainerにあった先頭文字をふくまない。</p>
-<p><img alt="before" src="/burst_trie/before_burst.png">
-<img alt="after" src="/burst_trie/after_burst.png"></p>
+<p><img src="/burst_trie/before_burst.png" alt="before">
+<img src="/burst_trie/after_burst.png" alt="after"></p>
 <p>要素を削除するときは、containerの削除アルゴリズムに通りに要素を削除する。
 このとき、containerが空になり、親のtrie木のノードが子containerを持たないならばburst trie木からノードを削除する。
 trie木のノードの削除は、空でない親ノードかルートに到達するまで再帰的にくりかえされる。</p>

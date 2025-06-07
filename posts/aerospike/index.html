@@ -120,7 +120,7 @@ cluster keyは無作為に生成される8バイトの値で、ノードのIDは
 ハッシュ値の値域は4096個の区間に分かれ、該当する区間を担うノードにレコードが保存される。
 各区間は、succession listを並び変えたリストを管理している。
 リストの先頭をマスタとして、続く複数のノードにレコードの複製が保存される。</p>
-<p><img alt="distribution" src="/aerospike/distribution.png"></p>
+<p><img src="/aerospike/distribution.png" alt="distribution"></p>
 <p>スケールアップの工夫はCPU, コンテキストスイッチ、フラグメンテーションにある。
 Non-Uniform Memory Access(NUMA)アーキテクチャは、コア数の増加で効率よく処理性能の上げるために、コアに個別のローカルメモリを持たせ、複数のコアが同時にメモリにアクセスできない問題を回避する。
 他のコアのメモリへのアクセスはローカルメモリへのアクセスよりも時間がかかる。

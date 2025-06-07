@@ -117,34 +117,34 @@ Numbers Everyone Should Knowは、ハードウェアの性能に依存する値�
 しかし、Back of Envelope Calculationは大まかな試算なので、ある項目が別の項目の何倍違うかを抑えておけばいいだろう。
 特に重要に思えた項目を以下に抜粋する。</p>
 <table>
-<thead>
-<tr>
-<th>処理</th>
-<th style="text-align:right">所要時間</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.com/google/snappy/tree/main">snappy</a>で1kbを圧縮</td>
-<td style="text-align:right">10µs</td>
-</tr>
-<tr>
-<td>メモリ上の連続する1MBのデータの読み取り</td>
-<td style="text-align:right">250µs</td>
-</tr>
-<tr>
-<td>データセンタ内のラウンドトリップ</td>
-<td style="text-align:right">500µs</td>
-</tr>
-<tr>
-<td>SSD上の連続する1MBのデータの読み取り</td>
-<td style="text-align:right">1ms</td>
-</tr>
-<tr>
-<td>カリフォルニアとネーデルランド間のパケットのラウンドトリップ</td>
-<td style="text-align:right">150ms</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>処理</th>
+          <th style="text-align: right">所要時間</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><a href="https://github.com/google/snappy/tree/main">snappy</a>で1kbを圧縮</td>
+          <td style="text-align: right">10µs</td>
+      </tr>
+      <tr>
+          <td>メモリ上の連続する1MBのデータの読み取り</td>
+          <td style="text-align: right">250µs</td>
+      </tr>
+      <tr>
+          <td>データセンタ内のラウンドトリップ</td>
+          <td style="text-align: right">500µs</td>
+      </tr>
+      <tr>
+          <td>SSD上の連続する1MBのデータの読み取り</td>
+          <td style="text-align: right">1ms</td>
+      </tr>
+      <tr>
+          <td>カリフォルニアとネーデルランド間のパケットのラウンドトリップ</td>
+          <td style="text-align: right">150ms</td>
+      </tr>
+  </tbody>
 </table>
 <p>覚えやすいのは、SSDの1MBのデータ読み取りだろう。1MBに対して1msだ。
 さらに、SSDの読み取りに対するほかの項目のオーダーを覚えれば、残りの所要時間を計算できる。</p>

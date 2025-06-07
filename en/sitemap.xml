@@ -911,6 +911,22 @@
                 href="https://ryotaro.dev/en/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/"
                 />
   </url><url>
+    <loc>https://ryotaro.dev/en/posts/an_incremental_approach_to_compiler_construction/</loc>
+    <lastmod>2023-10-23T13:49:48-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/an_incremental_approach_to_compiler_construction/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/an_incremental_approach_to_compiler_construction/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/tags/compiler/</loc>
+    <lastmod>2023-10-23T13:49:48-04:00</lastmod>
+  </url><url>
     <loc>https://ryotaro.dev/en/tags/activation-function/</loc>
     <lastmod>2023-10-21T10:00:49-04:00</lastmod>
   </url><url>
@@ -1194,20 +1210,6 @@
                 hreflang="en"
                 href="https://ryotaro.dev/en/posts/layer_normalization/"
                 />
-  </url><url>
-    <loc>https://ryotaro.dev/en/posts/an_incremental_approach_to_compiler_construction/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/posts/an_incremental_approach_to_compiler_construction/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/posts/an_incremental_approach_to_compiler_construction/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/en/tags/compiler/</loc>
   </url><url>
     <loc>https://ryotaro.dev/en/about/</loc>
     <xhtml:link

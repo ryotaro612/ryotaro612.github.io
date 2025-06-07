@@ -13,7 +13,7 @@
       <link>https://ryotaro.dev/en/posts/conflict-free-replicated-data-types/</link>
       <pubDate>Sun, 31 Dec 2023 14:31:58 -0500</pubDate>
       <guid>https://ryotaro.dev/en/posts/conflict-free-replicated-data-types/</guid>
-      <description>In a distributed system with replicated objects distributed across processes interconnected by an asynchronous network, updating a replica without synchronization can lead to conflicts when the update is sent to other replicas. Conflict-free Replicated Data Types (CRDTs) are data structures whose states form a join semilattice and monotonically non-decreasing across updates. The replicas of CRDTs that have delivered the same updates eventually reach the same state if clents stop submitting updates.</description>
+      <description>&lt;p&gt;In a distributed system with replicated objects distributed across processes interconnected by an asynchronous network, updating a replica without synchronization can lead to conflicts when the update is sent to other replicas.&#xA;&lt;a href=&#34;https://pages.lip6.fr/Marc.Shapiro/papers/RR-7687.pdf&#34;&gt;Conflict-free Replicated Data Types&lt;/a&gt; (CRDTs) are data structures whose states form a join semilattice and monotonically non-decreasing across updates.&#xA;The replicas of CRDTs that have delivered the same updates eventually reach the same state if clents stop submitting updates.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

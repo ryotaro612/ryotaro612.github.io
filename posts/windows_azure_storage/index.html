@@ -110,7 +110,7 @@
 storage stampはストレージノードを積んだラックからなるクラスタであり、典型的なクラスタは18のノードを積んだ10から20個のラックである。
 location serivceは、アカウントのデータがどのstorage stampに保存されているかを管理する。
 新しいアカウントを作成するときは、アカウントのIDを含んだURLからstorage stampのVIPを解決するようにDNSを更新する。
-<img alt="high level architecture" src="/was/high_level_arch.png"></p>
+<img src="/was/high_level_arch.png" alt="high level architecture"></p>
 <p>storage stampはstream Layer, partition layer, front-endsの3層からなる。
 stream Layerは、storage stamp内でファイルを分散、複製するための分散ファイルシステムとみなすことができる。
 stream layerは、高可用性を担う層であり、データの種類がオブジェクト、テーブル、キューのいずれであるかを意識せずにデータを保存、提供する。
@@ -121,7 +121,7 @@ Parition layerは、リクエストの処理とは非同期に、storage stamp�
 <p>Stream Layerのstreamは、extentとよばれる大きなデータの順序つきリストを意味する。
 extentへの書き込みは追記しかできず、更新はできない。
 下に、4つのextentからなるstreamを例示する。
-<img alt="stream" src="/was/stream.png">
+<img src="/was/stream.png" alt="stream">
 図中の<code>B</code>はblockとよばれる読み込みと追記の最小単位であり、サイズは4MB程度である。extentは連結したblockからなる。
 blockのサイズはblockごとに違ってよい。
 Extentはレプリケーションの単位であり、デフォルトでは1つのstorage stampの中に3つのレプリカを作る。
@@ -130,7 +130,7 @@ streamはextentを参照するポインタの順序付きリストであり、�
 追記ができるextentはstreamの末尾のものに限られる。</p>
 <p>Stream layerはstream manager(SM)とextent node(EN)からなる。
 Stream layerのアーキテクチャを以下に図示する。
-<img alt="stream_layer" src="/was/stream_layer.png">
+<img src="/was/stream_layer.png" alt="stream_layer">
 SMは、新しいextentを作り、ENに割りあてる。
 割り当てた後も、アクティブなextentやstreamを管理し、どのstreamからも参照されていないextentを回収する。
 SMの処理は、クライアントのリクエストの処理とは非同期であり、クリティカルパス上にはない。
@@ -138,7 +138,7 @@ SMの処理は、クライアントのリクエストの処理とは非同期で
 ENはextentとblockを管理し、これらがどのstreamに属するかを知ることはない。</p>
 <p>Stream layerがレプリケーションで高可用性を支えるのに対し、parititon layerは一貫性を支える。
 Partiton layerは下図のようにpartition manager(PM)とpartition server(PS)からなる。
-<img alt="partition_layer" src="/was/partition_layer.png">
+<img src="/was/partition_layer.png" alt="partition_layer">
 Partiton layerはobject table(OT)というデータ構造を構成し、streamに保存された単なるデータを、ユーザからはBlobやテーブル、キューのように見えるようにする。
 OTは、ペタバイト級のサイズであるため、OTの連続するレコードの集合であるRangePartitionに分割して管理される。
 PMはOTをrange partitionとよばれる単位に分割し、各range partitionが常に1つのアクティブなPSに割り当てられ、range partitionが重複しないことを保証する。

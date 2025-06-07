@@ -107,7 +107,7 @@
 層が深くなると計算コストの増加や過学習が課題になるが、先行研究の<a href="https://arxiv.org/abs/1412.6575">DistMult</a>や<a href="https://arxiv.org/abs/1703.06103">R-GCN</a>と比べたConvEのパラメタ数は1/8や1/17であり、パラメタ効率がよい。</p>
 <p>アーキテクチャは、畳み込み層、全結合層、ドロップアウト層からなる。
 下図はアーキテクチャの全体像をあらわす。
-<img alt="convE" src="/conve.png"></p>
+<img src="/conve.png" alt="convE"></p>
 <p>エンティティと関係を集合をそれぞれ\(\varepsilon\), \(\mathcal{R}\)として、関係グラフを\(\mathcal{G}=\{(s, r, o)\}\subseteq\varepsilon\times \mathcal{R}\times \varepsilon\)と記す。
 なお、以下の数式ではドロップアウト層を省く。
 エンティティと関係をあたえ、適当な各エンティティと関係のベクトルからなるパラメタ\(k, k&rsquo;\)の行列\(\boldsymbol{\rm E}^{\mid \varepsilon\mid \times k},\boldsymbol{\rm R}^{\mid\mathcal{R}\mid \times k&rsquo;}\)を学習する。

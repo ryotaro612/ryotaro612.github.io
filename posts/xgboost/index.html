@@ -123,10 +123,10 @@ $$
 で近似的にもとめられる。</p>
 <p>損失関数で最適な決定木がわかるが、とりえるすべての決定木を構築し損失関数で評価することは計算量上できない。
 そこで、勾配ブースティングは、以下のアルゴリズムで1つのノードから徐々に枝をのばして決定木を構築する。
-<img alt="greedy" src="/xgboost/greedy.png"></p>
+<img src="/xgboost/greedy.png" alt="greedy"></p>
 <p>XGBoostは、スパースなデータであれば、以下のアルゴリズムによって、欠損データをつかわずに情報利得を最大化できる分岐をもとめる。
 アルゴリズムの中では、欠損したデータがあるときに、左右どちらに分岐するほうがいいかを比較する。
-<img alt="sparse" src="/xgboost/sparse.png"></p>
+<img src="/xgboost/sparse.png" alt="sparse"></p>
 <p>論文を<a href="https://www.kdd.org/kdd2016/papers/files/rfp0697-chenAemb.pdf">こちら</a>からダウンロードできます。
 画像は論文から引用しています。</p>
   </div>

@@ -107,7 +107,7 @@ EWISEは単語の意味をアノテーションしあテキストと辞書を教
 実験では、辞書にWordNetをつかい、概念同士の上下関係や関係を示す分散表現を獲得する。
 学習であたえられていない意味を推定するために、離散値ではなく分散表現でラベルの意味を表現する。</p>
 <h3 id="アーキテクチャ">アーキテクチャ</h3>
-<p><img alt="img" src="/ewise.png"></p>
+<p><img src="/ewise.png" alt="img"></p>
 <h4 id="atentive-context-encoder">Atentive Context Encoder</h4>
 <p>Attentive Context Encoderは、入力文を、意味の分散表現のある空間のベクトルに写像する。
 はじめに、入力文\(&lt;x^1 \dots x^T&gt;\)を2層の双方向LSTMと注意機構にあたえて文脈依存の分散表現をつくる。

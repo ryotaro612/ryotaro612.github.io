@@ -134,7 +134,7 @@ $$</p>
 \(b\) is an even divisor of the dimension \(d\).
 The sub-quantizers typically have 256 reproduction values, and the quantization value of the product quantizer is then \(q_2(y)=q^0(y^0)+256\times q^1(y^1)+\dots + 256^{b-1}\times q^{b-1}(y^{b-1})\).</p>
 <p>The search uses Batcher&rsquo;s bitonic sorting network to determine the exact distances in the set of reproduction values. The figure below, cited from the paper, displays the sorting network.
-<img alt="fig" src="/billion-scale-similarity-search-with-gpus.png">
+<img src="/billion-scale-similarity-search-with-gpus.png" alt="fig">
 \([a_i]_{i=0:l}\) is provided for selection and \([T^j_i]_{i=0:t}\) represents a priority queue where the elements are ordered from largest to smallest (\(T^j_{i}\ge T^j_{i+1}\)).
 \([a_i]_{i=0:l}\) are the sequence provided fro selection, and \([T^j_i]_{i=0:t}\) is a priority queue where the elements are ordered from largest to smallest (\(T^j_{i}\ge T^j_{i+1}\)).
 \([W_i]_{i=0:k}\) is the array of \(k\) smallest seen elements.

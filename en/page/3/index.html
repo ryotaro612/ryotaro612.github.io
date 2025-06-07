@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<meta name="generator" content="Hugo 0.131.0">
+	<meta name="generator" content="Hugo 0.147.2">
   
   
   <script>(function (w, d, s, l, i) {
@@ -102,7 +102,10 @@
     
     <article>
         <h3><a href="https://ryotaro.dev/en/posts/llama-open-and-efficient-foundation-language-models/">LLaMA Open and Efficient Foundation Language Models (2023)</a></h3>
-        <div class="summary">Scaling Laws for Neural Language Models refers to empirical observations that model test performance has a power-law relationship with each of the three scale factors: the number of model parameters, the dataset size in tokens, and the amount of compute used for training, when not bottlenecked by the other two. Hoffmann et al. (2022) investigated the bottleneck and found that, given a fixed FLOPs budget, the number of model parameters and the training tokens should be scaled equally to minimize pre-training loss.</div>
+        <div class="summary"><p><a href="https://arxiv.org/pdf/2001.08361.pdf">Scaling Laws for Neural Language Models</a> refers to empirical observations that model test performance has a power-law relationship with each of the three scale factors: the number of model parameters, the dataset size in tokens, and the amount of compute used for training, when not bottlenecked by the other two.
+<a href="https://arxiv.org/abs/2203.15556">Hoffmann et al. (2022)</a> investigated the bottleneck and found that, given a fixed FLOPs budget, the number of model parameters and the training tokens should be scaled equally to minimize pre-training loss.
+They trained a predicted compute-optimal model, Chinchilla, with 80B parameters, at the same compute budget as Gopher (280B) and with 4 times more data.
+Chinchilla outperformed Gopher and GPT-3 (175B) on a large range of downstream evaluation tasks.</p></div>
         <div class="article-footer">
 	  	  
 	  <ul class="tags">
@@ -287,7 +290,9 @@ The authors have implemented this method in a library called <a href="https://gi
     
     <article>
         <h3><a href="https://ryotaro.dev/en/posts/conflict-free-replicated-data-types/">Conflict-free Replicated Data Types (2011)</a></h3>
-        <div class="summary">In a distributed system with replicated objects distributed across processes interconnected by an asynchronous network, updating a replica without synchronization can lead to conflicts when the update is sent to other replicas. Conflict-free Replicated Data Types (CRDTs) are data structures whose states form a join semilattice and monotonically non-decreasing across updates. The replicas of CRDTs that have delivered the same updates eventually reach the same state if clents stop submitting updates.</div>
+        <div class="summary"><p>In a distributed system with replicated objects distributed across processes interconnected by an asynchronous network, updating a replica without synchronization can lead to conflicts when the update is sent to other replicas.
+<a href="https://pages.lip6.fr/Marc.Shapiro/papers/RR-7687.pdf">Conflict-free Replicated Data Types</a> (CRDTs) are data structures whose states form a join semilattice and monotonically non-decreasing across updates.
+The replicas of CRDTs that have delivered the same updates eventually reach the same state if clents stop submitting updates.</p></div>
         <div class="article-footer">
 	  	  
 	  <ul class="tags">

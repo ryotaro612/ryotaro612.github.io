@@ -120,10 +120,10 @@ $$
 c_{ij}&amp;=\frac{\exp(b_{ij})}{\sum_k\exp (b_{ik})}
 \end{align}
 $$
-<img alt="algo" src="/dynamic_routing_between_capsules/algo.png"></p>
+<img src="/dynamic_routing_between_capsules/algo.png" alt="algo"></p>
 <p>MNISTによる実験では、一番下にチャネル数256, カーネル9x9, ストライド 1の畳み込み層(Conv1)を、次にチャネル数256, カーネル9x9, ストライド2の畳み込み層で実装した32チャンネル、8次元のカプセル層を、最後に全結合層による16次元のカプセルをクラス数10だけもったカプセル層を使ったネットワークを利用した。
 以下の図は、ネットワークの中間で生成されるベクトルをあらわす。
-<img alt="arch" src="/dynamic_routing_between_capsules/arch.png">
+<img src="/dynamic_routing_between_capsules/arch.png" alt="arch">
 また、\(m^{+}=0.9, m^{-}=0.1, \lambda=0.5, T_k\)をクラス\(k\)でありそのときに限り\(1\)の値として、次の損失関数を使った。
 $$
 L_k=T_{k}\max(0, m^+-\mid\mid \boldsymbol{\rm v}_k\mid\mid)^2 +\lambda (1-T_k)\max(0, \mid\mid \boldsymbol{\rm v}_k\mid\mid - m^-)^2

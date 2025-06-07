@@ -123,7 +123,7 @@ In the appending phase, it collects white objects that are unreachable from thin
 The algorithm prioritizes minimizing the atomic operations of the garbage collector to reduce overhead on the application.</p>
 <p>A post on The Go Blog, <a href="https://go.dev/blog/go15gc">Go GC: Prioritizing low latency and simplicity</a>, states that the algorithm deliberately diverges from most “enterprise” grade garbage collectors of today.
 While this may be true, <a href="https://typeset.io/pdf/deep-dive-into-zgc-a-modern-garbage-collector-in-openjdk-2aa9ffwc.pdf">ZGC</a>, one of Java&rsquo;s garbage collectors, employs the concept of the tri-color marking.</p>
-<p>Rich Hudson, a member of Google’s Go team, explained why the algorithm suited for Go&rsquo;s runtime in <a href="https://go.dev/talks/2015/go-gc.pdf">Rick HudsonのGo GC: Latency Problem Solved</a> and its <a href="https://www.youtube.com/watch?v=aiv1JOfMjm0&ab_channel=GopherAcademy">video</a>.
+<p>Rich Hudson, a member of Google’s Go team, explained why the algorithm suited for Go&rsquo;s runtime in <a href="https://go.dev/talks/2015/go-gc.pdf">Rick HudsonのGo GC: Latency Problem Solved</a> and its <a href="https://www.youtube.com/watch?v=aiv1JOfMjm0&amp;ab_channel=GopherAcademy">video</a>.
 He emphasized the importance of memory allocation locality in the presentation and another <a href="https://go.dev/blog/ismmkeynote">talk</a>.
 First, the fields are embedded in their structs and  allocated sequentially in the heap.
 Second, as long as an interior pointer refers to a member of a struct, the struct remains alive.</p>

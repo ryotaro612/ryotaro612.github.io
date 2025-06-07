@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
-	<meta name="generator" content="Hugo 0.131.0">
+	<meta name="generator" content="Hugo 0.147.2">
   
   
   <script>(function (w, d, s, l, i) {
@@ -166,10 +166,12 @@ UIS-Hunterは、FigmaやAndroid Studio Layout Editorなどのモックアップ�
     
     <article>
         <h3><a href="https://ryotaro.dev/posts/an_empirical_analysis_of_ui-based_flaky_tests/">An Empirical Analysis of UI-based Flaky Tests</a></h3>
-        <div class="summary">GitHub上の5つのWebアプリケーションと37のAndroidアプリケーションから集めた235件のUIのflaky tests（何度か実行すると成功する不安定なテスト）を調査し、原因と修正を分類した。
-大きく原因を、非同期処理の待機、環境依存の動作、DOMのセレクタやテストライブラリの誤用、テスト対象の事前条件を満たしていないテストスクリプトの4つに大別した。 具体例をあげると、環境依存の動作には、IE固有のバグや予期していないレイアウトで画面が表示される場合、テストの事前条件については、テストの実行順序次第で誤ったテストデータが作られる場合がある。 最も多くのテストが分類され、全体の45%を占めたのは、非同期処理の不適切な待機方法だった。
-修正のパターンには、待機時間の追加、テスト用APIの誤用の修正やAPIのアップグレード、テストスクリプトのリファクタリング、アニメーションの削除、不要なテストの削除がある。
-論文をこちらからダウンロードできます。</div>
+        <div class="summary"><p>GitHub上の5つのWebアプリケーションと37のAndroidアプリケーションから集めた235件のUIのflaky tests（何度か実行すると成功する不安定なテスト）を調査し、原因と修正を分類した。</p>
+<p>大きく原因を、非同期処理の待機、環境依存の動作、DOMのセレクタやテストライブラリの誤用、テスト対象の事前条件を満たしていないテストスクリプトの4つに大別した。
+具体例をあげると、環境依存の動作には、IE固有のバグや予期していないレイアウトで画面が表示される場合、テストの事前条件については、テストの実行順序次第で誤ったテストデータが作られる場合がある。
+最も多くのテストが分類され、全体の45%を占めたのは、非同期処理の不適切な待機方法だった。</p>
+<p>修正のパターンには、待機時間の追加、テスト用APIの誤用の修正やAPIのアップグレード、テストスクリプトのリファクタリング、アニメーションの削除、不要なテストの削除がある。</p>
+<p>論文を<a href="https://arxiv.org/pdf/2103.02669.pdf">こちら</a>からダウンロードできます。</p></div>
         <div class="article-footer">
 	  
           <span class="date">August 14, 2021</span>

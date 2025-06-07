@@ -126,7 +126,7 @@ Assignment Nodeは変数の更新、Decision Nodeは分岐に対応する。
 Assignment Nodeの出力先のノードはつねに1つ、Decision Nodeの出力先は2つである。
 \(x\)をプログラム中の変数集合、\(X\)は\(x\)がとりえる値の集合とすると\(f\)は\(X\)から\(X\)への写像である。
 \(p\)の始域は\(X\), 終域は\(\{\textit{true},\textit{false}\} \)である。
-<img alt="flowchart" src="/proving_the_correctness_of_multiprocess_programs.png"></p>
+<img src="/proving_the_correctness_of_multiprocess_programs.png" alt="flowchart"></p>
 <p>プロセスが実行中の矢印を示すための印をトークンといい、Asseriton（表明）は、トークンと\(x\)をもとに真偽値を返す関数である。
 プログラムが実行中、つねに表明が真であれば、表明はinvariant（不変）である。
 より形式的には、\(N\)個のプロセスがあり、プロセス\(\prod_k\)の矢印の集合を\(\Gamma_k\), \(\Gamma\equiv\Gamma_1\times \cdots\times\Gamma_N\)とすると、表明\(A\)は始域が\(X\times\Gamma\)で、終域が真偽値の関数である。

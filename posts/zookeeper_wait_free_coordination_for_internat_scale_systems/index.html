@@ -127,7 +127,7 @@ A-linearilzabilityは、制限を緩めて、複数の同時操作を認める�
 制限を守るときは、同じクライアントから送られたリクエストは送信順に処理される。</p>
 <p>ZooKeeperは大きく分けてRequest Processor, Atomic Broadcast, Replicated Databaseからなる。
 以下の図は、ZooKeeper内における読み込みと書き込みのリクエストの処理の流れである。
-<img alt="ZooKeeper" src="/zookeeper.png">
+<img src="/zookeeper.png" alt="ZooKeeper">
 ZooKeeperのサーバーは、リーダー選出アルゴリズム<a href="https://www.datadoghq.com/pdf/zab.totally-ordered-broadcast-protocol.2008.pdf">Zab</a>で選ばれるleaderとそれ以外のfollowerに分かれる。</p>
 <p>書き込みリクエストはleaderに送られ、読み込みリクエストはfollowerに送られる。
 更新のAPIのシグネチャには、更新したいデータの位置や更新後のデータに加えて、更新対象のバージョンのパラメータもある。

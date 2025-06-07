@@ -116,17 +116,17 @@
 手法の新規性は、1億以上もの大量のテーブルを対象にしていることにある。</p>
 <h3 id="準備">準備</h3>
 <p>アルゴリズムの説明の準備のために、<strong>ASCDb</strong> (attribute correlation astatistics database)というスキーマの出現回数の統計情報を紹介する。これらは、\(\mathcal{R}\)関係モデル\(R\)の集合、\(R.u\)を\(R\)のあるURL、\(R.S\)をRのスキーマとすると、次のアルゴリズムで<strong>ASCDb</strong>を求めることができる。また、属性の生起確率\(p\)は、<strong>ASCDb</strong>で集計した出現回数をもとに、属性を含むスキーマの数をスキーマの総数で割った値で定義される。
-<img alt="ascdb" src="/webtables/ascdb.png"></p>
+<img src="/webtables/ascdb.png" alt="ascdb"></p>
 <h3 id="ランキング">ランキング</h3>
 <p>本論文におけるランキングは、クエリ\(q\)と出力数\(k\)を入力として、関連する関係モデルを順序つき\(k\)関係モデルを順序付きで出力する。
 ここでの\(q\)は、私たちが普段検索エンジンに入力するような検索キーワードをさし、実際にアルゴリズムの中で検索エンジンに入力される。</p>
 <p>提案されているランキングのうち最も検索性能のよいアルゴリズムは<strong>schemaRank</strong>といい、以下に示すベースラインのアルゴリズムのひとつ<strong>featureRank</strong>との違いは\(\mathcal{score}\)の計算方法のみである。
 なお、最も単純なベースラインは、\(q\)を検索エンジンにかけて得られたURLにある表を返す。</p>
-<p><img alt="feature_rank" src="/webtables/feature_rank.png">
+<p><img src="/webtables/feature_rank.png" alt="feature_rank">
 <strong>featureRank</strong>のアルゴリズムにおける\(\mathcal{score}\)の計算には、以下の特徴量を使う。各特徴には重みが与えられ、重みの値は人が作成した正解データと線形回帰を使って決められている。
-<img alt="feature_rank" src="/webtables/table2.png">
+<img src="/webtables/table2.png" alt="feature_rank">
 <strong>schemaRank</strong>の\(\mathcal{score}\)の計算には、これらの特徴量に加えて次の\(\mathcal{cohere}\)も使用する。
-<img alt="cohere" src="/webtables/cohere.png"></p>
+<img src="/webtables/cohere.png" alt="cohere"></p>
 <p>アルゴリズムの評価には、クエリと関係モデルの組に対して人手でつけられた5段階評価が使われた。
 実験は、\(k\)の値が大きくなるほど<strong>schemaRank</strong>とベースラインとの検索性能の差が広がることを示していた。</p>
 <h3 id="感想">感想</h3>

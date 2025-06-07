@@ -123,7 +123,7 @@
 <p>2015年に書かれたThe Go Blogの<a href="https://go.dev/blog/go15gc">Go GC: Prioritizing low latency and simplicity</a>によれば、3色マーキングのコンカレント マーク&amp;スイープはエンタープライズ向けのGCではない。
 それでも、3色マーキングの考え自体はJavaのZGCなど他のガベージコレクションで<a href="https://typeset.io/pdf/deep-dive-into-zgc-a-modern-garbage-collector-in-openjdk-2aa9ffwc.pdf">採用されている</a>。</p>
 <script defer class="speakerdeck-embed" data-id="8f824f9493eb46e5b47202fdd6ff1f9b" data-ratio="1.7784313725490195" src="//speakerdeck.com/assets/embed.js"></script>
-<p><a href="https://go.dev/talks/2015/go-gc.pdf">Rick HudsonのGo GC: Latency Problem Solved</a>や、その<a href="https://www.youtube.com/watch?v=aiv1JOfMjm0&ab_channel=GopherAcademy">動画</a>では、JavaとGoのランタイムを対比させて、Goのランタイムに適したGCのアルゴリズムを採用する必要性が説明されている。
+<p><a href="https://go.dev/talks/2015/go-gc.pdf">Rick HudsonのGo GC: Latency Problem Solved</a>や、その<a href="https://www.youtube.com/watch?v=aiv1JOfMjm0&amp;ab_channel=GopherAcademy">動画</a>では、JavaとGoのランタイムを対比させて、Goのランタイムに適したGCのアルゴリズムを採用する必要性が説明されている。
 動画で最も強調されていた理由は、構造体の内部を指すポインタ interior pointerがフィールドを参照する間は構造体全体がメモリに残ることだった。
 また、Rick Hudsonのほかの<a href="https://go.dev/blog/ismmkeynote">資料</a>によると、構造体のメンバーは連続する領域に割り当てられるため、関連のあるデータを構造体にまとめることで、キャッシュ効率を改善できる。</p>
 <p>On the Fly Garbage Collection an Exercise in Cooperationは、ヒープをノード数が固定の有向グラフとみなしてノードを白、灰色、黒色に着色する。

@@ -118,11 +118,11 @@ Auroraでのコピー数と投票数は、\(V=6, V_w=4, V_r=3\)に設定され�
 <p>Auroraは、ネットワーク越しのレプリカのストレージに直接Redoログだけを送る。
 Redoログのレコードの実態は、変更されるページの前後の差分にあたる。
 次の図は、Redoログを転送する様子を示す。</p>
-<p><img alt="networkio" src="/aurora/networkio.png"></p>
+<p><img src="/aurora/networkio.png" alt="networkio"></p>
 <p>ストレージにRedoログを直接送り、フォアグラウンドのレプリカにかかる負荷を下げることで処理性能の向上をはかっている。
 下図は、インスタンスとレプリカのストレージでのデータの転送の様子を示す。
 各ステップは非同期で、1, 2だけがフォアグラウンドの処理でレイテインシに影響する。</p>
-<p><img alt="iotraffic" src="/aurora/iotraffic.png"></p>
+<p><img src="/aurora/iotraffic.png" alt="iotraffic"></p>
 <p>Auroraは、2層コミットを使わず、Redoログだけで一貫性を確保する。
 Redoログのレコードには単調増加する数(Log Sequence Number, LSN)が割り当てられる。
 LSNはデータベースで生成される。

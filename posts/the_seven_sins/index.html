@@ -114,56 +114,56 @@
 <h3 id="the-seven-sins">The Seven Sins</h3>
 <p>分類した項目と対応するCWEを表で示す。</p>
 <table>
-<thead>
-<tr>
-<th>The Seven Sins</th>
-<th>CWE</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Admin by default</td>
-<td>250</td>
-<td>デフォルトユーザが管理者権限をもつ</td>
-</tr>
-<tr>
-<td>Empty pasword</td>
-<td>258</td>
-<td>パスワードが空文字</td>
-</tr>
-<tr>
-<td>hard-coded secret</td>
-<td>798</td>
-<td>機密情報がハードコードされている</td>
-</tr>
-<tr>
-<td>Invalid IP address binding</td>
-<td>284</td>
-<td><code>0.0.0.0</code>をクラウドサービスやDBに割り当てている</td>
-</tr>
-<tr>
-<td>Suspicious comment</td>
-<td>546</td>
-<td>システムに不足する機能や脆弱性へのコメントがある</td>
-</tr>
-<tr>
-<td>Use of HTTP without TLS</td>
-<td>319</td>
-<td>TLSを通さずHTTPを使用している</td>
-</tr>
-<tr>
-<td>Use of weak cryptography algorithms</td>
-<td>327, 326</td>
-<td>脆弱な暗号化アルゴリズムを使用している</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>The Seven Sins</th>
+          <th>CWE</th>
+          <th>説明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Admin by default</td>
+          <td>250</td>
+          <td>デフォルトユーザが管理者権限をもつ</td>
+      </tr>
+      <tr>
+          <td>Empty pasword</td>
+          <td>258</td>
+          <td>パスワードが空文字</td>
+      </tr>
+      <tr>
+          <td>hard-coded secret</td>
+          <td>798</td>
+          <td>機密情報がハードコードされている</td>
+      </tr>
+      <tr>
+          <td>Invalid IP address binding</td>
+          <td>284</td>
+          <td><code>0.0.0.0</code>をクラウドサービスやDBに割り当てている</td>
+      </tr>
+      <tr>
+          <td>Suspicious comment</td>
+          <td>546</td>
+          <td>システムに不足する機能や脆弱性へのコメントがある</td>
+      </tr>
+      <tr>
+          <td>Use of HTTP without TLS</td>
+          <td>319</td>
+          <td>TLSを通さずHTTPを使用している</td>
+      </tr>
+      <tr>
+          <td>Use of weak cryptography algorithms</td>
+          <td>327, 326</td>
+          <td>脆弱な暗号化アルゴリズムを使用している</td>
+      </tr>
+  </tbody>
 </table>
 <h3 id="ツールによる検出調査">ツールによる検出調査</h3>
 <p>著者らは分類した不吉な匂いを検出するツールを実装し、ツールにより、Mozilla, Openstack, Wikimedia Commons, GitHub上の293のリポジトリにある15232個のIaCスクリプトに対して、不吉な匂いがないか調査した。
 オラクルデータセットによるツールの性能評価では、全ての匂いについてPrecision, recallともに0.95を超えている。
 調査結果を次に示す。</p>
-<p><img alt="table8" src="/the_seven_sins.png"></p>
+<p><img src="/the_seven_sins.png" alt="table8"></p>
 <h3 id="感想">感想</h3>
 <p>ルールベースは比較的単純であり、また、The Seven Sinsは意外性のあるものではないので、多くのリポジトリを調査したことことが受賞につながったように感じた。</p>
 <hr>

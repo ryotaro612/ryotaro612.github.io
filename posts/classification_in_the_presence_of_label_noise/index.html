@@ -133,7 +133,7 @@
 <h4 id="分類">分類</h4>
 <p>ノイズは、真のラベルや特徴との独立性により、3種類に分類される。
 各種類の依存関係を描いた図を次に示す。
-<img alt="fig1" src="/classification_in_the_presence_of_label_noise/fig1.png">
+<img src="/classification_in_the_presence_of_label_noise/fig1.png" alt="fig1">
 \(X\)は特徴ベクトル、Yは真のラベル、\(\tilde{Y}\)は観測されたラベル、\(E\)は誤ったラベルがはられている(\(Y\neq\tilde{Y}\))を示す。
 (a)は、特徴や真のクラスと無関係にノイズが生じる状態である。
 この場合、各クラスにおけるノイズの発生確率は等しい。
@@ -143,7 +143,7 @@
 <p>ノイズがクラス分類に及ぼす影響は影響先により4つに整理されている。
 モデルの予測性能、学習に必要な教師データ数やモデルの複雑さ、観測されるクラスの頻度、特徴選択などの関連タスクである。</p>
 <p>モデルの予測性能と複雑さについては、アルゴリズムごとにノイズへの影響が調べられている。
-ZhangとYang<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.78.7449&rep=rep1&type=pdf">[97]</a>は、テキスト分類における線形分類器の正則化のノイズに対する頑強さを調べた。
+ZhangとYang<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.78.7449&amp;rep=rep1&amp;type=pdf">[97]</a>は、テキスト分類における線形分類器の正則化のノイズに対する頑強さを調べた。
 線形SVM、リッジ回帰、ロジスティック回帰では、いずれも5%のラベルを反転させると予測性能の大幅な低下がみられた。
 AdaBoostは、ノイズのある教師データについて過学習する傾向にある<a href="http://www.ehu.eus/ccwintco/uploads/archive/f/f0/20120125204518!Ana_Gonzalez_Dietterich2000.pdf">[103]</a>。
 また、ノイズはモデルを複雑にする。
@@ -152,7 +152,7 @@ AdaBoostは、ノイズのある教師データについて過学習する傾向
 <h3 id="ノイズへの対処">ノイズへの対処</h3>
 <p>ノイズに対する手法は、ノイズに対して頑強なもの、学習前にノイズを除去するもの、ノイズの分布を仮定しノイズのモデルを使うもの、既存のモデルをノイズに耐性のあるモデルに改良されたものに大別される。
 次の表は、各手法の代表例をまとめている。
-<img alt="tab1" src="/classification_in_the_presence_of_label_noise/tab1.png"></p>
+<img src="/classification_in_the_presence_of_label_noise/tab1.png" alt="tab1"></p>
   </div>
 </main>
 

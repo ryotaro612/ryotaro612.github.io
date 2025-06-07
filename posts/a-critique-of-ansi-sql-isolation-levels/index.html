@@ -120,7 +120,7 @@ Dirty Readは、トランザクションT1がデータを編集し、T1のコミ
 このとき、T1がロールバックしたらT2は未来から見ると存在しないデータを読んだようにみえる。
 Fuzzy Readだと、T1がデータを読み、T2がデータを変更か削除すると、T1が再びデータを読んだときに前の読み込みと同じ結果にならない。
 Phantomでは、T1が条件を満たすデータを読んだ後にT2が条件を満たすデータを追加するとT1が同じ条件で読み込んだときに追加されたデータも読み込んでしまう。
-<img alt="ansi" src="/critique/ansi.png"></p>
+<img src="/critique/ansi.png" alt="ansi"></p>
 <p>規格のDirty Read, Fuzzy Read, Phantomは自然言語で定義されており、解釈の余地がある。
 たとえば、これらの3つの現象を以下のように定義できる。
 数字はトランザクションを区別し、aはabort, cはcommitを意味する。</p>
@@ -133,7 +133,7 @@ A3 : r1[P]...w2[y in P]...c2....r1[P]...c1 (Phantom)
 </code></pre>
 <p>提唱するトランザクション分離レベルは、ANSI規格の現象を厳しく現象列を操作列するように解釈し、新たにDirty Writeを現象にくわえる。
 トランザクション分離レベルと現象の対応と現象の形式的な定義を以下にのせる。
-<img alt="table3" src="/critique/table3.png"></p>
+<img src="/critique/table3.png" alt="table3"></p>
 <pre><code>P0: w1[x]...w2[x]...(c1 or a1) (Dirty Write)
 P1: w1[x]...r2[x]...(c1 or a1) (Dirty Read)
 P2: r1[x]...w2[x]...(c1 or a1) (Fuzzy Read)

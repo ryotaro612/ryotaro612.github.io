@@ -117,7 +117,7 @@ In addition, for sufficiently long access sequences, splay trees are as efficien
 If we want to splay a tree at a node \(x\) and \(p(x)\), the parent of x, is the root, rotate the edge joining \(x\) with \(p(x)\)(Figure a).
 If \(p(x)\) is not the root and \(x\) and \(p(x)\) are both left or both right children, rotate the edge joining \(p(x)\) with its grandparent and then rotate the edge joining \(x\) with p(x)(Figure b).
 If \(p\) is not the root and \(x\) is a left child and \(p(x)\) a right child, or vice versa, rotate the edge joining \(x\) with \(p(x)\) and then rotate the edge joining \(x\) with the new \(p(x)\).
-<img alt="splay" src="/splay/splay.png"></p>
+<img src="/splay/splay.png" alt="splay"></p>
 <p>We can implement the insertion, join, and deletion using splaying.
 To carry out \(insert(i, t)\), inserting item \(i\) in a tree \(t\), we search for \(i\), then replace the pointer to null reached during the search by a pointer to a new node containing \(i\), and finally splay the tree at the new node.
 \(join(t_1, t_2)\) is combining trees \(t_1\) and \(t_2\) into a single tree. This operation assumes that all items in \(t_1\) are less than all those in \(t_2\).
@@ -127,7 +127,7 @@ We finally make \(t_2\) the right subtree of the root.
 To carry out \(delete(i, t)\), we search for the node containing \(i\), say \(x\), and let its parent be \(y\).
 We replace \(x\) as a child of \(y\) by the join of the left and right subtrees of \(x\), and then we splay at \(y\).
 The following figure illustrates insertion of 80 followed by deletion of 30.
-<img alt="mod" src="/splay/mod.png"></p>
+<img src="/splay/mod.png" alt="mod"></p>
 <p>The figures were cited from the paper.</p>
   </div>
 </main>

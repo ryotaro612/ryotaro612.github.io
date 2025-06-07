@@ -107,17 +107,37 @@
       </a>
     </li>
     
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/transformer/">
+	#Transformer
+      </a>
+    </li>
+    
   </ul>  
   <span class="date">November 18, 2023</span>    
   <div>
-    <p><a href="https://arxiv.org/pdf/1804.08838.pdf">Li et al. (2018)</a>と<a href="https://arxiv.org/pdf/2012.13255.pdf">Aghajanyan et al. (2020)</a>は、Large Language Models (LLM)のファインチューニングにかかる計算資源は大きいが、下流タスクに必要なパラメータ数はLLMのパラメタ数よりもはるかに少ないと主張した。
-<a href="https://arxiv.org/pdf/2106.09685.pdf">LoRA</a>は、この仮説によりファインチューニングを避け、LLMの重みと線形結合すると下流タスクに最適な重みに近似できる小さな行列を求める。
-LLMの重みを\(W_0\in\mathbb{R}^{d\times k}\)とすると、\(W_0+BA\ (B\in\mathbb{R}^{d\times r}, A\in\mathbb{R}^{r\times k}, r \ll\min (d, k))\)が下流タスクに最適な重みに近づくように、ファインチューニングにかわって\(W_0\)を更新せず\(B,\ A\)のみを更新する。
-\(r\)が\(d, k\)よりも小さいので、ファインチューニングよりも学習時間は短い。
+    <p><a href="https://arxiv.org/pdf/1804.08838.pdf">Li et al. (2018)</a>と<a href="https://arxiv.org/pdf/2012.13255.pdf">Aghajanyan et al. (2020)</a>は、Large Language Models (LLM) のファインチューニングにおいて、下流タスクに必要なパラメータ数はLLMのパラメタ数よりもはるかに少ないと主張する。
+<a href="https://arxiv.org/pdf/2106.09685.pdf">LoRA</a>は、この仮説を支持し、ファインチューニングを避け、LLMの全結合層と線形結合するための2つの小さい行列を導入する。
+LLMの重みを\(W_0\in\mathbb{R}^{d\times k}\) とすると、\(W_0+BA\ (B\in\mathbb{R}^{d\times r}, A\in\mathbb{R}^{r\times k}, r \ll\min (d, k))\)が下流タスクに最適な重みに近づくように、ファインチューニングにかわって\(W_0\)を更新せず\(B,\ A\)のみを更新する。
+\(r\)が\(d, k\)よりも小さいので、\(W_0\)を更新するファインチューニングよりも学習時間は短い。
 また、複数の下流タスクを入力に適用する場合、\(W_0x\)を共有できるので、推論に必要な計算も\(W_0\)を更新するファインチューニングより少ない。</p>
-<p>\(A, B\)は、それぞれ、ガウス分布で生成したランダムな値と0で初期化される。
-Transformerに適用する場合、MLPと自己注意機構のうち、自己注意機構にのみLoRAを適用する。
-ただし、自己注意機構の重み\(W_q, W_k, W_v, W_o\)のうち、\(W_q, W_k, W_v\)については、マルチヘッド注意機構のために等分割する前の行列にLoRAを適用する。</p>
+<p>\(A\)はガウス分布で生成したランダムな値で、\(B\)は0で初期化される。
+また、LoRAの出力を調整するときは、定数\(\alpha\)をランク\(r\)で割った値で\(BA\)をスケールすることで、\(r\)によらず同じ\(\alpha\)が使えるようになる。
+$$
+W_0+\frac{\alpha}{r}BA
+$$</p>
+<p>Transformerに適用する場合、自己注意機構にのみLoRAを適用する。
+自己注意機構の重みは\(W_q, W_k, W_v, W_o\)の4種類あり、いくつかの重みだけにLoRAを適用することもできる。
+自己注意機構への入力は、ヘッドの数で等分した重みと埋め込み行列の積で<a href="https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">定式化されている</a>。
+具体的には、\(d_{\text{model}}\)を埋め込みベクトルの次元、\(h\)をヘッド数、\(d_k, d_v\)を\(d_{model}/h\), \(W_i^Q\in \mathbb{R}^{d_{model} \times d_k}, W_i^K\in \mathbb{R}^{d_{model}\times d_k}, W_i^V\in \mathbb{R}^{d_{model}\times d_v}\)
+$$
+\text{head}_i = \text{softmax}\left(\frac{QW_i^Q(KW_i^K)^\top}{\sqrt{d_k}}\right)VW_i^V
+$$
+$$
+\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, \dots , \text{head}_h)W^{O}
+$$
+と表せる。
+ただし、LoRAを適用する場合は、分割後の重みごとではなく、分割前の\(W_q, W_k, W_v\)と\(BA\)の線形結合で求めた行列を分割し、各\(head_i\)を計算する。</p>
   </div>
 </main>
 

@@ -177,7 +177,7 @@ Examples of divided tasks include:</p>
 <li>Video encoder</li>
 </ul>
 <p>The following figure illustrates a design where encoding and tagging videos are asyncrhonous.
-<img alt="queue" src="/video-streaming/queue.drawio.svg"></p>
+<img src="/video-streaming/queue.drawio.svg" alt="queue"></p>
 <p>The maximum size of the message that can be equeued is limited.
 For example, the max size of the SQS messages is <a href="https://docs.aws.amazon.com/en_us/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">256KB</a>, while Kafka&rsquo;s is <a href="https://kafka.apache.org/08/documentation.html">1MB</a>.
 Generally speaking, the size of a video exceeds 1MB, and videos cannot be enqueued.</p>
