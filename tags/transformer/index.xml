@@ -16,7 +16,7 @@
       <description>&lt;p&gt;入力系列のラベルを推定できるようにTransformerのエンコーダーをファインチューニングするとき、エンコーディングの仕方に、Cross encoder (&lt;a href=&#34;https://arxiv.org/abs/1901.08149&#34;&gt;Wolf et al.&lt;/a&gt;) とBi-encoder (&lt;a href=&#34;https://arxiv.org/abs/1809.01984&#34;&gt;Mazaré et al.&lt;/a&gt;) がある。&#xA;Cross-encoderは、入力系列とラベルを連結した系列をエンコーダーに入力し、入力系列とラベルのペアのエンベディングからスコアを求める。&#xA;Bi-encoderは、入力系列とラベルを別のエンコーダーに入力し、それぞれのエンベディングの内積をスコアとする。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS</title>
+      <title>LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS (2021)</title>
       <link>https://ryotaro.dev/posts/lora-low-rank-adaptation-of-large-language-models/</link>
       <pubDate>Sat, 18 Nov 2023 12:21:20 -0500</pubDate>
       <guid>https://ryotaro.dev/posts/lora-low-rank-adaptation-of-large-language-models/</guid>
