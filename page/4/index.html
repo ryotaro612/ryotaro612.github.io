@@ -97,77 +97,115 @@
   </header>
   
 <main>
-    <h1>Posts</h1>
-    
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/wide-and-deep-learning-for-recommender-systems/">Wide and Deep Learning for Recommender Systems (2016)</a></h3>
-        <div class="summary"><p>推薦システムに一般化線形モデルや深層学習を応用する場合、両者には一長一短がある。
+  <h1>Posts</h1>
+  
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/cap-twelve-years-later-how-the-rules-have-changed/">CAP Twelve Years Later: How the &#34;Rules&#34; Have Changed (2012)</a></h3>
+    <div class="summary"><p><a href="https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf">CAP定理</a>は、データベースが一貫性 (Consistency), 可用性 (Availability), 分断耐性 (Partition Tolerance) から2つしか選択できない定理として知られる。
+この定理は、Martin Kleppmannによって、その著書<a href="https://dataintensive.net/">Designing Data-Intensive Applications</a>や<a href="https://www.cl.cam.ac.uk/research/dtg/archived/files/publications/public/mk428/cap-critique.pdf">A Critique of the CAP Theorem</a> で批判されている。
+CAP定理をなづけたBrewerは、<a href="https://sites.cs.ucsb.edu/~rich/class/cs293b-cloud/papers/brewer-cap.pdf">CAP Twelve Years Later: How the “Rules” Have Changed</a>で、2つを選択するという表現は誤解をまねく表現であると認め、現実的にはデータベースはネットワークの分断時に一貫性と可用性のトレードオフにさまられると主張した。
+CAP定理の発表された12年後の今日では、分断時における一貫性と可用性の最適化に、各ノードの操作履歴を記録するversion verctorsや<a href="https://arxiv.org/pdf/1805.06358.pdf">Commutative Replicated Data Types (CRDTs)</a> を利用できる。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/cap%E5%AE%9A%E7%90%86/">
+            #CAP定理
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 23, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/wide-and-deep-learning-for-recommender-systems/">Wide and Deep Learning for Recommender Systems (2016)</a></h3>
+    <div class="summary"><p>推薦システムに一般化線形モデルや深層学習を応用する場合、両者には一長一短がある。
 一般線形化モデルは、学習データに忠実かつ解釈しやすい推測を出力するが、交互作用では学習データにないアイテムを推薦できない。
 深層学習は、汎化性能にすぐれるが、疎で高ランクな行列を学習しがたい。
 <a href="https://arxiv.org/abs/1606.07792">Wide &amp; Deep Learning for Recommender Systems</a>は、一般線形化モデルとフィードフォワードニューラルネットワーク (FFN) の出力の重みつき和をロジスティック関数に適用し、両者の利点を生かし欠点をおぎなうモデルである。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/recommendation/">
-		#Recommendation
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 16, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/a_protocol_for_packet_network_intercommunication/">A Protocol for Packet Network Intercommunication (1974)</a></h3>
-        <div class="summary"><p>TCPの起源はヴィントン・サーフとロバート・カーンが1974年に出版した<a href="https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf">A Protocol for Packet Network Intercommunication</a>にまでさかのぼる。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/recommendation/">
+            #Recommendation
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 16, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/a_protocol_for_packet_network_intercommunication/">A Protocol for Packet Network Intercommunication (1974)</a></h3>
+    <div class="summary"><p>TCPの起源はヴィントン・サーフとロバート・カーンが1974年に出版した<a href="https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf">A Protocol for Packet Network Intercommunication</a>にまでさかのぼる。
 当時、ローカルネットワーク内のコンピュータ同士で通信するためのプロトコルはあったが、ネットワークを横断して通信できるプロコトルはなかった。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/tcp/">
-		#TCP
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 9, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/probabilistic_latent_semantic_indexing/">Probablistic Latent Semantic Indexing (1999)</a></h3>
-        <div class="summary"><p><a href="http://wordvec.colorado.edu/papers/Deerwester_1990.pdf">Latent Semantic Analysis</a>は、単語の出現頻度の列ベクトルで文書をあらわす行列を、特異値分解し、潜在的な意味を反映した低ランクな行列を求める方法である。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/tcp/">
+            #TCP
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 9, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/probabilistic_latent_semantic_indexing/">Probablistic Latent Semantic Indexing (1999)</a></h3>
+    <div class="summary"><p><a href="http://wordvec.colorado.edu/papers/Deerwester_1990.pdf">Latent Semantic Analysis</a>は、単語の出現頻度の列ベクトルで文書をあらわす行列を、特異値分解し、潜在的な意味を反映した低ランクな行列を求める方法である。
 特異値を大きい順に\(k\)個えらぶとき、単語の数を\(t\), 文書数を\(d\)とすれば、左特異ベクトルのサイズは、\(t\times k\), 右特異ベクトルの転置行列のサイズは\(k\times d\)になる。</p>
 <p><a href="https://sigir.org/wp-content/uploads/2017/06/p211.pdf">Probabilistic Latent Smantic Indexing</a>は、各文書が1つのクラスに分類されると仮定し、クラスを示すベクトルを隠れ変数とみなしたEMアルゴリズムで、文書や単語の尤度、クラスの生起確率を求める。
 これにより、クラス\(z_k\)についての文書\(d_i\)と単語\(w_j\)の尤度を\(P(d_i|z_k)\), \(P(w_j|z_k)\), また\(\hat{\textbf{U}}=(P(d_i|z_k))_{i, k}\), \(\hat{\textbf{V}}=(P(w_j|z_k))_{j, k}\), \(\hat{\Sigma}=\text{diag} (P(z_k))_k\)とすると、同時確率モデルを特異値分解の形式\(P=\hat{\textbf{U}}\hat{\Sigma}\hat{\textbf{V}}^t\)で表すことができる。
 Latent Semantic Analysisと違い、\(P\)の固有値や特異ベクトルの要素から確率モデル上の意味を読みとることができる。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E6%BD%9C%E5%9C%A8%E6%84%8F%E5%91%B3%E8%A7%A3%E6%9E%90/">
-		#潜在意味解析
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 2, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/">Chord: A Scalable Peer-to-peer Lookup Service for Internet Applications (2001)</a></h3>
-        <div class="summary"><p>\(N\)個のノードからなる<a href="https://pdos.csail.mit.edu/papers/ton:chord/paper-ton.pdf">Chord</a>のクラスタは、キーによるノードの問い合せに、\(O(\log N)\)のノードを介して応答できるPeer-to-peerのプロトコルである。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E6%BD%9C%E5%9C%A8%E6%84%8F%E5%91%B3%E8%A7%A3%E6%9E%90/">
+            #潜在意味解析
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 2, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/">Chord: A Scalable Peer-to-peer Lookup Service for Internet Applications (2001)</a></h3>
+    <div class="summary"><p>\(N\)個のノードからなる<a href="https://pdos.csail.mit.edu/papers/ton:chord/paper-ton.pdf">Chord</a>のクラスタは、キーによるノードの問い合せに、\(O(\log N)\)のノードを介して応答できるPeer-to-peerのプロトコルである。
 <a href="https://www.cs.princeton.edu/courses/archive/fall09/cos518/papers/chash.pdf">Consistent Hashing</a>を応用しており、\(2^{m-1}+1\)以上\(2^m\)以下のノードが参加するconsistent hashingクラスタは、\(\mod(2^m)\)の非負の整数をIDとしてキーとノードを管理し、IDの空間上で隣接するノードにキーをわりあてる。
 Consistent hashingはキーをほぼ均等に配置でき、ノードの参加、離脱時に移動すべきキー数は\(O(1/N)\)に収まる。</p>
 <p>参加、離脱するノードと隣接するノード間でのみキーの移動が生じる。
@@ -175,196 +213,191 @@ Chordは、多くのノードが参加できるように、各ノードにもた
 クライアントや別のノードからキーを受信したノードは、ルーティング情報にあるノードと自分のID \(\textit{n}\)をキー\(\textit{key}\)と比較する。
 このとき、\(\textit{key} + x \equiv n_i\mod 2^m\)をみたす最小の非負の整数\(x\)に対応する\(n_i\)が自分のIDであれば、そのノードがキーに対応する。
 それ以外の場合は、最小の値になるIDをもつノードにキーを転送する。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/peer-to-peer/">
-		#Peer-to-Peer
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">November 23, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/lora-low-rank-adaptation-of-large-language-models/">LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS (2021)</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/pdf/1804.08838.pdf">Li et al. (2018)</a>と<a href="https://arxiv.org/pdf/2012.13255.pdf">Aghajanyan et al. (2020)</a>は、Large Language Models (LLM) のファインチューニングにおいて、下流タスクに必要なパラメータ数はLLMのパラメタ数よりもはるかに少ないと主張する。
-<a href="https://arxiv.org/pdf/2106.09685.pdf">LoRA</a>は、この仮説を支持し、ファインチューニングを避け、LLMの全結合層と線形結合するための2つの小さい行列を導入する。
-LLMの重みを\(W_0\in\mathbb{R}^{d\times k}\) とすると、\(W_0+BA\ (B\in\mathbb{R}^{d\times r}, A\in\mathbb{R}^{r\times k}, r \ll\min (d, k))\)が下流タスクに最適な重みに近づくように、ファインチューニングにかわって\(W_0\)を更新せず\(B,\ A\)のみを更新する。
-\(r\)が\(d, k\)よりも小さいので、\(W_0\)を更新するファインチューニングよりも学習時間は短い。
-また、複数の下流タスクを入力に適用する場合、\(W_0x\)を共有できるので、推論に必要な計算も\(W_0\)を更新するファインチューニングより少ない。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/large-language-model/">
-		#Large Language Model
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/transformer/">
-		#Transformer
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">November 18, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/">Pastry: Scalable Decentralized Object Location and Routing for Large Scale Peer to Peer Systems (2001)</a></h3>
-        <div class="summary"><p><a href="https://rowstron.azurewebsites.net/PAST/pastry.pdf">Pastry</a>は、広域ネットーワーク規模のPeer-to-Peerなルーティングのアルゴリズムであり、メッセージをメッセージのキーに最も近いIDをもつノードに転送する。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/peer-to-peer/">
+            #Peer-to-Peer
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        November 23, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/">Pastry: Scalable Decentralized Object Location and Routing for Large Scale Peer to Peer Systems (2001)</a></h3>
+    <div class="summary"><p><a href="https://rowstron.azurewebsites.net/PAST/pastry.pdf">Pastry</a>は、広域ネットーワーク規模のPeer-to-Peerなルーティングのアルゴリズムであり、メッセージをメッセージのキーに最も近いIDをもつノードに転送する。
 Pastryに参加するノードは対称的で、すべてのノードは同じアルゴリズムにしたがう。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/peer-to-peer/">
-		#Peer-to-Peer
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">November 7, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/distilbert-a-distilled-version-of-bert-smaller-fastercheater-and-lighter/">DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter (2019)</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/abs/1910.01108">DistilBERT</a>は、<a href="https://arxiv.org/abs/1810.04805">BERT</a>の事前学習に<a href="https://arxiv.org/pdf/1503.02531.pdf">知識の蒸留</a>を適用したモデルである。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/peer-to-peer/">
+            #Peer-to-Peer
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        November 7, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/distilbert-a-distilled-version-of-bert-smaller-fastercheater-and-lighter/">DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter (2019)</a></h3>
+    <div class="summary"><p><a href="https://arxiv.org/abs/1910.01108">DistilBERT</a>は、<a href="https://arxiv.org/abs/1810.04805">BERT</a>の事前学習に<a href="https://arxiv.org/pdf/1503.02531.pdf">知識の蒸留</a>を適用したモデルである。
 DistilBERTの事前学習の損失関数は、BERTの学習に使われるMasked language model, BERTとDistilBERTの隠れ状態のコサイン類似度、BERTとDistil BERTの交差エントロピーの線形結合である。
 学習時は温度付きソフトマックスを\(T&gt;1\)に設定し、推論時には\(T=1\)として通常のソフトマックスをもちいる。
 DistilBERTのアーキテクチャは、セグメントエンベディング、下流タスクにCLSトークンのエンベディングを渡す層、半数の層をBERTから取り除いてできている。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E7%9F%A5%E8%AD%98%E8%92%B8%E7%95%99/">
-		#知識蒸留
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/bert/">
-		#BERT
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">November 4, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/an_incremental_approach_to_compiler_construction/">An Incremental Approach to Compiler Construction (2006)</a></h3>
-        <div class="summary"><p><a href="http://scheme2006.cs.uchicago.edu/11-ghuloum.pdf">An Incremental Approach to Compiler Construction</a>は、コンパイラの学習を目的としたSchemeのコンパイラの実装方法の解説である。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E7%9F%A5%E8%AD%98%E8%92%B8%E7%95%99/">
+            #知識蒸留
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/bert/">
+            #BERT
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        November 4, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/an_incremental_approach_to_compiler_construction/">An Incremental Approach to Compiler Construction (2006)</a></h3>
+    <div class="summary"><p><a href="http://scheme2006.cs.uchicago.edu/11-ghuloum.pdf">An Incremental Approach to Compiler Construction</a>は、コンパイラの学習を目的としたSchemeのコンパイラの実装方法の解説である。
 コンパイラの実装に使用する言語もSchemeであり、コンパイラは、Intel-x86のアセンブリコードを出力する。
 プログラマが普段使用しているコンパイラは、教育用の教材としてのコンパイラと比べて複雑であり、学習には向かない。
 この商用と学習用のコンパイラの溝を埋めるために、Schemeの仕様の大部分を満たす規模のコンパイラの実装例が示されている。
 実装手順は24ステップからなり、最後のステップまで実装しなくても、各ステップにある実装を完了すれば、コンパイラが正常に動作するように実装することができる。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9/">
-		#コンパイラ
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">October 23, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/gaussian_error_linear_units/">GAUSSIAN ERROR LINEAR UNITS (GELUs) 2016</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/abs/1606.08415">GAUSSIAN ERROR LINEAR UNITS (GELUs)</a>は、標準正規分布の累積分布関数を\(\Phi(x)\)とおくと、\(\text{GELU}(x)=x\Phi(x)\)で定義される活性化関数である。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9/">
+            #コンパイラ
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        October 23, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/gaussian_error_linear_units/">GAUSSIAN ERROR LINEAR UNITS (GELUs) 2016</a></h3>
+    <div class="summary"><p><a href="https://arxiv.org/abs/1606.08415">GAUSSIAN ERROR LINEAR UNITS (GELUs)</a>は、標準正規分布の累積分布関数を\(\Phi(x)\)とおくと、\(\text{GELU}(x)=x\Phi(x)\)で定義される活性化関数である。
 GELUsは、Dropout, <a href="https://openreview.net/pdf?id=rJqBEPcxe">Zoneout</a>, \(\text{ReLU}(x)=\max(0, x)\)の性質を兼ね備える。
 Zoneoutは、RNNむけの正則化であり、ユニットが一つ前の状態を確率的に維持するしくみである。
 ReLUは、非線形性により、ニューラルネットワークを非線形関数に近似できる。
 ZoneoutやDropoutは正則化の役割をはたす。
 ReLUsの出力が入力に依存する一方で、Dropoutの出力は入力に依存しない。
 GELUsは、確率\(\Phi(x)\)で1をとるベルヌーイ分布にしたがう0-1マスクを人工ニューロンへの入力に適用することで、非線形関数への近似と正則化の両方を実現する。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E6%B4%BB%E6%80%A7%E5%8C%96%E9%96%A2%E6%95%B0/">
-		#活性化関数
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">October 21, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/a_design_methodology_for_reliable_software_systems/">A design methodology for reliable software systems (1972)</a></h3>
-        <div class="summary"><p>スタンフォードで数学の博士号を取得した<a href="https://computerhistory.org/profile/barbara-liskov/">Liskov</a>は以前勤めていたMitre Corporationに戻った後、最初にVenusとよばれるタイムシェアリングシステムの開発プロジェクトを担当し、その次にソフトウェア危機に対処する開発手法の研究に取り組んだ。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E6%B4%BB%E6%80%A7%E5%8C%96%E9%96%A2%E6%95%B0/">
+            #活性化関数
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        October 21, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/a_design_methodology_for_reliable_software_systems/">A design methodology for reliable software systems (1972)</a></h3>
+    <div class="summary"><p>スタンフォードで数学の博士号を取得した<a href="https://computerhistory.org/profile/barbara-liskov/">Liskov</a>は以前勤めていたMitre Corporationに戻った後、最初にVenusとよばれるタイムシェアリングシステムの開発プロジェクトを担当し、その次にソフトウェア危機に対処する開発手法の研究に取り組んだ。
 <a href="https://dl.acm.org/doi/pdf/10.1145/1479992.1480018">A design methodology for reliable software systems</a>は、Venusの開発から得られた構造化プログラミングの方法論である。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E6%A7%8B%E9%80%A0%E5%8C%96%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/">
-		#構造化プログラミング
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">October 8, 2023</span>
-        </div>
-    </article>
-    
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E6%A7%8B%E9%80%A0%E5%8C%96%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/">
+            #構造化プログラミング
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        October 8, 2023
+        
+      </span>
+    </div>
+  </article>
+  
 </main>
 
   
 
-<ul class="pagination">  
-    
-    <li>
-      <a href="/">
-	<i class="fa-solid fa-xl fa-angles-left"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/page/3/">
-	<i class="fa-solid fa-xl fa-angle-left"></i>
-      </a>
-    </li>
-    
-    
-    <li>
-      <a href="/page/5/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/page/33/">
-	<i class="fa-solid fa-xl fa-angles-right"></i>
-      </a>
-    </li>
-    
+<ul class="pagination">
+  
+  <li>
+    <a href="/">
+      <i class="fa-solid fa-xl fa-angles-left"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/page/3/">
+      <i class="fa-solid fa-xl fa-angle-left"></i>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a href="/page/5/">
+      <i class="fa-solid fa-xl fa-angle-right"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/page/33/">
+      <i class="fa-solid fa-xl fa-angles-right"></i>
+    </a>
+  </li>
+  
 </ul>
 
   <footer>

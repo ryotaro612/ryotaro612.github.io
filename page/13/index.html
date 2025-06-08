@@ -97,162 +97,202 @@
   </header>
   
 <main>
-    <h1>Posts</h1>
-    
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/effective_multi-label_active_learning_for_text_classification/">Effective Multi-Label Active Learning for Text Classification</a></h3>
-        <div class="summary"><p>SVMをつかったマルチラベル文書分類のための能動学習である。
+  <h1>Posts</h1>
+  
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/effective_multi-label_active_learning_for_text_classification/">Effective Multi-Label Active Learning for Text Classification</a></h3>
+    <div class="summary"><p>SVMをつかったマルチラベル文書分類のための能動学習である。
 ラベルをつければモデルの損失を最も小さくできるデータをさがす。
 ラベルつきデータでSVMを学習し、さらに、その識別関数の値を特徴としてラベルの数を予測するロジスティック回帰を学習する。
 ラベルのないデータを両モデルに入力し、ロジスティック回帰が予測するラベルの数だけ、識別関数の値の高い順にラベルを選び、そのデータのマルチラベルとみなす。
 このとき、その推定したマルチラベルと識別関数の値がほど、損失関数を最も小さくできるデータとみなす。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">March 12, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/pegasos/">Pegasos: Primal Estimated sub-GrAdient SOlver for SVM</a></h3>
-        <div class="summary"><p>Pegasosは、SVMの学習のための反復的なアルゴリズムであり、2022年3月現在、scikit-learnの<a href="https://scikit-learn.org/stable/modules/sgd.html#implementation-details">SGDClassifier</a>で学習率を更新に採用されている。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        March 12, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/pegasos/">Pegasos: Primal Estimated sub-GrAdient SOlver for SVM</a></h3>
+    <div class="summary"><p>Pegasosは、SVMの学習のための反復的なアルゴリズムであり、2022年3月現在、scikit-learnの<a href="https://scikit-learn.org/stable/modules/sgd.html#implementation-details">SGDClassifier</a>で学習率を更新に採用されている。
 Pegasosは、目的関数の最小値の近似値をもとめる。
 求める最小値との誤差を\(\epsilon\), SVMの正則化パラメタを\(\lambda\), 各サンプルの説明変数の0でない要素数の上限を\(d\)とすると、線形カーネルをつかうSVMの時間計算量は、\(\tilde{O}(d/\lambda \epsilon)\)になる。
 訓練データの数が計算量に影響しないので、教師データの数に対してスケールする。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">March 12, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/an_interior_point_method_for_large_scale_l1_regularized_least_squares/">An Interior-Point Method for Large-Scale L1-Regularized Least Squares</a></h3>
-        <div class="summary"><p>前処理付共役勾配法により、スパースな説明変数をもつリッジ回帰の学習を高速化する。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        March 12, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/an_interior_point_method_for_large_scale_l1_regularized_least_squares/">An Interior-Point Method for Large-Scale L1-Regularized Least Squares</a></h3>
+    <div class="summary"><p>前処理付共役勾配法により、スパースな説明変数をもつリッジ回帰の学習を高速化する。
 リッジ回帰の目的関数は、凸関数だが微分可能ではない。
 また、リッジ回帰の係数はスパースになりやすい。
 そこで、目的関数を最小化する係数の探索を、線形不等式制約つきの凸二次計画問題とらえ、前処理付共役勾配法をつかった内点法で係数の更新方向を探索する。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">March 5, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/regularization_paths_for_generalized_liner_models_via_coordinate_descent/">Regularization Paths for Generalized Linear Models via Coordinate Descent</a></h3>
-        <div class="summary"><p>ラッソ、リッジ、またはその両方をくみあわせるelastictnetを正則化項とする一般化線形モデルの学習を高速化した座標降下法である。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        March 5, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/regularization_paths_for_generalized_liner_models_via_coordinate_descent/">Regularization Paths for Generalized Linear Models via Coordinate Descent</a></h3>
+    <div class="summary"><p>ラッソ、リッジ、またはその両方をくみあわせるelastictnetを正則化項とする一般化線形モデルの学習を高速化した座標降下法である。
 座標降下法を単純に実装すると、スパースで次元数の多い特徴だと学習に時間がかかる。
 表題の手法は、その単純なパラメタの更新式の一部を、説明変数の内積におきかえ、学習データの数や次元数に対して学習時間を短縮する。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">February 19, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/using_tfidf_to_determine_word_relevance_in_document_queries/">Using TF-IDF to Determine Word Relevance in Document Queries(2003)</a></h3>
-        <div class="summary"><p>自然言語による文書検索で、TF-IDFをベースラインにつかう利点と欠点を調べた。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        February 19, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/using_tfidf_to_determine_word_relevance_in_document_queries/">Using TF-IDF to Determine Word Relevance in Document Queries(2003)</a></h3>
+    <div class="summary"><p>自然言語による文書検索で、TF-IDFをベースラインにつかう利点と欠点を調べた。
 クエリにある各単語のTF-IDF値の総和が最大の文書を最も関連する文書とみなす。
 実験では、TFのみで検索する手法よりも予測性能がよかったが、類義語同士の同一判定をできない問題があった。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">February 19, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/an_algorithm_for_suffix_stripping/">An algorithm for suffix stripping (1980)</a></h3>
-        <div class="summary"><p>Poterのステミングで知られる。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        February 19, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/an_algorithm_for_suffix_stripping/">An algorithm for suffix stripping (1980)</a></h3>
+    <div class="summary"><p>Poterのステミングで知られる。
 アルゴリズムが単純で、辞書を必要としないところに特徴がある。
 規則にしたがって単語の接尾辞を段階的に変換し、変換後の文字列を語幹とみなす。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">February 11, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/bringing_gnu_emacs_to_native_code/">Bringing GNU Emacs to Native Code</a></h3>
-        <div class="summary"><p>Emacs 28から利用できる<a href="https://gcc.gnu.org/onlinedocs/jit/">libgccjit</a>によるネイティブコンパイルの解説である。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        February 11, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/bringing_gnu_emacs_to_native_code/">Bringing GNU Emacs to Native Code</a></h3>
+    <div class="summary"><p>Emacs 28から利用できる<a href="https://gcc.gnu.org/onlinedocs/jit/">libgccjit</a>によるネイティブコンパイルの解説である。
 パッケージアーカイブELPAにあるelisp-benchmarksによる比較ではバイトコンパイルよりも2.3倍から42倍の高速化を実現した。
 ネイティブコンパイル時は、はじめに、Emacs Lispのコードをバイトコンパイラで、Emacs VM(Lisp Assembly Program, LAP)の中間表現に変換する。
 つぎに、LAPをS式で静的単一代入形式の中間表現LIMPLEに変換する。
 LIMPLEは、GCCの中間表現GIMPLEに由来し、ネイティブコンパイルの中核技術にあたる。
 さいごに、LIMPLEをlibgccjitの中間表現に変換し、GCCでネイティブに実行可能なプログラムにコンパイルする。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">January 30, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/data_structure_for_text_sequence/">Data Structure for Text Sequences</a></h3>
-        <div class="summary"><p>テキストエディタのためのデータ構造として、array, gap, list, line pointers, fixed size buffers, piece tablesを評価する。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        January 30, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/data_structure_for_text_sequence/">Data Structure for Text Sequences</a></h3>
+    <div class="summary"><p>テキストエディタのためのデータ構造として、array, gap, list, line pointers, fixed size buffers, piece tablesを評価する。
 とくに、Piece tablesを評価し詳しく解説する。
 Piece tableはテキストを2つのバッファに記録する。
 2つのバッファはfile buffer, add bufferで、file bufferは初期状態のテキストを保存し、add bufferは新たに挿入される文字列を保存する追記のみのバッファである。
 名前のpieceはバッファ内の連続する部分文字列を意味する。
 そして、pieceへのポインタのシーケンスがpiece tableである。
 ポインタは、どちらのバッファか、参照する部分文字列の開始位置、長さの3つの情報からなる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">January 29, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/semi_supervised_classification_with_graph_convolutional_networks/">SEMI-SUPERVISED CLASSIFICATION WITH GRAPH CONVOLUTIONAL NETWORKS</a></h3>
-        <div class="summary"><p>文書の特徴を点、引用などの文書間の関係を辺であらわすグラフ構造に畳込みニューラルネットワークを適用する。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        January 29, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/semi_supervised_classification_with_graph_convolutional_networks/">SEMI-SUPERVISED CLASSIFICATION WITH GRAPH CONVOLUTIONAL NETWORKS</a></h3>
+    <div class="summary"><p>文書の特徴を点、引用などの文書間の関係を辺であらわすグラフ構造に畳込みニューラルネットワークを適用する。
 半教師あり学習であり、ラベルのない文書は近くにある文書とおなじラベルになると仮定する。
 <a href="https://mlg.eng.cam.ac.uk/zoubin/papers/zgl.pdf">Zhu et al.</a>の先行研究は、辺の情報をネットワークにあたず、文書の特徴のみを入力する。
 表題の手法では、文書の特徴にくわえ、隣接行列で表現した辺の情報もネットワークにあたえる。
 グラフの辺の数に対して線形にスケールし、隠れ層でグラフの分散表現を獲得できる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">January 21, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/dynamic_routing_between_capsules/">Dynamic Routing Between Capsules (2017)</a></h3>
-        <div class="summary"><p>カプセルはおなじ層にあるニューロン(ユニット)のグループであり、カプセルの出力するベクトルは入力にある特定のエンティティの分散表現になる。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        January 21, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/dynamic_routing_between_capsules/">Dynamic Routing Between Capsules (2017)</a></h3>
+    <div class="summary"><p>カプセルはおなじ層にあるニューロン(ユニット)のグループであり、カプセルの出力するベクトルは入力にある特定のエンティティの分散表現になる。
 表題のdynamic routingは、カプセルの出力ベクトルを1つ上の層のどのカプセルに渡すべきかを学習する手法である。
 これにより、プーリング層で失われるエンティティの空間上の位置情報をカプセルの出力するベクトルで表現する。
 実験では、2層の畳み込み層と1層の全結合層からなる浅いニューラルネットワークをMNISTに適用し、長さでエンティティが存在する確率を、向きでエンティティの特徴を表現できるベクトルを学習できることを示した。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">December 26, 2021</span>
-        </div>
-    </article>
-    
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        December 26, 2021
+        
+      </span>
+    </div>
+  </article>
+  
 </main>
 
   
 
-<ul class="pagination">  
-    
-    <li>
-      <a href="/">
-	<i class="fa-solid fa-xl fa-angles-left"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/page/12/">
-	<i class="fa-solid fa-xl fa-angle-left"></i>
-      </a>
-    </li>
-    
-    
-    <li>
-      <a href="/page/14/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/page/33/">
-	<i class="fa-solid fa-xl fa-angles-right"></i>
-      </a>
-    </li>
-    
+<ul class="pagination">
+  
+  <li>
+    <a href="/">
+      <i class="fa-solid fa-xl fa-angles-left"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/page/12/">
+      <i class="fa-solid fa-xl fa-angle-left"></i>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a href="/page/14/">
+      <i class="fa-solid fa-xl fa-angle-right"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/page/33/">
+      <i class="fa-solid fa-xl fa-angles-right"></i>
+    </a>
+  </li>
+  
 </ul>
 
   <footer>

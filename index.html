@@ -97,135 +97,188 @@
   </header>
   
 <main>
-    <h1>Posts</h1>
-    
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/supervised-learning-of-universal-sentence-representations-from-natural-language-inference-data/">Supervised Learning of Universal Sentence Representations From Natural Language Inference Data (2017)</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/pdf/1705.02364">Supervised Learning of Universal Sentence Representations From Natural Language Inference Data</a>は自然言語推論のデータセットであるStanford Natural Language Inference (SNLI) を使った文の埋め込みベクトルを生成モデルを教師あり学習を提案した。
+  <h1>Posts</h1>
+  
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/lora-low-rank-adaptation-of-large-language-models/">LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS (2021)</a></h3>
+    <div class="summary"><p><a href="https://arxiv.org/pdf/1804.08838.pdf">Li et al. (2018)</a>と<a href="https://arxiv.org/pdf/2012.13255.pdf">Aghajanyan et al. (2020)</a>は、Large Language Models (LLM) のファインチューニングにおいて、下流タスクに必要なパラメータ数はLLMのパラメタ数よりもはるかに少ないと主張する。
+<a href="https://arxiv.org/pdf/2106.09685.pdf">LoRA</a>は、この仮説を支持し、ファインチューニングを避け、LLMの全結合層と線形結合するための2つの小さい行列を導入する。
+LLMの重みを\(W_0\in\mathbb{R}^{d\times k}\) とすると、\(W_0+BA\ (B\in\mathbb{R}^{d\times r}, A\in\mathbb{R}^{r\times k}, r \ll\min (d, k))\)が下流タスクに最適な重みに近づくように、ファインチューニングにかわって\(W_0\)を更新せず\(B,\ A\)のみを更新する。
+\(r\)が\(d, k\)よりも小さいので、\(W_0\)を更新するファインチューニングよりも学習時間は短い。
+また、複数の下流タスクを入力に適用する場合、\(W_0x\)を共有できるので、推論に必要な計算も\(W_0\)を更新するファインチューニングより少ない。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/large-language-model/">
+            #Large Language Model
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/transformer/">
+            #Transformer
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        June 7, 2025 (Originally posted on November 18, 2023)</p>
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/supervised-learning-of-universal-sentence-representations-from-natural-language-inference-data/">Supervised Learning of Universal Sentence Representations From Natural Language Inference Data (2017)</a></h3>
+    <div class="summary"><p><a href="https://arxiv.org/pdf/1705.02364">Supervised Learning of Universal Sentence Representations From Natural Language Inference Data</a>は自然言語推論のデータセットであるStanford Natural Language Inference (SNLI) を使った文の埋め込みベクトルを生成モデルを教師あり学習を提案した。
 7種類のネットワークアーキテクチャを12種類のタスクで評価したところ、双方向LSTMと最大値プーリングを採用したアーキテクチャが最も高い性能を発揮した。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/sentence-embedding/">
-		#Sentence Embedding
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">May 30, 2025</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/scaling-instruction-finetuned-language-models/">Scaling Instruction Finetuned Language Models (2022)</a></h3>
-        <div class="summary"><p>Instruction Finetuningは訓練データにない種類のタスクのゼロショットを改善するファインチューニングの一種で、<a href="https://arxiv.org/pdf/2109.01652">Finetuned Language Models Are Zero-Shot Learners</a>で知られるようになった。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/sentence-embedding/">
+            #Sentence Embedding
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        May 30, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/scaling-instruction-finetuned-language-models/">Scaling Instruction Finetuned Language Models (2022)</a></h3>
+    <div class="summary"><p>Instruction Finetuningは訓練データにない種類のタスクのゼロショットを改善するファインチューニングの一種で、<a href="https://arxiv.org/pdf/2109.01652">Finetuned Language Models Are Zero-Shot Learners</a>で知られるようになった。
 もとの文献ではInstruction tuningと呼ばれている。
 <a href="https://arxiv.org/pdf/2210.11416">Scaling Instruction-Finetuned Language Models</a>は、学習データ、モデルのパラメタの数、chain-of-thoughtのデータを増やすと、instruction tuningで学習したモデルの性能を向上できることを示した。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/large-language-models/">
-		#Large Language Models
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/instruction-finetuning/">
-		#Instruction Finetuning
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">May 7, 2025</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/reading-wikipedia-to-answer-open-domain-questions/">Reading Wikipedia to Answer Open Domain Questions (2017)</a></h3>
-        <div class="summary"><p><a href="https://aclanthology.org/P17-1171.pdf">Reading Wikipedia to Answer Open Domain Questions</a>で提案されたDrQAは、ドメインを問わない事実を問う質問に対して、Wikipediaの文書のある文字列区間を解答とみなして出力する。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/large-language-models/">
+            #Large Language Models
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/instruction-finetuning/">
+            #Instruction Finetuning
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        May 7, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/reading-wikipedia-to-answer-open-domain-questions/">Reading Wikipedia to Answer Open Domain Questions (2017)</a></h3>
+    <div class="summary"><p><a href="https://aclanthology.org/P17-1171.pdf">Reading Wikipedia to Answer Open Domain Questions</a>で提案されたDrQAは、ドメインを問わない事実を問う質問に対して、Wikipediaの文書のある文字列区間を解答とみなして出力する。
 DrQAは質問に関係する文書を収集するDocument RetrieverとDocument Readerから構成される。
 Document Retrieverは、バイグラムのTF-IDFで質問と類似するWikipediaを検索し、上位5位の文書をDocument Readerに渡す。
 Document Readerは、Document Retrieverから渡された質問と応答を別の方法で分散表現に変換する。
 最後に質問と応答の分散表現を比較し、応答の解答と推定した区間を出力する。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/open-domain-questions/">
-		#Open Domain Questions
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/tf-idf/">
-		#TF-IDF
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">April 26, 2025</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/language-models-are-few-shot-learners/">Language Models Are Few Shot Learners (2020)</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/abs/2005.14165">Language Models are Few-Shot Learners</a>は、Few-shot learningで学習したGPT-3とパラメタ数の少ないファインチューニングしたモデルのタスク処理を比較し、パラメタ数を大幅に増やすことでも予測性能を向上できることを示した。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/open-domain-questions/">
+            #Open Domain Questions
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/tf-idf/">
+            #TF-IDF
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        April 26, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/language-models-are-few-shot-learners/">Language Models Are Few Shot Learners (2020)</a></h3>
+    <div class="summary"><p><a href="https://arxiv.org/abs/2005.14165">Language Models are Few-Shot Learners</a>は、Few-shot learningで学習したGPT-3とパラメタ数の少ないファインチューニングしたモデルのタスク処理を比較し、パラメタ数を大幅に増やすことでも予測性能を向上できることを示した。
 GPT-3のパラメタ数は1750億であり、その数は、比較対象のファインチューニングされたモデルよりも10倍ほど大きい。
 GPT-3のネットワークアーキテクチャは<a href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf">GPT-2</a>と大きく変わらないが、<a href="https://arxiv.org/pdf/1904.10509">Sparse Transformer</a>に似た注意機構を導入したところが異なる。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/few-shot-learning/">
-		#Few-Shot Learning
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/large-language-model/">
-		#Large Language Model
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">April 12, 2025</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/">Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web</a></h3>
-        <div class="summary"><p>コンシステントハッシュ法は、Content Delivery Network (CDN) 規模のキャッシュシステムの負荷分散に<a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/">使われている</a>。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/few-shot-learning/">
+            #Few-Shot Learning
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/large-language-model/">
+            #Large Language Model
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        April 12, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/">Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web</a></h3>
+    <div class="summary"><p>コンシステントハッシュ法は、Content Delivery Network (CDN) 規模のキャッシュシステムの負荷分散に<a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/">使われている</a>。
 コンシステントハッシュ法を提案した<a href="https://dl.acm.org/doi/10.1145/258533.258660">Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web</a>は、特定のキャッシュサーバーへのリクエストの集中を避けることを目的にする。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%B3%E3%83%88%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E6%B3%95/">
-		#コンシステントハッシュ法
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">March 18, 2025</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/">Coverage Is Not Strongly Correlated With Test Suite Effectiveness (2014)</a></h3>
-        <div class="summary"><p>コードカバレッジに対する批判を散見する。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%B3%E3%83%88%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E6%B3%95/">
+            #コンシステントハッシュ法
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        March 18, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/">Coverage Is Not Strongly Correlated With Test Suite Effectiveness (2014)</a></h3>
+    <div class="summary"><p>コードカバレッジに対する批判を散見する。
 たとえば、<a href="https://www.oreilly.com/library/view/software-engineering-at/9781492082781/">Googleのソフトウェアエンジニアリング</a>の11.2.4節「コードカバレッジについてもメモ」には、コードカバレッジに対する2つの批判がある。
 まず、最低限満たすべきコードカバレッジを設定すると、すぐに水準を下回るコードがすぐにリポジトリに取り込まれはじめる。
 次に、テストカバレッジが保証するのはテストがコードが実行することだけであり、実行したコードにあるバグを見つけるとは限らない。</p>
@@ -234,158 +287,143 @@ GPT-3のネットワークアーキテクチャは<a href="https://cdn.openai.co
 <a href="https://poi.apache.org/devel/subversion.html">Apache POI</a>, <a href="https://github.com/google/closure-compiler">Closure</a>, <a href="https://hsqldb.org/">HSQLDB</a>, <a href="https://www.jfree.org/jfreechart/">JFreeChart</a>, <a href="https://www.joda.org/joda-time/">Joda Time</a>のコードベースをミューテーション解析し、テストケースの有効性を、テストケースを失敗させた変異体の数で定量化した。
 テストケースの数とテストスイートのカバレッジは、有効性との間に中から高の相関があった。
 一方、テストケースの数を固定すると、カバレッジと有効性の相関は低から中に減少した。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E3%82%B3%E3%83%BC%E3%83%89%E3%82%AB%E3%83%90%E3%83%AC%E3%83%83%E3%82%B8/">
-		#コードカバレッジ
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">March 3, 2025</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/">On the Fly Garbage Collection an Exercise in Cooperation (1978)</a></h3>
-        <div class="summary"><p>Go1.5で、ガベージコレクション (GC) のアルゴリズムが3色マーキングによるコンカレント マーク&amp;スイープに変わった。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E3%82%B3%E3%83%BC%E3%83%89%E3%82%AB%E3%83%90%E3%83%AC%E3%83%83%E3%82%B8/">
+            #コードカバレッジ
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        March 3, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/">On the Fly Garbage Collection an Exercise in Cooperation (1978)</a></h3>
+    <div class="summary"><p>Go1.5で、ガベージコレクション (GC) のアルゴリズムが3色マーキングによるコンカレント マーク&amp;スイープに変わった。
 このアルゴリズムの起源を辿ると、1978年の<a href="https://lamport.azurewebsites.net/pubs/garbage.pdf">On the Fly Garbage Collection an Exercise in Cooperation</a>にいきつく。
 ポインタをたどってヒープを黒や灰色に着色するマーキングフェーズと、解放してよい白のヒープを解放するアペンディングフェーズ、この2つのフェーズを繰り返す。
 アルゴリズムはStop The World (STW)を抑制することを主眼におく。</p>
 <p>2015年に書かれたThe Go Blogの<a href="https://go.dev/blog/go15gc">Go GC: Prioritizing low latency and simplicity</a>によれば、3色マーキングのコンカレント マーク&amp;スイープはエンタープライズ向けのGCではない。
 それでも、3色マーキングの考え自体はJavaのZGCなど他のガベージコレクションで<a href="https://typeset.io/pdf/deep-dive-into-zgc-a-modern-garbage-collector-in-openjdk-2aa9ffwc.pdf">採用されている</a>。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E3%82%AC%E3%83%99%E3%83%BC%E3%82%B8%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/">
-		#ガベージコレクション
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/go/">
-		#Go
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">February 11, 2025</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/s3-sign/">署名つきURLでS3オブジェクトを公開する</a></h3>
-        <div class="summary"><p>S3バケットにあるプライベートオブジェクトの署名つきURLを発行すれば、URLを知るユーザーのみにオブジェクトを公開できる。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E3%82%AC%E3%83%99%E3%83%BC%E3%82%B8%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/">
+            #ガベージコレクション
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/go/">
+            #Go
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        February 11, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/s3-sign/">署名つきURLでS3オブジェクトを公開する</a></h3>
+    <div class="summary"><p>S3バケットにあるプライベートオブジェクトの署名つきURLを発行すれば、URLを知るユーザーのみにオブジェクトを公開できる。
 発行方法は<a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html">AWSの記事</a>で紹介されている。</p>
 <p>記事にしたがってURLを発行してみたところ、バケットとファイル手間がかかった。
 また、URLを発行するクライアントを生成する方法が記事になく、別途調査する必要があった。</p>
 <p>これまでに何度かURLを発行する方法を調べたことがあるので、今後のために、バケットとファイルを用意するterraformのコードと、ファイルのURLを発行するGoのコードをGitHubの<a href="https://github.com/ryotaro612/s3-signin">リポジトリ</a>に公開した。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/s3/">
-		#S3
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">January 30, 2025</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/highly-available-transactions-virtues-and-limitations/">Highly Available Transactions Virtues and Limitations (2013)</a></h3>
-        <div class="summary"><h2 id="概要">概要</h2>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/s3/">
+            #S3
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        January 30, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/highly-available-transactions-virtues-and-limitations/">Highly Available Transactions Virtues and Limitations (2013)</a></h3>
+    <div class="summary"><h2 id="概要">概要</h2>
 <p>CAP定理の一貫性、可用性、ネットワークの分断耐性のトリレンマは、1つを完全に切り捨てるのではなく、現実には、3つの性質の優先順位をつける問題になる。
 システムの一貫性と可用性の均衡を設計するときは、求める一貫性に対して実現できる可用性を知らないといけない。
 <a href="https://www.vldb.org/pvldb/vol7/p181-bailis.pdf">Highly Available Transactions Virtues and Limitations</a> は、既存の一貫性を両立できる可用性の水準と対応させ、両性質の強さで一貫性と可用性のペアを半順序関係に整理した。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
-		#分散システム
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B6%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/">
-		#トランザクション
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E5%8F%AF%E7%94%A8%E6%80%A7/">
-		#可用性
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">January 30, 2025</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/jepsen/">分散システム向けのフォールトインジェクションフレームワーク Jepsen</a></h3>
-        <div class="summary"><h2 id="概要">概要</h2>
-<p>分散システムのテストをClojureで実装するためのフレームワークに<a href="https://jepsen.io/">Jepsen</a>がある。
-Jepsenのテストケースは、システムへの操作、操作後のシステムに期待する状態、障害と操作のスケジューリングの3要素からなる。
-テストケースは、スケジューリング通りに操作と障害を起こし、最後にシステムの応答が期待通りか確認する。
-Jepsenの公式サイトにはJepsenによる<a href="https://jepsen.io/analyses">主要な分散システムのテスト結果</a>が公開されている。
-また、Kubernetes内部で使わているKVSの<a href="https://kubernetes.io/ja/docs/tasks/administer-cluster/configure-upgrade-etcd/">etcd</a>の<a href="https://etcd.io/blog/2020/jepsen-343-results/">公式ウェブサイト</a>にもJepsenのテスト結果が公開されている。
-分散システムの開発側からも参照されているので、分散システムにおけるJepsenの認知度は高いように思える。</p>
-<p>その一方で、公式ドキュメントは整備されていないようだった。
-たとえば、チュートリアルはetcdを例題にJepsenの使い方を解説しているが、etcdのクライアントライブラリが古く、実際に実装してもチュートリアル通りに実行できない。
-かわりに、2相コミットするアプリケーションとテストケースを実装したが、実装のためにJepsenのソースコードを調べる必要があった。
-実装したアプリケーションとテストケースは<a href="https://github.com/ryotaro612/jepsen-tutorial-xa">GitHubのリポジトリ</a>に公開してある。</p>
-<p>それでも、依然として、Jepsenを使ってテストケース実装するほうが、スクラッチからテストケースを実装するよりも効率的ではあると思う。
-そこで、今後の備忘録をかねて、Jepsenを試すにあたって、チュートリアルに不足を感じた部分を書き留めておく。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
-		#分散システム
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">January 26, 2025</span>
-        </div>
-    </article>
-    
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+            #分散システム
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B6%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/">
+            #トランザクション
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E5%8F%AF%E7%94%A8%E6%80%A7/">
+            #可用性
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        January 30, 2025
+        
+      </span>
+    </div>
+  </article>
+  
 </main>
 
   
 
-<ul class="pagination">  
-    
-    
-    <li>
-      <a href="/page/2/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/page/33/">
-	<i class="fa-solid fa-xl fa-angles-right"></i>
-      </a>
-    </li>
-    
+<ul class="pagination">
+  
+  
+  <li>
+    <a href="/page/2/">
+      <i class="fa-solid fa-xl fa-angle-right"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/page/33/">
+      <i class="fa-solid fa-xl fa-angles-right"></i>
+    </a>
+  </li>
+  
 </ul>
 
   <footer>

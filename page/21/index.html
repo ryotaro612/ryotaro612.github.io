@@ -97,166 +97,206 @@
   </header>
   
 <main>
-    <h1>Posts</h1>
-    
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/translating_embeddings_for_modeling_multi_relational_data/">論文メモ Translating Embeddings for Modeling Multi-relational Data</a></h3>
-        <div class="summary"><p>ナレッジグラフを低次元のベクトル空間に埋め込むアルゴリズムTransEを提案した。
+  <h1>Posts</h1>
+  
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/translating_embeddings_for_modeling_multi_relational_data/">論文メモ Translating Embeddings for Modeling Multi-relational Data</a></h3>
+    <div class="summary"><p>ナレッジグラフを低次元のベクトル空間に埋め込むアルゴリズムTransEを提案した。
 エンティティは複数種類のラベルをもってよく、埋め込まれたエンティティやラベルの距離を計算することで、入力されたグラフに欠けているリンクを推定できる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">December 5, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/the_declarative_imperative/">論文メモ The Declarative Imperative</a></h3>
-        <div class="summary"><p>宣言型言語Datalogを拡張した言語でネットワークプロトコルと分散システムを開発した7年間の経験から、次世代の並列分散プログラミング言語の基礎になる理論上の予想を4つ提唱した。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        December 5, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/the_declarative_imperative/">論文メモ The Declarative Imperative</a></h3>
+    <div class="summary"><p>宣言型言語Datalogを拡張した言語でネットワークプロトコルと分散システムを開発した7年間の経験から、次世代の並列分散プログラミング言語の基礎になる理論上の予想を4つ提唱した。
 Datalogは、論理プログラミング言語Prologのサブセットの構文をもった言語である。
 予想の説明に使われるDatalogの拡張言語<a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2009/EECS-2009-173.pdf">Dedalus</a>は、分散システムのノードが互いの時刻を直接的に推論できない性質を、送受信するデータから離れたノードの時刻を推論する問題に帰着する。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">December 5, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/bigtable/">論文メモ Bigtable: A Distributed Storage System for Structured Data</a></h3>
-        <div class="summary"><p>Bigtableは、数千のコモディティサーバ上でペタバイト級のデータをホスティングできる分散ストレージであり、行、列、タイムスタンプをキーとして値の文字列を保存する。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        December 5, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/bigtable/">論文メモ Bigtable: A Distributed Storage System for Structured Data</a></h3>
+    <div class="summary"><p>Bigtableは、数千のコモディティサーバ上でペタバイト級のデータをホスティングできる分散ストレージであり、行、列、タイムスタンプをキーとして値の文字列を保存する。
 論文の発表された2005年時点で、検索エンジンのインデックス, Google Earth, Google Financeなどの多様なアプリケーションの実装に使用されている。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">November 30, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/aerospike/">論文メモ Aerospike: Architecture of a Real-Time Operational Database</a></h3>
-        <div class="summary"><p>Aerospikeは、高い対障害性をもった分散データベースで、正式にはCitrusleafという。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        November 30, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/aerospike/">論文メモ Aerospike: Architecture of a Real-Time Operational Database</a></h3>
+    <div class="summary"><p>Aerospikeは、高い対障害性をもった分散データベースで、正式にはCitrusleafという。
 CPU, DRAM, HDDやSSDを搭載したコモディティなサーバでクラスタを組める。
 ノード同士はTCP/IPで通信し、シェアードナッシングなクラスタを構成する。
 処理性能の向上のために、スケールアウトだけでなく、スケールアップも重視しており、ハードウェアを意識した実装で高速化をはかっている。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">November 28, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/spanner/">論文メモ Spanner: Google&#39;s Globally Distributed Database</a></h3>
-        <div class="summary"><p>Spannerは、世界中のデータセンタにデータを複製する高可用な分散データベースで、<a href="http://bitsavers.trailing-edge.com/pdf/xerox/parc/techReports/CSL-81-8_Information_Storage_in_a_Decentralized_Computer_System.pdf">外部整合性</a>のある分散トランザクションを保証する。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        November 28, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/spanner/">論文メモ Spanner: Google&#39;s Globally Distributed Database</a></h3>
+    <div class="summary"><p>Spannerは、世界中のデータセンタにデータを複製する高可用な分散データベースで、<a href="http://bitsavers.trailing-edge.com/pdf/xerox/parc/techReports/CSL-81-8_Information_Storage_in_a_Decentralized_Computer_System.pdf">外部整合性</a>のある分散トランザクションを保証する。
 ユーザからみると半リレーショナルなデータモデルのデータベースであり、各テーブルに一つ以上の順序つき主キーが必要なところがリレーショナルデータモデルと違う。
 一方、内部は文字列とタイムスタンプの組をキーにしたキーバリューストアであり、Single Paxos状態機械でデータの一貫性を守りながら複数のデータセンタにデータを複製する。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">November 27, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/a_relational_model_of_data_for_large_shared_data_banks/">論文メモ A Relational Model of Data for Large Shared Data Banks</a></h3>
-        <div class="summary"><p>Coddがリレーショナルデータモデルを提唱した70年の論文。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        November 27, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/a_relational_model_of_data_for_large_shared_data_banks/">論文メモ A Relational Model of Data for Large Shared Data Banks</a></h3>
+    <div class="summary"><p>Coddがリレーショナルデータモデルを提唱した70年の論文。
 データをリレーション(SQLでのテーブル)として束ね、リレーションを順序なしのタプル(SQLの行)で構成する。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">November 21, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/on_designing_and_deploying_internet-scale_services/">論文メモ On Designing and Deploying Internet-Scale Services</a></h3>
-        <div class="summary"><p>MSNとWindows Liveで培われたシステム管理者による運用負担を減らすためのベストプラクティス集。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        November 21, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/on_designing_and_deploying_internet-scale_services/">論文メモ On Designing and Deploying Internet-Scale Services</a></h3>
+    <div class="summary"><p>MSNとWindows Liveで培われたシステム管理者による運用負担を減らすためのベストプラクティス集。
 07年に発表された。
 プラクティス集は、10のグループに分かれ、それぞれ複数のアドバイスからなる。
 特徴的な内容に絞って以下に要約する。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">November 20, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/weighted_voting_for_replicated_data/">論文メモ Weighted Voting for Replicated Data</a></h3>
-        <div class="summary"><p>1979年に発表されたレプリケーション管理のクオーラムモデルのアルゴリズムの論文で、以前紹介したように<a href="https://awsmedia.awsstatic-china.com/blog/2017/aurora-design-considerations-paper.pdf">Amazon Aurora</a>や<a href="https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf">Dynamo</a>で採用されている。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        November 20, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/weighted_voting_for_replicated_data/">論文メモ Weighted Voting for Replicated Data</a></h3>
+    <div class="summary"><p>1979年に発表されたレプリケーション管理のクオーラムモデルのアルゴリズムの論文で、以前紹介したように<a href="https://awsmedia.awsstatic-china.com/blog/2017/aurora-design-considerations-paper.pdf">Amazon Aurora</a>や<a href="https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf">Dynamo</a>で採用されている。
 ファイルの読み込みや書き込みのトランザクションは、複製されたファイルのもつ票を集め、所定の数、クオーラムを越えたときのみ実行される。
 これにより、読み込み、書き込みの線形の一貫性が保証され、実行中のトランザクションが高々一つであるかのように見せかけられる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">November 19, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/amazon_aurora/">論文メモ Amazon Aurora: Design Considerations for High Throughput Cloud-Native Relational Databases</a></h3>
-        <div class="summary"><p>AWSで提供されるRDBM, Amazon Auroraのアーキテクチャを解説した論文。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        November 19, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/amazon_aurora/">論文メモ Amazon Aurora: Design Considerations for High Throughput Cloud-Native Relational Databases</a></h3>
+    <div class="summary"><p>AWSで提供されるRDBM, Amazon Auroraのアーキテクチャを解説した論文。
 分散システムをクラウドにおく場合、計算やIOはノードに分散され、ボトルネックではなくなる。
 そして、ボトルネックは、DBインスタンスとストレージ間のネットワークになる。
 この仮説もと、プライマリインスタンスが、別テナントのストレージに直接Redoログを送ることで、レプリカインスタンスとストレージ間の負荷を減らし、処理性能の向上をはかる。
 また、レプリケーションのために、MySQLがRedoログだけでなくバイナリログなど複数種類のログをスレーブに送るのに対し、AuroraはRedoログだけを転送する。
 これにより、リカバリや縮退、フェールオーバの性能も向上している。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">November 13, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/one-size-fits-all-an-idea-whose-time-has-come-and-gone/">&#34;One Size Fits All&#34;: An Idea Whose Time Has Come and Gone (2005)</a></h3>
-        <div class="summary"><p>2005年に発表された論文で、これまでのようにDBMSを様々なデータ中心のアプリケーションに利用することがデータベース市場で受け入れられなくなったと主張する。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        November 13, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/one-size-fits-all-an-idea-whose-time-has-come-and-gone/">&#34;One Size Fits All&#34;: An Idea Whose Time Has Come and Gone (2005)</a></h3>
+    <div class="summary"><p>2005年に発表された論文で、これまでのようにDBMSを様々なデータ中心のアプリケーションに利用することがデータベース市場で受け入れられなくなったと主張する。
 データウェアハウスとストリーミング処理を例にとり、これらに特化したデータベースをDBMSで代用することの限界が説明されている。
 表題の&quot;One Size Fits All&quot;はフリーサイズ、転じて、万能、汎用的を意味する。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/rdbms/">
-		#RDBMS
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/streaming-data/">
-		#Streaming Data
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">November 13, 2020</span>
-        </div>
-    </article>
-    
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/rdbms/">
+            #RDBMS
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/streaming-data/">
+            #Streaming Data
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        November 13, 2020
+        
+      </span>
+    </div>
+  </article>
+  
 </main>
 
   
 
-<ul class="pagination">  
-    
-    <li>
-      <a href="/">
-	<i class="fa-solid fa-xl fa-angles-left"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/page/20/">
-	<i class="fa-solid fa-xl fa-angle-left"></i>
-      </a>
-    </li>
-    
-    
-    <li>
-      <a href="/page/22/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/page/33/">
-	<i class="fa-solid fa-xl fa-angles-right"></i>
-      </a>
-    </li>
-    
+<ul class="pagination">
+  
+  <li>
+    <a href="/">
+      <i class="fa-solid fa-xl fa-angles-left"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/page/20/">
+      <i class="fa-solid fa-xl fa-angle-left"></i>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a href="/page/22/">
+      <i class="fa-solid fa-xl fa-angle-right"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/page/33/">
+      <i class="fa-solid fa-xl fa-angles-right"></i>
+    </a>
+  </li>
+  
 </ul>
 
   <footer>

@@ -97,283 +97,332 @@
   </header>
   
 <main>
-    <h1>Posts</h1>
-    
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/origin-of-type-theory/">The Origins of Type Theory</a></h3>
-        <div class="summary"><p>Type theory began as an effort to resolve Russell&rsquo;s Paradox, an issue discovered by Bertrand Russell.
+  <h1>Posts</h1>
+  
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/jepsen/">Jepsen: A framework for distributed systems verification, with fault injection</a></h3>
+    <div class="summary"><h2 id="overview">Overview</h2>
+<p>Jepsen is a Clojure testing framework for distributed systems.
+A Jepsen test case defines operations on a system, expected responses to the operations, and a schedule for injecting faults to inject and the operations.
+The test case executes the operations, introduces faults as scheduled, and validates whether the system&rsquo;s response meets expectations.</p>
+<p>Jepsen appears to be well-regarded in the field of distributed systems.
+Tests results for <a href="https://jepsen.io/analyses">major distributed systems</a> using Jepsen are published on its official website.
+Additionally, A Jepsen test result for <a href="https://kubernetes.io/ja/docs/tasks/administer-cluster/configure-upgrade-etcd/">etcd</a>, a key-value store used within Kubernetes, is available on its <a href="https://etcd.io/blog/2020/jepsen-343-results/">official website</a>.</p>
+<p>Despite its recognition, <a href="https://github.com/jepsen-io/jepsen/blob/main/doc/tutorial/index.md">the tutorial of Jepsen</a> wasn&rsquo;t informative enough for me to learn the basic usage of Jepsen.
+For instance, while the tutorial uses etcd as an example, the client library for etcd is outdated, making it impossible to execute the tutorial as instructed.
+Instead, by researching Jepsen&rsquo;s source code, I implemented an application with two-phase commits and a test case for it.
+The implemented application and test caseare available in <a href="https://github.com/ryotaro612/jepsen-tutorial-xa">one of my GitHub repository</a>.</p>
+<p>Despite of the insufficent reference, using Jepsen to implement test cases is still more efficient than building them from scratch.
+For a future reference, I will explore an advanced usage of Jepsen compared with the tutorial.</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/distributed-systems/">
+            #Distributed Systems
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/jepsen/">
+            #Jepsen
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        January 26, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/origin-of-type-theory/">The Origins of Type Theory</a></h3>
+    <div class="summary"><p>Type theory began as an effort to resolve Russell&rsquo;s Paradox, an issue discovered by Bertrand Russell.
 The precise events that mark the origin of type theory can be a matter of debate.
 Cantor, who developed set theory, independently discovered a similar paradox around the same time. In correspondence with Russell, Frege replied that in his conceptual notation, predicates do not take other predicates as arguments.
 Considering Russell&rsquo;s approach that employs the hierarchical elements in the conceptual notation to resolve the paradox, one might argue that Frege&rsquo;s predicate logic can be seen as an origin of type theory.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/type-theory/">
-		#Type Theory
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 30, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/runc/">Implementation of runc as of November 2024</a></h3>
-        <div class="summary"><p><a href="https://github.com/opencontainers/runc">runc</a> is a container runtime with a command-line interface tool.
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/type-theory/">
+            #Type Theory
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 30, 2024
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/runc/">Implementation of runc as of November 2024</a></h3>
+    <div class="summary"><p><a href="https://github.com/opencontainers/runc">runc</a> is a container runtime with a command-line interface tool.
 Although runc was separated from Docker in 2015, Docker still uses runc because the Docker Engine is built on top of containerd, which incorporates runc.
 In this post, I will explain some Linux features used in the implementation of runc.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/runc/">
-		#Runc
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/container/">
-		#Container
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 8, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/back-of-envelope-calculations/">Back of Envelope Calculations</a></h3>
-        <div class="summary"><p>In system design interviews, back of envelope calculation is a task to estimate required comuputing resources based on the given requirement.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/back-of-the-envelope-estimation/">
-		#Back of the Envelope Estimation
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/system-design-interview/">
-		#System Design Interview
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">September 24, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/video-streaming/">System design case study: video streaming service</a></h3>
-        <div class="summary"><p>Youtube is an example of a video streaming service where users upload, stream, search, and review videos.
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/runc/">
+            #Runc
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/container/">
+            #Container
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 8, 2024
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/back-of-envelope-calculations/">Back of Envelope Calculations</a></h3>
+    <div class="summary"><p>In system design interviews, back of envelope calculation is a task to estimate required comuputing resources based on the given requirement.</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/back-of-the-envelope-estimation/">
+            #Back of the Envelope Estimation
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/system-design-interview/">
+            #System Design Interview
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        September 24, 2024
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/video-streaming/">System design case study: video streaming service</a></h3>
+    <div class="summary"><p>Youtube is an example of a video streaming service where users upload, stream, search, and review videos.
 This post presents common designs for processing and hosting uploaded videos across several case studies of video streaming services for system design interviews.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/system-design-interview/">
-		#System Design Interview
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">September 18, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/realm-retrieval-augmented-language-model-pre-training/">REALM Retrieval Augmented Language Model Pre Training (2020)</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/abs/2002.08909">REALM</a> is a language model for open-domain question answering.
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/system-design-interview/">
+            #System Design Interview
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        September 18, 2024
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/realm-retrieval-augmented-language-model-pre-training/">REALM Retrieval Augmented Language Model Pre Training (2020)</a></h3>
+    <div class="summary"><p><a href="https://arxiv.org/abs/2002.08909">REALM</a> is a language model for open-domain question answering.
 REALM is composed of two components: the neural knowledge retriever and the knowledge-augmented encoder.
 The neural knowledge retriever finds documents related to the input.
 The knowledge-augmented encoder generates responses from the found documents and the input.
 In pre-training, the REALM employs masked language modeling, and it is trained to predict the original tokens that are maked in the given sentences.
 In fine-tuning, the model is trained to produce the answer of the given input.
 The authors experimented the model with Open-domain QA tasks under the assumption that the answer can be found as a contiguous sequence of tokens in some documents.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/retrieval-augmented-generation/">
-		#Retrieval Augmented Generation
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">May 27, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/">Distributed GraphLab: a Framework for Machine Learning and Data Mining in the Cloud (2012)</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/pdf/1408.2041">GraphLab</a> is a programming model for machine learning and data mining.
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/retrieval-augmented-generation/">
+            #Retrieval Augmented Generation
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        May 27, 2024
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/">Distributed GraphLab: a Framework for Machine Learning and Data Mining in the Cloud (2012)</a></h3>
+    <div class="summary"><p><a href="https://arxiv.org/pdf/1408.2041">GraphLab</a> is a programming model for machine learning and data mining.
 GraphLab takes a direct graph, a set of vertices, and update functions as input.
 Every update function accepts a vertex and returns a set of vertices.
 GraphLab selects a vertex from the set, applies a function to it, and adds the resulting set of vertices back intothe set, repeating this process until the set is empty.
 GraphLab supports parallel execution of update functions on multi-processor machines.
 <a href="https://arxiv.org/pdf/1408.2041">Distributed GraphLab</a> extends GraphLab by distributing parts of a graph across machines that are memory, utilizing <a href="https://lamport.azurewebsites.net/pubs/chandy.pdf">Chandy-Lamport</a>&rsquo;s snapshot algorithm for fault tolerance.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/distributed-system/">
-		#Distributed System
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">May 7, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/policy-gradient-methods-for-reinforcement-learning-with-function-approximation/">Policy Gradient Methods for Reinforcement Learning With Function Approximation (1999)</a></h3>
-        <div class="summary"><p>Policy gradient methods approximate stochastic policies using function approximators, which are independent of value functions.
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/distributed-system/">
+            #Distributed System
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        May 7, 2024
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/policy-gradient-methods-for-reinforcement-learning-with-function-approximation/">Policy Gradient Methods for Reinforcement Learning With Function Approximation (1999)</a></h3>
+    <div class="summary"><p>Policy gradient methods approximate stochastic policies using function approximators, which are independent of value functions.
 They update the policies according to the gradient of expected reward with respect to the policy parameters.
 <a href="https://proceedings.neurips.cc/paper/1999/file/464d828b85b0bed98e80ade0a5c43b0f-Paper.pdf">Policy Gradient Methods for Reinforcement Learning With Function Approximation</a> shows that a form of policy iteration with function approximation converges to a locally optimal policy.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/policy-gradient-method/">
-		#Policy Gradient Method
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/reinforcement-learning/">
-		#Reinforcement Learning
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">April 27, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/spark-sql-relational-data-processing-in-spark/">Spark SQL: Relational Data Processing in Spark (2015)</a></h3>
-        <div class="summary"><p><a href="https://dl.acm.org/doi/10.1145/2723372.2742797">Spark SQL</a> provides a DataFrame API, an abstract data type equivalent to a table in a relational database. The DataFrame objects can be manipulated in a manner consistent with relational algebra. For example, the API includes various relational operators such as <code>where</code> and <code>group by</code>, similar to data frames in R and Python. The DataFrame objects are evaluated lazily, meaning they are not evaluated until certain output operations, like <code>count</code>, are performed. Catalyst, an optimizer written in Scala, optimizes these lazy queries and then compiles them into Java bytecode.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/sql/">
-		#SQL
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/spark/">
-		#Spark
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">April 14, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/neural-collaborative-filtering/">Neural Collaborative Filtering (2017)</a></h3>
-        <div class="summary"><p>In collaborative filtering, Matrix Factorization (MF) approximates the user-item interaction matrix by multiplying the latent matrices for users and items.
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/policy-gradient-method/">
+            #Policy Gradient Method
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/reinforcement-learning/">
+            #Reinforcement Learning
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        April 27, 2024
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/spark-sql-relational-data-processing-in-spark/">Spark SQL: Relational Data Processing in Spark (2015)</a></h3>
+    <div class="summary"><p><a href="https://dl.acm.org/doi/10.1145/2723372.2742797">Spark SQL</a> provides a DataFrame API, an abstract data type equivalent to a table in a relational database. The DataFrame objects can be manipulated in a manner consistent with relational algebra. For example, the API includes various relational operators such as <code>where</code> and <code>group by</code>, similar to data frames in R and Python. The DataFrame objects are evaluated lazily, meaning they are not evaluated until certain output operations, like <code>count</code>, are performed. Catalyst, an optimizer written in Scala, optimizes these lazy queries and then compiles them into Java bytecode.</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/sql/">
+            #SQL
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/spark/">
+            #Spark
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        April 14, 2024
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/neural-collaborative-filtering/">Neural Collaborative Filtering (2017)</a></h3>
+    <div class="summary"><p>In collaborative filtering, Matrix Factorization (MF) approximates the user-item interaction matrix by multiplying the latent matrices for users and items.
 An estimated iteraction is the inner product of the latent vectors for the user and the item.
 <a href="https://arxiv.org/pdf/1708.05031.pdf">Neural Collaborative Filtering (NCF)</a> replaces the inner product with a neural neural network to capture the complex structure of user interaction data.
 There are three instances of NFC: Generalized Matrix Factorization (GMF), Multi-Layer Perceptron (MLP), Neural Matrix Factoriation (NeuMF).</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/collaborative-filtering/">
-		#Collaborative Filtering
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">March 25, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/">TelegraphCQ: Continuous Dataflow Processing for an Uncertain World (2003)</a></h3>
-        <div class="summary"><p>Stonebraker and Çetintemel presented <a href="https://cs.brown.edu/~ugur/fits_all.pdf">&ldquo;One Size Fits All&rdquo;</a> in 2005.
-The phrase refers to the fact that various data-centric applications use traditional DMBMS architectures to store data regardless of the characteristics and requirements of the data.
-In the paper, they argued that this approach was no longer applicable, with examples of streaing processing.
-<a href="https://cs.brown.edu/courses/cs227/archives/2015/papers/ss-telegraphcq.pdf">TelegraphCQ</a>, presented in 2003, is the first generation of databases for streamingffff data from the early 2000s.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/streaming-data/">
-		#Streaming Data
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/postgresql/">
-		#PostgreSQL
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">March 22, 2024</span>
-        </div>
-    </article>
-    
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/collaborative-filtering/">
+            #Collaborative Filtering
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        March 25, 2024
+        
+      </span>
+    </div>
+  </article>
+  
 </main>
 
   
 
-<ul class="pagination">  
-    
-    <li>
-      <a href="/en/">
-	<i class="fa-solid fa-xl fa-angles-left"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/en/">
-	<i class="fa-solid fa-xl fa-angle-left"></i>
-      </a>
-    </li>
-    
-    
-    <li>
-      <a href="/en/page/3/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/en/page/6/">
-	<i class="fa-solid fa-xl fa-angles-right"></i>
-      </a>
-    </li>
-    
+<ul class="pagination">
+  
+  <li>
+    <a href="/en/">
+      <i class="fa-solid fa-xl fa-angles-left"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/en/">
+      <i class="fa-solid fa-xl fa-angle-left"></i>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a href="/en/page/3/">
+      <i class="fa-solid fa-xl fa-angle-right"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/en/page/6/">
+      <i class="fa-solid fa-xl fa-angles-right"></i>
+    </a>
+  </li>
+  
 </ul>
 
   <footer>

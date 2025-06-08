@@ -97,134 +97,185 @@
   </header>
   
 <main>
-    <h1>Posts</h1>
-    
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/supervised-learning-of-universal-sentence-representations-from-natural-language-inference-data/">Supervised Learning of Universal Sentence Representations From Natural Language Inference Data (2017)</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/pdf/1705.02364">Supervised Learning of Universal Sentence Representations From Natural Language Inference Data</a> proposes a supervised approach to train neural networks on the Stanford Natural Language Inference (SNLI) dataset to produce general-purpose sentence embeddings applicable to a wide range of downstream tasks.
+  <h1>Posts</h1>
+  
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/lora-low-rank-adaptation-of-large-language-models/">LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS (2021)</a></h3>
+    <div class="summary"><p>LoRA is motivated by the findings of <a href="https://arxiv.org/pdf/1804.08838.pdf">Li et al. (2018)</a> and <a href="https://arxiv.org/pdf/2012.13255.pdf">Aghajanyan et al. (2020)</a>, which show that overparameterized models tend to converge to solutions that lie within a low-dimensional intrinsic subspace.</p>
+<p>The intrinsic dimension refers to the minimum number of trainable parameters needed to reach satisfactory performance on a given task.</p>
+<p>LoRA introduces low-rank adaptation by decomposing the weight matrices in dense layers. Instead of fine-tuning all parameters of a pre-trained model, LoRA freezes the original weights and learns two low-rank matrices during training.</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/large-language-model/">
+            #Large Language Model
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/transformer/">
+            #Transformer
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        June 7, 2025 (Originally posted on November 18, 2023)</p>
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/supervised-learning-of-universal-sentence-representations-from-natural-language-inference-data/">Supervised Learning of Universal Sentence Representations From Natural Language Inference Data (2017)</a></h3>
+    <div class="summary"><p><a href="https://arxiv.org/pdf/1705.02364">Supervised Learning of Universal Sentence Representations From Natural Language Inference Data</a> proposes a supervised approach to train neural networks on the Stanford Natural Language Inference (SNLI) dataset to produce general-purpose sentence embeddings applicable to a wide range of downstream tasks.
 The authors evaluated seven different encoder architectures across twelve NLP tasks and found that a bidirectional LSTM with max pooling achieved the best performance.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/sentence-embedding/">
-		#Sentence Embedding
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">May 30, 2025</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/scaling-instruction-finetuned-language-models/">Scaling Instruction Finetuned Language Models (2022)</a></h3>
-        <div class="summary"><p>Instruction finetuning is a technique for enhancing the zero-shot performance of large language models (LLMs). The seminal work, <a href="https://arxiv.org/pdf/2109.01652">Finetuned Language Models Are Zero-Shot Learners</a>, refers to this method as instruction tuning.
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/sentence-embedding/">
+            #Sentence Embedding
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        May 30, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/scaling-instruction-finetuned-language-models/">Scaling Instruction Finetuned Language Models (2022)</a></h3>
+    <div class="summary"><p>Instruction finetuning is a technique for enhancing the zero-shot performance of large language models (LLMs). The seminal work, <a href="https://arxiv.org/pdf/2109.01652">Finetuned Language Models Are Zero-Shot Learners</a>, refers to this method as instruction tuning.
 Building on this, <a href="https://arxiv.org/abs/2210.11416">Scaling Instruction-Finetuned Language Models</a> explored scaling the number of tasks, model sizes, and the incorporation of chain-of-thought (CoT) data. Their findings demonstrate that instruction finetuning can significantly improve LLM performance across a wide range of settings.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/large-language-models/">
-		#Large Language Models
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/instruction-finetuning/">
-		#Instruction Finetuning
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">May 7, 2025</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/reading-wikipedia-to-answer-open-domain-questions/">Reading Wikipedia to Answer Open Domain Questions (2017)</a></h3>
-        <div class="summary"><p><a href="https://aclanthology.org/P17-1171/">Reading Wikipedia to Answer Open Domain Questions</a> proposes DrQA, a system for open-domain question answering.
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/large-language-models/">
+            #Large Language Models
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/instruction-finetuning/">
+            #Instruction Finetuning
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        May 7, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/reading-wikipedia-to-answer-open-domain-questions/">Reading Wikipedia to Answer Open Domain Questions (2017)</a></h3>
+    <div class="summary"><p><a href="https://aclanthology.org/P17-1171/">Reading Wikipedia to Answer Open Domain Questions</a> proposes DrQA, a system for open-domain question answering.
 DrQA consists of two components: Document Retriever and Document Reader.</p>
 <p>Given a question, the Document Retriever uses bigram TF-IDF matching to search Wikipedia and retrieve the five most relevant articles.
 These articles, along with the question, are then passed to the Document Reader, a neural network model that embeds the question and the paragraphs into vector representations.
 The model then compares the paragraph embeddings with the question embedding to identify the most salient text span that likely contains the answer.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/open-domain-questions/">
-		#Open Domain Questions
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/tf-idf/">
-		#TF-IDF
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">April 26, 2025</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/language-models-are-few-shot-learners/">Language Models Are Few Shot Learners (2020)</a></h3>
-        <div class="summary"><p>In <a href="https://arxiv.org/abs/2005.14165">Language Models are Few-Shot Learners</a>, it is shown that increasing the number of parameters of <a href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf">GPT-2</a> improves few-shot performance across various tasks.
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/open-domain-questions/">
+            #Open Domain Questions
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/tf-idf/">
+            #TF-IDF
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        April 26, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/language-models-are-few-shot-learners/">Language Models Are Few Shot Learners (2020)</a></h3>
+    <div class="summary"><p>In <a href="https://arxiv.org/abs/2005.14165">Language Models are Few-Shot Learners</a>, it is shown that increasing the number of parameters of <a href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf">GPT-2</a> improves few-shot performance across various tasks.
 The proposed model, GPT-3, is an autoregressive language model with 175 billion parameters.
 Its architecture mirrors that of GPT-2, except that GPT-3 uses alternating dense and locally banded sparse attention patterns, similar to the <a href="https://arxiv.org/pdf/1904.10509">Sparse Transformer</a>.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/few-shot-learning/">
-		#Few-Shot Learning
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/large-language-model/">
-		#Large Language Model
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">April 12, 2025</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/">Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web</a></h3>
-        <div class="summary"><p>Consistent hashing is used for load balancing in cache systems at the scale of a Content Delivery Network (CDN), as <a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/">discussed</a>.
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/few-shot-learning/">
+            #Few-Shot Learning
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/large-language-model/">
+            #Large Language Model
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        April 12, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/">Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web</a></h3>
+    <div class="summary"><p>Consistent hashing is used for load balancing in cache systems at the scale of a Content Delivery Network (CDN), as <a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/">discussed</a>.
 The paper <a href="https://dl.acm.org/doi/10.1145/258533.258660">Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web</a> proposed the hashing algorithm to decrease or eliminate the occurrence of hot spots in the network.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/consistent-hashing/">
-		#Consistent Hashing
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">March 18, 2025</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/">Coverage is Not Strongly Correlated with Test Suite Effectiveness (2014)</a></h3>
-        <div class="summary"><p>There are debates concerning the ability of code coverage to measure the effectiveness of test suites.
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/consistent-hashing/">
+            #Consistent Hashing
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        March 18, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/">Coverage is Not Strongly Correlated with Test Suite Effectiveness (2014)</a></h3>
+    <div class="summary"><p>There are debates concerning the ability of code coverage to measure the effectiveness of test suites.
 For instance, Winters et al. argued that setting an objective coverage threshold does not necessarily lead developers to write meaningful tests, as discussed in &lsquo;A Note on Code Coverage&rsquo; (Section 11.2.4) in <a href="https://www.oreilly.com/library/view/software-engineering-at/9781492082781/"><em>Software Engineering at Google</em></a>.
 They also claimed that coverage percentage does not guarantee fault detection ability.</p>
 <p>compared with the abundance of rational arguments and anecdotal experiences, empirical studies on this topic are relatively rare.
@@ -233,165 +284,144 @@ The paper investigated correlation between test suite size, coverage and effecti
 The authors applied mutation testing to <a href="https://poi.apache.org/devel/subversion.html">Apache POI</a>, <a href="https://github.com/google/closure-compiler">Closure</a>, <a href="https://hsqldb.org/">HSQLDB</a>, <a href="https://www.jfree.org/jfreechart/">JFreeChart</a>, and <a href="https://www.joda.org/joda-time/">Joda Time</a>.
 They found a moderate to high correlation between the effectiveness and coverage of a test suite when ignoring the influence of the number of test cases.
 However, the correlation dropped when suite size was controlled for.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/code-coverage/">
-		#Code Coverage
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">March 3, 2025</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/">On the Fly Garbage Collection an Exercise in Cooperation (1978)</a></h3>
-        <div class="summary"><p>In Go 1.5, the algorithm of the garbage collector (GC) changed to a concurrent, tri-color, mark-sweep collector, which was first proposed by <a href="https://lamport.azurewebsites.net/pubs/garbage.pdf">Dijkstra et al.</a> in 1978.
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/code-coverage/">
+            #Code Coverage
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        March 3, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/">On the Fly Garbage Collection an Exercise in Cooperation (1978)</a></h3>
+    <div class="summary"><p>In Go 1.5, the algorithm of the garbage collector (GC) changed to a concurrent, tri-color, mark-sweep collector, which was first proposed by <a href="https://lamport.azurewebsites.net/pubs/garbage.pdf">Dijkstra et al.</a> in 1978.
 The algorithm proposed by Dijkstra et al. alternates a marking phase and an appending phase.
 In the marking phase, the garbage collector colors reachable objects in gray or black.
 In the appending phase, it collects white objects that are unreachable from things on the stack and global variables.
 The algorithm prioritizes minimizing the atomic operations of the garbage collector to reduce overhead on the application.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/garbage-collection/">
-		#Garbage Collection
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/go/">
-		#Go
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">February 28, 2025</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/s3-sign/">Publishing S3 Objects with Signed URLs</a></h3>
-        <div class="summary"><p>The owner of an S3 bucket can share an object by creating a presigned URL for it. The <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html">AWS Documentation</a> provides a user guide on how to generate presigned URLs.</p>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/garbage-collection/">
+            #Garbage Collection
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/go/">
+            #Go
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        February 28, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/s3-sign/">Publishing S3 Objects with Signed URLs</a></h3>
+    <div class="summary"><p>The owner of an S3 bucket can share an object by creating a presigned URL for it. The <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html">AWS Documentation</a> provides a user guide on how to generate presigned URLs.</p>
 <p>When I tried generating a presigned URL using the document, I found that preparing the bucket and file was a bit cumbersome.
 Additionally, the guide doesn&rsquo;t cover how to instantiate a client to generate the URL, so I had to look for another guide to learn how to do this.</p>
 <p>I&rsquo;ve researched generating presigned URLs a couple of times before and eventually implemented Terraform scripts and a Go script for future reference.
 The Terraform scripts create an S3 bucket and upload a file to it.
 The Go script generates a presigned URL for the file using the AWS SDK.
 These resources are available in this <a href="https://github.com/ryotaro612/s3-signin">GitHub repository</a>.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/s3/">
-		#S3
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">January 30, 2025</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/highly-available-transactions-virtues-and-limitations/">Highly Available Transactions: Virtues and Limitations (2013)</a></h3>
-        <div class="summary"><h2 id="overview">Overview</h2>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/s3/">
+            #S3
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        January 30, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/highly-available-transactions-virtues-and-limitations/">Highly Available Transactions: Virtues and Limitations (2013)</a></h3>
+    <div class="summary"><h2 id="overview">Overview</h2>
 <p>The CAP theorem’s trilemma of consistency, availability, and partition tolerance does not require sacrificing one property entirely but rather prioritizing among the three.
 Given a specific consistency model, how much availability is feasible?
 The paper <a href="https://www.vldb.org/pvldb/vol7/p181-bailis.pdf">Highly Available Transactions: Virtues and Limitations</a> explores the relationship between consistency models and their achievable availability. It organizes each consistency-availability pair into a partial order based on their strengths.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/distributed-systems/">
-		#Distributed Systems
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/transactions/">
-		#Transactions
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/availability/">
-		#Availability
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">January 30, 2025</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/jepsen/">Jepsen: A framework for distributed systems verification, with fault injection</a></h3>
-        <div class="summary"><h2 id="overview">Overview</h2>
-<p>Jepsen is a Clojure testing framework for distributed systems.
-A Jepsen test case defines operations on a system, expected responses to the operations, and a schedule for injecting faults to inject and the operations.
-The test case executes the operations, introduces faults as scheduled, and validates whether the system&rsquo;s response meets expectations.</p>
-<p>Jepsen appears to be well-regarded in the field of distributed systems.
-Tests results for <a href="https://jepsen.io/analyses">major distributed systems</a> using Jepsen are published on its official website.
-Additionally, A Jepsen test result for <a href="https://kubernetes.io/ja/docs/tasks/administer-cluster/configure-upgrade-etcd/">etcd</a>, a key-value store used within Kubernetes, is available on its <a href="https://etcd.io/blog/2020/jepsen-343-results/">official website</a>.</p>
-<p>Despite its recognition, <a href="https://github.com/jepsen-io/jepsen/blob/main/doc/tutorial/index.md">the tutorial of Jepsen</a> wasn&rsquo;t informative enough for me to learn the basic usage of Jepsen.
-For instance, while the tutorial uses etcd as an example, the client library for etcd is outdated, making it impossible to execute the tutorial as instructed.
-Instead, by researching Jepsen&rsquo;s source code, I implemented an application with two-phase commits and a test case for it.
-The implemented application and test caseare available in <a href="https://github.com/ryotaro612/jepsen-tutorial-xa">one of my GitHub repository</a>.</p>
-<p>Despite of the insufficent reference, using Jepsen to implement test cases is still more efficient than building them from scratch.
-For a future reference, I will explore an advanced usage of Jepsen compared with the tutorial.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/distributed-systems/">
-		#Distributed Systems
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/jepsen/">
-		#Jepsen
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">January 26, 2025</span>
-        </div>
-    </article>
-    
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/distributed-systems/">
+            #Distributed Systems
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/transactions/">
+            #Transactions
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/availability/">
+            #Availability
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        January 30, 2025
+        
+      </span>
+    </div>
+  </article>
+  
 </main>
 
   
 
-<ul class="pagination">  
-    
-    
-    <li>
-      <a href="/en/page/2/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/en/page/6/">
-	<i class="fa-solid fa-xl fa-angles-right"></i>
-      </a>
-    </li>
-    
+<ul class="pagination">
+  
+  
+  <li>
+    <a href="/en/page/2/">
+      <i class="fa-solid fa-xl fa-angle-right"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/en/page/6/">
+      <i class="fa-solid fa-xl fa-angles-right"></i>
+    </a>
+  </li>
+  
 </ul>
 
   <footer>

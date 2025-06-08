@@ -97,165 +97,205 @@
   </header>
   
 <main>
-    <h1>Posts</h1>
-    
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/a_comparision_of_fractal_trees_to_lsm_trees/">論文メモ A comparison of Fractal Trees to Log-Structured Merge (LSM) Trees</a></h3>
-        <div class="summary"><p>Fractal Treeは、B+木のルートと節にバッファをもたせるデータ構造にあたる。
+  <h1>Posts</h1>
+  
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/a_comparision_of_fractal_trees_to_lsm_trees/">論文メモ A comparison of Fractal Trees to Log-Structured Merge (LSM) Trees</a></h3>
+    <div class="summary"><p>Fractal Treeは、B+木のルートと節にバッファをもたせるデータ構造にあたる。
 そのFractal TreeのamplificationをB+木やLSM Treeのそれと比較した。
 議論になるamplificationは、write, read, spaceの3つで、write amplificationはアプリケーションが書き込むデータ量に対して実際にストレージに書き込まれたデータ量を表す。
 read amplificationはクエリの実行に必要なI/Oの回数、space amplificationは仕組み上避けられない断片化や一時的なデータのコピーに該当する。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">April 19, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/fast_intersection_algorithms_for_sorted_sequences/">論文メモ Fast Intersection Algorithms for Sorted Sequences</a></h3>
-        <div class="summary"><p>ソートされたシーケンスの直積を高速に求めるアルゴリズム Double Binary Searchを示した。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        April 19, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/fast_intersection_algorithms_for_sorted_sequences/">論文メモ Fast Intersection Algorithms for Sorted Sequences</a></h3>
+    <div class="summary"><p>ソートされたシーケンスの直積を高速に求めるアルゴリズム Double Binary Searchを示した。
 2つのシーケンス\(D\), \(Q\)があり、\(\mid D\mid=n\), \(\mid Q\mid=m\), \(n &gt;= m\)であれば、平均と最悪時間計算量が、それぞれ、\(\mathcal{O}(m\log(n/m))\), \(m\)になる。
 本アルゴリズムは、Web検索エンジンで大きなシーケンスの直積を高速に求めるために開発された。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">April 12, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/lsmtree/">論文メモ The Log-Structured Merge-Tree (LSM-Tree)</a></h3>
-        <div class="summary"><p>LSM-Treeは、検索より挿入や削除が多い用途に向いたインデックス構造であり、例えば履歴テーブルやログの保存につかえる。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        April 12, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/lsmtree/">論文メモ The Log-Structured Merge-Tree (LSM-Tree)</a></h3>
+    <div class="summary"><p>LSM-Treeは、検索より挿入や削除が多い用途に向いたインデックス構造であり、例えば履歴テーブルやログの保存につかえる。
 メモリにある1つ木とディスク上の1つ以上の木からなり、直近の挿入や削除をメモリの木で管理する。
 メモリの木の大きさがしきい値を超えたとき、メモリの木の葉をディスクの木に移す。
 移動時は、ディスク上の木の葉とメモリの葉をマージソートの要領でソートし、ソートした葉をディスクの新しい連続領域に書き込む。
 連続領域に書き込み、アームの移動やディスクの回転を減らすことで、高速に挿入や削除ができる。
 一方、検索速度は、複数の木を探索しなければならないために、1つの木でインデックスを構成するB木に劣る。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">April 3, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/the_design_and_implementation_of_a_log_structured_file_system/">論文メモ The Design and Implementation of a Log-Structured File System</a></h3>
-        <div class="summary"><p>Log-structured file system(LFS)は、91年に提唱されたHDD向けのファイルシステムであり、バッファリングした変更をディスクの連続領域に一度に書き込むことで、小さなファイルを大量に高速で書き込める。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        April 3, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/the_design_and_implementation_of_a_log_structured_file_system/">論文メモ The Design and Implementation of a Log-Structured File System</a></h3>
+    <div class="summary"><p>Log-structured file system(LFS)は、91年に提唱されたHDD向けのファイルシステムであり、バッファリングした変更をディスクの連続領域に一度に書き込むことで、小さなファイルを大量に高速で書き込める。
 また、クラッシュからのリカバリも、ディスク全体ではなくチェックポイント以降に追記された箇所だけを検査すればよいので、高速になる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">March 29, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/ariesim/">論文メモ ARIES/IM: An Efficient and High Concurrency Index Management Method Using Write-Ahead Logging</a></h3>
-        <div class="summary"><p>ARIES/IMは、B+木への直列化可能性のある並行処理とログ先行書き込み(Write-Ahead Logging, WAL)による復元を実現する。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        March 29, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/ariesim/">論文メモ ARIES/IM: An Efficient and High Concurrency Index Management Method Using Write-Ahead Logging</a></h3>
+    <div class="summary"><p>ARIES/IMは、B+木への直列化可能性のある並行処理とログ先行書き込み(Write-Ahead Logging, WAL)による復元を実現する。
 ARIES/IMのベースには、先行研究の<a href="https://web.stanford.edu/class/cs345d-01/rl/aries.pdf">ARIES</a>がある。
 復元手順はARIESとほとんど変わらない。
 キーの参照先にあるデータのレコードとキーを同じロックで保護したり、ロックの代わりにラッチを使ったりすることで、ロックの頻度を下げ、B+木の高速化を実現する。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">March 21, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/the_ubiquitous_b_tree/">論文メモ The Ubiquitous B-Tree</a></h3>
-        <div class="summary"><p>B木とその派生データ構造のサーベイ論文で、とくにB+木に重点がおかれている。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        March 21, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/the_ubiquitous_b_tree/">論文メモ The Ubiquitous B-Tree</a></h3>
+    <div class="summary"><p>B木とその派生データ構造のサーベイ論文で、とくにB+木に重点がおかれている。
 B+木は、全てのキーを葉におき、葉を隣接リストでつなぐことで、B木が不得手なシーケンシャルなアクセスを改善する。
 これにより、定数オーダーの時間と空間計算量で逐次的にキーにアクセスにできる。
 ランダムな検索、挿入、削除にかかる時間、空間計算量はB木と変わらない。
 以降はB木のデータ構造を前提としてB+木の概要を説明する。B木について知りたい場合は、<a href="/posts/organization_and_maintenance_of_large_orderred_indexes/">B木のオリジナル論文の解説記事</a>を見てほしい。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">March 19, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/robust_random_cut_forest_based_anomaly_detection_on_streams/">論文メモ Robust Random Cut Forest Based Anomaly Detection On Streams</a></h3>
-        <div class="summary"><p>Robust Random Cut Forest(RRCT)はストリームデータ向きの異常検知の手法で、<a href="https://www.aclweb.org/anthology/P16-1162/">Amazon SageMaker</a>から提供されている。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        March 19, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/robust_random_cut_forest_based_anomaly_detection_on_streams/">論文メモ Robust Random Cut Forest Based Anomaly Detection On Streams</a></h3>
+    <div class="summary"><p>Robust Random Cut Forest(RRCT)はストリームデータ向きの異常検知の手法で、<a href="https://www.aclweb.org/anthology/P16-1162/">Amazon SageMaker</a>から提供されている。
 バッチデータと違い、ストリームデータは新たなデータが随時追加、修正される。
 RRCTは、特徴の値でデータを2分するノードからなる木の集合であり、データを追加したときに木の集合であるモデルを大きく複雑するものを異常と判定する。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">March 12, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/organization_and_maintenance_of_large_orderred_indexes/">論文メモ Organization and Maintenance of Large Ordered indexes</a></h3>
-        <div class="summary"><p>1972年に発表されたB木のオリジナルの論文。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        March 12, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/organization_and_maintenance_of_large_orderred_indexes/">論文メモ Organization and Maintenance of Large Ordered indexes</a></h3>
+    <div class="summary"><p>1972年に発表されたB木のオリジナルの論文。
 \(I\)をインデックスの大きさ、\(k\)をハードウェア依存の値とすると、検索、挿入、削除の時間計算量は\(\log_kI\)になる。
 ここでのインデックスは、固定長の\((x, \alpha)\)を要素とする連想配列で、最大\(2k\)個のキーを格納できる連続したページ上にある。
 \(\alpha\)には、データを保存した1つ以上のレコードへのポインタが格納される。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">February 27, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/space_time_trade-offs_in_hash_coding_with_allowable_errors/">Space/Time Trade-offs in Hash Coding with Allowable Errors</a></h3>
-        <div class="summary"><p>要素がハッシュ空間にあるかを高速に調べる手法で、ブルームフィルタの名で知られる。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        February 27, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/space_time_trade-offs_in_hash_coding_with_allowable_errors/">Space/Time Trade-offs in Hash Coding with Allowable Errors</a></h3>
+    <div class="summary"><p>要素がハッシュ空間にあるかを高速に調べる手法で、ブルームフィルタの名で知られる。
 偽陽性を許容し、ハッシュ値の保持に必要な空間を小さすることで、管理できるデータ件数を増やす。
 例えば、<a href="https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/">データベースのストレージで使われており</a>、検索するキーがデータベースに存在するか事前に確かめ、存在しないキーのための不要なディスクの読み取りを省いている。
 偽陰性の誤りはない。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/bloom-filter/">
-		#Bloom Filter
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">February 20, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/tree_index_on_solid_state_drives/">論文メモ Tree Indexing on Solid State Drives</a></h3>
-        <div class="summary"><p>SSDのランダムな書き込みを高速化するために、インデックスのためのデータ構造FD-treeを提案した。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/bloom-filter/">
+            #Bloom Filter
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        February 20, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/tree_index_on_solid_state_drives/">論文メモ Tree Indexing on Solid State Drives</a></h3>
+    <div class="summary"><p>SSDのランダムな書き込みを高速化するために、インデックスのためのデータ構造FD-treeを提案した。
 FD-treeのエントリ数が\(n\), ページサイズが\(B\)であれば、ランダムな読み込みと書き込みの計算量はともに\(\mathcal{O}(\log_B(n))\)になる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">February 15, 2021</span>
-        </div>
-    </article>
-    
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        February 15, 2021
+        
+      </span>
+    </div>
+  </article>
+  
 </main>
 
   
 
-<ul class="pagination">  
-    
-    <li>
-      <a href="/">
-	<i class="fa-solid fa-xl fa-angles-left"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/page/18/">
-	<i class="fa-solid fa-xl fa-angle-left"></i>
-      </a>
-    </li>
-    
-    
-    <li>
-      <a href="/page/20/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/page/33/">
-	<i class="fa-solid fa-xl fa-angles-right"></i>
-      </a>
-    </li>
-    
+<ul class="pagination">
+  
+  <li>
+    <a href="/">
+      <i class="fa-solid fa-xl fa-angles-left"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/page/18/">
+      <i class="fa-solid fa-xl fa-angle-left"></i>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a href="/page/20/">
+      <i class="fa-solid fa-xl fa-angle-right"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/page/33/">
+      <i class="fa-solid fa-xl fa-angles-right"></i>
+    </a>
+  </li>
+  
 </ul>
 
   <footer>

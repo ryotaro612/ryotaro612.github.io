@@ -97,36 +97,44 @@
   </header>
   
 <main>
-    <h1>Posts</h1>
-    
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/the_many_faces_of_publish_subscribe/">The Many Faces of Publish/Subscribe (2003)</a></h3>
-        <div class="summary"><p>分散システムの通信をpublish/subscribeモデルにするとシステム間の結合を疎にできる。
+  <h1>Posts</h1>
+  
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/the_many_faces_of_publish_subscribe/">The Many Faces of Publish/Subscribe (2003)</a></h3>
+    <div class="summary"><p>分散システムの通信をpublish/subscribeモデルにするとシステム間の結合を疎にできる。
 表題の論文は、publish/subscribeのサーベイであり、publish/subscribeモデルを空間、時間、同期の3種の結合度を下げる技術ととらえ、ほかの通信技術と比較する。
 また、先行研究のpublish/subscribeモデルを、購読するイベントの宣言手段によって、topic-based, content-based, type-basedに分類する。
 最後に、メッセージブローカーを使うかどうかなどpublish/subscribeモデルの設計や実装の利点や欠点を整理する。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">October 30, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/dryad/">Dryad: Distributed Data-Parallel Programs from Sequential Building Blocks</a></h3>
-        <div class="summary"><p>DryadはMicrosoftで開発された分散コンピューティングエンジンであり、MapReduceに近い。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        October 30, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/dryad/">Dryad: Distributed Data-Parallel Programs from Sequential Building Blocks</a></h3>
+    <div class="summary"><p>DryadはMicrosoftで開発された分散コンピューティングエンジンであり、MapReduceに近い。
 処理を点、処理結果を受け渡す通信経路を辺とするDAGで、分散処理を定義する。
 通信経路にはファイル、TCP, FIFOを使え、実行環境は1台のマルチコアのコンピュータから数千台のコンピュータまでスケールできる。
 MapReduceは入力と出力が一つでなければならないが、DryadはDAGであれば入力と出力が複数あってもかまわない。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">October 23, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/the_chubby_lock_service_for_loosely_coupled_distributed_systems/">The Chubby lock service for loosely-coupled distributed systems</a></h3>
-        <div class="summary"><p>Chubbyは、ファイルに助言ロックをかけられる低容量のストレージで、開発元のGoogleは分散システム向けのロックサービスとして使っている。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        October 23, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/the_chubby_lock_service_for_loosely_coupled_distributed_systems/">The Chubby lock service for loosely-coupled distributed systems</a></h3>
+    <div class="summary"><p>Chubbyは、ファイルに助言ロックをかけられる低容量のストレージで、開発元のGoogleは分散システム向けのロックサービスとして使っている。
 処理性能よりも高可用性と信頼性を重視し、ロックを保持する期間は数時間から数日にわたる長いものを想定する。
 ロックされたファイルで情報を共有でき、例えばリーダーの選出に使える。
 Chubbyは既存のアルゴリズムを集積であり、表題の論文は、新しいアルゴリズムよりも、Chubbyの設計や想定していた使用方法や想定外の使われ方に重点をおく。
@@ -134,124 +142,156 @@ Chubbyはロックサービスとして作られたが、ネームサーバと�
 数千規模の互いに依存するプロセスがあり、プロセスが落ちたら新しいプロセスに置き換えるとする。
 このとき、ネームサーバにDNSをつかうと、DNSは時間で失効するキャッシュ方式なので、TTLを短くし、落ちたプロセスにリクエストが届かないようにすると、DNSへの負荷が増える。
 一方、Chubbyのキャッシュは時間ではなくファイルに変更されたときに無効になるので、Chubbyをネームサーバに使うことで、名前解決の負荷を減らすことができる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">October 16, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/congestion_avoidance_and_control/">Congestion Avoidance and Control</a></h3>
-        <div class="summary"><p>86年の10月におきたインターネットの世界規模の輻輳の反省から、4BSDに7つのTCPの輻輳制御のアルゴリズムが導入された。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        October 16, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/congestion_avoidance_and_control/">Congestion Avoidance and Control</a></h3>
+    <div class="summary"><p>86年の10月におきたインターネットの世界規模の輻輳の反省から、4BSDに7つのTCPの輻輳制御のアルゴリズムが導入された。
 うち5つは、送信したパケットが到達や消失でネットワークに流れなくなるまで、ウィンドウサイズ以上の新しいパケットを送らない原則を守るためにある。
 この原則をconservation of packets principleという。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">October 9, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/the_notion_of_consistency_and_predicate_locks_in_a_database_system/">The Notion of Consistency and Predicate Locks in a Database System</a></h3>
-        <div class="summary"><p>トランザクションを並行実行するときに、直列実行した場合と同じ実行結果をえるには、各トランザクションがロックを解放後に新しいロックを獲得してはならないことを示した。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        October 9, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/the_notion_of_consistency_and_predicate_locks_in_a_database_system/">The Notion of Consistency and Predicate Locks in a Database System</a></h3>
+    <div class="summary"><p>トランザクションを並行実行するときに、直列実行した場合と同じ実行結果をえるには、各トランザクションがロックを解放後に新しいロックを獲得してはならないことを示した。
 その場合もデッドロックがおきうるが、それは並列実行を終了するためにはいつロックをかければよいかという議論である。
 ここでは、並列実行が終了した場合に直列実行と同じ結果になる一貫性を保証できるロックの順序を問う。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">October 2, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/parallel_database_systems/">Parallel Database Systems: The Future of High Performance Database Systems (1992)</a></h3>
-        <div class="summary"><p>データベースの処理性能を上げる方法として、汎用的なコンピュータによる水平パーティションのシェアードナッシング構成を主張した。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        October 2, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/parallel_database_systems/">Parallel Database Systems: The Future of High Performance Database Systems (1992)</a></h3>
+    <div class="summary"><p>データベースの処理性能を上げる方法として、汎用的なコンピュータによる水平パーティションのシェアードナッシング構成を主張した。
 特殊なハードウェアを使ったり、メモリ、ディスクを共有する複数のコンピュータを使ったりするよりも、単純で安く実装できる。
 論文が発表された1992年の時点でTeradataやTandem NonStopなどのパーティンション化されたデータベースがある。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">September 25, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/chain_replication_for_supporting_high_throughput_and_availability/">Chain Replication for Supporting High Throughput and Availability</a></h3>
-        <div class="summary"><p>ストレージサーバーに順番をつけ、順にオブジェクトを複製することで、ストレージサービスの一貫性を維持しつつスループットと可用性の向上をはかる。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        September 25, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/chain_replication_for_supporting_high_throughput_and_availability/">Chain Replication for Supporting High Throughput and Availability</a></h3>
+    <div class="summary"><p>ストレージサーバーに順番をつけ、順にオブジェクトを複製することで、ストレージサービスの一貫性を維持しつつスループットと可用性の向上をはかる。
 ここでのストレージサービスは、オブジェクトを保存し、クエリに対して一つのオブジェクトを返し、アトミックに一つのオブジェクトを更新できるものをさす。
 また、一貫性は、オブジェクトごとにクエリと更新を直列的に適用し、更新につづくクエリが更新内容になることを意味する。
 末尾のサーバーがクエリを受信し、該当するオブジェクトをクライアントに返す。
 先頭のサーバーが更新リクエストを受信し、順にサーバーのオブジェクトを更新し、末尾のサーバーが更新の結果をクライアントに返す。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">September 18, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/implementing_remote_procedure_calls/">Implementing Remote Procedure Calls</a></h3>
-        <div class="summary"><p>Xeroxのプログラミング環境<a href="http://www.bitsavers.org/pdf/xerox/parc/techReports/CSL-80-10_Requirements_for_an_Experimental_Programming_Environment.pdf">Cedar</a>のために開発されたRPCを解説した84年の論文。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        September 18, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/implementing_remote_procedure_calls/">Implementing Remote Procedure Calls</a></h3>
+    <div class="summary"><p>Xeroxのプログラミング環境<a href="http://www.bitsavers.org/pdf/xerox/parc/techReports/CSL-80-10_Requirements_for_an_Experimental_Programming_Environment.pdf">Cedar</a>のために開発されたRPCを解説した84年の論文。
 RPCの開発目的は、分散コンピューティングを簡単に実装できるようにする、通信時間を短くする、通信をセキュアにすることの3点にある。
 RPCは大部分で<a href="http://www.bitsavers.org/pdf/xerox/parc/techReports/CSL-79-3_Mesa_Language_Manual_Version_5.0.pdf">Mesa</a>が使われた。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">September 11, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/dremel/">Dremel: Interactive Analysis of Web-Scale Datasets</a></h3>
-        <div class="summary"><p>Dremelは2006年からGoogle社内で利用されているDWHで、社外にはBigQueryとして提供されている。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        September 11, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/dremel/">Dremel: Interactive Analysis of Web-Scale Datasets</a></h3>
+    <div class="summary"><p>Dremelは2006年からGoogle社内で利用されているDWHで、社外にはBigQueryとして提供されている。
 列指向の形式でデータを保存し、SQLに似た言語のクエリでデータを検索できる。
 Dremelは、サーバーのクラスタを木構造に組織し、ルートで受理したクエリの処理を下層のサーバに分配し、その結果を集約することで処理を分散し高速化をはかる。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">September 4, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/is_rust_used_safely_by_software_developers/">Is Rust Used Safely by Software Developers?</a></h3>
-        <div class="summary"><p><a href="https://crates.io/">crates.io</a>に登録された15,097個のクレートにおける<code>unsafe</code>キーワードの使用状況を調べた。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        September 4, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/is_rust_used_safely_by_software_developers/">Is Rust Used Safely by Software Developers?</a></h3>
+    <div class="summary"><p><a href="https://crates.io/">crates.io</a>に登録された15,097個のクレートにおける<code>unsafe</code>キーワードの使用状況を調べた。
 調査したクレートは、調査を開始した2018年9月時点で<a href="https://crates.io/">crates.io</a>に登録された全クレートの81%にあたる。
 <code>unsafe</code>を含むクレートは、そのうちの29%だったが、依存するクレートにある<code>unsafe</code>も対象にすると、50%におよぶ。
 <a href="https://crates.io/">crates.io</a>の総ダウンロード数のうち90%を占める473個の有名なクレートに限定すると、60%のクレート<code>unsafe</code>が含まれる。
 2018年9月から2019年6月までの10ヶ月間で<code>unsafe</code>の使用傾向に変化はなく、<code>unsafe</code>の数が少し増えただけであった。
 <code>unsafe</code>の用途の大半は<code>unsafe</code>で修飾されたRustの関数を呼び出すためだった。
 なお、コンパイラで生成された<code>unsafe</code>キーワードは集計に含まれていない。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">August 27, 2021</span>
-        </div>
-    </article>
-    
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        August 27, 2021
+        
+      </span>
+    </div>
+  </article>
+  
 </main>
 
   
 
-<ul class="pagination">  
-    
-    <li>
-      <a href="/">
-	<i class="fa-solid fa-xl fa-angles-left"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/page/14/">
-	<i class="fa-solid fa-xl fa-angle-left"></i>
-      </a>
-    </li>
-    
-    
-    <li>
-      <a href="/page/16/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/page/33/">
-	<i class="fa-solid fa-xl fa-angles-right"></i>
-      </a>
-    </li>
-    
+<ul class="pagination">
+  
+  <li>
+    <a href="/">
+      <i class="fa-solid fa-xl fa-angles-left"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/page/14/">
+      <i class="fa-solid fa-xl fa-angle-left"></i>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a href="/page/16/">
+      <i class="fa-solid fa-xl fa-angle-right"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/page/33/">
+      <i class="fa-solid fa-xl fa-angles-right"></i>
+    </a>
+  </li>
+  
 </ul>
 
   <footer>

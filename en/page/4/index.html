@@ -97,273 +97,317 @@
   </header>
   
 <main>
-    <h1>Posts</h1>
-    
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/cap-twelve-years-later-how-the-rules-have-changed/">CAP Twelve Years Later: How the &#34;Rules&#34; Have Changed (2012)</a></h3>
-        <div class="summary"><p>The <a href="https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf">CAP theorem</a>, coined by Eric Brewer, states that in a shared-data system, you can have either Consistency (C), Availability (A), or Parition tolerance (P), but not all three simultaneously.
+  <h1>Posts</h1>
+  
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/dense-passage-retrieval-for-open-domain-question-answering/">Dense Passage Retrieval for Open-Domain Question Answering (2020)</a></h3>
+    <div class="summary"><p>Open-domain question answering (QA) involves answering fact-based questions using documents.
+An open-domain QA system can be divided into two components: one that retrieves relevant passages and another that extracts the answer spans from those passages <a href="https://arxiv.org/abs/1704.00051">(Chen et al., 2017)</a>.
+While traditional approaches use sparse vector space models like BM25 for the retrieval step, <a href="https://aclanthology.org/2020.emnlp-main.550/">Dense Passage Retrieval for Open-Domain Question Answering</a> shows that dense representations can also be practically implemented using dense representations.</p>
+<!-- Open-domain question answering (QA) is a task that answers factorid questions using documents. -->
+<!-- If the answers are spans appearing in passages of the documents, an open-domain QA system can be decomposed into 2 components. -->
+<!-- The first component retrieves a small set of passages relevant to the question, and the second one extract the span from the filter set [(Chen et al., 2017)](https://arxiv.org/abs/1704.00051). -->
+<!-- While traditional approaches use sparse vector space models such as BM25 for the first module, [Dense Passage Retrieval for Open-Domain Question Answering](https://aclanthology.org/2020.emnlp-main.550/) demonstrates that the first retrieval step can be implemented using dense representations. -->
+<p>The embeddings are learned from the training dataset, optimizing for maximizing inner products between question and relevant passage vectors.
+The training is essentially metric learning, and each question needs irrelvant passages.
+In experiments, it was found that utilizing both the top passages returned by BM25, excluding the answer, and positive passages paired with other questions as negatives yielded best performance.</p>
+<!-- The embeddings are learned from the questions and passages in a training dataset, and optimized for maximizing inner products of the question and relevant passage vectors. -->
+<!-- The training is essentially metric learning, and each question needs irrelvant passages. -->
+<!-- Using both the top passages returned by BM25 except the answer and positive passages paired with other questions as negatives outperformed in experiments. --></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/question-answering/">
+            #Question Answering
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 30, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/cap-twelve-years-later-how-the-rules-have-changed/">CAP Twelve Years Later: How the &#34;Rules&#34; Have Changed (2012)</a></h3>
+    <div class="summary"><p>The <a href="https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf">CAP theorem</a>, coined by Eric Brewer, states that in a shared-data system, you can have either Consistency (C), Availability (A), or Parition tolerance (P), but not all three simultaneously.
 However, Martin Kleppmann challenges the CAP theorem and discusses its limitations in <a href="https://dataintensive.net/">Designing Data-Intensive Applications</a>, and <a href="https://www.cl.cam.ac.uk/research/dtg/archived/files/publications/public/mk428/cap-critique.pdf">A Critique of the CAP Theorem</a>.
 In <a href="https://sites.cs.ucsb.edu/~rich/class/cs293b-cloud/papers/brewer-cap.pdf">CAP Twelve Years Later: How the “Rules” Have Changed</a>, Brewer clarifies that the notion of &ldquo;2 of 3&rdquo; is misleading.
 In practice, designers cannot forfeit P and have a choice between C and A.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/cap-theorem/">
-		#CAP Theorem
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 23, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/wide-and-deep-learning-for-recommender-systems/">Wide and Deep Learning for Recommender Systems (2016)</a></h3>
-        <div class="summary"><p>Generalized linear models are widely used for large-scale regression and classification problems with sparse inputs because they are simple, scale and interpretable.
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/cap-theorem/">
+            #CAP Theorem
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 23, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/wide-and-deep-learning-for-recommender-systems/">Wide and Deep Learning for Recommender Systems (2016)</a></h3>
+    <div class="summary"><p>Generalized linear models are widely used for large-scale regression and classification problems with sparse inputs because they are simple, scale and interpretable.
 One limitation of interactions or cross-prodcution transformations in generalized linear models is that they do not generalize to query-item feature pairs that have not appeared in the training data.
 Compared with generalized linear models, deep neural networks can improve the diversity of the recommendations.
 Howerver it is difficult to learn effective low-dimentional dense embedding vectors.
 <a href="https://arxiv.org/abs/1606.07792">Wide &amp; Deep Learning for Recommender Systems</a> jointly trains a generalized linear model and a feed-forward neural network (FFN) to combines their benefits.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/recommendation/">
-		#Recommendation
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 16, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/a_protocol_for_packet_network_intercommunication/">A Protocol for Packet Network Intercommunication (1974)</a></h3>
-        <div class="summary"><p>Vinton Cerf and Robert Kahn presented a protocol that supports packet communication between hosts in different packet switching networks in <a href="https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf">A Protocol for Packet Network Intercommunication</a>.
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/recommendation/">
+            #Recommendation
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 16, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/a_protocol_for_packet_network_intercommunication/">A Protocol for Packet Network Intercommunication (1974)</a></h3>
+    <div class="summary"><p>Vinton Cerf and Robert Kahn presented a protocol that supports packet communication between hosts in different packet switching networks in <a href="https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf">A Protocol for Packet Network Intercommunication</a>.
 The protocol assumes that a Transmission Control Program (TCP) in a host handles the transmission and acceptance of messages on behalf of processes.
 Later, the program was divided into the Transmission Control Protocol (TCP) and the Internet Protocol (IP).
 At that time, several protocols that supported exchanging packets between computers were developed, but they assumed the computers were on the same network.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/tcp/">
-		#TCP
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 9, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/probabilistic_latent_semantic_indexing/">Probablistic Latent Semantic Indexing (1999)</a></h3>
-        <div class="summary"><p><a href="http://wordvec.colorado.edu/papers/Deerwester_1990.pdf">Latent Semantic Analysis</a> approximates an original term-document matrix by singular value decomposition (SVD).
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/tcp/">
+            #TCP
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 9, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/probabilistic_latent_semantic_indexing/">Probablistic Latent Semantic Indexing (1999)</a></h3>
+    <div class="summary"><p><a href="http://wordvec.colorado.edu/papers/Deerwester_1990.pdf">Latent Semantic Analysis</a> approximates an original term-document matrix by singular value decomposition (SVD).
 The components consist of the frequencies with which each term occurred in each document.
 The Latent Semantic Analysis thresholds all but the largest \(K\) singular values to zero.
 The left singular vectors are a \(t \times K\) matrix, and the transpose of the right singular vectors are a \(K\times d\) matrix where \(t\) is the number of the terms and \(d\) is the number of the documents.</p>
 <p><a href="https://sigir.org/wp-content/uploads/2017/06/p211.pdf">Probabilistic Latent Semantic Indexing</a> (PLSI) is a generative model that associates each term and document with an unobserved class variable \(z \in \mathcal{Z} = \{z_1,\dots , z_K\}\).
 The likelihoods of the documents and terms are estimated by the Expectation Maximization (EM) algorithm, and the joint probability model \(\textbf{P}\) can be written as \(\textbf{P}=\hat{\textbf{U}}\hat{\Sigma}\hat{\textbf{V}}^t\) where \(\hat{\textbf{U}}=(P(d_i|z_k))_{i, k}\), \(\hat{\textbf{V}}=(P(w_j|z_k))_{j, k}\), \(\hat{\Sigma}=\text{diag} (P(z_k))_k\).
 Compared to the Latent Semantic Analysis, the components of \(\textbf{P}\) have a clear probabilistic meaning in terms of mixture component distributions.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/latent-semantic-analysis/">
-		#Latent Semantic Analysis
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 2, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/">Chord: A Scalable Peer-to-peer Lookup Service for Internet Applications (2001)</a></h3>
-        <div class="summary"><p><a href="https://pdos.csail.mit.edu/papers/ton:chord/paper-ton.pdf">Chord</a> is a distributed lookup protocol that supports just one operation: mapping a given key onto a node in a Chord cluster.
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/latent-semantic-analysis/">
+            #Latent Semantic Analysis
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 2, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/">Chord: A Scalable Peer-to-peer Lookup Service for Internet Applications (2001)</a></h3>
+    <div class="summary"><p><a href="https://pdos.csail.mit.edu/papers/ton:chord/paper-ton.pdf">Chord</a> is a distributed lookup protocol that supports just one operation: mapping a given key onto a node in a Chord cluster.
 If an \(N\)-node system is in the steady state, each node resolves all the queries via \(O(\log N)\) messages to other nodes.
 Chord uses <a href="https://www.cs.princeton.edu/courses/archive/fall09/cos518/papers/chash.pdf">consistent hashing</a> to assign keys to Chord nodes.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/peer-to-peer/">
-		#Peer-to-Peer
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">November 23, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/lora-low-rank-adaptation-of-large-language-models/">LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS (2021)</a></h3>
-        <div class="summary"><p>LoRA is motivated by the findings of <a href="https://arxiv.org/pdf/1804.08838.pdf">Li et al. (2018)</a> and <a href="https://arxiv.org/pdf/2012.13255.pdf">Aghajanyan et al. (2020)</a>, which show that overparameterized models tend to converge to solutions that lie within a low-dimensional intrinsic subspace.</p>
-<p>The intrinsic dimension refers to the minimum number of trainable parameters needed to reach satisfactory performance on a given task.</p>
-<p>LoRA introduces low-rank adaptation by decomposing the weight matrices in dense layers. Instead of fine-tuning all parameters of a pre-trained model, LoRA freezes the original weights and learns two low-rank matrices during training.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/large-language-model/">
-		#Large Language Model
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/transformer/">
-		#Transformer
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">November 18, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/">Pastry: Scalable Decentralized Object Location and Routing for Large Scale Peer to Peer Systems (2001)</a></h3>
-        <div class="summary"><p><a href="https://rowstron.azurewebsites.net/PAST/pastry.pdf">Pastry</a> is a decentralized peer-to-peer object location and routing system based on nodes connected via the Internet.
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/peer-to-peer/">
+            #Peer-to-Peer
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        November 23, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/">Pastry: Scalable Decentralized Object Location and Routing for Large Scale Peer to Peer Systems (2001)</a></h3>
+    <div class="summary"><p><a href="https://rowstron.azurewebsites.net/PAST/pastry.pdf">Pastry</a> is a decentralized peer-to-peer object location and routing system based on nodes connected via the Internet.
 When each node in the Pastry network receives a message and a numeric key, it routes them to the node with a nodeId that is numerically close to the key.
 If a node is not the final destination of a message, it forwards the message to another node with a nodeId that is numerically closer to the key than the nodeId of the present node.
 The nodeId ranges from 0 to \(2^{128}-1\).</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/peer-to-peer/">
-		#Peer-to-Peer
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">November 7, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/an_incremental_approach_to_compiler_construction/">An Incremental Approach to Compiler Construction (2006)</a></h3>
-        <div class="summary"><p><a href="http://scheme2006.cs.uchicago.edu/11-ghuloum.pdf">An Incremental Approach to Compiler Construction</a> shows an incremental approach to build a compiler that accepts a large subset of the Scheme programming language.
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/peer-to-peer/">
+            #Peer-to-Peer
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        November 7, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/an_incremental_approach_to_compiler_construction/">An Incremental Approach to Compiler Construction (2006)</a></h3>
+    <div class="summary"><p><a href="http://scheme2006.cs.uchicago.edu/11-ghuloum.pdf">An Incremental Approach to Compiler Construction</a> shows an incremental approach to build a compiler that accepts a large subset of the Scheme programming language.
 The compiler produces assembly code for the Intel-X86 architecture.
 Because real-life compilers are too complex to serve as an educational tool, the gap between real-life compilers and the educational toy compilers is too wide.</p>
 <p>The goal of the paper is to break the barrier.
 The development of the compiler is broken down into 24 incremental steps.
 Every step yields a fully working compiler for progressively expanding a subset of Scheme.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/compiler/">
-		#Compiler
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">October 23, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/gaussian_error_linear_units/">GAUSSIAN ERROR LINEAR UNITS (GELUs) (2016)</a></h3>
-        <div class="summary"><p>The <a href="https://arxiv.org/abs/1606.08415">GAUSSIAN ERROR LINEAR UNITS (GELUs)</a>, a neural network activation function,is \(x\Phi(s)\), where \(\Phi(x)\) the standard Gaussian cumulative distribution function.
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/compiler/">
+            #Compiler
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        October 23, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/gaussian_error_linear_units/">GAUSSIAN ERROR LINEAR UNITS (GELUs) (2016)</a></h3>
+    <div class="summary"><p>The <a href="https://arxiv.org/abs/1606.08415">GAUSSIAN ERROR LINEAR UNITS (GELUs)</a>, a neural network activation function,is \(x\Phi(s)\), where \(\Phi(x)\) the standard Gaussian cumulative distribution function.
 GELUs have properties of Dropout, <a href="https://openreview.net/pdf?id=rJqBEPcxe">Zoneout</a>, and ReLUs.
 Zoneout is a method for regularizing RNNs, and stochastically forces some hidden units to maintain their previous values.
 ReLUs introduce nonlinearity to neural networks.
 Dropout is a regularizer.
 GELUs merge the both functionalities by multipling the neuron input \(x\) by \(m \sim \text{Bernoulli}(\Phi (x))\) , where \(\Phi(x)=P(X\le x), X\sim \mathcal{N}(0, 1)\).
 GELU is the expected transformation on an input \(x\), which is \(\Phi(x) \times Ix + (1-\Phi(x))\times 0x = x\Phi(x)\)</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/activation-function/">
-		#Activation Function
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">October 21, 2023</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/en/posts/a_design_methodology_for_reliable_software_systems/">A design methodology for reliable software systems (1972)</a></h3>
-        <div class="summary"><p>After earning her PhD in computer Science at Stanford University, Liskov worked again for MITRE Corporation.
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/activation-function/">
+            #Activation Function
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        October 21, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/a_design_methodology_for_reliable_software_systems/">A design methodology for reliable software systems (1972)</a></h3>
+    <div class="summary"><p>After earning her PhD in computer Science at Stanford University, Liskov worked again for MITRE Corporation.
 She was involved in the development of a time-sharing system called Venus, then was involved in finding ways to address the &ldquo;software crisis.&rdquo; at MITRE.
 <a href="https://dl.acm.org/doi/pdf/10.1145/1479992.1480018">A design methodology for reliable software systems</a> describes a design methodology of structured programming developed as part of the second project.</p>
 <p>The methodology uses testing to guarantee reliability.
 To test a program, it is necessary to identify relevant test cases, and the set of them must be small enough to implement.
 Structured programming helps to identify the relevant test cases and reduce the number of required test cases by dividing a system into modules.</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/en/tags/structured-programming/">
-		#Structured Programming
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">October 8, 2023</span>
-        </div>
-    </article>
-    
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/structured-programming/">
+            #Structured Programming
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        October 8, 2023
+        
+      </span>
+    </div>
+  </article>
+  
 </main>
 
   
 
-<ul class="pagination">  
-    
-    <li>
-      <a href="/en/">
-	<i class="fa-solid fa-xl fa-angles-left"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/en/page/3/">
-	<i class="fa-solid fa-xl fa-angle-left"></i>
-      </a>
-    </li>
-    
-    
-    <li>
-      <a href="/en/page/5/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/en/page/6/">
-	<i class="fa-solid fa-xl fa-angles-right"></i>
-      </a>
-    </li>
-    
+<ul class="pagination">
+  
+  <li>
+    <a href="/en/">
+      <i class="fa-solid fa-xl fa-angles-left"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/en/page/3/">
+      <i class="fa-solid fa-xl fa-angle-left"></i>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a href="/en/page/5/">
+      <i class="fa-solid fa-xl fa-angle-right"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/en/page/6/">
+      <i class="fa-solid fa-xl fa-angles-right"></i>
+    </a>
+  </li>
+  
 </ul>
 
   <footer>

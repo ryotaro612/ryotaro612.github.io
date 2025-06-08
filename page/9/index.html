@@ -97,238 +97,274 @@
   </header>
   
 <main>
-    <h1>Posts</h1>
-    
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/programming_with_abstract_data_types/">抄訳 PROGRAMMING WITH ABSTRACT DATA TYPES (1974)</a></h3>
-        <div class="summary"><p>高水準言語は、実装の詳細を意識せずに使える操作、データ構造、while文などの制御構造を提供する。
+  <h1>Posts</h1>
+  
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/programming_with_abstract_data_types/">抄訳 PROGRAMMING WITH ABSTRACT DATA TYPES (1974)</a></h3>
+    <div class="summary"><p>高水準言語は、実装の詳細を意識せずに使える操作、データ構造、while文などの制御構造を提供する。
 この3つを抽象とよぶ。
 プログラミング言語から提供される抽象だけではプログラムを実装できないので、開発者は、足りない抽象を実装しなければならない。
 抽象データ型は、言語から提供される抽象を組合せて作るデータ構造である。
 抽象データ型に対する操作の実装は外部に公開されず、抽象データ型の特徴は抽象データ型に可能な操作によって決まる。
 構造化プログラミングと抽象データ型を提供するプログラミング言語を開発し、抽象データ型を使うプログラムのソースコードを例示することで、ほとんどの処理が抽象データ型だけで実装可能なことを示唆した。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E6%8A%BD%E8%B1%A1%E3%83%87%E3%83%BC%E3%82%BF%E5%9E%8B/">
-		#抽象データ型
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 28, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/a_taxonomy_of_web_search/">抄訳 A taxonomy of web search (2002)</a></h3>
-        <div class="summary"><p>Web検索をnavigational, informational, transactionalの3つに分類する。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E6%8A%BD%E8%B1%A1%E3%83%87%E3%83%BC%E3%82%BF%E5%9E%8B/">
+            #抽象データ型
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 28, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/a_taxonomy_of_web_search/">抄訳 A taxonomy of web search (2002)</a></h3>
+    <div class="summary"><p>Web検索をnavigational, informational, transactionalの3つに分類する。
 Navigationalは、ユーザーに訪問したい特定のサイトがあり、そのサイトを開くための検索である。
 Informationalは、ユーザーに収集したい情報があり、その情報があると思われるサイトを検索する。
 情報が断片的であれば、複数のサイトを訪問することもある。
 Transactionalは、検索や種々のダウンロードなどインタラクションを要するサイトを訪問するための検索である。
 ユーザーは、最終的な目的の情報のために訪問先のサイトでさらに検索をする。
 たとえばECサイトへの検索が該当する。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E3%82%A6%E3%82%A7%E3%83%96%E6%A4%9C%E7%B4%A2/">
-		#ウェブ検索
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 23, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/epidemic_algorithms_for_replicated_database_maintenance/">Epidemic Algorithm for Replicated Database Maintenance(1987)</a></h3>
-        <div class="summary"><p>Epidemic Algorithmは、データベース間の差分を解消するために、データベースがランダムに選んだ別のデータベースと同期する手法である。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E3%82%A6%E3%82%A7%E3%83%96%E6%A4%9C%E7%B4%A2/">
+            #ウェブ検索
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 23, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/epidemic_algorithms_for_replicated_database_maintenance/">Epidemic Algorithm for Replicated Database Maintenance(1987)</a></h3>
+    <div class="summary"><p>Epidemic Algorithmは、データベース間の差分を解消するために、データベースがランダムに選んだ別のデータベースと同期する手法である。
 Epidemicを邦訳すると伝染性である。
 ここではデータベースにはマスタースレーブの区別はなく、任意のサーバーがレコードの変更リクエストを受理できる。
 Epidemic Algorithmには、定期的にデーターベース全体を同期する手法と、変更を受理したときに当該の変更のみを別のデータベースに伝搬させる手法の2つがある。
 前者は、データベース全体を同期するので変更のとりこぼしがいずれは解消されるが、同期に時間がかかる。
 後者は、時間はかからないが、伝搬を終えるまでに同期できなかった変更があれば、その齟齬が残りつづける。
 データベースがある時点で最新の変更をもたない確率を仮定し、その確率で次の同期で変更を取得できる確率を表し、手法間の同期する収束の速さを比較した。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E3%83%AC%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/">
-		#レプリケーション
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
-		#分散システム
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 19, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/syntactic_clustering_of_the_web/">抄訳 Syntactic Clustering of the Web (1997)</a></h3>
-        <div class="summary"><p>2つのWeb文書から抽出したn-gramの集合を比較し、文書の包含関係と類似度を測定する。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E3%83%AC%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/">
+            #レプリケーション
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+            #分散システム
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 19, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/syntactic_clustering_of_the_web/">抄訳 Syntactic Clustering of the Web (1997)</a></h3>
+    <div class="summary"><p>2つのWeb文書から抽出したn-gramの集合を比較し、文書の包含関係と類似度を測定する。
 はじめに、大文字をすべて小文字にしたり、htmlタグを除外したりして文書に前処理をかける。
 次に文書\(A\)からnグラムの集合\(S(A)\)を抽出する。
 このとき、文書\(A\)と\(B\)間の類似度を\(|S(A)\cap S(B)|/|S(A) \cup S(B)|\)、\(A\)の\(B\)への包含の度合いを\(|S(A) \cap S(B)|/|S(A)|\)と定義する。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E6%96%87%E6%9B%B8%E9%96%93%E9%A1%9E%E4%BC%BC%E5%BA%A6/">
-		#文書間類似度
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 13, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/an_improved_data_stream_summary_the_count_min_sketch_and_its_application/">An Improved Data Stream Summary: The Count-Min Sketch and its Applications(2005)</a></h3>
-        <div class="summary"><p>Count-Min Sketch(CM Sketch)は、単位時間ごとに1要素ずつ更新される\(n\)次元のベクトルの要素を\(n\)の劣線形の計算量で集計できるデータ構造である。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E6%96%87%E6%9B%B8%E9%96%93%E9%A1%9E%E4%BC%BC%E5%BA%A6/">
+            #文書間類似度
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 13, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/an_improved_data_stream_summary_the_count_min_sketch_and_its_application/">An Improved Data Stream Summary: The Count-Min Sketch and its Applications(2005)</a></h3>
+    <div class="summary"><p>Count-Min Sketch(CM Sketch)は、単位時間ごとに1要素ずつ更新される\(n\)次元のベクトルの要素を\(n\)の劣線形の計算量で集計できるデータ構造である。
 空間の大きさはパラメタで指定する誤差大きさと誤差の生じる確率に依存する。
 誤差と確率のパラメタを\(\epsilon\)と\(\delta\)とすると、CM sketchは\(\lceil{\ln \frac{1}{\delta}\rceil}\times \lceil\frac{e}{\epsilon}\rceil\)の二次元行列である。
 \(\ln\)の底は\(e\)である。
 要素の値、ベクトルの内積、ある範囲の要素の和を劣線形の計算量で求めることができる。
 また、これらと二分探索を応用すれば、指定した値よりも大きい要素のみからなる範囲や分位数も計算できる。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
-		#分散システム
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 7, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/lof_identifying_density_based_local_outliners/">抄訳 LOF: Identifying Density-Based Local Outliers(2000)</a></h3>
-        <div class="summary"><p>局所外れ値因子法(LOF)は、あるインスタンスが外れ値であるかを、その周囲のインスタンスとの距離から判定する。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+            #分散システム
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 7, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/lof_identifying_density_based_local_outliners/">抄訳 LOF: Identifying Density-Based Local Outliers(2000)</a></h3>
+    <div class="summary"><p>局所外れ値因子法(LOF)は、あるインスタンスが外れ値であるかを、その周囲のインスタンスとの距離から判定する。
 異常検知の手法の中には異常か正常かの二値を出力するものがあるが、LOFは[0,1]区間の値を出力する。
 1に近いほど正常とみなす。
 要素間の距離が近くて密度の高いクラスタと低いクラスタがあり、密度の高いクラスタの少し遠くに外れ値とみなすべきインスタンスがあるとする。
 このとき、密度の低いクラスタのインスタンス間の距離を基準にすると、密度の高いクラスタのインスタンスと外れ値のインスタンス間の距離は大きいとみなせない。</p>
 <p>他方で、外れ値のインスタンスのそばの密度の高いクラスタの距離を基準にすれば、外れ値のインスタンスは周囲のインスタンスから遠いとみなせる。
 このように、密度の違うクラスタがあるデータセットでも、インスタンスに近いサンプル間の距離を基準にすることで、他のクラスタの密度で測れば正常なインタンスと判定される外れ値を検出できる。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E7%95%B0%E5%B8%B8%E6%A4%9C%E7%9F%A5/">
-		#異常検知
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">November 28, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/millwheel_fault_tolerant_stream_processing_at_internet_scale/">MillWheel: Fault-Tolerant Stream Processing at Internet Scale(2013)</a></h3>
-        <div class="summary"><p>MillWheelはGoogleで開発されたストリーミング処理のフレームワークである。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E7%95%B0%E5%B8%B8%E6%A4%9C%E7%9F%A5/">
+            #異常検知
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        November 28, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/millwheel_fault_tolerant_stream_processing_at_internet_scale/">MillWheel: Fault-Tolerant Stream Processing at Internet Scale(2013)</a></h3>
+    <div class="summary"><p>MillWheelはGoogleで開発されたストリーミング処理のフレームワークである。
 開発者が羃等な処理をノードとする有向グラフを実装すれば、MillWheelがデータをノードに正確に一回だけ配信する。
 ただし、転送が遅延しているデータは破棄される。
 データは、キー、値、論理的な時刻の3組からなるレコードを単位として、ノードからノードに出力される。
 向き先のノードは、レコードからキーへの関数を、根のノードから出力されるレコードに適用し、期待するキーに対応するレコードをノードに集約する。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%A2%E3%83%87%E3%83%AB/">
-		#プログラミングモデル
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
-		#分散システム
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">November 23, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/rusboost_a_hybrid_approach_to_alleviating_class_imbalance/">抄訳 RUSBoost: A Hybrid Approach to Alleviating Class Imbalance(2010)</a></h3>
-        <div class="summary"><p>RUSBoostは、random undersampling(RUS)とAdaBoostを応用し、不均衡データの予測性能を改善する。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%A2%E3%83%87%E3%83%AB/">
+            #プログラミングモデル
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+            #分散システム
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        November 23, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/rusboost_a_hybrid_approach_to_alleviating_class_imbalance/">抄訳 RUSBoost: A Hybrid Approach to Alleviating Class Imbalance(2010)</a></h3>
+    <div class="summary"><p>RUSBoostは、random undersampling(RUS)とAdaBoostを応用し、不均衡データの予測性能を改善する。
 類似の先行研究である<a href="http://www.datascienceassn.org/sites/default/files/SMOTEBoost%20Improving%20Prediction%20of%20the%20Minority%20Class%20in%20Boosting%20.pdf">SMOTEBoost</a>よりも学習時間が短く、アルゴリズムが単純である。
 アンダーサンプリングで学習データを減らせば、学習時間を短くできるが、学習器に与える情報が減る。
 一方、AdaBoostは、前に訓練した弱学習器が誤分類したデータに高い重みを与え、次の弱学習器を学習し、予測性能を上げる。
 AdaBoostを借りることで、単分類の難しい少数クラスのサンプルに高い重みを単純に与えられる。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/under-sampling/">
-		#Under Sampling
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">November 13, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/graphchi_large_scale_graph_computation_on_just_a_pc/">抄訳 GraphChi: Large-Scale Graph Computation on Just a PC(2012)</a></h3>
-        <div class="summary"><p>GraphChiは、商業規模の有向グラフをコンシューマPCで計算できるとうたうデータ構造とプログラミングモデルである。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/under-sampling/">
+            #Under Sampling
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        November 13, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/graphchi_large_scale_graph_computation_on_just_a_pc/">抄訳 GraphChi: Large-Scale Graph Computation on Just a PC(2012)</a></h3>
+    <div class="summary"><p>GraphChiは、商業規模の有向グラフをコンシューマPCで計算できるとうたうデータ構造とプログラミングモデルである。
 そのためには、任意のひとつのノードとそのノードに接続する全てのエッジを読み込めるメモリがあればよい。
 順序つきのノードを互いに素なP個の集合に分け、それぞれをintervalをよぶ。
 interval内のノードに向うエッジを根のノード順にソートし、エッジをP個のshardに分けて保存する。
 1つのshardをディスクの連続領域に保存することで、あるノードとノードに接続するエッジを、高々P回のディスクへのアクセスでメモリに読み込める。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%A2%E3%83%87%E3%83%AB/">
-		#プログラミングモデル
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">November 12, 2022</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/popular_ensemble_methods_an_empirical_study/">抄訳 Popular Ensemble Methods: An Empirical Study(1999)</a></h3>
-        <div class="summary"><p>アンサンブル学習は、弱学習器を組みわせることで、より予測性能の高いモデルを生成する。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%A2%E3%83%87%E3%83%AB/">
+            #プログラミングモデル
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        November 12, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/popular_ensemble_methods_an_empirical_study/">抄訳 Popular Ensemble Methods: An Empirical Study(1999)</a></h3>
+    <div class="summary"><p>アンサンブル学習は、弱学習器を組みわせることで、より予測性能の高いモデルを生成する。
 弱学習器にニューラルネットワークと決定木を使い、バギングとブースティングの予測性能を、23件のデータで測定した。
 バギングはほぼすべての場合に1つの学習器より高精度だったが、まれにブースティングよりも著しく性能が低かった。
 他方で、ブースティングは、単体の学習器よりも性能が低いことがあった。
@@ -336,41 +372,45 @@ interval内のノードに向うエッジを根のノード順にソートし、
 ブースティグは、既存の弱学習器が誤答したサンプルを回答できる弱学習器を生成する。
 <a href="https://cseweb.ucsd.edu/~yfreund/papers/boostingexperiments.pdf">Freundら</a>は、データにノイズが多いと、学習の後半になるほどノイズを学習するので、性能が悪くなると示唆している。
 データにノイズを混ぜ、その量とブースティングの精度を比較することで、ノイズが多いほどブースティングの性能がバギングと比べたときよりも悪くなることを確認した。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">November 5, 2022</span>
-        </div>
-    </article>
-    
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        November 5, 2022
+        
+      </span>
+    </div>
+  </article>
+  
 </main>
 
   
 
-<ul class="pagination">  
-    
-    <li>
-      <a href="/">
-	<i class="fa-solid fa-xl fa-angles-left"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/page/8/">
-	<i class="fa-solid fa-xl fa-angle-left"></i>
-      </a>
-    </li>
-    
-    
-    <li>
-      <a href="/page/10/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/page/33/">
-	<i class="fa-solid fa-xl fa-angles-right"></i>
-      </a>
-    </li>
-    
+<ul class="pagination">
+  
+  <li>
+    <a href="/">
+      <i class="fa-solid fa-xl fa-angles-left"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/page/8/">
+      <i class="fa-solid fa-xl fa-angle-left"></i>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a href="/page/10/">
+      <i class="fa-solid fa-xl fa-angle-right"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/page/33/">
+      <i class="fa-solid fa-xl fa-angles-right"></i>
+    </a>
+  </li>
+  
 </ul>
 
   <footer>

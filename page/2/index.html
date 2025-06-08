@@ -97,270 +97,317 @@
   </header>
   
 <main>
-    <h1>Posts</h1>
-    
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/origin-of-type-theory/">型理論のはじまり</a></h3>
-        <div class="summary"><p>型理論の起源はラッセルのパラドクスにある。
+  <h1>Posts</h1>
+  
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/jepsen/">分散システム向けのフォールトインジェクションフレームワーク Jepsen</a></h3>
+    <div class="summary"><h2 id="概要">概要</h2>
+<p>分散システムのテストをClojureで実装するためのフレームワークに<a href="https://jepsen.io/">Jepsen</a>がある。
+Jepsenのテストケースは、システムへの操作、操作後のシステムに期待する状態、障害と操作のスケジューリングの3要素からなる。
+テストケースは、スケジューリング通りに操作と障害を起こし、最後にシステムの応答が期待通りか確認する。
+Jepsenの公式サイトにはJepsenによる<a href="https://jepsen.io/analyses">主要な分散システムのテスト結果</a>が公開されている。
+また、Kubernetes内部で使わているKVSの<a href="https://kubernetes.io/ja/docs/tasks/administer-cluster/configure-upgrade-etcd/">etcd</a>の<a href="https://etcd.io/blog/2020/jepsen-343-results/">公式ウェブサイト</a>にもJepsenのテスト結果が公開されている。
+分散システムの開発側からも参照されているので、分散システムにおけるJepsenの認知度は高いように思える。</p>
+<p>その一方で、公式ドキュメントは整備されていないようだった。
+たとえば、チュートリアルはetcdを例題にJepsenの使い方を解説しているが、etcdのクライアントライブラリが古く、実際に実装してもチュートリアル通りに実行できない。
+かわりに、2相コミットするアプリケーションとテストケースを実装したが、実装のためにJepsenのソースコードを調べる必要があった。
+実装したアプリケーションとテストケースは<a href="https://github.com/ryotaro612/jepsen-tutorial-xa">GitHubのリポジトリ</a>に公開してある。</p>
+<p>それでも、依然として、Jepsenを使ってテストケース実装するほうが、スクラッチからテストケースを実装するよりも効率的ではあると思う。
+そこで、今後の備忘録をかねて、Jepsenを試すにあたって、チュートリアルに不足を感じた部分を書き留めておく。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+            #分散システム
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        January 26, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/origin-of-type-theory/">型理論のはじまり</a></h3>
+    <div class="summary"><p>型理論の起源はラッセルのパラドクスにある。
 ただし、厳密な起源となる出来事は何かという問いになると、意見は分かれると思う。
 名前の通り、ラッセルのパラドクスはラッセルが見つけたものだが、集合論を確立したカントールも同時期に独立して同等のパラドクスを発見した。
 またラッセルとフレーゲの往復書簡の中で、フレーゲは、彼の概念記法における述語は述語を引数にとらないと回答した。
 ラッセルが概念記法の要素の階層関係を発展させてパラドクスの解消を試みたことを考えれば、フレーゲの述語論理を型理論の起源とみなすこともできるだろう。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E5%9E%8B%E7%90%86%E8%AB%96/">
-		#型理論
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 30, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/runc/">2024年11月のruncの実装</a></h3>
-        <div class="summary"><p>runcは抽象度の低いコンテナのランタイムであると同時に、そのランタイムを操作するCLIでもある。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E5%9E%8B%E7%90%86%E8%AB%96/">
+            #型理論
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 30, 2024
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/runc/">2024年11月のruncの実装</a></h3>
+    <div class="summary"><p>runcは抽象度の低いコンテナのランタイムであると同時に、そのランタイムを操作するCLIでもある。
 もともとruncはdockerの一部だったが、2015年にdockerからのスピンアウトされた。
 containerdがruncでコンテナの操作するので、今でもdockerはruncでコンテナを操作していることになる。
 この記事は、runcの実装に使われているLinuxの機能を紹介する。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/runc/">
-		#Runc
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/container/">
-		#Container
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 8, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/back-of-envelope-calculations/">Back of Envelope Calculations</a></h3>
-        <div class="summary"><p>システム設計の面接では、与えられた情報からシステムに求められるシステムリソースを試算することを、back of the envelope calculations (estimation)という。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/back-of-the-envelope-estimation/">
-		#Back of the Envelope Estimation
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">September 24, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/video-streaming/">動画配信プラットフォームの例</a></h3>
-        <div class="summary"><p>システム設計面接におけるNetflixやYoutubeのような動画サービスの問題における要点を整理する。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/system-design-interview/">
-		#System Design Interview
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">September 18, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/realm-retrieval-augmented-language-model-pre-training/">REALM Retrieval Augmented Language Model Pre Training (2020)</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/pdf/2002.08909">REALM</a>は、オープンドメイン質問応答向けの言語モデルであり、入力文に関連する文書をみつけるknowledge retrieverと見つけた文書と入力文から応答を生成するknowledge-augmented encoderで構成されている。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/runc/">
+            #Runc
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/container/">
+            #Container
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 8, 2024
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/back-of-envelope-calculations/">Back of Envelope Calculations</a></h3>
+    <div class="summary"><p>システム設計の面接では、与えられた情報からシステムに求められるシステムリソースを試算することを、back of the envelope calculations (estimation)という。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/back-of-the-envelope-estimation/">
+            #Back of the Envelope Estimation
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        September 24, 2024
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/video-streaming/">動画配信プラットフォームの例</a></h3>
+    <div class="summary"><p>システム設計面接におけるNetflixやYoutubeのような動画サービスの問題における要点を整理する。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/system-design-interview/">
+            #System Design Interview
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        September 18, 2024
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/realm-retrieval-augmented-language-model-pre-training/">REALM Retrieval Augmented Language Model Pre Training (2020)</a></h3>
+    <div class="summary"><p><a href="https://arxiv.org/pdf/2002.08909">REALM</a>は、オープンドメイン質問応答向けの言語モデルであり、入力文に関連する文書をみつけるknowledge retrieverと見つけた文書と入力文から応答を生成するknowledge-augmented encoderで構成されている。
 事前学習はmasked language modelingによる教師なし学習であり、一部のトークンがマスクされた入力文をあたえたときに、もとのマスクされた単語を出力できるように訓練する。
 オープンドメイン質問応答のファインチューニングでは、質問文を入力したときに、回答を出力できるようにモデルを訓練する。
 評価実験では、期待する回答がknowledge retrieverの学習に使うコーパスに文字通りにあることが前提にされている。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/retrieval-augmented-generation/">
-		#Retrieval Augmented Generation
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">May 27, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/">Distributed GraphLab: a Framework for Machine Learning and Data Mining in the Cloud (2012)</a></h3>
-        <div class="summary"><p><a href="https://vldb.org/pvldb/vol5/p716_yuchenglow_vldb2012.pdf">Distributed GraphLab</a>は、機械学習とデータマイニング向けのプログラミングモデルの<a href="https://arxiv.org/pdf/1408.2041">GraphLab</a>を、クラスタ上で実行できるように発展させた。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/retrieval-augmented-generation/">
+            #Retrieval Augmented Generation
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        May 27, 2024
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/">Distributed GraphLab: a Framework for Machine Learning and Data Mining in the Cloud (2012)</a></h3>
+    <div class="summary"><p><a href="https://vldb.org/pvldb/vol5/p716_yuchenglow_vldb2012.pdf">Distributed GraphLab</a>は、機械学習とデータマイニング向けのプログラミングモデルの<a href="https://arxiv.org/pdf/1408.2041">GraphLab</a>を、クラスタ上で実行できるように発展させた。
 GraphLabは、グラフの一部から点の集合を返す関数を、反復的にグラフに適用する。
 関数から返された点は再び関数に渡され、渡すべき点がなくなるとアルゴリズムは終了する。
 Distributed GraphLabは、GraphLabをメモリ共有するノードからなるクラスタで実行できるように、<a href="https://lamport.azurewebsites.net/pubs/chandy.pdf">Chandy-Lamport</a>のスナップショットとロックを導入した。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/distributed-system/">
-		#Distributed System
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">May 7, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/spark-sql-relational-data-processing-in-spark/">Spark SQL: Relational Data Processing in Spark (2015)</a></h3>
-        <div class="summary"><p><a href="https://dl.acm.org/doi/10.1145/2723372.2742797">Spark SQL</a>は、関係データベースのテーブルにあたる抽象データ構造のDataFrameを公開し、Spark上で関係代数によるデータ処理を実現する。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/distributed-system/">
+            #Distributed System
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        May 7, 2024
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/spark-sql-relational-data-processing-in-spark/">Spark SQL: Relational Data Processing in Spark (2015)</a></h3>
+    <div class="summary"><p><a href="https://dl.acm.org/doi/10.1145/2723372.2742797">Spark SQL</a>は、関係データベースのテーブルにあたる抽象データ構造のDataFrameを公開し、Spark上で関係代数によるデータ処理を実現する。
 DataFrameに対する操作は、<code>save</code>のような出力まで遅延される。
 遅延により蓄積したクエリは、最適化器Catalystで最適化された後にバイトコードにコンパイルされる。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/spark/">
-		#Spark
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/sql/">
-		#SQL
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">April 14, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/neural-collaborative-filtering/">Neural Collaborative Filtering (2017)</a></h3>
-        <div class="summary"><p>行列分解による協調フィルタリングは、ユーザとアイテムの評価値行列を近似するユーザとアイテムの潜在因子行列の積を学習する。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/spark/">
+            #Spark
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/sql/">
+            #SQL
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        April 14, 2024
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/neural-collaborative-filtering/">Neural Collaborative Filtering (2017)</a></h3>
+    <div class="summary"><p>行列分解による協調フィルタリングは、ユーザとアイテムの評価値行列を近似するユーザとアイテムの潜在因子行列の積を学習する。
 <a href="https://arxiv.org/pdf/1708.05031.pdf">Neural Collaborative Filtering (NCF)</a> は、行列分解のかわりにニューラルネットワークで、パラメータを更新する。
 NCFは3種類あり、Generalized Matrix Factorization (GMF) と Multi-Layer Perceptron (MLP)、GMFとMLPを組み合わせたNeural Matrix Factorization (NeuMF) がある。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E5%8D%94%E8%AA%BF%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/">
-		#協調フィルタリング
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">March 25, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/">TelegraphCQ: Continuous Dataflow Processing for an Uncertain World (2003)</a></h3>
-        <div class="summary"><p>2005年、StonebrakerとÇetintemelは、<a href="https://cs.brown.edu/~ugur/fits_all.pdf">&ldquo;One Size Fits All&rdquo;</a>で、ストリーミングデータを例に、あらゆる種類のデータをDMBSで管理できなくなったと主張した。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E5%8D%94%E8%AA%BF%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/">
+            #協調フィルタリング
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        March 25, 2024
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/">TelegraphCQ: Continuous Dataflow Processing for an Uncertain World (2003)</a></h3>
+    <div class="summary"><p>2005年、StonebrakerとÇetintemelは、<a href="https://cs.brown.edu/~ugur/fits_all.pdf">&ldquo;One Size Fits All&rdquo;</a>で、ストリーミングデータを例に、あらゆる種類のデータをDMBSで管理できなくなったと主張した。
 &ldquo;One Size Fits All&quot;については<a href="https://ryotaro.dev/posts/one-size-fits-all-an-idea-whose-time-has-come-and-gone/">過去の記事</a>で紹介した。
 2003年に発表された<a href="https://cs.brown.edu/courses/cs227/archives/2015/papers/ss-telegraphcq.pdf">TelegraphCQ</a>は、そのようなドメイン特化のデータベースが必要とされはじめた初期のストリーミングデータのためのデータベースである。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/streaming-data/">
-		#Streaming Data
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/postgresql/">
-		#PostgreSQL
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">March 22, 2024</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/llama-open-and-efficient-foundation-language-models/">LLaMA Open and Efficient Foundation Language Models (2023)</a></h3>
-        <div class="summary"><p><a href="https://arxiv.org/pdf/2001.08361.pdf">スケーリング則</a>によれば、<a href="https://arxiv.org/abs/1706.03762">Transformer</a>型モデルのテストデータに対する交差エントロピーの損失は、のこり2つの要素がボトルネックにならないかぎり、パラメタ数、データ量、訓練時間とべき乗の関係にある。
-パラメタをふやすほど損失を下げることができる。</p>
-<p><a href="https://arxiv.org/abs/2203.15556">Hoffmann et al. (2022)</a> は、訓練に使えるFlop数が一定のときに、事前学習時の損失を効果的に下げるには、訓練時に参照するトークン数、パラメタ数を等しい比率でスケールすべきと結論づけた。
-実験のために開発されたパラメタ数70BのモデルChinchillaはパラメタ数175BのGPT-3の性能を上回った。</p>
-<p>しかし、訓練時の損失を目標まで下げるまでにかかるFlop数が少ないモデルほど、推論時もプロセッサの利用効率がよいとはかぎらない。
-たとえば、パラメタ数の大きいモデルが小さいモデルよりも高いプロセッサの利用効率で訓練時の損失を目標以下にできても、推論に必要なFlop数はパラメタ数が多いモデルのほうが大きい。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/large-language-model/">
-		#Large Language Model
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">March 14, 2024</span>
-        </div>
-    </article>
-    
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/streaming-data/">
+            #Streaming Data
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/postgresql/">
+            #PostgreSQL
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        March 22, 2024
+        
+      </span>
+    </div>
+  </article>
+  
 </main>
 
   
 
-<ul class="pagination">  
-    
-    <li>
-      <a href="/">
-	<i class="fa-solid fa-xl fa-angles-left"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/">
-	<i class="fa-solid fa-xl fa-angle-left"></i>
-      </a>
-    </li>
-    
-    
-    <li>
-      <a href="/page/3/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/page/33/">
-	<i class="fa-solid fa-xl fa-angles-right"></i>
-      </a>
-    </li>
-    
+<ul class="pagination">
+  
+  <li>
+    <a href="/">
+      <i class="fa-solid fa-xl fa-angles-left"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/">
+      <i class="fa-solid fa-xl fa-angle-left"></i>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a href="/page/3/">
+      <i class="fa-solid fa-xl fa-angle-right"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/page/33/">
+      <i class="fa-solid fa-xl fa-angles-right"></i>
+    </a>
+  </li>
+  
 </ul>
 
   <footer>

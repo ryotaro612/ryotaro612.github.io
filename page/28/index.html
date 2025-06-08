@@ -97,12 +97,12 @@
   </header>
   
 <main>
-    <h1>Posts</h1>
-    
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/neural_machine_translation_by_jointly_learning_to_align_and_translate/">NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE(2015)</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
+  <h1>Posts</h1>
+  
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/neural_machine_translation_by_jointly_learning_to_align_and_translate/">NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE(2015)</a></h3>
+    <div class="summary"><h3 id="概要">概要</h3>
 <p>Decoderに注意機構を採用したencoder-decoderモデルを提案したICLR2015の論文である。
 論文の発表当時、encoder-decoderモデルによる翻訳の多くは、encoderが入力文を固定長ベクトルに変換し、固定長ベクトルから翻訳された文を出力していた。
 著者らは、固定長ベクトルへの変換が長い文の翻訳性能を下げていると考え、固定長ベクトルを注意機構におきかえたencoder-decoderモデルを提案した。
@@ -110,268 +110,308 @@
 推定時には、まず、次に生成する単語に関係する入力文の箇所を推定する。
 次に、推定された箇所と生成済の単語列をもとに、単語を生成する。
 特に長い文書の翻訳において、固定長ベクトルをつかうモデルよりも、提案手法が優れていることを実験的に示した。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E6%A9%9F%E6%A2%B0%E7%BF%BB%E8%A8%B3/">
-		#機械翻訳
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/attention/">
-		#Attention
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">February 1, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/why_should_i_trust_you/">Why Should I Trust You? Explaining the Predictions of Any Classifier</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E6%A9%9F%E6%A2%B0%E7%BF%BB%E8%A8%B3/">
+            #機械翻訳
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/attention/">
+            #Attention
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        February 1, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/why_should_i_trust_you/">Why Should I Trust You? Explaining the Predictions of Any Classifier</a></h3>
+    <div class="summary"><h3 id="概要">概要</h3>
 <p>モデルの予測に説明をあたえる手法、Local Interpretable Model-agnostic Explanations (LIME)を提案する。
 モデルが回帰や分類器であれば、アルゴリズムによらずLIMEを適用できる。
 説明を与えたい事例近くにある事例を解釈可能なモデルに学習させ、解釈可能なモデルで予測を説明する。
 また、個別の予測ではなく、モデル自体をよく説明する事例を集める手法Submodullar Pick (SP)-LIMEを提案する。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E8%AA%AC%E6%98%8E%E5%8F%AF%E8%83%BD%E3%81%AAai/">
-		#説明可能なAI
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">January 26, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/active_learning_for_ranking_through_expected_loss_optimization/">Active Learning for Ranking through Expected Loss Optimization</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E8%AA%AC%E6%98%8E%E5%8F%AF%E8%83%BD%E3%81%AAai/">
+            #説明可能なAI
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        January 26, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/active_learning_for_ranking_through_expected_loss_optimization/">Active Learning for Ranking through Expected Loss Optimization</a></h3>
+    <div class="summary"><h3 id="概要">概要</h3>
 <p>Yahoo! Labsで開発されたランキングのための能動学習の論文である。
 提案手法は、Yahoo!検索エンジンでの<a href="https://www.kdd.org/kdd2016/papers/files/adf0361-yinA.pdf">採用実績</a>がある。
 手法は、Expected Loss Optimization(ELO)とよばれ、ベイズ決定則によって識別したときの損失の期待値が最大になるデータを選ぶ。
 ELOに用いる損失関数にDCGを採用したExpected DCG Loss Optimization(ELO-DCG)を提案し、実験で評価した。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/">
-		#ランキング学習
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E8%83%BD%E5%8B%95%E5%AD%A6%E7%BF%92/">
-		#能動学習
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">January 19, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/docker-cmake-clang/">AtCoderに提出したコードをテストするためのDockerイメージ</a></h3>
-        <div class="summary"><p>AtCoderに提出したコードをテストするためのDockerイメージを実装した。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/">
+            #ランキング学習
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E8%83%BD%E5%8B%95%E5%AD%A6%E7%BF%92/">
+            #能動学習
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        January 19, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/docker-cmake-clang/">AtCoderに提出したコードをテストするためのDockerイメージ</a></h3>
+    <div class="summary"><p>AtCoderに提出したコードをテストするためのDockerイメージを実装した。
 イメージの<code>Dockerfile</code>は<a href="https://github.com/nryotaro/docker-cmake-clang">こちら</a>にある。
 AtCoderで提出したコードを<a href="https://github.com/nryotaro/at_c">github</a>で管理していて、これをテストするために作った。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">January 14, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/unsupervised_models_for_named_entity_classification/">Unsupervised Models for Named Entity Classification(1999)</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        January 14, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/unsupervised_models_for_named_entity_classification/">Unsupervised Models for Named Entity Classification(1999)</a></h3>
+    <div class="summary"><h3 id="概要">概要</h3>
 <p>1999年に発表された教師なしの固有表現抽出の手法である。
 発表時期が古いことに注意してほしい。
 2つの手法が提案されている。
 ひとつは、DL-CoTrainと呼ばれるルールベースの手法であり、教師なしデータに既存のルールを適用、適用結果から導出したルールを既存のルールに追加、をくりかえしてルールを増やす。
 もう一方は、AdaBoostを応用したCoBoostとよばれる手法である。
 ルールベースの手法のほうがCoBoostよりもよい実験結果であったので、前者のみを説明する。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/ner/">
-		#NER
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E6%95%99%E5%B8%AB%E3%81%AA%E3%81%97%E5%AD%A6%E7%BF%92/">
-		#教師なし学習
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">January 13, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/multilabel_classification_with_label_correlations_and_missing_labels/">Multilabel Classification with Label Correlations and Missing Labels(2014)</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/ner/">
+            #NER
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E6%95%99%E5%B8%AB%E3%81%AA%E3%81%97%E5%AD%A6%E7%BF%92/">
+            #教師なし学習
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        January 13, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/multilabel_classification_with_label_correlations_and_missing_labels/">Multilabel Classification with Label Correlations and Missing Labels(2014)</a></h3>
+    <div class="summary"><h3 id="概要">概要</h3>
 <p>ラベルの相関関係を学習し推論に利用するマルチラベルの線形モデルを提案した論文である。
 相関関係のあるラベル集合を相関関係のないラベル集合に変換し、ラベルごとに分けて学習する手法、Label transformationを応用する。
 分類器は、相関関係だけなく、学習データに与えられていないラベルを推定するように拡張できる。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A9%E3%83%99%E3%83%AB%E5%88%86%E9%A1%9E/">
-		#マルチラベル分類
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">January 6, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/">Learning Deep Structured Semantic Models for Web Search using Clickthrough Data(2013)</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A9%E3%83%99%E3%83%AB%E5%88%86%E9%A1%9E/">
+            #マルチラベル分類
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        January 6, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/">Learning Deep Structured Semantic Models for Web Search using Clickthrough Data(2013)</a></h3>
+    <div class="summary"><h3 id="概要">概要</h3>
 <p>クエリと文書を同じ低次元の空間に射影する深層学習のモデルを提案した論文である。
 クエリと文書は、適合度合いが高いほど、近くに配置される。
 教師データは、クエリと文書の組からなる教師データである。
 実験では、商用検索エンジンから抽出した16510件のクエリと対応するWeサイトのタイトルがつかわれる。
 Web文書の大量の語彙をあつかうために、語彙の増加に対して次元数を抑えるbag-of-wordsの手法、word hasingも提案した。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/">
-		#ランキング学習
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">January 4, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/classification_in_the_presence_of_label_noise/">Classification in the Presence of Label Noise: a Survey(2013)</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/">
+            #ランキング学習
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        January 4, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/classification_in_the_presence_of_label_noise/">Classification in the Presence of Label Noise: a Survey(2013)</a></h3>
+    <div class="summary"><h3 id="概要">概要</h3>
 <p>ノイズのある教師データによるクラス分類の<a href="https://romisatriawahono.net/lecture/rm/survey/machine%20learning/Frenay%20-%20Classification%20in%20the%20Presence%20of%20Label%20Noise%20-%202014.pdf">サーベイ論文</a>である。発表時期は、<a href="https://ieeexplore.ieee.org/document/6685834">2013年の12月</a>である。
 主な内容は、ノイズの分類、ノイズが分類に及ぼす影響、ノイズへの対策である。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/label-noise/">
-		#Label Noise
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E3%82%B5%E3%83%BC%E3%83%99%E3%82%A4%E8%AB%96%E6%96%87/">
-		#サーベイ論文
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 30, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/distributed_representations_of_sentences_and_documents/">Distributed Representations of Sentences and Documents(2014)</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/label-noise/">
+            #Label Noise
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E3%82%B5%E3%83%BC%E3%83%99%E3%82%A4%E8%AB%96%E6%96%87/">
+            #サーベイ論文
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 30, 2019
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/distributed_representations_of_sentences_and_documents/">Distributed Representations of Sentences and Documents(2014)</a></h3>
+    <div class="summary"><h3 id="概要">概要</h3>
 <p><a href="https://radimrehurek.com/gensim/models/doc2vec.html">Doc2Vec</a>のアルゴリズムとして採用されたニューラル言語モデルParagraph Vectorを提案した論文である。
 bag of wordsは、文書の単語順を記憶せず、また、似た意味の単語ベクトルと無関係なベクトルを単語にわりあてる。
 Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文脈の中心の単語をあてられるように学習することで、可変長文字列から固定長の文書埋め込みベクトルを生成できるようになる。
 これにより、単語順と単語の意味を記憶したベクトルの生成を実現する。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/embedding/">
-		#Embedding
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 28, 2019</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/glove_vectors_for_word_representation/">GloVe: Global Vectors for Word Representation(2014)</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/embedding/">
+            #Embedding
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 28, 2019
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/glove_vectors_for_word_representation/">GloVe: Global Vectors for Word Representation(2014)</a></h3>
+    <div class="summary"><h3 id="概要">概要</h3>
 <p><a href="https://www.aclweb.org/anthology/D14-1162.pdf">GloVe</a>は,コーパスに出現する単語の共起回数を学習するニューラル言語モデルである。
 既存手法を単語の出現頻度の統計値つかう手法と対数双線形モデルに分類し、両者の長所を備え短所を補う手法として、GloVeを提案する。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/embedding/">
-		#Embedding
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">December 21, 2019</span>
-        </div>
-    </article>
-    
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/embedding/">
+            #Embedding
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 21, 2019
+        
+      </span>
+    </div>
+  </article>
+  
 </main>
 
   
 
-<ul class="pagination">  
-    
-    <li>
-      <a href="/">
-	<i class="fa-solid fa-xl fa-angles-left"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/page/27/">
-	<i class="fa-solid fa-xl fa-angle-left"></i>
-      </a>
-    </li>
-    
-    
-    <li>
-      <a href="/page/29/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/page/33/">
-	<i class="fa-solid fa-xl fa-angles-right"></i>
-      </a>
-    </li>
-    
+<ul class="pagination">
+  
+  <li>
+    <a href="/">
+      <i class="fa-solid fa-xl fa-angles-left"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/page/27/">
+      <i class="fa-solid fa-xl fa-angle-left"></i>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a href="/page/29/">
+      <i class="fa-solid fa-xl fa-angle-right"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/page/33/">
+      <i class="fa-solid fa-xl fa-angles-right"></i>
+    </a>
+  </li>
+  
 </ul>
 
   <footer>

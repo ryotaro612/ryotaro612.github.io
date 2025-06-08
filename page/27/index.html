@@ -97,119 +97,143 @@
   </header>
   
 <main>
-    <h1>Posts</h1>
-    
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/character_aware_neural_language_models/">論文メモ Character-Aware Neural Language Models</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
+  <h1>Posts</h1>
+  
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/character_aware_neural_language_models/">論文メモ Character-Aware Neural Language Models</a></h3>
+    <div class="summary"><h3 id="概要">概要</h3>
 <p>文字単位の入力から次に出現する単語を予測するニューラル言語モデルの論文である。
 アーキテクチャは入力から近い順にCNN, highway network, LSTMからなる。
 実験データにPenn Treebankを、評価指標にPerplexityを採用してモデルを評価したところ、
 論文が発表された2016年時点での<a href="https://arxiv.org/abs/1409.2329">SOTA</a>の60%程度のパラメタしかないモデルでありながら、これに匹敵する性能を発揮した。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">April 4, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/deep_contextualized_word_representations/">論文メモ Deep contextualized word representations</a></h3>
-        <div class="summary"><p>文脈をふまえた単語の分散表現を生成する手法を提案し、教師あり学習に応用することで評価した論文である。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        April 4, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/deep_contextualized_word_representations/">論文メモ Deep contextualized word representations</a></h3>
+    <div class="summary"><p>文脈をふまえた単語の分散表現を生成する手法を提案し、教師あり学習に応用することで評価した論文である。
 文字単位の学習済み双方向LSTM言語モデルへの入力と各層の出力から分散表現をつくる。
 言語モデルの入力やどの層をどれだけ重視するかは、教師あり学習のときに更新するパラメタのひとつになる。
 実験では、構文にかかわるタスクであれば入力層に近い層が、意味にかかわるものであれば出力層に近い層が、重視された。
 モデルは、Embeddings from Language Modelsにちなみ、ELMoと名付けられた。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">March 24, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/the_seven_sins/">論文メモ The Seven Sins: Security Smells in Infrastructure as Code Scripts</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        March 24, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/the_seven_sins/">論文メモ The Seven Sins: Security Smells in Infrastructure as Code Scripts</a></h3>
+    <div class="summary"><h3 id="概要">概要</h3>
 <p>OSSの調査にもとづき、Infrastrucure as Code(IaC)スクリプトに潜む主要なセキュリティ上の不吉な匂い(Security Smells)を7つ列挙し、これらを検出するツールを実装した論文である。
 論文のねらいは、開発者がIaCスクリプトに不吉な匂いを混ぜないようにすることにある。
 著者らは、本論文で、ICSE2019のDistinguished Paper Awardを受賞した。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">March 20, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/semi_supervised_sequence_learning/">Semi-supervised Sequence Learning(2015)</a></h3>
-        <div class="summary"><p>系列データの教師あり学習において、ラベルのないデータを学習した言語モデルやオートエンコーダーの重みでLSTMを初期化することの有用性を実験的に示した。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/">
-		#言語モデル
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">March 14, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/raft/">In Search of an Understandable Consensus Algorithm (2014)</a></h3>
-        <div class="summary"><p>コンセンサスアルゴリズムRaftを提案した論文である。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        March 20, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/semi_supervised_sequence_learning/">Semi-supervised Sequence Learning(2015)</a></h3>
+    <div class="summary"><p>系列データの教師あり学習において、ラベルのないデータを学習した言語モデルやオートエンコーダーの重みでLSTMを初期化することの有用性を実験的に示した。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/">
+            #言語モデル
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        March 14, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/raft/">In Search of an Understandable Consensus Algorithm (2014)</a></h3>
+    <div class="summary"><p>コンセンサスアルゴリズムRaftを提案した論文である。
 Raftは、Multi Paxosと同様の実行結果をもたらす。
 実行するコマンドのログをサーバ間で交換することで、状態を同期し、サーバの一部が落ちてもシステムを継続することができる。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/raft/">
-		#Raft
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%B5%E3%82%B9-%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0/">
-		#コンセンサス アルゴリズム
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">March 9, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/sentence_piece/">SentencePiece: A simple and language independent subword tokenizer and detokenizer for Neural Text Processing</a></h3>
-        <div class="summary"><p>SentencePieceは、深層学習向けのトークナイザ・脱トークナイザである。
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/raft/">
+            #Raft
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%B5%E3%82%B9-%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0/">
+            #コンセンサス アルゴリズム
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        March 9, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/sentence_piece/">SentencePiece: A simple and language independent subword tokenizer and detokenizer for Neural Text Processing</a></h3>
+    <div class="summary"><p>SentencePieceは、深層学習向けのトークナイザ・脱トークナイザである。
 特定の言語を意識した処理がないため、あらゆるテキストに利用できる。
 本論文では、C++やPythonによる<a href="https://github.com/google/sentencepiece">実装</a>と翻訳への適用実験について書かれている。
 アルゴリズムの解説は、<a href="https://www.aclweb.org/anthology/P16-1162.pdf">Sennrich et al.</a>や<a href="https://arxiv.org/pdf/1804.10959.pdf">Kudo.</a>にゆずられている。
 これらの論文について2019年7月13日の<a href="../neural_machine_translation_of_rate_words/">記事</a>と2019年7月17日の<a href="/posts/subword_regularization/">記事</a>で解説している。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/sentencepiece/">
-		#SentencePiece
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">February 29, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/latent_dirichlet_allocation/">Latent Dirichlet Allocation(2003)</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/sentencepiece/">
+            #SentencePiece
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        February 29, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/latent_dirichlet_allocation/">Latent Dirichlet Allocation(2003)</a></h3>
+    <div class="summary"><h3 id="概要">概要</h3>
 <p>トピックモデルの潜在的ディリクレ配分法(LDA)の原論文である。
 LDAは、テキストコーパスのような離散データの確率的生成モデルである。
 意味のあるデータのまとまりに対する端的な説明を与える情報を見つけることを目的としている。
@@ -217,127 +241,143 @@ LDAは、テキストコーパスのような離散データの確率的生成�
 データの要素は、各トピックを表すモデルの混合モデルから生成される。
 トピックもまた混合モデルから確率的に生成される。
 推論にはベイズ変分法を、パラメタの推定にはEMアルゴリズムをもちいる。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E3%83%88%E3%83%94%E3%83%83%E3%82%AF%E3%83%A2%E3%83%87%E3%83%AB/">
-		#トピックモデル
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">February 23, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/unsupervised_pretraining_for_sequence_to_sequence_learning/">Unsupervised Pretraining for Sequence to Sequence Learning(2017)</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E3%83%88%E3%83%94%E3%83%83%E3%82%AF%E3%83%A2%E3%83%87%E3%83%AB/">
+            #トピックモデル
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        February 23, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/unsupervised_pretraining_for_sequence_to_sequence_learning/">Unsupervised Pretraining for Sequence to Sequence Learning(2017)</a></h3>
+    <div class="summary"><h3 id="概要">概要</h3>
 <p>事前学習とファインチューニングにより<a href="https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf">seq2seq</a>の汎化性能を改善する手法を提案した論文である。
 encoderの重みを学習済み言語モデルの重みで初期化する。
 decoderについても、encoderと別の言語モデルを用意し、その重みで初期化する。
 ただし、工夫のないファインチューニングをすると<a href="https://arxiv.org/pdf/1312.6211.pdf">破滅的忘却</a>が生じてしまう。
 そこで、ファインチューニングでは言語モデルとseq2seqの目的関数の両方を学習につかうことで、過学習をさけ、汎化性能を確保する。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/seq2seq/">
-		#Seq2seq
-	      </a>
-	    </li>
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/pretraining/">
-		#Pretraining
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">February 16, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/playing_atari_with_deep_reinforcement_learning/">Playing Atari with Deep Reinforcement Learning(2013)</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/seq2seq/">
+            #Seq2seq
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/pretraining/">
+            #Pretraining
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        February 16, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/playing_atari_with_deep_reinforcement_learning/">Playing Atari with Deep Reinforcement Learning(2013)</a></h3>
+    <div class="summary"><h3 id="概要">概要</h3>
 <p>深層強化学習をAtari2600の7つのゲームに応用し、うち6つについて先行手法の性能を超えたDeep Q-Networks(DQN)を提案した論文である。
 ピクセルデータを直接入力として与え、深層学習で方策を学習する手法としては初めて提案された。</p></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92/">
-		#強化学習
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">February 9, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/context2vec/">context2vec: Learning Generic Context Embedding with Bidirectional LSTM (2016)</a></h3>
-        <div class="summary"><h3 id="概要">概要</h3>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92/">
+            #強化学習
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        February 9, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/context2vec/">context2vec: Learning Generic Context Embedding with Bidirectional LSTM (2016)</a></h3>
+    <div class="summary"><h3 id="概要">概要</h3>
 <p>文書の文脈の分散表現を獲得するニューラルネットワークのアーキテクチャ<em>context2vec</em>を提案、評価した論文である。
 アーキテクチャの基本構造は<a href="https://arxiv.org/pdf/1301.3781.pdf">CBOW</a>と同様で、周辺の単語から中心の単語を当てられるようにコーパスをもとにモデルを訓練する。
 CBOWとの違いは、文脈の算出方法にある。
 CBOWは、ウィンドウ内のベクトルの平均値で文脈の分散表現を求める。
 一方、<em>context2vec</em>では、双方向LSTMの出力をもとに算出する。</p>
 <!-- 分散表現を汎用的に利用できることを想定しており、獲得した分散表現をsentence comp --></div>
-        <div class="article-footer">
-	  	  
-	  <ul class="tags">
-	    
-            <li class="tag">
-	      <a href="https://ryotaro.dev/tags/embedding/">
-		#Embedding
-	      </a>
-	    </li>
-	    
-	  </ul>
-	  
-          <span class="date">February 2, 2020</span>
-        </div>
-    </article>
-    
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/embedding/">
+            #Embedding
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        February 2, 2020
+        
+      </span>
+    </div>
+  </article>
+  
 </main>
 
   
 
-<ul class="pagination">  
-    
-    <li>
-      <a href="/">
-	<i class="fa-solid fa-xl fa-angles-left"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/page/26/">
-	<i class="fa-solid fa-xl fa-angle-left"></i>
-      </a>
-    </li>
-    
-    
-    <li>
-      <a href="/page/28/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/page/33/">
-	<i class="fa-solid fa-xl fa-angles-right"></i>
-      </a>
-    </li>
-    
+<ul class="pagination">
+  
+  <li>
+    <a href="/">
+      <i class="fa-solid fa-xl fa-angles-left"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/page/26/">
+      <i class="fa-solid fa-xl fa-angle-left"></i>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a href="/page/28/">
+      <i class="fa-solid fa-xl fa-angle-right"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/page/33/">
+      <i class="fa-solid fa-xl fa-angles-right"></i>
+    </a>
+  </li>
+  
 </ul>
 
   <footer>

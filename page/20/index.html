@@ -97,152 +97,192 @@
   </header>
   
 <main>
-    <h1>Posts</h1>
-    
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/isolation_forest/">論文メモ Isolation Forest</a></h3>
-        <div class="summary"><p>Isolation Forestは、完全二分木による異常検知の手法で、iForestともよばれる。時間計算量が線形で、ハイパーパラメタがわずか2つで、メモリ効率がよい。
+  <h1>Posts</h1>
+  
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/isolation_forest/">論文メモ Isolation Forest</a></h3>
+    <div class="summary"><p>Isolation Forestは、完全二分木による異常検知の手法で、iForestともよばれる。時間計算量が線形で、ハイパーパラメタがわずか2つで、メモリ効率がよい。
 時間、空間計算量が少なく高次元のデータに向く。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">February 13, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/tao_facebooks_distributed_data_store_for_social_graph/">論文メモ TAO: Facebook&#39;s Distributed Data Store for the Social Graph</a></h3>
-        <div class="summary"><p>TAOは、Facebookで開発されたソーシャルグラフのためのマルチリージョンの分散システムで、秒間10億件の読み込みと数百万件の書き込みの性能を発揮する。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        February 13, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/tao_facebooks_distributed_data_store_for_social_graph/">論文メモ TAO: Facebook&#39;s Distributed Data Store for the Social Graph</a></h3>
+    <div class="summary"><p>TAOは、Facebookで開発されたソーシャルグラフのためのマルチリージョンの分散システムで、秒間10億件の読み込みと数百万件の書き込みの性能を発揮する。
 Facebookは、もともとソーシャルグラフを、MySQLに保存し、memcacheでキャッシュし、PHPで問いあわせるシステムで構成していた。
 TAOは、そのシステムの現状を引きつぎ、MySQLをストレージに採用している。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">February 4, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/the_daily_life_of_software_engineers_during_the_covid_19_pandemic/">論文メモ The Daily Life of Software Engineers during the COVID-19 Pandemic</a></h3>
-        <div class="summary"><p>COVID19でソフトウェア開発者が在宅稼動(WFH)をはじめたことによる稼動時間の使い方、良好性(Well-being), 生産性の変化を調査した。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        February 4, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/the_daily_life_of_software_engineers_during_the_covid_19_pandemic/">論文メモ The Daily Life of Software Engineers during the COVID-19 Pandemic</a></h3>
+    <div class="summary"><p>COVID19でソフトウェア開発者が在宅稼動(WFH)をはじめたことによる稼動時間の使い方、良好性(Well-being), 生産性の変化を調査した。
 ロックダウンを実施した国々のエンジニア500名の中から、2020年4月20日から26日の一波について192名、2020年5月4日から10日の二波について184名を選び、サンプルを集めた。
 結果、会社での勤務とWFHの間で、稼動時間の使い方はほぼ変わっていないかった。
 また、一波において休憩と生産性の間に負の相関がみられたが、それ以外では良好性、生産性、社会性、心理の4つと特定の業務内容の間に相関関係はみられなかった。
 結果、組織やエンジニアにとってWFHそれ自体が課題になるわけではないと結論づけている。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">January 30, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/dapper/">論文メモ Dapper, a Large-Scale Distributed Systems Tracing Infrastructure</a></h3>
-        <div class="summary"><p>分散トレーシングシステムDapperをGoogle社内で開発、デプロイ、運用した知見がまとめられている。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        January 30, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/dapper/">論文メモ Dapper, a Large-Scale Distributed Systems Tracing Infrastructure</a></h3>
+    <div class="summary"><p>分散トレーシングシステムDapperをGoogle社内で開発、デプロイ、運用した知見がまとめられている。
 運用期間は2年にわたる。
 Dapperをもとに、TwitterはZipkinを、UberはJaegerを<a href="https://www.oreilly.co.jp/books/9784873119038/">開発した</a>。
 Dapper以前に開発された<a href="https://www.usenix.org/legacy/publications/library/proceedings/hotos03/tech/full_papers/barham/barham_html/paper.html">Magpie</a>や<a href="https://www.usenix.org/conference/nsdi-07/x-trace-pervasive-network-tracing-framework">X-Trace</a>との違いは、サンプリングされたリクエストのみをトレースし負荷を下げるられたり、少数の共通ライブラリだけを測定対象したりする点にある。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">January 23, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/convolutional_2d_knowledge_graph_embeddings/">論文メモ Convolutional 2D Knowledge Graph Embeddings</a></h3>
-        <div class="summary"><p>ナレッジグラフの未知のリンクを予測するモデルは、一般に大きなグラフをあつかえるようにネットワークを浅くし、処理性能の高速化をはかる。一方、代償として層の深いモデルと比べて表現力を欠く。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        January 23, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/convolutional_2d_knowledge_graph_embeddings/">論文メモ Convolutional 2D Knowledge Graph Embeddings</a></h3>
+    <div class="summary"><p>ナレッジグラフの未知のリンクを予測するモデルは、一般に大きなグラフをあつかえるようにネットワークを浅くし、処理性能の高速化をはかる。一方、代償として層の深いモデルと比べて表現力を欠く。
 提唱されるネットワークConvEは、畳み込み層をつかった深めのネットワークで予測性能の向上をはかる。
 層が深くなると計算コストの増加や過学習が課題になるが、先行研究の<a href="https://arxiv.org/abs/1412.6575">DistMult</a>や<a href="https://arxiv.org/abs/1703.06103">R-GCN</a>と比べたConvEのパラメタ数は1/8や1/17であり、パラメタ効率がよい。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">January 11, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/mvcc/">論文メモ Multiversion Concurrency Control - Theory and Algorithms</a></h3>
-        <div class="summary"><p>データベースのトランザクション制御Multiversion Concurrency Control(MVCC, 多版型同時実行制御) 下のトランザクションが逐次実行と等価な結果になる条件を定義した。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        January 11, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/mvcc/">論文メモ Multiversion Concurrency Control - Theory and Algorithms</a></h3>
+    <div class="summary"><p>データベースのトランザクション制御Multiversion Concurrency Control(MVCC, 多版型同時実行制御) 下のトランザクションが逐次実行と等価な結果になる条件を定義した。
 また、その定義を既存のMVCCのアルゴリズム3つにあてはめ、アルゴリズムの正しさを確かめた。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">January 6, 2021</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/paxos_made_simple/">論文メモ Paxos Made Simple</a></h3>
-        <div class="summary"><p><a href="https://lamport.azurewebsites.net/pubs/lamport-paxos.pdf">The Part-Time Parliament</a>で提唱された分散含意アルゴリズムPaxosをLamport自身が平易に解説した。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        January 6, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/paxos_made_simple/">論文メモ Paxos Made Simple</a></h3>
+    <div class="summary"><p><a href="https://lamport.azurewebsites.net/pubs/lamport-paxos.pdf">The Part-Time Parliament</a>で提唱された分散含意アルゴリズムPaxosをLamport自身が平易に解説した。
 エージェントの処理速度やメッセージが配信されるまでの長さに仮定はない。
 メッセージは複製、喪失してもよい。
 他方で、ビザンチン将軍問題は扱わず、メッセージが壊れることは考えない。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">December 31, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/impossibility_of_distributed_consensus_with_one_faulty_process/">論文メモ Impossibility of Distributed Consensus with One Faulty Process</a></h3>
-        <div class="summary"><p>プロセスが1つでもクラッシュしうる場合には常に含意を保証できる完全な非同期アルゴリズムは存在しないことを示した。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        December 31, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/impossibility_of_distributed_consensus_with_one_faulty_process/">論文メモ Impossibility of Distributed Consensus with One Faulty Process</a></h3>
+    <div class="summary"><p>プロセスが1つでもクラッシュしうる場合には常に含意を保証できる完全な非同期アルゴリズムは存在しないことを示した。
 この定理はFLP帰結とよばれる。
 FLPは、著者Fischer, Lynch, Patersonの頭文字に由来する。
 ここでの完全は、プロセスの処理速度やメッセージの配信遅延に仮定をおかず、同期クロックがないためにタイムアウトを使えず、ほかのプロセスが別のプロセスの障害を検知できないことを意味する。
 いいかえると、含意アルゴリズムを実装するには上のいずれかを仮定しなければないことを示した。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">December 18, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/availability_in_globally_distributed_storage_systems/">論文メモ Availability in Globally Distributed Storage Systems</a></h3>
-        <div class="summary"><p>Googleの分散ストレージで生じた障害の統計をとり、ストレージの可用性の予測モデルを提唱した。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        December 18, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/availability_in_globally_distributed_storage_systems/">論文メモ Availability in Globally Distributed Storage Systems</a></h3>
+    <div class="summary"><p>Googleの分散ストレージで生じた障害の統計をとり、ストレージの可用性の予測モデルを提唱した。
 ディスク、ノード、ラックなどハードウェアの粒度を変えて、粒度ごとの平均故障間隔を計測し、故障原因を分類した。
 2分のウィンドウで生じた障害をグループにまとめると、ほとんどの障害が同時多発的な障害の一部であった。
 20以上のノードを巻き込む大きな障害では、別々のラックにあるノードに障害が起きるよりも、特定のラックのノードに障害が起きることが多かった。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">December 12, 2020</span>
-        </div>
-    </article>
-    
-    <article>
-        <h3><a href="https://ryotaro.dev/posts/what_you_always_wanted_to_know_about_datalog/">論文メモ What You Always Wanted to Know About Datalog</a></h3>
-        <div class="summary"><p>論理型のデータベースのクエリ言語Datalogの構文、意味論、最適化が解説されている。
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        December 12, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/what_you_always_wanted_to_know_about_datalog/">論文メモ What You Always Wanted to Know About Datalog</a></h3>
+    <div class="summary"><p>論理型のデータベースのクエリ言語Datalogの構文、意味論、最適化が解説されている。
 最適化の節はサーベイ論文の形式で、最適化を分類し、各種類の先行研究に案内がある。</p></div>
-        <div class="article-footer">
-	  
-          <span class="date">December 12, 2020</span>
-        </div>
-    </article>
-    
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        December 12, 2020
+        
+      </span>
+    </div>
+  </article>
+  
 </main>
 
   
 
-<ul class="pagination">  
-    
-    <li>
-      <a href="/">
-	<i class="fa-solid fa-xl fa-angles-left"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/page/19/">
-	<i class="fa-solid fa-xl fa-angle-left"></i>
-      </a>
-    </li>
-    
-    
-    <li>
-      <a href="/page/21/">
-	<i class="fa-solid fa-xl fa-angle-right"></i>
-      </a>
-    </li>
-    <li>
-      <a href="/page/33/">
-	<i class="fa-solid fa-xl fa-angles-right"></i>
-      </a>
-    </li>
-    
+<ul class="pagination">
+  
+  <li>
+    <a href="/">
+      <i class="fa-solid fa-xl fa-angles-left"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/page/19/">
+      <i class="fa-solid fa-xl fa-angle-left"></i>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a href="/page/21/">
+      <i class="fa-solid fa-xl fa-angle-right"></i>
+    </a>
+  </li>
+  <li>
+    <a href="/page/33/">
+      <i class="fa-solid fa-xl fa-angles-right"></i>
+    </a>
+  </li>
+  
 </ul>
 
   <footer>
