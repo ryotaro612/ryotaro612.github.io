@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
-	<meta name="generator" content="Hugo 0.147.2">
+	<meta name="generator" content="Hugo 0.147.7">
   
   
   <script>(function (w, d, s, l, i) {
@@ -99,6 +99,33 @@
 <main>
   <h1>Posts</h1>
   
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/learning_to_rank_using_gradient_descent/">抄訳 Learning to Rank using Gradient Descent (2005)</a></h3>
+    <div class="summary"><p>ランキング学習のニューラルネットワークRankNetを提案する。
+RankNetは、ベクトルから実数を出力し、その出力が大きいほどランキングが高いと予測する。
+損失関数には、ある2つのベクトルのうち片方が他方よりもランキングが高い確率をあたえる。
+確率とみなす値は、両ベクトルのモデルの出力の差をシグモイド関数に入力したときの出力である。
+RankNetの学習は、モデルの出力と訓練データの確率分布の交差エントロピーを最小化する。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/">
+            #ランキング学習
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        January 7, 2023
+        
+      </span>
+    </div>
+  </article>
   
   <article>
     <h3><a href="https://ryotaro.dev/posts/programming_with_abstract_data_types/">抄訳 PROGRAMMING WITH ABSTRACT DATA TYPES (1974)</a></h3>
@@ -357,26 +384,6 @@ interval内のノードに向うエッジを根のノード順にソートし、
       <span class="date">
         
         November 12, 2022
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/popular_ensemble_methods_an_empirical_study/">抄訳 Popular Ensemble Methods: An Empirical Study(1999)</a></h3>
-    <div class="summary"><p>アンサンブル学習は、弱学習器を組みわせることで、より予測性能の高いモデルを生成する。
-弱学習器にニューラルネットワークと決定木を使い、バギングとブースティングの予測性能を、23件のデータで測定した。
-バギングはほぼすべての場合に1つの学習器より高精度だったが、まれにブースティングよりも著しく性能が低かった。
-他方で、ブースティングは、単体の学習器よりも性能が低いことがあった。
-特にニューラルネットワークを弱学習器にした場合に逆転の傾向がみられた。
-ブースティグは、既存の弱学習器が誤答したサンプルを回答できる弱学習器を生成する。
-<a href="https://cseweb.ucsd.edu/~yfreund/papers/boostingexperiments.pdf">Freundら</a>は、データにノイズが多いと、学習の後半になるほどノイズを学習するので、性能が悪くなると示唆している。
-データにノイズを混ぜ、その量とブースティングの精度を比較することで、ノイズが多いほどブースティングの性能がバギングと比べたときよりも悪くなることを確認した。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        November 5, 2022
         
       </span>
     </div>

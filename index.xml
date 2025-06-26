@@ -6,8 +6,15 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 07 Jun 2025 19:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 15 Jun 2025 16:29:31 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Denoising Diffusion Probabilistic Models (2020)</title>
+      <link>https://ryotaro.dev/posts/denoising-diffusion-probabilistic-models/</link>
+      <pubDate>Sun, 15 Jun 2025 16:29:31 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/denoising-diffusion-probabilistic-models/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/2006.11239&#34;&gt;Denoising Diffusion Probabilistic Models&lt;/a&gt;は、高品質な画像の生成することで、デノイジング確率拡散モデル（拡散モデル）の効果を示した。&#xA;拡散モデルは、観測データにノイズを徐々に加えるマルコフ過程を遡行する。&#xA;言いかえればノイズから観測データを生成するマルコフ過程である。&#xA;モデルにノイズを加える過程は拡散過程、遡行する過程は逆拡散過程とよばれる。&#xA;ノイズが徐々に除かれるデータの各時刻の状態を潜在変数、ノイズを除いたデータを観測変数とすれば、拡散モデルを潜在変数モデルとみなせる。&#xA;観測変数の尤度を現実的な計算量で求めるために、最尤推定に変分下限を応用する。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Supervised Learning of Universal Sentence Representations From Natural Language Inference Data (2017)</title>
       <link>https://ryotaro.dev/posts/supervised-learning-of-universal-sentence-representations-from-natural-language-inference-data/</link>

@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
-	<meta name="generator" content="Hugo 0.147.2">
+	<meta name="generator" content="Hugo 0.147.7">
   
   
   <script>(function (w, d, s, l, i) {
@@ -99,6 +99,26 @@
 <main>
   <h1>Posts</h1>
   
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/popular_ensemble_methods_an_empirical_study/">抄訳 Popular Ensemble Methods: An Empirical Study(1999)</a></h3>
+    <div class="summary"><p>アンサンブル学習は、弱学習器を組みわせることで、より予測性能の高いモデルを生成する。
+弱学習器にニューラルネットワークと決定木を使い、バギングとブースティングの予測性能を、23件のデータで測定した。
+バギングはほぼすべての場合に1つの学習器より高精度だったが、まれにブースティングよりも著しく性能が低かった。
+他方で、ブースティングは、単体の学習器よりも性能が低いことがあった。
+特にニューラルネットワークを弱学習器にした場合に逆転の傾向がみられた。
+ブースティグは、既存の弱学習器が誤答したサンプルを回答できる弱学習器を生成する。
+<a href="https://cseweb.ucsd.edu/~yfreund/papers/boostingexperiments.pdf">Freundら</a>は、データにノイズが多いと、学習の後半になるほどノイズを学習するので、性能が悪くなると示唆している。
+データにノイズを混ぜ、その量とブースティングの精度を比較することで、ノイズが多いほどブースティングの性能がバギングと比べたときよりも悪くなることを確認した。</p></div>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        November 5, 2022
+        
+      </span>
+    </div>
+  </article>
   
   <article>
     <h3><a href="https://ryotaro.dev/posts/defining_liveness/">抄訳 DEFINING LIVENESS(1985)</a></h3>
@@ -247,21 +267,6 @@ Pregelでは、この間隔をsuperstepとよび、グラフ上の点である�
 カットの評価基準としてnormalized cutとその近似解を求め方を提案した。
 Normalized cutが最小値のとき、異なるサブグラフにあるノード間の類似度は最小に、同じサブグラフにあるノードの類似度は最大になる。
 Normalized cutをレイリー商に変形し、固有値問題をとくことで、Normalized cutの最小値の近似解を求める。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        August 6, 2022
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/understanding_diagnostic_tests3/">Understanding diagnostic tests3: receiver operating characteristic curves(2007)</a></h3>
-    <div class="summary"><p>医学では陰性と陽性を区別する分割点をカットオフポイントと呼ぶ。
-ROC曲線は、縦軸を感度(sensitivity)TP/(FN+TP), 横軸を1-特異度(specificity)1 - TN/(TN+FP)とするグラフで、この2値はトレードオフの関係にある。
-トレードオフのもとでカットオフポイントの決める方法を先行研究から2つ紹介している。</p></div>
     <div class="article-footer">
       
       <span class="date">

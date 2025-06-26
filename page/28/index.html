@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
-	<meta name="generator" content="Hugo 0.147.2">
+	<meta name="generator" content="Hugo 0.147.7">
   
   
   <script>(function (w, d, s, l, i) {
@@ -99,6 +99,35 @@
 <main>
   <h1>Posts</h1>
   
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/context2vec/">context2vec: Learning Generic Context Embedding with Bidirectional LSTM (2016)</a></h3>
+    <div class="summary"><h3 id="概要">概要</h3>
+<p>文書の文脈の分散表現を獲得するニューラルネットワークのアーキテクチャ<em>context2vec</em>を提案、評価した論文である。
+アーキテクチャの基本構造は<a href="https://arxiv.org/pdf/1301.3781.pdf">CBOW</a>と同様で、周辺の単語から中心の単語を当てられるようにコーパスをもとにモデルを訓練する。
+CBOWとの違いは、文脈の算出方法にある。
+CBOWは、ウィンドウ内のベクトルの平均値で文脈の分散表現を求める。
+一方、<em>context2vec</em>では、双方向LSTMの出力をもとに算出する。</p>
+<!-- 分散表現を汎用的に利用できることを想定しており、獲得した分散表現をsentence comp --></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/embedding/">
+            #Embedding
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        February 2, 2020
+        
+      </span>
+    </div>
+  </article>
   
   <article>
     <h3><a href="https://ryotaro.dev/posts/neural_machine_translation_by_jointly_learning_to_align_and_translate/">NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE(2015)</a></h3>
@@ -353,31 +382,6 @@ Paragraph Vectorは、文脈中の単語と抽出元のパラグラフから文�
       <span class="date">
         
         December 28, 2019
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/glove_vectors_for_word_representation/">GloVe: Global Vectors for Word Representation(2014)</a></h3>
-    <div class="summary"><h3 id="概要">概要</h3>
-<p><a href="https://www.aclweb.org/anthology/D14-1162.pdf">GloVe</a>は,コーパスに出現する単語の共起回数を学習するニューラル言語モデルである。
-既存手法を単語の出現頻度の統計値つかう手法と対数双線形モデルに分類し、両者の長所を備え短所を補う手法として、GloVeを提案する。</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/embedding/">
-            #Embedding
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        December 21, 2019
         
       </span>
     </div>

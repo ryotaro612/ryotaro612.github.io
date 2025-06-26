@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
-	<meta name="generator" content="Hugo 0.147.2">
+	<meta name="generator" content="Hugo 0.147.7">
   
   
   <script>(function (w, d, s, l, i) {
@@ -99,6 +99,36 @@
 <main>
   <h1>Posts</h1>
   
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/time_clocks_and_the_ordering_of_events_in_a_distributed_system/">Time, Clocks, and the Ordering of Events in a Distributed System</a></h3>
+    <div class="summary"><p>分散システムの各プロセスにおける送受信の半順序関係をすべてのプロセスで起きた送受信の全順序関係に拡張するアルゴリズムを提案し、アルゴリズムを同期処理に応用できることを例示した。
+分散システムではプロセスの時刻が同期しているとはかぎらない。
+各プロセスで起きたメッセージの送受信をプロセスでの時刻順に並べられても、その計測時刻を信じて全プロセスで起きたイベントを正しく発生順に並べることはできない。</p>
+<p>アルゴリズムは、プロセスごとに論理的なクロックをもたせる。
+クロックは、メッセージを送信するときに時を進める。
+メッセージを送信するプロセスは、送信時刻をメッセージにふくめる。
+受信したプロセスは現在の時刻とメッセージにある送信元の時刻より先の時刻に時を進める。
+以上の手続きで、異なるプロセス間の送受信であっても送信時刻が受信時刻より必ず前になり、全プロセスの送受信イベントに全順序関係を定義できる。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+            #分散システム
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        August 14, 2021
+        
+      </span>
+    </div>
+  </article>
   
   <article>
     <h3><a href="https://ryotaro.dev/posts/dataflow/">The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-Scale, unbounded, Out-of-Order Data Processing</a></h3>
@@ -236,32 +266,6 @@ Phase 2は、78年から79年にSan Jose Research Laboratoryなどでの実用�
       <span class="date">
         
         June 20, 2021
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/consistent_hashing_and_random_trees/">Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web</a></h3>
-    <div class="summary"><p>各サーバーがネットワーク全体の情報を保持しない分散キャッシュネットワークにホットスポットを生まないためのキャッシュプロトコルを開発した。
-表題のconsistent hashingは、プロトコルの基礎になるハッシュ関数で、関数の写像が値域の違いに影響されにくい。
-この影響しにくさは、クライアントから見えるアクティブなサーバが入れ替わる可能性に対して機能する。
-また、クライアントは一部のキャッシュサーバーにアクセスできればよく、クライアントごとにアクセス可能なキャッシュサーバーの集合は違ってよい。</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%B3%E3%83%88%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E6%B3%95/">
-            #コンシステントハッシュ法
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        June 19, 2021
         
       </span>
     </div>
