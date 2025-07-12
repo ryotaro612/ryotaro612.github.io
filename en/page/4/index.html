@@ -101,6 +101,30 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/en/posts/billion-scale-similarity-search-with-gpus/">Billion Scale Similarity Search With GPUs (2017)</a></h3>
+    <div class="summary"><p>The paper <a href="https://arxiv.org/abs/1702.08734">Billion-scale-similarity search with GPUs</a> presents an approximate nearest-neighbor search method that uses GPUs and combines the <a href="https://inria.hal.science/inria-00514462v2/document">IVFADC</a> indexing structure with <a href="https://www.cs.kent.edu/~batcher/sort.pdf">Batcher&rsquo;s bitonic sorting network</a>.
+The authors have implemented this method in a library called <a href="https://github.com/facebookresearch/faiss">faiss</a>.</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/approximate-nearest-neighbors/">
+            #Approximate Nearest Neighbors
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        January 1, 2024
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/en/posts/conflict-free-replicated-data-types/">Conflict-free Replicated Data Types (2011)</a></h3>
     <div class="summary"><p>In a distributed system with replicated objects distributed across processes interconnected by an asynchronous network, updating a replica without synchronization can lead to conflicts when the update is sent to other replicas.
 <a href="https://pages.lip6.fr/Marc.Shapiro/papers/RR-7687.pdf">Conflict-free Replicated Data Types</a> (CRDTs) are data structures whose states form a join semilattice and monotonically non-decreasing across updates.
@@ -342,35 +366,6 @@ Every step yields a fully working compiler for progressively expanding a subset 
       <span class="date">
         
         October 23, 2023
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/en/posts/gaussian_error_linear_units/">GAUSSIAN ERROR LINEAR UNITS (GELUs) (2016)</a></h3>
-    <div class="summary"><p>The <a href="https://arxiv.org/abs/1606.08415">GAUSSIAN ERROR LINEAR UNITS (GELUs)</a>, a neural network activation function,is \(x\Phi(s)\), where \(\Phi(x)\) the standard Gaussian cumulative distribution function.
-GELUs have properties of Dropout, <a href="https://openreview.net/pdf?id=rJqBEPcxe">Zoneout</a>, and ReLUs.
-Zoneout is a method for regularizing RNNs, and stochastically forces some hidden units to maintain their previous values.
-ReLUs introduce nonlinearity to neural networks.
-Dropout is a regularizer.
-GELUs merge the both functionalities by multipling the neuron input \(x\) by \(m \sim \text{Bernoulli}(\Phi (x))\) , where \(\Phi(x)=P(X\le x), X\sim \mathcal{N}(0, 1)\).
-GELU is the expected transformation on an input \(x\), which is \(\Phi(x) \times Ix + (1-\Phi(x))\times 0x = x\Phi(x)\)</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/en/tags/activation-function/">
-            #Activation Function
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        October 21, 2023
         
       </span>
     </div>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Prompt Engineering on Blanket</title>
+    <link>https://ryotaro.dev/tags/prompt-engineering/</link>
+    <description>Recent content in Prompt Engineering on Blanket</description>
+    <generator>Hugo</generator>
+    <language>ja</language>
+    <lastBuildDate>Fri, 11 Jul 2025 03:03:29 +0900</lastBuildDate>
+    <atom:link href="https://ryotaro.dev/tags/prompt-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>REACT: SYNERGIZING REASONING AND ACTING IN LANGUAGE MODELS (2023)</title>
+      <link>https://ryotaro.dev/posts/react-synergizing-reasoning-and-acting-in-language-models/</link>
+      <pubDate>Fri, 11 Jul 2025 03:03:29 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/react-synergizing-reasoning-and-acting-in-language-models/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/2210.03629&#34;&gt;ReAct (Synergizing &lt;em&gt;Re&lt;/em&gt;asoning + &lt;em&gt;Act&lt;/em&gt;ing)&lt;/a&gt; は、推論 (Chain of Thought) と行動 (Action) を織り混ぜた出力を促すプロンプトをLLMに与え、推論と行動両方の出力を改善する。&#xA;推論は行動の立案に使える情報を提供し、行動はLLM外部の情報を推論に提供することで互いを補完する。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

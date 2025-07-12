@@ -101,6 +101,33 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/s3-sign/">署名つきURLでS3オブジェクトを公開する</a></h3>
+    <div class="summary"><p>S3バケットにあるプライベートオブジェクトの署名つきURLを発行すれば、URLを知るユーザーのみにオブジェクトを公開できる。
+発行方法は<a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html">AWSの記事</a>で紹介されている。</p>
+<p>記事にしたがってURLを発行してみたところ、バケットとファイル手間がかかった。
+また、URLを発行するクライアントを生成する方法が記事になく、別途調査する必要があった。</p>
+<p>これまでに何度かURLを発行する方法を調べたことがあるので、今後のために、バケットとファイルを用意するterraformのコードと、ファイルのURLを発行するGoのコードをGitHubの<a href="https://github.com/ryotaro612/s3-signin">リポジトリ</a>に公開した。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/s3/">
+            #S3
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        January 30, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/highly-available-transactions-virtues-and-limitations/">Highly Available Transactions Virtues and Limitations (2013)</a></h3>
     <div class="summary"><h2 id="概要">概要</h2>
 <p>CAP定理の一貫性、可用性、ネットワークの分断耐性のトリレンマは、1つを完全に切り捨てるのではなく、現実には、3つの性質の優先順位をつける問題になる。
@@ -356,31 +383,6 @@ DataFrameに対する操作は、<code>save</code>のような出力まで遅延
       <span class="date">
         
         April 14, 2024
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/neural-collaborative-filtering/">Neural Collaborative Filtering (2017)</a></h3>
-    <div class="summary"><p>行列分解による協調フィルタリングは、ユーザとアイテムの評価値行列を近似するユーザとアイテムの潜在因子行列の積を学習する。
-<a href="https://arxiv.org/pdf/1708.05031.pdf">Neural Collaborative Filtering (NCF)</a> は、行列分解のかわりにニューラルネットワークで、パラメータを更新する。
-NCFは3種類あり、Generalized Matrix Factorization (GMF) と Multi-Layer Perceptron (MLP)、GMFとMLPを組み合わせたNeural Matrix Factorization (NeuMF) がある。</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/%E5%8D%94%E8%AA%BF%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/">
-            #協調フィルタリング
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        March 25, 2024
         
       </span>
     </div>

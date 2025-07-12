@@ -101,6 +101,35 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/en/posts/spark-sql-relational-data-processing-in-spark/">Spark SQL: Relational Data Processing in Spark (2015)</a></h3>
+    <div class="summary"><p><a href="https://dl.acm.org/doi/10.1145/2723372.2742797">Spark SQL</a> provides a DataFrame API, an abstract data type equivalent to a table in a relational database. The DataFrame objects can be manipulated in a manner consistent with relational algebra. For example, the API includes various relational operators such as <code>where</code> and <code>group by</code>, similar to data frames in R and Python. The DataFrame objects are evaluated lazily, meaning they are not evaluated until certain output operations, like <code>count</code>, are performed. Catalyst, an optimizer written in Scala, optimizes these lazy queries and then compiles them into Java bytecode.</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/sql/">
+            #SQL
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/spark/">
+            #Spark
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        April 14, 2024
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/en/posts/neural-collaborative-filtering/">Neural Collaborative Filtering (2017)</a></h3>
     <div class="summary"><p>In collaborative filtering, Matrix Factorization (MF) approximates the user-item interaction matrix by multiplying the latent matrices for users and items.
 An estimated iteraction is the inner product of the latent vectors for the user and the item.
@@ -349,30 +378,6 @@ Their processing is independent of the values and is easy to run on the GPU beca
       <span class="date">
         
         January 14, 2024
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/en/posts/billion-scale-similarity-search-with-gpus/">Billion Scale Similarity Search With GPUs (2017)</a></h3>
-    <div class="summary"><p>The paper <a href="https://arxiv.org/abs/1702.08734">Billion-scale-similarity search with GPUs</a> presents an approximate nearest-neighbor search method that uses GPUs and combines the <a href="https://inria.hal.science/inria-00514462v2/document">IVFADC</a> indexing structure with <a href="https://www.cs.kent.edu/~batcher/sort.pdf">Batcher&rsquo;s bitonic sorting network</a>.
-The authors have implemented this method in a library called <a href="https://github.com/facebookresearch/faiss">faiss</a>.</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/en/tags/approximate-nearest-neighbors/">
-            #Approximate Nearest Neighbors
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        January 1, 2024
         
       </span>
     </div>

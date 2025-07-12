@@ -101,6 +101,37 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/en/posts/react-synergizing-reasoning-and-acting-in-language-models/">REACT: SYNERGIZING REASONING AND ACTING IN LANGUAGE MODELS (2023)</a></h3>
+    <div class="summary"><p><a href="https://arxiv.org/pdf/2210.03629">ReAct (Synergizing <em>Re</em>asoning + <em>Act</em>ing)</a> is a prompting strategy that enables large language models (LLMs) to generate reasoning traces and actions in an interleaved manner, allowing them to more effectively combine thought and actions.
+ReAct provides LLMs with reasoning traces that guide their actions.
+Additionally, it allows models to incorporate external knowledge obtained through actions into their reasoning process.</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/large-language-models/">
+            #Large Language Models
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/prompt-engineering/">
+            #Prompt Engineering
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        July 11, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/en/posts/denoising-diffusion-probabilistic-models/">Denoising Diffusion Probabilistic Models (2020)</a></h3>
     <div class="summary"><p><a href="https://arxiv.org/pdf/2006.11239">Denoising Diffusion Probabilistic Models</a> generate high-quality images by learning to reverse a gradual noising process.
 The forward process is a fixed Markov chain that incrementally corrupts the data by adding Gaussian noise.
@@ -358,35 +389,6 @@ The algorithm prioritizes minimizing the atomic operations of the garbage collec
       <span class="date">
         
         February 28, 2025
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/en/posts/s3-sign/">Publishing S3 Objects with Signed URLs</a></h3>
-    <div class="summary"><p>The owner of an S3 bucket can share an object by creating a presigned URL for it. The <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html">AWS Documentation</a> provides a user guide on how to generate presigned URLs.</p>
-<p>When I tried generating a presigned URL using the document, I found that preparing the bucket and file was a bit cumbersome.
-Additionally, the guide doesn&rsquo;t cover how to instantiate a client to generate the URL, so I had to look for another guide to learn how to do this.</p>
-<p>I&rsquo;ve researched generating presigned URLs a couple of times before and eventually implemented Terraform scripts and a Go script for future reference.
-The Terraform scripts create an S3 bucket and upload a file to it.
-The Go script generates a presigned URL for the file using the AWS SDK.
-These resources are available in this <a href="https://github.com/ryotaro612/s3-signin">GitHub repository</a>.</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/en/tags/s3/">
-            #S3
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        January 30, 2025
         
       </span>
     </div>

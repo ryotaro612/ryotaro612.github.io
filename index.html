@@ -101,6 +101,36 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/react-synergizing-reasoning-and-acting-in-language-models/">REACT: SYNERGIZING REASONING AND ACTING IN LANGUAGE MODELS (2023)</a></h3>
+    <div class="summary"><p><a href="https://arxiv.org/pdf/2210.03629">ReAct (Synergizing <em>Re</em>asoning + <em>Act</em>ing)</a> は、推論 (Chain of Thought) と行動 (Action) を織り混ぜた出力を促すプロンプトをLLMに与え、推論と行動両方の出力を改善する。
+推論は行動の立案に使える情報を提供し、行動はLLM外部の情報を推論に提供することで互いを補完する。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/large-language-models/">
+            #Large Language Models
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/prompt-engineering/">
+            #Prompt Engineering
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        July 11, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/denoising-diffusion-probabilistic-models/">Denoising Diffusion Probabilistic Models (2020)</a></h3>
     <div class="summary"><p><a href="https://arxiv.org/pdf/2006.11239">Denoising Diffusion Probabilistic Models</a>は、高品質な画像の生成することで、デノイジング確率拡散モデル（拡散モデル）の効果を示した。
 拡散モデルは、観測データにノイズを徐々に加えるマルコフ過程を遡行する。
@@ -364,33 +394,6 @@ GPT-3のネットワークアーキテクチャは<a href="https://cdn.openai.co
       <span class="date">
         
         February 11, 2025
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/s3-sign/">署名つきURLでS3オブジェクトを公開する</a></h3>
-    <div class="summary"><p>S3バケットにあるプライベートオブジェクトの署名つきURLを発行すれば、URLを知るユーザーのみにオブジェクトを公開できる。
-発行方法は<a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html">AWSの記事</a>で紹介されている。</p>
-<p>記事にしたがってURLを発行してみたところ、バケットとファイル手間がかかった。
-また、URLを発行するクライアントを生成する方法が記事になく、別途調査する必要があった。</p>
-<p>これまでに何度かURLを発行する方法を調べたことがあるので、今後のために、バケットとファイルを用意するterraformのコードと、ファイルのURLを発行するGoのコードをGitHubの<a href="https://github.com/ryotaro612/s3-signin">リポジトリ</a>に公開した。</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/s3/">
-            #S3
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        January 30, 2025
         
       </span>
     </div>

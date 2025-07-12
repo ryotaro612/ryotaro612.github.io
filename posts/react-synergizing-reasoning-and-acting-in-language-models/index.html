@@ -26,7 +26,9 @@
   <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
   
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/list.min.77915db2c7e22353f139086e8007e836c0943b636d1285b13737de98af7c5e56.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -40,7 +42,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
     integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
-  <title>Large Language Models</title>
+  <title>REACT: SYNERGIZING REASONING AND ACTING IN LANGUAGE MODELS (2023)</title>
 </head>
 
 <body>
@@ -60,7 +62,7 @@
         <li><a href="https://ryotaro.dev/posts">Posts</a></li>
         <li><a href="https://ryotaro.dev/tags">Tags</a></li>
         
-        <li><a href="https://ryotaro.dev/en/tags/large-language-models/">en</a></li>
+        <li><a href="https://ryotaro.dev/en/posts/react-synergizing-reasoning-and-acting-in-language-models/">en</a></li>
         
       </ul>
       <ul>
@@ -96,26 +98,57 @@
   </header>
   
 <main>
-  <h1>Large Language Models</h1>
-    <div>
-      
-      <a href="https://ryotaro.dev/posts/react-synergizing-reasoning-and-acting-in-language-models/">
-        <div class="entry">
-          <h2>REACT: SYNERGIZING REASONING AND ACTING IN LANGUAGE MODELS (2023)</h2>
-        </div>
-      </a>	
-      
-      <a href="https://ryotaro.dev/posts/scaling-instruction-finetuned-language-models/">
-        <div class="entry">
-          <h2>Scaling Instruction Finetuned Language Models (2022)</h2>
-        </div>
-      </a>	
-      
-    </div>
+  <h1>REACT: SYNERGIZING REASONING AND ACTING IN LANGUAGE MODELS (2023)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/large-language-models/">
+        #Large Language Models
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/prompt-engineering/">
+        #Prompt Engineering
+      </a>
+    </li>
+    
+  </ul>
+  <span class="date">
+    
+    July 11, 2025
+    
+  </span>
+  <div>
+    <p><a href="https://arxiv.org/pdf/2210.03629">ReAct (Synergizing <em>Re</em>asoning + <em>Act</em>ing)</a> は、推論 (Chain of Thought) と行動 (Action) を織り混ぜた出力を促すプロンプトをLLMに与え、推論と行動両方の出力を改善する。
+推論は行動の立案に使える情報を提供し、行動はLLM外部の情報を推論に提供することで互いを補完する。</p>
+<p>評価に使われた4つの実験データセットは知識集約型と意思決定型のタスクに分けられる。
+知識集約型の質問応答タスク<a href="https://arxiv.org/pdf/1809.09600">HotpotQA</a>を解くには複数のWikipediaの節の推論が求められる。
+たとえば質問の例に、&ldquo;How many rooms are in the hotel that is home to the Cirque de Soleil show Mystere?&ldquo;がある。
+HotpotQAを解くReACTができる行動は<code>entity</code>か<code>entity</code>に類するWikipediaの記事の最初の5文を返す<code>search[entity]</code>, <code>string</code>を含むページの次の文を返す<code>lookup[string]</code>, タスクに回答する<code>finish[answer]</code>の3種類である。
+<a href="https://github.com/ysymyth/ReAct/blob/master/hotpotqa.ipynb">公開された実験データ</a>によると以下のプロンプトが与えられたようだった。</p>
+<blockquote>
+<p>Solve a question answering task with interleaving Thought, Action, Observation steps. Thought can reason about the current situation, and Action can be three types:<br>
+(1) Search[entity], which searches the exact entity on Wikipedia and returns the first paragraph if it exists. If not, it will return some similar entities to search.<br>
+(2) Lookup[keyword], which returns the next sentence containing keyword in the current passage.<br>
+(3) Finish[answer], which returns the answer and finishes the task.<br>
+Here are some examples.</p></blockquote>
+  </div>
 </main>
 
   
+<ul class="pagination">
   
+  <li>
+    <a href="/posts/denoising-diffusion-probabilistic-models/">
+      <i class="fa-solid fa-xl fa-angle-left"></i>
+    </a>
+  </li>
+  
+  
+</ul>
+
+
   <footer>
     <small>© Ryotaro Nakamura. All Rights Reserved.</small>
   </footer>

@@ -101,6 +101,31 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/skip_lists_a_probablistic_alternative_to_balanced_trees/">Skip Lists: A Probabilistic Alternative to Balanced Trees(1990)</a></h3>
+    <div class="summary"><p><a href="https://15721.courses.cs.cmu.edu/spring2018/papers/08-oltpindexes1/pugh-skiplists-cacm1990.pdf">Skip Lists</a>は、バランス木の代用になるアルゴリズムである。
+Skip listsのノードは、ランダムに選ばれた後続のノードへのポインタをもつ。
+ランダムに参照するノードを選ぶことで、バランス木よりも単純なアルゴリズムで、計算量を均衡をでき、さらに最悪計算量をより小さくできる。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0/">
+            #データ構造
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        May 6, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/an_image_is_worth_16x16_words_transformers_for_image_recognition_at_scale/">AN IMAGE IS WORTH 16x16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE(2021)</a></h3>
     <div class="summary"><p>画像認識に<a href="https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">Transformer</a>を使う手法を提案し、<a href="https://arxiv.org/abs/1912.11370">Big Transfer</a>と<a href="https://arxiv.org/abs/1911.04252">Noisy Student</a>と比較した。
 論文が発表された2021年でも、画像認識にニューラルネットワークを使う場合、畳込みニューラルネット(CNN)が基本の選択肢になる。
@@ -371,33 +396,6 @@ GPT-2のアーキテクチャは、GPT-1に層正規化の位置を変え、resi
       <span class="date">
         
         March 12, 2023
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/indexing_by_latent_semantic_analysis/">Indexing by Latent Semantic Analysis (1990)</a></h3>
-    <div class="summary"><p>特異値分解を応用した潜在的な意味にもとづく文書検索の手法である。
-文書を、単語の出現回数が成分の列ベクトルとしてあつかう。
-その列ベクトルからなる文書集合の行列に特異値分解(Singular Value Decomposition, SVD)を適用する。
-大きい順に\(k\)個の特異値とその特異ベクトルを選んで、低ランクの行列をつくり、もとの行列を近似する。
-単語の数が\(t\), 文書数が\(d\)のとき、低ランクの行列の左特異ベクトルの行列\(T\)と右特異ベクトルの転置行列\(D&rsquo;\)のサイズは、それぞれ、\(t\times k\), \(k \times d\)になる。</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/%E6%BD%9C%E5%9C%A8%E6%84%8F%E5%91%B3%E8%A7%A3%E6%9E%90/">
-            #潜在意味解析
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        March 4, 2023
         
       </span>
     </div>

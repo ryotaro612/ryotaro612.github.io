@@ -101,6 +101,22 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/normalized_cuts_and_image_segmentation/">Normalized Cuts and Image Segmentation (2000)</a></h3>
+    <div class="summary"><p>単純無向グラフのクラスタリングを応用して画像をセグメントに分割する。
+カットの評価基準としてnormalized cutとその近似解を求め方を提案した。
+Normalized cutが最小値のとき、異なるサブグラフにあるノード間の類似度は最小に、同じサブグラフにあるノードの類似度は最大になる。
+Normalized cutをレイリー商に変形し、固有値問題をとくことで、Normalized cutの最小値の近似解を求める。</p></div>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        August 6, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/understanding_diagnostic_tests3/">Understanding diagnostic tests3: receiver operating characteristic curves(2007)</a></h3>
     <div class="summary"><p>医学では陰性と陽性を区別する分割点をカットオフポイントと呼ぶ。
 ROC曲線は、縦軸を感度(sensitivity)TP/(FN+TP), 横軸を1-特異度(specificity)1 - TN/(TN+FP)とするグラフで、この2値はトレードオフの関係にある。
@@ -258,23 +274,6 @@ Ridge回帰は、回帰係数を全体的に小さくすることで正則化項
       <span class="date">
         
         June 12, 2022
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/c-store_a_column_oriented_dbms/">C-Store: A Column-oriented DBMS(2005)</a></h3>
-    <div class="summary"><p>C-Storeは、OLAP系の読み込みクエリに特化した列指向データベースで、標準のSQLでのデータへのアクセスをサポートする。
-高速化のために、テーブルのデータを、ある列の値でソートした複数の投影として保存する。
-読み込みクエリのSELECT句やソートに合致する投影があれば処理を高速化でき、さらに可用性も向上する。
-しかし、同じ列を重複して複数の投影に含める場合、必要なディスク容量も増える。
-そのため、C-Storeは4種類の圧縮アルゴリズムによって、データを圧縮して保存する。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        June 4, 2022
         
       </span>
     </div>
