@@ -101,6 +101,37 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/spark-sql-relational-data-processing-in-spark/">Spark SQL: Relational Data Processing in Spark (2015)</a></h3>
+    <div class="summary"><p><a href="https://dl.acm.org/doi/10.1145/2723372.2742797">Spark SQL</a>は、関係データベースのテーブルにあたる抽象データ構造のDataFrameを公開し、Spark上で関係代数によるデータ処理を実現する。
+DataFrameに対する操作は、<code>save</code>のような出力まで遅延される。
+遅延により蓄積したクエリは、最適化器Catalystで最適化された後にバイトコードにコンパイルされる。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/spark/">
+            #Spark
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/sql/">
+            #SQL
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        April 14, 2024
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/neural-collaborative-filtering/">Neural Collaborative Filtering (2017)</a></h3>
     <div class="summary"><p>行列分解による協調フィルタリングは、ユーザとアイテムの評価値行列を近似するユーザとアイテムの潜在因子行列の積を学習する。
 <a href="https://arxiv.org/pdf/1708.05031.pdf">Neural Collaborative Filtering (NCF)</a> は、行列分解のかわりにニューラルネットワークで、パラメータを更新する。
@@ -351,31 +382,6 @@ DPRは、質問と文書を別々のBERTで埋め込みベクトルに変換し�
       <span class="date">
         
         January 14, 2024
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/billion-scale-similarity-search-with-gpus/">Billion Scale Similarity Search With GPUs (2017)</a></h3>
-    <div class="summary"><p><a href="https://arxiv.org/abs/1702.08734">Billion-scale-similarity search with GPUs</a>は、<a href="https://inria.hal.science/inria-00514462v2/document">IVFADC</a>による量子化と<a href="https://www.cs.kent.edu/~batcher/sort.pdf">Batcherのバイトニックソート</a>を利用したGPUで実行するL2ノルムの近似最近傍探索である。
-実装は、OSSの<a href="https://github.com/facebookresearch/faiss">faiss</a>として公開されている。</p>
-<!-- クエリの分散表現である密なベクトルの最も近傍にある\\(k\\)個のデータベースあるベクトルを近似的に求める。 --></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/%E8%BF%91%E4%BC%BC%E6%9C%80%E8%BF%91%E5%82%8D%E6%8E%A2%E7%B4%A2/">
-            #近似最近傍探索
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        January 1, 2024
         
       </span>
     </div>

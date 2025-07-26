@@ -101,6 +101,31 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/billion-scale-similarity-search-with-gpus/">Billion Scale Similarity Search With GPUs (2017)</a></h3>
+    <div class="summary"><p><a href="https://arxiv.org/abs/1702.08734">Billion-scale-similarity search with GPUs</a>は、<a href="https://inria.hal.science/inria-00514462v2/document">IVFADC</a>による量子化と<a href="https://www.cs.kent.edu/~batcher/sort.pdf">Batcherのバイトニックソート</a>を利用したGPUで実行するL2ノルムの近似最近傍探索である。
+実装は、OSSの<a href="https://github.com/facebookresearch/faiss">faiss</a>として公開されている。</p>
+<!-- クエリの分散表現である密なベクトルの最も近傍にある\\(k\\)個のデータベースあるベクトルを近似的に求める。 --></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E8%BF%91%E4%BC%BC%E6%9C%80%E8%BF%91%E5%82%8D%E6%8E%A2%E7%B4%A2/">
+            #近似最近傍探索
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        January 1, 2024
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/conflict-free-replicated-data-types/">Conflict-free Replicated Data Types (2011)</a></h3>
     <div class="summary"><p>オブジェクトのレプリカを複数のノードに分散するシステムにおいて、レプリカが非同期に更新された場合、後の同期で更新内容が衝突しうる。
 <a href="https://pages.lip6.fr/Marc.Shapiro/papers/RR-7687.pdf">Conflict-free Replicated Data Types</a> (CRDTs) は、結び半束の関係にある状態をもつオブジェクトである。
@@ -335,33 +360,6 @@ DistilBERTのアーキテクチャは、セグメントエンベディング、�
       <span class="date">
         
         November 4, 2023
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/an_incremental_approach_to_compiler_construction/">An Incremental Approach to Compiler Construction (2006)</a></h3>
-    <div class="summary"><p><a href="http://scheme2006.cs.uchicago.edu/11-ghuloum.pdf">An Incremental Approach to Compiler Construction</a>は、コンパイラの学習を目的としたSchemeのコンパイラの実装方法の解説である。
-コンパイラの実装に使用する言語もSchemeであり、コンパイラは、Intel-x86のアセンブリコードを出力する。
-プログラマが普段使用しているコンパイラは、教育用の教材としてのコンパイラと比べて複雑であり、学習には向かない。
-この商用と学習用のコンパイラの溝を埋めるために、Schemeの仕様の大部分を満たす規模のコンパイラの実装例が示されている。
-実装手順は24ステップからなり、最後のステップまで実装しなくても、各ステップにある実装を完了すれば、コンパイラが正常に動作するように実装することができる。</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9/">
-            #コンパイラ
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        October 23, 2023
         
       </span>
     </div>

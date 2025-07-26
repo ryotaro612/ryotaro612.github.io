@@ -101,6 +101,34 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/en/posts/sorting-networks-and-their-applications/">Sorting networks and their applications (1968)</a></h3>
+    <div class="summary"><p>A sorting network is a network of comparison elements with 2 indegree and 2 outdegree that sorts a list in ascending or descending order.
+A comparison element receives two numbers and outputs the smaller one to one output and the larger one to the other output.
+Odd-even merging networks and Bitonic sorters are sorting networks proposed in <a href="https://www.cs.kent.edu/~batcher/sort.pdf">Sorting networks and their applications</a>.
+They can sort \(2^p\) elements with \(\ln (\frac{1}{2})p(p+1)\) steps.
+Their processing is independent of the values and is easy to run on the GPU because it does not change the output location in memory based on input data values.</p>
+<!-- https://developer.nvidia.com/gpugems/gpugems2/part-vi-simulation-and-numerical-algorithms/chapter-46-improved-gpu-sorting --></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/sorting-algorithm/">
+            #Sorting Algorithm
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        January 14, 2024
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/en/posts/billion-scale-similarity-search-with-gpus/">Billion Scale Similarity Search With GPUs (2017)</a></h3>
     <div class="summary"><p>The paper <a href="https://arxiv.org/abs/1702.08734">Billion-scale-similarity search with GPUs</a> presents an approximate nearest-neighbor search method that uses GPUs and combines the <a href="https://inria.hal.science/inria-00514462v2/document">IVFADC</a> indexing structure with <a href="https://www.cs.kent.edu/~batcher/sort.pdf">Batcher&rsquo;s bitonic sorting network</a>.
 The authors have implemented this method in a library called <a href="https://github.com/facebookresearch/faiss">faiss</a>.</p></div>
@@ -338,34 +366,6 @@ The nodeId ranges from 0 to \(2^{128}-1\).</p></div>
       <span class="date">
         
         November 7, 2023
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/en/posts/an_incremental_approach_to_compiler_construction/">An Incremental Approach to Compiler Construction (2006)</a></h3>
-    <div class="summary"><p><a href="http://scheme2006.cs.uchicago.edu/11-ghuloum.pdf">An Incremental Approach to Compiler Construction</a> shows an incremental approach to build a compiler that accepts a large subset of the Scheme programming language.
-The compiler produces assembly code for the Intel-X86 architecture.
-Because real-life compilers are too complex to serve as an educational tool, the gap between real-life compilers and the educational toy compilers is too wide.</p>
-<p>The goal of the paper is to break the barrier.
-The development of the compiler is broken down into 24 incremental steps.
-Every step yields a fully working compiler for progressively expanding a subset of Scheme.</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/en/tags/compiler/">
-            #Compiler
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        October 23, 2023
         
       </span>
     </div>

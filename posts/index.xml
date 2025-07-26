@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 11 Jul 2025 03:03:29 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 24 Jul 2025 03:09:28 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Training Language Models to Follow Instructions With Human Feedback (2022)</title>
+      <link>https://ryotaro.dev/posts/training-language-models-to-follow-instructions-with-human-feedback/</link>
+      <pubDate>Thu, 24 Jul 2025 03:09:28 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/training-language-models-to-follow-instructions-with-human-feedback/</guid>
+      <description>&lt;p&gt;LLMはウェブページ上の次のトークンを予測できるように訓練される。&#xA;指示に応じた出力になるようにLLMを訓練していないため、パラメタ数を増やしても、プロンプトに忠実で安全で便利な出力にできるとは限らない。&#xA;&lt;a href=&#34;https://arxiv.org/pdf/2203.02155&#34;&gt;Training language models to follow instructions with human feedback&lt;/a&gt;は、人間のフィードバックによる強化学習 (RLHF) により、プロンプトに対する望ましい順に順序づけられた出力で報酬モデルを訓練し、報酬モデルと&lt;a href=&#34;https://arxiv.org/pdf/1707.06347&#34;&gt;PPO&lt;/a&gt;でGPT-3の方策を最適化した。&#xA;RLHFで訓練したパラメタ数1.3BのGPT-3 (InsturctGPT) の出力は、175BのGPT-3よりも人にとって望ましかった。&lt;/p&gt;&#xA;&lt;p&gt;InstructGPTに採用したRLHFも、先行手法の&lt;a href=&#34;https://arxiv.org/pdf/1706.03741&#34;&gt;Deep Reinforcement Learning from Human Preferences&lt;/a&gt;のように、報酬関数のモデルを訓練する。&#xA;なお、先行手法についても過去に&lt;a href=&#34;https://ryotaro.dev/posts/deep_reinforcement_learning_from_human_preferences/&#34;&gt;記事&lt;/a&gt;にした。&#xA;InstructGPTのRLHFには、報酬関数のモデルを生成する前に、GPT3をファインチューニングする手順がある。&#xA;このファインチューニングのための訓練データは、主にOpen AI APIで集めたプロンプトに40名の請負業者が適切な出力を書いて作成された。&#xA;報酬モデルの学習データを集めるときは、ファインチューニングされたモデルにプロンプトを入力し、プロンプトに対する複数の出力を収集し、業者に良い順に出力を順序づけてもらった。&#xA;プロンプトと順序つき出力を訓練データとして、スカラ値の報酬を出力する報酬モデルを訓練し、最後に、PPOで報酬モデルの出力に方策モデルを最適化した。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>REACT: SYNERGIZING REASONING AND ACTING IN LANGUAGE MODELS (2023)</title>
       <link>https://ryotaro.dev/posts/react-synergizing-reasoning-and-acting-in-language-models/</link>
@@ -478,7 +485,7 @@
       <description>&lt;p&gt;マルチプロセスプログラムの正しさを証明するための公理を提案する。&#xA;正しさの条件は、プログラムが安全性と活性を満たすことである。&#xA;安全はプログラムが特定の状態になりえないことを、活性はプログラムが特定の状態に必ず到達することを意味する。&#xA;たとえば、キューにメッセージを配信するproducerとキューから取り出すconsumerがあるとする。&#xA;このとき、容量以上のメッセージがキューに蓄積しない性質が安全性に、キューが満杯時にconsumerがメッセージを消費する性質が活性になりえる。&#xA;プログラム、安全性、活性を形式化し、安全性と活性を証明することで、プログラムの正しさを示す。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>概要 Deep Reinforcement Learing from Human Preferences (2017)</title>
+      <title>Deep Reinforcement Learing from Human Preferences (2017)</title>
       <link>https://ryotaro.dev/posts/deep_reinforcement_learning_from_human_preferences/</link>
       <pubDate>Mon, 20 Mar 2023 11:54:48 -0400</pubDate>
       <guid>https://ryotaro.dev/posts/deep_reinforcement_learning_from_human_preferences/</guid>

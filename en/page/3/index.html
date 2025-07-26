@@ -101,6 +101,37 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/en/posts/policy-gradient-methods-for-reinforcement-learning-with-function-approximation/">Policy Gradient Methods for Reinforcement Learning With Function Approximation (1999)</a></h3>
+    <div class="summary"><p>Policy gradient methods approximate stochastic policies using function approximators, which are independent of value functions.
+They update the policies according to the gradient of expected reward with respect to the policy parameters.
+<a href="https://proceedings.neurips.cc/paper/1999/file/464d828b85b0bed98e80ade0a5c43b0f-Paper.pdf">Policy Gradient Methods for Reinforcement Learning With Function Approximation</a> shows that a form of policy iteration with function approximation converges to a locally optimal policy.</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/policy-gradient-method/">
+            #Policy Gradient Method
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/reinforcement-learning/">
+            #Reinforcement Learning
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        April 27, 2024
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/en/posts/spark-sql-relational-data-processing-in-spark/">Spark SQL: Relational Data Processing in Spark (2015)</a></h3>
     <div class="summary"><p><a href="https://dl.acm.org/doi/10.1145/2723372.2742797">Spark SQL</a> provides a DataFrame API, an abstract data type equivalent to a table in a relational database. The DataFrame objects can be manipulated in a manner consistent with relational algebra. For example, the API includes various relational operators such as <code>where</code> and <code>group by</code>, similar to data frames in R and Python. The DataFrame objects are evaluated lazily, meaning they are not evaluated until certain output operations, like <code>count</code>, are performed. Catalyst, an optimizer written in Scala, optimizes these lazy queries and then compiles them into Java bytecode.</p></div>
     <div class="article-footer">
@@ -350,34 +381,6 @@ Retrieval Augmented Generation (RAG) is a method to improve language generation 
       <span class="date">
         
         January 27, 2024
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/en/posts/sorting-networks-and-their-applications/">Sorting networks and their applications (1968)</a></h3>
-    <div class="summary"><p>A sorting network is a network of comparison elements with 2 indegree and 2 outdegree that sorts a list in ascending or descending order.
-A comparison element receives two numbers and outputs the smaller one to one output and the larger one to the other output.
-Odd-even merging networks and Bitonic sorters are sorting networks proposed in <a href="https://www.cs.kent.edu/~batcher/sort.pdf">Sorting networks and their applications</a>.
-They can sort \(2^p\) elements with \(\ln (\frac{1}{2})p(p+1)\) steps.
-Their processing is independent of the values and is easy to run on the GPU because it does not change the output location in memory based on input data values.</p>
-<!-- https://developer.nvidia.com/gpugems/gpugems2/part-vi-simulation-and-numerical-algorithms/chapter-46-improved-gpu-sorting --></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/en/tags/sorting-algorithm/">
-            #Sorting Algorithm
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        January 14, 2024
         
       </span>
     </div>

@@ -6,13 +6,20 @@
     <description>Recent content in Tags on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 11 Jul 2025 03:03:29 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 24 Jul 2025 03:09:28 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Large Language Models</title>
       <link>https://ryotaro.dev/en/tags/large-language-models/</link>
-      <pubDate>Fri, 11 Jul 2025 03:03:29 +0900</pubDate>
+      <pubDate>Thu, 24 Jul 2025 03:09:28 +0900</pubDate>
       <guid>https://ryotaro.dev/en/tags/large-language-models/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reinforcement Learning From Human Feedback</title>
+      <link>https://ryotaro.dev/en/tags/reinforcement-learning-from-human-feedback/</link>
+      <pubDate>Thu, 24 Jul 2025 03:09:28 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/reinforcement-learning-from-human-feedback/</guid>
       <description></description>
     </item>
     <item>

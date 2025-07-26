@@ -42,7 +42,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
     integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
-  <title>REACT: SYNERGIZING REASONING AND ACTING IN LANGUAGE MODELS (2023)</title>
+  <title>Training Language Models to Follow Instructions With Human Feedback (2022)</title>
 </head>
 
 <body>
@@ -62,7 +62,7 @@
         <li><a href="https://ryotaro.dev/en/posts">Posts</a></li>
         <li><a href="https://ryotaro.dev/en/tags">Tags</a></li>
         
-        <li><a href="https://ryotaro.dev/posts/react-synergizing-reasoning-and-acting-in-language-models/">ja</a></li>
+        <li><a href="https://ryotaro.dev/posts/training-language-models-to-follow-instructions-with-human-feedback/">ja</a></li>
         
       </ul>
       <ul>
@@ -98,8 +98,14 @@
   </header>
   
 <main>
-  <h1>REACT: SYNERGIZING REASONING AND ACTING IN LANGUAGE MODELS (2023)</h1>
+  <h1>Training Language Models to Follow Instructions With Human Feedback (2022)</h1>
   <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/en/tags/reinforcement-learning-from-human-feedback/">
+        #Reinforcement Learning From Human Feedback
+      </a>
+    </li>
     
     <li class="tag">
       <a href="https://ryotaro.dev/en/tags/large-language-models/">
@@ -107,38 +113,16 @@
       </a>
     </li>
     
-    <li class="tag">
-      <a href="https://ryotaro.dev/en/tags/prompt-engineering/">
-        #Prompt Engineering
-      </a>
-    </li>
-    
   </ul>
   <span class="date">
     
-    July 11, 2025
+    July 24, 2025
     
   </span>
   <div>
-    <p><a href="https://arxiv.org/pdf/2210.03629">ReAct (Synergizing <em>Re</em>asoning + <em>Act</em>ing)</a> is a prompting strategy that enables large language models (LLMs) to generate reasoning traces and actions in an interleaved manner, allowing them to more effectively combine thought and actions.
-ReAct provides LLMs with reasoning traces that guide their actions.
-Additionally, it allows models to incorporate external knowledge obtained through actions into their reasoning process.</p>
-<p>The paper evaluates ReAct on two types of tasks: knowledge-intensive reasoning and decision-making.
-<a href="https://arxiv.org/pdf/1809.09600">HotpotQA</a>, a knowledge-intensive task, requires reasoning over multiple Wikipedia passages.
-For example, one question in the dataset asks: “How many rooms are in the hotel that is home to the Cirque de Soleil show Mystere?”</p>
-<p>To solve the task, an LLM can perform three types of actions:</p>
-<ul>
-<li><code>search[entity]</code>: Retrieves the first five sentences from the corresponding Wikipedia page if it exists; otherwise, it returns the top five similar entities.</li>
-<li><code>lookup[string]</code>: Retrieves the next sentence on the page that contains the specified string.</li>
-<li><code>finish[answer]</code>: Provides the final answer to the question.</li>
-</ul>
-<p><a href="https://github.com/ysymyth/ReAct/blob/master/hotpotqa.ipynb">The published experiment report</a> presents the prompt used for the HotpotQA task:</p>
-<blockquote>
-<p>Solve a question answering task with interleaving Thought, Action, Observation steps. Thought can reason about the current situation, and Action can be three types:<br>
-(1) Search[entity], which searches the exact entity on Wikipedia and returns the first paragraph if it exists. If not, it will return some similar entities to search.<br>
-(2) Lookup[keyword], which returns the next sentence containing keyword in the current passage.<br>
-(3) Finish[answer], which returns the answer and finishes the task.<br>
-Here are some examples.</p></blockquote>
+    <p>Increasing the number of parameters does not inherently improve a model’s ability to follow users&rsquo; intent. Large Language Models (LLMs) are typically trained to predict the next token in large-scale internet text corpora, but this objective does not explicitly encourage models to follow user instructions in a helpful and safe manner. [Training Language Models to Follow Instructions with Human Feedback](<a href="https://arxiv.org/pdf/2203.02155">https://arxiv.org/pdf/2203.02155</a>  introduces a method for aligning models with human intent using Reinforcement Learning from Human Feedback (RLHF).</p>
+<p>In human evaluations, outputs from InstructGPT — a 1.3 billion parameter GPT-3 model fine-tuned with RLHF — were preferred over outputs from the much larger 175 billion parameter GPT-3. Similar to <a href="https://arxiv.org/pdf/1706.03741">Deep Reinforcement Learning from Human Preferences</a>, the authors collected human preference data to train a reward model that ranks model outputs by desirability.</p>
+<p>The RLHF process involved three main steps. First, a team of 40 labelers provided demonstrations of ideal outputs for prompts sourced from the OpenAI API, which were used to fine-tune GPT-3 via supervised learning. Next, the labelers created a dataset of human preference rankings by comparing multiple model-generated outputs for the same prompts. This dataset was used to train a reward model that assigns scalar scores to outputs based on human preferences. Finally, the policy model was fine-tuned using Proximal Policy Optimization (<a href="https://arxiv.org/pdf/1707.06347">PPO</a>), optimizing its outputs to maximize the reward model’s evaluations.</p>
   </div>
 </main>
 
@@ -146,17 +130,11 @@ Here are some examples.</p></blockquote>
 <ul class="pagination">
   
   <li>
-    <a href="/en/posts/denoising-diffusion-probabilistic-models/">
+    <a href="/en/posts/react-synergizing-reasoning-and-acting-in-language-models/">
       <i class="fa-solid fa-xl fa-angle-left"></i>
     </a>
   </li>
   
-  
-  <li>
-    <a href="/en/posts/training-language-models-to-follow-instructions-with-human-feedback/">
-      <i class="fa-solid fa-xl fa-angle-right"></i>
-    </a>
-  </li>
   
 </ul>
 

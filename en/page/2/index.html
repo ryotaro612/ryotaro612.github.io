@@ -101,6 +101,39 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/en/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/">On the Fly Garbage Collection an Exercise in Cooperation (1978)</a></h3>
+    <div class="summary"><p>In Go 1.5, the algorithm of the garbage collector (GC) changed to a concurrent, tri-color, mark-sweep collector, which was first proposed by <a href="https://lamport.azurewebsites.net/pubs/garbage.pdf">Dijkstra et al.</a> in 1978.
+The algorithm proposed by Dijkstra et al. alternates a marking phase and an appending phase.
+In the marking phase, the garbage collector colors reachable objects in gray or black.
+In the appending phase, it collects white objects that are unreachable from things on the stack and global variables.
+The algorithm prioritizes minimizing the atomic operations of the garbage collector to reduce overhead on the application.</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/garbage-collection/">
+            #Garbage Collection
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/go/">
+            #Go
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        February 28, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/en/posts/s3-sign/">Publishing S3 Objects with Signed URLs</a></h3>
     <div class="summary"><p>The owner of an S3 bucket can share an object by creating a presigned URL for it. The <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html">AWS Documentation</a> provides a user guide on how to generate presigned URLs.</p>
 <p>When I tried generating a presigned URL using the document, I found that preparing the bucket and file was a bit cumbersome.
@@ -370,37 +403,6 @@ GraphLab supports parallel execution of update functions on multi-processor mach
       <span class="date">
         
         May 7, 2024
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/en/posts/policy-gradient-methods-for-reinforcement-learning-with-function-approximation/">Policy Gradient Methods for Reinforcement Learning With Function Approximation (1999)</a></h3>
-    <div class="summary"><p>Policy gradient methods approximate stochastic policies using function approximators, which are independent of value functions.
-They update the policies according to the gradient of expected reward with respect to the policy parameters.
-<a href="https://proceedings.neurips.cc/paper/1999/file/464d828b85b0bed98e80ade0a5c43b0f-Paper.pdf">Policy Gradient Methods for Reinforcement Learning With Function Approximation</a> shows that a form of policy iteration with function approximation converges to a locally optimal policy.</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/en/tags/policy-gradient-method/">
-            #Policy Gradient Method
-          </a>
-        </li>
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/en/tags/reinforcement-learning/">
-            #Reinforcement Learning
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        April 27, 2024
         
       </span>
     </div>

@@ -101,6 +101,44 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/training-language-models-to-follow-instructions-with-human-feedback/">Training Language Models to Follow Instructions With Human Feedback (2022)</a></h3>
+    <div class="summary"><p>LLMはウェブページ上の次のトークンを予測できるように訓練される。
+指示に応じた出力になるようにLLMを訓練していないため、パラメタ数を増やしても、プロンプトに忠実で安全で便利な出力にできるとは限らない。
+<a href="https://arxiv.org/pdf/2203.02155">Training language models to follow instructions with human feedback</a>は、人間のフィードバックによる強化学習 (RLHF) により、プロンプトに対する望ましい順に順序づけられた出力で報酬モデルを訓練し、報酬モデルと<a href="https://arxiv.org/pdf/1707.06347">PPO</a>でGPT-3の方策を最適化した。
+RLHFで訓練したパラメタ数1.3BのGPT-3 (InsturctGPT) の出力は、175BのGPT-3よりも人にとって望ましかった。</p>
+<p>InstructGPTに採用したRLHFも、先行手法の<a href="https://arxiv.org/pdf/1706.03741">Deep Reinforcement Learning from Human Preferences</a>のように、報酬関数のモデルを訓練する。
+なお、先行手法についても過去に<a href="/posts/deep_reinforcement_learning_from_human_preferences/">記事</a>にした。
+InstructGPTのRLHFには、報酬関数のモデルを生成する前に、GPT3をファインチューニングする手順がある。
+このファインチューニングのための訓練データは、主にOpen AI APIで集めたプロンプトに40名の請負業者が適切な出力を書いて作成された。
+報酬モデルの学習データを集めるときは、ファインチューニングされたモデルにプロンプトを入力し、プロンプトに対する複数の出力を収集し、業者に良い順に出力を順序づけてもらった。
+プロンプトと順序つき出力を訓練データとして、スカラ値の報酬を出力する報酬モデルを訓練し、最後に、PPOで報酬モデルの出力に方策モデルを最適化した。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/large-language-models/">
+            #Large Language Models
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/reinforcement-learning-from-human-feedback/">
+            #Reinforcement Learning From Human Feedback
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        July 24, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/react-synergizing-reasoning-and-acting-in-language-models/">REACT: SYNERGIZING REASONING AND ACTING IN LANGUAGE MODELS (2023)</a></h3>
     <div class="summary"><p><a href="https://arxiv.org/pdf/2210.03629">ReAct (Synergizing <em>Re</em>asoning + <em>Act</em>ing)</a> は、推論 (Chain of Thought) と行動 (Action) を織り混ぜた出力を促すプロンプトをLLMに与え、推論と行動両方の出力を改善する。
 推論は行動の立案に使える情報を提供し、行動はLLM外部の情報を推論に提供することで互いを補完する。</p></div>
@@ -360,40 +398,6 @@ GPT-3のネットワークアーキテクチャは<a href="https://cdn.openai.co
       <span class="date">
         
         March 3, 2025
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/">On the Fly Garbage Collection an Exercise in Cooperation (1978)</a></h3>
-    <div class="summary"><p>Go1.5で、ガベージコレクション (GC) のアルゴリズムが3色マーキングによるコンカレント マーク&amp;スイープに変わった。
-このアルゴリズムの起源を辿ると、1978年の<a href="https://lamport.azurewebsites.net/pubs/garbage.pdf">On the Fly Garbage Collection an Exercise in Cooperation</a>にいきつく。
-ポインタをたどってヒープを黒や灰色に着色するマーキングフェーズと、解放してよい白のヒープを解放するアペンディングフェーズ、この2つのフェーズを繰り返す。
-アルゴリズムはStop The World (STW)を抑制することを主眼におく。</p>
-<p>2015年に書かれたThe Go Blogの<a href="https://go.dev/blog/go15gc">Go GC: Prioritizing low latency and simplicity</a>によれば、3色マーキングのコンカレント マーク&amp;スイープはエンタープライズ向けのGCではない。
-それでも、3色マーキングの考え自体はJavaのZGCなど他のガベージコレクションで<a href="https://typeset.io/pdf/deep-dive-into-zgc-a-modern-garbage-collector-in-openjdk-2aa9ffwc.pdf">採用されている</a>。</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/%E3%82%AC%E3%83%99%E3%83%BC%E3%82%B8%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/">
-            #ガベージコレクション
-          </a>
-        </li>
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/go/">
-            #Go
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        February 11, 2025
         
       </span>
     </div>

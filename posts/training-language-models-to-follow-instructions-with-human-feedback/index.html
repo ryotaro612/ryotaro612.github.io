@@ -26,7 +26,9 @@
   <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
   
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/list.min.77915db2c7e22353f139086e8007e836c0943b636d1285b13737de98af7c5e56.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -40,7 +42,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
     integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
-  <title>Large Language Models</title>
+  <title>Training Language Models to Follow Instructions With Human Feedback (2022)</title>
 </head>
 
 <body>
@@ -60,7 +62,7 @@
         <li><a href="https://ryotaro.dev/posts">Posts</a></li>
         <li><a href="https://ryotaro.dev/tags">Tags</a></li>
         
-        <li><a href="https://ryotaro.dev/en/tags/large-language-models/">en</a></li>
+        <li><a href="https://ryotaro.dev/en/posts/training-language-models-to-follow-instructions-with-human-feedback/">en</a></li>
         
       </ul>
       <ul>
@@ -96,32 +98,55 @@
   </header>
   
 <main>
-  <h1>Large Language Models</h1>
-    <div>
-      
-      <a href="https://ryotaro.dev/posts/training-language-models-to-follow-instructions-with-human-feedback/">
-        <div class="entry">
-          <h2>Training Language Models to Follow Instructions With Human Feedback (2022)</h2>
-        </div>
-      </a>	
-      
-      <a href="https://ryotaro.dev/posts/react-synergizing-reasoning-and-acting-in-language-models/">
-        <div class="entry">
-          <h2>REACT: SYNERGIZING REASONING AND ACTING IN LANGUAGE MODELS (2023)</h2>
-        </div>
-      </a>	
-      
-      <a href="https://ryotaro.dev/posts/scaling-instruction-finetuned-language-models/">
-        <div class="entry">
-          <h2>Scaling Instruction Finetuned Language Models (2022)</h2>
-        </div>
-      </a>	
-      
-    </div>
+  <h1>Training Language Models to Follow Instructions With Human Feedback (2022)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/large-language-models/">
+        #Large Language Models
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/reinforcement-learning-from-human-feedback/">
+        #Reinforcement Learning From Human Feedback
+      </a>
+    </li>
+    
+  </ul>
+  <span class="date">
+    
+    July 24, 2025
+    
+  </span>
+  <div>
+    <p>LLMはウェブページ上の次のトークンを予測できるように訓練される。
+指示に応じた出力になるようにLLMを訓練していないため、パラメタ数を増やしても、プロンプトに忠実で安全で便利な出力にできるとは限らない。
+<a href="https://arxiv.org/pdf/2203.02155">Training language models to follow instructions with human feedback</a>は、人間のフィードバックによる強化学習 (RLHF) により、プロンプトに対する望ましい順に順序づけられた出力で報酬モデルを訓練し、報酬モデルと<a href="https://arxiv.org/pdf/1707.06347">PPO</a>でGPT-3の方策を最適化した。
+RLHFで訓練したパラメタ数1.3BのGPT-3 (InsturctGPT) の出力は、175BのGPT-3よりも人にとって望ましかった。</p>
+<p>InstructGPTに採用したRLHFも、先行手法の<a href="https://arxiv.org/pdf/1706.03741">Deep Reinforcement Learning from Human Preferences</a>のように、報酬関数のモデルを訓練する。
+なお、先行手法についても過去に<a href="/posts/deep_reinforcement_learning_from_human_preferences/">記事</a>にした。
+InstructGPTのRLHFには、報酬関数のモデルを生成する前に、GPT3をファインチューニングする手順がある。
+このファインチューニングのための訓練データは、主にOpen AI APIで集めたプロンプトに40名の請負業者が適切な出力を書いて作成された。
+報酬モデルの学習データを集めるときは、ファインチューニングされたモデルにプロンプトを入力し、プロンプトに対する複数の出力を収集し、業者に良い順に出力を順序づけてもらった。
+プロンプトと順序つき出力を訓練データとして、スカラ値の報酬を出力する報酬モデルを訓練し、最後に、PPOで報酬モデルの出力に方策モデルを最適化した。</p>
+
+  </div>
 </main>
 
   
+<ul class="pagination">
   
+  <li>
+    <a href="/posts/react-synergizing-reasoning-and-acting-in-language-models/">
+      <i class="fa-solid fa-xl fa-angle-left"></i>
+    </a>
+  </li>
+  
+  
+</ul>
+
+
   <footer>
     <small>© Ryotaro Nakamura. All Rights Reserved.</small>
   </footer>

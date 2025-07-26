@@ -6,8 +6,15 @@
     <description>Recent content in Large Language Models on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 11 Jul 2025 03:03:29 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 24 Jul 2025 03:09:28 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/tags/large-language-models/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Training Language Models to Follow Instructions With Human Feedback (2022)</title>
+      <link>https://ryotaro.dev/en/posts/training-language-models-to-follow-instructions-with-human-feedback/</link>
+      <pubDate>Thu, 24 Jul 2025 03:09:28 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/training-language-models-to-follow-instructions-with-human-feedback/</guid>
+      <description>&lt;p&gt;Increasing the number of parameters does not inherently improve a model’s ability to follow users&amp;rsquo; intent. Large Language Models (LLMs) are typically trained to predict the next token in large-scale internet text corpora, but this objective does not explicitly encourage models to follow user instructions in a helpful and safe manner. [Training Language Models to Follow Instructions with Human Feedback](&lt;a href=&#34;https://arxiv.org/pdf/2203.02155&#34;&gt;https://arxiv.org/pdf/2203.02155&lt;/a&gt;  introduces a method for aligning models with human intent using Reinforcement Learning from Human Feedback (RLHF).&lt;/p&gt;</description>
+    </item>
     <item>
       <title>REACT: SYNERGIZING REASONING AND ACTING IN LANGUAGE MODELS (2023)</title>
       <link>https://ryotaro.dev/en/posts/react-synergizing-reasoning-and-acting-in-language-models/</link>

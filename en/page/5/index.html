@@ -101,6 +101,34 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/en/posts/an_incremental_approach_to_compiler_construction/">An Incremental Approach to Compiler Construction (2006)</a></h3>
+    <div class="summary"><p><a href="http://scheme2006.cs.uchicago.edu/11-ghuloum.pdf">An Incremental Approach to Compiler Construction</a> shows an incremental approach to build a compiler that accepts a large subset of the Scheme programming language.
+The compiler produces assembly code for the Intel-X86 architecture.
+Because real-life compilers are too complex to serve as an educational tool, the gap between real-life compilers and the educational toy compilers is too wide.</p>
+<p>The goal of the paper is to break the barrier.
+The development of the compiler is broken down into 24 incremental steps.
+Every step yields a fully working compiler for progressively expanding a subset of Scheme.</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/compiler/">
+            #Compiler
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        October 23, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/en/posts/gaussian_error_linear_units/">GAUSSIAN ERROR LINEAR UNITS (GELUs) (2016)</a></h3>
     <div class="summary"><p>The <a href="https://arxiv.org/abs/1606.08415">GAUSSIAN ERROR LINEAR UNITS (GELUs)</a>, a neural network activation function,is \(x\Phi(s)\), where \(\Phi(x)\) the standard Gaussian cumulative distribution function.
 GELUs have properties of Dropout, <a href="https://openreview.net/pdf?id=rJqBEPcxe">Zoneout</a>, and ReLUs.
@@ -386,41 +414,6 @@ The programmers should aim to shorten the conceptual gap between the source code
       <span class="date">
         
         August 26, 2023
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/en/posts/self_attention_with_relative_position_representations/">Self-Attention with Relative Position Representations(2018)</a></h3>
-    <div class="summary"><p>The authors of <a href="https://arxiv.org/pdf/1803.02155.pdf">Self-Attention with Relative Position Representations</a> presented a way of injecting relative position representations in the self-attention mechanism of the <a href="https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">Transformer</a>.
-In contrast to recurrent and convolutional neural networks, Transformer does not explicitly model position information in its structure.
-<a href="https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">The original position encoding</a> employs sine and cosine functions of different frequencies.
-The authors of Transformer hypothesized that sinusoidal position encodings would help Transformer to generalize to sequence lengths unseen during training.
-Positional encodings are added to the input embeddings at the bottoms of the encoder and decoder stacks of Transformer.
-This hypothesis was shared by the relative position representations.
-In contrast to absolute position representations, the relative position representations are invariant to the total sequence length.</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/en/tags/attention/">
-            #Attention
-          </a>
-        </li>
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/en/tags/transformer/">
-            #Transformer
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        August 19, 2023
         
       </span>
     </div>

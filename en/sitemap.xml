@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ryotaro.dev/en/</loc>
-    <lastmod>2025-07-11T03:03:29+09:00</lastmod>
+    <lastmod>2025-07-24T03:09:28+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/tags/large-language-models/</loc>
-    <lastmod>2025-07-11T03:03:29+09:00</lastmod>
+    <lastmod>2025-07-24T03:09:28+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/posts/</loc>
-    <lastmod>2025-07-11T03:03:29+09:00</lastmod>
+    <lastmod>2025-07-24T03:09:28+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -39,6 +39,45 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ryotaro.dev/en/posts/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/tags/reinforcement-learning-from-human-feedback/</loc>
+    <lastmod>2025-07-24T03:09:28+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/reinforcement-learning-from-human-feedback/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/reinforcement-learning-from-human-feedback/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/tags/</loc>
+    <lastmod>2025-07-24T03:09:28+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/posts/training-language-models-to-follow-instructions-with-human-feedback/</loc>
+    <lastmod>2025-07-24T03:09:28+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/training-language-models-to-follow-instructions-with-human-feedback/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/training-language-models-to-follow-instructions-with-human-feedback/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/tags/prompt-engineering/</loc>
@@ -65,19 +104,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ryotaro.dev/en/posts/react-synergizing-reasoning-and-acting-in-language-models/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/en/tags/</loc>
-    <lastmod>2025-07-11T03:03:29+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/tags/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/posts/denoising-diffusion-probabilistic-models/</loc>
