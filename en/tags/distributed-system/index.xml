@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Distributed System on Blanket</title>
-    <link>https://ryotaro.dev/en/tags/distributed-system/</link>
+    <link>http://localhost:1313/en/tags/distributed-system/</link>
     <description>Recent content in Distributed System on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 07 May 2024 11:49:13 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/en/tags/distributed-system/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/en/tags/distributed-system/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Distributed GraphLab: a Framework for Machine Learning and Data Mining in the Cloud (2012)</title>
-      <link>https://ryotaro.dev/en/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/</link>
+      <link>http://localhost:1313/en/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/</link>
       <pubDate>Tue, 07 May 2024 11:49:13 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/</guid>
+      <guid>http://localhost:1313/en/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1408.2041&#34;&gt;GraphLab&lt;/a&gt; is a programming model for machine learning and data mining.&#xA;GraphLab takes a direct graph, a set of vertices, and update functions as input.&#xA;Every update function accepts a vertex and returns a set of vertices.&#xA;GraphLab selects a vertex from the set, applies a function to it, and adds the resulting set of vertices back intothe set, repeating this process until the set is empty.&#xA;GraphLab supports parallel execution of update functions on multi-processor machines.&#xA;&lt;a href=&#34;https://arxiv.org/pdf/1408.2041&#34;&gt;Distributed GraphLab&lt;/a&gt; extends GraphLab by distributing parts of a graph across machines that are memory, utilizing &lt;a href=&#34;https://lamport.azurewebsites.net/pubs/chandy.pdf&#34;&gt;Chandy-Lamport&lt;/a&gt;&amp;rsquo;s snapshot algorithm for fault tolerance.&lt;/p&gt;</description>
     </item>
   </channel>

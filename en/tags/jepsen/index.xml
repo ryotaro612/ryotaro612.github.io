@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jepsen on Blanket</title>
-    <link>https://ryotaro.dev/en/tags/jepsen/</link>
+    <link>http://localhost:1313/en/tags/jepsen/</link>
     <description>Recent content in Jepsen on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 26 Jan 2025 23:12:54 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/en/tags/jepsen/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/en/tags/jepsen/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Jepsen: A framework for distributed systems verification, with fault injection</title>
-      <link>https://ryotaro.dev/en/posts/jepsen/</link>
+      <link>http://localhost:1313/en/posts/jepsen/</link>
       <pubDate>Sun, 26 Jan 2025 23:12:54 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/jepsen/</guid>
+      <guid>http://localhost:1313/en/posts/jepsen/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;Jepsen is a Clojure testing framework for distributed systems.&#xA;A Jepsen test case defines operations on a system, expected responses to the operations, and a schedule for injecting faults to inject and the operations.&#xA;The test case executes the operations, introduces faults as scheduled, and validates whether the system&amp;rsquo;s response meets expectations.&lt;/p&gt;&#xA;&lt;p&gt;Jepsen appears to be well-regarded in the field of distributed systems.&#xA;Tests results for &lt;a href=&#34;https://jepsen.io/analyses&#34;&gt;major distributed systems&lt;/a&gt; using Jepsen are published on its official website.&#xA;Additionally, A Jepsen test result for &lt;a href=&#34;https://kubernetes.io/ja/docs/tasks/administer-cluster/configure-upgrade-etcd/&#34;&gt;etcd&lt;/a&gt;, a key-value store used within Kubernetes, is available on its &lt;a href=&#34;https://etcd.io/blog/2020/jepsen-343-results/&#34;&gt;official website&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Despite its recognition, &lt;a href=&#34;https://github.com/jepsen-io/jepsen/blob/main/doc/tutorial/index.md&#34;&gt;the tutorial of Jepsen&lt;/a&gt; wasn&amp;rsquo;t informative enough for me to learn the basic usage of Jepsen.&#xA;For instance, while the tutorial uses etcd as an example, the client library for etcd is outdated, making it impossible to execute the tutorial as instructed.&#xA;Instead, by researching Jepsen&amp;rsquo;s source code, I implemented an application with two-phase commits and a test case for it.&#xA;The implemented application and test caseare available in &lt;a href=&#34;https://github.com/ryotaro612/jepsen-tutorial-xa&#34;&gt;one of my GitHub repository&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Despite of the insufficent reference, using Jepsen to implement test cases is still more efficient than building them from scratch.&#xA;For a future reference, I will explore an advanced usage of Jepsen compared with the tutorial.&lt;/p&gt;</description>
     </item>
   </channel>

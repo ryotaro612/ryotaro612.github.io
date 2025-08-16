@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sentence Embedding on Blanket</title>
-    <link>https://ryotaro.dev/en/tags/sentence-embedding/</link>
+    <link>http://localhost:1313/en/tags/sentence-embedding/</link>
     <description>Recent content in Sentence Embedding on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 30 May 2025 14:52:18 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/en/tags/sentence-embedding/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/en/tags/sentence-embedding/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Supervised Learning of Universal Sentence Representations From Natural Language Inference Data (2017)</title>
-      <link>https://ryotaro.dev/en/posts/supervised-learning-of-universal-sentence-representations-from-natural-language-inference-data/</link>
+      <link>http://localhost:1313/en/posts/supervised-learning-of-universal-sentence-representations-from-natural-language-inference-data/</link>
       <pubDate>Fri, 30 May 2025 14:52:18 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/supervised-learning-of-universal-sentence-representations-from-natural-language-inference-data/</guid>
+      <guid>http://localhost:1313/en/posts/supervised-learning-of-universal-sentence-representations-from-natural-language-inference-data/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1705.02364&#34;&gt;Supervised Learning of Universal Sentence Representations From Natural Language Inference Data&lt;/a&gt; proposes a supervised approach to train neural networks on the Stanford Natural Language Inference (SNLI) dataset to produce general-purpose sentence embeddings applicable to a wide range of downstream tasks.&#xA;The authors evaluated seven different encoder architectures across twelve NLP tasks and found that a bidirectional LSTM with max pooling achieved the best performance.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks(2019)</title>
-      <link>https://ryotaro.dev/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</link>
+      <link>http://localhost:1313/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</link>
       <pubDate>Sat, 23 Sep 2023 10:21:03 -0400</pubDate>
-      <guid>https://ryotaro.dev/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</guid>
+      <guid>http://localhost:1313/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1908.10084&#34;&gt;Sentence-BERT&lt;/a&gt; derives semantically meaningful sentence embedding that can be compared using cosine-similarity.&#xA;&lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt; achieved new state-of-the art performance on various sentence-pair regression tasks using a cross-encoder.&#xA;A cross-encoder accepts two sentences as input to the transformer network and the target value is predicted.&#xA;Semantic textual similarity is one of the sentence-pair regression tasks.&#xA;However, this setup is often not scalable for various pair regression tasks due to many possible combinations.&#xA;The semantic search that maps each sentence to a vector space where semantically similar sentences are close alleviates the combinatorial explosion.&#xA;Sentence-BERT uses a siamese network in which the two BERT networks have tied weights such that the produced sentence embeddings can be semantically compared using cosine-similarity.&lt;/p&gt;</description>
     </item>
   </channel>

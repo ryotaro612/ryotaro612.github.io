@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Reinforcement Learning From Human Feedback on Blanket</title>
-    <link>https://ryotaro.dev/en/tags/reinforcement-learning-from-human-feedback/</link>
+    <link>http://localhost:1313/en/tags/reinforcement-learning-from-human-feedback/</link>
     <description>Recent content in Reinforcement Learning From Human Feedback on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 24 Jul 2025 03:09:28 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/en/tags/reinforcement-learning-from-human-feedback/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/en/tags/reinforcement-learning-from-human-feedback/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Training Language Models to Follow Instructions With Human Feedback (2022)</title>
-      <link>https://ryotaro.dev/en/posts/training-language-models-to-follow-instructions-with-human-feedback/</link>
+      <link>http://localhost:1313/en/posts/training-language-models-to-follow-instructions-with-human-feedback/</link>
       <pubDate>Thu, 24 Jul 2025 03:09:28 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/training-language-models-to-follow-instructions-with-human-feedback/</guid>
+      <guid>http://localhost:1313/en/posts/training-language-models-to-follow-instructions-with-human-feedback/</guid>
       <description>&lt;p&gt;Increasing the number of parameters does not inherently improve a model’s ability to follow users&amp;rsquo; intent. Large Language Models (LLMs) are typically trained to predict the next token in large-scale internet text corpora, but this objective does not explicitly encourage models to follow user instructions in a helpful and safe manner. [Training Language Models to Follow Instructions with Human Feedback](&lt;a href=&#34;https://arxiv.org/pdf/2203.02155&#34;&gt;https://arxiv.org/pdf/2203.02155&lt;/a&gt;  introduces a method for aligning models with human intent using Reinforcement Learning from Human Feedback (RLHF).&lt;/p&gt;</description>
     </item>
   </channel>

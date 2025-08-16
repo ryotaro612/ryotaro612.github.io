@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>キーワード抽出 on Blanket</title>
-    <link>https://ryotaro.dev/tags/%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89%E6%8A%BD%E5%87%BA/</link>
+    <link>http://localhost:1313/tags/%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89%E6%8A%BD%E5%87%BA/</link>
     <description>Recent content in キーワード抽出 on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 20 Jul 2019 17:49:36 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89%E6%8A%BD%E5%87%BA/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89%E6%8A%BD%E5%87%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>抄訳 TextRank: Bringing Order into Texts(2004)</title>
-      <link>https://ryotaro.dev/posts/textrank/</link>
+      <link>http://localhost:1313/posts/textrank/</link>
       <pubDate>Sat, 20 Jul 2019 17:49:36 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/textrank/</guid>
+      <guid>http://localhost:1313/posts/textrank/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;TextRankは、ドキュメントからキーワードとキーセンテンスを抽出するためのグラフベースのアルゴリズムである。&#xA;TextRankは、単語を頂点、文書をグラフとみなすことで、PageRankを応用する。&#xA;頂点の重要度を、頂点の内容のような局所的な情報ではなく、他の頂点との辺の接続関係を含むグラフ全体の大域的な情報から決定する。&#xA;TextRankは、PageRankと違い、辺ごとに重みを設定できる。&lt;/p&gt;</description>
     </item>
   </channel>

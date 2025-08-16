@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Few-Shot Learning on Blanket</title>
-    <link>https://ryotaro.dev/en/tags/few-shot-learning/</link>
+    <link>http://localhost:1313/en/tags/few-shot-learning/</link>
     <description>Recent content in Few-Shot Learning on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sat, 12 Apr 2025 14:01:19 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/en/tags/few-shot-learning/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/en/tags/few-shot-learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Language Models Are Few Shot Learners (2020)</title>
-      <link>https://ryotaro.dev/en/posts/language-models-are-few-shot-learners/</link>
+      <link>http://localhost:1313/en/posts/language-models-are-few-shot-learners/</link>
       <pubDate>Sat, 12 Apr 2025 14:01:19 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/language-models-are-few-shot-learners/</guid>
+      <guid>http://localhost:1313/en/posts/language-models-are-few-shot-learners/</guid>
       <description>&lt;p&gt;In &lt;a href=&#34;https://arxiv.org/abs/2005.14165&#34;&gt;Language Models are Few-Shot Learners&lt;/a&gt;, it is shown that increasing the number of parameters of &lt;a href=&#34;https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf&#34;&gt;GPT-2&lt;/a&gt; improves few-shot performance across various tasks.&#xA;The proposed model, GPT-3, is an autoregressive language model with 175 billion parameters.&#xA;Its architecture mirrors that of GPT-2, except that GPT-3 uses alternating dense and locally banded sparse attention patterns, similar to the &lt;a href=&#34;https://arxiv.org/pdf/1904.10509&#34;&gt;Sparse Transformer&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
   </channel>

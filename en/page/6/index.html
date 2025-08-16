@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<meta name="generator" content="Hugo 0.147.7">
+	<meta name="generator" content="Hugo 0.147.7"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
   
   <script>(function (w, d, s, l, i) {
@@ -22,12 +22,12 @@
     integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
     crossorigin="anonymous" />
   
-  <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+  <link rel="stylesheet" href="http://localhost:1313/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
   
-  <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
+  <link rel="stylesheet" href="http://localhost:1313/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
   
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/articles.min.3ceb81a62f07e7057aa63e938b7f0479d4643c093f1c72984a82a68278ddbba3.css">
+<link rel="stylesheet" href="http://localhost:1313/scss/articles.min.3ceb81a62f07e7057aa63e938b7f0479d4643c093f1c72984a82a68278ddbba3.css">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -54,14 +54,14 @@
   
   
   <header class="navigation">
-    <h2><a href="https://ryotaro.dev/en/">Blanket</a></h2>
+    <h2><a href="http://localhost:1313/en/">Blanket</a></h2>
     <nav>
       <ul>
-        <li><a href="https://ryotaro.dev/en/about">About</a></li>
-        <li><a href="https://ryotaro.dev/en/posts">Posts</a></li>
-        <li><a href="https://ryotaro.dev/en/tags">Tags</a></li>
+        <li><a href="http://localhost:1313/en/about">About</a></li>
+        <li><a href="http://localhost:1313/en/posts">Posts</a></li>
+        <li><a href="http://localhost:1313/en/tags">Tags</a></li>
         
-        <li><a href="https://ryotaro.dev/">ja</a></li>
+        <li><a href="http://localhost:1313/">ja</a></li>
         
       </ul>
       <ul>
@@ -87,7 +87,7 @@
         </li>
         
         <li>
-          <a href="https://ryotaro.dev/en/%20index.xml">
+          <a href="http://localhost:1313/en/%20index.xml">
             <i class="fas fa-rss"></i>
           </a>
         </li>
@@ -101,7 +101,138 @@
   
   
   <article>
-    <h3><a href="https://ryotaro.dev/en/posts/self_attention_with_relative_position_representations/">Self-Attention with Relative Position Representations(2018)</a></h3>
+    <h3><a href="http://localhost:1313/en/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/">A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning (2008)</a></h3>
+    <div class="summary"><p><a href="http://machinelearning.org/archive/icml2008/papers/391.pdf">A Unified Architecture for Natural Language Processing</a> is an instance of multitask learning.
+The first layer is a lookup table that stores embeddings of a fixed dictionary and size.
+The second layer is a <a href="https://www.cs.toronto.edu/~hinton/absps/waibelTDNN.pdf">Time-Delay Neural Networks</a> layer.
+It extracts features from the sentence treating it as a sequence with local structure.
+The third layer takes the maximum value for each of the output features of the second layer over time.
+The following layers are classical NN layers.
+The lookup-table is shared among the tasks, and the other layers can be task specific to each task.</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="http://localhost:1313/en/tags/multitask-learning/">
+            #Multitask Learning
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        September 16, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="http://localhost:1313/en/posts/transmission_of_information/">Transmission of Information(1927)</a></h3>
+    <div class="summary"><p>In <a href="https://monoskop.org/images/a/a6/Hartley_Ralph_VL_1928_Transmission_of_Information.pdf">Transmission of Information</a>, Hartley developed a quantitative measure of &ldquo;information&rdquo; in 1927.
+Hartley claims that information is the outcome of a selection among a finite set of possible messages.
+Shannon&rsquo;s &ldquo;A mathematical theory of communication&rdquo;, which is based in part on Hartley&rsquo;s ideas, published in 1947.
+Hartley did not model the source of information probabilistically.
+Shannon modeled the source of information as a random process.</p>
+<p>Hartley stated that information should be proportional to the number of selections for practical engineering value.
+He uses the letter \(H\) to denote the amount of information associated with \(n\) selections.
+$$
+H=Kn
+$$
+where \(K\) is a constant which depends on the number \(s\) of symbols available at each selection.
+Let us consider two systems with \(s_1, s_2, K_1, K_2\).
+We then define \(K_1, K_2\) by the condition that whenever the number of possible sequences is the same for both systems, then the amount of information is also the same for both:
+$$
+s_1^{n_1} = s_2^{n_2}
+$$
+$$
+H=K_1n_1=K_2n_2
+$$
+$$
+\frac{K_1}{\log s_1}=\frac{K_2}{\log s_2}
+$$</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="http://localhost:1313/en/tags/entropy/">
+            #Entropy
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        September 9, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="http://localhost:1313/en/posts/roberta/">RoBERTa: A Robustly Optimized BERT Pretraining Approach(2019)</a></h3>
+    <div class="summary"><p><a href="https://arxiv.org/pdf/1907.11692.pdf">RoBERTa</a>(Robusty optimized BERT approach) is an improved recipe for training <a href="https://arxiv.org/pdf/1810.04805.pdf">BERT</a> models.
+BERT uses two objectives, masked language modeling and next sequence prediction (NSP), during pretraining.
+RoBERTa uses masked language modeling only.
+The authors increased the batch size and Byte-Pair Encoding (BPE) vocabulary size.
+RobERTa is trained with byte-level BPE, which uses bytes instead of unicode characters as the base subword units.</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="http://localhost:1313/en/tags/bert/">
+            #BERT
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="http://localhost:1313/en/tags/byte-pair-encoding/">
+            #Byte Pair Encoding
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        August 27, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="http://localhost:1313/en/posts/go_to_statement_considered_harmful/">Go To Statement Considered Harmful (1968)</a></h3>
+    <div class="summary"><p>Edgar Djkstra criticized the excessive use of the go to statement in <a href="https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf">Go To Statement Considered Harmful</a>.
+While the source code is static, the process taking place under the control of the source code is dynamic.
+The programmers should aim to shorten the conceptual gap between the source code and its process to describe the progress.</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="http://localhost:1313/en/tags/early-programming/">
+            #Early Programming
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        August 26, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="http://localhost:1313/en/posts/self_attention_with_relative_position_representations/">Self-Attention with Relative Position Representations(2018)</a></h3>
     <div class="summary"><p>The authors of <a href="https://arxiv.org/pdf/1803.02155.pdf">Self-Attention with Relative Position Representations</a> presented a way of injecting relative position representations in the self-attention mechanism of the <a href="https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">Transformer</a>.
 In contrast to recurrent and convolutional neural networks, Transformer does not explicitly model position information in its structure.
 <a href="https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">The original position encoding</a> employs sine and cosine functions of different frequencies.
@@ -114,13 +245,13 @@ In contrast to absolute position representations, the relative position represen
       <ul class="tags">
         
         <li class="tag">
-          <a href="https://ryotaro.dev/en/tags/attention/">
+          <a href="http://localhost:1313/en/tags/attention/">
             #Attention
           </a>
         </li>
         
         <li class="tag">
-          <a href="https://ryotaro.dev/en/tags/transformer/">
+          <a href="http://localhost:1313/en/tags/transformer/">
             #Transformer
           </a>
         </li>
@@ -136,7 +267,7 @@ In contrast to absolute position representations, the relative position represen
   </article>
   
   <article>
-    <h3><a href="https://ryotaro.dev/en/posts/self_adjusting_binary_search_trees/">Self-Adjusting Binary Search Trees(1985)</a></h3>
+    <h3><a href="http://localhost:1313/en/posts/self_adjusting_binary_search_trees/">Self-Adjusting Binary Search Trees(1985)</a></h3>
     <div class="summary"><p><a href="https://www.cs.cmu.edu/~sleator/papers/self-adjusting.pdf">The splay tree</a>, a self-adjusting form of a binary search tree, is a binary search tree that moves an accessed node to the root after each access.
 On an \(n\)-node splay tree, accessing, inserting and deleting have an amortized time bound of \(O(\log n)\) per operation.
 In addition, for sufficiently long access sequences, splay trees are as efficient, to within a constant factor, as static optimum search trees.</p></div>
@@ -145,7 +276,7 @@ In addition, for sufficiently long access sequences, splay trees are as efficien
       <ul class="tags">
         
         <li class="tag">
-          <a href="https://ryotaro.dev/en/tags/splay-tree/">
+          <a href="http://localhost:1313/en/tags/splay-tree/">
             #Splay Tree
           </a>
         </li>
@@ -161,7 +292,7 @@ In addition, for sufficiently long access sequences, splay trees are as efficien
   </article>
   
   <article>
-    <h3><a href="https://ryotaro.dev/en/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/">Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer(2020)</a></h3>
+    <h3><a href="http://localhost:1313/en/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/">Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer(2020)</a></h3>
     <div class="summary"><p>The authors of <a href="https://arxiv.org/abs/1910.10683">Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer</a> performed experiments with <em>T</em>ext-<em>t</em>o-<em>T</em>ext <em>T</em>ransfer <em>T</em>ransformer(T5), a unified framework for NLP.
 The basic idea underlying T5 is to treat various NLP problems as taking text as input and producing new text as output.
 Their goal is to explore general language learning abilities instead of providing new methods.
@@ -174,7 +305,7 @@ They used heuristic for cleaning up Common Crawl web-extracted text, and used <c
       <ul class="tags">
         
         <li class="tag">
-          <a href="https://ryotaro.dev/en/tags/transformer/">
+          <a href="http://localhost:1313/en/tags/transformer/">
             #Transformer
           </a>
         </li>
@@ -190,7 +321,7 @@ They used heuristic for cleaning up Common Crawl web-extracted text, and used <c
   </article>
   
   <article>
-    <h3><a href="https://ryotaro.dev/en/posts/catalan_number/">Catalan Numbers(2016)</a></h3>
+    <h3><a href="http://localhost:1313/en/posts/catalan_number/">Catalan Numbers(2016)</a></h3>
     <div class="summary"><p>The Catalan numbers are a sequence of natural numbers that occur in various problems in combinatorial mathematics.
 For example, the number of expressions containing \(n\) valid pairs of parentheses is the \(n\)th Catalan number.
 Suppose you have a grid of \(n \times n\) squares, the \(n\)th Catalan number represents the number of paths with a length of \(2n\) that lead from the upper left corner to the lower right corner without intersecting the diagonal dotted line running from the upper left to the lower right.
@@ -200,7 +331,7 @@ Later in the page, we will derive explicit formulas for the Catalan numbers in t
       <ul class="tags">
         
         <li class="tag">
-          <a href="https://ryotaro.dev/en/tags/catalan-numbers/">
+          <a href="http://localhost:1313/en/tags/catalan-numbers/">
             #Catalan Numbers
           </a>
         </li>
@@ -216,7 +347,7 @@ Later in the page, we will derive explicit formulas for the Catalan numbers in t
   </article>
   
   <article>
-    <h3><a href="https://ryotaro.dev/en/posts/layer_normalization/">Layer Normalization (2016)</a></h3>
+    <h3><a href="http://localhost:1313/en/posts/layer_normalization/">Layer Normalization (2016)</a></h3>
     <div class="summary"><p>Layer Normalization, introduced in the 2016 paper <a href="https://arxiv.org/abs/1607.06450">Layer Normalization</a>, is a technique used to normalize the summed inputs to the neurons in a layer by using the mean and standard deviation of those inputs within that layer.</p>
 <p><a href="https://arxiv.org/abs/1502.03167">Batch Normalization</a> uses the mean and the standard deviation of the summed inputs of a neuron in a mini-batch to normalize the summed inputs to it.
 While Batch Normalization can accelerate training, it depends on mini-batch size and is challenging to implement in RNNs.</p></div>
@@ -225,7 +356,7 @@ While Batch Normalization can accelerate training, it depends on mini-batch size
       <ul class="tags">
         
         <li class="tag">
-          <a href="https://ryotaro.dev/en/tags/layer-normalization/">
+          <a href="http://localhost:1313/en/tags/layer-normalization/">
             #Layer Normalization
           </a>
         </li>
@@ -235,6 +366,38 @@ While Batch Normalization can accelerate training, it depends on mini-batch size
       <span class="date">
         
         June 17, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="http://localhost:1313/en/posts/bert/">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)</a></h3>
+    <div class="summary"><p><a href="https://arxiv.org/pdf/1810.04805">BERT</a>, <em>B</em>idirectional <em>E</em>ncoder <em>R</em>epresentations from <em>T</em>ransformers, is a language model based on the Transformer encoder architecture.
+During pre-training, BERT learns bidirectional representations from unlabeled text using two tasks: Masked Language Modeling (MLM) and Next Sentence Prediction (NSP).
+MLM involves predicting randomly masked tokens in a sequence using surrounding context.
+NSP trains the model to predict whether the second sentence in a pair follows the first in the original document.</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="http://localhost:1313/en/tags/large-language-model/">
+            #Large Language Model
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="http://localhost:1313/en/tags/bert/">
+            #BERT
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 14, 2019
         
       </span>
     </div>

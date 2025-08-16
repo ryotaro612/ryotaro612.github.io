@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>近似最近傍探索 on Blanket</title>
-    <link>https://ryotaro.dev/tags/%E8%BF%91%E4%BC%BC%E6%9C%80%E8%BF%91%E5%82%8D%E6%8E%A2%E7%B4%A2/</link>
+    <link>http://localhost:1313/tags/%E8%BF%91%E4%BC%BC%E6%9C%80%E8%BF%91%E5%82%8D%E6%8E%A2%E7%B4%A2/</link>
     <description>Recent content in 近似最近傍探索 on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Mon, 01 Jan 2024 22:21:27 -0500</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/%E8%BF%91%E4%BC%BC%E6%9C%80%E8%BF%91%E5%82%8D%E6%8E%A2%E7%B4%A2/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E8%BF%91%E4%BC%BC%E6%9C%80%E8%BF%91%E5%82%8D%E6%8E%A2%E7%B4%A2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Billion Scale Similarity Search With GPUs (2017)</title>
-      <link>https://ryotaro.dev/posts/billion-scale-similarity-search-with-gpus/</link>
+      <link>http://localhost:1313/posts/billion-scale-similarity-search-with-gpus/</link>
       <pubDate>Mon, 01 Jan 2024 22:21:27 -0500</pubDate>
-      <guid>https://ryotaro.dev/posts/billion-scale-similarity-search-with-gpus/</guid>
+      <guid>http://localhost:1313/posts/billion-scale-similarity-search-with-gpus/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1702.08734&#34;&gt;Billion-scale-similarity search with GPUs&lt;/a&gt;は、&lt;a href=&#34;https://inria.hal.science/inria-00514462v2/document&#34;&gt;IVFADC&lt;/a&gt;による量子化と&lt;a href=&#34;https://www.cs.kent.edu/~batcher/sort.pdf&#34;&gt;Batcherのバイトニックソート&lt;/a&gt;を利用したGPUで実行するL2ノルムの近似最近傍探索である。&#xA;実装は、OSSの&lt;a href=&#34;https://github.com/facebookresearch/faiss&#34;&gt;faiss&lt;/a&gt;として公開されている。&lt;/p&gt;&#xA;&lt;!-- クエリの分散表現である密なベクトルの最も近傍にある\\(k\\)個のデータベースあるベクトルを近似的に求める。 --&gt;</description>
     </item>
   </channel>

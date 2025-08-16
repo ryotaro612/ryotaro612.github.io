@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Conflict-Free Replicated Data Types on Blanket</title>
-    <link>https://ryotaro.dev/en/tags/conflict-free-replicated-data-types/</link>
+    <link>http://localhost:1313/en/tags/conflict-free-replicated-data-types/</link>
     <description>Recent content in Conflict-Free Replicated Data Types on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 31 Dec 2023 14:31:58 -0500</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/en/tags/conflict-free-replicated-data-types/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/en/tags/conflict-free-replicated-data-types/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Conflict-free Replicated Data Types (2011)</title>
-      <link>https://ryotaro.dev/en/posts/conflict-free-replicated-data-types/</link>
+      <link>http://localhost:1313/en/posts/conflict-free-replicated-data-types/</link>
       <pubDate>Sun, 31 Dec 2023 14:31:58 -0500</pubDate>
-      <guid>https://ryotaro.dev/en/posts/conflict-free-replicated-data-types/</guid>
+      <guid>http://localhost:1313/en/posts/conflict-free-replicated-data-types/</guid>
       <description>&lt;p&gt;In a distributed system with replicated objects distributed across processes interconnected by an asynchronous network, updating a replica without synchronization can lead to conflicts when the update is sent to other replicas.&#xA;&lt;a href=&#34;https://pages.lip6.fr/Marc.Shapiro/papers/RR-7687.pdf&#34;&gt;Conflict-free Replicated Data Types&lt;/a&gt; (CRDTs) are data structures whose states form a join semilattice and monotonically non-decreasing across updates.&#xA;The replicas of CRDTs that have delivered the same updates eventually reach the same state if clents stop submitting updates.&lt;/p&gt;</description>
     </item>
   </channel>

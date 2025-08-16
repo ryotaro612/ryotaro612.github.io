@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>型理論 on Blanket</title>
-    <link>https://ryotaro.dev/tags/%E5%9E%8B%E7%90%86%E8%AB%96/</link>
+    <link>http://localhost:1313/tags/%E5%9E%8B%E7%90%86%E8%AB%96/</link>
     <description>Recent content in 型理論 on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Mon, 30 Dec 2024 22:45:30 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/%E5%9E%8B%E7%90%86%E8%AB%96/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E5%9E%8B%E7%90%86%E8%AB%96/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>型理論のはじまり</title>
-      <link>https://ryotaro.dev/posts/origin-of-type-theory/</link>
+      <link>http://localhost:1313/posts/origin-of-type-theory/</link>
       <pubDate>Mon, 30 Dec 2024 22:45:30 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/origin-of-type-theory/</guid>
+      <guid>http://localhost:1313/posts/origin-of-type-theory/</guid>
       <description>&lt;p&gt;型理論の起源はラッセルのパラドクスにある。&#xA;ただし、厳密な起源となる出来事は何かという問いになると、意見は分かれると思う。&#xA;名前の通り、ラッセルのパラドクスはラッセルが見つけたものだが、集合論を確立したカントールも同時期に独立して同等のパラドクスを発見した。&#xA;またラッセルとフレーゲの往復書簡の中で、フレーゲは、彼の概念記法における述語は述語を引数にとらないと回答した。&#xA;ラッセルが概念記法の要素の階層関係を発展させてパラドクスの解消を試みたことを考えれば、フレーゲの述語論理を型理論の起源とみなすこともできるだろう。&lt;/p&gt;</description>
     </item>
   </channel>

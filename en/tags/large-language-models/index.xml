@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Large Language Models on Blanket</title>
-    <link>https://ryotaro.dev/en/tags/large-language-models/</link>
+    <link>http://localhost:1313/en/tags/large-language-models/</link>
     <description>Recent content in Large Language Models on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 24 Jul 2025 03:09:28 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/en/tags/large-language-models/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/en/tags/large-language-models/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Training Language Models to Follow Instructions With Human Feedback (2022)</title>
-      <link>https://ryotaro.dev/en/posts/training-language-models-to-follow-instructions-with-human-feedback/</link>
+      <link>http://localhost:1313/en/posts/training-language-models-to-follow-instructions-with-human-feedback/</link>
       <pubDate>Thu, 24 Jul 2025 03:09:28 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/training-language-models-to-follow-instructions-with-human-feedback/</guid>
+      <guid>http://localhost:1313/en/posts/training-language-models-to-follow-instructions-with-human-feedback/</guid>
       <description>&lt;p&gt;Increasing the number of parameters does not inherently improve a model’s ability to follow users&amp;rsquo; intent. Large Language Models (LLMs) are typically trained to predict the next token in large-scale internet text corpora, but this objective does not explicitly encourage models to follow user instructions in a helpful and safe manner. [Training Language Models to Follow Instructions with Human Feedback](&lt;a href=&#34;https://arxiv.org/pdf/2203.02155&#34;&gt;https://arxiv.org/pdf/2203.02155&lt;/a&gt;  introduces a method for aligning models with human intent using Reinforcement Learning from Human Feedback (RLHF).&lt;/p&gt;</description>
     </item>
     <item>
       <title>REACT: SYNERGIZING REASONING AND ACTING IN LANGUAGE MODELS (2023)</title>
-      <link>https://ryotaro.dev/en/posts/react-synergizing-reasoning-and-acting-in-language-models/</link>
+      <link>http://localhost:1313/en/posts/react-synergizing-reasoning-and-acting-in-language-models/</link>
       <pubDate>Fri, 11 Jul 2025 03:03:29 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/react-synergizing-reasoning-and-acting-in-language-models/</guid>
+      <guid>http://localhost:1313/en/posts/react-synergizing-reasoning-and-acting-in-language-models/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/2210.03629&#34;&gt;ReAct (Synergizing &lt;em&gt;Re&lt;/em&gt;asoning + &lt;em&gt;Act&lt;/em&gt;ing)&lt;/a&gt; is a prompting strategy that enables large language models (LLMs) to generate reasoning traces and actions in an interleaved manner, allowing them to more effectively combine thought and actions.&#xA;ReAct provides LLMs with reasoning traces that guide their actions.&#xA;Additionally, it allows models to incorporate external knowledge obtained through actions into their reasoning process.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Scaling Instruction Finetuned Language Models (2022)</title>
-      <link>https://ryotaro.dev/en/posts/scaling-instruction-finetuned-language-models/</link>
+      <link>http://localhost:1313/en/posts/scaling-instruction-finetuned-language-models/</link>
       <pubDate>Wed, 07 May 2025 02:41:24 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/scaling-instruction-finetuned-language-models/</guid>
+      <guid>http://localhost:1313/en/posts/scaling-instruction-finetuned-language-models/</guid>
       <description>&lt;p&gt;Instruction finetuning is a technique for enhancing the zero-shot performance of large language models (LLMs). The seminal work, &lt;a href=&#34;https://arxiv.org/pdf/2109.01652&#34;&gt;Finetuned Language Models Are Zero-Shot Learners&lt;/a&gt;, refers to this method as instruction tuning.&#xA;Building on this, &lt;a href=&#34;https://arxiv.org/abs/2210.11416&#34;&gt;Scaling Instruction-Finetuned Language Models&lt;/a&gt; explored scaling the number of tasks, model sizes, and the incorporation of chain-of-thought (CoT) data. Their findings demonstrate that instruction finetuning can significantly improve LLM performance across a wide range of settings.&lt;/p&gt;</description>
     </item>
   </channel>

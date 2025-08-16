@@ -2,32 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Large Language Model on Blanket</title>
-    <link>https://ryotaro.dev/en/tags/large-language-model/</link>
+    <link>http://localhost:1313/en/tags/large-language-model/</link>
     <description>Recent content in Large Language Model on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sat, 07 Jun 2025 19:00:00 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/en/tags/large-language-model/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/en/tags/large-language-model/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Language Models Are Few Shot Learners (2020)</title>
-      <link>https://ryotaro.dev/en/posts/language-models-are-few-shot-learners/</link>
+      <link>http://localhost:1313/en/posts/language-models-are-few-shot-learners/</link>
       <pubDate>Sat, 12 Apr 2025 14:01:19 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/language-models-are-few-shot-learners/</guid>
+      <guid>http://localhost:1313/en/posts/language-models-are-few-shot-learners/</guid>
       <description>&lt;p&gt;In &lt;a href=&#34;https://arxiv.org/abs/2005.14165&#34;&gt;Language Models are Few-Shot Learners&lt;/a&gt;, it is shown that increasing the number of parameters of &lt;a href=&#34;https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf&#34;&gt;GPT-2&lt;/a&gt; improves few-shot performance across various tasks.&#xA;The proposed model, GPT-3, is an autoregressive language model with 175 billion parameters.&#xA;Its architecture mirrors that of GPT-2, except that GPT-3 uses alternating dense and locally banded sparse attention patterns, similar to the &lt;a href=&#34;https://arxiv.org/pdf/1904.10509&#34;&gt;Sparse Transformer&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>LLaMA Open and Efficient Foundation Language Models (2023)</title>
-      <link>https://ryotaro.dev/en/posts/llama-open-and-efficient-foundation-language-models/</link>
+      <link>http://localhost:1313/en/posts/llama-open-and-efficient-foundation-language-models/</link>
       <pubDate>Thu, 14 Mar 2024 14:41:48 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/llama-open-and-efficient-foundation-language-models/</guid>
+      <guid>http://localhost:1313/en/posts/llama-open-and-efficient-foundation-language-models/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/2001.08361.pdf&#34;&gt;Scaling Laws for Neural Language Models&lt;/a&gt; refers to empirical observations that model test performance has a power-law relationship with each of the three scale factors: the number of model parameters, the dataset size in tokens, and the amount of compute used for training, when not bottlenecked by the other two.&#xA;&lt;a href=&#34;https://arxiv.org/abs/2203.15556&#34;&gt;Hoffmann et al. (2022)&lt;/a&gt; investigated the bottleneck and found that, given a fixed FLOPs budget, the number of model parameters and the training tokens should be scaled equally to minimize pre-training loss.&#xA;They trained a predicted compute-optimal model, Chinchilla, with 80B parameters, at the same compute budget as Gopher (280B) and with 4 times more data.&#xA;Chinchilla outperformed Gopher and GPT-3 (175B) on a large range of downstream evaluation tasks.&lt;/p&gt;</description>
     </item>
     <item>
       <title>LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS (2021)</title>
-      <link>https://ryotaro.dev/en/posts/lora-low-rank-adaptation-of-large-language-models/</link>
+      <link>http://localhost:1313/en/posts/lora-low-rank-adaptation-of-large-language-models/</link>
       <pubDate>Sat, 18 Nov 2023 12:21:20 -0500</pubDate>
-      <guid>https://ryotaro.dev/en/posts/lora-low-rank-adaptation-of-large-language-models/</guid>
+      <guid>http://localhost:1313/en/posts/lora-low-rank-adaptation-of-large-language-models/</guid>
       <description>&lt;p&gt;LoRA is motivated by the findings of &lt;a href=&#34;https://arxiv.org/pdf/1804.08838.pdf&#34;&gt;Li et al. (2018)&lt;/a&gt; and &lt;a href=&#34;https://arxiv.org/pdf/2012.13255.pdf&#34;&gt;Aghajanyan et al. (2020)&lt;/a&gt;, which show that overparameterized models tend to converge to solutions that lie within a low-dimensional intrinsic subspace.&lt;/p&gt;&#xA;&lt;p&gt;The intrinsic dimension refers to the minimum number of trainable parameters needed to reach satisfactory performance on a given task.&lt;/p&gt;&#xA;&lt;p&gt;LoRA introduces low-rank adaptation by decomposing the weight matrices in dense layers. Instead of fine-tuning all parameters of a pre-trained model, LoRA freezes the original weights and learns two low-rank matrices during training.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)</title>
+      <link>http://localhost:1313/en/posts/bert/</link>
+      <pubDate>Sat, 14 Dec 2019 17:39:09 +0900</pubDate>
+      <guid>http://localhost:1313/en/posts/bert/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1810.04805&#34;&gt;BERT&lt;/a&gt;, &lt;em&gt;B&lt;/em&gt;idirectional &lt;em&gt;E&lt;/em&gt;ncoder &lt;em&gt;R&lt;/em&gt;epresentations from &lt;em&gt;T&lt;/em&gt;ransformers, is a language model based on the Transformer encoder architecture.&#xA;During pre-training, BERT learns bidirectional representations from unlabeled text using two tasks: Masked Language Modeling (MLM) and Next Sentence Prediction (NSP).&#xA;MLM involves predicting randomly masked tokens in a sequence using surrounding context.&#xA;NSP trains the model to predict whether the second sentence in a pair follows the first in the original document.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

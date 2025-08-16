@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hash Function on Blanket</title>
-    <link>https://ryotaro.dev/tags/hash-function/</link>
+    <link>http://localhost:1313/tags/hash-function/</link>
     <description>Recent content in Hash Function on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 10 Jun 2023 17:32:42 -0400</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/hash-function/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/hash-function/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Universal Classes of Hash Functions(1977)</title>
-      <link>https://ryotaro.dev/posts/universal_classes_of_hash_functions/</link>
+      <link>http://localhost:1313/posts/universal_classes_of_hash_functions/</link>
       <pubDate>Sat, 10 Jun 2023 17:32:42 -0400</pubDate>
-      <guid>https://ryotaro.dev/posts/universal_classes_of_hash_functions/</guid>
+      <guid>http://localhost:1313/posts/universal_classes_of_hash_functions/</guid>
       <description>&lt;p&gt;値の保存と参照からなる任意のリクエストの系列を、系列長の時間計算量で処理できるハッシュ関数と連想配列を示す。&#xA;求めるハッシュ関数の集合があるとき、各ハッシュ関数の時間計算量の平均がリクエストの系列長に等しくなる。&lt;/p&gt;</description>
     </item>
   </channel>

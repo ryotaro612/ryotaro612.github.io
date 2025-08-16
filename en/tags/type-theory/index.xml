@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Type Theory on Blanket</title>
-    <link>https://ryotaro.dev/en/tags/type-theory/</link>
+    <link>http://localhost:1313/en/tags/type-theory/</link>
     <description>Recent content in Type Theory on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 30 Dec 2024 22:45:30 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/en/tags/type-theory/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/en/tags/type-theory/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Origins of Type Theory</title>
-      <link>https://ryotaro.dev/en/posts/origin-of-type-theory/</link>
+      <link>http://localhost:1313/en/posts/origin-of-type-theory/</link>
       <pubDate>Mon, 30 Dec 2024 22:45:30 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/origin-of-type-theory/</guid>
+      <guid>http://localhost:1313/en/posts/origin-of-type-theory/</guid>
       <description>&lt;p&gt;Type theory began as an effort to resolve Russell&amp;rsquo;s Paradox, an issue discovered by Bertrand Russell.&#xA;The precise events that mark the origin of type theory can be a matter of debate.&#xA;Cantor, who developed set theory, independently discovered a similar paradox around the same time. In correspondence with Russell, Frege replied that in his conceptual notation, predicates do not take other predicates as arguments.&#xA;Considering Russell&amp;rsquo;s approach that employs the hierarchical elements in the conceptual notation to resolve the paradox, one might argue that Frege&amp;rsquo;s predicate logic can be seen as an origin of type theory.&lt;/p&gt;</description>
     </item>
   </channel>

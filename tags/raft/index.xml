@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Raft on Blanket</title>
-    <link>https://ryotaro.dev/tags/raft/</link>
+    <link>http://localhost:1313/tags/raft/</link>
     <description>Recent content in Raft on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Mon, 09 Mar 2020 02:17:22 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/raft/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/raft/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>In Search of an Understandable Consensus Algorithm (2014)</title>
-      <link>https://ryotaro.dev/posts/raft/</link>
+      <link>http://localhost:1313/posts/raft/</link>
       <pubDate>Mon, 09 Mar 2020 02:17:22 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/raft/</guid>
+      <guid>http://localhost:1313/posts/raft/</guid>
       <description>&lt;p&gt;コンセンサスアルゴリズムRaftを提案した論文である。&#xA;Raftは、Multi Paxosと同様の実行結果をもたらす。&#xA;実行するコマンドのログをサーバ間で交換することで、状態を同期し、サーバの一部が落ちてもシステムを継続することができる。&lt;/p&gt;</description>
     </item>
   </channel>

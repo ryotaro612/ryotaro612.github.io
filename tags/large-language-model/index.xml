@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Large Language Model on Blanket</title>
-    <link>https://ryotaro.dev/tags/large-language-model/</link>
+    <link>http://localhost:1313/tags/large-language-model/</link>
     <description>Recent content in Large Language Model on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 07 Jun 2025 19:00:00 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/large-language-model/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/large-language-model/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Language Models Are Few Shot Learners (2020)</title>
-      <link>https://ryotaro.dev/posts/language-models-are-few-shot-learners/</link>
+      <link>http://localhost:1313/posts/language-models-are-few-shot-learners/</link>
       <pubDate>Sat, 12 Apr 2025 14:01:19 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/language-models-are-few-shot-learners/</guid>
+      <guid>http://localhost:1313/posts/language-models-are-few-shot-learners/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/2005.14165&#34;&gt;Language Models are Few-Shot Learners&lt;/a&gt;は、Few-shot learningで学習したGPT-3とパラメタ数の少ないファインチューニングしたモデルのタスク処理を比較し、パラメタ数を大幅に増やすことでも予測性能を向上できることを示した。&#xA;GPT-3のパラメタ数は1750億であり、その数は、比較対象のファインチューニングされたモデルよりも10倍ほど大きい。&#xA;GPT-3のネットワークアーキテクチャは&lt;a href=&#34;https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf&#34;&gt;GPT-2&lt;/a&gt;と大きく変わらないが、&lt;a href=&#34;https://arxiv.org/pdf/1904.10509&#34;&gt;Sparse Transformer&lt;/a&gt;に似た注意機構を導入したところが異なる。&lt;/p&gt;</description>
     </item>
     <item>
       <title>LLaMA Open and Efficient Foundation Language Models (2023)</title>
-      <link>https://ryotaro.dev/posts/llama-open-and-efficient-foundation-language-models/</link>
+      <link>http://localhost:1313/posts/llama-open-and-efficient-foundation-language-models/</link>
       <pubDate>Thu, 14 Mar 2024 14:41:45 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/llama-open-and-efficient-foundation-language-models/</guid>
+      <guid>http://localhost:1313/posts/llama-open-and-efficient-foundation-language-models/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/2001.08361.pdf&#34;&gt;スケーリング則&lt;/a&gt;によれば、&lt;a href=&#34;https://arxiv.org/abs/1706.03762&#34;&gt;Transformer&lt;/a&gt;型モデルのテストデータに対する交差エントロピーの損失は、のこり2つの要素がボトルネックにならないかぎり、パラメタ数、データ量、訓練時間とべき乗の関係にある。&#xA;パラメタをふやすほど損失を下げることができる。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/2203.15556&#34;&gt;Hoffmann et al. (2022)&lt;/a&gt; は、訓練に使えるFlop数が一定のときに、事前学習時の損失を効果的に下げるには、訓練時に参照するトークン数、パラメタ数を等しい比率でスケールすべきと結論づけた。&#xA;実験のために開発されたパラメタ数70BのモデルChinchillaはパラメタ数175BのGPT-3の性能を上回った。&lt;/p&gt;&#xA;&lt;p&gt;しかし、訓練時の損失を目標まで下げるまでにかかるFlop数が少ないモデルほど、推論時もプロセッサの利用効率がよいとはかぎらない。&#xA;たとえば、パラメタ数の大きいモデルが小さいモデルよりも高いプロセッサの利用効率で訓練時の損失を目標以下にできても、推論に必要なFlop数はパラメタ数が多いモデルのほうが大きい。&lt;/p&gt;</description>
     </item>
     <item>
       <title>LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS (2021)</title>
-      <link>https://ryotaro.dev/posts/lora-low-rank-adaptation-of-large-language-models/</link>
+      <link>http://localhost:1313/posts/lora-low-rank-adaptation-of-large-language-models/</link>
       <pubDate>Sat, 18 Nov 2023 12:21:20 -0500</pubDate>
-      <guid>https://ryotaro.dev/posts/lora-low-rank-adaptation-of-large-language-models/</guid>
+      <guid>http://localhost:1313/posts/lora-low-rank-adaptation-of-large-language-models/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1804.08838.pdf&#34;&gt;Li et al. (2018)&lt;/a&gt;と&lt;a href=&#34;https://arxiv.org/pdf/2012.13255.pdf&#34;&gt;Aghajanyan et al. (2020)&lt;/a&gt;は、Large Language Models (LLM) のファインチューニングにおいて、下流タスクに必要なパラメータ数はLLMのパラメタ数よりもはるかに少ないと主張する。&#xA;&lt;a href=&#34;https://arxiv.org/pdf/2106.09685.pdf&#34;&gt;LoRA&lt;/a&gt;は、この仮説を支持し、ファインチューニングを避け、LLMの全結合層と線形結合するための2つの小さい行列を導入する。&#xA;LLMの重みを\(W_0\in\mathbb{R}^{d\times k}\) とすると、\(W_0+BA\ (B\in\mathbb{R}^{d\times r}, A\in\mathbb{R}^{r\times k}, r \ll\min (d, k))\)が下流タスクに最適な重みに近づくように、ファインチューニングにかわって\(W_0\)を更新せず\(B,\ A\)のみを更新する。&#xA;\(r\)が\(d, k\)よりも小さいので、\(W_0\)を更新するファインチューニングよりも学習時間は短い。&#xA;また、複数の下流タスクを入力に適用する場合、\(W_0x\)を共有できるので、推論に必要な計算も\(W_0\)を更新するファインチューニングより少ない。&lt;/p&gt;</description>
     </item>
     <item>
       <title>BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)</title>
-      <link>https://ryotaro.dev/posts/bert/</link>
+      <link>http://localhost:1313/posts/bert/</link>
       <pubDate>Sat, 14 Dec 2019 17:39:09 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/bert/</guid>
+      <guid>http://localhost:1313/posts/bert/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1810.04805&#34;&gt;BERT&lt;/a&gt;は、Bidirectional Encoder Representations from Transformersの略称で、&lt;a href=&#34;https://arxiv.org/pdf/1706.03762.pdf&#34;&gt;Transformer&lt;/a&gt;のエンコーダー部で、順方向と逆方向のテキストからテキストの分散表現を生成する。&#xA;事前学習では、周辺のトークンからマスクされたトークンを推定する教師なしタスクのMaksed Language Model (MLM) と2つの文が隣接した箇所から抜きだされたかを判定するタスクのNext Sentence Prediction (NSP) でモデルを訓練する。&lt;/p&gt;</description>
     </item>
   </channel>

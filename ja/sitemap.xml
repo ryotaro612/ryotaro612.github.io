@@ -2,2317 +2,2427 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ryotaro.dev/</loc>
-    <lastmod>2025-07-24T03:09:28+09:00</lastmod>
+    <loc>http://localhost:1313/posts/amazon.com-recommendations-item-to-item-collaborative-filtering/</loc>
+    <lastmod>2025-08-16T14:29:07+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/"
+                href="http://localhost:1313/en/posts/amazon.com-recommendations-item-to-item-collaborative-filtering/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/"
+                href="http://localhost:1313/posts/amazon.com-recommendations-item-to-item-collaborative-filtering/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/large-language-models/</loc>
-    <lastmod>2025-07-24T03:09:28+09:00</lastmod>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-08-16T14:29:07+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/large-language-models/"
+                href="http://localhost:1313/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/large-language-models/"
+                href="http://localhost:1313/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/</loc>
-    <lastmod>2025-07-24T03:09:28+09:00</lastmod>
+    <loc>http://localhost:1313/tags/collaborative-filtering/</loc>
+    <lastmod>2025-08-16T14:29:07+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/"
+                href="http://localhost:1313/en/tags/collaborative-filtering/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/"
+                href="http://localhost:1313/tags/collaborative-filtering/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/reinforcement-learning-from-human-feedback/</loc>
-    <lastmod>2025-07-24T03:09:28+09:00</lastmod>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-08-16T14:29:07+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/reinforcement-learning-from-human-feedback/"
+                href="http://localhost:1313/en/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/reinforcement-learning-from-human-feedback/"
+                href="http://localhost:1313/posts/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/</loc>
-    <lastmod>2025-07-24T03:09:28+09:00</lastmod>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-08-16T14:29:07+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/"
+                href="http://localhost:1313/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/"
+                href="http://localhost:1313/tags/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/training-language-models-to-follow-instructions-with-human-feedback/</loc>
-    <lastmod>2025-07-24T03:09:28+09:00</lastmod>
+    <loc>http://localhost:1313/tags/mixture-of-experts/</loc>
+    <lastmod>2025-08-01T22:36:18+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/training-language-models-to-follow-instructions-with-human-feedback/"
+                href="http://localhost:1313/en/tags/mixture-of-experts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/training-language-models-to-follow-instructions-with-human-feedback/"
+                href="http://localhost:1313/tags/mixture-of-experts/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/prompt-engineering/</loc>
+    <loc>http://localhost:1313/posts/outrageously-large-neural-networks-the-sparsely-gated-mixture-of-expert-layer/</loc>
+    <lastmod>2025-08-01T22:36:18+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/posts/outrageously-large-neural-networks-the-sparsely-gated-mixture-of-expert-layer/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="http://localhost:1313/posts/outrageously-large-neural-networks-the-sparsely-gated-mixture-of-expert-layer/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/tags/large-language-models/</loc>
+    <lastmod>2025-07-24T03:09:28+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/tags/large-language-models/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="http://localhost:1313/tags/large-language-models/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/tags/reinforcement-learning-from-human-feedback/</loc>
+    <lastmod>2025-07-24T03:09:28+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/tags/reinforcement-learning-from-human-feedback/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="http://localhost:1313/tags/reinforcement-learning-from-human-feedback/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/posts/training-language-models-to-follow-instructions-with-human-feedback/</loc>
+    <lastmod>2025-07-24T03:09:28+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/posts/training-language-models-to-follow-instructions-with-human-feedback/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="http://localhost:1313/posts/training-language-models-to-follow-instructions-with-human-feedback/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/tags/prompt-engineering/</loc>
     <lastmod>2025-07-11T03:03:29+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/prompt-engineering/"
+                href="http://localhost:1313/en/tags/prompt-engineering/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/prompt-engineering/"
+                href="http://localhost:1313/tags/prompt-engineering/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/react-synergizing-reasoning-and-acting-in-language-models/</loc>
+    <loc>http://localhost:1313/posts/react-synergizing-reasoning-and-acting-in-language-models/</loc>
     <lastmod>2025-07-11T03:03:29+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/react-synergizing-reasoning-and-acting-in-language-models/"
+                href="http://localhost:1313/en/posts/react-synergizing-reasoning-and-acting-in-language-models/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/react-synergizing-reasoning-and-acting-in-language-models/"
+                href="http://localhost:1313/posts/react-synergizing-reasoning-and-acting-in-language-models/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/denoising-diffusion-probabilistic-models/</loc>
+    <loc>http://localhost:1313/posts/denoising-diffusion-probabilistic-models/</loc>
     <lastmod>2025-06-15T16:29:31+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/denoising-diffusion-probabilistic-models/"
+                href="http://localhost:1313/en/posts/denoising-diffusion-probabilistic-models/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/denoising-diffusion-probabilistic-models/"
+                href="http://localhost:1313/posts/denoising-diffusion-probabilistic-models/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/diffusion-model/</loc>
+    <loc>http://localhost:1313/tags/diffusion-model/</loc>
     <lastmod>2025-06-15T16:29:31+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/diffusion-model/"
+                href="http://localhost:1313/en/tags/diffusion-model/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/diffusion-model/"
+                href="http://localhost:1313/tags/diffusion-model/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/sentence-embedding/</loc>
+    <loc>http://localhost:1313/tags/sentence-embedding/</loc>
     <lastmod>2025-05-30T14:52:18+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/sentence-embedding/"
+                href="http://localhost:1313/en/tags/sentence-embedding/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/sentence-embedding/"
+                href="http://localhost:1313/tags/sentence-embedding/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/supervised-learning-of-universal-sentence-representations-from-natural-language-inference-data/</loc>
+    <loc>http://localhost:1313/posts/supervised-learning-of-universal-sentence-representations-from-natural-language-inference-data/</loc>
     <lastmod>2025-05-30T14:52:18+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/supervised-learning-of-universal-sentence-representations-from-natural-language-inference-data/"
+                href="http://localhost:1313/en/posts/supervised-learning-of-universal-sentence-representations-from-natural-language-inference-data/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/supervised-learning-of-universal-sentence-representations-from-natural-language-inference-data/"
+                href="http://localhost:1313/posts/supervised-learning-of-universal-sentence-representations-from-natural-language-inference-data/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/instruction-finetuning/</loc>
+    <loc>http://localhost:1313/tags/instruction-finetuning/</loc>
     <lastmod>2025-05-07T02:41:24+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/instruction-finetuning/"
+                href="http://localhost:1313/en/tags/instruction-finetuning/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/instruction-finetuning/"
+                href="http://localhost:1313/tags/instruction-finetuning/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/scaling-instruction-finetuned-language-models/</loc>
+    <loc>http://localhost:1313/posts/scaling-instruction-finetuned-language-models/</loc>
     <lastmod>2025-05-07T02:41:24+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/scaling-instruction-finetuned-language-models/"
+                href="http://localhost:1313/en/posts/scaling-instruction-finetuned-language-models/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/scaling-instruction-finetuned-language-models/"
+                href="http://localhost:1313/posts/scaling-instruction-finetuned-language-models/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/open-domain-questions/</loc>
+    <loc>http://localhost:1313/tags/open-domain-questions/</loc>
     <lastmod>2025-04-26T13:49:53+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/open-domain-questions/"
+                href="http://localhost:1313/en/tags/open-domain-questions/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/open-domain-questions/"
+                href="http://localhost:1313/tags/open-domain-questions/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/reading-wikipedia-to-answer-open-domain-questions/</loc>
+    <loc>http://localhost:1313/posts/reading-wikipedia-to-answer-open-domain-questions/</loc>
     <lastmod>2025-04-26T13:49:53+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/reading-wikipedia-to-answer-open-domain-questions/"
+                href="http://localhost:1313/en/posts/reading-wikipedia-to-answer-open-domain-questions/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/reading-wikipedia-to-answer-open-domain-questions/"
+                href="http://localhost:1313/posts/reading-wikipedia-to-answer-open-domain-questions/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/tf-idf/</loc>
+    <loc>http://localhost:1313/tags/tf-idf/</loc>
     <lastmod>2025-04-26T13:49:53+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/tf-idf/"
+                href="http://localhost:1313/en/tags/tf-idf/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/tf-idf/"
+                href="http://localhost:1313/tags/tf-idf/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/few-shot-learning/</loc>
+    <loc>http://localhost:1313/tags/few-shot-learning/</loc>
     <lastmod>2025-04-12T14:01:19+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/few-shot-learning/"
+                href="http://localhost:1313/en/tags/few-shot-learning/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/few-shot-learning/"
+                href="http://localhost:1313/tags/few-shot-learning/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/language-models-are-few-shot-learners/</loc>
+    <loc>http://localhost:1313/posts/language-models-are-few-shot-learners/</loc>
     <lastmod>2025-04-12T14:01:19+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/language-models-are-few-shot-learners/"
+                href="http://localhost:1313/en/posts/language-models-are-few-shot-learners/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/language-models-are-few-shot-learners/"
+                href="http://localhost:1313/posts/language-models-are-few-shot-learners/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/large-language-model/</loc>
+    <loc>http://localhost:1313/tags/large-language-model/</loc>
     <lastmod>2025-06-07T19:00:00+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/large-language-model/"
+                href="http://localhost:1313/en/tags/large-language-model/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/large-language-model/"
+                href="http://localhost:1313/tags/large-language-model/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/</loc>
+    <loc>http://localhost:1313/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/</loc>
     <lastmod>2025-03-18T13:18:51+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/"
+                href="http://localhost:1313/en/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/"
+                href="http://localhost:1313/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%B3%E3%83%88%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E6%B3%95/</loc>
+    <loc>http://localhost:1313/tags/%E3%82%B3%E3%83%B3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%B3%E3%83%88%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E6%B3%95/</loc>
     <lastmod>2025-03-18T13:18:51+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/</loc>
+    <loc>http://localhost:1313/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/</loc>
     <lastmod>2025-03-03T21:55:22+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/"
+                href="http://localhost:1313/en/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/"
+                href="http://localhost:1313/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%82%B3%E3%83%BC%E3%83%89%E3%82%AB%E3%83%90%E3%83%AC%E3%83%83%E3%82%B8/</loc>
+    <loc>http://localhost:1313/tags/%E3%82%B3%E3%83%BC%E3%83%89%E3%82%AB%E3%83%90%E3%83%AC%E3%83%83%E3%82%B8/</loc>
     <lastmod>2025-03-03T21:55:22+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/go/</loc>
+    <loc>http://localhost:1313/tags/go/</loc>
     <lastmod>2025-02-11T15:16:30+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/go/"
+                href="http://localhost:1313/en/tags/go/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/go/"
+                href="http://localhost:1313/tags/go/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/</loc>
+    <loc>http://localhost:1313/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/</loc>
     <lastmod>2025-02-11T15:16:30+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/"
+                href="http://localhost:1313/en/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/"
+                href="http://localhost:1313/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%82%AC%E3%83%99%E3%83%BC%E3%82%B8%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/</loc>
+    <loc>http://localhost:1313/tags/%E3%82%AC%E3%83%99%E3%83%BC%E3%82%B8%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/</loc>
     <lastmod>2025-02-11T15:16:30+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/s3/</loc>
+    <loc>http://localhost:1313/tags/s3/</loc>
     <lastmod>2025-01-30T03:01:59+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/s3/"
+                href="http://localhost:1313/en/tags/s3/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/s3/"
+                href="http://localhost:1313/tags/s3/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/s3-sign/</loc>
+    <loc>http://localhost:1313/posts/s3-sign/</loc>
     <lastmod>2025-01-30T03:01:59+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/s3-sign/"
+                href="http://localhost:1313/en/posts/s3-sign/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/s3-sign/"
+                href="http://localhost:1313/posts/s3-sign/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/highly-available-transactions-virtues-and-limitations/</loc>
+    <loc>http://localhost:1313/posts/highly-available-transactions-virtues-and-limitations/</loc>
     <lastmod>2025-01-30T03:01:31+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/highly-available-transactions-virtues-and-limitations/"
+                href="http://localhost:1313/en/posts/highly-available-transactions-virtues-and-limitations/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/highly-available-transactions-virtues-and-limitations/"
+                href="http://localhost:1313/posts/highly-available-transactions-virtues-and-limitations/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B6%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/</loc>
+    <loc>http://localhost:1313/tags/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B6%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/</loc>
     <lastmod>2025-01-30T03:01:31+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E5%8F%AF%E7%94%A8%E6%80%A7/</loc>
+    <loc>http://localhost:1313/tags/%E5%8F%AF%E7%94%A8%E6%80%A7/</loc>
     <lastmod>2025-01-30T03:01:31+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</loc>
+    <loc>http://localhost:1313/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</loc>
     <lastmod>2025-01-30T03:01:31+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/jepsen/</loc>
+    <loc>http://localhost:1313/posts/jepsen/</loc>
     <lastmod>2025-01-26T23:12:54+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/jepsen/"
+                href="http://localhost:1313/en/posts/jepsen/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/jepsen/"
+                href="http://localhost:1313/posts/jepsen/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E5%9E%8B%E7%90%86%E8%AB%96/</loc>
+    <loc>http://localhost:1313/tags/%E5%9E%8B%E7%90%86%E8%AB%96/</loc>
     <lastmod>2024-12-30T22:45:30+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/origin-of-type-theory/</loc>
+    <loc>http://localhost:1313/posts/origin-of-type-theory/</loc>
     <lastmod>2024-12-30T22:45:30+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/origin-of-type-theory/"
+                href="http://localhost:1313/en/posts/origin-of-type-theory/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/origin-of-type-theory/"
+                href="http://localhost:1313/posts/origin-of-type-theory/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/runc/</loc>
+    <loc>http://localhost:1313/posts/runc/</loc>
     <lastmod>2024-12-08T18:51:20+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/runc/"
+                href="http://localhost:1313/en/posts/runc/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/runc/"
+                href="http://localhost:1313/posts/runc/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/container/</loc>
+    <loc>http://localhost:1313/tags/container/</loc>
     <lastmod>2024-12-08T18:51:20+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/container/"
+                href="http://localhost:1313/en/tags/container/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/container/"
+                href="http://localhost:1313/tags/container/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/runc/</loc>
+    <loc>http://localhost:1313/tags/runc/</loc>
     <lastmod>2024-12-08T18:51:20+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/runc/"
+                href="http://localhost:1313/en/tags/runc/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/runc/"
+                href="http://localhost:1313/tags/runc/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/back-of-envelope-calculations/</loc>
+    <loc>http://localhost:1313/posts/question-and-answer-service/</loc>
+    <lastmod>2024-10-31T02:39:28+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/back-of-envelope-calculations/</loc>
     <lastmod>2024-09-24T02:14:15+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/back-of-envelope-calculations/"
+                href="http://localhost:1313/en/posts/back-of-envelope-calculations/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/back-of-envelope-calculations/"
+                href="http://localhost:1313/posts/back-of-envelope-calculations/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/back-of-the-envelope-estimation/</loc>
+    <loc>http://localhost:1313/tags/back-of-the-envelope-estimation/</loc>
     <lastmod>2024-09-24T02:14:15+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/back-of-the-envelope-estimation/"
+                href="http://localhost:1313/en/tags/back-of-the-envelope-estimation/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/back-of-the-envelope-estimation/"
+                href="http://localhost:1313/tags/back-of-the-envelope-estimation/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/system-design-interview/</loc>
+    <loc>http://localhost:1313/tags/system-design-interview/</loc>
     <lastmod>2024-09-18T01:13:19+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/system-design-interview/"
+                href="http://localhost:1313/en/tags/system-design-interview/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/system-design-interview/"
+                href="http://localhost:1313/tags/system-design-interview/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/video-streaming/</loc>
+    <loc>http://localhost:1313/posts/video-streaming/</loc>
     <lastmod>2024-09-18T01:13:19+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/video-streaming/"
+                href="http://localhost:1313/en/posts/video-streaming/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/video-streaming/"
+                href="http://localhost:1313/posts/video-streaming/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/realm-retrieval-augmented-language-model-pre-training/</loc>
+    <loc>http://localhost:1313/posts/realm-retrieval-augmented-language-model-pre-training/</loc>
     <lastmod>2024-05-27T22:28:20+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/realm-retrieval-augmented-language-model-pre-training/"
+                href="http://localhost:1313/en/posts/realm-retrieval-augmented-language-model-pre-training/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/realm-retrieval-augmented-language-model-pre-training/"
+                href="http://localhost:1313/posts/realm-retrieval-augmented-language-model-pre-training/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/retrieval-augmented-generation/</loc>
+    <loc>http://localhost:1313/tags/retrieval-augmented-generation/</loc>
     <lastmod>2024-05-27T22:28:20+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/retrieval-augmented-generation/"
+                href="http://localhost:1313/en/tags/retrieval-augmented-generation/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/retrieval-augmented-generation/"
+                href="http://localhost:1313/tags/retrieval-augmented-generation/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/</loc>
+    <loc>http://localhost:1313/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/</loc>
     <lastmod>2024-05-07T11:49:13+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/"
+                href="http://localhost:1313/en/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/"
+                href="http://localhost:1313/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/distributed-system/</loc>
+    <loc>http://localhost:1313/tags/distributed-system/</loc>
     <lastmod>2024-05-07T11:49:13+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/distributed-system/"
+                href="http://localhost:1313/en/tags/distributed-system/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/distributed-system/"
+                href="http://localhost:1313/tags/distributed-system/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/spark/</loc>
+    <loc>http://localhost:1313/posts/policy-gradient-methods-for-reinforcement-learning-with-function-approximation/</loc>
+    <lastmod>2024-04-27T14:49:30+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/posts/policy-gradient-methods-for-reinforcement-learning-with-function-approximation/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="http://localhost:1313/posts/policy-gradient-methods-for-reinforcement-learning-with-function-approximation/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/tags/%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92/</loc>
+    <lastmod>2024-04-27T14:49:30+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E6%96%B9%E7%AD%96%E5%8B%BE%E9%85%8D%E6%B3%95/</loc>
+    <lastmod>2024-04-27T14:49:30+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/proximal-policy-optimization-algorithms/</loc>
+    <lastmod>2024-04-27T00:49:26+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/spark/</loc>
     <lastmod>2024-04-14T14:08:04+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/spark/"
+                href="http://localhost:1313/en/tags/spark/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/spark/"
+                href="http://localhost:1313/tags/spark/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/spark-sql-relational-data-processing-in-spark/</loc>
+    <loc>http://localhost:1313/posts/spark-sql-relational-data-processing-in-spark/</loc>
     <lastmod>2024-04-14T14:08:04+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/spark-sql-relational-data-processing-in-spark/"
+                href="http://localhost:1313/en/posts/spark-sql-relational-data-processing-in-spark/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/spark-sql-relational-data-processing-in-spark/"
+                href="http://localhost:1313/posts/spark-sql-relational-data-processing-in-spark/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/sql/</loc>
+    <loc>http://localhost:1313/tags/sql/</loc>
     <lastmod>2024-04-14T14:08:04+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/sql/"
+                href="http://localhost:1313/en/tags/sql/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/sql/"
+                href="http://localhost:1313/tags/sql/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/neural-collaborative-filtering/</loc>
+    <loc>http://localhost:1313/posts/neural-collaborative-filtering/</loc>
     <lastmod>2024-03-25T16:56:51+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/neural-collaborative-filtering/"
+                href="http://localhost:1313/en/posts/neural-collaborative-filtering/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/neural-collaborative-filtering/"
+                href="http://localhost:1313/posts/neural-collaborative-filtering/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E5%8D%94%E8%AA%BF%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/</loc>
+    <loc>http://localhost:1313/tags/%E5%8D%94%E8%AA%BF%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/</loc>
     <lastmod>2024-03-25T16:56:51+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/postgresql/</loc>
+    <loc>http://localhost:1313/tags/postgresql/</loc>
     <lastmod>2024-03-22T15:35:16+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/postgresql/"
+                href="http://localhost:1313/en/tags/postgresql/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/postgresql/"
+                href="http://localhost:1313/tags/postgresql/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/streaming-data/</loc>
+    <loc>http://localhost:1313/tags/streaming-data/</loc>
     <lastmod>2024-03-22T15:35:16+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/streaming-data/"
+                href="http://localhost:1313/en/tags/streaming-data/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/streaming-data/"
+                href="http://localhost:1313/tags/streaming-data/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/</loc>
+    <loc>http://localhost:1313/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/</loc>
     <lastmod>2024-03-22T15:35:16+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/"
+                href="http://localhost:1313/en/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/"
+                href="http://localhost:1313/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/llama-open-and-efficient-foundation-language-models/</loc>
+    <loc>http://localhost:1313/posts/llama-open-and-efficient-foundation-language-models/</loc>
     <lastmod>2024-03-14T14:41:45+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/llama-open-and-efficient-foundation-language-models/"
+                href="http://localhost:1313/en/posts/llama-open-and-efficient-foundation-language-models/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/llama-open-and-efficient-foundation-language-models/"
+                href="http://localhost:1313/posts/llama-open-and-efficient-foundation-language-models/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/apache-calcite/</loc>
+    <loc>http://localhost:1313/tags/apache-calcite/</loc>
     <lastmod>2024-03-10T10:44:15+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/apache-calcite/"
+                href="http://localhost:1313/en/tags/apache-calcite/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/apache-calcite/"
+                href="http://localhost:1313/tags/apache-calcite/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/</loc>
+    <loc>http://localhost:1313/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/</loc>
     <lastmod>2024-03-10T10:44:15+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/"
+                href="http://localhost:1313/en/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/"
+                href="http://localhost:1313/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/mining-association-rules-between-sets-of-items-in-large-databases/</loc>
+    <loc>http://localhost:1313/posts/mining-association-rules-between-sets-of-items-in-large-databases/</loc>
     <lastmod>2024-03-02T15:58:04+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/mining-association-rules-between-sets-of-items-in-large-databases/"
+                href="http://localhost:1313/en/posts/mining-association-rules-between-sets-of-items-in-large-databases/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/mining-association-rules-between-sets-of-items-in-large-databases/"
+                href="http://localhost:1313/posts/mining-association-rules-between-sets-of-items-in-large-databases/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%82%A2%E3%82%BD%E3%82%B7%E3%82%A8%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%88%86%E6%9E%90/</loc>
+    <loc>http://localhost:1313/tags/%E3%82%A2%E3%82%BD%E3%82%B7%E3%82%A8%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%88%86%E6%9E%90/</loc>
     <lastmod>2024-03-02T15:58:04+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/</loc>
+    <loc>http://localhost:1313/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/</loc>
     <lastmod>2024-02-24T23:11:48+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/"
+                href="http://localhost:1313/en/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/"
+                href="http://localhost:1313/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/transformer/</loc>
+    <loc>http://localhost:1313/tags/transformer/</loc>
     <lastmod>2025-06-07T19:00:00+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/transformer/"
+                href="http://localhost:1313/en/tags/transformer/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/transformer/"
+                href="http://localhost:1313/tags/transformer/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/rdbms/</loc>
+    <loc>http://localhost:1313/posts/recipes-for-building-an-open-domain-chatbot/</loc>
+    <lastmod>2024-02-24T12:22:03+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/posts/recipes-for-building-an-open-domain-chatbot/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="http://localhost:1313/posts/recipes-for-building-an-open-domain-chatbot/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/tags/rdbms/</loc>
     <lastmod>2024-02-17T17:44:38+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/rdbms/"
+                href="http://localhost:1313/en/tags/rdbms/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/rdbms/"
+                href="http://localhost:1313/tags/rdbms/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/the-design-of-postgres/</loc>
+    <loc>http://localhost:1313/posts/the-design-of-postgres/</loc>
     <lastmod>2024-02-17T17:44:38+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/the-design-of-postgres/"
+                href="http://localhost:1313/en/posts/the-design-of-postgres/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/the-design-of-postgres/"
+                href="http://localhost:1313/posts/the-design-of-postgres/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/</loc>
+    <loc>http://localhost:1313/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/</loc>
     <lastmod>2024-01-27T16:44:55-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/"
+                href="http://localhost:1313/en/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/"
+                href="http://localhost:1313/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/sorting-algorithm/</loc>
+    <loc>http://localhost:1313/tags/sorting-algorithm/</loc>
     <lastmod>2024-01-14T23:32:24-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/sorting-algorithm/"
+                href="http://localhost:1313/en/tags/sorting-algorithm/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/sorting-algorithm/"
+                href="http://localhost:1313/tags/sorting-algorithm/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/sorting-networks-and-their-applications/</loc>
+    <loc>http://localhost:1313/posts/sorting-networks-and-their-applications/</loc>
     <lastmod>2024-01-14T23:32:24-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/sorting-networks-and-their-applications/"
+                href="http://localhost:1313/en/posts/sorting-networks-and-their-applications/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/sorting-networks-and-their-applications/"
+                href="http://localhost:1313/posts/sorting-networks-and-their-applications/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/billion-scale-similarity-search-with-gpus/</loc>
+    <loc>http://localhost:1313/posts/billion-scale-similarity-search-with-gpus/</loc>
     <lastmod>2024-01-01T22:21:27-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/billion-scale-similarity-search-with-gpus/"
+                href="http://localhost:1313/en/posts/billion-scale-similarity-search-with-gpus/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/billion-scale-similarity-search-with-gpus/"
+                href="http://localhost:1313/posts/billion-scale-similarity-search-with-gpus/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E8%BF%91%E4%BC%BC%E6%9C%80%E8%BF%91%E5%82%8D%E6%8E%A2%E7%B4%A2/</loc>
+    <loc>http://localhost:1313/tags/%E8%BF%91%E4%BC%BC%E6%9C%80%E8%BF%91%E5%82%8D%E6%8E%A2%E7%B4%A2/</loc>
     <lastmod>2024-01-01T22:21:27-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/conflict-free-replicated-data-types/</loc>
+    <loc>http://localhost:1313/tags/conflict-free-replicated-data-types/</loc>
     <lastmod>2023-12-31T14:31:58-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/conflict-free-replicated-data-types/"
+                href="http://localhost:1313/en/tags/conflict-free-replicated-data-types/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/conflict-free-replicated-data-types/"
+                href="http://localhost:1313/tags/conflict-free-replicated-data-types/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/conflict-free-replicated-data-types/</loc>
+    <loc>http://localhost:1313/posts/conflict-free-replicated-data-types/</loc>
     <lastmod>2023-12-31T14:31:58-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/conflict-free-replicated-data-types/"
+                href="http://localhost:1313/en/posts/conflict-free-replicated-data-types/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/conflict-free-replicated-data-types/"
+                href="http://localhost:1313/posts/conflict-free-replicated-data-types/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/dense-passage-retrieval-for-open-domain-question-answering/</loc>
+    <loc>http://localhost:1313/posts/dense-passage-retrieval-for-open-domain-question-answering/</loc>
     <lastmod>2023-12-30T00:42:11-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/dense-passage-retrieval-for-open-domain-question-answering/"
+                href="http://localhost:1313/en/posts/dense-passage-retrieval-for-open-domain-question-answering/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/dense-passage-retrieval-for-open-domain-question-answering/"
+                href="http://localhost:1313/posts/dense-passage-retrieval-for-open-domain-question-answering/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E8%B3%AA%E5%95%8F%E5%BF%9C%E7%AD%94/</loc>
+    <loc>http://localhost:1313/tags/%E8%B3%AA%E5%95%8F%E5%BF%9C%E7%AD%94/</loc>
     <lastmod>2023-12-30T00:42:11-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/cap-twelve-years-later-how-the-rules-have-changed/</loc>
+    <loc>http://localhost:1313/posts/cap-twelve-years-later-how-the-rules-have-changed/</loc>
     <lastmod>2023-12-23T11:47:05-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/cap-twelve-years-later-how-the-rules-have-changed/"
+                href="http://localhost:1313/en/posts/cap-twelve-years-later-how-the-rules-have-changed/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/cap-twelve-years-later-how-the-rules-have-changed/"
+                href="http://localhost:1313/posts/cap-twelve-years-later-how-the-rules-have-changed/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/cap%E5%AE%9A%E7%90%86/</loc>
+    <loc>http://localhost:1313/tags/cap%E5%AE%9A%E7%90%86/</loc>
     <lastmod>2023-12-23T11:47:05-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/recommendation/</loc>
+    <loc>http://localhost:1313/tags/recommendation/</loc>
     <lastmod>2023-12-16T09:48:32-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/recommendation/"
+                href="http://localhost:1313/en/tags/recommendation/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/recommendation/"
+                href="http://localhost:1313/tags/recommendation/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/wide-and-deep-learning-for-recommender-systems/</loc>
+    <loc>http://localhost:1313/posts/wide-and-deep-learning-for-recommender-systems/</loc>
     <lastmod>2023-12-16T09:48:32-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/wide-and-deep-learning-for-recommender-systems/"
+                href="http://localhost:1313/en/posts/wide-and-deep-learning-for-recommender-systems/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/wide-and-deep-learning-for-recommender-systems/"
+                href="http://localhost:1313/posts/wide-and-deep-learning-for-recommender-systems/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/a_protocol_for_packet_network_intercommunication/</loc>
+    <loc>http://localhost:1313/posts/a_protocol_for_packet_network_intercommunication/</loc>
     <lastmod>2023-12-09T12:24:23-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/a_protocol_for_packet_network_intercommunication/"
+                href="http://localhost:1313/en/posts/a_protocol_for_packet_network_intercommunication/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/a_protocol_for_packet_network_intercommunication/"
+                href="http://localhost:1313/posts/a_protocol_for_packet_network_intercommunication/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/tcp/</loc>
+    <loc>http://localhost:1313/tags/tcp/</loc>
     <lastmod>2023-12-09T12:24:23-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/tcp/"
+                href="http://localhost:1313/en/tags/tcp/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/tcp/"
+                href="http://localhost:1313/tags/tcp/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/probabilistic_latent_semantic_indexing/</loc>
+    <loc>http://localhost:1313/posts/probabilistic_latent_semantic_indexing/</loc>
     <lastmod>2023-12-02T11:27:38-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/probabilistic_latent_semantic_indexing/"
+                href="http://localhost:1313/en/posts/probabilistic_latent_semantic_indexing/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/probabilistic_latent_semantic_indexing/"
+                href="http://localhost:1313/posts/probabilistic_latent_semantic_indexing/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E6%BD%9C%E5%9C%A8%E6%84%8F%E5%91%B3%E8%A7%A3%E6%9E%90/</loc>
+    <loc>http://localhost:1313/tags/%E6%BD%9C%E5%9C%A8%E6%84%8F%E5%91%B3%E8%A7%A3%E6%9E%90/</loc>
     <lastmod>2023-12-02T11:27:38-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/</loc>
+    <loc>http://localhost:1313/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/</loc>
     <lastmod>2023-11-23T12:31:01-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/"
+                href="http://localhost:1313/en/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/"
+                href="http://localhost:1313/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/peer-to-peer/</loc>
+    <loc>http://localhost:1313/tags/peer-to-peer/</loc>
     <lastmod>2023-11-23T12:31:01-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/peer-to-peer/"
+                href="http://localhost:1313/en/tags/peer-to-peer/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/peer-to-peer/"
+                href="http://localhost:1313/tags/peer-to-peer/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/lora-low-rank-adaptation-of-large-language-models/</loc>
+    <loc>http://localhost:1313/posts/lora-low-rank-adaptation-of-large-language-models/</loc>
     <lastmod>2025-06-07T19:00:00+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/lora-low-rank-adaptation-of-large-language-models/"
+                href="http://localhost:1313/en/posts/lora-low-rank-adaptation-of-large-language-models/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/lora-low-rank-adaptation-of-large-language-models/"
+                href="http://localhost:1313/posts/lora-low-rank-adaptation-of-large-language-models/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/</loc>
+    <loc>http://localhost:1313/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/</loc>
     <lastmod>2023-11-07T02:04:06-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/"
+                href="http://localhost:1313/en/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/"
+                href="http://localhost:1313/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/bert/</loc>
+    <loc>http://localhost:1313/tags/bert/</loc>
     <lastmod>2023-11-04T06:43:01-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/bert/"
+                href="http://localhost:1313/en/tags/bert/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/bert/"
+                href="http://localhost:1313/tags/bert/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/distilbert-a-distilled-version-of-bert-smaller-fastercheater-and-lighter/</loc>
+    <loc>http://localhost:1313/posts/distilbert-a-distilled-version-of-bert-smaller-fastercheater-and-lighter/</loc>
+    <lastmod>2023-11-04T06:43:01-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/posts/distilbert-a-distilled-version-of-bert-smaller-fastercheater-and-lighter/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="http://localhost:1313/posts/distilbert-a-distilled-version-of-bert-smaller-fastercheater-and-lighter/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/tags/%E7%9F%A5%E8%AD%98%E8%92%B8%E7%95%99/</loc>
     <lastmod>2023-11-04T06:43:01-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E7%9F%A5%E8%AD%98%E8%92%B8%E7%95%99/</loc>
-    <lastmod>2023-11-04T06:43:01-04:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/an_incremental_approach_to_compiler_construction/</loc>
+    <loc>http://localhost:1313/posts/an_incremental_approach_to_compiler_construction/</loc>
     <lastmod>2023-10-23T13:49:48-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/an_incremental_approach_to_compiler_construction/"
+                href="http://localhost:1313/en/posts/an_incremental_approach_to_compiler_construction/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/an_incremental_approach_to_compiler_construction/"
+                href="http://localhost:1313/posts/an_incremental_approach_to_compiler_construction/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9/</loc>
+    <loc>http://localhost:1313/tags/%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9/</loc>
     <lastmod>2023-10-23T13:49:48-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/gaussian_error_linear_units/</loc>
+    <loc>http://localhost:1313/posts/gaussian_error_linear_units/</loc>
     <lastmod>2023-10-21T10:00:49-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/gaussian_error_linear_units/"
+                href="http://localhost:1313/en/posts/gaussian_error_linear_units/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/gaussian_error_linear_units/"
+                href="http://localhost:1313/posts/gaussian_error_linear_units/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E6%B4%BB%E6%80%A7%E5%8C%96%E9%96%A2%E6%95%B0/</loc>
+    <loc>http://localhost:1313/tags/%E6%B4%BB%E6%80%A7%E5%8C%96%E9%96%A2%E6%95%B0/</loc>
     <lastmod>2023-10-21T10:00:49-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/a_design_methodology_for_reliable_software_systems/</loc>
+    <loc>http://localhost:1313/posts/a_design_methodology_for_reliable_software_systems/</loc>
     <lastmod>2023-10-08T09:38:50-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/a_design_methodology_for_reliable_software_systems/"
+                href="http://localhost:1313/en/posts/a_design_methodology_for_reliable_software_systems/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/a_design_methodology_for_reliable_software_systems/"
+                href="http://localhost:1313/posts/a_design_methodology_for_reliable_software_systems/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E6%A7%8B%E9%80%A0%E5%8C%96%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/</loc>
+    <loc>http://localhost:1313/tags/%E6%A7%8B%E9%80%A0%E5%8C%96%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/</loc>
     <lastmod>2023-10-08T09:38:50-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/</loc>
+    <loc>http://localhost:1313/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/</loc>
     <lastmod>2023-10-07T10:28:13-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/"
+                href="http://localhost:1313/en/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/"
+                href="http://localhost:1313/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/communicating-sequential-processes/</loc>
+    <loc>http://localhost:1313/tags/communicating-sequential-processes/</loc>
     <lastmod>2023-09-30T11:34:47-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/communicating-sequential-processes/"
+                href="http://localhost:1313/en/tags/communicating-sequential-processes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/communicating-sequential-processes/"
+                href="http://localhost:1313/tags/communicating-sequential-processes/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/communicating_sequential_processes/</loc>
+    <loc>http://localhost:1313/posts/communicating_sequential_processes/</loc>
     <lastmod>2023-09-30T11:34:47-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/communicating_sequential_processes/"
+                href="http://localhost:1313/en/posts/communicating_sequential_processes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/communicating_sequential_processes/"
+                href="http://localhost:1313/posts/communicating_sequential_processes/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/concurrent-programming/</loc>
+    <loc>http://localhost:1313/tags/concurrent-programming/</loc>
     <lastmod>2023-09-30T11:34:47-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/concurrent-programming/"
+                href="http://localhost:1313/en/tags/concurrent-programming/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/concurrent-programming/"
+                href="http://localhost:1313/tags/concurrent-programming/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</loc>
+    <loc>http://localhost:1313/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</loc>
     <lastmod>2023-09-23T10:21:03-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/"
+                href="http://localhost:1313/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/"
+                href="http://localhost:1313/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%82%B3%E3%82%B5%E3%82%A4%E3%83%B3%E9%A1%9E%E4%BC%BC%E5%BA%A6/</loc>
+    <loc>http://localhost:1313/tags/%E3%82%B3%E3%82%B5%E3%82%A4%E3%83%B3%E9%A1%9E%E4%BC%BC%E5%BA%A6/</loc>
     <lastmod>2023-09-23T10:21:03-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/</loc>
+    <loc>http://localhost:1313/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/</loc>
     <lastmod>2023-09-16T08:59:45-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/"
+                href="http://localhost:1313/en/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/"
+                href="http://localhost:1313/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%83%9E%E3%83%AB%E3%83%81%E3%82%BF%E3%82%B9%E3%82%AF%E5%AD%A6%E7%BF%92/</loc>
+    <loc>http://localhost:1313/tags/%E3%83%9E%E3%83%AB%E3%83%81%E3%82%BF%E3%82%B9%E3%82%AF%E5%AD%A6%E7%BF%92/</loc>
     <lastmod>2023-09-16T08:59:45-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/transmission_of_information/</loc>
+    <loc>http://localhost:1313/posts/transmission_of_information/</loc>
     <lastmod>2023-09-09T12:10:45-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/transmission_of_information/"
+                href="http://localhost:1313/en/posts/transmission_of_information/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/transmission_of_information/"
+                href="http://localhost:1313/posts/transmission_of_information/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E6%83%85%E5%A0%B1%E9%87%8F/</loc>
+    <loc>http://localhost:1313/tags/%E6%83%85%E5%A0%B1%E9%87%8F/</loc>
     <lastmod>2023-09-09T12:10:45-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/byte-pair-encoding/</loc>
+    <loc>http://localhost:1313/posts/gentoo_installation/</loc>
+    <lastmod>2023-09-04T15:36:30-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/byte-pair-encoding/</loc>
     <lastmod>2023-08-27T13:13:39-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/byte-pair-encoding/"
+                href="http://localhost:1313/en/tags/byte-pair-encoding/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/byte-pair-encoding/"
+                href="http://localhost:1313/tags/byte-pair-encoding/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/roberta/</loc>
+    <loc>http://localhost:1313/posts/roberta/</loc>
     <lastmod>2023-08-27T13:13:39-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/roberta/"
+                href="http://localhost:1313/en/posts/roberta/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/roberta/"
+                href="http://localhost:1313/posts/roberta/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/early-programming/</loc>
+    <loc>http://localhost:1313/tags/early-programming/</loc>
     <lastmod>2023-08-26T10:46:18-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/early-programming/"
+                href="http://localhost:1313/en/tags/early-programming/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/early-programming/"
+                href="http://localhost:1313/tags/early-programming/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/go_to_statement_considered_harmful/</loc>
+    <loc>http://localhost:1313/posts/go_to_statement_considered_harmful/</loc>
     <lastmod>2023-08-26T10:46:18-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/go_to_statement_considered_harmful/"
+                href="http://localhost:1313/en/posts/go_to_statement_considered_harmful/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/go_to_statement_considered_harmful/"
+                href="http://localhost:1313/posts/go_to_statement_considered_harmful/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/attention/</loc>
+    <loc>http://localhost:1313/tags/attention/</loc>
     <lastmod>2023-08-19T10:02:50-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/tags/attention/"
+                href="http://localhost:1313/en/tags/attention/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/tags/attention/"
+                href="http://localhost:1313/tags/attention/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/self_attention_with_relative_position_representations/</loc>
+    <loc>http://localhost:1313/posts/self_attention_with_relative_position_representations/</loc>
     <lastmod>2023-08-19T10:02:50-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/self_attention_with_relative_position_representations/"
+                href="http://localhost:1313/en/posts/self_attention_with_relative_position_representations/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/self_attention_with_relative_position_representations/"
+                href="http://localhost:1313/posts/self_attention_with_relative_position_representations/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/self_adjusting_binary_search_trees/</loc>
+    <loc>http://localhost:1313/posts/self_adjusting_binary_search_trees/</loc>
     <lastmod>2023-08-12T13:49:56-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/self_adjusting_binary_search_trees/"
+                href="http://localhost:1313/en/posts/self_adjusting_binary_search_trees/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/self_adjusting_binary_search_trees/"
+                href="http://localhost:1313/posts/self_adjusting_binary_search_trees/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC%E6%9C%A8/</loc>
+    <loc>http://localhost:1313/tags/%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC%E6%9C%A8/</loc>
     <lastmod>2023-08-12T13:49:56-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/</loc>
+    <loc>http://localhost:1313/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/</loc>
     <lastmod>2023-08-05T13:27:09-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/"
+                href="http://localhost:1313/en/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/"
+                href="http://localhost:1313/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/posts/catalan_number/</loc>
+    <loc>http://localhost:1313/posts/catalan_number/</loc>
     <lastmod>2023-07-29T15:24:15-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/catalan_number/"
+                href="http://localhost:1313/en/posts/catalan_number/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/catalan_number/"
+                href="http://localhost:1313/posts/catalan_number/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%82%AB%E3%82%BF%E3%83%A9%E3%83%B3%E6%95%B0/</loc>
+    <loc>http://localhost:1313/tags/%E3%82%AB%E3%82%BF%E3%83%A9%E3%83%B3%E6%95%B0/</loc>
     <lastmod>2023-07-29T15:24:15-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/abstract_syntax_networks_for_code_generation_and_semantic_parsing/</loc>
+    <loc>http://localhost:1313/posts/abstract_syntax_networks_for_code_generation_and_semantic_parsing/</loc>
     <lastmod>2023-07-01T17:53:10-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/fibonacci_heaps_and_their_uses_in_improving_network_optimization_algorithms/</loc>
+    <loc>http://localhost:1313/posts/fibonacci_heaps_and_their_uses_in_improving_network_optimization_algorithms/</loc>
     <lastmod>2023-06-24T10:38:25-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/layer_normalization/</loc>
+    <loc>http://localhost:1313/posts/layer_normalization/</loc>
     <lastmod>2023-06-17T10:18:51-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/posts/layer_normalization/"
+                href="http://localhost:1313/en/posts/layer_normalization/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/posts/layer_normalization/"
+                href="http://localhost:1313/posts/layer_normalization/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E5%B1%A4%E6%AD%A3%E8%A6%8F%E5%8C%96/</loc>
+    <loc>http://localhost:1313/tags/%E5%B1%A4%E6%AD%A3%E8%A6%8F%E5%8C%96/</loc>
     <lastmod>2023-06-17T10:18:51-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/hash-function/</loc>
+    <loc>http://localhost:1313/tags/hash-function/</loc>
     <lastmod>2023-06-10T17:32:42-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/universal_classes_of_hash_functions/</loc>
+    <loc>http://localhost:1313/posts/universal_classes_of_hash_functions/</loc>
     <lastmod>2023-06-10T17:32:42-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/unsupervised_cross_lingual_representation_learning_at_scale/</loc>
+    <loc>http://localhost:1313/posts/unsupervised_cross_lingual_representation_learning_at_scale/</loc>
     <lastmod>2023-06-03T12:32:35-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/</loc>
+    <loc>http://localhost:1313/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/</loc>
     <lastmod>2023-06-03T12:32:35-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E5%A4%9A%E8%A8%80%E8%AA%9E%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/</loc>
+    <loc>http://localhost:1313/tags/%E5%A4%9A%E8%A8%80%E8%AA%9E%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/</loc>
     <lastmod>2023-06-03T12:32:35-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/a_mojority_consensus_approach_to_concurrency_control_for_multiple_copy_databases/</loc>
+    <loc>http://localhost:1313/posts/a_mojority_consensus_approach_to_concurrency_control_for_multiple_copy_databases/</loc>
     <lastmod>2023-05-27T13:41:06-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/embedding/</loc>
+    <loc>http://localhost:1313/tags/embedding/</loc>
     <lastmod>2023-05-21T14:43:39-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/word_translation_without_parallel_data/</loc>
+    <loc>http://localhost:1313/posts/word_translation_without_parallel_data/</loc>
     <lastmod>2023-05-21T14:43:39-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E6%A9%9F%E6%A2%B0%E7%BF%BB%E8%A8%B3/</loc>
+    <loc>http://localhost:1313/tags/%E6%A9%9F%E6%A2%B0%E7%BF%BB%E8%A8%B3/</loc>
     <lastmod>2023-05-21T14:43:39-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/skip_lists_a_probablistic_alternative_to_balanced_trees/</loc>
+    <loc>http://localhost:1313/posts/skip_lists_a_probablistic_alternative_to_balanced_trees/</loc>
     <lastmod>2023-05-06T15:03:48-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0/</loc>
+    <loc>http://localhost:1313/tags/%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0/</loc>
     <lastmod>2023-05-06T15:03:48-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/an_image_is_worth_16x16_words_transformers_for_image_recognition_at_scale/</loc>
+    <loc>http://localhost:1313/posts/an_image_is_worth_16x16_words_transformers_for_image_recognition_at_scale/</loc>
     <lastmod>2023-04-29T12:12:11-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E7%94%BB%E5%83%8F%E8%AA%8D%E8%AD%98/</loc>
+    <loc>http://localhost:1313/tags/%E7%94%BB%E5%83%8F%E8%AA%8D%E8%AD%98/</loc>
     <lastmod>2023-04-29T12:12:11-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/virtual_time_and_global_states_of_distributed_systems/</loc>
+    <loc>http://localhost:1313/posts/virtual_time_and_global_states_of_distributed_systems/</loc>
     <lastmod>2023-04-22T21:35:08-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/generating_long_sequences_with_sparse_transformers/</loc>
+    <loc>http://localhost:1313/posts/generating_long_sequences_with_sparse_transformers/</loc>
     <lastmod>2023-04-15T10:59:43-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/storing_a_sparse_table_with_o1_worst_case_access_time/</loc>
+    <loc>http://localhost:1313/posts/storing_a_sparse_table_with_o1_worst_case_access_time/</loc>
     <lastmod>2023-04-08T12:38:44-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB/</loc>
+    <loc>http://localhost:1313/tags/%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB/</loc>
     <lastmod>2023-04-08T12:38:44-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/language_models_are_unsupervised_multitask_learners/</loc>
+    <loc>http://localhost:1313/posts/language_models_are_unsupervised_multitask_learners/</loc>
     <lastmod>2023-04-01T09:39:17-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/proving_correctness_of_multiprocess_programs/</loc>
+    <loc>http://localhost:1313/posts/proving_correctness_of_multiprocess_programs/</loc>
     <lastmod>2023-03-25T12:34:08-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E5%BD%A2%E5%BC%8F%E6%89%8B%E6%B3%95/</loc>
+    <loc>http://localhost:1313/tags/%E5%BD%A2%E5%BC%8F%E6%89%8B%E6%B3%95/</loc>
     <lastmod>2023-03-25T12:34:08-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/deep_reinforcement_learning_from_human_preferences/</loc>
+    <loc>http://localhost:1313/posts/deep_reinforcement_learning_from_human_preferences/</loc>
     <lastmod>2023-03-20T11:54:48-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92/</loc>
-    <lastmod>2023-03-20T11:54:48-04:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/arc049b/</loc>
+    <loc>http://localhost:1313/posts/arc049b/</loc>
     <lastmod>2023-03-15T11:04:07+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/</loc>
+    <loc>http://localhost:1313/tags/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/</loc>
     <lastmod>2023-03-15T11:04:07+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/your_coffee_shop_doesnt_use_two_phase_commit/</loc>
+    <loc>http://localhost:1313/posts/your_coffee_shop_doesnt_use_two_phase_commit/</loc>
     <lastmod>2023-03-12T16:17:35-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/indexing_by_latent_semantic_analysis/</loc>
+    <loc>http://localhost:1313/posts/indexing_by_latent_semantic_analysis/</loc>
     <lastmod>2023-03-04T18:27:24+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/aries/</loc>
+    <loc>http://localhost:1313/posts/aries/</loc>
     <lastmod>2023-02-26T01:47:13-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/scatter_gather_a_cluster_based_approach_to_browsing_large_document_collections/</loc>
+    <loc>http://localhost:1313/posts/scatter_gather_a_cluster_based_approach_to_browsing_large_document_collections/</loc>
     <lastmod>2023-02-19T20:23:11-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/</loc>
+    <loc>http://localhost:1313/tags/%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/</loc>
     <lastmod>2023-02-19T20:23:11-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/arc028b/</loc>
+    <loc>http://localhost:1313/posts/arc028b/</loc>
     <lastmod>2023-02-19T10:56:35+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/zookeeper/</loc>
+    <loc>http://localhost:1313/tags/zookeeper/</loc>
     <lastmod>2023-02-12T15:47:06-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/zookeeper_wait_free_coordination_for_internat_scale_systems/</loc>
+    <loc>http://localhost:1313/posts/zookeeper_wait_free_coordination_for_internat_scale_systems/</loc>
     <lastmod>2023-02-12T15:47:06-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/arc007/</loc>
+    <loc>http://localhost:1313/posts/arc007/</loc>
     <lastmod>2023-02-11T11:04:07+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/arc005/</loc>
+    <loc>http://localhost:1313/posts/arc005/</loc>
     <lastmod>2023-02-07T11:04:07+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/from_ranknet_to_lambdarank_to_lambdamart_an_overview/</loc>
+    <loc>http://localhost:1313/posts/from_ranknet_to_lambdarank_to_lambdamart_an_overview/</loc>
     <lastmod>2023-02-03T16:55:53-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/</loc>
+    <loc>http://localhost:1313/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/</loc>
     <lastmod>2023-02-03T16:55:53-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/principles_of_transaction_oriented_database_recovery/</loc>
+    <loc>http://localhost:1313/posts/principles_of_transaction_oriented_database_recovery/</loc>
     <lastmod>2023-01-29T15:14:29-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/learning_to_rank_with_nonsmooth_cost_functions/</loc>
+    <loc>http://localhost:1313/posts/learning_to_rank_with_nonsmooth_cost_functions/</loc>
     <lastmod>2023-01-23T16:23:52-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/</loc>
+    <loc>http://localhost:1313/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/</loc>
     <lastmod>2023-01-17T11:42:12-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/cap/</loc>
+    <loc>http://localhost:1313/tags/cap/</loc>
     <lastmod>2023-01-17T11:42:12-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/learning_to_rank_using_gradient_descent/</loc>
+    <loc>http://localhost:1313/posts/learning_to_rank_using_gradient_descent/</loc>
     <lastmod>2023-01-07T20:59:34-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/programming_with_abstract_data_types/</loc>
+    <loc>http://localhost:1313/posts/programming_with_abstract_data_types/</loc>
     <lastmod>2022-12-28T12:52:36-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E6%8A%BD%E8%B1%A1%E3%83%87%E3%83%BC%E3%82%BF%E5%9E%8B/</loc>
+    <loc>http://localhost:1313/tags/%E6%8A%BD%E8%B1%A1%E3%83%87%E3%83%BC%E3%82%BF%E5%9E%8B/</loc>
     <lastmod>2022-12-28T12:52:36-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%82%A6%E3%82%A7%E3%83%96%E6%A4%9C%E7%B4%A2/</loc>
+    <loc>http://localhost:1313/tags/%E3%82%A6%E3%82%A7%E3%83%96%E6%A4%9C%E7%B4%A2/</loc>
     <lastmod>2022-12-23T22:44:46-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/a_taxonomy_of_web_search/</loc>
+    <loc>http://localhost:1313/posts/a_taxonomy_of_web_search/</loc>
     <lastmod>2022-12-23T22:44:46-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/epidemic_algorithms_for_replicated_database_maintenance/</loc>
+    <loc>http://localhost:1313/posts/epidemic_algorithms_for_replicated_database_maintenance/</loc>
     <lastmod>2022-12-19T11:07:49-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%83%AC%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/</loc>
+    <loc>http://localhost:1313/tags/%E3%83%AC%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/</loc>
     <lastmod>2022-12-19T11:07:49-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/syntactic_clustering_of_the_web/</loc>
+    <loc>http://localhost:1313/posts/syntactic_clustering_of_the_web/</loc>
     <lastmod>2022-12-13T13:38:46-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E6%96%87%E6%9B%B8%E9%96%93%E9%A1%9E%E4%BC%BC%E5%BA%A6/</loc>
+    <loc>http://localhost:1313/tags/%E6%96%87%E6%9B%B8%E9%96%93%E9%A1%9E%E4%BC%BC%E5%BA%A6/</loc>
     <lastmod>2022-12-13T13:38:46-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/an_improved_data_stream_summary_the_count_min_sketch_and_its_application/</loc>
+    <loc>http://localhost:1313/posts/an_improved_data_stream_summary_the_count_min_sketch_and_its_application/</loc>
     <lastmod>2022-12-07T12:29:36-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E7%95%B0%E5%B8%B8%E6%A4%9C%E7%9F%A5/</loc>
+    <loc>http://localhost:1313/tags/%E7%95%B0%E5%B8%B8%E6%A4%9C%E7%9F%A5/</loc>
     <lastmod>2022-11-28T12:22:20-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/lof_identifying_density_based_local_outliners/</loc>
+    <loc>http://localhost:1313/posts/lof_identifying_density_based_local_outliners/</loc>
     <lastmod>2022-11-28T12:22:20-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/millwheel_fault_tolerant_stream_processing_at_internet_scale/</loc>
+    <loc>http://localhost:1313/posts/millwheel_fault_tolerant_stream_processing_at_internet_scale/</loc>
     <lastmod>2022-11-23T11:44:08-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%A2%E3%83%87%E3%83%AB/</loc>
+    <loc>http://localhost:1313/tags/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%A2%E3%83%87%E3%83%AB/</loc>
     <lastmod>2022-11-23T11:44:08-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/under-sampling/</loc>
+    <loc>http://localhost:1313/tags/under-sampling/</loc>
     <lastmod>2022-11-13T12:18:12-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/rusboost_a_hybrid_approach_to_alleviating_class_imbalance/</loc>
+    <loc>http://localhost:1313/posts/rusboost_a_hybrid_approach_to_alleviating_class_imbalance/</loc>
     <lastmod>2022-11-13T12:18:12-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/graphchi_large_scale_graph_computation_on_just_a_pc/</loc>
+    <loc>http://localhost:1313/posts/graphchi_large_scale_graph_computation_on_just_a_pc/</loc>
     <lastmod>2022-11-12T09:57:01-05:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/popular_ensemble_methods_an_empirical_study/</loc>
+    <loc>http://localhost:1313/posts/popular_ensemble_methods_an_empirical_study/</loc>
     <lastmod>2022-11-05T10:19:41-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/defining_liveness/</loc>
+    <loc>http://localhost:1313/posts/defining_liveness/</loc>
     <lastmod>2022-10-29T09:04:26-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/borderline-smote_a_new_over-sampling_method_inbalanced_data_sets_learning/</loc>
+    <loc>http://localhost:1313/posts/borderline-smote_a_new_over-sampling_method_inbalanced_data_sets_learning/</loc>
     <lastmod>2022-10-22T09:42:58-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/data_cube_a_relational_aggregation_operator_generalizing_group_by_cross_tab_and_sub_totals/</loc>
+    <loc>http://localhost:1313/posts/data_cube_a_relational_aggregation_operator_generalizing_group_by_cross_tab_and_sub_totals/</loc>
     <lastmod>2022-10-15T10:28:20-04:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/adasyn_adaptive_syntetic_samping_approach_for_imbalanced_learning/</loc>
+    <loc>http://localhost:1313/posts/adasyn_adaptive_syntetic_samping_approach_for_imbalanced_learning/</loc>
     <lastmod>2022-09-11T11:33:21+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/sagas/</loc>
+    <loc>http://localhost:1313/posts/sagas/</loc>
     <lastmod>2022-09-04T00:45:37+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/smote_synthetic_minority_over_sampling_technique/</loc>
+    <loc>http://localhost:1313/posts/smote_synthetic_minority_over_sampling_technique/</loc>
     <lastmod>2022-08-31T19:07:55+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/kafka-a-distributed-messaging-system-for-log-processing/</loc>
+    <loc>http://localhost:1313/posts/kafka-a-distributed-messaging-system-for-log-processing/</loc>
     <lastmod>2022-08-22T19:30:19+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/pregel_a_system_for_large_scale_graph_processing/</loc>
+    <loc>http://localhost:1313/posts/pregel_a_system_for_large_scale_graph_processing/</loc>
     <lastmod>2022-08-19T23:47:30+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/normalized_cuts_and_image_segmentation/</loc>
+    <loc>http://localhost:1313/posts/normalized_cuts_and_image_segmentation/</loc>
     <lastmod>2022-08-06T15:03:06+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/understanding_diagnostic_tests3/</loc>
+    <loc>http://localhost:1313/posts/understanding_diagnostic_tests3/</loc>
     <lastmod>2022-08-06T02:20:21+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/the_transaction_concept/</loc>
+    <loc>http://localhost:1313/posts/the_transaction_concept/</loc>
     <lastmod>2022-07-30T16:29:35+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/on_spectral_clustering_analysis_and_an_algorithm/</loc>
+    <loc>http://localhost:1313/posts/on_spectral_clustering_analysis_and_an_algorithm/</loc>
     <lastmod>2022-07-23T14:06:59+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/how_to_make_a_multiprocessor_computer_that_correctly_executes_multiprocess_programs/</loc>
+    <loc>http://localhost:1313/posts/how_to_make_a_multiprocessor_computer_that_correctly_executes_multiprocess_programs/</loc>
     <lastmod>2022-07-16T16:07:20+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/a_min-max_cut_algorithm_for_graph_partitioning_and_data_clustering/</loc>
+    <loc>http://localhost:1313/posts/a_min-max_cut_algorithm_for_graph_partitioning_and_data_clustering/</loc>
     <lastmod>2022-07-09T17:11:22+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/implementing_fault-tolerant_services_using_the_state_machine_approach_a_tutorial/</loc>
+    <loc>http://localhost:1313/posts/implementing_fault-tolerant_services_using_the_state_machine_approach_a_tutorial/</loc>
     <lastmod>2022-06-26T11:27:52+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/least_angle_regression/</loc>
+    <loc>http://localhost:1313/posts/least_angle_regression/</loc>
     <lastmod>2022-06-25T15:35:05+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/consensus_in_the_presence_of_partial_synchrony/</loc>
+    <loc>http://localhost:1313/posts/consensus_in_the_presence_of_partial_synchrony/</loc>
     <lastmod>2022-06-18T15:46:42+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/regression_shrinkage_and_selection_via_the_lasso/</loc>
+    <loc>http://localhost:1313/posts/regression_shrinkage_and_selection_via_the_lasso/</loc>
     <lastmod>2022-06-12T10:52:14+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/c-store_a_column_oriented_dbms/</loc>
+    <loc>http://localhost:1313/posts/c-store_a_column_oriented_dbms/</loc>
     <lastmod>2022-06-04T13:20:16+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/simpls_an_alternative_approach_to_partial_least_squares_regression/</loc>
+    <loc>http://localhost:1313/posts/simpls_an_alternative_approach_to_partial_least_squares_regression/</loc>
     <lastmod>2022-05-28T15:05:49+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/experience_report_the_wycash_portfolio_management_system/</loc>
+    <loc>http://localhost:1313/posts/experience_report_the_wycash_portfolio_management_system/</loc>
     <lastmod>2022-05-28T13:19:37+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/pls_regression_a_basic_tool_of_chemometrics/</loc>
+    <loc>http://localhost:1313/posts/pls_regression_a_basic_tool_of_chemometrics/</loc>
     <lastmod>2022-05-21T12:21:05+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/statistics_and_causal_inference/</loc>
+    <loc>http://localhost:1313/posts/statistics_and_causal_inference/</loc>
     <lastmod>2022-05-14T12:29:55+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/a_family_of_experiments_on_test_driven_development/</loc>
+    <loc>http://localhost:1313/posts/a_family_of_experiments_on_test_driven_development/</loc>
     <lastmod>2022-04-29T19:10:03+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/simcse/</loc>
+    <loc>http://localhost:1313/posts/simcse/</loc>
     <lastmod>2022-04-29T16:25:57+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/stochastic_gradient_boosting/</loc>
+    <loc>http://localhost:1313/posts/stochastic_gradient_boosting/</loc>
     <lastmod>2022-04-23T14:05:43+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/lightgbm/</loc>
+    <loc>http://localhost:1313/posts/lightgbm/</loc>
     <lastmod>2022-04-16T14:32:01+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/adam/</loc>
+    <loc>http://localhost:1313/posts/adam/</loc>
     <lastmod>2022-04-09T13:43:35+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/xgboost/</loc>
+    <loc>http://localhost:1313/posts/xgboost/</loc>
     <lastmod>2022-03-26T17:38:58+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/classifier_chains_for_multi-label_classification/</loc>
+    <loc>http://localhost:1313/posts/classifier_chains_for_multi-label_classification/</loc>
     <lastmod>2022-03-22T16:30:13+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/effective_multi-label_active_learning_for_text_classification/</loc>
+    <loc>http://localhost:1313/posts/effective_multi-label_active_learning_for_text_classification/</loc>
     <lastmod>2022-03-12T15:25:23+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/pegasos/</loc>
+    <loc>http://localhost:1313/posts/pegasos/</loc>
     <lastmod>2022-03-12T11:50:41+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/an_interior_point_method_for_large_scale_l1_regularized_least_squares/</loc>
+    <loc>http://localhost:1313/posts/an_interior_point_method_for_large_scale_l1_regularized_least_squares/</loc>
     <lastmod>2022-03-05T13:11:47+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/regularization_paths_for_generalized_liner_models_via_coordinate_descent/</loc>
+    <loc>http://localhost:1313/posts/regularization_paths_for_generalized_liner_models_via_coordinate_descent/</loc>
     <lastmod>2022-02-19T15:02:19+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/using_tfidf_to_determine_word_relevance_in_document_queries/</loc>
+    <loc>http://localhost:1313/posts/using_tfidf_to_determine_word_relevance_in_document_queries/</loc>
     <lastmod>2022-02-19T13:31:44+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/an_algorithm_for_suffix_stripping/</loc>
+    <loc>http://localhost:1313/posts/an_algorithm_for_suffix_stripping/</loc>
     <lastmod>2022-02-11T13:23:45+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/bringing_gnu_emacs_to_native_code/</loc>
+    <loc>http://localhost:1313/posts/bringing_gnu_emacs_to_native_code/</loc>
     <lastmod>2022-01-30T14:19:49+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/data_structure_for_text_sequence/</loc>
+    <loc>http://localhost:1313/posts/data_structure_for_text_sequence/</loc>
     <lastmod>2022-01-29T18:15:25+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/semi_supervised_classification_with_graph_convolutional_networks/</loc>
+    <loc>http://localhost:1313/posts/semi_supervised_classification_with_graph_convolutional_networks/</loc>
     <lastmod>2022-01-21T21:01:24+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/dynamic_routing_between_capsules/</loc>
+    <loc>http://localhost:1313/posts/dynamic_routing_between_capsules/</loc>
     <lastmod>2021-12-26T22:26:10+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/hierarchical_attention_networks_for_document_classification/</loc>
+    <loc>http://localhost:1313/posts/hierarchical_attention_networks_for_document_classification/</loc>
     <lastmod>2021-12-26T13:24:12+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/effective_approaches_to_attention_based_neural_machine_translation/</loc>
+    <loc>http://localhost:1313/posts/effective_approaches_to_attention_based_neural_machine_translation/</loc>
     <lastmod>2021-12-26T01:54:42+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/deep_learning_based_text_classification/</loc>
+    <loc>http://localhost:1313/posts/deep_learning_based_text_classification/</loc>
     <lastmod>2021-12-25T11:44:17+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/monitoring_streams/</loc>
+    <loc>http://localhost:1313/posts/monitoring_streams/</loc>
     <lastmod>2021-12-11T18:27:24+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/a_bridging_model_for_parallel_computation/</loc>
+    <loc>http://localhost:1313/posts/a_bridging_model_for_parallel_computation/</loc>
     <lastmod>2021-12-11T14:29:16+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/wait_free_synchronization/</loc>
+    <loc>http://localhost:1313/posts/wait_free_synchronization/</loc>
     <lastmod>2021-11-27T12:41:19+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/live_migration_of_virtual_machines/</loc>
+    <loc>http://localhost:1313/posts/live_migration_of_virtual_machines/</loc>
     <lastmod>2021-11-20T19:53:45+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/a-critique-of-ansi-sql-isolation-levels/</loc>
+    <loc>http://localhost:1313/posts/a-critique-of-ansi-sql-isolation-levels/</loc>
     <lastmod>2021-11-13T19:34:24+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/an_overview_of_data_warehousing_and_olap_technology/</loc>
+    <loc>http://localhost:1313/posts/an_overview_of_data_warehousing_and_olap_technology/</loc>
     <lastmod>2021-11-06T21:10:04+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/bayou/</loc>
+    <loc>http://localhost:1313/posts/bayou/</loc>
     <lastmod>2021-11-06T18:41:01+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/the_many_faces_of_publish_subscribe/</loc>
+    <loc>http://localhost:1313/posts/the_many_faces_of_publish_subscribe/</loc>
     <lastmod>2021-10-30T16:13:08+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/dryad/</loc>
+    <loc>http://localhost:1313/posts/dryad/</loc>
     <lastmod>2021-10-23T19:03:45+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/the_chubby_lock_service_for_loosely_coupled_distributed_systems/</loc>
+    <loc>http://localhost:1313/posts/the_chubby_lock_service_for_loosely_coupled_distributed_systems/</loc>
     <lastmod>2021-10-16T15:16:55+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/congestion_avoidance_and_control/</loc>
+    <loc>http://localhost:1313/posts/congestion_avoidance_and_control/</loc>
     <lastmod>2021-10-09T12:44:26+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/the_notion_of_consistency_and_predicate_locks_in_a_database_system/</loc>
+    <loc>http://localhost:1313/posts/the_notion_of_consistency_and_predicate_locks_in_a_database_system/</loc>
     <lastmod>2021-10-02T16:24:31+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/parallel_database_systems/</loc>
+    <loc>http://localhost:1313/posts/parallel_database_systems/</loc>
     <lastmod>2021-09-25T13:09:34+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/chain_replication_for_supporting_high_throughput_and_availability/</loc>
+    <loc>http://localhost:1313/posts/chain_replication_for_supporting_high_throughput_and_availability/</loc>
     <lastmod>2021-09-18T15:34:12+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/implementing_remote_procedure_calls/</loc>
+    <loc>http://localhost:1313/posts/implementing_remote_procedure_calls/</loc>
     <lastmod>2021-09-11T12:34:19+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/dremel/</loc>
+    <loc>http://localhost:1313/posts/dremel/</loc>
     <lastmod>2021-09-04T15:55:14+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/is_rust_used_safely_by_software_developers/</loc>
+    <loc>http://localhost:1313/posts/is_rust_used_safely_by_software_developers/</loc>
     <lastmod>2021-08-27T17:51:26+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/design_tradeoffs_for_ssd_performance/</loc>
+    <loc>http://localhost:1313/posts/design_tradeoffs_for_ssd_performance/</loc>
     <lastmod>2021-08-23T12:03:39+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/program_comprehension_and_code_complexity_metrics/</loc>
+    <loc>http://localhost:1313/posts/program_comprehension_and_code_complexity_metrics/</loc>
     <lastmod>2021-08-21T16:13:15+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/the_unix_time_sharing_system/</loc>
+    <loc>http://localhost:1313/posts/the_unix_time_sharing_system/</loc>
     <lastmod>2021-08-21T13:11:06+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/what_helped_and_what_did_not/</loc>
+    <loc>http://localhost:1313/posts/what_helped_and_what_did_not/</loc>
     <lastmod>2021-08-20T17:58:08+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/dont_do_that/</loc>
+    <loc>http://localhost:1313/posts/dont_do_that/</loc>
     <lastmod>2021-08-14T16:40:58+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/an_empirical_analysis_of_ui-based_flaky_tests/</loc>
+    <loc>http://localhost:1313/posts/an_empirical_analysis_of_ui-based_flaky_tests/</loc>
     <lastmod>2021-08-14T16:33:14+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/a_case_study_of_onboarding_in_software_teams/</loc>
+    <loc>http://localhost:1313/posts/a_case_study_of_onboarding_in_software_teams/</loc>
     <lastmod>2021-08-14T16:31:08+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/a_differential_testing_approach_for_evaluating_ast_mapping_algorithms/</loc>
+    <loc>http://localhost:1313/posts/a_differential_testing_approach_for_evaluating_ast_mapping_algorithms/</loc>
     <lastmod>2021-08-14T16:29:33+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/ignorance_and_prejudice_in_software_fairness/</loc>
+    <loc>http://localhost:1313/posts/ignorance_and_prejudice_in_software_fairness/</loc>
     <lastmod>2021-08-14T16:23:49+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/time_clocks_and_the_ordering_of_events_in_a_distributed_system/</loc>
+    <loc>http://localhost:1313/posts/time_clocks_and_the_ordering_of_events_in_a_distributed_system/</loc>
     <lastmod>2021-08-14T14:18:01+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/dataflow/</loc>
+    <loc>http://localhost:1313/posts/dataflow/</loc>
     <lastmod>2021-08-07T15:11:48+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/playing_planning_poker_in_crowds/</loc>
+    <loc>http://localhost:1313/posts/playing_planning_poker_in_crowds/</loc>
     <lastmod>2021-08-06T13:44:03+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/the_byzantine_generals_problem/</loc>
+    <loc>http://localhost:1313/posts/the_byzantine_generals_problem/</loc>
     <lastmod>2021-07-31T11:07:42+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/browsemaps/</loc>
+    <loc>http://localhost:1313/posts/browsemaps/</loc>
     <lastmod>2021-07-22T13:01:15+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/linearizability/</loc>
+    <loc>http://localhost:1313/posts/linearizability/</loc>
     <lastmod>2021-07-17T13:31:07+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/end_to_end_arguments_in_system_design/</loc>
+    <loc>http://localhost:1313/posts/end_to_end_arguments_in_system_design/</loc>
     <lastmod>2021-07-10T15:15:39+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/a_history_and_evaluation_of_systemr/</loc>
+    <loc>http://localhost:1313/posts/a_history_and_evaluation_of_systemr/</loc>
     <lastmod>2021-07-03T15:02:21+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/rei/</loc>
+    <loc>http://localhost:1313/posts/rei/</loc>
     <lastmod>2021-06-26T17:15:24+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/atcoder_abc206d/</loc>
+    <loc>http://localhost:1313/posts/atcoder_abc206d/</loc>
     <lastmod>2021-06-20T12:59:08+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/consistent_hashing_and_random_trees/</loc>
+    <loc>http://localhost:1313/posts/consistent_hashing_and_random_trees/</loc>
     <lastmod>2021-06-19T14:41:22+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/abc051d/</loc>
+    <loc>http://localhost:1313/posts/abc051d/</loc>
     <lastmod>2021-06-14T11:04:07+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/abc205d/</loc>
+    <loc>http://localhost:1313/posts/abc205d/</loc>
     <lastmod>2021-06-14T10:56:35+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/windows_azure_storage/</loc>
+    <loc>http://localhost:1313/posts/windows_azure_storage/</loc>
     <lastmod>2021-06-12T17:21:52+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/thrift/</loc>
+    <loc>http://localhost:1313/posts/thrift/</loc>
     <lastmod>2021-05-30T19:59:48+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/the_end_of_an_architectural_era/</loc>
+    <loc>http://localhost:1313/posts/the_end_of_an_architectural_era/</loc>
     <lastmod>2021-05-29T20:54:27+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/burst_tries/</loc>
+    <loc>http://localhost:1313/posts/burst_tries/</loc>
     <lastmod>2021-05-22T02:32:18+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/suffix_arrays/</loc>
+    <loc>http://localhost:1313/posts/suffix_arrays/</loc>
     <lastmod>2021-05-16T01:45:32+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/hyperdex/</loc>
+    <loc>http://localhost:1313/posts/hyperdex/</loc>
     <lastmod>2021-05-07T18:10:27+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/integrating_the_ub_tree_into_a_database_system_kernel/</loc>
+    <loc>http://localhost:1313/posts/integrating_the_ub_tree_into_a_database_system_kernel/</loc>
     <lastmod>2021-04-29T16:30:04+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/designing_access_methods/</loc>
+    <loc>http://localhost:1313/posts/designing_access_methods/</loc>
     <lastmod>2021-04-26T10:29:22+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/a_comparision_of_fractal_trees_to_lsm_trees/</loc>
+    <loc>http://localhost:1313/posts/a_comparision_of_fractal_trees_to_lsm_trees/</loc>
     <lastmod>2021-04-19T14:59:31+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/fast_intersection_algorithms_for_sorted_sequences/</loc>
+    <loc>http://localhost:1313/posts/fast_intersection_algorithms_for_sorted_sequences/</loc>
     <lastmod>2021-04-12T13:27:26+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/lsmtree/</loc>
+    <loc>http://localhost:1313/posts/lsmtree/</loc>
     <lastmod>2021-04-03T22:26:27+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/the_design_and_implementation_of_a_log_structured_file_system/</loc>
+    <loc>http://localhost:1313/posts/the_design_and_implementation_of_a_log_structured_file_system/</loc>
     <lastmod>2021-03-29T16:18:21+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/ariesim/</loc>
+    <loc>http://localhost:1313/posts/ariesim/</loc>
     <lastmod>2021-03-21T12:08:11+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/the_ubiquitous_b_tree/</loc>
+    <loc>http://localhost:1313/posts/the_ubiquitous_b_tree/</loc>
     <lastmod>2021-03-19T19:17:56+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/robust_random_cut_forest_based_anomaly_detection_on_streams/</loc>
+    <loc>http://localhost:1313/posts/robust_random_cut_forest_based_anomaly_detection_on_streams/</loc>
     <lastmod>2021-03-12T20:30:31+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/organization_and_maintenance_of_large_orderred_indexes/</loc>
+    <loc>http://localhost:1313/posts/organization_and_maintenance_of_large_orderred_indexes/</loc>
     <lastmod>2021-02-27T19:54:56+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/bloom-filter/</loc>
+    <loc>http://localhost:1313/tags/bloom-filter/</loc>
     <lastmod>2021-02-20T16:46:44+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/space_time_trade-offs_in_hash_coding_with_allowable_errors/</loc>
+    <loc>http://localhost:1313/posts/space_time_trade-offs_in_hash_coding_with_allowable_errors/</loc>
     <lastmod>2021-02-20T16:46:44+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/tree_index_on_solid_state_drives/</loc>
+    <loc>http://localhost:1313/posts/tree_index_on_solid_state_drives/</loc>
     <lastmod>2021-02-15T15:53:09+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/isolation_forest/</loc>
+    <loc>http://localhost:1313/posts/isolation_forest/</loc>
     <lastmod>2021-02-13T19:52:34+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/tao_facebooks_distributed_data_store_for_social_graph/</loc>
+    <loc>http://localhost:1313/posts/tao_facebooks_distributed_data_store_for_social_graph/</loc>
     <lastmod>2021-02-04T18:47:38+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/the_daily_life_of_software_engineers_during_the_covid_19_pandemic/</loc>
+    <loc>http://localhost:1313/posts/the_daily_life_of_software_engineers_during_the_covid_19_pandemic/</loc>
     <lastmod>2021-01-30T13:19:49+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/dapper/</loc>
+    <loc>http://localhost:1313/posts/dapper/</loc>
     <lastmod>2021-01-23T14:50:16+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/convolutional_2d_knowledge_graph_embeddings/</loc>
+    <loc>http://localhost:1313/posts/convolutional_2d_knowledge_graph_embeddings/</loc>
     <lastmod>2021-01-11T17:24:16+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/mvcc/</loc>
+    <loc>http://localhost:1313/posts/mvcc/</loc>
     <lastmod>2021-01-06T16:02:37+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/paxos_made_simple/</loc>
+    <loc>http://localhost:1313/posts/paxos_made_simple/</loc>
     <lastmod>2020-12-31T19:17:13+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/impossibility_of_distributed_consensus_with_one_faulty_process/</loc>
+    <loc>http://localhost:1313/posts/impossibility_of_distributed_consensus_with_one_faulty_process/</loc>
     <lastmod>2020-12-18T22:18:59+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/availability_in_globally_distributed_storage_systems/</loc>
+    <loc>http://localhost:1313/posts/availability_in_globally_distributed_storage_systems/</loc>
     <lastmod>2020-12-12T20:53:10+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/what_you_always_wanted_to_know_about_datalog/</loc>
+    <loc>http://localhost:1313/posts/what_you_always_wanted_to_know_about_datalog/</loc>
     <lastmod>2020-12-12T18:02:01+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/translating_embeddings_for_modeling_multi_relational_data/</loc>
+    <loc>http://localhost:1313/posts/translating_embeddings_for_modeling_multi_relational_data/</loc>
     <lastmod>2020-12-05T20:21:25+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/the_declarative_imperative/</loc>
+    <loc>http://localhost:1313/posts/the_declarative_imperative/</loc>
     <lastmod>2020-12-05T16:19:30+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/bigtable/</loc>
+    <loc>http://localhost:1313/posts/bigtable/</loc>
     <lastmod>2020-11-30T20:18:18+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/aerospike/</loc>
+    <loc>http://localhost:1313/posts/aerospike/</loc>
     <lastmod>2020-11-28T21:22:34+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/spanner/</loc>
+    <loc>http://localhost:1313/posts/spanner/</loc>
     <lastmod>2020-11-27T16:56:57+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/a_relational_model_of_data_for_large_shared_data_banks/</loc>
+    <loc>http://localhost:1313/posts/a_relational_model_of_data_for_large_shared_data_banks/</loc>
     <lastmod>2020-11-21T13:51:57+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/on_designing_and_deploying_internet-scale_services/</loc>
+    <loc>http://localhost:1313/posts/on_designing_and_deploying_internet-scale_services/</loc>
     <lastmod>2020-11-20T18:55:51+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/weighted_voting_for_replicated_data/</loc>
+    <loc>http://localhost:1313/posts/weighted_voting_for_replicated_data/</loc>
     <lastmod>2020-11-19T21:21:33+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/amazon_aurora/</loc>
+    <loc>http://localhost:1313/posts/amazon_aurora/</loc>
     <lastmod>2020-11-13T17:51:53+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/one-size-fits-all-an-idea-whose-time-has-come-and-gone/</loc>
+    <loc>http://localhost:1313/posts/one-size-fits-all-an-idea-whose-time-has-come-and-gone/</loc>
     <lastmod>2020-11-13T16:05:23+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/dynamo_amazons_highly_available_key_value_store/</loc>
+    <loc>http://localhost:1313/posts/dynamo_amazons_highly_available_key_value_store/</loc>
     <lastmod>2020-11-06T17:06:40+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/zero_shot_word_sense_disambiguation_using_sense_definition_embeddings/</loc>
+    <loc>http://localhost:1313/posts/zero_shot_word_sense_disambiguation_using_sense_definition_embeddings/</loc>
     <lastmod>2020-10-30T18:58:39+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/simple_testing_can_prevent_most_critical_failures/</loc>
+    <loc>http://localhost:1313/posts/simple_testing_can_prevent_most_critical_failures/</loc>
     <lastmod>2020-10-29T20:53:06+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/from_diversity_by_numbers_to_diversity_as_process/</loc>
+    <loc>http://localhost:1313/posts/from_diversity_by_numbers_to_diversity_as_process/</loc>
     <lastmod>2020-10-16T23:58:44+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/end_to_end_sequence_labeling_via_bi_directional_lstm_cnns_crf/</loc>
+    <loc>http://localhost:1313/posts/end_to_end_sequence_labeling_via_bi_directional_lstm_cnns_crf/</loc>
     <lastmod>2020-10-16T22:17:56+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/becoming_agile/</loc>
+    <loc>http://localhost:1313/posts/becoming_agile/</loc>
     <lastmod>2020-10-16T17:34:32+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/software_development_waste/</loc>
+    <loc>http://localhost:1313/posts/software_development_waste/</loc>
     <lastmod>2020-10-11T15:02:49+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/end_to_end_neural_coreference_resolution/</loc>
+    <loc>http://localhost:1313/posts/end_to_end_neural_coreference_resolution/</loc>
     <lastmod>2020-10-10T00:12:47+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/build_it_yourself/</loc>
+    <loc>http://localhost:1313/posts/build_it_yourself/</loc>
     <lastmod>2020-10-02T20:22:20+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/universal_sentence_encoder/</loc>
+    <loc>http://localhost:1313/posts/universal_sentence_encoder/</loc>
     <lastmod>2020-10-02T18:20:29+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/how_much_up-front/</loc>
+    <loc>http://localhost:1313/posts/how_much_up-front/</loc>
     <lastmod>2020-09-25T20:40:50+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/character_level_convolutional_networks_for_text_classification/</loc>
+    <loc>http://localhost:1313/posts/character_level_convolutional_networks_for_text_classification/</loc>
     <lastmod>2020-09-25T18:10:08+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/what_makes_a_great_software_engineer/</loc>
+    <loc>http://localhost:1313/posts/what_makes_a_great_software_engineer/</loc>
     <lastmod>2020-09-18T20:19:31+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/maml/</loc>
+    <loc>http://localhost:1313/posts/maml/</loc>
     <lastmod>2020-09-18T17:54:38+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/truth_in_advertising/</loc>
+    <loc>http://localhost:1313/posts/truth_in_advertising/</loc>
     <lastmod>2020-09-11T20:01:30+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/skip_thought_vectors/</loc>
+    <loc>http://localhost:1313/posts/skip_thought_vectors/</loc>
     <lastmod>2020-09-11T16:09:15+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/beyond_accuracy/</loc>
+    <loc>http://localhost:1313/posts/beyond_accuracy/</loc>
     <lastmod>2020-09-04T21:54:22+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/why_good_developers_write_bad_code/</loc>
+    <loc>http://localhost:1313/posts/why_good_developers_write_bad_code/</loc>
     <lastmod>2020-09-04T20:54:26+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/a_comparative_study_of_programming_languages_in_rosetta_code/</loc>
+    <loc>http://localhost:1313/posts/a_comparative_study_of_programming_languages_in_rosetta_code/</loc>
     <lastmod>2020-08-28T20:19:47+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/squad/</loc>
+    <loc>http://localhost:1313/posts/squad/</loc>
     <lastmod>2020-08-28T19:36:42+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/extensible_effects/</loc>
+    <loc>http://localhost:1313/posts/extensible_effects/</loc>
     <lastmod>2020-08-23T13:34:09+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/when_and_why_your_code_starts_to_smell_bad/</loc>
+    <loc>http://localhost:1313/posts/when_and_why_your_code_starts_to_smell_bad/</loc>
     <lastmod>2020-08-21T18:03:14+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/extracting_and_composing_robust_features_with_denoising_autoencoders/</loc>
+    <loc>http://localhost:1313/posts/extracting_and_composing_robust_features_with_denoising_autoencoders/</loc>
     <lastmod>2020-08-21T17:04:31+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/statistical_errors_in_software_engineering_experiments/</loc>
+    <loc>http://localhost:1313/posts/statistical_errors_in_software_engineering_experiments/</loc>
     <lastmod>2020-08-14T18:39:35+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/semi-supervised_learning_with_ladder_networks/</loc>
+    <loc>http://localhost:1313/posts/semi-supervised_learning_with_ladder_networks/</loc>
     <lastmod>2020-08-14T17:01:02+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/an_empirical_study_on_program_failures_on_deep_learning_jobs/</loc>
+    <loc>http://localhost:1313/posts/an_empirical_study_on_program_failures_on_deep_learning_jobs/</loc>
     <lastmod>2020-08-07T18:50:12+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/</loc>
+    <loc>http://localhost:1313/posts/improving_language_understanding_by_generative_pre_training/</loc>
     <lastmod>2020-08-07T16:45:55+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/a_tale_from_the_trenches/</loc>
+    <loc>http://localhost:1313/posts/a_tale_from_the_trenches/</loc>
     <lastmod>2020-07-31T18:55:54+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/factorization_machines/</loc>
+    <loc>http://localhost:1313/posts/factorization_machines/</loc>
     <lastmod>2020-07-31T16:50:25+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/exploration_of_technical_debt_in_start_ups/</loc>
+    <loc>http://localhost:1313/posts/exploration_of_technical_debt_in_start_ups/</loc>
     <lastmod>2020-07-24T15:26:42+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/deep_learning_recommendation_model_for_personalization_and_recommendation_systems/</loc>
+    <loc>http://localhost:1313/posts/deep_learning_recommendation_model_for_personalization_and_recommendation_systems/</loc>
     <lastmod>2020-07-24T13:53:05+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/explaining_pair_programming_session_dynamics_from_knowledge_gaps/</loc>
+    <loc>http://localhost:1313/posts/explaining_pair_programming_session_dynamics_from_knowledge_gaps/</loc>
     <lastmod>2020-07-17T19:20:38+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/bag_of_trics_for_efficient_text_classification/</loc>
+    <loc>http://localhost:1313/posts/bag_of_trics_for_efficient_text_classification/</loc>
     <lastmod>2020-07-17T17:09:26+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/recognizing_developers_emotions_while_programming/</loc>
+    <loc>http://localhost:1313/posts/recognizing_developers_emotions_while_programming/</loc>
     <lastmod>2020-07-11T12:45:00+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/pytorch_an_imperative_style_high_performance_deep_learning_library/</loc>
+    <loc>http://localhost:1313/posts/pytorch_an_imperative_style_high_performance_deep_learning_library/</loc>
     <lastmod>2020-07-11T01:47:32+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/here_we_go_again/</loc>
+    <loc>http://localhost:1313/posts/here_we_go_again/</loc>
     <lastmod>2020-07-04T13:55:02+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/automatic_differentiation_in_pytorch/</loc>
+    <loc>http://localhost:1313/posts/automatic_differentiation_in_pytorch/</loc>
     <lastmod>2020-07-04T12:06:25+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/rouge/</loc>
+    <loc>http://localhost:1313/posts/rouge/</loc>
     <lastmod>2020-06-27T12:55:45+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/do_developers_discover_new_tools_on_the_toilet/</loc>
+    <loc>http://localhost:1313/posts/do_developers_discover_new_tools_on_the_toilet/</loc>
     <lastmod>2020-06-20T22:33:10+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/a_neural_attention_model_for_sentence_summarization/</loc>
+    <loc>http://localhost:1313/posts/a_neural_attention_model_for_sentence_summarization/</loc>
     <lastmod>2020-06-20T16:23:49+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/bleu/</loc>
+    <loc>http://localhost:1313/posts/bleu/</loc>
     <lastmod>2020-06-13T13:48:07+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/sequence_to_sequence_learning_with_neural_networks/</loc>
+    <loc>http://localhost:1313/posts/sequence_to_sequence_learning_with_neural_networks/</loc>
     <lastmod>2020-06-06T00:18:16+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/google_neural_machine_translation_system/</loc>
+    <loc>http://localhost:1313/posts/google_neural_machine_translation_system/</loc>
     <lastmod>2020-05-30T16:09:32+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/zero_shot_learning_with_semantic_output_codes/</loc>
+    <loc>http://localhost:1313/posts/zero_shot_learning_with_semantic_output_codes/</loc>
     <lastmod>2020-05-23T14:04:24+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/a_structured_self_attentivesentence_embedding/</loc>
+    <loc>http://localhost:1313/posts/a_structured_self_attentivesentence_embedding/</loc>
     <lastmod>2020-05-16T14:05:38+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/poincare_embeddings/</loc>
+    <loc>http://localhost:1313/posts/poincare_embeddings/</loc>
     <lastmod>2020-05-09T14:42:32+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/learning_joint_multilingual_sentence_representations_with_neural_machine_translation/</loc>
+    <loc>http://localhost:1313/posts/learning_joint_multilingual_sentence_representations_with_neural_machine_translation/</loc>
     <lastmod>2020-04-29T14:40:56+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/albert/</loc>
+    <loc>http://localhost:1313/posts/albert/</loc>
     <lastmod>2020-04-25T13:12:05+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/random_walks_in_recommender_systems/</loc>
+    <loc>http://localhost:1313/posts/random_walks_in_recommender_systems/</loc>
     <lastmod>2020-04-18T01:25:10+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/domain_adversarial_training_of_neural_networks/</loc>
+    <loc>http://localhost:1313/posts/domain_adversarial_training_of_neural_networks/</loc>
     <lastmod>2020-04-11T15:07:47+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/character_aware_neural_language_models/</loc>
+    <loc>http://localhost:1313/posts/character_aware_neural_language_models/</loc>
     <lastmod>2020-04-04T16:46:56+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/deep_contextualized_word_representations/</loc>
+    <loc>http://localhost:1313/posts/deep_contextualized_word_representations/</loc>
     <lastmod>2020-03-24T01:59:00+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/the_seven_sins/</loc>
+    <loc>http://localhost:1313/posts/the_seven_sins/</loc>
     <lastmod>2020-03-20T15:14:44+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/semi_supervised_sequence_learning/</loc>
+    <loc>http://localhost:1313/posts/semi_supervised_sequence_learning/</loc>
     <lastmod>2020-03-14T23:46:31+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/raft/</loc>
+    <loc>http://localhost:1313/posts/raft/</loc>
     <lastmod>2020-03-09T02:17:22+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/raft/</loc>
+    <loc>http://localhost:1313/tags/raft/</loc>
     <lastmod>2020-03-09T02:17:22+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%B5%E3%82%B9-%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0/</loc>
+    <loc>http://localhost:1313/tags/%E3%82%B3%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%B5%E3%82%B9-%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0/</loc>
     <lastmod>2020-03-09T02:17:22+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/sentencepiece/</loc>
+    <loc>http://localhost:1313/tags/sentencepiece/</loc>
     <lastmod>2020-02-29T21:15:17+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/sentence_piece/</loc>
+    <loc>http://localhost:1313/posts/sentence_piece/</loc>
     <lastmod>2020-02-29T21:15:17+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/latent_dirichlet_allocation/</loc>
+    <loc>http://localhost:1313/posts/latent_dirichlet_allocation/</loc>
     <lastmod>2020-02-23T21:54:59+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%83%88%E3%83%94%E3%83%83%E3%82%AF%E3%83%A2%E3%83%87%E3%83%AB/</loc>
+    <loc>http://localhost:1313/tags/%E3%83%88%E3%83%94%E3%83%83%E3%82%AF%E3%83%A2%E3%83%87%E3%83%AB/</loc>
     <lastmod>2020-02-23T21:54:59+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/pretraining/</loc>
+    <loc>http://localhost:1313/tags/pretraining/</loc>
     <lastmod>2020-02-16T14:21:55+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/seq2seq/</loc>
+    <loc>http://localhost:1313/tags/seq2seq/</loc>
     <lastmod>2020-02-16T14:21:55+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/unsupervised_pretraining_for_sequence_to_sequence_learning/</loc>
+    <loc>http://localhost:1313/posts/unsupervised_pretraining_for_sequence_to_sequence_learning/</loc>
     <lastmod>2020-02-16T14:21:55+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/playing_atari_with_deep_reinforcement_learning/</loc>
+    <loc>http://localhost:1313/posts/playing_atari_with_deep_reinforcement_learning/</loc>
     <lastmod>2020-02-09T17:05:30+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/context2vec/</loc>
+    <loc>http://localhost:1313/posts/context2vec/</loc>
     <lastmod>2020-02-02T19:19:46+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/neural_machine_translation_by_jointly_learning_to_align_and_translate/</loc>
+    <loc>http://localhost:1313/posts/neural_machine_translation_by_jointly_learning_to_align_and_translate/</loc>
     <lastmod>2020-02-01T17:21:41+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/why_should_i_trust_you/</loc>
+    <loc>http://localhost:1313/posts/why_should_i_trust_you/</loc>
     <lastmod>2020-01-26T01:38:57+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E8%AA%AC%E6%98%8E%E5%8F%AF%E8%83%BD%E3%81%AAai/</loc>
+    <loc>http://localhost:1313/tags/%E8%AA%AC%E6%98%8E%E5%8F%AF%E8%83%BD%E3%81%AAai/</loc>
     <lastmod>2020-01-26T01:38:57+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/active_learning_for_ranking_through_expected_loss_optimization/</loc>
+    <loc>http://localhost:1313/posts/active_learning_for_ranking_through_expected_loss_optimization/</loc>
     <lastmod>2020-01-19T18:23:41+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E8%83%BD%E5%8B%95%E5%AD%A6%E7%BF%92/</loc>
+    <loc>http://localhost:1313/tags/%E8%83%BD%E5%8B%95%E5%AD%A6%E7%BF%92/</loc>
     <lastmod>2020-01-19T18:23:41+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/docker-cmake-clang/</loc>
+    <loc>http://localhost:1313/posts/docker-cmake-clang/</loc>
     <lastmod>2020-01-14T00:29:43+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/ner/</loc>
+    <loc>http://localhost:1313/tags/ner/</loc>
     <lastmod>2020-01-13T19:54:03+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/unsupervised_models_for_named_entity_classification/</loc>
+    <loc>http://localhost:1313/posts/unsupervised_models_for_named_entity_classification/</loc>
     <lastmod>2020-01-13T19:54:03+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E6%95%99%E5%B8%AB%E3%81%AA%E3%81%97%E5%AD%A6%E7%BF%92/</loc>
+    <loc>http://localhost:1313/tags/%E6%95%99%E5%B8%AB%E3%81%AA%E3%81%97%E5%AD%A6%E7%BF%92/</loc>
     <lastmod>2020-01-13T19:54:03+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/multilabel_classification_with_label_correlations_and_missing_labels/</loc>
+    <loc>http://localhost:1313/posts/multilabel_classification_with_label_correlations_and_missing_labels/</loc>
     <lastmod>2020-01-06T22:27:05+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A9%E3%83%99%E3%83%AB%E5%88%86%E9%A1%9E/</loc>
+    <loc>http://localhost:1313/tags/%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A9%E3%83%99%E3%83%AB%E5%88%86%E9%A1%9E/</loc>
     <lastmod>2020-01-06T22:27:05+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/</loc>
+    <loc>http://localhost:1313/posts/learning_deep_structured_semantics_models_for_web_search_using_clickthrough_data/</loc>
     <lastmod>2020-01-04T23:25:20+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/classification_in_the_presence_of_label_noise/</loc>
+    <loc>http://localhost:1313/posts/classification_in_the_presence_of_label_noise/</loc>
     <lastmod>2019-12-30T16:07:40+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/label-noise/</loc>
+    <loc>http://localhost:1313/tags/label-noise/</loc>
     <lastmod>2019-12-30T16:07:40+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%82%B5%E3%83%BC%E3%83%99%E3%82%A4%E8%AB%96%E6%96%87/</loc>
+    <loc>http://localhost:1313/tags/%E3%82%B5%E3%83%BC%E3%83%99%E3%82%A4%E8%AB%96%E6%96%87/</loc>
     <lastmod>2019-12-30T16:07:40+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/distributed_representations_of_sentences_and_documents/</loc>
+    <loc>http://localhost:1313/posts/distributed_representations_of_sentences_and_documents/</loc>
     <lastmod>2019-12-28T00:56:36+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/glove_vectors_for_word_representation/</loc>
+    <loc>http://localhost:1313/posts/glove_vectors_for_word_representation/</loc>
     <lastmod>2019-12-21T23:53:36+09:00</lastmod>
   </url><url>
-    <loc>https://ryotaro.dev/posts/bert/</loc>
+    <loc>http://localhost:1313/posts/bert/</loc>
     <lastmod>2019-12-14T17:39:09+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/150_successfuly_machine_learning_modes/</loc>
-    <lastmod>2019-12-14T13:25:04+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/empirical-research/</loc>
-    <lastmod>2019-12-14T13:25:04+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/mlops/</loc>
-    <lastmod>2019-12-14T13:25:04+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/ranking_relevance_in_yahoo_search/</loc>
-    <lastmod>2019-12-07T15:10:51+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/a_dual_embedding_space_model_for_document_ranking/</loc>
-    <lastmod>2019-11-30T08:18:06+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/confidence-calibration/</loc>
-    <lastmod>2019-11-23T14:37:30+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/on_calibration_of_modern_neural_networks/</loc>
-    <lastmod>2019-11-23T14:37:30+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/nearest-neighbor/</loc>
-    <lastmod>2019-11-16T13:12:52+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/trinary_projection_trees/</loc>
-    <lastmod>2019-11-16T13:12:52+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/weak-supervision/</loc>
-    <lastmod>2019-11-09T21:46:12+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/get_another_label/</loc>
-    <lastmod>2019-11-09T21:46:12+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/active_clean/</loc>
-    <lastmod>2019-11-09T15:37:31+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%83%87%E3%83%BC%E3%82%BF%E5%8F%8E%E9%9B%86/</loc>
-    <lastmod>2019-10-31T21:09:38+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/web_tables/</loc>
-    <lastmod>2019-10-31T21:09:38+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/a_survey_on_data_collection_for_machine_learning/</loc>
-    <lastmod>2019-10-26T14:27:10+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/structure_estimation_for_dscrete_graphical_models/</loc>
-    <lastmod>2019-10-19T16:21:31+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/feature_selection_for_text_categorization_on_imbalance_data/</loc>
-    <lastmod>2019-10-12T15:59:09+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/%E7%89%B9%E5%BE%B4%E9%81%B8%E6%8A%9E/</loc>
-    <lastmod>2019-10-12T15:59:09+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/%E4%B8%8D%E5%9D%87%E8%A1%A1%E3%83%87%E3%83%BC%E3%82%BF/</loc>
-    <lastmod>2019-10-12T15:59:09+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/snorkel_drybell_case_study/</loc>
-    <lastmod>2019-10-05T00:45:00+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/training_complex_models_with_multi_task_weak_supervision/</loc>
-    <lastmod>2019-09-28T14:53:47+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/snorkel_rapid_training_data_creation_with_weak_supervision/</loc>
-    <lastmod>2019-09-21T12:01:51+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/software_engineering_for_machine_learning/</loc>
-    <lastmod>2019-09-14T11:26:41+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/class_imbalance_redux/</loc>
-    <lastmod>2019-09-07T15:34:06+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/active-learning/</loc>
-    <lastmod>2019-08-31T02:05:53+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/learning_on_border/</loc>
-    <lastmod>2019-08-31T02:05:53+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/distilling_the_knowledge_in_a_neural_network/</loc>
-    <lastmod>2019-08-24T23:04:39+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/extreme-classification/</loc>
-    <lastmod>2019-08-24T15:45:40+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/fastxml/</loc>
-    <lastmod>2019-08-24T15:45:40+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/advantages_and_disadvantages_of_a_monolithic_repository/</loc>
-    <lastmod>2019-08-17T14:49:48+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E7%AE%A1%E7%90%86%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</loc>
-    <lastmod>2019-08-17T14:49:48+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/%E5%8B%BE%E9%85%8D%E3%83%96%E3%83%BC%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0/</loc>
-    <lastmod>2019-08-10T23:27:29+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/cat_boost/</loc>
-    <lastmod>2019-08-10T23:27:29+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/are_we_really_making_much_progress/</loc>
-    <lastmod>2019-08-10T14:39:11+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/%E6%8E%A8%E8%96%A6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</loc>
-    <lastmod>2019-08-10T14:39:11+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%82%AC%E3%82%A6%E3%82%B9%E9%81%8E%E7%A8%8B%E5%9B%9E%E5%B8%B0/</loc>
-    <lastmod>2019-08-03T21:54:03+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/gaussian_processes_for_regression/</loc>
-    <lastmod>2019-08-03T21:54:03+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%83%8F%E3%82%A4%E3%83%91%E3%83%BC%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E6%8E%A2%E7%B4%A2/</loc>
-    <lastmod>2019-08-03T17:18:36+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/google_vizier/</loc>
-    <lastmod>2019-08-03T17:18:36+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/learning_active_learning_from_data/</loc>
-    <lastmod>2019-07-27T16:40:43+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89%E6%8A%BD%E5%87%BA/</loc>
-    <lastmod>2019-07-20T17:49:36+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/textrank/</loc>
-    <lastmod>2019-07-20T17:49:36+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/subword_regularization/</loc>
-    <lastmod>2019-07-17T12:51:29+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/neural_machine_translation_of_rate_words/</loc>
-    <lastmod>2019-07-13T17:19:10+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/the_annotated_transformer/</loc>
-    <lastmod>2019-07-01T12:57:09+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/knowledge-graph/</loc>
-    <lastmod>2019-02-17T17:03:49+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/embedding_logical_queries_on_knowledge_graphs/</loc>
-    <lastmod>2019-02-17T17:03:49+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/regularizing_and_optimizing_lstm_language_models/</loc>
-    <lastmod>2018-11-23T19:27:00+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/entity-disambiguation/</loc>
-    <lastmod>2018-11-09T21:11:50+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/deep_joint_entity_disambiguation/</loc>
-    <lastmod>2018-11-09T21:11:50+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/entity-linking/</loc>
-    <lastmod>2018-11-02T16:59:14+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/end_to_end_neural_entity_linking/</loc>
-    <lastmod>2018-11-02T16:59:14+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/deeptype/</loc>
-    <lastmod>2018-10-26T20:53:08+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/crf/</loc>
-    <lastmod>2018-10-12T18:39:08+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/conditional_random_fields_probabilistic_models_for_segmenting_and_labeling_sequence/</loc>
-    <lastmod>2018-10-12T18:39:08+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/%E7%B3%BB%E5%88%97%E3%83%A9%E3%83%99%E3%83%AA%E3%83%B3%E3%82%B0/</loc>
-    <lastmod>2018-10-05T18:46:36+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/bidirectional_lstm_crf_models_for_sequence_tagging/</loc>
-    <lastmod>2018-10-05T18:46:36+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/word-embedding/</loc>
-    <lastmod>2018-09-28T16:29:46+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/context_string_embeddings_for_sequence_labeling/</loc>
-    <lastmod>2018-09-28T16:29:46+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/fine-tuning/</loc>
-    <lastmod>2018-09-14T16:33:43+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/universal_language_model_fine_tuning_for_text_classification/</loc>
-    <lastmod>2018-09-14T16:33:43+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/graph-embedding/</loc>
-    <lastmod>2018-09-07T18:31:47+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/metapath2vec/</loc>
-    <lastmod>2018-09-07T18:31:47+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/applying_deep_learning_to_airbnb_search/</loc>
-    <lastmod>2018-08-31T19:21:10+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/the_relationship_between_precision_recall_and_roc_curve/</loc>
-    <lastmod>2018-08-25T00:56:13+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/%E5%88%86%E9%A1%9E%E3%81%AE%E8%A9%95%E4%BE%A1/</loc>
-    <lastmod>2018-08-25T00:56:13+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/enriching_word_vectors_with_subword_information/</loc>
-    <lastmod>2018-08-10T17:29:44+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/%E3%83%90%E3%82%B0%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2018-08-03T21:47:03+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/when_do_changes_induce_fixes/</loc>
-    <lastmod>2018-08-03T21:47:03+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/%E5%BD%A2%E6%85%8B%E7%B4%A0%E8%A7%A3%E6%9E%90/</loc>
-    <lastmod>2018-07-17T12:51:29+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/%E5%8D%8A%E6%95%99%E5%B8%AB%E5%AD%A6%E7%BF%92/</loc>
-    <lastmod>2018-07-17T12:51:29+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/a_simple_semi_supervised_for_ner/</loc>
-    <lastmod>2018-07-17T12:51:29+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/applying_crf_to_japanese_morph_analysis/</loc>
-    <lastmod>2018-07-17T12:51:29+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/posts/text_cls_from_lbl_and_unlbl_doc_em/</loc>
-    <lastmod>2018-07-08T01:23:49+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/tags/%E6%96%87%E6%9B%B8%E5%88%86%E9%A1%9E/</loc>
-    <lastmod>2018-07-08T01:23:49+09:00</lastmod>
-  </url><url>
-    <loc>https://ryotaro.dev/about/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ryotaro.dev/en/about/"
+                href="http://localhost:1313/en/posts/bert/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://ryotaro.dev/about/"
+                href="http://localhost:1313/posts/bert/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/posts/150_successfuly_machine_learning_modes/</loc>
+    <lastmod>2019-12-14T13:25:04+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/empirical-research/</loc>
+    <lastmod>2019-12-14T13:25:04+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/mlops/</loc>
+    <lastmod>2019-12-14T13:25:04+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/ranking_relevance_in_yahoo_search/</loc>
+    <lastmod>2019-12-07T15:10:51+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/a_dual_embedding_space_model_for_document_ranking/</loc>
+    <lastmod>2019-11-30T08:18:06+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/confidence-calibration/</loc>
+    <lastmod>2019-11-23T14:37:30+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/on_calibration_of_modern_neural_networks/</loc>
+    <lastmod>2019-11-23T14:37:30+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/nearest-neighbor/</loc>
+    <lastmod>2019-11-16T13:12:52+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/trinary_projection_trees/</loc>
+    <lastmod>2019-11-16T13:12:52+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/weak-supervision/</loc>
+    <lastmod>2019-11-09T21:46:12+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/get_another_label/</loc>
+    <lastmod>2019-11-09T21:46:12+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/active_clean/</loc>
+    <lastmod>2019-11-09T15:37:31+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E3%83%87%E3%83%BC%E3%82%BF%E5%8F%8E%E9%9B%86/</loc>
+    <lastmod>2019-10-31T21:09:38+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/web_tables/</loc>
+    <lastmod>2019-10-31T21:09:38+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/a_survey_on_data_collection_for_machine_learning/</loc>
+    <lastmod>2019-10-26T14:27:10+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/structure_estimation_for_dscrete_graphical_models/</loc>
+    <lastmod>2019-10-19T16:21:31+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/feature_selection_for_text_categorization_on_imbalance_data/</loc>
+    <lastmod>2019-10-12T15:59:09+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E7%89%B9%E5%BE%B4%E9%81%B8%E6%8A%9E/</loc>
+    <lastmod>2019-10-12T15:59:09+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E4%B8%8D%E5%9D%87%E8%A1%A1%E3%83%87%E3%83%BC%E3%82%BF/</loc>
+    <lastmod>2019-10-12T15:59:09+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/snorkel_drybell_case_study/</loc>
+    <lastmod>2019-10-05T00:45:00+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/training_complex_models_with_multi_task_weak_supervision/</loc>
+    <lastmod>2019-09-28T14:53:47+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/snorkel_rapid_training_data_creation_with_weak_supervision/</loc>
+    <lastmod>2019-09-21T12:01:51+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/software_engineering_for_machine_learning/</loc>
+    <lastmod>2019-09-14T11:26:41+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/class_imbalance_redux/</loc>
+    <lastmod>2019-09-07T15:34:06+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/active-learning/</loc>
+    <lastmod>2019-08-31T02:05:53+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/learning_on_border/</loc>
+    <lastmod>2019-08-31T02:05:53+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/distilling_the_knowledge_in_a_neural_network/</loc>
+    <lastmod>2019-08-24T23:04:39+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/extreme-classification/</loc>
+    <lastmod>2019-08-24T15:45:40+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/fastxml/</loc>
+    <lastmod>2019-08-24T15:45:40+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/advantages_and_disadvantages_of_a_monolithic_repository/</loc>
+    <lastmod>2019-08-17T14:49:48+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E7%AE%A1%E7%90%86%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</loc>
+    <lastmod>2019-08-17T14:49:48+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E5%8B%BE%E9%85%8D%E3%83%96%E3%83%BC%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0/</loc>
+    <lastmod>2019-08-10T23:27:29+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/cat_boost/</loc>
+    <lastmod>2019-08-10T23:27:29+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/are_we_really_making_much_progress/</loc>
+    <lastmod>2019-08-10T14:39:11+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E6%8E%A8%E8%96%A6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</loc>
+    <lastmod>2019-08-10T14:39:11+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E3%82%AC%E3%82%A6%E3%82%B9%E9%81%8E%E7%A8%8B%E5%9B%9E%E5%B8%B0/</loc>
+    <lastmod>2019-08-03T21:54:03+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/gaussian_processes_for_regression/</loc>
+    <lastmod>2019-08-03T21:54:03+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E3%83%8F%E3%82%A4%E3%83%91%E3%83%BC%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E6%8E%A2%E7%B4%A2/</loc>
+    <lastmod>2019-08-03T17:18:36+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/google_vizier/</loc>
+    <lastmod>2019-08-03T17:18:36+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/learning_active_learning_from_data/</loc>
+    <lastmod>2019-07-27T16:40:43+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89%E6%8A%BD%E5%87%BA/</loc>
+    <lastmod>2019-07-20T17:49:36+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/textrank/</loc>
+    <lastmod>2019-07-20T17:49:36+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/subword_regularization/</loc>
+    <lastmod>2019-07-17T12:51:29+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/neural_machine_translation_of_rate_words/</loc>
+    <lastmod>2019-07-13T17:19:10+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/the_annotated_transformer/</loc>
+    <lastmod>2019-07-01T12:57:09+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/knowledge-graph/</loc>
+    <lastmod>2019-02-17T17:03:49+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/embedding_logical_queries_on_knowledge_graphs/</loc>
+    <lastmod>2019-02-17T17:03:49+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/regularizing_and_optimizing_lstm_language_models/</loc>
+    <lastmod>2018-11-23T19:27:00+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/entity-disambiguation/</loc>
+    <lastmod>2018-11-09T21:11:50+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/deep_joint_entity_disambiguation/</loc>
+    <lastmod>2018-11-09T21:11:50+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/entity-linking/</loc>
+    <lastmod>2018-11-02T16:59:14+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/end_to_end_neural_entity_linking/</loc>
+    <lastmod>2018-11-02T16:59:14+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/deeptype/</loc>
+    <lastmod>2018-10-26T20:53:08+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/crf/</loc>
+    <lastmod>2018-10-12T18:39:08+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/conditional_random_fields_probabilistic_models_for_segmenting_and_labeling_sequence/</loc>
+    <lastmod>2018-10-12T18:39:08+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E7%B3%BB%E5%88%97%E3%83%A9%E3%83%99%E3%83%AA%E3%83%B3%E3%82%B0/</loc>
+    <lastmod>2018-10-05T18:46:36+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/bidirectional_lstm_crf_models_for_sequence_tagging/</loc>
+    <lastmod>2018-10-05T18:46:36+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/word-embedding/</loc>
+    <lastmod>2018-09-28T16:29:46+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/context_string_embeddings_for_sequence_labeling/</loc>
+    <lastmod>2018-09-28T16:29:46+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/fine-tuning/</loc>
+    <lastmod>2018-09-14T16:33:43+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/universal_language_model_fine_tuning_for_text_classification/</loc>
+    <lastmod>2018-09-14T16:33:43+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/graph-embedding/</loc>
+    <lastmod>2018-09-07T18:31:47+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/metapath2vec/</loc>
+    <lastmod>2018-09-07T18:31:47+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/applying_deep_learning_to_airbnb_search/</loc>
+    <lastmod>2018-08-31T19:21:10+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/the_relationship_between_precision_recall_and_roc_curve/</loc>
+    <lastmod>2018-08-25T00:56:13+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E5%88%86%E9%A1%9E%E3%81%AE%E8%A9%95%E4%BE%A1/</loc>
+    <lastmod>2018-08-25T00:56:13+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/enriching_word_vectors_with_subword_information/</loc>
+    <lastmod>2018-08-10T17:29:44+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E3%83%90%E3%82%B0%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2018-08-03T21:47:03+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/when_do_changes_induce_fixes/</loc>
+    <lastmod>2018-08-03T21:47:03+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E5%BD%A2%E6%85%8B%E7%B4%A0%E8%A7%A3%E6%9E%90/</loc>
+    <lastmod>2018-07-17T12:51:29+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E5%8D%8A%E6%95%99%E5%B8%AB%E5%AD%A6%E7%BF%92/</loc>
+    <lastmod>2018-07-17T12:51:29+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/a_simple_semi_supervised_for_ner/</loc>
+    <lastmod>2018-07-17T12:51:29+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/applying_crf_to_japanese_morph_analysis/</loc>
+    <lastmod>2018-07-17T12:51:29+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/text_cls_from_lbl_and_unlbl_doc_em/</loc>
+    <lastmod>2018-07-08T01:23:49+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E6%96%87%E6%9B%B8%E5%88%86%E9%A1%9E/</loc>
+    <lastmod>2018-07-08T01:23:49+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/about/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="http://localhost:1313/about/"
                 />
   </url>
 </urlset>

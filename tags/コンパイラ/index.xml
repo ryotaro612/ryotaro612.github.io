@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>コンパイラ on Blanket</title>
-    <link>https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9/</link>
+    <link>http://localhost:1313/tags/%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9/</link>
     <description>Recent content in コンパイラ on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Mon, 23 Oct 2023 13:49:48 -0400</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>An Incremental Approach to Compiler Construction (2006)</title>
-      <link>https://ryotaro.dev/posts/an_incremental_approach_to_compiler_construction/</link>
+      <link>http://localhost:1313/posts/an_incremental_approach_to_compiler_construction/</link>
       <pubDate>Mon, 23 Oct 2023 13:49:48 -0400</pubDate>
-      <guid>https://ryotaro.dev/posts/an_incremental_approach_to_compiler_construction/</guid>
+      <guid>http://localhost:1313/posts/an_incremental_approach_to_compiler_construction/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://scheme2006.cs.uchicago.edu/11-ghuloum.pdf&#34;&gt;An Incremental Approach to Compiler Construction&lt;/a&gt;は、コンパイラの学習を目的としたSchemeのコンパイラの実装方法の解説である。&#xA;コンパイラの実装に使用する言語もSchemeであり、コンパイラは、Intel-x86のアセンブリコードを出力する。&#xA;プログラマが普段使用しているコンパイラは、教育用の教材としてのコンパイラと比べて複雑であり、学習には向かない。&#xA;この商用と学習用のコンパイラの溝を埋めるために、Schemeの仕様の大部分を満たす規模のコンパイラの実装例が示されている。&#xA;実装手順は24ステップからなり、最後のステップまで実装しなくても、各ステップにある実装を完了すれば、コンパイラが正常に動作するように実装することができる。&lt;/p&gt;</description>
     </item>
   </channel>

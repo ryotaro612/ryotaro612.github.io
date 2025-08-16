@@ -2,402 +2,437 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blanket</title>
-    <link>https://ryotaro.dev/en/</link>
+    <link>http://localhost:1313/en/</link>
     <description>Recent content on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 24 Jul 2025 03:09:28 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Aug 2025 14:29:07 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Amazon.com Recommendations Item to Item Collaborative Filtering</title>
+      <link>http://localhost:1313/en/posts/amazon.com-recommendations-item-to-item-collaborative-filtering/</link>
+      <pubDate>Sat, 16 Aug 2025 14:29:07 +0900</pubDate>
+      <guid>http://localhost:1313/en/posts/amazon.com-recommendations-item-to-item-collaborative-filtering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OUTRAGEOUSLY LARGE NEURAL NETWORKS THE SPARSELY-GATED MIXTURE-OF-EXPERTS LAYER (2017)</title>
+      <link>http://localhost:1313/en/posts/outrageously-large-neural-networks-the-sparsely-gated-mixture-of-expert-layer/</link>
+      <pubDate>Fri, 01 Aug 2025 22:36:18 +0900</pubDate>
+      <guid>http://localhost:1313/en/posts/outrageously-large-neural-networks-the-sparsely-gated-mixture-of-expert-layer/</guid>
+      <description>&lt;p&gt;Increasing a model’s number of parameters enhances its capacity to learn complex patterns, but it also raises computational costs.&#xA;&lt;a href=&#34;https://arxiv.org/pdf/1701.06538&#34;&gt;OUTRAGEOUSLY LARGE NEURAL NETWORKS: THE SPARSELY-GATED MIXTURE-OF-EXPERTS LAYER&lt;/a&gt; (MoE)  introduces a method to scale model capacity efficiently by using a gating network that dynamically selects a sparse subset of feed-forward networks (called experts) for each input, while skipping computation for the others.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Training Language Models to Follow Instructions With Human Feedback (2022)</title>
-      <link>https://ryotaro.dev/en/posts/training-language-models-to-follow-instructions-with-human-feedback/</link>
+      <link>http://localhost:1313/en/posts/training-language-models-to-follow-instructions-with-human-feedback/</link>
       <pubDate>Thu, 24 Jul 2025 03:09:28 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/training-language-models-to-follow-instructions-with-human-feedback/</guid>
+      <guid>http://localhost:1313/en/posts/training-language-models-to-follow-instructions-with-human-feedback/</guid>
       <description>&lt;p&gt;Increasing the number of parameters does not inherently improve a model’s ability to follow users&amp;rsquo; intent. Large Language Models (LLMs) are typically trained to predict the next token in large-scale internet text corpora, but this objective does not explicitly encourage models to follow user instructions in a helpful and safe manner. [Training Language Models to Follow Instructions with Human Feedback](&lt;a href=&#34;https://arxiv.org/pdf/2203.02155&#34;&gt;https://arxiv.org/pdf/2203.02155&lt;/a&gt;  introduces a method for aligning models with human intent using Reinforcement Learning from Human Feedback (RLHF).&lt;/p&gt;</description>
     </item>
     <item>
       <title>REACT: SYNERGIZING REASONING AND ACTING IN LANGUAGE MODELS (2023)</title>
-      <link>https://ryotaro.dev/en/posts/react-synergizing-reasoning-and-acting-in-language-models/</link>
+      <link>http://localhost:1313/en/posts/react-synergizing-reasoning-and-acting-in-language-models/</link>
       <pubDate>Fri, 11 Jul 2025 03:03:29 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/react-synergizing-reasoning-and-acting-in-language-models/</guid>
+      <guid>http://localhost:1313/en/posts/react-synergizing-reasoning-and-acting-in-language-models/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/2210.03629&#34;&gt;ReAct (Synergizing &lt;em&gt;Re&lt;/em&gt;asoning + &lt;em&gt;Act&lt;/em&gt;ing)&lt;/a&gt; is a prompting strategy that enables large language models (LLMs) to generate reasoning traces and actions in an interleaved manner, allowing them to more effectively combine thought and actions.&#xA;ReAct provides LLMs with reasoning traces that guide their actions.&#xA;Additionally, it allows models to incorporate external knowledge obtained through actions into their reasoning process.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Denoising Diffusion Probabilistic Models (2020)</title>
-      <link>https://ryotaro.dev/en/posts/denoising-diffusion-probabilistic-models/</link>
+      <link>http://localhost:1313/en/posts/denoising-diffusion-probabilistic-models/</link>
       <pubDate>Sun, 15 Jun 2025 16:29:31 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/denoising-diffusion-probabilistic-models/</guid>
+      <guid>http://localhost:1313/en/posts/denoising-diffusion-probabilistic-models/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/2006.11239&#34;&gt;Denoising Diffusion Probabilistic Models&lt;/a&gt; generate high-quality images by learning to reverse a gradual noising process.&#xA;The forward process is a fixed Markov chain that incrementally corrupts the data by adding Gaussian noise.&#xA;The reverse process is a parameterized Markov chain, trained to denoise the corrupted inputs and generate samples.&#xA;The authors demonstrate that training the model to predict the added noise minimizes a variational upper bound on the negative log-likelihood.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Supervised Learning of Universal Sentence Representations From Natural Language Inference Data (2017)</title>
-      <link>https://ryotaro.dev/en/posts/supervised-learning-of-universal-sentence-representations-from-natural-language-inference-data/</link>
+      <link>http://localhost:1313/en/posts/supervised-learning-of-universal-sentence-representations-from-natural-language-inference-data/</link>
       <pubDate>Fri, 30 May 2025 14:52:18 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/supervised-learning-of-universal-sentence-representations-from-natural-language-inference-data/</guid>
+      <guid>http://localhost:1313/en/posts/supervised-learning-of-universal-sentence-representations-from-natural-language-inference-data/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1705.02364&#34;&gt;Supervised Learning of Universal Sentence Representations From Natural Language Inference Data&lt;/a&gt; proposes a supervised approach to train neural networks on the Stanford Natural Language Inference (SNLI) dataset to produce general-purpose sentence embeddings applicable to a wide range of downstream tasks.&#xA;The authors evaluated seven different encoder architectures across twelve NLP tasks and found that a bidirectional LSTM with max pooling achieved the best performance.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Scaling Instruction Finetuned Language Models (2022)</title>
-      <link>https://ryotaro.dev/en/posts/scaling-instruction-finetuned-language-models/</link>
+      <link>http://localhost:1313/en/posts/scaling-instruction-finetuned-language-models/</link>
       <pubDate>Wed, 07 May 2025 02:41:24 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/scaling-instruction-finetuned-language-models/</guid>
+      <guid>http://localhost:1313/en/posts/scaling-instruction-finetuned-language-models/</guid>
       <description>&lt;p&gt;Instruction finetuning is a technique for enhancing the zero-shot performance of large language models (LLMs). The seminal work, &lt;a href=&#34;https://arxiv.org/pdf/2109.01652&#34;&gt;Finetuned Language Models Are Zero-Shot Learners&lt;/a&gt;, refers to this method as instruction tuning.&#xA;Building on this, &lt;a href=&#34;https://arxiv.org/abs/2210.11416&#34;&gt;Scaling Instruction-Finetuned Language Models&lt;/a&gt; explored scaling the number of tasks, model sizes, and the incorporation of chain-of-thought (CoT) data. Their findings demonstrate that instruction finetuning can significantly improve LLM performance across a wide range of settings.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Reading Wikipedia to Answer Open Domain Questions (2017)</title>
-      <link>https://ryotaro.dev/en/posts/reading-wikipedia-to-answer-open-domain-questions/</link>
+      <link>http://localhost:1313/en/posts/reading-wikipedia-to-answer-open-domain-questions/</link>
       <pubDate>Sat, 26 Apr 2025 13:49:53 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/reading-wikipedia-to-answer-open-domain-questions/</guid>
+      <guid>http://localhost:1313/en/posts/reading-wikipedia-to-answer-open-domain-questions/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://aclanthology.org/P17-1171/&#34;&gt;Reading Wikipedia to Answer Open Domain Questions&lt;/a&gt; proposes DrQA, a system for open-domain question answering.&#xA;DrQA consists of two components: Document Retriever and Document Reader.&lt;/p&gt;&#xA;&lt;p&gt;Given a question, the Document Retriever uses bigram TF-IDF matching to search Wikipedia and retrieve the five most relevant articles.&#xA;These articles, along with the question, are then passed to the Document Reader, a neural network model that embeds the question and the paragraphs into vector representations.&#xA;The model then compares the paragraph embeddings with the question embedding to identify the most salient text span that likely contains the answer.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Language Models Are Few Shot Learners (2020)</title>
-      <link>https://ryotaro.dev/en/posts/language-models-are-few-shot-learners/</link>
+      <link>http://localhost:1313/en/posts/language-models-are-few-shot-learners/</link>
       <pubDate>Sat, 12 Apr 2025 14:01:19 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/language-models-are-few-shot-learners/</guid>
+      <guid>http://localhost:1313/en/posts/language-models-are-few-shot-learners/</guid>
       <description>&lt;p&gt;In &lt;a href=&#34;https://arxiv.org/abs/2005.14165&#34;&gt;Language Models are Few-Shot Learners&lt;/a&gt;, it is shown that increasing the number of parameters of &lt;a href=&#34;https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf&#34;&gt;GPT-2&lt;/a&gt; improves few-shot performance across various tasks.&#xA;The proposed model, GPT-3, is an autoregressive language model with 175 billion parameters.&#xA;Its architecture mirrors that of GPT-2, except that GPT-3 uses alternating dense and locally banded sparse attention patterns, similar to the &lt;a href=&#34;https://arxiv.org/pdf/1904.10509&#34;&gt;Sparse Transformer&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web</title>
-      <link>https://ryotaro.dev/en/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/</link>
+      <link>http://localhost:1313/en/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/</link>
       <pubDate>Tue, 18 Mar 2025 13:18:53 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/</guid>
+      <guid>http://localhost:1313/en/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/</guid>
       <description>&lt;p&gt;Consistent hashing is used for load balancing in cache systems at the scale of a Content Delivery Network (CDN), as &lt;a href=&#34;https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/&#34;&gt;discussed&lt;/a&gt;.&#xA;The paper &lt;a href=&#34;https://dl.acm.org/doi/10.1145/258533.258660&#34;&gt;Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web&lt;/a&gt; proposed the hashing algorithm to decrease or eliminate the occurrence of hot spots in the network.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Coverage is Not Strongly Correlated with Test Suite Effectiveness (2014)</title>
-      <link>https://ryotaro.dev/en/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/</link>
+      <link>http://localhost:1313/en/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/</link>
       <pubDate>Mon, 03 Mar 2025 21:55:26 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/</guid>
+      <guid>http://localhost:1313/en/posts/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/</guid>
       <description>&lt;p&gt;There are debates concerning the ability of code coverage to measure the effectiveness of test suites.&#xA;For instance, Winters et al. argued that setting an objective coverage threshold does not necessarily lead developers to write meaningful tests, as discussed in &amp;lsquo;A Note on Code Coverage&amp;rsquo; (Section 11.2.4) in &lt;a href=&#34;https://www.oreilly.com/library/view/software-engineering-at/9781492082781/&#34;&gt;&lt;em&gt;Software Engineering at Google&lt;/em&gt;&lt;/a&gt;.&#xA;They also claimed that coverage percentage does not guarantee fault detection ability.&lt;/p&gt;&#xA;&lt;p&gt;compared with the abundance of rational arguments and anecdotal experiences, empirical studies on this topic are relatively rare.&#xA;&lt;a href=&#34;https://www.cs.ubc.ca/~rtholmes/papers/icse_2014_inozemtseva.pdf&#34;&gt;Coverage Is Not Strongly Correlated With Test Suite Effectiveness&lt;/a&gt; (ICSE 2014) is an empirical study that was awarded the &lt;a href=&#34;https://conf.researchr.org/info/icse-2024/awards&#34;&gt;most influential paper ICSE N-10 at ICSE 2024&lt;/a&gt;.&#xA;The paper investigated correlation between test suite size, coverage and effectiveness.&#xA;The authors applied mutation testing to &lt;a href=&#34;https://poi.apache.org/devel/subversion.html&#34;&gt;Apache POI&lt;/a&gt;, &lt;a href=&#34;https://github.com/google/closure-compiler&#34;&gt;Closure&lt;/a&gt;, &lt;a href=&#34;https://hsqldb.org/&#34;&gt;HSQLDB&lt;/a&gt;, &lt;a href=&#34;https://www.jfree.org/jfreechart/&#34;&gt;JFreeChart&lt;/a&gt;, and &lt;a href=&#34;https://www.joda.org/joda-time/&#34;&gt;Joda Time&lt;/a&gt;.&#xA;They found a moderate to high correlation between the effectiveness and coverage of a test suite when ignoring the influence of the number of test cases.&#xA;However, the correlation dropped when suite size was controlled for.&lt;/p&gt;</description>
     </item>
     <item>
       <title>On the Fly Garbage Collection an Exercise in Cooperation (1978)</title>
-      <link>https://ryotaro.dev/en/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/</link>
+      <link>http://localhost:1313/en/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/</link>
       <pubDate>Fri, 28 Feb 2025 15:16:30 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/</guid>
+      <guid>http://localhost:1313/en/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/</guid>
       <description>&lt;p&gt;In Go 1.5, the algorithm of the garbage collector (GC) changed to a concurrent, tri-color, mark-sweep collector, which was first proposed by &lt;a href=&#34;https://lamport.azurewebsites.net/pubs/garbage.pdf&#34;&gt;Dijkstra et al.&lt;/a&gt; in 1978.&#xA;The algorithm proposed by Dijkstra et al. alternates a marking phase and an appending phase.&#xA;In the marking phase, the garbage collector colors reachable objects in gray or black.&#xA;In the appending phase, it collects white objects that are unreachable from things on the stack and global variables.&#xA;The algorithm prioritizes minimizing the atomic operations of the garbage collector to reduce overhead on the application.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Publishing S3 Objects with Signed URLs</title>
-      <link>https://ryotaro.dev/en/posts/s3-sign/</link>
+      <link>http://localhost:1313/en/posts/s3-sign/</link>
       <pubDate>Thu, 30 Jan 2025 03:01:59 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/s3-sign/</guid>
+      <guid>http://localhost:1313/en/posts/s3-sign/</guid>
       <description>&lt;p&gt;The owner of an S3 bucket can share an object by creating a presigned URL for it. The &lt;a href=&#34;https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html&#34;&gt;AWS Documentation&lt;/a&gt; provides a user guide on how to generate presigned URLs.&lt;/p&gt;&#xA;&lt;p&gt;When I tried generating a presigned URL using the document, I found that preparing the bucket and file was a bit cumbersome.&#xA;Additionally, the guide doesn&amp;rsquo;t cover how to instantiate a client to generate the URL, so I had to look for another guide to learn how to do this.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve researched generating presigned URLs a couple of times before and eventually implemented Terraform scripts and a Go script for future reference.&#xA;The Terraform scripts create an S3 bucket and upload a file to it.&#xA;The Go script generates a presigned URL for the file using the AWS SDK.&#xA;These resources are available in this &lt;a href=&#34;https://github.com/ryotaro612/s3-signin&#34;&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Highly Available Transactions: Virtues and Limitations (2013)</title>
-      <link>https://ryotaro.dev/en/posts/highly-available-transactions-virtues-and-limitations/</link>
+      <link>http://localhost:1313/en/posts/highly-available-transactions-virtues-and-limitations/</link>
       <pubDate>Thu, 30 Jan 2025 03:01:31 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/highly-available-transactions-virtues-and-limitations/</guid>
+      <guid>http://localhost:1313/en/posts/highly-available-transactions-virtues-and-limitations/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;The CAP theorem’s trilemma of consistency, availability, and partition tolerance does not require sacrificing one property entirely but rather prioritizing among the three.&#xA;Given a specific consistency model, how much availability is feasible?&#xA;The paper &lt;a href=&#34;https://www.vldb.org/pvldb/vol7/p181-bailis.pdf&#34;&gt;Highly Available Transactions: Virtues and Limitations&lt;/a&gt; explores the relationship between consistency models and their achievable availability. It organizes each consistency-availability pair into a partial order based on their strengths.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jepsen: A framework for distributed systems verification, with fault injection</title>
-      <link>https://ryotaro.dev/en/posts/jepsen/</link>
+      <link>http://localhost:1313/en/posts/jepsen/</link>
       <pubDate>Sun, 26 Jan 2025 23:12:54 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/jepsen/</guid>
+      <guid>http://localhost:1313/en/posts/jepsen/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;Jepsen is a Clojure testing framework for distributed systems.&#xA;A Jepsen test case defines operations on a system, expected responses to the operations, and a schedule for injecting faults to inject and the operations.&#xA;The test case executes the operations, introduces faults as scheduled, and validates whether the system&amp;rsquo;s response meets expectations.&lt;/p&gt;&#xA;&lt;p&gt;Jepsen appears to be well-regarded in the field of distributed systems.&#xA;Tests results for &lt;a href=&#34;https://jepsen.io/analyses&#34;&gt;major distributed systems&lt;/a&gt; using Jepsen are published on its official website.&#xA;Additionally, A Jepsen test result for &lt;a href=&#34;https://kubernetes.io/ja/docs/tasks/administer-cluster/configure-upgrade-etcd/&#34;&gt;etcd&lt;/a&gt;, a key-value store used within Kubernetes, is available on its &lt;a href=&#34;https://etcd.io/blog/2020/jepsen-343-results/&#34;&gt;official website&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Despite its recognition, &lt;a href=&#34;https://github.com/jepsen-io/jepsen/blob/main/doc/tutorial/index.md&#34;&gt;the tutorial of Jepsen&lt;/a&gt; wasn&amp;rsquo;t informative enough for me to learn the basic usage of Jepsen.&#xA;For instance, while the tutorial uses etcd as an example, the client library for etcd is outdated, making it impossible to execute the tutorial as instructed.&#xA;Instead, by researching Jepsen&amp;rsquo;s source code, I implemented an application with two-phase commits and a test case for it.&#xA;The implemented application and test caseare available in &lt;a href=&#34;https://github.com/ryotaro612/jepsen-tutorial-xa&#34;&gt;one of my GitHub repository&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Despite of the insufficent reference, using Jepsen to implement test cases is still more efficient than building them from scratch.&#xA;For a future reference, I will explore an advanced usage of Jepsen compared with the tutorial.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The Origins of Type Theory</title>
-      <link>https://ryotaro.dev/en/posts/origin-of-type-theory/</link>
+      <link>http://localhost:1313/en/posts/origin-of-type-theory/</link>
       <pubDate>Mon, 30 Dec 2024 22:45:30 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/origin-of-type-theory/</guid>
+      <guid>http://localhost:1313/en/posts/origin-of-type-theory/</guid>
       <description>&lt;p&gt;Type theory began as an effort to resolve Russell&amp;rsquo;s Paradox, an issue discovered by Bertrand Russell.&#xA;The precise events that mark the origin of type theory can be a matter of debate.&#xA;Cantor, who developed set theory, independently discovered a similar paradox around the same time. In correspondence with Russell, Frege replied that in his conceptual notation, predicates do not take other predicates as arguments.&#xA;Considering Russell&amp;rsquo;s approach that employs the hierarchical elements in the conceptual notation to resolve the paradox, one might argue that Frege&amp;rsquo;s predicate logic can be seen as an origin of type theory.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Implementation of runc as of November 2024</title>
-      <link>https://ryotaro.dev/en/posts/runc/</link>
+      <link>http://localhost:1313/en/posts/runc/</link>
       <pubDate>Sun, 08 Dec 2024 18:51:20 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/runc/</guid>
+      <guid>http://localhost:1313/en/posts/runc/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/opencontainers/runc&#34;&gt;runc&lt;/a&gt; is a container runtime with a command-line interface tool.&#xA;Although runc was separated from Docker in 2015, Docker still uses runc because the Docker Engine is built on top of containerd, which incorporates runc.&#xA;In this post, I will explain some Linux features used in the implementation of runc.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Back of Envelope Calculations</title>
-      <link>https://ryotaro.dev/en/posts/back-of-envelope-calculations/</link>
+      <link>http://localhost:1313/en/posts/back-of-envelope-calculations/</link>
       <pubDate>Tue, 24 Sep 2024 02:14:15 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/back-of-envelope-calculations/</guid>
+      <guid>http://localhost:1313/en/posts/back-of-envelope-calculations/</guid>
       <description>&lt;p&gt;In system design interviews, back of envelope calculation is a task to estimate required comuputing resources based on the given requirement.&lt;/p&gt;</description>
     </item>
     <item>
       <title>System design case study: video streaming service</title>
-      <link>https://ryotaro.dev/en/posts/video-streaming/</link>
+      <link>http://localhost:1313/en/posts/video-streaming/</link>
       <pubDate>Wed, 18 Sep 2024 01:13:19 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/video-streaming/</guid>
+      <guid>http://localhost:1313/en/posts/video-streaming/</guid>
       <description>&lt;p&gt;Youtube is an example of a video streaming service where users upload, stream, search, and review videos.&#xA;This post presents common designs for processing and hosting uploaded videos across several case studies of video streaming services for system design interviews.&lt;/p&gt;</description>
     </item>
     <item>
       <title>REALM Retrieval Augmented Language Model Pre Training (2020)</title>
-      <link>https://ryotaro.dev/en/posts/realm-retrieval-augmented-language-model-pre-training/</link>
+      <link>http://localhost:1313/en/posts/realm-retrieval-augmented-language-model-pre-training/</link>
       <pubDate>Mon, 27 May 2024 22:28:20 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/realm-retrieval-augmented-language-model-pre-training/</guid>
+      <guid>http://localhost:1313/en/posts/realm-retrieval-augmented-language-model-pre-training/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/2002.08909&#34;&gt;REALM&lt;/a&gt; is a language model for open-domain question answering.&#xA;REALM is composed of two components: the neural knowledge retriever and the knowledge-augmented encoder.&#xA;The neural knowledge retriever finds documents related to the input.&#xA;The knowledge-augmented encoder generates responses from the found documents and the input.&#xA;In pre-training, the REALM employs masked language modeling, and it is trained to predict the original tokens that are maked in the given sentences.&#xA;In fine-tuning, the model is trained to produce the answer of the given input.&#xA;The authors experimented the model with Open-domain QA tasks under the assumption that the answer can be found as a contiguous sequence of tokens in some documents.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Distributed GraphLab: a Framework for Machine Learning and Data Mining in the Cloud (2012)</title>
-      <link>https://ryotaro.dev/en/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/</link>
+      <link>http://localhost:1313/en/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/</link>
       <pubDate>Tue, 07 May 2024 11:49:13 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/</guid>
+      <guid>http://localhost:1313/en/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1408.2041&#34;&gt;GraphLab&lt;/a&gt; is a programming model for machine learning and data mining.&#xA;GraphLab takes a direct graph, a set of vertices, and update functions as input.&#xA;Every update function accepts a vertex and returns a set of vertices.&#xA;GraphLab selects a vertex from the set, applies a function to it, and adds the resulting set of vertices back intothe set, repeating this process until the set is empty.&#xA;GraphLab supports parallel execution of update functions on multi-processor machines.&#xA;&lt;a href=&#34;https://arxiv.org/pdf/1408.2041&#34;&gt;Distributed GraphLab&lt;/a&gt; extends GraphLab by distributing parts of a graph across machines that are memory, utilizing &lt;a href=&#34;https://lamport.azurewebsites.net/pubs/chandy.pdf&#34;&gt;Chandy-Lamport&lt;/a&gt;&amp;rsquo;s snapshot algorithm for fault tolerance.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Policy Gradient Methods for Reinforcement Learning With Function Approximation (1999)</title>
-      <link>https://ryotaro.dev/en/posts/policy-gradient-methods-for-reinforcement-learning-with-function-approximation/</link>
+      <link>http://localhost:1313/en/posts/policy-gradient-methods-for-reinforcement-learning-with-function-approximation/</link>
       <pubDate>Sat, 27 Apr 2024 14:49:30 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/policy-gradient-methods-for-reinforcement-learning-with-function-approximation/</guid>
+      <guid>http://localhost:1313/en/posts/policy-gradient-methods-for-reinforcement-learning-with-function-approximation/</guid>
       <description>&lt;p&gt;Policy gradient methods approximate stochastic policies using function approximators, which are independent of value functions.&#xA;They update the policies according to the gradient of expected reward with respect to the policy parameters.&#xA;&lt;a href=&#34;https://proceedings.neurips.cc/paper/1999/file/464d828b85b0bed98e80ade0a5c43b0f-Paper.pdf&#34;&gt;Policy Gradient Methods for Reinforcement Learning With Function Approximation&lt;/a&gt; shows that a form of policy iteration with function approximation converges to a locally optimal policy.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Spark SQL: Relational Data Processing in Spark (2015)</title>
-      <link>https://ryotaro.dev/en/posts/spark-sql-relational-data-processing-in-spark/</link>
+      <link>http://localhost:1313/en/posts/spark-sql-relational-data-processing-in-spark/</link>
       <pubDate>Sun, 14 Apr 2024 14:08:04 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/spark-sql-relational-data-processing-in-spark/</guid>
+      <guid>http://localhost:1313/en/posts/spark-sql-relational-data-processing-in-spark/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://dl.acm.org/doi/10.1145/2723372.2742797&#34;&gt;Spark SQL&lt;/a&gt; provides a DataFrame API, an abstract data type equivalent to a table in a relational database. The DataFrame objects can be manipulated in a manner consistent with relational algebra. For example, the API includes various relational operators such as &lt;code&gt;where&lt;/code&gt; and &lt;code&gt;group by&lt;/code&gt;, similar to data frames in R and Python. The DataFrame objects are evaluated lazily, meaning they are not evaluated until certain output operations, like &lt;code&gt;count&lt;/code&gt;, are performed. Catalyst, an optimizer written in Scala, optimizes these lazy queries and then compiles them into Java bytecode.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Neural Collaborative Filtering (2017)</title>
-      <link>https://ryotaro.dev/en/posts/neural-collaborative-filtering/</link>
+      <link>http://localhost:1313/en/posts/neural-collaborative-filtering/</link>
       <pubDate>Mon, 25 Mar 2024 16:56:51 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/neural-collaborative-filtering/</guid>
+      <guid>http://localhost:1313/en/posts/neural-collaborative-filtering/</guid>
       <description>&lt;p&gt;In collaborative filtering, Matrix Factorization (MF) approximates the user-item interaction matrix by multiplying the latent matrices for users and items.&#xA;An estimated iteraction is the inner product of the latent vectors for the user and the item.&#xA;&lt;a href=&#34;https://arxiv.org/pdf/1708.05031.pdf&#34;&gt;Neural Collaborative Filtering (NCF)&lt;/a&gt; replaces the inner product with a neural neural network to capture the complex structure of user interaction data.&#xA;There are three instances of NFC: Generalized Matrix Factorization (GMF), Multi-Layer Perceptron (MLP), Neural Matrix Factoriation (NeuMF).&lt;/p&gt;</description>
     </item>
     <item>
       <title>TelegraphCQ: Continuous Dataflow Processing for an Uncertain World (2003)</title>
-      <link>https://ryotaro.dev/en/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/</link>
+      <link>http://localhost:1313/en/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/</link>
       <pubDate>Fri, 22 Mar 2024 15:35:16 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/</guid>
+      <guid>http://localhost:1313/en/posts/telegraphcq-continuous-dataflow-processing-for-an-uncertain-world/</guid>
       <description>&lt;p&gt;Stonebraker and Çetintemel presented &lt;a href=&#34;https://cs.brown.edu/~ugur/fits_all.pdf&#34;&gt;&amp;ldquo;One Size Fits All&amp;rdquo;&lt;/a&gt; in 2005.&#xA;The phrase refers to the fact that various data-centric applications use traditional DMBMS architectures to store data regardless of the characteristics and requirements of the data.&#xA;In the paper, they argued that this approach was no longer applicable, with examples of streaing processing.&#xA;&lt;a href=&#34;https://cs.brown.edu/courses/cs227/archives/2015/papers/ss-telegraphcq.pdf&#34;&gt;TelegraphCQ&lt;/a&gt;, presented in 2003, is the first generation of databases for streamingffff data from the early 2000s.&lt;/p&gt;</description>
     </item>
     <item>
       <title>LLaMA Open and Efficient Foundation Language Models (2023)</title>
-      <link>https://ryotaro.dev/en/posts/llama-open-and-efficient-foundation-language-models/</link>
+      <link>http://localhost:1313/en/posts/llama-open-and-efficient-foundation-language-models/</link>
       <pubDate>Thu, 14 Mar 2024 14:41:48 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/llama-open-and-efficient-foundation-language-models/</guid>
+      <guid>http://localhost:1313/en/posts/llama-open-and-efficient-foundation-language-models/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/2001.08361.pdf&#34;&gt;Scaling Laws for Neural Language Models&lt;/a&gt; refers to empirical observations that model test performance has a power-law relationship with each of the three scale factors: the number of model parameters, the dataset size in tokens, and the amount of compute used for training, when not bottlenecked by the other two.&#xA;&lt;a href=&#34;https://arxiv.org/abs/2203.15556&#34;&gt;Hoffmann et al. (2022)&lt;/a&gt; investigated the bottleneck and found that, given a fixed FLOPs budget, the number of model parameters and the training tokens should be scaled equally to minimize pre-training loss.&#xA;They trained a predicted compute-optimal model, Chinchilla, with 80B parameters, at the same compute budget as Gopher (280B) and with 4 times more data.&#xA;Chinchilla outperformed Gopher and GPT-3 (175B) on a large range of downstream evaluation tasks.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Apache Calcite a Foundational Framework for Optimized Query Processing Over Heterogeneous Data Sources</title>
-      <link>https://ryotaro.dev/en/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/</link>
+      <link>http://localhost:1313/en/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/</link>
       <pubDate>Sun, 10 Mar 2024 10:44:18 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/</guid>
+      <guid>http://localhost:1313/en/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/</guid>
       <description>&lt;p&gt;Michael StonebrakerとUğur Çetintemel presented &lt;a href=&#34;https://cs.brown.edu/~ugur/fits_all.pdf&#34;&gt;One Size Fits All&lt;/a&gt; in 2005.&#xA;The title refers to the fact that traditional RDBMS had been used to implement a variety of data-centric applications.&#xA;Tn the paper, they argued that the phrase was no longer applicable and predicted the rise of domain-specific database engines.&#xA;Indeed, organizations leverage various domain-specific database engines such as column stores and text search engines today.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mining Association Rules Between Sets of Items in Large Databases (1993)</title>
-      <link>https://ryotaro.dev/en/posts/mining-association-rules-between-sets-of-items-in-large-databases/</link>
+      <link>http://localhost:1313/en/posts/mining-association-rules-between-sets-of-items-in-large-databases/</link>
       <pubDate>Sat, 02 Mar 2024 15:58:07 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/mining-association-rules-between-sets-of-items-in-large-databases/</guid>
+      <guid>http://localhost:1313/en/posts/mining-association-rules-between-sets-of-items-in-large-databases/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://dl.acm.org/doi/10.1145/170036.170072&#34;&gt;Mining Association Rules between Sets of Items in Large Databases&lt;/a&gt; presents one of the earliest approaches for association rules mining.&#xA;An association rule is an implication of the form \(X \Rightarrow I_j\) where \(X\) is a set of some items, and \(I_j\) is an item that is not in \(X\).&#xA;For instance, if transactions buying bread and butter also buy milk, that forms an association rule.&#xA;The paper introduces a method to find association rules and measure confidence and support factors from transactions.&#xA;The confidence factor measures how many transactions that satisfy \(X\) also satisfy \(I_j\).&#xA;The support factor of an association rule is defined to be the fraction of transactions that contain the union of items in the rule.&#xA;The support factor implies statistical significance of the association rule.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Poly-Encoders: Architectures and Pre-Training Strategies for Fast and Accurate Multi-Sentence Scoring (2019)</title>
-      <link>https://ryotaro.dev/en/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/</link>
+      <link>http://localhost:1313/en/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/</link>
       <pubDate>Sat, 24 Feb 2024 23:11:51 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/</guid>
+      <guid>http://localhost:1313/en/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/</guid>
       <description>&lt;p&gt;For tasks matching input sequences with labels, current state-of-the-art approaches focus on using &lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt; models for pre-training.&#xA;Two common encoding approaches are Cross-encoders (&lt;a href=&#34;https://arxiv.org/abs/1901.08149&#34;&gt;Wolf et al.&lt;/a&gt;), which concatenate input sequences and candidate labels into a single vector, and produce candidate-sensitive embeddings, and Bi-encoders (&lt;a href=&#34;https://arxiv.org/abs/1809.01984&#34;&gt;Mazaré et al.&lt;/a&gt;), which encode input sequences and candidate labels separately.&#xA;In Bi-encoders, the score is the dot-product of the two embeddings.&#xA;While Cross-encoders are more accurate than Bi-encoders, Bi-encoders are faster.&lt;/p&gt;&#xA;&lt;!-- For the tasks that match an input sequence with a corresponding label, current state-of-the-art approaches focuse on using [BERT](https://arxiv.org/abs/1810.04805) models for pre-training, and two encoding approaches are common: Cross-encoders ([Wolf et al.](https://arxiv.org/abs/1901.08149)) and Bi-encoders ([Mazaré et al.](https://arxiv.org/abs/1809.01984)). --&gt;&#xA;&lt;!-- Cross-encoders concatenate an input seqeuence and a candidate label into a single vector, and produce a candidate-sensitive input embedding from the vector. --&gt;&#xA;&lt;!-- Bi-encoders encde an input sequence and a candidate label separately. --&gt;&#xA;&lt;!-- The score is  the dot-product of the two embeddings. --&gt;&#xA;&lt;!-- While Cross-encoders are more accurate than Bi-encoders, Bi-encoders are faster than the other. --&gt;</description>
     </item>
     <item>
+      <title>Recipes for Building an Open Domain Chatbot</title>
+      <link>http://localhost:1313/en/posts/recipes-for-building-an-open-domain-chatbot/</link>
+      <pubDate>Sat, 24 Feb 2024 12:22:06 +0900</pubDate>
+      <guid>http://localhost:1313/en/posts/recipes-for-building-an-open-domain-chatbot/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>THE DESIGN OF POSTGRES (1986)</title>
-      <link>https://ryotaro.dev/en/posts/the-design-of-postgres/</link>
+      <link>http://localhost:1313/en/posts/the-design-of-postgres/</link>
       <pubDate>Sat, 17 Feb 2024 17:44:38 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/posts/the-design-of-postgres/</guid>
+      <guid>http://localhost:1313/en/posts/the-design-of-postgres/</guid>
       <description>&lt;p&gt;The preliminary design of POSTGRES was presented in &lt;a href=&#34;https://dsf.berkeley.edu/papers/ERL-M85-95.pdf&#34;&gt;The Design of Postgres&lt;/a&gt;.&#xA;According to &lt;a href=&#34;https://www.postgresql.jp/document/8.3/html/history.html&#34;&gt;Brief History of Postgres&lt;/a&gt;, the data model, rules, and storage system were separately described in different papers: &lt;a href=&#34;https://apps.dtic.mil/sti/tr/pdf/ADA184251.pdf&#34;&gt;The Postgres Data Model&lt;/a&gt;, &lt;a href=&#34;https://apps.dtic.mil/sti/tr/pdf/ADA179161.pdf&#34;&gt;The Design of the Postgres Rule System&lt;/a&gt;, and &lt;a href=&#34;https://dsf.berkeley.edu/papers/ERL-M87-06.pdf&#34;&gt;The Design of the Postgres Storage System&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;POSTGRES is the successor to the INGRES relational database system.&#xA;The main design goals of POSTGRES were to support complex objects, simplify the DBMS code for crash recovery, and utilize optical disks while making as few changes as possible to the relational model.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Retrieval Augmented Generation for Knowledge Intensive NLP Tasks (2021)</title>
-      <link>https://ryotaro.dev/en/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/</link>
+      <link>http://localhost:1313/en/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/</link>
       <pubDate>Sat, 27 Jan 2024 16:44:55 -0500</pubDate>
-      <guid>https://ryotaro.dev/en/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/</guid>
+      <guid>http://localhost:1313/en/posts/retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks/</guid>
       <description>&lt;p&gt;While large pre-trained language models (LLMs) can implicitly store factual knowledge in their parameters, their ability to access explicit encyclopedic and commonsense is knowledge still limited.&#xA;Retrieval Augmented Generation (RAG) is a method to improve language generation by providing external explicit knowledge to LLMs.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sorting networks and their applications (1968)</title>
-      <link>https://ryotaro.dev/en/posts/sorting-networks-and-their-applications/</link>
+      <link>http://localhost:1313/en/posts/sorting-networks-and-their-applications/</link>
       <pubDate>Sun, 14 Jan 2024 23:32:24 -0500</pubDate>
-      <guid>https://ryotaro.dev/en/posts/sorting-networks-and-their-applications/</guid>
+      <guid>http://localhost:1313/en/posts/sorting-networks-and-their-applications/</guid>
       <description>&lt;p&gt;A sorting network is a network of comparison elements with 2 indegree and 2 outdegree that sorts a list in ascending or descending order.&#xA;A comparison element receives two numbers and outputs the smaller one to one output and the larger one to the other output.&#xA;Odd-even merging networks and Bitonic sorters are sorting networks proposed in &lt;a href=&#34;https://www.cs.kent.edu/~batcher/sort.pdf&#34;&gt;Sorting networks and their applications&lt;/a&gt;.&#xA;They can sort \(2^p\) elements with \(\ln (\frac{1}{2})p(p+1)\) steps.&#xA;Their processing is independent of the values and is easy to run on the GPU because it does not change the output location in memory based on input data values.&lt;/p&gt;&#xA;&lt;!-- https://developer.nvidia.com/gpugems/gpugems2/part-vi-simulation-and-numerical-algorithms/chapter-46-improved-gpu-sorting --&gt;</description>
     </item>
     <item>
       <title>Billion Scale Similarity Search With GPUs (2017)</title>
-      <link>https://ryotaro.dev/en/posts/billion-scale-similarity-search-with-gpus/</link>
+      <link>http://localhost:1313/en/posts/billion-scale-similarity-search-with-gpus/</link>
       <pubDate>Mon, 01 Jan 2024 22:21:29 -0500</pubDate>
-      <guid>https://ryotaro.dev/en/posts/billion-scale-similarity-search-with-gpus/</guid>
+      <guid>http://localhost:1313/en/posts/billion-scale-similarity-search-with-gpus/</guid>
       <description>&lt;p&gt;The paper &lt;a href=&#34;https://arxiv.org/abs/1702.08734&#34;&gt;Billion-scale-similarity search with GPUs&lt;/a&gt; presents an approximate nearest-neighbor search method that uses GPUs and combines the &lt;a href=&#34;https://inria.hal.science/inria-00514462v2/document&#34;&gt;IVFADC&lt;/a&gt; indexing structure with &lt;a href=&#34;https://www.cs.kent.edu/~batcher/sort.pdf&#34;&gt;Batcher&amp;rsquo;s bitonic sorting network&lt;/a&gt;.&#xA;The authors have implemented this method in a library called &lt;a href=&#34;https://github.com/facebookresearch/faiss&#34;&gt;faiss&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Conflict-free Replicated Data Types (2011)</title>
-      <link>https://ryotaro.dev/en/posts/conflict-free-replicated-data-types/</link>
+      <link>http://localhost:1313/en/posts/conflict-free-replicated-data-types/</link>
       <pubDate>Sun, 31 Dec 2023 14:31:58 -0500</pubDate>
-      <guid>https://ryotaro.dev/en/posts/conflict-free-replicated-data-types/</guid>
+      <guid>http://localhost:1313/en/posts/conflict-free-replicated-data-types/</guid>
       <description>&lt;p&gt;In a distributed system with replicated objects distributed across processes interconnected by an asynchronous network, updating a replica without synchronization can lead to conflicts when the update is sent to other replicas.&#xA;&lt;a href=&#34;https://pages.lip6.fr/Marc.Shapiro/papers/RR-7687.pdf&#34;&gt;Conflict-free Replicated Data Types&lt;/a&gt; (CRDTs) are data structures whose states form a join semilattice and monotonically non-decreasing across updates.&#xA;The replicas of CRDTs that have delivered the same updates eventually reach the same state if clents stop submitting updates.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Dense Passage Retrieval for Open-Domain Question Answering (2020)</title>
-      <link>https://ryotaro.dev/en/posts/dense-passage-retrieval-for-open-domain-question-answering/</link>
+      <link>http://localhost:1313/en/posts/dense-passage-retrieval-for-open-domain-question-answering/</link>
       <pubDate>Sat, 30 Dec 2023 00:42:11 -0500</pubDate>
-      <guid>https://ryotaro.dev/en/posts/dense-passage-retrieval-for-open-domain-question-answering/</guid>
+      <guid>http://localhost:1313/en/posts/dense-passage-retrieval-for-open-domain-question-answering/</guid>
       <description>&lt;p&gt;Open-domain question answering (QA) involves answering fact-based questions using documents.&#xA;An open-domain QA system can be divided into two components: one that retrieves relevant passages and another that extracts the answer spans from those passages &lt;a href=&#34;https://arxiv.org/abs/1704.00051&#34;&gt;(Chen et al., 2017)&lt;/a&gt;.&#xA;While traditional approaches use sparse vector space models like BM25 for the retrieval step, &lt;a href=&#34;https://aclanthology.org/2020.emnlp-main.550/&#34;&gt;Dense Passage Retrieval for Open-Domain Question Answering&lt;/a&gt; shows that dense representations can also be practically implemented using dense representations.&lt;/p&gt;&#xA;&lt;!-- Open-domain question answering (QA) is a task that answers factorid questions using documents. --&gt;&#xA;&lt;!-- If the answers are spans appearing in passages of the documents, an open-domain QA system can be decomposed into 2 components. --&gt;&#xA;&lt;!-- The first component retrieves a small set of passages relevant to the question, and the second one extract the span from the filter set [(Chen et al., 2017)](https://arxiv.org/abs/1704.00051). --&gt;&#xA;&lt;!-- While traditional approaches use sparse vector space models such as BM25 for the first module, [Dense Passage Retrieval for Open-Domain Question Answering](https://aclanthology.org/2020.emnlp-main.550/) demonstrates that the first retrieval step can be implemented using dense representations. --&gt;&#xA;&lt;p&gt;The embeddings are learned from the training dataset, optimizing for maximizing inner products between question and relevant passage vectors.&#xA;The training is essentially metric learning, and each question needs irrelvant passages.&#xA;In experiments, it was found that utilizing both the top passages returned by BM25, excluding the answer, and positive passages paired with other questions as negatives yielded best performance.&lt;/p&gt;&#xA;&lt;!-- The embeddings are learned from the questions and passages in a training dataset, and optimized for maximizing inner products of the question and relevant passage vectors. --&gt;&#xA;&lt;!-- The training is essentially metric learning, and each question needs irrelvant passages. --&gt;&#xA;&lt;!-- Using both the top passages returned by BM25 except the answer and positive passages paired with other questions as negatives outperformed in experiments. --&gt;</description>
     </item>
     <item>
       <title>CAP Twelve Years Later: How the &#34;Rules&#34; Have Changed (2012)</title>
-      <link>https://ryotaro.dev/en/posts/cap-twelve-years-later-how-the-rules-have-changed/</link>
+      <link>http://localhost:1313/en/posts/cap-twelve-years-later-how-the-rules-have-changed/</link>
       <pubDate>Sat, 23 Dec 2023 11:47:05 -0500</pubDate>
-      <guid>https://ryotaro.dev/en/posts/cap-twelve-years-later-how-the-rules-have-changed/</guid>
+      <guid>http://localhost:1313/en/posts/cap-twelve-years-later-how-the-rules-have-changed/</guid>
       <description>&lt;p&gt;The &lt;a href=&#34;https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf&#34;&gt;CAP theorem&lt;/a&gt;, coined by Eric Brewer, states that in a shared-data system, you can have either Consistency (C), Availability (A), or Parition tolerance (P), but not all three simultaneously.&#xA;However, Martin Kleppmann challenges the CAP theorem and discusses its limitations in &lt;a href=&#34;https://dataintensive.net/&#34;&gt;Designing Data-Intensive Applications&lt;/a&gt;, and &lt;a href=&#34;https://www.cl.cam.ac.uk/research/dtg/archived/files/publications/public/mk428/cap-critique.pdf&#34;&gt;A Critique of the CAP Theorem&lt;/a&gt;.&#xA;In &lt;a href=&#34;https://sites.cs.ucsb.edu/~rich/class/cs293b-cloud/papers/brewer-cap.pdf&#34;&gt;CAP Twelve Years Later: How the “Rules” Have Changed&lt;/a&gt;, Brewer clarifies that the notion of &amp;ldquo;2 of 3&amp;rdquo; is misleading.&#xA;In practice, designers cannot forfeit P and have a choice between C and A.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Wide and Deep Learning for Recommender Systems (2016)</title>
-      <link>https://ryotaro.dev/en/posts/wide-and-deep-learning-for-recommender-systems/</link>
+      <link>http://localhost:1313/en/posts/wide-and-deep-learning-for-recommender-systems/</link>
       <pubDate>Sat, 16 Dec 2023 09:48:32 -0500</pubDate>
-      <guid>https://ryotaro.dev/en/posts/wide-and-deep-learning-for-recommender-systems/</guid>
+      <guid>http://localhost:1313/en/posts/wide-and-deep-learning-for-recommender-systems/</guid>
       <description>&lt;p&gt;Generalized linear models are widely used for large-scale regression and classification problems with sparse inputs because they are simple, scale and interpretable.&#xA;One limitation of interactions or cross-prodcution transformations in generalized linear models is that they do not generalize to query-item feature pairs that have not appeared in the training data.&#xA;Compared with generalized linear models, deep neural networks can improve the diversity of the recommendations.&#xA;Howerver it is difficult to learn effective low-dimentional dense embedding vectors.&#xA;&lt;a href=&#34;https://arxiv.org/abs/1606.07792&#34;&gt;Wide &amp;amp; Deep Learning for Recommender Systems&lt;/a&gt; jointly trains a generalized linear model and a feed-forward neural network (FFN) to combines their benefits.&lt;/p&gt;</description>
     </item>
     <item>
       <title>A Protocol for Packet Network Intercommunication (1974)</title>
-      <link>https://ryotaro.dev/en/posts/a_protocol_for_packet_network_intercommunication/</link>
+      <link>http://localhost:1313/en/posts/a_protocol_for_packet_network_intercommunication/</link>
       <pubDate>Sat, 09 Dec 2023 12:24:23 -0500</pubDate>
-      <guid>https://ryotaro.dev/en/posts/a_protocol_for_packet_network_intercommunication/</guid>
+      <guid>http://localhost:1313/en/posts/a_protocol_for_packet_network_intercommunication/</guid>
       <description>&lt;p&gt;Vinton Cerf and Robert Kahn presented a protocol that supports packet communication between hosts in different packet switching networks in &lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf&#34;&gt;A Protocol for Packet Network Intercommunication&lt;/a&gt;.&#xA;The protocol assumes that a Transmission Control Program (TCP) in a host handles the transmission and acceptance of messages on behalf of processes.&#xA;Later, the program was divided into the Transmission Control Protocol (TCP) and the Internet Protocol (IP).&#xA;At that time, several protocols that supported exchanging packets between computers were developed, but they assumed the computers were on the same network.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Probablistic Latent Semantic Indexing (1999)</title>
-      <link>https://ryotaro.dev/en/posts/probabilistic_latent_semantic_indexing/</link>
+      <link>http://localhost:1313/en/posts/probabilistic_latent_semantic_indexing/</link>
       <pubDate>Sat, 02 Dec 2023 11:27:38 -0500</pubDate>
-      <guid>https://ryotaro.dev/en/posts/probabilistic_latent_semantic_indexing/</guid>
+      <guid>http://localhost:1313/en/posts/probabilistic_latent_semantic_indexing/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://wordvec.colorado.edu/papers/Deerwester_1990.pdf&#34;&gt;Latent Semantic Analysis&lt;/a&gt; approximates an original term-document matrix by singular value decomposition (SVD).&#xA;The components consist of the frequencies with which each term occurred in each document.&#xA;The Latent Semantic Analysis thresholds all but the largest \(K\) singular values to zero.&#xA;The left singular vectors are a \(t \times K\) matrix, and the transpose of the right singular vectors are a \(K\times d\) matrix where \(t\) is the number of the terms and \(d\) is the number of the documents.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://sigir.org/wp-content/uploads/2017/06/p211.pdf&#34;&gt;Probabilistic Latent Semantic Indexing&lt;/a&gt; (PLSI) is a generative model that associates each term and document with an unobserved class variable \(z \in \mathcal{Z} = \{z_1,\dots , z_K\}\).&#xA;The likelihoods of the documents and terms are estimated by the Expectation Maximization (EM) algorithm, and the joint probability model \(\textbf{P}\) can be written as \(\textbf{P}=\hat{\textbf{U}}\hat{\Sigma}\hat{\textbf{V}}^t\) where \(\hat{\textbf{U}}=(P(d_i|z_k))_{i, k}\), \(\hat{\textbf{V}}=(P(w_j|z_k))_{j, k}\), \(\hat{\Sigma}=\text{diag} (P(z_k))_k\).&#xA;Compared to the Latent Semantic Analysis, the components of \(\textbf{P}\) have a clear probabilistic meaning in terms of mixture component distributions.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Chord: A Scalable Peer-to-peer Lookup Service for Internet Applications (2001)</title>
-      <link>https://ryotaro.dev/en/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/</link>
+      <link>http://localhost:1313/en/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/</link>
       <pubDate>Thu, 23 Nov 2023 12:31:01 -0500</pubDate>
-      <guid>https://ryotaro.dev/en/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/</guid>
+      <guid>http://localhost:1313/en/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://pdos.csail.mit.edu/papers/ton:chord/paper-ton.pdf&#34;&gt;Chord&lt;/a&gt; is a distributed lookup protocol that supports just one operation: mapping a given key onto a node in a Chord cluster.&#xA;If an \(N\)-node system is in the steady state, each node resolves all the queries via \(O(\log N)\) messages to other nodes.&#xA;Chord uses &lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall09/cos518/papers/chash.pdf&#34;&gt;consistent hashing&lt;/a&gt; to assign keys to Chord nodes.&lt;/p&gt;</description>
     </item>
     <item>
       <title>LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS (2021)</title>
-      <link>https://ryotaro.dev/en/posts/lora-low-rank-adaptation-of-large-language-models/</link>
+      <link>http://localhost:1313/en/posts/lora-low-rank-adaptation-of-large-language-models/</link>
       <pubDate>Sat, 18 Nov 2023 12:21:20 -0500</pubDate>
-      <guid>https://ryotaro.dev/en/posts/lora-low-rank-adaptation-of-large-language-models/</guid>
+      <guid>http://localhost:1313/en/posts/lora-low-rank-adaptation-of-large-language-models/</guid>
       <description>&lt;p&gt;LoRA is motivated by the findings of &lt;a href=&#34;https://arxiv.org/pdf/1804.08838.pdf&#34;&gt;Li et al. (2018)&lt;/a&gt; and &lt;a href=&#34;https://arxiv.org/pdf/2012.13255.pdf&#34;&gt;Aghajanyan et al. (2020)&lt;/a&gt;, which show that overparameterized models tend to converge to solutions that lie within a low-dimensional intrinsic subspace.&lt;/p&gt;&#xA;&lt;p&gt;The intrinsic dimension refers to the minimum number of trainable parameters needed to reach satisfactory performance on a given task.&lt;/p&gt;&#xA;&lt;p&gt;LoRA introduces low-rank adaptation by decomposing the weight matrices in dense layers. Instead of fine-tuning all parameters of a pre-trained model, LoRA freezes the original weights and learns two low-rank matrices during training.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Pastry: Scalable Decentralized Object Location and Routing for Large Scale Peer to Peer Systems (2001)</title>
-      <link>https://ryotaro.dev/en/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/</link>
+      <link>http://localhost:1313/en/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/</link>
       <pubDate>Tue, 07 Nov 2023 02:04:06 -0500</pubDate>
-      <guid>https://ryotaro.dev/en/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/</guid>
+      <guid>http://localhost:1313/en/posts/pastry-scalable-decentralized-object-location-and-routing-for-large-scale-peer-to-peer-systems/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://rowstron.azurewebsites.net/PAST/pastry.pdf&#34;&gt;Pastry&lt;/a&gt; is a decentralized peer-to-peer object location and routing system based on nodes connected via the Internet.&#xA;When each node in the Pastry network receives a message and a numeric key, it routes them to the node with a nodeId that is numerically close to the key.&#xA;If a node is not the final destination of a message, it forwards the message to another node with a nodeId that is numerically closer to the key than the nodeId of the present node.&#xA;The nodeId ranges from 0 to \(2^{128}-1\).&lt;/p&gt;</description>
     </item>
     <item>
+      <title>DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter (2019)</title>
+      <link>http://localhost:1313/en/posts/distilbert-a-distilled-version-of-bert-smaller-fastercheater-and-lighter/</link>
+      <pubDate>Sat, 04 Nov 2023 06:43:01 -0400</pubDate>
+      <guid>http://localhost:1313/en/posts/distilbert-a-distilled-version-of-bert-smaller-fastercheater-and-lighter/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1910.01108&#34;&gt;DistilBERT&lt;/a&gt; is a method to pre-train a smaller BERT with &lt;a href=&#34;https://arxiv.org/pdf/1503.02531.pdf&#34;&gt;knowledge distillation&lt;/a&gt;.&#xA;The training loss of DistilBERT is a linear combination of the masked-language modeling loss, cross-entropy loss between the DistilBERT model and the BERT model, a cosine similarity between the hidden states of both models.&#xA;During pre-training, DistilBERT uses a softmax-temperature.&#xA;While at inference, the temperature is set to \(1\).&#xA;The token-type embeddings and the pooler are removed while the number of layers is reduced by a factor of two.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>An Incremental Approach to Compiler Construction (2006)</title>
-      <link>https://ryotaro.dev/en/posts/an_incremental_approach_to_compiler_construction/</link>
+      <link>http://localhost:1313/en/posts/an_incremental_approach_to_compiler_construction/</link>
       <pubDate>Mon, 23 Oct 2023 13:49:48 -0400</pubDate>
-      <guid>https://ryotaro.dev/en/posts/an_incremental_approach_to_compiler_construction/</guid>
+      <guid>http://localhost:1313/en/posts/an_incremental_approach_to_compiler_construction/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://scheme2006.cs.uchicago.edu/11-ghuloum.pdf&#34;&gt;An Incremental Approach to Compiler Construction&lt;/a&gt; shows an incremental approach to build a compiler that accepts a large subset of the Scheme programming language.&#xA;The compiler produces assembly code for the Intel-X86 architecture.&#xA;Because real-life compilers are too complex to serve as an educational tool, the gap between real-life compilers and the educational toy compilers is too wide.&lt;/p&gt;&#xA;&lt;p&gt;The goal of the paper is to break the barrier.&#xA;The development of the compiler is broken down into 24 incremental steps.&#xA;Every step yields a fully working compiler for progressively expanding a subset of Scheme.&lt;/p&gt;</description>
     </item>
     <item>
       <title>GAUSSIAN ERROR LINEAR UNITS (GELUs) (2016)</title>
-      <link>https://ryotaro.dev/en/posts/gaussian_error_linear_units/</link>
+      <link>http://localhost:1313/en/posts/gaussian_error_linear_units/</link>
       <pubDate>Sat, 21 Oct 2023 10:00:49 -0400</pubDate>
-      <guid>https://ryotaro.dev/en/posts/gaussian_error_linear_units/</guid>
+      <guid>http://localhost:1313/en/posts/gaussian_error_linear_units/</guid>
       <description>&lt;p&gt;The &lt;a href=&#34;https://arxiv.org/abs/1606.08415&#34;&gt;GAUSSIAN ERROR LINEAR UNITS (GELUs)&lt;/a&gt;, a neural network activation function,is \(x\Phi(s)\), where \(\Phi(x)\) the standard Gaussian cumulative distribution function.&#xA;GELUs have properties of Dropout, &lt;a href=&#34;https://openreview.net/pdf?id=rJqBEPcxe&#34;&gt;Zoneout&lt;/a&gt;, and ReLUs.&#xA;Zoneout is a method for regularizing RNNs, and stochastically forces some hidden units to maintain their previous values.&#xA;ReLUs introduce nonlinearity to neural networks.&#xA;Dropout is a regularizer.&#xA;GELUs merge the both functionalities by multipling the neuron input \(x\) by \(m \sim \text{Bernoulli}(\Phi (x))\) , where \(\Phi(x)=P(X\le x), X\sim \mathcal{N}(0, 1)\).&#xA;GELU is the expected transformation on an input \(x\), which is \(\Phi(x) \times Ix + (1-\Phi(x))\times 0x = x\Phi(x)\)&lt;/p&gt;</description>
     </item>
     <item>
       <title>A design methodology for reliable software systems (1972)</title>
-      <link>https://ryotaro.dev/en/posts/a_design_methodology_for_reliable_software_systems/</link>
+      <link>http://localhost:1313/en/posts/a_design_methodology_for_reliable_software_systems/</link>
       <pubDate>Sun, 08 Oct 2023 09:38:50 -0400</pubDate>
-      <guid>https://ryotaro.dev/en/posts/a_design_methodology_for_reliable_software_systems/</guid>
+      <guid>http://localhost:1313/en/posts/a_design_methodology_for_reliable_software_systems/</guid>
       <description>&lt;p&gt;After earning her PhD in computer Science at Stanford University, Liskov worked again for MITRE Corporation.&#xA;She was involved in the development of a time-sharing system called Venus, then was involved in finding ways to address the &amp;ldquo;software crisis.&amp;rdquo; at MITRE.&#xA;&lt;a href=&#34;https://dl.acm.org/doi/pdf/10.1145/1479992.1480018&#34;&gt;A design methodology for reliable software systems&lt;/a&gt; describes a design methodology of structured programming developed as part of the second project.&lt;/p&gt;&#xA;&lt;p&gt;The methodology uses testing to guarantee reliability.&#xA;To test a program, it is necessary to identify relevant test cases, and the set of them must be small enough to implement.&#xA;Structured programming helps to identify the relevant test cases and reduce the number of required test cases by dividing a system into modules.&lt;/p&gt;</description>
     </item>
     <item>
       <title>BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension (2019)</title>
-      <link>https://ryotaro.dev/en/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/</link>
+      <link>http://localhost:1313/en/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/</link>
       <pubDate>Sat, 07 Oct 2023 10:28:13 -0400</pubDate>
-      <guid>https://ryotaro.dev/en/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/</guid>
+      <guid>http://localhost:1313/en/posts/bart_denoising_sequence_to_sequence_pre-training_for_natural_language_generation_translation_and_comprehension/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1910.13461&#34;&gt;BART&lt;/a&gt; is a denoising autoencoder for Pretraining sequence-to-sequence models.&#xA;BART is trained on corrupted text, and updates the parameters to reconstruct the original text.&#xA;The authors experimented with several noising functions that corrupt text like token masking, token deletion, text infilling, sentence permutation, and document rotation.&#xA;BART with text infilling, where text spans are sampled with span lengths drawn from a Poisson distribution(\(\lambda = 3\)), demonstrated the most consistently strong performance.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Communicating Sequential Processes (1978)</title>
-      <link>https://ryotaro.dev/en/posts/communicating_sequential_processes/</link>
+      <link>http://localhost:1313/en/posts/communicating_sequential_processes/</link>
       <pubDate>Sat, 30 Sep 2023 11:34:47 -0400</pubDate>
-      <guid>https://ryotaro.dev/en/posts/communicating_sequential_processes/</guid>
+      <guid>http://localhost:1313/en/posts/communicating_sequential_processes/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.cs.cmu.edu/~crary/819-f09/Hoare78.pdf&#34;&gt;Communicating Sequential Processes (CSP)&lt;/a&gt; is a program structuring method that constructs a program as a parallel composition of a fixed number of sequential processes.&#xA;A process is a sequence of commands.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks(2019)</title>
-      <link>https://ryotaro.dev/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</link>
+      <link>http://localhost:1313/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</link>
       <pubDate>Sat, 23 Sep 2023 10:21:03 -0400</pubDate>
-      <guid>https://ryotaro.dev/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</guid>
+      <guid>http://localhost:1313/en/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1908.10084&#34;&gt;Sentence-BERT&lt;/a&gt; derives semantically meaningful sentence embedding that can be compared using cosine-similarity.&#xA;&lt;a href=&#34;https://arxiv.org/abs/1810.04805&#34;&gt;BERT&lt;/a&gt; achieved new state-of-the art performance on various sentence-pair regression tasks using a cross-encoder.&#xA;A cross-encoder accepts two sentences as input to the transformer network and the target value is predicted.&#xA;Semantic textual similarity is one of the sentence-pair regression tasks.&#xA;However, this setup is often not scalable for various pair regression tasks due to many possible combinations.&#xA;The semantic search that maps each sentence to a vector space where semantically similar sentences are close alleviates the combinatorial explosion.&#xA;Sentence-BERT uses a siamese network in which the two BERT networks have tied weights such that the produced sentence embeddings can be semantically compared using cosine-similarity.&lt;/p&gt;</description>
     </item>
     <item>
       <title>A Unified Architecture for Natural Language Processing: Deep Neural Networks with Multitask Learning (2008)</title>
-      <link>https://ryotaro.dev/en/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/</link>
+      <link>http://localhost:1313/en/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/</link>
       <pubDate>Sat, 16 Sep 2023 08:59:45 -0400</pubDate>
-      <guid>https://ryotaro.dev/en/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/</guid>
+      <guid>http://localhost:1313/en/posts/a_unified_architecture_for_natural_language_processing_deep_neural_networks_with_multitask_learning/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://machinelearning.org/archive/icml2008/papers/391.pdf&#34;&gt;A Unified Architecture for Natural Language Processing&lt;/a&gt; is an instance of multitask learning.&#xA;The first layer is a lookup table that stores embeddings of a fixed dictionary and size.&#xA;The second layer is a &lt;a href=&#34;https://www.cs.toronto.edu/~hinton/absps/waibelTDNN.pdf&#34;&gt;Time-Delay Neural Networks&lt;/a&gt; layer.&#xA;It extracts features from the sentence treating it as a sequence with local structure.&#xA;The third layer takes the maximum value for each of the output features of the second layer over time.&#xA;The following layers are classical NN layers.&#xA;The lookup-table is shared among the tasks, and the other layers can be task specific to each task.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Transmission of Information(1927)</title>
-      <link>https://ryotaro.dev/en/posts/transmission_of_information/</link>
+      <link>http://localhost:1313/en/posts/transmission_of_information/</link>
       <pubDate>Sat, 09 Sep 2023 12:10:45 -0400</pubDate>
-      <guid>https://ryotaro.dev/en/posts/transmission_of_information/</guid>
+      <guid>http://localhost:1313/en/posts/transmission_of_information/</guid>
       <description>&lt;p&gt;In &lt;a href=&#34;https://monoskop.org/images/a/a6/Hartley_Ralph_VL_1928_Transmission_of_Information.pdf&#34;&gt;Transmission of Information&lt;/a&gt;, Hartley developed a quantitative measure of &amp;ldquo;information&amp;rdquo; in 1927.&#xA;Hartley claims that information is the outcome of a selection among a finite set of possible messages.&#xA;Shannon&amp;rsquo;s &amp;ldquo;A mathematical theory of communication&amp;rdquo;, which is based in part on Hartley&amp;rsquo;s ideas, published in 1947.&#xA;Hartley did not model the source of information probabilistically.&#xA;Shannon modeled the source of information as a random process.&lt;/p&gt;&#xA;&lt;p&gt;Hartley stated that information should be proportional to the number of selections for practical engineering value.&#xA;He uses the letter \(H\) to denote the amount of information associated with \(n\) selections.&#xA;$$&#xA;H=Kn&#xA;$$&#xA;where \(K\) is a constant which depends on the number \(s\) of symbols available at each selection.&#xA;Let us consider two systems with \(s_1, s_2, K_1, K_2\).&#xA;We then define \(K_1, K_2\) by the condition that whenever the number of possible sequences is the same for both systems, then the amount of information is also the same for both:&#xA;$$&#xA;s_1^{n_1} = s_2^{n_2}&#xA;$$&#xA;$$&#xA;H=K_1n_1=K_2n_2&#xA;$$&#xA;$$&#xA;\frac{K_1}{\log s_1}=\frac{K_2}{\log s_2}&#xA;$$&lt;/p&gt;</description>
     </item>
     <item>
       <title>RoBERTa: A Robustly Optimized BERT Pretraining Approach(2019)</title>
-      <link>https://ryotaro.dev/en/posts/roberta/</link>
+      <link>http://localhost:1313/en/posts/roberta/</link>
       <pubDate>Sun, 27 Aug 2023 13:13:39 -0400</pubDate>
-      <guid>https://ryotaro.dev/en/posts/roberta/</guid>
+      <guid>http://localhost:1313/en/posts/roberta/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1907.11692.pdf&#34;&gt;RoBERTa&lt;/a&gt;(Robusty optimized BERT approach) is an improved recipe for training &lt;a href=&#34;https://arxiv.org/pdf/1810.04805.pdf&#34;&gt;BERT&lt;/a&gt; models.&#xA;BERT uses two objectives, masked language modeling and next sequence prediction (NSP), during pretraining.&#xA;RoBERTa uses masked language modeling only.&#xA;The authors increased the batch size and Byte-Pair Encoding (BPE) vocabulary size.&#xA;RobERTa is trained with byte-level BPE, which uses bytes instead of unicode characters as the base subword units.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Go To Statement Considered Harmful (1968)</title>
-      <link>https://ryotaro.dev/en/posts/go_to_statement_considered_harmful/</link>
+      <link>http://localhost:1313/en/posts/go_to_statement_considered_harmful/</link>
       <pubDate>Sat, 26 Aug 2023 10:46:18 -0400</pubDate>
-      <guid>https://ryotaro.dev/en/posts/go_to_statement_considered_harmful/</guid>
+      <guid>http://localhost:1313/en/posts/go_to_statement_considered_harmful/</guid>
       <description>&lt;p&gt;Edgar Djkstra criticized the excessive use of the go to statement in &lt;a href=&#34;https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf&#34;&gt;Go To Statement Considered Harmful&lt;/a&gt;.&#xA;While the source code is static, the process taking place under the control of the source code is dynamic.&#xA;The programmers should aim to shorten the conceptual gap between the source code and its process to describe the progress.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Self-Attention with Relative Position Representations(2018)</title>
-      <link>https://ryotaro.dev/en/posts/self_attention_with_relative_position_representations/</link>
+      <link>http://localhost:1313/en/posts/self_attention_with_relative_position_representations/</link>
       <pubDate>Sat, 19 Aug 2023 10:02:50 -0400</pubDate>
-      <guid>https://ryotaro.dev/en/posts/self_attention_with_relative_position_representations/</guid>
+      <guid>http://localhost:1313/en/posts/self_attention_with_relative_position_representations/</guid>
       <description>&lt;p&gt;The authors of &lt;a href=&#34;https://arxiv.org/pdf/1803.02155.pdf&#34;&gt;Self-Attention with Relative Position Representations&lt;/a&gt; presented a way of injecting relative position representations in the self-attention mechanism of the &lt;a href=&#34;https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;Transformer&lt;/a&gt;.&#xA;In contrast to recurrent and convolutional neural networks, Transformer does not explicitly model position information in its structure.&#xA;&lt;a href=&#34;https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;The original position encoding&lt;/a&gt; employs sine and cosine functions of different frequencies.&#xA;The authors of Transformer hypothesized that sinusoidal position encodings would help Transformer to generalize to sequence lengths unseen during training.&#xA;Positional encodings are added to the input embeddings at the bottoms of the encoder and decoder stacks of Transformer.&#xA;This hypothesis was shared by the relative position representations.&#xA;In contrast to absolute position representations, the relative position representations are invariant to the total sequence length.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Self-Adjusting Binary Search Trees(1985)</title>
-      <link>https://ryotaro.dev/en/posts/self_adjusting_binary_search_trees/</link>
+      <link>http://localhost:1313/en/posts/self_adjusting_binary_search_trees/</link>
       <pubDate>Sat, 12 Aug 2023 13:49:56 -0400</pubDate>
-      <guid>https://ryotaro.dev/en/posts/self_adjusting_binary_search_trees/</guid>
+      <guid>http://localhost:1313/en/posts/self_adjusting_binary_search_trees/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.cs.cmu.edu/~sleator/papers/self-adjusting.pdf&#34;&gt;The splay tree&lt;/a&gt;, a self-adjusting form of a binary search tree, is a binary search tree that moves an accessed node to the root after each access.&#xA;On an \(n\)-node splay tree, accessing, inserting and deleting have an amortized time bound of \(O(\log n)\) per operation.&#xA;In addition, for sufficiently long access sequences, splay trees are as efficient, to within a constant factor, as static optimum search trees.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer(2020)</title>
-      <link>https://ryotaro.dev/en/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/</link>
+      <link>http://localhost:1313/en/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/</link>
       <pubDate>Sat, 05 Aug 2023 13:27:09 -0400</pubDate>
-      <guid>https://ryotaro.dev/en/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/</guid>
+      <guid>http://localhost:1313/en/posts/exploring_the_limits_of_transfer_learning_with_a_unified_text-to-text_transformer/</guid>
       <description>&lt;p&gt;The authors of &lt;a href=&#34;https://arxiv.org/abs/1910.10683&#34;&gt;Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer&lt;/a&gt; performed experiments with &lt;em&gt;T&lt;/em&gt;ext-&lt;em&gt;t&lt;/em&gt;o-&lt;em&gt;T&lt;/em&gt;ext &lt;em&gt;T&lt;/em&gt;ransfer &lt;em&gt;T&lt;/em&gt;ransformer(T5), a unified framework for NLP.&#xA;The basic idea underlying T5 is to treat various NLP problems as taking text as input and producing new text as output.&#xA;Their goal is to explore general language learning abilities instead of providing new methods.&#xA;They are interested in exploring the limits of transfer learning for NLP by scaling up models and data sets beyond what has previously been considered.&#xA;To perform experiments at scale, they created Colossal Clean Crawled Corpus (C4), a dataset consisting of hundreds of gigabytes of clean English text scraped from the web.&#xA;They leveraged &lt;a href=&#34;https://commoncrawl.org/&#34;&gt;Common Crawl&lt;/a&gt; to create C4.&#xA;They used heuristic for cleaning up Common Crawl web-extracted text, and used &lt;code&gt;langdetect&lt;/code&gt; to filter out any pages that are not classified as English documents.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Catalan Numbers(2016)</title>
-      <link>https://ryotaro.dev/en/posts/catalan_number/</link>
+      <link>http://localhost:1313/en/posts/catalan_number/</link>
       <pubDate>Sat, 29 Jul 2023 15:24:15 -0400</pubDate>
-      <guid>https://ryotaro.dev/en/posts/catalan_number/</guid>
+      <guid>http://localhost:1313/en/posts/catalan_number/</guid>
       <description>&lt;p&gt;The Catalan numbers are a sequence of natural numbers that occur in various problems in combinatorial mathematics.&#xA;For example, the number of expressions containing \(n\) valid pairs of parentheses is the \(n\)th Catalan number.&#xA;Suppose you have a grid of \(n \times n\) squares, the \(n\)th Catalan number represents the number of paths with a length of \(2n\) that lead from the upper left corner to the lower right corner without intersecting the diagonal dotted line running from the upper left to the lower right.&#xA;Later in the page, we will derive explicit formulas for the Catalan numbers in two different ways.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Layer Normalization (2016)</title>
-      <link>https://ryotaro.dev/en/posts/layer_normalization/</link>
+      <link>http://localhost:1313/en/posts/layer_normalization/</link>
       <pubDate>Sat, 17 Jun 2023 10:18:51 -0400</pubDate>
-      <guid>https://ryotaro.dev/en/posts/layer_normalization/</guid>
+      <guid>http://localhost:1313/en/posts/layer_normalization/</guid>
       <description>&lt;p&gt;Layer Normalization, introduced in the 2016 paper &lt;a href=&#34;https://arxiv.org/abs/1607.06450&#34;&gt;Layer Normalization&lt;/a&gt;, is a technique used to normalize the summed inputs to the neurons in a layer by using the mean and standard deviation of those inputs within that layer.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1502.03167&#34;&gt;Batch Normalization&lt;/a&gt; uses the mean and the standard deviation of the summed inputs of a neuron in a mini-batch to normalize the summed inputs to it.&#xA;While Batch Normalization can accelerate training, it depends on mini-batch size and is challenging to implement in RNNs.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)</title>
+      <link>http://localhost:1313/en/posts/bert/</link>
+      <pubDate>Sat, 14 Dec 2019 17:39:09 +0900</pubDate>
+      <guid>http://localhost:1313/en/posts/bert/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/1810.04805&#34;&gt;BERT&lt;/a&gt;, &lt;em&gt;B&lt;/em&gt;idirectional &lt;em&gt;E&lt;/em&gt;ncoder &lt;em&gt;R&lt;/em&gt;epresentations from &lt;em&gt;T&lt;/em&gt;ransformers, is a language model based on the Transformer encoder architecture.&#xA;During pre-training, BERT learns bidirectional representations from unlabeled text using two tasks: Masked Language Modeling (MLM) and Next Sentence Prediction (NSP).&#xA;MLM involves predicting randomly masked tokens in a sequence using surrounding context.&#xA;NSP trains the model to predict whether the second sentence in a pair follows the first in the original document.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Disclaimer</title>
-      <link>https://ryotaro.dev/en/about/</link>
+      <link>http://localhost:1313/en/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ryotaro.dev/en/about/</guid>
+      <guid>http://localhost:1313/en/about/</guid>
       <description>&lt;!-- ## Disclaimer --&gt;&#xA;&lt;p&gt;All the information on this website is published in good faith and for general information purpose only.&#xA;This website does not make any warranties about the completeness, reliability and accuracy of this information.&#xA;Any action you take upon the information you find on this website, is strictly at your own risk.&#xA;Ryotaro Nakamura will not be liable for any losses and/or damages in connection with the use of this website.&lt;/p&gt;</description>
     </item>
   </channel>

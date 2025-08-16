@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Question Answering on Blanket</title>
-    <link>https://ryotaro.dev/en/tags/question-answering/</link>
+    <link>http://localhost:1313/en/tags/question-answering/</link>
     <description>Recent content in Question Answering on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sat, 30 Dec 2023 00:42:11 -0500</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/en/tags/question-answering/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/en/tags/question-answering/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dense Passage Retrieval for Open-Domain Question Answering (2020)</title>
-      <link>https://ryotaro.dev/en/posts/dense-passage-retrieval-for-open-domain-question-answering/</link>
+      <link>http://localhost:1313/en/posts/dense-passage-retrieval-for-open-domain-question-answering/</link>
       <pubDate>Sat, 30 Dec 2023 00:42:11 -0500</pubDate>
-      <guid>https://ryotaro.dev/en/posts/dense-passage-retrieval-for-open-domain-question-answering/</guid>
+      <guid>http://localhost:1313/en/posts/dense-passage-retrieval-for-open-domain-question-answering/</guid>
       <description>&lt;p&gt;Open-domain question answering (QA) involves answering fact-based questions using documents.&#xA;An open-domain QA system can be divided into two components: one that retrieves relevant passages and another that extracts the answer spans from those passages &lt;a href=&#34;https://arxiv.org/abs/1704.00051&#34;&gt;(Chen et al., 2017)&lt;/a&gt;.&#xA;While traditional approaches use sparse vector space models like BM25 for the retrieval step, &lt;a href=&#34;https://aclanthology.org/2020.emnlp-main.550/&#34;&gt;Dense Passage Retrieval for Open-Domain Question Answering&lt;/a&gt; shows that dense representations can also be practically implemented using dense representations.&lt;/p&gt;&#xA;&lt;!-- Open-domain question answering (QA) is a task that answers factorid questions using documents. --&gt;&#xA;&lt;!-- If the answers are spans appearing in passages of the documents, an open-domain QA system can be decomposed into 2 components. --&gt;&#xA;&lt;!-- The first component retrieves a small set of passages relevant to the question, and the second one extract the span from the filter set [(Chen et al., 2017)](https://arxiv.org/abs/1704.00051). --&gt;&#xA;&lt;!-- While traditional approaches use sparse vector space models such as BM25 for the first module, [Dense Passage Retrieval for Open-Domain Question Answering](https://aclanthology.org/2020.emnlp-main.550/) demonstrates that the first retrieval step can be implemented using dense representations. --&gt;&#xA;&lt;p&gt;The embeddings are learned from the training dataset, optimizing for maximizing inner products between question and relevant passage vectors.&#xA;The training is essentially metric learning, and each question needs irrelvant passages.&#xA;In experiments, it was found that utilizing both the top passages returned by BM25, excluding the answer, and positive passages paired with other questions as negatives yielded best performance.&lt;/p&gt;&#xA;&lt;!-- The embeddings are learned from the questions and passages in a training dataset, and optimized for maximizing inner products of the question and relevant passage vectors. --&gt;&#xA;&lt;!-- The training is essentially metric learning, and each question needs irrelvant passages. --&gt;&#xA;&lt;!-- Using both the top passages returned by BM25 except the answer and positive passages paired with other questions as negatives outperformed in experiments. --&gt;</description>
     </item>
   </channel>

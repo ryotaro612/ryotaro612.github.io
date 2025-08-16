@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+  
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-W5TDG76');
+  </script>
+  
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=300,initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+    crossorigin="anonymous" />
+  
+  <link rel="stylesheet" href="http://localhost:1313/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+  
+  <link rel="stylesheet" href="http://localhost:1313/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+  
+
+<link rel="stylesheet" href="http://localhost:1313/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+
+<link rel="stylesheet" href="http://localhost:1313/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+    crossorigin="anonymous"></script>
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+  <title>OUTRAGEOUSLY LARGE NEURAL NETWORKS THE SPARSELY-GATED MIXTURE-OF-EXPERTS LAYER (2017)</title>
+</head>
+
+<body>
+  
+  
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0"
+      style="display:none;visibility:hidden" />
+  </noscript>
+  
+  
+  <header class="navigation">
+    <h2><a href="http://localhost:1313/">Blanket</a></h2>
+    <nav>
+      <ul>
+        <li><a href="http://localhost:1313/about">About</a></li>
+        <li><a href="http://localhost:1313/posts">Posts</a></li>
+        <li><a href="http://localhost:1313/tags">Tags</a></li>
+        
+        <li><a href="http://localhost:1313/en/posts/outrageously-large-neural-networks-the-sparsely-gated-mixture-of-expert-layer/">en</a></li>
+        
+      </ul>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/ryotaro612">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/ryotaro612/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://speakerdeck.com/ryotaro612/">
+            <i class="fa-brands fa-speaker-deck"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a href="http://localhost:1313/%20index.xml">
+            <i class="fas fa-rss"></i>
+          </a>
+        </li>
+        
+      </ul>
+    </nav>
+  </header>
+  
+<main>
+  <h1>OUTRAGEOUSLY LARGE NEURAL NETWORKS THE SPARSELY-GATED MIXTURE-OF-EXPERTS LAYER (2017)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="http://localhost:1313/tags/mixture-of-experts/">
+        #Mixture-of-Experts
+      </a>
+    </li>
+    
+  </ul>
+  <span class="date">
+    
+    August 1, 2025
+    
+  </span>
+  <div>
+    <p>パラメタ数を増やせば多くの情報をモデルに学習させられるが、計算量も増える。
+<a href="https://arxiv.org/pdf/1701.06538">OUTRAGEOUSLY LARGE NEURAL NETWORKS: THE SPARSELY-GATED MIXTURE-OF-EXPERTS LAYER</a> (MoE) は、ゲートと数千規模の全結合層からなる層であり、ゲートの後に全結合層を並列に配置する。
+ゲートは、サンプルごとに疎なベクトルを出力する。
+各サンプルの推論において、ベクトルの0でない要素に対応する全結合層だけを計算対象に限定し、パラメタ数の増加と計算量の抑制を両立する。</p>
+<p>サンプルを\(x\), ゲートを\(G\), \(n\)個の\(i\)番目の全結合層を\(E_i\)をおくと、MoE層の\(x\)に対する出力は、ゲートと全結合層の出力の内積になる。
+$$
+y=\sum^n_{i=1}G(x)_iE_i(x)
+$$</p>
+<p>\(G\)の出力の次元は\(n\)で、ハイパーパラメタ\(k\)の要素が1未満の正の値に、それ以外の要素は\(0\)になる。
+\(G(x)\)の出力が分かれば、\(y\)の計算に必要な全結合層は\(k\)個のみになる。
+\(G\)の重みは2つある。
+ひとつは全結合層を選ぶための重み\(W_g\)であり、残りはノイズを調整する重み\(W_{\text{noise}}\)である。
+$$
+\begin{align*}
+G(x)&amp;=\text{Softmax}(\text{KeepTopK}(H(x), k))\\
+H(x)_i&amp;=(x\cdot W_g)_i + \text{StandardNormal()}\cdot \text{Softplus}((x\cdot W_{\text{noise}})_i)\\
+\text{KeepTopK}(v,k)_i&amp;=
+\begin{cases}
+v_i&amp;\text{if }v_i \text{ is in the top }k\text{ elements of }v\\
+-\infty&amp;\text{otherwise}
+\end{cases}
+\end{align*}
+$$</p>
+<p>選ばれる全結合層が偏ると計算を分散できなくなる。そこで、偏りに対する2つの損失関数\(L_{\text{importance}}(X)\)と\(L_{\text{load}}(X)\)を導入する。以下の式の\(\textit{CV}\)を変動係数とすると、\(L_{\text{importance}}(X)\)は
+$$
+\begin{align*}
+\text{Importance}(X)&amp;=\sum_{x\in X}G(x)\\
+L_{\text{importance}}(X)&amp;=w_{\text{importance}}\cdot \textit{CV}(\text{Importance}(X))^2
+\end{align*}
+$$
+と定義される。</p>
+<p>ノイズ\(\text{StandardNormal()}\)の役割は、選ばれる全結合層に偏りをなくすことにある。
+全結合層に渡されるサンプル数は、離散値であり、誤差逆伝播法を使えない。
+そこで、全結合層に割り当てられるサンプル数の不均衡さを示す滑らかな関数\(L_{\text{load}}(X)\)を定義し、損失の一部として計算する。</p>
+<p>まず、\(\text{kth\_excluding}(v, k, i)\)を\(i\)を除いて\(k\)番目に値の大きい\(v\), 正規分布の累積分布関数を\(\Phi\), \(G(x)_i\)が\(0\)でない確率を\(P(x, i)\)とする。
+$$
+\begin{align*}
+P(x, i) &amp;=\textit{Pr}\left((x\cdot W_g)_i + \text{StandardNormal}()\cdot \text{Softplus}((x\cdot W_{\text{noise}})_i) &gt; \text{kth\_excluding}(H(x), k, i)\right)\\
+&amp;=\Phi\left(\frac{(x\cdot W_g)_i - \text{kth\_excluding}(H(x), k, i)}{\text{Softplus}((x\cdot W_{\text{noise}})_i)}\right)\\
+\end{align*}
+$$
+このとき、 \(w_{\text{load}}\)をハイパーパラメタとすると、\(L_{\text{load}}(X)\)は
+$$
+\begin{align*}
+\text{Load}(X)_i&amp;= \sum_{x\in X} P(x,i)\\
+L_{\text{load}}(X)&amp;=w_{\text{load}}\cdot\text{CV}(\text{Load}(X))^2
+\end{align*}
+$$
+になる。</p>
+  </div>
+</main>
+
+  
+<ul class="pagination">
+  
+  <li>
+    <a href="/posts/training-language-models-to-follow-instructions-with-human-feedback/">
+      <i class="fa-solid fa-xl fa-angle-left"></i>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a href="/posts/amazon.com-recommendations-item-to-item-collaborative-filtering/">
+      <i class="fa-solid fa-xl fa-angle-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  <footer>
+    <small>© Ryotaro Nakamura. All Rights Reserved.</small>
+  </footer>
+</body>
+
+
+</html>

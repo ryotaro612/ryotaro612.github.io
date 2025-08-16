@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>S3 on Blanket</title>
-    <link>https://ryotaro.dev/tags/s3/</link>
+    <link>http://localhost:1313/tags/s3/</link>
     <description>Recent content in S3 on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Thu, 30 Jan 2025 03:01:59 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/s3/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/s3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>署名つきURLでS3オブジェクトを公開する</title>
-      <link>https://ryotaro.dev/posts/s3-sign/</link>
+      <link>http://localhost:1313/posts/s3-sign/</link>
       <pubDate>Thu, 30 Jan 2025 03:01:59 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/s3-sign/</guid>
+      <guid>http://localhost:1313/posts/s3-sign/</guid>
       <description>&lt;p&gt;S3バケットにあるプライベートオブジェクトの署名つきURLを発行すれば、URLを知るユーザーのみにオブジェクトを公開できる。&#xA;発行方法は&lt;a href=&#34;https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html&#34;&gt;AWSの記事&lt;/a&gt;で紹介されている。&lt;/p&gt;&#xA;&lt;p&gt;記事にしたがってURLを発行してみたところ、バケットとファイル手間がかかった。&#xA;また、URLを発行するクライアントを生成する方法が記事になく、別途調査する必要があった。&lt;/p&gt;&#xA;&lt;p&gt;これまでに何度かURLを発行する方法を調べたことがあるので、今後のために、バケットとファイルを用意するterraformのコードと、ファイルのURLを発行するGoのコードをGitHubの&lt;a href=&#34;https://github.com/ryotaro612/s3-signin&#34;&gt;リポジトリ&lt;/a&gt;に公開した。&lt;/p&gt;</description>
     </item>
   </channel>

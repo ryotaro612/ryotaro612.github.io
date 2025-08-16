@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Structured Programming on Blanket</title>
-    <link>https://ryotaro.dev/en/tags/structured-programming/</link>
+    <link>http://localhost:1313/en/tags/structured-programming/</link>
     <description>Recent content in Structured Programming on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 08 Oct 2023 09:38:50 -0400</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/en/tags/structured-programming/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/en/tags/structured-programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A design methodology for reliable software systems (1972)</title>
-      <link>https://ryotaro.dev/en/posts/a_design_methodology_for_reliable_software_systems/</link>
+      <link>http://localhost:1313/en/posts/a_design_methodology_for_reliable_software_systems/</link>
       <pubDate>Sun, 08 Oct 2023 09:38:50 -0400</pubDate>
-      <guid>https://ryotaro.dev/en/posts/a_design_methodology_for_reliable_software_systems/</guid>
+      <guid>http://localhost:1313/en/posts/a_design_methodology_for_reliable_software_systems/</guid>
       <description>&lt;p&gt;After earning her PhD in computer Science at Stanford University, Liskov worked again for MITRE Corporation.&#xA;She was involved in the development of a time-sharing system called Venus, then was involved in finding ways to address the &amp;ldquo;software crisis.&amp;rdquo; at MITRE.&#xA;&lt;a href=&#34;https://dl.acm.org/doi/pdf/10.1145/1479992.1480018&#34;&gt;A design methodology for reliable software systems&lt;/a&gt; describes a design methodology of structured programming developed as part of the second project.&lt;/p&gt;&#xA;&lt;p&gt;The methodology uses testing to guarantee reliability.&#xA;To test a program, it is necessary to identify relevant test cases, and the set of them must be small enough to implement.&#xA;Structured programming helps to identify the relevant test cases and reduce the number of required test cases by dividing a system into modules.&lt;/p&gt;</description>
     </item>
   </channel>

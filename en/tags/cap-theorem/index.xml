@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CAP Theorem on Blanket</title>
-    <link>https://ryotaro.dev/en/tags/cap-theorem/</link>
+    <link>http://localhost:1313/en/tags/cap-theorem/</link>
     <description>Recent content in CAP Theorem on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sat, 23 Dec 2023 11:47:05 -0500</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/en/tags/cap-theorem/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/en/tags/cap-theorem/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CAP Twelve Years Later: How the &#34;Rules&#34; Have Changed (2012)</title>
-      <link>https://ryotaro.dev/en/posts/cap-twelve-years-later-how-the-rules-have-changed/</link>
+      <link>http://localhost:1313/en/posts/cap-twelve-years-later-how-the-rules-have-changed/</link>
       <pubDate>Sat, 23 Dec 2023 11:47:05 -0500</pubDate>
-      <guid>https://ryotaro.dev/en/posts/cap-twelve-years-later-how-the-rules-have-changed/</guid>
+      <guid>http://localhost:1313/en/posts/cap-twelve-years-later-how-the-rules-have-changed/</guid>
       <description>&lt;p&gt;The &lt;a href=&#34;https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf&#34;&gt;CAP theorem&lt;/a&gt;, coined by Eric Brewer, states that in a shared-data system, you can have either Consistency (C), Availability (A), or Parition tolerance (P), but not all three simultaneously.&#xA;However, Martin Kleppmann challenges the CAP theorem and discusses its limitations in &lt;a href=&#34;https://dataintensive.net/&#34;&gt;Designing Data-Intensive Applications&lt;/a&gt;, and &lt;a href=&#34;https://www.cl.cam.ac.uk/research/dtg/archived/files/publications/public/mk428/cap-critique.pdf&#34;&gt;A Critique of the CAP Theorem&lt;/a&gt;.&#xA;In &lt;a href=&#34;https://sites.cs.ucsb.edu/~rich/class/cs293b-cloud/papers/brewer-cap.pdf&#34;&gt;CAP Twelve Years Later: How the “Rules” Have Changed&lt;/a&gt;, Brewer clarifies that the notion of &amp;ldquo;2 of 3&amp;rdquo; is misleading.&#xA;In practice, designers cannot forfeit P and have a choice between C and A.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pretraining on Blanket</title>
-    <link>https://ryotaro.dev/tags/pretraining/</link>
+    <link>http://localhost:1313/tags/pretraining/</link>
     <description>Recent content in Pretraining on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 16 Feb 2020 14:21:55 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/pretraining/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/pretraining/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unsupervised Pretraining for Sequence to Sequence Learning(2017)</title>
-      <link>https://ryotaro.dev/posts/unsupervised_pretraining_for_sequence_to_sequence_learning/</link>
+      <link>http://localhost:1313/posts/unsupervised_pretraining_for_sequence_to_sequence_learning/</link>
       <pubDate>Sun, 16 Feb 2020 14:21:55 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/unsupervised_pretraining_for_sequence_to_sequence_learning/</guid>
+      <guid>http://localhost:1313/posts/unsupervised_pretraining_for_sequence_to_sequence_learning/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;事前学習とファインチューニングにより&lt;a href=&#34;https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf&#34;&gt;seq2seq&lt;/a&gt;の汎化性能を改善する手法を提案した論文である。&#xA;encoderの重みを学習済み言語モデルの重みで初期化する。&#xA;decoderについても、encoderと別の言語モデルを用意し、その重みで初期化する。&#xA;ただし、工夫のないファインチューニングをすると&lt;a href=&#34;https://arxiv.org/pdf/1312.6211.pdf&#34;&gt;破滅的忘却&lt;/a&gt;が生じてしまう。&#xA;そこで、ファインチューニングでは言語モデルとseq2seqの目的関数の両方を学習につかうことで、過学習をさけ、汎化性能を確保する。&lt;/p&gt;</description>
     </item>
   </channel>

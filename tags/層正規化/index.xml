@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>層正規化 on Blanket</title>
-    <link>https://ryotaro.dev/tags/%E5%B1%A4%E6%AD%A3%E8%A6%8F%E5%8C%96/</link>
+    <link>http://localhost:1313/tags/%E5%B1%A4%E6%AD%A3%E8%A6%8F%E5%8C%96/</link>
     <description>Recent content in 層正規化 on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 17 Jun 2023 10:18:51 -0400</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/%E5%B1%A4%E6%AD%A3%E8%A6%8F%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E5%B1%A4%E6%AD%A3%E8%A6%8F%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Layer Normalization (2016)</title>
-      <link>https://ryotaro.dev/posts/layer_normalization/</link>
+      <link>http://localhost:1313/posts/layer_normalization/</link>
       <pubDate>Sat, 17 Jun 2023 10:18:51 -0400</pubDate>
-      <guid>https://ryotaro.dev/posts/layer_normalization/</guid>
+      <guid>http://localhost:1313/posts/layer_normalization/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1607.06450&#34;&gt;層正規化&lt;/a&gt; (Layer Normalization) はニューラルネットワークのユニットへの入力の重みつきの和を正規化し、学習時間を短縮する。&#xA;各層ごとの重みを掛けた入力の総和の平均と標準偏差を求め、この2つの統計量で層の各ユニットの総入力を正規化する&#xA;先行研究の&lt;a href=&#34;https://arxiv.org/abs/1502.03167&#34;&gt;バッチ正規化&lt;/a&gt;は、ミニバッチごとに、各ユニットの入力の重みつき和の平均と分散を計算し、ユニットの総入力を正規化する。&#xA;バッチ正規化でも学習時間を短縮できるが、その効果はミニバッチのサイズに依存する。また、単純にはRNNに適用できない。&lt;/p&gt;</description>
     </item>
   </channel>

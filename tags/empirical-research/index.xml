@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Empirical Research on Blanket</title>
-    <link>https://ryotaro.dev/tags/empirical-research/</link>
+    <link>http://localhost:1313/tags/empirical-research/</link>
     <description>Recent content in Empirical Research on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 14 Dec 2019 13:25:04 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/empirical-research/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/empirical-research/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>150 Successful Machine Learning Models: 6 Lessons Learned at Booking.com(2019)</title>
-      <link>https://ryotaro.dev/posts/150_successfuly_machine_learning_modes/</link>
+      <link>http://localhost:1313/posts/150_successfuly_machine_learning_modes/</link>
       <pubDate>Sat, 14 Dec 2019 13:25:04 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/150_successfuly_machine_learning_modes/</guid>
+      <guid>http://localhost:1313/posts/150_successfuly_machine_learning_modes/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;宿泊予約サービス&lt;a href=&#34;http://booking.com/&#34;&gt;Booking.com&lt;/a&gt;におけるモデルの開発運用でえられた教訓を6つにまとめたKDD2019の論文である。&#xA;教訓の主眼を収益におき、6つの教訓を通して、実運用環境における仮説と実験を反復する重要性を強調する。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Software Engineering for Machine Learning: A Case Study</title>
-      <link>https://ryotaro.dev/posts/software_engineering_for_machine_learning/</link>
+      <link>http://localhost:1313/posts/software_engineering_for_machine_learning/</link>
       <pubDate>Sat, 14 Sep 2019 11:26:41 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/software_engineering_for_machine_learning/</guid>
+      <guid>http://localhost:1313/posts/software_engineering_for_machine_learning/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;マイクロソフトにおける機械学習を応用したアプリケーションの開発についての調査結果をまとている。&#xA;著者らは、9人中の8名がMicrosoft Researchに所属し、本論文で2019年のICSEのSoftware Engineering in Practiceの分野でBest Paper Awardを受賞した。&#xA;主な貢献は、各チームにおける開発フローを9のステージに分けて解説したこと、機械学習を応用するアプリケーションやプラットフォームの開発におけるベストプラクティスを示したこと、機械学習を応用するアプリケーションの開発に固有の課題にまつわる論考の3つである。&lt;/p&gt;</description>
     </item>
   </channel>

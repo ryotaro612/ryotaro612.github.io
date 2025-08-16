@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Apache Calcite on Blanket</title>
-    <link>https://ryotaro.dev/tags/apache-calcite/</link>
+    <link>http://localhost:1313/tags/apache-calcite/</link>
     <description>Recent content in Apache Calcite on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 10 Mar 2024 10:44:15 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/apache-calcite/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/apache-calcite/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Apache Calcite: A Foundational Framework for Optimized Query Processing Over Heterogeneous Data Sources (2018)</title>
-      <link>https://ryotaro.dev/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/</link>
+      <link>http://localhost:1313/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/</link>
       <pubDate>Sun, 10 Mar 2024 10:44:15 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/</guid>
+      <guid>http://localhost:1313/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/</guid>
       <description>&lt;p&gt;Michael StonebrakerとUğur Çetintemelは、2005年に&lt;a href=&#34;https://cs.brown.edu/~ugur/fits_all.pdf&#34;&gt;One size fits all&lt;/a&gt;で、データウェアハウスとストリーミング処理をとりあげ、すべてのデータをRDBMSで管理する時代の終わりを主張した。&#xA;組織はデータベースを特定の用途ごとに使い分けるようになった。&#xA;しかし同時に、データベースの開発者は、どんなデータベースでも必要な仕組みをデータベースごとに実装しなければならなくなった。&#xA;どのようなクエリ言語を採用するデーターベースにもクエリ最適化が求められる。&#xA;一方、組織は複数のデータベースに分散したデータを統合しなければならなくなった。&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://calcite.apache.org/&#34;&gt;Apache Calcite&lt;/a&gt;は、SQLの解釈、最適化、実行のためのフレームワークであり、複数のデータベースに分散したデータへのANSI標準のSQLでの問い合せを実現する。&#xA;データが複数のデータベースに分散していても、クライアントはデータが1つのRDBMSにあるかのようにSQLでCalciteに問い合せられる。&lt;/p&gt;&#xA;&lt;!-- クライアントは、複数のデータベースに分散するデータが1つのRDBMSにあるかのように、SQLでCalciteに問い合せられる。 --&gt;</description>
     </item>
   </channel>

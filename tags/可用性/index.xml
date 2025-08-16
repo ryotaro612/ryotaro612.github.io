@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>可用性 on Blanket</title>
-    <link>https://ryotaro.dev/tags/%E5%8F%AF%E7%94%A8%E6%80%A7/</link>
+    <link>http://localhost:1313/tags/%E5%8F%AF%E7%94%A8%E6%80%A7/</link>
     <description>Recent content in 可用性 on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Thu, 30 Jan 2025 03:01:31 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/%E5%8F%AF%E7%94%A8%E6%80%A7/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E5%8F%AF%E7%94%A8%E6%80%A7/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Highly Available Transactions Virtues and Limitations (2013)</title>
-      <link>https://ryotaro.dev/posts/highly-available-transactions-virtues-and-limitations/</link>
+      <link>http://localhost:1313/posts/highly-available-transactions-virtues-and-limitations/</link>
       <pubDate>Thu, 30 Jan 2025 03:01:31 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/highly-available-transactions-virtues-and-limitations/</guid>
+      <guid>http://localhost:1313/posts/highly-available-transactions-virtues-and-limitations/</guid>
       <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;&#xA;&lt;p&gt;CAP定理の一貫性、可用性、ネットワークの分断耐性のトリレンマは、1つを完全に切り捨てるのではなく、現実には、3つの性質の優先順位をつける問題になる。&#xA;システムの一貫性と可用性の均衡を設計するときは、求める一貫性に対して実現できる可用性を知らないといけない。&#xA;&lt;a href=&#34;https://www.vldb.org/pvldb/vol7/p181-bailis.pdf&#34;&gt;Highly Available Transactions Virtues and Limitations&lt;/a&gt; は、既存の一貫性を両立できる可用性の水準と対応させ、両性質の強さで一貫性と可用性のペアを半順序関係に整理した。&lt;/p&gt;</description>
     </item>
   </channel>

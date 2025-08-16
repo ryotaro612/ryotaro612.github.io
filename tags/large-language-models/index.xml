@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Large Language Models on Blanket</title>
-    <link>https://ryotaro.dev/tags/large-language-models/</link>
+    <link>http://localhost:1313/tags/large-language-models/</link>
     <description>Recent content in Large Language Models on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Thu, 24 Jul 2025 03:09:28 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/large-language-models/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/large-language-models/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Training Language Models to Follow Instructions With Human Feedback (2022)</title>
-      <link>https://ryotaro.dev/posts/training-language-models-to-follow-instructions-with-human-feedback/</link>
+      <link>http://localhost:1313/posts/training-language-models-to-follow-instructions-with-human-feedback/</link>
       <pubDate>Thu, 24 Jul 2025 03:09:28 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/training-language-models-to-follow-instructions-with-human-feedback/</guid>
-      <description>&lt;p&gt;LLMはウェブページ上の次のトークンを予測できるように訓練される。&#xA;指示に応じた出力になるようにLLMを訓練していないため、パラメタ数を増やしても、プロンプトに忠実で安全で便利な出力にできるとは限らない。&#xA;&lt;a href=&#34;https://arxiv.org/pdf/2203.02155&#34;&gt;Training language models to follow instructions with human feedback&lt;/a&gt;は、人間のフィードバックによる強化学習 (RLHF) により、プロンプトに対する望ましい順に順序づけられた出力で報酬モデルを訓練し、報酬モデルと&lt;a href=&#34;https://arxiv.org/pdf/1707.06347&#34;&gt;PPO&lt;/a&gt;でGPT-3の方策を最適化した。&#xA;RLHFで訓練したパラメタ数1.3BのGPT-3 (InsturctGPT) の出力は、175BのGPT-3よりも人にとって望ましかった。&lt;/p&gt;&#xA;&lt;p&gt;InstructGPTに採用したRLHFも、先行手法の&lt;a href=&#34;https://arxiv.org/pdf/1706.03741&#34;&gt;Deep Reinforcement Learning from Human Preferences&lt;/a&gt;のように、報酬関数のモデルを訓練する。&#xA;なお、先行手法についても過去に&lt;a href=&#34;https://ryotaro.dev/posts/deep_reinforcement_learning_from_human_preferences/&#34;&gt;記事&lt;/a&gt;にした。&#xA;InstructGPTのRLHFには、報酬関数のモデルを生成する前に、GPT3をファインチューニングする手順がある。&#xA;このファインチューニングのための訓練データは、主にOpen AI APIで集めたプロンプトに40名の請負業者が適切な出力を書いて作成された。&#xA;報酬モデルの学習データを集めるときは、ファインチューニングされたモデルにプロンプトを入力し、プロンプトに対する複数の出力を収集し、業者に良い順に出力を順序づけてもらった。&#xA;プロンプトと順序つき出力を訓練データとして、スカラ値の報酬を出力する報酬モデルを訓練し、最後に、PPOで報酬モデルの出力に方策モデルを最適化した。&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/training-language-models-to-follow-instructions-with-human-feedback/</guid>
+      <description>&lt;p&gt;LLMはウェブページ上の次のトークンを予測できるように訓練される。&#xA;指示に応じた出力になるようにLLMを訓練していないため、パラメタ数を増やしても、プロンプトに忠実で安全で便利な出力にできるとは限らない。&#xA;&lt;a href=&#34;https://arxiv.org/pdf/2203.02155&#34;&gt;Training language models to follow instructions with human feedback&lt;/a&gt;は、人間のフィードバックによる強化学習 (RLHF) により、プロンプトに対する望ましい順に順序づけられた出力で報酬モデルを訓練し、報酬モデルと&lt;a href=&#34;https://arxiv.org/pdf/1707.06347&#34;&gt;PPO&lt;/a&gt;でGPT-3の方策を最適化した。&#xA;RLHFで訓練したパラメタ数1.3BのGPT-3 (InsturctGPT) の出力は、175BのGPT-3よりも人にとって望ましかった。&lt;/p&gt;&#xA;&lt;p&gt;InstructGPTに採用したRLHFも、先行手法の&lt;a href=&#34;https://arxiv.org/pdf/1706.03741&#34;&gt;Deep Reinforcement Learning from Human Preferences&lt;/a&gt;のように、報酬関数のモデルを訓練する。&#xA;なお、先行手法についても過去に&lt;a href=&#34;http://localhost:1313/posts/deep_reinforcement_learning_from_human_preferences/&#34;&gt;記事&lt;/a&gt;にした。&#xA;InstructGPTのRLHFには、報酬関数のモデルを生成する前に、GPT3をファインチューニングする手順がある。&#xA;このファインチューニングのための訓練データは、主にOpen AI APIで集めたプロンプトに40名の請負業者が適切な出力を書いて作成された。&#xA;報酬モデルの学習データを集めるときは、ファインチューニングされたモデルにプロンプトを入力し、プロンプトに対する複数の出力を収集し、業者に良い順に出力を順序づけてもらった。&#xA;プロンプトと順序つき出力を訓練データとして、スカラ値の報酬を出力する報酬モデルを訓練し、最後に、PPOで報酬モデルの出力に方策モデルを最適化した。&lt;/p&gt;</description>
     </item>
     <item>
       <title>REACT: SYNERGIZING REASONING AND ACTING IN LANGUAGE MODELS (2023)</title>
-      <link>https://ryotaro.dev/posts/react-synergizing-reasoning-and-acting-in-language-models/</link>
+      <link>http://localhost:1313/posts/react-synergizing-reasoning-and-acting-in-language-models/</link>
       <pubDate>Fri, 11 Jul 2025 03:03:29 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/react-synergizing-reasoning-and-acting-in-language-models/</guid>
+      <guid>http://localhost:1313/posts/react-synergizing-reasoning-and-acting-in-language-models/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/2210.03629&#34;&gt;ReAct (Synergizing &lt;em&gt;Re&lt;/em&gt;asoning + &lt;em&gt;Act&lt;/em&gt;ing)&lt;/a&gt; は、推論 (Chain of Thought) と行動 (Action) を織り混ぜた出力を促すプロンプトをLLMに与え、推論と行動両方の出力を改善する。&#xA;推論は行動の立案に使える情報を提供し、行動はLLM外部の情報を推論に提供することで互いを補完する。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Scaling Instruction Finetuned Language Models (2022)</title>
-      <link>https://ryotaro.dev/posts/scaling-instruction-finetuned-language-models/</link>
+      <link>http://localhost:1313/posts/scaling-instruction-finetuned-language-models/</link>
       <pubDate>Wed, 07 May 2025 02:41:24 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/scaling-instruction-finetuned-language-models/</guid>
+      <guid>http://localhost:1313/posts/scaling-instruction-finetuned-language-models/</guid>
       <description>&lt;p&gt;Instruction Finetuningは訓練データにない種類のタスクのゼロショットを改善するファインチューニングの一種で、&lt;a href=&#34;https://arxiv.org/pdf/2109.01652&#34;&gt;Finetuned Language Models Are Zero-Shot Learners&lt;/a&gt;で知られるようになった。&#xA;もとの文献ではInstruction tuningと呼ばれている。&#xA;&lt;a href=&#34;https://arxiv.org/pdf/2210.11416&#34;&gt;Scaling Instruction-Finetuned Language Models&lt;/a&gt;は、学習データ、モデルのパラメタの数、chain-of-thoughtのデータを増やすと、instruction tuningで学習したモデルの性能を向上できることを示した。&lt;/p&gt;</description>
     </item>
   </channel>

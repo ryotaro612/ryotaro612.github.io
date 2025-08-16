@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Distributed System on Blanket</title>
-    <link>https://ryotaro.dev/tags/distributed-system/</link>
+    <link>http://localhost:1313/tags/distributed-system/</link>
     <description>Recent content in Distributed System on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Tue, 07 May 2024 11:49:13 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/distributed-system/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/distributed-system/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Distributed GraphLab: a Framework for Machine Learning and Data Mining in the Cloud (2012)</title>
-      <link>https://ryotaro.dev/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/</link>
+      <link>http://localhost:1313/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/</link>
       <pubDate>Tue, 07 May 2024 11:49:13 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/</guid>
+      <guid>http://localhost:1313/posts/distributed-graphlab-a-framework-for-machine-learning-and-data-mining-in-the-cloud/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://vldb.org/pvldb/vol5/p716_yuchenglow_vldb2012.pdf&#34;&gt;Distributed GraphLab&lt;/a&gt;は、機械学習とデータマイニング向けのプログラミングモデルの&lt;a href=&#34;https://arxiv.org/pdf/1408.2041&#34;&gt;GraphLab&lt;/a&gt;を、クラスタ上で実行できるように発展させた。&#xA;GraphLabは、グラフの一部から点の集合を返す関数を、反復的にグラフに適用する。&#xA;関数から返された点は再び関数に渡され、渡すべき点がなくなるとアルゴリズムは終了する。&#xA;Distributed GraphLabは、GraphLabをメモリ共有するノードからなるクラスタで実行できるように、&lt;a href=&#34;https://lamport.azurewebsites.net/pubs/chandy.pdf&#34;&gt;Chandy-Lamport&lt;/a&gt;のスナップショットとロックを導入した。&lt;/p&gt;</description>
     </item>
   </channel>

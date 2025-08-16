@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Weak Supervision on Blanket</title>
-    <link>https://ryotaro.dev/tags/weak-supervision/</link>
+    <link>http://localhost:1313/tags/weak-supervision/</link>
     <description>Recent content in Weak Supervision on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 09 Nov 2019 21:46:12 +0900</lastBuildDate>
-    <atom:link href="https://ryotaro.dev/tags/weak-supervision/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/weak-supervision/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>論文メモ Get Another Label? Improving Data Quality and Data Mining Using Multiple, Noisy Labelers(2018)</title>
-      <link>https://ryotaro.dev/posts/get_another_label/</link>
+      <link>http://localhost:1313/posts/get_another_label/</link>
       <pubDate>Sat, 09 Nov 2019 21:46:12 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/get_another_label/</guid>
+      <guid>http://localhost:1313/posts/get_another_label/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;ある確率でデータに誤ったラベルをふるlabelerでデータにラベルをふるときに、&#xA;既にラベルのあるデータに重ねてラベルをふるべきか調査した。&#xA;12種類のラベルつきデータセットを使い、&#xA;正解ラベルを誤ったラベルに置換する割合や同一のデータのもつラベルの数を変化させ、モデルの精度の違いを観察した。&#xA;加えて、ラベルをふるべきデータを推定する手法も提案している。&lt;/p&gt;</description>
     </item>
     <item>
       <title>メモ ActiveClean: Interactive Data Cleaning For Statistical Modeling(2016)</title>
-      <link>https://ryotaro.dev/posts/active_clean/</link>
+      <link>http://localhost:1313/posts/active_clean/</link>
       <pubDate>Sat, 09 Nov 2019 15:37:31 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/active_clean/</guid>
+      <guid>http://localhost:1313/posts/active_clean/</guid>
       <description>&lt;p&gt;ActiveCleanは、教師データの誤りを修正し、モデルの精度を改善する手法である。&#xA;優先して修正すべきデータを推定し、データが修正されたら修正されたデータでモデルを学習する。&#xA;この修正と学習を条件を満たすまでくりかえす。&#xA;反復的な学習で大域的最適解をえられるモデルであれば、最適解への収束が保証される。&#xA;データの修正件数が等しい場合に、先行研究と比べて最大2.5倍の精度改善を達成した。&lt;/p&gt;</description>
     </item>
     <item>
       <title>概要 Structure estimation for discrete graphical models: Generalized covariance matrices and their inverses (2012)</title>
-      <link>https://ryotaro.dev/posts/structure_estimation_for_dscrete_graphical_models/</link>
+      <link>http://localhost:1313/posts/structure_estimation_for_dscrete_graphical_models/</link>
       <pubDate>Sat, 19 Oct 2019 16:21:31 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/structure_estimation_for_dscrete_graphical_models/</guid>
+      <guid>http://localhost:1313/posts/structure_estimation_for_dscrete_graphical_models/</guid>
       <description>&lt;p&gt;表題の論文は、マルコフ確率場をなす無向グラフとグラフの構造を反映した逆共分散行列の間の対応関係を証明し、&#xA;観測した確率変数の値からグラフの構造を復元する実験を通じて、対応関係を確認した。&#xA;この手法は&lt;a href=&#34;https://arxiv.org/pdf/1810.02840.pdf&#34;&gt;Snorkel&lt;/a&gt;というWeak supervisionの手法において、&#xA;正解データのない環境で、ノイズつきの教師データを生成する異なるソース間の相関関係を推定するために応用された。&lt;/p&gt;</description>
     </item>
     <item>
       <title>メモ Snorkel DryBell: A Case Study in Deploying Weak Supervision at Industrial Scale(2019)</title>
-      <link>https://ryotaro.dev/posts/snorkel_drybell_case_study/</link>
+      <link>http://localhost:1313/posts/snorkel_drybell_case_study/</link>
       <pubDate>Sat, 05 Oct 2019 00:45:00 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/snorkel_drybell_case_study/</guid>
+      <guid>http://localhost:1313/posts/snorkel_drybell_case_study/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;Weak Supervisionは、人手によるルールベースよりも効率良くノイズ交じりの教師データを生成する手法である。&#xA;表題の論文は、Weak Supervisionの手法である&lt;a href=&#34;https://www.snorkel.org&#34;&gt;Snorkel&lt;/a&gt;をGoogleで適用したケーススタディである。&#xA;Snorkelは、サンプルから推定したラベルを返す関数（ラベリング関数）を複数用意し、それをラベルなしデータに適用する。&#xA;その結果から関数の精度を予測し、個々の関数よりも高い精度でデータにラベルを与える。この関数をラベリング関数という。&#xA;Snorkel DryBellは、Snorkelのアルゴリズムをスケールさせるために、MapReduceに適用できるように修正された主要である。&lt;/p&gt;</description>
     </item>
     <item>
       <title>メモ Training Complex Models with Multi-Task Weak Supervision(2018)</title>
-      <link>https://ryotaro.dev/posts/training_complex_models_with_multi_task_weak_supervision/</link>
+      <link>http://localhost:1313/posts/training_complex_models_with_multi_task_weak_supervision/</link>
       <pubDate>Sat, 28 Sep 2019 14:53:47 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/training_complex_models_with_multi_task_weak_supervision/</guid>
+      <guid>http://localhost:1313/posts/training_complex_models_with_multi_task_weak_supervision/</guid>
       <description>&lt;p&gt;ソース間の粒度や精度が揃っていることを前提とせず、&lt;a href=&#34;https://arxiv.org/pdf/1212.0478.pdf&#34;&gt;LohとWainwrightらの手法&lt;/a&gt;でソースの精度を推定し、ソースのラベルよりも精度が高いラベルをデータに与えるWeak supervsionの手法である。&lt;/p&gt;</description>
     </item>
     <item>
       <title>メモ Snorkel: Rapid Traning Data Creation with Weak Supervision (2020)</title>
-      <link>https://ryotaro.dev/posts/snorkel_rapid_training_data_creation_with_weak_supervision/</link>
+      <link>http://localhost:1313/posts/snorkel_rapid_training_data_creation_with_weak_supervision/</link>
       <pubDate>Sat, 21 Sep 2019 12:01:51 +0900</pubDate>
-      <guid>https://ryotaro.dev/posts/snorkel_rapid_training_data_creation_with_weak_supervision/</guid>
+      <guid>http://localhost:1313/posts/snorkel_rapid_training_data_creation_with_weak_supervision/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;Snorkelは、不正確なラベルを許容した上で半手動で大量の教師データを生成するWeak supervisionの一種である。&#xA;Snorkelは、データを受け取りラベルの予測値か予測不可能であることを示す値を返す関数を使い、データにラベルを割りあてる。&#xA;このラベル付けする関数は、ラベリング関数と呼ばれ、データとともにSnorkelに与えられる。&#xA;ラベリング関数は人間が実装したルールベースな関数でよい。&#xA;Snorkelは、入力された複数のラベリング関数をデータに適用し、データ件数xラベリング関数の個数をサイズとするラベルの予測値の行列を作る。その後、真のラベルを予測するモデルを行列にあてはめ、サンプルにラベルごとの真のラベルについての確信度を出力する。&lt;/p&gt;</description>
     </item>
   </channel>
