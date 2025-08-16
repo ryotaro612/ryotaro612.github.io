@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>協調フィルタリング on Blanket</title>
-    <link>http://localhost:1313/tags/%E5%8D%94%E8%AA%BF%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/</link>
+    <link>https://ryotaro.dev/tags/%E5%8D%94%E8%AA%BF%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/</link>
     <description>Recent content in 協調フィルタリング on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Mon, 25 Mar 2024 16:56:51 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E5%8D%94%E8%AA%BF%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/%E5%8D%94%E8%AA%BF%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Neural Collaborative Filtering (2017)</title>
-      <link>http://localhost:1313/posts/neural-collaborative-filtering/</link>
+      <link>https://ryotaro.dev/posts/neural-collaborative-filtering/</link>
       <pubDate>Mon, 25 Mar 2024 16:56:51 +0900</pubDate>
-      <guid>http://localhost:1313/posts/neural-collaborative-filtering/</guid>
+      <guid>https://ryotaro.dev/posts/neural-collaborative-filtering/</guid>
       <description>&lt;p&gt;行列分解による協調フィルタリングは、ユーザとアイテムの評価値行列を近似するユーザとアイテムの潜在因子行列の積を学習する。&#xA;&lt;a href=&#34;https://arxiv.org/pdf/1708.05031.pdf&#34;&gt;Neural Collaborative Filtering (NCF)&lt;/a&gt; は、行列分解のかわりにニューラルネットワークで、パラメータを更新する。&#xA;NCFは3種類あり、Generalized Matrix Factorization (GMF) と Multi-Layer Perceptron (MLP)、GMFとMLPを組み合わせたNeural Matrix Factorization (NeuMF) がある。&lt;/p&gt;</description>
     </item>
   </channel>

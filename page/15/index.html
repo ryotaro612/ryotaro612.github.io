@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
-	<meta name="generator" content="Hugo 0.147.7"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta name="generator" content="Hugo 0.147.7">
   
   
   <script>(function (w, d, s, l, i) {
@@ -22,12 +22,12 @@
     integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
     crossorigin="anonymous" />
   
-  <link rel="stylesheet" href="http://localhost:1313/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+  <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
   
-  <link rel="stylesheet" href="http://localhost:1313/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+  <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
   
 
-<link rel="stylesheet" href="http://localhost:1313/scss/articles.min.3ceb81a62f07e7057aa63e938b7f0479d4643c093f1c72984a82a68278ddbba3.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/articles.min.3ceb81a62f07e7057aa63e938b7f0479d4643c093f1c72984a82a68278ddbba3.css">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -54,14 +54,14 @@
   
   
   <header class="navigation">
-    <h2><a href="http://localhost:1313/">Blanket</a></h2>
+    <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
     <nav>
       <ul>
-        <li><a href="http://localhost:1313/about">About</a></li>
-        <li><a href="http://localhost:1313/posts">Posts</a></li>
-        <li><a href="http://localhost:1313/tags">Tags</a></li>
+        <li><a href="https://ryotaro.dev/about">About</a></li>
+        <li><a href="https://ryotaro.dev/posts">Posts</a></li>
+        <li><a href="https://ryotaro.dev/tags">Tags</a></li>
         
-        <li><a href="http://localhost:1313/en/">en</a></li>
+        <li><a href="https://ryotaro.dev/en/">en</a></li>
         
       </ul>
       <ul>
@@ -87,7 +87,7 @@
         </li>
         
         <li>
-          <a href="http://localhost:1313/%20index.xml">
+          <a href="https://ryotaro.dev/%20index.xml">
             <i class="fas fa-rss"></i>
           </a>
         </li>
@@ -101,92 +101,7 @@
   
   
   <article>
-    <h3><a href="http://localhost:1313/posts/hierarchical_attention_networks_for_document_classification/">Hierarchical Attention Networks for Document Classification (2016)</a></h3>
-    <div class="summary"><p>Hierarchical Attention Network(HAN)は、単語は文から文書は文からなる文書の構造をアーキテクチャに反映し、単語の注意から文の注意を、文の注意から文書の注意を計算する。
-順方向と逆方向の2つのGRUでエンコードした単語の分散表現から注意を計算し、文ごとに、単語の注意の重みつき和を計算し文の分散表現とする。
-さらに、文の分散表現を別の順、逆方向GRUにあたえ、単語とおなじように各文の注意を計算し、その重みつき和を文書の分散表現としてあつかう。
-最後に、文書の分散表現を全結合層に入力し、ソフトマックス関数で文書のクラスを推定する。
-単語の文の注意を推定できるため、単語と文の2つの粒度で文書の重要な箇所を可視化することができる。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        December 26, 2021
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="http://localhost:1313/posts/effective_approaches_to_attention_based_neural_machine_translation/">Effective Approaches to Attention-based Neural Machine Translation (2015)</a></h3>
-    <div class="summary"><p>注意機構をつかった翻訳用のニューラルネットワークを2つ例示し、翻訳における効果的な注意機構の使い方を提案した。
-どちらもスタッキングしたLSTMを使うが、注意の計算で参照するLSTMの隠れ状態が違う。
-ひとつは、1単語を出力するときに、すべての単語のLSTMの隠れ状態から注意を算出するグローバルなアプローチで、もうひとつは一部の単語の状態だけから注意を算出するローカルなアプローチである。
-英語とドイツ語の双方への翻訳タスクに適用したところ、ローカルなアプローチで注意機構をつかわない手法と比べてBLEUスコアを5.0ポイントできた。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        December 26, 2021
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="http://localhost:1313/posts/deep_learning_based_text_classification/">Deep Learning Based Text Classification: A Comprehensive Review (2020)</a></h3>
-    <div class="summary"><p>深層学習によるテキスト分類のサーベイで、調査したモデル数の多さで論文の貢献を主張している。
-文章の構成は、150個のモデル、40件のデータセット、定量的な評価指標の解説がつづく。
-文書分類を広くとらえ、典型的なテキスト分類だけでなくQAやテキスト含意への言及もある。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        December 25, 2021
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="http://localhost:1313/posts/monitoring_streams/">Monitoring Streams - A New Class of Data Management Applications (2002)</a></h3>
-    <div class="summary"><p>常時発生するセンサー情報などのストリームデータの監視にむいたDBMS, Auroraの設計の解説。
-既存のDBMSは人の行動で起きるトランザクションを想定している。
-一方、ストリームデータは、人の能動的な活動によらず絶えず発生し、異常値があればアラートを出す必要がある。
-また、時系列に長期的なデータをとり、リアルタイムに応答するために不要なデータを切り捨て負荷を下げる必要もある。
-Auroraは、以上のストリーミング、トリガー、不正確なデータ、リアルタイム性の4特性を扱えるモデルとして、ストリームデータの出力元をソース、ノードをストリームデータの計算、シンクをアプリケーションとするDAGで抽象化されたアーキテクチャをもつ。
-ノードが計算には、ストリームをウィンドウに区切る、フィルタ、リサンプリングなどの8つがある。
-DAGで表せる計算をAurora内部で実行し、その結果が接続するアプリケーションにわたる。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        December 11, 2021
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="http://localhost:1313/posts/a_bridging_model_for_parallel_computation/">A Bridging Model for parallel Computation (1990)</a></h3>
-    <div class="summary"><p>バッチ処理グラフの最適化を目的として演算処理のバルク同期並列（bulk synchronous parallel、 BSP）を提唱した。
-BPSは、Apache Giraph, Spark の GraphX API, Gelly APIで採用され、なかでもGoogleのPregelで知られるようになった<a href="https://www.oreilly.co.jp/books/9784873118703/">*1</a>。
-BPSの目的は、ハードウェアと並列計算の高水準なプログラミングモデルがどちらもBPSに準ずることで、高水準なプログラミングモデルで実装された並列計算を多様なハードウェア上で動かすことにある。
-フォン・ノイマンモデル型のコンピュータであれば、ハードウェアの種類を意識することなく、その上で逐次計算をおこなう多様なソフトウェアを動かせる。
-フォン・ノイマンモデルは、多様なハードウェアと多様なソフトウェアをつなぐ。
-BPSは、並列計算用のハードウェアと高水準な並列計算のプログラミングモデルをつなぐためにある。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        December 11, 2021
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="http://localhost:1313/posts/wait_free_synchronization/">Wait-Free Synchronization</a></h3>
+    <h3><a href="https://ryotaro.dev/posts/wait_free_synchronization/">Wait-Free Synchronization</a></h3>
     <div class="summary"><p>あるデータ構造がwait-freeであり、データ構造への操作が有限回のステップで完了するのであれば、ほかの並行プロセスの処理速度によらず、任意のプロセスによるその操作は必ず完了する。
 表題のsynchronizationは、wait-freeであるデータ構造で別のwait-freeなデータ構造を実装することを意味する。
 実装可能かを定義するためにコンセンサス数を導入する。
@@ -204,7 +119,7 @@ BPSは、並列計算用のハードウェアと高水準な並列計算のプ�
   </article>
   
   <article>
-    <h3><a href="http://localhost:1313/posts/live_migration_of_virtual_machines/">Live Migration of Virtual Machines</a></h3>
+    <h3><a href="https://ryotaro.dev/posts/live_migration_of_virtual_machines/">Live Migration of Virtual Machines</a></h3>
     <div class="summary"><p>XenのハイパーバイザーにOSのライブマグレーションを統合し、約60msのダウンタイムでのOSのライブマイグレーションを実現した。
 手法の焦点は、どれだけ短いダウンタイムや移行時間で、移行元と移行先のメモリの状態を同等にできるかにある。
 ネットワークアドレスや物理デバイスの移行はあつかわない。
@@ -220,7 +135,7 @@ BPSは、並列計算用のハードウェアと高水準な並列計算のプ�
   </article>
   
   <article>
-    <h3><a href="http://localhost:1313/posts/a-critique-of-ansi-sql-isolation-levels/">A Critique of ANSI SQL Isolation Levels (1995)</a></h3>
+    <h3><a href="https://ryotaro.dev/posts/a-critique-of-ansi-sql-isolation-levels/">A Critique of ANSI SQL Isolation Levels (1995)</a></h3>
     <div class="summary"><p>ANSI SQL-92規格は、トランザクション分離レベルを、Dirty Read, Non-Repeatable Reads, Phantomが発生する可能性で定義する。
 著者は、トランザクション分離レベルを禁止する現象で定義する理由を、ロックなどの実装手段で定義すると規格が実装依存になるからだと考えている。
 表題の論文は、規格の現象による定義があいまいであり、3つの異常が起きなくても望まない結果になる実行があることを例示した。
@@ -232,7 +147,7 @@ BPSは、並列計算用のハードウェアと高水準な並列計算のプ�
       <ul class="tags">
         
         <li class="tag">
-          <a href="http://localhost:1313/tags/sql/">
+          <a href="https://ryotaro.dev/tags/sql/">
             #SQL
           </a>
         </li>
@@ -248,7 +163,7 @@ BPSは、並列計算用のハードウェアと高水準な並列計算のプ�
   </article>
   
   <article>
-    <h3><a href="http://localhost:1313/posts/an_overview_of_data_warehousing_and_olap_technology/">An Overview of Data Warehousing and OLAP Technology</a></h3>
+    <h3><a href="https://ryotaro.dev/posts/an_overview_of_data_warehousing_and_olap_technology/">An Overview of Data Warehousing and OLAP Technology</a></h3>
     <div class="summary"><p>データウェアハウスの概要と発表時期の97年の関連技術を解説した論文で、データウェアハウスの理論を提唱したInmonにならい、データウェアハウスを、目的指向(subject-oriented)で、統合され、組織の意思決定に資する永続的なデータとらえている。
 関連技術を、ETL処理、データ保存方法、保存したデータによる分析の3つに分けて整理する。
 データベースの設計手法では、Kimballの提唱したスタースキーマ、その応用のスノーフレークスキーマ, 事実の星座(fact constellations)、インデックスについてビットマップインデックスを解説する。</p></div>
@@ -263,7 +178,7 @@ BPSは、並列計算用のハードウェアと高水準な並列計算のプ�
   </article>
   
   <article>
-    <h3><a href="http://localhost:1313/posts/bayou/">Managing Update Conflicts in Bayou, a Weakly Connected Replicated Storage System</a></h3>
+    <h3><a href="https://ryotaro.dev/posts/bayou/">Managing Update Conflicts in Bayou, a Weakly Connected Replicated Storage System</a></h3>
     <div class="summary"><p>Bayouは、モバイルコンピューティングむけに95年に発表されたストレージで、弱い一貫性とレプリケーションがある。
 発表当時の不安定なモバイルネットワーク環境でもクライアントがストレージにアクセスできるように、一貫性を犠牲にしてクライアントにどんなレプリケーションへの読み書きも認める。
 Bayouは、アプリケーションの知識を借りてデータの整合性を復元するアプローチを開拓したストレージとして知られ、書き込み時に開発者が実装した不整合を検知する処理を実行する。
@@ -274,6 +189,88 @@ Bayouは、アプリケーションの知識を借りてデータの整合性を
       <span class="date">
         
         November 6, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/the_many_faces_of_publish_subscribe/">The Many Faces of Publish/Subscribe (2003)</a></h3>
+    <div class="summary"><p>分散システムの通信をpublish/subscribeモデルにするとシステム間の結合を疎にできる。
+表題の論文は、publish/subscribeのサーベイであり、publish/subscribeモデルを空間、時間、同期の3種の結合度を下げる技術ととらえ、ほかの通信技術と比較する。
+また、先行研究のpublish/subscribeモデルを、購読するイベントの宣言手段によって、topic-based, content-based, type-basedに分類する。
+最後に、メッセージブローカーを使うかどうかなどpublish/subscribeモデルの設計や実装の利点や欠点を整理する。</p></div>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        October 30, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/dryad/">Dryad: Distributed Data-Parallel Programs from Sequential Building Blocks</a></h3>
+    <div class="summary"><p>DryadはMicrosoftで開発された分散コンピューティングエンジンであり、MapReduceに近い。
+処理を点、処理結果を受け渡す通信経路を辺とするDAGで、分散処理を定義する。
+通信経路にはファイル、TCP, FIFOを使え、実行環境は1台のマルチコアのコンピュータから数千台のコンピュータまでスケールできる。
+MapReduceは入力と出力が一つでなければならないが、DryadはDAGであれば入力と出力が複数あってもかまわない。</p></div>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        October 23, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/the_chubby_lock_service_for_loosely_coupled_distributed_systems/">The Chubby lock service for loosely-coupled distributed systems</a></h3>
+    <div class="summary"><p>Chubbyは、ファイルに助言ロックをかけられる低容量のストレージで、開発元のGoogleは分散システム向けのロックサービスとして使っている。
+処理性能よりも高可用性と信頼性を重視し、ロックを保持する期間は数時間から数日にわたる長いものを想定する。
+ロックされたファイルで情報を共有でき、例えばリーダーの選出に使える。
+Chubbyは既存のアルゴリズムを集積であり、表題の論文は、新しいアルゴリズムよりも、Chubbyの設計や想定していた使用方法や想定外の使われ方に重点をおく。
+Chubbyはロックサービスとして作られたが、ネームサーバとして最もよく使われる。
+数千規模の互いに依存するプロセスがあり、プロセスが落ちたら新しいプロセスに置き換えるとする。
+このとき、ネームサーバにDNSをつかうと、DNSは時間で失効するキャッシュ方式なので、TTLを短くし、落ちたプロセスにリクエストが届かないようにすると、DNSへの負荷が増える。
+一方、Chubbyのキャッシュは時間ではなくファイルに変更されたときに無効になるので、Chubbyをネームサーバに使うことで、名前解決の負荷を減らすことができる。</p></div>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        October 16, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/congestion_avoidance_and_control/">Congestion Avoidance and Control</a></h3>
+    <div class="summary"><p>86年の10月におきたインターネットの世界規模の輻輳の反省から、4BSDに7つのTCPの輻輳制御のアルゴリズムが導入された。
+うち5つは、送信したパケットが到達や消失でネットワークに流れなくなるまで、ウィンドウサイズ以上の新しいパケットを送らない原則を守るためにある。
+この原則をconservation of packets principleという。</p></div>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        October 9, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/the_notion_of_consistency_and_predicate_locks_in_a_database_system/">The Notion of Consistency and Predicate Locks in a Database System</a></h3>
+    <div class="summary"><p>トランザクションを並行実行するときに、直列実行した場合と同じ実行結果をえるには、各トランザクションがロックを解放後に新しいロックを獲得してはならないことを示した。
+その場合もデッドロックがおきうるが、それは並列実行を終了するためにはいつロックをかければよいかという議論である。
+ここでは、並列実行が終了した場合に直列実行と同じ結果になる一貫性を保証できるロックの順序を問う。</p></div>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        October 2, 2021
         
       </span>
     </div>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>System Design Interview on Blanket</title>
-    <link>http://localhost:1313/tags/system-design-interview/</link>
+    <link>https://ryotaro.dev/tags/system-design-interview/</link>
     <description>Recent content in System Design Interview on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Wed, 18 Sep 2024 01:13:19 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/system-design-interview/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/system-design-interview/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>動画配信プラットフォームの例</title>
-      <link>http://localhost:1313/posts/video-streaming/</link>
+      <link>https://ryotaro.dev/posts/video-streaming/</link>
       <pubDate>Wed, 18 Sep 2024 01:13:19 +0900</pubDate>
-      <guid>http://localhost:1313/posts/video-streaming/</guid>
+      <guid>https://ryotaro.dev/posts/video-streaming/</guid>
       <description>&lt;p&gt;システム設計面接におけるNetflixやYoutubeのような動画サービスの問題における要点を整理する。&lt;/p&gt;</description>
     </item>
   </channel>

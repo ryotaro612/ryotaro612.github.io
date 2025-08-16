@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
-	<meta name="generator" content="Hugo 0.147.7"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta name="generator" content="Hugo 0.147.7">
   
   
   <script>(function (w, d, s, l, i) {
@@ -22,12 +22,12 @@
     integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
     crossorigin="anonymous" />
   
-  <link rel="stylesheet" href="http://localhost:1313/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+  <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
   
-  <link rel="stylesheet" href="http://localhost:1313/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+  <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
   
 
-<link rel="stylesheet" href="http://localhost:1313/scss/articles.min.3ceb81a62f07e7057aa63e938b7f0479d4643c093f1c72984a82a68278ddbba3.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/articles.min.3ceb81a62f07e7057aa63e938b7f0479d4643c093f1c72984a82a68278ddbba3.css">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -54,14 +54,14 @@
   
   
   <header class="navigation">
-    <h2><a href="http://localhost:1313/">Blanket</a></h2>
+    <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
     <nav>
       <ul>
-        <li><a href="http://localhost:1313/about">About</a></li>
-        <li><a href="http://localhost:1313/posts">Posts</a></li>
-        <li><a href="http://localhost:1313/tags">Tags</a></li>
+        <li><a href="https://ryotaro.dev/about">About</a></li>
+        <li><a href="https://ryotaro.dev/posts">Posts</a></li>
+        <li><a href="https://ryotaro.dev/tags">Tags</a></li>
         
-        <li><a href="http://localhost:1313/en/">en</a></li>
+        <li><a href="https://ryotaro.dev/en/">en</a></li>
         
       </ul>
       <ul>
@@ -87,7 +87,7 @@
         </li>
         
         <li>
-          <a href="http://localhost:1313/%20index.xml">
+          <a href="https://ryotaro.dev/%20index.xml">
             <i class="fas fa-rss"></i>
           </a>
         </li>
@@ -101,96 +101,7 @@
   
   
   <article>
-    <h3><a href="http://localhost:1313/posts/the_transaction_concept/">抄訳 The Transaction Concept: Virtues and Limitations(1981)</a></h3>
-    <div class="summary"><p>トランザクションのコミットとロールバックの2通りの実装方針を提案している。
-1つは、オブジェクトの値とその値の有効期間を記録し、値の履歴を管理する。
-もうひとつは、ログとロックを利用した実装で、操作時にUNDOログとREDOログを出力する。
-ロールバック時には、ログをもとにコミット開始前の状態にシステムを復元する。
-UNDOやREDOを再実行可能でなければならず、そのためにオブジェクトにしばしばバージョンをつけることがある。
-2つの実装方針は異なるように見えるが、内部の実装は似かよったものになる。</p>
-<!--
-https://dspace.mit.edu/handle/1721.1/16279
---></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        July 30, 2022
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="http://localhost:1313/posts/on_spectral_clustering_analysis_and_an_algorithm/">On Spectral Clustering: Analysis and an algorithm</a></h3>
-    <div class="summary"><p>スペクトラルクラスタリングは、類似度を辺の重みとするグラフをデータから構築し、重みをもとにカットする辺を決めて、データをクラスタに分ける。
-グラフラプラシアンのようなグラフを表現した行列をつくり、その固有ベクトルを求め、固有ベクトルを列ベクトルとして並べた行列にK-meansを適用する。
-もとのデータに二重丸のような凸集合でないクラスタがあるときに、最初からK-meansを適用するよりも良い結果を期待できる。
-また、データ分布に確率モデルにあてはめ、どのクラスタにデータを割りあてるか確率的に決めるクラスタリングと違い、データの分布を仮定しなくてよい。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        July 23, 2022
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="http://localhost:1313/posts/how_to_make_a_multiprocessor_computer_that_correctly_executes_multiprocess_programs/">How to Make a Multiprocessor Computer That Correctly Executes Multiprocess Programs(1979)</a></h3>
-    <div class="summary"><p>プロセッサは、高速化のためにソースコードと違う順序で命令を実行することがある。
-順序の入れ換えが実行結果に影響しなければ、プロセッサは逐次的であるという。
-マルチプロセッサに期待する実行結果は、各プロセッサがソースコードの順序で命令を実行し、かつ、全プロセッサの命令がある順序で逐次的に実行されるときの結果である。
-任意のプログラムで実行結果が等しいならば、そのマルチプロセッサには逐次一貫性がある。
-プロセッサがメモリ上のデータを共有する場合、各プロセッサが逐次的でも、マルチプロセッサが逐次一貫になるとは限らない。
-マルチプロセッサが逐次一貫であるには、各プロセッサがソースコード通りの順序でメモリにリクエストを送り、メモリは各セルへのリクエストを到着順(FIFO)に処理しなければならない。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        July 16, 2022
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="http://localhost:1313/posts/a_min-max_cut_algorithm_for_graph_partitioning_and_data_clustering/">A Min-max Cut Algorithm for Graph Partitioning and Data Clustering</a></h3>
-    <div class="summary"><p>重みつき隣接行列で表した無向グラフを2分割するクラスタリングであり、グラフ間の類似を最小化し、グラフ内のノードの類似の最大化をはかる。
-隣接行列を\(W_{uv}\), \(\text{cut}(A, B)=W(A, B)\), \(W(A, B) = \sum_{u\in A, v\in B}W_{uv}\)として、以下の目的関数を最小化する分割を探索する。
-ノードを2つに分ける最適解はNP完全であるため、近似解をもとめる。
-$$
-\text{Mcut} = \frac{\text{cut}(A, B)}{W(A)} + \frac{\text{cut}(A, B)}{W(B)}
-$$</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        July 9, 2022
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="http://localhost:1313/posts/implementing_fault-tolerant_services_using_the_state_machine_approach_a_tutorial/">Implementing Fault-Tolerant Services Using the State Machine Approach: A Tutorial</a></h3>
-    <div class="summary"><p>サーバのレプリケーションによってフォールトトレランスを高めることができるが、レプリケーション間の合意形成のプロトコルが必要になる。
-そこで、ステートマシンをモデルにプロトコルを定義する手法を、Fail Stopとビザンチン将軍問題で例示する。
-ステートマシンは、状態変数を決定的に変更するコマンドからなり、入力系列のみから出力が決まる。
-モデルは、複数のステートマシンを同じ初期状態から開始し、同じ入力を与え、出力の合意をはかる。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        June 26, 2022
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="http://localhost:1313/posts/least_angle_regression/">LEAST ANGLE REGRESSION</a></h3>
+    <h3><a href="https://ryotaro.dev/posts/least_angle_regression/">LEAST ANGLE REGRESSION</a></h3>
     <div class="summary"><p>Least Angle Regression(LARS)はLASSO回帰のアルゴリズムで、目的変数の値とモデルの推定値の残差と相関の大きい入力変数をひとつずつモデルに取り込む。
 ベクトル間の相関が大きいほど間の角度が小さくなるため、least angle(最小角)と名がつく。</p>
 <p>初期状態のモデルは説明変数をもたず推定値は0である。
@@ -215,7 +126,7 @@ $$</p></div>
   </article>
   
   <article>
-    <h3><a href="http://localhost:1313/posts/consensus_in_the_presence_of_partial_synchrony/">Consensus in the Presence of Patial Synchrony (1988)</a></h3>
+    <h3><a href="https://ryotaro.dev/posts/consensus_in_the_presence_of_partial_synchrony/">Consensus in the Presence of Patial Synchrony (1988)</a></h3>
     <div class="summary"><p>同期的なシステムには、プロセッサ間のメッセージの到達時間や時刻の誤差に有界がある。
 非同期的なシステムには、どちらの有界もない。
 表題のpartial synchronousは、同期、非同期の中間的な環境である。
@@ -231,7 +142,7 @@ $$</p></div>
   </article>
   
   <article>
-    <h3><a href="http://localhost:1313/posts/regression_shrinkage_and_selection_via_the_lasso/">Regression Shrinkage and Selection via the Lasso</a></h3>
+    <h3><a href="https://ryotaro.dev/posts/regression_shrinkage_and_selection_via_the_lasso/">Regression Shrinkage and Selection via the Lasso</a></h3>
     <div class="summary"><p>Lasso(least absolute shrinkage and selection operator)を提案した論文で、特定の回帰係数を0にする正則化項により、モデルを解釈しやすくする。
 Subset selectionはデータの変化に敏感で、学習結果が安定しない。
 Ridge回帰は、回帰係数を全体的に小さくすることで正則化項の制約をみたすため、説明変数を減らしてモデルを解釈しやすくはしない。
@@ -249,7 +160,7 @@ Ridge回帰は、回帰係数を全体的に小さくすることで正則化項
   </article>
   
   <article>
-    <h3><a href="http://localhost:1313/posts/c-store_a_column_oriented_dbms/">C-Store: A Column-oriented DBMS(2005)</a></h3>
+    <h3><a href="https://ryotaro.dev/posts/c-store_a_column_oriented_dbms/">C-Store: A Column-oriented DBMS(2005)</a></h3>
     <div class="summary"><p>C-Storeは、OLAP系の読み込みクエリに特化した列指向データベースで、標準のSQLでのデータへのアクセスをサポートする。
 高速化のために、テーブルのデータを、ある列の値でソートした複数の投影として保存する。
 読み込みクエリのSELECT句やソートに合致する投影があれば処理を高速化でき、さらに可用性も向上する。
@@ -266,7 +177,7 @@ Ridge回帰は、回帰係数を全体的に小さくすることで正則化項
   </article>
   
   <article>
-    <h3><a href="http://localhost:1313/posts/simpls_an_alternative_approach_to_partial_least_squares_regression/">SIMPLS: an alternative approach to partial least squares regression</a></h3>
+    <h3><a href="https://ryotaro.dev/posts/simpls_an_alternative_approach_to_partial_least_squares_regression/">SIMPLS: an alternative approach to partial least squares regression</a></h3>
     <div class="summary"><p>SIMPLSは、NIPALSとおなじく部分的最小二乗法（PLS）である。
 NIPALSでは、潜在変数が、デフレーションされた説明変数の線形結合になる。
 他方、SIMPLSの潜在変数は、中心化された説明変数の線形結合で表現できる。
@@ -276,6 +187,91 @@ NIPALSでは、潜在変数が、デフレーションされた説明変数の�
       <span class="date">
         
         May 28, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/experience_report_the_wycash_portfolio_management_system/">The WyCach Portfolio Management System(1992)</a></h3>
+    <div class="summary"><p>Ward Cunninghamが証券ポートフォリオ管理システムWyCASH+を開発したときの事例報告で、92年のオブジェクト指向の国際会議OOPSLAで発表された。
+この発表が技術的負債の典拠であるが、文中には技術的(technical)はなく単に負債(debt)と書かれている。
+アジャイルソフトウェア開発宣言が発表された2001年以前に、ウォーターフォールよりもインクリメンタルな開発のほうが最短で適当な品質のソフトウェアを構築できると主張した。
+しかし、インクリメンタルな開発では、全ての知識が十分に揃っていない状態でコーディングするため、システムの部分的な修正を重ねる必要がある。
+そして、オブジェクト指向言語のメッセージパッシングによって漸進的な修正が可能になるというのが発表の骨子である。
+負債で会社の成長を早められるように、コードをリリースすることで後に修正する必要があるかもしれないが、よい設計を早く知ることができるため、Cunninghamは最初にリリースするコードを負債と形容した。
+負債と対比されているのはプログラミングの前に設計を熟考することであり、こちらが前払い、全額払いと表現されている。</p></div>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        May 28, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/pls_regression_a_basic_tool_of_chemometrics/">PLS-regression: a basic tool of chemometrics</a></h3>
+    <div class="summary"><p>重回帰分析は、説明変数の行列がフルランクでないとき、多重共線性により出力が不安定になる。
+そのため、説明変数の数を減らし、説明変数間に相関関係がないようにする必要がある。
+PLS（部分的最小二乗法）は、入力変数の線形結合で表わせる潜在変数を求め、潜在変数の線形結合で目的変数を表す。
+説明変数の数より少ない数の潜在変数を求めることで、説明変数間の相関関係をとりのぞく。</p></div>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        May 21, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/statistics_and_causal_inference/">Statistics and Causal Inference(1986)</a></h3>
+    <div class="summary"><p>ルービンの因果モデルによる統計的因果推定では、群\(U\)の要素を\(u\), 処置を\(t\), \(c\), \(Y\)を潜在的結果変数とすると、\(u\)に対して処置\(c\)を適用するときの処置\(t\)の因果効果を、\(T = Y_t(u) - Y_c(u)\)とみなす。
+たとえば、\(u\)を人、\(t\), \(c\)を運動をする、しない、\(Y\)をコレステロールの値とすれば、運動とコレステロール値の関係になる。
+おなじ\(u\)に対して\(Y_t(u)\)と\(Y_c(u)\)を両方観測することはできない。
+因果効果は、観測するものではなく、推定するものになる。</p></div>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        May 14, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/a_family_of_experiments_on_test_driven_development/">A Family of Experiments on Test-Driven Development</a></h3>
+    <div class="summary"><p>TDDがコードに及ぼす影響を調べた先行研究はあるが、研究手法、被検者、プログラミング環境などの実験条件は様々、結論は違い、明確な結論はない。
+表題の論文は、個別のTDDの実験結果の精度と汎化性を上げるために、実験結果に影響するとみられる実験条件をかえ、TDDとITL(iterative test-last development)を比較する12の実験を実施した。
+被検者は4大学と企業12社で、5つのトイタスクを解かせ、通ったテストオラクルの割合で実装の品質を評価した。
+結果、TDD初心者の被検者はITLによる実装のほうが品質が高かった。
+エディタや言語、ITLとTDDの実験の被験順序、TDDとITLをどちらを先に学んだかは品質に影響しなかった。
+学生よりも企業に所属するプロフェッショナルのほうがTDD、ITL両方で品質がよかったが、TDDで実装したときの品質の下がり幅は学生の下がり幅の2倍に及んだ。</p></div>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        April 29, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/simcse/">SimCSE: Simple Contrastive Learning of Sentence Embeddings</a></h3>
+    <div class="summary"><p>対照学習は、意味の近い要素同士を近くに、異なる要素を遠くに配置する分散表現を獲得する。
+SimCSEは、文の分散表現のための対照学習であり、教師なしと教師ありの2つの学習方法を提供する。
+教師なし学習は、Dropout層を通したサンプルが近くに配置されるように、Dropout層の出力2つからなるペアを教師データにする。
+教師あり学習は、自然言語推論(含意関係認識)の教師データをつかい、前提と含意の分散表現が近くになるように学習する。</p></div>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        April 29, 2022
         
       </span>
     </div>

@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NER on Blanket</title>
-    <link>http://localhost:1313/tags/ner/</link>
+    <link>https://ryotaro.dev/tags/ner/</link>
     <description>Recent content in NER on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Mon, 13 Jan 2020 19:54:03 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/ner/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/ner/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unsupervised Models for Named Entity Classification(1999)</title>
-      <link>http://localhost:1313/posts/unsupervised_models_for_named_entity_classification/</link>
+      <link>https://ryotaro.dev/posts/unsupervised_models_for_named_entity_classification/</link>
       <pubDate>Mon, 13 Jan 2020 19:54:03 +0900</pubDate>
-      <guid>http://localhost:1313/posts/unsupervised_models_for_named_entity_classification/</guid>
+      <guid>https://ryotaro.dev/posts/unsupervised_models_for_named_entity_classification/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;1999年に発表された教師なしの固有表現抽出の手法である。&#xA;発表時期が古いことに注意してほしい。&#xA;2つの手法が提案されている。&#xA;ひとつは、DL-CoTrainと呼ばれるルールベースの手法であり、教師なしデータに既存のルールを適用、適用結果から導出したルールを既存のルールに追加、をくりかえしてルールを増やす。&#xA;もう一方は、AdaBoostを応用したCoBoostとよばれる手法である。&#xA;ルールベースの手法のほうがCoBoostよりもよい実験結果であったので、前者のみを説明する。&lt;/p&gt;</description>
     </item>
     <item>
       <title>抄訳 Contextual String Embeddings for Sequence Labeling(2018)</title>
-      <link>http://localhost:1313/posts/context_string_embeddings_for_sequence_labeling/</link>
+      <link>https://ryotaro.dev/posts/context_string_embeddings_for_sequence_labeling/</link>
       <pubDate>Fri, 28 Sep 2018 16:29:46 +0900</pubDate>
-      <guid>http://localhost:1313/posts/context_string_embeddings_for_sequence_labeling/</guid>
+      <guid>https://ryotaro.dev/posts/context_string_embeddings_for_sequence_labeling/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;表題の論文は、&lt;a href=&#34;https://github.com/flairNLP/flair&#34;&gt;flair&lt;/a&gt;のアルゴリズムを提案、評価したもの。&#xA;論文は、テキストの系列ラベリングに向いた単語の分散表現モデルを提案し、&#xA;提案手法が予測性能において既存手法より優れいたことを実験的に示した。&#xA;本手法における単語の分散表現は、単語の字面だけでなく、文中における単語の出現位置によって決まる。&#xA;いいかえると、同じ単語であっても、文中における出現位置が異なれば、単語は異なる分散表現に変換される。&#xA;著者らは、分散表現に文脈の情報を含められることを強調して、提案手法をContextual String Embeddingsと名付けた。&lt;/p&gt;</description>
     </item>
     <item>
       <title>要約 A Simple Semi-supervised Algorithm For Named Entity Recognition</title>
-      <link>http://localhost:1313/posts/a_simple_semi_supervised_for_ner/</link>
+      <link>https://ryotaro.dev/posts/a_simple_semi_supervised_for_ner/</link>
       <pubDate>Tue, 17 Jul 2018 12:51:29 +0900</pubDate>
-      <guid>http://localhost:1313/posts/a_simple_semi_supervised_for_ner/</guid>
+      <guid>https://ryotaro.dev/posts/a_simple_semi_supervised_for_ner/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;CRFに入力する学習データを集めるための半教師学習の手法を提案と評価した論文。&#xA;本手法はCRFに与える学習データを集めるための手法であり、CRFのアルゴリズム自体に変更を加えることはない。&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>コンシステントハッシュ法 on Blanket</title>
-    <link>http://localhost:1313/tags/%E3%82%B3%E3%83%B3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%B3%E3%83%88%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E6%B3%95/</link>
+    <link>https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%B3%E3%83%88%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E6%B3%95/</link>
     <description>Recent content in コンシステントハッシュ法 on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Tue, 18 Mar 2025 13:18:51 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E3%82%B3%E3%83%B3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%B3%E3%83%88%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%B3%E3%83%88%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web</title>
-      <link>http://localhost:1313/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/</link>
+      <link>https://ryotaro.dev/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/</link>
       <pubDate>Tue, 18 Mar 2025 13:18:51 +0900</pubDate>
-      <guid>http://localhost:1313/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/</guid>
+      <guid>https://ryotaro.dev/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/</guid>
       <description>&lt;p&gt;コンシステントハッシュ法は、Content Delivery Network (CDN) 規模のキャッシュシステムの負荷分散に&lt;a href=&#34;https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/&#34;&gt;使われている&lt;/a&gt;。&#xA;コンシステントハッシュ法を提案した&lt;a href=&#34;https://dl.acm.org/doi/10.1145/258533.258660&#34;&gt;Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web&lt;/a&gt;は、特定のキャッシュサーバーへのリクエストの集中を避けることを目的にする。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web</title>
-      <link>http://localhost:1313/posts/consistent_hashing_and_random_trees/</link>
+      <link>https://ryotaro.dev/posts/consistent_hashing_and_random_trees/</link>
       <pubDate>Sat, 19 Jun 2021 14:41:22 +0900</pubDate>
-      <guid>http://localhost:1313/posts/consistent_hashing_and_random_trees/</guid>
+      <guid>https://ryotaro.dev/posts/consistent_hashing_and_random_trees/</guid>
       <description>&lt;p&gt;各サーバーがネットワーク全体の情報を保持しない分散キャッシュネットワークにホットスポットを生まないためのキャッシュプロトコルを開発した。&#xA;表題のconsistent hashingは、プロトコルの基礎になるハッシュ関数で、関数の写像が値域の違いに影響されにくい。&#xA;この影響しにくさは、クライアントから見えるアクティブなサーバが入れ替わる可能性に対して機能する。&#xA;また、クライアントは一部のキャッシュサーバーにアクセスできればよく、クライアントごとにアクセス可能なキャッシュサーバーの集合は違ってよい。&lt;/p&gt;</description>
     </item>
   </channel>

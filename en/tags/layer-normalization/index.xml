@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Layer Normalization on Blanket</title>
-    <link>http://localhost:1313/en/tags/layer-normalization/</link>
+    <link>https://ryotaro.dev/en/tags/layer-normalization/</link>
     <description>Recent content in Layer Normalization on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sat, 17 Jun 2023 10:18:51 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/en/tags/layer-normalization/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/en/tags/layer-normalization/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Layer Normalization (2016)</title>
-      <link>http://localhost:1313/en/posts/layer_normalization/</link>
+      <link>https://ryotaro.dev/en/posts/layer_normalization/</link>
       <pubDate>Sat, 17 Jun 2023 10:18:51 -0400</pubDate>
-      <guid>http://localhost:1313/en/posts/layer_normalization/</guid>
+      <guid>https://ryotaro.dev/en/posts/layer_normalization/</guid>
       <description>&lt;p&gt;Layer Normalization, introduced in the 2016 paper &lt;a href=&#34;https://arxiv.org/abs/1607.06450&#34;&gt;Layer Normalization&lt;/a&gt;, is a technique used to normalize the summed inputs to the neurons in a layer by using the mean and standard deviation of those inputs within that layer.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1502.03167&#34;&gt;Batch Normalization&lt;/a&gt; uses the mean and the standard deviation of the summed inputs of a neuron in a mini-batch to normalize the summed inputs to it.&#xA;While Batch Normalization can accelerate training, it depends on mini-batch size and is challenging to implement in RNNs.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fine Tuning on Blanket</title>
-    <link>http://localhost:1313/tags/fine-tuning/</link>
+    <link>https://ryotaro.dev/tags/fine-tuning/</link>
     <description>Recent content in Fine Tuning on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Fri, 14 Sep 2018 16:33:43 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/fine-tuning/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/fine-tuning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>メモ Universal Language Model Fine-tuning for Text Classification</title>
-      <link>http://localhost:1313/posts/universal_language_model_fine_tuning_for_text_classification/</link>
+      <link>https://ryotaro.dev/posts/universal_language_model_fine_tuning_for_text_classification/</link>
       <pubDate>Fri, 14 Sep 2018 16:33:43 +0900</pubDate>
-      <guid>http://localhost:1313/posts/universal_language_model_fine_tuning_for_text_classification/</guid>
+      <guid>https://ryotaro.dev/posts/universal_language_model_fine_tuning_for_text_classification/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;UMLFiTという、様々なNLPの問題に適用可能なファインチューニングの手法を提案、評価した。&#xA;評価手段として、6種のテキスト分類のタスクにおける既存手法とのエラー率の比較が採られている。&#xA;主要な評価として、100件のラベル付きデータだけでその100倍のデータを要した事前学習を用いない手法と同等の予測性能が出たことを報告している。&lt;/p&gt;</description>
     </item>
   </channel>

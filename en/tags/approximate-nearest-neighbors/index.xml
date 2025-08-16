@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Approximate Nearest Neighbors on Blanket</title>
-    <link>http://localhost:1313/en/tags/approximate-nearest-neighbors/</link>
+    <link>https://ryotaro.dev/en/tags/approximate-nearest-neighbors/</link>
     <description>Recent content in Approximate Nearest Neighbors on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 01 Jan 2024 22:21:29 -0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/en/tags/approximate-nearest-neighbors/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/en/tags/approximate-nearest-neighbors/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Billion Scale Similarity Search With GPUs (2017)</title>
-      <link>http://localhost:1313/en/posts/billion-scale-similarity-search-with-gpus/</link>
+      <link>https://ryotaro.dev/en/posts/billion-scale-similarity-search-with-gpus/</link>
       <pubDate>Mon, 01 Jan 2024 22:21:29 -0500</pubDate>
-      <guid>http://localhost:1313/en/posts/billion-scale-similarity-search-with-gpus/</guid>
+      <guid>https://ryotaro.dev/en/posts/billion-scale-similarity-search-with-gpus/</guid>
       <description>&lt;p&gt;The paper &lt;a href=&#34;https://arxiv.org/abs/1702.08734&#34;&gt;Billion-scale-similarity search with GPUs&lt;/a&gt; presents an approximate nearest-neighbor search method that uses GPUs and combines the &lt;a href=&#34;https://inria.hal.science/inria-00514462v2/document&#34;&gt;IVFADC&lt;/a&gt; indexing structure with &lt;a href=&#34;https://www.cs.kent.edu/~batcher/sort.pdf&#34;&gt;Batcher&amp;rsquo;s bitonic sorting network&lt;/a&gt;.&#xA;The authors have implemented this method in a library called &lt;a href=&#34;https://github.com/facebookresearch/faiss&#34;&gt;faiss&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
   </channel>

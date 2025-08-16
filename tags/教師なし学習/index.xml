@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>教師なし学習 on Blanket</title>
-    <link>http://localhost:1313/tags/%E6%95%99%E5%B8%AB%E3%81%AA%E3%81%97%E5%AD%A6%E7%BF%92/</link>
+    <link>https://ryotaro.dev/tags/%E6%95%99%E5%B8%AB%E3%81%AA%E3%81%97%E5%AD%A6%E7%BF%92/</link>
     <description>Recent content in 教師なし学習 on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Mon, 13 Jan 2020 19:54:03 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E6%95%99%E5%B8%AB%E3%81%AA%E3%81%97%E5%AD%A6%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/%E6%95%99%E5%B8%AB%E3%81%AA%E3%81%97%E5%AD%A6%E7%BF%92/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unsupervised Models for Named Entity Classification(1999)</title>
-      <link>http://localhost:1313/posts/unsupervised_models_for_named_entity_classification/</link>
+      <link>https://ryotaro.dev/posts/unsupervised_models_for_named_entity_classification/</link>
       <pubDate>Mon, 13 Jan 2020 19:54:03 +0900</pubDate>
-      <guid>http://localhost:1313/posts/unsupervised_models_for_named_entity_classification/</guid>
+      <guid>https://ryotaro.dev/posts/unsupervised_models_for_named_entity_classification/</guid>
       <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;1999年に発表された教師なしの固有表現抽出の手法である。&#xA;発表時期が古いことに注意してほしい。&#xA;2つの手法が提案されている。&#xA;ひとつは、DL-CoTrainと呼ばれるルールベースの手法であり、教師なしデータに既存のルールを適用、適用結果から導出したルールを既存のルールに追加、をくりかえしてルールを増やす。&#xA;もう一方は、AdaBoostを応用したCoBoostとよばれる手法である。&#xA;ルールベースの手法のほうがCoBoostよりもよい実験結果であったので、前者のみを説明する。&lt;/p&gt;</description>
     </item>
   </channel>

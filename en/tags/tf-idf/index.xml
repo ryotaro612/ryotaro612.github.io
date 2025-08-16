@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>TF-IDF on Blanket</title>
-    <link>http://localhost:1313/en/tags/tf-idf/</link>
+    <link>https://ryotaro.dev/en/tags/tf-idf/</link>
     <description>Recent content in TF-IDF on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sat, 26 Apr 2025 13:49:53 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/en/tags/tf-idf/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/en/tags/tf-idf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Reading Wikipedia to Answer Open Domain Questions (2017)</title>
-      <link>http://localhost:1313/en/posts/reading-wikipedia-to-answer-open-domain-questions/</link>
+      <link>https://ryotaro.dev/en/posts/reading-wikipedia-to-answer-open-domain-questions/</link>
       <pubDate>Sat, 26 Apr 2025 13:49:53 +0900</pubDate>
-      <guid>http://localhost:1313/en/posts/reading-wikipedia-to-answer-open-domain-questions/</guid>
+      <guid>https://ryotaro.dev/en/posts/reading-wikipedia-to-answer-open-domain-questions/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://aclanthology.org/P17-1171/&#34;&gt;Reading Wikipedia to Answer Open Domain Questions&lt;/a&gt; proposes DrQA, a system for open-domain question answering.&#xA;DrQA consists of two components: Document Retriever and Document Reader.&lt;/p&gt;&#xA;&lt;p&gt;Given a question, the Document Retriever uses bigram TF-IDF matching to search Wikipedia and retrieve the five most relevant articles.&#xA;These articles, along with the question, are then passed to the Document Reader, a neural network model that embeds the question and the paragraphs into vector representations.&#xA;The model then compares the paragraph embeddings with the question embedding to identify the most salient text span that likely contains the answer.&lt;/p&gt;</description>
     </item>
   </channel>

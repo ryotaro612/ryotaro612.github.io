@@ -2,94 +2,94 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>分散システム on Blanket</title>
-    <link>http://localhost:1313/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</link>
+    <link>https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</link>
     <description>Recent content in 分散システム on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Thu, 30 Jan 2025 03:01:31 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Highly Available Transactions Virtues and Limitations (2013)</title>
-      <link>http://localhost:1313/posts/highly-available-transactions-virtues-and-limitations/</link>
+      <link>https://ryotaro.dev/posts/highly-available-transactions-virtues-and-limitations/</link>
       <pubDate>Thu, 30 Jan 2025 03:01:31 +0900</pubDate>
-      <guid>http://localhost:1313/posts/highly-available-transactions-virtues-and-limitations/</guid>
+      <guid>https://ryotaro.dev/posts/highly-available-transactions-virtues-and-limitations/</guid>
       <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;&#xA;&lt;p&gt;CAP定理の一貫性、可用性、ネットワークの分断耐性のトリレンマは、1つを完全に切り捨てるのではなく、現実には、3つの性質の優先順位をつける問題になる。&#xA;システムの一貫性と可用性の均衡を設計するときは、求める一貫性に対して実現できる可用性を知らないといけない。&#xA;&lt;a href=&#34;https://www.vldb.org/pvldb/vol7/p181-bailis.pdf&#34;&gt;Highly Available Transactions Virtues and Limitations&lt;/a&gt; は、既存の一貫性を両立できる可用性の水準と対応させ、両性質の強さで一貫性と可用性のペアを半順序関係に整理した。&lt;/p&gt;</description>
     </item>
     <item>
       <title>分散システム向けのフォールトインジェクションフレームワーク Jepsen</title>
-      <link>http://localhost:1313/posts/jepsen/</link>
+      <link>https://ryotaro.dev/posts/jepsen/</link>
       <pubDate>Sun, 26 Jan 2025 23:12:54 +0900</pubDate>
-      <guid>http://localhost:1313/posts/jepsen/</guid>
+      <guid>https://ryotaro.dev/posts/jepsen/</guid>
       <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;&#xA;&lt;p&gt;分散システムのテストをClojureで実装するためのフレームワークに&lt;a href=&#34;https://jepsen.io/&#34;&gt;Jepsen&lt;/a&gt;がある。&#xA;Jepsenのテストケースは、システムへの操作、操作後のシステムに期待する状態、障害と操作のスケジューリングの3要素からなる。&#xA;テストケースは、スケジューリング通りに操作と障害を起こし、最後にシステムの応答が期待通りか確認する。&#xA;Jepsenの公式サイトにはJepsenによる&lt;a href=&#34;https://jepsen.io/analyses&#34;&gt;主要な分散システムのテスト結果&lt;/a&gt;が公開されている。&#xA;また、Kubernetes内部で使わているKVSの&lt;a href=&#34;https://kubernetes.io/ja/docs/tasks/administer-cluster/configure-upgrade-etcd/&#34;&gt;etcd&lt;/a&gt;の&lt;a href=&#34;https://etcd.io/blog/2020/jepsen-343-results/&#34;&gt;公式ウェブサイト&lt;/a&gt;にもJepsenのテスト結果が公開されている。&#xA;分散システムの開発側からも参照されているので、分散システムにおけるJepsenの認知度は高いように思える。&lt;/p&gt;&#xA;&lt;p&gt;その一方で、公式ドキュメントは整備されていないようだった。&#xA;たとえば、チュートリアルはetcdを例題にJepsenの使い方を解説しているが、etcdのクライアントライブラリが古く、実際に実装してもチュートリアル通りに実行できない。&#xA;かわりに、2相コミットするアプリケーションとテストケースを実装したが、実装のためにJepsenのソースコードを調べる必要があった。&#xA;実装したアプリケーションとテストケースは&lt;a href=&#34;https://github.com/ryotaro612/jepsen-tutorial-xa&#34;&gt;GitHubのリポジトリ&lt;/a&gt;に公開してある。&lt;/p&gt;&#xA;&lt;p&gt;それでも、依然として、Jepsenを使ってテストケース実装するほうが、スクラッチからテストケースを実装するよりも効率的ではあると思う。&#xA;そこで、今後の備忘録をかねて、Jepsenを試すにあたって、チュートリアルに不足を感じた部分を書き留めておく。&lt;/p&gt;</description>
     </item>
     <item>
       <title>A Majority Consensus Approach to Concurrency Control for Multiple Copy Databases(1979)</title>
-      <link>http://localhost:1313/posts/a_mojority_consensus_approach_to_concurrency_control_for_multiple_copy_databases/</link>
+      <link>https://ryotaro.dev/posts/a_mojority_consensus_approach_to_concurrency_control_for_multiple_copy_databases/</link>
       <pubDate>Sat, 27 May 2023 13:41:06 -0400</pubDate>
-      <guid>http://localhost:1313/posts/a_mojority_consensus_approach_to_concurrency_control_for_multiple_copy_databases/</guid>
+      <guid>https://ryotaro.dev/posts/a_mojority_consensus_approach_to_concurrency_control_for_multiple_copy_databases/</guid>
       <description>&lt;p&gt;データベースを同期するためのアルゴリズム&lt;a href=&#34;https://pages.cs.wisc.edu/~remzi/Classes/739/Fall2018/Papers/thomas79-quorums.pdf&#34;&gt;majority consensus&lt;/a&gt;を提案する。&#xA;アプリケーションは任意のデータベースに更新リクエストを送信でき、データベースは更新リクエストの処理について含意をとる。&#xA;データベースは、タイムスタンプのついたレコードの集合である。&#xA;タイムスタンプは、レコードの値の更新時刻をあらわす。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Virtual Time and Global States of Distributed Systems(1988)</title>
-      <link>http://localhost:1313/posts/virtual_time_and_global_states_of_distributed_systems/</link>
+      <link>https://ryotaro.dev/posts/virtual_time_and_global_states_of_distributed_systems/</link>
       <pubDate>Sat, 22 Apr 2023 21:35:08 -0400</pubDate>
-      <guid>http://localhost:1313/posts/virtual_time_and_global_states_of_distributed_systems/</guid>
+      <guid>https://ryotaro.dev/posts/virtual_time_and_global_states_of_distributed_systems/</guid>
       <description>&lt;p&gt;分散システムのプロセス間で時刻が常に同期しているとは限らない。&#xA;プロセスの時刻から判断すると、プロセスでは、ほかのプロセスのイベントと比べてどちらが先に起きたか分からないイベントが起きえる。&#xA;&lt;a href=&#34;https://lamport.azurewebsites.net/pubs/time-clocks.pdf&#34;&gt;Lamport&lt;/a&gt;は、各プロセスに単調増加する論理的な時刻をもたせ、メッセージとともに時刻をプロセス間で交換することで、イベントの依存関係と矛盾せずにイベントを全順序に並べる手法を提案した。&#xA;先行するイベントは、必ず後続のイベントよりも小さい時刻をもつ。&#xA;しかし、逆は必ずしも成り立たない。&#xA;先行する場合もあれば、前後関係がないこともある。&#xA;&lt;a href=&#34;http://www.vs.inf.ethz.ch/publ/papers/VirtTimeGlobStates.pdf&#34;&gt;Virtual Time and Global States of Distributed Systems&lt;/a&gt;は、各プロセスの時刻を、プロセス数とおなじ数の長さの配列で表現する。&#xA;これにより、時刻の前後関係が定義されていることがイベント間に前後関係があることの必要十分条件であることを可能にした。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Proving the Correctness of Multiprocess Programs (1977)</title>
-      <link>http://localhost:1313/posts/proving_correctness_of_multiprocess_programs/</link>
+      <link>https://ryotaro.dev/posts/proving_correctness_of_multiprocess_programs/</link>
       <pubDate>Sat, 25 Mar 2023 12:34:08 -0400</pubDate>
-      <guid>http://localhost:1313/posts/proving_correctness_of_multiprocess_programs/</guid>
+      <guid>https://ryotaro.dev/posts/proving_correctness_of_multiprocess_programs/</guid>
       <description>&lt;p&gt;マルチプロセスプログラムの正しさを証明するための公理を提案する。&#xA;正しさの条件は、プログラムが安全性と活性を満たすことである。&#xA;安全はプログラムが特定の状態になりえないことを、活性はプログラムが特定の状態に必ず到達することを意味する。&#xA;たとえば、キューにメッセージを配信するproducerとキューから取り出すconsumerがあるとする。&#xA;このとき、容量以上のメッセージがキューに蓄積しない性質が安全性に、キューが満杯時にconsumerがメッセージを消費する性質が活性になりえる。&#xA;プログラム、安全性、活性を形式化し、安全性と活性を証明することで、プログラムの正しさを示す。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Your Coffee Shop Doesn&#39;t Use Two-Phase Commit(2005)</title>
-      <link>http://localhost:1313/posts/your_coffee_shop_doesnt_use_two_phase_commit/</link>
+      <link>https://ryotaro.dev/posts/your_coffee_shop_doesnt_use_two_phase_commit/</link>
       <pubDate>Sun, 12 Mar 2023 16:17:35 -0400</pubDate>
-      <guid>http://localhost:1313/posts/your_coffee_shop_doesnt_use_two_phase_commit/</guid>
+      <guid>https://ryotaro.dev/posts/your_coffee_shop_doesnt_use_two_phase_commit/</guid>
       <description>&lt;p&gt;非同期処理を、スターバックスの注文からコーヒーの提供までの流れにたとえたアネクドートである。&#xA;注文をうけたレジの店員は、どの客の注文か分かる目印をコーヒーカップに書き、カップをエスプレッソマシンの上にならべる。&#xA;客はバリスタのいるカウンターに移動し、レジの店員は次の顧客の注文をうけつける。&#xA;バリスタは、ならべられたカップをとり、コーヒーを注ぎ、客に提供する。&lt;/p&gt;&#xA;&lt;p&gt;レジの店員とバリスタは非同期にはたらいている。&#xA;バリスタのコーヒーの提供が滞っても、レジの店員は注文をうけることができる。&#xA;カップの列が長くなれば、バリスタの人数を増やせば、レジの店員に影響することなく、より速くコーヒーを提供できる。&#xA;それはキューで通信するプロデューサーとコンシューマーのようである。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Zookeeper: Wait-free coordination for Internet-scale systems (2010)</title>
-      <link>http://localhost:1313/posts/zookeeper_wait_free_coordination_for_internat_scale_systems/</link>
+      <link>https://ryotaro.dev/posts/zookeeper_wait_free_coordination_for_internat_scale_systems/</link>
       <pubDate>Sun, 12 Feb 2023 15:47:06 -0500</pubDate>
-      <guid>http://localhost:1313/posts/zookeeper_wait_free_coordination_for_internat_scale_systems/</guid>
+      <guid>https://ryotaro.dev/posts/zookeeper_wait_free_coordination_for_internat_scale_systems/</guid>
       <description>&lt;p&gt;ZooKeeperは、リーダ選出と構成管理の機能を提供するためのインメモリーデータベースである。&#xA;データーベースは、ファイルシステムのような階層構造のwait-freeな抽象データ型であり、各ノードにはデフォルトで最大1MBの少量のデータを保存できる。&#xA;たとえば、ノードに設定を保存して共有することも、設定ファイルが編集中でないことを示すフラグ代わりのファイルを置くこともできる。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Brewer&#39;s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web (2002)</title>
-      <link>http://localhost:1313/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/</link>
+      <link>https://ryotaro.dev/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/</link>
       <pubDate>Tue, 17 Jan 2023 11:42:12 -0500</pubDate>
-      <guid>http://localhost:1313/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/</guid>
+      <guid>https://ryotaro.dev/posts/brewers_conjecture_and_the_feasibility_of_consistent_available_partition_tolerant_web/</guid>
       <description>&lt;p&gt;分散システムは一貫性、可用性、分断耐性を同時に満たすことができない。&#xA;この予想は、2000年のPODCでBrewerが発表したCAP定理として知られている。&#xA;しかし、Brewerの&lt;a href=&#34;https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf&#34;&gt;講演&lt;/a&gt;では厳密な定義や証明はない。&#xA;そこで、それを補うために、ある2つの計算モデルでCAPが成立することを証明する。&#xA;計算モデルは、asynchronous network modelとpartially synchhronous modelである。&#xA;asynchronouse network modelでは、モデルのノードは、クロックをもたず、受信したメッセージとノード内の計算のみで出力を決定する。&#xA;partially synchronous modelでは、各ノードは、一定間隔で単調増加するクロックをもち、処理をタイムアウトしたり、スケジューリングしたりできる。&#xA;ただし、ノード間でクロックが同期されているとは限らない。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Epidemic Algorithm for Replicated Database Maintenance(1987)</title>
-      <link>http://localhost:1313/posts/epidemic_algorithms_for_replicated_database_maintenance/</link>
+      <link>https://ryotaro.dev/posts/epidemic_algorithms_for_replicated_database_maintenance/</link>
       <pubDate>Mon, 19 Dec 2022 11:07:49 -0500</pubDate>
-      <guid>http://localhost:1313/posts/epidemic_algorithms_for_replicated_database_maintenance/</guid>
+      <guid>https://ryotaro.dev/posts/epidemic_algorithms_for_replicated_database_maintenance/</guid>
       <description>&lt;p&gt;Epidemic Algorithmは、データベース間の差分を解消するために、データベースがランダムに選んだ別のデータベースと同期する手法である。&#xA;Epidemicを邦訳すると伝染性である。&#xA;ここではデータベースにはマスタースレーブの区別はなく、任意のサーバーがレコードの変更リクエストを受理できる。&#xA;Epidemic Algorithmには、定期的にデーターベース全体を同期する手法と、変更を受理したときに当該の変更のみを別のデータベースに伝搬させる手法の2つがある。&#xA;前者は、データベース全体を同期するので変更のとりこぼしがいずれは解消されるが、同期に時間がかかる。&#xA;後者は、時間はかからないが、伝搬を終えるまでに同期できなかった変更があれば、その齟齬が残りつづける。&#xA;データベースがある時点で最新の変更をもたない確率を仮定し、その確率で次の同期で変更を取得できる確率を表し、手法間の同期する収束の速さを比較した。&lt;/p&gt;</description>
     </item>
     <item>
       <title>An Improved Data Stream Summary: The Count-Min Sketch and its Applications(2005)</title>
-      <link>http://localhost:1313/posts/an_improved_data_stream_summary_the_count_min_sketch_and_its_application/</link>
+      <link>https://ryotaro.dev/posts/an_improved_data_stream_summary_the_count_min_sketch_and_its_application/</link>
       <pubDate>Wed, 07 Dec 2022 12:29:36 -0500</pubDate>
-      <guid>http://localhost:1313/posts/an_improved_data_stream_summary_the_count_min_sketch_and_its_application/</guid>
+      <guid>https://ryotaro.dev/posts/an_improved_data_stream_summary_the_count_min_sketch_and_its_application/</guid>
       <description>&lt;p&gt;Count-Min Sketch(CM Sketch)は、単位時間ごとに1要素ずつ更新される\(n\)次元のベクトルの要素を\(n\)の劣線形の計算量で集計できるデータ構造である。&#xA;空間の大きさはパラメタで指定する誤差大きさと誤差の生じる確率に依存する。&#xA;誤差と確率のパラメタを\(\epsilon\)と\(\delta\)とすると、CM sketchは\(\lceil{\ln \frac{1}{\delta}\rceil}\times \lceil\frac{e}{\epsilon}\rceil\)の二次元行列である。&#xA;\(\ln\)の底は\(e\)である。&#xA;要素の値、ベクトルの内積、ある範囲の要素の和を劣線形の計算量で求めることができる。&#xA;また、これらと二分探索を応用すれば、指定した値よりも大きい要素のみからなる範囲や分位数も計算できる。&lt;/p&gt;</description>
     </item>
     <item>
       <title>MillWheel: Fault-Tolerant Stream Processing at Internet Scale(2013)</title>
-      <link>http://localhost:1313/posts/millwheel_fault_tolerant_stream_processing_at_internet_scale/</link>
+      <link>https://ryotaro.dev/posts/millwheel_fault_tolerant_stream_processing_at_internet_scale/</link>
       <pubDate>Wed, 23 Nov 2022 11:44:08 -0500</pubDate>
-      <guid>http://localhost:1313/posts/millwheel_fault_tolerant_stream_processing_at_internet_scale/</guid>
+      <guid>https://ryotaro.dev/posts/millwheel_fault_tolerant_stream_processing_at_internet_scale/</guid>
       <description>&lt;p&gt;MillWheelはGoogleで開発されたストリーミング処理のフレームワークである。&#xA;開発者が羃等な処理をノードとする有向グラフを実装すれば、MillWheelがデータをノードに正確に一回だけ配信する。&#xA;ただし、転送が遅延しているデータは破棄される。&#xA;データは、キー、値、論理的な時刻の3組からなるレコードを単位として、ノードからノードに出力される。&#xA;向き先のノードは、レコードからキーへの関数を、根のノードから出力されるレコードに適用し、期待するキーに対応するレコードをノードに集約する。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Time, Clocks, and the Ordering of Events in a Distributed System</title>
-      <link>http://localhost:1313/posts/time_clocks_and_the_ordering_of_events_in_a_distributed_system/</link>
+      <link>https://ryotaro.dev/posts/time_clocks_and_the_ordering_of_events_in_a_distributed_system/</link>
       <pubDate>Sat, 14 Aug 2021 14:18:01 +0900</pubDate>
-      <guid>http://localhost:1313/posts/time_clocks_and_the_ordering_of_events_in_a_distributed_system/</guid>
+      <guid>https://ryotaro.dev/posts/time_clocks_and_the_ordering_of_events_in_a_distributed_system/</guid>
       <description>&lt;p&gt;分散システムの各プロセスにおける送受信の半順序関係をすべてのプロセスで起きた送受信の全順序関係に拡張するアルゴリズムを提案し、アルゴリズムを同期処理に応用できることを例示した。&#xA;分散システムではプロセスの時刻が同期しているとはかぎらない。&#xA;各プロセスで起きたメッセージの送受信をプロセスでの時刻順に並べられても、その計測時刻を信じて全プロセスで起きたイベントを正しく発生順に並べることはできない。&lt;/p&gt;&#xA;&lt;p&gt;アルゴリズムは、プロセスごとに論理的なクロックをもたせる。&#xA;クロックは、メッセージを送信するときに時を進める。&#xA;メッセージを送信するプロセスは、送信時刻をメッセージにふくめる。&#xA;受信したプロセスは現在の時刻とメッセージにある送信元の時刻より先の時刻に時を進める。&#xA;以上の手続きで、異なるプロセス間の送受信であっても送信時刻が受信時刻より必ず前になり、全プロセスの送受信イベントに全順序関係を定義できる。&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mixture-of-Experts on Blanket</title>
-    <link>http://localhost:1313/en/tags/mixture-of-experts/</link>
+    <link>https://ryotaro.dev/en/tags/mixture-of-experts/</link>
     <description>Recent content in Mixture-of-Experts on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 01 Aug 2025 22:36:18 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/en/tags/mixture-of-experts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/en/tags/mixture-of-experts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OUTRAGEOUSLY LARGE NEURAL NETWORKS THE SPARSELY-GATED MIXTURE-OF-EXPERTS LAYER (2017)</title>
-      <link>http://localhost:1313/en/posts/outrageously-large-neural-networks-the-sparsely-gated-mixture-of-expert-layer/</link>
+      <link>https://ryotaro.dev/en/posts/outrageously-large-neural-networks-the-sparsely-gated-mixture-of-expert-layer/</link>
       <pubDate>Fri, 01 Aug 2025 22:36:18 +0900</pubDate>
-      <guid>http://localhost:1313/en/posts/outrageously-large-neural-networks-the-sparsely-gated-mixture-of-expert-layer/</guid>
+      <guid>https://ryotaro.dev/en/posts/outrageously-large-neural-networks-the-sparsely-gated-mixture-of-expert-layer/</guid>
       <description>&lt;p&gt;Increasing a model’s number of parameters enhances its capacity to learn complex patterns, but it also raises computational costs.&#xA;&lt;a href=&#34;https://arxiv.org/pdf/1701.06538&#34;&gt;OUTRAGEOUSLY LARGE NEURAL NETWORKS: THE SPARSELY-GATED MIXTURE-OF-EXPERTS LAYER&lt;/a&gt; (MoE)  introduces a method to scale model capacity efficiently by using a gating network that dynamically selects a sparse subset of feed-forward networks (called experts) for each input, while skipping computation for the others.&lt;/p&gt;</description>
     </item>
   </channel>

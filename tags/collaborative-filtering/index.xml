@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Collaborative Filtering on Blanket</title>
-    <link>http://localhost:1313/tags/collaborative-filtering/</link>
+    <link>https://ryotaro.dev/tags/collaborative-filtering/</link>
     <description>Recent content in Collaborative Filtering on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 16 Aug 2025 14:29:07 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/collaborative-filtering/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/collaborative-filtering/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Amazon.com Recommendations Item to Item Collaborative Filtering (2003)</title>
-      <link>http://localhost:1313/posts/amazon.com-recommendations-item-to-item-collaborative-filtering/</link>
+      <link>https://ryotaro.dev/posts/amazon.com-recommendations-item-to-item-collaborative-filtering/</link>
       <pubDate>Sat, 16 Aug 2025 14:29:07 +0900</pubDate>
-      <guid>http://localhost:1313/posts/amazon.com-recommendations-item-to-item-collaborative-filtering/</guid>
-      <description>&lt;p&gt;IEEE Internet Computingは、創刊20周年を記念し、時の試練を越えた論文に&lt;a href=&#34;https://www.cs.umd.edu/~samir/498/Amazon-Recommendations.pdf&#34;&gt;Amazon.com Recommendations Item to Item Collaborative Filtering&lt;/a&gt;を&lt;a href=&#34;https://www.amazon.science/the-history-of-amazons-recommendation-algorithm&#34;&gt;選んだ&lt;/a&gt;。&#xA;文献では、古典的な協調フィルタリングを、アイテム数\(N\)次元のベクトルでユーザーを表現し、類似するユーザーが選んだアイテムのうち、ユーザーが未選択のアイテムを推薦対象に選ぶ手法とみなされている。&#xA;提案されたItem to Item Collaborative Filteringは、アイテム同士の類似度を示す\(N\text{x}N\)次元の行列をオフラインで構築し、\(N\)や全ユーザー数に依存しないオンラインの計算量で、ユーザーが過去に選んだアイテムに類似するアイテムを推薦できる。&lt;/p&gt;</description>
+      <guid>https://ryotaro.dev/posts/amazon.com-recommendations-item-to-item-collaborative-filtering/</guid>
+      <description>&lt;p&gt;IEEE Internet Computingは、創刊20周年を記念し、時の試練を越えた論文に&lt;a href=&#34;https://www.cs.umd.edu/~samir/498/Amazon-Recommendations.pdf&#34;&gt;Amazon.com Recommendations Item to Item Collaborative Filtering&lt;/a&gt;を&lt;a href=&#34;https://www.amazon.science/the-history-of-amazons-recommendation-algorithm&#34;&gt;選んだ&lt;/a&gt;。&#xA;文献では、古典的な協調フィルタリングを、アイテム数次元\(N\)のベクトルでユーザーを表現し、類似するユーザーが選んだアイテムのうち、ユーザーが未選択のアイテムを推薦対象に選ぶ手法とみなされている。&#xA;提案されたItem to Item Collaborative Filteringは、アイテム同士の類似度を示す\(N\)x\(N\)次元の行列をオフラインで構築し、\(N\)や全ユーザー数に依存しないオンラインの計算量で、ユーザーが過去に選んだアイテムに類似するアイテムを推薦できる。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

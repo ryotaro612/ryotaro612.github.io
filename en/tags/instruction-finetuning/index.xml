@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Instruction Finetuning on Blanket</title>
-    <link>http://localhost:1313/en/tags/instruction-finetuning/</link>
+    <link>https://ryotaro.dev/en/tags/instruction-finetuning/</link>
     <description>Recent content in Instruction Finetuning on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 07 May 2025 02:41:24 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/en/tags/instruction-finetuning/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/en/tags/instruction-finetuning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Scaling Instruction Finetuned Language Models (2022)</title>
-      <link>http://localhost:1313/en/posts/scaling-instruction-finetuned-language-models/</link>
+      <link>https://ryotaro.dev/en/posts/scaling-instruction-finetuned-language-models/</link>
       <pubDate>Wed, 07 May 2025 02:41:24 +0900</pubDate>
-      <guid>http://localhost:1313/en/posts/scaling-instruction-finetuned-language-models/</guid>
+      <guid>https://ryotaro.dev/en/posts/scaling-instruction-finetuned-language-models/</guid>
       <description>&lt;p&gt;Instruction finetuning is a technique for enhancing the zero-shot performance of large language models (LLMs). The seminal work, &lt;a href=&#34;https://arxiv.org/pdf/2109.01652&#34;&gt;Finetuned Language Models Are Zero-Shot Learners&lt;/a&gt;, refers to this method as instruction tuning.&#xA;Building on this, &lt;a href=&#34;https://arxiv.org/abs/2210.11416&#34;&gt;Scaling Instruction-Finetuned Language Models&lt;/a&gt; explored scaling the number of tasks, model sizes, and the incorporation of chain-of-thought (CoT) data. Their findings demonstrate that instruction finetuning can significantly improve LLM performance across a wide range of settings.&lt;/p&gt;</description>
     </item>
   </channel>

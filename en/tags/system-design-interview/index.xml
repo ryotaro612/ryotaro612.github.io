@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>System Design Interview on Blanket</title>
-    <link>http://localhost:1313/en/tags/system-design-interview/</link>
+    <link>https://ryotaro.dev/en/tags/system-design-interview/</link>
     <description>Recent content in System Design Interview on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 24 Sep 2024 02:14:15 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/en/tags/system-design-interview/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/en/tags/system-design-interview/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Back of Envelope Calculations</title>
-      <link>http://localhost:1313/en/posts/back-of-envelope-calculations/</link>
+      <link>https://ryotaro.dev/en/posts/back-of-envelope-calculations/</link>
       <pubDate>Tue, 24 Sep 2024 02:14:15 +0900</pubDate>
-      <guid>http://localhost:1313/en/posts/back-of-envelope-calculations/</guid>
+      <guid>https://ryotaro.dev/en/posts/back-of-envelope-calculations/</guid>
       <description>&lt;p&gt;In system design interviews, back of envelope calculation is a task to estimate required comuputing resources based on the given requirement.&lt;/p&gt;</description>
     </item>
     <item>
       <title>System design case study: video streaming service</title>
-      <link>http://localhost:1313/en/posts/video-streaming/</link>
+      <link>https://ryotaro.dev/en/posts/video-streaming/</link>
       <pubDate>Wed, 18 Sep 2024 01:13:19 +0900</pubDate>
-      <guid>http://localhost:1313/en/posts/video-streaming/</guid>
+      <guid>https://ryotaro.dev/en/posts/video-streaming/</guid>
       <description>&lt;p&gt;Youtube is an example of a video streaming service where users upload, stream, search, and review videos.&#xA;This post presents common designs for processing and hosting uploaded videos across several case studies of video streaming services for system design interviews.&lt;/p&gt;</description>
     </item>
   </channel>

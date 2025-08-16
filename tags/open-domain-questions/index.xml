@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Open Domain Questions on Blanket</title>
-    <link>http://localhost:1313/tags/open-domain-questions/</link>
+    <link>https://ryotaro.dev/tags/open-domain-questions/</link>
     <description>Recent content in Open Domain Questions on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 26 Apr 2025 13:49:53 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/open-domain-questions/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/open-domain-questions/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Reading Wikipedia to Answer Open Domain Questions (2017)</title>
-      <link>http://localhost:1313/posts/reading-wikipedia-to-answer-open-domain-questions/</link>
+      <link>https://ryotaro.dev/posts/reading-wikipedia-to-answer-open-domain-questions/</link>
       <pubDate>Sat, 26 Apr 2025 13:49:53 +0900</pubDate>
-      <guid>http://localhost:1313/posts/reading-wikipedia-to-answer-open-domain-questions/</guid>
+      <guid>https://ryotaro.dev/posts/reading-wikipedia-to-answer-open-domain-questions/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://aclanthology.org/P17-1171.pdf&#34;&gt;Reading Wikipedia to Answer Open Domain Questions&lt;/a&gt;で提案されたDrQAは、ドメインを問わない事実を問う質問に対して、Wikipediaの文書のある文字列区間を解答とみなして出力する。&#xA;DrQAは質問に関係する文書を収集するDocument RetrieverとDocument Readerから構成される。&#xA;Document Retrieverは、バイグラムのTF-IDFで質問と類似するWikipediaを検索し、上位5位の文書をDocument Readerに渡す。&#xA;Document Readerは、Document Retrieverから渡された質問と応答を別の方法で分散表現に変換する。&#xA;最後に質問と応答の分散表現を比較し、応答の解答と推定した区間を出力する。&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,899 +2,892 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Blanket</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://ryotaro.dev/tags/</link>
     <description>Recent content in Tags on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 16 Aug 2025 14:29:07 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Collaborative Filtering</title>
-      <link>http://localhost:1313/tags/collaborative-filtering/</link>
+      <link>https://ryotaro.dev/tags/collaborative-filtering/</link>
       <pubDate>Sat, 16 Aug 2025 14:29:07 +0900</pubDate>
-      <guid>http://localhost:1313/tags/collaborative-filtering/</guid>
+      <guid>https://ryotaro.dev/tags/collaborative-filtering/</guid>
       <description></description>
     </item>
     <item>
       <title>Mixture-of-Experts</title>
-      <link>http://localhost:1313/tags/mixture-of-experts/</link>
+      <link>https://ryotaro.dev/tags/mixture-of-experts/</link>
       <pubDate>Fri, 01 Aug 2025 22:36:18 +0900</pubDate>
-      <guid>http://localhost:1313/tags/mixture-of-experts/</guid>
+      <guid>https://ryotaro.dev/tags/mixture-of-experts/</guid>
       <description></description>
     </item>
     <item>
       <title>Large Language Models</title>
-      <link>http://localhost:1313/tags/large-language-models/</link>
+      <link>https://ryotaro.dev/tags/large-language-models/</link>
       <pubDate>Thu, 24 Jul 2025 03:09:28 +0900</pubDate>
-      <guid>http://localhost:1313/tags/large-language-models/</guid>
+      <guid>https://ryotaro.dev/tags/large-language-models/</guid>
       <description></description>
     </item>
     <item>
       <title>Reinforcement Learning From Human Feedback</title>
-      <link>http://localhost:1313/tags/reinforcement-learning-from-human-feedback/</link>
+      <link>https://ryotaro.dev/tags/reinforcement-learning-from-human-feedback/</link>
       <pubDate>Thu, 24 Jul 2025 03:09:28 +0900</pubDate>
-      <guid>http://localhost:1313/tags/reinforcement-learning-from-human-feedback/</guid>
+      <guid>https://ryotaro.dev/tags/reinforcement-learning-from-human-feedback/</guid>
       <description></description>
     </item>
     <item>
       <title>Prompt Engineering</title>
-      <link>http://localhost:1313/tags/prompt-engineering/</link>
+      <link>https://ryotaro.dev/tags/prompt-engineering/</link>
       <pubDate>Fri, 11 Jul 2025 03:03:29 +0900</pubDate>
-      <guid>http://localhost:1313/tags/prompt-engineering/</guid>
+      <guid>https://ryotaro.dev/tags/prompt-engineering/</guid>
       <description></description>
     </item>
     <item>
       <title>Diffusion Model</title>
-      <link>http://localhost:1313/tags/diffusion-model/</link>
+      <link>https://ryotaro.dev/tags/diffusion-model/</link>
       <pubDate>Sun, 15 Jun 2025 16:29:31 +0900</pubDate>
-      <guid>http://localhost:1313/tags/diffusion-model/</guid>
+      <guid>https://ryotaro.dev/tags/diffusion-model/</guid>
       <description></description>
     </item>
     <item>
       <title>Sentence Embedding</title>
-      <link>http://localhost:1313/tags/sentence-embedding/</link>
+      <link>https://ryotaro.dev/tags/sentence-embedding/</link>
       <pubDate>Fri, 30 May 2025 14:52:18 +0900</pubDate>
-      <guid>http://localhost:1313/tags/sentence-embedding/</guid>
+      <guid>https://ryotaro.dev/tags/sentence-embedding/</guid>
       <description></description>
     </item>
     <item>
       <title>Instruction Finetuning</title>
-      <link>http://localhost:1313/tags/instruction-finetuning/</link>
+      <link>https://ryotaro.dev/tags/instruction-finetuning/</link>
       <pubDate>Wed, 07 May 2025 02:41:24 +0900</pubDate>
-      <guid>http://localhost:1313/tags/instruction-finetuning/</guid>
+      <guid>https://ryotaro.dev/tags/instruction-finetuning/</guid>
       <description></description>
     </item>
     <item>
       <title>Open Domain Questions</title>
-      <link>http://localhost:1313/tags/open-domain-questions/</link>
+      <link>https://ryotaro.dev/tags/open-domain-questions/</link>
       <pubDate>Sat, 26 Apr 2025 13:49:53 +0900</pubDate>
-      <guid>http://localhost:1313/tags/open-domain-questions/</guid>
+      <guid>https://ryotaro.dev/tags/open-domain-questions/</guid>
       <description></description>
     </item>
     <item>
       <title>TF-IDF</title>
-      <link>http://localhost:1313/tags/tf-idf/</link>
+      <link>https://ryotaro.dev/tags/tf-idf/</link>
       <pubDate>Sat, 26 Apr 2025 13:49:53 +0900</pubDate>
-      <guid>http://localhost:1313/tags/tf-idf/</guid>
+      <guid>https://ryotaro.dev/tags/tf-idf/</guid>
       <description></description>
     </item>
     <item>
       <title>Few-Shot Learning</title>
-      <link>http://localhost:1313/tags/few-shot-learning/</link>
+      <link>https://ryotaro.dev/tags/few-shot-learning/</link>
       <pubDate>Sat, 12 Apr 2025 14:01:19 +0900</pubDate>
-      <guid>http://localhost:1313/tags/few-shot-learning/</guid>
+      <guid>https://ryotaro.dev/tags/few-shot-learning/</guid>
       <description></description>
     </item>
     <item>
       <title>Large Language Model</title>
-      <link>http://localhost:1313/tags/large-language-model/</link>
+      <link>https://ryotaro.dev/tags/large-language-model/</link>
       <pubDate>Sat, 12 Apr 2025 14:01:19 +0900</pubDate>
-      <guid>http://localhost:1313/tags/large-language-model/</guid>
+      <guid>https://ryotaro.dev/tags/large-language-model/</guid>
       <description></description>
     </item>
     <item>
       <title>コンシステントハッシュ法</title>
-      <link>http://localhost:1313/tags/%E3%82%B3%E3%83%B3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%B3%E3%83%88%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E6%B3%95/</link>
+      <link>https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%B3%E3%83%88%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E6%B3%95/</link>
       <pubDate>Tue, 18 Mar 2025 13:18:51 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E3%82%B3%E3%83%B3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%B3%E3%83%88%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E6%B3%95/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%B3%E3%83%88%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E6%B3%95/</guid>
       <description></description>
     </item>
     <item>
       <title>コードカバレッジ</title>
-      <link>http://localhost:1313/tags/%E3%82%B3%E3%83%BC%E3%83%89%E3%82%AB%E3%83%90%E3%83%AC%E3%83%83%E3%82%B8/</link>
+      <link>https://ryotaro.dev/tags/%E3%82%B3%E3%83%BC%E3%83%89%E3%82%AB%E3%83%90%E3%83%AC%E3%83%83%E3%82%B8/</link>
       <pubDate>Mon, 03 Mar 2025 21:55:22 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E3%82%B3%E3%83%BC%E3%83%89%E3%82%AB%E3%83%90%E3%83%AC%E3%83%83%E3%82%B8/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%82%B3%E3%83%BC%E3%83%89%E3%82%AB%E3%83%90%E3%83%AC%E3%83%83%E3%82%B8/</guid>
       <description></description>
     </item>
     <item>
       <title>Go</title>
-      <link>http://localhost:1313/tags/go/</link>
+      <link>https://ryotaro.dev/tags/go/</link>
       <pubDate>Tue, 11 Feb 2025 15:16:30 +0900</pubDate>
-      <guid>http://localhost:1313/tags/go/</guid>
+      <guid>https://ryotaro.dev/tags/go/</guid>
       <description></description>
     </item>
     <item>
       <title>ガベージコレクション</title>
-      <link>http://localhost:1313/tags/%E3%82%AC%E3%83%99%E3%83%BC%E3%82%B8%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/</link>
+      <link>https://ryotaro.dev/tags/%E3%82%AC%E3%83%99%E3%83%BC%E3%82%B8%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/</link>
       <pubDate>Tue, 11 Feb 2025 15:16:30 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E3%82%AC%E3%83%99%E3%83%BC%E3%82%B8%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%82%AC%E3%83%99%E3%83%BC%E3%82%B8%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/</guid>
       <description></description>
     </item>
     <item>
       <title>S3</title>
-      <link>http://localhost:1313/tags/s3/</link>
+      <link>https://ryotaro.dev/tags/s3/</link>
       <pubDate>Thu, 30 Jan 2025 03:01:59 +0900</pubDate>
-      <guid>http://localhost:1313/tags/s3/</guid>
+      <guid>https://ryotaro.dev/tags/s3/</guid>
       <description></description>
     </item>
     <item>
       <title>トランザクション</title>
-      <link>http://localhost:1313/tags/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B6%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/</link>
+      <link>https://ryotaro.dev/tags/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B6%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/</link>
       <pubDate>Thu, 30 Jan 2025 03:01:31 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B6%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B6%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/</guid>
       <description></description>
     </item>
     <item>
       <title>可用性</title>
-      <link>http://localhost:1313/tags/%E5%8F%AF%E7%94%A8%E6%80%A7/</link>
+      <link>https://ryotaro.dev/tags/%E5%8F%AF%E7%94%A8%E6%80%A7/</link>
       <pubDate>Thu, 30 Jan 2025 03:01:31 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E5%8F%AF%E7%94%A8%E6%80%A7/</guid>
+      <guid>https://ryotaro.dev/tags/%E5%8F%AF%E7%94%A8%E6%80%A7/</guid>
       <description></description>
     </item>
     <item>
       <title>分散システム</title>
-      <link>http://localhost:1313/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</link>
+      <link>https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</link>
       <pubDate>Thu, 30 Jan 2025 03:01:31 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</guid>
+      <guid>https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</guid>
       <description></description>
     </item>
     <item>
       <title>型理論</title>
-      <link>http://localhost:1313/tags/%E5%9E%8B%E7%90%86%E8%AB%96/</link>
+      <link>https://ryotaro.dev/tags/%E5%9E%8B%E7%90%86%E8%AB%96/</link>
       <pubDate>Mon, 30 Dec 2024 22:45:30 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E5%9E%8B%E7%90%86%E8%AB%96/</guid>
+      <guid>https://ryotaro.dev/tags/%E5%9E%8B%E7%90%86%E8%AB%96/</guid>
       <description></description>
     </item>
     <item>
       <title>Container</title>
-      <link>http://localhost:1313/tags/container/</link>
+      <link>https://ryotaro.dev/tags/container/</link>
       <pubDate>Sun, 08 Dec 2024 18:51:20 +0900</pubDate>
-      <guid>http://localhost:1313/tags/container/</guid>
+      <guid>https://ryotaro.dev/tags/container/</guid>
       <description></description>
     </item>
     <item>
       <title>Runc</title>
-      <link>http://localhost:1313/tags/runc/</link>
+      <link>https://ryotaro.dev/tags/runc/</link>
       <pubDate>Sun, 08 Dec 2024 18:51:20 +0900</pubDate>
-      <guid>http://localhost:1313/tags/runc/</guid>
+      <guid>https://ryotaro.dev/tags/runc/</guid>
       <description></description>
     </item>
     <item>
       <title>Back of the Envelope Estimation</title>
-      <link>http://localhost:1313/tags/back-of-the-envelope-estimation/</link>
+      <link>https://ryotaro.dev/tags/back-of-the-envelope-estimation/</link>
       <pubDate>Tue, 24 Sep 2024 02:14:15 +0900</pubDate>
-      <guid>http://localhost:1313/tags/back-of-the-envelope-estimation/</guid>
+      <guid>https://ryotaro.dev/tags/back-of-the-envelope-estimation/</guid>
       <description></description>
     </item>
     <item>
       <title>System Design Interview</title>
-      <link>http://localhost:1313/tags/system-design-interview/</link>
+      <link>https://ryotaro.dev/tags/system-design-interview/</link>
       <pubDate>Wed, 18 Sep 2024 01:13:19 +0900</pubDate>
-      <guid>http://localhost:1313/tags/system-design-interview/</guid>
+      <guid>https://ryotaro.dev/tags/system-design-interview/</guid>
       <description></description>
     </item>
     <item>
       <title>Retrieval Augmented Generation</title>
-      <link>http://localhost:1313/tags/retrieval-augmented-generation/</link>
+      <link>https://ryotaro.dev/tags/retrieval-augmented-generation/</link>
       <pubDate>Mon, 27 May 2024 22:28:20 +0900</pubDate>
-      <guid>http://localhost:1313/tags/retrieval-augmented-generation/</guid>
+      <guid>https://ryotaro.dev/tags/retrieval-augmented-generation/</guid>
       <description></description>
     </item>
     <item>
       <title>Distributed System</title>
-      <link>http://localhost:1313/tags/distributed-system/</link>
+      <link>https://ryotaro.dev/tags/distributed-system/</link>
       <pubDate>Tue, 07 May 2024 11:49:13 +0900</pubDate>
-      <guid>http://localhost:1313/tags/distributed-system/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>強化学習</title>
-      <link>http://localhost:1313/tags/%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92/</link>
-      <pubDate>Sat, 27 Apr 2024 14:49:30 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>方策勾配法</title>
-      <link>http://localhost:1313/tags/%E6%96%B9%E7%AD%96%E5%8B%BE%E9%85%8D%E6%B3%95/</link>
-      <pubDate>Sat, 27 Apr 2024 14:49:30 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E6%96%B9%E7%AD%96%E5%8B%BE%E9%85%8D%E6%B3%95/</guid>
+      <guid>https://ryotaro.dev/tags/distributed-system/</guid>
       <description></description>
     </item>
     <item>
       <title>Spark</title>
-      <link>http://localhost:1313/tags/spark/</link>
+      <link>https://ryotaro.dev/tags/spark/</link>
       <pubDate>Sun, 14 Apr 2024 14:08:04 +0900</pubDate>
-      <guid>http://localhost:1313/tags/spark/</guid>
+      <guid>https://ryotaro.dev/tags/spark/</guid>
       <description></description>
     </item>
     <item>
       <title>SQL</title>
-      <link>http://localhost:1313/tags/sql/</link>
+      <link>https://ryotaro.dev/tags/sql/</link>
       <pubDate>Sun, 14 Apr 2024 14:08:04 +0900</pubDate>
-      <guid>http://localhost:1313/tags/sql/</guid>
+      <guid>https://ryotaro.dev/tags/sql/</guid>
       <description></description>
     </item>
     <item>
       <title>協調フィルタリング</title>
-      <link>http://localhost:1313/tags/%E5%8D%94%E8%AA%BF%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/</link>
+      <link>https://ryotaro.dev/tags/%E5%8D%94%E8%AA%BF%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/</link>
       <pubDate>Mon, 25 Mar 2024 16:56:51 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E5%8D%94%E8%AA%BF%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/</guid>
+      <guid>https://ryotaro.dev/tags/%E5%8D%94%E8%AA%BF%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/</guid>
       <description></description>
     </item>
     <item>
       <title>PostgreSQL</title>
-      <link>http://localhost:1313/tags/postgresql/</link>
+      <link>https://ryotaro.dev/tags/postgresql/</link>
       <pubDate>Fri, 22 Mar 2024 15:35:16 +0900</pubDate>
-      <guid>http://localhost:1313/tags/postgresql/</guid>
+      <guid>https://ryotaro.dev/tags/postgresql/</guid>
       <description></description>
     </item>
     <item>
       <title>Streaming Data</title>
-      <link>http://localhost:1313/tags/streaming-data/</link>
+      <link>https://ryotaro.dev/tags/streaming-data/</link>
       <pubDate>Fri, 22 Mar 2024 15:35:16 +0900</pubDate>
-      <guid>http://localhost:1313/tags/streaming-data/</guid>
+      <guid>https://ryotaro.dev/tags/streaming-data/</guid>
       <description></description>
     </item>
     <item>
       <title>Apache Calcite</title>
-      <link>http://localhost:1313/tags/apache-calcite/</link>
+      <link>https://ryotaro.dev/tags/apache-calcite/</link>
       <pubDate>Sun, 10 Mar 2024 10:44:15 +0900</pubDate>
-      <guid>http://localhost:1313/tags/apache-calcite/</guid>
+      <guid>https://ryotaro.dev/tags/apache-calcite/</guid>
       <description></description>
     </item>
     <item>
       <title>アソシエーション分析</title>
-      <link>http://localhost:1313/tags/%E3%82%A2%E3%82%BD%E3%82%B7%E3%82%A8%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%88%86%E6%9E%90/</link>
+      <link>https://ryotaro.dev/tags/%E3%82%A2%E3%82%BD%E3%82%B7%E3%82%A8%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%88%86%E6%9E%90/</link>
       <pubDate>Sat, 02 Mar 2024 15:58:04 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E3%82%A2%E3%82%BD%E3%82%B7%E3%82%A8%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%88%86%E6%9E%90/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%82%A2%E3%82%BD%E3%82%B7%E3%82%A8%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%88%86%E6%9E%90/</guid>
       <description></description>
     </item>
     <item>
       <title>Transformer</title>
-      <link>http://localhost:1313/tags/transformer/</link>
+      <link>https://ryotaro.dev/tags/transformer/</link>
       <pubDate>Sat, 24 Feb 2024 23:11:48 +0900</pubDate>
-      <guid>http://localhost:1313/tags/transformer/</guid>
+      <guid>https://ryotaro.dev/tags/transformer/</guid>
       <description></description>
     </item>
     <item>
       <title>RDBMS</title>
-      <link>http://localhost:1313/tags/rdbms/</link>
+      <link>https://ryotaro.dev/tags/rdbms/</link>
       <pubDate>Sat, 17 Feb 2024 17:44:38 +0900</pubDate>
-      <guid>http://localhost:1313/tags/rdbms/</guid>
+      <guid>https://ryotaro.dev/tags/rdbms/</guid>
       <description></description>
     </item>
     <item>
       <title>Sorting Algorithm</title>
-      <link>http://localhost:1313/tags/sorting-algorithm/</link>
+      <link>https://ryotaro.dev/tags/sorting-algorithm/</link>
       <pubDate>Sun, 14 Jan 2024 23:32:24 -0500</pubDate>
-      <guid>http://localhost:1313/tags/sorting-algorithm/</guid>
+      <guid>https://ryotaro.dev/tags/sorting-algorithm/</guid>
       <description></description>
     </item>
     <item>
       <title>近似最近傍探索</title>
-      <link>http://localhost:1313/tags/%E8%BF%91%E4%BC%BC%E6%9C%80%E8%BF%91%E5%82%8D%E6%8E%A2%E7%B4%A2/</link>
+      <link>https://ryotaro.dev/tags/%E8%BF%91%E4%BC%BC%E6%9C%80%E8%BF%91%E5%82%8D%E6%8E%A2%E7%B4%A2/</link>
       <pubDate>Mon, 01 Jan 2024 22:21:27 -0500</pubDate>
-      <guid>http://localhost:1313/tags/%E8%BF%91%E4%BC%BC%E6%9C%80%E8%BF%91%E5%82%8D%E6%8E%A2%E7%B4%A2/</guid>
+      <guid>https://ryotaro.dev/tags/%E8%BF%91%E4%BC%BC%E6%9C%80%E8%BF%91%E5%82%8D%E6%8E%A2%E7%B4%A2/</guid>
       <description></description>
     </item>
     <item>
       <title>Conflict-Free Replicated Data Types</title>
-      <link>http://localhost:1313/tags/conflict-free-replicated-data-types/</link>
+      <link>https://ryotaro.dev/tags/conflict-free-replicated-data-types/</link>
       <pubDate>Sun, 31 Dec 2023 14:31:58 -0500</pubDate>
-      <guid>http://localhost:1313/tags/conflict-free-replicated-data-types/</guid>
+      <guid>https://ryotaro.dev/tags/conflict-free-replicated-data-types/</guid>
       <description></description>
     </item>
     <item>
       <title>質問応答</title>
-      <link>http://localhost:1313/tags/%E8%B3%AA%E5%95%8F%E5%BF%9C%E7%AD%94/</link>
+      <link>https://ryotaro.dev/tags/%E8%B3%AA%E5%95%8F%E5%BF%9C%E7%AD%94/</link>
       <pubDate>Sat, 30 Dec 2023 00:42:11 -0500</pubDate>
-      <guid>http://localhost:1313/tags/%E8%B3%AA%E5%95%8F%E5%BF%9C%E7%AD%94/</guid>
+      <guid>https://ryotaro.dev/tags/%E8%B3%AA%E5%95%8F%E5%BF%9C%E7%AD%94/</guid>
       <description></description>
     </item>
     <item>
       <title>CAP定理</title>
-      <link>http://localhost:1313/tags/cap%E5%AE%9A%E7%90%86/</link>
+      <link>https://ryotaro.dev/tags/cap%E5%AE%9A%E7%90%86/</link>
       <pubDate>Sat, 23 Dec 2023 11:47:05 -0500</pubDate>
-      <guid>http://localhost:1313/tags/cap%E5%AE%9A%E7%90%86/</guid>
+      <guid>https://ryotaro.dev/tags/cap%E5%AE%9A%E7%90%86/</guid>
       <description></description>
     </item>
     <item>
       <title>Recommendation</title>
-      <link>http://localhost:1313/tags/recommendation/</link>
+      <link>https://ryotaro.dev/tags/recommendation/</link>
       <pubDate>Sat, 16 Dec 2023 09:48:32 -0500</pubDate>
-      <guid>http://localhost:1313/tags/recommendation/</guid>
+      <guid>https://ryotaro.dev/tags/recommendation/</guid>
       <description></description>
     </item>
     <item>
       <title>TCP</title>
-      <link>http://localhost:1313/tags/tcp/</link>
+      <link>https://ryotaro.dev/tags/tcp/</link>
       <pubDate>Sat, 09 Dec 2023 12:24:23 -0500</pubDate>
-      <guid>http://localhost:1313/tags/tcp/</guid>
+      <guid>https://ryotaro.dev/tags/tcp/</guid>
       <description></description>
     </item>
     <item>
       <title>潜在意味解析</title>
-      <link>http://localhost:1313/tags/%E6%BD%9C%E5%9C%A8%E6%84%8F%E5%91%B3%E8%A7%A3%E6%9E%90/</link>
+      <link>https://ryotaro.dev/tags/%E6%BD%9C%E5%9C%A8%E6%84%8F%E5%91%B3%E8%A7%A3%E6%9E%90/</link>
       <pubDate>Sat, 02 Dec 2023 11:27:38 -0500</pubDate>
-      <guid>http://localhost:1313/tags/%E6%BD%9C%E5%9C%A8%E6%84%8F%E5%91%B3%E8%A7%A3%E6%9E%90/</guid>
+      <guid>https://ryotaro.dev/tags/%E6%BD%9C%E5%9C%A8%E6%84%8F%E5%91%B3%E8%A7%A3%E6%9E%90/</guid>
       <description></description>
     </item>
     <item>
       <title>Peer-to-Peer</title>
-      <link>http://localhost:1313/tags/peer-to-peer/</link>
+      <link>https://ryotaro.dev/tags/peer-to-peer/</link>
       <pubDate>Thu, 23 Nov 2023 12:31:01 -0500</pubDate>
-      <guid>http://localhost:1313/tags/peer-to-peer/</guid>
+      <guid>https://ryotaro.dev/tags/peer-to-peer/</guid>
       <description></description>
     </item>
     <item>
       <title>BERT</title>
-      <link>http://localhost:1313/tags/bert/</link>
+      <link>https://ryotaro.dev/tags/bert/</link>
       <pubDate>Sat, 04 Nov 2023 06:43:01 -0400</pubDate>
-      <guid>http://localhost:1313/tags/bert/</guid>
+      <guid>https://ryotaro.dev/tags/bert/</guid>
       <description></description>
     </item>
     <item>
       <title>知識蒸留</title>
-      <link>http://localhost:1313/tags/%E7%9F%A5%E8%AD%98%E8%92%B8%E7%95%99/</link>
+      <link>https://ryotaro.dev/tags/%E7%9F%A5%E8%AD%98%E8%92%B8%E7%95%99/</link>
       <pubDate>Sat, 04 Nov 2023 06:43:01 -0400</pubDate>
-      <guid>http://localhost:1313/tags/%E7%9F%A5%E8%AD%98%E8%92%B8%E7%95%99/</guid>
+      <guid>https://ryotaro.dev/tags/%E7%9F%A5%E8%AD%98%E8%92%B8%E7%95%99/</guid>
       <description></description>
     </item>
     <item>
       <title>コンパイラ</title>
-      <link>http://localhost:1313/tags/%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9/</link>
+      <link>https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9/</link>
       <pubDate>Mon, 23 Oct 2023 13:49:48 -0400</pubDate>
-      <guid>http://localhost:1313/tags/%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9/</guid>
       <description></description>
     </item>
     <item>
       <title>活性化関数</title>
-      <link>http://localhost:1313/tags/%E6%B4%BB%E6%80%A7%E5%8C%96%E9%96%A2%E6%95%B0/</link>
+      <link>https://ryotaro.dev/tags/%E6%B4%BB%E6%80%A7%E5%8C%96%E9%96%A2%E6%95%B0/</link>
       <pubDate>Sat, 21 Oct 2023 10:00:49 -0400</pubDate>
-      <guid>http://localhost:1313/tags/%E6%B4%BB%E6%80%A7%E5%8C%96%E9%96%A2%E6%95%B0/</guid>
+      <guid>https://ryotaro.dev/tags/%E6%B4%BB%E6%80%A7%E5%8C%96%E9%96%A2%E6%95%B0/</guid>
       <description></description>
     </item>
     <item>
       <title>構造化プログラミング</title>
-      <link>http://localhost:1313/tags/%E6%A7%8B%E9%80%A0%E5%8C%96%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/</link>
+      <link>https://ryotaro.dev/tags/%E6%A7%8B%E9%80%A0%E5%8C%96%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/</link>
       <pubDate>Sun, 08 Oct 2023 09:38:50 -0400</pubDate>
-      <guid>http://localhost:1313/tags/%E6%A7%8B%E9%80%A0%E5%8C%96%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/</guid>
+      <guid>https://ryotaro.dev/tags/%E6%A7%8B%E9%80%A0%E5%8C%96%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/</guid>
       <description></description>
     </item>
     <item>
       <title>Communicating Sequential Processes</title>
-      <link>http://localhost:1313/tags/communicating-sequential-processes/</link>
+      <link>https://ryotaro.dev/tags/communicating-sequential-processes/</link>
       <pubDate>Sat, 30 Sep 2023 11:34:47 -0400</pubDate>
-      <guid>http://localhost:1313/tags/communicating-sequential-processes/</guid>
+      <guid>https://ryotaro.dev/tags/communicating-sequential-processes/</guid>
       <description></description>
     </item>
     <item>
       <title>Concurrent Programming</title>
-      <link>http://localhost:1313/tags/concurrent-programming/</link>
+      <link>https://ryotaro.dev/tags/concurrent-programming/</link>
       <pubDate>Sat, 30 Sep 2023 11:34:47 -0400</pubDate>
-      <guid>http://localhost:1313/tags/concurrent-programming/</guid>
+      <guid>https://ryotaro.dev/tags/concurrent-programming/</guid>
       <description></description>
     </item>
     <item>
       <title>コサイン類似度</title>
-      <link>http://localhost:1313/tags/%E3%82%B3%E3%82%B5%E3%82%A4%E3%83%B3%E9%A1%9E%E4%BC%BC%E5%BA%A6/</link>
+      <link>https://ryotaro.dev/tags/%E3%82%B3%E3%82%B5%E3%82%A4%E3%83%B3%E9%A1%9E%E4%BC%BC%E5%BA%A6/</link>
       <pubDate>Sat, 23 Sep 2023 10:21:03 -0400</pubDate>
-      <guid>http://localhost:1313/tags/%E3%82%B3%E3%82%B5%E3%82%A4%E3%83%B3%E9%A1%9E%E4%BC%BC%E5%BA%A6/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%82%B3%E3%82%B5%E3%82%A4%E3%83%B3%E9%A1%9E%E4%BC%BC%E5%BA%A6/</guid>
       <description></description>
     </item>
     <item>
       <title>マルチタスク学習</title>
-      <link>http://localhost:1313/tags/%E3%83%9E%E3%83%AB%E3%83%81%E3%82%BF%E3%82%B9%E3%82%AF%E5%AD%A6%E7%BF%92/</link>
+      <link>https://ryotaro.dev/tags/%E3%83%9E%E3%83%AB%E3%83%81%E3%82%BF%E3%82%B9%E3%82%AF%E5%AD%A6%E7%BF%92/</link>
       <pubDate>Sat, 16 Sep 2023 08:59:45 -0400</pubDate>
-      <guid>http://localhost:1313/tags/%E3%83%9E%E3%83%AB%E3%83%81%E3%82%BF%E3%82%B9%E3%82%AF%E5%AD%A6%E7%BF%92/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%83%9E%E3%83%AB%E3%83%81%E3%82%BF%E3%82%B9%E3%82%AF%E5%AD%A6%E7%BF%92/</guid>
       <description></description>
     </item>
     <item>
       <title>情報量</title>
-      <link>http://localhost:1313/tags/%E6%83%85%E5%A0%B1%E9%87%8F/</link>
+      <link>https://ryotaro.dev/tags/%E6%83%85%E5%A0%B1%E9%87%8F/</link>
       <pubDate>Sat, 09 Sep 2023 12:10:45 -0400</pubDate>
-      <guid>http://localhost:1313/tags/%E6%83%85%E5%A0%B1%E9%87%8F/</guid>
+      <guid>https://ryotaro.dev/tags/%E6%83%85%E5%A0%B1%E9%87%8F/</guid>
       <description></description>
     </item>
     <item>
       <title>Byte Pair Encoding</title>
-      <link>http://localhost:1313/tags/byte-pair-encoding/</link>
+      <link>https://ryotaro.dev/tags/byte-pair-encoding/</link>
       <pubDate>Sun, 27 Aug 2023 13:13:39 -0400</pubDate>
-      <guid>http://localhost:1313/tags/byte-pair-encoding/</guid>
+      <guid>https://ryotaro.dev/tags/byte-pair-encoding/</guid>
       <description></description>
     </item>
     <item>
       <title>Early Programming</title>
-      <link>http://localhost:1313/tags/early-programming/</link>
+      <link>https://ryotaro.dev/tags/early-programming/</link>
       <pubDate>Sat, 26 Aug 2023 10:46:18 -0400</pubDate>
-      <guid>http://localhost:1313/tags/early-programming/</guid>
+      <guid>https://ryotaro.dev/tags/early-programming/</guid>
       <description></description>
     </item>
     <item>
       <title>Attention</title>
-      <link>http://localhost:1313/tags/attention/</link>
+      <link>https://ryotaro.dev/tags/attention/</link>
       <pubDate>Sat, 19 Aug 2023 10:02:50 -0400</pubDate>
-      <guid>http://localhost:1313/tags/attention/</guid>
+      <guid>https://ryotaro.dev/tags/attention/</guid>
       <description></description>
     </item>
     <item>
       <title>スプレー木</title>
-      <link>http://localhost:1313/tags/%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC%E6%9C%A8/</link>
+      <link>https://ryotaro.dev/tags/%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC%E6%9C%A8/</link>
       <pubDate>Sat, 12 Aug 2023 13:49:56 -0400</pubDate>
-      <guid>http://localhost:1313/tags/%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC%E6%9C%A8/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%82%B9%E3%83%97%E3%83%AC%E3%83%BC%E6%9C%A8/</guid>
       <description></description>
     </item>
     <item>
       <title>カタラン数</title>
-      <link>http://localhost:1313/tags/%E3%82%AB%E3%82%BF%E3%83%A9%E3%83%B3%E6%95%B0/</link>
+      <link>https://ryotaro.dev/tags/%E3%82%AB%E3%82%BF%E3%83%A9%E3%83%B3%E6%95%B0/</link>
       <pubDate>Sat, 29 Jul 2023 15:24:15 -0400</pubDate>
-      <guid>http://localhost:1313/tags/%E3%82%AB%E3%82%BF%E3%83%A9%E3%83%B3%E6%95%B0/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%82%AB%E3%82%BF%E3%83%A9%E3%83%B3%E6%95%B0/</guid>
       <description></description>
     </item>
     <item>
       <title>層正規化</title>
-      <link>http://localhost:1313/tags/%E5%B1%A4%E6%AD%A3%E8%A6%8F%E5%8C%96/</link>
+      <link>https://ryotaro.dev/tags/%E5%B1%A4%E6%AD%A3%E8%A6%8F%E5%8C%96/</link>
       <pubDate>Sat, 17 Jun 2023 10:18:51 -0400</pubDate>
-      <guid>http://localhost:1313/tags/%E5%B1%A4%E6%AD%A3%E8%A6%8F%E5%8C%96/</guid>
+      <guid>https://ryotaro.dev/tags/%E5%B1%A4%E6%AD%A3%E8%A6%8F%E5%8C%96/</guid>
       <description></description>
     </item>
     <item>
       <title>Hash Function</title>
-      <link>http://localhost:1313/tags/hash-function/</link>
+      <link>https://ryotaro.dev/tags/hash-function/</link>
       <pubDate>Sat, 10 Jun 2023 17:32:42 -0400</pubDate>
-      <guid>http://localhost:1313/tags/hash-function/</guid>
+      <guid>https://ryotaro.dev/tags/hash-function/</guid>
       <description></description>
     </item>
     <item>
       <title>言語モデル</title>
-      <link>http://localhost:1313/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/</link>
+      <link>https://ryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/</link>
       <pubDate>Sat, 03 Jun 2023 12:32:35 -0400</pubDate>
-      <guid>http://localhost:1313/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/</guid>
+      <guid>https://ryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/</guid>
       <description></description>
     </item>
     <item>
       <title>多言語言語モデル</title>
-      <link>http://localhost:1313/tags/%E5%A4%9A%E8%A8%80%E8%AA%9E%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/</link>
+      <link>https://ryotaro.dev/tags/%E5%A4%9A%E8%A8%80%E8%AA%9E%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/</link>
       <pubDate>Sat, 03 Jun 2023 12:32:35 -0400</pubDate>
-      <guid>http://localhost:1313/tags/%E5%A4%9A%E8%A8%80%E8%AA%9E%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/</guid>
+      <guid>https://ryotaro.dev/tags/%E5%A4%9A%E8%A8%80%E8%AA%9E%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/</guid>
       <description></description>
     </item>
     <item>
       <title>Embedding</title>
-      <link>http://localhost:1313/tags/embedding/</link>
+      <link>https://ryotaro.dev/tags/embedding/</link>
       <pubDate>Sun, 21 May 2023 14:43:39 -0400</pubDate>
-      <guid>http://localhost:1313/tags/embedding/</guid>
+      <guid>https://ryotaro.dev/tags/embedding/</guid>
       <description></description>
     </item>
     <item>
       <title>機械翻訳</title>
-      <link>http://localhost:1313/tags/%E6%A9%9F%E6%A2%B0%E7%BF%BB%E8%A8%B3/</link>
+      <link>https://ryotaro.dev/tags/%E6%A9%9F%E6%A2%B0%E7%BF%BB%E8%A8%B3/</link>
       <pubDate>Sun, 21 May 2023 14:43:39 -0400</pubDate>
-      <guid>http://localhost:1313/tags/%E6%A9%9F%E6%A2%B0%E7%BF%BB%E8%A8%B3/</guid>
+      <guid>https://ryotaro.dev/tags/%E6%A9%9F%E6%A2%B0%E7%BF%BB%E8%A8%B3/</guid>
       <description></description>
     </item>
     <item>
       <title>データ構造</title>
-      <link>http://localhost:1313/tags/%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0/</link>
+      <link>https://ryotaro.dev/tags/%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0/</link>
       <pubDate>Sat, 06 May 2023 15:03:48 -0400</pubDate>
-      <guid>http://localhost:1313/tags/%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0/</guid>
       <description></description>
     </item>
     <item>
       <title>画像認識</title>
-      <link>http://localhost:1313/tags/%E7%94%BB%E5%83%8F%E8%AA%8D%E8%AD%98/</link>
+      <link>https://ryotaro.dev/tags/%E7%94%BB%E5%83%8F%E8%AA%8D%E8%AD%98/</link>
       <pubDate>Sat, 29 Apr 2023 12:12:11 -0400</pubDate>
-      <guid>http://localhost:1313/tags/%E7%94%BB%E5%83%8F%E8%AA%8D%E8%AD%98/</guid>
+      <guid>https://ryotaro.dev/tags/%E7%94%BB%E5%83%8F%E8%AA%8D%E8%AD%98/</guid>
       <description></description>
     </item>
     <item>
       <title>ハッシュテーブル</title>
-      <link>http://localhost:1313/tags/%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB/</link>
+      <link>https://ryotaro.dev/tags/%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB/</link>
       <pubDate>Sat, 08 Apr 2023 12:38:44 -0400</pubDate>
-      <guid>http://localhost:1313/tags/%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB/</guid>
       <description></description>
     </item>
     <item>
       <title>形式手法</title>
-      <link>http://localhost:1313/tags/%E5%BD%A2%E5%BC%8F%E6%89%8B%E6%B3%95/</link>
+      <link>https://ryotaro.dev/tags/%E5%BD%A2%E5%BC%8F%E6%89%8B%E6%B3%95/</link>
       <pubDate>Sat, 25 Mar 2023 12:34:08 -0400</pubDate>
-      <guid>http://localhost:1313/tags/%E5%BD%A2%E5%BC%8F%E6%89%8B%E6%B3%95/</guid>
+      <guid>https://ryotaro.dev/tags/%E5%BD%A2%E5%BC%8F%E6%89%8B%E6%B3%95/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>強化学習</title>
+      <link>https://ryotaro.dev/tags/%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92/</link>
+      <pubDate>Mon, 20 Mar 2023 11:54:48 -0400</pubDate>
+      <guid>https://ryotaro.dev/tags/%E5%BC%B7%E5%8C%96%E5%AD%A6%E7%BF%92/</guid>
       <description></description>
     </item>
     <item>
       <title>競技プログラミング</title>
-      <link>http://localhost:1313/tags/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/</link>
+      <link>https://ryotaro.dev/tags/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/</link>
       <pubDate>Wed, 15 Mar 2023 11:04:07 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/</guid>
+      <guid>https://ryotaro.dev/tags/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/</guid>
       <description></description>
     </item>
     <item>
       <title>クラスタリング</title>
-      <link>http://localhost:1313/tags/%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/</link>
+      <link>https://ryotaro.dev/tags/%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/</link>
       <pubDate>Sun, 19 Feb 2023 20:23:11 -0500</pubDate>
-      <guid>http://localhost:1313/tags/%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0/</guid>
       <description></description>
     </item>
     <item>
       <title>Zookeeper</title>
-      <link>http://localhost:1313/tags/zookeeper/</link>
+      <link>https://ryotaro.dev/tags/zookeeper/</link>
       <pubDate>Sun, 12 Feb 2023 15:47:06 -0500</pubDate>
-      <guid>http://localhost:1313/tags/zookeeper/</guid>
+      <guid>https://ryotaro.dev/tags/zookeeper/</guid>
       <description></description>
     </item>
     <item>
       <title>ランキング学習</title>
-      <link>http://localhost:1313/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/</link>
+      <link>https://ryotaro.dev/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/</link>
       <pubDate>Fri, 03 Feb 2023 16:55:53 -0500</pubDate>
-      <guid>http://localhost:1313/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/</guid>
       <description></description>
     </item>
     <item>
       <title>CAP</title>
-      <link>http://localhost:1313/tags/cap/</link>
+      <link>https://ryotaro.dev/tags/cap/</link>
       <pubDate>Tue, 17 Jan 2023 11:42:12 -0500</pubDate>
-      <guid>http://localhost:1313/tags/cap/</guid>
+      <guid>https://ryotaro.dev/tags/cap/</guid>
       <description></description>
     </item>
     <item>
       <title>抽象データ型</title>
-      <link>http://localhost:1313/tags/%E6%8A%BD%E8%B1%A1%E3%83%87%E3%83%BC%E3%82%BF%E5%9E%8B/</link>
+      <link>https://ryotaro.dev/tags/%E6%8A%BD%E8%B1%A1%E3%83%87%E3%83%BC%E3%82%BF%E5%9E%8B/</link>
       <pubDate>Wed, 28 Dec 2022 12:52:36 -0500</pubDate>
-      <guid>http://localhost:1313/tags/%E6%8A%BD%E8%B1%A1%E3%83%87%E3%83%BC%E3%82%BF%E5%9E%8B/</guid>
+      <guid>https://ryotaro.dev/tags/%E6%8A%BD%E8%B1%A1%E3%83%87%E3%83%BC%E3%82%BF%E5%9E%8B/</guid>
       <description></description>
     </item>
     <item>
       <title>ウェブ検索</title>
-      <link>http://localhost:1313/tags/%E3%82%A6%E3%82%A7%E3%83%96%E6%A4%9C%E7%B4%A2/</link>
+      <link>https://ryotaro.dev/tags/%E3%82%A6%E3%82%A7%E3%83%96%E6%A4%9C%E7%B4%A2/</link>
       <pubDate>Fri, 23 Dec 2022 22:44:46 -0500</pubDate>
-      <guid>http://localhost:1313/tags/%E3%82%A6%E3%82%A7%E3%83%96%E6%A4%9C%E7%B4%A2/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%82%A6%E3%82%A7%E3%83%96%E6%A4%9C%E7%B4%A2/</guid>
       <description></description>
     </item>
     <item>
       <title>レプリケーション</title>
-      <link>http://localhost:1313/tags/%E3%83%AC%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/</link>
+      <link>https://ryotaro.dev/tags/%E3%83%AC%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/</link>
       <pubDate>Mon, 19 Dec 2022 11:07:49 -0500</pubDate>
-      <guid>http://localhost:1313/tags/%E3%83%AC%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%83%AC%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3/</guid>
       <description></description>
     </item>
     <item>
       <title>文書間類似度</title>
-      <link>http://localhost:1313/tags/%E6%96%87%E6%9B%B8%E9%96%93%E9%A1%9E%E4%BC%BC%E5%BA%A6/</link>
+      <link>https://ryotaro.dev/tags/%E6%96%87%E6%9B%B8%E9%96%93%E9%A1%9E%E4%BC%BC%E5%BA%A6/</link>
       <pubDate>Tue, 13 Dec 2022 13:38:46 -0500</pubDate>
-      <guid>http://localhost:1313/tags/%E6%96%87%E6%9B%B8%E9%96%93%E9%A1%9E%E4%BC%BC%E5%BA%A6/</guid>
+      <guid>https://ryotaro.dev/tags/%E6%96%87%E6%9B%B8%E9%96%93%E9%A1%9E%E4%BC%BC%E5%BA%A6/</guid>
       <description></description>
     </item>
     <item>
       <title>異常検知</title>
-      <link>http://localhost:1313/tags/%E7%95%B0%E5%B8%B8%E6%A4%9C%E7%9F%A5/</link>
+      <link>https://ryotaro.dev/tags/%E7%95%B0%E5%B8%B8%E6%A4%9C%E7%9F%A5/</link>
       <pubDate>Mon, 28 Nov 2022 12:22:20 -0500</pubDate>
-      <guid>http://localhost:1313/tags/%E7%95%B0%E5%B8%B8%E6%A4%9C%E7%9F%A5/</guid>
+      <guid>https://ryotaro.dev/tags/%E7%95%B0%E5%B8%B8%E6%A4%9C%E7%9F%A5/</guid>
       <description></description>
     </item>
     <item>
       <title>プログラミングモデル</title>
-      <link>http://localhost:1313/tags/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%A2%E3%83%87%E3%83%AB/</link>
+      <link>https://ryotaro.dev/tags/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%A2%E3%83%87%E3%83%AB/</link>
       <pubDate>Wed, 23 Nov 2022 11:44:08 -0500</pubDate>
-      <guid>http://localhost:1313/tags/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%A2%E3%83%87%E3%83%AB/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%83%A2%E3%83%87%E3%83%AB/</guid>
       <description></description>
     </item>
     <item>
       <title>Under Sampling</title>
-      <link>http://localhost:1313/tags/under-sampling/</link>
+      <link>https://ryotaro.dev/tags/under-sampling/</link>
       <pubDate>Sun, 13 Nov 2022 12:18:12 -0500</pubDate>
-      <guid>http://localhost:1313/tags/under-sampling/</guid>
+      <guid>https://ryotaro.dev/tags/under-sampling/</guid>
       <description></description>
     </item>
     <item>
       <title>Bloom Filter</title>
-      <link>http://localhost:1313/tags/bloom-filter/</link>
+      <link>https://ryotaro.dev/tags/bloom-filter/</link>
       <pubDate>Sat, 20 Feb 2021 16:46:44 +0900</pubDate>
-      <guid>http://localhost:1313/tags/bloom-filter/</guid>
+      <guid>https://ryotaro.dev/tags/bloom-filter/</guid>
       <description></description>
     </item>
     <item>
       <title>Raft</title>
-      <link>http://localhost:1313/tags/raft/</link>
+      <link>https://ryotaro.dev/tags/raft/</link>
       <pubDate>Mon, 09 Mar 2020 02:17:22 +0900</pubDate>
-      <guid>http://localhost:1313/tags/raft/</guid>
+      <guid>https://ryotaro.dev/tags/raft/</guid>
       <description></description>
     </item>
     <item>
       <title>コンセンサス アルゴリズム</title>
-      <link>http://localhost:1313/tags/%E3%82%B3%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%B5%E3%82%B9-%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0/</link>
+      <link>https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%B5%E3%82%B9-%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0/</link>
       <pubDate>Mon, 09 Mar 2020 02:17:22 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E3%82%B3%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%B5%E3%82%B9-%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%B5%E3%82%B9-%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0/</guid>
       <description></description>
     </item>
     <item>
       <title>SentencePiece</title>
-      <link>http://localhost:1313/tags/sentencepiece/</link>
+      <link>https://ryotaro.dev/tags/sentencepiece/</link>
       <pubDate>Sat, 29 Feb 2020 21:15:17 +0900</pubDate>
-      <guid>http://localhost:1313/tags/sentencepiece/</guid>
+      <guid>https://ryotaro.dev/tags/sentencepiece/</guid>
       <description></description>
     </item>
     <item>
       <title>トピックモデル</title>
-      <link>http://localhost:1313/tags/%E3%83%88%E3%83%94%E3%83%83%E3%82%AF%E3%83%A2%E3%83%87%E3%83%AB/</link>
+      <link>https://ryotaro.dev/tags/%E3%83%88%E3%83%94%E3%83%83%E3%82%AF%E3%83%A2%E3%83%87%E3%83%AB/</link>
       <pubDate>Sun, 23 Feb 2020 21:54:59 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E3%83%88%E3%83%94%E3%83%83%E3%82%AF%E3%83%A2%E3%83%87%E3%83%AB/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%83%88%E3%83%94%E3%83%83%E3%82%AF%E3%83%A2%E3%83%87%E3%83%AB/</guid>
       <description></description>
     </item>
     <item>
       <title>Pretraining</title>
-      <link>http://localhost:1313/tags/pretraining/</link>
+      <link>https://ryotaro.dev/tags/pretraining/</link>
       <pubDate>Sun, 16 Feb 2020 14:21:55 +0900</pubDate>
-      <guid>http://localhost:1313/tags/pretraining/</guid>
+      <guid>https://ryotaro.dev/tags/pretraining/</guid>
       <description></description>
     </item>
     <item>
       <title>Seq2seq</title>
-      <link>http://localhost:1313/tags/seq2seq/</link>
+      <link>https://ryotaro.dev/tags/seq2seq/</link>
       <pubDate>Sun, 16 Feb 2020 14:21:55 +0900</pubDate>
-      <guid>http://localhost:1313/tags/seq2seq/</guid>
+      <guid>https://ryotaro.dev/tags/seq2seq/</guid>
       <description></description>
     </item>
     <item>
       <title>説明可能なAI</title>
-      <link>http://localhost:1313/tags/%E8%AA%AC%E6%98%8E%E5%8F%AF%E8%83%BD%E3%81%AAai/</link>
+      <link>https://ryotaro.dev/tags/%E8%AA%AC%E6%98%8E%E5%8F%AF%E8%83%BD%E3%81%AAai/</link>
       <pubDate>Sun, 26 Jan 2020 01:38:57 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E8%AA%AC%E6%98%8E%E5%8F%AF%E8%83%BD%E3%81%AAai/</guid>
+      <guid>https://ryotaro.dev/tags/%E8%AA%AC%E6%98%8E%E5%8F%AF%E8%83%BD%E3%81%AAai/</guid>
       <description></description>
     </item>
     <item>
       <title>能動学習</title>
-      <link>http://localhost:1313/tags/%E8%83%BD%E5%8B%95%E5%AD%A6%E7%BF%92/</link>
+      <link>https://ryotaro.dev/tags/%E8%83%BD%E5%8B%95%E5%AD%A6%E7%BF%92/</link>
       <pubDate>Sun, 19 Jan 2020 18:23:41 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E8%83%BD%E5%8B%95%E5%AD%A6%E7%BF%92/</guid>
+      <guid>https://ryotaro.dev/tags/%E8%83%BD%E5%8B%95%E5%AD%A6%E7%BF%92/</guid>
       <description></description>
     </item>
     <item>
       <title>NER</title>
-      <link>http://localhost:1313/tags/ner/</link>
+      <link>https://ryotaro.dev/tags/ner/</link>
       <pubDate>Mon, 13 Jan 2020 19:54:03 +0900</pubDate>
-      <guid>http://localhost:1313/tags/ner/</guid>
+      <guid>https://ryotaro.dev/tags/ner/</guid>
       <description></description>
     </item>
     <item>
       <title>教師なし学習</title>
-      <link>http://localhost:1313/tags/%E6%95%99%E5%B8%AB%E3%81%AA%E3%81%97%E5%AD%A6%E7%BF%92/</link>
+      <link>https://ryotaro.dev/tags/%E6%95%99%E5%B8%AB%E3%81%AA%E3%81%97%E5%AD%A6%E7%BF%92/</link>
       <pubDate>Mon, 13 Jan 2020 19:54:03 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E6%95%99%E5%B8%AB%E3%81%AA%E3%81%97%E5%AD%A6%E7%BF%92/</guid>
+      <guid>https://ryotaro.dev/tags/%E6%95%99%E5%B8%AB%E3%81%AA%E3%81%97%E5%AD%A6%E7%BF%92/</guid>
       <description></description>
     </item>
     <item>
       <title>マルチラベル分類</title>
-      <link>http://localhost:1313/tags/%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A9%E3%83%99%E3%83%AB%E5%88%86%E9%A1%9E/</link>
+      <link>https://ryotaro.dev/tags/%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A9%E3%83%99%E3%83%AB%E5%88%86%E9%A1%9E/</link>
       <pubDate>Mon, 06 Jan 2020 22:27:05 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A9%E3%83%99%E3%83%AB%E5%88%86%E9%A1%9E/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A9%E3%83%99%E3%83%AB%E5%88%86%E9%A1%9E/</guid>
       <description></description>
     </item>
     <item>
       <title>Label Noise</title>
-      <link>http://localhost:1313/tags/label-noise/</link>
+      <link>https://ryotaro.dev/tags/label-noise/</link>
       <pubDate>Mon, 30 Dec 2019 16:07:40 +0900</pubDate>
-      <guid>http://localhost:1313/tags/label-noise/</guid>
+      <guid>https://ryotaro.dev/tags/label-noise/</guid>
       <description></description>
     </item>
     <item>
       <title>サーベイ論文</title>
-      <link>http://localhost:1313/tags/%E3%82%B5%E3%83%BC%E3%83%99%E3%82%A4%E8%AB%96%E6%96%87/</link>
+      <link>https://ryotaro.dev/tags/%E3%82%B5%E3%83%BC%E3%83%99%E3%82%A4%E8%AB%96%E6%96%87/</link>
       <pubDate>Mon, 30 Dec 2019 16:07:40 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E3%82%B5%E3%83%BC%E3%83%99%E3%82%A4%E8%AB%96%E6%96%87/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%82%B5%E3%83%BC%E3%83%99%E3%82%A4%E8%AB%96%E6%96%87/</guid>
       <description></description>
     </item>
     <item>
       <title>Empirical Research</title>
-      <link>http://localhost:1313/tags/empirical-research/</link>
+      <link>https://ryotaro.dev/tags/empirical-research/</link>
       <pubDate>Sat, 14 Dec 2019 13:25:04 +0900</pubDate>
-      <guid>http://localhost:1313/tags/empirical-research/</guid>
+      <guid>https://ryotaro.dev/tags/empirical-research/</guid>
       <description></description>
     </item>
     <item>
       <title>MLOps</title>
-      <link>http://localhost:1313/tags/mlops/</link>
+      <link>https://ryotaro.dev/tags/mlops/</link>
       <pubDate>Sat, 14 Dec 2019 13:25:04 +0900</pubDate>
-      <guid>http://localhost:1313/tags/mlops/</guid>
+      <guid>https://ryotaro.dev/tags/mlops/</guid>
       <description></description>
     </item>
     <item>
       <title>Confidence Calibration</title>
-      <link>http://localhost:1313/tags/confidence-calibration/</link>
+      <link>https://ryotaro.dev/tags/confidence-calibration/</link>
       <pubDate>Sat, 23 Nov 2019 14:37:30 +0900</pubDate>
-      <guid>http://localhost:1313/tags/confidence-calibration/</guid>
+      <guid>https://ryotaro.dev/tags/confidence-calibration/</guid>
       <description></description>
     </item>
     <item>
       <title>Nearest Neighbor</title>
-      <link>http://localhost:1313/tags/nearest-neighbor/</link>
+      <link>https://ryotaro.dev/tags/nearest-neighbor/</link>
       <pubDate>Sat, 16 Nov 2019 13:12:52 +0900</pubDate>
-      <guid>http://localhost:1313/tags/nearest-neighbor/</guid>
+      <guid>https://ryotaro.dev/tags/nearest-neighbor/</guid>
       <description></description>
     </item>
     <item>
       <title>Weak Supervision</title>
-      <link>http://localhost:1313/tags/weak-supervision/</link>
+      <link>https://ryotaro.dev/tags/weak-supervision/</link>
       <pubDate>Sat, 09 Nov 2019 21:46:12 +0900</pubDate>
-      <guid>http://localhost:1313/tags/weak-supervision/</guid>
+      <guid>https://ryotaro.dev/tags/weak-supervision/</guid>
       <description></description>
     </item>
     <item>
       <title>データ収集</title>
-      <link>http://localhost:1313/tags/%E3%83%87%E3%83%BC%E3%82%BF%E5%8F%8E%E9%9B%86/</link>
+      <link>https://ryotaro.dev/tags/%E3%83%87%E3%83%BC%E3%82%BF%E5%8F%8E%E9%9B%86/</link>
       <pubDate>Thu, 31 Oct 2019 21:09:38 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E3%83%87%E3%83%BC%E3%82%BF%E5%8F%8E%E9%9B%86/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%83%87%E3%83%BC%E3%82%BF%E5%8F%8E%E9%9B%86/</guid>
       <description></description>
     </item>
     <item>
       <title>特徴選択</title>
-      <link>http://localhost:1313/tags/%E7%89%B9%E5%BE%B4%E9%81%B8%E6%8A%9E/</link>
+      <link>https://ryotaro.dev/tags/%E7%89%B9%E5%BE%B4%E9%81%B8%E6%8A%9E/</link>
       <pubDate>Sat, 12 Oct 2019 15:59:09 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E7%89%B9%E5%BE%B4%E9%81%B8%E6%8A%9E/</guid>
+      <guid>https://ryotaro.dev/tags/%E7%89%B9%E5%BE%B4%E9%81%B8%E6%8A%9E/</guid>
       <description></description>
     </item>
     <item>
       <title>不均衡データ</title>
-      <link>http://localhost:1313/tags/%E4%B8%8D%E5%9D%87%E8%A1%A1%E3%83%87%E3%83%BC%E3%82%BF/</link>
+      <link>https://ryotaro.dev/tags/%E4%B8%8D%E5%9D%87%E8%A1%A1%E3%83%87%E3%83%BC%E3%82%BF/</link>
       <pubDate>Sat, 12 Oct 2019 15:59:09 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E4%B8%8D%E5%9D%87%E8%A1%A1%E3%83%87%E3%83%BC%E3%82%BF/</guid>
+      <guid>https://ryotaro.dev/tags/%E4%B8%8D%E5%9D%87%E8%A1%A1%E3%83%87%E3%83%BC%E3%82%BF/</guid>
       <description></description>
     </item>
     <item>
       <title>Active Learning</title>
-      <link>http://localhost:1313/tags/active-learning/</link>
+      <link>https://ryotaro.dev/tags/active-learning/</link>
       <pubDate>Sat, 31 Aug 2019 02:05:53 +0900</pubDate>
-      <guid>http://localhost:1313/tags/active-learning/</guid>
+      <guid>https://ryotaro.dev/tags/active-learning/</guid>
       <description></description>
     </item>
     <item>
       <title>Extreme Classification</title>
-      <link>http://localhost:1313/tags/extreme-classification/</link>
+      <link>https://ryotaro.dev/tags/extreme-classification/</link>
       <pubDate>Sat, 24 Aug 2019 15:45:40 +0900</pubDate>
-      <guid>http://localhost:1313/tags/extreme-classification/</guid>
+      <guid>https://ryotaro.dev/tags/extreme-classification/</guid>
       <description></description>
     </item>
     <item>
       <title>バージョン管理システム</title>
-      <link>http://localhost:1313/tags/%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E7%AE%A1%E7%90%86%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</link>
+      <link>https://ryotaro.dev/tags/%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E7%AE%A1%E7%90%86%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</link>
       <pubDate>Sat, 17 Aug 2019 14:49:48 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E7%AE%A1%E7%90%86%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E7%AE%A1%E7%90%86%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</guid>
       <description></description>
     </item>
     <item>
       <title>勾配ブースティング</title>
-      <link>http://localhost:1313/tags/%E5%8B%BE%E9%85%8D%E3%83%96%E3%83%BC%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0/</link>
+      <link>https://ryotaro.dev/tags/%E5%8B%BE%E9%85%8D%E3%83%96%E3%83%BC%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0/</link>
       <pubDate>Sat, 10 Aug 2019 23:27:29 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E5%8B%BE%E9%85%8D%E3%83%96%E3%83%BC%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0/</guid>
+      <guid>https://ryotaro.dev/tags/%E5%8B%BE%E9%85%8D%E3%83%96%E3%83%BC%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0/</guid>
       <description></description>
     </item>
     <item>
       <title>推薦システム</title>
-      <link>http://localhost:1313/tags/%E6%8E%A8%E8%96%A6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</link>
+      <link>https://ryotaro.dev/tags/%E6%8E%A8%E8%96%A6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</link>
       <pubDate>Sat, 10 Aug 2019 14:39:11 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E6%8E%A8%E8%96%A6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</guid>
+      <guid>https://ryotaro.dev/tags/%E6%8E%A8%E8%96%A6%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/</guid>
       <description></description>
     </item>
     <item>
       <title>ガウス過程回帰</title>
-      <link>http://localhost:1313/tags/%E3%82%AC%E3%82%A6%E3%82%B9%E9%81%8E%E7%A8%8B%E5%9B%9E%E5%B8%B0/</link>
+      <link>https://ryotaro.dev/tags/%E3%82%AC%E3%82%A6%E3%82%B9%E9%81%8E%E7%A8%8B%E5%9B%9E%E5%B8%B0/</link>
       <pubDate>Sat, 03 Aug 2019 21:54:03 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E3%82%AC%E3%82%A6%E3%82%B9%E9%81%8E%E7%A8%8B%E5%9B%9E%E5%B8%B0/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%82%AC%E3%82%A6%E3%82%B9%E9%81%8E%E7%A8%8B%E5%9B%9E%E5%B8%B0/</guid>
       <description></description>
     </item>
     <item>
       <title>ハイパーパラメータ探索</title>
-      <link>http://localhost:1313/tags/%E3%83%8F%E3%82%A4%E3%83%91%E3%83%BC%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E6%8E%A2%E7%B4%A2/</link>
+      <link>https://ryotaro.dev/tags/%E3%83%8F%E3%82%A4%E3%83%91%E3%83%BC%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E6%8E%A2%E7%B4%A2/</link>
       <pubDate>Sat, 03 Aug 2019 17:18:36 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E3%83%8F%E3%82%A4%E3%83%91%E3%83%BC%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E6%8E%A2%E7%B4%A2/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%83%8F%E3%82%A4%E3%83%91%E3%83%BC%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF%E6%8E%A2%E7%B4%A2/</guid>
       <description></description>
     </item>
     <item>
       <title>キーワード抽出</title>
-      <link>http://localhost:1313/tags/%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89%E6%8A%BD%E5%87%BA/</link>
+      <link>https://ryotaro.dev/tags/%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89%E6%8A%BD%E5%87%BA/</link>
       <pubDate>Sat, 20 Jul 2019 17:49:36 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89%E6%8A%BD%E5%87%BA/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89%E6%8A%BD%E5%87%BA/</guid>
       <description></description>
     </item>
     <item>
       <title>Knowledge Graph</title>
-      <link>http://localhost:1313/tags/knowledge-graph/</link>
+      <link>https://ryotaro.dev/tags/knowledge-graph/</link>
       <pubDate>Sun, 17 Feb 2019 17:03:49 +0900</pubDate>
-      <guid>http://localhost:1313/tags/knowledge-graph/</guid>
+      <guid>https://ryotaro.dev/tags/knowledge-graph/</guid>
       <description></description>
     </item>
     <item>
       <title>Entity Disambiguation</title>
-      <link>http://localhost:1313/tags/entity-disambiguation/</link>
+      <link>https://ryotaro.dev/tags/entity-disambiguation/</link>
       <pubDate>Fri, 09 Nov 2018 21:11:50 +0900</pubDate>
-      <guid>http://localhost:1313/tags/entity-disambiguation/</guid>
+      <guid>https://ryotaro.dev/tags/entity-disambiguation/</guid>
       <description></description>
     </item>
     <item>
       <title>Entity Linking</title>
-      <link>http://localhost:1313/tags/entity-linking/</link>
+      <link>https://ryotaro.dev/tags/entity-linking/</link>
       <pubDate>Fri, 02 Nov 2018 16:59:14 +0900</pubDate>
-      <guid>http://localhost:1313/tags/entity-linking/</guid>
+      <guid>https://ryotaro.dev/tags/entity-linking/</guid>
       <description></description>
     </item>
     <item>
       <title>CRF</title>
-      <link>http://localhost:1313/tags/crf/</link>
+      <link>https://ryotaro.dev/tags/crf/</link>
       <pubDate>Fri, 12 Oct 2018 18:39:08 +0900</pubDate>
-      <guid>http://localhost:1313/tags/crf/</guid>
+      <guid>https://ryotaro.dev/tags/crf/</guid>
       <description></description>
     </item>
     <item>
       <title>系列ラベリング</title>
-      <link>http://localhost:1313/tags/%E7%B3%BB%E5%88%97%E3%83%A9%E3%83%99%E3%83%AA%E3%83%B3%E3%82%B0/</link>
+      <link>https://ryotaro.dev/tags/%E7%B3%BB%E5%88%97%E3%83%A9%E3%83%99%E3%83%AA%E3%83%B3%E3%82%B0/</link>
       <pubDate>Fri, 05 Oct 2018 18:46:36 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E7%B3%BB%E5%88%97%E3%83%A9%E3%83%99%E3%83%AA%E3%83%B3%E3%82%B0/</guid>
+      <guid>https://ryotaro.dev/tags/%E7%B3%BB%E5%88%97%E3%83%A9%E3%83%99%E3%83%AA%E3%83%B3%E3%82%B0/</guid>
       <description></description>
     </item>
     <item>
       <title>Word Embedding</title>
-      <link>http://localhost:1313/tags/word-embedding/</link>
+      <link>https://ryotaro.dev/tags/word-embedding/</link>
       <pubDate>Fri, 28 Sep 2018 16:29:46 +0900</pubDate>
-      <guid>http://localhost:1313/tags/word-embedding/</guid>
+      <guid>https://ryotaro.dev/tags/word-embedding/</guid>
       <description></description>
     </item>
     <item>
       <title>Fine Tuning</title>
-      <link>http://localhost:1313/tags/fine-tuning/</link>
+      <link>https://ryotaro.dev/tags/fine-tuning/</link>
       <pubDate>Fri, 14 Sep 2018 16:33:43 +0900</pubDate>
-      <guid>http://localhost:1313/tags/fine-tuning/</guid>
+      <guid>https://ryotaro.dev/tags/fine-tuning/</guid>
       <description></description>
     </item>
     <item>
       <title>Graph Embedding</title>
-      <link>http://localhost:1313/tags/graph-embedding/</link>
+      <link>https://ryotaro.dev/tags/graph-embedding/</link>
       <pubDate>Fri, 07 Sep 2018 18:31:47 +0900</pubDate>
-      <guid>http://localhost:1313/tags/graph-embedding/</guid>
+      <guid>https://ryotaro.dev/tags/graph-embedding/</guid>
       <description></description>
     </item>
     <item>
       <title>分類の評価</title>
-      <link>http://localhost:1313/tags/%E5%88%86%E9%A1%9E%E3%81%AE%E8%A9%95%E4%BE%A1/</link>
+      <link>https://ryotaro.dev/tags/%E5%88%86%E9%A1%9E%E3%81%AE%E8%A9%95%E4%BE%A1/</link>
       <pubDate>Sat, 25 Aug 2018 00:56:13 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E5%88%86%E9%A1%9E%E3%81%AE%E8%A9%95%E4%BE%A1/</guid>
+      <guid>https://ryotaro.dev/tags/%E5%88%86%E9%A1%9E%E3%81%AE%E8%A9%95%E4%BE%A1/</guid>
       <description></description>
     </item>
     <item>
       <title>バグ分析</title>
-      <link>http://localhost:1313/tags/%E3%83%90%E3%82%B0%E5%88%86%E6%9E%90/</link>
+      <link>https://ryotaro.dev/tags/%E3%83%90%E3%82%B0%E5%88%86%E6%9E%90/</link>
       <pubDate>Fri, 03 Aug 2018 21:47:03 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E3%83%90%E3%82%B0%E5%88%86%E6%9E%90/</guid>
+      <guid>https://ryotaro.dev/tags/%E3%83%90%E3%82%B0%E5%88%86%E6%9E%90/</guid>
       <description></description>
     </item>
     <item>
       <title>形態素解析</title>
-      <link>http://localhost:1313/tags/%E5%BD%A2%E6%85%8B%E7%B4%A0%E8%A7%A3%E6%9E%90/</link>
+      <link>https://ryotaro.dev/tags/%E5%BD%A2%E6%85%8B%E7%B4%A0%E8%A7%A3%E6%9E%90/</link>
       <pubDate>Tue, 17 Jul 2018 12:51:29 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E5%BD%A2%E6%85%8B%E7%B4%A0%E8%A7%A3%E6%9E%90/</guid>
+      <guid>https://ryotaro.dev/tags/%E5%BD%A2%E6%85%8B%E7%B4%A0%E8%A7%A3%E6%9E%90/</guid>
       <description></description>
     </item>
     <item>
       <title>半教師学習</title>
-      <link>http://localhost:1313/tags/%E5%8D%8A%E6%95%99%E5%B8%AB%E5%AD%A6%E7%BF%92/</link>
+      <link>https://ryotaro.dev/tags/%E5%8D%8A%E6%95%99%E5%B8%AB%E5%AD%A6%E7%BF%92/</link>
       <pubDate>Tue, 17 Jul 2018 12:51:29 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E5%8D%8A%E6%95%99%E5%B8%AB%E5%AD%A6%E7%BF%92/</guid>
+      <guid>https://ryotaro.dev/tags/%E5%8D%8A%E6%95%99%E5%B8%AB%E5%AD%A6%E7%BF%92/</guid>
       <description></description>
     </item>
     <item>
       <title>文書分類</title>
-      <link>http://localhost:1313/tags/%E6%96%87%E6%9B%B8%E5%88%86%E9%A1%9E/</link>
+      <link>https://ryotaro.dev/tags/%E6%96%87%E6%9B%B8%E5%88%86%E9%A1%9E/</link>
       <pubDate>Sun, 08 Jul 2018 01:23:49 +0900</pubDate>
-      <guid>http://localhost:1313/tags/%E6%96%87%E6%9B%B8%E5%88%86%E9%A1%9E/</guid>
+      <guid>https://ryotaro.dev/tags/%E6%96%87%E6%9B%B8%E5%88%86%E9%A1%9E/</guid>
       <description></description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ガベージコレクション on Blanket</title>
-    <link>http://localhost:1313/tags/%E3%82%AC%E3%83%99%E3%83%BC%E3%82%B8%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/</link>
+    <link>https://ryotaro.dev/tags/%E3%82%AC%E3%83%99%E3%83%BC%E3%82%B8%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/</link>
     <description>Recent content in ガベージコレクション on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Tue, 11 Feb 2025 15:16:30 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E3%82%AC%E3%83%99%E3%83%BC%E3%82%B8%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ryotaro.dev/tags/%E3%82%AC%E3%83%99%E3%83%BC%E3%82%B8%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>On the Fly Garbage Collection an Exercise in Cooperation (1978)</title>
-      <link>http://localhost:1313/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/</link>
+      <link>https://ryotaro.dev/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/</link>
       <pubDate>Tue, 11 Feb 2025 15:16:30 +0900</pubDate>
-      <guid>http://localhost:1313/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/</guid>
+      <guid>https://ryotaro.dev/posts/on-the-fly-garbage-collection-an-exercise-in-cooperation/</guid>
       <description>&lt;p&gt;Go1.5で、ガベージコレクション (GC) のアルゴリズムが3色マーキングによるコンカレント マーク&amp;amp;スイープに変わった。&#xA;このアルゴリズムの起源を辿ると、1978年の&lt;a href=&#34;https://lamport.azurewebsites.net/pubs/garbage.pdf&#34;&gt;On the Fly Garbage Collection an Exercise in Cooperation&lt;/a&gt;にいきつく。&#xA;ポインタをたどってヒープを黒や灰色に着色するマーキングフェーズと、解放してよい白のヒープを解放するアペンディングフェーズ、この2つのフェーズを繰り返す。&#xA;アルゴリズムはStop The World (STW)を抑制することを主眼におく。&lt;/p&gt;&#xA;&lt;p&gt;2015年に書かれたThe Go Blogの&lt;a href=&#34;https://go.dev/blog/go15gc&#34;&gt;Go GC: Prioritizing low latency and simplicity&lt;/a&gt;によれば、3色マーキングのコンカレント マーク&amp;amp;スイープはエンタープライズ向けのGCではない。&#xA;それでも、3色マーキングの考え自体はJavaのZGCなど他のガベージコレクションで&lt;a href=&#34;https://typeset.io/pdf/deep-dive-into-zgc-a-modern-garbage-collector-in-openjdk-2aa9ffwc.pdf&#34;&gt;採用されている&lt;/a&gt;。&lt;/p&gt;</description>
     </item>
   </channel>

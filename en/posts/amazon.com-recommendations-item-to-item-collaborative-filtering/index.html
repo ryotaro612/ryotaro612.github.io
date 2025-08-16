@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   
   
   <script>(function (w, d, s, l, i) {
@@ -21,14 +21,14 @@
     integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
     crossorigin="anonymous" />
   
-  <link rel="stylesheet" href="http://localhost:1313/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+  <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
   
-  <link rel="stylesheet" href="http://localhost:1313/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
+  <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
   
 
-<link rel="stylesheet" href="http://localhost:1313/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
 
-<link rel="stylesheet" href="http://localhost:1313/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -42,7 +42,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
     integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
-  <title>Amazon.com Recommendations Item to Item Collaborative Filtering</title>
+  <title>Amazon.com Recommendations Item to Item Collaborative Filtering (2003)</title>
 </head>
 
 <body>
@@ -55,14 +55,14 @@
   
   
   <header class="navigation">
-    <h2><a href="http://localhost:1313/en/">Blanket</a></h2>
+    <h2><a href="https://ryotaro.dev/en/">Blanket</a></h2>
     <nav>
       <ul>
-        <li><a href="http://localhost:1313/en/about">About</a></li>
-        <li><a href="http://localhost:1313/en/posts">Posts</a></li>
-        <li><a href="http://localhost:1313/en/tags">Tags</a></li>
+        <li><a href="https://ryotaro.dev/en/about">About</a></li>
+        <li><a href="https://ryotaro.dev/en/posts">Posts</a></li>
+        <li><a href="https://ryotaro.dev/en/tags">Tags</a></li>
         
-        <li><a href="http://localhost:1313/posts/amazon.com-recommendations-item-to-item-collaborative-filtering/">ja</a></li>
+        <li><a href="https://ryotaro.dev/posts/amazon.com-recommendations-item-to-item-collaborative-filtering/">ja</a></li>
         
       </ul>
       <ul>
@@ -88,7 +88,7 @@
         </li>
         
         <li>
-          <a href="http://localhost:1313/en/%20index.xml">
+          <a href="https://ryotaro.dev/en/%20index.xml">
             <i class="fas fa-rss"></i>
           </a>
         </li>
@@ -98,11 +98,11 @@
   </header>
   
 <main>
-  <h1>Amazon.com Recommendations Item to Item Collaborative Filtering</h1>
+  <h1>Amazon.com Recommendations Item to Item Collaborative Filtering (2003)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="http://localhost:1313/en/tags/collaborative-filtering/">
+      <a href="https://ryotaro.dev/en/tags/collaborative-filtering/">
         #Collaborative Filtering
       </a>
     </li>
@@ -114,7 +114,19 @@
     
   </span>
   <div>
-    
+    <p>When the journal IEEE Internet Computing was celebrating its 20th anniversary in 2017, its editorial board selected <a href="https://www.cs.umd.edu/~samir/498/Amazon-Recommendations.pdf">Amazon.com Recommendations: Item-to-Item Collaborative Filtering</a>, published in 2003, as the paper that best stood the test of time.
+The paper views traditional collaborative filtering as the approach of finding users similar to the target user and recommending items those users have selected but the user has not.
+Let \(N\) be the number of the items. In the traditional approach, each user is represented as an \(N\)-dimensional vector to measure the similarity between users, the item to item collaborative filtering constructs an \(N\) x \(N\) matrix, where each component represents the similarity between two items.
+By computing the item to item matrix offline, the proposed approach can recommend similar items in time independent of both \(N\) and the number of users \(M\).</p>
+<p>The item to item similarity matrix is based on the pairs of items that each user selected:</p>
+<pre tabindex="0"><code>For each item in product catalog, I1
+  For each customer C who purchased I1
+    For each item I2 purchased by customer C
+      Record that a customer purchased I1 and I2
+  For each item I2
+    Compute the similarity between I1 and I2
+</code></pre><p>Cosine similarity is commonly used as the similarity metric.
+Although the worst-case time complexity is \(O(N^2M)\), in practice it is closer to \(O(NM)\), since each user typically selects only a small number of items.</p>
   </div>
 </main>
 

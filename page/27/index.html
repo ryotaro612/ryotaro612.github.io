@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
-	<meta name="generator" content="Hugo 0.147.7"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta name="generator" content="Hugo 0.147.7">
   
   
   <script>(function (w, d, s, l, i) {
@@ -22,12 +22,12 @@
     integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
     crossorigin="anonymous" />
   
-  <link rel="stylesheet" href="http://localhost:1313/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+  <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
   
-  <link rel="stylesheet" href="http://localhost:1313/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+  <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
   
 
-<link rel="stylesheet" href="http://localhost:1313/scss/articles.min.3ceb81a62f07e7057aa63e938b7f0479d4643c093f1c72984a82a68278ddbba3.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/articles.min.3ceb81a62f07e7057aa63e938b7f0479d4643c093f1c72984a82a68278ddbba3.css">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -54,14 +54,14 @@
   
   
   <header class="navigation">
-    <h2><a href="http://localhost:1313/">Blanket</a></h2>
+    <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
     <nav>
       <ul>
-        <li><a href="http://localhost:1313/about">About</a></li>
-        <li><a href="http://localhost:1313/posts">Posts</a></li>
-        <li><a href="http://localhost:1313/tags">Tags</a></li>
+        <li><a href="https://ryotaro.dev/about">About</a></li>
+        <li><a href="https://ryotaro.dev/posts">Posts</a></li>
+        <li><a href="https://ryotaro.dev/tags">Tags</a></li>
         
-        <li><a href="http://localhost:1313/en/">en</a></li>
+        <li><a href="https://ryotaro.dev/en/">en</a></li>
         
       </ul>
       <ul>
@@ -87,7 +87,7 @@
         </li>
         
         <li>
-          <a href="http://localhost:1313/%20index.xml">
+          <a href="https://ryotaro.dev/%20index.xml">
             <i class="fas fa-rss"></i>
           </a>
         </li>
@@ -101,99 +101,7 @@
   
   
   <article>
-    <h3><a href="http://localhost:1313/posts/bleu/">論文メモ BLEU: a Method for Automatic Evaluation of Machine Translation</a></h3>
-    <div class="summary"><h3 id="概要">概要</h3>
-<p>自動翻訳を定量的に評価するための指標BLEUを提案した論文である。
-指標は、専門家の翻訳に翻訳に高い評価をあたえるよう設計されている。
-BLEUは、ひとつの候補訳に対する1つ以上の参照訳をあたえ、0から1の値をとるスコアを出力する。
-スコアは高いほどよい。
-BLEUは、参照訳にある単語を過剰に含むことや文の短さにペナルティをあたえ、適合率で候補訳を評価する。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        June 13, 2020
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="http://localhost:1313/posts/sequence_to_sequence_learning_with_neural_networks/">論文メモ Sequence to Sequence Learning with Nueral Networks</a></h3>
-    <div class="summary"><h3 id="概要">概要</h3>
-<p>Sequence to Sequenceの論文。
-入出力が系列データを学習する場合、入力と出力の長さが等しかったり対応関係にある箇所が系列の方向に単調でなければならなかったりする。
-これらの制約に対処するために、Sequence to Sequenceでは、入力全体を固定長のベクトルに一度変換し、そのベクトルをもとに出力を予測する。
-2種類のLSTMをもち、入力を与えるLSTMの最終層の隠れ状態で、固定長ベクトルをつくる。
-固定長のベクトルは、単調の制約を緩めるはたらきをする。
-このベクトルは、もう一方のLSTMにあたえられ、その主力が最終的な出力になる。
-実験では、入力系列を反転してあたえると、入力と出力の対応関係にある箇所の距離が近づき、予測性能が上がることが確認された。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        June 6, 2020
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="http://localhost:1313/posts/google_neural_machine_translation_system/">論文メモ Google&#39;s Neural Machine Transltation System: Bridging the Gap between Human and Machine Translation</a></h3>
-    <div class="summary"><h3 id="概要">概要</h3>
-<p>ニューラルネットワークをもちいた機械翻訳システムの論文である。
-解決したい問題として、学習と推論時の処理時間の長さ、低頻出の単語を翻訳する難しさ、入力文の一部が翻訳されないことをあげ、注意機構でつながれたEncoderとDecoderからなるアーキテクチャを提案した。
-学習時間を短縮するために、Decoderの最初の層とEncodeerの出力層から注意をつくる注意機構を採用し、Decoderを並列に学習できるようにしている。
-また、量子化によって推論時間を短縮をしている。
-低頻出の単語でも翻訳できるようにwordpieceでエンコードされた入力をうけとる。
-入力文の一部が翻訳されない問題に対しては、短い出力文に罰則を課すビームサーチで出力文の候補を探索する仕組みが導入されている。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        May 30, 2020
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="http://localhost:1313/posts/zero_shot_learning_with_semantic_output_codes/">論文メモ Zero-Shot Learning with Semantic Output Codes</a></h3>
-    <div class="summary"><p>学習データにないラベルを推定する問題に対してzero-shot leanringと名づけ、ラベルを推定できる確率と条件を形式化した論文である。
-形式化するモデルは、複数の二値分類器と1つの最近傍探索器からなる。
-最近傍探索は、2値分類器の出力を要素とするベクトルをうけとり、最近傍のラベルに対応するベクトルを探す。
-PACフレームワークにもとづく必要な学習データの件数を示し、そのデータで訓練されたモデルが学習データにないラベルを推定できる確率を示した。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        May 23, 2020
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="http://localhost:1313/posts/a_structured_self_attentivesentence_embedding/">論文メモ A STRUCTURED SELF-ATTENTIVE SENTENCE EMBEDDING</a></h3>
-    <div class="summary"><h3 id="概要">概要</h3>
-<p>自己注意機構をもちいて、可変長の文を埋め込み行列に変換するアーキテクチャを発表した論文である。
-埋め込み行列の各行は、それぞれ文中の異なる箇所の意味を反映する。
-アーキテクチャは2つの構成からなり、入力から出力にむかい双方向LSTMを、次に自己注意機構をもつ。
-自己注意機構を導入した背景は、回帰結合型のネットワークでは、全ての時刻わたって入力の意味を保持することは難しく、また不要であるという著者らの仮説である。
-3つの実験により、文の分散表現を獲得する先行研究と比較し、自己注意機構の効果が確認された。
-注意機構は複数のベクトルのどれを重視するかを学習できるため、埋め込まれた文の箇所を可視化できることも示した。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        May 16, 2020
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="http://localhost:1313/posts/poincare_embeddings/">論文メモ Poincaré Embeddings for Learning Hierarchical Representations</a></h3>
+    <h3><a href="https://ryotaro.dev/posts/poincare_embeddings/">論文メモ Poincaré Embeddings for Learning Hierarchical Representations</a></h3>
     <div class="summary"><h3 id="概要">概要</h3>
 <p>単語のように上位下位関係のある記号を、ポアンカレ球体模型という双曲空間に埋め込む手法を発表した論文である。
 ユークリッド空間よりも、記号間の類似度や上位下位関係が保たれていることを実験的に示した。
@@ -248,7 +156,7 @@ $$</p></div>
   </article>
   
   <article>
-    <h3><a href="http://localhost:1313/posts/learning_joint_multilingual_sentence_representations_with_neural_machine_translation/">論文 メモ Learning Joint Multilingual Sentence Representations with Neural Machine Translation</a></h3>
+    <h3><a href="https://ryotaro.dev/posts/learning_joint_multilingual_sentence_representations_with_neural_machine_translation/">論文 メモ Learning Joint Multilingual Sentence Representations with Neural Machine Translation</a></h3>
     <div class="summary"><h3 id="概要">概要</h3>
 <p>多言語の文をあつかう分散表現モデルを発表した論文である。
 異なる言語の文であっても、意味が同じであれば、同様の分散表現に変換される。
@@ -266,7 +174,7 @@ $$</p></div>
   </article>
   
   <article>
-    <h3><a href="http://localhost:1313/posts/albert/">論文メモ ALBERT: A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS</a></h3>
+    <h3><a href="https://ryotaro.dev/posts/albert/">論文メモ ALBERT: A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS</a></h3>
     <div class="summary"><p>BERTのパラメタ数を削減し、学習時間の短縮と正則化による予測性能の向上を両立したモデルALBERTを提案し、GLUE, RACE, SQuADでSoTAを実現した。
 BERT-largeと比べると、ALBERT-largeのパラメタ数は約5.3%の18Mであり、学習時間は1.7倍速い。
 パラメタを削減するために、単語のOne-hotベクトルをあたえられる単語埋め込み行列の次元を減らし、隠れ層の順伝播ネットワークや注意機構のパラメタを層の間で共有した。
@@ -282,7 +190,7 @@ BERT-largeと比べると、ALBERT-largeのパラメタ数は約5.3%の18Mであ
   </article>
   
   <article>
-    <h3><a href="http://localhost:1313/posts/random_walks_in_recommender_systems/">論文メモ Random Walks in recommender Systems: Exact Computation and Simulations</a></h3>
+    <h3><a href="https://ryotaro.dev/posts/random_walks_in_recommender_systems/">論文メモ Random Walks in recommender Systems: Exact Computation and Simulations</a></h3>
     <div class="summary"><h3 id="概要">概要</h3>
 <p><a href="https://ieeexplore.ieee.org/document/4072747">F. Foussら</a>や<a href="https://www.aaai.org/Papers/IJCAI/2007/IJCAI07-444.pdf">M. Goriら</a>のランダムウォークによる推薦システムの先行研究を、質や計算量について比較した論文である。
 比較対象には、著者らの用意したも含まれる。
@@ -299,7 +207,7 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
   </article>
   
   <article>
-    <h3><a href="http://localhost:1313/posts/domain_adversarial_training_of_neural_networks/">論文メモ Domain Adversarial Training of Neural Networks</a></h3>
+    <h3><a href="https://ryotaro.dev/posts/domain_adversarial_training_of_neural_networks/">論文メモ Domain Adversarial Training of Neural Networks</a></h3>
     <div class="summary"><h3 id="概要">概要</h3>
 <p>ニューラルネットワークをもちいたドメイン適用の論文である。
 ソースドメインのラベルつきデータと目標ドメインのラベルのないデータでモデルを訓練し、目標ドメインに対する分類性能を引きあげる。
@@ -313,6 +221,110 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
       <span class="date">
         
         April 11, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/character_aware_neural_language_models/">論文メモ Character-Aware Neural Language Models</a></h3>
+    <div class="summary"><h3 id="概要">概要</h3>
+<p>文字単位の入力から次に出現する単語を予測するニューラル言語モデルの論文である。
+アーキテクチャは入力から近い順にCNN, highway network, LSTMからなる。
+実験データにPenn Treebankを、評価指標にPerplexityを採用してモデルを評価したところ、
+論文が発表された2016年時点での<a href="https://arxiv.org/abs/1409.2329">SOTA</a>の60%程度のパラメタしかないモデルでありながら、これに匹敵する性能を発揮した。</p></div>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        April 4, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/deep_contextualized_word_representations/">論文メモ Deep contextualized word representations</a></h3>
+    <div class="summary"><p>文脈をふまえた単語の分散表現を生成する手法を提案し、教師あり学習に応用することで評価した論文である。
+文字単位の学習済み双方向LSTM言語モデルへの入力と各層の出力から分散表現をつくる。
+言語モデルの入力やどの層をどれだけ重視するかは、教師あり学習のときに更新するパラメタのひとつになる。
+実験では、構文にかかわるタスクであれば入力層に近い層が、意味にかかわるものであれば出力層に近い層が、重視された。
+モデルは、Embeddings from Language Modelsにちなみ、ELMoと名付けられた。</p></div>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        March 24, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/the_seven_sins/">論文メモ The Seven Sins: Security Smells in Infrastructure as Code Scripts</a></h3>
+    <div class="summary"><h3 id="概要">概要</h3>
+<p>OSSの調査にもとづき、Infrastrucure as Code(IaC)スクリプトに潜む主要なセキュリティ上の不吉な匂い(Security Smells)を7つ列挙し、これらを検出するツールを実装した論文である。
+論文のねらいは、開発者がIaCスクリプトに不吉な匂いを混ぜないようにすることにある。
+著者らは、本論文で、ICSE2019のDistinguished Paper Awardを受賞した。</p></div>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        March 20, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/semi_supervised_sequence_learning/">Semi-supervised Sequence Learning(2015)</a></h3>
+    <div class="summary"><p>系列データの教師あり学習において、ラベルのないデータを学習した言語モデルやオートエンコーダーの重みでLSTMを初期化することの有用性を実験的に示した。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/">
+            #言語モデル
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        March 14, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/raft/">In Search of an Understandable Consensus Algorithm (2014)</a></h3>
+    <div class="summary"><p>コンセンサスアルゴリズムRaftを提案した論文である。
+Raftは、Multi Paxosと同様の実行結果をもたらす。
+実行するコマンドのログをサーバ間で交換することで、状態を同期し、サーバの一部が落ちてもシステムを継続することができる。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/raft/">
+            #Raft
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%B5%E3%82%B9-%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0/">
+            #コンセンサス アルゴリズム
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        March 9, 2020
         
       </span>
     </div>
