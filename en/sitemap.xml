@@ -2,6 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ryotaro.dev/en/</loc>
+    <lastmod>2025-08-23T15:03:19+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/posts/</loc>
+    <lastmod>2025-08-23T15:03:19+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/"
+                />
+  </url><url>
     <loc>https://ryotaro.dev/en/posts/amazon.com-recommendations-item-to-item-collaborative-filtering/</loc>
     <lastmod>2025-08-16T14:29:07+09:00</lastmod>
     <xhtml:link
@@ -15,19 +41,6 @@
                 href="https://ryotaro.dev/en/posts/amazon.com-recommendations-item-to-item-collaborative-filtering/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/en/</loc>
-    <lastmod>2025-08-16T14:29:07+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/"
-                />
-  </url><url>
     <loc>https://ryotaro.dev/en/tags/collaborative-filtering/</loc>
     <lastmod>2025-08-16T14:29:07+09:00</lastmod>
     <xhtml:link
@@ -39,19 +52,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ryotaro.dev/en/tags/collaborative-filtering/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/en/posts/</loc>
-    <lastmod>2025-08-16T14:29:07+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/posts/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/tags/</loc>
