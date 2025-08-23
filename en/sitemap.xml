@@ -316,6 +316,16 @@
   </url><url>
     <loc>https://ryotaro.dev/en/tags/consistent-hashing/</loc>
     <lastmod>2025-03-18T13:18:53+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/consistent-hashing/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/consistent-hashing/"
+                />
   </url><url>
     <loc>https://ryotaro.dev/en/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/</loc>
     <lastmod>2025-03-18T13:18:53+09:00</lastmod>
