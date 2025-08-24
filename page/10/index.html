@@ -101,6 +101,34 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/an_improved_data_stream_summary_the_count_min_sketch_and_its_application/">An Improved Data Stream Summary: The Count-Min Sketch and its Applications(2005)</a></h3>
+    <div class="summary"><p>Count-Min Sketch(CM Sketch)は、単位時間ごとに1要素ずつ更新される\(n\)次元のベクトルの要素を\(n\)の劣線形の計算量で集計できるデータ構造である。
+空間の大きさはパラメタで指定する誤差大きさと誤差の生じる確率に依存する。
+誤差と確率のパラメタを\(\epsilon\)と\(\delta\)とすると、CM sketchは\(\lceil{\ln \frac{1}{\delta}\rceil}\times \lceil\frac{e}{\epsilon}\rceil\)の二次元行列である。
+\(\ln\)の底は\(e\)である。
+要素の値、ベクトルの内積、ある範囲の要素の和を劣線形の計算量で求めることができる。
+また、これらと二分探索を応用すれば、指定した値よりも大きい要素のみからなる範囲や分位数も計算できる。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+            #分散システム
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 7, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/lof_identifying_density_based_local_outliners/">抄訳 LOF: Identifying Density-Based Local Outliers(2000)</a></h3>
     <div class="summary"><p>局所外れ値因子法(LOF)は、あるインスタンスが外れ値であるかを、その周囲のインスタンスとの距離から判定する。
 異常検知の手法の中には異常か正常かの二値を出力するものがあるが、LOFは[0,1]区間の値を出力する。
@@ -296,21 +324,6 @@ SMOTEとの違いは、K近傍に多数クラスのサンプルの多い少数�
       <span class="date">
         
         September 11, 2022
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/sagas/">抄訳 Sagas(1987)</a></h3>
-    <div class="summary"><p>データベースのトランザクションが長くなるほど、ほかのトランザクションを待たせてしまう。
-トランザクションの時間は短いほどよい。
-トランザクションを短い複数のトランザクションに分割でき、そのトランザクションの間にほかのトランザクションを実行できるなら、そのトランザクションをsagaと呼ぶ。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        September 4, 2022
         
       </span>
     </div>

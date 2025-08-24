@@ -101,6 +101,40 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/proving_correctness_of_multiprocess_programs/">Proving the Correctness of Multiprocess Programs (1977)</a></h3>
+    <div class="summary"><p>マルチプロセスプログラムの正しさを証明するための公理を提案する。
+正しさの条件は、プログラムが安全性と活性を満たすことである。
+安全はプログラムが特定の状態になりえないことを、活性はプログラムが特定の状態に必ず到達することを意味する。
+たとえば、キューにメッセージを配信するproducerとキューから取り出すconsumerがあるとする。
+このとき、容量以上のメッセージがキューに蓄積しない性質が安全性に、キューが満杯時にconsumerがメッセージを消費する性質が活性になりえる。
+プログラム、安全性、活性を形式化し、安全性と活性を証明することで、プログラムの正しさを示す。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+            #分散システム
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E5%BD%A2%E5%BC%8F%E6%89%8B%E6%B3%95/">
+            #形式手法
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        March 25, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/deep_reinforcement_learning_from_human_preferences/">Deep Reinforcement Learing from Human Preferences (2017)</a></h3>
     <div class="summary"><p>エージェントの行動を撮影した2つのビデオクリップから良い方を人間に選ばせ、報酬関数の学習データを生成する。
 テーブルを掃除するロボットの制御などは、報酬関数の設計が難しい。
@@ -327,21 +361,6 @@ ARIESのCLSに記録された更新はUNDOされない。
       <span class="date">
         
         February 11, 2023
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/arc005/">ARC 005C 器物損壊！高橋君</a></h3>
-    <div class="summary"><p>ダイクストラ法を使えば、スタート地点から各区画への最短距離を求められる。
-塀に移動にかかる時間を十分に大きい値、かりに\(HM+1\)として、ダイクストラ法適用すると、
-ゴール地点が\(3(HM+1)\)以下未満であり、そのときに限り、塀を壊す回数が2回以下でゴール地点に到達できる。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        February 7, 2023
         
       </span>
     </div>

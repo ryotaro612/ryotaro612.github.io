@@ -101,6 +101,31 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/on_calibration_of_modern_neural_networks/">論文メモ On Calibration of Modern Neural Networks(2017)</a></h3>
+    <div class="summary"><p>ネットワークの複雑化、バッチ正則化、重み減衰を使わない、負の対数尤度の過学習が汎化精度を上げるが、予測確率と精度のズレを大きくすることを実験的に示した。
+予測確率を補正する6つの手法を19種類のクラス分類のデータセットに適用した結果、
+最も補正できたものは、温度つきソフトマックスの出力を予測確率にする場合であった。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/confidence-calibration/">
+            #Confidence Calibration
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        November 23, 2019
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/trinary_projection_trees/">概要 Trinary-Projection Trees for Approximate Nearest Neighbor Search(2012)</a></h3>
     <div class="summary"><p>Trinary-Projection Trees(TP trees)は、kd木のように、ユークリッド空間の分割を二分木で表現できるデータ構造である。
 超平面は1または-1の重みのついた少数の座標軸で定義される。
@@ -343,34 +368,6 @@ Snorkel DryBellは、Snorkelのアルゴリズムをスケールさせるため�
       <span class="date">
         
         September 28, 2019
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/snorkel_rapid_training_data_creation_with_weak_supervision/">メモ Snorkel: Rapid Traning Data Creation with Weak Supervision (2020)</a></h3>
-    <div class="summary"><h3 id="概要">概要</h3>
-<p>Snorkelは、不正確なラベルを許容した上で半手動で大量の教師データを生成するWeak supervisionの一種である。
-Snorkelは、データを受け取りラベルの予測値か予測不可能であることを示す値を返す関数を使い、データにラベルを割りあてる。
-このラベル付けする関数は、ラベリング関数と呼ばれ、データとともにSnorkelに与えられる。
-ラベリング関数は人間が実装したルールベースな関数でよい。
-Snorkelは、入力された複数のラベリング関数をデータに適用し、データ件数xラベリング関数の個数をサイズとするラベルの予測値の行列を作る。その後、真のラベルを予測するモデルを行列にあてはめ、サンプルにラベルごとの真のラベルについての確信度を出力する。</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/weak-supervision/">
-            #Weak Supervision
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        September 21, 2019
         
       </span>
     </div>

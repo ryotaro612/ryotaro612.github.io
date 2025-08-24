@@ -101,6 +101,40 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/infinispan/">Infinispanの分散キャッシュ</a></h3>
+    <div class="summary"><p><a href="https://infinispan.org/">Inifinispan</a>は有償インメモリーデータベース<a href="https://www.redhat.com/en/technologies/jboss-middleware/data-grid">Red Hat Data Grid</a>のOSSとして提供されており、OIDCによるSSOの機能を提供するKeyCloakでキャッシュサーバとして<a href="https://www.keycloak.org/server/caching">利用できる</a>。
+Red HatはKeyCloakの開発も支援している。</p>
+<p><a href="https://infinispan.org/use-cases/">公式ドキュメント</a>でRedisやmemcachedを置きかえるユースケースを紹介されているように、Infinispanの用途は、RedisやMemcachedと近い。
+実際、InifinispanはRESPプロトコルを<a href="https://infinispan.org/docs/stable/titles/resp/resp-endpoint.html">実装している</a>。
+Inifinispanは、Javaで実装されており、Javaのクライアントと<a href="https://github.com/jsr107/jsr107spec">JSR107</a>のJCache APIで通信できる。
+たとえば、クライアントは、<a href="https://www.javadoc.io/doc/javax.cache/cache-api/latest/index.html">CacheManager</a>でハッシュマップ構造の<a href="https://www.javadoc.io/doc/javax.cache/cache-api/latest/index.html">Cache</a>を取得し、エントリを操作できる。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/infinispan/">
+            #Infinispan
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/consistent-hashing/">
+            #Consistent Hashing
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        August 23, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/amazon.com-recommendations-item-to-item-collaborative-filtering/">Amazon.com Recommendations Item to Item Collaborative Filtering (2003)</a></h3>
     <div class="summary"><p>IEEE Internet Computingは、創刊20周年を記念し、時の試練を越えた論文に<a href="https://www.cs.umd.edu/~samir/498/Amazon-Recommendations.pdf">Amazon.com Recommendations Item to Item Collaborative Filtering</a>を<a href="https://www.amazon.science/the-history-of-amazons-recommendation-algorithm">選んだ</a>。
 文献では、古典的な協調フィルタリングを、アイテム数次元\(N\)のベクトルでユーザーを表現し、類似するユーザーが選んだアイテムのうち、ユーザーが未選択のアイテムを推薦対象に選ぶ手法とみなされている。
@@ -363,37 +397,6 @@ Document Readerは、Document Retrieverから渡された質問と応答を別�
       <span class="date">
         
         April 26, 2025
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/language-models-are-few-shot-learners/">Language Models Are Few Shot Learners (2020)</a></h3>
-    <div class="summary"><p><a href="https://arxiv.org/abs/2005.14165">Language Models are Few-Shot Learners</a>は、Few-shot learningで学習したGPT-3とパラメタ数の少ないファインチューニングしたモデルのタスク処理を比較し、パラメタ数を大幅に増やすことでも予測性能を向上できることを示した。
-GPT-3のパラメタ数は1750億であり、その数は、比較対象のファインチューニングされたモデルよりも10倍ほど大きい。
-GPT-3のネットワークアーキテクチャは<a href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf">GPT-2</a>と大きく変わらないが、<a href="https://arxiv.org/pdf/1904.10509">Sparse Transformer</a>に似た注意機構を導入したところが異なる。</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/few-shot-learning/">
-            #Few-Shot Learning
-          </a>
-        </li>
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/large-language-model/">
-            #Large Language Model
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        April 12, 2025
         
       </span>
     </div>

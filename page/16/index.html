@@ -101,6 +101,21 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/the_notion_of_consistency_and_predicate_locks_in_a_database_system/">The Notion of Consistency and Predicate Locks in a Database System</a></h3>
+    <div class="summary"><p>トランザクションを並行実行するときに、直列実行した場合と同じ実行結果をえるには、各トランザクションがロックを解放後に新しいロックを獲得してはならないことを示した。
+その場合もデッドロックがおきうるが、それは並列実行を終了するためにはいつロックをかければよいかという議論である。
+ここでは、並列実行が終了した場合に直列実行と同じ結果になる一貫性を保証できるロックの順序を問う。</p></div>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        October 2, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/parallel_database_systems/">Parallel Database Systems: The Future of High Performance Database Systems (1992)</a></h3>
     <div class="summary"><p>データベースの処理性能を上げる方法として、汎用的なコンピュータによる水平パーティションのシェアードナッシング構成を主張した。
 特殊なハードウェアを使ったり、メモリ、ディスクを共有する複数のコンピュータを使ったりするよりも、単純で安く実装できる。
@@ -244,22 +259,6 @@ PDP-11は1971年2月から運用がはじまり、当初はアセンブリ言語
       <span class="date">
         
         August 20, 2021
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/dont_do_that/">Don&#39;t Do That! Hunting Down Visual Design Smells in Complex UIs against Design Guidelines</a></h3>
-    <div class="summary"><p>2020年5月時点のマテリアルデザインの公式ドキュメントから93種類の不吉な匂いを洗い出し、71種類の匂いを検出するツールUIS-Hunterを開発した。
-文中に&quot;don&rsquo;t&quot;や&quot;caution&quot;があることとUIの画像があることを条件に不吉な匂いを選び、9,286個のアンドロイドアプリにある7,497のUIを調べたところ、2,587個のアプリから1つ以上の不吉な匂いのあるUIが見つかった。
-UIS-Hunterは、FigmaやAndroid Studio Layout EditorなどのモックアップやAndroid UI AutomatorやSeleniumのスクリーンショットから不吉な匂いを解析し、UIのソースコードを必要としない。
-9,286個のアプリの60,756のUIで検出性能を評価したところ、precisionが0.81, recallが0.90だった。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        August 14, 2021
         
       </span>
     </div>

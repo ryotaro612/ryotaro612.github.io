@@ -101,6 +101,25 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/a_structured_self_attentivesentence_embedding/">論文メモ A STRUCTURED SELF-ATTENTIVE SENTENCE EMBEDDING</a></h3>
+    <div class="summary"><h3 id="概要">概要</h3>
+<p>自己注意機構をもちいて、可変長の文を埋め込み行列に変換するアーキテクチャを発表した論文である。
+埋め込み行列の各行は、それぞれ文中の異なる箇所の意味を反映する。
+アーキテクチャは2つの構成からなり、入力から出力にむかい双方向LSTMを、次に自己注意機構をもつ。
+自己注意機構を導入した背景は、回帰結合型のネットワークでは、全ての時刻わたって入力の意味を保持することは難しく、また不要であるという著者らの仮説である。
+3つの実験により、文の分散表現を獲得する先行研究と比較し、自己注意機構の効果が確認された。
+注意機構は複数のベクトルのどれを重視するかを学習できるため、埋め込まれた文の箇所を可視化できることも示した。</p></div>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        May 16, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/poincare_embeddings/">論文メモ Poincaré Embeddings for Learning Hierarchical Representations</a></h3>
     <div class="summary"><h3 id="概要">概要</h3>
 <p>単語のように上位下位関係のある記号を、ポアンカレ球体模型という双曲空間に埋め込む手法を発表した論文である。
@@ -294,37 +313,6 @@ F. Foussらの実験で使われた評価指標や上位kの推薦結果のヒ�
       <span class="date">
         
         March 14, 2020
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/raft/">In Search of an Understandable Consensus Algorithm (2014)</a></h3>
-    <div class="summary"><p>コンセンサスアルゴリズムRaftを提案した論文である。
-Raftは、Multi Paxosと同様の実行結果をもたらす。
-実行するコマンドのログをサーバ間で交換することで、状態を同期し、サーバの一部が落ちてもシステムを継続することができる。</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/raft/">
-            #Raft
-          </a>
-        </li>
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/%E3%82%B3%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%B5%E3%82%B9-%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0/">
-            #コンセンサス アルゴリズム
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        March 9, 2020
         
       </span>
     </div>
