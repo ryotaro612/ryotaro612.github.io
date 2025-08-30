@@ -6,8 +6,15 @@
     <description>Recent content in Consistent Hashing on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 18 Mar 2025 13:18:53 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 23 Aug 2025 15:03:19 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/tags/consistent-hashing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Distributed Caches in Infinispan</title>
+      <link>https://ryotaro.dev/en/posts/infinispan/</link>
+      <pubDate>Sat, 23 Aug 2025 15:03:19 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/infinispan/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://infinispan.org/&#34;&gt;Infinispan&lt;/a&gt; is an open-source in-memory data grid and forms the core of &lt;a href=&#34;https://www.redhat.com/en/technologies/jboss-middleware/data-grid&#34;&gt;Red Hat Data Grid&lt;/a&gt;.&#xA;It can also serve as a &lt;a href=&#34;https://www.keycloak.org/&#34;&gt;cache server&lt;/a&gt; for &lt;a href=&#34;https://www.keycloak.org/&#34;&gt;KeyCloak&lt;/a&gt;, which provides single sign-on and identity brokering.&lt;/p&gt;&#xA;&lt;p&gt;The official documentation describes Infinispan as a &lt;a href=&#34;https://infinispan.org/use-cases/&#34;&gt;drop-in replacement for Redis or Memcached&lt;/a&gt;.&#xA;It also implements &lt;a href=&#34;https://github.com/jsr107/jsr107spec&#34;&gt;JSR107&lt;/a&gt;, which allows Java clients to interact with an Infinispan cluster via the JCache API.&#xA;For example, a client can use a &lt;a href=&#34;https://www.javadoc.io/doc/javax.cache/cache-api/latest/index.html&#34;&gt;CacheManager&lt;/a&gt; to obtain a &lt;a href=&#34;https://www.javadoc.io/doc/javax.cache/cache-api/latest/index.html&#34;&gt;Cache&lt;/a&gt;—a map-like data structure—and perform updates or lookups.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web</title>
       <link>https://ryotaro.dev/en/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/</link>

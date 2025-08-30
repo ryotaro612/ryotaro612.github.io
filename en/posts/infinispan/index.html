@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   
   
   <script>(function (w, d, s, l, i) {
@@ -21,14 +21,14 @@
     integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
     crossorigin="anonymous" />
   
-  <link rel="stylesheet" href="http://localhost:1313/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+  <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
   
-  <link rel="stylesheet" href="http://localhost:1313/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
+  <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
   
 
-<link rel="stylesheet" href="http://localhost:1313/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
 
-<link rel="stylesheet" href="http://localhost:1313/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -42,7 +42,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
     integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
-  <title>Distributed Caches of Infinispan</title>
+  <title>Distributed Caches in Infinispan</title>
 </head>
 
 <body>
@@ -55,14 +55,14 @@
   
   
   <header class="navigation">
-    <h2><a href="http://localhost:1313/en/">Blanket</a></h2>
+    <h2><a href="https://ryotaro.dev/en/">Blanket</a></h2>
     <nav>
       <ul>
-        <li><a href="http://localhost:1313/en/about">About</a></li>
-        <li><a href="http://localhost:1313/en/posts">Posts</a></li>
-        <li><a href="http://localhost:1313/en/tags">Tags</a></li>
+        <li><a href="https://ryotaro.dev/en/about">About</a></li>
+        <li><a href="https://ryotaro.dev/en/posts">Posts</a></li>
+        <li><a href="https://ryotaro.dev/en/tags">Tags</a></li>
         
-        <li><a href="http://localhost:1313/posts/infinispan/">ja</a></li>
+        <li><a href="https://ryotaro.dev/posts/infinispan/">ja</a></li>
         
       </ul>
       <ul>
@@ -88,7 +88,7 @@
         </li>
         
         <li>
-          <a href="http://localhost:1313/en/%20index.xml">
+          <a href="https://ryotaro.dev/en/%20index.xml">
             <i class="fas fa-rss"></i>
           </a>
         </li>
@@ -98,17 +98,17 @@
   </header>
   
 <main>
-  <h1>Distributed Caches of Infinispan</h1>
+  <h1>Distributed Caches in Infinispan</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="http://localhost:1313/en/tags/infinispan/">
+      <a href="https://ryotaro.dev/en/tags/infinispan/">
         #Infinispan
       </a>
     </li>
     
     <li class="tag">
-      <a href="http://localhost:1313/en/tags/consistent-hashing/">
+      <a href="https://ryotaro.dev/en/tags/consistent-hashing/">
         #Consistent Hashing
       </a>
     </li>
@@ -120,45 +120,46 @@
     
   </span>
   <div>
-    <p><a href="https://infinispan.org/">Inifinispan</a>は有償インメモリーデータベース<a href="https://www.redhat.com/en/technologies/jboss-middleware/data-grid">Red Hat Data Grid</a>のOSSとして提供されており、OIDCによるSSOの機能を提供するKeyCloakでキャッシュサーバとして<a href="https://www.keycloak.org/server/caching">利用できる</a>。
-Red HatはKeyCloakの開発も支援している。</p>
-<p>Infinispanの用途は、InifinispanはRESPプロトコルを<a href="https://infinispan.org/docs/stable/titles/resp/resp-endpoint.html">実装している</a>など、RedisやMemcachedと近い。
-<a href="https://infinispan.org/use-cases/">公式ドキュメント</a>でRedisやmemcachedを置きかえるユースケースを紹介されている。
-Inifinispanは、Javaで実装されており、Javaのクライアントと<a href="https://github.com/jsr107/jsr107spec">JSR107</a>のJCache APIで通信できる。
-たとえば、クライアントは、<a href="https://www.javadoc.io/doc/javax.cache/cache-api/latest/index.html">CacheManager</a>でハッシュマップ構造の<a href="https://www.javadoc.io/doc/javax.cache/cache-api/latest/index.html">Cache</a>を取得し、エントリを操作できる。</p>
-<p>Infinispanクラスタのノードをクライアントと同じJVMで動かすこともできる。
-ただし、JVMを同じくする場合、クライアントを停止してもキャッシュを維持したり、違うノード数でクラスタを構成したりすることは難しいだろう。
-KeyCloakの高可用性に関する<a href="https://www.keycloak.org/high-availability/concepts-multi-site">文書</a>では、KeyCloakと別のサーバーでクラスタを構築することを推奨している。</p>
-<p>ノードの実行環境だけでなく、Cacheにも保存方法の選択肢がある。
-保存方法はlocal, replicated, distributed, invalidationの4通りあり、クライアントと違うJVMで起動したノードでクラスタを構成したときは、replicatedかdistributedのいずれかを選ぶ。
-Invalidationは<a href="https://infinispan.org/docs/stable/titles/configuring/configuring.html#invalidation-caches_clustered-caches">推奨されていない</a>。</p>
-<p>Replicated cacheのエントリは全ノードに保存されるが、distributed cacheのエントリは一部のノードにしか保存されない。
-レプリケーションのリクエスト数はノード数に対して線形であり、ノード数が10以上になるときは、処理性能を下げないようにdistributed cacheが<a href="https://infinispan.org/docs/stable/titles/configuring/configuring.html#replicated-caches_clustered-caches">推奨されている</a>。
-つまり、Infinispanの高可用性と処理性能を上げるには、クライアントと別のプロセスでノードを起動し、distributed cacheを選ぶことになる。</p>
-<p>Distributed cacheのエントリを保存するノードは、コンシステントハッシュ法によって決まる。
-具体的なアルゴリズムはどの<a href="https://infinispan.org/docs/stable/titles/configuring/configuring.html#key-ownership_clustered-caches">ConsistentHashFactory</a>の具象クラスを採用するかで決まる。
-原典のコンシステントハッシュ法は、キーを保存するノードを分散するために、キーとノードを単位区間のハッシュ値に写像し、ハッシュ値の隣接するノードにキーを保存する。
-具体的なアルゴリズムを過去に<a href="http://localhost:1313/en/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/">記事</a>にした。</p>
-<p><code>ConsistentHashFactory</code>のアルゴリズムは原典と違う。
-Infinispanに備わるトランザクションやレプリケーションは、原典のコンシステントハッシュ法では解決できない。
-Infinispanはエントリを保存する集合から1つのノードをprimary ownerに選ぶ。
-残りのノードはbackupと呼ばれる。
-Backupへの書き込みリクエストはprimary ownerに転送される。
-Primary ownerはエントリを保存した後に、その結果をBackupに転送する。
-Infinispanの<code>ConsisitentHashFactory</code>は、エントリを分散して配置するだけでなく、primary ownerとbackupの選出も担う。</p>
-<p>特に指定しなければ<code>ConsistentHashFactory</code>の実装に<a href="https://infinispan.org/docs/stable/titles/configuring/configuring.html#key-ownership_clustered-caches"><code>SyncConsistentHashFactory</code></a>が選ばれる。
-以下では、<code>15.2.5-final</code>版の実装の概要について説明する。
-<a href="https://github.com/infinispan/infinispan/blob/68513c2c84ef5203e7543766f5098fbebde91ddd/core/src/main/java/org/infinispan/distribution/ch/impl/SyncConsistentHashFactory.java#L48"><code>create</code></a>メソッドは、<code>int numOwners</code>, <code>int numSegments</code>,<code>List&lt;Address&gt; members</code>, <code>Map&lt;Address, Float&gt; capacityFactors</code>を引数にとる。
-<code>numOwners</code>はエントリを保存するノード数、<code>members</code>はノードを表す。
-Primary ownerを先頭とする<code>numOwners</code>個のノードのリストをセグメントといい、<code>SyncConsistentHashFactory</code>は<code>numSegments</code>個のセグメントを生成する。
-エントリのキーとセグメントのハッシュ値を比較し、キーに隣接するセグメントのノードにエントリを保存する。
-セグメントごとにノードやその順序を変えることで負荷分散、primary ownerの選出、レプリケーションを実現する。
-ノードに割り当てるセグメントも両者のハッシュ値の距離によって決まる。
-<code>capacityFactors</code>で、割り当てるセグメント数やセグメント内の順序をノードの性能に合わせて調整できる。
-<code>numOwners</code>は実行中でも可変だが<code>numSegments</code>は変えられない。</p>
-<p>ハッシュ空間は<code>[0..2^63-1]</code>であり、<code>long</code>型で表現できる非負の整数の集合に等しい。
-セグメントのハッシュ値は、隣接するセグメントのハッシュ値と等間隔(<code>Long.MAX_VALUE/numSegments</code>)になるように決まる。最初のセグメントのハッシュ値は<code>Long.MAX_VALUE/(2*numSegments)</code>からはじまる。
-以下の<a href="https://github.com/infinispan/infinispan/blob/68513c2c84ef5203e7543766f5098fbebde91ddd/core/src/main/java/org/infinispan/distribution/ch/impl/SyncConsistentHashFactory.java#L275"><code>computeSegmentHashes</code></a>で<code>segmentHashes</code>にハッシュ値を記録する。</p>
+    <p><a href="https://infinispan.org/">Infinispan</a> is an open-source in-memory data grid and forms the core of <a href="https://www.redhat.com/en/technologies/jboss-middleware/data-grid">Red Hat Data Grid</a>.
+It can also serve as a <a href="https://www.keycloak.org/">cache server</a> for <a href="https://www.keycloak.org/">KeyCloak</a>, which provides single sign-on and identity brokering.</p>
+<p>The official documentation describes Infinispan as a <a href="https://infinispan.org/use-cases/">drop-in replacement for Redis or Memcached</a>.
+It also implements <a href="https://github.com/jsr107/jsr107spec">JSR107</a>, which allows Java clients to interact with an Infinispan cluster via the JCache API.
+For example, a client can use a <a href="https://www.javadoc.io/doc/javax.cache/cache-api/latest/index.html">CacheManager</a> to obtain a <a href="https://www.javadoc.io/doc/javax.cache/cache-api/latest/index.html">Cache</a>—a map-like data structure—and perform updates or lookups.</p>
+<p>Although it is possible to run an Infinispan node in the same JVM as the client, the <a href="https://www.keycloak.org/high-availability/concepts-multi-site">KeyCloak documentation</a> recommends running clusters and clients on separate servers.
+Keeping them separate makes it easier to scale both independently and improves availability.</p>
+<p>Infinispan supports four cache modes: local, replicated, distributed, and invalidation.
+When clusters and clients run on different servers, only replicated or distributed caches are suitable.
+<a href="https://infinispan.org/docs/stable/titles/configuring/configuring.html#invalidation-caches_clustered-caches">Invalidation caches</a> are not recommended in this case.</p>
+<p>A replicated cache stores every entry on all nodes, while a distributed cache stores each entry on a subset of nodes.
+Because the number of replication requests grows linearly with the number of nodes, the <a href="https://infinispan.org/docs/stable/titles/configuring/configuring.html#replicated-caches_clustered-caches">documentation</a> recommends distributed caches when you have ten nodes or more.
+In short, for both high availability and performance, clusters should run on separate servers and use distributed caches.</p>
+<p>Node assignment for cache entries is determined using a consistent hashing algorithm.
+More precisely, an implementation of <a href="https://infinispan.org/docs/stable/titles/configuring/configuring.html#key-ownership_clustered-caches">ConsistentHashFactory</a> decides how keys are mapped to nodes.
+The original consistent hashing algorithm maps keys and nodes into a unit interval, assigning each key to its successor node.
+This balances load and minimizes redistribution.
+See this <a href="https://ryotaro.dev/en/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/">post</a> for details on the original algorithm.</p>
+<p>Infinispan’s <code>ConsistentHashFactory</code> extends that idea to support replication and transactions, which the original algorithm does not address.
+The group of nodes that stores a given entry is called a <strong>segment</strong>.
+The first node in the segment is the <strong>primary owner</strong>, while the others serve as <strong>backups</strong>.
+Writes are always directed to the primary owner, which stores the entry and then replicates it to the backups.
+Thus, <code>ConsistentHashFactory</code> is responsible not only for distributing entries but also for selecting primary owners and backup nodes.</p>
+<p>By default, Infinispan uses <a href="https://infinispan.org/docs/stable/titles/configuring/configuring.html#key-ownership_clustered-caches"><code>SyncConsistentHashFactory</code></a>.
+The <a href="https://github.com/infinispan/infinispan/blob/68513c2c84ef5203e7543766f5098fbebde91ddd/core/src/main/java/org/infinispan/distribution/ch/impl/SyncConsistentHashFactory.java#L48">implementation in version 15.2.5-final</a> exposes a <code>create</code> method with the following parameters:</p>
+<ul>
+<li><code>numOwners</code>: the number of nodes that should hold each entry</li>
+<li><code>numSegments</code>: the total number of segments</li>
+<li><code>members</code>: the list of cluster nodes</li>
+<li><code>capacityFactors</code>: a weight per node that influences how many segments it receives</li>
+</ul>
+<p>A segment is defined as a list of <code>numOwners</code> nodes, with the primary owner listed first.
+<code>SyncConsistentHashFactory</code> creates <code>numSegments</code> such segments.
+Each key is hashed and mapped to the segment whose hash is closest, ensuring balanced distribution.
+By varying the node composition and order per segment, the algorithm achieves load balancing, primary assignment, and replication.
+Segment placement also considers the distance between node hashes, while <code>capacityFactors</code> can be used to skew assignments based on node performance.
+Notably, <code>numOwners</code> can be adjusted at runtime, but <code>numSegments</code> is fixed.</p>
+<p>The hash space spans all non-negative <code>long</code> values, from \(0\) to \(2^{63}-1\).
+Segments are placed at evenly spaced intervals (<code>Long.MAX_VALUE / numSegments</code>), with the first segment starting at <code>Long.MAX_VALUE / (2 * numSegments)</code>.
+This allocation is implemented in <a href="https://github.com/infinispan/infinispan/blob/68513c2c84ef5203e7543766f5098fbebde91ddd/core/src/main/java/org/infinispan/distribution/ch/impl/SyncConsistentHashFactory.java#L275"><code>computeSegmentHashes</code></a>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f38ba8">private</span> <span style="color:#f38ba8">long</span><span style="color:#89dceb;font-weight:bold">[]</span> <span style="color:#89b4fa">computeSegmentHashes</span>(<span style="color:#f38ba8">int</span> numSegments) {
 </span></span><span style="display:flex;"><span>   <span style="color:#cba6f7">assert</span> segmentSize <span style="color:#89dceb;font-weight:bold">!=</span> 0;
 </span></span><span style="display:flex;"><span>   <span style="color:#f38ba8">long</span><span style="color:#89dceb;font-weight:bold">[]</span> segmentHashes <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#cba6f7">new</span> <span style="color:#f38ba8">long</span><span style="color:#89dceb;font-weight:bold">[</span>numSegments<span style="color:#89dceb;font-weight:bold">]</span>;
@@ -169,24 +170,19 @@ Primary ownerを先頭とする<code>numOwners</code>個のノードのリスト
 </span></span><span style="display:flex;"><span>   }
 </span></span><span style="display:flex;"><span>   <span style="color:#cba6f7">return</span> segmentHashes;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>エントリーのキーを保存するセグメントを決めるために<a href="https://github.com/infinispan/infinispan/blob/68513c2c84ef5203e7543766f5098fbebde91ddd/commons/all/src/main/java/org/infinispan/commons/hash/MurmurHash3.java#L30">MurMurHash3</a>を使う。
-キーにMurMurHash3を適用して得られたハッシュ値の下位64ビットをセグメント数で割り、セグメントを決める。
-実際の実装は<a href="https://github.com/infinispan/infinispan/blob/68513c2c84ef5203e7543766f5098fbebde91ddd/core/src/main/java/org/infinispan/distribution/ch/impl/HashFunctionPartitioner.java#L78"><code>getSegmentForHash</code></a>にある。</p>
+</span></span></code></pre></div><p>Keys are hashed using <a href="https://github.com/infinispan/infinispan/blob/68513c2c84ef5203e7543766f5098fbebde91ddd/commons/all/src/main/java/org/infinispan/commons/hash/MurmurHash3.java?utm_source=chatgpt.com#L30">MurmurHash3</a>.
+The <a href="https://github.com/infinispan/infinispan/blob/68513c2c84ef5203e7543766f5098fbebde91ddd/core/src/main/java/org/infinispan/distribution/ch/impl/HashFunctionPartitioner.java?utm_source=chatgpt.com#L78">getSegmentForHash</a> method maps the MurmurHash3 result to a segment by dividing the lower 64 bits by the segment size:</p>
 <div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f38ba8">public</span> <span style="color:#f38ba8">int</span> <span style="color:#89b4fa">getSegmentForHash</span>(<span style="color:#f38ba8">int</span> hash) {
-</span></span><span style="display:flex;"><span>   <span style="color:#6c7086;font-style:italic">// The result must always be positive, so we make sure the dividend is positive first</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#6c7086;font-style:italic">// Ensure the result is always positive</span>
 </span></span><span style="display:flex;"><span>   <span style="color:#cba6f7">return</span> (hash <span style="color:#89dceb;font-weight:bold">&amp;</span> Integer.<span style="color:#89b4fa">MAX_VALUE</span>) <span style="color:#89dceb;font-weight:bold">/</span> segmentSize;
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>ノードのハッシュの計算にも<code>MurMurHash3</code>を使う。
-ノードの場合、原典のコンシステントハッシュ法にあるvirtual nodeを使うため、実際にはvirtual nodeを求める。
-virtual nodeの数は、<a href="https://github.com/infinispan/infinispan/blob/68513c2c84ef5203e7543766f5098fbebde91ddd/core/src/main/java/org/infinispan/distribution/ch/impl/SyncConsistentHashFactory.java#L200"><code>Builder</code></a>のコンストラクタのようにセグメント数-1の対数に近い値になる。</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>numNodeHashes <span style="color:#89dceb;font-weight:bold">=</span> 32 <span style="color:#89dceb;font-weight:bold">-</span> Integer.<span style="color:#89b4fa">numberOfLeadingZeros</span>(numSegments);
-</span></span></code></pre></div><p>virtual nodeのハッシュ値は、virtual nodeの配列の番号をシードとしてノードのUUIDにMurMurHash3を適用した値になる。</p>
-<p>virtual nodeとsegmentのハッシュ値を求めたら、今度はノードにセグメントを割り当てる。
-はじめに、すべてのセグメントのprimary ownerを決め、その後順番にセグメントのbackupの集合を決める。
-セグメントとノードの距離は、セグメントのハッシュ値と最も近いvirtual nodeの距離をスケールした値になる。
-全ノードで最小のキャパシティをノードのキャパシティで割った値でスケールする。
-最大のハッシュ値をもつvirtual nodeと最小のハッシュ値をもつvirtual nodeは互いに隣接するとみなす。
-各セグメントのbackupの集合を決めるときは、ハッシュ値を基準した優先度つきキューにすべてのノードを追加した後に、集合の数だけキューから取り出す。</p>
+</span></span></code></pre></div><p>Nodes are also hashed with MurmurHash3, but through the use of virtual nodes.
+Each node is assigned \(\lceil \log_2(\text{numSegments}-1) \rceil\) virtual nodes.
+The \(i\)-th virtual node’s hash is computed from the node’s UUID with \(i\) as the seed.</p>
+<p>Primary owners are assigned first, followed by backups.
+The distance between a segment and a node is defined as the scaled distance between the segment’s hash and the nearest virtual node hash, adjusted by the node’s capacity relative to the minimum capacity.
+Hashes are treated as circular, so the maximum and minimum values are neighbors.
+Backups are then selected by inserting all nodes into a priority queue, ordered by scaled distance, and dequeuing \(\texttt{numOwners} - 1\) of them.</p>
   </div>
 </main>
 

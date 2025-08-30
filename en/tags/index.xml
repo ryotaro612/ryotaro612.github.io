@@ -6,8 +6,22 @@
     <description>Recent content in Tags on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 16 Aug 2025 14:29:07 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 23 Aug 2025 15:03:19 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Consistent Hashing</title>
+      <link>https://ryotaro.dev/en/tags/consistent-hashing/</link>
+      <pubDate>Sat, 23 Aug 2025 15:03:19 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/consistent-hashing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Infinispan</title>
+      <link>https://ryotaro.dev/en/tags/infinispan/</link>
+      <pubDate>Sat, 23 Aug 2025 15:03:19 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/infinispan/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Collaborative Filtering</title>
       <link>https://ryotaro.dev/en/tags/collaborative-filtering/</link>
@@ -90,13 +104,6 @@
       <link>https://ryotaro.dev/en/tags/large-language-model/</link>
       <pubDate>Sat, 12 Apr 2025 14:01:19 +0900</pubDate>
       <guid>https://ryotaro.dev/en/tags/large-language-model/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Consistent Hashing</title>
-      <link>https://ryotaro.dev/en/tags/consistent-hashing/</link>
-      <pubDate>Tue, 18 Mar 2025 13:18:53 +0900</pubDate>
-      <guid>https://ryotaro.dev/en/tags/consistent-hashing/</guid>
       <description></description>
     </item>
     <item>

@@ -30,9 +30,29 @@
   </url><url>
     <loc>https://ryotaro.dev/tags/infinispan/</loc>
     <lastmod>2025-08-23T15:03:24+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/infinispan/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/infinispan/"
+                />
   </url><url>
     <loc>https://ryotaro.dev/posts/infinispan/</loc>
     <lastmod>2025-08-23T15:03:24+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/infinispan/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/infinispan/"
+                />
   </url><url>
     <loc>https://ryotaro.dev/posts/</loc>
     <lastmod>2025-08-23T15:03:24+09:00</lastmod>
