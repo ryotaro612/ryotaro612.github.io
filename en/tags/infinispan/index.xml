@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Infinispan on Blanket</title>
+    <link>http://localhost:45243/en/tags/infinispan/</link>
+    <description>Recent content in Infinispan on Blanket</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 23 Aug 2025 15:03:19 +0900</lastBuildDate>
+    <atom:link href="http://localhost:45243/en/tags/infinispan/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Distributed Caches of Infinispan</title>
+      <link>http://localhost:45243/en/posts/infinispan/</link>
+      <pubDate>Sat, 23 Aug 2025 15:03:19 +0900</pubDate>
+      <guid>http://localhost:45243/en/posts/infinispan/</guid>
+      <description>&lt;!-- https://docs.redhat.com/en/documentation/red_hat_data_grid/7.0/html/getting_started_guide/red_hat_jboss_data_grid_version_information --&gt;&#xA;&lt;p&gt;Infinispan, an open-source in-memory database.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://infinispan.org/&#34;&gt;Inifinispan&lt;/a&gt;は有償インメモリーデータベース&lt;a href=&#34;https://www.redhat.com/en/technologies/jboss-middleware/data-grid&#34;&gt;Red Hat Data Grid&lt;/a&gt;のOSSとして提供されており、OIDCによるSSOの機能を提供するKeyCloakでキャッシュサーバとして&lt;a href=&#34;https://www.keycloak.org/server/caching&#34;&gt;利用できる&lt;/a&gt;。&#xA;Red HatはKeyCloakの開発も支援している。&lt;/p&gt;&#xA;&lt;p&gt;Infinispanの用途は、RedisやMemcachedと近い。&#xA;&lt;a href=&#34;https://infinispan.org/use-cases/&#34;&gt;公式ドキュメント&lt;/a&gt;でRedisやmemcachedを置きかえるユースケースを紹介されている。&#xA;実際、InifinispanはRESPプロトコルを&lt;a href=&#34;https://infinispan.org/docs/stable/titles/resp/resp-endpoint.html&#34;&gt;実装している&lt;/a&gt;。&#xA;Inifinispanは、Javaで実装されており、Javaのクライアントと&lt;a href=&#34;https://github.com/jsr107/jsr107spec&#34;&gt;JSR107&lt;/a&gt;のJCache APIで通信できる。&#xA;たとえば、クライアントは、&lt;a href=&#34;https://www.javadoc.io/doc/javax.cache/cache-api/latest/index.html&#34;&gt;CacheManager&lt;/a&gt;でハッシュマップ構造の&lt;a href=&#34;https://www.javadoc.io/doc/javax.cache/cache-api/latest/index.html&#34;&gt;Cache&lt;/a&gt;を取得し、エントリを操作できる。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

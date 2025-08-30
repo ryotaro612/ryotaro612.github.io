@@ -104,8 +104,8 @@
     <h3><a href="https://ryotaro.dev/posts/infinispan/">Infinispanの分散キャッシュ</a></h3>
     <div class="summary"><p><a href="https://infinispan.org/">Inifinispan</a>は有償インメモリーデータベース<a href="https://www.redhat.com/en/technologies/jboss-middleware/data-grid">Red Hat Data Grid</a>のOSSとして提供されており、OIDCによるSSOの機能を提供するKeyCloakでキャッシュサーバとして<a href="https://www.keycloak.org/server/caching">利用できる</a>。
 Red HatはKeyCloakの開発も支援している。</p>
-<p><a href="https://infinispan.org/use-cases/">公式ドキュメント</a>でRedisやmemcachedを置きかえるユースケースを紹介されているように、Infinispanの用途は、RedisやMemcachedと近い。
-実際、InifinispanはRESPプロトコルを<a href="https://infinispan.org/docs/stable/titles/resp/resp-endpoint.html">実装している</a>。
+<p>Infinispanの用途は、InifinispanはRESPプロトコルを<a href="https://infinispan.org/docs/stable/titles/resp/resp-endpoint.html">実装している</a>など、RedisやMemcachedと近い。
+<a href="https://infinispan.org/use-cases/">公式ドキュメント</a>でRedisやmemcachedを置きかえるユースケースを紹介されている。
 Inifinispanは、Javaで実装されており、Javaのクライアントと<a href="https://github.com/jsr107/jsr107spec">JSR107</a>のJCache APIで通信できる。
 たとえば、クライアントは、<a href="https://www.javadoc.io/doc/javax.cache/cache-api/latest/index.html">CacheManager</a>でハッシュマップ構造の<a href="https://www.javadoc.io/doc/javax.cache/cache-api/latest/index.html">Cache</a>を取得し、エントリを操作できる。</p></div>
     <div class="article-footer">
