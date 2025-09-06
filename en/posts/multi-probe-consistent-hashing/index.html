@@ -26,7 +26,9 @@
   <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
   
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/list.min.77915db2c7e22353f139086e8007e836c0943b636d1285b13737de98af7c5e56.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -40,7 +42,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
     integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
-  <title>Consistent Hashing</title>
+  <title>Multi-probe consistent hashing (2015)</title>
 </head>
 
 <body>
@@ -60,7 +62,7 @@
         <li><a href="https://ryotaro.dev/en/posts">Posts</a></li>
         <li><a href="https://ryotaro.dev/en/tags">Tags</a></li>
         
-        <li><a href="https://ryotaro.dev/tags/consistent-hashing/">ja</a></li>
+        <li><a href="https://ryotaro.dev/posts/multi-probe-consistent-hashing/">ja</a></li>
         
       </ul>
       <ul>
@@ -96,32 +98,49 @@
   </header>
   
 <main>
-  <h1>Consistent Hashing</h1>
-    <div>
-      
-      <a href="https://ryotaro.dev/en/posts/multi-probe-consistent-hashing/">
-        <div class="entry">
-          <h2>Multi-probe consistent hashing (2015)</h2>
-        </div>
-      </a>	
-      
-      <a href="https://ryotaro.dev/en/posts/infinispan/">
-        <div class="entry">
-          <h2>Distributed Caches in Infinispan</h2>
-        </div>
-      </a>	
-      
-      <a href="https://ryotaro.dev/en/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/">
-        <div class="entry">
-          <h2>Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web</h2>
-        </div>
-      </a>	
-      
-    </div>
+  <h1>Multi-probe consistent hashing (2015)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/en/tags/consistent-hashing/">
+        #Consistent Hashing
+      </a>
+    </li>
+    
+  </ul>
+  <span class="date">
+    
+    September 6, 2025
+    
+  </span>
+  <div>
+    <p>Karger et al&rsquo;s <a href="https://www.cs.princeton.edu/courses/archive/fall09/cos518/papers/chash.pdf">Consistent hashing</a> is widely used for load balancing in content delivery networks and key-value store databases.
+Consistent hashing maps both keys and nodes to values in the unit interval, and assigns each key to its closest node.</p>
+<p>Since nodes in the cluster can frequently change, the algorithm generates multiple hash values for each node to help balance the load.
+Let \(n\) be the number of nodes.
+The load of a node is the number of keys stored on it, and the peak-to-average load is defined as the ratio of the maximum load to the average load across all nodes.
+Achieving a peak-to-average load of \(1+\epsilon\) with high probability (\(1-\frac{1}{n^{\Omega(1)}}\)) requires \(\Theta(\frac{\ln n}{\epsilon^2})\) hash values per node.
+This form of consistent hashing requires more than \(O(n)\) space to achieve good load balancing.</p>
+<p><a href="https://arxiv.org/pdf/1505.00062">Multi-probe consistent hashing</a> instead generates \(K\) hash values for each key, rather than multiple hash values for the nodes.
+A key is then assigned to its closest successor node among the candidate hash positions.
+For \(2 \le K \ll \frac{\sqrt{n}}{\ln n}\), the peak-to-average load is \(\frac{K}{K-1}\frac{1}{n}+o(\frac{1}{n})\) with high probability (\(1-\frac{1}{n^{\Omega(1)}}\)).
+While the original algorithm assigns each key to its closest node, Multi-probe consistent hashing assigns the key to its closest successor node.</p>
+  </div>
 </main>
 
   
+<ul class="pagination">
   
+  <li>
+    <a href="/en/posts/infinispan/">
+      <i class="fa-solid fa-xl fa-angle-left"></i>
+    </a>
+  </li>
+  
+  
+</ul>
+
+
   <footer>
     <small>© Ryotaro Nakamura. All Rights Reserved.</small>
   </footer>

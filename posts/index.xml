@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 23 Aug 2025 15:03:24 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 06 Sep 2025 14:51:04 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Multi-probe consistent hashing (2015)</title>
+      <link>https://ryotaro.dev/posts/multi-probe-consistent-hashing/</link>
+      <pubDate>Sat, 06 Sep 2025 14:51:04 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/multi-probe-consistent-hashing/</guid>
+      <description>&lt;p&gt;Karger et al.による原典の&lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall09/cos518/papers/chash.pdf&#34;&gt;Consistent Hashing&lt;/a&gt;は、CDNやKVSのノードの負荷を分散するために、ノードとキーを単位区間のハッシュ値に写像し、ハッシュ値で比べたときの最近傍のノードにキーを割り当てる。&#xA;ノードの追加と削除を繰り返してもキーの保存数が均等になるように、1つのノードに複数のハッシュ値を割りあてる。&#xA;キーと最も近いハッシュ値のノードにキーを保存する。&#xA;ノードの負荷をノードに保存するキーの数とすると、最大の負荷と平均の負荷の比率を高確率(\(1-\frac{1}{n^{\Omega(1)}}\))で\(1+\epsilon\)に抑えるには、\(\Theta(\frac{\ln n}{\epsilon^2})\)のハッシュ値を各ノードに割り当てなければならず、空間計算量はノードの数より大きくなる。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Infinispanの分散キャッシュ</title>
       <link>https://ryotaro.dev/posts/infinispan/</link>

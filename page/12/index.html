@@ -101,6 +101,24 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/a_min-max_cut_algorithm_for_graph_partitioning_and_data_clustering/">A Min-max Cut Algorithm for Graph Partitioning and Data Clustering</a></h3>
+    <div class="summary"><p>重みつき隣接行列で表した無向グラフを2分割するクラスタリングであり、グラフ間の類似を最小化し、グラフ内のノードの類似の最大化をはかる。
+隣接行列を\(W_{uv}\), \(\text{cut}(A, B)=W(A, B)\), \(W(A, B) = \sum_{u\in A, v\in B}W_{uv}\)として、以下の目的関数を最小化する分割を探索する。
+ノードを2つに分ける最適解はNP完全であるため、近似解をもとめる。
+$$
+\text{Mcut} = \frac{\text{cut}(A, B)}{W(A)} + \frac{\text{cut}(A, B)}{W(B)}
+$$</p></div>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        July 9, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/implementing_fault-tolerant_services_using_the_state_machine_approach_a_tutorial/">Implementing Fault-Tolerant Services Using the State Machine Approach: A Tutorial</a></h3>
     <div class="summary"><p>サーバのレプリケーションによってフォールトトレランスを高めることができるが、レプリケーション間の合意形成のプロトコルが必要になる。
 そこで、ステートマシンをモデルにプロトコルを定義する手法を、Fail Stopとビザンチン将軍問題で例示する。
@@ -254,24 +272,6 @@ PLS（部分的最小二乗法）は、入力変数の線形結合で表わせ�
       <span class="date">
         
         May 14, 2022
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/a_family_of_experiments_on_test_driven_development/">A Family of Experiments on Test-Driven Development</a></h3>
-    <div class="summary"><p>TDDがコードに及ぼす影響を調べた先行研究はあるが、研究手法、被検者、プログラミング環境などの実験条件は様々、結論は違い、明確な結論はない。
-表題の論文は、個別のTDDの実験結果の精度と汎化性を上げるために、実験結果に影響するとみられる実験条件をかえ、TDDとITL(iterative test-last development)を比較する12の実験を実施した。
-被検者は4大学と企業12社で、5つのトイタスクを解かせ、通ったテストオラクルの割合で実装の品質を評価した。
-結果、TDD初心者の被検者はITLによる実装のほうが品質が高かった。
-エディタや言語、ITLとTDDの実験の被験順序、TDDとITLをどちらを先に学んだかは品質に影響しなかった。
-学生よりも企業に所属するプロフェッショナルのほうがTDD、ITL両方で品質がよかったが、TDDで実装したときの品質の下がり幅は学生の下がり幅の2倍に及んだ。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        April 29, 2022
         
       </span>
     </div>

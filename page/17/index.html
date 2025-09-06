@@ -101,6 +101,23 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/what_helped_and_what_did_not/">What helped, and what did not? An Evaluation of the Strategies to Improve Continuous Integration</a></h3>
+    <div class="summary"><p><a href="https://travistorrent.testroots.org/">TravisTorrent</a>にある100件のプロジェクトで10種類のCIのテクニックを定量評価した。
+テクニックは、不要なビルドやテストをスキップするか、実行順序を優先づけるものかに分かれる。
+前者は計算資源の消費を減らすこと、後者は失敗するケースを早めに実行することを目的にする。
+もっとも成功するテストやビルドをスキップできたテクニックは、コードに変更のないケースをスキップするものだったが、同時に失敗するテストを多く見落とした。
+実行順序を優先付ける手法で最も性能のよかったテクニックは、<a href="https://www.semanticscholar.org/paper/Static-test-case-prioritization-using-topic-models-Thomas-Hemmati/ad77a2776733c7fdc10c0b043f7504a14fce3b6e">Thomasら</a>のもので、シグネチャやコメントで学習したトピックモデルを使い直前に実行したテストと違うトピックのテストを実行する。</p></div>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        August 20, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/dont_do_that/">Don&#39;t Do That! Hunting Down Visual Design Smells in Complex UIs against Design Guidelines</a></h3>
     <div class="summary"><p>2020年5月時点のマテリアルデザインの公式ドキュメントから93種類の不吉な匂いを洗い出し、71種類の匂いを検出するツールUIS-Hunterを開発した。
 文中に&quot;don&rsquo;t&quot;や&quot;caution&quot;があることとUIの画像があることを条件に不吉な匂いを選び、9,286個のアンドロイドアプリにある7,497のUIを調べたところ、2,587個のアプリから1つ以上の不吉な匂いのあるUIが見つかった。
@@ -249,21 +266,6 @@ Lambda architectureは、システムの複雑化を許容し、2つのアーキ
       <span class="date">
         
         July 31, 2021
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/browsemaps/">The Browsemaps: Collaborative Filtering at LinkedIn</a></h3>
-    <div class="summary"><p>Browsemapsは、LinkedInのアイテムベースで水平型の協調フィルタリングである。
-Browsemapは、LinkedInの画面上にある推薦するコンテンツを並べたコンポーネントを意味する。
-ここでの水平型は特徴の種類の違いによらず異なるエンティティを統一的に扱えることであり、実際に、人、仕事、会社など複数のエンティティをBrowsemapsでユーザに推薦している。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        July 22, 2021
         
       </span>
     </div>

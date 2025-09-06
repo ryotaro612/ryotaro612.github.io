@@ -6,8 +6,15 @@
     <description>Recent content in Consistent Hashing on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 23 Aug 2025 15:03:19 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 06 Sep 2025 14:51:04 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/tags/consistent-hashing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Multi-probe consistent hashing (2015)</title>
+      <link>https://ryotaro.dev/en/posts/multi-probe-consistent-hashing/</link>
+      <pubDate>Sat, 06 Sep 2025 14:51:04 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/multi-probe-consistent-hashing/</guid>
+      <description>&lt;p&gt;Karger et al&amp;rsquo;s &lt;a href=&#34;https://www.cs.princeton.edu/courses/archive/fall09/cos518/papers/chash.pdf&#34;&gt;Consistent hashing&lt;/a&gt; is widely used for load balancing in content delivery networks and key-value store databases.&#xA;Consistent hashing maps both keys and nodes to values in the unit interval, and assigns each key to its closest node.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Distributed Caches in Infinispan</title>
       <link>https://ryotaro.dev/en/posts/infinispan/</link>

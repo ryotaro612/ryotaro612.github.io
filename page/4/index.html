@@ -101,6 +101,31 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/">Poly-Encoders: Architectures and Pre-Training Strategies for Fast and Accurate Multi-Sentence Scoring (2019)</a></h3>
+    <div class="summary"><p>入力系列のラベルを推定できるようにTransformerのエンコーダーをファインチューニングするとき、エンコーディングの仕方に、Cross encoder (<a href="https://arxiv.org/abs/1901.08149">Wolf et al.</a>) とBi-encoder (<a href="https://arxiv.org/abs/1809.01984">Mazaré et al.</a>) がある。
+Cross-encoderは、入力系列とラベルを連結した系列をエンコーダーに入力し、入力系列とラベルのペアのエンベディングからスコアを求める。
+Bi-encoderは、入力系列とラベルを別のエンコーダーに入力し、それぞれのエンベディングの内積をスコアとする。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/transformer/">
+            #Transformer
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        February 24, 2024
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/the-design-of-postgres/">THE DESIGN OF POSTGRES (1986)</a></h3>
     <div class="summary"><p>最初期におけるPOSTGRESの設計は、<a href="https://dsf.berkeley.edu/papers/ERL-M85-95.pdf">THE DESIGN OF POSTGRES</a>で発表された。
 <a href="https://www.postgresql.jp/document/8.3/html/history.html">POSTGRES少史</a>によると、データモデルは<a href="https://apps.dtic.mil/sti/tr/pdf/ADA184251.pdf">The POSTGRES data model</a>で、ルールは<a href="https://apps.dtic.mil/sti/tr/pdf/ADA179161.pdf">The design of the POSTGRES rules system</a>で、ストレージは<a href="https://dsf.berkeley.edu/papers/ERL-M87-06.pdf">THE DESIGN OF THE POSTGRES STORAGE SYSTEM</a>で同時期に個別に論じられている。
@@ -336,33 +361,6 @@ CAP定理の発表された12年後の今日では、分断時における一貫
       <span class="date">
         
         December 9, 2023
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/probabilistic_latent_semantic_indexing/">Probablistic Latent Semantic Indexing (1999)</a></h3>
-    <div class="summary"><p><a href="http://wordvec.colorado.edu/papers/Deerwester_1990.pdf">Latent Semantic Analysis</a>は、単語の出現頻度の列ベクトルで文書をあらわす行列を、特異値分解し、潜在的な意味を反映した低ランクな行列を求める方法である。
-特異値を大きい順に\(k\)個えらぶとき、単語の数を\(t\), 文書数を\(d\)とすれば、左特異ベクトルのサイズは、\(t\times k\), 右特異ベクトルの転置行列のサイズは\(k\times d\)になる。</p>
-<p><a href="https://sigir.org/wp-content/uploads/2017/06/p211.pdf">Probabilistic Latent Smantic Indexing</a>は、各文書が1つのクラスに分類されると仮定し、クラスを示すベクトルを隠れ変数とみなしたEMアルゴリズムで、文書や単語の尤度、クラスの生起確率を求める。
-これにより、クラス\(z_k\)についての文書\(d_i\)と単語\(w_j\)の尤度を\(P(d_i|z_k)\), \(P(w_j|z_k)\), また\(\hat{\textbf{U}}=(P(d_i|z_k))_{i, k}\), \(\hat{\textbf{V}}=(P(w_j|z_k))_{j, k}\), \(\hat{\Sigma}=\text{diag} (P(z_k))_k\)とすると、同時確率モデルを特異値分解の形式\(P=\hat{\textbf{U}}\hat{\Sigma}\hat{\textbf{V}}^t\)で表すことができる。
-Latent Semantic Analysisと違い、\(P\)の固有値や特異ベクトルの要素から確率モデル上の意味を読みとることができる。</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/%E6%BD%9C%E5%9C%A8%E6%84%8F%E5%91%B3%E8%A7%A3%E6%9E%90/">
-            #潜在意味解析
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        December 2, 2023
         
       </span>
     </div>

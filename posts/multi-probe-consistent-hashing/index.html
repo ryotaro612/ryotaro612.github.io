@@ -26,7 +26,9 @@
   <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
   
 
-<link rel="stylesheet" href="https://ryotaro.dev/scss/list.min.77915db2c7e22353f139086e8007e836c0943b636d1285b13737de98af7c5e56.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -40,7 +42,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
     integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
-  <title>Consistent Hashing</title>
+  <title>Multi-probe consistent hashing (2015)</title>
 </head>
 
 <body>
@@ -60,7 +62,7 @@
         <li><a href="https://ryotaro.dev/posts">Posts</a></li>
         <li><a href="https://ryotaro.dev/tags">Tags</a></li>
         
-        <li><a href="https://ryotaro.dev/en/tags/consistent-hashing/">en</a></li>
+        <li><a href="https://ryotaro.dev/en/posts/multi-probe-consistent-hashing/">en</a></li>
         
       </ul>
       <ul>
@@ -96,38 +98,46 @@
   </header>
   
 <main>
-  <h1>Consistent Hashing</h1>
-    <div>
-      
-      <a href="https://ryotaro.dev/posts/multi-probe-consistent-hashing/">
-        <div class="entry">
-          <h2>Multi-probe consistent hashing (2015)</h2>
-        </div>
-      </a>	
-      
-      <a href="https://ryotaro.dev/posts/infinispan/">
-        <div class="entry">
-          <h2>Infinispanの分散キャッシュ</h2>
-        </div>
-      </a>	
-      
-      <a href="https://ryotaro.dev/posts/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web/">
-        <div class="entry">
-          <h2>Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web</h2>
-        </div>
-      </a>	
-      
-      <a href="https://ryotaro.dev/posts/consistent_hashing_and_random_trees/">
-        <div class="entry">
-          <h2>Consistent Hashing and Random Trees: Distributed Caching Protocols for Relieving Hot Spots on the World Wide Web</h2>
-        </div>
-      </a>	
-      
-    </div>
+  <h1>Multi-probe consistent hashing (2015)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/consistent-hashing/">
+        #Consistent Hashing
+      </a>
+    </li>
+    
+  </ul>
+  <span class="date">
+    
+    September 6, 2025
+    
+  </span>
+  <div>
+    <p>Karger et al.による原典の<a href="https://www.cs.princeton.edu/courses/archive/fall09/cos518/papers/chash.pdf">Consistent Hashing</a>は、CDNやKVSのノードの負荷を分散するために、ノードとキーを単位区間のハッシュ値に写像し、ハッシュ値で比べたときの最近傍のノードにキーを割り当てる。
+ノードの追加と削除を繰り返してもキーの保存数が均等になるように、1つのノードに複数のハッシュ値を割りあてる。
+キーと最も近いハッシュ値のノードにキーを保存する。
+ノードの負荷をノードに保存するキーの数とすると、最大の負荷と平均の負荷の比率を高確率(\(1-\frac{1}{n^{\Omega(1)}}\))で\(1+\epsilon\)に抑えるには、\(\Theta(\frac{\ln n}{\epsilon^2})\)のハッシュ値を各ノードに割り当てなければならず、空間計算量はノードの数より大きくなる。</p>
+<p><a href="https://arxiv.org/pdf/1505.00062">Multi-probe consistent hashing</a>は、ノードに複数のハッシュ値を割りあてずに、キーのハッシュ値を\(K\)個生成する。
+その後、キーと後続のノードのハッシュ値の距離を比較し、最小の距離にあるノードにキーを割り当てる。
+\(2\le K \ll \frac{\sqrt{n}}{\ln n}\)であれば、最大の負荷と平均の負荷の比率は、高確率(\(1-\frac{1}{n^{\Omega(1)}}\))で\(\frac{K}{K-1}\frac{1}{n}+o(\frac{1}{n})\)になる。
+原典のConsistent Hashingはキーを最近傍のノードに割り当てるが、Multi-probe consistent hashingは、キーを後続のノードに割り当てる。</p>
+  </div>
 </main>
 
   
+<ul class="pagination">
   
+  <li>
+    <a href="/posts/infinispan/">
+      <i class="fa-solid fa-xl fa-angle-left"></i>
+    </a>
+  </li>
+  
+  
+</ul>
+
+
   <footer>
     <small>© Ryotaro Nakamura. All Rights Reserved.</small>
   </footer>

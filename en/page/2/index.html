@@ -101,6 +101,39 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/en/posts/reading-wikipedia-to-answer-open-domain-questions/">Reading Wikipedia to Answer Open Domain Questions (2017)</a></h3>
+    <div class="summary"><p><a href="https://aclanthology.org/P17-1171/">Reading Wikipedia to Answer Open Domain Questions</a> proposes DrQA, a system for open-domain question answering.
+DrQA consists of two components: Document Retriever and Document Reader.</p>
+<p>Given a question, the Document Retriever uses bigram TF-IDF matching to search Wikipedia and retrieve the five most relevant articles.
+These articles, along with the question, are then passed to the Document Reader, a neural network model that embeds the question and the paragraphs into vector representations.
+The model then compares the paragraph embeddings with the question embedding to identify the most salient text span that likely contains the answer.</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/open-domain-questions/">
+            #Open Domain Questions
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/tf-idf/">
+            #TF-IDF
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        April 26, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/en/posts/language-models-are-few-shot-learners/">Language Models Are Few Shot Learners (2020)</a></h3>
     <div class="summary"><p>In <a href="https://arxiv.org/abs/2005.14165">Language Models are Few-Shot Learners</a>, it is shown that increasing the number of parameters of <a href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf">GPT-2</a> improves few-shot performance across various tasks.
 The proposed model, GPT-3, is an autoregressive language model with 175 billion parameters.
@@ -379,35 +412,6 @@ In this post, I will explain some Linux features used in the implementation of r
       <span class="date">
         
         December 8, 2024
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/en/posts/back-of-envelope-calculations/">Back of Envelope Calculations</a></h3>
-    <div class="summary"><p>In system design interviews, back of envelope calculation is a task to estimate required comuputing resources based on the given requirement.</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/en/tags/back-of-the-envelope-estimation/">
-            #Back of the Envelope Estimation
-          </a>
-        </li>
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/en/tags/system-design-interview/">
-            #System Design Interview
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        September 24, 2024
         
       </span>
     </div>

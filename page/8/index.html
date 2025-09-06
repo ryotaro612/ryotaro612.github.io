@@ -101,6 +101,40 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/language_models_are_unsupervised_multitask_learners/">Language Models are Unsupervised Multitask Learners (2018)</a></h3>
+    <div class="summary"><p>Zero-shotかつマルチタスク用のモデルとして<a href="https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf">GPT-1</a>の後経のGPT-2を提案した。
+<a href="https://www.semanticscholar.org/paper/Multitask-Learning-Caruana/161ffb54a3fdf0715b198bb57bd22f910242eb49">マルチタスク学習</a>は、複数のタスクむけにモデルを訓練する手法である。
+特徴の入力形式はタスクによらず同じであり、タスク間で知識を補うことで各タスクの汎化性能を向上させる。
+GPT-1の用途がファインチューニングであるため、GPT-1とGPT-2では解けるタスクが違う。
+学習のために、45,000,000件のリンクを含む高品質なコーパスであるWebTextを人の手もかりて用意した。
+GPT-2のアーキテクチャは、GPT-1に層正規化の位置を変え、residual layerの重みをスケールしただけであり、GPT-1と大きな違いはない。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/">
+            #言語モデル
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/byte-pair-encoding/">
+            #Byte Pair Encoding
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        April 1, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/proving_correctness_of_multiprocess_programs/">Proving the Correctness of Multiprocess Programs (1977)</a></h3>
     <div class="summary"><p>マルチプロセスプログラムの正しさを証明するための公理を提案する。
 正しさの条件は、プログラムが安全性と活性を満たすことである。
@@ -346,21 +380,6 @@ ARIESのCLSに記録された更新はUNDOされない。
       <span class="date">
         
         February 12, 2023
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/arc007/">AtCoder Regular Contest 007 C - 節約生活</a></h3>
-    <div class="summary"><p>文字数を\(n\)とすると複数のテレビを組合せたときの視聴パターンの重ね方は\(2^n\)個ある。
-最大文字数は整数型のビット数より数分の1しかないので、ビット操作ですべての重ね方を試行することを考える。
-各重ね方について、パターンを十分に連結した値の論理和に最大文字数以上連続する1があれば、その試行は要件を満たす。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        February 11, 2023
         
       </span>
     </div>

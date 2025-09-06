@@ -101,6 +101,32 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/multi-probe-consistent-hashing/">Multi-probe consistent hashing (2015)</a></h3>
+    <div class="summary"><p>Karger et al.による原典の<a href="https://www.cs.princeton.edu/courses/archive/fall09/cos518/papers/chash.pdf">Consistent Hashing</a>は、CDNやKVSのノードの負荷を分散するために、ノードとキーを単位区間のハッシュ値に写像し、ハッシュ値で比べたときの最近傍のノードにキーを割り当てる。
+ノードの追加と削除を繰り返してもキーの保存数が均等になるように、1つのノードに複数のハッシュ値を割りあてる。
+キーと最も近いハッシュ値のノードにキーを保存する。
+ノードの負荷をノードに保存するキーの数とすると、最大の負荷と平均の負荷の比率を高確率(\(1-\frac{1}{n^{\Omega(1)}}\))で\(1+\epsilon\)に抑えるには、\(\Theta(\frac{\ln n}{\epsilon^2})\)のハッシュ値を各ノードに割り当てなければならず、空間計算量はノードの数より大きくなる。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/consistent-hashing/">
+            #Consistent Hashing
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        September 6, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/infinispan/">Infinispanの分散キャッシュ</a></h3>
     <div class="summary"><p><a href="https://infinispan.org/">Inifinispan</a>は有償インメモリーデータベース<a href="https://www.redhat.com/en/technologies/jboss-middleware/data-grid">Red Hat Data Grid</a>のOSSとして提供されており、OIDCによるSSOの機能を提供するKeyCloakでキャッシュサーバとして<a href="https://www.keycloak.org/server/caching">利用できる</a>。
 Red HatはKeyCloakの開発も支援している。</p>
@@ -364,39 +390,6 @@ LLMの重みを\(W_0\in\mathbb{R}^{d\times k}\) とすると、\(W_0+BA\ (B\in\m
       <span class="date">
         
         May 7, 2025
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/reading-wikipedia-to-answer-open-domain-questions/">Reading Wikipedia to Answer Open Domain Questions (2017)</a></h3>
-    <div class="summary"><p><a href="https://aclanthology.org/P17-1171.pdf">Reading Wikipedia to Answer Open Domain Questions</a>で提案されたDrQAは、ドメインを問わない事実を問う質問に対して、Wikipediaの文書のある文字列区間を解答とみなして出力する。
-DrQAは質問に関係する文書を収集するDocument RetrieverとDocument Readerから構成される。
-Document Retrieverは、バイグラムのTF-IDFで質問と類似するWikipediaを検索し、上位5位の文書をDocument Readerに渡す。
-Document Readerは、Document Retrieverから渡された質問と応答を別の方法で分散表現に変換する。
-最後に質問と応答の分散表現を比較し、応答の解答と推定した区間を出力する。</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/open-domain-questions/">
-            #Open Domain Questions
-          </a>
-        </li>
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/tf-idf/">
-            #TF-IDF
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        April 26, 2025
         
       </span>
     </div>
