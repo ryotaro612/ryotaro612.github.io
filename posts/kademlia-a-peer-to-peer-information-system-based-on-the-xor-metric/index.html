@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  
+  
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-W5TDG76');
+  </script>
+  
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=300,initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+    crossorigin="anonymous" />
+  
+  <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+  
+  <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+  
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+    crossorigin="anonymous"></script>
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+  <title>Kademlia: A Peer to Peer Information System Based on the Xor Metric (2002)</title>
+</head>
+
+<body>
+  
+  
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0"
+      style="display:none;visibility:hidden" />
+  </noscript>
+  
+  
+  <header class="navigation">
+    <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+    <nav>
+      <ul>
+        <li><a href="https://ryotaro.dev/about">About</a></li>
+        <li><a href="https://ryotaro.dev/posts">Posts</a></li>
+        <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+        
+      </ul>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/ryotaro612">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/ryotaro612/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://speakerdeck.com/ryotaro612/">
+            <i class="fa-brands fa-speaker-deck"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://ryotaro.dev/%20index.xml">
+            <i class="fas fa-rss"></i>
+          </a>
+        </li>
+        
+      </ul>
+    </nav>
+  </header>
+  
+<main>
+  <h1>Kademlia: A Peer to Peer Information System Based on the Xor Metric (2002)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/peer-to-peer/">
+        #Peer-to-Peer
+      </a>
+    </li>
+    
+  </ul>
+  <span class="date">
+    
+    September 13, 2025
+    
+  </span>
+  <div>
+    <p>peer-to-peerのファイル共有アプリケーション BitTorrentの分散ハッシュテーブル<a href="https://www.cs.helsinki.fi/u/lxwang/publications/P2P2013_13.pdf">Mainline DHT</a>は<a href="https://pdos.csail.mit.edu/~petar/papers/maymounkov-kademlia-lncs.pdf">Kademlia</a>をもとに実装されている。
+Kademilaのノードやキーには160ビットのIDが割り当てられ、2つのIDの排他的論理和を両者の距離とみなす。
+ノードは、ノード内に保存されたIDに近い宛先に再帰的にRPCを送り、IDを検索する。</p>
+<p>ノードと通信するための宛先は、IPアドレス、UDPポート、ノードのIDの3つの情報から成り立つ。
+宛先はノード内の160個の\(k\)-bucketに保存される。
+\(i\)番目の\(k\)-bucketには距離が\([2^i, 2^{i+1}]\)内の宛先を保存する。
+\(k\)はバケットに保存するノードの最大数を示す。
+バケットにある宛先は最後に参照された時刻の昇順に並ぶ。
+リクエストやレスポンスを受信したノードは、添付されたIDを\(k\)-bucketに追加できるか確認する。
+\(k\)-bucket内の宛先が\(k\)未満か、先頭の宛先から応答がなければ対向ノードの情報を\(k\)-bucketに追加する。
+応答のない先頭の宛先は削除される。
+先頭の宛先が応答すれば、先頭の宛先を最後尾に移動し、新しいIDを保存せずに破棄する。</p>
+<p><code>PING</code>, <code>STORE</code>, <code>FIND_NODE</code>, <code>FIND_VALUE</code>の4つのRPCがある。
+<code>PING</code>でノードがオンラインか確認できる。
+<code>STORE</code>はキーバリューのペアを宛先のノードに保存する。
+<code>FIND_NODE</code>はIDを引数にとり、送信先に最大\(k\)個のIDに最近傍の宛先を問い合わせる。
+<code>FIND_VALUE</code>は受信したノードに目的のバリューがあればバリューを返し、なければ<code>FIND_NODE</code>と同様に最大\(k\)個の宛先を返す。</p>
+<p>IDで指定したノードを探すときは<code>FIND_NODE</code>を再帰的に呼出す。
+はじめに、ノードは\(\alpha\)個のIDに最近傍のノードに<code>FIND_NODE</code>を並列に送る。
+さらに、応答で得られた宛先のうち、\(\alpha\)個の最近傍かつ未送信の宛先に<code>FIND_NODE</code>を送る。
+新たに<code>FIND_NODE</code>を送る未送信の宛先を得らなければ、未送信かつ最近傍の\(k\)個のノードに<code>FIND_NODE</code>を送る。
+それでも、送信済みの宛先しか得られなければ再帰的探索を終了する。</p>
+<p>再帰的探索はオンラインの宛先を\(k\)-bucketに維持するために使われる。
+1時間以上再帰的探索のなかった\(k\)-bucketがあれば、\(k\)-bucketの範囲のIDを無作為に選び、そのIDの再帰的探索で\(k\)-bucketを更新する。</p>
+<p>Kademliaに参加するノードも再帰的探索で\(k\)-bucketを充填する。
+参加するノードは1つ以上の宛先を知らないといけない。
+参加するノードは宛先を\(k\)-bucketに追加し、自身のノードのIDを再帰的探索し、\(k\)-bucketを更新すると同時に宛先に自身を登録させる。</p>
+<!-- また、バリューを見つけられたら、ノードは参照したがバリューを返せなかったノードのうちでキーに最近傍のノードにキーバリューを保存する。 -->
+<p>バリューを探すときは、<code>FIND_NODE</code>のかわりに<code>FIND_VALUE</code>を呼出す。
+キーバリューを保存する処理は、この再帰的探索をもとに実装されている。
+ノードは、キーバリューを、再帰的探索で見つけた\(k\)個の最近傍のノードにキーを保存する。
+24時間おきに探索の大本のノードはキーバリューを再配信する。</p>
+<p>キーバリューは複製して保存されることもある。
+ノードが新しい宛先を見つけたとき、ノード内のキーバリューのうち、ノードよりも宛先に近いキーのキーバリューを宛先に複製する。
+ノードにあるキーバリューの保存期間は、キーと最近傍のノードとノードの間にあるノード数を指数とする関数で設定する。
+キーから遠いキーバリューほど保存期間が短い。</p>
+  </div>
+</main>
+
+  
+<ul class="pagination">
+  
+  <li>
+    <a href="/posts/multi-probe-consistent-hashing/">
+      <i class="fa-solid fa-xl fa-angle-left"></i>
+    </a>
+  </li>
+  
+  
+</ul>
+
+
+  <footer>
+    <small>© Ryotaro Nakamura. All Rights Reserved.</small>
+  </footer>
+</body>
+
+
+</html>

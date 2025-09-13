@@ -101,6 +101,30 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/a_protocol_for_packet_network_intercommunication/">A Protocol for Packet Network Intercommunication (1974)</a></h3>
+    <div class="summary"><p>TCPの起源はヴィントン・サーフとロバート・カーンが1974年に出版した<a href="https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf">A Protocol for Packet Network Intercommunication</a>にまでさかのぼる。
+当時、ローカルネットワーク内のコンピュータ同士で通信するためのプロトコルはあったが、ネットワークを横断して通信できるプロコトルはなかった。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/tcp/">
+            #TCP
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 9, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/probabilistic_latent_semantic_indexing/">Probablistic Latent Semantic Indexing (1999)</a></h3>
     <div class="summary"><p><a href="http://wordvec.colorado.edu/papers/Deerwester_1990.pdf">Latent Semantic Analysis</a>は、単語の出現頻度の列ベクトルで文書をあらわす行列を、特異値分解し、潜在的な意味を反映した低ランクな行列を求める方法である。
 特異値を大きい順に\(k\)個えらぶとき、単語の数を\(t\), 文書数を\(d\)とすれば、左特異ベクトルのサイズは、\(t\times k\), 右特異ベクトルの転置行列のサイズは\(k\times d\)になる。</p>
@@ -345,53 +369,6 @@ GELUsは、確率\(\Phi(x)\)で1をとるベルヌーイ分布にしたがう0-1
       <span class="date">
         
         September 30, 2023
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/sentence-bert_sentence_embeddings_using_siamese_bert-networks/">Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks</a></h3>
-    <div class="summary"><p><a href="https://arxiv.org/pdf/1908.10084">Sentence-BERT</a>は、テキストをコサイン類似度で意味の類似度を比較できる固定長のベクトルに変換できる。
-<a href="https://arxiv.org/abs/1810.04805">BERT</a>を2つのテキストを入力し類似度を出力するように訓練できるが、あるテキストに類似するテキストを求めたい場合には組合せ爆発が生じる。
-Sentence-BERTは、類似度が定義されたテキストの組から、類似するテキスト同士を近い位置に写像できるように学習する。
-ネットワークは、BERTを使ったシャムネットワークであり、重みを共有した2つのBERTに1つずつテキストを入力し、両方の出力を目的関数に入力する。</p>
-<!-- Siamese Networkとテキスロ -->
-<!-- 重みを共有するネットワークにBERTを採用したSiamese Networkである。 -->
-<!-- Sentence-BERTは、Sentence-BERTはテキストを --></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/bert/">
-            #BERT
-          </a>
-        </li>
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/%E3%82%B3%E3%82%B5%E3%82%A4%E3%83%B3%E9%A1%9E%E4%BC%BC%E5%BA%A6/">
-            #コサイン類似度
-          </a>
-        </li>
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/transformer/">
-            #Transformer
-          </a>
-        </li>
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/sentence-embedding/">
-            #Sentence Embedding
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        September 23, 2023
         
       </span>
     </div>

@@ -101,6 +101,34 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/mining-association-rules-between-sets-of-items-in-large-databases/">Mining Association Rules between Sets of Items in Large Databases (1993)</a></h3>
+    <div class="summary"><p>ある商品と一緒に買われやすい商品を小売の購買履歴から分析する初期の手法に<a href="https://dl.acm.org/doi/pdf/10.1145/170035.170072">Mining Association Rules between Sets of Items in Large Databases</a>がある。
+抽出される規則は、商品の集合と1つの商品のペアからなり、集合のすべての商品を買われるときに他方の商品も買われやすいことを意味する。
+アルゴリズムは、規則を抽出するだけでなく、規則の確信度と支持度も計算する。
+確信度は、規則の前提にある商品の集合を含むトランザクションのうち規則を満たすものの割合であり、規則の信憑性を意味する。
+支持度は、すべてのトランザクションに対する規則に表れる商品を含むトランザクションの割合であり、規則を適用できる機会の多さを意味する。
+アルゴリズムは、しきい値以下の支持度の規則を無視することで、現実的な速度で実行できる。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E3%82%A2%E3%82%BD%E3%82%B7%E3%82%A8%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%88%86%E6%9E%90/">
+            #アソシエーション分析
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        March 2, 2024
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/poly-encoders-architectures-and-pre-training-strategies-for-fast-and-accurate-multi-sentence-scoring/">Poly-Encoders: Architectures and Pre-Training Strategies for Fast and Accurate Multi-Sentence Scoring (2019)</a></h3>
     <div class="summary"><p>入力系列のラベルを推定できるようにTransformerのエンコーダーをファインチューニングするとき、エンコーディングの仕方に、Cross encoder (<a href="https://arxiv.org/abs/1901.08149">Wolf et al.</a>) とBi-encoder (<a href="https://arxiv.org/abs/1809.01984">Mazaré et al.</a>) がある。
 Cross-encoderは、入力系列とラベルを連結した系列をエンコーダーに入力し、入力系列とラベルのペアのエンベディングからスコアを求める。
@@ -337,30 +365,6 @@ CAP定理の発表された12年後の今日では、分断時における一貫
       <span class="date">
         
         December 16, 2023
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/a_protocol_for_packet_network_intercommunication/">A Protocol for Packet Network Intercommunication (1974)</a></h3>
-    <div class="summary"><p>TCPの起源はヴィントン・サーフとロバート・カーンが1974年に出版した<a href="https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf">A Protocol for Packet Network Intercommunication</a>にまでさかのぼる。
-当時、ローカルネットワーク内のコンピュータ同士で通信するためのプロトコルはあったが、ネットワークを横断して通信できるプロコトルはなかった。</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/tcp/">
-            #TCP
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        December 9, 2023
         
       </span>
     </div>

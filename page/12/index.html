@@ -101,6 +101,24 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/how_to_make_a_multiprocessor_computer_that_correctly_executes_multiprocess_programs/">How to Make a Multiprocessor Computer That Correctly Executes Multiprocess Programs(1979)</a></h3>
+    <div class="summary"><p>プロセッサは、高速化のためにソースコードと違う順序で命令を実行することがある。
+順序の入れ換えが実行結果に影響しなければ、プロセッサは逐次的であるという。
+マルチプロセッサに期待する実行結果は、各プロセッサがソースコードの順序で命令を実行し、かつ、全プロセッサの命令がある順序で逐次的に実行されるときの結果である。
+任意のプログラムで実行結果が等しいならば、そのマルチプロセッサには逐次一貫性がある。
+プロセッサがメモリ上のデータを共有する場合、各プロセッサが逐次的でも、マルチプロセッサが逐次一貫になるとは限らない。
+マルチプロセッサが逐次一貫であるには、各プロセッサがソースコード通りの順序でメモリにリクエストを送り、メモリは各セルへのリクエストを到着順(FIFO)に処理しなければならない。</p></div>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        July 16, 2022
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/a_min-max_cut_algorithm_for_graph_partitioning_and_data_clustering/">A Min-max Cut Algorithm for Graph Partitioning and Data Clustering</a></h3>
     <div class="summary"><p>重みつき隣接行列で表した無向グラフを2分割するクラスタリングであり、グラフ間の類似を最小化し、グラフ内のノードの類似の最大化をはかる。
 隣接行列を\(W_{uv}\), \(\text{cut}(A, B)=W(A, B)\), \(W(A, B) = \sum_{u\in A, v\in B}W_{uv}\)として、以下の目的関数を最小化する分割を探索する。
@@ -256,22 +274,6 @@ PLS（部分的最小二乗法）は、入力変数の線形結合で表わせ�
       <span class="date">
         
         May 21, 2022
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/statistics_and_causal_inference/">Statistics and Causal Inference(1986)</a></h3>
-    <div class="summary"><p>ルービンの因果モデルによる統計的因果推定では、群\(U\)の要素を\(u\), 処置を\(t\), \(c\), \(Y\)を潜在的結果変数とすると、\(u\)に対して処置\(c\)を適用するときの処置\(t\)の因果効果を、\(T = Y_t(u) - Y_c(u)\)とみなす。
-たとえば、\(u\)を人、\(t\), \(c\)を運動をする、しない、\(Y\)をコレステロールの値とすれば、運動とコレステロール値の関係になる。
-おなじ\(u\)に対して\(Y_t(u)\)と\(Y_c(u)\)を両方観測することはできない。
-因果効果は、観測するものではなく、推定するものになる。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        May 14, 2022
         
       </span>
     </div>

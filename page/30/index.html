@@ -101,6 +101,32 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/ranking_relevance_in_yahoo_search/">Ranking Relevance In Yahoo Search(2016)</a></h3>
+    <div class="summary"><h3 id="概要">概要</h3>
+<p>Yahooの検索エンジンを解説するKDD16の論文である。
+論文におけるランキングの課題は、クエリと文書の語彙がことなること、ほとんどのクエリは滅多に入力されないこと、クエリの意味の解釈が難しいことである。
+これらの課題に対する手法として、ランキングのモデル、特徴のつくりかた、クエリを文書によせる翻訳モデルを解説する。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E5%AD%A6%E7%BF%92/">
+            #ランキング学習
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 7, 2019
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/a_dual_embedding_space_model_for_document_ranking/">A Dual Embedding Space Model for Document Ranking</a></h3>
     <div class="summary"><p>Dual Embedding Space Model(DESM)は、word2vecによるランキング学習である。
 word2vecは、単語ごとに、入力と出力それぞれに近い重みから、2つの分散表現を生成できる。
@@ -351,34 +377,6 @@ DESMだけで順位づけをすると偽陽性が高くなるが、DESMとBM25�
       <span class="date">
         
         October 12, 2019
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/snorkel_drybell_case_study/">メモ Snorkel DryBell: A Case Study in Deploying Weak Supervision at Industrial Scale(2019)</a></h3>
-    <div class="summary"><h3 id="概要">概要</h3>
-<p>Weak Supervisionは、人手によるルールベースよりも効率良くノイズ交じりの教師データを生成する手法である。
-表題の論文は、Weak Supervisionの手法である<a href="https://www.snorkel.org">Snorkel</a>をGoogleで適用したケーススタディである。
-Snorkelは、サンプルから推定したラベルを返す関数（ラベリング関数）を複数用意し、それをラベルなしデータに適用する。
-その結果から関数の精度を予測し、個々の関数よりも高い精度でデータにラベルを与える。この関数をラベリング関数という。
-Snorkel DryBellは、Snorkelのアルゴリズムをスケールさせるために、MapReduceに適用できるように修正された主要である。</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/weak-supervision/">
-            #Weak Supervision
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        October 5, 2019
         
       </span>
     </div>

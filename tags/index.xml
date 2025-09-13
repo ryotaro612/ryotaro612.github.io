@@ -6,8 +6,15 @@
     <description>Recent content in Tags on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 06 Sep 2025 14:51:04 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 13 Sep 2025 14:31:35 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Peer-to-Peer</title>
+      <link>https://ryotaro.dev/tags/peer-to-peer/</link>
+      <pubDate>Sat, 13 Sep 2025 14:31:35 +0900</pubDate>
+      <guid>https://ryotaro.dev/tags/peer-to-peer/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Consistent Hashing</title>
       <link>https://ryotaro.dev/tags/consistent-hashing/</link>
@@ -321,13 +328,6 @@
       <link>https://ryotaro.dev/tags/%E6%BD%9C%E5%9C%A8%E6%84%8F%E5%91%B3%E8%A7%A3%E6%9E%90/</link>
       <pubDate>Sat, 02 Dec 2023 11:27:38 -0500</pubDate>
       <guid>https://ryotaro.dev/tags/%E6%BD%9C%E5%9C%A8%E6%84%8F%E5%91%B3%E8%A7%A3%E6%9E%90/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Peer-to-Peer</title>
-      <link>https://ryotaro.dev/tags/peer-to-peer/</link>
-      <pubDate>Thu, 23 Nov 2023 12:31:01 -0500</pubDate>
-      <guid>https://ryotaro.dev/tags/peer-to-peer/</guid>
       <description></description>
     </item>
     <item>

@@ -101,6 +101,25 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/fibonacci_heaps_and_their_uses_in_improving_network_optimization_algorithms/">Fibonacchi Heaps and Their Uses in Improved Network Optimization Algorithms(1987)</a></h3>
+    <div class="summary"><p><a href="https://web.eecs.umich.edu/~pettie/matching/Fredman-Tarjan-Fibonacci-Heaps.pdf">Fibonacci heaps</a>(F-heaps)は、ダイクストラアルゴリズムの高速化ために開発された木構造の抽象データ型である。
+ノードは、1つの値を保存し、親へのポインタをもつ。
+また、2つのポインタによって、同じ階層にある兄弟ノードからなる双方向リストに組み込まれる。
+ルート階層にあるノードはいずれも親をもたない。
+そのほかにも、削除時に使用されるboolean型の変数がノードごとに1つある。
+ヒープにある要素の数\(n\)に対して、要素を償却時間計算量\(O(\log n)\)でき、また、定数の償却時間計算量でほかの主要な操作を行える。</p>
+<!-- Fibonacchi heapsは、Vuilleminによる[binomial queues](https://dl.acm.org/doi/pdf/10.1145/359460.359478)を拡張した --></div>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        June 24, 2023
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/layer_normalization/">Layer Normalization (2016)</a></h3>
     <div class="summary"><p><a href="https://arxiv.org/abs/1607.06450">層正規化</a> (Layer Normalization) はニューラルネットワークのユニットへの入力の重みつきの和を正規化し、学習時間を短縮する。
 各層ごとの重みを掛けた入力の総和の平均と標準偏差を求め、この2つの統計量で層の各ユニットの総入力を正規化する
@@ -358,33 +377,6 @@ Sparse Transformerは、\(p\)個のパターンを用意し、パターンに該
       <span class="date">
         
         April 15, 2023
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/storing_a_sparse_table_with_o1_worst_case_access_time/">Storing a Sparse Table with O(1) Worst Case Access Time(1984)</a></h3>
-    <div class="summary"><p>単射のハッシュ関数は完全である。完全ハッシュ関数により、衝突することのないハッシュテーブルのデータ構造と計算時間量の証明を示す。
-データ構造は、はじめに、\(U(|U|=m)\)の部分集合\(S\)(\(|S|=n\))の要素\(x\)をハッシュテーブルに格納するとき、ある\(U\)の要素\(k\)を使った関数\(f(x)=(kx\mod p)\mod n\)で\(x\)を格納するブロック\(W_j(0\le j &lt; n)\)を決める。
-\(p\)は\(p=m+1\)の素数である。
-次に\(U\)の要素\(k&rsquo;_j\)をもちいた関数\(g(x) = ((k&rsquo;_jx) \mod p)\mod |W_j|^2\)で、\(x\)のエントリを特定する。
-データ構造の証明は、\(f, g\)によって重複なくエントリを特定できる\(k\), \(k&rsquo;_j\)があることを示す。</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB/">
-            #ハッシュテーブル
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        April 8, 2023
         
       </span>
     </div>

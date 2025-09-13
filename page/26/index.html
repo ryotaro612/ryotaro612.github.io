@@ -101,6 +101,21 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/bag_of_trics_for_efficient_text_classification/">論文メモ Bag of Tricks for Efficient Text Classification</a></h3>
+    <div class="summary"><p>2016年における分類のSOTAと互角の精度でありながら、格段に高速に学習、推定可能なモデルを<code>fastText</code>で構築できることを示した。
+評価実験には、<a href="http://projects.dfki.uni-kl.de/yfcc100m/">YFCC100M</a>のキャプションとタイトルからタグを予測するタスク、8つのデータセットによる感情分析が採用された。
+タグの予測では、312116個のユニークなタグをつかい、大きなクラス数でもモデルがうまくはたらくことが確かめられた。</p></div>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        July 17, 2020
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/recognizing_developers_emotions_while_programming/">論文メモ Recognizing Developers&#39; Emotions while Programming</a></h3>
     <div class="summary"><p>23人の被検者に30分間のプログラミングをさせ、その間5分ごとに進捗と感情を自己申告してもらい、その結果から感情と進捗の関係を調査した。
 作業後にインタービューを実施し、感情が変化する要因と良くない感情への対処法をヒアリングした。
@@ -238,25 +253,6 @@ BLEUは、参照訳にある単語を過剰に含むことや文の短さにペ�
       <span class="date">
         
         June 6, 2020
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/google_neural_machine_translation_system/">論文メモ Google&#39;s Neural Machine Transltation System: Bridging the Gap between Human and Machine Translation</a></h3>
-    <div class="summary"><h3 id="概要">概要</h3>
-<p>ニューラルネットワークをもちいた機械翻訳システムの論文である。
-解決したい問題として、学習と推論時の処理時間の長さ、低頻出の単語を翻訳する難しさ、入力文の一部が翻訳されないことをあげ、注意機構でつながれたEncoderとDecoderからなるアーキテクチャを提案した。
-学習時間を短縮するために、Decoderの最初の層とEncodeerの出力層から注意をつくる注意機構を採用し、Decoderを並列に学習できるようにしている。
-また、量子化によって推論時間を短縮をしている。
-低頻出の単語でも翻訳できるようにwordpieceでエンコードされた入力をうけとる。
-入力文の一部が翻訳されない問題に対しては、短い出力文に罰則を課すビームサーチで出力文の候補を探索する仕組みが導入されている。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        May 30, 2020
         
       </span>
     </div>

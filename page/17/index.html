@@ -101,6 +101,22 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/the_unix_time_sharing_system/">The UNIX Time-Sharing System</a></h3>
+    <div class="summary"><p>デニス・リッチーとケン・トンプソンによるPDP-11/40, /45, /70で採用されたUnixのファイルシステムとコマンドラインインターフェースの解説である。
+PDP-11は1971年2月から運用がはじまり、当初はアセンブリ言語で実装されていたが、1973年の夏にCで再実装された。
+ファイルシステムは、UNIXの最も重要な役割に位置づけられ、特殊ファイルによるI/Oデバイスの抽象化、外部ディスクのマウント、ファイルの権限、i-nodeをふくむ多くの特徴が今日まで引き継がれている。
+2人は、UNIXの設計に影響したものとして、プログラマとして対話的なインターフェースを望んでいたこと、ハードウェアの低い性能ゆえにソフトウェアの設計を洗練させる必要があったこと、ソースコードをUNIX上で編集し簡単にプログラムを変更できたことをあげている。</p></div>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        August 21, 2021
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/what_helped_and_what_did_not/">What helped, and what did not? An Evaluation of the Strategies to Improve Continuous Integration</a></h3>
     <div class="summary"><p><a href="https://travistorrent.testroots.org/">TravisTorrent</a>にある100件のプロジェクトで10種類のCIのテクニックを定量評価した。
 テクニックは、不要なビルドやテストをスキップするか、実行順序を優先づけるものかに分かれる。
@@ -250,22 +266,6 @@ Lambda architectureは、システムの複雑化を許容し、2つのアーキ
       <span class="date">
         
         August 6, 2021
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/the_byzantine_generals_problem/">The Byzantine Generals Problem</a></h3>
-    <div class="summary"><p>ビザンチン将軍問題は、故障したコンポーネントがほかのコンポーネントに誤ったメッセージを送りうるとき、コンポーネント間でメッセージを交換した結果、すべてのコンポーネントが一つの正しいメッセージを合意する問題をあつかう。
-アルゴリズムは、署名付きメッセージを使うものと使わないものの2つがある。
-署名付きメッセージを使うと、受信したメッセージが改ざんされたかをコンポーネントが判断できる。
-署名を使わない場合、3分の2より多くのコンポーネントが正常でなければシステム全体が正しい1つのメッセージについて合意にできないことを示した。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        July 31, 2021
         
       </span>
     </div>

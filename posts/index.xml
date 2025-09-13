@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 06 Sep 2025 14:51:04 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 13 Sep 2025 14:31:35 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kademlia: A Peer to Peer Information System Based on the Xor Metric (2002)</title>
+      <link>https://ryotaro.dev/posts/kademlia-a-peer-to-peer-information-system-based-on-the-xor-metric/</link>
+      <pubDate>Sat, 13 Sep 2025 14:31:35 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/kademlia-a-peer-to-peer-information-system-based-on-the-xor-metric/</guid>
+      <description>&lt;p&gt;peer-to-peerのファイル共有アプリケーション BitTorrentの分散ハッシュテーブル&lt;a href=&#34;https://www.cs.helsinki.fi/u/lxwang/publications/P2P2013_13.pdf&#34;&gt;Mainline DHT&lt;/a&gt;は&lt;a href=&#34;https://pdos.csail.mit.edu/~petar/papers/maymounkov-kademlia-lncs.pdf&#34;&gt;Kademlia&lt;/a&gt;をもとに実装されている。&#xA;Kademilaのノードやキーには160ビットのIDが割り当てられ、2つのIDの排他的論理和を両者の距離とみなす。&#xA;ノードは、ノード内に保存されたIDに近い宛先に再帰的にRPCを送り、IDを検索する。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Multi-probe consistent hashing (2015)</title>
       <link>https://ryotaro.dev/posts/multi-probe-consistent-hashing/</link>
