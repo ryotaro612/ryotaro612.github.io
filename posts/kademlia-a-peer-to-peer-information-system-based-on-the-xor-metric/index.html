@@ -62,6 +62,8 @@
         <li><a href="https://ryotaro.dev/posts">Posts</a></li>
         <li><a href="https://ryotaro.dev/tags">Tags</a></li>
         
+        <li><a href="https://ryotaro.dev/en/posts/kademlia-a-peer-to-peer-information-system-based-on-the-xor-metric/">en</a></li>
+        
       </ul>
       <ul>
         
@@ -117,7 +119,7 @@ Kademilaのノードやキーには160ビットのIDが割り当てられ、2つ
 ノードは、ノード内に保存されたIDに近い宛先に再帰的にRPCを送り、IDを検索する。</p>
 <p>ノードと通信するための宛先は、IPアドレス、UDPポート、ノードのIDの3つの情報から成り立つ。
 宛先はノード内の160個の\(k\)-bucketに保存される。
-\(i\)番目の\(k\)-bucketには距離が\([2^i, 2^{i+1}]\)内の宛先を保存する。
+\(i\)番目の\(k\)-bucketには距離が\([2^i, 2^{i+1})\)内の宛先を保存する。
 \(k\)はバケットに保存するノードの最大数を示す。
 バケットにある宛先は最後に参照された時刻の昇順に並ぶ。
 リクエストやレスポンスを受信したノードは、添付されたIDを\(k\)-bucketに追加できるか確認する。

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   
   
   <script>(function (w, d, s, l, i) {
@@ -21,14 +21,14 @@
     integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
     crossorigin="anonymous" />
   
-  <link rel="stylesheet" href="http://localhost:1313/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+  <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
   
-  <link rel="stylesheet" href="http://localhost:1313/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
+  <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
   
 
-<link rel="stylesheet" href="http://localhost:1313/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
 
-<link rel="stylesheet" href="http://localhost:1313/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -42,7 +42,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
     integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
-  <title>Kademlia a Peer to Peer Information System Based on the Xor Metric</title>
+  <title>Kademlia: A Peer-to-Peer Information System Based on the XOR Metric (2002)</title>
 </head>
 
 <body>
@@ -55,14 +55,14 @@
   
   
   <header class="navigation">
-    <h2><a href="http://localhost:1313/en/">Blanket</a></h2>
+    <h2><a href="https://ryotaro.dev/en/">Blanket</a></h2>
     <nav>
       <ul>
-        <li><a href="http://localhost:1313/en/about">About</a></li>
-        <li><a href="http://localhost:1313/en/posts">Posts</a></li>
-        <li><a href="http://localhost:1313/en/tags">Tags</a></li>
+        <li><a href="https://ryotaro.dev/en/about">About</a></li>
+        <li><a href="https://ryotaro.dev/en/posts">Posts</a></li>
+        <li><a href="https://ryotaro.dev/en/tags">Tags</a></li>
         
-        <li><a href="http://localhost:1313/posts/kademlia-a-peer-to-peer-information-system-based-on-the-xor-metric/">ja</a></li>
+        <li><a href="https://ryotaro.dev/posts/kademlia-a-peer-to-peer-information-system-based-on-the-xor-metric/">ja</a></li>
         
       </ul>
       <ul>
@@ -88,7 +88,7 @@
         </li>
         
         <li>
-          <a href="http://localhost:1313/en/%20index.xml">
+          <a href="https://ryotaro.dev/en/%20index.xml">
             <i class="fas fa-rss"></i>
           </a>
         </li>
@@ -98,8 +98,14 @@
   </header>
   
 <main>
-  <h1>Kademlia a Peer to Peer Information System Based on the Xor Metric</h1>
+  <h1>Kademlia: A Peer-to-Peer Information System Based on the XOR Metric (2002)</h1>
   <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/en/tags/peer-to-peer/">
+        #Peer-to-Peer
+      </a>
+    </li>
     
   </ul>
   <span class="date">
@@ -108,7 +114,41 @@
     
   </span>
   <div>
-    
+    <p><a href="https://www.cs.helsinki.fi/u/lxwang/publications/P2P2013_13.pdf">Mainline DHT</a>, the distributed hash table used by BitTorrent, is based on <a href="https://pdos.csail.mit.edu/~petar/papers/maymounkov-kademlia-lncs.pdf">Kademlia</a>.
+In Kademlia, both nodes and keys are identified by 160-bit identifiers. The distance between two identifiers is defined as their bitwise XOR interpreted as an integer. To locate other nodes or values, a node repeatedly sends RPC requests to peers whose addresses it knows and that appear closer to the target according to the XOR metric.</p>
+<p>Each node’s address is composed of an IP address, a UDP port, and its identifier. A node maintains a routing table consisting of 160 \(k\)-buckets. The \(i\)-th bucket contains contacts whose distance from the node lies in the interval \([2^i, 2^{i+1})\).
+Each bucket can hold up to k entries, sorted by the time last seen, with the least recently seen at the head and the most recently seen at the tail.</p>
+<p>Every request and response carries the sender’s identifier.
+When a node receives a message, it updates the appropriate \(k\)-bucket.
+If the sender is already present, it is moved to the tail.
+If the sender is not present and the bucket has fewer than \(k\) entries, it is appended.
+If the bucket is full, the recipient pings the least recently seen node at the head of the list.
+If that node fails to respond, it is evicted and the new contact is inserted;
+if it responds, it is moved to the tail and the new contact is discarded.</p>
+<p>The protocol defines four RPCs: <code>PING</code>, <code>STORE</code>, <code>FIND_NODE</code>, and <code>FIND_VALUE</code>.
+<code>PING</code> checks whether a node is online.
+<code>STORE</code> requests a node to store a <code>⟨key, value⟩</code> pair.
+<code>FIND_NODE</code> sends an identifier and asks the recipient to return up to k contacts it knows that are closest to that identifier.
+<code>FIND_VALUE</code> behaves like FIND_NODE but returns the stored value if the recipient has it.</p>
+<p>The essential operation in Kademlia is the node lookup.
+To find the nodes closest to a given identifier, the initiator selects up to α of the closest contacts it knows and sends them <code>FIND_NODE</code> requests in parallel.
+As responses arrive, the initiator continues by querying new nodes that are closer to the target, again selecting up to α at a time.
+If no closer nodes are discovered, the initiator queries all of the k closest nodes it has not yet contacted.
+The lookup terminates once the initiator has queried and received responses from the k closest nodes it knows.</p>
+<p>To maintain the freshness of its routing table, a node performs lookups for random identifiers.
+If no lookup has been performed into the range of a bucket within an hour, the node selects a random identifier in that range and executes a lookup, thereby refreshing the bucket.</p>
+<p>When joining the network, a node must already know at least one participant.
+It inserts that address into the appropriate \(k\)-bucket and performs a lookup for its own identifier.
+This both populates its routing table and inserts its own address into the tables of other nodes.
+It then refreshes all buckets more distant than its closest neighbor.</p>
+<p>To store a value, a node locates the \(k\) closest nodes to the key and issues <code>STORE</code> RPCs to them.
+Nodes that hold values re-publish them every hour to maintain persistence, and the original publisher republishes its values every 24 hours.
+To retrieve a value, a node performs a lookup using <code>FIND_VALUE</code>.
+The search halts immediately if any node returns the value.
+Once a lookup succeeds, the requester caches the value at the closest node it encountered that did not already possess it.</p>
+<p>Replication occurs whenever a node discovers another node that is closer to a key than itself.
+In this case, it transfers the value to the new node without deleting its own copy.
+The lifetime of cached entries is set to be exponentially inversely proportional to the number of nodes between the caching node and the node whose identifier is closest to the key.</p>
   </div>
 </main>
 

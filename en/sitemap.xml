@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ryotaro.dev/en/</loc>
-    <lastmod>2025-09-13T14:31:38+09:00</lastmod>
+    <lastmod>2025-09-13T14:31:35+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -15,8 +15,34 @@
                 href="https://ryotaro.dev/en/"
                 />
   </url><url>
+    <loc>https://ryotaro.dev/en/posts/kademlia-a-peer-to-peer-information-system-based-on-the-xor-metric/</loc>
+    <lastmod>2025-09-13T14:31:35+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/kademlia-a-peer-to-peer-information-system-based-on-the-xor-metric/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/kademlia-a-peer-to-peer-information-system-based-on-the-xor-metric/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/tags/peer-to-peer/</loc>
+    <lastmod>2025-09-13T14:31:35+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/peer-to-peer/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/peer-to-peer/"
+                />
+  </url><url>
     <loc>https://ryotaro.dev/en/posts/</loc>
-    <lastmod>2025-09-13T14:31:38+09:00</lastmod>
+    <lastmod>2025-09-13T14:31:35+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -26,6 +52,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ryotaro.dev/en/posts/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/tags/</loc>
+    <lastmod>2025-09-13T14:31:35+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/tags/consistent-hashing/</loc>
@@ -52,19 +91,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ryotaro.dev/en/posts/multi-probe-consistent-hashing/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/en/tags/</loc>
-    <lastmod>2025-09-06T14:51:04+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/tags/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/posts/infinispan/</loc>
@@ -1046,19 +1072,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ryotaro.dev/en/posts/chord-a-scalable-peer-to-peer-lookup-service-for-internet-application/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/en/tags/peer-to-peer/</loc>
-    <lastmod>2023-11-23T12:31:01-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/tags/peer-to-peer/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/tags/peer-to-peer/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/posts/lora-low-rank-adaptation-of-large-language-models/</loc>
