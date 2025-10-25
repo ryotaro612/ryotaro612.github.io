@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
-	<meta name="generator" content="Hugo 0.147.7">
+	<meta name="generator" content="Hugo 0.152.0">
   
   
   <script>(function (w, d, s, l, i) {
@@ -99,6 +99,39 @@
 <main>
   <h1>Posts</h1>
   
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/deep-neural-networks-for-youtube-recommendations/">Deep Neural Networks for Youtube Recommendations (2016)</a></h3>
+    <div class="summary"><p><a href="https://static.googleusercontent.com/media/research.google.com/ja//pubs/archive/45530.pdf">Deep Neural Networks for YouTube Recommendations</a>は2016年頃のYouTubeの推薦システムの解説であり、パラメタ数が10億の深層学習のモデルが使われている。
+この数千億の学習データで訓練されたモデルはcandidate generationとrankingの2つのネットワークからなる。
+candidate generationは、ユーザーのYoutube上の行動履歴から数百の推薦候補の動画を協調フィルタリングで選び出す。
+協調フィルタリングは、ユーザーの埋め込みベクトルを、視聴した動画のIDや検索クエリのトークンが要素のスパースなベクトルで構成する。
+rankingはcandidate generationで選ばれた動画の試聴時間を推定する。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/recommendation/">
+            #Recommendation
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/collaborative-filtering/">
+            #Collaborative Filtering
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        September 23, 2025
+        
+      </span>
+    </div>
+  </article>
   
   <article>
     <h3><a href="https://ryotaro.dev/posts/kademlia-a-peer-to-peer-information-system-based-on-the-xor-metric/">Kademlia: A Peer to Peer Information System Based on the Xor Metric (2002)</a></h3>
@@ -360,30 +393,6 @@ LLMの重みを\(W_0\in\mathbb{R}^{d\times k}\) とすると、\(W_0+BA\ (B\in\m
       <span class="date">
         
         June 7, 2025 (Originally posted on November 18, 2023)</p>
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/supervised-learning-of-universal-sentence-representations-from-natural-language-inference-data/">Supervised Learning of Universal Sentence Representations From Natural Language Inference Data (2017)</a></h3>
-    <div class="summary"><p><a href="https://arxiv.org/pdf/1705.02364">Supervised Learning of Universal Sentence Representations From Natural Language Inference Data</a>は自然言語推論のデータセットであるStanford Natural Language Inference (SNLI) を使った文の埋め込みベクトルを生成モデルを教師あり学習を提案した。
-7種類のネットワークアーキテクチャを12種類のタスクで評価したところ、双方向LSTMと最大値プーリングを採用したアーキテクチャが最も高い性能を発揮した。</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/sentence-embedding/">
-            #Sentence Embedding
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        May 30, 2025
         
       </span>
     </div>

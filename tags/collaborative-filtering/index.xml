@@ -6,8 +6,15 @@
     <description>Recent content in Collaborative Filtering on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 16 Aug 2025 14:29:07 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 23 Sep 2025 22:56:53 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/tags/collaborative-filtering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deep Neural Networks for Youtube Recommendations (2016)</title>
+      <link>https://ryotaro.dev/posts/deep-neural-networks-for-youtube-recommendations/</link>
+      <pubDate>Tue, 23 Sep 2025 22:56:53 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/deep-neural-networks-for-youtube-recommendations/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://static.googleusercontent.com/media/research.google.com/ja//pubs/archive/45530.pdf&#34;&gt;Deep Neural Networks for YouTube Recommendations&lt;/a&gt;は2016年頃のYouTubeの推薦システムの解説であり、パラメタ数が10億の深層学習のモデルが使われている。&#xA;この数千億の学習データで訓練されたモデルはcandidate generationとrankingの2つのネットワークからなる。&#xA;candidate generationは、ユーザーのYoutube上の行動履歴から数百の推薦候補の動画を協調フィルタリングで選び出す。&#xA;協調フィルタリングは、ユーザーの埋め込みベクトルを、視聴した動画のIDや検索クエリのトークンが要素のスパースなベクトルで構成する。&#xA;rankingはcandidate generationで選ばれた動画の試聴時間を推定する。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Amazon.com Recommendations Item to Item Collaborative Filtering (2003)</title>
       <link>https://ryotaro.dev/posts/amazon.com-recommendations-item-to-item-collaborative-filtering/</link>

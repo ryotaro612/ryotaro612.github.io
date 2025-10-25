@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  
+  
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-W5TDG76');
+  </script>
+  
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=300,initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+    crossorigin="anonymous" />
+  
+  <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+  
+  <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+  
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
+    crossorigin="anonymous"></script>
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+  <title>Deep Neural Networks for Youtube Recommendations (2016)</title>
+</head>
+
+<body>
+  
+  
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0"
+      style="display:none;visibility:hidden" />
+  </noscript>
+  
+  
+  <header class="navigation">
+    <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+    <nav>
+      <ul>
+        <li><a href="https://ryotaro.dev/about">About</a></li>
+        <li><a href="https://ryotaro.dev/posts">Posts</a></li>
+        <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+        
+      </ul>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/ryotaro612">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/ryotaro612/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://speakerdeck.com/ryotaro612/">
+            <i class="fa-brands fa-speaker-deck"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://ryotaro.dev/%20index.xml">
+            <i class="fas fa-rss"></i>
+          </a>
+        </li>
+        
+      </ul>
+    </nav>
+  </header>
+  
+<main>
+  <h1>Deep Neural Networks for Youtube Recommendations (2016)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/recommendation/">
+        #Recommendation
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/collaborative-filtering/">
+        #Collaborative Filtering
+      </a>
+    </li>
+    
+  </ul>
+  <span class="date">
+    
+    September 23, 2025
+    
+  </span>
+  <div>
+    <p><a href="https://static.googleusercontent.com/media/research.google.com/ja//pubs/archive/45530.pdf">Deep Neural Networks for YouTube Recommendations</a>は2016年頃のYouTubeの推薦システムの解説であり、パラメタ数が10億の深層学習のモデルが使われている。
+この数千億の学習データで訓練されたモデルはcandidate generationとrankingの2つのネットワークからなる。
+candidate generationは、ユーザーのYoutube上の行動履歴から数百の推薦候補の動画を協調フィルタリングで選び出す。
+協調フィルタリングは、ユーザーの埋め込みベクトルを、視聴した動画のIDや検索クエリのトークンが要素のスパースなベクトルで構成する。
+rankingはcandidate generationで選ばれた動画の試聴時間を推定する。</p>
+<p>candidate generationは、行列分解による協調フィルタリングでユーザーと動画の埋め込みベクトルを学習する。
+ネットワークはextreame classificationの問題として推薦をとらえ、視聴を見込める動画のクラスにユーザーを分類する。
+しかし、YouTubeの動画数は多いので、クラス数の多いときに利用されるSampled Softmaxを出力層の活性化関数に使う。
+ユーザーと動画の分散表現の次元数は等しく、推論時は近似最近傍探索でユーザーの分散表現に近い動画を検索し、出力する。</p>
+<p>ネットワークは、順伝搬型であり、ユーザーの特徴を連結した疎なベクトルを入力として受けつける。
+ユーザーの特徴の中には、視聴履歴や検索履歴があり、履歴を系列な表現ではなくベクトルで表現する必要がある。
+そこで、視聴や検索を動画やクエリのトークンのIDを要素にした疎なベクトルで表し、ベクトルの平均値を履歴の分散表現として扱う。
+連結した疎なベクトルには、新しい動画を推薦できるように、訓練データの古さを示す要素も含まれる。</p>
+<p>Sampled Softmaxは、ニューラルネットワークによる機械翻訳で扱える語彙数を増やすために<a href="https://arxiv.org/pdf/1412.2007">Sébastien Jeanら</a>によって考案された。
+Sampled Softmaxのアルゴリズムだけを知りたいければ、TensorFlowの<a href="https://www.tensorflow.org/api_docs/python/tf/nn/sampled_softmax_loss"><code>tf.nn.sampled_softmax_loss</code></a>の参考文献 <a href="https://www.tensorflow.org/api_docs/python/tf/nn/sampled_softmax_loss">What is Candidate Sampling</a>の方が論文よりも分かりやすく思えた。
+そのため、以下では参考文献に沿ってSampled Softmaxを説明する。
+Sampled Softmaxには、入力の正解クラスを含むクラスの部分集合と入力を与えたときに、入力のクラスの確率が最大になるようにモデルを訓練する。
+全クラスを\(L\),サンプルで選ばれるクラス\(y\in L\)の集合を\(S_i\)とする。
+このとき、入力\(x_i\)が与えられたときに、クラス\(y\)がサンプルされる確率を\(y\)とすると、
+$$
+P(S_i=S|x_i) = \prod_{y\in S}Q(y|x_i) \prod_{y\in (L-S)}(1-Q(y|x_i))
+$$
+が成りたつ。
+\(x\)のクラスを\(t_i\)とすれば、\(x_i\)が与えらえれたときに、\(C_i\)の中から\(t_i\)の確率が最大になるようにパラメタを更新する。
+$$
+C_i = S_i \cup \{t_i\}
+$$
+ベイズ則を適用すると</p>
+<p>$$
+\begin{align*}
+P(t_i=y|x_i, C_i)
+&amp;= P(t_i = y, C_i|x_i)/ P(C_i|x_i)\\
+&amp;= P(t_i=y|x_i)P(C_i|t_i=y, x_i)/P(C_i|x_i)\\
+&amp;=P(y|x_i)P(C_i|t_i=y,x_i)/P(C_i|x_i)
+\end{align*}
+$$</p>
+<p>また</p>
+<p>$$
+P(C_i|t_i=y,x_i) = \frac{1}{Q(y|x_i)}\prod_{y&rsquo;\in C_i}Q(y&rsquo;|x_i)\prod_{y&rsquo;\in (L-C_i)}(1-Q(y&rsquo;|x_i))
+$$
+より\(y\)に依存しない関数\(K(x_i, C_i)\), \(K&rsquo;(x_i, C_i)\)を導入すると</p>
+<p>$$
+\begin{align*}
+P(t_i=y|x_i, C_i) &amp;= \frac{P(y|x_i)}{Q(y|x_i)}/K(x_i, C_i)\\
+\log(P(t_i=y|x_i,C_i)) &amp;= \log(P(y|x_i)) - \log(Q(y|x_i)) + K&rsquo;(x_i, C_i)
+\end{align*}
+$$
+となる。
+Softmaxでクラスの確率の合計が\(1\)になるように正規化されるので、\(y\)に依存しない\(K&rsquo;(x_i, C_i)\)は無視できる。
+また、モデルに学習させたい項は\(\log(P(y|x_i))\)なので、通常のSoftmaxへの入力と\(\log(Q(y|x))\)の差をSoftmaxに与える。</p>
+<p>Youtubeの推薦システムはSampled Softmaxにおいて動画をクラスとみなす。
+学習によって出力層への入力と重みの積が\(P(y|x_i)\)になるように訓練するため、重みを動画の埋め込みベクトル、入力をユーザーの埋め込みベクトルとして最近傍探索のデータベースに保存する。
+推論時にはSoftmaxを計算せず、データベースに近傍の要素を推薦対象として問い合わせる。</p>
+<p>rankingも、順伝播型のネットワークであり、ロジスティック回帰で動画の試聴時間を推定する。
+推論時には、全ての動画ではなくcandidate generationが出力する動画の試聴時間のみを推薦すればよいため、candidate generationよりも扱う特徴量は多い。
+交差エントロピーを使って訓練するとき、試聴時間を推定できるように、正例と負例の目標値を試聴時間と\(1\)にそれぞれ設定する。
+試聴時間を予測するために、出力層の活性化関数に指数関数\(e^{x}\)を選ぶ。
+このとき\(N\)を訓練データの総数、\(k\)を正例の数、\(i\)番目の正例の試聴時間を\(T_i\)とすれば、オッズは\(\frac{\sum T_i}{N-k}\)になる。
+\(\frac{1}{1-x}\approx 1+x\)より、rankingのモデルは\(P\)を表示する確率とすると\(E<a href="1&#43;P">T</a>\)を推定する。
+Youtubeの場合、\(P\)は小さいため、近似的に\(E[T]\)を予測するとみなせる。</p>
+  </div>
+</main>
+
+  
+<ul class="pagination">
+  
+  <li>
+    <a href="/posts/kademlia-a-peer-to-peer-information-system-based-on-the-xor-metric/">
+      <i class="fa-solid fa-xl fa-angle-left"></i>
+    </a>
+  </li>
+  
+  
+</ul>
+
+
+  <footer>
+    <small>© Ryotaro Nakamura. All Rights Reserved.</small>
+  </footer>
+</body>
+
+
+</html>

@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
-	<meta name="generator" content="Hugo 0.147.7">
+	<meta name="generator" content="Hugo 0.152.0">
   
   
   <script>(function (w, d, s, l, i) {
@@ -99,6 +99,37 @@
 <main>
   <h1>Posts</h1>
   
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/the_relationship_between_precision_recall_and_roc_curve/">The Relationship Between Precision-Recall and ROC Curves</a></h3>
+    <div class="summary"><p>ROCとPrecision Recallの関係を示した論文。</p>
+<ul>
+<li>1 Recallが0でなければ、ROC曲線には一対一に対応するPR曲線がある。</li>
+<li>2 PR曲線AがPR曲線Bに対して常に優位であることとは、ROC曲線においてAがBより常に優位であることの必要十分条件。</li>
+<li>3 1,2よりROC空間上の凸包に対応するPR曲線は、他の妥当なPR曲線よりも優位な曲線になる。</li>
+<li>4 線形補間でROC曲線を描くことは妥当。一方で、Recallの分母は固定値であるが、Precisionの分母の値はRecallが上がると増える。そのため、PR曲線を線形補間でプロットすると、評価の甘い曲線になる。</li>
+</ul>
+<hr>
+<p>論文は<a href="https://ftp.cs.wisc.edu/machine-learning/shavlik-group/davis.icml06.pdf">こちら</a>からダウンロードできます。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E5%88%86%E9%A1%9E%E3%81%AE%E8%A9%95%E4%BE%A1/">
+            #分類の評価
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        August 25, 2018
+        
+      </span>
+    </div>
+  </article>
   
   <article>
     <h3><a href="https://ryotaro.dev/posts/enriching_word_vectors_with_subword_information/">メモ Enriching Word Vectors with Subword Information</a></h3>

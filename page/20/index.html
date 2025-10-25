@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
-	<meta name="generator" content="Hugo 0.147.7">
+	<meta name="generator" content="Hugo 0.152.0">
   
   
   <script>(function (w, d, s, l, i) {
@@ -99,6 +99,21 @@
 <main>
   <h1>Posts</h1>
   
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/fast_intersection_algorithms_for_sorted_sequences/">論文メモ Fast Intersection Algorithms for Sorted Sequences</a></h3>
+    <div class="summary"><p>ソートされたシーケンスの直積を高速に求めるアルゴリズム Double Binary Searchを示した。
+2つのシーケンス\(D\), \(Q\)があり、\(\mid D\mid=n\), \(\mid Q\mid=m\), \(n &gt;= m\)であれば、平均と最悪時間計算量が、それぞれ、\(\mathcal{O}(m\log(n/m))\), \(m\)になる。
+本アルゴリズムは、Web検索エンジンで大きなシーケンスの直積を高速に求めるために開発された。</p></div>
+    <div class="article-footer">
+      
+      <span class="date">
+        
+        April 12, 2021
+        
+      </span>
+    </div>
+  </article>
   
   <article>
     <h3><a href="https://ryotaro.dev/posts/lsmtree/">論文メモ The Log-Structured Merge-Tree (LSM-Tree)</a></h3>
@@ -245,21 +260,6 @@ FD-treeのエントリ数が\(n\), ページサイズが\(B\)であれば、ラ�
       <span class="date">
         
         February 13, 2021
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/tao_facebooks_distributed_data_store_for_social_graph/">論文メモ TAO: Facebook&#39;s Distributed Data Store for the Social Graph</a></h3>
-    <div class="summary"><p>TAOは、Facebookで開発されたソーシャルグラフのためのマルチリージョンの分散システムで、秒間10億件の読み込みと数百万件の書き込みの性能を発揮する。
-Facebookは、もともとソーシャルグラフを、MySQLに保存し、memcacheでキャッシュし、PHPで問いあわせるシステムで構成していた。
-TAOは、そのシステムの現状を引きつぎ、MySQLをストレージに採用している。</p></div>
-    <div class="article-footer">
-      
-      <span class="date">
-        
-        February 4, 2021
         
       </span>
     </div>
