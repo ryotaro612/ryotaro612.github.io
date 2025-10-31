@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   
   
   <script>(function (w, d, s, l, i) {
@@ -21,14 +21,14 @@
     integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
     crossorigin="anonymous" />
   
-  <link rel="stylesheet" href="http://localhost:1313/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+  <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
   
-  <link rel="stylesheet" href="http://localhost:1313/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
+  <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
   
 
-<link rel="stylesheet" href="http://localhost:1313/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
 
-<link rel="stylesheet" href="http://localhost:1313/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+<link rel="stylesheet" href="https://ryotaro.dev/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
@@ -55,14 +55,14 @@
   
   
   <header class="navigation">
-    <h2><a href="http://localhost:1313/en/">Blanket</a></h2>
+    <h2><a href="https://ryotaro.dev/en/">Blanket</a></h2>
     <nav>
       <ul>
-        <li><a href="http://localhost:1313/en/about">About</a></li>
-        <li><a href="http://localhost:1313/en/posts">Posts</a></li>
-        <li><a href="http://localhost:1313/en/tags">Tags</a></li>
+        <li><a href="https://ryotaro.dev/en/about">About</a></li>
+        <li><a href="https://ryotaro.dev/en/posts">Posts</a></li>
+        <li><a href="https://ryotaro.dev/en/tags">Tags</a></li>
         
-        <li><a href="http://localhost:1313/posts/deep-neural-networks-for-youtube-recommendations/">ja</a></li>
+        <li><a href="https://ryotaro.dev/posts/deep-neural-networks-for-youtube-recommendations/">ja</a></li>
         
       </ul>
       <ul>
@@ -88,7 +88,7 @@
         </li>
         
         <li>
-          <a href="http://localhost:1313/en/%20index.xml">
+          <a href="https://ryotaro.dev/en/%20index.xml">
             <i class="fas fa-rss"></i>
           </a>
         </li>
@@ -101,6 +101,18 @@
   <h1>Deep Neural Networks for Youtube Recommendations (2016)</h1>
   <ul class="tags">
     
+    <li class="tag">
+      <a href="https://ryotaro.dev/en/tags/recommendation/">
+        #Recommendation
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/en/tags/collaborative-filtering/">
+        #Collaborative Filtering
+      </a>
+    </li>
+    
   </ul>
   <span class="date">
     
@@ -108,7 +120,144 @@
     
   </span>
   <div>
-    
+    <p><a href="https://static.googleusercontent.com/media/research.google.com/ja//pubs/archive/45530.pdf">Deep Neural Networks for YouTube Recommendations</a>, published in 2016, describes YouTube’s large-scale recommendation system.<br>
+The system consists of two feed-forward neural networks: a candidate generation model and a ranking model, together containing approximately one billion parameters.</p>
+<p>The candidate generation network suggests hundreds of videos using collaborative filtering.
+A user’s representation includes coarse features such as the IDs of watched videos and tokens from search queries.
+The ranking network predicts the expected watch time of the videos suggested by the candidate generation network.</p>
+<p>The candidate generation model learns embeddings of users and videos through a process similar to matrix factorization.
+The model frames recommendation as an extreme multiclass classification problem: it classifies which video a user is expected to watch.
+Because the number of possible videos is too large to compute a full softmax, the output layer uses sampled softmax as its loss approximation.</p>
+<p>After training, video embeddings are stored in a nearest-neighbor index.
+At serving time, the system performs nearest-neighbor search to generate candidate recommendations.</p>
+<p>Features for the candidate generation model include the user’s watch history.
+Since watch history is sequential, the sparse ID vectors of the sequence are averaged to produce a fixed-size input vector.
+Another feature is the age of each training example, which allows the model to prioritize newer videos over older ones and correct bias toward past data.</p>
+<p><a href="https://arxiv.org/pdf/1412.2007">Sébastien Jean et al.</a> proposed sampled softmax to efficiently train neural networks with very large output vocabularies.
+TensorFlow implements this method as <a href="https://www.tensorflow.org/api_docs/python/tf/nn/sampled_softmax_loss"><code>tf.nn.sampled_softmax_loss</code></a>, also explained in <a href="https://www.tensorflow.org/api_docs/python/tf/nn/sampled_softmax_loss"><em>What is Candidate Sampling</em></a>.</p>
+<p>In sampled softmax, the task is to predict the correct class from a subset of all possible classes.
+Let the set of all classes be \( L \), the sampling function be \( Q(y|x) \), and the sampled subset of \( L \) at the \( i \)-th iteration be \( S_i \).
+For an input \( x_i \):</p>
+<p>$$
+P(S_i = S \mid x_i) = \prod_{y \in S} Q(y|x_i) \prod_{y \in (L - S)} (1 - Q(y|x_i)).
+$$</p>
+<p>Let the correct class of \( x_i \) be \( t_i \).
+The training procedure updates model parameters to maximize the probability of \( t_i \) within the sampled subset:</p>
+<p>$$
+C_i = S_i \cup \{t_i\}.
+$$</p>
+<p>Applying Bayes’s rule step by step:</p>
+<p>$$
+\begin{align*}
+P(t_i = y \mid x_i, C_i)
+&amp;= \frac{P(t_i = y, C_i \mid x_i)}{P(C_i \mid x_i)} \\
+&amp;= \frac{P(t_i = y \mid x_i) P(C_i \mid t_i = y, x_i)}{P(C_i \mid x_i)} \\
+&amp;= \frac{P(y \mid x_i)}{P(C_i \mid x_i)} P(C_i \mid t_i = y, x_i).
+\end{align*}
+$$</p>
+<p>Given a constant \( K(x_i, C_i) \) independent of \( y \):</p>
+<p>$$
+P(C_i \mid t_i = y, x_i)
+= \frac{1}{Q(y|x_i)}
+\prod_{y&rsquo; \in C_i} Q(y&rsquo;|x_i)
+\prod_{y&rsquo; \in (L - C_i)} (1 - Q(y&rsquo;|x_i)).
+$$</p>
+<p>Substituting and simplifying:</p>
+<p>$$
+P(t_i = y \mid x_i, C_i)
+= \frac{P(y|x_i)}{Q(y|x_i)} \cdot \frac{1}{K(x_i, C_i)}.
+$$</p>
+<p>Taking logs gives:</p>
+<p>$$
+\log P(t_i = y \mid x_i, C_i)
+= \log P(y|x_i) - \log Q(y|x_i) + K&rsquo;(x_i, C_i).
+$$</p>
+<p>Since \( K&rsquo;(x_i, C_i) \) is independent of \( y \), it is ignored during training.
+Thus, the model effectively learns to predict</p>
+<p>$$
+\log P(y|x_i) - \log Q(y|x_i).
+$$</p>
+<p>The weights of the output layer correspond to video embeddings, and the inputs are user embeddings.
+These are later stored in the nearest-neighbor index for serving.</p>
+<p>The ranking model predicts the watch time of videos using weighted logistic regression.
+During training, positive examples (clicked videos) are weighted by their actual watch times.
+Let \( N \) be the total number of examples, \( k \) the number of positive examples, and \( T_i \) the watch time of the \( i \)-th positive example.
+The model’s odds are approximately:</p>
+<p>$$
+\frac{\sum T_i}{N - k}
+$$</p>
+<p>Assuming \( \frac{1}{1 - x} \approx 1 + x \), and letting \( P \) denote the probability of an impression, the ranking model predicts \( E[T](1 + P) \).
+Since \( P \) is small in YouTube’s case, this is effectively \( E[T] \), the expected watch time.</p>
+<!-- [Deep Neural Networks for YouTube Recommendations](https://static.googleusercontent.com/media/research.google.com/ja//pubs/archive/45530.pdf), published in 2016, describes a recommendation system of YouTube. 
+The system consists of two feed-forward neural networks: a candidate generation model and a ranking model.
+They are with approximately 1 billion parameters.
+The candidate generation network suggents hundreds of videos using collaborative filtering.
+The representation of a user contains coarse features such as IDs of vidoes and tokens in queries.
+The ranking network predicts expected watch time of viodes that the candidate generation network has suggested.
+
+The candidate generation model learns embeddings of users and videos through matrix factorization.
+The model considers recommendation as extreme classification.
+It classifies users into videos that they are expected to watch.
+The number of videos are too large to use softmax, and the activation function of the output layer is sampled softmax.
+After training, video embeddings are stored in nearest neighbor index.
+At serving time, the recommendation system runs nearest neighbor search to suggests candidates.
+
+Features of the candidate generation model are concatenated with a variety of features.
+A user's watch history is a feature of the candidate generation model.
+To make such sequential features suitable as the input, sparse ID vectors of the sequence are averaged.
+
+The age of a training dataset is also a feature of the candidate generation model.
+The age is used to give priority to newer videos over older ones.
+
+[Sébastien Jean et al.](https://arxiv.org/pdf/1412.2007) proposed sampled softmax to increase the vocabulary in a neural network translation.
+TensorFlow provides implementation as [`tf.nn.sampled_softmax_loss`](https://www.tensorflow.org/api_docs/python/tf/nn/sampled_softmax_loss), and "[What is Candidate Sampling](https://www.tensorflow.org/api_docs/python/tf/nn/sampled_softmax_loss)" for reference.
+
+A task that uses sampled softmax is to predict the correct class of input from a subset of all the classes.
+Let the set of the classes be \\(L\\), a sampling function be \\(Q(y|x)\\), a sampled subset of \\(L\\) at \\(i\\)th iteration be \\(S\_i\\), input be \\(x\_i\\):
+$$
+P(S\_i=S|x\_i) = \prod\_{y\in S}Q(y|x\_i) \prod\_{y\in (L-S)}(1-Q(y|x\_i))
+$$
+Let the class of \\(x\_i\\) be \\(t\_i\\),  the training updates the parameters to maximize the probability of \\(t\_i\\) among \\(C\_i\\):
+$$
+C\_i = S\_i \cup \\{t\_i\\}
+$$
+
+Applying Bayes’ rule:
+$$
+\begin{align*}
+P(t\_i=y|x\_i, C\_i) 
+&= P(t\_i = y, C\_i|x\_i)/ P(C\_i|x\_i)\\\\
+&= P(t\_i=y|x\_i)P(C\_i|t\_i=y, x\_i)/P(C\_i|x\_i)\\\\
+&=P(y|x\_i)P(C\_i|t\_i=y,x\_i)/P(C\_i|x\_i)
+\end{align*}
+$$
+
+Given \\(K(x\_i, C\_i)\\), \\(K'(x\_i, C\_i)\\) that is independent of \\(y\\):
+
+$$
+\begin{align*}
+P(C\_i|t\_i=y,x\_i) &= \frac{1}{Q(y|x\_i)}\prod\_{y'\in C\_i}Q(y'|x\_i)\prod\_{y'\in (L-C\_i)}(1-Q(y'|x\_i)) \\\\
+P(t\_i=y|x\_i, C\_i) &= \frac{P(y|x\_i)}{Q(y|x\_i)}/K(x\_i, C\_i)\\\\
+\log(P(t\_i=y|x\_i,C\_i)) &= \log(P(y|x\_i)) - \log(Q(y|x\_i)) + K'(x\_i, C\_i)
+\end{align*}
+$$
+
+\\(K'(x\_i, C\_i)\\) is ignorable because of independence of \\(y\\) and softmax normalization.
+The term the model should predict is \\(\log(P(y|x\_i))\\), the input of sampled softmax is: 
+$$
+\log(P(y|x\_i)) - \log(Q(y|x\_i))
+$$
+The weights of the output layer are video embeddings, and inputs of the layer are user embeddings.
+They are stored in nearest neighbor index.
+
+The ranking model predicts watch time of videos using logistic regression.
+To predict the time, the objectives of the positive examples are weighted by their watch time.
+In this case, let the number of all the examples be \\(N\\), the number of the positive examples be \\(k\\), the watch time of the \\(i\\)th positive example be \\(T\_i\\), the odds is \\(\frac{\sum T\_i}{N-k}\\).
+Assuming \\(\frac{1}{1-x}\approx 1+x\\), say \\(P\\) is the probability of an impression, and the ranking model predicts \\(E\[T\](1+P)\\).
+The \\(P\\) in Youtube is small enough, we can see the ranking model predicts \\(E\[T\]\\).
+
+The above text is a summary of the attached file.
+Improve clumsy and wrong text because the writer is not a native English speaker. -->
   </div>
 </main>
 

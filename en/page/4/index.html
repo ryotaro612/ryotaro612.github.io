@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<meta name="generator" content="Hugo 0.152.0">
+	<meta name="generator" content="Hugo 0.152.2">
   
   
   <script>(function (w, d, s, l, i) {
@@ -99,6 +99,32 @@
 <main>
   <h1>Posts</h1>
   
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/en/posts/llama-open-and-efficient-foundation-language-models/">LLaMA Open and Efficient Foundation Language Models (2023)</a></h3>
+    <div class="summary"><p><a href="https://arxiv.org/pdf/2001.08361.pdf">Scaling Laws for Neural Language Models</a> refers to empirical observations that model test performance has a power-law relationship with each of the three scale factors: the number of model parameters, the dataset size in tokens, and the amount of compute used for training, when not bottlenecked by the other two.
+<a href="https://arxiv.org/abs/2203.15556">Hoffmann et al. (2022)</a> investigated the bottleneck and found that, given a fixed FLOPs budget, the number of model parameters and the training tokens should be scaled equally to minimize pre-training loss.
+They trained a predicted compute-optimal model, Chinchilla, with 80B parameters, at the same compute budget as Gopher (280B) and with 4 times more data.
+Chinchilla outperformed Gopher and GPT-3 (175B) on a large range of downstream evaluation tasks.</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/large-language-model/">
+            #Large Language Model
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        March 14, 2024
+        
+      </span>
+    </div>
+  </article>
   
   <article>
     <h3><a href="https://ryotaro.dev/en/posts/apache-calcite-a-foundational-framework-for-optimized-query-processing-over-heterogeneous-data-sources/">Apache Calcite a Foundational Framework for Optimized Query Processing Over Heterogeneous Data Sources</a></h3>
@@ -354,32 +380,6 @@ In experiments, it was found that utilizing both the top passages returned by BM
     </div>
   </article>
   
-  <article>
-    <h3><a href="https://ryotaro.dev/en/posts/cap-twelve-years-later-how-the-rules-have-changed/">CAP Twelve Years Later: How the &#34;Rules&#34; Have Changed (2012)</a></h3>
-    <div class="summary"><p>The <a href="https://sites.cs.ucsb.edu/~rich/class/cs293-cloud/papers/Brewer_podc_keynote_2000.pdf">CAP theorem</a>, coined by Eric Brewer, states that in a shared-data system, you can have either Consistency (C), Availability (A), or Parition tolerance (P), but not all three simultaneously.
-However, Martin Kleppmann challenges the CAP theorem and discusses its limitations in <a href="https://dataintensive.net/">Designing Data-Intensive Applications</a>, and <a href="https://www.cl.cam.ac.uk/research/dtg/archived/files/publications/public/mk428/cap-critique.pdf">A Critique of the CAP Theorem</a>.
-In <a href="https://sites.cs.ucsb.edu/~rich/class/cs293b-cloud/papers/brewer-cap.pdf">CAP Twelve Years Later: How the “Rules” Have Changed</a>, Brewer clarifies that the notion of &ldquo;2 of 3&rdquo; is misleading.
-In practice, designers cannot forfeit P and have a choice between C and A.</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/en/tags/cap-theorem/">
-            #CAP Theorem
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        December 23, 2023
-        
-      </span>
-    </div>
-  </article>
-  
 </main>
 
   
@@ -404,7 +404,7 @@ In practice, designers cannot forfeit P and have a choice between C and A.</p></
     </a>
   </li>
   <li>
-    <a href="/en/page/6/">
+    <a href="/en/page/7/">
       <i class="fa-solid fa-xl fa-angles-right"></i>
     </a>
   </li>

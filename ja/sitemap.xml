@@ -30,6 +30,16 @@
   </url><url>
     <loc>https://ryotaro.dev/posts/deep-neural-networks-for-youtube-recommendations/</loc>
     <lastmod>2025-09-23T22:56:53+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/deep-neural-networks-for-youtube-recommendations/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/deep-neural-networks-for-youtube-recommendations/"
+                />
   </url><url>
     <loc>https://ryotaro.dev/posts/</loc>
     <lastmod>2025-09-23T22:56:53+09:00</lastmod>

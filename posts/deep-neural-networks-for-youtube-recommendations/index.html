@@ -62,6 +62,8 @@
         <li><a href="https://ryotaro.dev/posts">Posts</a></li>
         <li><a href="https://ryotaro.dev/tags">Tags</a></li>
         
+        <li><a href="https://ryotaro.dev/en/posts/deep-neural-networks-for-youtube-recommendations/">en</a></li>
+        
       </ul>
       <ul>
         
@@ -121,27 +123,27 @@
     <p><a href="https://static.googleusercontent.com/media/research.google.com/ja//pubs/archive/45530.pdf">Deep Neural Networks for YouTube Recommendations</a>は2016年頃のYouTubeの推薦システムの解説であり、パラメタ数が10億の深層学習のモデルが使われている。
 この数千億の学習データで訓練されたモデルはcandidate generationとrankingの2つのネットワークからなる。
 candidate generationは、ユーザーのYoutube上の行動履歴から数百の推薦候補の動画を協調フィルタリングで選び出す。
-協調フィルタリングは、ユーザーの埋め込みベクトルを、視聴した動画のIDや検索クエリのトークンが要素のスパースなベクトルで構成する。
+協調フィルタリングは、視聴した動画のIDや検索クエリのトークンが要素のスパースなベクトルを連結し、ユーザーの埋め込みベクトルを作る。
 rankingはcandidate generationで選ばれた動画の試聴時間を推定する。</p>
 <p>candidate generationは、行列分解による協調フィルタリングでユーザーと動画の埋め込みベクトルを学習する。
 ネットワークはextreame classificationの問題として推薦をとらえ、視聴を見込める動画のクラスにユーザーを分類する。
-しかし、YouTubeの動画数は多いので、クラス数の多いときに利用されるSampled Softmaxを出力層の活性化関数に使う。
-ユーザーと動画の分散表現の次元数は等しく、推論時は近似最近傍探索でユーザーの分散表現に近い動画を検索し、出力する。</p>
+ただし、YouTubeの動画数はクラスとみなすには数が多いため、クラス数の多いときに利用されるSampled Softmaxを出力層の活性化関数に使う。
+ユーザーと動画の分散表現の次元数は等しく、推論時は近似最近傍探索でユーザーの分散表現に近い動画を検索し、推薦する。</p>
 <p>ネットワークは、順伝搬型であり、ユーザーの特徴を連結した疎なベクトルを入力として受けつける。
-ユーザーの特徴の中には、視聴履歴や検索履歴があり、履歴を系列な表現ではなくベクトルで表現する必要がある。
+ユーザーの特徴の中には、視聴履歴や検索履歴があり、履歴を系列ではなくベクトルで表現する必要がある。
 そこで、視聴や検索を動画やクエリのトークンのIDを要素にした疎なベクトルで表し、ベクトルの平均値を履歴の分散表現として扱う。
 連結した疎なベクトルには、新しい動画を推薦できるように、訓練データの古さを示す要素も含まれる。</p>
 <p>Sampled Softmaxは、ニューラルネットワークによる機械翻訳で扱える語彙数を増やすために<a href="https://arxiv.org/pdf/1412.2007">Sébastien Jeanら</a>によって考案された。
 Sampled Softmaxのアルゴリズムだけを知りたいければ、TensorFlowの<a href="https://www.tensorflow.org/api_docs/python/tf/nn/sampled_softmax_loss"><code>tf.nn.sampled_softmax_loss</code></a>の参考文献 <a href="https://www.tensorflow.org/api_docs/python/tf/nn/sampled_softmax_loss">What is Candidate Sampling</a>の方が論文よりも分かりやすく思えた。
 そのため、以下では参考文献に沿ってSampled Softmaxを説明する。
 Sampled Softmaxには、入力の正解クラスを含むクラスの部分集合と入力を与えたときに、入力のクラスの確率が最大になるようにモデルを訓練する。
-全クラスを\(L\),サンプルで選ばれるクラス\(y\in L\)の集合を\(S_i\)とする。
-このとき、入力\(x_i\)が与えられたときに、クラス\(y\)がサンプルされる確率を\(y\)とすると、
+全クラスを\(L\), 関数\(Q(y|x)\)によるサンプルで選ばれるクラス\(y\in L\)の集合を\(S_i\)とする。
+このとき、入力を\(x_i\)とすると、
 $$
 P(S_i=S|x_i) = \prod_{y\in S}Q(y|x_i) \prod_{y\in (L-S)}(1-Q(y|x_i))
 $$
 が成りたつ。
-\(x\)のクラスを\(t_i\)とすれば、\(x_i\)が与えらえれたときに、\(C_i\)の中から\(t_i\)の確率が最大になるようにパラメタを更新する。
+\(x_i\)のクラスを\(t_i\)とすれば、\(x_i\)が与えらえれたときに、\(C_i\)の中から\(t_i\)の確率が最大になるようにパラメタを更新する。
 $$
 C_i = S_i \cup \{t_i\}
 $$
@@ -176,7 +178,7 @@ Softmaxでクラスの確率の合計が\(1\)になるように正規化され�
 交差エントロピーを使って訓練するとき、試聴時間を推定できるように、正例と負例の目標値を試聴時間と\(1\)にそれぞれ設定する。
 試聴時間を予測するために、出力層の活性化関数に指数関数\(e^{x}\)を選ぶ。
 このとき\(N\)を訓練データの総数、\(k\)を正例の数、\(i\)番目の正例の試聴時間を\(T_i\)とすれば、オッズは\(\frac{\sum T_i}{N-k}\)になる。
-\(\frac{1}{1-x}\approx 1+x\)より、rankingのモデルは\(P\)を表示する確率とすると\(E<a href="1&#43;P">T</a>\)を推定する。
+\(\frac{1}{1-x}\approx 1+x\)より、rankingのモデルは\(P\)をインプレッションが生じる確率とすると\(E[T](1+P)\)を推定する。
 Youtubeの場合、\(P\)は小さいため、近似的に\(E[T]\)を予測するとみなせる。</p>
   </div>
 </main>

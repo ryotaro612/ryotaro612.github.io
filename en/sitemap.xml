@@ -15,6 +15,32 @@
                 href="https://ryotaro.dev/en/"
                 />
   </url><url>
+    <loc>https://ryotaro.dev/en/tags/collaborative-filtering/</loc>
+    <lastmod>2025-09-23T22:56:55+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/collaborative-filtering/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/collaborative-filtering/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/posts/deep-neural-networks-for-youtube-recommendations/</loc>
+    <lastmod>2025-09-23T22:56:55+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/deep-neural-networks-for-youtube-recommendations/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/deep-neural-networks-for-youtube-recommendations/"
+                />
+  </url><url>
     <loc>https://ryotaro.dev/en/posts/</loc>
     <lastmod>2025-09-23T22:56:55+09:00</lastmod>
     <xhtml:link
@@ -26,6 +52,32 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ryotaro.dev/en/posts/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/tags/recommendation/</loc>
+    <lastmod>2025-09-23T22:56:55+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/recommendation/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/recommendation/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/tags/</loc>
+    <lastmod>2025-09-23T22:56:55+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/posts/kademlia-a-peer-to-peer-information-system-based-on-the-xor-metric/</loc>
@@ -52,19 +104,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ryotaro.dev/en/tags/peer-to-peer/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/en/tags/</loc>
-    <lastmod>2025-09-13T14:31:35+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/tags/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/tags/consistent-hashing/</loc>
@@ -130,19 +169,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ryotaro.dev/en/posts/amazon.com-recommendations-item-to-item-collaborative-filtering/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/en/tags/collaborative-filtering/</loc>
-    <lastmod>2025-08-16T14:29:07+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/tags/collaborative-filtering/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/tags/collaborative-filtering/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/tags/mixture-of-experts/</loc>
@@ -991,19 +1017,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ryotaro.dev/en/posts/cap-twelve-years-later-how-the-rules-have-changed/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/en/tags/recommendation/</loc>
-    <lastmod>2023-12-16T09:48:32-05:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/tags/recommendation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/tags/recommendation/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/posts/wide-and-deep-learning-for-recommender-systems/</loc>
