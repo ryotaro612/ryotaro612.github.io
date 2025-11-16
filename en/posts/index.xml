@@ -6,7 +6,7 @@
     <description>Recent content in Posts on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 23 Sep 2025 22:56:55 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 16 Nov 2025 19:00:00 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deep Neural Networks for Youtube Recommendations (2016)</title>
@@ -434,6 +434,13 @@
       <pubDate>Sat, 17 Jun 2023 10:18:51 -0400</pubDate>
       <guid>https://ryotaro.dev/en/posts/layer_normalization/</guid>
       <description>&lt;p&gt;Layer Normalization, introduced in the 2016 paper &lt;a href=&#34;https://arxiv.org/abs/1607.06450&#34;&gt;Layer Normalization&lt;/a&gt;, is a technique used to normalize the summed inputs to the neurons in a layer by using the mean and standard deviation of those inputs within that layer.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1502.03167&#34;&gt;Batch Normalization&lt;/a&gt; uses the mean and the standard deviation of the summed inputs of a neuron in a mini-batch to normalize the summed inputs to it.&#xA;While Batch Normalization can accelerate training, it depends on mini-batch size and is challenging to implement in RNNs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Improving Language Understanding by Generative Pre-Training (2018)</title>
+      <link>https://ryotaro.dev/en/posts/improving_language_understanding_by_generative_pre_training/</link>
+      <pubDate>Fri, 07 Aug 2020 16:45:55 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/improving_language_understanding_by_generative_pre_training/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf&#34;&gt;Improving Language Understanding by Generative Pre-Training&lt;/a&gt; describes the original generative pre-trained transformer model. The paper shows that pre-training on unlabeled text followed by fine-tuning on supervised tasks leads to strong performance. During fine-tuning, the output of the pre-trained model is passed to a linear output layer.&lt;/p&gt;&#xA;&lt;p&gt;The model described in the paper is based on a &lt;a href=&#34;https://arxiv.org/pdf/1801.10198&#34;&gt;multi-layer Transformer decoder&lt;/a&gt;. Unlike the architecture in &lt;a href=&#34;https://arxiv.org/pdf/1801.10198&#34;&gt;Attention Is All You Need&lt;/a&gt;, this model uses only the decoder stack. Representations for upstream tasks are constructed so that their format aligns with the unlabeled text used in pre-training. For example, an entailment example is created by concatenating the premise and the hypothesis with a delimiter. A text similarity task also concatenates two texts with a delimiter and feeds the sequence into the pre-trained model.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

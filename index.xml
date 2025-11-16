@@ -6,7 +6,7 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 23 Sep 2025 22:56:53 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 16 Nov 2025 19:00:00 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deep Neural Networks for Youtube Recommendations (2016)</title>
@@ -1728,7 +1728,7 @@
       <link>https://ryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/</link>
       <pubDate>Fri, 07 Aug 2020 16:45:55 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf&#34;&gt;Improving Language Understanding by Generative Pre-Training&lt;/a&gt;は教師なしの事前学習であり、GPTシリーズの最初のモデルにあたる。&#xA;12の自然言語処理タスクのうち9つについて、事前学習したモデルの出力を1層の全結合層に入力するファインチューニングで、当時のSoTAを上まわる性能を発揮した。&lt;/p&gt;&#xA;&lt;p&gt;ネットワークは、&lt;a href=&#34;https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;transformer&lt;/a&gt;のデコーダーであり、&lt;a href=&#34;https://arxiv.org/pdf/1706.03762&#34;&gt;Attention Is All you Need&lt;/a&gt;のエンコーダーは含まれない。&#xA;ファインチューニングでは、特徴の入力を事前学習のデータ形式に揃えることで、事前学習とファインチューニングの差異を埋める。&#xA;推論タスクであれば前提や仮定、テキストの類似性判定であれば比較する2つのテキストといった異種の特徴をデリミタで連結した系列を作り、モデルに入力する。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf&#34;&gt;Improving Language Understanding by Generative Pre-Training&lt;/a&gt;は教師なしの事前学習であり、GPTシリーズの最初のモデルにあたる。&#xA;12の自然言語処理タスクのうち9つについて、事前学習したモデルの出力を1層の全結合層に入力するファインチューニングで、当時のSoTAを上まわる性能を発揮した。&lt;/p&gt;&#xA;&lt;p&gt;ネットワークは、&lt;a href=&#34;https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;transformer&lt;/a&gt;のデコーダーであり、&lt;a href=&#34;https://arxiv.org/pdf/1706.03762&#34;&gt;Attention Is All You Need&lt;/a&gt;のエンコーダーは含まれない。&#xA;ファインチューニングでは、特徴の入力を事前学習のデータ形式に揃えることで、事前学習とファインチューニングの差異を埋める。&#xA;推論タスクであれば前提や仮定、テキストの類似性判定であれば比較する2つのテキストといった異種の特徴をデリミタで連結した系列を作り、モデルに入力する。&lt;/p&gt;</description>
     </item>
     <item>
       <title>論文メモ A Tale from the Trenches: Cognitive Biases and Software Development</title>

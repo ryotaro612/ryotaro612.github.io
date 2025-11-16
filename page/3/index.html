@@ -101,6 +101,41 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/jepsen/">分散システム向けのフォールトインジェクションフレームワーク Jepsen</a></h3>
+    <div class="summary"><h2 id="概要">概要</h2>
+<p>分散システムのテストをClojureで実装するためのフレームワークに<a href="https://jepsen.io/">Jepsen</a>がある。
+Jepsenのテストケースは、システムへの操作、操作後のシステムに期待する状態、障害と操作のスケジューリングの3要素からなる。
+テストケースは、スケジューリング通りに操作と障害を起こし、最後にシステムの応答が期待通りか確認する。
+Jepsenの公式サイトにはJepsenによる<a href="https://jepsen.io/analyses">主要な分散システムのテスト結果</a>が公開されている。
+また、Kubernetes内部で使わているKVSの<a href="https://kubernetes.io/ja/docs/tasks/administer-cluster/configure-upgrade-etcd/">etcd</a>の<a href="https://etcd.io/blog/2020/jepsen-343-results/">公式ウェブサイト</a>にもJepsenのテスト結果が公開されている。
+分散システムの開発側からも参照されているので、分散システムにおけるJepsenの認知度は高いように思える。</p>
+<p>その一方で、公式ドキュメントは整備されていないようだった。
+たとえば、チュートリアルはetcdを例題にJepsenの使い方を解説しているが、etcdのクライアントライブラリが古く、実際に実装してもチュートリアル通りに実行できない。
+かわりに、2相コミットするアプリケーションとテストケースを実装したが、実装のためにJepsenのソースコードを調べる必要があった。
+実装したアプリケーションとテストケースは<a href="https://github.com/ryotaro612/jepsen-tutorial-xa">GitHubのリポジトリ</a>に公開してある。</p>
+<p>それでも、依然として、Jepsenを使ってテストケース実装するほうが、スクラッチからテストケースを実装するよりも効率的ではあると思う。
+そこで、今後の備忘録をかねて、Jepsenを試すにあたって、チュートリアルに不足を感じた部分を書き留めておく。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
+            #分散システム
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        January 26, 2025
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/origin-of-type-theory/">型理論のはじまり</a></h3>
     <div class="summary"><p>型理論の起源はラッセルのパラドクスにある。
 ただし、厳密な起源となる出来事は何かという問いになると、意見は分かれると思う。
@@ -339,34 +374,6 @@ NCFは3種類あり、Generalized Matrix Factorization (GMF) と Multi-Layer Per
       <span class="date">
         
         March 22, 2024
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/llama-open-and-efficient-foundation-language-models/">LLaMA Open and Efficient Foundation Language Models (2023)</a></h3>
-    <div class="summary"><p><a href="https://arxiv.org/pdf/2001.08361.pdf">スケーリング則</a>によれば、<a href="https://arxiv.org/abs/1706.03762">Transformer</a>型モデルのテストデータに対する交差エントロピーの損失は、のこり2つの要素がボトルネックにならないかぎり、パラメタ数、データ量、訓練時間とべき乗の関係にある。
-パラメタをふやすほど損失を下げることができる。</p>
-<p><a href="https://arxiv.org/abs/2203.15556">Hoffmann et al. (2022)</a> は、訓練に使えるFlop数が一定のときに、事前学習時の損失を効果的に下げるには、訓練時に参照するトークン数、パラメタ数を等しい比率でスケールすべきと結論づけた。
-実験のために開発されたパラメタ数70BのモデルChinchillaはパラメタ数175BのGPT-3の性能を上回った。</p>
-<p>しかし、訓練時の損失を目標まで下げるまでにかかるFlop数が少ないモデルほど、推論時もプロセッサの利用効率がよいとはかぎらない。
-たとえば、パラメタ数の大きいモデルが小さいモデルよりも高いプロセッサの利用効率で訓練時の損失を目標以下にできても、推論に必要なFlop数はパラメタ数が多いモデルのほうが大きい。</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/large-language-model/">
-            #Large Language Model
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        March 14, 2024
         
       </span>
     </div>

@@ -101,6 +101,37 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/en/posts/lora-low-rank-adaptation-of-large-language-models/">LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS (2021)</a></h3>
+    <div class="summary"><p>LoRA is motivated by the findings of <a href="https://arxiv.org/pdf/1804.08838.pdf">Li et al. (2018)</a> and <a href="https://arxiv.org/pdf/2012.13255.pdf">Aghajanyan et al. (2020)</a>, which show that overparameterized models tend to converge to solutions that lie within a low-dimensional intrinsic subspace.</p>
+<p>The intrinsic dimension refers to the minimum number of trainable parameters needed to reach satisfactory performance on a given task.</p>
+<p>LoRA introduces low-rank adaptation by decomposing the weight matrices in dense layers. Instead of fine-tuning all parameters of a pre-trained model, LoRA freezes the original weights and learns two low-rank matrices during training.</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/large-language-model/">
+            #Large Language Model
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/transformer/">
+            #Transformer
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        June 7, 2025 (Originally posted on November 18, 2023)</p>
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/en/posts/supervised-learning-of-universal-sentence-representations-from-natural-language-inference-data/">Supervised Learning of Universal Sentence Representations From Natural Language Inference Data (2017)</a></h3>
     <div class="summary"><p><a href="https://arxiv.org/pdf/1705.02364">Supervised Learning of Universal Sentence Representations From Natural Language Inference Data</a> proposes a supervised approach to train neural networks on the Stanford Natural Language Inference (SNLI) dataset to produce general-purpose sentence embeddings applicable to a wide range of downstream tasks.
 The authors evaluated seven different encoder architectures across twelve NLP tasks and found that a bidirectional LSTM with max pooling achieved the best performance.</p></div>
@@ -368,47 +399,6 @@ The paper <a href="https://www.vldb.org/pvldb/vol7/p181-bailis.pdf">Highly Avail
       <span class="date">
         
         January 30, 2025
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/en/posts/jepsen/">Jepsen: A framework for distributed systems verification, with fault injection</a></h3>
-    <div class="summary"><h2 id="overview">Overview</h2>
-<p>Jepsen is a Clojure testing framework for distributed systems.
-A Jepsen test case defines operations on a system, expected responses to the operations, and a schedule for injecting faults to inject and the operations.
-The test case executes the operations, introduces faults as scheduled, and validates whether the system&rsquo;s response meets expectations.</p>
-<p>Jepsen appears to be well-regarded in the field of distributed systems.
-Tests results for <a href="https://jepsen.io/analyses">major distributed systems</a> using Jepsen are published on its official website.
-Additionally, A Jepsen test result for <a href="https://kubernetes.io/ja/docs/tasks/administer-cluster/configure-upgrade-etcd/">etcd</a>, a key-value store used within Kubernetes, is available on its <a href="https://etcd.io/blog/2020/jepsen-343-results/">official website</a>.</p>
-<p>Despite its recognition, <a href="https://github.com/jepsen-io/jepsen/blob/main/doc/tutorial/index.md">the tutorial of Jepsen</a> wasn&rsquo;t informative enough for me to learn the basic usage of Jepsen.
-For instance, while the tutorial uses etcd as an example, the client library for etcd is outdated, making it impossible to execute the tutorial as instructed.
-Instead, by researching Jepsen&rsquo;s source code, I implemented an application with two-phase commits and a test case for it.
-The implemented application and test caseare available in <a href="https://github.com/ryotaro612/jepsen-tutorial-xa">one of my GitHub repository</a>.</p>
-<p>Despite of the insufficent reference, using Jepsen to implement test cases is still more efficient than building them from scratch.
-For a future reference, I will explore an advanced usage of Jepsen compared with the tutorial.</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/en/tags/distributed-systems/">
-            #Distributed Systems
-          </a>
-        </li>
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/en/tags/jepsen/">
-            #Jepsen
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        January 26, 2025
         
       </span>
     </div>

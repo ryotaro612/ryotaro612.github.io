@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ryotaro.dev/</loc>
-    <lastmod>2025-11-08T21:33:01+09:00</lastmod>
+    <lastmod>2025-11-16T19:00:00+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://ryotaro.dev/posts/</loc>
-    <lastmod>2025-11-08T21:33:01+09:00</lastmod>
+    <lastmod>2025-11-16T19:00:00+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -68,7 +68,7 @@
                 />
   </url><url>
     <loc>https://ryotaro.dev/tags/</loc>
-    <lastmod>2025-09-23T22:56:53+09:00</lastmod>
+    <lastmod>2025-11-16T19:00:00+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -198,7 +198,7 @@
                 />
   </url><url>
     <loc>https://ryotaro.dev/tags/large-language-models/</loc>
-    <lastmod>2025-07-24T03:09:28+09:00</lastmod>
+    <lastmod>2025-11-16T19:00:00+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -2032,10 +2032,30 @@
     <lastmod>2020-08-07T18:50:12+09:00</lastmod>
   </url><url>
     <loc>https://ryotaro.dev/tags/gpt/</loc>
-    <lastmod>2020-08-07T16:45:55+09:00</lastmod>
+    <lastmod>2025-11-16T19:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/gpt/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/gpt/"
+                />
   </url><url>
     <loc>https://ryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/</loc>
-    <lastmod>2020-08-07T16:45:55+09:00</lastmod>
+    <lastmod>2025-11-16T19:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/improving_language_understanding_by_generative_pre_training/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/"
+                />
   </url><url>
     <loc>https://ryotaro.dev/posts/a_tale_from_the_trenches/</loc>
     <lastmod>2020-07-31T18:55:54+09:00</lastmod>

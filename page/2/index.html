@@ -101,6 +101,39 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/lora-low-rank-adaptation-of-large-language-models/">LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS (2021)</a></h3>
+    <div class="summary"><p><a href="https://arxiv.org/pdf/1804.08838.pdf">Li et al. (2018)</a>と<a href="https://arxiv.org/pdf/2012.13255.pdf">Aghajanyan et al. (2020)</a>は、Large Language Models (LLM) のファインチューニングにおいて、下流タスクに必要なパラメータ数はLLMのパラメタ数よりもはるかに少ないと主張する。
+<a href="https://arxiv.org/pdf/2106.09685.pdf">LoRA</a>は、この仮説を支持し、ファインチューニングを避け、LLMの全結合層と線形結合するための2つの小さい行列を導入する。
+LLMの重みを\(W_0\in\mathbb{R}^{d\times k}\) とすると、\(W_0+BA\ (B\in\mathbb{R}^{d\times r}, A\in\mathbb{R}^{r\times k}, r \ll\min (d, k))\)が下流タスクに最適な重みに近づくように、ファインチューニングにかわって\(W_0\)を更新せず\(B,\ A\)のみを更新する。
+\(r\)が\(d, k\)よりも小さいので、\(W_0\)を更新するファインチューニングよりも学習時間は短い。
+また、複数の下流タスクを入力に適用する場合、\(W_0x\)を共有できるので、推論に必要な計算も\(W_0\)を更新するファインチューニングより少ない。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/large-language-model/">
+            #Large Language Model
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/transformer/">
+            #Transformer
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        June 7, 2025 (Originally posted on November 18, 2023)</p>
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/supervised-learning-of-universal-sentence-representations-from-natural-language-inference-data/">Supervised Learning of Universal Sentence Representations From Natural Language Inference Data (2017)</a></h3>
     <div class="summary"><p><a href="https://arxiv.org/pdf/1705.02364">Supervised Learning of Universal Sentence Representations From Natural Language Inference Data</a>は自然言語推論のデータセットであるStanford Natural Language Inference (SNLI) を使った文の埋め込みベクトルを生成モデルを教師あり学習を提案した。
 7種類のネットワークアーキテクチャを12種類のタスクで評価したところ、双方向LSTMと最大値プーリングを採用したアーキテクチャが最も高い性能を発揮した。</p></div>
@@ -368,41 +401,6 @@ GPT-3のネットワークアーキテクチャは<a href="https://cdn.openai.co
       <span class="date">
         
         January 30, 2025
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/jepsen/">分散システム向けのフォールトインジェクションフレームワーク Jepsen</a></h3>
-    <div class="summary"><h2 id="概要">概要</h2>
-<p>分散システムのテストをClojureで実装するためのフレームワークに<a href="https://jepsen.io/">Jepsen</a>がある。
-Jepsenのテストケースは、システムへの操作、操作後のシステムに期待する状態、障害と操作のスケジューリングの3要素からなる。
-テストケースは、スケジューリング通りに操作と障害を起こし、最後にシステムの応答が期待通りか確認する。
-Jepsenの公式サイトにはJepsenによる<a href="https://jepsen.io/analyses">主要な分散システムのテスト結果</a>が公開されている。
-また、Kubernetes内部で使わているKVSの<a href="https://kubernetes.io/ja/docs/tasks/administer-cluster/configure-upgrade-etcd/">etcd</a>の<a href="https://etcd.io/blog/2020/jepsen-343-results/">公式ウェブサイト</a>にもJepsenのテスト結果が公開されている。
-分散システムの開発側からも参照されているので、分散システムにおけるJepsenの認知度は高いように思える。</p>
-<p>その一方で、公式ドキュメントは整備されていないようだった。
-たとえば、チュートリアルはetcdを例題にJepsenの使い方を解説しているが、etcdのクライアントライブラリが古く、実際に実装してもチュートリアル通りに実行できない。
-かわりに、2相コミットするアプリケーションとテストケースを実装したが、実装のためにJepsenのソースコードを調べる必要があった。
-実装したアプリケーションとテストケースは<a href="https://github.com/ryotaro612/jepsen-tutorial-xa">GitHubのリポジトリ</a>に公開してある。</p>
-<p>それでも、依然として、Jepsenを使ってテストケース実装するほうが、スクラッチからテストケースを実装するよりも効率的ではあると思う。
-そこで、今後の備忘録をかねて、Jepsenを試すにあたって、チュートリアルに不足を感じた部分を書き留めておく。</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/%E5%88%86%E6%95%A3%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0/">
-            #分散システム
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        January 26, 2025
         
       </span>
     </div>

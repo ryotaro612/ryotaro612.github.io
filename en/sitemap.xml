@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ryotaro.dev/en/</loc>
-    <lastmod>2025-11-08T21:33:04+09:00</lastmod>
+    <lastmod>2025-11-16T19:00:00+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/posts/</loc>
-    <lastmod>2025-11-08T21:33:04+09:00</lastmod>
+    <lastmod>2025-11-16T19:00:00+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -68,7 +68,7 @@
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/tags/</loc>
-    <lastmod>2025-09-23T22:56:55+09:00</lastmod>
+    <lastmod>2025-11-16T19:00:00+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -198,7 +198,7 @@
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/tags/large-language-models/</loc>
-    <lastmod>2025-07-24T03:09:28+09:00</lastmod>
+    <lastmod>2025-11-16T19:00:00+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -1411,6 +1411,32 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ryotaro.dev/en/posts/layer_normalization/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/tags/gpt/</loc>
+    <lastmod>2025-11-16T19:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/gpt/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/gpt/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/posts/improving_language_understanding_by_generative_pre_training/</loc>
+    <lastmod>2025-11-16T19:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/improving_language_understanding_by_generative_pre_training/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/about/</loc>

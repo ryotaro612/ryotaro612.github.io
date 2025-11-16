@@ -101,6 +101,39 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/">Improving Language Understanding by Generative Pre-Training (2018)</a></h3>
+    <div class="summary"><p><a href="https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf">Improving Language Understanding by Generative Pre-Training</a>は教師なしの事前学習であり、GPTシリーズの最初のモデルにあたる。
+12の自然言語処理タスクのうち9つについて、事前学習したモデルの出力を1層の全結合層に入力するファインチューニングで、当時のSoTAを上まわる性能を発揮した。</p>
+<p>ネットワークは、<a href="https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">transformer</a>のデコーダーであり、<a href="https://arxiv.org/pdf/1706.03762">Attention Is All You Need</a>のエンコーダーは含まれない。
+ファインチューニングでは、特徴の入力を事前学習のデータ形式に揃えることで、事前学習とファインチューニングの差異を埋める。
+推論タスクであれば前提や仮定、テキストの類似性判定であれば比較する2つのテキストといった異種の特徴をデリミタで連結した系列を作り、モデルに入力する。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/large-language-models/">
+            #Large Language Models
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/gpt/">
+            #GPT
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        November 16, 2025 (Originally posted on August 7, 2020)</p>
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/posts/deep-neural-networks-for-youtube-recommendations/">Deep Neural Networks for Youtube Recommendations (2016)</a></h3>
     <div class="summary"><p><a href="https://static.googleusercontent.com/media/research.google.com/ja//pubs/archive/45530.pdf">Deep Neural Networks for YouTube Recommendations</a>は2016年頃のYouTubeの推薦システムの解説であり、パラメタ数が10億の深層学習のモデルが使われている。
 この数千億の学習データで訓練されたモデルはcandidate generationとrankingの2つのネットワークからなる。
@@ -360,39 +393,6 @@ InstructGPTのRLHFには、報酬関数のモデルを生成する前に、GPT3�
       <span class="date">
         
         June 15, 2025
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/lora-low-rank-adaptation-of-large-language-models/">LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS (2021)</a></h3>
-    <div class="summary"><p><a href="https://arxiv.org/pdf/1804.08838.pdf">Li et al. (2018)</a>と<a href="https://arxiv.org/pdf/2012.13255.pdf">Aghajanyan et al. (2020)</a>は、Large Language Models (LLM) のファインチューニングにおいて、下流タスクに必要なパラメータ数はLLMのパラメタ数よりもはるかに少ないと主張する。
-<a href="https://arxiv.org/pdf/2106.09685.pdf">LoRA</a>は、この仮説を支持し、ファインチューニングを避け、LLMの全結合層と線形結合するための2つの小さい行列を導入する。
-LLMの重みを\(W_0\in\mathbb{R}^{d\times k}\) とすると、\(W_0+BA\ (B\in\mathbb{R}^{d\times r}, A\in\mathbb{R}^{r\times k}, r \ll\min (d, k))\)が下流タスクに最適な重みに近づくように、ファインチューニングにかわって\(W_0\)を更新せず\(B,\ A\)のみを更新する。
-\(r\)が\(d, k\)よりも小さいので、\(W_0\)を更新するファインチューニングよりも学習時間は短い。
-また、複数の下流タスクを入力に適用する場合、\(W_0x\)を共有できるので、推論に必要な計算も\(W_0\)を更新するファインチューニングより少ない。</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/large-language-model/">
-            #Large Language Model
-          </a>
-        </li>
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/transformer/">
-            #Transformer
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        June 7, 2025 (Originally posted on November 18, 2023)</p>
         
       </span>
     </div>

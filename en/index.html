@@ -101,6 +101,36 @@
   
   
   <article>
+    <h3><a href="https://ryotaro.dev/en/posts/improving_language_understanding_by_generative_pre_training/">Improving Language Understanding by Generative Pre-Training (2018)</a></h3>
+    <div class="summary"><p><a href="https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf">Improving Language Understanding by Generative Pre-Training</a> describes the original generative pre-trained transformer model. The paper shows that pre-training on unlabeled text followed by fine-tuning on supervised tasks leads to strong performance. During fine-tuning, the output of the pre-trained model is passed to a linear output layer.</p>
+<p>The model described in the paper is based on a <a href="https://arxiv.org/pdf/1801.10198">multi-layer Transformer decoder</a>. Unlike the architecture in <a href="https://arxiv.org/pdf/1801.10198">Attention Is All You Need</a>, this model uses only the decoder stack. Representations for upstream tasks are constructed so that their format aligns with the unlabeled text used in pre-training. For example, an entailment example is created by concatenating the premise and the hypothesis with a delimiter. A text similarity task also concatenates two texts with a delimiter and feeds the sequence into the pre-trained model.</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/large-language-models/">
+            #Large Language Models
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/en/tags/gpt/">
+            #GPT
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        November 16, 2025 (Originally posted on August 7, 2020)</p>
+        
+      </span>
+    </div>
+  </article>
+  
+  <article>
     <h3><a href="https://ryotaro.dev/en/posts/deep-neural-networks-for-youtube-recommendations/">Deep Neural Networks for Youtube Recommendations (2016)</a></h3>
     <div class="summary"><p><a href="https://static.googleusercontent.com/media/research.google.com/ja//pubs/archive/45530.pdf">Deep Neural Networks for YouTube Recommendations</a>, published in 2016, describes YouTube’s large-scale recommendation system.<br>
 The system consists of two feed-forward neural networks: a candidate generation model and a ranking model, together containing approximately one billion parameters.</p>
@@ -345,37 +375,6 @@ The authors demonstrate that training the model to predict the added noise minim
       <span class="date">
         
         June 15, 2025
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/en/posts/lora-low-rank-adaptation-of-large-language-models/">LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS (2021)</a></h3>
-    <div class="summary"><p>LoRA is motivated by the findings of <a href="https://arxiv.org/pdf/1804.08838.pdf">Li et al. (2018)</a> and <a href="https://arxiv.org/pdf/2012.13255.pdf">Aghajanyan et al. (2020)</a>, which show that overparameterized models tend to converge to solutions that lie within a low-dimensional intrinsic subspace.</p>
-<p>The intrinsic dimension refers to the minimum number of trainable parameters needed to reach satisfactory performance on a given task.</p>
-<p>LoRA introduces low-rank adaptation by decomposing the weight matrices in dense layers. Instead of fine-tuning all parameters of a pre-trained model, LoRA freezes the original weights and learns two low-rank matrices during training.</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/en/tags/large-language-model/">
-            #Large Language Model
-          </a>
-        </li>
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/en/tags/transformer/">
-            #Transformer
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        June 7, 2025 (Originally posted on November 18, 2023)</p>
         
       </span>
     </div>
