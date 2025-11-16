@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ryotaro.dev/</loc>
-    <lastmod>2025-09-23T22:56:53+09:00</lastmod>
+    <lastmod>2025-11-08T21:33:01+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -13,6 +13,19 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://ryotaro.dev/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/posts/</loc>
+    <lastmod>2025-11-08T21:33:01+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/tags/collaborative-filtering/</loc>
@@ -39,19 +52,6 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://ryotaro.dev/posts/deep-neural-networks-for-youtube-recommendations/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/posts/</loc>
-    <lastmod>2025-09-23T22:56:53+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/posts/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/tags/recommendation/</loc>
@@ -2030,6 +2030,9 @@
   </url><url>
     <loc>https://ryotaro.dev/posts/an_empirical_study_on_program_failures_on_deep_learning_jobs/</loc>
     <lastmod>2020-08-07T18:50:12+09:00</lastmod>
+  </url><url>
+    <loc>https://ryotaro.dev/tags/gpt/</loc>
+    <lastmod>2020-08-07T16:45:55+09:00</lastmod>
   </url><url>
     <loc>https://ryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/</loc>
     <lastmod>2020-08-07T16:45:55+09:00</lastmod>

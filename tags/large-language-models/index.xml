@@ -29,5 +29,12 @@
       <guid>https://ryotaro.dev/posts/scaling-instruction-finetuned-language-models/</guid>
       <description>&lt;p&gt;Instruction Finetuningは訓練データにない種類のタスクのゼロショットを改善するファインチューニングの一種で、&lt;a href=&#34;https://arxiv.org/pdf/2109.01652&#34;&gt;Finetuned Language Models Are Zero-Shot Learners&lt;/a&gt;で知られるようになった。&#xA;もとの文献ではInstruction tuningと呼ばれている。&#xA;&lt;a href=&#34;https://arxiv.org/pdf/2210.11416&#34;&gt;Scaling Instruction-Finetuned Language Models&lt;/a&gt;は、学習データ、モデルのパラメタの数、chain-of-thoughtのデータを増やすと、instruction tuningで学習したモデルの性能を向上できることを示した。&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Improving Language Understanding by Generative Pre-Training (2018)</title>
+      <link>https://ryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/</link>
+      <pubDate>Fri, 07 Aug 2020 16:45:55 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf&#34;&gt;Improving Language Understanding by Generative Pre-Training&lt;/a&gt;は教師なしの事前学習であり、GPTシリーズの最初のモデルにあたる。&#xA;12の自然言語処理タスクのうち9つについて、事前学習したモデルの出力を1層の全結合層に入力するファインチューニングで、当時のSoTAを上まわる性能を発揮した。&lt;/p&gt;&#xA;&lt;p&gt;ネットワークは、&lt;a href=&#34;https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;transformer&lt;/a&gt;のデコーダーであり、&lt;a href=&#34;https://arxiv.org/pdf/1706.03762&#34;&gt;Attention Is All you Need&lt;/a&gt;のエンコーダーは含まれない。&#xA;ファインチューニングでは、特徴の入力を事前学習のデータ形式に揃えることで、事前学習とファインチューニングの差異を埋める。&#xA;推論タスクであれば前提や仮定、テキストの類似性判定であれば比較する2つのテキストといった異種の特徴をデリミタで連結した系列を作り、モデルに入力する。&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

@@ -1724,11 +1724,11 @@
       <description>&lt;p&gt;Microsoftの社内では深層学習のプラットフォームPhillyが運用されており、そこで起きた4960件のジョブの失敗原因を調査した。&#xA;調査では、失敗の原因を20のカテゴリに分類し、カテゴリごとに失敗の件数を集計した。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>概要 Improving Language Understanding by Generative Pre-Training</title>
+      <title>Improving Language Understanding by Generative Pre-Training (2018)</title>
       <link>https://ryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/</link>
       <pubDate>Fri, 07 Aug 2020 16:45:55 +0900</pubDate>
       <guid>https://ryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/</guid>
-      <description>&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;&#xA;&lt;p&gt;GPTの略称で知られる教師なしの事前学習である。&#xA;評価実験では、全結合層を1層追加したファインチューニングで、12の自然言語処理タスクのうち9つについて、当時のSoTAを上まわる性能を発揮した。&#xA;ネットワークには&lt;a href=&#34;https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;Transformer&lt;/a&gt;のデコーダー部分が使われている。&#xA;ファインチューニング時には、事前学習の効果を生かすために、特徴の入力をモデルのアーキテクチャに合わせ、アーキテクチャの変更を最小限におさえる。&#xA;推論タスクであれば前提や仮定、テキストの類似性判定であれば比較する2つのテキストといった異種の特徴をデリミタで連結した系列を作り、モデルに入力する。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf&#34;&gt;Improving Language Understanding by Generative Pre-Training&lt;/a&gt;は教師なしの事前学習であり、GPTシリーズの最初のモデルにあたる。&#xA;12の自然言語処理タスクのうち9つについて、事前学習したモデルの出力を1層の全結合層に入力するファインチューニングで、当時のSoTAを上まわる性能を発揮した。&lt;/p&gt;&#xA;&lt;p&gt;ネットワークは、&lt;a href=&#34;https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf&#34;&gt;transformer&lt;/a&gt;のデコーダーであり、&lt;a href=&#34;https://arxiv.org/pdf/1706.03762&#34;&gt;Attention Is All you Need&lt;/a&gt;のエンコーダーは含まれない。&#xA;ファインチューニングでは、特徴の入力を事前学習のデータ形式に揃えることで、事前学習とファインチューニングの差異を埋める。&#xA;推論タスクであれば前提や仮定、テキストの類似性判定であれば比較する2つのテキストといった異種の特徴をデリミタで連結した系列を作り、モデルに入力する。&lt;/p&gt;</description>
     </item>
     <item>
       <title>論文メモ A Tale from the Trenches: Cognitive Biases and Software Development</title>

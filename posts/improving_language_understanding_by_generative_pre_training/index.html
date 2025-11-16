@@ -42,7 +42,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
     integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
-  <title>概要 Improving Language Understanding by Generative Pre-Training</title>
+  <title>Improving Language Understanding by Generative Pre-Training (2018)</title>
 </head>
 
 <body>
@@ -96,12 +96,18 @@
   </header>
   
 <main>
-  <h1>概要 Improving Language Understanding by Generative Pre-Training</h1>
+  <h1>Improving Language Understanding by Generative Pre-Training (2018)</h1>
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://ryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/">
-        #言語モデル
+      <a href="https://ryotaro.dev/tags/large-language-models/">
+        #Large Language Models
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="https://ryotaro.dev/tags/gpt/">
+        #GPT
       </a>
     </li>
     
@@ -112,46 +118,39 @@
     
   </span>
   <div>
-    <h3 id="概要">概要</h3>
-<p>GPTの略称で知られる教師なしの事前学習である。
-評価実験では、全結合層を1層追加したファインチューニングで、12の自然言語処理タスクのうち9つについて、当時のSoTAを上まわる性能を発揮した。
-ネットワークには<a href="https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">Transformer</a>のデコーダー部分が使われている。
-ファインチューニング時には、事前学習の効果を生かすために、特徴の入力をモデルのアーキテクチャに合わせ、アーキテクチャの変更を最小限におさえる。
+    <p><a href="https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf">Improving Language Understanding by Generative Pre-Training</a>は教師なしの事前学習であり、GPTシリーズの最初のモデルにあたる。
+12の自然言語処理タスクのうち9つについて、事前学習したモデルの出力を1層の全結合層に入力するファインチューニングで、当時のSoTAを上まわる性能を発揮した。</p>
+<p>ネットワークは、<a href="https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">transformer</a>のデコーダーであり、<a href="https://arxiv.org/pdf/1706.03762">Attention Is All you Need</a>のエンコーダーは含まれない。
+ファインチューニングでは、特徴の入力を事前学習のデータ形式に揃えることで、事前学習とファインチューニングの差異を埋める。
 推論タスクであれば前提や仮定、テキストの類似性判定であれば比較する2つのテキストといった異種の特徴をデリミタで連結した系列を作り、モデルに入力する。</p>
-<h3 id="事前学習">事前学習</h3>
-<p>事前学習では、次の目的関数でトークン列\(\mathcal{U}=\{u_1,\dots , u_n\}\)で言語モデルをつくる。
+<p>事前学習では、コンテキストウィンドウの長さを\(k\),トークン列を\(\mathcal{U}=\{u_1,\dots , u_n\}\)として、コンテキストウィンドウに続くトークンの生起確率を最大化できるように目的関数\(L_1(\mathcal{U})\)を設定する。
 $$
 L_1(\mathcal{U})=\sum_i\log P(u_i\mid u_{i-k},\dots , u_{i-1};\Theta)
 $$
-\(k\)はウィンドウサイズを示す。
-モデルに使われるmulti-layer <a href="https://openreview.net/pdf?id=Hyg0vbWC-">Trasformer decoder</a>は、条件付き確率\(P\)にあてはまるようにパラメタ\(\Theta\)を学習する。</p>
-<p>\(n\)層のTransformer decoderは、トークンの埋込み行列\(W_e\)とトークンの位置の埋込み行列\(W_p\)を受け取り、次の式になる。</p>
-<p>$$
+モデルに使われる<a href="https://openreview.net/pdf?id=Hyg0vbWC-">multi-layer trasformer decoder</a>は、条件付き確率\(P\)にあてはまるようにパラメタ\(\Theta\)を学習する。
+\(n\)層のtransformer decoderは、トークンの埋込み行列 \(W_e\)とトークンの位置の埋込み行列\(W_p\), コンテキスト \(U=(u_{-k}, \dots, u_{-1})\)を受け取り、次のトークンを生成する。
+$$
 \begin{align}
 h_0&amp;=UW_e+W_p\\
-h_l&amp;=\mathtt{transformer_block}(h_{l-1})\forall i \in[1,n]\\
+h_l&amp;=\mathtt{transformerblock}(h_{l-1})\forall i \in[1,n]\\
 P(u)&amp;=\texttt{softmax}(h_nW^{T}_{e})
 \end{align}
 $$</p>
-<h3 id="ファインチューニング">ファインチューニング</h3>
-<p>transfomerの最終層の出力をうけとる1層の全結合層をアーキテクチャにつなげ、主タスクの学習データ\(\mathcal{C}\)で学習する。
-学習時のアーキテクチャは次の図のようになる。
-<img src="/gpt/arch.png" alt="gpt"></p>
-<p>教師データの事例のトークン列を\(x^1,\dots , x^m\)、最終層の出力を\(h_l^m\), 全結合層のパラメタを\(W_y\)とおくと、学習時には次の\(L_3(\mathcal{C})\)を最大化する。
+<p>ファインチューニングでは、最後のtransformerから出力された末尾のトークンを1層の全結合層に入力する。
+以下の図は、ファインチューニングの学習データ\(\mathcal{C}\)を事前学習の入力形式に合わせてモデルに与える様子を示す。
+上の図の右部は、分類、含意関係認識、類似度、Q&amp;Aのタスクにおける入力を示す。
+分類以外は全て、事例の要素をデリメタを挟んで隣接させ、モデルにあたえている。
+<img src="/gpt/arch.png" alt="gpt">
+教師データの事例のトークン列を\(x^1,\dots , x^m\), 最終層の出力を\(h_l^m\), 全結合層のパラメタを\(W_y\), 学習時には次の\(L_2(\mathcal{C})\)を最大化する。
+また、汎化性能や学習の収束時間を改善するために、事前学習の目的関数に重み\(\lambda\)を添えた\(L_3(\mathcal{C})\)を目的関数に設定することもできる。
 $$
 \begin{align}
 P(y\mid x^1 , \dots , x^m) &amp;= \texttt{softmax}(h^m_lW_y) \\\
 L_2(\mathcal{C})&amp;=\sum_{(x,y)}\log P(y\mid x^1\dots , x^m)\\\
-L_3(\mathcal{C})&amp;=L(\mathcal{C})+\lambda * L_1(\mathcal{C})
+L_3(\mathcal{C})&amp;=L_2(\mathcal{C})+\lambda * L_1(\mathcal{C})
 \end{align}
 $$</p>
-<p>事前学習時のアーキクチャをできるだけ変えずに事前学習の効果を発揮するために、タスクに合わせて入力形式を工夫する。
-上の図の右部は、分類、含意関係認識、類似度、Q&amp;Aのタスクにおける入力を示す。
-分類以外は全て、事例の要素をデリメタを挟んで隣接させ、モデルにあたえている。</p>
-<hr>
-<ul>
-<li>論文を<a href="https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf">こちら</a>からダウンロードできます。</li>
-</ul>
+<!-- 事前学習時のアーキクチャをできるだけ変えずに事前学習の効果を発揮するために、タスクに合わせて入力形式を工夫する。 -->
   </div>
 </main>
 

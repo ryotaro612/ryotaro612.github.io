@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fill in the Middle on Blanket</title>
+    <link>http://localhost:1313/tags/fill-in-the-middle/</link>
+    <description>Recent content in Fill in the Middle on Blanket</description>
+    <generator>Hugo</generator>
+    <language>ja</language>
+    <lastBuildDate>Sat, 08 Nov 2025 21:33:01 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/fill-in-the-middle/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Efficient Training of Language Models to Fill in the Middle</title>
+      <link>http://localhost:1313/posts/efficient-training-of-language-models-to-fill-in-the-middle/</link>
+      <pubDate>Sat, 08 Nov 2025 21:33:01 +0900</pubDate>
+      <guid>http://localhost:1313/posts/efficient-training-of-language-models-to-fill-in-the-middle/</guid>
+      <description>&lt;p&gt;Fill in the Middle (FIM) は、文書の接頭辞と接尾辞から接中辞を推測するタスクであり、&lt;a href=&#34;https://arxiv.org/pdf/2207.14255&#34;&gt;Efficient Training of Language Models to Fill in the Middle&lt;/a&gt;で提案された。&#xA;接中辞を予測するタスクの例にコードの生成がある。&#xA;たとえば、&lt;a href=&#34;https://arxiv.org/pdf/2405.04324&#34;&gt;Granite Code Model&lt;/a&gt;はFill in the Middle (FIM) で訓練された。&#xA;Fill in the Middleで訓練するモデルは、文書の接頭辞と接尾辞から接中辞を推測する。&#xA;Fill in the Middleの学習データは文書の接中辞を末尾に配置した文書であり、&#xA;学習データの一部をFIMの形式に変換しても、順方向に文章を生成する自己回帰型言語モデル本来の性能は失われなかった。&lt;/p&gt;&#xA;&lt;!-- どれくらい --&gt;&#xA;&lt;!-- fine tuningやっている事例もある --&gt;&#xA;&lt;!-- GPT の論文を補足する --&gt;</description>
+    </item>
+  </channel>
+</rss>

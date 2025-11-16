@@ -111,14 +111,15 @@
 ひとつは、1単語を出力するときに、すべての単語のLSTMの隠れ状態から注意を算出するグローバルなアプローチで、もうひとつは一部の単語の状態だけから注意を算出するローカルなアプローチである。
 英語とドイツ語の双方への翻訳タスクに適用したところ、ローカルなアプローチで注意機構をつかわない手法と比べてBLEUスコアを5.0ポイントできた。</p>
 <p>以下に図示するグローバルとローカルどちらのアプローチも、時刻\(t\)におけるLSTMのトップ層の隠れ状態\(\boldsymbol{h}_t\)から、次に出力すべき単語の手掛かりになる原文の文脈\(\boldsymbol{c}_t\)を計算する。
-LSTMの隠れ状態\(\boldsymbol{h}_t\)と文脈\(\boldsymbol{c}_t\)を結合したベクトルから図の注意レイヤーの隠れ状態\(\tilde{\boldsymbol{h}}_t\)を計算し、その値をソフトマックス関数を適用し次に出力すべき単語をもとめる。
-$$
+LSTMの隠れ状態\(\boldsymbol{h}_t\)と文脈\(\boldsymbol{c}_t\)を結合したベクトルから図の注意レイヤーの隠れ状態\(\tilde{\boldsymbol{h}}_t\)を計算し、その値をソフトマックス関数を適用し次に出力すべき単語をもとめる。</p>
+<p>$$
 \begin{align}
 \tilde{\boldsymbol{h}}_t &amp;= \tanh(\boldsymbol{W}_c[\boldsymbol{c}_t;\boldsymbol{h}_t]) \\
-p(y_t\mid y_{&lt;t}, x) &amp;= \text{softmax}(\boldsymbol{W}_\boldsymbol{s}\tilde{\boldsymbol{h}}_t)
+p(y_t| y_{&lt;t}, x) &amp;= \text{softmax}(\boldsymbol{W}_{\boldsymbol{s}} \tilde{\boldsymbol{h}}_{t})
 \end{align}
-$$
-<img src="/effective_approach_to_attention_based_nmt/global.png" alt="global">
+$$</p>
+<!-- p(y\_t| y\_{<t}, x) &= \text{softmax}(\boldsymbol{W}\_\boldsymbol{s}\tilde{\boldsymbol{h}}\_t) -->
+<p><img src="/effective_approach_to_attention_based_nmt/global.png" alt="global">
 <img src="/effective_approach_to_attention_based_nmt/local.png" alt="local"></p>
 <p>グローバルなアプローチでは、原文の各単語の注意\(\boldsymbol{a}_t\)の重みつき平均を、文脈\(\boldsymbol{c}_t\)としてあつかう。
 原文のある状態\(s\)の注意\(\boldsymbol{a}_t(s)\)は、現在の出力側の隠れ状態\(\boldsymbol{h}_t\)と隠れ状態\(\bar{\boldsymbol{h}}_s\)から次のように算出できる。

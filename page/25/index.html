@@ -177,20 +177,25 @@ Ladder Networkは、2015年に、著者の一人Valpolaによって教師なし�
   </article>
   
   <article>
-    <h3><a href="https://ryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/">概要 Improving Language Understanding by Generative Pre-Training</a></h3>
-    <div class="summary"><h3 id="概要">概要</h3>
-<p>GPTの略称で知られる教師なしの事前学習である。
-評価実験では、全結合層を1層追加したファインチューニングで、12の自然言語処理タスクのうち9つについて、当時のSoTAを上まわる性能を発揮した。
-ネットワークには<a href="https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">Transformer</a>のデコーダー部分が使われている。
-ファインチューニング時には、事前学習の効果を生かすために、特徴の入力をモデルのアーキテクチャに合わせ、アーキテクチャの変更を最小限におさえる。
+    <h3><a href="https://ryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/">Improving Language Understanding by Generative Pre-Training (2018)</a></h3>
+    <div class="summary"><p><a href="https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf">Improving Language Understanding by Generative Pre-Training</a>は教師なしの事前学習であり、GPTシリーズの最初のモデルにあたる。
+12の自然言語処理タスクのうち9つについて、事前学習したモデルの出力を1層の全結合層に入力するファインチューニングで、当時のSoTAを上まわる性能を発揮した。</p>
+<p>ネットワークは、<a href="https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">transformer</a>のデコーダーであり、<a href="https://arxiv.org/pdf/1706.03762">Attention Is All you Need</a>のエンコーダーは含まれない。
+ファインチューニングでは、特徴の入力を事前学習のデータ形式に揃えることで、事前学習とファインチューニングの差異を埋める。
 推論タスクであれば前提や仮定、テキストの類似性判定であれば比較する2つのテキストといった異種の特徴をデリミタで連結した系列を作り、モデルに入力する。</p></div>
     <div class="article-footer">
       
       <ul class="tags">
         
         <li class="tag">
-          <a href="https://ryotaro.dev/tags/%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB/">
-            #言語モデル
+          <a href="https://ryotaro.dev/tags/large-language-models/">
+            #Large Language Models
+          </a>
+        </li>
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/gpt/">
+            #GPT
           </a>
         </li>
         
