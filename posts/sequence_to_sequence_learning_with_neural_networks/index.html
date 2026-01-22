@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>論文メモ Sequence to Sequence Learning with Nueral Networks</title>
 </head>
 
@@ -119,20 +141,20 @@
 入力と出力で長さの違う系列でも学習するため、入力から分散表現\(v\)をつくり、\(v\)をもとに系列を予測する。
 \(v\)にはLSTMの最終層の状態がもちいられる。
 これを式で示すと次のようになる。</p>
-<p>$$
-p(y_1 , \cdots , y_{T&rsquo;}\mid x_1 , \cdots , x_T) = \prod_{t=1}^{T&rsquo;}p(y_t\mid v, y_1 , \cdots , y_{t-1})
 $$
+p(y\_1 , \cdots , y\_{T'}\mid x\_1 , \cdots , x\_T) = \prod\_{t=1}^{T'}p(y\_t\mid v, y\_1 , \cdots , y\_{t-1})
+$$<p>
 \(p(y_t\mid v, y_1,\cdots , y_{t-1})\)の計算には、語彙にある単語についてのソフトマックス関数をもちいる。
 また、出力系列の長さを有限にするために、系列の最後には終端を示す記号<code>&quot;&lt;EOS&gt;&quot;</code>を追加し、系列に終端を予測できるようにする。</p>
 <p>学習では、入力系列\(S\)と出力系列\(T\)を含む学習データセットを\(\mathcal{S}\)として、次の目的関数をもちいる。
+</p>
 $$
-1/\mid \mathcal{S}\mid \sum_{(T, S)\in \mathcal{S}} \log p(T\mid S)
-$$</p>
-<p>予測時には、条件付き確率の最も高い\(T\)を出力する。
+1/\mid \mathcal{S}\mid \sum\_{(T, S)\in \mathcal{S}} \log p(T\mid S)
+$$<p>予測時には、条件付き確率の最も高い\(T\)を出力する。
+</p>
 $$
 \hat{T} = \underset{T}{\operatorname{argmax}} p(T\mid S)
-$$</p>
-<h3 id="入力系列の反転">入力系列の反転</h3>
+$$<h3 id="入力系列の反転">入力系列の反転</h3>
 <p>入力系列を反転することで予測性能が向上する理由について完全な説明はなされていない。
 次の図は、モデルによって入力系列から出力系列を予測する様子を示している。
 入力と出力系列に単調な対応関係があれば、入力系列を反転すると、対応関係にある記号間の距離の平均値を変えずに、系列の先頭に近いほど記号間の距離が短くなり、後になるほど遠くにできる。

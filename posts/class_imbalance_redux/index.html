@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>メモ Class Imbalance, Redux(2012)</title>
 </head>
 
@@ -121,30 +143,30 @@
 <p>バツは正例の、四角は負例のサンプルを示す。\(w^{*}\)は最適化された、\(\hat{w}\)は教師データ\({\mathcal D}\)から学習した識別境界を示す。
 \(\mathcal{R^{+}_{w^{*}}}\)と\(\mathcal{R^{-}_{w^{*}}}\)は、識別境界\(w^{*}\)が正例、負例と推定する領域を示す。
 左右の曲線は、正例及び負例の分布\(P\), \(G\)を示す。以上をもとに、予測性能を下げる偏りは
+</p>
 $$
-\mathcal{R^{\hat{w}}_{+}} &lt; \mathcal{R^{w^{*}}_{+}}
-$$
+\mathcal{R^{\hat{w}}\_{+}} < \mathcal{R^{w^{\*}}\_{+}}
+$$<p>
 と定義される。</p>
 <p>次に、以上の偏りが生じる条件を求める。まず、偽陽性と偽陰性のコストを\(\mathcal{C}_\text{fp}\), \(\mathcal{C}_{\text{fn}}\)として、経験損失を</p>
-<p>$$
-\mathcal{L_{D}}(w) = \mathcal{C}_\text{fn}\mid \{x\mid x\in \mathcal{D^+}\wedge x \in \mathcal{R}^{w}_{-} \} \mid + \ \mathcal{C}_\text{fp}\mid \{x\mid x \in \mathcal{D}^{-} \wedge x \in \mathcal{R}^{w}_{+} \}\mid
 $$
+\mathcal{L\_{D}}(w) = \mathcal{C}\_\text{fn}\mid \\{x\mid x\in \mathcal{D^+}\wedge x \in \mathcal{R}^{w}\_{-} \\} \mid + \ \mathcal{C}\_\text{fp}\mid \\{x\mid x \in \mathcal{D}^{-} \wedge x \in \mathcal{R}^{w}\_{+} \\}\mid
+$$<p>
 と表す。このとき偏り\(\mathcal{R^{\hat{w}}_{+}} &lt; \mathcal{R^{w^{*}}_{+}}\)が生じる条件は、</p>
-<p>$$
-\exists w^{\gamma}\ s.t.\ \forall w&rsquo; \in \{w : \mathcal{R}^{w}_{+} \ge \mathcal{R}^{w^{*}}_{+} \}, \mathcal{L}_{\mathcal{D}}(w^{\gamma}) &lt; \mathcal{L}_{\mathcal{D}}(w&rsquo;)
 $$
+\exists w^{\gamma}\ s.t.\ \forall w' \in \\{w : \mathcal{R}^{w}\_{+} \ge \mathcal{R}^{w^{\*}}\_{+} \\}, \mathcal{L}\_{\mathcal{D}}(w^{\gamma}) < \mathcal{L}\_{\mathcal{D}}(w')
+$$<p>
 となる。上の図でいえば、これは、\(w^{*}\)より右側のどんな識別境界の経験損失よりも小さい経験損失の識別境界が左側に存在する状態をさす。</p>
 <p>今度は、偏りのもとになる\(w^{\gamma}\)が生じやすい状況を考える。母集団における正例の割合を\(\pi(\le0.5)\)とすると、件の状況は、</p>
-<p>$$
-(1-\pi)\mathcal{C}_\text{fp}\int_{\mathcal{R}^{+}_{w^{*}}}G(x)&gt; \pi\mathcal{C}_\text{fn}\int_{\mathcal{R}^-_{w^{*}}}P(x) dx
-$$</p>
-<p>となる。式で着目している領域は、\(w^{*}\)の足元にある図中の\(P\), \(G\)と底辺で囲まれた範囲である。\(\pi\)に着目すると、この式が最も成立しにくいのは\(\pi=0.5\)のときである。以上より、最適な識別境界に近い識別境界を求めるためには、均衡なデータを用意することが望ましい。</p>
+$$
+(1-\pi)\mathcal{C}\_\text{fp}\int\_{\mathcal{R}^{+}\_{w^{\*}}}G(x)> \pi\mathcal{C}\_\text{fn}\int\_{\mathcal{R}^-\_{w^{\*}}}P(x) dx
+$$<p>となる。式で着目している領域は、\(w^{*}\)の足元にある図中の\(P\), \(G\)と底辺で囲まれた範囲である。\(\pi\)に着目すると、この式が最も成立しにくいのは\(\pi=0.5\)のときである。以上より、最適な識別境界に近い識別境界を求めるためには、均衡なデータを用意することが望ましい。</p>
 <p>不均衡データへの別のアプローチに偽陰性に対するコストを偽陽性よりも大きくする手法があり、これが有効にはたらく状況についても議論されている。
 前提として、偽陰性の誤りが生じなければアプローチがはたらかない。このような、識別境界\(\hat{w}\)による偽陰性のエラーとなるサンプルが教師データ\(\mathcal{D}\)
 上にある確率は</p>
-<p>$$
-\pi\mid \mathcal{D}\mid \int_{\mathcal{R}^{-}_{\hat{w}}}P(x)dx
 $$
+\pi\mid \mathcal{D}\mid \int\_{\mathcal{R}^{-}\_{\hat{w}}}P(x)dx
+$$<p>
 である。以上の式より、コストの重みを変える手法は、データが不均衡で、教師データの数が少ない場合には有効にはたらかないことが分かる。</p>
 <hr>
 <p>論文の出所は<a href="https://ieeexplore.ieee.org/abstract/document/6137280">こちら</a>。</p>

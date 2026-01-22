@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Dremel: Interactive Analysis of Web-Scale Datasets</title>
 </head>
 
@@ -131,19 +153,21 @@ Dremelは、サーバーのクラスタを木構造に組織し、ルートで�
 <img src="/dremel/fig7.png" alt="fig7">
 ルートサーバは、探索すべきtablet(テーブルの水平パーティション)を特定し、下層のノードに検索処理を分散できるようにクエリを書きかえる。
 たとえば、以下のクエリがあたえられると、
+</p>
 $$
 \texttt{SELECT A, COUNT(B) FROM T GROUP BY A}
-$$
+$$<p>
 ルートサーバーはこれを
+</p>
 $$
-\texttt{SELECT A}, \texttt{SUM(c) FROM} (R^1_1\ \texttt{UNION ALL}\dots R^1_1) \texttt{GROUP BY A}
-$$
+\texttt{SELECT A}, \texttt{SUM(c) FROM} (R^1\_1\ \texttt{UNION ALL}\dots R^1\_1) \texttt{GROUP BY A}
+$$<p>
 に書きかえる。
 \(R^1_1, \dots , R^1_n\)は1層の\(1,\dots , n\)ノードの以下のクエリの結果をあらわす。各層でこの書きかえをleafに到達するまでくりかえす。
+</p>
 $$
-R^1_i = \texttt{SELECT A, COUNT(B) AS c FROM}\ T^1_i\ \texttt{GROUP BY A}
-$$</p>
-<p>論文を<a href="https://static.googleusercontent.com/media/research.google.com/ja//pubs/archive/36632.pdf">こちら</a>からダウンロードできます。
+R^1\_i = \texttt{SELECT A, COUNT(B) AS c FROM}\ T^1\_i\ \texttt{GROUP BY A}
+$$<p>論文を<a href="https://static.googleusercontent.com/media/research.google.com/ja//pubs/archive/36632.pdf">こちら</a>からダウンロードできます。
 画像は論文から引用したものです。</p>
   </div>
 </main>

@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>An Interior-Point Method for Large-Scale L1-Regularized Least Squares</title>
 </head>
 
@@ -111,59 +133,67 @@
 また、リッジ回帰の係数はスパースになりやすい。
 そこで、目的関数を最小化する係数の探索を、線形不等式制約つきの凸二次計画問題とらえ、前処理付共役勾配法をつかった内点法で係数の更新方向を探索する。</p>
 <p>\($x\in \boldsymbol{\rm R}^n\)を係数、\(y\in \boldsymbol{\rm R}^m\)を目的変数、\(A\in \boldsymbol{\rm R}^{m\times n} \)をデータとする線形モデル\(y=Ax+v\)があるときL1正則化項つきの目的関数は以下になる。
+</p>
 $$
-\text{minimize}\ {\mid\mid Ax-y\mid \mid}^2_2 +\lambda \mid\mid x \mid\mid_1\\
+\text{minimize}\ {\\mid\mid Ax-y\mid \mid}^2\_2 +\lambda \mid\mid x \mid\mid\_1\\\\
+$$<p>
+</p>
 $$
+\mid\mid x\mid \mid \_1 = \sum^n\_i\mid x\_i\mid
+$$<p>
+</p>
 $$
-\mid\mid x\mid \mid _1 = \sum^n_i\mid x_i\mid
-$$
-$$
-\lambda &gt; 0
-$$
+\lambda > 0
+$$<p>
 これを線形不等式制約つきの凸二次計画問題におきかえると
+</p>
 $$
-\text{minimize} \mid\mid Ax-y\mid\mid^2_2 + \lambda \sum^n_{i=1}u_i
+\text{minimize} \mid\mid Ax-y\mid\mid^2\_2 + \lambda \sum^n\_{i=1}u\_i
+$$<p>
+</p>
 $$
+\text{subject to} -u\_i\le x\_i \le u\_i, i = 1,\dots n
+$$<p>まず、\(-u_i\le x_i \le u_i \)に対するバリア関数を導入する。
+</p>
 $$
-\text{subject to} -u_i\le x_i \le u_i, i = 1,\dots n
-$$</p>
-<p>まず、\(-u_i\le x_i \le u_i \)に対するバリア関数を導入する。
+\Phi (x, u) = -\sum\_{i=1}^n\log(u\_i + x\_i) - \sum^n\_{i=1}\log(u\_i-x\_i)
+$$<p>
+</p>
 $$
-\Phi (x, u) = -\sum_{i=1}^n\log(u_i + x_i) - \sum^n_{i=1}\log(u_i-x_i)
-$$
-$$
-\text{dom} \Phi = \{(x, u)\in \boldsymbol{\rm R}^n \times \boldsymbol{\rm R}^n \mid\ \mid x_i \mid &lt; u_i, i= 1,\dots n\}
-$$
+\text{dom} \Phi = \\{(x, u)\in \boldsymbol{\rm R}^n \times \boldsymbol{\rm R}^n \mid\ \mid x\_i \mid < u\_i, i= 1,\dots n\\}
+$$<p>
 このとき、0から\(\infty\)までとりえるパラメタ\(t\)をもつ中心パスは
+</p>
 $$
-\phi_t(x, u) = t\mid\mid Ax - y \mid\mid^2_2 + t \sum^n_{i=1}\lambda u_i +\Phi(x,u)
-$$
+\phi\_t(x, u) = t\mid\mid Ax - y \mid\mid^2\_2 + t \sum^n\_{i=1}\lambda u\_i +\Phi(x,u)
+$$<p>
 になる。</p>
 <p>アルゴリズムは、入力に、反復終了の条件\(\epsilon_{\text{rel}} &gt; 0 \)のほかパラメタ\(\alpha\), \(\beta\), \(\mu\), \(s_{\min}\)をとる。
 はじめに、\(t:= 1/\lambda, u:= 1 = (1,\dots,1)\in \boldsymbol{\rm R}^n\) で初期化する。
 そして以下の手順をくりかえす。</p>
 <p>はじめに、前処理付共役勾配法で\((\Delta x, \Delta u)\)をもとめる。</p>
 <p>次に、以下をみたす最小の\(k&gt;=0\)をもとめ、\(s=\beta^k\)により、\((x, u) := s(\Delta x, \Delta u)\)と更新する。
+</p>
 $$
-\phi_t(x+\beta^k\Delta x, u+\beta^k\Delta u) \le \phi_t (x, u) + \alpha \beta^k\nabla\phi_t (x, u)^\top [\Delta x \Delta u]
-$$
+\phi\_t(x+\beta^k\Delta x, u+\beta^k\Delta u) \le \phi\_t (x, u) + \alpha \beta^k\nabla\phi\_t (x, u)^\top [\Delta x \Delta u]
+$$<p>
 また、\(t\)も更新する。
+</p>
 $$
-t :=
+t := 
 \begin{cases}
-\max \{ \mu \min \{2n / \eta, t\}, t\},&amp; s \ge s_{\min} \\
-t,&amp; s &lt; s_{\min}
+\max \\{ \mu \min \\{2n / \eta, t\\}, t\\},& s \ge s\_{\min} \\\\
+t,& s < s\_{\min}
 \end{cases}
-$$</p>
-<p>そして、\(\eta / G(\upsilon)\le \epsilon_{\text{rel}}\)であれば、終了し、そうでなければ最初の手順にもどる。
+$$<p>そして、\(\eta / G(\upsilon)\le \epsilon_{\text{rel}}\)であれば、終了し、そうでなければ最初の手順にもどる。
+</p>
 $$
 \begin{align}
-\eta &amp;= \mid\mid Ax - y \mid\mid^2_2 + \lambda \mid\mid x \mid\mid_1 - G(\upsilon) \\
-G(\upsilon) &amp;= -(1/4)\upsilon^\top \upsilon - \upsilon^\top y \\
-\upsilon &amp;= 2s(Ax - y)
+\eta &= \mid\mid Ax - y \mid\mid^2\_2 + \lambda \mid\mid x \mid\mid\_1 - G(\upsilon) \\\\
+ G(\upsilon) &= -(1/4)\upsilon^\top \upsilon - \upsilon^\top y \\\\
+ \upsilon &= 2s(Ax - y)
 \end{align}
-$$</p>
-<p>論文を<a href="https://web.stanford.edu/~boyd/papers/pdf/l1_ls.pdf">こちら</a>からダウンロードできます。</p>
+$$<p>論文を<a href="https://web.stanford.edu/~boyd/papers/pdf/l1_ls.pdf">こちら</a>からダウンロードできます。</p>
   </div>
 </main>
 

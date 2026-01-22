@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Normalized Cuts and Image Segmentation (2000)</title>
 </head>
 
@@ -112,54 +134,62 @@ Normalized cutが最小値のとき、異なるサブグラフにあるノード
 Normalized cutをレイリー商に変形し、固有値問題をとくことで、Normalized cutの最小値の近似解を求める。</p>
 <p>アルゴリズムは、グラフのすべてのノードを2つの素集合\(A, B\)に再帰的に分け、画像をセグメンテーションに分ける。
 \(w(u, v)\)をノード\(u, v\)間の重みとして、カットを
+</p>
 $$
-\textit{cut}(A, B) = \sum_{u\in A, v \in B}w(u, v)
-$$
+\textit{cut}(A, B) = \sum\_{u\in A, v \in B}w(u, v)
+$$<p>
 と表す。
 一方のノードが\(A\)に属する辺の重みの総和を
+</p>
 $$
-\textit{assoc}(A, V) = \sum_{u\in A, t\in V}w(u, t)
-$$
+\textit{assoc}(A, V) = \sum\_{u\in A, t\in V}w(u, t)
+$$<p>
 とおくとnormalized cut(Ncut)を
+</p>
 $$
 \begin{align}
-\textit{Ncut}(A, B) &amp;= \frac{\textit{cut}(A, B)}{\textit{assoc}(A, V)} + \frac{\textit{cut}(A, B)}{\textit{assoc}(B, V)}\\
-&amp;=2-\frac{\textit{assoc}(A, A)}{\textit{assoc}(A, V)} - \frac{\textit{assoc}(B, B)}{\textit{assoc}(B, V)}
+\textit{Ncut}(A, B) &= \frac{\textit{cut}(A, B)}{\textit{assoc}(A, V)} + \frac{\textit{cut}(A, B)}{\textit{assoc}(B, V)}\\\\
+&=2-\frac{\textit{assoc}(A, A)}{\textit{assoc}(A, V)} - \frac{\textit{assoc}(B, B)}{\textit{assoc}(B, V)}
 \end{align}
-$$
+$$<p>
 とかける。
 上の式から、Ncutが最小のとき\(A\), \(B\)内の類似度が最大かつ\(A\), \(B\)間の類似度が最小になる。
 Ncutの最小値を求める問題はNP完全であるため、近似解を探す。</p>
 <p>ノード\(i\)が\(A\)にあれば\(x_i=1\), \(B\)にあれば\(x_i=-1\)となる長さ\(N=|V|\)のベクトルを\(\boldsymbol{x}\), \(i\)の他のノードへの重みの総和を\(\boldsymbol{d}(i)=\sum_jw(i,j)\)とする。
 \(\boldsymbol{d}\)を対角成分とする\(N\times N\)の対角行列\(\mathcal{\rm D}\), \(\mathrm{W}(i, j)=w_{ij}\)を成分とする\(N\times N\)の対称行列\(\mathrm{W}\), すべての成分が1の\(N\times 1\)ベクトルを\(\boldsymbol{1}\), \(b=\frac{\sum_{x_i&gt;0}d_i}{\sum_{x_i&lt;0}d_i}\), \(\boldsymbol{y}=(\boldsymbol{1}+\boldsymbol{x})-b(\boldsymbol{1}-\boldsymbol{x})\)とすると、\(y(i)\in \{1,-b\}かつy^\top\mathrm{\boldsymbol{D1}}=0\)のもとで、
+</p>
 $$
-\min_{\boldsymbol{x}}\mathit{Ncut}(\boldsymbol{x})=\min_{\boldsymbol{y}}\frac{\boldsymbol{y}^\top(\mathrm{\boldsymbol{D}}-\mathrm{\boldsymbol{W}})\boldsymbol{\mathcal{y}}}{\boldsymbol{\mathcal{y}}^\top\boldsymbol{\mathrm{D}}\boldsymbol{y}}
-$$
+\min\_{\boldsymbol{x}}\mathit{Ncut}(\boldsymbol{x})=\min\_{\boldsymbol{y}}\frac{\boldsymbol{y}^\top(\mathrm{\boldsymbol{D}}-\mathrm{\boldsymbol{W}})\boldsymbol{\mathcal{y}}}{\boldsymbol{\mathcal{y}}^\top\boldsymbol{\mathrm{D}}\boldsymbol{y}}
+$$<p>
 がなりたつ。</p>
 <p>レイリー商\(R(\boldsymbol{x})\)の最小値は最小固有値であり、そのときの\(\boldsymbol{x}\)は、その固有ベクトルになる。
 そのため、\(\boldsymbol{y}\)を実数の範囲に限定すると、上の問題は
+</p>
 $$
 (\boldsymbol{\mathrm D}-\boldsymbol{\rm W})y=\lambda \boldsymbol{\rm D}y
-$$
+$$<p>
 の固有値問題としてあつかえる。</p>
 <p>しかし、\(\boldsymbol{y}\)にはとりえる範囲の制約があるので、固有ベクトルが制約を満たすかどうかを調べる必要がある。
 固有値の方程式を\(z=\mathrm{\boldsymbol{D}}^{\frac{1}{2}}\mathcal{\boldsymbol{y}}\)として
+</p>
 $$
 \mathrm{\boldsymbol{D}}^{-\frac{1}{2}}(\boldsymbol{\mathrm{D}-\boldsymbol{\mathrm{W}}})\boldsymbol{\mathrm{D}}^{-\frac{1}{2}}z=\lambda z
-$$
+$$<p>
 と書き直すと、\(z_0=\boldsymbol{\mathrm{D}^{\frac{1}{2}}}\boldsymbol{1}\)は固有値0の固有ベクトルになる。
 ラプラシアン行列は半正定値行列であるため、\(\mathrm{\boldsymbol{D}}^{-\frac{1}{2}}(\boldsymbol{\mathrm{D}-\boldsymbol{\mathrm{W}}})\boldsymbol{\mathrm{D}}^{-\frac{1}{2}}\)は対称な半正定値行列であり、固有値行列の固有値は非負になる。
 そのため、\(z_0\)は最小の固有ベクトルであり、すべての固有ベクトルは互いに直交する。
 \(\boldsymbol{y}_0=\boldsymbol{1}\)が最小の固有値0の固有ベクトルでありうため、\(\boldsymbol{y}_1\)を二番目に小さい固有値に対応する固有ベクトルとすると\(0=\boldsymbol{y}_1^\top\boldsymbol{\mathrm{D}1}\)がなりたつ。
 \(\boldsymbol{x}\)が\(j-1\)番目までの小さい固有値に対応する固有ベクトルと直交する場合、レイリー商は\(\boldsymbol{x}_j\)のときにその固有値\(\lambda_j\)を最小値にとる。
 したがって、
+</p>
 $$
-z_1 = \underset{z^\top z_0=0}{\operatorname{argmin}}\frac{\boldsymbol{z}^\top\mathrm{\boldsymbol{D}}^{-\frac{1}{2}}(\boldsymbol{\mathrm{D}}-\boldsymbol{\mathrm{W}})\boldsymbol{\mathrm{D}}^{-\frac{1}{2}}\boldsymbol{z}}{\boldsymbol{z}^\top \boldsymbol{z}}
-$$
+z\_1 = \underset{z^\top z\_0=0}{\operatorname{argmin}}\frac{\boldsymbol{z}^\top\mathrm{\boldsymbol{D}}^{-\frac{1}{2}}(\boldsymbol{\mathrm{D}}-\boldsymbol{\mathrm{W}})\boldsymbol{\mathrm{D}}^{-\frac{1}{2}}\boldsymbol{z}}{\boldsymbol{z}^\top \boldsymbol{z}}
+$$<p>
 より
+</p>
 $$
-y_1 = \underset{\boldsymbol{y}^\top\boldsymbol{\mathrm{D1}}=0}{\operatorname{argmin}}\frac{\boldsymbol{y}^\top(\boldsymbol{\mathrm{D}}-\boldsymbol{\mathrm{W}})\boldsymbol{y}}{\boldsymbol{y}^\top\mathrm{\boldsymbol{D}}\boldsymbol{y}}
-$$
+y\_1 = \underset{\boldsymbol{y}^\top\boldsymbol{\mathrm{D1}}=0}{\operatorname{argmin}}\frac{\boldsymbol{y}^\top(\boldsymbol{\mathrm{D}}-\boldsymbol{\mathrm{W}})\boldsymbol{y}}{\boldsymbol{y}^\top\mathrm{\boldsymbol{D}}\boldsymbol{y}}
+$$<p>
 となる。</p>
 <p>論文への<a href="https://people.eecs.berkeley.edu/~malik/papers/SM-ncut.pdf">リンク</a></p>
   </div>

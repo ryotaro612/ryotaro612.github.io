@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Catalan Numbers(2016)</title>
 </head>
 
@@ -126,10 +148,10 @@ Any \(n(&gt;0)\) valid pairs of parentheses can be represented as &ldquo;(A)B.&r
 A and B are balanced sets of parentheses.
 If A contains \(k\) pairs, then B contains \(n − k − 1\) pairs.
 \(k\) is between \(0\) and \(n-1\), and we conclude that:
+</p>
 $$
-C_n = C_{n-1}C_0 + C_{n-2}C_1 + \cdots + C_1C_{n-2} + C_0C_{n-1}
-$$</p>
-<p>We will obtain an explicit formula for the Catalan numbers by analyzing the number of the diagonal-avoiding paths.
+C\_n = C\_{n-1}C\_0 + C\_{n-2}C\_1 + \cdots + C\_1C\_{n-2} + C\_0C\_{n-1}
+$$<p>We will obtain an explicit formula for the Catalan numbers by analyzing the number of the diagonal-avoiding paths.
 The total number of paths through an \(n\times n\) grid is \(\binom{2n}{n}\) because every path from the upper left corner to the lower right corner contains \(n\) steps to the right and \(n\) steps down.</p>
 <p>We will count the number of diagonal-avoiding paths by counting the total number of paths through the grid and then subtract the number of paths that hit the diagonal.
 The following figure illustrates a path that crosses the dotted diagonal line.
@@ -137,10 +159,10 @@ The following figure illustrates a path that crosses the dotted diagonal line.
 <p>A point \(P\) is the first grid point it touches on the wrong side of the diagonal.
 Every diagonal-avoiding path has the first grid point.
 If you swap steps to the right and steps down that are in a sub path begins at P, the swapped path contains \(n-1\) steps to the right and \(n+1\) steps down:
+</p>
 $$
-C_n = \binom{2n}{n} - \binom{2n}{n+1}
-$$</p>
-<h2 id="reference">Reference</h2>
+C\_n = \binom{2n}{n} - \binom{2n}{n+1}
+$$<h2 id="reference">Reference</h2>
 <p><a href="http://www.geometer.org/mathcircles/catalan.pdf">Tom Davis, Catalan Numbers, 2016</a></p>
 <p>The above figure was cited from the paper.</p>
 

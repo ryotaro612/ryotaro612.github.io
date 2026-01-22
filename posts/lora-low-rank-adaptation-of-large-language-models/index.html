@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>LoRA: LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS (2021)</title>
 </head>
 
@@ -127,19 +149,21 @@ LLMの重みを\(W_0\in\mathbb{R}^{d\times k}\) とすると、\(W_0+BA\ (B\in\m
 また、複数の下流タスクを入力に適用する場合、\(W_0x\)を共有できるので、推論に必要な計算も\(W_0\)を更新するファインチューニングより少ない。</p>
 <p>\(A\)はガウス分布で生成したランダムな値で、\(B\)は0で初期化される。
 また、LoRAの出力を調整するときは、定数\(\alpha\)をランク\(r\)で割った値で\(BA\)をスケールすることで、\(r\)によらず同じ\(\alpha\)が使えるようになる。
+</p>
 $$
-W_0+\frac{\alpha}{r}BA
-$$</p>
-<p>Transformerに適用する場合、自己注意機構にのみLoRAを適用する。
+W\_0+\frac{\alpha}{r}BA
+$$<p>Transformerに適用する場合、自己注意機構にのみLoRAを適用する。
 自己注意機構の重みは\(W_q, W_k, W_v, W_o\)の4種類あり、いくつかの重みだけにLoRAを適用することもできる。
 自己注意機構への入力は、ヘッドの数で等分した重みと埋め込み行列の積で<a href="https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">定式化されている</a>。
 具体的には、\(d_{\text{model}}\)を埋め込みベクトルの次元、\(h\)をヘッド数、\(d_k, d_v\)を\(d_{model}/h\), \(W_i^Q\in \mathbb{R}^{d_{model} \times d_k}, W_i^K\in \mathbb{R}^{d_{model}\times d_k}, W_i^V\in \mathbb{R}^{d_{model}\times d_v}\)
+</p>
 $$
-\text{head}_i = \text{softmax}\left(\frac{QW_i^Q(KW_i^K)^\top}{\sqrt{d_k}}\right)VW_i^V
+\text{head}\_i = \text{softmax}\left(\frac{QW\_i^Q(KW\_i^K)^\top}{\sqrt{d\_k}}\right)VW\_i^V
+$$<p>
+</p>
 $$
-$$
-\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, \dots , \text{head}_h)W^{O}
-$$
+\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}\_1, \dots , \text{head}\_h)W^{O}
+$$<p>
 と表せる。
 ただし、LoRAを適用する場合は、分割後の重みごとではなく、分割前の\(W_q, W_k, W_v\)と\(BA\)の線形結合で求めた行列を分割し、各\(head_i\)を計算する。</p>
   </div>

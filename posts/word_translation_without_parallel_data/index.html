@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>WORD TRANSLATION WITHOUT PARALLEL DATA(2018)</title>
 </head>
 
@@ -125,14 +147,16 @@
 原言語のエンベディングの集合を\(\mathcal{X}=\{x_1, \dots x_n\}\), 目的言語のエンベディングの集合を\(\mathcal{Y}=\{y_1,\dots y_m\}\)とする。
 \(n\)と\(m\)は単語の数である。写像を\(W\)とすると、\(W\mathcal{X}\)と\(\mathcal{Y}\)からランダムにサンプルを選び、ネットワークを学習する。</p>
 <p>識別ネットワークのパラメタを\(\theta_D\)とすると、損失関数は
+</p>
 $$
-\mathcal{L}_D(W|\theta_D)=-\frac{1}{n}\sum^n_{i=1}\log P_{\theta_D}(\text{source}=0|Wx_i)-\frac{1}{m}\sum^m_{i=1}\log P_{\theta_D}(\text{source}=1|y_i)
-$$
+\mathcal{L}\_D(W|\theta\_D)=-\frac{1}{n}\sum^n\_{i=1}\log P\_{\theta\_D}(\text{source}=0|Wx\_i)-\frac{1}{m}\sum^m\_{i=1}\log P\_{\theta\_D}(\text{source}=1|y\_i)
+$$<p>
 である。
 損失関数は
+</p>
 $$
-\mathcal{L}_D(\theta_D|W)=-\frac{1}{n}\sum^n_{i=1}\log P_{\theta_D}(\text{source}=1|Wx_i)-\frac{1}{m}\sum^m_{i=1}\log P_{\theta_D}(\text{source}=0|y_i)
-$$
+\mathcal{L}\_D(\theta\_D|W)=-\frac{1}{n}\sum^n\_{i=1}\log P\_{\theta\_D}(\text{source}=1|Wx\_i)-\frac{1}{m}\sum^m\_{i=1}\log P\_{\theta\_D}(\text{source}=0|y\_i)
+$$<p>
 である。</p>
 <p>敵対的生成ネットワークは、単語の出現頻度を無視して、エンベディングを写像する。
 出現頻度の低い単語は、原言語と目的言語それぞれで違う文脈で出現しがちである。
@@ -142,24 +166,26 @@ $$
 しかし、<a href="https://www.jmlr.org/papers/volume11/radovanovic10a/radovanovic10a.pdf">Radovanović et el.</a>によれば、特徴の次元が高いと、密に特徴が集まる空間が生じ、正確なペアのマッチングが難しくなる。
 そこで、密に集まる特徴間の類似にペナルティを与える類似度の指標 Cross-Domain Similarity Local Scaling(CSLS)を定義する。
 \(\mathcal{N}_T(Wx_s)\)を\(Wx_s\)の近傍にある目的言語の単語の集合、\(N_S(y_t)\)を単語\(t\)の近傍にある写像された原言語の単語集合とする。
+</p>
 $$
 \begin{align*}
-r_T(Wx_s)&amp;=\frac{1}{K}\sum_{y_t\in \mathcal{N}_T(Wx_s)}\text{cos}(Wx_s, y_t)\\
-r_S(y_t)&amp;=\frac{1}{K}\sum_{Wx_s\in \mathcal{N}_S(y_t)}\text{cos}(Wx_s, y_t)
+r\_T(Wx\_s)&=\frac{1}{K}\sum\_{y\_t\in \mathcal{N}\_T(Wx\_s)}\text{cos}(Wx\_s, y\_t)\\\\
+r\_S(y\_t)&=\frac{1}{K}\sum\_{Wx\_s\in \mathcal{N}\_S(y\_t)}\text{cos}(Wx\_s, y\_t)
 \end{align*}
-$$
+$$<p>
 とおくと、
+</p>
 $$
-\text{CSLS}(Wx_s, y_t)=2\text{cos}(Wx_s, y_t)-r_T(Wx_s)-r_S(y_t)
-$$
+\text{CSLS}(Wx\_s, y\_t)=2\text{cos}(Wx\_s, y\_t)-r\_T(Wx\_s)-r\_S(y\_t)
+$$<p>
 である。</p>
 <p>CSLSと写像関数で原言語に対応する目的言語のエンベディングを特定する。
 <a href="https://aclanthology.org/N15-1104/">Xing et al</a>は\(W\)に直交性の制約を与えることで精度を向上できることを示した。
 そこで、出現頻度の高い単語に対して、プロクラステス分析を適用し、以下の式で表せる\(W^{*}\)を求める。
+</p>
 $$
-W^{*}=\underset{W\in O_d(\mathbb{R})}{\operatorname{argmin}}||WX-Y ||_F = UV^T,\ \text{with}\ U{\textstyle \sum} V^T = SVD(YX^T)
-$$</p>
-<p>論文の<a href="https://arxiv.org/abs/1710.04087">リンク</a></p>
+W^{\*}=\underset{W\in O\_d(\mathbb{R})}{\operatorname{argmin}}||WX-Y ||\_F = UV^T,\ \text{with}\ U{\textstyle \sum} V^T = SVD(YX^T)
+$$<p>論文の<a href="https://arxiv.org/abs/1710.04087">リンク</a></p>
   </div>
 </main>
 

@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>論文メモ Poincaré Embeddings for Learning Hierarchical Representations</title>
 </head>
 
@@ -118,45 +140,43 @@
 <p>埋め込みたい上下関係\(\mathcal{D}=\{(u, v)\}\)を記号の数を\(n\)として入力すると、アルゴリズムは、埋め込みベクトルの集合\({\rm \Theta}=\{\boldsymbol{\theta}_i\}^n_{i=1}\)を出力する。
 ただし、\(\boldsymbol{\theta}\in \mathcal{B}^d\), \(\mathcal{B}^d=\{\boldsymbol{x}\in \mathbb{R}^d\mid ||\boldsymbol{x}||&lt;1\}\)とする。
 学習では、次の損失関数\(\mathcal{L}(\Theta)\)をもちいる。</p>
-<p>$$
-\mathcal{L}(\Theta)=\sum_{(u, v)\in \mathcal{D}}\log\frac{e^{-d(\boldsymbol{u}, \boldsymbol{v})}}{\sum_{\boldsymbol{v}&rsquo;\in \mathcal{N}(u)}e^{-d(\boldsymbol{u}, \boldsymbol{v}&rsquo;)}}
 $$
+\mathcal{L}(\Theta)=\sum\_{(u, v)\in \mathcal{D}}\log\frac{e^{-d(\boldsymbol{u}, \boldsymbol{v})}}{\sum\_{\boldsymbol{v}'\in \mathcal{N}(u)}e^{-d(\boldsymbol{u}, \boldsymbol{v}')}}
+$$<p>
 \(\mathcal{N}(u)=\{v&rsquo;\mid (u, v&rsquo;)\notin \mathcal{D}\} \cup \{v\}\)は\(v\)を含んだ\(u\)に対する負例である。
 実験では、正例に対して10の負例をサンプリングしていた。
 \(d\)は、\(\boldsymbol{u}, \boldsymbol{v}\in \mathcal{B}^d\)の距離であり、次の式であたえらえる。</p>
-<p>$$
-d(\boldsymbol{u}, \boldsymbol{v}) = \mathrm{arccosh}\left(1+2\frac{||\boldsymbol{u}-\boldsymbol{v}||^2}{(1-||\boldsymbol{u}||^2)(1-||\boldsymbol{v}||^2)}\right)
-$$</p>
-<h3 id="最適化">最適化</h3>
+$$
+d(\boldsymbol{u}, \boldsymbol{v}) = \mathrm{arccosh}\left(1+2\frac{\|\|\boldsymbol{u}-\boldsymbol{v}\|\|^2}{(1-\|\|\boldsymbol{u}\|\|^2)(1-\|\|\boldsymbol{v}\|\|^2)}\right)
+$$<h3 id="最適化">最適化</h3>
 <p>RSGDやRSVRGで損失関数の値を最小化する埋め込みベクトルを探す。
 ここでは、RSGDについて説明する。
 RSGDでは、次のパラメタの更新式をとる。</p>
-<p>$$
-\boldsymbol{\theta}_{t+1} = \mathfrak{R}_{\theta_t}(-\eta_t\nabla_R\mathcal{L}(\boldsymbol{\theta}_t))
 $$
+\boldsymbol{\theta}\_{t+1} = \mathfrak{R}\_{\theta\_t}(-\eta\_t\nabla\_R\mathcal{L}(\boldsymbol{\theta}\_t))
+$$<p>
 \(\mathfrak{R}_{\theta_t}\)はレトラクションで、ここでは\(\mathfrak{R}_\theta(\boldsymbol{v})=\boldsymbol{\theta}+\boldsymbol{v}\)をもちいる。
 \(\eta_t\)は時刻\(t\)の学習率をさす。
 \(\nabla_R\)はリーマン多様体上の勾配であり、ユークリッド空間上の勾配\(\nabla_E\)とは</p>
-<p>$$
-\nabla_R = \frac{(1-||\boldsymbol{\theta_t}||^2)^2}{4}\nabla_E
 $$
+\nabla\_R = \frac{(1-\|\|\boldsymbol{\theta\_t}\|\|^2)^2}{4}\nabla\_E
+$$<p>
 の関係がある。
 以上より、更新式は</p>
-<p>$$
+$$
 \mathrm{proj}(\boldsymbol{\theta})=
 \begin{cases}
-\boldsymbol{\theta}/||\boldsymbol{\theta}|| - \epsilon &amp;\mathrm{if}\ ||\boldsymbol{\theta}||\ge 1 \\
-\boldsymbol{\theta}&amp;\mathrm{otherwise.}
+\boldsymbol{\theta}/\|\|\boldsymbol{\theta}\|\| - \epsilon &\mathrm{if}\ \|\|\boldsymbol{\theta}\|\|\ge 1 \\\\
+\boldsymbol{\theta}&\mathrm{otherwise.}
 \end{cases}
-$$</p>
-<p>$$
-\boldsymbol{\theta}_{t+1}\leftarrow \mathrm{proj}\left(\boldsymbol{\theta}_t-\eta_t\frac{(1-||\boldsymbol{\theta}_t||^2)^2}{4}\nabla_E\right)
-$$
+$$$$
+\boldsymbol{\theta}\_{t+1}\leftarrow \mathrm{proj}\left(\boldsymbol{\theta}\_t-\eta\_t\frac{(1-\|\|\boldsymbol{\theta}\_t\|\|^2)^2}{4}\nabla\_E\right)
+$$<p>
 となる。\(\epsilon\)は計算の安定のために導入する小さな値であり、実験では\(10^{-5}\)がつかわれた。
 なお、\(\nabla_E=\frac{\partial\mathcal{L}(\boldsymbol{\theta})}{\partial d(\boldsymbol{\theta}, \boldsymbol{x})}\frac{\partial d(\boldsymbol{\theta}, \boldsymbol{x})}{\partial\boldsymbol{\theta}}\)であり、\(\alpha=1-||\boldsymbol{\theta}||^2, \beta=1-||\boldsymbol{x}||^2, \gamma=1+\frac{2}{\alpha\beta}||\boldsymbol{\theta}-\boldsymbol{x}||^2\)とすると、</p>
-<p>$$
-\frac{\partial d(\boldsymbol{\theta},\boldsymbol{x})}{\partial \boldsymbol{\theta}}=\frac{4}{\beta\sqrt{\gamma^2-1}}\left(\frac{||\boldsymbol{x}||^2-2\langle\boldsymbol{\theta}, \boldsymbol{x}\rangle+1}{\alpha^2}\boldsymbol{\theta}-\frac{\boldsymbol{x}}{\alpha}\right)
 $$
+\frac{\partial d(\boldsymbol{\theta},\boldsymbol{x})}{\partial \boldsymbol{\theta}}=\frac{4}{\beta\sqrt{\gamma^2-1}}\left(\frac{\|\|\boldsymbol{x}\|\|^2-2\langle\boldsymbol{\theta}, \boldsymbol{x}\rangle+1}{\alpha^2}\boldsymbol{\theta}-\frac{\boldsymbol{x}}{\alpha}\right)
+$$<p>
 である。</p>
 <hr>
 <ul>

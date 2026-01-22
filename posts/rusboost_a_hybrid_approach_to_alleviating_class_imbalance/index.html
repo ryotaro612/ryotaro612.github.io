@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>抄訳 RUSBoost: A Hybrid Approach to Alleviating Class Imbalance(2010)</title>
 </head>
 
@@ -121,14 +143,14 @@ AdaBoostを借りることで、単分類の難しい少数クラスのサンプ
 \(t\in [1,T]\)回目の学習における\(i\)番目のサンプルの重みを\(D_t(i)\)とし、\(D_1(i)\)で\(1/m\)で初期化する。
 \(t\)回目の訓練には、少数クラスの割合が\(N\%\)になるようにアンダーサンプリングしたデータ集合\(S&rsquo;_t\)を使い、弱学習器\(h_t:X\times Y\rightarrow [0, 1]\)を訓練する。
 \(D_t\)で重みづけした\(S\)に\(h_t\)を適用し、疑似損失\(\epsilon_t\)から重みの更新パラメタ\(\alpha_t\)を求め、\(t+1\)回目の重みを計算する。</p>
-<p>$$
-\begin{align*}
-\epsilon_t &amp;= \sum_{(i,y): y_i\neq y}D_t(i)(1-h_t(x_i, y_i) + h_t(x_i, y))\\
-\alpha_t&amp;=\frac{\epsilon_t}{1-\epsilon_t}\\
-D_{t+1}(i)&amp;=D_t(i)\alpha_t^{\frac{1}{2}(1+h_t(x_i,y_i)-h_t(x_i,y:y\neq y_i))}\\
-D_{t+1}(i)&amp;:=\frac{D_{t+1}(i)}{\sum_iD_{t+1}(i)}
-\end{align*}
 $$
+\begin{align*}
+\epsilon\_t &= \sum\_{(i,y): y\_i\neq y}D\_t(i)(1-h\_t(x\_i, y\_i) + h\_t(x\_i, y))\\\\
+\alpha\_t&=\frac{\epsilon\_t}{1-\epsilon\_t}\\\\
+D\_{t+1}(i)&=D\_t(i)\alpha\_t^{\frac{1}{2}(1+h\_t(x\_i,y\_i)-h\_t(x\_i,y:y\neq y\_i))}\\\\
+D\_{t+1}(i)&:=\frac{D\_{t+1}(i)}{\sum\_iD\_{t+1}(i)}
+\end{align*}
+$$<p>
 以上により、弱学習器を束ねた学習器\(H(x)=\textrm{argmax}_{y\in Y}\sum^T_{t=1}h_t(x,y)\log\frac{1}{\alpha_t}\)をえる。</p>
 <p>論文への<a href="https://sci2s.ugr.es/keel/pdf/algorithm/articulo/2010-IEEE%20TSMCpartA-RUSBoost%20A%20Hybrid%20Approach%20to%20Alleviating%20Class%20Imbalance.pdf">リンク</a></p>
 <h2 id="所感">所感</h2>

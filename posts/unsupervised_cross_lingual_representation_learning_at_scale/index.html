@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Unsupervised Cross-lingual Representation Learning at Scale (2020)</title>
 </head>
 
@@ -126,9 +148,10 @@ LampleとConneauの手法を含む従来の多言語の言語モデルの評価�
 <p>LampleとConneauによる語彙は、Byte Pair Encoding(BPE)で結合した文字列の集合であり、多言語の文字列からなる。
 言語の数を\(N\), 言語\(i\)の単語の種類数を\(n_i\)とおく。
 このとき、各言語について、確率\(\{q_i\}_{i=0\dots N}\)で選んだ言語の文を無作為に抽出し、BPEを適用する。
+</p>
 $$
-q_i=\frac{p^\alpha_i}{\sum^N_{j=1}p^\alpha_j},\ p_i=\frac{n_i}{\sum^N_{k=1}n_k}
-$$
+q\_i=\frac{p^\alpha\_i}{\sum^N\_{j=1}p^\alpha\_j},\ p\_i=\frac{n\_i}{\sum^N\_{k=1}n\_k}
+$$<p>
 \(\alpha\)はコーパスの小ささに対するペナルティの大きさを調整するためのハイパーパラメタである。</p>
 <p>学習では、マスクされた単語を特定できるようにモデルを訓練する。</p>
 <p>論文の<a href="https://aclanthology.org/2020.acl-main.747/">リンク</a></p>

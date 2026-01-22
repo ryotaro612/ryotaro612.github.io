@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Proving the Correctness of Multiprocess Programs (1977)</title>
 </head>
 
@@ -145,29 +167,32 @@ legitimateな状態で任意のステップを実行してもlegitimateな状態
 <p>安全性は表明についての帰納法で証明できる。
 以上の定義をもとに、以下の2つを公理として定義する。</p>
 <p>任意の表明 A, Bについて
+</p>
 $$
 \begin{align}
-&amp;\text{if} \vdash [A]\text{, then}\models[A].\\
-&amp;\text{if} \models [A]\text{ and}\models[A \supset B]\text{, then}\models [B].
+&\text{if} \vdash [A]\text{, then}\models[A].\\\\
+&\text{if} \models [A]\text{ and}\models[A \supset B]\text{, then}\models [B].
 \end{align}
-$$
+$$<p>
 である。</p>
 <p>また、解釈\(I\)が不変であれば、任意の\(k\)と\(\alpha\in\Gamma_k\)について
+</p>
 $$
-\models[(\pi_k=\alpha)\supset I^{\alpha}_{k}]
-$$
+\models[(\pi\_k=\alpha)\supset I^{\alpha}_{k}]
+$$<p>
 である。</p>
 <p>\(I_k\)がgeneralized interpretationであるとは、\(\vdash[_oI^\alpha_k\supset_iI^\alpha_k]\)である入力の表明\(\textit{input} \prod_k\textit{-assertion}\ _iI_{k}^{\alpha}\)と出力の表明\(\textit{output} \prod_k\textit{-assertion}\ _oI^\alpha_k\)を各\(a\in\Gamma_k\)に適用することを意味する。</p>
 <p>legitimateな実行系列によって表明\(A\)が真である状態に到達したら後に\(B\)が成立する関係を\(A\leadsto B\)と書く。
 表明\(A\)と\(B\)があり、\(I\)をgeneralized interpretation \(I_k\)からなる解釈とする。</p>
 <p>このとき活性の証明のための2つのうち公理1は、</p>
 <p>\(\models [\sim B]\)と仮定すると
+</p>
 $$
 \begin{align}
-&amp;\models [A \supset \wedge\{(\pi=\alpha)\supset _iI^\alpha_k: \text{all } k, \text{and all }\alpha\in\Gamma_k\}]\\
-&amp;I \text{ is consistent}
+&\models [A \supset \wedge\\{(\pi=\alpha)\supset \_iI^\alpha_k: \text{all } k, \text{and all }\alpha\in\Gamma_k\\}]\\\\
+&I \text{ is consistent}
 \end{align}
-$$
+$$<p>
 を証明でき、\(\{\alpha: _oI^\alpha_k\equiv \textit{false}\}\)がinevitable setであれば、\(A\leadsto B\)である。</p>
 <p>また、公理2は、\(\leadsto\)は推移的閉包であり、\(\mathcal{D}\)が表明の有限集合で、\(A\in \mathcal{D}\)であれば\(\vee\mathcal{D}\leadsto B\)が成立することである。</p>
 <p>論文の<a href="https://lamport.azurewebsites.net/pubs/proving.pdf">リンク</a></p>

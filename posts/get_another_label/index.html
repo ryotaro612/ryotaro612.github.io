@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>論文メモ Get Another Label? Improving Data Quality and Data Mining Using Multiple, Noisy Labelers(2018)</title>
 </head>
 
@@ -132,19 +154,22 @@ MVの場合、ラベルの数が増えてもデータの数は固定される。
 <p>ラベルをふるべきデータの推定は、不確かさを基準にする。
 ここでの不確かさはモデルの推定の不確かさ\(S_{MU}\)とデータにふられたラベルの不確かさ\(S_{LU}\)の幾何平均\(S_{LMU}=\sqrt{S_{MU}\cdot S_{LU}}\)である。
 モデルの数を\(m\), \(P(+\mid x,H_i)\)を\(H_i\)が出力する\(x\)が正例(\(+\))である確信度とすると\(S_{MU}\)は次の式で表わされる。
+</p>
 $$
 S_{MU} = 0.5 - \mathrel{\bigg|} \frac{1}{m} \sum_{i=1}^{m}Pr(+\mid x, H_i) - 0.5 \mathrel{\bigg|}
-$$
+$$<p>
 データにふられたラベルの中で最大数のラベルを\(y_m\)とすると、\(S_{LU}\)は\(y_m\)が正しいラベルであることの不確かさである。
 この不確かさをベイズ推定で求める。
 \(L_{pos}\)と\(L_{neg}\)を正のラベルと負のラベルの数、事前分布を一様分布、事後分布を\(B(L_{pos}+1, L_{neg}+1)\)とすると、累積分布関数\(I_x\)で閾値を\(x\)とする不確かさを定義できる。
+</p>
 $$
 I_{x}(\alpha, \beta)\sum_{j=a}^{\alpha +\beta -1}\frac{(\alpha + \beta - 1)!}{j!(\alpha + \beta - 1 -j)!}x^j(1-x)^{\alpha + \beta -1 -j}
-$$
+$$<p>
 論文では、\(x=0.5, \alpha = L_{pos}+1, \beta=L_{neg}+1\)として
+</p>
 $$
-L_{LU} = min\{I_{0.5}(L_{pos}, L_{neg}), 1 - I_{0.5}(L_{pos}, L_{neg}) \}
-$$
+L_{LU} = min\\{I_{0.5}(L_{pos}, L_{neg}), 1 - I_{0.5}(L_{pos}, L_{neg}) \\}
+$$<p>
 としている。</p>
 <hr>
 <ul>

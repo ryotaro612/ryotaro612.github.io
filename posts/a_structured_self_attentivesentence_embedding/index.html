@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>論文メモ A STRUCTURED SELF-ATTENTIVE SENTENCE EMBEDDING</title>
 </head>
 
@@ -125,20 +147,22 @@
 <h4 id="双方向lstm">双方向LSTM</h4>
 <p>双方向LSTMは、単語のベクトル列で示された文をうけとり、その出力を自己注意機構に渡す。
 以降の説明では、入力される文を、\(n\)個の次元数\(d\)の単語のベクトルからなる\(n\times d\)の行列\(S\)と表記する。
+</p>
 $$
-S=(\boldsymbol{\rm w_1}, \boldsymbol{\rm w_2}, \cdots \boldsymbol{\rm w_n})
-$$
+S=(\boldsymbol{\rm w\_1}, \boldsymbol{\rm w\_2}, \cdots \boldsymbol{\rm w\_n})
+$$<p>
 \(\boldsymbol{\rm w_i}\)は文の\(i\)番目の単語の埋め込みベクトルを示す。
 双方向LSTMによって、文脈依存の情報をもとめる。
 隠れ状態のユニット数を\(u\)とする単方向のLSTMをもちいると、時刻\(t\)の順方向、逆方向のLSTMの隠れ状態、\(\overrightarrow{h_t}, \overleftarrow{h_t}\)を連結させた\(h_t\)を行とする\(n\times 2u\)の行列\(H\)をえる。
+</p>
 $$
-H=(\boldsymbol{\rm h_1}, \boldsymbol{\rm h_2}, \cdots \boldsymbol{\rm h_n})
-$$</p>
-<h4 id="自己注意機構">自己注意機構</h4>
+H=(\boldsymbol{\rm h\_1}, \boldsymbol{\rm h\_2}, \cdots \boldsymbol{\rm h\_n})
+$$<h4 id="自己注意機構">自己注意機構</h4>
 <p>annotation matrixは、バイアス項のない2層の多層パーセプトロンであり、次の式であわらされる。
+</p>
 $$fi
-A=\text{softmax}(W_{s2}\tanh(W_{s1}H^{T}))
-$$
+A=\text{softmax}(W\_{s2}\tanh(W\_{s1}H^{T}))
+$$<p>
 \(d_a\)と\(r\)をハイパーパラメタとして、\(W_{s1}\)は\(d_a\times 2u\)の、\(W_{s2}\)は\(r\times d_a\)の行列のパラメタである。
 \(r\)は、注意したい文中の箇所数に対応する。
 最終的に、埋め込み行列\(M\)は、\(M=AH\)により、\(r\times 2u\)の行列になる。</p>
@@ -148,10 +172,10 @@ $$
 <h4 id="正則化">正則化</h4>
 <p>埋め込みベクトルが特定の箇所に注意しすぎないように、正則化を適用することもできる。
 その場合、\(P\)をもとのロスに加算して学習する。
+</p>
 $$
-P=\mid\mid (AA^T-I)\mid\mid_{F}^2
-$$</p>
-<hr>
+P=\mid\mid (AA^T-I)\mid\mid\_{F}^2
+$$<hr>
 <ul>
 <li>論文を<a href="https://arxiv.org/abs/1703.03130">こちら</a>からダウンロードできます。</li>
 <li>画像は論文から引用されています。</li>

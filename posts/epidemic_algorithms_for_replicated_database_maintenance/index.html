@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Epidemic Algorithm for Replicated Database Maintenance(1987)</title>
 </head>
 
@@ -130,14 +152,16 @@ pull型は、伝搬されていない変更があるデータベースがラン�
 push型は、変更を受信したデータベースが別のサーバーをランダムに選んで同期する。</p>
 <p>\(i\)回目の同期後に、あるデータベースが最新の変更を受理していない確率を\(p_i\)とする。
 pull型の場合、\(i+1\)回目の同期後にも最新の変更を受理していない状態になるのは、\(i\)回目の同期後に変更を受理しておらず、かつ、\(i+1\)回目に最新の変更をもたないデータベースと同期する場合であり、その確率は
+</p>
 $$
-p_{i+1}=(p_i)^2
-$$
+p\_{i+1}=(p\_i)^2
+$$<p>
 である。
 push型の場合、\(i+1\)回目の同期後にも同様の状態になるのは、\(i\)回目までに変更を受信しておらず、\(i+1\)回目にどんな最新の状態にあるデータベースからも選ばれない場合であり、その確率は、
+</p>
 $$
-p_{i+1}=p_i\left(1-\frac{1}{n}\right)^{n(1-p_i)}
-$$
+p\_{i+1}=p\_i\left(1-\frac{1}{n}\right)^{n(1-p\_i)}
+$$<p>
 である。pull型とpush型を比較するとpull型のほうが0への収束が速い。</p>
 <p>受理した変更のみを別のデータベースに伝搬する場合、データベースは、3つの状態をとる。それぞれ、変更を受信していない(susceptible), 受信済みで別のデータベースに伝搬している(infective), 受信済みだが別のデータベースへの伝搬をやめている(removed)状態である。
 ここでは、変更を受信したinfectiveのデータベースがinfectiveのデータベースと同期した場合に\(1/k\)の確率でremovedに遷移する。
@@ -145,27 +169,31 @@ $$
 susceptive, infective, removedなデータベースの割合をそれぞれ\(s, i, r\)とおく。
 \(s+i+r=1\)である。
 このとき、
+</p>
 $$
 \begin{align}
-\frac{d s}{dt}&amp;=-si\\
-\frac{di}{dt}&amp;=+si-\frac{1}{k}(1-s)i
+\frac{d s}{dt}&=-si\\\
+\frac{di}{dt}&=+si-\frac{1}{k}(1-s)i
 \end{align}
-$$
+$$<p>
 であるから\(c\)を定数とすると
+</p>
 $$
 \begin{align}
-\frac{di}{ds}&amp;=-\frac{k+1}{k} + \frac{1}{ks}\\
-i(s)&amp;=-\frac{k+1}{k}s + \frac{1}{k}\log s + c
+\frac{di}{ds}&=-\frac{k+1}{k} + \frac{1}{ks}\\\\
+i(s)&=-\frac{k+1}{k}s + \frac{1}{k}\log s + c
 \end{align}
-$$
+$$<p>
 \(c=\frac{k+1}{k}\)とすると
+</p>
 $$
 i(s) = \frac{k+1}{k}(1-s)+\frac{1}{k}\log s
-$$
+$$<p>
 であり、\(i(s)=0\)になるのは
+</p>
 $$
 s=e^{-(k+1)(1-s)}
-$$
+$$<p>
 のときである。\(k=1\)であれば20%のデータベースは変更を受信し損ねるが、\(k=2\)であれば6%まで下がる。</p>
 <p>論文への<a href="http://bitsavers.trailing-edge.com/pdf/xerox/parc/techReports/CSL-89-1_Epidemic_Algorithms_for_Replicated_Database_Maintenance.pdf">リンク</a></p>
 <h2 id="雑記">雑記</h2>

@@ -15,19 +15,6 @@
                 href="https://ryotaro.dev/en/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/en/posts/</loc>
-    <lastmod>2025-11-16T19:00:00+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/posts/"
-                />
-  </url><url>
     <loc>https://ryotaro.dev/en/tags/collaborative-filtering/</loc>
     <lastmod>2025-09-23T22:56:55+09:00</lastmod>
     <xhtml:link
@@ -52,6 +39,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ryotaro.dev/en/posts/deep-neural-networks-for-youtube-recommendations/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/posts/</loc>
+    <lastmod>2025-11-16T19:00:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/tags/recommendation/</loc>
@@ -1450,5 +1450,7 @@
                 hreflang="en"
                 href="https://ryotaro.dev/en/about/"
                 />
+  </url><url>
+    <loc>https://ryotaro.dev/en/tags/knowledge-distillation/</loc>
   </url>
 </urlset>

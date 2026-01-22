@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Deep Neural Networks for Youtube Recommendations (2016)</title>
 </head>
 
@@ -138,55 +160,47 @@ TensorFlow implements this method as <a href="https://www.tensorflow.org/api_doc
 <p>In sampled softmax, the task is to predict the correct class from a subset of all possible classes.
 Let the set of all classes be \( L \), the sampling function be \( Q(y|x) \), and the sampled subset of \( L \) at the \( i \)-th iteration be \( S_i \).
 For an input \( x_i \):</p>
-<p>$$
+$$
 P(S_i = S \mid x_i) = \prod_{y \in S} Q(y|x_i) \prod_{y \in (L - S)} (1 - Q(y|x_i)).
-$$</p>
-<p>Let the correct class of \( x_i \) be \( t_i \).
+$$<p>Let the correct class of \( x_i \) be \( t_i \).
 The training procedure updates model parameters to maximize the probability of \( t_i \) within the sampled subset:</p>
-<p>$$
-C_i = S_i \cup \{t_i\}.
-$$</p>
-<p>Applying Bayes’s rule step by step:</p>
-<p>$$
+$$
+C_i = S_i \cup \\{t_i\\}.
+$$<p>Applying Bayes’s rule step by step:</p>
+$$
 \begin{align*}
 P(t_i = y \mid x_i, C_i)
-&amp;= \frac{P(t_i = y, C_i \mid x_i)}{P(C_i \mid x_i)} \\
-&amp;= \frac{P(t_i = y \mid x_i) P(C_i \mid t_i = y, x_i)}{P(C_i \mid x_i)} \\
-&amp;= \frac{P(y \mid x_i)}{P(C_i \mid x_i)} P(C_i \mid t_i = y, x_i).
+&= \frac{P(t_i = y, C_i \mid x_i)}{P(C_i \mid x_i)} \\\\
+&= \frac{P(t_i = y \mid x_i) P(C_i \mid t_i = y, x_i)}{P(C_i \mid x_i)} \\\\
+&= \frac{P(y \mid x_i)}{P(C_i \mid x_i)} P(C_i \mid t_i = y, x_i).
 \end{align*}
-$$</p>
-<p>Given a constant \( K(x_i, C_i) \) independent of \( y \):</p>
-<p>$$
+$$<p>Given a constant \( K(x_i, C_i) \) independent of \( y \):</p>
+$$
 P(C_i \mid t_i = y, x_i)
-= \frac{1}{Q(y|x_i)}
-\prod_{y&rsquo; \in C_i} Q(y&rsquo;|x_i)
-\prod_{y&rsquo; \in (L - C_i)} (1 - Q(y&rsquo;|x_i)).
-$$</p>
-<p>Substituting and simplifying:</p>
-<p>$$
+= \frac{1}{Q(y|x_i)} 
+\prod_{y' \in C_i} Q(y'|x_i)
+\prod_{y' \in (L - C_i)} (1 - Q(y'|x_i)).
+$$<p>Substituting and simplifying:</p>
+$$
 P(t_i = y \mid x_i, C_i)
 = \frac{P(y|x_i)}{Q(y|x_i)} \cdot \frac{1}{K(x_i, C_i)}.
-$$</p>
-<p>Taking logs gives:</p>
-<p>$$
+$$<p>Taking logs gives:</p>
+$$
 \log P(t_i = y \mid x_i, C_i)
-= \log P(y|x_i) - \log Q(y|x_i) + K&rsquo;(x_i, C_i).
-$$</p>
-<p>Since \( K&rsquo;(x_i, C_i) \) is independent of \( y \), it is ignored during training.
+= \log P(y|x_i) - \log Q(y|x_i) + K'(x_i, C_i).
+$$<p>Since \( K&rsquo;(x_i, C_i) \) is independent of \( y \), it is ignored during training.
 Thus, the model effectively learns to predict</p>
-<p>$$
+$$
 \log P(y|x_i) - \log Q(y|x_i).
-$$</p>
-<p>The weights of the output layer correspond to video embeddings, and the inputs are user embeddings.
+$$<p>The weights of the output layer correspond to video embeddings, and the inputs are user embeddings.
 These are later stored in the nearest-neighbor index for serving.</p>
 <p>The ranking model predicts the watch time of videos using weighted logistic regression.
 During training, positive examples (clicked videos) are weighted by their actual watch times.
 Let \( N \) be the total number of examples, \( k \) the number of positive examples, and \( T_i \) the watch time of the \( i \)-th positive example.
 The model’s odds are approximately:</p>
-<p>$$
+$$
 \frac{\sum T_i}{N - k}
-$$</p>
-<p>Assuming \( \frac{1}{1 - x} \approx 1 + x \), and letting \( P \) denote the probability of an impression, the ranking model predicts \( E[T](1 + P) \).
+$$<p>Assuming \( \frac{1}{1 - x} \approx 1 + x \), and letting \( P \) denote the probability of an impression, the ranking model predicts \( E[T](1 + P) \).
 Since \( P \) is small in YouTube’s case, this is effectively \( E[T] \), the expected watch time.</p>
 <!-- [Deep Neural Networks for YouTube Recommendations](https://static.googleusercontent.com/media/research.google.com/ja//pubs/archive/45530.pdf), published in 2016, describes a recommendation system of YouTube. 
 The system consists of two feed-forward neural networks: a candidate generation model and a ranking model.

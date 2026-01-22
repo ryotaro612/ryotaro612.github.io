@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Suffix Arrays: A New Method for On-Line String Searches</title>
 </head>
 
@@ -111,14 +133,16 @@
 suffix arrayの構築にかかる最悪時間計算量が\(\mathcal{O}(N\log N)\)に対して、suffix treeは\(\mathcal{O}(N)\)しかかからない。</p>
 <p>Suffix Arrayは文字列のすべてのsuffixを辞書順にソートした配列であり、配列には、suffixそのものではなく、その開始位置を格納する。
 長さ\(N\)の文字列を\(A=a_0\ a_1\cdots a_{N-1}\), \(i\)番目から始まる\(A\)のsuffixを\(A_i\), suffixを辞書順にソートしたときの開始位置の配列を\(\textit{POS}\), \(\le\)を辞書順の記号とすると、
+</p>
 $$
-A_{\text{POS}[0]} \le \dots \le A_{\text{POS}[N-1]}
-$$
+A\_{\text{POS}[0]} \le \dots \le A\_{\text{POS}[N-1]}
+$$<p>
 がなりたつ。
 ここで\(\le_p\)を長さ\(p\)のprefixでくらべた辞書順の関係とすると
+</p>
 $$
-A_{\text{POS}[0]} \le_p \dots \le_p A_{\text{POS}[N-1]}
-$$
+A\_{\text{POS}[0]} \le\_p \dots \le\_p A\_{\text{POS}[N-1]}
+$$<p>
 も同時に成立する。ただし、長さが\(u(&lt;p)\)のときは先頭\(u\)文字でくらべる。
 このとき、長さ\(p\)の文字列の\(A\)における全ての開始位置を二分探索で検索できる。</p>
 <p>単純に長さ\(n\)の文字列\(n\)個をソートしてsuffix arrayをつくると、\(\mathcal{O}(n^2\log n)\)時間かかってしまう。

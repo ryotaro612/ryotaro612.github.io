@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>論文メモ Deep contextualized word representations</title>
 </head>
 
@@ -115,34 +137,37 @@
 <p>\(k\)番目の文字に対する言語モデルへの入力\(\boldsymbol{{\rm x}}_k^{LM}\)には、文脈に依存しない文字の分散表現や文字レベルのCNNをもちいる。
 実験では、<a href="https://arxiv.org/pdf/1602.02410.pdf">Jozefowiczら</a>の<code>CNN-BIG-LSTM</code>が使われた。
 順方向の言語モデルは、\(t_1, t_2, \dots , t_N\)の確率を次のように計算する。
+</p>
 $$
-p(t_1, t_2, \dots , t_N) = \prod_{k=1}^{N}p(t_k\mid t_1, t_2, \dots , t_{k-1})
-$$
+p(t\_1, t\_2, \dots , t\_N) = \prod\_{k=1}^{N}p(t\_k\mid t\_1, t\_2, \dots , t\_{k-1})
+$$<p>
 逆方向の言語モデルは
+</p>
 $$
-p(t_1, t_2, \dots , t_N) = \prod_{k=1}^{N}p(t_k\mid t_{k+1}, t_{k+2}, \dots , t_{N})
-$$
+p(t\_1, t\_2, \dots , t\_N) = \prod\_{k=1}^{N}p(t\_k\mid t\_{k+1}, t\_{k+2}, \dots , t\_{N})
+$$<p>
 と計算する。
 この2つの言語モデルを重ねた双方向LSTMの目的関数は、入力のパラメタ\({\rm \Theta}_{x}\)とソフトマックス層\({\rm \Theta}_s\)のパラメタを共有した次の式となる。
+</p>
 $$
 \begin{align}
-\sum^{N}_{k=1}(\log p(t_k\mid t_1, \dots , t_{k-1};{\rm \Theta}_x, \overrightarrow{\Theta}_{LSTM}, {\rm \Theta}_s) + \\
-(\log p(t_k\mid t_1, \dots , t_{k-1};{\rm \Theta}_x, \overleftarrow{\Theta}_{LSTM}, {\rm \Theta}_s))
+\sum^{N}\_{k=1}(\log p(t\_k\mid t\_1, \dots , t\_{k-1};{\rm \Theta}\_x, \overrightarrow{\Theta}\_{LSTM}, {\rm \Theta}\_s) + \\\\
+(\log p(t\_k\mid t\_1, \dots , t\_{k-1};{\rm \Theta}\_x, \overleftarrow{\Theta}\_{LSTM}, {\rm \Theta}\_s))
 \end{align}
-$$</p>
-<h3 id="分散表現の計算">分散表現の計算</h3>
+$$<h3 id="分散表現の計算">分散表現の計算</h3>
 <p>\(k\)に対する順方向LSTMによる\(j\)番目の層の出力を\(\overrightarrow{\boldsymbol{\rm h}}^{LM}_{k, j}\), 逆方向LSTMの出力を\(\overleftarrow{\boldsymbol{\rm h}}^{LM}_{k, j}\)として</p>
-<p>$$
-\boldsymbol{\rm h}^{LM}_{k, j} =
+$$
+\boldsymbol{\rm h}^{LM}\_{k, j} = 
 \begin{cases}
-\boldsymbol{\rm x}^{LM}_k (j=0) \\
-[\overrightarrow{\rm h}^{LM}_{k,j}; \overleftarrow{\rm h}^{LM}_{k,j}] (1\le j\le L)
+  \boldsymbol{\rm x}^{LM}\_k (j=0) \\\\
+  [\overrightarrow{\rm h}^{LM}\_{k,j}; \overleftarrow{\rm h}^{LM}\_{k,j}] (1\le j\le L)
 \end{cases}
-$$
+$$<p>
 とするとELMoの分散表現\({\rm ELMo}^{task}_k\)は、\(\gamma^{task}\)をスカラのパラメタ、\(s^{task}_j\)をパラメタにソフトマックス関数を適用して正規化したものとすると、
+</p>
 $$
-{\rm ELMo}^{task}_k = \gamma^{task}\sum^{L}_{j=0}s^{task}_{j}\boldsymbol{\rm h}^{LM}_{k,j}
-$$
+{\rm ELMo}^{task}\_k = \gamma^{task}\sum^{L}\_{j=0}s^{task}\_{j}\boldsymbol{\rm h}^{LM}\_{k,j}
+$$<p>
 となる。</p>
 <p>ELMoを教師あり学習に使うときは、双方向LSTMの重みを固定させ、ELMoを使わないもとの入力\(\boldsymbol{\rm x}_k\)を\([\boldsymbol{\rm x}_k;\text{ELMo}^{task}_k]\)でおきかえる。
 \(\gamma^{task}\), \(s^{task}_j\)は学習時に更新され、タスクにあわせて言語モデルへの入力や各層が及ぼす\(\text{ELMo}^{task}_k\)への影響を調整する。</p>

@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Retrieval Augmented Generation for Knowledge Intensive NLP Tasks (2021)</title>
 </head>
 
@@ -128,15 +150,17 @@ seq2seq uses \(x\) and \(z\) as additional context to generate the target seqeue
 \(\eta\) and \(\theta\) represent the model parameters.
 \(y_i\) denotes the \(i^{\text{th}}\) token in the target sequence.</p>
 <p>In the RAG-Token, the seq2seq produces a distribution for the next output token for each retrieved document and then marginalize the documents:
+</p>
 $$
-p_{\text{RAG-Token}}(y|x) \approx\prod^N_i \sum_{z\in \text{top-k}(p(\cdot|x))}p_\eta (z|x)p_{\theta}(y_i|x,z,y_{1:i-1})
-$$
+p\_{\text{RAG-Token}}(y|x) \approx\prod^N\_i \sum\_{z\in \text{top-k}(p(\cdot|x))}p\_\eta (z|x)p\_{\theta}(y\_i|x,z,y\_{1:i-1})
+$$<p>
 where \(N\) is the length of the target sequence.
 The decoding uses a standard beam search to approximate \(\argmax_y p(y|x)\).</p>
 <p>The RAG-Sequence Model uses the same retrieved document to generate the target sequence:
+</p>
 $$
-p_{\text{RAG-Sequence}}(y|x)\approx\sum_{z\in \text{top-k}(p(\cdot |x))}p_{\eta}(z|x)p_{\theta}(y|x,z) = \sum_{z\in\text{top-k}(p(\cdot|x))}p_{\eta}(z|x)\prod^N_i p_{\theta}(y_i|x,z,y_{1:i-1})
-$$
+p\_{\text{RAG-Sequence}}(y|x)\approx\sum\_{z\in \text{top-k}(p(\cdot |x))}p\_{\eta}(z|x)p\_{\theta}(y|x,z) = \sum\_{z\in\text{top-k}(p(\cdot|x))}p\_{\eta}(z|x)\prod^N\_i p\_{\theta}(y\_i|x,z,y\_{1:i-1})
+$$<p>
 The decoding runs beam search for each document \(z\) to yield a set of hypotheses.
 Some of which may not have appeared in the beams of all documents.
 In that case,\(p_{\theta}(y|x,z_i)\approx 0\) can be used for efficient decoding.</p>

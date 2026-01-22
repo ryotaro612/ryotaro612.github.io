@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>抄訳 Learning to Rank with Nonsmooth Cost Functions (2006)</title>
 </head>
 
@@ -114,39 +136,43 @@ RankNetをLambdaRankで学習することで、学習時間を短縮し、NDCG�
 <p>RankNetは、2つの文書からクエリに適合する方を選べるように学習する。
 損失関数\(C_T\)に交差エントロピーを使う場合、文書\(i, j\)を入力したときのスコアの差\(s_i - s_j\)をシグモイド関数にあたえ、その値を文書\(i\)が\(j\)よりも適合する確率とみなす。
 学習データの集合を\(\mathcal{P}\), モデルの重みを\(w_k\in\mathcal{R}\)とするとき、\(w_k\)で\(C_T\)を偏微分すると</p>
-<p>$$
+$$
 \begin{align}
-C_T&amp;\equiv\sum_{\{i,j\}\in P}C(s_i,s_j)\\
-\frac{\partial C_T}{\partial w_k}&amp;=\sum_{\{i,j\}\in P}\frac{\partial C(s_i, s_j)}{\partial s_i}\frac{\partial s_i}{\partial w_k} + \frac{\partial C(s_i, s_j)}{\partial s_j}\frac{\partial s_j}{\partial w_k}\\
+C\_T&\equiv\sum\_{\\{i,j\\}\in P}C(s\_i,s\_j)\\\\
+\frac{\partial C\_T}{\partial w\_k}&=\sum\_{\\{i,j\\}\in P}\frac{\partial C(s\_i, s\_j)}{\partial s\_i}\frac{\partial s\_i}{\partial w\_k} + \frac{\partial C(s\_i, s\_j)}{\partial s\_j}\frac{\partial s\_j}{\partial w\_k}\\\\
 \end{align}
-$$</p>
-<p>もっとも、式が成立するには\(C(s_i, s_j)\)が\(s_i\)と\(s_j\)でつねに偏微分できなければならない。
+$$<p>もっとも、式が成立するには\(C(s_i, s_j)\)が\(s_i\)と\(s_j\)でつねに偏微分できなければならない。
 そこで、クエリ\(i\)を与えたときにモデルが出力する\(n_i\)個のスコアを\(s\)とラベルを\(l\)として
+</p>
 $$
-\frac{\partial C}{\partial s_j} = -\lambda_j(s_1, l_1,\dots, s_{n_i}, l_{n_i})
-$$
+\frac{\partial C}{\partial s\_j} = -\lambda\_j(s\_1, l\_1,\dots, s\_{n\_i}, l\_{n\_i})
+$$<p>
 が存在する必要十分条件を求める。</p>
 <p>ポアンカレの補題より、\(S\in \mathcal{R}^n\)が星型の開集合であるとき、\(S\)上の閉形式は完全である。
 同時に完全形式は閉形式であるから、星型の開集合上の微分形式が完全形式であり、かつそのときに限り、閉形式になる。
 \(\mathcal{R}^{n}\)上の1-形式の基底を\(dx^j\)として\(\boldsymbol{\lambda}\)を
+</p>
 $$
-\boldsymbol{\lambda} \equiv \sum_j \lambda_j dx^j
-$$
+\boldsymbol{\lambda} \equiv \sum\_j \lambda\_j dx^j
+$$<p>
 と定義する。
 このとき1-形式\(\boldsymbol{\lambda}\)は閉であるから
+</p>
 $$
-\frac{\partial \lambda_k}{\partial x^j} - \frac{\partial\lambda_j}{\partial x_k} = 0\ \ (\forall k &lt; j \le n_i)
-$$
+\frac{\partial \lambda\_k}{\partial x^j} - \frac{\partial\lambda\_j}{\partial x\_k} = 0\ \ (\forall k < j \le n\_i)
+$$<p>
 である。以上から
+</p>
 $$
-\frac{\partial\lambda_j}{\partial s_k} = \frac{\partial \lambda_k}{\partial s_j}\ \ \forall j,k \in \{1,\dots , n_i\}
-$$
+\frac{\partial\lambda\_j}{\partial s\_k} = \frac{\partial \lambda\_k}{\partial s\_j}\ \ \forall j,k \in \\{1,\dots , n\_i\\}
+$$<p>
 が成りたつような\(C\)であればよい。</p>
 <p>RankNetの高速化をはかる実験では、複数の損失2つの文書を入れ換えてえられるNDCGの利得とRankNetの損失関数の積が、損失関数に使われている。
 このとき
+</p>
 $$
-\lambda = N\left(\frac{1}{1+e^{s_i-s_j}}\right)(2^{l_i}-2^{l_j})\left(\frac{1}{\log(1+i)}-\frac{1}{\log(1+j)}\right)
-$$
+\lambda = N\left(\frac{1}{1+e^{s\_i-s\_j}}\right)(2^{l\_i}-2^{l\_j})\left(\frac{1}{\log(1+i)}-\frac{1}{\log(1+j)}\right)
+$$<p>
 である。</p>
 <p>論文の<a href="https://papers.nips.cc/paper/2006/hash/af44c4c56f385c43f2529f9b1b018f6a-Abstract.html">リンク</a></p>
   </div>

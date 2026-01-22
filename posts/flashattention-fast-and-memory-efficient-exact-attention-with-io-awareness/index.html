@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+  
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-W5TDG76');
+  </script>
+  
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=300,initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+    crossorigin="anonymous" />
+  
+  <link rel="stylesheet" href="http://localhost:1313/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+  
+  <link rel="stylesheet" href="http://localhost:1313/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+  
+
+<link rel="stylesheet" href="http://localhost:1313/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+
+<link rel="stylesheet" href="http://localhost:1313/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
+  <title>FLASHATTENTION: Fast and Memory-Efficient Exact Attention with IO-Awareness (2022)</title>
+</head>
+
+<body>
+  
+  
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0"
+      style="display:none;visibility:hidden" />
+  </noscript>
+  
+  
+  <header class="navigation">
+    <h2><a href="http://localhost:1313/">Blanket</a></h2>
+    <nav>
+      <ul>
+        <li><a href="http://localhost:1313/about">About</a></li>
+        <li><a href="http://localhost:1313/posts">Posts</a></li>
+        <li><a href="http://localhost:1313/tags">Tags</a></li>
+        
+      </ul>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/ryotaro612">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/ryotaro612/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://speakerdeck.com/ryotaro612/">
+            <i class="fa-brands fa-speaker-deck"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a href="http://localhost:1313/%20index.xml">
+            <i class="fas fa-rss"></i>
+          </a>
+        </li>
+        
+      </ul>
+    </nav>
+  </header>
+  
+<main>
+  <h1>FLASHATTENTION: Fast and Memory-Efficient Exact Attention with IO-Awareness (2022)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="http://localhost:1313/tags/%E6%B3%A8%E6%84%8F%E6%A9%9F%E6%A7%8B/">
+        #注意機構
+      </a>
+    </li>
+    
+  </ul>
+  <span class="date">
+    
+    December 29, 2025
+    
+  </span>
+  <div>
+    <p>TransformerのQKV注意機構の時間、空間計算量は、系列長が\(N\)のときには\(O(N^2)\)になる。
+<a href="https://arxiv.org/pdf/2001.04451">Reformer: The Efficient Transformer</a>などのFLOP数を減らす手法はあるが、実際の処理時間を十分に短縮できず、普及していない。
+<a href="https://arxiv.org/pdf/2205.14135">FLASHATTENTION</a>は、FLOP数ではなく、GPUのHBM (high bandwidth memory) と SRAM間の転送量を減らし、処理時間を短縮する。
+HBMの記憶領域はSRAMよりも数十倍大きいが、SRAMよりも数十倍遅い。
+注意 $\mathbf{O}$ を計算するとき、FLASHATTENTIONは、$\mathbf{Q}$, $\mathbf{K}$, $\mathbf{V}$, $\mathbf{O}$それぞれの一部の行ベクトルからなるブロックだけをSRAMに読み、$\mathbf{O}$の一部を更新し、をHBMに書き込む。
+ブロックの操作を繰り返すと、最終的に自己注意機構と等しい注意を計算できる。</p>
+<p>FLASHATTENTIONは、逆伝搬時のHBMとSRAM間の転送量も減らす。
+通常のQKV注意機構であれば、$\mathbf{Q}$, $\mathbf{K}$, $\mathbf{V}$, $\mathbf{O}$の勾配を計算するためにSoftmax関数に与える行列$\mathbf{S}$とその結果$\mathbf{P}$を記録する。
+$\mathbf{Q}$, $\mathbf{K}$, $\mathbf{V}$が\(\mathbb{R}^{N\times d}\)であれば、$\mathbf{S}$, $\mathbf{P}$のサイズは$\textrm{O}(N^2)$になる。
+FLASHATTENTIONは、順伝搬時に計算した中間結果と$\mathbf{O}$から$\mathbf{S}$, $\mathbf{P}$を計算し直すことで、$\mathbf{S}$と$\mathbf{P}$の記録を省き、空間計算量を減らす。</p>
+<p>FLASHATTENTIONは、勾配消失を避けるために、ベクトルの最大値でスケールしたSoftmax関数の計算時間を短縮する。
+softmax関数は\(\mathbf{S}\)の行ベクトル\(x\in \mathbb{R}^d\)ごとに適用される。
+</p>
+$$
+\begin{align*}
+\mathbf{S} &= \mathbf{Q}\mathbf{K}^\top \in \mathbb{R}^{N\times N}\\\\
+\mathbf{P} &= \textrm{softmax}(\mathbf{S})\in \mathbb{R}^{N\times N}\\\\
+\mathbf{O} &=\mathbf{P}\mathbf{V}\in\mathbb{R}^{N\times d}\\\\
+m(x) &:= \max_{{i}} x_{i}\\\\
+f(x) &:= [e^{x_1-m(x)} \dots e^{x_d-m(x)}]\\\\
+\ell(x) &:= \sum_i {f(x)}_i\\\\
+\text{softmax}(x) &:= \frac{f(x)}{\ell(x)}
+\end{align*}
+$$<p>
+softmax関数の計算を安定させるために最大値$m(x)$でスケールされている。
+<a href="https://arxiv.org/pdf/1706.03762">Attention Is All You Need</a>では、$d$が大きくなればドット積の値も大きくなり勾配が消失するので、ベクトルの要素を$\sqrt{d}$でスケールしてからSoftmax関数が適用されている。</p>
+<p>2つのベクトルとその統計量\(m\), \(\ell\)から、連結したベクトルにsoftmax関数を適用した結果を計算できる。
+</p>
+$$
+\begin{align*}
+m(x) &= m([x^{(1)}x^{(2)}])=\max(m(x^{(1)}), m(x^{(2)})) \\\\
+f(x) &= \left[ e^{m(x^{(1)})-m(x)}f(x^{(1)})\ \ \ \ e^{m(x^{(2)})-m(x)}f(x^{(2)}) \right]\\\\
+\ell(x) &= \ell(\left[x^{(1)}\ x^{(2)}\right])=e^{m(x^{(1)})-m(x)}\ell(x^{(1)})+e^{m(x^{(2)})-m(x)}\ell (x^{(2)}) \\\\
+\text{softmax}(x)&=\frac{f(x)}{\ell(x)}
+\end{align*}
+$$<p>FLASHATTENTIONは、統計量から連結ベクトルのSoftmax関数の適用結果を求めあれる性質をもちいて、SRAMとHBM間の転送量を減らす。
+具体的なアルゴリズムは以下の文献から引用したアルゴリズムになる。
+<img src="/flashattention/algo1.png" alt="algo1"></p>
+<p>アルゴリズムは$j$について帰納的に証明できる。
+$\mathbf{K}, \mathbf{V}$の最初の$jB_c$行のブロックを$\mathbf{K}_{:j}\in\mathbb{R}^{jB_c\times d}$, $\mathbf{V}_{:j}\in\mathbb{R}^{jB_c\times d}$とおく。
+また、$\mathbf{S}_{::j}=\mathbf{Q}\mathbf{K}^{\top}_{:j}\in\mathbb{R}^{N\times jB_c}$, $\mathbf{P}_{::j}=\text{softmax}(\mathbf{S}_{::j})\in\mathbb{R}^{N\times jB_c}$とする。
+これらの変数をもとに、$j$番目の外側の繰り返しの後の$m, \ell, \mathbf{O}$を、$m^j, \ell^{(j)}, \mathbf{O}^{(j)}$として$j$番目の外側の繰り返しの後に、以下が成り立つことを帰納的に示す。
+</p>
+$$
+\begin{align*}
+m^{(j)}&=\textrm{rowmax}(\mathbf{S}_{:,:j})\in\mathbb{R}^N\\\\
+\ell^{(j)}&=\textrm{rowsum}(\exp(\mathbf{S}_{:,:j}-m^{(j)}))\in\mathbb{R}^N\\\\
+\mathbf{O}^{(j)}&=\mathbf{P}_{:,:j}\mathbf{V}_{:j}\in\mathbb{R}^{N\times d}
+\end{align*}
+$$<p>
+アルゴリズムの2行目で変数を初期したとき、つまり$j=0$の場合は上の関係を満たす。
+以降、$j=0,\dots,T_c-1$のときに上の3つの式が成り立つと仮定し、$j+1$でも成立することを示す。</p>
+<p>アルゴリズムは$S$をブロック単位で計算する。$j$回目の外側の繰り返しは$\mathbf{S}$の$B_C(j-1)+1$から$B_Cj$列を計算する。
+内側の繰り返しは、外側の繰り返しで計算する$\mathbb{R}^{N\times B_C}$を上から順番に$\mathbb{R}^{B_r\times B_c}$ずつ計算する。
+$j+1$回目の繰り返しの終わりには、$\mathbb{R}^{N\times B_C}$の各行の最大値$\tilde{m}_{:j}$を求めているので、11行目の$m_i^{\text{new}}$の計算と仮定から、
+</p>
+$$
+m^{(j+1)} = \text{rowmax}(\mathbf{S}_{:,:j+1})\in \mathbb{R}^N
+$$<p>
+が成り立つ。</p>
+  </div>
+</main>
+
+  
+<ul class="pagination">
+  
+  <li>
+    <a href="/posts/efficient-training-of-language-models-to-fill-in-the-middle/">
+      <i class="fa-solid fa-xl fa-angle-left"></i>
+    </a>
+  </li>
+  
+  
+</ul>
+
+
+  <footer>
+    <small>© Ryotaro Nakamura. All Rights Reserved.</small>
+  </footer>
+</body>
+
+
+</html>

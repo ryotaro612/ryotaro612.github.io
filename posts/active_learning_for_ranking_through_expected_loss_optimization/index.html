@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Active Learning for Ranking through Expected Loss Optimization</title>
 </head>
 
@@ -127,28 +149,32 @@ ELOに用いる損失関数にDCGを採用したExpected DCG Loss Optimization(E
 <p>集める対象がクエリか文書かによって損失関数がことなるので、集める対象によってアルゴリズムがかわる。
 ベイズ決定則は、誤って識別したときの損失を最小にするよう識別する。
 \(D\)を学習データ、クエリ\(q\)に対応する\(n\)件の文書の特徴ベクトルを\(\mathrm{X}_q:=(x_1,\dots x_n)\), そのラベルを\(Y:=(y_1,\dots ,y_n)\), \(\pi\)を長さ\(n\)の順列、\(l(\pi, Y)\)を損失とすると、損失の期待値は
+</p>
 $$
-\text{EL}(q):=\underset{\pi}{\operatorname{min}}\int_Y l(\pi, Y)P(Y\mid X_q , D)dY
-$$
+\text{EL}(q):=\underset{\pi}{\operatorname{min}}\int\_Y l(\pi, Y)P(Y\mid X\_q , D)dY
+$$<p>
 であり、\(\text{EL}(q)\)が最大となる\(q\)をラベルを与えるべきクエリと判定される。
 ELO-DCGの場合、DCGにもとづく損失関数は
+</p>
 $$
-l(\pi, Y) = \underset{\pi &lsquo;}{\operatorname{max}}\text{DCG}(\pi &lsquo;, Y) - \text{DCG}(\pi, Y)
-$$
+l(\pi, Y) = \underset{\pi '}{\operatorname{max}}\text{DCG}(\pi ', Y) - \text{DCG}(\pi, Y)
+$$<p>
 となる。このとき
+</p>
 $$
-\text{EL}(q)=\int_Y \underset{\pi}{\operatorname{max}}\text{DCG}(\pi, Y)P(Y\mid X_q , D)dY -  \underset{\pi}{\operatorname{max}}\int_Y\text{DCG}(\pi, Y)P(Y\mid X_q , D)dY
-$$
+\text{EL}(q)=\int\_Y \underset{\pi}{\operatorname{max}}\text{DCG}(\pi, Y)P(Y\mid X\_q , D)dY -  \underset{\pi}{\operatorname{max}}\int\_Y\text{DCG}(\pi, Y)P(Y\mid X\_q , D)dY 
+$$<p>
 となる。\(\pi(i)\)を\(i\)番目の文書における順位、利得関数\(G\)を\(G(s)=2^s-1\), \(&lt;\cdot&gt;\)を平均、\(\text{BDCG}\)を利得の集合\(\{g_j\}\)でつくれる最も高いDCGの値を返す関数とすると、Query level ELO-DCGを次のアルゴリズムで実装できる。
 <img src="/active_learning_for_ranking_through_expected_loss_optimization/algo1.png" alt="algo1"></p>
 <h3 id="document-level-active-learning">Document level Active Learning</h3>
 <p>学習すべき文書を選ぶ場合、クエリ\(q\)に関連する\(i\)番目の文書を選んだときの損失の期待値\(\text{EL}(q,i)\)を
+</p>
 $$
 \begin{align}
-\text{EL}(q, i)&amp;=\int_{Y^i}\underset{\pi}{\operatorname{min}}\int_{y_i}l(\pi, Y)P(Y\mid X_q , D)dy_idY^i\\
-&amp;=\int_{Y^i}\left(\int_{y^i}\underset{\pi}{\operatorname{max}}\text{DCG}(\pi, Y)P(Y\mid X_q, D)dy_i - \underset{\pi}{\operatorname{max}}\int_{y^i}\text{DCG}(\pi, Y)P(Y\mid X_q, D)dy_i\right)dY^i
+\text{EL}(q, i)&=\int\_{Y^i}\underset{\pi}{\operatorname{min}}\int\_{y\_i}l(\pi, Y)P(Y\mid X\_q , D)dy\_idY^i\\\\
+&=\int\_{Y^i}\left(\int\_{y^i}\underset{\pi}{\operatorname{max}}\text{DCG}(\pi, Y)P(Y\mid X\_q, D)dy\_i - \underset{\pi}{\operatorname{max}}\int\_{y^i}\text{DCG}(\pi, Y)P(Y\mid X\_q, D)dy\_i\right)dY^i
 \end{align}
-$$
+$$<p>
 とする。ただし、\(Y^i\)は\(Y\)から\(y^i\)を除いたベクトルである。
 このとき、Document Level ELO-DCGを次のアルゴリズムで実装できる。
 <img src="/active_learning_for_ranking_through_expected_loss_optimization/algo2.png" alt="algo2"></p>

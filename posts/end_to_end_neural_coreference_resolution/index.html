@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>論文メモ End-to-end Neural Coreference Resolution</title>
 </head>
 
@@ -115,53 +137,47 @@
 \(\epsilon\)は、\(i\)が参照表現でないか、参照表現であっても既出のどの単語系列とも照応関係にないことを意味する。
 このとき、モデルは、次の確率分布\(P(y_1,\dots ,y_N\mid D)\)を学習する。
 これは、各単語系列の先行詞についての確率分布の積になっている。</p>
-<p>$$
+$$
 \begin{align}
-P(y_1, \dots y_N\mid D)&amp;=\prod_{i=1}^{N}P(y_i\mid D)\\\
-&amp;=\prod_{i}^{N}\frac{\exp (s(i, y_i))}{\sum_{y&rsquo;\in \mathcal{Y}(i)}\exp(s(i, y&rsquo;))}
+P(y\_1, \dots y\_N\mid D)&=\prod\_{i=1}^{N}P(y\_i\mid D)\\\\\
+&=\prod\_{i}^{N}\frac{\exp (s(i, y\_i))}{\sum\_{y'\in \mathcal{Y}(i)}\exp(s(i, y'))}
 \end{align}
-$$</p>
-<p>\(s(i,j)\)は、単語系列\(i, j\)の照応関係のスコアを示す。
+$$<p>\(s(i,j)\)は、単語系列\(i, j\)の照応関係のスコアを示す。
 \(s_m(x)\)は\(x\)が参照表現かを示し、\(s_a(i,j)\)は\(j\)が\(i\)の先行詞かを示すスコアである。
 計算量を削減する場合、\(s_m(x)\)に閾値をもうけて、候補とする単語系列の数を減らす。</p>
-<p>$$
+$$
 s(i,j)=
 \begin{cases}
-0&amp;j=\epsilon\\\
-s_m(i)+s_m(j)+s_a(i,j)&amp;j\neq \epsilon
+0&j=\epsilon\\\\\
+s\_m(i)+s\_m(j)+s\_a(i,j)&j\neq \epsilon
 \end{cases}
-$$</p>
-<p>次の2つの図は、ネットワークアーキテクチャ全体を示す。
+$$<p>次の2つの図は、ネットワークアーキテクチャ全体を示す。
 \(s_m(i)\)は、順伝播ネットワーク\(\text{FFNN}_m\)に単語系列の分散表現\(\boldsymbol{g}_i\)をあたえた出力とパラメタ重み\(\boldsymbol{w}_m\)の積である。</p>
-<p>$$
-s_m(i)=\boldsymbol{w}_m\cdot \text{FFNN}_m(\boldsymbol{g}_i)
-$$</p>
-<p>\(s_a(i,j)\)は、順伝播ネットワーク\(\text{FFNN}_a\)に2つの単語系列の分散表現とgenre, speakerの特徴ベクトル\(\phi (i, j)\)をあたえた出力とパラメタ\(\boldsymbol{w}_a\)からなる。
+$$
+s\_m(i)=\boldsymbol{w}\_m\cdot \text{FFNN}\_m(\boldsymbol{g}\_i)
+$$<p>\(s_a(i,j)\)は、順伝播ネットワーク\(\text{FFNN}_a\)に2つの単語系列の分散表現とgenre, speakerの特徴ベクトル\(\phi (i, j)\)をあたえた出力とパラメタ\(\boldsymbol{w}_a\)からなる。
 \(\circ\)は要素同士の乗積をさす。</p>
-<p>$$
-s_a(i,j)=\boldsymbol{w}_a\cdot\text{FFNN}_a([\boldsymbol{g}_i,\boldsymbol{g}_j,\boldsymbol{g}_i\circ\boldsymbol{g}_j,\phi(i,j)])
-$$</p>
-<p>単語系列の分散表現\(\boldsymbol{g}_i\)は、双方向LSTMに単語の分散表現\(\{\boldsymbol{x}_1,\dots , \boldsymbol{x}_T\}\)からつくられる。
+$$
+s\_a(i,j)=\boldsymbol{w}\_a\cdot\text{FFNN}\_a([\boldsymbol{g}\_i,\boldsymbol{g}\_j,\boldsymbol{g}\_i\circ\boldsymbol{g}\_j,\phi(i,j)])
+$$<p>単語系列の分散表現\(\boldsymbol{g}_i\)は、双方向LSTMに単語の分散表現\(\{\boldsymbol{x}_1,\dots , \boldsymbol{x}_T\}\)からつくられる。
 \(\{\boldsymbol{x}_1,\dots , \boldsymbol{x}_T\}\)は、学習済みの単語の分散表現と文字単位の1次元CNNの出力からなる。
 このとき単語\(\boldsymbol{x}_t\)に対応する双方向LSTMによる分散表現を\(\boldsymbol{x}^{*}_t\)とおく。
 単語系列の始点をSTART(\(i\)), 終点をEND(\(i\))とすると、\(\boldsymbol{g}_i\)は、次の式で計算される。</p>
-<p>$$
+$$
 \begin{align}
-\alpha_t&amp;=\boldsymbol{w}_{\alpha}\cdot\text{FFNN}_{\alpha}(\boldsymbol{x}^{*}_{t})\\\
-\alpha_{i,t}&amp;=\frac{\exp(\alpha_t)}{\sum^{\text{END}(i)}_{k=\text{START}(i)}\exp(\alpha_k)}\\\
-\boldsymbol{\hat{x}}_i&amp;=\sum^{\text{END}(i)}_{t=\text{START}(i)}\alpha_{i,t}\cdot\boldsymbol{x}_t\\\
-\boldsymbol{g}_i&amp;=[\boldsymbol{x}_{\text{START}(i)}^{\star},\boldsymbol{x}_{\text{END}(i)}^{\star},\boldsymbol{\hat{x}}_{i},\phi (i)]
+\alpha\_t&=\boldsymbol{w}\_{\alpha}\cdot\text{FFNN}\_{\alpha}(\boldsymbol{x}^{*}\_{t})\\\\\
+\alpha\_{i,t}&=\frac{\exp(\alpha\_t)}{\sum^{\text{END}(i)}\_{k=\text{START}(i)}\exp(\alpha\_k)}\\\\\
+\boldsymbol{\hat{x}}\_i&=\sum^{\text{END}(i)}\_{t=\text{START}(i)}\alpha\_{i,t}\cdot\boldsymbol{x}\_t\\\\\
+\boldsymbol{g}\_i&=[\boldsymbol{x}\_{\text{START}(i)}^{\star},\boldsymbol{x}\_{\text{END}(i)}^{\star},\boldsymbol{\hat{x}}\_{i},\phi (i)]
 \end{align}
-$$</p>
-<p><img src="/e2e_ncr/1.png" alt="e2e_ncr/1.png"></p>
+$$<p><img src="/e2e_ncr/1.png" alt="e2e_ncr/1.png"></p>
 <p><img src="/e2e_ncr/2.png" alt="e2e_ncr/2.png"></p>
 <p>教師データGOLDにある単語系列\(i\)を先行詞とする集合をGOLD(\(i\))とする。
 ただし、\(i\)が集合に所属していないか計算量の都合でGOLDにある先行詞が枝刈りされいれば、GOLD\((i)=\{\epsilon\}\)とする。
 このとき、目的関数は次の式になる。</p>
-<p>$$
-\log\prod^N_{i=1}\sum_{\hat{y}\in\mathcal{Y}(i)\cap\text{GOLD}(i)}P(\hat{y})
-$$</p>
-<hr>
+$$
+\log\prod^N\_{i=1}\sum\_{\hat{y}\in\mathcal{Y}(i)\cap\text{GOLD}(i)}P(\hat{y})
+$$<hr>
 <ul>
 <li>論文を<a href="https://www.aclweb.org/anthology/D17-1018/">こちら</a>からダウンロードできます。</li>
 </ul>

@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Deep Neural Networks for Youtube Recommendations (2016)</title>
 </head>
 
@@ -139,34 +161,35 @@ Sampled Softmaxのアルゴリズムだけを知りたいければ、TensorFlow�
 Sampled Softmaxには、入力の正解クラスを含むクラスの部分集合と入力を与えたときに、入力のクラスの確率が最大になるようにモデルを訓練する。
 全クラスを\(L\), 関数\(Q(y|x)\)によるサンプルで選ばれるクラス\(y\in L\)の集合を\(S_i\)とする。
 このとき、入力を\(x_i\)とすると、
+</p>
 $$
-P(S_i=S|x_i) = \prod_{y\in S}Q(y|x_i) \prod_{y\in (L-S)}(1-Q(y|x_i))
-$$
+P(S\_i=S|x\_i) = \prod\_{y\in S}Q(y|x\_i) \prod\_{y\in (L-S)}(1-Q(y|x\_i))
+$$<p>
 が成りたつ。
 \(x_i\)のクラスを\(t_i\)とすれば、\(x_i\)が与えらえれたときに、\(C_i\)の中から\(t_i\)の確率が最大になるようにパラメタを更新する。
+</p>
 $$
-C_i = S_i \cup \{t_i\}
-$$
+C\_i = S\_i \cup \\{t\_i\\}
+$$<p>
 ベイズ則を適用すると</p>
-<p>$$
-\begin{align*}
-P(t_i=y|x_i, C_i)
-&amp;= P(t_i = y, C_i|x_i)/ P(C_i|x_i)\\
-&amp;= P(t_i=y|x_i)P(C_i|t_i=y, x_i)/P(C_i|x_i)\\
-&amp;=P(y|x_i)P(C_i|t_i=y,x_i)/P(C_i|x_i)
-\end{align*}
-$$</p>
-<p>また</p>
-<p>$$
-P(C_i|t_i=y,x_i) = \frac{1}{Q(y|x_i)}\prod_{y&rsquo;\in C_i}Q(y&rsquo;|x_i)\prod_{y&rsquo;\in (L-C_i)}(1-Q(y&rsquo;|x_i))
 $$
+\begin{align*}
+P(t\_i=y|x\_i, C\_i) 
+&= P(t\_i = y, C\_i|x\_i)/ P(C\_i|x\_i)\\\\
+&= P(t\_i=y|x\_i)P(C\_i|t\_i=y, x\_i)/P(C\_i|x\_i)\\\\
+&=P(y|x\_i)P(C\_i|t\_i=y,x\_i)/P(C\_i|x\_i)
+\end{align*}
+$$<p>また</p>
+$$
+P(C\_i|t\_i=y,x\_i) = \frac{1}{Q(y|x\_i)}\prod\_{y'\in C\_i}Q(y'|x\_i)\prod\_{y'\in (L-C\_i)}(1-Q(y'|x\_i))
+$$<p>
 より\(y\)に依存しない関数\(K(x_i, C_i)\), \(K&rsquo;(x_i, C_i)\)を導入すると</p>
-<p>$$
-\begin{align*}
-P(t_i=y|x_i, C_i) &amp;= \frac{P(y|x_i)}{Q(y|x_i)}/K(x_i, C_i)\\
-\log(P(t_i=y|x_i,C_i)) &amp;= \log(P(y|x_i)) - \log(Q(y|x_i)) + K&rsquo;(x_i, C_i)
-\end{align*}
 $$
+\begin{align*}
+P(t\_i=y|x\_i, C\_i) &= \frac{P(y|x\_i)}{Q(y|x\_i)}/K(x\_i, C\_i)\\\\
+\log(P(t\_i=y|x\_i,C\_i)) &= \log(P(y|x\_i)) - \log(Q(y|x\_i)) + K'(x\_i, C\_i)
+\end{align*}
+$$<p>
 となる。
 Softmaxでクラスの確率の合計が\(1\)になるように正規化されるので、\(y\)に依存しない\(K&rsquo;(x_i, C_i)\)は無視できる。
 また、モデルに学習させたい項は\(\log(P(y|x_i))\)なので、通常のSoftmaxへの入力と\(\log(Q(y|x))\)の差をSoftmaxに与える。</p>
@@ -178,7 +201,8 @@ Softmaxでクラスの確率の合計が\(1\)になるように正規化され�
 交差エントロピーを使って訓練するとき、試聴時間を推定できるように、正例と負例の目標値を試聴時間と\(1\)にそれぞれ設定する。
 試聴時間を予測するために、出力層の活性化関数に指数関数\(e^{x}\)を選ぶ。
 このとき\(N\)を訓練データの総数、\(k\)を正例の数、\(i\)番目の正例の試聴時間を\(T_i\)とすれば、オッズは\(\frac{\sum T_i}{N-k}\)になる。
-\(\frac{1}{1-x}\approx 1+x\)より、rankingのモデルは\(P\)をインプレッションが生じる確率とすると\(E[T](1+P)\)を推定する。
+\(\frac{1}{1-x}\approx 1+x\)より、rankingのモデルは\(P\)をインプレッションが生じる確率とすると\(E</p>
+\[T\]<p>(1+P)\)を推定する。
 Youtubeの場合、\(P\)は小さいため、近似的に\(E[T]\)を予測するとみなせる。</p>
   </div>
 </main>

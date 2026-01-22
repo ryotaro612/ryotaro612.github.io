@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Stochastic Gradient Boosting</title>
 </head>
 
@@ -110,36 +132,41 @@
 Stochastic Gradient Boostingは、弱識別器の学習に非復元抽出したデータの部分集合をつかい、精度と学習速度を向上する。</p>
 <p>学習データを\(\{y_i, \boldsymbol{\rm x}_i\}_1^N\), 損失関数を\(\Psi\)とする。
 ブースティングは、損失関数に学習データを入力したときの出力を最小にする関数を次の加法展開\(F(\boldsymbol{\rm x})\)で近似する。
+</p>
 $$
-F(\boldsymbol{\rm x})=\sum^M_{m=0}\beta_mh(\boldsymbol{\rm x};\boldsymbol{\rm a}_m)
+F(\boldsymbol{\rm x})=\sum^M\_{m=0}\beta\_mh(\boldsymbol{\rm x};\boldsymbol{\rm a}\_m)
+$$<p>
+</p>
 $$
-$$
-(\beta_m,\boldsymbol{\rm a}_m) = \underset{\beta, \boldsymbol{\rm a}}{\operatorname{arg min}}\sum^N_{i=1}\Psi(y_i,F_{m-1}(\boldsymbol{\rm x}_i) + \beta h(\boldsymbol{\rm x}_i;\boldsymbol{\rm a}))
-$$
+(\beta\_m,\boldsymbol{\rm a}\_m) = \underset{\beta, \boldsymbol{\rm a}}{\operatorname{arg min}}\sum^N\_{i=1}\Psi(y\_i,F\_{m-1}(\boldsymbol{\rm x}\_i) + \beta h(\boldsymbol{\rm x}\_i;\boldsymbol{\rm a}))
+$$<p>
 \(h\)は弱識別器であり、\(\boldsymbol{\rm a}\)はパラメータである。
 \(m=0\)であれば、弱識別器は識別器とかわらない。</p>
 <p>勾配ブースティングは、\(m\)回目の反復において、ラベルと\(F_{m-1}(\boldsymbol{\rm x})\)の残差の二乗誤差を最小化する弱識別器を学習する。
+</p>
 $$
-\boldsymbol{\rm a}_{m} = \underset{\boldsymbol{\rm a},\rho}{\operatorname{arg min}}\sum^N_{i=1}[\tilde{y}_{im}-\rho h(\boldsymbol{\rm x}_i; \boldsymbol{\rm a})]^2
+\boldsymbol{\rm a}\_{m} = \underset{\boldsymbol{\rm a},\rho}{\operatorname{arg min}}\sum^N\_{i=1}[\tilde{y}\_{im}-\rho h(\boldsymbol{\rm x}\_i; \boldsymbol{\rm a})]^2
+$$<p>
+</p>
 $$
-$$
-\tilde{y}_{im}=-\left[\frac{\partial\Psi(y_i,F(\boldsymbol{x}_i))}{\partial F(\boldsymbol{x}_i)}\right]_{F(\boldsymbol{x})=F_{m-1}(\boldsymbol{\rm x})}
-$$
+\tilde{y}\_{im}=-\left[\frac{\partial\Psi(y\_i,F(\boldsymbol{x}\_i))}{\partial F(\boldsymbol{x}\_i)}\right]\_{F(\boldsymbol{x})=F\_{m-1}(\boldsymbol{\rm x})}
+$$<p>
 弱識別器を学習後、その係数を決める。
+</p>
 $$
-\beta_m = \underset{\beta}{\operatorname{arg min}}\sum^N_{i=1}\Psi(y_i, F_{m-1}(\boldsymbol{\rm x}_i), +\beta h(\boldsymbol{\rm x}_i;\boldsymbol{\rm a}_m))
-$$</p>
-<p>\(L\)個の葉をもつ決定木を弱識別器にする勾配ブースティングでは、弱識別器が\(\boldsymbol{\rm x}\)を分ける領域\(\{R_{lm}\}^L_1\)をパラメタにもつ。
+\beta\_m = \underset{\beta}{\operatorname{arg min}}\sum^N\_{i=1}\Psi(y\_i, F\_{m-1}(\boldsymbol{\rm x}\_i), +\beta h(\boldsymbol{\rm x}\_i;\boldsymbol{\rm a}\_m))
+$$<p>\(L\)個の葉をもつ決定木を弱識別器にする勾配ブースティングでは、弱識別器が\(\boldsymbol{\rm x}\)を分ける領域\(\{R_{lm}\}^L_1\)をパラメタにもつ。
 決定木は\(\boldsymbol{\rm x}\)の所属する領域によって予測値を決める。
+</p>
 $$
-h(\boldsymbol{\rm x}, \{R_{lm}\}^L_1)=\sum^L_{l=1}\bar{y}_{lm}1(\boldsymbol{\rm x}\in R_{lm})
-$$
+h(\boldsymbol{\rm x}, \\{R\_{lm}\\}^L\_1)=\sum^L\_{l=1}\bar{y}\_{lm}1(\boldsymbol{\rm x}\in R\_{lm})
+$$<p>
 \(\bar{y}_{lm}=\text{mean}_{\boldsymbol{\rm x}_i \in R_{lm}}(\tilde{y}_{im})\)である。
 このとき、上の\(\beta_m\)は領域ごとに決まる。
+</p>
 $$
-\gamma_{lm}=\underset{\gamma}{\operatorname{arg min}}\sum_{\boldsymbol{\rm x}_i\in R_{lm}}\Psi (y_i, F_{m-1}(\boldsymbol{\rm x}_i)+\gamma)
-$$</p>
-<p>Stochastic gradient boostingは、サンプル数が\(N\)より小さい値であり、非復元抽出した学習データをつかって弱識別器を学習する。</p>
+\gamma\_{lm}=\underset{\gamma}{\operatorname{arg min}}\sum\_{\boldsymbol{\rm x}\_i\in R\_{lm}}\Psi (y\_i, F\_{m-1}(\boldsymbol{\rm x}\_i)+\gamma)
+$$<p>Stochastic gradient boostingは、サンプル数が\(N\)より小さい値であり、非復元抽出した学習データをつかって弱識別器を学習する。</p>
 <p>論文を<a href="https://www.sciencedirect.com/science/article/abs/pii/S0167947301000652">こちら</a>からダウンロードできます。</p>
   </div>
 </main>

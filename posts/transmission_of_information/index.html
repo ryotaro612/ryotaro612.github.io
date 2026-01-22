@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Transmission of Information(1927)</title>
 </head>
 
@@ -119,29 +141,34 @@
 Hartleyは、通信内容の意味や解釈を捨象し、記号列の有限な候補からある記号列を選ぶことを情報みなした。
 シャノンは、有限の候補から記号列を選択する考えを継承し、さらに、記号が順に確率的に選ばれるとみなすことでHartleyの情報量の定義を情報エントロピーに発展させた。</p>
 <p>Hartleyの情報量\(H\)は、選択された記号列の長さ\(n\)に比例する。
+</p>
 $$
 H=Kn
-$$
+$$<p>
 \(K\)は通信システムが扱う記号の総数\(s\)に依存する定数である。</p>
 <p>2つの通信システム1, 2があり、記号の総数が\(s_1\), \(s_2\), 長さが\(n_1\)の記号列と\(n_2\)の記号列の候補の数が等しいとき、
+</p>
 $$
-s_1^{n_1} = s_2^{n_2}
-$$
+s\_1^{n\_1} = s\_2^{n\_2}
+$$<p>
 が成りたつ。
 このとき、情報量が等しくなるように\(K_1\)と\(K_2\)を定義すると
+</p>
 $$
-H=K_1n_1=K_2n_2
-$$
+H=K\_1n\_1=K\_2n\_2
+$$<p>
 から
+</p>
 $$
-\frac{K_1}{\log s_1}=\frac{K_2}{\log s_2}
-$$
+\frac{K\_1}{\log s\_1}=\frac{K\_2}{\log s\_2}
+$$<p>
 となる。
 すべての通信システムに共通の定数を\(K_0\)とし、\(K_i=K_0 \log s_i\)となるように\(K_i\)を定義するときのみ、上の等式はすべての\(s\)で成りたつ。</p>
 <p>\(K_0\)を省略できるように、対数の基数を設定すれば
+</p>
 $$
 H=n\log s
-$$
+$$<p>
 となる。</p>
   </div>
 </main>

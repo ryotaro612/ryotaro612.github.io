@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Universal Classes of Hash Functions(1977)</title>
 </head>
 
@@ -117,45 +139,49 @@
 <p>はじめに、ハッシュ値の衝突回数を見積もる。
 \(f\)を集合\(A\)から集合\(B\)へ写像するハッシュ関数とする。
 \(x, y\in A\)として、ハッシュ値の衝突回数を次の\(\delta\)で定義する。
+</p>
 $$
-\delta_f(x,y)=
+\delta\_f(x,y)=
 \begin{cases}
-1&amp;\text{if}\ x\neq y\ \text{and}\ f(x) = f(y)\\
-0&amp;\text{otherwise}
+1&\text{if}\ x\neq y\ \text{and}\ f(x) = f(y)\\\\
+0&\text{otherwise}
 \end{cases}
-$$</p>
-<p>\(H\)を任意のハッシュ関数の集合とすると、以下の不等式が成り立つ\(x, y\)が必ず存在する。
+$$<p>\(H\)を任意のハッシュ関数の集合とすると、以下の不等式が成り立つ\(x, y\)が必ず存在する。
+</p>
 $$
-\delta_H(x,y)&gt;\frac{|H|}{|B|}-\frac{|H|}{|A|}
-$$</p>
-<p>上の命題を証明する。
+\delta\_H(x,y)>\frac{|H|}{|B|}-\frac{|H|}{|A|}
+$$<p>上の命題を証明する。
 \(a=|A|,\ b=|B|\)とする。
 各\(i\in B\)について、\(A_i\)を\(f\)によって\(i\)に写像される\(A\)の要素の集合とし、\(a_i=|A_i|\)とおくと、
+</p>
 $$
-\delta_f(A, A) = \sum_{i\in B}\delta_f(A_i,A_i)=\sum_{i=B}(a^2_i - a_i)
-$$
+\delta\_f(A, A) = \sum\_{i\in B}\delta\_f(A\_i,A\_i)=\sum\_{i=B}(a^2\_i - a\_i)
+$$<p>
 である。
 この値が最小値になるのは、すべての\(i\)について\(a_i\)が等しいときであり、\(a_i=a/b\)のときである。
 よって
+</p>
 $$
-\delta_f(A,A)\geq a^2(1/b-1/a)
-$$
+\delta\_f(A,A)\geq a^2(1/b-1/a)
+$$<p>
 であるから
+</p>
 $$
-\delta_H(A, A)\geq a^2\left(\frac{|H|}{|B|}-\frac{|H|}{|A|}\right)
-$$
+\delta\_H(A, A)\geq a^2\left(\frac{|H|}{|B|}-\frac{|H|}{|A|}\right)
+$$<p>
 である。
 \(x, y\)のとりうる組合せは\(a^2\)個あり、\(\delta_H(x,x)=0\)であるから、鳩の巣の原理より命題が成立する。</p>
 <p>任意の\(x, y\)について\(\delta_H(x,y)\leq |H|/|B|\)が成立するハッシュ値の集合を\(\text{universal}_2\)とよぶ。
 \(\text{universal}_2\)がリクエスト系列を線形時間計算量で処理できることを証明する。
 \(\delta_H(x,y)\leq |H|/|B|\)は、任意の\(A\)の要素のペアをとりだしたとき、\(1/|B|\)番目より後のハッシュ関数とは衝突することはないとも言い換えられる。</p>
 <p>\(S\)を\(A\)の部分集合、\(f\)を\(\text{universal}_2\)からランダムに選んだ関数とすると、\(\delta_f(x,S)\)の平均値は\(|S|/|B|\)以下である。これは、\(\sum_H\delta_f(x,S)=\sum_{y\in S}\delta_H(x,y)\)であり、\(\text{universal}_2\)の定義から
+</p>
 $$
 \begin{align}
-\frac{1}{|H|}\sum_{y\in S}\delta_H(x, y) &amp;\leq \frac{1}{|H|}\sum_{y\in S}\frac{|H|}{|B|}\\
-&amp;=\frac{|S|}{|B|}
+\frac{1}{|H|}\sum\_{y\in S}\delta\_H(x, y) &\leq \frac{1}{|H|}\sum\_{y\in S}\frac{|H|}{|B|}\\\\
+&=\frac{|S|}{|B|}
 \end{align}
-$$
+$$<p>
 が成立するからである。</p>
 <p>次にリクエストの系列の時間計算量を考える。
 衝突したキーを隣接リストで管理することを想定し、既に連想配列にキーの集合\(S\)が格納されている状態における\(x\)の処理にかかる時間計算量を\(1+\delta_f(x, S)\)とする。

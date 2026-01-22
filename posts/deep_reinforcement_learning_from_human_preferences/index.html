@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Deep Reinforcement Learing from Human Preferences (2017)</title>
 </head>
 
@@ -131,24 +153,28 @@
 <p>ビデオクリップは、時刻\(t\)における観察可能な環境の状態\(o_t\in\mathcal{O}\)とエージェントが\(o_t\)が実行した行動\(a_t\in\mathcal{A}\)
 の系列\(\sigma=((o_0, a_0), (o_1, a_1),\dots ,(o_{k-1}, a_{k-1}))\in(\mathcal{O}\times \mathcal{A})^k\)とかく。
 系列\(\sigma^1\)が\(\sigma^2\)よりも好ましい関係を\(\sigma^1\succ\sigma^2\)で表し、報酬関数\(r: \mathcal{O}\times \mathcal{A}\rightarrow \mathbb{R}\)によって
+</p>
 $$
-r(o^1_0,a^1_0)+\dots + r(o^1_{k-1},a^1_{k-1}) &gt; r(a^2_0,a^2_0) + \dots + r(o^2_{k-1}, a^2_{k-1})
-$$
+r(o^1\_0,a^1\_0)+\dots + r(o^1\_{k-1},a^1_{k-1}) > r(a^2\_0,a^2\_0) + \dots + r(o^2\_{k-1}, a^2\_{k-1})
+$$<p>
 であるとき
+</p>
 $$
-r(o^1_0,a^1_0)+\dots + r(o^1_{k-1},a^1_{k-1}) \succ r(a^2_0,a^2_0) + \dots + r(o^2_{k-1}, a^2_{k-1})
-$$
+r(o^1\_0,a^1\_0)+\dots + r(o^1\_{k-1},a^1\_{k-1}) \succ r(a^2\_0,a^2\_0) + \dots + r(o^2\_{k-1}, a^2\_{k-1})
+$$<p>
 である。
 \(\sigma^1\succ \sigma^2\)であれば\(\mu=1\), \(\sigma^2 \succ \sigma^1\)であれば\(\mu=2\)として、訓練データのサンプルを\((\sigma^1, \sigma^2, \mu)\), その集合を\(\mathcal{D}\)とする。</p>
 <p>\(\mathcal{D}\)で、関係\(\sigma^1\succ\sigma^2\)が成立する確率\(\hat{P}[\sigma^1\succ \sigma^2]\)を推定できるように報酬関数のモデル\(\hat{r}\)を学習する。
 <a href="https://www.jstor.org/stable/2334029">Bradley-Terry</a>の確率モデルにしたがい
+</p>
 $$
-\hat{P}[\sigma^1\succ \sigma^2]=\frac{\exp\sum\hat{r}(o^{1}_{t},a^1_t)}{\exp\sum\hat{r}(o^1_t,a^1_t)+\exp \sum \hat{r}(o^2_t,a^2_t)}
-$$
+\hat{P}[\sigma^1\succ \sigma^2]=\frac{\exp\sum\hat{r}(o^{1}\_{t},a^1\_t)}{\exp\sum\hat{r}(o^1\_t,a^1\_t)+\exp \sum \hat{r}(o^2\_t,a^2\_t)}
+$$<p>
 で確率を推定し、交差エントロピーによる損失は
+</p>
 $$
-\textrm{loss}(\hat{r})=-\sum_{(\sigma^1,\sigma^2,\mu)=\mathcal{D}}\mu(1)\log\hat{P}[\sigma^1\succ\sigma^2]+\mu(2)\log\hat{P}[\sigma^2\succ \sigma^1]
-$$
+\textrm{loss}(\hat{r})=-\sum\_{(\sigma^1,\sigma^2,\mu)=\mathcal{D}}\mu(1)\log\hat{P}[\sigma^1\succ\sigma^2]+\mu(2)\log\hat{P}[\sigma^2\succ \sigma^1]
+$$<p>
 になる。</p>
 <p>実験では、以上のアルゴリズムに3つの改良が加えられている。
 まず、アンサンブル学習により、複数のモデルの出力の平均値を報酬にしている。

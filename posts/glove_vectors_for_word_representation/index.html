@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>GloVe: Global Vectors for Word Representation(2014)</title>
 </head>
 
@@ -123,30 +145,32 @@ GloVeは、コーパスにある共起した単語の組の共起回数を学習
 <h3 id="目的関数">目的関数</h3>
 <p>\(X_{ij}\)のi行j列の要素を、単語iの文脈における単語jの出現回数とすると、目的関数を\(J\)で表せる。
 \(w\)はパラメタ、\(b\)はバイアスである。
+</p>
 $$
-J = \sum^{V}_{i,j=1}f\left(X_{ij}\right)\left(w^{T}_{i}\tilde{w}_j+b_i + \tilde{b}_j-\log X_{ij}\right)^2
-$$</p>
-<p>$$
+J = \sum^{V}\_{i,j=1}f\left\(X\_{ij}\right\)\left\(w^{T}\_{i}\tilde{w}\_j+b\_i + \tilde{b}\_j-\log X\_{ij}\right\)^2
+$$$$
 f(x) = \begin{cases}
-(x/x_{max})^{\alpha} &amp; \text{if}\ x &lt; x_{max} \\\
-1 &amp; \text{otherwise}
+(x/x\_{max})^{\alpha} & \text{if}\ x < x\_{max} \\\\\
+1 & \text{otherwise}
 \end{cases}
-$$
+$$<p>
 \(x_{max}\)と\(\alpha\)は、ハイパーパラメタで、実験では\(100\)と\(3/4\)に設定されている。
 \(w\)と\(\tilde{w}\)の和が単語埋め込みベクトルとなる。</p>
 <h3 id="学習の計算量">学習の計算量</h3>
 <p>コーパスにある単語の集合が\(V\)であれば、学習の最悪計算量は\(\mathcal{O}(V^2)\)になるが、実際の計算量ははるかに少ない。
 \(r_{ij}\)を出現頻度の順位として\(X_{ij}\)を以下の式で仮定する。
+</p>
 $$
-X_{ij}=\frac{k}{{(r_{ij})}^{\alpha}}
-$$
+X\_{ij}=\frac{k}{{(r\_{ij})}^{\alpha}}
+$$<p>
 このとき、0以外の値である要素の数\(\mid X\mid\)は
+</p>
 $$
 \mid X\mid = \begin{cases}
-\mathcal{O}(\mid C\mid) &amp; \text{if}\ \alpha &lt; 1 \\\
-\mathcal{O}(\mid C\mid^{1/\alpha}) &amp;\text{if}\ \alpha &gt; 1
+\mathcal{O}(\mid C\mid) & \text{if}\ \alpha < 1 \\\\\
+\mathcal{O}(\mid C\mid^{1/\alpha}) &\text{if}\ \alpha > 1
 \end{cases}
-$$
+$$<p>
 となる。実験データの場合、\(\mid X\mid\)を\(\alpha=1.25\)で近似でき、このとき\(\mid X\mid = \mathcal{O}(\mid C \mid^{0.8})\)となる。
 以上より、GloVeは\(\mathcal{O}(\mid C\mid)\)でスケールするウィンドウベースの手法よりも高速とみなすことができる。</p>
 <hr>

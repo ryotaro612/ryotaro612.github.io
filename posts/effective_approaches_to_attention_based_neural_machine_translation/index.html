@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Effective Approaches to Attention-based Neural Machine Translation (2015)</title>
 </head>
 
@@ -112,43 +134,43 @@
 英語とドイツ語の双方への翻訳タスクに適用したところ、ローカルなアプローチで注意機構をつかわない手法と比べてBLEUスコアを5.0ポイントできた。</p>
 <p>以下に図示するグローバルとローカルどちらのアプローチも、時刻\(t\)におけるLSTMのトップ層の隠れ状態\(\boldsymbol{h}_t\)から、次に出力すべき単語の手掛かりになる原文の文脈\(\boldsymbol{c}_t\)を計算する。
 LSTMの隠れ状態\(\boldsymbol{h}_t\)と文脈\(\boldsymbol{c}_t\)を結合したベクトルから図の注意レイヤーの隠れ状態\(\tilde{\boldsymbol{h}}_t\)を計算し、その値をソフトマックス関数を適用し次に出力すべき単語をもとめる。</p>
-<p>$$
+$$
 \begin{align}
-\tilde{\boldsymbol{h}}_t &amp;= \tanh(\boldsymbol{W}_c[\boldsymbol{c}_t;\boldsymbol{h}_t]) \\
-p(y_t| y_{&lt;t}, x) &amp;= \text{softmax}(\boldsymbol{W}_{\boldsymbol{s}} \tilde{\boldsymbol{h}}_{t})
+\tilde{\boldsymbol{h}}\_t &= \tanh(\boldsymbol{W}\_c[\boldsymbol{c}\_t;\boldsymbol{h}\_t]) \\\\
+p(y\_t| y\_{<t}, x) &= \text{softmax}(\boldsymbol{W}\_{\boldsymbol{s}} \tilde{\boldsymbol{h}}\_{t})
 \end{align}
-$$</p>
-<!-- p(y\_t| y\_{<t}, x) &= \text{softmax}(\boldsymbol{W}\_\boldsymbol{s}\tilde{\boldsymbol{h}}\_t) -->
+$$<!-- p(y\_t| y\_{<t}, x) &= \text{softmax}(\boldsymbol{W}\_\boldsymbol{s}\tilde{\boldsymbol{h}}\_t) -->
 <p><img src="/effective_approach_to_attention_based_nmt/global.png" alt="global">
 <img src="/effective_approach_to_attention_based_nmt/local.png" alt="local"></p>
 <p>グローバルなアプローチでは、原文の各単語の注意\(\boldsymbol{a}_t\)の重みつき平均を、文脈\(\boldsymbol{c}_t\)としてあつかう。
 原文のある状態\(s\)の注意\(\boldsymbol{a}_t(s)\)は、現在の出力側の隠れ状態\(\boldsymbol{h}_t\)と隠れ状態\(\bar{\boldsymbol{h}}_s\)から次のように算出できる。
+</p>
 $$
 \begin{align}
-\boldsymbol{a}_t(s) &amp;=\text{align}(\boldsymbol{h}_t, \bar{\boldsymbol{h}}_s)\\
-&amp;= \frac{\exp(\text{score}(\boldsymbol{h}_t, \bar{\boldsymbol{h}}_s ))}{\sum_{s&rsquo;}\exp(\text{score} (\boldsymbol{h}_t, \bar{\boldsymbol{h}}_{s&rsquo;}) ) }
+\boldsymbol{a}\_t(s) &=\text{align}(\boldsymbol{h}\_t, \bar{\boldsymbol{h}}\_s)\\\\
+&= \frac{\exp(\text{score}(\boldsymbol{h}\_t, \bar{\boldsymbol{h}}\_s ))}{\sum\_{s'}\exp(\text{score} (\boldsymbol{h}\_t, \bar{\boldsymbol{h}}\_{s'}) ) }
 \end{align}
-$$
+$$<p>
 \(\text{score}\)の定義は、タスクにあわせて以下の3つからえらべる。
+</p>
 $$
-\text{score}(\boldsymbol{h}_t, \bar{\boldsymbol{h}}_s) =
+\text{score}(\boldsymbol{h}\_t, \bar{\boldsymbol{h}}\_s) = 
 \begin{cases}
-\boldsymbol{h}_t^{\top}\bar{\boldsymbol{h}}_s&amp;\text{dot}\\
-\boldsymbol{h}_t^{\top}\boldsymbol{W}_a\bar{\boldsymbol{h}}_s&amp;\text{general}\\
-\boldsymbol{v}_a^{\top}\tanh(\boldsymbol{W}_a[\boldsymbol{h}_t;\bar{\boldsymbol{h}}_s])&amp;\text{concat}\\
+\boldsymbol{h}\_t^{\top}\bar{\boldsymbol{h}}\_s&\text{dot}\\\\
+\boldsymbol{h}\_t^{\top}\boldsymbol{W}\_a\bar{\boldsymbol{h}}\_s&\text{general}\\\\
+\boldsymbol{v}\_a^{\top}\tanh(\boldsymbol{W}\_a[\boldsymbol{h}\_t;\bar{\boldsymbol{h}}\_s])&\text{concat}\\\\
 \end{cases}
-$$</p>
-<p>ローカルなアプローチの場合、注意の計算で原文のどの状態を参照するかを決めなければならない。
+$$<p>ローカルなアプローチの場合、注意の計算で原文のどの状態を参照するかを決めなければならない。
 \(S\)を原文の文の長さとして\(p_t\in[0, S]\)をもとめ、\([p_t-D, p_t+D]\)の範囲を次に出力すべき単語に関係する原文側の位置と推定する。
 \(\boldsymbol{W}_p\)と\(\boldsymbol{v}_p\)をパラメタとして\(p_t\)を次の式で推定する。
+</p>
 $$
-p_t=S\cdot \text{sigmoid}(\boldsymbol{v}_p^\top \tanh (\boldsymbol{W}_p\boldsymbol{h}_t))
-$$</p>
-<p>注意は、\(\sigma=\frac{D}{2}\)のガウス関数で算出する。
+p\_t=S\cdot \text{sigmoid}(\boldsymbol{v}\_p^\top \tanh (\boldsymbol{W}\_p\boldsymbol{h}\_t))
+$$<p>注意は、\(\sigma=\frac{D}{2}\)のガウス関数で算出する。
+</p>
 $$
-\boldsymbol{a}_t(s)=\text{align}(\boldsymbol{h}_t, \bar{\boldsymbol{h}}_s)\exp\left(\frac{(s-p_t)^2}{2\sigma^2}\right)
-$$</p>
-<p>論文を<a href="https://arxiv.org/pdf/1508.04025.pdf">こちら</a>からダウンロードできます。</p>
+\boldsymbol{a}\_t(s)=\text{align}(\boldsymbol{h}\_t, \bar{\boldsymbol{h}}\_s)\exp\left(\frac{(s-p\_t)^2}{2\sigma^2}\right)
+$$<p>論文を<a href="https://arxiv.org/pdf/1508.04025.pdf">こちら</a>からダウンロードできます。</p>
   </div>
 </main>
 

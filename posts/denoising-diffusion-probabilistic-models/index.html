@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Denoising Diffusion Probabilistic Models (2020)</title>
 </head>
 
@@ -123,78 +145,86 @@
 <p>まずは、変分下限を適用する尤度を示すために拡散過程と逆拡散過程を定義する。
 拡散過程では、時刻\(T\)の潜在変数について\(p(\textbf{x}_T)=\mathcal{N}(\textbf{x}_T;\boldsymbol{0}, \textrm{\textbf{I}})\)が成りたつように正規分布にしたがうノイズを観測データに加える。
 このとき、拡散モデルを潜在変数モデルとみなして周辺化すると、拡散モデルを\(p_\theta (\textbf{x}_0)\)と表せる。
+</p>
 $$
 \begin{align}
-p_\theta(\textbf{x}_0)&amp;:=\int p_\theta (\textbf{x}_{0:T})d\textbf{x}_{1:T}\\
-p_\theta(\textbf{x}_{0:T})&amp;:=p(\textbf{x}_T)\prod^T_{t=1}p_\theta (\textbf{x}_{t-1}|\textbf{x}_t)\\
-p_\theta(\textbf{x}_{t-1}|\textbf{x}_t)&amp;:= \mathcal{N}(\textbf{x}_{t-1};\boldsymbol{\mu}_\theta (\textbf{x}_t,t),\boldsymbol{\Sigma}_\theta(\textbf{x}_t,t))
+p_\theta(\textbf{x}\_0)&:=\int p\_\theta (\textbf{x}\_{0:T})d\textbf{x}\_{1:T}\\\\
+p\_\theta(\textbf{x}\_{0:T})&:=p(\textbf{x}\_T)\prod^T\_{t=1}p\_\theta (\textbf{x}\_{t-1}|\textbf{x}\_t)\\\\
+p\_\theta(\textbf{x}\_{t-1}|\textbf{x}\_t)&:= \mathcal{N}(\textbf{x}\_{t-1};\boldsymbol{\mu}\_\theta (\textbf{x}\_t,t),\boldsymbol{\Sigma}\_\theta(\textbf{x}\_t,t))
 \end{align}
-$$
+$$<p>
 一方、ノイズによる分散を\(\beta_1,\dots,\beta_T\)として、拡散過程を\(q(\textbf{x}_{1:T}|\textbf{x}_0)\)と定義する。分散\(\beta_t\)は時刻によらず一定でもよい。
+</p>
 $$
 \begin{align}
-q(\textbf{x}_{1:T}|\textbf{x}_0)&amp;:=\prod^T_{t=1}q(\textbf{x}_t|\textbf{x}_{t-1})\\
-q(\textbf{x}_t|\textbf{x}_{t-1})&amp;:=\mathcal{N}(\textbf{x}_t;\sqrt{1-\beta_t}\textbf{x}_{t-1},\beta_t\textbf{I})
+q(\textbf{x}\_{1:T}|\textbf{x}\_0)&:=\prod^T\_{t=1}q(\textbf{x}\_t|\textbf{x}\_{t-1})\\\\
+q(\textbf{x}\_t|\textbf{x}\_{t-1})&:=\mathcal{N}(\textbf{x}\_t;\sqrt{1-\beta\_t}\textbf{x}\_{t-1},\beta\_t\textbf{I})
 \end{align}
-$$
+$$<p>
 \(p_\theta(\textbf{x}_{0})\)には積分が出現する。
 そこで、最尤推定を現実的な時間で終えるために、負の対数尤度の変分下限を最小化する問題として学習を設定する。
+</p>
 $$
-\mathbb{E}\left[-\log p_\theta(\textbf{x}_0)\right]\le\mathbb{E}_q\left[-\log\frac{p_\theta(\textbf{x}_{0:T})}{q(\textbf{x}_{1:T}|\textbf{x}_0)}\right]=\mathbb{E}_q\left[-\log p(\textbf{x}_T)-\sum_{1\ge 1}\log\frac{p_\theta(\textbf{x}_{t-1}|\textbf{x}_t)}{q(\textbf{x}_t|\textbf{x}_{t-1})}\right]:=L
-$$
+\mathbb{E}\left[-\log p\_\theta(\textbf{x}\_0)\right]\le\mathbb{E}\_q\left[-\log\frac{p\_\theta(\textbf{x}\_{0:T})}{q(\textbf{x}\_{1:T}|\textbf{x}\_0)}\right]=\mathbb{E}\_q\left[-\log p(\textbf{x}\_T)-\sum\_{1\ge 1}\log\frac{p\_\theta(\textbf{x}\_{t-1}|\textbf{x}\_t)}{q(\textbf{x}\_t|\textbf{x}\_{t-1})}\right]:=L
+$$<p>
 さらに、文献のAppendix Aより、\(L\)はカルバックライブラーの情報量をもって表せる。
+</p>
 $$
-L=\mathbb{E}_q\left[D_{\textrm{KL}}(q(\textbf{x}_T|\textbf{x}_0)||p(\textbf{x}_T))+\sum_{t&gt;1}D_{\textrm{KL}}(q(\textbf{x}_{t-1}|\textbf{x}_t,\textbf{x}_0)||p_\theta (\textbf{x}_{t-1}|\textbf{x}_t))-\log p_\theta(\textbf{x}_0|\textbf{x}_1)\right]
-$$</p>
-<p>上の\(L\)を最小化する問題において、\(D_{\textrm{KL}}(q(\textbf{x}_T|\textbf{x}_0)||p(\textbf{x}_T))\)は、\(\beta_t\)を訓練で更新しないとき、パラメタに依存しない定数とみなせる。
+L=\mathbb{E}\_q\left[D\_{\textrm{KL}}(q(\textbf{x}\_T|\textbf{x}\_0)||p(\textbf{x}\_T))+\sum\_{t>1}D\_{\textrm{KL}}(q(\textbf{x}\_{t-1}|\textbf{x}\_t,\textbf{x}\_0)||p\_\theta (\textbf{x}\_{t-1}|\textbf{x}\_t))-\log p\_\theta(\textbf{x}\_0|\textbf{x}\_1)\right]
+$$<p>上の\(L\)を最小化する問題において、\(D_{\textrm{KL}}(q(\textbf{x}_T|\textbf{x}_0)||p(\textbf{x}_T))\)は、\(\beta_t\)を訓練で更新しないとき、パラメタに依存しない定数とみなせる。
 拡散過程の\(\textbf{x}_t\)は、\(\alpha_t:=1-\beta_t\), \(\bar{a}_t:=\prod^t_{s=1}\alpha_s\)とすると解析的に求めることができる。
+</p>
 $$
 \begin{equation}
-q(\textbf{x}_t|\text{x}_0)=\mathcal{N}(\textbf{x}_t;\sqrt{\bar{\alpha}_t}\textbf{x}_0,(1-\bar{\alpha}_t)\textbf{I})
+q(\textbf{x}\_t|\text{x}\_0)=\mathcal{N}(\textbf{x}\_t;\sqrt{\bar{\alpha}\_t}\textbf{x}\_0,(1-\bar{\alpha}\_t)\textbf{I})
 \end{equation}
-$$
+$$<p>
 より、\(q(\textbf{x}_t|\textbf{x}_0)\)も\(p(\textbf{x}_T)\)もパラメタに依存せず、定数とみなせる。</p>
 <p>次に\(L_{t-1}:=\mathbb{E}_q\left[D_{\textrm{KL}}(q(\textbf{x}_{t-1}|\textbf{x}_t,\textbf{x}_0)||p_\theta (\textbf{x}_{t-1}|\textbf{x}_t))\right]\)を最小化するパラメタを調べる。
 まず、生成過程が
+</p>
 $$
 \begin{align*}
-q(\textbf{x}_{t-1}|\textbf{x}_t, \textbf{x}_0)&amp;=\mathcal{N}(\textbf{x}_{t-1};\tilde{\boldsymbol{\mu}}_{t}(\textbf{x}_{t},\textbf{x}_0),\tilde{\beta}_t\textbf{I})\\
-\tilde{\boldsymbol{\mu}}_t(\textbf{x}_t,\textbf{x}_0)&amp;:=\frac{\sqrt{\bar{\alpha}_{t-1}\beta_t}}{1-\bar{\alpha}_t}\textbf{x}_0+\frac{\sqrt{\alpha_t}(1-\bar{\alpha}_{t-1})}{1-\bar{\alpha}_t}\textbf{x}_t\\
-\tilde{\beta}_t&amp;:=\frac{1-\bar{\alpha}_{t-1}}{1-\bar{\alpha}_t}\beta_{t}
+q(\textbf{x}\_{t-1}|\textbf{x}\_t, \textbf{x}\_0)&=\mathcal{N}(\textbf{x}\_{t-1};\tilde{\boldsymbol{\mu}}\_{t}(\textbf{x}\_{t},\textbf{x}\_0),\tilde{\beta}\_t\textbf{I})\\\\
+\tilde{\boldsymbol{\mu}}\_t(\textbf{x}\_t,\textbf{x}\_0)&:=\frac{\sqrt{\bar{\alpha}\_{t-1}\beta\_t}}{1-\bar{\alpha}\_t}\textbf{x}\_0+\frac{\sqrt{\alpha\_t}(1-\bar{\alpha}\_{t-1})}{1-\bar{\alpha}\_t}\textbf{x}\_t\\\\
+\tilde{\beta}\_t&:=\frac{1-\bar{\alpha}\_{t-1}}{1-\bar{\alpha}\_t}\beta\_{t}
 \end{align*}
-$$
+$$<p>
 とする。このとき、共分散行列が対角行列で次元が等しい正規分布のKLダイバージェンスになり、\(C\)を\(\theta\)に依存しない定数として
+</p>
 $$
-L_{t-1}-C = \mathbb{E}_q\left[\frac{1}{2\sigma^2_t}||\tilde{\boldsymbol{\mu}}(\textbf{x}_t,\textbf{x}_0)-\boldsymbol{\mu}_\theta (\textbf{x}_t, t)||^2\right]
-$$
+L\_{t-1}-C = \mathbb{E}\_q\left[\frac{1}{2\sigma^2\_t}||\tilde{\boldsymbol{\mu}}(\textbf{x}\_t,\textbf{x}\_0)-\boldsymbol{\mu}\_\theta (\textbf{x}\_t, t)||^2\right]
+$$<p>
 ここで、\((6)\)より、\(\textbf{x}_t(\textbf{x}_0,\boldsymbol{\epsilon})=\sqrt{\bar{\alpha}_t}\textbf{x}_0+\sqrt{1-\bar{\alpha}_t}\boldsymbol{\epsilon}\), \(\boldsymbol{\epsilon}\sim\mathcal{N}(\textbf{0}, \textbf{I})\)とすると、
+</p>
 $$
 \begin{align*}
-L_{t-1}-C=\mathbb{E}_{\textbf{x}_0, \boldsymbol{\epsilon}}\left[\frac{1}{2\sigma^2_t}\left|\left|\frac{1}{\sqrt{\alpha_t}}\left(\textbf{x}_t(\textbf{x}_0,\boldsymbol{\epsilon})-\frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}}\boldsymbol{\epsilon}\right)-\boldsymbol{\mu}_{\theta}(\textbf{x}_t(\textbf{x}_0,\boldsymbol{\epsilon}),t)\right|\right|^2\right]
+L\_{t-1}-C=\mathbb{E}\_{\textbf{x}\_0, \boldsymbol{\epsilon}}\left[\frac{1}{2\sigma^2\_t}\left|\left|\frac{1}{\sqrt{\alpha\_t}}\left(\textbf{x}\_t(\textbf{x}\_0,\boldsymbol{\epsilon})-\frac{\beta\_t}{\sqrt{1-\bar{\alpha}\_t}}\boldsymbol{\epsilon}\right)-\boldsymbol{\mu}\_{\theta}(\textbf{x}\_t(\textbf{x}\_0,\boldsymbol{\epsilon}),t)\right|\right|^2\right]
 \end{align*}
-$$
+$$<p>
 以上から、\(\boldsymbol{\mu}_\theta\)は\(\frac{1}{\sqrt{\alpha_t}}\left(\textbf{x}_t-\frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}}\boldsymbol{\epsilon}\right)\)となるように、パラメタを更新することになる。
 \(\textbf{x}_t\)はモデルへの入力であり、また、\(\textbf{x}_t(\textbf{x}_0,\boldsymbol{\epsilon})=\sqrt{\bar{\alpha}_t}\textbf{x}_0+\sqrt{1-\bar{\alpha}_t}\boldsymbol{\epsilon}\)なので、
+</p>
 $$
-L_{t-1}-C=\mathbb{E}_{\textbf{x}_0,\boldsymbol{\epsilon}}\left[\frac{\beta^2_t}{2\sigma^2_t\alpha_t(1-\bar{\alpha}_t)}\left|\left|\boldsymbol{\epsilon}-\boldsymbol{\epsilon}_\theta(\sqrt{\bar{\alpha}_t}\textbf{x}_0+\sqrt{1-\bar{\alpha}_t}\boldsymbol{\epsilon},t)\right|\right|^2\right]
-$$
+L\_{t-1}-C=\mathbb{E}\_{\textbf{x}\_0,\boldsymbol{\epsilon}}\left[\frac{\beta^2\_t}{2\sigma^2\_t\alpha\_t(1-\bar{\alpha}\_t)}\left|\left|\boldsymbol{\epsilon}-\boldsymbol{\epsilon}\_\theta(\sqrt{\bar{\alpha}\_t}\textbf{x}\_0+\sqrt{1-\bar{\alpha}\_t}\boldsymbol{\epsilon},t)\right|\right|^2\right]
+$$<p>
 以上より、逆拡散過程では、\(\boldsymbol{\mu}_\theta\)が\(\tilde{\boldsymbol{\mu}}_t\)を予測できるようにすることであり、それは同時に\(\boldsymbol{\epsilon}\)を予測できるようにパラメタを更新することでもある。</p>
 <p>最後に、\(-p_\theta(\textbf{x}_0|\textbf{x}_1)\)の最小化するにあたり、次元のデータを\([-1, 1]\)にスケールし、逆拡散過程が次元\(i\)ごとに独立な正規分布\(\mathcal{N}(\textbf{x}_0;\boldsymbol{\mu}_\theta(\textbf{x}_1,1), \sigma^2_1\textbf{I})\)にしたがうとみなす。
+</p>
 $$
-p_\theta(\textbf{x}_0|\textbf{x}_1)=\prod^D_{i=1}\int^{\delta+(x^i_o)}_{\delta_-(x^i_0)}\mathcal{N}(x;\mu^i_{\theta}(\textbf{x}_1,1),\sigma^2_1)dx
-$$</p>
-<p>$$
+p\_\theta(\textbf{x}\_0|\textbf{x}\_1)=\prod^D\_{i=1}\int^{\delta+(x^i\_o)}\_{\delta\_-(x^i\_0)}\mathcal{N}(x;\mu^i\_{\theta}(\textbf{x}\_1,1),\sigma^2\_1)dx
+$$$$
 \begin{align*}
-\delta_+(x)&amp;=\begin{cases}
-\infty&amp;\text{if}\ x=1\\
-x+\frac{1}{255}&amp;\text{if}\ x &lt; 1
-\end{cases}\\
-\delta_-(x)&amp;=\begin{cases}
--\infty&amp;\text{if}\ x=-1\\
-x-\frac{1}{255}&amp;\text{if}\ x &gt; -1
-\end{cases}\\
+\delta\_+(x)&=\begin{cases}
+\infty&\text{if}\ x=1\\\\
+x+\frac{1}{255}&\text{if}\ x < 1
+\end{cases}\\\\
+\delta\_-(x)&=\begin{cases}
+-\infty&\text{if}\ x=-1\\\\
+x-\frac{1}{255}&\text{if}\ x > -1
+\end{cases}\\\\
 \end{align*}
-$$
+$$<p>
 以上より、\(\textbf{x}_{t-1}=\frac{1}{\sqrt{\alpha_t}}\left(\textbf{x}_t-\frac{\beta_t}{\sqrt{1-\bar{\alpha_t}}}\boldsymbol{\epsilon}_\theta(\textbf{x}_t,t)\right)+\sigma_t\textbf{z}\), \(\textbf{z}\sim\mathcal{N}(\textbf{0}, \textbf{I})\)のようにサンプリングする場合、学習とサンプリングは文献中の以下の手続きになる。
 <img src="/denoising-diffusion-probabilistic-models.png" alt="algo"></p>
   </div>

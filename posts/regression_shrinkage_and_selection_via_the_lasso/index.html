@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Regression Shrinkage and Selection via the Lasso</title>
 </head>
 
@@ -114,16 +136,18 @@ Ridge回帰は、回帰係数を全体的に小さくすることで正則化項
 絶対値の大きい少数の回帰係数と0の回帰係数のときはSubset selectionが、絶対値の小さい回帰係数が多いときにRidge回帰の精度が最も高かった。</p>
 <p>平均を0, 分散を1に標準化した説明変数\(\boldsymbol{\rm x}^i = (x_{i1}, \dots , x_{ip})^\top\)からなるデータセットを\((\boldsymbol{\rm x}^i, y_i), i= 1, 2, \dots , N\)とおく。
 \(\hat{\boldsymbol{\beta}}=(\hat{\beta}_1,\dots , \hat{\beta}_p)^\top\)とおくと、Lasso回帰のパラメタ\((\hat{\alpha}, \hat{\beta})\)は、\(t&gt;0\)として
+</p>
 $$
 \begin{align}
-(\hat{\alpha}, \hat{\beta}) = {\operatorname{argmin}} \left\{\sum^N_{i=1}\left(y_i-\alpha -\sum_j\beta_jx_{ij}\right)^2\right\}&amp;\text{subject to} \sum_j\mid\beta_j\mid \le t
+(\hat{\alpha}, \hat{\beta}) = {\operatorname{argmin}} \left\\{\sum^N\_{i=1}\left(y\_i-\alpha -\sum\_j\beta\_jx\_{ij}\right)^2\right\\}&\text{subject to} \sum\_j\mid\beta\_j\mid \le t
 \end{align}
-$$
+$$<p>
 と定義できる。</p>
 <p>\(\hat{\beta}^o_j\)を正則化項のない場合の回帰係数、\(\boldsymbol{\rm X}\)を\(n\times p\)で\(ij\)の要素が\(x_{ij}\)で\(\boldsymbol{\rm X}^\top \boldsymbol{\rm X}=\boldsymbol{\rm I}\)である行列とし、目的変数が直交であるとする。このとき\(\gamma\)を\(\sum\mid \hat{\beta}_j\mid=t\)から決まる値として、
+</p>
 $$
-\hat{\beta}_j = \text{sign}(\hat{\beta}^o_j)(\mid \hat{\beta}^o_j\mid -\gamma)^+
-$$
+\hat{\beta}\_j = \text{sign}(\hat{\beta}^o\_j)(\mid \hat{\beta}^o\_j\mid -\gamma)^+
+$$<p>
 となる。
 \(\gamma\)の値が大きいほど、0になる回帰係数の数が増える。</p>
 <p>説明変数が直交している場合のほか、\(p=2\)の場合についても、回帰係数が0になる理由にも説明がある。

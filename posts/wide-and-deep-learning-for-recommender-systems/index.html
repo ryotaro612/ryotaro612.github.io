@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Wide and Deep Learning for Recommender Systems (2016)</title>
 </head>
 
@@ -120,17 +142,18 @@
 <a href="https://arxiv.org/abs/1606.07792">Wide &amp; Deep Learning for Recommender Systems</a>は、一般線形化モデルとフィードフォワードニューラルネットワーク (FFN) の出力の重みつき和をロジスティック関数に適用し、両者の利点を生かし欠点をおぎなうモデルである。</p>
 <p>次元数の\(d\)の特徴を\(\textbf{x}=[x_1, x_2, \dots, x_d]\), バイアス項を\(b\), 重みを\(\textbf{w}\)とすると、一般化線形モデルを\(y=\textbf{w}^T\textbf{x}+b\)と表せる。
 \(k\)番目の交互作用が\(i\)番目の特徴を採用する場合に\(c_{ki}=1\), しない場合に\(c_{ki}=0\)となる\(c_{ki}\)として、\(k\)番目の交互作用項を\(\phi_k(\textbf{x})\)とおく。
+</p>
 $$
-\phi_k(\textbf{x})=\prod^d_{i=1}x^{c_{ki}}_i\ c_{ki}\in\{0, 1\}
-$$</p>
-<p>FFNは、\(\textbf{x}\)を低次元の埋め込みベクトルに変換する層のあとに隠れ層がつづき、\(l\)を層の位置、\(f\)を活性化関数とすると\(a^{(l+l)}=f(W^{(l)}a^{(l)}+b^{(l)})\)となる。
+\phi\_k(\textbf{x})=\prod^d\_{i=1}x^{c\_{ki}}\_i\ c\_{ki}\in\\{0, 1\\}
+$$<p>FFNは、\(\textbf{x}\)を低次元の埋め込みベクトルに変換する層のあとに隠れ層がつづき、\(l\)を層の位置、\(f\)を活性化関数とすると\(a^{(l+l)}=f(W^{(l)}a^{(l)}+b^{(l)})\)となる。
 なお、アーキテクチャはFFNでなくてもよい。</p>
 <p>モデルは、一般化線形モデルとFFNのログオッズの重みつき和にロジスティック関数を適用した値を出力する。
 一般化線形モデルは、もとの特徴\(\textbf{x}\)と交互作用\(\phi(\textbf{x})\)を連結した行列\([\textbf{x}, \phi(\textbf{x})]\)をうけとる。
 このとき、2クラス問題を推定するモデルは
+</p>
 $$
-P(Y=1|\textbf{x})=\sigma(\textbf{w}^T_{\textit{wide}}[\textbf{x}, \phi(\textbf{x})]+\textbf{w}^T_{\textit{deep}}a^{(l_f)}+b)
-$$
+P(Y=1|\textbf{x})=\sigma(\textbf{w}^T\_{\textit{wide}}[\textbf{x}, \phi(\textbf{x})]+\textbf{w}^T\_{\textit{deep}}a^{(l\_f)}+b)
+$$<p>
 となる。</p>
   </div>
 </main>

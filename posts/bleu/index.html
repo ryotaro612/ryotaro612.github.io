@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>論文メモ BLEU: a Method for Automatic Evaluation of Machine Translation</title>
 </head>
 
@@ -117,10 +139,9 @@ BLEUは、参照訳にある単語を過剰に含むことや文の短さにペ�
 算出するには、まず、候補訳と参照訳の各ngramトークンについて、出現回数を数える。
 あるngramトークンの候補文における出現回数を\(Count\), 参照訳ごとの出現回数のうち最大値を\(Max\_Ref\_Count\), \(Count_{clip}=\min(Count, max\_Ref\_Count)\)とする。
 このとき、候補訳のngramの集合を\(C\)とすると、候補訳の適合率を次の式で算出する。</p>
-<p>$$
-\frac{\sum_{\text{n-gram}\in C}Count_{clip}(\text{n-gram})}{\sum_{\text{n-gram}\in C}Count(\text{n-gram})}
-$$</p>
-<p>例えば、上の計算式にもとづく場合、以下の候補訳の適合率は、\(\min(2, 7)/7\)となる。
+$$
+\frac{\sum\_{\text{n-gram}\in C}Count\_{clip}(\text{n-gram})}{\sum\_{\text{n-gram}\in C}Count(\text{n-gram})}
+$$<p>例えば、上の計算式にもとづく場合、以下の候補訳の適合率は、\(\min(2, 7)/7\)となる。
 theは、参照訳に含まれるものの、過剰に生成された単語theについてペナルティが課されている。</p>
 <ul>
 <li>候補訳: the the the the the the the.</li>
@@ -128,24 +149,22 @@ theは、参照訳に含まれるものの、過剰に生成された単語the�
 <li>参照訳2: There is a cat on the mat.</li>
 </ul>
 <p>翻訳された文書全体のnグラムの適合率\(p_n\)を計算する場合、文書に含まれる候補訳の集合を\(Candidates\)として次の計算で\(P_n\)を計算する。</p>
-<p>$$
-p_n=\frac{\sum_{C\in\{Candidates\}}\sum_{\text{n-gram}\in C}Count_{clip}(\text{n-gram})}{\sum_{C&rsquo;\in \{Candidates\}}\sum_{\text{n-gram}&rsquo;\in C&rsquo;}Count(\text{n-gram}&rsquo;)}
-$$</p>
-<h3 id="短い候補訳へのペナルティ">短い候補訳へのペナルティ</h3>
+$$
+p\_n=\frac{\sum\_{C\in\\{Candidates\\}}\sum\_{\text{n-gram}\in C}Count\_{clip}(\text{n-gram})}{\sum\_{C'\in \\{Candidates\\}}\sum\_{\text{n-gram}'\in C'}Count(\text{n-gram}')}
+$$<h3 id="短い候補訳へのペナルティ">短い候補訳へのペナルティ</h3>
 <p>Medified n-gram precisionは短い候補訳に高いスコアを与えるため、文の短さについてもペナルティを課す必要がある。
 各候補訳について、その長さに最も近い参照訳を求め、その長さの合計値を\(r\), 候補訳の文書の長さを\(c\)として、\(c\le r\)のとき、長さの違いにしたがって、次のようにペナルティを課す。</p>
-<p>$$
+$$
 \text{BP}=
 \begin{cases}
-1&amp;\text{if}\ c&gt;r \\
-e^{(1-r/c)}&amp;\text{if}\ c\le r
+1&\text{if}\ c>r \\\\
+e^{(1-r/c)}&\text{if}\ c\le r
 \end{cases}
-$$</p>
-<h3 id="bleuスコア">BLEUスコア</h3>
+$$<h3 id="bleuスコア">BLEUスコア</h3>
 <p>以上の適合率とペナルティから次の計算でBLEUを算出する。</p>
-<p>$$
-\text{BLEU} = \text{BP}\cdot \exp\left(\sum^N_{n=1}w_n\log p_n\right)
 $$
+\text{BLEU} = \text{BP}\cdot \exp\left(\sum^N\_{n=1}w\_n\log p\_n\right)
+$$<p>
 ベースラインでは、\(N=4\), \(w_n=\frac{1}{N}\)をもちいる。</p>
 <hr>
 <ul>

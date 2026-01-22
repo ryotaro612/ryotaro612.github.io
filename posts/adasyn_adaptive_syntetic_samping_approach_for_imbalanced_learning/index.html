@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>抄訳 ADASYN: Adaptive Synthetic Sampling Approach for Imbalanced Learning(2008)</title>
 </head>
 
@@ -111,26 +133,27 @@
 SMOTEとの違いは、K近傍に多数クラスのサンプルの多い少数クラスのサンプルから、より多くのサンプルを合成する点にある。</p>
 <p>サンプル数\(m_l\)件の多数クラスと\(m_s\)件の少数クラスからなる\(m\)件の\(n\)次元の学習データでアルゴリズムを説明する。
 まず、ハイパーパラメタ\(\beta\in[0,1]\)で合成するサンプル数を制御する\(G\)を求める。
+</p>
 $$
-G=(m_l - m_s)\times\beta
-$$</p>
-<p>少数クラスの各サンプルについて、K近傍にある多数クラスのサンプル数を\(\Delta_i\), \(i=1, \dots , m_s\)として以下を求める。
+G=(m\_l - m\_s)\times\beta
+$$<p>少数クラスの各サンプルについて、K近傍にある多数クラスのサンプル数を\(\Delta_i\), \(i=1, \dots , m_s\)として以下を求める。
+</p>
 $$
-r_i=\frac{\Delta_i}{K}
-$$</p>
-<p>次に、密度分布になるように正規化する。
+r\_i=\frac{\Delta\_i}{K}
+$$<p>次に、密度分布になるように正規化する。
+</p>
 $$
-\hat{r}_i = \frac{r_i}{\sum^{m_s}_{i=1}r_i}
-$$
+\hat{r}\_i = \frac{r\_i}{\sum^{m\_s}\_{i=1}r\_i}
+$$<p>
 正規化された値と\(G\)の積\(g_i\)だけサンプルから少数クラスを合成する。
+</p>
 $$
-g_i=\hat{r}_i\times G
-$$
+g\_i=\hat{r}\_i\times G
+$$<p>
 K近傍の少数クラスのサンプルをランダムに1つ\(\boldsymbol{x}_{zi}\)を選び、 \([0, 1]\)区間のランダムな値\(\lambda\)をもちいて、以下の式で\(n\)次元の各要素を計算し、サンプルを合成する。</p>
-<p>$$
-\boldsymbol{s}_i = \boldsymbol{x}_i + (\boldsymbol{z_{zi}}-\boldsymbol{x}_i)\times \lambda
-$$</p>
-<!--
+$$
+\boldsymbol{s}\_i = \boldsymbol{x}\_i + (\boldsymbol{z\_{zi}}-\boldsymbol{x}\_i)\times \lambda
+$$<!--
 不均衡データに対処する
 オーバーサンプリングによる不均衡データの予測性能を向上するアローチ
 重みつき分布をつかう。

@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>REALM Retrieval Augmented Language Model Pre Training (2020)</title>
 </head>
 
@@ -120,39 +142,42 @@
 評価実験では、期待する回答がknowledge retrieverの学習に使うコーパスに文字通りにあることが前提にされている。</p>
 <p>Knowedge retrieverが参照するコーパスを\(\mathcal{x}\)とすると、REALMの学習する確率分布\(p(y|x)\)を、\(x\)に関連する文書\(z\)を収集する部分と、\(x\)と\(z\)から\(y\)を予測する部分に分けられる。
 \(p(y|x)\)を分解すると次の式になる。
+</p>
 $$
-p(y|x) = \sum_{z\in \mathcal{Z}}p(y|z, x)p(z|x)
-$$</p>
-<p>Knowledge retriverは、入力\(x\)と文書の関連度\(f(x, z)\)をソフトマックス関数に入力したときの値を\(p(z|x)\)とみなす。
+p(y|x) = \sum\_{z\in \mathcal{Z}}p(y|z, x)p(z|x)
+$$<p>Knowledge retriverは、入力\(x\)と文書の関連度\(f(x, z)\)をソフトマックス関数に入力したときの値を\(p(z|x)\)とみなす。
+</p>
 $$
-p(z|x)=\frac{\exp f(x, z)}{\sum_{z&rsquo;}\exp f(x, z&rsquo;)}
-$$
+p(z|x)=\frac{\exp f(x, z)}{\sum\_{z'}\exp f(x, z')}
+$$<p>
 \(f(x, z)\)は\(x\)と\(z\)の次元\(d\)のエンベディング\(\texttt{Embed}_{\texttt{input}}(x), \texttt{Embed}_{\texttt{doc}}(z)\)の内積であり、BERTの<code>[CLS]</code>トークンのベクトルを入力や文書のエンベディングとしてあつかう。
+</p>
 $$
 \begin{align*}
-f(x, z) &amp;= \texttt{Embed}_{\texttt{input}}(x)^\top \texttt{Embed}_{\texttt{doc}}(z)\\
-\texttt{Embed}_{\texttt{input}}(x)&amp;={\rm \bf{W}}_{\texttt{input}}\texttt{BERT}_{\texttt{CLS}}(\texttt{[CLS]}x\texttt{[SEP]} )\\
-\texttt{Embed}_{\texttt{doc}}(z)
-&amp;={\rm \bf{W}}_{\texttt{doc}}\texttt{BERT}_{\texttt{CLS}}(\texttt{join}_{\texttt{BERT}}(z_\text{title}, z_{\text{body}}))\\
-&amp;={\rm \bf{W}}_{\texttt{doc}}\texttt{BERT}_{\texttt{CLS}}(\texttt{[CLS]}z_{\text{title}}\texttt{[SEP]}z_\text{body}\texttt{[SEP]})\\
+f(x, z) &= \texttt{Embed}\_{\texttt{input}}(x)^\top \texttt{Embed}\_{\texttt{doc}}(z)\\\\
+\texttt{Embed}\_{\texttt{input}}(x)&={\rm \bf{W}}\_{\texttt{input}}\texttt{BERT}\_{\texttt{CLS}}(\texttt{[CLS]}x\texttt{[SEP]} )\\\\
+\texttt{Embed}\_{\texttt{doc}}(z)
+&={\rm \bf{W}}\_{\texttt{doc}}\texttt{BERT}\_{\texttt{CLS}}(\texttt{join}\_{\texttt{BERT}}(z\_\text{title}, z\_{\text{body}}))\\\\
+&={\rm \bf{W}}\_{\texttt{doc}}\texttt{BERT}\_{\texttt{CLS}}(\texttt{[CLS]}z\_{\text{title}}\texttt{[SEP]}z\_\text{body}\texttt{[SEP]})\\\\
 \end{align*}
-$$</p>
-<p>Augmented encoderは、\(p(y|z, x)\)にあたり、\(z\)と\(x\)を連結した系列をTransformerに入力する。
+$$<p>Augmented encoderは、\(p(y|z, x)\)にあたり、\(z\)と\(x\)を連結した系列をTransformerに入力する。
 事前学習では、\(x\)と文書の本文\(\text{z}_{\text{body}}\)から\(J_x\)個の\(\texttt{[MASK]}\)を含む入力\(x\)の系列のマスクの中身を推定できるように訓練する。
+</p>
 $$
 \begin{align*}
-p(y|z, x) &amp;= \prod^{J_x}_{j=1}p(y_j|z, x)\\
-p(y_j|z, x) &amp;\propto\exp (w_j^\top \texttt{BERT}_{\texttt{MASK}(j)}(\texttt{join}_{\texttt{BERT}}(x, z_{\text{body}})))
+p(y|z, x) &= \prod^{J\_x}\_{j=1}p(y\_j|z, x)\\\\
+p(y\_j|z, x) &\propto\exp (w\_j^\top \texttt{BERT}\_{\texttt{MASK}(j)}(\texttt{join}\_{\texttt{BERT}}(x, z\_{\text{body}})))
 \end{align*}
-$$
+$$<p>
 ある文書\(z\)の連続するトークン列が正解\(y\)になることを前提にしたオープン質問応答のファインチューニングでは、\(S(z, y)\)を\(y\)にマッチする区間の集合、\(\texttt{BERT}_{\texttt{START}(s)}, \texttt{BERT}_{\texttt{END}(s)}\)を区間\(s\)の最初と最後の区間として、\(p(y|z, x)\)を以下のように定める。
+</p>
 $$
 \begin{align*}
-p(y|z, x)&amp;\propto \sum_{s\in S(z, y)}\exp (\texttt{MLP}([h_{\texttt{START}(s)}; h_{\texttt{END}(s)}]))\\
-h_{\texttt{START}(s)}&amp;=\texttt{BERT}_{\texttt{START}(s)}(\texttt{join}_{\texttt{BERT}}(x, z_{\text{body}}))\\
-h_{\texttt{END}(s)}&amp;=\texttt{BERT}_{\texttt{END}(s)}(\texttt{join}_{\texttt{BERT}}(x, z_{\text{body}}))
+p(y|z, x)&\propto \sum\_{s\in S(z, y)}\exp (\texttt{MLP}([h\_{\texttt{START}(s)}; h\_{\texttt{END}(s)}]))\\\\
+h\_{\texttt{START}(s)}&=\texttt{BERT}\_{\texttt{START}(s)}(\texttt{join}\_{\texttt{BERT}}(x, z\_{\text{body}}))\\\\
+h\_{\texttt{END}(s)}&=\texttt{BERT}\_{\texttt{END}(s)}(\texttt{join}\_{\texttt{BERT}}(x, z\_{\text{body}}))
 \end{align*}
-$$</p>
+$$
   </div>
 </main>
 

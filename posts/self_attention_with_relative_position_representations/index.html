@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Self-Attention with Relative Position Representations(2018)</title>
 </head>
 
@@ -128,24 +150,26 @@ Transformerの原論文は、正弦関数で要素の位置からベクトルを
 <p>長さ\(n\)の系列\(x=(x_1,\dots ,x_n)\)を入力されたQKV注意機構は、系列\((z_1 ,\dots , z_n)\)を出力する。
 \(x_i\), \(z_i\)の次元を\(d_x\), \(d_z\)とすると、クエリー、キー、バリューのパラメタ\(W^Q, W^K, W^V\)のサイズは\(d_x\times d_z\)である。
 このときのQKV注意機構の計算は以下の式になる。
+</p>
 $$
 \begin{align}
-z_i&amp;=\sum^n_{j=1}\alpha_{ij}(x_jW^V)\\
-\alpha_{ij}&amp;=\frac{\exp e_{ij}}{\sum^n_{k=1}\exp e_{ik}}\\
-e_{ij}&amp;=\frac{(x_iW^Q)(x_jW^K)^T}{\sqrt{d_z}}
+z\_i&=\sum^n\_{j=1}\alpha\_{ij}(x\_jW^V)\\\\
+\alpha\_{ij}&=\frac{\exp e\_{ij}}{\sum^n\_{k=1}\exp e\_{ik}}\\\\
+e\_{ij}&=\frac{(x\_iW^Q)(x\_jW^K)^T}{\sqrt{d\_z}}
 \end{align}
-$$</p>
-<p>提案手法は、相対位置のための\(\mathbb{R}^{d_a}\)のパラメタ\(w^V_{\text{clip}(j-i,k)}\)と\(w^K_{\text{clip}(j-i, k)}\)を導入し、\((1)\)と\((3)\)に以下の式におきかえる。
+$$<p>提案手法は、相対位置のための\(\mathbb{R}^{d_a}\)のパラメタ\(w^V_{\text{clip}(j-i,k)}\)と\(w^K_{\text{clip}(j-i, k)}\)を導入し、\((1)\)と\((3)\)に以下の式におきかえる。
+</p>
 $$
 \begin{align}
-z_i&amp;=\sum^n_{j=1}\alpha_{ij}(x_jW^V+w^V_{\text{clip}(j-i,k)})\\
-e_{ij}&amp;=\frac{(x_iW^Q)(x_jW^K+w^K_{\text{clip}(j-i, k)})^T}{\sqrt{d_z}}
+z\_i&=\sum^n\_{j=1}\alpha\_{ij}(x\_jW^V+w^V\_{\text{clip}(j-i,k)})\\\\
+e\_{ij}&=\frac{(x\_iW^Q)(x\_jW^K+w^K\_{\text{clip}(j-i, k)})^T}{\sqrt{d\_z}}
 \end{align}
-$$
+$$<p>
 \(\text{clip}\)関数は以下の式であり、\(i\)と\(j\)がハイパーパラメタ\(k\)よりも離れていれば、正確な相対位置を不要とみなす。
+</p>
 $$
 \text{clip}(x, k)=\max(-k, \min(k, x))
-$$
+$$<p>
 \(\text{clip}(x, k)\)のとりえる範囲より、\(w^K_i,w^V_i\in \mathbb{R}^{d_a}\), \(w^K=(w^K_{-k},\dots ,w^K_{k})\), \(w^V=(w_{-k}^V,\dots w_k^V)\)である。</p>
 <h2 id="雑記">雑記</h2>
 <p>訓練データにない入力長の系列に対する汎化性能が低くなることを問題にしている。

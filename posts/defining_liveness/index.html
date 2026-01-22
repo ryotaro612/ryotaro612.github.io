@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>抄訳 DEFINING LIVENESS(1985)</title>
 </head>
 
@@ -114,15 +136,14 @@
 <p>\(S\)をプログラムの状態の集合、\(S^{\omega}\)を無限長、\(S^{*}\)を有限長の系列とする。
 また、\(S^{\omega}\)の要素\(\sigma\)が性質\(P\)を満たすことを\(\sigma\vDash P\)とかく。
 このとき活性の定義は</p>
-<p>$$
-\forall\alpha : \alpha \in S^{*}:(\exists \beta: \beta \in S^\omega : \alpha \beta \vDash P)
 $$
+\forall\alpha : \alpha \in S^{*}:(\exists \beta: \beta \in S^\omega : \alpha \beta \vDash P)
+$$<p>
 である。\(\beta\)は無限長であるため、「よいこと」が常におきるのではなく、いつか起きるという定義になっている。</p>
 <p>なお、\(\sigma_i\)を\(\sigma\)の最初の\(i\)個の状態からなる系列とすると、以下をみたし、かつそのときのみ、\(P\)は安全性であると定義できる。</p>
-<p>$$
-\forall \sigma: \sigma \in S^\omega: \sigma \nvDash P \Rightarrow (\exists i: 0 \leq i:(\forall \beta : \beta \in S^\omega : \sigma_i \beta \nvDash P))
-$$</p>
-<p>論文への<a href="https://www.cs.cornell.edu/fbs/publications/DefLiveness.pdf">リンク</a></p>
+$$
+\forall \sigma: \sigma \in S^\omega: \sigma \nvDash P \Rightarrow (\exists i: 0 \leq i:(\forall \beta : \beta \in S^\omega : \sigma\_i \beta \nvDash P))
+$$<p>論文への<a href="https://www.cs.cornell.edu/fbs/publications/DefLiveness.pdf">リンク</a></p>
   </div>
 </main>
 

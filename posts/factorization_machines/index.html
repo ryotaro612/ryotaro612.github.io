@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>論文メモ Factorization Machines</title>
 </head>
 
@@ -113,34 +135,33 @@ Factorizatiom Machineは、両者の利点をそなえており、疎な任意�
 また、予測の計算量が線形であり、必要なパラメタの数も線形であるため、SVMのサポートベクタのように訓練データをモデルに持たせる必要がない。
 そのために、大量の訓練データを使う学習も可能となる。</p>
 <p>\(\boldsymbol{\mathrm{x}}\)を特徴とすると、2元(degree\(d=2\))のFactorization Machineは次の式をとる。
+</p>
 $$
-\hat{y}(\boldsymbol{\mathrm{x}}):= w_0 \sum^n_{i=1}w_ix_i+\sum^n_{i=1}\sum^n_{j=i+1}\langle\mathcal{\mathrm{\boldsymbol{v}}}_i, \mathcal{\mathrm{\boldsymbol{v}}}_j\rangle x_ix_j
-$$</p>
-<p>\(w_0 \in \mathbb{R}, \boldsymbol{\mathrm{w}} \in \mathbb{R}^n, \boldsymbol{\mathrm{V}}\in \mathbb{R}^{n\times k}\)はパラメタであり、\(\langle \cdot , \cdot \rangle\)はサイズ\(k\)のドット積を示す。</p>
-<p>$$
-\langle \mathcal{\boldsymbol{\mathrm{v}}}_i,\boldsymbol{\mathcal{\mathrm{v}}}_j \rangle :=\sum^k_{f=1}v_{i,f}\cdot v_{j, f}
-$$</p>
-<p>\(k\)はハイパーパラメタであり、値が多いほど複雑なデータを学習できるが、過学習におちいりやすくなる。
+\hat{y}(\boldsymbol{\mathrm{x}}):= w\_0 \sum^n\_{i=1}w\_ix\_i+\sum^n\_{i=1}\sum^n\_{j=i+1}\langle\mathcal{\mathrm{\boldsymbol{v}}}\_i, \mathcal{\mathrm{\boldsymbol{v}}}\_j\rangle x\_ix\_j
+$$<p>\(w_0 \in \mathbb{R}, \boldsymbol{\mathrm{w}} \in \mathbb{R}^n, \boldsymbol{\mathrm{V}}\in \mathbb{R}^{n\times k}\)はパラメタであり、\(\langle \cdot , \cdot \rangle\)はサイズ\(k\)のドット積を示す。</p>
+$$
+\langle \mathcal{\boldsymbol{\mathrm{v}}}\_i,\boldsymbol{\mathcal{\mathrm{v}}}\_j \rangle :=\sum^k\_{f=1}v\_{i,f}\cdot v\_{j, f}
+$$<p>\(k\)はハイパーパラメタであり、値が多いほど複雑なデータを学習できるが、過学習におちいりやすくなる。
 \(\mathcal{\boldsymbol{\mathrm{v}}}_i\)は\(k\)個のfactorからなる\(i\)番目の変数を示す。
 \(w_0\)はバイアス項であり、\(w_i\)は\(i\)番目の変数のはたらきの強さを示す。
 \(\langle \mathcal{\boldsymbol{\mathrm{v}}}_i, \mathcal{\boldsymbol{\mathrm{v}}}_j\rangle\)は変数\(i, j\)の交互作用の強さを示す。
 \(w_{i, j}\)のように1つのパラメタのかわりに、因数分解されたベクトルのドット積をもちいることで、疎な特徴を扱うことができる。
 交互作用の項は、次のように式を変形できるため、\(O(kn)\)で計算できる。
+</p>
 $$
-\sum^n_{i=1}\sum^n_{j=i+1}\langle \mathcal{\boldsymbol{\mathrm{v}}}_i,\mathcal{\boldsymbol{\mathrm{v}}}_j\rangle x_ix_j
-=\frac{1}{2}\sum^k_{f=1}\left({\left(\sum^n_{i=1}v_{i,f}x_i\right)}^2-\sum^n_{i=1}v^2_{i,f}x^2_i\right)
-$$</p>
-<p>計算量が線形であるため、勾配降下法でパラメタを学習できる。
+\sum^n\_{i=1}\sum^n\_{j=i+1}\langle \mathcal{\boldsymbol{\mathrm{v}}}\_i,\mathcal{\boldsymbol{\mathrm{v}}}\_j\rangle x\_ix\_j
+=\frac{1}{2}\sum^k\_{f=1}\left({\left(\sum^n\_{i=1}v\_{i,f}x\_i\right)}^2-\sum^n\_{i=1}v^2\_{i,f}x^2\_i\right)
+$$<p>計算量が線形であるため、勾配降下法でパラメタを学習できる。
 勾配は、\(w\)や\(v\)ごとに次の値をとる。
+</p>
 $$
 \frac{\partial }{\partial \theta}\hat{y}(\mathcal{\mathrm{x}})=
 \begin{cases}
-1,&amp;\text{if}\ \theta = w_0\\\
-x_i,&amp;\text{if}\ \theta =w_i\\\
-x_i\sum^n_{j=1}v_{j,f}x_j-v_{i,f}x^2_i&amp;\text{if}\ \theta=v_{i,f}
+1,&\text{if}\ \theta = w\_0\\\\\
+x\_i,&\text{if}\ \theta =w\_i\\\\\
+x\_i\sum^n\_{j=1}v\_{j,f}x\_j-v\_{i,f}x^2\_i&\text{if}\ \theta=v\_{i,f}
 \end{cases}
-$$</p>
-<hr>
+$$<hr>
 <p>論文は<a href="https://www.csie.ntu.edu.tw/~b97053/paper/Rendle2010FM.pdf">こちら</a>からダウンロードできます。</p>
   </div>
 </main>

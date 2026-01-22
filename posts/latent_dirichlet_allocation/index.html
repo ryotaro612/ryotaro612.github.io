@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Latent Dirichlet Allocation(2003)</title>
 </head>
 
@@ -142,33 +164,39 @@ LDAは、テキストコーパスのような離散データの確率的生成�
 外側の枠は文書を示し、内側の枠はトピックと単語の生成を示す。
 <img src="/lda/graph.png" alt="graph">
 トピック数を\(k\)とすると、ディリクレ関数\(\text{Dir}(\alpha)\)は
+</p>
 $$
-p(\theta\mid \alpha) =\frac{\Gamma (\sum^k_{i=1}\alpha_i)}{\prod^k_{i=1}\Gamma (\alpha_i)}\theta_1^{\alpha_1-1}\cdots \theta_1^{\alpha_k-1}
-$$
+p(\theta\mid \alpha) =\frac{\Gamma (\sum^k\_{i=1}\alpha\_i)}{\prod^k\_{i=1}\Gamma (\alpha\_i)}\theta\_1^{\alpha\_1-1}\cdots \theta\_1^{\alpha\_k-1}
+$$<p>
 となる。
 \(\Gamma\)はガンマ関数である。
 このとき
+</p>
 $$
-p(\theta,\boldsymbol{\rm z},\boldsymbol{\rm w}\mid \alpha ,\beta)=p(\theta\mid \alpha)\prod_{n=1}^N p(z_n\mid\theta)p(w_n\mid z_n,\beta)
-$$
+p(\theta,\boldsymbol{\rm z},\boldsymbol{\rm w}\mid \alpha ,\beta)=p(\theta\mid \alpha)\prod\_{n=1}^N p(z\_n\mid\theta)p(w\_n\mid z\_n,\beta)
+$$<p>
 \(\theta\)と\(\boldsymbol{\rm z}\)について周辺化すると
+</p>
 $$
-p(\boldsymbol{\rm w}\mid\alpha, \beta) = \int p(\theta\mid \alpha)\left( \prod_{n=1}^N\sum_{z_n}p(z_n\mid\theta)p(w_n\mid z_n,\beta)\right) d\theta
-$$
+p(\boldsymbol{\rm w}\mid\alpha, \beta) = \int p(\theta\mid \alpha)\left( \prod\_{n=1}^N\sum\_{z\_n}p(z\_n\mid\theta)p(w\_n\mid z\_n,\beta)\right) d\theta
+$$<p>
 以上よりコーパスの生成モデルは
+</p>
 $$
-p(\mathcal{D}\mid\alpha, \beta) = \prod^M_{d=1}\int p(\theta_d\mid \alpha)\left( \prod_{n=1}^{N_d}\sum_{z_{dn}}p(z_{dn}\mid\theta_d)p(w_{dn}\mid z_{dn},\beta)\right) d\theta_d
-$$
+p(\mathcal{D}\mid\alpha, \beta) = \prod^M\_{d=1}\int p(\theta\_d\mid \alpha)\left( \prod\_{n=1}^{N\_d}\sum\_{z\_{dn}}p(z\_{dn}\mid\theta\_d)p(w\_{dn}\mid z\_{dn},\beta)\right) d\theta\_d
+$$<p>
 となる。</p>
 <h3 id="推定">推定</h3>
 <p>文書のトピックの条件付き確率は次の式で表わされる。
+</p>
 $$
 p(\theta , \boldsymbol{\rm z}\mid \boldsymbol{\rm w}, \alpha, \beta)=\frac{p(\theta,\boldsymbol{\rm z},\boldsymbol{\rm w}\mid\alpha, \beta)}{p(\boldsymbol{\rm w}\mid \alpha,\beta)}
-$$
+$$<p>
 前節より右辺の分母は
+</p>
 $$
-p(\boldsymbol{\rm w}\mid \alpha,\beta)=\frac{\Gamma(\sum_i\alpha_i)}{\prod_i\Gamma(\alpha_i)}\int\left(\prod^k_{i=1}\theta^{\alpha_i-1}_i\right)\left(\prod^N_{n=1}\sum^k_{i=1}\prod^V_{j=1}(\theta_i\beta_{ij})^{w^j_n}\right)d\theta
-$$
+p(\boldsymbol{\rm w}\mid \alpha,\beta)=\frac{\Gamma(\sum\_i\alpha\_i)}{\prod\_i\Gamma(\alpha\_i)}\int\left(\prod^k\_{i=1}\theta^{\alpha\_i-1}\_i\right)\left(\prod^N\_{n=1}\sum^k\_{i=1}\prod^V\_{j=1}(\theta\_i\beta\_{ij})^{w^j\_n}\right)d\theta
+$$<p>
 となる。
 \(\beta\)は\(k\times V\)の行列であり\(\beta_{ij}=p(w^j=1\mid z^i=1)\)である。
 上の式は、\(\theta\)と\(\beta\)が結合しているために導出することができない(<a href="https://www.jstor.org/stable/2288131?seq=1">Dickey, 1983</a>)。

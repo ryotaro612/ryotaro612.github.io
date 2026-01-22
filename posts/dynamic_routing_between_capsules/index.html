@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Dynamic Routing Between Capsules (2017)</title>
 </head>
 
@@ -111,28 +133,30 @@
 これにより、プーリング層で失われるエンティティの空間上の位置情報をカプセルの出力するベクトルで表現する。
 実験では、2層の畳み込み層と1層の全結合層からなる浅いニューラルネットワークをMNISTに適用し、長さでエンティティが存在する確率を、向きでエンティティの特徴を表現できるベクトルを学習できることを示した。</p>
 <p>特定のエンティティが入力にある確率を長さで表現するベクトルが必要なので、ベクトルの長さを0以上1以下できる以下の非線形な関数squashingを導入する。
+</p>
 $$
-\boldsymbol{\rm v}_j=\frac{\mid\mid \boldsymbol{\rm s}_j\mid\mid^2}{1+\mid\mid \boldsymbol{\rm s}_j\mid\mid^2}\frac{\boldsymbol{\rm s}_j}{\mid\mid \boldsymbol{s}_j\mid\mid}
-$$
+\boldsymbol{\rm v}\_j=\frac{\mid\mid \boldsymbol{\rm s}\_j\mid\mid^2}{1+\mid\mid \boldsymbol{\rm s}\_j\mid\mid^2}\frac{\boldsymbol{\rm s}\_j}{\mid\mid \boldsymbol{s}\_j\mid\mid}
+$$<p>
 \(\boldsymbol{\rm v}_{j}\)はカプセル\(j\)の出力ベクトルで、\(\boldsymbol{\rm s}_j\)は前の層にあるカプセル\(i\)の出力ベクトル\(\boldsymbol{\rm u}_i\)とdynamic routingで更新する係数\(c_{ij}\)からもとめられる。
 カプセル\(i\)と\(i\)の1つ上にあるレイヤーの全カプセルの係数は合計で1にしたい。
 そこで、\(i\)が\(j\)と結合する対数事前確率\(b_{ij}\)をもとに、\(c_{ij}\)をソフトマックス関数で算出する。
+</p>
 $$
 \begin{align}
-\boldsymbol{\rm s}_j&amp;=\sum_ic_{ij}\hat{\boldsymbol{\rm u}}_{j\mid i}\\
-\hat{\boldsymbol{u}}_{j\mid i}&amp;=\boldsymbol{\rm W}_{ij}\boldsymbol{\rm u}_i\\
-c_{ij}&amp;=\frac{\exp(b_{ij})}{\sum_k\exp (b_{ik})}
+\boldsymbol{\rm s}\_j&=\sum\_ic\_{ij}\hat{\boldsymbol{\rm u}}\_{j\mid i}\\\\
+\hat{\boldsymbol{u}}\_{j\mid i}&=\boldsymbol{\rm W}\_{ij}\boldsymbol{\rm u}\_i\\\\
+c\_{ij}&=\frac{\exp(b\_{ij})}{\sum\_k\exp (b\_{ik})}
 \end{align}
-$$
+$$<p>
 <img src="/dynamic_routing_between_capsules/algo.png" alt="algo"></p>
 <p>MNISTによる実験では、一番下にチャネル数256, カーネル9x9, ストライド 1の畳み込み層(Conv1)を、次にチャネル数256, カーネル9x9, ストライド2の畳み込み層で実装した32チャンネル、8次元のカプセル層を、最後に全結合層による16次元のカプセルをクラス数10だけもったカプセル層を使ったネットワークを利用した。
 以下の図は、ネットワークの中間で生成されるベクトルをあらわす。
 <img src="/dynamic_routing_between_capsules/arch.png" alt="arch">
 また、\(m^{+}=0.9, m^{-}=0.1, \lambda=0.5, T_k\)をクラス\(k\)でありそのときに限り\(1\)の値として、次の損失関数を使った。
+</p>
 $$
-L_k=T_{k}\max(0, m^+-\mid\mid \boldsymbol{\rm v}_k\mid\mid)^2 +\lambda (1-T_k)\max(0, \mid\mid \boldsymbol{\rm v}_k\mid\mid - m^-)^2
-$$</p>
-<p>論文を<a href="https://arxiv.org/abs/1710.09829">こちら</a>からダウンロードできます。</p>
+L\_k=T\_{k}\max(0, m^+-\mid\mid \boldsymbol{\rm v}\_k\mid\mid)^2 +\lambda (1-T\_k)\max(0, \mid\mid \boldsymbol{\rm v}\_k\mid\mid - m^-)^2
+$$<p>論文を<a href="https://arxiv.org/abs/1710.09829">こちら</a>からダウンロードできます。</p>
   </div>
 </main>
 

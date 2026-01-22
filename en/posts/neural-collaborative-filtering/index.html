@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Neural Collaborative Filtering (2017)</title>
 </head>
 
@@ -122,28 +144,29 @@ There are three instances of NFC: Generalized Matrix Factorization (GMF), Multi-
 MF can be seen as a special case of GMF.
 Let \(\textbf{v}^U_u\) and \(\textbf{v}^I_{i}\) be the one-hot encoding of a user and an item, and \(\textbf{P}^\top\) and \(\textbf{Q}^\top\) be latent feature matrices.
 GMF estimates the interaction between user \(u\) and item \(i\) by projecting the element-wise product of latent vectors:<br>
+</p>
 $$
-\hat{y}_{ui}=a_{\text{out}}(\textbf{h}^\top (\textbf{p}_u \odot \textbf{q}_i))
-$$
+\hat{y}\_{ui}=a\_{\text{out}}(\textbf{h}^\top (\textbf{p}\_u \odot \textbf{q}\_i))
+$$<p>
 where \(\textbf{p}_u\) is \(\textbf{P}^\top \textbf{v}_u^U\) and \(\textbf{q}_i\) is \(\textbf{Q}^\top \textbf{v}_i^I\).</p>
 <p>MLP concatenates the latent vectors of a user and an item, and inputs the vector to a MLP network:
+</p>
 $$
 \begin{align*}
-\textbf{z}_1&amp;=\phi_1(\textbf{p}_u, \textbf{q}_i)=\begin{bmatrix}\textbf{p}_u\\\textbf{q}_i\end{bmatrix}\\
-\phi_2(\textbf{z}_1)&amp;=a_2(\textbf{W}^\top_2\textbf{z}_1+\textbf{b}_2)\\
-&amp;\dots\\
-\phi_L(\textbf{z}_{L-1})&amp;=a_L(\textbf{W}^\top_L\textbf{z}_{L-1}+\textbf{b}_L)\\
-\hat{y}_{ui}&amp;=\sigma(\textbf{h}^\top \phi_L(\textbf{z}_{L-1}))
+\textbf{z}\_1&=\phi\_1(\textbf{p}\_u, \textbf{q}\_i)=\begin{bmatrix}\textbf{p}\_u\\\\\textbf{q}\_i\end{bmatrix}\\\\
+\phi\_2(\textbf{z}\_1)&=a\_2(\textbf{W}^\top\_2\textbf{z}\_1+\textbf{b}\_2)\\\\
+&\dots\\\\
+\phi\_L(\textbf{z}\_{L-1})&=a\_L(\textbf{W}^\top\_L\textbf{z}\_{L-1}+\textbf{b}\_L)\\\\
+\hat{y}\_{ui}&=\sigma(\textbf{h}^\top \phi\_L(\textbf{z}\_{L-1}))
 \end{align*}
-$$</p>
-<p>NeuMF concatenates the outputs of GMP and MLP, then feeds the concatnated vectors to a linear layer:</p>
-<p>$$
+$$<p>NeuMF concatenates the outputs of GMP and MLP, then feeds the concatnated vectors to a linear layer:</p>
+$$
 \begin{align*}
-\phi^{\text{GMF}}&amp;=\textbf{p}^G_u\odot \textbf{q}^G_i\\
-\phi^{\text{MLP}}&amp;=a_L(\textbf{W}^T_L(a_{L-1} (\dots a_2(\textbf{W}^\top_2\begin{bmatrix}\textbf{p}^M_u\\\textbf{q}^M_i\end{bmatrix}+\textbf{b}_2)\dots)) + \textbf{b}_L)\\
-\hat{y}_{ui}&amp;=\sigma (\textbf{h}^\top \begin{bmatrix}\phi^{\text{GMF}}\\\phi^{\text{MLP}}\end{bmatrix})
+\phi^{\text{GMF}}&=\textbf{p}^G\_u\odot \textbf{q}^G\_i\\\\
+\phi^{\text{MLP}}&=a\_L(\textbf{W}^T\_L(a\_{L-1} (\dots a\_2(\textbf{W}^\top\_2\begin{bmatrix}\textbf{p}^M\_u\\\\\textbf{q}^M\_i\end{bmatrix}+\textbf{b}\_2)\dots)) + \textbf{b}\_L)\\\\
+\hat{y}\_{ui}&=\sigma (\textbf{h}^\top \begin{bmatrix}\phi^{\text{GMF}}\\\\\phi^{\text{MLP}}\end{bmatrix})
 \end{align*}
-$$</p>
+$$
   </div>
 </main>
 

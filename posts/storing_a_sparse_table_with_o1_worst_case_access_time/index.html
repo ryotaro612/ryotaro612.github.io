@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Storing a Sparse Table with O(1) Worst Case Access Time(1984)</title>
 </head>
 
@@ -119,39 +141,45 @@
 データ構造の証明は、\(f, g\)によって重複なくエントリを特定できる\(k\), \(k&rsquo;_j\)があることを示す。</p>
 <p>\(|W|=r, W\subseteq U, k\in U, s\ge r\)とおき、\(B(s,W,k,j)\)を、関数\(f(x)=(kx\mod p)\mod s\)で\(j(0\le j&lt; s)\)へ写像される\(W\)の要素数とする。より正確には、\(B(s,W,k,j)=|\{x|x\in W \text{and} (kx \mod p)\mod s = j\}|\)である。
 このとき、以下の補題がなりたつことを証明する。
+</p>
 $$
-\sum^{p-1}_{k=1}\sum^{s-1}_{j=0}\binom{B(s,W,k,j)}{2}&lt;\frac{(p-1)r^2}{s}
-$$
+\sum^{p-1}_{k=1}\sum^{s-1}\_{j=0}\binom{B(s,W,k,j)}{2}<\frac{(p-1)r^2}{s}
+$$<p>
 左辺は、\(x, y\in W, x\neq y, 1\le k &lt; p\)である
+</p>
 $$
 (kx\mod p)\mod s = (ky \mod p)\mod s
-$$
+$$<p>
 をみたすペア\((k, \{x, y\})\)の数である。
 \(x\)と\(y\)を固定すると、ペアの要素になりえる\(k\)の条件は、\(p\)が素数なので
+</p>
 $$
-k(x-y)\mod p\in \{s, 2s, 3s,\dots,p-s,p-2s,p-3s,\dots\}
-$$
+k(x-y)\mod p\in \\{s, 2s, 3s,\dots,p-s,p-2s,p-3s,\dots\\}
+$$<p>
 である。\(\mod p\)において\(x-y\)は逆元が存在するので、右側の集合の要素と1対1に対応する\(k\)がある。
 したがって、条件をみたす\(k\)の数は\(2(p-1)/s\)以下である。
 また、\(x, y\)の選び方が\(\binom{r}{2}\)であるため、不等式が成立する。</p>
 <!-- また、\\(\sum^r_{j=1}B(r,W,k,j)=|W|=r\\)と補題より\\(\sum^r_{j=1}B(r,W, k, j)^2<3r\\)をみたす\\(k\in U\\)が存在する。 -->
 <p>\(s=r^2\)のとき、補題より
+</p>
 $$
-\sum^{p-1}_{k=1}\sum^s_{j=1}\binom{B(s,W,k,j)}{2} &lt; (p-1)
-$$
+\sum^{p-1}_{k=1}\sum^s\_{j=1}\binom{B(s,W,k,j)}{2} < (p-1)
+$$<p>
 が成立するため、すべての\(j\)において\(B(r^2, W,k&rsquo;,j)&lt; 1\)である\(k&rsquo;\)が存在する。
 よって、始域を\(W\)とすると\(g(x)=(k&rsquo;x\mod p)\mod r^2\)と\(x\)は1対1の対応関係になる。</p>
 <p>論文の<a href="https://www.cs.umd.edu/~gasarch/BLOGPAPERS/FKS.pdf">リンク</a></p>
 <h2 id="雑記">雑記</h2>
 <p>論文では\(1\le j \le s\)だが、\(\mod s\)ではつねに\(j\neq s\)なので、\(0\le j &lt; s\)とした。</p>
 <p>もとの補題は
+</p>
 $$
-\sum^s_{j=1}\binom{B(s, W, k, j)}{2} &lt; \frac{r^2}{s}
-$$
+\sum^s\_{j=1}\binom{B(s, W, k, j)}{2} < \frac{r^2}{s}
+$$<p>
 であり、
+</p>
 $$
-\sum^{p-1}_{k=1}\sum^{s-1}_{j=0}\binom{B(s,W,k,j)}{2}&lt;\frac{(p-1)r^2}{s}
-$$
+\sum^{p-1}_{k=1}\sum^{s-1}\_{j=0}\binom{B(s,W,k,j)}{2}<\frac{(p-1)r^2}{s}
+$$<p>
 を証明することで、もとの補題を証明することにしていた。
 逆の証明がないので、もとの補題を使わないことにした。</p>
 <p>一つの関数ではなく、\(f\)と\(g\)を使うのは、\(n^2\)だと必要な空間が大きすぎるからだろうか。</p>

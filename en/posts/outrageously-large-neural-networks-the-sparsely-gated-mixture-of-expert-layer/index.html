@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>OUTRAGEOUSLY LARGE NEURAL NETWORKS THE SPARSELY-GATED MIXTURE-OF-EXPERTS LAYER (2017)</title>
 </head>
 
@@ -116,48 +138,52 @@
   <div>
     <p>Increasing a model’s number of parameters enhances its capacity to learn complex patterns, but it also raises computational costs.
 <a href="https://arxiv.org/pdf/1701.06538">OUTRAGEOUSLY LARGE NEURAL NETWORKS: THE SPARSELY-GATED MIXTURE-OF-EXPERTS LAYER</a> (MoE)  introduces a method to scale model capacity efficiently by using a gating network that dynamically selects a sparse subset of feed-forward networks (called experts) for each input, while skipping computation for the others.</p>
-<p>For a given input \(x\), let \(G(x)\) denote the output of the gating network, and \(E_i(x)\) represent the output of the \(i\)-th expert. The MoE layer produces its output (y) as a weighted sum of the selected experts’ outputs:
+<p>For a given input \(x\), let \(G(x)\) denote the output of the gating network, and \(E_i(x)\) represent the output of the \(i\)-th expert. The MoE layer produces its output \(y\) as a weighted sum of the selected experts’ outputs:
+</p>
 $$
-y=\sum^n_{i=1}G(x)_iE_i(x)
-$$
+y=\sum^n\_{i=1}G(x)\_iE\_i(x)
+$$<p>
 Here, \(G(x)\) is a sparse vector of size \(n\), where only \(k\) elements are positive (less than 1), and the rest are zero. Since the unselected experts contribute nothing to \(y\), only \(k\) experts need to be evaluated, which significantly reduces computation.</p>
 <p>The gating network computes \(G(x)\) using two trainable parameters: \(W_g\), which determines expert selection, and \(W_{noise}\), which injects controlled noise to promote balanced usage of experts:
+</p>
 $$
 \begin{align*}
-G(x)&amp;=\text{Softmax}(\text{KeepTopK}(H(x), k))\\
-H(x)_i&amp;=(x\cdot W_g)_i + \text{StandardNormal()}\cdot \text{Softplus}((x\cdot W_{\text{noise}})_i)\\
-\text{KeepTopK}(v,k)_i&amp;=
+G(x)&=\text{Softmax}(\text{KeepTopK}(H(x), k))\\\\
+H(x)\_i&=(x\cdot W\_g)\_i + \text{StandardNormal()}\cdot \text{Softplus}((x\cdot W\_{\text{noise}})\_i)\\\\
+\text{KeepTopK}(v,k)\_i&=
 \begin{cases}
-v_i&amp;\text{if }v_i \text{ is in the top }k\text{ elements of }v\\
--\infty&amp;\text{otherwise}
+v\_i&\text{if }v\_i \text{ is in the top }k\text{ elements of }v\\\\
+-\infty&\text{otherwise}
 \end{cases}
 \end{align*}
-$$</p>
-<p>An imbalanced selection of experts leads to inefficient computation and underutilization of model capacity. To encourage balanced expert usage, two auxiliary loss terms are introduced: \(L_{\text{importance}}(X)\) and \(L_{\text{load}}(X)\).</p>
+$$<p>An imbalanced selection of experts leads to inefficient computation and underutilization of model capacity. To encourage balanced expert usage, two auxiliary loss terms are introduced: \(L_{\text{importance}}(X)\) and \(L_{\text{load}}(X)\).</p>
 <p>The importance loss encourages equal contribution from all experts. Given a batch \(X\), the importance of each expert is the sum of its gate activations:
+</p>
 $$
 \begin{align*}
-\text{Importance}(X)&amp;=\sum_{x\in X}G(x)\\
-L_{\text{importance}}(X)&amp;=w_{\text{importance}}\cdot \textit{CV}(\text{Importance}(X))^2
+\text{Importance}(X)&=\sum\_{x\in X}G(x)\\\\
+L\_{\text{importance}}(X)&=w\_{\text{importance}}\cdot \textit{CV}(\text{Importance}(X))^2
 \end{align*}
-$$
+$$<p>
 where \(\text{CV}\) denotes the coefficient of variation (standard deviation divided by mean), and \(w_{\text{importance}}\) is a hand-tuned scaling factor.</p>
 <p>The load loss addresses the imbalance in the number of examples assigned to each expert. Since the number of examples is discrete and non-differentiable, a smooth estimator is used. For each expert \(i\), \(P(x, i)\) represents the probability that \(G(x)_i\) is non-zero, conditioned on the sampled noise:
+</p>
 $$
 \begin{align*}
-P(x, i) &amp;=\textit{Pr}\left((x\cdot W_g)_i + \text{StandardNormal}()\cdot \text{Softplus}((x\cdot W_{\text{noise}})_i) &gt; \text{kth\_excluding}(H(x), k, i)\right)\\
-&amp;=\Phi\left(\frac{(x\cdot W_g)_i - \text{kth\_excluding}(H(x), k, i)}{\text{Softplus}((x\cdot W_{\text{noise}})_i)}\right)\\
+P(x, i) &=\textit{Pr}\left((x\cdot W\_g)\_i + \text{StandardNormal}()\cdot \text{Softplus}((x\cdot W\_{\text{noise}})\_i) > \text{kth\\_excluding}(H(x), k, i)\right)\\\\
+&=\Phi\left(\frac{(x\cdot W\_g)\_i - \text{kth\\_excluding}(H(x), k, i)}{\text{Softplus}((x\cdot W\_{\text{noise}})\_i)}\right)\\\\
 \end{align*}
-$$
+$$<p>
 where \(\Phi\) is the cumulative distribution function of the standard normal distribution, and \(\text{kth\_excluding}(v, k, i)\) denotes the \(k\)-th largest element of \(v\) excluding position \(i\).</p>
 <p>The load for each expert across a batch \(X\) is then estimated as:
+</p>
 $$
-\text{Load}(X)_i = \sum_{x\in X} P(x,i)
-$$</p>
-<p>The load loss is defined as:
+\text{Load}(X)\_i = \sum\_{x\in X} P(x,i)
+$$<p>The load loss is defined as:
+</p>
 $$
-L_{\text{load}}(X)=w_{\text{load}}\cdot\text{CV}(\text{Load}(X))^2
-$$
+L\_{\text{load}}(X)=w\_{\text{load}}\cdot\text{CV}(\text{Load}(X))^2
+$$<p>
 where \(w_{\text{load}}\) is another hand-tuned scaling factor.</p>
 <p>By combining sparse gating with these load-balancing loss terms, the MoE layer achieves massive model capacity while keeping computation efficient.
 This technique enables training models with billions of parameters without a corresponding increase in computational cost.</p>

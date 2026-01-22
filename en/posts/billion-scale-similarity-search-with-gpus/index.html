@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Billion Scale Similarity Search With GPUs (2017)</title>
 </head>
 
@@ -117,24 +139,26 @@
     <p>The paper <a href="https://arxiv.org/abs/1702.08734">Billion-scale-similarity search with GPUs</a> presents an approximate nearest-neighbor search method that uses GPUs and combines the <a href="https://inria.hal.science/inria-00514462v2/document">IVFADC</a> indexing structure with <a href="https://www.cs.kent.edu/~batcher/sort.pdf">Batcher&rsquo;s bitonic sorting network</a>.
 The authors have implemented this method in a library called <a href="https://github.com/facebookresearch/faiss">faiss</a>.</p>
 <p>This search method aims to find the \(k\) nearest neighbors of a query vector \(x \in R^d\) among a set of database vectors \([y_i]_{i=0:l}\), based on the L2 distance. Instead of providing an exact result, it returns a suboptimal solution.
+</p>
 $$
-L=\text{k-}\argmin_{i=0:l}||x-y_i||_2
-$$</p>
-<p>The IVFADC indexing structure consists of two levels of quantization.
+L=\text{k-}\argmin\_{i=0:l}||x-y\_i||\_2
+$$<p>The IVFADC indexing structure consists of two levels of quantization.
+</p>
 $$
-y\approx q(y) = q_1(y) + q_2(y-q_1(y))
-$$
+y\approx q(y) = q\_1(y) + q\_2(y-q\_1(y))
+$$<p>
 The first-level quantizer \(q_1\): \(\mathbb{R}^d\rightarrow \mathcal{C}_1\subset \mathbb{R}^d\) maps each vector \(y\) to a coarse centroid \(c \in \mathcal{C_1}\), while the second-level quantizer: \(\mathbb{R}^d\rightarrow \mathcal{C}_2\subset \mathbb{R}^d\) encodes the residual vector after the first level.
 The database vectors are filtered based on their coarse-level centroids, and the search is then performed on the resulting subset using the second-level quantizer.
+</p>
 $$
-L_{\text{IVF}}=\tau-\argmin_{c\in\mathcal{C}_1}||x-c||_2
-$$
+L\_{\text{IVF}}=\tau-\argmin\_{c\in\mathcal{C}\_1}||x-c||\_2
+$$<p>
 \(\tau\) is the number of coarse-level centroids, and typically \(|C_1|\approx \sqrt{l}\) trained via \(k\)-means.
 For the second level, it computes the distances for the database vectors in \(L_{\text{IVF}}\).
+</p>
 $$
-L_{\text{IVFADC}}=k-\argmin_{i=0:l\ \text{s.t.}\ q_1(y_i)\in L_{\text{IVF}}}||x-q(y_i)||_2
-$$</p>
-<p>The second-level quantization \(q_2\) is done using a <a href="https://inria.hal.science/inria-00514462v2/document">product quantizer</a>, which divides the vector \(y\) into \(b\) sub-vectors \((y=[y^0\dots y^{b-1}])\) and quantizes each sub-vector independently.
+L\_{\text{IVFADC}}=k-\argmin\_{i=0:l\ \text{s.t.}\ q\_1(y\_i)\in L\_{\text{IVF}}}||x-q(y\_i)||\_2
+$$<p>The second-level quantization \(q_2\) is done using a <a href="https://inria.hal.science/inria-00514462v2/document">product quantizer</a>, which divides the vector \(y\) into \(b\) sub-vectors \((y=[y^0\dots y^{b-1}])\) and quantizes each sub-vector independently.
 \(b\) is an even divisor of the dimension \(d\).
 The sub-quantizers typically have 256 reproduction values, and the quantization value of the product quantizer is then \(q_2(y)=q^0(y^0)+256\times q^1(y^1)+\dots + 256^{b-1}\times q^{b-1}(y^{b-1})\).</p>
 <p>The search uses Batcher&rsquo;s bitonic sorting network to determine the exact distances in the set of reproduction values. The figure below, cited from the paper, displays the sorting network.

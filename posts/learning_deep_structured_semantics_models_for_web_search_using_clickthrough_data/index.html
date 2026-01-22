@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Learning Deep Structured Semantic Models for Web Search using Clickthrough Data(2013)</title>
 </head>
 
@@ -123,30 +145,34 @@ Web文書の大量の語彙をあつかうために、語彙の増加に対し�
 以下の図は、アーキテクチャの全体像である。\(Q\)はクエリ、\(D_{i}\)は文書、四角の中の数値はユニット数、\(R\)はコサイン類似度、\(P\)は温度付きソフトマックスを示す。
 <img src="/learning_deep_structured_semantic_models_for_web_search_using_clickthrough_data/fig1.png" alt="fig1">
 \(W\)は重み、\(b\)はバイアス、活性化関数は\(tanh\)であるから
+</p>
 $$
-l_1 = W_1 x
+l\_1 = W\_1 x
+$$<p>
+</p>
 $$
+l\_i = f(W\_i\ l\_{i-1} + b), i=2, \dots , N-1
+$$<p>
+</p>
 $$
-l_i = f(W_i\ l_{i-1} + b), i=2, \dots , N-1
-$$
-$$
-y = f(W_{N}\ l_{N-1}+b_N)
-$$
+y = f(W\_{N}\ l\_{N-1}+b\_N)
+$$<p>
+</p>
 $$
 f(x) = \frac{1-e^{-2x}}{1+e^{-2x}}
-$$
+$$<p>
 となる。
 温度はホールドアウトのデータで決められる。</p>
 <p>計算量の都合から、次の温度付きソフトマックスにある分母を近似する必要がある。</p>
-<p>$$
-P(D^{+}\mid Q) = \frac{\exp(\gamma R(Q, D^{+}))}{\sum_{D&rsquo;\in \boldsymbol{D}}\exp (\gamma R(Q, D&rsquo;))}
 $$
+P(D^{+}\mid Q) = \frac{\exp(\gamma R(Q, D^{+}))}{\sum\_{D'\in \boldsymbol{D}}\exp (\gamma R(Q, D'))}
+$$<p>
 そのため、\(\boldsymbol{D}\)は、無作為に抽出した負例\(\{D_j^-;j=1,\dots 4\}\)と正例\(D^{+}\)からなる集合で近似される。</p>
 <p>目的関数は、クエリが与えられたときの正例文書の尤度を最大化する次の式である。
+</p>
 $$
-L(\Lambda)=-\log\prod_{(Q, D^+)}P(D^+\mid Q)
-$$</p>
-<h3 id="word-hasing">Word hasing</h3>
+L(\Lambda)=-\log\prod\_{(Q, D^+)}P(D^+\mid Q)
+$$<h3 id="word-hasing">Word hasing</h3>
 <!-- 語彙数の増加に対して次元数を抑えるために、ネットワークの入力にbag-of-wordsの手法, word hasingをもちいる。-->
 <p>word-hasingは文字単位のnグラムである。
 はじめに、単語の始端と終端に記号をつけ、<code>good</code>を<code>#good#</code>のように、単語の始まりと終わりを明示する。

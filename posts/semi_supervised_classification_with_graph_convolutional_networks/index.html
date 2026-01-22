@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>SEMI-SUPERVISED CLASSIFICATION WITH GRAPH CONVOLUTIONAL NETWORKS</title>
 </head>
 
@@ -112,18 +134,21 @@
 表題の手法では、文書の特徴にくわえ、隣接行列で表現した辺の情報もネットワークにあたえる。
 グラフの辺の数に対して線形にスケールし、隠れ層でグラフの分散表現を獲得できる。</p>
 <p>\(A\)を隣接行列, \(I_{N}\)を単位行列、\(\tilde{A}=A+I_{N}\), \(\tilde{D}_{ii}=\sum_{j}\tilde{A}_{ij}\)とすると、各層の伝搬規則は次の式になる。
+</p>
 $$
 H^{(l+1)}=\sigma \left(\tilde{D}^{-\frac{1}{2}}\tilde{A}\tilde{D}^{-\frac{1}{2}}H^{(l)}W^{(l)}  \right)
-$$
+$$<p>
 \(\sigma\)は\(\text{ReLU}(\cdot)=\max(0, \cdot)\)などの活性化関数、\(H\in\mathbb{R}^{N\times D}\), \(H^{(0)}=X\)である。
 たとえば、2層のネットワークであれば、\(C\)をチャネル数, \(H\)を特徴マップとして\(W^{(0)}\in\mathbb{R}^{C\times H}\)の
+</p>
 $$
 Z=f(X, A)=  \text{softmax}\left(\hat{A} \text{ReLU}\left(\hat{A}XW^{(0)}\right)W^{(1)}\right)
-$$
+$$<p>
 で、学習時は\(\mathcal{Y}_L\)をラベルのある点の集合として交差エントロピー
+</p>
 $$
-\mathcal{L}=-\sum_{l\in \mathcal{Y}_L}\sum^{F}_{f=1}Y_{lf}\ln Z_{lf}
-$$
+\mathcal{L}=-\sum\_{l\in \mathcal{Y}\_L}\sum^{F}\_{f=1}Y\_{lf}\ln Z\_{lf}
+$$<p>
 をもちいる。</p>
 <p>論文を<a href="https://arxiv.org/pdf/1609.02907.pdf">こちら</a>からダウンロードできます。</p>
   </div>

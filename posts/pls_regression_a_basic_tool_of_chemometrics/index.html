@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>PLS-regression: a basic tool of chemometrics</title>
 </head>
 
@@ -115,52 +137,59 @@ PLS（部分的最小二乗法）は、入力変数の線形結合で表わせ�
 以下では\(\boldsymbol{\rm X}\)は中心化と標準化されているものとする。</p>
 <p>潜在変数の要件より、\(A\)は\(K\)より小さく、潜在変数\(\boldsymbol{\rm t}\)は互いに直交である。
 潜在変数は、説明変数の一部の\(A\)次元で
+</p>
 $$
-t_{ia} = \sum_kW^*_{ka}X_{ik}; (\boldsymbol{\rm T}=\boldsymbol{\rm XW}^*)
-$$
+t\_{ia} = \sum\_kW^*\_{ka}X\_{ik}; (\boldsymbol{\rm T}=\boldsymbol{\rm XW}^\*)
+$$<p>
 と表せる。逆に、潜在変数の線形結合で説明変数を近似するのであれば、\(e_{ik}\)を残差すると
+</p>
 $$
-X_{ik}=\sum_at_{ia}p_{ak} + e_{ik}; (\boldsymbol{\rm X}=\boldsymbol{\rm TP}^\top+\boldsymbol{\rm E})
-$$
+X\_{ik}=\sum\_at\_{ia}p\_{ak} + e\_{ik}; (\boldsymbol{\rm X}=\boldsymbol{\rm TP}^\top+\boldsymbol{\rm E})
+$$<p>
 となる。
 \(f_{im}\)を残差とすると目的変数も潜在変数の線形結合により
+</p>
 $$
-y_{im} = \sum_ac_{ma}t_{ia} + f_{im}; (\boldsymbol{\rm Y}=\boldsymbol{\rm TC}^\top+\boldsymbol{\rm F})
-$$
+y\_{im} = \sum\_ac\_{ma}t\_{ia} + f\_{im}; (\boldsymbol{\rm Y}=\boldsymbol{\rm TC}^\top+\boldsymbol{\rm F})
+$$<p>
 になる。以上をあわせると、
+</p>
 $$
-y_{im}=\sum_ac_{ma}\sum_kw^*_{ka}x_{ik} + f_{im} = \sum_kb_{mk}x_{ik}+f_{im}
+y\_{im}=\sum_ac\_{ma}\sum\_kw^\*\_{ka}x\_{ik} + f\_{im} = \sum\_kb\_{mk}x\_{ik}+f\_{im}
+$$<p>
+</p>
 $$
-$$
-\boldsymbol{\rm Y} = \boldsymbol{\rm XW}^*\boldsymbol{\rm C}^\top + \boldsymbol{\rm F} = \boldsymbol{\rm XB} + \boldsymbol{\rm F}
-$$
+\boldsymbol{\rm Y} = \boldsymbol{\rm XW}^\*\boldsymbol{\rm C}^\top + \boldsymbol{\rm F} = \boldsymbol{\rm XB} + \boldsymbol{\rm F}
+$$<p>
 であり、PLSの回帰係数を
+</p>
 $$
-b_{mk}=\sum_ac_{ma}w^*_{ka}; (\boldsymbol{\rm B}=\boldsymbol{\rm W}^* \boldsymbol{\rm C}^\top)
-$$
+b\_{mk}=\sum\_ac\_{ma}w^\*\_{ka}; (\boldsymbol{\rm B}=\boldsymbol{\rm W}^\* \boldsymbol{\rm C}^\top)
+$$<p>
 とかける。</p>
 <p>PLSの学習アルゴリズムに、NIPALS（非線形反復部分最小二乗法）がある。
 これはまず、\(\boldsymbol{\rm u}\)を\(\boldsymbol{\rm Y}\)のある列ベクトルとする。
 次に
+</p>
 $$
 \boldsymbol{\rm w} = \boldsymbol{\rm X}^\top \boldsymbol{\rm u} / \boldsymbol{\rm u}^\top \boldsymbol{\rm u}
-$$
+$$<p>
 その後、\(\mid\mid \boldsymbol{\rm w}\mid \mid = 1.0\)としてもよい。</p>
 <p>これをもとに\(\boldsymbol{\rm t}=\boldsymbol{\rm Xw}\)として潜在変数\(\boldsymbol{\rm t}\)を計算し、さらに、\(\boldsymbol{\rm c}=\boldsymbol{\rm Y}^\top \boldsymbol{\rm t} / \boldsymbol{\rm t}^\top \boldsymbol{\rm t}\)とする。</p>
 <p>最後に、\(\boldsymbol{\rm u}\)を更新する。
+</p>
 $$
 \boldsymbol{\rm u}=\boldsymbol{\rm Yc}/\boldsymbol{\rm c}^\top\boldsymbol{\rm c}
-$$</p>
-<p>\(\mid \mid\boldsymbol{\rm t_{\text{old}}} - \boldsymbol{\rm t_{\text{new}}}\mid\mid / \mid\mid \boldsymbol{\rm t_{\text{new}}}\mid\mid &lt; \epsilon\)が収束していなければ、\(\boldsymbol{\rm w}\)を求めるところに戻る。</p>
+$$<p>\(\mid \mid\boldsymbol{\rm t_{\text{old}}} - \boldsymbol{\rm t_{\text{new}}}\mid\mid / \mid\mid \boldsymbol{\rm t_{\text{new}}}\mid\mid &lt; \epsilon\)が収束していなければ、\(\boldsymbol{\rm w}\)を求めるところに戻る。</p>
 <p>以下の式で現在の成分を\(\boldsymbol{\rm X}, \boldsymbol{\rm Y}\)からデフレーションし、はじめに戻る。
+</p>
 $$
 \begin{align}
-\boldsymbol{\rm p} &amp;= \boldsymbol{\rm X}^\top \boldsymbol{\rm t}/(\boldsymbol{\rm t}^\top \boldsymbol{\rm t}) \\
-\boldsymbol{\rm X} &amp;= \boldsymbol{\rm X} - \boldsymbol{\rm t} \boldsymbol{\rm p}^\top \\
-\boldsymbol{\rm Y} &amp;= \boldsymbol{\rm Y} - \boldsymbol{\rm t}\boldsymbol{\rm c}^\top
+\boldsymbol{\rm p} &= \boldsymbol{\rm X}^\top \boldsymbol{\rm t}/(\boldsymbol{\rm t}^\top \boldsymbol{\rm t}) \\\\
+\boldsymbol{\rm X} &= \boldsymbol{\rm X} - \boldsymbol{\rm t} \boldsymbol{\rm p}^\top \\\\
+\boldsymbol{\rm Y} &= \boldsymbol{\rm Y} - \boldsymbol{\rm t}\boldsymbol{\rm c}^\top
 \end{align}
-$$</p>
-<p>論文の<a href="https://www.libpls.net/publication/PLS_basic_2001.pdf">リンク</a></p>
+$$<p>論文の<a href="https://www.libpls.net/publication/PLS_basic_2001.pdf">リンク</a></p>
   </div>
 </main>
 

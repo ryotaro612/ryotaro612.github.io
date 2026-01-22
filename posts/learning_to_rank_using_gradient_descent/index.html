@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>抄訳 Learning to Rank using Gradient Descent (2005)</title>
 </head>
 
@@ -120,13 +142,14 @@ RankNetの学習は、モデルの出力と訓練データの確率分布の交�
 <p>モデルの入力を\(d\)次元のベクトル\(\boldsymbol{\mathrm{x}}\in \mathcal{R}^d\), モデルを\(f: \mathcal{R}^d\mapsto \mathcal{R}\)とする。
 このとき、\(\boldsymbol{\mathrm{x}}_i\)のランキングが\(\boldsymbol{\mathrm{x}}_j\)よりも高い確率の正解を\(\bar{P}_{ij}\)とすると、
 \(\boldsymbol{\mathrm{x}}_i\), \(\boldsymbol{\mathrm{x}}_j\)に対応する交差エントロピー\(C_{ij}\)は
+</p>
 $$
 \begin{align}
-o_{ij}&amp;\equiv f(\boldsymbol{\mathrm{x}}_i) - f(\boldsymbol{\mathrm{x}}_j)\\
-P_{ij}&amp;\equiv \frac{e^{o_{ij}}}{1+e^{{o}_{ij}}}\\
-C_{ij}&amp;=-\bar{P}_{ij}\log P_{ij} - (1-\bar{P}_{ij})\log(1-P_{ij})
+o\_{ij}&\equiv f(\boldsymbol{\mathrm{x}}\_i) - f(\boldsymbol{\mathrm{x}}\_j)\\\\
+P\_{ij}&\equiv \frac{e^{o\_{ij}}}{1+e^{{o}\_{ij}}}\\\\
+C\_{ij}&=-\bar{P}\_{ij}\log P\_{ij} - (1-\bar{P}\_{ij})\log(1-P\_{ij})
 \end{align}
-$$
+$$<p>
 研究の中心は、ネットワークではなく損失関数にあるので、提案した損失関数を使用できればネットワークのアーキテクチャは何でもよく、実験では2層の順伝搬ネットワークが使われている。</p>
 <p>論文の<a href="https://icml.cc/2015/wp-content/uploads/2015/06/icml_ranking.pdf">リンク</a></p>
 <h2 id="雑記">雑記</h2>

@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Space/Time Trade-offs in Hash Coding with Allowable Errors</title>
 </head>
 
@@ -124,39 +146,46 @@
 <p>要素の存在を確かめる時間、空間の大きさ、偽陽性の確率にはトレードオフがある。
 確認にかかる時間の単位を、1ビットにアクセスして値を調べる時間として、3つのトレードオフの関係を求める。
 \(n\)個の要素が追加されたときに、空間の全てのビットに対する0のままのビットの割合\(\phi\)は
+</p>
 $$
 \phi = \left(1-\frac{d}{N}\right)^n
-$$
+$$<p>
 これは\(d&lt; &lt;N \)と仮定すると
+</p>
 $$
 \begin{align}
-\log_2{\phi}&amp;=\log_e\left(1-\frac{d}{N}\right)^n\log_2e\\\
-&amp;=-n\left(\frac{d}{N}\right)\log_2e
+\log\_2{\phi}&=\log\_e\left(1-\frac{d}{N}\right)^n\log\_2e\\\\\
+&=-n\left(\frac{d}{N}\right)\log\_2e
 \end{align}
-$$
+$$<p>
 に近似できる。また、空間に存在しない要素が誤って存在すると判定される確率\(P\)は
+</p>
 $$
 P=(1-\phi)^d
-$$
+$$<p>
 であり、近似式と組みあわせると
+</p>
 $$
-N=n\left(-\log_2P\right)\frac{\log_2e}{\log_2\phi\log_2(1-\phi)}
-$$
+N=n\left(-\log\_2P\right)\frac{\log\_2e}{\log\_2\phi\log\_2(1-\phi)}
+$$<p>
 になる。次に時間について考えると、\(x\)ビットが検査されるのは、最初の\(x-1\)ビットが\(1\)で\(x\)番目のビットが\(0\)のときであり、その確率は
+</p>
 $$
 \phi(1-\phi)^{x-1}
-$$
+$$<p>
 になる。\(P&lt; &lt;1\)かつ\(d&gt; &gt;1\)と仮定すると、空間に存在しないと判定される要素の検査でアクセスされるビット数の期待値\(T\)は
+</p>
 $$
 \begin{align}
-T&amp;=\sum_{x=1}^{\infty}x\phi(1-\phi)^{x-1}\\\
-&amp;=\frac{1}{\phi}
+T&=\sum\_{x=1}^{\infty}x\phi(1-\phi)^{x-1}\\\\\
+&=\frac{1}{\phi}
 \end{align}
-$$
+$$<p>
 以上から、時間と空間のサイズと偽陽性の確率は
+</p>
 $$
-N=n(-\log_2P)\frac{\log_2e}{\log_2(1/T)\log_2(1-1/T)}
-$$
+N=n(-\log\_2P)\frac{\log\_2e}{\log\_2(1/T)\log\_2(1-1/T)}
+$$<p>
 という関係になる。</p>
 <p>論文を<a href="https://dl.acm.org/doi/10.1145/362686.362692">こちら</a>からダウンロードできます。</p>
   </div>

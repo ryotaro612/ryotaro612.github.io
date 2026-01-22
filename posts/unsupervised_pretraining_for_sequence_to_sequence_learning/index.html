@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Unsupervised Pretraining for Sequence to Sequence Learning(2017)</title>
 </head>
 
@@ -138,19 +160,22 @@ seq2seqには3層のLSTMが使われる。
 <h4 id="multi-layer-attention">Multi-layer attention</h4>
 <p>図の(b)のように、encoderにおけるLSTMの最初と最後の層の状態とdecoderのソフトマックスへの入力ベクトル\(q_t\)から文脈ベクトルをつくる。
 encoderの1層目の状態を\(h^{1}_1 , \dots , h^1_{T}\), 最後の層の状態を\(h^{L}_1 , \dots , h^L_{T}\)とすると文脈ベクトル\(c_t\)を次のように算出する。
+</p>
 $$
-\alpha_i = \frac{\exp (q_t \cdot h^{L}_i)}{\sum^T_{j=1}\exp (q_t \cdot h^L_j)}
+\alpha\_i = \frac{\exp (q\_t \cdot h^{L}\_i)}{\sum^T\_{j=1}\exp (q\_t \cdot h^L\_j)}
+$$<p>
+</p>
 $$
+c^1\_{t}=\sum^{T}\_{i=1}\alpha\_ih^1\_{i}
+$$<p>
+</p>
 $$
-c^1_{t}=\sum^{T}_{i=1}\alpha_ih^1_{i}
+c^L\_{t}=\sum^T\_{i=1}\alpha\_ih^L\_{i}
+$$<p>
+</p>
 $$
-$$
-c^L_{t}=\sum^T_{i=1}\alpha_ih^L_{i}
-$$
-$$
-c_t=[c^1_{t};c^L_t]
-$$</p>
-<hr>
+c\_t=[c^1\_{t};c^L\_t]
+$$<hr>
 <ul>
 <li>論文は<a href="https://www.aclweb.org/anthology/D17-1039.pdf">こちら</a>からダウンロードできます。</li>
 <li>図はすべて論文から引用されています。</li>

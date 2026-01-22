@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Sorting networks and their applications (1968)</title>
 </head>
 
@@ -131,12 +153,13 @@ The lowest output of the odd merge becomes the lowest number of the final list.
 The \(i^{\textit{th}}\) output of the even merge is compared with the \(i+1^{\textit{th}}\) output of the odd merge to form the \(2i^{\textit{th}}\) and \(2i+1^{\textit{th}}\) numberos of the final list.
 A list is bitonic if the first elements are sorted in ascending order and the remaining elements are sorted in descending order.
 When the bitonic sort receives a bitonic list of \(2n\) elements, \(a_1, a_2,\dots ,a_{2n}\), it constructs the following two bitonic lists of \(n\) elements by comparing \(a_i\) with \(a_{n+i}\).
+</p>
 $$
 \begin{align*}
-\min(a_1, a_{n+1}), \min (a_2, a_{n+2}), \dots , \min (a_n, a_{2n})\\
-\max(a_1, a_{n+1}), \max (a_2, a_{n+2}), \dots , \max (a_n, a_{2n})
+\min(a\_1, a\_{n+1}), \min (a\_2, a\_{n+2}), \dots , \min (a\_n, a\_{2n})\\\\
+\max(a\_1, a\_{n+1}), \max (a\_2, a\_{n+2}), \dots , \max (a\_n, a\_{2n})
 \end{align*}
-$$
+$$<p>
 Any \(\min(a_i, a_{n+i})\) is smaller than any \(\max(a_i, a_{n+i})\), and the botonic sorter constructs the final list by concatenating the two smaller lists of \(n\) elements.
 The following figure illustrates a bitonic sorter with \(2n\) elements.
 <img src="/sorting-networks/bitonic.png" alt="bitonic"></p>

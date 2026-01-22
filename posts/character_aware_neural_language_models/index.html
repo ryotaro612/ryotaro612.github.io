@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>論文メモ Character-Aware Neural Language Models</title>
 </head>
 
@@ -120,54 +142,49 @@
 <p>\(d\)を文字の分散表現の次元として、長さ\(l\)の単語\(k\)は\({\rm C}^{d\times l}\in \mathbb{R}^{d \times l}\)の分散表現としてモデルに入力される。
 入力された分散表現に幅\(w\)のフィルタ\(\boldsymbol{\rm H}\in \mathbb{R}^{d \times w}\)を適用しnarrow conlovutionによって、特徴マップ\(\boldsymbol{\rm f}^k\in \mathbb{R}^{l-w+1}\)を求める。
 \(\boldsymbol{\rm C}^k[*, i:i+w-1]\)を単語\(k\)の分散表現\(\boldsymbol{\rm C}^k\)の\(i\)から\(i+w-1\)までの列とすると、\(i\)番目の要素は次の式で計算される。</p>
-<p>$$
+$$
 \boldsymbol{\rm f}^k[i] = \tanh (\text{Tr}(\boldsymbol{\rm C}^k[*, i:i+w-1] \boldsymbol{\rm H}^T) + b)
-$$</p>
-<p>MAXプーリングにより各フィルタからスカラー値\(y^k\)を求める。アーキテクチャ全体ではフィルタを\([100, 1000]\)の範囲の複数のフィルタ\(\boldsymbol{\rm H}_1 ,\dots \boldsymbol{\rm H}_h\)をつかう。
+$$<p>MAXプーリングにより各フィルタからスカラー値\(y^k\)を求める。アーキテクチャ全体ではフィルタを\([100, 1000]\)の範囲の複数のフィルタ\(\boldsymbol{\rm H}_1 ,\dots \boldsymbol{\rm H}_h\)をつかう。
 このとき、単語\(k\)に対して\(\boldsymbol{y}^k=[y_1^k , \dots y_h^k]\)がhighway networkにわたされる。</p>
-<p>$$
-y^k=\max_i \boldsymbol{\rm f}^k[i]
-$$</p>
-<h4 id="highway-network">Highway Network</h4>
+$$
+y^k=\max\_i \boldsymbol{\rm f}^k[i]
+$$<h4 id="highway-network">Highway Network</h4>
 <p>CNNの出力をhighway networkに入力し、次の\(\boldsymbol{\rm z}\)を計算する。
+</p>
 $$
-\boldsymbol{\rm z}=\boldsymbol{\rm t}\odot g(\boldsymbol{\rm W}_H \boldsymbol{\rm y} + \boldsymbol{\rm b}_H) + (\boldsymbol{1} - \boldsymbol{\rm t}\odot \boldsymbol{\rm y})
-$$
+\boldsymbol{\rm z}=\boldsymbol{\rm t}\odot g(\boldsymbol{\rm W}\_H \boldsymbol{\rm y} + \boldsymbol{\rm b}\_H) + (\boldsymbol{1} - \boldsymbol{\rm t}\odot \boldsymbol{\rm y})
+$$<p>
 ただし、\(\boldsymbol{\rm t}=\sigma (\boldsymbol{\rm W}_T\boldsymbol{\rm y} + \boldsymbol{\rm b}_T)\)であり、これをtransform gateという。
 \(\boldsymbol{1}-\boldsymbol{\rm t}\)はcarry gateとよばれ、LSTMのメモリセルと同じく、入力を適応的にそのまま出力するはたらきがある。</p>
 <h4 id="lstm">LSTM</h4>
 <p>時刻\(t\)のhighway networkの出力\(\boldsymbol{\rm z}_t\in \mathbb{R}^n\)はLSTMに入力され、LSTMは次の計算により\(\boldsymbol{\rm h}_t\in \mathbb{R}^m\)を出力する。
 複数のLSTMを重ねるときは、\(\boldsymbol{\rm h}_t\)を次のLSTMにわたす。</p>
-<p>$$
+$$
 \begin{align}
-\boldsymbol{\rm i}_t &amp;= \sigma(\boldsymbol{\rm W}^i\boldsymbol{\rm z}_t + \boldsymbol{\rm U}^i\boldsymbol{\rm h}_{t-1}+\boldsymbol{\rm b}^i)\\
-\boldsymbol{\rm f}_t &amp;= \sigma(\boldsymbol{\rm W}^f\boldsymbol{\rm z}_t + \boldsymbol{\rm U}^f\boldsymbol{\rm h}_{t-1}+\boldsymbol{\rm b}^f)\\
-\boldsymbol{\rm o}_t &amp;= \sigma(\boldsymbol{\rm W}^o\boldsymbol{\rm z}_t + \boldsymbol{\rm U}^o\boldsymbol{\rm h}_{t-1}+\boldsymbol{\rm b}^o)\\
-\boldsymbol{\rm g}_t &amp;= \tanh(\boldsymbol{\rm W}^g\boldsymbol{\rm z}_t + \boldsymbol{\rm U}^g\boldsymbol{\rm h}_{t-1}+\boldsymbol{\rm b}^g)\\
-\boldsymbol{\rm c}_t &amp;= \boldsymbol{\rm f}_t \odot \boldsymbol{\rm c}_{t-1} + \boldsymbol{\rm i}_t \odot \boldsymbol{\rm g}_t \\
-\boldsymbol{\rm h}_t &amp;= \boldsymbol{\rm o}_t \odot \tanh (\boldsymbol{\rm c}_t)
+\\boldsymbol{\rm i}\_t &= \sigma(\boldsymbol{\rm W}^i\boldsymbol{\rm z}\_t + \boldsymbol{\rm U}^i\boldsymbol{\rm h}\_{t-1}+\boldsymbol{\rm b}^i)\\\\
+\\boldsymbol{\rm f}\_t &= \sigma(\boldsymbol{\rm W}^f\boldsymbol{\rm z}\_t + \boldsymbol{\rm U}^f\boldsymbol{\rm h}\_{t-1}+\boldsymbol{\rm b}^f)\\\\
+\\boldsymbol{\rm o}\_t &= \sigma(\boldsymbol{\rm W}^o\boldsymbol{\rm z}\_t + \boldsymbol{\rm U}^o\boldsymbol{\rm h}\_{t-1}+\boldsymbol{\rm b}^o)\\\\
+\\boldsymbol{\rm g}\_t &= \tanh(\boldsymbol{\rm W}^g\boldsymbol{\rm z}\_t + \boldsymbol{\rm U}^g\boldsymbol{\rm h}\_{t-1}+\boldsymbol{\rm b}^g)\\\\
+\boldsymbol{\rm c}\_t &= \boldsymbol{\rm f}\_t \odot \boldsymbol{\rm c}\_{t-1} + \boldsymbol{\rm i}\_t \odot \boldsymbol{\rm g}\_t \\\\
+\boldsymbol{\rm h}\_t &= \boldsymbol{\rm o}\_t \odot \tanh (\boldsymbol{\rm c}\_t)
 \end{align}
-$$</p>
-<h4 id="出力層">出力層</h4>
+$$<h4 id="出力層">出力層</h4>
 <p>LSTMの出力\(\boldsymbol{\rm h}_t\)を全結合層とソフトマックス関数に入力し、単語列\(w_{1:t}=[w_1, \dots w_t]\)から次の単語\(w_{t+1}\)を予測する。</p>
-<p>$$
-\text{Pr}(w_{t+1}=j\mid w_{1:t}) = \frac{\exp (\boldsymbol{\rm h}_t \cdot \boldsymbol{\rm p}^j + q^j)}{\sum_{j&rsquo;\in \mathcal{V}}\exp (\boldsymbol{\rm h}_t \cdot \boldsymbol{\rm p}^{j&rsquo;}+ q^{j&rsquo;})}
-$$</p>
-<p>\(\mathcal{V}\)は単語の集合をさす。
+$$
+\text{Pr}(w\_{t+1}=j\mid w\_{1:t}) = \frac{\exp (\boldsymbol{\rm h}\_t \cdot \boldsymbol{\rm p}^j + q^j)}{\sum\_{j'\in \mathcal{V}}\exp (\boldsymbol{\rm h}\_t \cdot \boldsymbol{\rm p}^{j'}+ q^{j'})}
+$$<p>\(\mathcal{V}\)は単語の集合をさす。
 単語数\(\mid\mathcal{V}\mid\)が多い場合、階層的ソフトマックスをもちいる。
 \(\mathcal{V}\)を\(c=\lceil\sqrt{\mid\mathcal{V}\mid} \rceil\)として\(\mathcal{V}_1,\dots \mathcal{V}_c\)に分割し、次のように予測する。</p>
-<p>$$
+$$
 \begin{align}
-\text{Pr}(w_{t+1} = j\mid w_{1:t}) &amp;= \frac{\exp (\boldsymbol{\rm h}_t\cdot \boldsymbol{\rm s}^r + t^r)}{\sum^c_{r&rsquo;=1}\exp (\boldsymbol{\rm h}_t \cdot \boldsymbol{\rm s}^{r&rsquo;}+ t^{r&rsquo;})} \\
-&amp;\times \frac{\exp (\boldsymbol{\rm h}_t\cdot \boldsymbol{\rm p}_r^j + q_r^j)}{\sum_{j&rsquo;\in\mathcal{V}_r}\exp (\boldsymbol{\rm h}_t \cdot \boldsymbol{\rm p}_r^{j&rsquo;}+ q_r^{j&rsquo;})}
+\text{Pr}(w\_{t+1} = j\mid w\_{1:t}) &= \frac{\exp (\boldsymbol{\rm h}\_t\cdot \boldsymbol{\rm s}^r + t^r)}{\sum^c\_{r'=1}\exp (\boldsymbol{\rm h}\_t \cdot \boldsymbol{\rm s}^{r'}+ t^{r'})} \\\\
+&\times \frac{\exp (\boldsymbol{\rm h}\_t\cdot \boldsymbol{\rm p}\_r^j + q\_r^j)}{\sum\_{j'\in\mathcal{V}\_r}\exp (\boldsymbol{\rm h}\_t \cdot \boldsymbol{\rm p}\_r^{j'}+ q\_r^{j'})}
 \end{align}
-$$</p>
-<h4 id="損失関数">損失関数</h4>
+$$<h4 id="損失関数">損失関数</h4>
 <p>損失関数にはnegative log-likelihood(NLL)をもちいる。</p>
-<p>$$
-NLL = - \sum_{t=1}^T \log \text{Pr}(w_t\mid w_{1:t-1})
-$$</p>
-<h3 id="備考">備考</h3>
+$$
+NLL = - \sum\_{t=1}^T \log \text{Pr}(w\_t\mid w\_{1:t-1})
+$$<h3 id="備考">備考</h3>
 <p>提案された言語モデルは、<a href="https://arxiv.org/abs/1802.05365">ELMo</a>で応用された。
 以前、<a href="/posts/deep_contextualized_word_representations/">こちら</a>にELMoの内容をまとめた。</p>
 <h3 id="感想">感想</h3>

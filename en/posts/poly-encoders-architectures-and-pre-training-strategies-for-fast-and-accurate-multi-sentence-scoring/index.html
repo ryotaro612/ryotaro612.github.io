@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Poly-Encoders: Architectures and Pre-Training Strategies for Fast and Accurate Multi-Sentence Scoring (2019)</title>
 </head>
 
@@ -134,18 +156,20 @@ To resemble the procedure of pre-training, Bi-encoders surround the input and la
 <!-- A Bi-encoder employs the special token `[S]` and the segment token as [BERT](https://arxiv.org/abs/1810.04805). -->
 <!-- To resemble the procedure of pre-training, Bi-encoders surround the input and label by the special token `[S]`, and assign the segment token for features with them. -->
 <p>The Poly-encoder represents an input sequence with \(m\) vectors \((y^1_{\textit{ctxt}}\dots y^m_{\textit{ctxt}})\) using \(m\) attention mechanisms.
+</p>
 $$
 \begin{align*}
-y^i_{\textit{ctxt}}&amp;=\sum_jw^{c_i}_jh_j\\
-(w_1^{c_i},\dots , w_N^{c_i})&amp;=\text{softmax}(c_i\cdot h_1,\dots , c_i\cdot h_N)
+y^i\_{\textit{ctxt}}&=\sum\_jw^{c\_i}\_jh\_j\\\\
+(w\_1^{c\_i},\dots , w\_N^{c\_i})&=\text{softmax}(c\_i\cdot h\_1,\dots , c\_i\cdot h\_N)
 \end{align*}
-$$
+$$<p>
 where \((h_1,\dots, h_N)\) is the output of Context Encoder in the figure, and context codes \((c_1,\dots,c_m)\) function as the query of the QKV attention mechanism.
 The context codes are randomly initialized, and learnt during fine-tuning.
 Finally, the Poly-encoder inputs \((y^1_{\textit{ctxt}}\dots y^m_{\textit{ctxt}})\) and a candidate label \(y_{\textit{cand}_i}\) to the subsequent attention mechanism after the \(m\) ones:
+</p>
 $$
-y_{\textit{ctxt}}=\sum_iw_iy^i_{\textit{ctxt}}\ \ \ \ \text{where}\ \ \ \ (w_1,\dots ,w_m) = \text{softmax}(y_{\textit{cand}_i}\cdot y^1_{\textit{ctxt}}, \dots , y_{\textit{cand}_i}\cdot y^m_{\textit{ctxt}})
-$$</p>
+y\_{\textit{ctxt}}=\sum\_iw\_iy^i\_{\textit{ctxt}}\ \ \ \ \text{where}\ \ \ \ (w\_1,\dots ,w\_m) = \text{softmax}(y\_{\textit{cand}\_i}\cdot y^1\_{\textit{ctxt}}, \dots , y\_{\textit{cand}\_i}\cdot y^m\_{\textit{ctxt}})
+$$
   </div>
 </main>
 

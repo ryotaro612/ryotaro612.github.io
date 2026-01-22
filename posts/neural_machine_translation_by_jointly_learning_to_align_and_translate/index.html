@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE(2015)</title>
 </head>
 
@@ -129,33 +151,39 @@
 <h3 id="decoder">Decoder</h3>
 <p>長さ\(T_{T_x}\)のone-hotベクトルのシーケンス\({\rm \boldsymbol{x}}\)を入力文、長さ\(T_{T_y}\)のシーケンス\({\rm \boldsymbol{y}}\)を出力文とする。
 \({\rm \boldsymbol{x}}\)と\({\rm \boldsymbol{y}}\)の間には次の関係が成り立つ。
+</p>
 $$
 {\rm \boldsymbol{y}} = \underset{{\rm \boldsymbol{y}}}{\operatorname{argmax}}\ p({\rm \boldsymbol{y}}\mid {\rm \boldsymbol{x}})
-$$
+$$<p>
 \(p({\rm \boldsymbol{y}})\)を次のように条件付き確率に分解する。
+</p>
 $$
 \begin{align}
-p({\rm \boldsymbol{y}})&amp;=\prod_{t=1}^{T_{y}}p(y_i\mid y_1 , \dots ,y_{i-1}, {\rm \boldsymbol{x}}) \\
-&amp;=\prod_{t=1}^{T_{y}} g(y_{i-1}, s_i, c_i)
+p({\rm \boldsymbol{y}})&=\prod\_{t=1}^{T\_{y}}p(y\_i\mid y\_1 , \dots ,y\_{i-1}, {\rm \boldsymbol{x}}) \\\\
+&=\prod\_{t=1}^{T\_{y}} g(y\_{i-1}, s\_i, c\_i)
 \end{align}
-$$
+$$<p>
 \(g\)は、\(y_i\)の確率を出力する非線形の関数である。\(s_i\)は時刻\(i\)のRNN\(f\)の内部状態であり、
+</p>
 $$
-s_i = f(s_{i-1}, y_{i-1}, c_i)
-$$
+s\_i = f(s\_{i-1}, y\_{i-1}, c\_i)
+$$<p>
 で計算される。
 \(c_i\)は、生成する単語に関係する入力文の文脈を示すベクトルである。
 encoderが出力するアノテーション\((h_1 \cdots , h_{T_x})\)から
+</p>
 $$
-c_i=\sum^{T_x}_{j=1}\alpha_{ij}h_j
-$$
+c\_i=\sum^{T\_x}\_{j=1}\alpha\_{ij}h\_j
+$$<p>
 で計算される。ただし
+</p>
 $$
-\alpha_{ij}=\frac{\exp(e_{ij})}{\sum^{T_x}_{k=1}\exp(e_{ik})}
+\alpha\_{ij}=\frac{\exp(e\_{ij})}{\sum^{T\_x}\_{k=1}\exp(e\_{ik})}
+$$<p>
+</p>
 $$
-$$
-e_{ij}=a(s_{i-1},h_j)
-$$
+e\_{ij}=a(s\_{i-1},h\_j)
+$$<p>
 であり、\(a\)は論文中でalignment modelと呼ばれる、順伝播ネットワークである。</p>
 <h3 id="encoder">Encoder</h3>
 <p>decoderの入力にある\(h_j\)は、\(j\)番目の単語周辺に注目した入力文全体の情報を含むベクトルである。

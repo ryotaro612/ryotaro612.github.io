@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>概要 Subword Regularization: Improving Neural Network Translation Models with Multiple Subword Candidates</title>
 </head>
 
@@ -129,13 +151,11 @@
 <p>文に対応するサブワード列を生成するために、サブワードを生成するユニグラム言語モデルを源言語文と目的言語文から学習する。
 学習はEMアルゴリズムにより、\(\mathcal{L}\)を最大化するように、サブワード\(x_i\)の出現確率\(p(x_i)\)の更新を繰り返す。
 \(D\)は学習データにある文の集合、\({\bf x} = (x_1, \dots, x_M)\)は文\(X^{(s)}\)のサブワード列、\(S(X)\) はサブワードによるセグメンテーションの候補の集合を表す。</p>
-<p>$$
-\mathcal{L} = \sum_{ s = 1}^{ \mid D \mid } \log (P(X^{(s)})) = \sum_{s=1}^{\mid D \mid}\log \left( \sum_{{\bf x}\in S(X^{(s)})} P({\bf x}) \right)
-$$</p>
-<p>$$
-P({\bf x}) = \prod_{i=1}^{M}p(x_i), \forall i\ x_i\in \mathcal{V}, \sum_{x\in\mathcal{V}}p(x) =1
-$$</p>
-<p>ただし、\(\mathcal{V}\)は未知なので、十分大きな要素数の\(\mathcal{V}\)を設定し、その後、\(p(x_i)\)を求め、\(x_i\)の有無における\(\mathcal{L}\)への差分が小さい\(x_i\)を\(\mathcal{V}\)から除外するというステップを繰り返し、期待する要素数の\(\mathcal{V}\)を求める。</p>
+$$
+\mathcal{L} = \sum\_{ s = 1}^{ \mid D \mid } \log (P(X^{(s)})) = \sum\_{s=1}^{\mid D \mid}\log \left( \sum\_{\{\bf x}\in S(X^{(s)})} P(\{\bf x}) \right)
+$$$$
+P(\{\bf x}) = \prod\_{i=1}^{M}p(x_i), \forall i\ x_i\in \mathcal{V}, \sum\_{x\in\mathcal{V}}p(x) =1
+$$<p>ただし、\(\mathcal{V}\)は未知なので、十分大きな要素数の\(\mathcal{V}\)を設定し、その後、\(p(x_i)\)を求め、\(x_i\)の有無における\(\mathcal{L}\)への差分が小さい\(x_i\)を\(\mathcal{V}\)から除外するというステップを繰り返し、期待する要素数の\(\mathcal{V}\)を求める。</p>
 <p>英語の論文は<a href="https://arxiv.org/abs/1804.10959">こちら</a>から、日本語の論文は<a href="https://www.anlp.jp/proceedings/annual_meeting/2018/pdf_dir/B1-5.pdf">こちら</a>から参照できる。</p>
 <h3 id="感想">感想</h3>
 <p>EMアルゴリズムにおける\(p(x_i)\)の更新する値は、\(\mathcal{L}\)を偏微分して求めるのだと思う。

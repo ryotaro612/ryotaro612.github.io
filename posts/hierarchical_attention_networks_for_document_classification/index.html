@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Hierarchical Attention Networks for Document Classification (2016)</title>
 </head>
 
@@ -115,56 +137,56 @@
 以下では、文書に\(L\)の文があり、文\(s_i\)には\(T_i\)個の単語\(w_{it} (t \in [1, T])\)があるとする。
 <img src="/han.png" alt="han">
 単語の注意層にあたえる隠れ状態\(h_{it}\)は順方向のGRU(\(\overrightarrow{\text{GRU}}\))と逆方向のGRU(\(\overleftarrow{\text{GRU}}\))の隠れ状態を結合したベクトル\(h_{it}=[\overrightarrow{h}_{it}, \overleftarrow{h}_{it}]\)であり、以下の計算でもとめる。
+</p>
 $$
 \begin{align}
-x_{it} &amp;= W_ew_{it}, t\in [1, T]\\
-\overrightarrow{h}_{it}&amp;=\overrightarrow{\text{GRU}}(x_{it}), t\in[1, T]\\
-\overleftarrow{h}_{it}&amp;=\overleftarrow{\text{GRU}}(x_{it}), t \in [T, 1]
+x\_{it} &= W\_ew\_{it}, t\in [1, T]\\\\
+\overrightarrow{h}\_{it}&=\overrightarrow{\text{GRU}}(x\_{it}), t\in[1, T]\\\\
+\overleftarrow{h}\_{it}&=\overleftarrow{\text{GRU}}(x\_{it}), t \in [T, 1]
 \end{align}
-$$
+$$<p>
 GRUは、リセットゲートを\(r_t\), 更新ゲートを\(z_t\)として以下の式をとる。
+</p>
 $$
 \begin{align}
-h_t &amp;= (1-z_t)\odot h_{t-1} + z_t \odot \tilde{h}_t\\
-z_t &amp;= \sigma(W_zx_t + U_z h_{t-1}+b_z)\\
-\tilde{h}_t &amp;= \tanh(W_hx_t + r_t \odot (U_hh_{t-1}) + b_h)\\
-r_t &amp;= \sigma (W_rx_t + U_rh_{t-1} + b_r)
+h\_t &= (1-z\_t)\odot h\_{t-1} + z\_t \odot \tilde{h}\_t\\\\
+z\_t &= \sigma(W\_zx\_t + U\_z h\_{t-1}+b\_z)\\\\
+\tilde{h}\_t &= \tanh(W\_hx\_t + r\_t \odot (U\_hh\_{t-1}) + b\_h)\\\\
+r\_t &= \sigma (W\_rx\_t + U\_rh\_{t-1} + b\_r)
 \end{align}
-$$</p>
-<p>文の分散表現\(s_i\)は、単語の注意\(\alpha_{it}\)の重み\(h_{it}\)つき和である。
+$$<p>文の分散表現\(s_i\)は、単語の注意\(\alpha_{it}\)の重み\(h_{it}\)つき和である。
 \(u_w\)をランダムに初期化し、学習時に同時に更新するパラメタとして、次のようにもとめる。</p>
-<p>$$
+$$
 \begin{align}
-u_{it}&amp;=\tanh(W_wh_{it} + b_w)\\
-\alpha_{it}&amp;=\frac{\exp (u^\top_{it} u_w)}{\sum_t \exp (u^\top_{it}u_w)}\\
-s_i&amp;=\sum_t \alpha_{it}h_{it}
+u\_{it}&=\tanh(W\_wh\_{it} + b\_w)\\\\
+\alpha\_{it}&=\frac{\exp (u^\top\_{it} u\_w)}{\sum\_t \exp (u^\top\_{it}u\_w)}\\\\
+s\_i&=\sum\_t \alpha\_{it}h\_{it}
 \end{align}
-$$</p>
-<p>単語と同じく、文の分散表現についても、順、逆方向2つのGRUに入力し、隠れ状態\(h_i =[\overrightarrow{h}_i, \overleftarrow{h}_i]\)を計算する。
+$$<p>単語と同じく、文の分散表現についても、順、逆方向2つのGRUに入力し、隠れ状態\(h_i =[\overrightarrow{h}_i, \overleftarrow{h}_i]\)を計算する。
 \(h_i\)は、文\(i\)を中心にその周辺の情報をもつ。
+</p>
 $$
 \begin{align}
-\overrightarrow{h}_i &amp;= \overrightarrow{\text{GRU}}(s_i), i\in[1, L]  \\
-\overleftarrow{h}_i &amp;= \overleftarrow{\text{GRU}}(s_i), t\in [L, 1]
+\overrightarrow{h}\_i &= \overrightarrow{\text{GRU}}(s\_i), i\in[1, L]  \\\\
+\overleftarrow{h}\_i &= \overleftarrow{\text{GRU}}(s\_i), t\in [L, 1]
 \end{align}
-$$</p>
-<p>文の注意層では、単語のときと同様に、\(u_s\)をランダムに初期化し、文書の分散ベクトル\(v\)をえる。
+$$<p>文の注意層では、単語のときと同様に、\(u_s\)をランダムに初期化し、文書の分散ベクトル\(v\)をえる。
+</p>
 $$
 \begin{align}
-u_{i}&amp;=\tanh(W_sh_{i} + b_s)\\
-\alpha_{i}&amp;=\frac{\exp (u^\top_{i} u_s)}{\sum_i \exp (u^\top_{i}u_s)}\\
-v&amp;=\sum_i \alpha_{i}h_{i}
+u\_{i}&=\tanh(W\_sh\_{i} + b\_s)\\\\
+\alpha\_{i}&=\frac{\exp (u^\top\_{i} u\_s)}{\sum\_i \exp (u^\top\_{i}u\_s)}\\\\
+v&=\sum\_i \alpha\_{i}h\_{i}
 \end{align}
-$$</p>
-<p>最後に全結合層がある。
+$$<p>最後に全結合層がある。
+</p>
 $$
-p=\text{softmax}(W_cv+b_c)
-$$</p>
-<p>以下の目的関数をもちいて学習する。
+p=\text{softmax}(W\_cv+b\_c)
+$$<p>以下の目的関数をもちいて学習する。
+</p>
 $$
-L=-\sum_d\log p_{dj}
-$$</p>
-<p>論文を<a href="https://www.cs.cmu.edu/~./hovy/papers/16HLT-hierarchical-attention-networks.pdf">こちら</a>からダウンロードできます。</p>
+L=-\sum\_d\log p\_{dj}
+$$<p>論文を<a href="https://www.cs.cmu.edu/~./hovy/papers/16HLT-hierarchical-attention-networks.pdf">こちら</a>からダウンロードできます。</p>
   </div>
 </main>
 

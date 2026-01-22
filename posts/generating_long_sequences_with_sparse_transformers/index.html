@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Generating Long Sequences with Sparse Transformers (2019)</title>
 </head>
 
@@ -128,21 +150,22 @@ Sparse Transformerは、\(p\)個のパターンを用意し、パターンに該
 パターン\(m\)が\(i\)番目位置にある要素が注意する位置の集合を\(A^{(m)}_{i}\)とする。
 このとき、パターン\(A^{(m)}\)の注意機構が再構成するクエリ\(\text{Attend}(X,A^{(m)})=\left(a({\rm x}_i,A^{(m)}_i)\right)_{i\in\{1,\dots,n\}}\)は、</p>
 <!--\\(S\_i\in \\{S\_1,\dots , S\_n\\}\\)を\\(i\\)にある要素が注意する要素の集合とすると、再構成したクエリ\\(a({\rm x}\_i,S\_i)\\)は、-->
-<p>$$
-\begin{align}
-a({\rm x}_i,A^{(m)}_i)&amp;=\text{softmax} \left(\frac{(W_q{\rm x}_i)K^T_{A^{(m)}_i}}{\sqrt{d}}\right)V_{A^{(m)}_i}\\
-K_{A^{(m)}_i}&amp;=\left(W_k{\rm x}_j\right)_{j\in A^{(m)}_i}\\
-V_{A^{(m)}_i}&amp;=\left(W_v{\rm x}_j\right)_{j\in A^{(m)}_i}
-\end{align}
 $$
+\begin{align}
+a({\rm x}\_i,A^{(m)}\_i)&=\text{softmax} \left(\frac{(W\_q{\rm x}\_i)K^T_{A^{(m)}\_i}}{\sqrt{d}}\right)V\_{A^{(m)}\_i}\\\\
+K\_{A^{(m)}\_i}&=\left(W_k{\rm x}_j\right)\_{j\in A^{(m)}\_i}\\\\
+V\_{A^{(m)}\_i}&=\left(W\_v{\rm x}\_j\right)\_{j\in A^{(m)}\_i}
+\end{align}
+$$<p>
 である。\(W_q, W_k,W_v\)は\({\rm x}_i\)をクエリ、キー、バリューに変換する重みであり、\(d\)はクエリとキーの次元である。
 実験では、パターンの数は2である。
 パターンを形式的に定義するなら、たとえば、\(A_i^{(1)}=\{t,t+1,\dots,i\}\ \text{for}\ t = \max(0, i-l) \), \(A^{(2)}_i=\{j:(i-j)\ \mod l=0\}\)と示すことができる。</p>
 <p>注意機構がパターン数\(p\)個あるマルチヘッド注意機構であるから、個別の注意機構で生成された注意を合成する。
 2つの合成方法を例示しており、そのうちの一つは、重みを\(W_p\)として
+</p>
 $$
-\text{attention}(X)=W_p\cdot \text{attend}\left(X,\bigcup^p_{m=1}A^{(m)}\right)
-$$
+\text{attention}(X)=W\_p\cdot \text{attend}\left(X,\bigcup^p\_{m=1}A^{(m)}\right)
+$$<p>
 を計算し、注意を生成する。</p>
 <h2 id="雑記">雑記</h2>
 <p>sparse factorizationをみて行列分解を想像したが、factorizationは単にQKV注意機構へ入力する要素を限定することだけを意味しているように読めた。

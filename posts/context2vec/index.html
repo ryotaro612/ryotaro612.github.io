@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>context2vec: Learning Generic Context Embedding with Bidirectional LSTM (2016)</title>
 </head>
 
@@ -124,24 +146,27 @@ CBOWは、ウィンドウ内のベクトルの平均値で文脈の分散表現�
 context2vecのアーキテクチャを次に示す。
 <img src="/context2vec/fig2.png" alt="fig2"></p>
 <p>\(n\)単語からなる文を\(w_{1:n}\)とおき、単語列を順方向に受理するLSTMをlLS, 逆方向のをrLSとすると、両LSTMの出力の連結ベクトルで単語\(w_i\)の「浅い」文脈の分散表現をつくる。
+</p>
 $$
-\text{biLS}(w_{1:n}, i) = \text{lLS}(l_{1:i-1})\oplus\text{rLS}(r_{n:i+1})
-$$</p>
-<p>この「浅い」文脈の分散表現は、多層パーセプロトロン(MLP)にわたり、求める「深い」分散表現\(\vec{c}\)に変換される。
+\text{biLS}(w\_{1:n}, i) = \text{lLS}(l\_{1:i-1})\oplus\text{rLS}(r\_{n:i+1})
+$$<p>この「浅い」文脈の分散表現は、多層パーセプロトロン(MLP)にわたり、求める「深い」分散表現\(\vec{c}\)に変換される。
+</p>
 $$
-L_i(x)=W_ix+b_i
+L\_i(x)=W\_ix+b\_i
+$$<p>
+</p>
 $$
+\text{MLP}(x)=L\_2(\text{ReLU}(L\_1(x)))
+$$<p>
+</p>
 $$
-\text{MLP}(x)=L_2(\text{ReLU}(L_1(x)))
-$$
-$$
-\vec{c}=\text{MLP}(\text{biLS}(w_{1:n},i))
-$$</p>
-<p>CBOWと同様に、目的関数には負例サンプリングを目的関数に用いる。
+\vec{c}=\text{MLP}(\text{biLS}(w\_{1:n},i))
+$$<p>CBOWと同様に、目的関数には負例サンプリングを目的関数に用いる。
 \(\vec{t}\)を\(w_i\)に対応する単語の埋め込みベクトル、\(t_1,\dots t_k\)をランダムに選んだ負例とおくとき、目的関数\(S\)は
+</p>
 $$
-S=\sum_{t,c}\left(\log\sigma(\vec{t}\cdot\vec{c})+\sum^{k}_{i=1}\log\sigma (-\vec{t}_{i}\cdot \vec{c})\right)
-$$
+S=\sum\_{t,c}\left(\log\sigma(\vec{t}\cdot\vec{c})+\sum^{k}\_{i=1}\log\sigma (-\vec{t}\_{i}\cdot \vec{c})\right)
+$$<p>
 である。</p>
 <hr>
 <ul>

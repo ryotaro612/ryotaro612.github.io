@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Distributed Representations of Sentences and Documents(2014)</title>
 </head>
 
@@ -126,15 +148,17 @@ PV-DMだけでも期待できる予測性能をだせるが、両者のモデル
 <img src="/distributed_representations_of_sentences_and_documents/pvdm.png" alt="pvdm">
 \(D\)と\(W\)は、それぞれ、パラグラフや単語と1対1に対応する。
 \(T_i\)をパラグラフ\(d_i\)の単語数、\(N\)をパラグラフの総数、\(w_{i,t}\)を\(d_i\)の\(t\)番目に出現する単語とおくと、最大化すべき目的関数を次の式で表せる。</p>
-<p>$$
-\sum_{i=1}^{N}\sum_{t=k}^{T_i-k}\log p(w_{i,t} \mid d_i, w_{i, t-k}, \dots , w_{i, t+k})
 $$
+\sum\_{i=1}^{N}\sum\_{t=k}^{T\_i-k}\log p(w\_{i,t} \mid d\_i, w\_{i, t-k}, \dots , w\_{i, t+k})
+$$<p>
+</p>
 $$
-p(w_{i,t} \mid d_i, w_{i, t-k}, \dots , w_{i, t+k})=\frac{e^{w_{i, t}}}{\sum_i e^{y_i}}
+p(w\_{i,t} \mid d\_i, w\_{i, t-k}, \dots , w\_{i, t+k})=\frac{e^{w\_{i, t}}}{\sum\_i e^{y\_i}}
+$$<p>
+</p>
 $$
-$$
-y = b + Uh(d_i, w_{i, t-k}, \dots , w_{i, t+k}; D, W)
-$$
+y = b + Uh(d\_i, w\_{i, t-k}, \dots , w\_{i, t+k}; D, W)
+$$<p>
 \(U\)と\(b\)はソフトマックスのパラメタ、\(h\)はベクトルを連結または平均する関数である。
 論文の実験では連結が採用されている。</p>
 <p>ソフトマックスの計算量を減らすために、word2vecのように、階層的ソフトマックスを利用できる。

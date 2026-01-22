@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Probablistic Latent Semantic Indexing (1999)</title>
 </head>
 
@@ -120,27 +142,29 @@
 これにより、クラス\(z_k\)についての文書\(d_i\)と単語\(w_j\)の尤度を\(P(d_i|z_k)\), \(P(w_j|z_k)\), また\(\hat{\textbf{U}}=(P(d_i|z_k))_{i, k}\), \(\hat{\textbf{V}}=(P(w_j|z_k))_{j, k}\), \(\hat{\Sigma}=\text{diag} (P(z_k))_k\)とすると、同時確率モデルを特異値分解の形式\(P=\hat{\textbf{U}}\hat{\Sigma}\hat{\textbf{V}}^t\)で表すことができる。
 Latent Semantic Analysisと違い、\(P\)の固有値や特異ベクトルの要素から確率モデル上の意味を読みとることができる。</p>
 <p>\(n(d, w)\)を文書\(d\)における単語\(w\)の出現回数とすると、EMアルゴリズムでは対数尤度\(\mathcal{L}\)を最大化するパラメータを求める。
+</p>
 $$
-\mathcal{L}=\sum_{d\in \mathcal{D}}\sum_{w\in \mathcal{W}}n(d, w)\log P(d, w)
-$$
+\mathcal{L}=\sum\_{d\in \mathcal{D}}\sum\_{w\in \mathcal{W}}n(d, w)\log P(d, w)
+$$<p>
 なお、ベイズの定理より、\(P(d, w)\)は
+</p>
 $$
-P(d, w)=\sum_{z\in \mathcal{Z}}P(z)P(w|z)P(d|z)
-$$
+P(d, w)=\sum\_{z\in \mathcal{Z}}P(z)P(w|z)P(d|z)
+$$<p>
 と計算できる。</p>
 <p>Eステップでは、クラスの事後確率\(P(z|d, w)\)を求める。
+</p>
 $$
-P(z|d, w)\frac{P(z)P(d|z)P(w|z)}{\sum_{z&rsquo;}P(z&rsquo;)P(d|z&rsquo;)P(w|z&rsquo;)}
-$$</p>
-<p>MステップではEステップで計算した事後確率をもちいて、パラメータを再推定する。
+P(z|d, w)\\frac{P(z)P(d|z)P(w|z)}{\sum\_{z'}P(z')P(d|z')P(w|z')}
+$$<p>MステップではEステップで計算した事後確率をもちいて、パラメータを再推定する。
 最後に、再推定したパラメタで\(\mathcal{L}\)を計算し、収束していればアルゴリズムを終了し、していなければEステップに戻る。</p>
-<p>$$
+$$
 \begin{align*}
-P(w|z)&amp;=\frac{\sum_dn(d,w)P(z|d, w)}{\sum_{d, w&rsquo;}n(d, w&rsquo;)P(z|d, w&rsquo;)&rsquo;}\\
-P(d|z)&amp;=\frac{\sum_wn(d, w)P(z|d, w)}{\sum_{d&rsquo;, w}n(d&rsquo;, w)P(z|d&rsquo;, w)&rsquo;}\\
-P(z)&amp;=\frac{1}{R}\sum_{d, w}n(d, w)P(z|d, w), R\equiv\sum_{d, w}n(d, w)
+P(w|z)&=\frac{\sum\_dn(d,w)P(z|d, w)}{\sum\_{d, w'}n(d, w')P(z|d, w')'}\\\\
+P(d|z)&=\frac{\sum\_wn(d, w)P(z|d, w)}{\sum\_{d', w}n(d', w)P(z|d', w)'}\\\\
+P(z)&=\frac{1}{R}\sum\_{d, w}n(d, w)P(z|d, w), R\equiv\sum\_{d, w}n(d, w)
 \end{align*}
-$$</p>
+$$
   </div>
 </main>
 

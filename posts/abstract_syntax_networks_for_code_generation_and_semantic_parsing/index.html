@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Abstract Syntax Networks for Code Generation and Semantic Parsing</title>
 </head>
 
@@ -115,33 +137,34 @@ decoderは、ASTの生成規則にある記号に対応するモジュールを�
 系列を個別の双方向LSTMに入力し、順方向と逆方向の隠れ状態を連結したベクトルを系列ごとに用意する。</p>
 <p>生成規則の右辺が非終端記号の選択である場合、モジュールは、そのうちの一つ\(\text{C}\)を推定する。
 系列のベクトルの連結\(\textbf{v}\)と順伝搬ネットワーク\(f_\text{T}\)に与えることで、以下のように生成規則を求める。
+</p>
 $$
-p({\rm C}| \text{T}, \textbf{v}) = [\text{softmax}(f_\text{T}(\textbf{v}))]_{\text{C}}
-$$</p>
-<p>生成規則の右辺が非終端記号列であれば、\(\textbf{v}\)と注意\(\textbf{c}\)から、系列にある各記号の中間状態を計算する。
+p({\rm C}| \text{T}, \textbf{v}) = [\text{softmax}(f\_\text{T}(\textbf{v}))]\_{\text{C}}
+$$<p>生成規則の右辺が非終端記号列であれば、\(\textbf{v}\)と注意\(\textbf{c}\)から、系列にある各記号の中間状態を計算する。
 入力系列中のトークン\(t\)の埋め込みベクトルを\(\textbf{e}^\top_t\), 入力系列の種類\(g\)の重みを\(\textbf{w}_g\)とすると、注意\(\textbf{c}\)を次のように計算する。
+</p>
 $$
 \begin{align}
-q_t&amp;=\textbf{e}^\top_t\textbf{W}\textbf{v}+\textbf{w}^\top_c{\rm v}\\
-\textbf{a}&amp;=\text{softmax}(\textbf{q})\\
-\textbf{c}&amp;=\sum_ta_t\textbf{e}_t
+q\_t&=\textbf{e}^\top\_t\textbf{W}\textbf{v}+\textbf{w}^\top\_c{\rm v}\\\\
+\textbf{a}&=\text{softmax}(\textbf{q})\\\\
+\textbf{c}&=\sum\_ta\_t\textbf{e}\_t
 \end{align}
-$$
+$$<p>
 順伝搬ネットワーク\(f_\text{C}\)と生成規則の右辺にある記号\(\text{F}\)の埋め込みベクトル\(\textbf{e}_\text{F}\)から、ノード\(u\)における\(\text{F}\)の隠れ状態\(\textbf{v}_{u,\text{F}}\)を計算する。
 ノード\(u\)から再帰的に呼び出すモジュールには、\(\textbf{v}\)にかわって\(\textbf{v}_{u,\text{F}}\)を渡す。
 \(\text{LSTM}(\textbf{h}, \textbf{x})\)は、隠れ状態に\(\textbf{h}\), 入力に\(\textbf{x}\)を与えることを意味する。
+</p>
 $$
-\textbf{v}_{u, \text{F}}=\text{LSTM}(\textbf{v}, f_{\text{C}}(\textbf{e}_\text{F}, \textbf{c}))
-$$</p>
-<p>記号が終端記号\(\text{T}\)であれば、記号の隠れ状態\(\textbf{v}_{u, \text{F}}\)を順伝搬ネットワーク\(f\)に入力し、出力\(y\)を決定する。
+\textbf{v}\_{u, \text{F}}=\text{LSTM}(\textbf{v}, f\_{\text{C}}(\textbf{e}\_\text{F}, \textbf{c}))
+$$<p>記号が終端記号\(\text{T}\)であれば、記号の隠れ状態\(\textbf{v}_{u, \text{F}}\)を順伝搬ネットワーク\(f\)に入力し、出力\(y\)を決定する。
+</p>
 $$
-p(y|\text{T}, \textbf{v}_{u,\text{F}})=[\text{softmax}(f(\textbf{v}_{u,\text{F}}))]_y
-$$</p>
-<p>記号が別の記号オプションであれば、順伝搬ネットワーク\(f^{\text{gen}}_{\text{F}}\)で記号を生成すべきか推定する。
+p(y|\text{T}, \textbf{v}\_{u,\text{F}})=[\text{softmax}(f(\textbf{v}\_{u,\text{F}}))]\_y
+$$<p>記号が別の記号オプションであれば、順伝搬ネットワーク\(f^{\text{gen}}_{\text{F}}\)で記号を生成すべきか推定する。
+</p>
 $$
-p(z_{\text{F}}=1|\textbf{v}_{u,\text{F}})=\text{sigmoid}(f^{\text{gen}}_{\text{F}}(\textbf{v}_{u,\text{F}}))
-$$</p>
-<h2 id="雑記">雑記</h2>
+p(z\_{\text{F}}=1|\textbf{v}\_{u,\text{F}})=\text{sigmoid}(f^{\text{gen}}\_{\text{F}}(\textbf{v}\_{u,\text{F}}))
+$$<h2 id="雑記">雑記</h2>
 <p>学習をはじめたばかりでは、再帰しつづけるような生成規則の展開が起きてしまわないだろうか。</p>
   </div>
 </main>

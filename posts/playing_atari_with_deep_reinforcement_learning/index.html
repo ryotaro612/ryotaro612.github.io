@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Playing Atari with Deep Reinforcement Learning(2013)</title>
 </head>
 
@@ -125,13 +147,15 @@ DQNのアルゴリズムを以下に示す。方策モデルには、\(\epsilon\
 ただし、\(x_i\)は画面のイメージ、CNNに入力するために可変長の履歴データを固定長に変換する関数を\(\phi\)とする。
 <img src="/playing_atari_with_deep_reinforcement_learning/algorithm.png" alt="algorithm">
 図の方程式3は、ベルマン方程式のQ関数を重みを\(\theta\)とする関数近似噐\(Q(s,a;\theta_i)\)で近似したときの損失関数\(L_i(\theta_i)\)を
+</p>
 $$
-L_i(\theta_i)=\mathbb{E}_{s,a\sim \rho (\cdot) }\big[(y_i - Q(s,a;\theta_i))^2\big]
-$$
+L\_i(\theta\_i)=\mathbb{E}\_{s,a\sim \rho (\cdot) }\big[(y\_i - Q(s,a;\theta\_i))^2\big]
+$$<p>
 としたときの勾配\(\nabla_{\theta_i}L_i(\theta_i)\)
+</p>
 $$
-\nabla_{\theta_i}L_i(\theta_i) = \mathbb{E}_{s,a\sim \rho(\cdot);s&rsquo;\sim\epsilon}[\left(r+\gamma\max_{a&rsquo;}Q(s&rsquo;, a&rsquo;;\theta_{i-1})-Q(s,a;\theta_i)\right)\nabla_{\theta}Q(s,a;\theta_i)]
-$$
+\nabla\_{\theta\_i}L\_i(\theta\_i) = \mathbb{E}\_{s,a\sim \rho(\cdot);s'\sim\epsilon}[\left(r+\gamma\max\_{a'}Q(s', a';\theta\_{i-1})-Q(s,a;\theta\_i)\right)\nabla\_{\theta}Q(s,a;\theta\_i)]
+$$<p>
 である。\(\rho(s, a)\)は状態\(s\)と行動\(a\)の確率分布である。</p>
 <hr>
 <ul>

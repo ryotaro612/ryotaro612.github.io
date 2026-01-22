@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>From RankNet to LambdaRank to LambdaMART: An Overview (2010)</title>
 </head>
 
@@ -123,94 +145,109 @@ LambdaRankは、損失の計算を省き、スコアと損失の勾配で重み�
 LambdaMARTは、RankNetに勾配ブースティング決定木を使い、残差の計算にLambdaRankを応用したランキング学習のモデルである。</p>
 <p>MARTは、スコアについての損失の勾配を予測する決定木の学習をくりかえす。
 \(i\)回目に訓練した決定木を\(f_i(x)\), その重みを\(\alpha_i\)とするとMARTを関数
+</p>
 $$
-F_N(x) = \sum^N_{i=1}\alpha_if_i(x)
-$$
+F\_N(x) = \sum^N\_{i=1}\alpha\_if\_i(x)
+$$<p>
 であらわせる。
 損失関数を\(C\), 学習データの数を\(m\)、\(i\)番目の特徴を\(x_i\)とおけば、\(N+1\)番目の決定木は、\(x_i, i=1,\dots m\)における微分係数\(\frac{\partial C}{\partial F_N}\)を学習する。
 損失とスコアの微小変化の関係
+</p>
 $$
-\delta C\approx\frac{\partial C(F_N)}{\partial F_N}\partial F
-$$
+\delta C\approx\frac{\partial C(F\_N)}{\partial F\_N}\partial F
+$$<p>
 より、学習率を\(\eta\)として\(\delta F=-\eta \frac{\partial\mathcal{C}}{\partial F_N}\)であれば、\(\delta C&lt;0\)であり、決定木を追加して損失を減らすことを期待できる。</p>
 <p>MARTを二値分類のために訓練する場合、\(m\)番目の決定木の\(j\)番目の葉の出力\(\gamma_{jm}\)を求める。
 学習データのラベルを\(y_i\in\{\pm 1\}\), \(P_+\equiv P(y=1|x)\), \(P_-\equiv P(y=-1|x)\)とする。
 ロジスティック回帰はオッズ比の対数のモデルであることより
+</p>
 $$
-F_N(x)=\frac{1}{2}\log\left(\frac{P_+}{P_-}\right)
-$$
+F\_N(x)=\frac{1}{2}\log\left(\frac{P\_+}{P\_-}\right)
+$$<p>
 または
+</p>
 $$
 \begin{align}
-P_+&amp;=\frac{1}{1+e^{-2\sigma F_N(x)}}\\
-P_-&amp;=1-P_+=\frac{1}{1+e^{2\sigma F_N(x)}}
+P\_+&=\frac{1}{1+e^{-2\sigma F\_N(x)}}\\\\
+P\_-&=1-P\_+=\frac{1}{1+e^{2\sigma F\_N(x)}}
 \end{align}
-$$
+$$<p>
 である。損失関数\(L(y,F_N)\)が交差エントロピーであれば
+</p>
 $$
-L(y,F_N) =\log\left(1+e^{-2y\sigma F_N}\right)
-$$
+L(y,F\_N) =\log\left(1+e^{-2y\sigma F\_N}\right)
+$$<p>
 である。\(m\)番目の決定木の\(j\)番目の葉にあるサンプルの集合を\(R_{jm}\)とすると\(\gamma_{jm}\)は、
+</p>
 $$
-\gamma_{jm}=\underset{\gamma}{\operatorname{argmin}}\sum_{x_i\in R_{jm}}\log\left(1+e^{-2y_i\sigma(F_{m-1}(x_i)+\gamma)}\right)\equiv \underset{\gamma}{\operatorname{argmin}}g(\gamma)
-$$
+\gamma\_{jm}=\underset{\gamma}{\operatorname{argmin}}\sum\_{x\_i\in R\_{jm}}\log\left(1+e^{-2y\_i\sigma(F\_{m-1}(x\_i)+\gamma)}\right)\equiv \underset{\gamma}{\operatorname{argmin}}g(\gamma)
+$$<p>
 MARTは、ニュートンラプソン法によって以下の更新式で反復的に\(\gamma\)の近似解を求める。
 LambdaMARTは、この更新でLambdaRankを利用する。
+</p>
 $$
-\gamma_{n+1}=\gamma_n - \frac{g&rsquo;(\gamma_n)}{g&rsquo;&rsquo;(\gamma_n)}
-$$</p>
-<p>LamdaRankを導入するために、MARTから離れ、RankNetの話をする。
+\gamma\_{n+1}=\gamma\_n - \frac{g'(\gamma\_n)}{g''(\gamma\_n)}
+$$<p>LamdaRankを導入するために、MARTから離れ、RankNetの話をする。
 RankNetは、あるクエリに該当した2つのURL \(U_i, U_j\)があり、そのスコア\(s_i, s_j\)があれば、\(U_i\)が\(U_j\)よりも高いランキングである確率\(P_{ij}\)を
+</p>
 $$
-P_{ij}\equiv\frac{1}{1+e^{-\sigma(s_i-s_j)}}
-$$
+P\_{ij}\equiv\frac{1}{1+e^{-\sigma(s\_i-s\_j)}}
+$$<p>
 とする。
 RankNetの各学習データは、2つの特徴\(U_i, U_j\)とランキングのより高い方を示すラベルからなる。
 ラベルを\(S_{i,j}\in\{0,\pm 1\}\)とし、\(i\)のランキングが\(j\)より高ければ\(1\), 低ければ\(-1\), 同じであれば\(0\)とする。
 このとき、\(\bar{P}_{ij}=\frac{1}{2}(1+S_{ij})\)として交差エントロピーを損失\(C\)とすると
+</p>
 $$
 \begin{align}
-C&amp;=-\bar{P}_{ij}\log P_{ij}-(1-\bar{P}_{ij})\log(1-P_{ij})\\
-C&amp;=\frac{1}{2}(1-S_{ij})\sigma(s_i-s_j) + \log\left(1+e^{-\sigma(s_i-s_j)}\right)
+C&=-\bar{P}\_{ij}\log P\_{ij}-(1-\bar{P}\_{ij})\log(1-P\_{ij})\\\\
+C&=\frac{1}{2}(1-S\_{ij})\sigma(s\_i-s\_j) + \log\left(1+e^{-\sigma(s\_i-s\_j)}\right)
 \end{align}
-$$
+$$<p>
 である。この\(C\)の微小変化\(\delta C\)を負にするには、
+</p>
 $$
-\delta C=\sum_k \frac{\partial C}{\partial w_k}\delta w_k=\sum_k \frac{\partial C}{\partial w_k}\left(-\eta \frac{\partial C}{\partial w_k}\right)=-\eta \sum_k\left(\frac{\partial C}{\partial w_k}\right)^2 &lt; 0
-$$
+\delta C=\sum\_k \frac{\partial C}{\partial w\_k}\delta w\_k=\sum\_k \frac{\partial C}{\partial w\_k}\left(-\eta \frac{\partial C}{\partial w\_k}\right)=-\eta \sum\_k\left(\frac{\partial C}{\partial w\_k}\right)^2 < 0
+$$<p>
 より\(\delta w_k=-\eta\frac{\partial C}{\partial w_k}\)であればよい。</p>
 <p>ここで、モデルのあるパラメータを\(w_k\)とし、\(C\)を合成関数とみると
+</p>
 $$
 \begin{align}
-\frac{\partial C}{\partial w_k}
-&amp;=\frac{\partial C}{\partial s_i}\frac{\partial s_i}{\partial w_k} + \frac{\partial C}{\partial s_j}\frac{\partial s_j}{\partial w_k}\\
-&amp;=\sigma \left(\frac{1}{2}(1-S_{ij})-\frac{1}{1+e^{\sigma(s_i-s_j)}} \right)\left(\frac{\partial s_i}{\partial w_k}-\frac{\partial s_j}{\partial w_k}\right)\\
-&amp;=\lambda_{ij}\left(\frac{\partial s_i}{\partial w_k}-\frac{\partial s_j}{\partial w_k}\right)
+\frac{\partial C}{\partial w\_k}
+&=\frac{\partial C}{\partial s\_i}\frac{\partial s\_i}{\partial w\_k} + \frac{\partial C}{\partial s\_j}\frac{\partial s\_j}{\partial w\_k}\\\\
+&=\sigma \left(\frac{1}{2}(1-S\_{ij})-\frac{1}{1+e^{\sigma(s\_i-s\_j)}} \right)\left(\frac{\partial s\_i}{\partial w\_k}-\frac{\partial s\_j}{\partial w\_k}\right)\\\\
+&=\lambda\_{ij}\left(\frac{\partial s\_i}{\partial w\_k}-\frac{\partial s\_j}{\partial w\_k}\right)
 \end{align}
-$$
+$$<p>
 となる。ただし
+</p>
 $$
-\lambda_{ij}\equiv\frac{\partial C(s_i-s_j)}{\partial s_i}=\sigma \left(\frac{1}{2}(1-S_{ij})-\frac{1}{1+e^{\sigma(s_i-s_j)}} \right)
-$$
+\lambda\_{ij}\equiv\frac{\partial C(s\_i-s\_j)}{\partial s\_i}=\sigma \left(\frac{1}{2}(1-S\_{ij})-\frac{1}{1+e^{\sigma(s\_i-s\_j)}} \right)
+$$<p>
 と定義した。
 任意の\(i,j\)について\(S_{ij}=1\)となる学習データの集合\(I\)があれば
+</p>
 $$
-\lambda_i = \sum_{j:\{i,j\}\in I}\lambda_{ij} - \sum_{j:\{j,i\}\in I}\lambda_{ij}
-$$
+\lambda\_i = \sum\_{j:\\{i,j\\}\in I}\lambda\_{ij} - \sum\_{j:\\{j,i\\}\in I}\lambda\_{ij}
+$$<p>
 とおくとき
+</p>
 $$
-\delta w_k=-\eta\sum_{\{i,j\}\in I}\left(\lambda_{ij}\frac{\partial s_i}{\partial w_k}-\lambda_{ij}\frac{\partial s_j}{\partial w_k}\right)\equiv -\eta \sum_i\lambda_i\frac{\partial s_i}{\partial w_k}
-$$
+\delta w\_k=-\eta\sum_{\\{i,j\\}\in I}\left(\lambda\_{ij}\frac{\partial s\_i}{\partial w\_k}-\lambda\_{ij}\frac{\partial s\_j}{\partial w\_k}\right)\equiv -\eta \sum\_i\lambda\_i\frac{\partial s\_i}{\partial w\_k}
+$$<p>
 である。もともとのRankNetは各学習データを処理する度に重みを更新していたが、LambdaRankは\(\lambda_i\)によってURLごとに計算をまとめ、重みの更新頻度を減らし、計算を高速化する。
 LamdaRankは、ほかにも、モデルの評価にNDCGを使う場合、\(U_i\)と\(U_j\)を入れ換えたときのNDCGの変化の大きさを\(|\Delta_{\textrm{NDCG}}|\)として
+</p>
 $$
-\lambda_{ij}=\frac{\partial C(s_i-s_j)}{\partial s_i}=\frac{-\sigma}{1+e^{\sigma(s_i-s_j)}}|\Delta_{\textrm{NDCG}}|
-$$
+\lambda\_{ij}=\frac{\partial C(s\_i-s\_j)}{\partial s\_i}=\frac{-\sigma}{1+e^{\sigma(s\_i-s\_j)}}|\Delta\_{\textrm{NDCG}}|
+$$<p>
 とすると評価が上がることを実験的に示した。</p>
 <p>MARTに話をもどして、モデルのスコアについての\(L(y, F_N)\)の勾配は
+</p>
 $$
-\bar{y}_i=-\left[\frac{\partial L(y_i, F(x_i))}{\partial F(x_i)}\right]_{F(x)=F_{m-1}(x)}=\frac{2y_i\sigma}{1+2^{2y_i\sigma F_{m-1}(x)}}
-$$
+\bar{y}\_i=-\left[\frac{\partial L(y\_i, F(x\_i))}{\partial F(x\_i)}\right]\_{F(x)=F\_{m-1}(x)}=\frac{2y\_i\sigma}{1+2^{2y\_i\sigma F\_{m-1}(x)}}
+$$<p>
 である。
 これが\(\lambda_{ij}\)に類似することから、LambdaMARTは\(\bar{y}_i\)の代わりに\(\lambda_i\)を利用する。</p>
 <!--

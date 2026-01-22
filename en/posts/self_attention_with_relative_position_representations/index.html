@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Self-Attention with Relative Position Representations(2018)</title>
 </head>
 
@@ -129,26 +151,29 @@ This hypothesis was shared by the relative position representations.
 In contrast to absolute position representations, the relative position representations are invariant to the total sequence length.</p>
 <p>Self-attention mechanism maps an input sequence, \(x=(x_1 , \dots , x_n)\) of \(n\) elements where \(x_i\in\mathbb{R}^{d_x}\), to a new sequence, \(z=(z_1,\dots , z_n)\) of \(n\) where \(z_i\in\mathbb{R}^{d_z}\).
 The output is computed as a weighted sum of a linearly transformed input elements:
+</p>
 $$
 \begin{align}
-z_i&amp;=\sum^n_{j=1}\alpha_{ij}(x_jW^V)\\
-\alpha_{ij}&amp;=\frac{\exp e_{ij}}{\sum^n_{k=1}\exp e_{ik}}\\
-e_{ij}&amp;=\frac{(x_iW^Q)(x_jW^K)^T}{\sqrt{d_z}}
+z\_i&=\sum^n\_{j=1}\alpha\_{ij}(x\_jW^V)\\\\
+\alpha\_{ij}&=\frac{\exp e\_{ij}}{\sum^n\_{k=1}\exp e\_{ik}}\\\\
+e\_{ij}&=\frac{(x\_iW^Q)(x\_jW^K)^T}{\sqrt{d\_z}}
 \end{align}
-$$
+$$<p>
 Where the projections are parameter matrices \(W^Q, W^K, W^V \in \mathbb{R}^{d_x\times d_z}\).</p>
 <p>They extended the self-attention to consider the pairwise relationships between input elements without additional linear transformations.
 They modified equations (1) and (3):
+</p>
 $$
 \begin{align}
-z_i&amp;=\sum^n_{j=1}\alpha_{ij}(x_jW^V+w^V_{\text{clip}(j-i,k)})\\
-e_{ij}&amp;=\frac{(x_iW^Q)(x_jW^K+w^K_{\text{clip}(j-i, k)})^T}{\sqrt{d_z}}
+z\_i&=\sum^n\_{j=1}\alpha\_{ij}(x\_jW^V+w^V\_{\text{clip}(j-i,k)})\\\\
+e\_{ij}&=\frac{(x\_iW^Q)(x\_jW^K+w^K\_{\text{clip}(j-i, k)})^T}{\sqrt{d\_z}}
 \end{align}
-$$
+$$<p>
 They employed the function \(\text{clip}(x, k)\) to clip the maximum relative position to an absolute value of \(k\):
+</p>
 $$
 \text{clip}(x, k)=\max(-k, \min(k, x))
-$$
+$$<p>
 They hypothesized that precise relative position information is not useful beyond a certain distance, \(k\), and the parameters of the relative position representations are \(w^K_i,w^V_i\in \mathbb{R}^{d_a}\) and \(w^K=(w^K_{-k},\dots ,w^K_{k})\) where \(w^V=(w_{-k}^V,\dots w_k^V)\).</p>
   </div>
 </main>

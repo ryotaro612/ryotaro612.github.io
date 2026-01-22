@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Virtual Time and Global States of Distributed Systems(1988)</title>
 </head>
 
@@ -121,32 +143,37 @@
 <a href="http://www.vs.inf.ethz.ch/publ/papers/VirtTimeGlobStates.pdf">Virtual Time and Global States of Distributed Systems</a>は、各プロセスの時刻を、プロセス数とおなじ数の長さの配列で表現する。
 これにより、時刻の前後関係が定義されていることがイベント間に前後関係があることの必要十分条件であることを可能にした。</p>
 <p>イベント\(e\)が\(e&rsquo;\)に先行する関係を\(&lt;\)と書くなら、Lamportのアルゴリズムは、イベントから時刻への関数を\(C\)として
+</p>
 $$
-e&lt;e&rsquo; \rightarrow C(e) &lt; C(e&rsquo;)
-$$
+e<e' \rightarrow C(e) < C(e')
+$$<p>
 が成立するようにイベントに時刻を割りあてられる。
 イベントが発生すると、プロセス\(i\)の時刻\(C_i\)が増加する。
 別のプロセスとやりとりしないイベントが発生すると、時刻が\(d\)増加する。
+</p>
 $$
-C_i:=C_i+d\ (d&gt;0)
-$$
+C_i:=C_i+d\ (d>0)
+$$<p>
 プロセスがメッセージと一緒に送信時刻\(t\)を別のプロセス\(i\)に送ると、メッセージを受信した\(i\)は、送信元や自身の時刻よりも大きい時刻に更新する。
+</p>
 $$
-c_i := \max(C_i,t)+ d\ (d&gt;0)
-$$</p>
-<p>Virtual Time and Global States of Distributed Systemsでは、\(n\)個のプロセスからなる分散システムのプロセス\(i\)の時刻を長さ\(n\)の配列で定義する。
+c_i := \max(C_i,t)+ d\ (d>0)
+$$<p>Virtual Time and Global States of Distributed Systemsでは、\(n\)個のプロセスからなる分散システムのプロセス\(i\)の時刻を長さ\(n\)の配列で定義する。
 \(i\)で別のプロセスと通信しないイベントが発生するとき、\(C_i[i]:= C_i[i]+1\)と時刻を更新する。
 プロセス\(j\)からメッセージと一緒に送信元の時刻\(C_j\)を受信したときは、\(C_i:=\max(C_i, C_j)\)として要素が\(C_j\)より小さくならないように更新する。
 時刻\(u, v\)の前後関係\(\le, &lt;\)と順序関係の未定義\(||\)の定義は、
+</p>
 $$
 u\le v\ \textit{iff}\ \forall i: u[i]\le v[i]
+$$<p>
+</p>
 $$
+u<v\ \textit{iff}\ u \le v\ \textrm{and}\ u\neq v
+$$<p>
+</p>
 $$
-u&lt;v\ \textit{iff}\ u \le v\ \textrm{and}\ u\neq v
-$$
-$$
-u||v\ \textit{iff}\ \neg(u&lt;v) \textrm{and}\ \neg (v&lt;u)
-$$
+u||v\ \textit{iff}\ \neg(u<v) \textrm{and}\ \neg (v<u)
+$$<p>
 である。</p>
 <p>以下に論文中にある実行系列の例を示す。Lamportの手法の場合は、時刻を0で初期化し\(d=1\)とすると\(\begin{pmatrix}0\\1\\0\\0\end{pmatrix}\)と\(\begin{pmatrix}0\\0\\0\\2\end{pmatrix}\)のイベントの時刻はどちらも\(\begin{pmatrix}2\\1\\2\\1\end{pmatrix}\)より小さくなる。
 前者は前後関係があり、後者は未定義である。

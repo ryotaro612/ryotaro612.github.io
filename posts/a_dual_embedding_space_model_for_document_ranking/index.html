@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>A Dual Embedding Space Model for Document Ranking</title>
 </head>
 
@@ -126,15 +148,17 @@ DESMだけで順位づけをすると偽陽性が高くなるが、DESMとBM25�
 アルゴリズムを実装し<a href="https://github.com/nryotaro/desm">公開</a>した。</p>
 <p>Continuous Bag-of-Words(CBOW)は、ウィンドウ内の単語を与えられたときの中心の単語の生起確率を学習する。
 コーパスを\({\mathcal D}\), 埋め込みベクトルの次元を\(d\), 大きさ\(K-1\)のウィンドウにある単語の埋め込みベクトルを\(\boldsymbol{c}_k \in \mathbb{R}^d \), 中心の単語の\(w_i\)の埋め込みベクトルを\(\boldsymbol{w}_i \in \mathbb{R}^d\)とおくと、損失関数\({\mathcal L_{CBOW}}\)が最小値になる埋め込みベクトルを学習する。
+</p>
 $$
 \begin{align}
-{\mathcal L_{CBOW}} &amp;= \sum^{\mid D\mid}_{i=1}-\log p(w_i\mid C_K) \\\
-&amp;= \sum^{\mid D \mid}_{i=1}-\log\frac{e^{\bar{C_k^T}\boldsymbol{w}_i}}{\sum^{V_w}_{v=1}e^{\bar{C}^T_K\boldsymbol{w}_v}}
+{\mathcal L\_{CBOW}} &= \sum^{\mid D\mid}\_{i=1}-\log p(w\_i\mid C\_K) \\\\\
+&= \sum^{\mid D \mid}\_{i=1}-\log\frac{e^{\bar{C\_k^T}\boldsymbol{w}\_i}}{\sum^{V\_w}\_{v=1}e^{\bar{C}^T\_K\boldsymbol{w}\_v}}
 \end{align}
+$$<p>
+</p>
 $$
-$$
-\bar{C}_K = \frac{1}{K-1}\sum_{i-k\le k \le i+K, k\neq i} \boldsymbol{c}_k
-$$
+\bar{C}\_K = \frac{1}{K-1}\sum\_{i-k\le k \le i+K, k\neq i} \boldsymbol{c}\_k
+$$<p>
 とする。
 \(\boldsymbol{c}\)からなる重み行列を\(\boldsymbol{W}_{IN}\), \(\boldsymbol{w}\)からなる重み行列を\(\boldsymbol{W}_{OUT}\)と表記する。</p>
 <p>通常のword2vecは、\(\boldsymbol{W}_{IN}\)だけで単語埋め込みベクトルを作るが、DESMは、クエリと文書にそれぞれ\(\boldsymbol{W}_{IN}\)と\(\boldsymbol{W}_{OUT}\)をあてがう。
@@ -144,20 +168,21 @@ IN-IN同士のベクトルでは「大学」という同じ機能をもった単
 論文の洞察は、このような単語の存在をクエリと文書の関連度の手がかりにすることにある。</p>
 <p>\(q_i\)をクエリ\(Q\)に含まれる単語埋め込みベクトル、\(d_j\)を文書\(D\)に含まれる単語埋め込みベクトルとすると、
 \(Q\)と\(D\)のDESMの値は以下の式で定義される。</p>
-<p>$$
-DESM(Q, D) = \frac{1}{\mid Q\mid}\sum_{\boldsymbol{q}_i\in Q}\frac{\boldsymbol{q}_i^T\bar{\boldsymbol{D}}}{\mid\mid\boldsymbol{q_i}\mid\mid\mid\mid \bar{D}\mid\mid}
 $$
+DESM(Q, D) = \frac{1}{\mid Q\mid}\sum\_{\boldsymbol{q}\_i\in Q}\frac{\boldsymbol{q}\_i^T\bar{\boldsymbol{D}}}{\mid\mid\boldsymbol{q\_i}\mid\mid\mid\mid \bar{D}\mid\mid}
+$$<p>
+</p>
 $$
-\bar{D}= \frac{1}{\mid D\mid}\sum_{\boldsymbol{d}_j \in D}\frac{\boldsymbol{d}_j}{\mid\mid \boldsymbol{d}_j\mid\mid}
-$$</p>
-<p>実験では、DESMは偽陽性率が高いため、BM25との加重平均\(MM(Q, D)\)を評価している。
+\bar{D}= \frac{1}{\mid D\mid}\sum\_{\boldsymbol{d}\_j \in D}\frac{\boldsymbol{d}\_j}{\mid\mid \boldsymbol{d}\_j\mid\mid}
+$$<p>実験では、DESMは偽陽性率が高いため、BM25との加重平均\(MM(Q, D)\)を評価している。
+</p>
 $$
 MM(Q, D) = \alpha DESM(Q, D) + (1-\alpha)BM25(Q, D)
-$$
+$$<p>
+</p>
 $$
 \alpha \in \mathbb{R}, 0\le\alpha\le 1
-$$</p>
-<hr>
+$$<hr>
 <p>論文は<a href="https://arxiv.org/pdf/1602.01137">こちら</a>からダウンロードできます。</p>
   </div>
 </main>

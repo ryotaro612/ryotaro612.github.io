@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>論文メモ Skip-Thought Vectors</title>
 </head>
 
@@ -117,34 +139,31 @@ Skip-Toughtを8タスクに適用し、汎用性を確かめた。</p>
 また、\(s_i\)の\(t\)番目の単語\(w_i^t\)の分散表現を\(\mathrm{x}^t_i\)とする。
 このとき、次のencoderの隠れ状態\(\mathrm{\boldsymbol{h}}_i^t\)が\(w_i^1, \dots w_i^t\)の分散表現となる。
 以下の式では添字\(i\)を省略している。</p>
-<p>$$
+$$
 \begin{align}
-\mathrm{\boldsymbol{r}}^t &amp;=\sigma (\boldsymbol{\mathrm{W}}_r\mathrm{\boldsymbol{x}}^t+\mathrm{\boldsymbol{U}}_r\mathrm{\boldsymbol{h}}^{t-1})\\\
-\mathrm{\boldsymbol{z}}^t&amp;=\sigma(\boldsymbol{\mathrm{W}}_z\boldsymbol{\mathrm{x}}^t + \mathrm{\boldsymbol{U}}_z\boldsymbol{\mathrm{h}}^{t-1})\\\
-\bar{\boldsymbol{\mathrm{h}}}^t&amp;=\tanh(\mathrm{\boldsymbol{W}}\boldsymbol{\mathrm{x}}^t+\boldsymbol{\mathrm{U}}(\mathrm{\boldsymbol{r}}^t\odot \mathrm{\boldsymbol{h}}^{t-1}))\\\
-\boldsymbol{\mathrm{h}}^t&amp;=(1-\mathrm{\boldsymbol{z}}^t)\odot \mathrm{\boldsymbol{h}}^{t-1}+\boldsymbol{\mathrm{z}}^t\odot\bar{\mathrm{\boldsymbol{h}}}^t
+\mathrm{\boldsymbol{r}}^t &=\sigma (\boldsymbol{\mathrm{W}}\_r\mathrm{\boldsymbol{x}}^t+\mathrm{\boldsymbol{U}}\_r\mathrm{\boldsymbol{h}}^{t-1})\\\\\
+\mathrm{\boldsymbol{z}}^t&=\sigma(\boldsymbol{\mathrm{W}}\_z\boldsymbol{\mathrm{x}}^t + \mathrm{\boldsymbol{U}}\_z\boldsymbol{\mathrm{h}}^{t-1})\\\\\
+\bar{\boldsymbol{\mathrm{h}}}^t&=\tanh(\mathrm{\boldsymbol{W}}\boldsymbol{\mathrm{x}}^t+\boldsymbol{\mathrm{U}}(\mathrm{\boldsymbol{r}}^t\odot \mathrm{\boldsymbol{h}}^{t-1}))\\\\\
+\boldsymbol{\mathrm{h}}^t&=(1-\mathrm{\boldsymbol{z}}^t)\odot \mathrm{\boldsymbol{h}}^{t-1}+\boldsymbol{\mathrm{z}}^t\odot\bar{\mathrm{\boldsymbol{h}}}^t
 \end{align}
-$$</p>
-<p>decoderは、encoderの出力\(\mathrm{\boldsymbol{h}}_i\)を条件とする条件付き確率に対応する言語モデルになっている。
+$$<p>decoderは、encoderの出力\(\mathrm{\boldsymbol{h}}_i\)を条件とする条件付き確率に対応する言語モデルになっている。
 2つのdecoderが使われ、それぞれ入力文の前の文を推定するものと、後の文を推定するものに対応する。
 また、バイアス項として\(\mathrm{\boldsymbol{C}}_z, \mathrm{\boldsymbol{C}}_r, \mathrm{\boldsymbol{C}}\)がある点もencoderと異なる。
 後の文を推定するdecoderは次の式をとる。</p>
-<p>$$
-\begin{align}
-\mathrm{\boldsymbol{r}}^t &amp;=\sigma (\boldsymbol{\mathrm{W}}^d_r\mathrm{\boldsymbol{x}}^{t-1}+\mathrm{\boldsymbol{U}}^d_r\mathrm{\boldsymbol{h}}^{t-1}+\mathrm{\boldsymbol{C}}_r\mathrm{\boldsymbol{h}}_i)\\\
-\mathrm{\boldsymbol{z}}^t&amp;=\sigma(\boldsymbol{\mathrm{W}}^d_z\boldsymbol{\mathrm{x}}^{t-1} + \mathrm{\boldsymbol{U}}^d_z\boldsymbol{\mathrm{h}}^{t-1}+\mathrm{\boldsymbol{C}}_z\mathrm{\boldsymbol{h}}_i)\\\
-\bar{\boldsymbol{\mathrm{h}}}^t&amp;=\tanh(\mathrm{\boldsymbol{W}}^d\boldsymbol{\mathrm{x}}^{t-1}+\boldsymbol{\mathrm{U}}^d(\mathrm{\boldsymbol{r}}^t\odot \mathrm{\boldsymbol{h}}^{t-1})+\mathrm{\boldsymbol{C}}\mathrm{\boldsymbol{h}}_i)\\\
-\boldsymbol{\mathrm{h}}^t_{i+1}&amp;=(1-\mathrm{\boldsymbol{z}}^t)\odot \mathrm{\boldsymbol{h}}^{t-1}+\boldsymbol{\mathrm{z}}^t\odot\bar{\mathrm{\boldsymbol{h}}}^t
-\end{align}
-$$</p>
-<p>\(\mathrm{\boldsymbol{V}}\)を\(w_{i+1}^t\)に対応する行ベクトル\(\mathrm{\boldsymbol{v}}_{w^t_{i+1}}\)をもつパラメタとすると、</p>
-<p>$$P(w^t_{i+1}\mid w^{&lt;t}_{i+1},\boldsymbol{\mathrm{h}}_i)\propto\exp (\mathrm{\boldsymbol{v}}_{w^t_{i-1}}\mathrm{\boldsymbol{h}}_{i+1}^t)
 $$
+\begin{align}
+\mathrm{\boldsymbol{r}}^t &=\sigma (\boldsymbol{\mathrm{W}}^d\_r\mathrm{\boldsymbol{x}}^{t-1}+\mathrm{\boldsymbol{U}}^d\_r\mathrm{\boldsymbol{h}}^{t-1}+\mathrm{\boldsymbol{C}}\_r\mathrm{\boldsymbol{h}}\_i)\\\\\
+\mathrm{\boldsymbol{z}}^t&=\sigma(\boldsymbol{\mathrm{W}}^d\_z\boldsymbol{\mathrm{x}}^{t-1} + \mathrm{\boldsymbol{U}}^d\_z\boldsymbol{\mathrm{h}}^{t-1}+\mathrm{\boldsymbol{C}}\_z\mathrm{\boldsymbol{h}}\_i)\\\\\
+\bar{\boldsymbol{\mathrm{h}}}^t&=\tanh(\mathrm{\boldsymbol{W}}^d\boldsymbol{\mathrm{x}}^{t-1}+\boldsymbol{\mathrm{U}}^d(\mathrm{\boldsymbol{r}}^t\odot \mathrm{\boldsymbol{h}}^{t-1})+\mathrm{\boldsymbol{C}}\mathrm{\boldsymbol{h}}\_i)\\\\\
+\boldsymbol{\mathrm{h}}^t\_{i+1}&=(1-\mathrm{\boldsymbol{z}}^t)\odot \mathrm{\boldsymbol{h}}^{t-1}+\boldsymbol{\mathrm{z}}^t\odot\bar{\mathrm{\boldsymbol{h}}}^t
+\end{align}
+$$<p>\(\mathrm{\boldsymbol{V}}\)を\(w_{i+1}^t\)に対応する行ベクトル\(\mathrm{\boldsymbol{v}}_{w^t_{i+1}}\)をもつパラメタとすると、</p>
+$$P(w^t\_{i+1}\mid w^{<t}\_{i+1},\boldsymbol{\mathrm{h}}\_i)\propto\exp (\mathrm{\boldsymbol{v}}\_{w^t\_{i-1}}\mathrm{\boldsymbol{h}}\_{i+1}^t)
+$$<p>
 となり、目的関数は次になる。</p>
-<p>$$
-\sum\log P(\mathrm{w}^t_{i+1}\mid w_{i+1}^{&lt;t},\mathrm{\boldsymbol{h}}_i)+\sum_t\log P(w_{i-1}^t\mid w_{i-1}^{&lt;t},\boldsymbol{\mathrm{h}}_i)
-$$</p>
-<hr>
+$$
+\sum\log P(\mathrm{w}^t\_{i+1}\mid w\_{i+1}^{<t},\mathrm{\boldsymbol{h}}\_i)+\sum\_t\log P(w\_{i-1}^t\mid w\_{i-1}^{<t},\boldsymbol{\mathrm{h}}\_i)
+$$<hr>
 <ul>
 <li>論文を<a href="https://papers.nips.cc/paper/5950-skip-thought-vectors.pdf">こちら</a>からダウンロードできます。</li>
 </ul>

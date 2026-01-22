@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>論文メモ Spanner: Google&#39;s Globally Distributed Database</title>
 </head>
 
@@ -123,20 +145,21 @@ TrueTime APIは、GPSと原子時計によって時刻の精度を確保して�
 トランザクション\(T_i\)の開始とコミットのイベントを\(e^{\text{start}}_i, e^{\text{commit}}_i\), コミットタイムスタンプを\(s_i\)とおく。
 ただし、トランザクション\(T_i\)のコミットリクエストをサーバが受理するイベントを\(e^{\text{server}}_i\)とすると、\(s_i\)は、\(e^{\text{server}}_i\)の後に呼び出された\(\texttt{TT.now().latest}\)以上の値になっている。
 イベント\(e\)の発生時刻を\(t_{\text{abs}}(e)\)、True Time API(TT)より、
+</p>
 $$
-tt=\texttt{TT.now()}, \texttt{tt.earlist}\le t_{\text{abs}}(e_{\text{now}})\le \texttt{tt.latest}
-$$
+tt=\texttt{TT.now()}, \texttt{tt.earlist}\le t\_{\text{abs}}(e\_{\text{now}})\le \texttt{tt.latest}
+$$<p>
 とすると、外部整合性を\(t_{\text{abs}}(e^{\text{commit}}_1)&lt;t_{\text{abs}}(e^{\text{start}}_2)\Rightarrow s_1&lt;s_2\)と書ける。</p>
 <p>このとき、\(s_1&lt;t_{\text{abs}}(e^{\text{commit}}_1)\)が成立するようにロック期間を伸ばすと</p>
-<p>$$
-\begin{align}
-s_1&amp;&lt;t_{\text{abs}}(e^{\text{commit}}_1)\\\
-t_{\text{abs}}(e^{\text{commit}}_1)&amp;&lt;t_{\text{abs}}(e^{\text{start}}_2)\\\
-t_{\text{abs}}(e^{\text{start}}_2)&amp;\le t_{\text{abs}}(e^{\text{server}}_2)\\\
-t_{\text{abs}}(e^{\text{server}}_2)&amp;\le s_2\\\
-s_1&amp;&lt; s_2
-\end{align}
 $$
+\begin{align}
+s\_1&<t\_{\text{abs}}(e^{\text{commit}}\_1)\\\\\
+t\_{\text{abs}}(e^{\text{commit}}\_1)&<t\_{\text{abs}}(e^{\text{start}}\_2)\\\\\
+t\_{\text{abs}}(e^{\text{start}}\_2)&\le t\_{\text{abs}}(e^{\text{server}}\_2)\\\\\
+t\_{\text{abs}}(e^{\text{server}}\_2)&\le s\_2\\\\\
+s\_1&< s\_2
+\end{align}
+$$<p>
 となり、外部整合性が成立する。</p>
 <hr>
 <ul>

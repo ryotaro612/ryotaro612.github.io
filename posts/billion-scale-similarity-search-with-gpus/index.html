@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Billion Scale Similarity Search With GPUs (2017)</title>
 </head>
 
@@ -118,28 +140,30 @@
 実装は、OSSの<a href="https://github.com/facebookresearch/faiss">faiss</a>として公開されている。</p>
 <!-- クエリの分散表現である密なベクトルの最も近傍にある\\(k\\)個のデータベースあるベクトルを近似的に求める。 -->
 <p>\(l\)個のデータベースにあるベクトル\([y_i]_{i=0:l}\)の中からクエリ\(x\in\mathbb{R}^d\)の最近傍にある\(k\)個の集合\(L\)に近い要素を、近似的に求める。
+</p>
 $$
-L=\text{k-}\argmin_{i=0:l}||x-y_i||_2
-$$</p>
-<!-- \\(||x-y\_i||^2\_2\\)を展開すると\\(||x-y\_i||^2\_2=||x||^2+||y\_i||^2-2\langle x,y\_i\rangle\\)になる。 -->
+L=\text{k-}\argmin\_{i=0:l}||x-y\_i||\_2
+$$<!-- \\(||x-y\_i||^2\_2\\)を展開すると\\(||x-y\_i||^2\_2=||x||^2+||y\_i||^2-2\langle x,y\_i\rangle\\)になる。 -->
 <!-- クエリに影響されないので第1, 2項は事前に計算できる。 -->
 <!-- しかし、第三項の内積はクエリに依存するため、クエリが確定するまで計算できない。 -->
 <p>IVFADCは、\(\mathbb{R}^d\)から\(\mathbb{R}^d\)の真部分集合に写す2つの関数でデータベースベクトルを量子化する。
+</p>
 $$
-y\approx q(y) = q_1(y) + q_2(y-q_1(y))
-$$
+y\approx q(y) = q\_1(y) + q\_2(y-q\_1(y))
+$$<p>
 関数\(q_1\): \(\mathbb{R}^d\rightarrow \mathcal{C}_1\subset \mathbb{R}^d\)はcoarse quantizer, 関数\(q_2\): \(\mathbb{R}^d\rightarrow \mathcal{C}_2\subset \mathbb{R}^d\)はfine quantizerとよばれる。
 \(q_2\)は\(q_1\)を適用した結果と\(y\)の残差をエンコードする。
 IVFADCは、\(q_1\)で\(y\)の近傍にある\(\mathcal{C}_1\)で写されるデータベースベクトルのみを検索対象に限定する。
 まず、\(y\)の最近傍にある\(\tau\)個の\(\mathcal{C}_1\)の部分集合\(L_{\text{IVF}}\)を求める。
+</p>
 $$
-L_{\text{IVF}}=\tau-\argmin_{c\in\mathcal{C}_1}||x-c||_2
-$$
+L\_{\text{IVF}}=\tau-\argmin\_{c\in\mathcal{C}\_1}||x-c||\_2
+$$<p>
 次に、\(L_\text{IVF}\)にあるデータベースベクトルの量子化された値とクエリ\(x\)を比較し、\(k\)個の最近傍の集合\(L_{\text{IVFADC}}\)を求める。
+</p>
 $$
-L_{\text{IVFADC}}=k-\argmin_{i=0:l\ \text{s.t.}\ q_1(y_i)\in L_{\text{IVF}}}||x-q(y_i)||_2
-$$</p>
-<p>\(q_1\)は\(|\mathcal{C}_1|\approx \sqrt{l}\)に設定したk-meansで決められ、\(q_2\)にはproduct quantizerが使われる。
+L\_{\text{IVFADC}}=k-\argmin\_{i=0:l\ \text{s.t.}\ q\_1(y\_i)\in L\_{\text{IVF}}}||x-q(y\_i)||\_2
+$$<p>\(q_1\)は\(|\mathcal{C}_1|\approx \sqrt{l}\)に設定したk-meansで決められ、\(q_2\)にはproduct quantizerが使われる。
 Product quantizerは、\(y\)を\(d\)の偶数の約数\(b\)単位に分割\((y=[y^0\dots y^{b-1}])\)し、分割したサブベクトルごとに量子化する。
 サブベクトルは1バイトに収まる\([0,255]\)の値に変換され、量子化された値をビットシフトすることで、\(q_2(y)\)の値\(q_2(y)=q^0(y^0)+256\times q^1(y^1)+\dots + 256^{b-1}\times q^{b-1}(y^{b-1})\)が求まる。</p>
 <p>量子化されたデータベースベクトルとクエリ間の距離を求めたら、Batcherのバイトニックソートでクエリの最近傍にある\(k\)個のベクトルを見つける。

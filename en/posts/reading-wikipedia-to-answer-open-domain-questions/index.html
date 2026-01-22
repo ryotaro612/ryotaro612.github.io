@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Reading Wikipedia to Answer Open Domain Questions (2017)</title>
 </head>
 
@@ -133,26 +155,28 @@ A multi-layer bidirectional LSTM processes this sequence, and for each token \(p
 The aligned question embedding \(f_{\textit{align}}(p_i)\) is calculated as follows.
 Let \(\alpha(\cdot)\) represent a single dense layer followed by a ReLU activation.
 Given a question \(q\), the aligned embedding is computed by:
+</p>
 $$
-f_{\textit{align}}(p_i)=\sum_j \frac{\exp(\alpha(\mathbf{E}(p_i))\cdot \alpha (\mathbf{E}(q_j)))}{\sum_{j&rsquo;}\exp \left(\alpha (\mathbf{E}(p_i))\cdot \alpha (\mathbf{E}(q_{j&rsquo;}))\right)} \mathbf{E}(q_j)
-$$</p>
-<p>To encode the question, a slightly different method is used.
+f\_{\textit{align}}(p\_i)=\sum\_j \frac{\exp(\alpha(\mathbf{E}(p\_i))\cdot \alpha (\mathbf{E}(q\_j)))}{\sum\_{j'}\exp \left(\alpha (\mathbf{E}(p\_i))\cdot \alpha (\mathbf{E}(q\_{j'}))\right)} \mathbf{E}(q\_j)
+$$<p>To encode the question, a slightly different method is used.
 Let \(l\) be the number of tokens in the question.
 The embeddings of the tokens \(q_j\) are passed through an RNN, producing hidden vectors \(\mathbf{q}_j\).
 The final question embedding \(\mathbf{q}\) is obtained by a weighted sum:
+</p>
 $$
-\mathbf{q}=\sum_j\frac{\exp(\mathbf{w}\cdot \mathbf{q}_j)}{\sum_{j&rsquo;}\exp(\mathbf{w}\cdot\mathbf{q}_{j&rsquo;})}\mathbf{q}_j
-$$
+\mathbf{q}=\sum\_j\frac{\exp(\mathbf{w}\cdot \mathbf{q}\_j)}{\sum\_{j'}\exp(\mathbf{w}\cdot\mathbf{q}\_{j'})}\mathbf{q}\_j
+$$<p>
 where \(\mathbf{w}\) is a learnable weight vector.</p>
 <p>Using these paragraph and question embeddings, DrQA predicts the start and end positions of the answer span independently.
 Let \(\mathbf{W}_s, \mathbf{W}_e\) be learned weight matrices.
 For each token \(p_i\), the probabilities for the start and end positions are given by:
+</p>
 $$
 \begin{align*}
-P_{\text{start}}(i)&amp;\propto \exp(\mathbf{p}_i\mathbf{W}_s\mathbf{q})\\
-P_{\text{end}}(i)&amp;\propto \exp(\mathbf{p}_i\mathbf{W}_e\mathbf{q})
+P\_{\text{start}}(i)&\propto \exp(\mathbf{p}\_i\mathbf{W}\_s\mathbf{q})\\\\
+P\_{\text{end}}(i)&\propto \exp(\mathbf{p}\_i\mathbf{W}\_e\mathbf{q})
 \end{align*}
-$$
+$$<p>
 The model selects the span \((i, i&rsquo;)\) that maximizes \(P_{\text{start}}(i)\times P_{\text{end}}(i&rsquo;)\) under the constraint \(i \le i&rsquo; \le i+15\).</p>
   </div>
 </main>

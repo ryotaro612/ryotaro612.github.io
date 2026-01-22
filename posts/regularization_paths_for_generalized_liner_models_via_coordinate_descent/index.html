@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>Regularization Paths for Generalized Linear Models via Coordinate Descent</title>
 </head>
 
@@ -112,51 +134,56 @@
 <p>目的変数を\(Y \in \mathbb{R}\), 説明変数を\(X\in \mathbb{R}^p\), \(N\)件の学習データを\((x_i, y_i)\)として、説明のために線形回帰\(E(Y\mid X=x)=\beta_0 + x^\top\beta\)を導入する。
 簡単のために、\(j=1, \dots , p\)について、\(x_{i,j}\)は、\(\sum^N_{i=1}x_{i,j}=0, \frac{1}{N}\sum^{N}_{i=1}x^2_{i,j}=1\)で標準化されていると仮定する。
 このとき、\(P_\alpha\)をelastic-net penaltyにもつelasticnetの学習は、つぎの問題をとく。
+</p>
 $$
 \begin{align}
-\min_{\beta_0, \beta\in \mathbb{R}^{p+1}}R_\lambda(\beta_0, \beta) &amp;= \min_{(\beta_0, \beta)\in\mathbb{R}^{p+1}}\left[\frac{1}{2N}\sum_{i=1}^{N}(y_i-\beta_0-x^{\top}_i\beta)^2 + \lambda P_\alpha (\beta)\right]\\
-P_{\alpha}(\beta) &amp;= (1-\alpha)\frac{1}{2}\mid\mid \beta\mid\mid^2_{l_2}+\alpha\mid\mid\beta\mid\mid_{l_1}\\
-&amp;=\sum^p_{j=1}\left[\frac{1}{2}(1-\alpha)\beta^2_j+\alpha\mid\beta_j\mid\right]
+\min\_{\beta\_0, \beta\in \mathbb{R}^{p+1}}R\_\lambda(\beta\_0, \beta) &= \min\_{(\beta\_0, \beta)\in\mathbb{R}^{p+1}}\left[\frac{1}{2N}\sum\_{i=1}^{N}(y\_i-\beta\_0-x^{\top}\_i\beta)^2 + \lambda P\_\alpha (\beta)\right]\\\\
+P\_{\alpha}(\beta) &= (1-\alpha)\frac{1}{2}\mid\mid \beta\mid\mid^2\_{l\_2}+\alpha\mid\mid\beta\mid\mid\_{l\_1}\\\\
+&=\sum^p\_{j=1}\left[\frac{1}{2}(1-\alpha)\beta^2\_j+\alpha\mid\beta\_j\mid\right]
 \end{align}
-$$
+$$<p>
 このとき、座標降下法で次元\(j\)の係数\(\tilde{\beta}_j\)を以下の式で更新できる。
+</p>
 $$
 \begin{align}
-\tilde{\beta}_j&amp;\leftarrow\frac{S\left(\frac{1}{N}\sum^N_{i=1}x_{ij}(y_i-\tilde{y}_i^{(j)}), \lambda\alpha\right)}{1+\lambda (1-\alpha)}\\
-\tilde{y}_i^{(j)}&amp;=\tilde{\beta}_0 + \sum_{l\neq j}x_{il}\tilde{\beta}_l
+\tilde{\beta}\_j&\leftarrow\frac{S\left(\frac{1}{N}\sum^N\_{i=1}x\_{ij}(y\_i-\tilde{y}\_i^{(j)}), \lambda\alpha\right)}{1+\lambda (1-\alpha)}\\\\
+\tilde{y}\_i^{(j)}&=\tilde{\beta}\_0 + \sum\_{l\neq j}x\_{il}\tilde{\beta}\_l
 \end{align}
-$$
+$$<p>
+</p>
 $$
 S(z, \gamma) =
 \begin{cases}
-z-\gamma &amp; \text{if }z&gt;0 \text{ and }\gamma &lt;\mid z\mid\\
-z+\gamma &amp; \text{if } z &lt; 0 \text{ and } \gamma &lt; \mid z \mid \\
-0 &amp;\text{if } \gamma \ge \mid z \mid
+z-\gamma & \text{if }z>0 \text{ and }\gamma <\mid z\mid\\\\
+z+\gamma & \text{if } z < 0 \text{ and } \gamma < \mid z \mid \\\\
+0 &\text{if } \gamma \ge \mid z \mid
 \end{cases}
-$$</p>
-<p>ここで、\(\hat{y}_i\)をサンプル\(i\)の現在の予測値、\(r_i\)を残差とすると
+$$<p>ここで、\(\hat{y}_i\)をサンプル\(i\)の現在の予測値、\(r_i\)を残差とすると
+</p>
 $$
 \begin{align}
-y_i-\tilde{y}_i^{(j)}&amp;=y_i-\hat{y}_i+x_{ij}\tilde{\beta}_j\\
-&amp;=r_i+x_{ij}\tilde{\beta}_j
+y\_i-\tilde{y}\_i^{(j)}&=y\_i-\hat{y}\_i+x\_{ij}\tilde{\beta}\_j\\\\
+&=r\_i+x\_{ij}\tilde{\beta}\_j
 \end{align}
-$$
+$$<p>
 であり、\(x_j\)を平均0で標準化しているため
+</p>
 $$
-\frac{1}{N}\sum^N_{i=1}x_{ij}(y_i-\tilde{y}_i^{(j)})=\frac{1}{N}\sum^N_{i=1}x_{ij}r_i+\tilde{\beta}_j
-$$
+\frac{1}{N}\sum^N\_{i=1}x\_{ij}(y\_i-\tilde{y}\_i^{(j)})=\frac{1}{N}\sum^N\_{i=1}x\_{ij}r\_i+\tilde{\beta}\_j
+$$<p>
 この場合、各次元の係数を一回ずつ更新するときの計算量は\(O(pN)\)になり、説明変数の次元数がおおいと計算に時間がかかる。
 そこで、\(\langle x_j,y\rangle = \sum^N_{i=1}x_{ij}y_i\)とすると説明変数の内積により
+</p>
 $$
 \begin{align}
-\sum_{i=1}^Nx_{ij}r_j
-&amp;=\sum_i^{N}(y_i-\tilde{y_i}^{(j)}-x_{ij}\tilde{\beta}_j)x_{ij}\\
-&amp;=\sum_i^{N}x_{ij}y_i-\sum^N_{i=1}x_{ij}(\tilde{y}_i^{(j)}+x_{ij}\tilde{\beta}_j)\\
-&amp;=\langle x_j,y\rangle - \sum_{i=1}^Nx_{ij}(\tilde{\beta}_0 + \sum_{l\neq j}x_{il}\tilde{\beta}_l + x_{ij}\tilde{\beta}_j)\\
-&amp;=\langle x_j,y\rangle - \sum_{i=1}^Nx_{ij}(\tilde{\beta}_0 + \sum_{k=1}^px_{ik}\tilde{\beta}_k)\\
-&amp;=\langle x_j,y\rangle - \sum_{k:\mid\tilde{\beta}_k\mid &gt; 0}\langle x_j,x_k\rangle \tilde{\beta}_k
+\sum\_{i=1}^Nx_{ij}r\_j
+&=\sum\_i^{N}(y\_i-\tilde{y\_i}^{(j)}-x\_{ij}\tilde{\beta}\_j)x\_{ij}\\\\
+&=\sum\_i^{N}x\_{ij}y\_i-\sum^N\_{i=1}x\_{ij}(\tilde{y}\_i^{(j)}+x\_{ij}\tilde{\beta}\_j)\\\\
+&=\langle x\_j,y\rangle - \sum\_{i=1}^Nx\_{ij}(\tilde{\beta}\_0 + \sum\_{l\neq j}x\_{il}\tilde{\beta}\_l + x\_{ij}\tilde{\beta}\_j)\\\\
+&=\langle x\_j,y\rangle - \sum\_{i=1}^Nx\_{ij}(\tilde{\beta}\_0 + \sum\_{k=1}^px\_{ik}\tilde{\beta}\_k)\\\\
+&=\langle x\_j,y\rangle - \sum\_{k:\mid\tilde{\beta}\_k\mid > 0}\langle x\_j,x\_k\rangle \tilde{\beta}\_k
 \end{align}
-$$
+$$<p>
 に変形できる。
 \(\langle x_j,y\rangle\)は係数を更新に影響しないので一度だけ計算すればよい。
 係数のひとつが更新されたときに各勾配を\(O(p)\)で更新できる。

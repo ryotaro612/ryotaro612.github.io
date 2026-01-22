@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>抄訳 CatBoost: unbaiased boosting with categorical features (2017)</title>
 </head>
 
@@ -121,12 +143,13 @@ CatBoostは二進木の決定木を弱識別器に用いる。</p>
 対応する正解を\(y_k\in\mathbb{R}\)とするとTarget Statistics \(\hat{x}_k^i\)は\(\hat{x}_k^i\approx\mathbb{E}(y \mid x^i=x^i_k)\)となる。
 推定時には\(y\)は与えられないため、\(\hat{x}^i_k\)を計算するときに\(y_k\)を含めるとleakageが生じる。
 そこで、\(\sigma\)を訓練データの無作為な順列の順序の関数、\(\mathcal{D}_k=\{{\bf x}_j:\sigma(j)&lt;\sigma(k)\}\)、\(a&gt;0\)をパラメタ、\(p\)を教師データにおける\(y\)の平均値とすると</p>
-<p>$$
-\newcommand{\1}{\mbox{1}\hspace{-0.25em}\mbox{l}}
-\hat{x}^i_k = \frac{\sum_{{\bf x}_j\in\mathcal{D}_k}\1_{\{x_j^i=x_k^i\}}y_j+ap}{\sum_{{\bf x}_j\in\mathcal{D}_k}\1_{\{x^i_j=x^i_k\}}+a}
 $$
+\newcommand{\1}{\mbox{1}\hspace{-0.25em}\mbox{l}}
+\hat{x}^i\_k = \frac{\sum\_{{\bf x}\_j\in\mathcal{D}\_k}\1\_{\\{x\_j^i=x\_k^i\\}}y\_j+ap}{\sum\_{{\bf x}\_j\in\mathcal{D}\_k}\1\_{\\{x^i\_j=x^i\_k\\}}+a}
+$$<p>
 とすることで、leakageを避けて濃度の高いカテゴリカル特徴量の濃度を下げることができる。</p>
-<p>学習においても、leakageを避けるために訓練データに順序を与える。例えば、損失関数を\(\frac{1}{2}[y_i-f(x_i)]^2\)とすると、勾配\(-\partial L(y_i,f(x_i))/\partial f(x_i)\)は\(y_i - f(x_i)\)となる。このとき、\(m\)ステップで勾配を計算するときに使われる弱識別器\(f_{m-1}\)の学習に\((x_i, y_i)\)が訓練データに含まれているとleakageが生じる。そこで、<em>Algorithm 1</em> では、訓練データに順列を設定し、leakageが生じないようにしている。なお、\(I\)は決定木の数をさす。
+<p>学習においても、leakageを避けるために訓練データに順序を与える。例えば、損失関数を\(\frac{1}{2}</p>
+\[y\_i-f(x\_i)\]<p>^2\)とすると、勾配\(-\partial L(y_i,f(x_i))/\partial f(x_i)\)は\(y_i - f(x_i)\)となる。このとき、\(m\)ステップで勾配を計算するときに使われる弱識別器\(f_{m-1}\)の学習に\((x_i, y_i)\)が訓練データに含まれているとleakageが生じる。そこで、<em>Algorithm 1</em> では、訓練データに順列を設定し、leakageが生じないようにしている。なお、\(I\)は決定木の数をさす。
 <em>Algorithm 1</em> は訓練データの数以上のモデルを学習する必要があるのでスケールしない。論文中ではこれを近似するアルゴリズムも提案されており、実験や評価ではそちらが使われている。</p>
 <figure class="center"><img src="/catboost.png" width="320">
 </figure>

@@ -2,18 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>方策勾配法 on Blanket</title>
-    <link>http://localhost:1313/tags/%E6%96%B9%E7%AD%96%E5%8B%BE%E9%85%8D%E6%B3%95/</link>
+    <link>https://ryotaro.dev/tags/%E6%96%B9%E7%AD%96%E5%8B%BE%E9%85%8D%E6%B3%95/</link>
     <description>Recent content in 方策勾配法 on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 27 Apr 2024 14:49:30 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E6%96%B9%E7%AD%96%E5%8B%BE%E9%85%8D%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Policy Gradient Methods for Reinforcement Learning With Function Approximation (1999)</title>
-      <link>http://localhost:1313/posts/policy-gradient-methods-for-reinforcement-learning-with-function-approximation/</link>
-      <pubDate>Sat, 27 Apr 2024 14:49:30 +0900</pubDate>
-      <guid>http://localhost:1313/posts/policy-gradient-methods-for-reinforcement-learning-with-function-approximation/</guid>
-      <description>&lt;p&gt;方策勾配法は、パラメタつき方策モデルを設定し、報酬の期待値の勾配でパラメタを更新する。&#xA;行動価値関数から方策モデルを求めない点で、アクタークリティック法は、方策勾配法の一種とみなせる。&#xA;行動価値関数から方策を求める方法の多くは決定的な方策を求めるが、確率的に行動を選択する方策のほうが理想的な問題もある。&#xA;また、行動価値の微小な変化で、選択される行動が変わり、方策が収束しないことがある。&#xA;&lt;a href=&#34;https://proceedings.neurips.cc/paper/1999/file/464d828b85b0bed98e80ade0a5c43b0f-Paper.pdf&#34;&gt;Policy Gradient Methods for Reinforcement Learning With Function Approximation&lt;/a&gt;は、方策勾配法において、関数近似器で近似された目的関数が局所最適解に収束する条件を示した。&lt;/p&gt;</description>
-    </item>
+    <atom:link href="https://ryotaro.dev/tags/%E6%96%B9%E7%AD%96%E5%8B%BE%E9%85%8D%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

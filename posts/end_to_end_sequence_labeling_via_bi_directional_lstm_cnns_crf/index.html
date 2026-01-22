@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>論文メモ End-to-end Sequence Labeling via Bi-directional LSTM-CNNs-CRF</title>
 </head>
 
@@ -117,18 +139,15 @@
 <h3 id="crf">CRF</h3>
 <p>双方向LSTMからの入力を\(\boldsymbol{\mathrm{z}}=\{\boldsymbol{\mathrm{z}}_1,\cdots ,\boldsymbol{\mathrm{z}}_n\}\), \(i\)番目の単語のラベルを\(y_i\)とする正解の系列を\(\boldsymbol{\mathrm{y}}=\{y_1,\cdots ,y_n\}\), \(\boldsymbol{\mathrm{z}}\)がとりえるラベルの系列の集合を\(\mathcal{Y}(\boldsymbol{\mathrm{z}})\)とすると、CRFは、次の条件付き確率分布で\(p(\boldsymbol{y}\mid\boldsymbol{\mathrm{z}};\boldsymbol{\mathrm{W}},\boldsymbol{\mathrm{b}})\)で系列を推定する。
 ただし、\(\psi_i(y&rsquo;,y,\boldsymbol{\mathrm{z}})=\exp (\boldsymbol{\mathrm{W}}^T_{y&rsquo;,y}\boldsymbol{\mathrm{z}}_i+\boldsymbol{\mathrm{b}}_{y&rsquo;,y})\)であり、\(\mathrm{\boldsymbol{W}}^T_{y&rsquo;,y}\)と\(\boldsymbol{\mathrm{b}}_{y&rsquo;,y}\)は\((y&rsquo;,y)\)に対応する重みとバイアスである。</p>
-<p>$$
-p(\boldsymbol{y}\mid \boldsymbol{\mathrm{z}};\boldsymbol{\mathrm{W}},\boldsymbol{\mathrm{b}})=\frac{\prod^n_{i=1}\psi_i(y_{i-1},y_i,\boldsymbol{\mathrm{z}})}{\sum_{y&rsquo;\in\mathcal{Y}(\boldsymbol{\mathrm{z}})}\psi_i(y&rsquo;_{i-1},y&rsquo;_i,\mathrm{\boldsymbol{z}})}
-$$</p>
-<p>\(\{(\mathrm{\boldsymbol{z}}_i, \boldsymbol{\mathrm{y}}_i)\}\)を教師データとする学習では、次の尤度を最大化するパラメタ\(\mathrm{\boldsymbol{W}}, \mathrm{\boldsymbol{b}}\)を求める。</p>
-<p>$$
-\mathcal{\mathrm{L}}(\boldsymbol{\mathrm{W}},\boldsymbol{\mathrm{b}})=\sum_i\log p(\boldsymbol{y}\mid \boldsymbol{\mathrm{z}};\boldsymbol{\mathrm{W}},\boldsymbol{\mathrm{b}})
-$$</p>
-<p>以上のように学習したCRFは、\(\mathrm{\boldsymbol{z}}\)があたえられたとき、次の\(y^*\)をラベル系列として推定する。</p>
-<p>$$
+$$
+p(\boldsymbol{y}\mid \boldsymbol{\mathrm{z}};\boldsymbol{\mathrm{W}},\boldsymbol{\mathrm{b}})=\frac{\prod^n\_{i=1}\psi\_i(y\_{i-1},y\_i,\boldsymbol{\mathrm{z}})}{\sum\_{y'\in\mathcal{Y}(\boldsymbol{\mathrm{z}})}\psi\_i(y'\_{i-1},y'\_i,\mathrm{\boldsymbol{z}})}
+$$<p>\(\{(\mathrm{\boldsymbol{z}}_i, \boldsymbol{\mathrm{y}}_i)\}\)を教師データとする学習では、次の尤度を最大化するパラメタ\(\mathrm{\boldsymbol{W}}, \mathrm{\boldsymbol{b}}\)を求める。</p>
+$$
+\mathcal{\mathrm{L}}(\boldsymbol{\mathrm{W}},\boldsymbol{\mathrm{b}})=\sum\_i\log p(\boldsymbol{y}\mid \boldsymbol{\mathrm{z}};\boldsymbol{\mathrm{W}},\boldsymbol{\mathrm{b}})
+$$<p>以上のように学習したCRFは、\(\mathrm{\boldsymbol{z}}\)があたえられたとき、次の\(y^*\)をラベル系列として推定する。</p>
+$$
 \boldsymbol{y}^* = \underset{y\in\mathcal{Y}(\boldsymbol{\mathrm{z}})}{\operatorname{argmax}} p(\boldsymbol{y}\mid \boldsymbol{\mathrm{z}};\boldsymbol{\mathrm{W}},\boldsymbol{\mathrm{b}})
-$$</p>
-<hr>
+$$<hr>
 <ul>
 <li>論文は<a href="https://www.aclweb.org/anthology/P16-1101/">こちら</a>からダウンロードできます。</li>
 </ul>

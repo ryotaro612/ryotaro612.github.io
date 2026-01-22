@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>論文メモ Impossibility of Distributed Consensus with One Faulty Process</title>
 </head>
 
@@ -138,9 +160,9 @@ FLPの帰結のいうところは、totally correctな\(P\)は存在しないこ
 <li>補題2. configuration \(C\)から到達可能なconfigurationのdecision valueが\(0\)と\(1\)どちらもありえるなら、\(C\)はbivalentといい、\(P\)にはbivalentなinitial configurationがある。</li>
 <li>補題3. \(C\)をbivalentなconfiguration, \(e=(p, m)\)を\(C\)に適用可能なイベント、\(\mathcal{F}\)を\(e\)を適用せずに\(C\)から到達可能なconfigurationの集合、\(\mathcal{D}\)を</li>
 </ul>
-<p>$$
-\mathcal{D}=e(\mathcal{F})=\{e(E)\mid E \in \mathcal{F}\text{かつ}e\text{は}E\text{に適用可能}\}
 $$
+\mathcal{D}=e(\mathcal{F})=\\{e(E)\mid E \in \mathcal{F}\text{かつ}e\text{は}E\text{に適用可能}\\}
+$$<p>
 とすると\(\mathcal{D}\)はbivalentなconfigurationを含む。</p>
 <p>ここで、\(C_0\)をbivalentなinitial configurationとする。
 \(C_0\)は補題2より存在する。

@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>SimCSE: Simple Contrastive Learning of Sentence Embeddings</title>
 </head>
 
@@ -111,15 +133,16 @@ SimCSEは、文の分散表現のための対照学習であり、教師なし�
 教師なし学習は、Dropout層を通したサンプルが近くに配置されるように、Dropout層の出力2つからなるペアを教師データにする。
 教師あり学習は、自然言語推論(含意関係認識)の教師データをつかい、前提と含意の分散表現が近くになるように学習する。</p>
 <p>教師なし学習は、\(N\)をミニバッチのサイズ、\(\boldsymbol{\rm h}_i^z=f_{\theta}(x_i, z)\)を事例\(x_i\)にドロップアウトによるマスク\(z\)を適用した結果とすると、損失関数は以下になる。
+</p>
 $$
-\ell_i = -\log\frac{e^{\text{sim}(\boldsymbol{\rm h}_i^{z_i}, \boldsymbol{\rm h}_i^{z_i&rsquo;})/\tau}}{\sum_{j=1}^Ne^{\text{sim}(\boldsymbol{\rm h}_i^{z_i}, \boldsymbol{\rm h}_j^{z&rsquo;_j})/\tau}}
-$$
+\ell\_i = -\log\frac{e^{\text{sim}(\boldsymbol{\rm h}\_i^{z\_i}, \boldsymbol{\rm h}\_i^{z\_i'})/\tau}}{\sum\_{j=1}^Ne^{\text{sim}(\boldsymbol{\rm h}\_i^{z\_i}, \boldsymbol{\rm h}\_j^{z'\_j})/\tau}}
+$$<p>
 \(\tau\)は温度パラメータである。</p>
 <p>教師あり学習の場合、\(x_i\)を前提、含意を\(x_i^+\), 矛盾を\(x_i^-\)として
+</p>
 $$
-\ell_i = -\log\frac{e^{\text{sim}(\boldsymbol{\rm h}_i, \boldsymbol{\rm h}_i^+)/\tau}}{\sum^N_{j=1}\left(e^{\text{sim}(\boldsymbol{\rm h}_i, \boldsymbol{\rm h}_j^+)/\tau} + e^{\text{sim}(\boldsymbol{\rm h}_i, \boldsymbol{\rm h}_j^-)/\tau}\right)}
-$$</p>
-<p>論文への<a href="https://arxiv.org/pdf/2104.08821.pdf">リンク</a></p>
+\ell\_i = -\log\frac{e^{\text{sim}(\boldsymbol{\rm h}\_i, \boldsymbol{\rm h}\_i^+)/\tau}}{\sum^N\_{j=1}\left(e^{\text{sim}(\boldsymbol{\rm h}\_i, \boldsymbol{\rm h}\_j^+)/\tau} + e^{\text{sim}(\boldsymbol{\rm h}\_i, \boldsymbol{\rm h}\_j^-)/\tau}\right)}
+$$<p>論文への<a href="https://arxiv.org/pdf/2104.08821.pdf">リンク</a></p>
   </div>
 </main>
 

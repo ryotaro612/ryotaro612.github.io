@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>概要 Learning on the Border: Active Learning in Imbalanced Data Classification(2007)</title>
 </head>
 
@@ -119,41 +141,45 @@
 具体的には、ラベルづけしたデータでSVMをオンライン学習し、無作為に抽出されたラベルのないデータの中で最も超平面に近いデータにラベルをつける手順をマージンの中にあるデータ数が変わらなくなるまでくりかえす。</p>
 <p>SVMの超平面はマージン内にあるサンプルによって定められるので、論文は、マージン内にあるサンプルは外にあるサンプルよりも貢献するという立場である。</p>
 <p>超平面は次の損失関数を最小化することで求まる。</p>
-<p>$$
-\min_{{\bf w},\boldsymbol{b}, \xi_i}\frac{1}{2}{\bf w}\cdot{\bf w}^{T}+C\sum^{N}_{i=1}\xi_i
 $$
+\min\_{{\bf w},\boldsymbol{b}, \xi\_i}\frac{1}{2}{\bf w}\cdot{\bf w}^{T}+C\sum^{N}\_{i=1}\xi\_i
+$$<p>
+</p>
 $$
 \begin{cases}
-\forall i\ y_i ({\bf w}^T\phi(x_i)-b) \ge 1 -\xi_i \\\
-\forall i \ x_i \ge 0
+\forall i\ y\_i ({\bf w}^T\phi(x\_i)-b) \ge 1 -\xi\_i \\\\\
+\forall i \ x\_i \ge 0
 \end{cases}
-$$</p>
-<p>ただし、\({\bf w}\)は超平面のノルム、\(b\)はオフセット、\(y_i\)はラベル、\(\phi(\cdot)\)は入力を対応する特徴空間上のベクトルへの写像を示す。</p>
+$$<p>ただし、\({\bf w}\)は超平面のノルム、\(b\)はオフセット、\(y_i\)はラベル、\(\phi(\cdot)\)は入力を対応する特徴空間上のベクトルへの写像を示す。</p>
 <p>以上の目的関数の最小化の双対問題に、次の\(W(\alpha)\)の最大化がある。</p>
-<p>$$
-\max W(\alpha) \equiv \sum^N_{i=1}\alpha_i - \frac{1}{2}\sum_{j,j}\alpha_i\alpha_jy_iy_jK({\bf x_i}, {\bf x_j})
 $$
+\max W(\alpha) \equiv \sum^N\_{i=1}\alpha\_i - \frac{1}{2}\sum\_{j,j}\alpha\_i\alpha\_jy\_iy\_jK({\bf x\_i}, {\bf x\_j})
+$$<p>
+</p>
 $$
 \begin{cases}
-\forall i\ 0 \le \alpha_i \le C \\\
-\sum^N_{i=1}\alpha_iy_i = 0
+\forall i\ 0 \le \alpha\_i \le C \\\\\
+\sum^N\_{i=1}\alpha\_iy\_i = 0
 \end{cases}
-$$
+$$<p>
 ただし、\(K({\bf x_i}, {\bf x_j})=\langle\phi({\bf x_i}),\phi({\bf x_j})\rangle\)はカーネル行列を示す。
 このとき超平面\({\bf w}\)は
+</p>
 $$
-w = \sum^n_{i=1}\alpha_i\phi(x_i)
-$$
+w = \sum^n\_{i=1}\alpha\_i\phi(x\_i)
+$$<p>
 であり、\(x_i\)がマージンの外にある場合は\(\alpha_i=0\)となり、超平面の位置に影響しない。以上から、すべてのサンプルが等しく学習に貢献するわけではないことを導いている。</p>
 <p>論文中の実験では、59件のサンプルを一度に無作為に選び、最も超平面に近いサンプルを探す。
 無作為に選んだ\(L\)件のサンプルの中に母集団内で超平面に近い上位\(p%\)にあるサンプルが含まれる確率が\(1-\eta\)であるとき、
+</p>
 $$
-1-(1-p\%)^{L} = 1 -\eta
-$$
+1-(1-p\\%)^{L} = 1 -\eta
+$$<p>
 より
+</p>
 $$
-L=\frac{\log \eta}{\log (1-p%)}
-$$
+L=\frac{\log \eta}{\log (1-p\%)}
+$$<p>
 となり母集団の大きさによらず\(L=59\)のとき95%の確率で超平面に近い上位5%のサンプルを抽出することができる。</p>
 <h3 id="感想">感想</h3>
 <p>提案手法で集めたデータセットでSVM以外の学習器を訓練した場合にも、不均衡なデータに対して高い予測性能をだせるだろうか。</p>

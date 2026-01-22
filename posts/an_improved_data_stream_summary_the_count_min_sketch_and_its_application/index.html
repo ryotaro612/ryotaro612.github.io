@@ -32,16 +32,38 @@
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
-    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
-    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4"
-    crossorigin="anonymous"></script>
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
-    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
   <title>An Improved Data Stream Summary: The Count-Min Sketch and its Applications(2005)</title>
 </head>
 
@@ -120,26 +142,30 @@
 また、これらと二分探索を応用すれば、指定した値よりも大きい要素のみからなる範囲や分位数も計算できる。</p>
 <p>時刻\(t\)の\(n\)次元のベクトルを\(\boldsymbol{\rm a}(t)=[a_1(t),\dots a_i(t),\dots a_n(t)]\)とする。
 はじめ\(\boldsymbol{a}\)は\(\boldsymbol{0}\)であり、時刻\(t\)に\(i_t\)番目の要素に\(c_t\)が加算される前提である。より厳密には
+</p>
 $$
-a_{i_t}(t) = a_{i_t}(t-1) + c_t;\ \ a_{i&rsquo;}(t) = a_{i&rsquo;}(t-1)\ \ i&rsquo;\neq t_t \ \ c_t &gt; 0
-$$
+a\_{i\_t}(t) = a\_{i\_t}(t-1) + c\_t;\ \ a\_{i'}(t) = a\_{i'}(t-1)\ \ i'\neq t\_t \ \ c\_t > 0
+$$<p>
 という状況である。
 \(w=\lceil\frac{e}{\epsilon}\rceil, d=\lceil\ln\frac{1}{\delta}\rceil\)とする\(d\times w\)の二次元行列\(\text{count}\)の全ての要素の初期値は0である。
 また、\(\{1\dots n\}\)から\(\{1\dots w\}\)に写像する\(d\)個のハッシュ関数\(h_1\dots h_d\)を\(d\)ワイズ独立なハッシュ関数の集合から無作為に\(d\)個選ぶ。
 このとき、時刻\(t\)における\(i_t\)番目の要素への\(c_t\)を加算は
+</p>
 $$
-\forall 1 \le j \le d: \textit{count}[j,h_j(i_t)] \leftarrow \textit{count}[j,h_j(i_t)] + c_t
-$$
+\forall 1 \le j \le d: \textit{count}[j,h\_j(i\_t)] \leftarrow \textit{count}[j,h\_j(i\_t)] + c\_t
+$$<p>
 に対応する。</p>
 <p>\(i\)番目の要素の推定値\(\hat{a}_i\)は
+</p>
 $$
-\hat{a}_i = \min_j \textit{count}[j,h_j(i)]
-$$
+\hat{a}\_i = \min\_j \textit{count}[j,h\_j(i)]
+$$<p>
 であり、\(a_i\le \hat{a}_i\)、かつ、少なくとも\(1-\delta\)の確率で\(\hat{a}_i\le a_i + \epsilon||\boldsymbol{\rm a}||_1\)である。</p>
 <p>内積の推定値\(\widehat{\boldsymbol{\rm a}\odot \boldsymbol{\rm b}}\)は\(\min_j(\widehat{\boldsymbol{\rm a}\odot \boldsymbol{\rm b}})_j=\min_j \sum^w_{k=1}\textit{count}_{\boldsymbol{\rm a}}[j,k]*\textit{count}_{\boldsymbol{\rm b}}[j,k]\)であり、\(\epsilon\)と\(\delta\)の間には
+</p>
 $$
-\textrm{Pr}\left[\widehat{\boldsymbol{\rm a}\odot \boldsymbol{\rm b}} -\boldsymbol{\rm a}\odot \boldsymbol{\rm b} &gt; \epsilon ||\boldsymbol{\rm a}||_1||\boldsymbol{\rm b}||_1\right]\le\delta
-$$
+\textrm{Pr}\left[\widehat{\boldsymbol{\rm a}\odot \boldsymbol{\rm b}} -\boldsymbol{\rm a}\odot \boldsymbol{\rm b} > \epsilon ||\boldsymbol{\rm a}||\_1||\boldsymbol{\rm b}||\_1\right]\le\delta
+$$<p>
 が成立する。
 ある範囲の和については、\(\boldsymbol{\rm b}\)の内積を応用すれば求められる。</p>
 <p>論文への<a href="https://www.cse.unsw.edu.au/~cs9314/07s1/lectures/Lin_CS9314_References/cm-latin.pdf">リンク</a></p>
