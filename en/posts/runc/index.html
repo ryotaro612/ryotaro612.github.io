@@ -149,7 +149,7 @@ In this post, I will explain some Linux features used in the implementation of r
 <p>runc doesn&rsquo;t require any Docker images to start a container.
 It can use local directories as the root file systems for containers.
 For example, you can start a container with the following commands:</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mkdir rootfs
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mkdir rootfs
 </span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"># export busybox from Docker into the rootfs directory</span>
 </span></span><span style="display:flex;"><span>docker <span style="color:#89dceb">export</span> <span style="color:#cba6f7">$(</span>docker create busybox<span style="color:#cba6f7">)</span> | tar -C rootfs -xvf -
 </span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"># generate a specification in the format of ./config.json</span>
@@ -170,12 +170,12 @@ One is the master, with its path being <code>/dev/ptmx</code>, and the other is 
 When a process opens <code>/dev/ptmx</code>, the slave is created in <code>/dev/pts</code> directory.</p>
 <p>the <code>init</code> process creates a master and slave and sends the file descriptor of the master through a socket pair.
 The <code>run</code> process calls <a href="https://github.com/opencontainers/runc/blob/7cb363254b69e10320360b63fb73e0ffb5da7bf2/utils_linux.go#L107"><code>setupIO</code></a> to create the socket pair by <a href="https://man7.org/linux/man-pages/man2/socketpair.2.html"><code>socketpair</code></a>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>parent, child, err <span style="color:#89dceb;font-weight:bold">:=</span> utils.<span style="color:#89b4fa">NewSockPair</span>(<span style="color:#a6e3a1">&#34;console&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>parent, child, err <span style="color:#89dceb;font-weight:bold">:=</span> utils.<span style="color:#89b4fa">NewSockPair</span>(<span style="color:#a6e3a1">&#34;console&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#cba6f7">if</span> err <span style="color:#89dceb;font-weight:bold">!=</span> <span style="color:#fab387">nil</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">return</span> <span style="color:#fab387">nil</span>, err
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The <code>run</code> process places the <code>child</code> socket in the <code>ExtraFiles</code> field of [<code>Cmd</code>] which starts the <code>init</code> process. It binds <code>p.ConsoleSocket</code> to the <code>child</code> socket in the <code>ExtraFiles</code>, assigning the file descriptor with <code>_LIBCONTAINER_CONSOLE</code> as shown in the part of the <a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/libcontainer/container_linux.go#L519">newParentProcess</a> function:</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>cmd.ExtraFiles = <span style="color:#89dceb">append</span>(cmd.ExtraFiles, p.ExtraFiles<span style="color:#89dceb;font-weight:bold">...</span>)
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>cmd.ExtraFiles = <span style="color:#89dceb">append</span>(cmd.ExtraFiles, p.ExtraFiles<span style="color:#89dceb;font-weight:bold">...</span>)
 </span></span><span style="display:flex;"><span><span style="color:#cba6f7">if</span> p.ConsoleSocket <span style="color:#89dceb;font-weight:bold">!=</span> <span style="color:#fab387">nil</span> {
 </span></span><span style="display:flex;"><span>	cmd.ExtraFiles = <span style="color:#89dceb">append</span>(cmd.ExtraFiles, p.ConsoleSocket)
 </span></span><span style="display:flex;"><span>	cmd.Env = <span style="color:#89dceb">append</span>(cmd.Env,
@@ -183,13 +183,13 @@ The <code>run</code> process calls <a href="https://github.com/opencontainers/ru
 </span></span><span style="display:flex;"><span>	)
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The <code>init</code> process opens the <code>/dev/ptmx</code> and writes its file descriptor to the <code>child</code> socket in the <a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/libcontainer/utils/cmsg.go#L116"><code>SendRawFd</code></a>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">// SendRawFd sends a specific file descriptor over the given AF_UNIX socket.</span>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">// SendRawFd sends a specific file descriptor over the given AF_UNIX socket.</span>
 </span></span><span style="display:flex;"><span><span style="color:#f38ba8">func</span> <span style="color:#89b4fa">SendRawFd</span>(socket <span style="color:#89dceb;font-weight:bold">*</span>os.File, msg <span style="color:#f38ba8">string</span>, fd <span style="color:#f38ba8">uintptr</span>) <span style="color:#f38ba8">error</span> {
 </span></span><span style="display:flex;"><span>	oob <span style="color:#89dceb;font-weight:bold">:=</span> unix.<span style="color:#89b4fa">UnixRights</span>(<span style="color:#89dceb">int</span>(fd))
 </span></span><span style="display:flex;"><span>	<span style="color:#cba6f7">return</span> unix.<span style="color:#89b4fa">Sendmsg</span>(<span style="color:#89dceb">int</span>(socket.<span style="color:#89b4fa">Fd</span>()), []<span style="color:#89dceb">byte</span>(msg), oob, <span style="color:#fab387">nil</span>, <span style="color:#fab387">0</span>)
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The <code>init</code> process duplicates the slave to  standard IO and standard error in the following <a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/libcontainer/console_linux.go#L28"><code>dupStdio</code></a>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">// dupStdio opens the slavePath for the console and dups the fds to the current</span>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">// dupStdio opens the slavePath for the console and dups the fds to the current</span>
 </span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">// processes stdio, fd 0,1,2.</span>
 </span></span><span style="display:flex;"><span><span style="color:#f38ba8">func</span> <span style="color:#89b4fa">dupStdio</span>(slavePath <span style="color:#f38ba8">string</span>) <span style="color:#f38ba8">error</span> {
 </span></span><span style="display:flex;"><span>	fd, err <span style="color:#89dceb;font-weight:bold">:=</span> unix.<span style="color:#89b4fa">Open</span>(slavePath, unix.O_RDWR, <span style="color:#fab387">0</span>)
@@ -208,7 +208,7 @@ The <code>run</code> process calls <a href="https://github.com/opencontainers/ru
 </span></span><span style="display:flex;"><span>	<span style="color:#cba6f7">return</span> <span style="color:#fab387">nil</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The <code>init</code> process also makes the slave the controlling terminal through <a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/libcontainer/system/linux.go#L120"><code>Setctty</code></a>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f38ba8">func</span> <span style="color:#89b4fa">Setctty</span>() <span style="color:#f38ba8">error</span> {
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f38ba8">func</span> <span style="color:#89b4fa">Setctty</span>() <span style="color:#f38ba8">error</span> {
 </span></span><span style="display:flex;"><span>	<span style="color:#cba6f7">if</span> err <span style="color:#89dceb;font-weight:bold">:=</span> unix.<span style="color:#89b4fa">IoctlSetInt</span>(<span style="color:#fab387">0</span>, unix.TIOCSCTTY, <span style="color:#fab387">0</span>); err <span style="color:#89dceb;font-weight:bold">!=</span> <span style="color:#fab387">nil</span> {
 </span></span><span style="display:flex;"><span>		<span style="color:#cba6f7">return</span> err
 </span></span><span style="display:flex;"><span>	}
@@ -216,7 +216,7 @@ The <code>run</code> process calls <a href="https://github.com/opencontainers/ru
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Meanwhile, the <code>run</code> process monitors the master by <code>epoll</code> in the <a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/tty.go#L102"><code>recvtty</code></a>.
 It receives messages by the <code>recvmsg</code>, copies the stream read from the master to standard output, and transferring standard input of the <code>run</code> process to the master:</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#cba6f7">go</span> <span style="color:#f38ba8">func</span>() { _ = epoller.<span style="color:#89b4fa">Wait</span>() }()
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#cba6f7">go</span> <span style="color:#f38ba8">func</span>() { _ = epoller.<span style="color:#89b4fa">Wait</span>() }()
 </span></span><span style="display:flex;"><span><span style="color:#cba6f7">go</span> <span style="color:#f38ba8">func</span>() { _, _ = io.<span style="color:#89b4fa">Copy</span>(epollConsole, os.Stdin) }()
 </span></span><span style="display:flex;"><span>t.wg.<span style="color:#89b4fa">Add</span>(<span style="color:#fab387">1</span>)
 </span></span><span style="display:flex;"><span><span style="color:#cba6f7">go</span> t.<span style="color:#89b4fa">copyIO</span>(os.Stdout, epollConsole)
@@ -230,7 +230,7 @@ For instance, the same PID can be assigned to processes in two different namespa
 <code>unshare</code> creates a new namespace and moves the calling process into it.</p>
 <p>The <code>nsexec</code> function, written in C, changes the namespace of the <code>init</code> process.
 It is invoked before the Go runtime starts by the following snippet in the <a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/libcontainer/nsenter/nsenter.go#L9"><code>nsenter.go</code></a>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">//go:build linux &amp;&amp; !gccgo</span>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">//go:build linux &amp;&amp; !gccgo</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#94e2d5">package</span> nsenter
 </span></span><span style="display:flex;"><span>
@@ -261,7 +261,7 @@ For instance the file owner of a file created by the <code>init</code> process c
 <h3 id="root-filesystem">Root Filesystem</h3>
 <p><code>pivot_root</code> changes the <code>init</code> process&rsquo;s root filesystem.
 Below is a code snippet illustrating the execution of the <code>pivot_root</code>, setting the top directory of <code>rootfs</code> as the root filesystem:</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#89dceb">cd</span> rootfs <span style="color:#89dceb;font-weight:bold">&amp;&amp;</span> mkdir put_old
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#89dceb">cd</span> rootfs <span style="color:#89dceb;font-weight:bold">&amp;&amp;</span> mkdir put_old
 </span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"># run /bin/sh in a new namespace</span>
 </span></span><span style="display:flex;"><span>unshare -mpfr /bin/sh
 </span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"># the first argument of pivot_root must be a mount point</span>

@@ -2,8 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ryotaro.dev/en/tags/attention/</loc>
+    <lastmod>2025-12-29T12:34:47+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/attention/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/attention/"
+                />
+  </url><url>
     <loc>https://ryotaro.dev/en/</loc>
-    <lastmod>2025-11-16T19:00:00+09:00</lastmod>
+    <lastmod>2025-12-29T12:34:47+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -13,6 +26,45 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ryotaro.dev/en/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/posts/flashattention-fast-and-memory-efficient-exact-attention-with-io-awareness/</loc>
+    <lastmod>2025-12-29T12:34:47+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/flashattention-fast-and-memory-efficient-exact-attention-with-io-awareness/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/flashattention-fast-and-memory-efficient-exact-attention-with-io-awareness/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/posts/</loc>
+    <lastmod>2025-12-29T12:34:47+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/posts/"
+                />
+  </url><url>
+    <loc>https://ryotaro.dev/en/tags/</loc>
+    <lastmod>2025-12-29T12:34:47+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://ryotaro.dev/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ryotaro.dev/en/tags/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/tags/collaborative-filtering/</loc>
@@ -41,19 +93,6 @@
                 href="https://ryotaro.dev/en/posts/deep-neural-networks-for-youtube-recommendations/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/en/posts/</loc>
-    <lastmod>2025-11-16T19:00:00+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/posts/"
-                />
-  </url><url>
     <loc>https://ryotaro.dev/en/tags/recommendation/</loc>
     <lastmod>2025-09-23T22:56:55+09:00</lastmod>
     <xhtml:link
@@ -65,19 +104,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ryotaro.dev/en/tags/recommendation/"
-                />
-  </url><url>
-    <loc>https://ryotaro.dev/en/tags/</loc>
-    <lastmod>2025-11-16T19:00:00+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/tags/"
                 />
   </url><url>
     <loc>https://ryotaro.dev/en/posts/kademlia-a-peer-to-peer-information-system-based-on-the-xor-metric/</loc>
@@ -1326,19 +1352,6 @@
                 href="https://ryotaro.dev/en/posts/go_to_statement_considered_harmful/"
                 />
   </url><url>
-    <loc>https://ryotaro.dev/en/tags/attention/</loc>
-    <lastmod>2023-08-19T10:02:50-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://ryotaro.dev/tags/attention/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ryotaro.dev/en/tags/attention/"
-                />
-  </url><url>
     <loc>https://ryotaro.dev/en/posts/self_attention_with_relative_position_representations/</loc>
     <lastmod>2023-08-19T10:02:50-04:00</lastmod>
     <xhtml:link
@@ -1450,7 +1463,5 @@
                 hreflang="en"
                 href="https://ryotaro.dev/en/about/"
                 />
-  </url><url>
-    <loc>https://ryotaro.dev/en/tags/knowledge-distillation/</loc>
   </url>
 </urlset>

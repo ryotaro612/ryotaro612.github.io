@@ -6,8 +6,15 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 16 Nov 2025 19:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 29 Dec 2025 12:34:47 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FLASHATTENTION: Fast and Memory-Efficient Exact Attention with IO-Awareness (2022)</title>
+      <link>https://ryotaro.dev/en/posts/flashattention-fast-and-memory-efficient-exact-attention-with-io-awareness/</link>
+      <pubDate>Mon, 29 Dec 2025 12:34:47 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/posts/flashattention-fast-and-memory-efficient-exact-attention-with-io-awareness/</guid>
+      <description>&lt;p&gt;Let $N$ be the sequence length. In a standard Transformer, self-attention takes $O(N^2)$ time and $O(N^2)$ memory.&#xA;Approximate methods such as &lt;a href=&#34;https://arxiv.org/pdf/2001.04451&#34;&gt;Reformer: The Efficient Transformer&lt;/a&gt; reduce FLOPs by approximating attention, but they often do not yield significant wall-clock speedups and are therefore not widely used.&#xA;&lt;a href=&#34;https://arxiv.org/pdf/2205.14135&#34;&gt;FLASHATTENTION&lt;/a&gt; instead targets memory traffic: it reduces data movement between GPU high-bandwidth memory (HBM) and on-chip SRAM, which can be a major bottleneck.&#xA;HBM is much larger but has lower bandwidth than SRAM; SRAM is fast but small.&#xA;FLASHATTENTION tiles the computation: it loads blocks of $\mathbf{Q}$, $\mathbf{K}$, and $\mathbf{V}$ into SRAM, updates a block of the output $\mathbf{O}$, and then writes that block back to HBM.&#xA;By repeating this over all blocks, FLASHATTENTION computes exact attention.&lt;/p&gt;&#xA;&lt;p&gt;FLASHATTENTION also reduces HBM–SRAM traffic in the backward pass.&#xA;In a typical implementation, one materializes the attention score matrix $\mathbf{S}$ and the softmax output $\mathbf{P}$ so they can be reused to compute gradients of $\mathbf{Q}$, $\mathbf{K}$, $\mathbf{V}$, and $\mathbf{O}$.&#xA;When $\mathbf{Q}$, $\mathbf{K}$, $\mathbf{V}\in \mathbb{R}^{N\times d}$, both $\mathbf{S}$ and $\mathbf{P}$ are $O(N^2)$ in size.&#xA;FLASHATTENTION avoids storing these $N\times N$ matrices by recomputing $\mathbf{S}$ and $\mathbf{P}$ from $\mathbf{O}$ and intermediate values during backpropagation.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Deep Neural Networks for Youtube Recommendations (2016)</title>
       <link>https://ryotaro.dev/en/posts/deep-neural-networks-for-youtube-recommendations/</link>

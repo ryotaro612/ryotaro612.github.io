@@ -149,7 +149,7 @@ containerdがruncでコンテナの操作するので、今でもdockerはrunc�
 <h2 id="runcの使い方">runcの使い方</h2>
 <p><code>runc</code>でコンテナを起動する場合、イメージはいらず、コンテナの<code>/</code>以下がホストにあればよい。
 たとえば、次のコマンドでコンテナを起動できる。</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mkdir rootfs
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mkdir rootfs
 </span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"># copy the / in the busybox to rootfs</span>
 </span></span><span style="display:flex;"><span>docker <span style="color:#89dceb">export</span> <span style="color:#cba6f7">$(</span>docker create busybox<span style="color:#cba6f7">)</span> | tar -C rootfs -xvf -
 </span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"># generate ./config.json</span>
@@ -169,14 +169,14 @@ containerdがruncでコンテナの操作するので、今でもdockerはrunc�
 <!-- ホストはマスターから、コンテナはスレーブからメッセージを読み書きする。 -->
 <p><code>init</code>が、マスターとスレーブを作り、<a href="https://man7.org/linux/man-pages/man2/socketpair.2.html"><code>socketpair</code></a>で作られたソケットの組を介してマスターをホストに送る。
 ソケットの作るのはホストであり、<a href="https://github.com/opencontainers/runc/blob/7cb363254b69e10320360b63fb73e0ffb5da7bf2/utils_linux.go#L107"><code>setupIO</code>関数</a>の以下の箇所でソケットの組を作る。</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>parent, child, err <span style="color:#89dceb;font-weight:bold">:=</span> utils.<span style="color:#89b4fa">NewSockPair</span>(<span style="color:#a6e3a1">&#34;console&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>parent, child, err <span style="color:#89dceb;font-weight:bold">:=</span> utils.<span style="color:#89b4fa">NewSockPair</span>(<span style="color:#a6e3a1">&#34;console&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#cba6f7">if</span> err <span style="color:#89dceb;font-weight:bold">!=</span> <span style="color:#fab387">nil</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#cba6f7">return</span> <span style="color:#fab387">nil</span>, err
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><code>child</code>ソケットを<code>init</code>に渡すために、<code>run</code>はソケットを<code>init</code>を実行する<a href="https://pkg.go.dev/os/exec@go1.24rc1#Cmd"><code>Cmd</code></a>構造体の<code>ExtraFiles</code>の配列に入れる。
 <code>Cmd</code>で呼びだされたプロセスは<code>ExtraFiles</code>で指定されたファイルを開いた状態で開始し、<code>ExtraFiles</code>の<code>i</code>番目の要素のファイル記述子は<code>3+i</code>になる。
 <a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/libcontainer/container_linux.go#L519">newParentProcess</a>関数の以下の箇所で、<code>child</code>ソケットに束縛された<code>p.ConsoleSocket</code>を<code>ExtraFiles</code>に入れ、環境変数<code>_LIBCONTAINER_CONSOLE</code>で<code>init</code>プロセスにファイル記述子を伝える。</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>cmd.ExtraFiles = <span style="color:#89dceb">append</span>(cmd.ExtraFiles, p.ExtraFiles<span style="color:#89dceb;font-weight:bold">...</span>)
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>cmd.ExtraFiles = <span style="color:#89dceb">append</span>(cmd.ExtraFiles, p.ExtraFiles<span style="color:#89dceb;font-weight:bold">...</span>)
 </span></span><span style="display:flex;"><span><span style="color:#cba6f7">if</span> p.ConsoleSocket <span style="color:#89dceb;font-weight:bold">!=</span> <span style="color:#fab387">nil</span> {
 </span></span><span style="display:flex;"><span>	cmd.ExtraFiles = <span style="color:#89dceb">append</span>(cmd.ExtraFiles, p.ConsoleSocket)
 </span></span><span style="display:flex;"><span>	cmd.Env = <span style="color:#89dceb">append</span>(cmd.Env,
@@ -184,13 +184,13 @@ containerdがruncでコンテナの操作するので、今でもdockerはrunc�
 </span></span><span style="display:flex;"><span>	)
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><code>init</code>は、<code>/dev/ptmx</code>を開き、以下の<a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/libcontainer/utils/cmsg.go#L116"><code>SendRawFd</code></a>関数の中で、マスターのファイル記述子を<code>child</code>ソケットに書き込む。</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">// SendRawFd sends a specific file descriptor over the given AF_UNIX socket.</span>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">// SendRawFd sends a specific file descriptor over the given AF_UNIX socket.</span>
 </span></span><span style="display:flex;"><span><span style="color:#f38ba8">func</span> <span style="color:#89b4fa">SendRawFd</span>(socket <span style="color:#89dceb;font-weight:bold">*</span>os.File, msg <span style="color:#f38ba8">string</span>, fd <span style="color:#f38ba8">uintptr</span>) <span style="color:#f38ba8">error</span> {
 </span></span><span style="display:flex;"><span>	oob <span style="color:#89dceb;font-weight:bold">:=</span> unix.<span style="color:#89b4fa">UnixRights</span>(<span style="color:#89dceb">int</span>(fd))
 </span></span><span style="display:flex;"><span>	<span style="color:#cba6f7">return</span> unix.<span style="color:#89b4fa">Sendmsg</span>(<span style="color:#89dceb">int</span>(socket.<span style="color:#89b4fa">Fd</span>()), []<span style="color:#89dceb">byte</span>(msg), oob, <span style="color:#fab387">nil</span>, <span style="color:#fab387">0</span>)
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><code>init</code>はスレーブを以下の<a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/libcontainer/console_linux.go#L28"><code>dupStdio</code></a>関数で標準IOとエラー出力に複製する。</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">// dupStdio opens the slavePath for the console and dups the fds to the current</span>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">// dupStdio opens the slavePath for the console and dups the fds to the current</span>
 </span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">// processes stdio, fd 0,1,2.</span>
 </span></span><span style="display:flex;"><span><span style="color:#f38ba8">func</span> <span style="color:#89b4fa">dupStdio</span>(slavePath <span style="color:#f38ba8">string</span>) <span style="color:#f38ba8">error</span> {
 </span></span><span style="display:flex;"><span>	fd, err <span style="color:#89dceb;font-weight:bold">:=</span> unix.<span style="color:#89b4fa">Open</span>(slavePath, unix.O_RDWR, <span style="color:#fab387">0</span>)
@@ -209,7 +209,7 @@ containerdがruncでコンテナの操作するので、今でもdockerはrunc�
 </span></span><span style="display:flex;"><span>	<span style="color:#cba6f7">return</span> <span style="color:#fab387">nil</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>また、<code>init</code>は次の<a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/libcontainer/system/linux.go#L120"><code>Setctty</code></a>関数でスレーブを制御端末にする。</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f38ba8">func</span> <span style="color:#89b4fa">Setctty</span>() <span style="color:#f38ba8">error</span> {
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f38ba8">func</span> <span style="color:#89b4fa">Setctty</span>() <span style="color:#f38ba8">error</span> {
 </span></span><span style="display:flex;"><span>	<span style="color:#cba6f7">if</span> err <span style="color:#89dceb;font-weight:bold">:=</span> unix.<span style="color:#89b4fa">IoctlSetInt</span>(<span style="color:#fab387">0</span>, unix.TIOCSCTTY, <span style="color:#fab387">0</span>); err <span style="color:#89dceb;font-weight:bold">!=</span> <span style="color:#fab387">nil</span> {
 </span></span><span style="display:flex;"><span>		<span style="color:#cba6f7">return</span> err
 </span></span><span style="display:flex;"><span>	}
@@ -217,7 +217,7 @@ containerdがruncでコンテナの操作するので、今でもdockerはrunc�
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>他方、<code>run</code>プロセスは<a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/tty.go#L102"><code>recvtty</code></a>関数で
 <code>recvmsg</code>で受け取ったマスターを<code>epoll</code>で監視し、<code>recvtty</code>関数の以下のコードで、マスターから読みとったストリームを標準出力にコピーし、ホストの標準出力をマスターにコピーする。</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#cba6f7">go</span> <span style="color:#f38ba8">func</span>() { _ = epoller.<span style="color:#89b4fa">Wait</span>() }()
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#cba6f7">go</span> <span style="color:#f38ba8">func</span>() { _ = epoller.<span style="color:#89b4fa">Wait</span>() }()
 </span></span><span style="display:flex;"><span><span style="color:#cba6f7">go</span> <span style="color:#f38ba8">func</span>() { _, _ = io.<span style="color:#89b4fa">Copy</span>(epollConsole, os.Stdin) }()
 </span></span><span style="display:flex;"><span>t.wg.<span style="color:#89b4fa">Add</span>(<span style="color:#fab387">1</span>)
 </span></span><span style="display:flex;"><span><span style="color:#cba6f7">go</span> t.<span style="color:#89b4fa">copyIO</span>(os.Stdout, epollConsole)
@@ -232,7 +232,7 @@ containerdがruncでコンテナの操作するので、今でもdockerはrunc�
 <code>unshare</code>は、新しく名前空間を作って呼出したプロセスをその名前空間に移す。</p>
 <p>Cの<code>nsexec</code>関数で<code>init</code>プロセスの名前空間が変更される。
 <code>nsexec</code>は、以下の<a href="https://github.com/opencontainers/runc/blob/28b65d3d236714739685f7e8d9af1b8f7ed46a8e/libcontainer/nsenter/nsenter.go#L9"><code>nsenter.go</code></a>でGoのランタイムが始まる前に呼び出される。</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">//go:build linux &amp;&amp; !gccgo</span>
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">//go:build linux &amp;&amp; !gccgo</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#94e2d5">package</span> nsenter
 </span></span><span style="display:flex;"><span>
@@ -260,7 +260,7 @@ containerdがruncでコンテナの操作するので、今でもdockerはrunc�
 <h3 id="ルートファイルシステム">ルートファイルシステム</h3>
 <p><code>pivot_root</code>で<code>init</code>のルートファイルシステムをコンテナのディレクトリのルートに置き換える。
 以下のコードは<code>pivot_root</code>の実行例であり、<code>rootfs</code>のトップディレクトリをルートファイルシステムに設定している。</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#89dceb">cd</span> rootfs <span style="color:#89dceb;font-weight:bold">&amp;&amp;</span> mkdir put_old
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#89dceb">cd</span> rootfs <span style="color:#89dceb;font-weight:bold">&amp;&amp;</span> mkdir put_old
 </span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"># run /bin/sh in a a new namespace</span>
 </span></span><span style="display:flex;"><span>unshare -mpfr /bin/sh
 </span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic"># the first argument of pivot_root must be a mount point</span>

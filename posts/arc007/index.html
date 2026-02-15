@@ -131,7 +131,7 @@
     <p>文字数を\(n\)とすると複数のテレビを組合せたときの視聴パターンの重ね方は\(2^n\)個ある。
 最大文字数は整数型のビット数より数分の1しかないので、ビット操作ですべての重ね方を試行することを考える。
 各重ね方について、パターンを十分に連結した値の論理和に最大文字数以上連続する1があれば、その試行は要件を満たす。</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">#include</span> <span style="color:#6c7086;font-weight:bold;font-style:italic">&lt;bits/stdc++.h&gt;</span><span style="color:#6c7086;font-style:italic">
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">#include</span> <span style="color:#6c7086;font-weight:bold;font-style:italic">&lt;bits/stdc++.h&gt;</span><span style="color:#6c7086;font-style:italic">
 </span></span></span><span style="display:flex;"><span><span style="color:#cba6f7">using</span> <span style="color:#cba6f7">namespace</span> std;
 </span></span><span style="display:flex;"><span><span style="color:#cba6f7">using</span> ll <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#f38ba8">long</span> <span style="color:#f38ba8">long</span>;
 </span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">#define rep(i, n) for (int i = 0; i &lt; (int)(n); i++)

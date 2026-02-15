@@ -6,8 +6,15 @@
     <description>Recent content on Blanket</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 16 Nov 2025 19:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 29 Dec 2025 12:34:47 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FLASHATTENTION: Fast and Memory-Efficient Exact Attention with IO-Awareness (2022)</title>
+      <link>https://ryotaro.dev/posts/flashattention-fast-and-memory-efficient-exact-attention-with-io-awareness/</link>
+      <pubDate>Mon, 29 Dec 2025 12:34:47 +0900</pubDate>
+      <guid>https://ryotaro.dev/posts/flashattention-fast-and-memory-efficient-exact-attention-with-io-awareness/</guid>
+      <description>&lt;p&gt;TransformerのQKV注意機構の時間、空間計算量は、系列長が\(N\)のときには\(O(N^2)\)になる。&#xA;&lt;a href=&#34;https://arxiv.org/pdf/2001.04451&#34;&gt;Reformer: The Efficient Transformer&lt;/a&gt;などのFLOP数を減らす手法はあるが、実際の処理時間を十分に短縮できず、普及していない。&#xA;&lt;a href=&#34;https://arxiv.org/pdf/2205.14135&#34;&gt;FLASHATTENTION&lt;/a&gt;は、FLOP数ではなく、GPUのHBM (high bandwidth memory) と SRAM間の転送量を減らし、処理時間を短縮する。&#xA;HBMの記憶領域はSRAMよりも数十倍大きいが、SRAMよりも数十倍遅い。&#xA;注意 $\mathbf{O}$ を計算するとき、FLASHATTENTIONは、$\mathbf{Q}$, $\mathbf{K}$, $\mathbf{V}$, $\mathbf{O}$それぞれの一部の行ベクトルからなるブロックだけをSRAMに読み、$\mathbf{O}$の一部を更新し、計算した一部をHBMに書き込む。&#xA;更新を繰り返すと最終的に自己注意機構と等しい注意を計算できる。&lt;/p&gt;&#xA;&lt;p&gt;FLASHATTENTIONは逆伝搬時のHBMとSRAM間の転送量も減らす。&#xA;通常のQKV注意機構であれば、$\mathbf{Q}$, $\mathbf{K}$, $\mathbf{V}$, $\mathbf{O}$の勾配を計算するためにSoftmax関数に与える行列$\mathbf{S}$とその結果$\mathbf{P}$を記録する。&#xA;$\mathbf{Q}$, $\mathbf{K}$, $\mathbf{V}$が\(\mathbb{R}^{N\times d}\)であれば$\mathbf{S}$と$\mathbf{P}$のサイズは$\textrm{O}(N^2)$になる。&#xA;FLASHATTENTIONは、順伝搬時に計算した中間結果と$\mathbf{O}$から$\mathbf{S}$と$\mathbf{P}$を計算し直すことで$\mathbf{S}$と$\mathbf{P}$の記録を省き、空間計算量を減らす。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Deep Neural Networks for Youtube Recommendations (2016)</title>
       <link>https://ryotaro.dev/posts/deep-neural-networks-for-youtube-recommendations/</link>

@@ -6,8 +6,15 @@
     <description>Recent content in Tags on Blanket</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 16 Nov 2025 19:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 29 Dec 2025 12:34:47 +0900</lastBuildDate>
     <atom:link href="https://ryotaro.dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Attention</title>
+      <link>https://ryotaro.dev/en/tags/attention/</link>
+      <pubDate>Mon, 29 Dec 2025 12:34:47 +0900</pubDate>
+      <guid>https://ryotaro.dev/en/tags/attention/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Collaborative Filtering</title>
       <link>https://ryotaro.dev/en/tags/collaborative-filtering/</link>
@@ -422,13 +429,6 @@
       <description></description>
     </item>
     <item>
-      <title>Attention</title>
-      <link>https://ryotaro.dev/en/tags/attention/</link>
-      <pubDate>Sat, 19 Aug 2023 10:02:50 -0400</pubDate>
-      <guid>https://ryotaro.dev/en/tags/attention/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Splay Tree</title>
       <link>https://ryotaro.dev/en/tags/splay-tree/</link>
       <pubDate>Sat, 12 Aug 2023 13:49:56 -0400</pubDate>
@@ -454,13 +454,6 @@
       <link>https://ryotaro.dev/en/tags/gpt/</link>
       <pubDate>Fri, 07 Aug 2020 16:45:55 +0900</pubDate>
       <guid>https://ryotaro.dev/en/tags/gpt/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Knowledge Distillation</title>
-      <link>https://ryotaro.dev/en/tags/knowledge-distillation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ryotaro.dev/en/tags/knowledge-distillation/</guid>
       <description></description>
     </item>
   </channel>

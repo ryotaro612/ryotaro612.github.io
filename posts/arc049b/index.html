@@ -137,7 +137,7 @@
     <p>XとYは互いに干渉しないので、独立してX, Yを考えることができる。
 \(x_i, x_{i+1}\)の間に最適な\(X\)があるとすると、\(X\)の位置を\(x_i, x_{i+1}\)を境界として三分探索で求めることができる。
 これをすべての\(i\)について試行すればいい。</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">#include</span> <span style="color:#6c7086;font-weight:bold;font-style:italic">&lt;bits/stdc++.h&gt;</span><span style="color:#6c7086;font-style:italic">
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">#include</span> <span style="color:#6c7086;font-weight:bold;font-style:italic">&lt;bits/stdc++.h&gt;</span><span style="color:#6c7086;font-style:italic">
 </span></span></span><span style="display:flex;"><span><span style="color:#cba6f7">using</span> <span style="color:#cba6f7">namespace</span> std;
 </span></span><span style="display:flex;"><span><span style="color:#cba6f7">using</span> ld <span style="color:#89dceb;font-weight:bold">=</span> <span style="color:#f38ba8">long</span> <span style="color:#f38ba8">double</span>;
 </span></span><span style="display:flex;"><span><span style="color:#6c7086;font-style:italic">#define rep(i, n) for (int i = 0; i &lt; (int)(n); i++)

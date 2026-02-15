@@ -143,7 +143,7 @@
 <p>これまでに何度かURLを発行する方法を調べたことがあるので、今後のために、バケットとファイルを用意するterraformのコードと、ファイルのURLを発行するGoのコードをGitHubの<a href="https://github.com/ryotaro612/s3-signin">リポジトリ</a>に公開した。</p>
 <p>リポジトリのルートにある<code>Makefile</code>の<code>run</code>ターゲットで、S3オブジェクトを配置し、配置したオブジェクトの署名つきURLを発行できる。
 コマンドの実行例を以下に示す。</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>make <span style="color:#f5e0dc">AWS_REGION</span><span style="color:#89dceb;font-weight:bold">=</span>&lt;aws_region&gt; <span style="color:#f5e0dc">AWS_PROFILE</span><span style="color:#89dceb;font-weight:bold">=</span>&lt;profile&gt; <span style="color:#f5e0dc">BUCKET_NAME</span><span style="color:#89dceb;font-weight:bold">=</span>&lt;bucket_name&gt;
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>make <span style="color:#f5e0dc">AWS_REGION</span><span style="color:#89dceb;font-weight:bold">=</span>&lt;aws_region&gt; <span style="color:#f5e0dc">AWS_PROFILE</span><span style="color:#89dceb;font-weight:bold">=</span>&lt;profile&gt; <span style="color:#f5e0dc">BUCKET_NAME</span><span style="color:#89dceb;font-weight:bold">=</span>&lt;bucket_name&gt;
 </span></span></code></pre></div><p>自分の環境では、terraformで作成直後のS3バケットにファイルを置こうとするとエラーになった。
 その場合、再度上のコマンドを実行すれば、あらてめてファイルを置き、URLを発行することができる。
 発行されたURLは標準出力に表示される。

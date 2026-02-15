@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 
 <head>
   
@@ -23,7 +23,7 @@
   
   <link rel="stylesheet" href="https://ryotaro.dev/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
   
-  <link rel="stylesheet" href="https://ryotaro.dev/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+  <link rel="stylesheet" href="https://ryotaro.dev/scss/base.en.min.fabf7968ffbe5ff626ec9a346f0d38e91d0078974112f713b9d25782380a5073.css">
   
 
 <link rel="stylesheet" href="https://ryotaro.dev/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
@@ -77,14 +77,14 @@
   
   
   <header class="navigation">
-    <h2><a href="https://ryotaro.dev/">Blanket</a></h2>
+    <h2><a href="https://ryotaro.dev/en/">Blanket</a></h2>
     <nav>
       <ul>
-        <li><a href="https://ryotaro.dev/about">About</a></li>
-        <li><a href="https://ryotaro.dev/posts">Posts</a></li>
-        <li><a href="https://ryotaro.dev/tags">Tags</a></li>
+        <li><a href="https://ryotaro.dev/en/about">About</a></li>
+        <li><a href="https://ryotaro.dev/en/posts">Posts</a></li>
+        <li><a href="https://ryotaro.dev/en/tags">Tags</a></li>
         
-        <li><a href="https://ryotaro.dev/en/posts/flashattention-fast-and-memory-efficient-exact-attention-with-io-awareness/">en</a></li>
+        <li><a href="https://ryotaro.dev/posts/flashattention-fast-and-memory-efficient-exact-attention-with-io-awareness/">ja</a></li>
         
       </ul>
       <ul>
@@ -110,7 +110,7 @@
         </li>
         
         <li>
-          <a href="https://ryotaro.dev/%20index.xml">
+          <a href="https://ryotaro.dev/en/%20index.xml">
             <i class="fas fa-rss"></i>
           </a>
         </li>
@@ -124,8 +124,8 @@
   <ul class="tags">
     
     <li class="tag">
-      <a href="https://ryotaro.dev/tags/%E6%B3%A8%E6%84%8F%E6%A9%9F%E6%A7%8B/">
-        #注意機構
+      <a href="https://ryotaro.dev/en/tags/attention/">
+        #Attention
       </a>
     </li>
     
@@ -136,18 +136,17 @@
     
   </span>
   <div>
-    <p>TransformerのQKV注意機構の時間、空間計算量は、系列長が\(N\)のときには\(O(N^2)\)になる。
-<a href="https://arxiv.org/pdf/2001.04451">Reformer: The Efficient Transformer</a>などのFLOP数を減らす手法はあるが、実際の処理時間を十分に短縮できず、普及していない。
-<a href="https://arxiv.org/pdf/2205.14135">FLASHATTENTION</a>は、FLOP数ではなく、GPUのHBM (high bandwidth memory) と SRAM間の転送量を減らし、処理時間を短縮する。
-HBMの記憶領域はSRAMよりも数十倍大きいが、SRAMよりも数十倍遅い。
-注意 $\mathbf{O}$ を計算するとき、FLASHATTENTIONは、$\mathbf{Q}$, $\mathbf{K}$, $\mathbf{V}$, $\mathbf{O}$それぞれの一部の行ベクトルからなるブロックだけをSRAMに読み、$\mathbf{O}$の一部を更新し、計算した一部をHBMに書き込む。
-更新を繰り返すと最終的に自己注意機構と等しい注意を計算できる。</p>
-<p>FLASHATTENTIONは逆伝搬時のHBMとSRAM間の転送量も減らす。
-通常のQKV注意機構であれば、$\mathbf{Q}$, $\mathbf{K}$, $\mathbf{V}$, $\mathbf{O}$の勾配を計算するためにSoftmax関数に与える行列$\mathbf{S}$とその結果$\mathbf{P}$を記録する。
-$\mathbf{Q}$, $\mathbf{K}$, $\mathbf{V}$が\(\mathbb{R}^{N\times d}\)であれば$\mathbf{S}$と$\mathbf{P}$のサイズは$\textrm{O}(N^2)$になる。
-FLASHATTENTIONは、順伝搬時に計算した中間結果と$\mathbf{O}$から$\mathbf{S}$と$\mathbf{P}$を計算し直すことで$\mathbf{S}$と$\mathbf{P}$の記録を省き、空間計算量を減らす。</p>
-<p>FLASHATTENTIONでは、注意$\mathbf{O}$の計算にベクトルの最大値でスケールしたSoftmax関数が採用されている。
-softmax関数は\(\mathbf{S}\)の行ベクトル\(x\in \mathbb{R}^d\)ごとに適用される。
+    <p>Let $N$ be the sequence length. In a standard Transformer, self-attention takes $O(N^2)$ time and $O(N^2)$ memory.
+Approximate methods such as <a href="https://arxiv.org/pdf/2001.04451">Reformer: The Efficient Transformer</a> reduce FLOPs by approximating attention, but they often do not yield significant wall-clock speedups and are therefore not widely used.
+<a href="https://arxiv.org/pdf/2205.14135">FLASHATTENTION</a> instead targets memory traffic: it reduces data movement between GPU high-bandwidth memory (HBM) and on-chip SRAM, which can be a major bottleneck.
+HBM is much larger but has lower bandwidth than SRAM; SRAM is fast but small.
+FLASHATTENTION tiles the computation: it loads blocks of $\mathbf{Q}$, $\mathbf{K}$, and $\mathbf{V}$ into SRAM, updates a block of the output $\mathbf{O}$, and then writes that block back to HBM.
+By repeating this over all blocks, FLASHATTENTION computes exact attention.</p>
+<p>FLASHATTENTION also reduces HBM–SRAM traffic in the backward pass.
+In a typical implementation, one materializes the attention score matrix $\mathbf{S}$ and the softmax output $\mathbf{P}$ so they can be reused to compute gradients of $\mathbf{Q}$, $\mathbf{K}$, $\mathbf{V}$, and $\mathbf{O}$.
+When $\mathbf{Q}$, $\mathbf{K}$, $\mathbf{V}\in \mathbb{R}^{N\times d}$, both $\mathbf{S}$ and $\mathbf{P}$ are $O(N^2)$ in size.
+FLASHATTENTION avoids storing these $N\times N$ matrices by recomputing $\mathbf{S}$ and $\mathbf{P}$ from $\mathbf{O}$ and intermediate values during backpropagation.</p>
+<p>FLASHATTENTION uses a numerically stable row-wise softmax (subtracting the row maximum) to compute $\mathbf{O}$.
 </p>
 $$
 \begin{align*}
@@ -155,29 +154,30 @@ $$
 \mathbf{P} &= \textrm{softmax}(\mathbf{S})\in \mathbb{R}^{N\times N}\\\\
 \mathbf{O} &=\mathbf{P}\mathbf{V}\in\mathbb{R}^{N\times d}\\\\
 m(x) &:= \max_{{i}} x_{i}\\\\
-f(x) &:= [e^{x_1-m(x)} \dots e^{x_d-m(x)}]\\\\
+f(x) &:= [e^{x_1-m(x)} \dots e^{x_N-m(x)}]\\\\
 \ell(x) &:= \sum_i {f(x)}_i\\\\
 \text{softmax}(x) &:= \frac{f(x)}{\ell(x)}
 \end{align*}
 $$<p>
-softmax関数の計算を安定させるために最大値$m(x)$でスケールされている。
-<a href="https://arxiv.org/pdf/1706.03762">Attention Is All You Need</a>では、$d$が大きくなればドット積の値も大きくなり勾配が消失するので、ベクトルの要素を$\sqrt{d}$でスケールしてからSoftmax関数が適用されている。</p>
-<p>2つのベクトルとその統計量\(m\), \(\ell\)から、連結したベクトルにsoftmax関数を適用した結果を計算できる。
+Subtracting the row maximum $m(x)$ improves numerical stability.
+Let $d_k$ be the dimension of $\mathbf{K}$. In <a href="https://arxiv.org/pdf/1706.03762">Attention Is All You Need</a>, the attention logits $\mathbf{Q}\mathbf{K}^\top$ are scaled by $1/\sqrt{d_k}$ to prevent dot products from growing too large (which would make the softmax overly peaked and gradients small).</p>
+<p>FLASHATTENTION computes the attention output $\mathbf{O}$ in blocks.
+The softmax for a concatenated vector, $x=[x^{(1)} x^{(2)}]$, can be decomposed into two parts:
 </p>
 $$
 \begin{align*}
 m(x) &= m([x^{(1)}x^{(2)}])=\max(m(x^{(1)}), m(x^{(2)})) \\\\
 f(x) &= \left[ e^{m(x^{(1)})-m(x)}f(x^{(1)})\ \ \ \ e^{m(x^{(2)})-m(x)}f(x^{(2)}) \right]\\\\
 \ell(x) &= \ell(\left[x^{(1)}\ x^{(2)}\right])=e^{m(x^{(1)})-m(x)}\ell(x^{(1)})+e^{m(x^{(2)})-m(x)}\ell (x^{(2)}) \\\\
-\text{softmax}(x)&=\frac{f(x)}{\ell(x)}
+\text{softmax}(x)&=\frac{f(x)}{\eWExll(x)}
 \end{align*}
-$$<p>FLASHATTENTIONは、統計量から連結ベクトルのSoftmax関数の適用結果を求めあれる性質をもちいて、SRAMとHBM間の転送量を減らす。
-具体的なアルゴリズムは以下の文献から引用したアルゴリズムになる。
+$$<p>FLASHATTENTION uses this decomposition to reduce I/O when transferring data between HBM and SRAM.
+The algorithm is shown below:
 <img src="/flashattention/algo1.png" alt="algo1"></p>
-<p>アルゴリズムは$j$について帰納的に証明できる。
-$\mathbf{K}, \mathbf{V}$の最初の$jB_c$行のブロックを$\mathbf{K}_{:j}\in\mathbb{R}^{jB_c\times d}$, $\mathbf{V}_{:j}\in\mathbb{R}^{jB_c\times d}$とおく。
-また、$\mathbf{S}_{:,:j}=\mathbf{Q}\mathbf{K}^{\top}_{:j}\in\mathbb{R}^{N\times jB_c}$, $\mathbf{P}_{::j}=\text{softmax}(\mathbf{S}_{::j})\in\mathbb{R}^{N\times jB_c}$とする。
-これらの変数をもとに、$j$番目の外側の繰り返しの後の$m, \ell, \mathbf{O}$を、$m^j, \ell^{(j)}, \mathbf{O}^{(j)}$として$j$番目の外側の繰り返しの後に、以下が成り立つことを帰納的に示す。
+<p>The algorithm can be proved by induction.
+Let the first $jB_c$ blocks of $\mathbf{K}, \mathbf{V}$ be $\mathbf{K}_{:j}\in\mathbb{R}^{jB_c\times d}$ and $\mathbf{V}_{:j}\in\mathbb{R}^{jB_c\times d}$.
+Additionally, let $\mathbf{S}_{:,:j}$ be $\mathbf{Q}\mathbf{K}^{\top}_{:j}\in\mathbb{R}^{N\times jB_c}$, and let $\mathbf{P}_{:,:j}$ be $\text{softmax}(\mathbf{S}_{:,:j})\in\mathbb{R}^{N\times jB_c}$.
+The paper denotes the values of $m$, $\ell$, and $\mathbf{O}$ after the $j$-th outer loop as $m^{(j)}$, $\ell^{(j)}$, and $\mathbf{O}^{(j)}$, and proves the following by induction:
 </p>
 $$
 \begin{align*}
@@ -185,30 +185,22 @@ m^{(j)}&=\textrm{rowmax}(\mathbf{S}_{:,:j})\in\mathbb{R}^N\\\\
 \ell^{(j)}&=\textrm{rowsum}(\exp(\mathbf{S}_{:,:j}-m^{(j)}))\in\mathbb{R}^N\\\\
 \mathbf{O}^{(j)}&=\mathbf{P}_{:,:j}\mathbf{V}_{:j}\in\mathbb{R}^{N\times d}
 \end{align*}
-$$<p>
-アルゴリズムの2行目で変数を初期したとき、上の式は成立する。
-以降、$j=1,\dots,T_c-1$のときに上の3つの式が成り立つと仮定し、$j+1$でも成立することを示す。</p>
-<p>アルゴリズムは$\mathbf{S}$をブロック単位で計算する。
-$\mathbf{S}$の$B_C(j-1)+1$から$B_Cj$列のブロックを$\mathbf{S}_{:,j-1:j}\in \mathbb{R}^{N\times B_C}$とすると、$j$回目の外側の繰り返しは$\mathbf{S}_{:,j-1:j}$を計算する。
-内側の繰り返しは$\mathbf{S}_{:,j-1:j}$を上から順番に$\mathbb{R}^{B_r\times B_c}$ずつ計算する。
-$j$回目の繰り返しの終わりには、$\mathbf{S}_{:,j-1:j}$の各行の最大値$\textrm{rowmax}(\mathbf{S}_{:,j-1:j})$を計算できている。</p>
-<p>以上の計算手順と11行目の$m^{\text{new}}_i$の更新方法より
+$$<p>FLASHATTENTION computes $\mathbf{S}$ in blocks.
+Let the block of columns from $B_C(j-1)+1$ to $B_Cj$ be $\mathbf{S}_{:,j-1:j}\in \mathbb{R}^{N\times B_C}$; the $j$th outer loop computes $\mathbf{S}_{:,j-1:j}$.
+The inner loop computes blocks of size $B_r\times B_c$ within $\mathbf{S}_{:,j-1:j}$ from top to bottom.
+At the end of the $j$th outer loop, we have $\textrm{rowmax}(\mathbf{S}_{:,j-1:j})$.</p>
+<p>The update in line 11 of the algorithm, together with the steps above, implies that:
 </p>
 $$
 \begin{align*}
 m^{(j+1)}&=\text{max}(\textrm{rowmax}(\mathbf{S}_{:,:j}), \textrm{rowmax}(\mathbf{S}_{:,j:j+1}))\\\\
 m^{(j+1)}&=\text{rowmax}(\mathbf{S}_{:,:j+1})
 \end{align*}
-$$<p>
-となり$j+1$でも成立する。</p>
-<p>また、11行目において、仮定より$e^{m_i}\ell_i$は$\text{rowsum}(\exp(\mathbf{S}_{i,:j-1}))$, $e^{\tilde{m}_{ij}}\tilde{\ell}_{ij}$は$\text{rowsum}(\exp(\mathbf{S}_{ij}))$になるので、
+$$<p>Under the induction hypothesis, $e^{m_i}\ell_i = \text{rowsum}(\exp(\mathbf{S}_{i,:j-1}))$ and $e^{\tilde{m}_{ij}}\tilde{\ell}_{ij} = \text{rowsum}(\exp(\mathbf{S}_{ij}))$; line 11 then implies:
 </p>
 $$
 \ell^{(j+1)}=\text{rowsum}(\exp(\mathbf{S}_{:,:j+1}-m^{(j+1)}))\in\mathbb{R}^N
-$$<p>
-も成り立つ。</p>
-<p>$\mathbf{V}_{:j}$を$\mathbf{V}$の1列から$B_Cj$列からなるブロックとして、アルゴリズムの12行目の計算を外側の繰り返しにおける1回の計算に直し、$\tilde{m}$を$\textrm{rowmax}(\mathbf{S}_{:,j:j+1})$とすると
-</p>
+$$<p>Let $\mathbf{V}_{:j}$ be the first $B_Cj$ columns of $\mathbf{V}$, and let $\tilde{m}$ be $\textrm{rowmax}(\mathbf{S}_{:,j:j+1})$:</p>
 $$
 \begin{align*}
 \mathbf{O}^{(j+1)}
@@ -220,8 +212,7 @@ $$
 &=\textrm{softmax}(\mathbf{S}_{:,:j+1})\mathbf{V}_{j+1}
 \end{align*}
 $$<p>
-となり、$j+1$でも成りたつ。
-以上からFLASHATTENTIONで自己注意機構と等しい注意を計算できる。</p>
+Therefore the claim holds for $j+1$, completing the induction; FLASHATTENTION computes exact self-attention in Transformers.</p>
   </div>
 </main>
 
@@ -229,7 +220,7 @@ $$<p>
 <ul class="pagination">
   
   <li>
-    <a href="/posts/deep-neural-networks-for-youtube-recommendations/">
+    <a href="/en/posts/deep-neural-networks-for-youtube-recommendations/">
       <i class="fa-solid fa-xl fa-angle-left"></i>
     </a>
   </li>

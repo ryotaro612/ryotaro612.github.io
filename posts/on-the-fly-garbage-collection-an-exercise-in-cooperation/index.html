@@ -175,7 +175,7 @@ mutatorは、有向辺をはじめて変更する場合を除き、前回変え�
 <p>マーキングフェーズは、ルートノード以外の灰色のノードがなくなるまで続く。
 以下の疑似コードはマーキングフェーズを表す。
 ただし、初期状態では黒のノードがないことを前提とし、ノードの数を<code>M</code>とおく。</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#cba6f7">for</span> root <span style="color:#89dceb;font-weight:bold">in</span> roots:
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#cba6f7">for</span> root <span style="color:#89dceb;font-weight:bold">in</span> roots:
 </span></span><span style="display:flex;"><span>  <span style="color:#cba6f7">if</span> root<span style="color:#89dceb;font-weight:bold">.</span>color <span style="color:#89dceb;font-weight:bold">==</span> WHITE:
 </span></span><span style="display:flex;"><span>    root<span style="color:#89dceb;font-weight:bold">.</span>color <span style="color:#89dceb;font-weight:bold">=</span> GRAY
 </span></span><span style="display:flex;"><span>
@@ -203,7 +203,7 @@ mutatorは、有向辺をはじめて変更する場合を除き、前回変え�
 <p>アペンディングフェーズは、白のノードをリストに追加し、黒のノードを白に着色する。
 その間、ルートノード以外に灰色のノードはない。
 以下疑似コードでアペンディングコードを示す。</p>
-<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#cba6f7">for</span> i <span style="color:#89dceb;font-weight:bold">in</span> <span style="color:#89dceb">range</span>(m):
+<div class="highlight"><pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#cba6f7">for</span> i <span style="color:#89dceb;font-weight:bold">in</span> <span style="color:#89dceb">range</span>(m):
 </span></span><span style="display:flex;"><span>  color <span style="color:#89dceb;font-weight:bold">:=</span> nodes[i]<span style="color:#89dceb;font-weight:bold">.</span>color <span style="color:#89dceb;font-weight:bold">//</span> atomic
 </span></span><span style="display:flex;"><span>  <span style="color:#cba6f7">if</span> color <span style="color:#89dceb;font-weight:bold">==</span> WHITE:
 </span></span><span style="display:flex;"><span>    free_list<span style="color:#89dceb;font-weight:bold">.</span>append(nodes[i]) <span style="color:#89dceb;font-weight:bold">//</span> atomic

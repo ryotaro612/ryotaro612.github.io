@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
-	<meta name="generator" content="Hugo 0.153.4">
+	<meta name="generator" content="Hugo 0.155.3">
   
   
   <script>(function (w, d, s, l, i) {
@@ -121,6 +121,32 @@
 <main>
   <h1>Posts</h1>
   
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/dense-passage-retrieval-for-open-domain-question-answering/">Dense Passage Retrieval for Open-Domain Question Answering (2020)</a></h3>
+    <div class="summary"><p>あたえられた文書集合から事実についての質問に答えるオープンドメイン質問応答は、もとの集合から質問に関連する少数の文書集合を選び、選ばれた集合から解答を特定する二段階の手順に分けられる <a href="https://arxiv.org/abs/1704.00051">(Chen et al., 2017)</a>。
+<a href="https://aclanthology.org/2020.emnlp-main.550/">Dense Passage Retrieval for Open-Domain Question Answering</a>は、最初の文書候補を限定する手順に、従来より使われているBM25のような疎なベクトルを出力するモデルにかわって、BERTが出力する密で次元数の少ないベクトルを応用する。</p>
+<p>訓練方法は距離学習であり、質問と解答のベクトルの内積が大きく、解答以外の文章と質問の内積が小さくになるように、BERTの重みを更新する。
+負例を集めるために、無作為に選ばれた文章、BM25が最も高い文章、別の正例の文章を負例の文章に利用し比較したところ、BM25の高い文章と別の正例の文章を負例にするときに最もよい結果になった。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E8%B3%AA%E5%95%8F%E5%BF%9C%E7%AD%94/">
+            #質問応答
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 30, 2023
+        
+      </span>
+    </div>
+  </article>
   
   <article>
     <h3><a href="https://ryotaro.dev/posts/cap-twelve-years-later-how-the-rules-have-changed/">CAP Twelve Years Later: How the &#34;Rules&#34; Have Changed (2012)</a></h3>
@@ -362,30 +388,6 @@ GELUsは、確率\(\Phi(x)\)で1をとるベルヌーイ分布にしたがう0-1
       <span class="date">
         
         October 21, 2023
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/a_design_methodology_for_reliable_software_systems/">A design methodology for reliable software systems (1972)</a></h3>
-    <div class="summary"><p>スタンフォードで数学の博士号を取得した<a href="https://computerhistory.org/profile/barbara-liskov/">Liskov</a>は以前勤めていたMitre Corporationに戻った後、最初にVenusとよばれるタイムシェアリングシステムの開発プロジェクトを担当し、その次にソフトウェア危機に対処する開発手法の研究に取り組んだ。
-<a href="https://dl.acm.org/doi/pdf/10.1145/1479992.1480018">A design methodology for reliable software systems</a>は、Venusの開発から得られた構造化プログラミングの方法論である。</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/%E6%A7%8B%E9%80%A0%E5%8C%96%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/">
-            #構造化プログラミング
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        October 8, 2023
         
       </span>
     </div>

@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
-	<meta name="generator" content="Hugo 0.153.4">
+	<meta name="generator" content="Hugo 0.155.3">
   
   
   <script>(function (w, d, s, l, i) {
@@ -121,6 +121,38 @@
 <main>
   <h1>Posts</h1>
   
+  
+  <article>
+    <h3><a href="https://ryotaro.dev/posts/flashattention-fast-and-memory-efficient-exact-attention-with-io-awareness/">FLASHATTENTION: Fast and Memory-Efficient Exact Attention with IO-Awareness (2022)</a></h3>
+    <div class="summary"><p>TransformerのQKV注意機構の時間、空間計算量は、系列長が\(N\)のときには\(O(N^2)\)になる。
+<a href="https://arxiv.org/pdf/2001.04451">Reformer: The Efficient Transformer</a>などのFLOP数を減らす手法はあるが、実際の処理時間を十分に短縮できず、普及していない。
+<a href="https://arxiv.org/pdf/2205.14135">FLASHATTENTION</a>は、FLOP数ではなく、GPUのHBM (high bandwidth memory) と SRAM間の転送量を減らし、処理時間を短縮する。
+HBMの記憶領域はSRAMよりも数十倍大きいが、SRAMよりも数十倍遅い。
+注意 $\mathbf{O}$ を計算するとき、FLASHATTENTIONは、$\mathbf{Q}$, $\mathbf{K}$, $\mathbf{V}$, $\mathbf{O}$それぞれの一部の行ベクトルからなるブロックだけをSRAMに読み、$\mathbf{O}$の一部を更新し、計算した一部をHBMに書き込む。
+更新を繰り返すと最終的に自己注意機構と等しい注意を計算できる。</p>
+<p>FLASHATTENTIONは逆伝搬時のHBMとSRAM間の転送量も減らす。
+通常のQKV注意機構であれば、$\mathbf{Q}$, $\mathbf{K}$, $\mathbf{V}$, $\mathbf{O}$の勾配を計算するためにSoftmax関数に与える行列$\mathbf{S}$とその結果$\mathbf{P}$を記録する。
+$\mathbf{Q}$, $\mathbf{K}$, $\mathbf{V}$が\(\mathbb{R}^{N\times d}\)であれば$\mathbf{S}$と$\mathbf{P}$のサイズは$\textrm{O}(N^2)$になる。
+FLASHATTENTIONは、順伝搬時に計算した中間結果と$\mathbf{O}$から$\mathbf{S}$と$\mathbf{P}$を計算し直すことで$\mathbf{S}$と$\mathbf{P}$の記録を省き、空間計算量を減らす。</p></div>
+    <div class="article-footer">
+      
+      <ul class="tags">
+        
+        <li class="tag">
+          <a href="https://ryotaro.dev/tags/%E6%B3%A8%E6%84%8F%E6%A9%9F%E6%A7%8B/">
+            #注意機構
+          </a>
+        </li>
+        
+      </ul>
+      
+      <span class="date">
+        
+        December 29, 2025
+        
+      </span>
+    </div>
+  </article>
   
   <article>
     <h3><a href="https://ryotaro.dev/posts/improving_language_understanding_by_generative_pre_training/">Improving Language Understanding by Generative Pre-Training (2018)</a></h3>
@@ -387,34 +419,6 @@ InstructGPTのRLHFには、報酬関数のモデルを生成する前に、GPT3�
       <span class="date">
         
         July 11, 2025
-        
-      </span>
-    </div>
-  </article>
-  
-  <article>
-    <h3><a href="https://ryotaro.dev/posts/denoising-diffusion-probabilistic-models/">Denoising Diffusion Probabilistic Models (2020)</a></h3>
-    <div class="summary"><p><a href="https://arxiv.org/pdf/2006.11239">Denoising Diffusion Probabilistic Models</a>は、高品質な画像の生成することで、デノイジング確率拡散モデル（拡散モデル）の効果を示した。
-拡散モデルは、観測データにノイズを徐々に加えるマルコフ過程を遡行する。
-言いかえればノイズから観測データを生成するマルコフ過程である。
-モデルにノイズを加える過程は拡散過程、遡行する過程は逆拡散過程とよばれる。
-ノイズが徐々に除かれるデータの各時刻の状態を潜在変数、ノイズを除いたデータを観測変数とすれば、拡散モデルを潜在変数モデルとみなせる。
-観測変数の尤度を現実的な計算量で求めるために、最尤推定に変分下限を応用する。</p></div>
-    <div class="article-footer">
-      
-      <ul class="tags">
-        
-        <li class="tag">
-          <a href="https://ryotaro.dev/tags/diffusion-model/">
-            #Diffusion Model
-          </a>
-        </li>
-        
-      </ul>
-      
-      <span class="date">
-        
-        June 15, 2025
         
       </span>
     </div>
