@@ -171,6 +171,7 @@
 \(Count(x, y)\)を訓練データにおける特徴\(x\)とラベル\(y\)の組の数、\(Count(x)\)を\(x\)の数とすると、以下の\(h(x, y)\)が\(p_{\min}\)以上であるルールを最大\(n\)個選ぶ。
 \(k\)はラベルの数であり、実験で扱うラベルは<code>PERSON</code>, <code>LOCATION</code>, <code>ORGANIZATION</code>であるため\(k=3\)である。
 実験では\(p_{\min}\)は\(0.95\)に設定されている。
+
 $$
 h(x, y) = \frac{Count(x, y)}{Count(x) + k}
 $$</li>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Position Encoding on Blanket</title>
+    <link>http://localhost:1313/tags/position-encoding/</link>
+    <description>Recent content in Position Encoding on Blanket</description>
+    <generator>Hugo</generator>
+    <language>ja</language>
+    <lastBuildDate>Fri, 20 Mar 2026 17:09:03 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/position-encoding/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RoFormer: Enhanced Transformer with Rotary Position Embedding (2021)</title>
+      <link>http://localhost:1313/posts/roformer-enhanced-transformer-with-rotary-position-embedding/</link>
+      <pubDate>Fri, 20 Mar 2026 17:09:03 +0900</pubDate>
+      <guid>http://localhost:1313/posts/roformer-enhanced-transformer-with-rotary-position-embedding/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/2104.09864&#34;&gt;RoFormer: Enhanced Transformer with Rotary Position Embedding&lt;/a&gt;は、Transformerのself-attentionに回転による位置エンコーディングを導入する手法である。&#xA;query, keyをトークンの位置に応じて回転させることで、絶対位置を各ベクトルに埋め込みながら、attentionの内積では相対位置に依存した値を自然に計算できる。&#xA;著者らは、このRotary Position Embedding (RoPE) によって事前学習時の収束が速くなり、長い文書を扱うタスクでも性能が向上すると主張している。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

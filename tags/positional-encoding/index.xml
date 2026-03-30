@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Positional Encoding on Blanket</title>
+    <link>http://localhost:1313/tags/positional-encoding/</link>
+    <description>Recent content in Positional Encoding on Blanket</description>
+    <generator>Hugo</generator>
+    <language>ja</language>
+    <lastBuildDate>Fri, 20 Mar 2026 17:09:03 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/positional-encoding/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RoFormer: Enhanced Transformer with Rotary Position Embedding (2021)</title>
+      <link>http://localhost:1313/posts/roformer-enhanced-transformer-with-rotary-position-embedding/</link>
+      <pubDate>Fri, 20 Mar 2026 17:09:03 +0900</pubDate>
+      <guid>http://localhost:1313/posts/roformer-enhanced-transformer-with-rotary-position-embedding/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://arxiv.org/pdf/2104.09864&#34;&gt;RoFormer: Enhanced Transformer with Rotary Position Embedding&lt;/a&gt; (RoPE) は、&lt;a href=&#34;https://arxiv.org/pdf/1706.03762&#34;&gt;Transformer&lt;/a&gt;の$Q$, $K$のトークンベクトルをトークンの位置の定数倍回転することで、自己注意機構に位置のエンコーディングを導入する。&#xA;自己注意機構の内積には、$Q$と$K$両トークンの相対的な位置の影響だけが残る。絶対的な位置の影響は違っていても相対距離が等しいとき、内積の結果は変わらない。&#xA;相対距離を大きくすると内積の絶対値が小さくなるように比例定数を設定すれば、離れたトークンよりも近いトークンにより注意を向けるエンコーディングになる。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

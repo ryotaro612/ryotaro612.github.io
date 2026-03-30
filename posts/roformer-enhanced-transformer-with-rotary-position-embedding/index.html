@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+  
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-W5TDG76');
+  </script>
+  
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=300,initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+    crossorigin="anonymous" />
+  
+  <link rel="stylesheet" href="http://localhost:1313/scss/base.min.d5f9c6d3a478082690f838fa06a179ccee4dea5bd3f0cb3f4a357e2803c48d33.css">
+  
+  <link rel="stylesheet" href="http://localhost:1313/scss/base.ja.min.66816a64bc4ce50ec1c4b76199ca9d69163fc8a69f7abc6ea758d1968d8618b0.css">
+  
+
+<link rel="stylesheet" href="http://localhost:1313/scss/single.min.8ed5cbfb3dc516e9c4459a65252e4e6e8e9026aabfa9eb9f602cf53b30754966.css">
+
+<link rel="stylesheet" href="http://localhost:1313/scss/posts/single.min.0008713f3f7556e78c13cb8efde9cf534239cb206c10ba85ce5a76e6ae9ce758.css">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://kit.fontawesome.com/e48a1b5aa5.js" crossorigin="anonymous"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css"
+  integrity="sha384-WcoG4HRXMzYzfCgiyfrySxx90XSl2rxY5mnVY5TwtWE6KLrArNKn0T/mOgNL0Mmi"
+  crossorigin="anonymous"
+>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.js"
+  integrity="sha384-J+9dG2KMoiR9hqcFao0IBLwxt6zpcyN68IgwzsCSkbreXUjmNVRhPFTssqdSGjwQ"
+  crossorigin="anonymous">
+</script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},  
+        {left: '$$', right: '$$', display: true},    
+        {left: '\\(', right: '\\)', display: false},  
+        {left: '$', right: '$', display: false}  
+      ],
+      throwOnError : false
+    });
+  });
+</script>
+  <title>RoFormer: Enhanced Transformer with Rotary Position Embedding (2021)</title>
+</head>
+
+<body>
+  
+  
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5TDG76" height="0" width="0"
+      style="display:none;visibility:hidden" />
+  </noscript>
+  
+  
+  <header class="navigation">
+    <h2><a href="http://localhost:1313/">Blanket</a></h2>
+    <nav>
+      <ul>
+        <li><a href="http://localhost:1313/about">About</a></li>
+        <li><a href="http://localhost:1313/posts">Posts</a></li>
+        <li><a href="http://localhost:1313/tags">Tags</a></li>
+        
+      </ul>
+      <ul>
+        
+        <li>
+          <a href="https://github.com/ryotaro612">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://www.linkedin.com/in/ryotaro612/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a href="https://speakerdeck.com/ryotaro612/">
+            <i class="fa-brands fa-speaker-deck"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a href="http://localhost:1313/%20index.xml">
+            <i class="fas fa-rss"></i>
+          </a>
+        </li>
+        
+      </ul>
+    </nav>
+  </header>
+  
+<main>
+  <h1>RoFormer: Enhanced Transformer with Rotary Position Embedding (2021)</h1>
+  <ul class="tags">
+    
+    <li class="tag">
+      <a href="http://localhost:1313/tags/transformer/">
+        #Transformer
+      </a>
+    </li>
+    
+    <li class="tag">
+      <a href="http://localhost:1313/tags/positional-encoding/">
+        #Positional Encoding
+      </a>
+    </li>
+    
+  </ul>
+  <span class="date">
+    
+    March 20, 2026
+    
+  </span>
+  <div>
+    <p><a href="https://arxiv.org/pdf/2104.09864">RoFormer: Enhanced Transformer with Rotary Position Embedding</a> (RoPE) は、<a href="https://arxiv.org/pdf/1706.03762">Transformer</a>の$Q$, $K$のトークンベクトルをトークンの位置の定数倍回転することで、自己注意機構に位置のエンコーディングを導入する。
+自己注意機構の内積には、$Q$と$K$両トークンの相対的な位置の影響だけが残る。絶対的な位置の影響は違っていても相対距離が等しいとき、内積の結果は変わらない。
+相対距離を大きくすると内積の絶対値が小さくなるように比例定数を設定すれば、離れたトークンよりも近いトークンにより注意を向けるエンコーディングになる。</p>
+<p>Transformerの自己注意機構にトークンの位置情報を与える場合、$Q$, $K$, $V$の系列を位置情報を組み込む必要がある。
+位置$m (n) $にあるトークンのエンベディングを$\boldsymbol{x}_{m (n)}$, トークンと位置のエンコーディングの仕方を$f_q, f_k, f_v$とすると、QKV注意機構を次のように表せる。
+</p>
+$$
+\begin{align*}
+\boldsymbol{q}_m&=f_q(\boldsymbol{x}_m, m)\\\\
+\boldsymbol{k}_n&=f_k(\boldsymbol{x}_n, n)\\\\
+\boldsymbol{v}_n&=f_v(\boldsymbol{x}_n, n)\\\\
+a_{m,n}&=\frac{\exp(\frac{\mathbf{q}^\top_mk_n}{\sqrt{d}})}{\sum^N_{j=1}\exp(\frac{\boldsymbol{q}^\top_mk_j}{\sqrt{d}})}\\\\
+\boldsymbol{o}_m&=\sum^N_{n=1}a_{m,n}\boldsymbol{v}_n
+\end{align*}
+$$<p>
+自己注意機構への位置情報の与え方は$f_q, f_k, f_v$の定義で決まる。</p>
+<p>そのため、元のTransformerでは、正弦関数にもとづく絶対位置ベクトルを入力埋め込みに加算して位置を表現する。
+その後の研究では、attentionの重みそのものに相対位置を入れる手法も提案されている。
+ただし、これらの手法は位置情報を加算的に扱うものが多く、self-attentionの内積が相対位置だけに依存する構造を直接表しているわけではない。</p>
+<p>RoPEは、位置\(m\)のトークンから得たquery \(q_m\)と、位置\(n\)のトークンから得たkey \(k_n\)を、2次元部分空間ごとの回転行列で変換する。
+2次元の場合、位置\(m\)のベクトルは角度\(m\theta\)だけ回転される。
+偶数次元の一般の場合には、各2次元部分空間に異なる角速度\(\theta_i\)を割り当てたブロック対角行列\(R_{\Theta, m}^d\)をつかい、
+</p>
+$$
+\begin{align*}
+q_m &= R_{\Theta, m}^d W_q x_m \\\\
+k_n &= R_{\Theta, n}^d W_k x_n
+\end{align*}
+$$<p>
+とする。
+このとき、attentionでつかわれる内積は
+</p>
+$$
+q_m^\top k_n = x_m^\top W_q^\top R_{\Theta, n-m}^d W_k x_n
+$$<p>
+となる。
+つまり、各ベクトルには絶対位置\(m, n\)がエンコードされているが、内積は相対位置\(n-m\)だけで記述できる。
+回転行列は直交行列なのでベクトルのノルムを保ち、加算型の位置埋め込みよりも表現の大きさを乱しにくい。</p>
+<p>論文では、\(\theta_i = 10000^{-2(i-1)/d}\)とおくことで、トークン間の距離が大きくなるほど内積が減衰しやすいことも示している。
+著者らは、この性質が遠いトークン同士の関係を弱めるという自然な仮定に対応すると説明している。
+また、RoPEは回転によって位置情報を入れるので、線形attentionにも組み込みやすい。
+内積の計算量そのものを減らす手法ではないが、既存のattentionの式を大きく変えずに相対位置を導入できる点が利点になる。</p>
+<p>実験では、機械翻訳、事前学習、文書分類、文書類似度判定など複数のタスクで評価している。
+WMT14 English-Germanでは、ベースラインのTransformerのBLEU 27.3に対してRoFormerは27.5だった。
+BERT型モデルの事前学習では、同じ学習ステップ数でベースラインより小さい損失になり、収束が速い傾向が確認されている。
+また、中国語の長文類似度判定データセットCAIL2019-SCMでは、入力長512ではWoBERTとほぼ同等だが、1024まで伸ばすとRoFormerの精度が69.79%となり、WoBERT-512の68.10%を上回った。
+著者らは、この結果を長文への適性の根拠としている。</p>
+<h2 id="雑記">雑記</h2>
+<p>RoPEの重要な点は、位置情報をquery, keyに回転として埋め込むことで、attentionの内積に相対位置をそのまま入れられることにある。
+絶対位置埋め込みを入力に足すよりも、self-attentionの計算式に近いところで位置の効果を表現している。</p>
+<p>一方で、論文自身も、なぜ他の位置エンコーディングより速く収束するのか、なぜ長文でとくによいのかを十分には説明できていないと述べている。
+実用上は有効でも、理論的な理解はまだ途上にあるようにみえる。</p>
+<!--
+- である。表現をなくす。
+- 「事前学習時の収束が早くなる。」を外す。
+
+- 絶対的な位置を回転行列にエンコードする。
+- 減衰
+- なぜ、plmsと統合するのがいいのか。
+- 既存のcontext embeddingに位置を追加するのは何が問題か。
+- roformerだと、長さの制限がなくなるのか、減衰するのか、なにがいいのか。
+-->
+  </div>
+</main>
+
+  
+<ul class="pagination">
+  
+  <li>
+    <a href="/posts/flashattention-fast-and-memory-efficient-exact-attention-with-io-awareness/">
+      <i class="fa-solid fa-xl fa-angle-left"></i>
+    </a>
+  </li>
+  
+  
+</ul>
+
+
+  <footer>
+    <small>© Ryotaro Nakamura. All Rights Reserved.</small>
+  </footer>
+</body>
+
+
+</html>
