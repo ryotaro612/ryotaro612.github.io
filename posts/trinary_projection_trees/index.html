@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -148,9 +147,10 @@ kd木は\(\mid\mid{\rm w}\mid\mid_0=1\)のTP Treeとみなせる。
 <p><img src="/tptree1.png" alt="tp木"></p>
 <p>空間を分割するときの、\({\rm w}\)の最適解は以下で定義される。
 \(\tau\)の要素数は、\(\frac{3^d-1}{2}\)であり、次元\(d\)に対して指数関数的に大きくなる。そのため、近似解を求める手法が提案されている。</p>
-$$
-	\underset{{\rm w}\in \tau}{\operatorname{argmax}}\ {\rm Var}_{{\rm x} \in \widetilde{\chi}}[{\mid\mid{\rm w}\mid\mid}_2^{-1}{\rm w}^T{\rm x}]
-$$<hr>
+<p>$$
+\underset{{\rm w}\in \tau}{\operatorname{argmax}}\ {\rm Var}_{{\rm x} \in \widetilde{\chi}}[{\mid\mid{\rm w}\mid\mid}_2^{-1}{\rm w}^T{\rm x}]
+$$</p>
+<hr>
 <ul>
 <li><a href="https://jingdongwang2017.github.io/Pubs/TPAMI-TPTree.pdf">こちら</a>から論文を参照できます。</li>
 <li>文中の図は論文から引用されています。</li>

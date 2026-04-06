@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -155,20 +154,18 @@ TransformerはCNNのように画像の向きや局所性を帰納バイアスに
 <p>Transformerは後続の層に入力データを流すために、長さ\(D\)の固定長の潜在ベクトルにパッチを変換する。
 以下の式により、クラスを表現するためのエンベディング\({\rm z}^0_0={\rm x}_{\text{class}}\)と重み\(\boldsymbol{\rm E, E}_{\textit{pos}}\)を使い、画像を\({\rm z}_0\in \mathbb{R}^{(N+1)\times D}\)に変換する。
 \(E_{\textit{pos}}\)はパッチの位置を表すパラメタである。
-</p>
 $$
-{\rm z}\_0 =[{\rm x}\_{\text{class}};{\rm x}^1\_p{\rm E};{\rm x}^2\_p{\rm E};\cdots ;{\rm x}^N\_p{\rm E}]+{\rm E}\_{\textit{pos}}
-$$<p>
+{\rm z}_0 =[{\rm x}_{\text{class}};{\rm x}^1_p{\rm E};{\rm x}^2_p{\rm E};\cdots ;{\rm x}^N_p{\rm E}]+{\rm E}_{\textit{pos}}
+$$
 \({\rm E}\in \mathbb{R}^{(P^2\cdot C)\times D}\), \({\rm E}_{\textit{pos}}\in\mathbb{R}^{(N+1)\times D}\)である。</p>
 <p>層正規化を\(\text{LN}\), マルチヘッド注意機構を\(\text{MSA}\), フィードフォワード層を\(\text{MLP}\)とすると、画像の表現\({\rm y}\)までの後続のネットワークは、\(l=1\dots L\)として
-</p>
 $$
 \begin{align*}
-{\rm z}'\_l&=\text{MSA}(\text{LN}({\rm z\_{l-1}}))+{\rm z}\_{l-1}\\\\
-{\rm z}\_l&=\text{MLP}(\text{LN}(z'\_l))+{\rm z}'\_l\\\\
-{\rm y}&=\text{LN}({\rm z}^0\_L)
+{\rm z}&rsquo;_l&amp;=\text{MSA}(\text{LN}({\rm z_{l-1}}))+{\rm z}_{l-1}\\
+{\rm z}_l&amp;=\text{MLP}(\text{LN}(z&rsquo;_l))+{\rm z}&rsquo;_l\\
+{\rm y}&amp;=\text{LN}({\rm z}^0_L)
 \end{align*}
-$$<p>
+$$
 と示せる。
 事前学習時には、\({\rm z^0_L}\)の後に、隠れ層が1つのMLPが続き、ファインチューニング時にはlinear layerが1つ続く。</p>
 <!--

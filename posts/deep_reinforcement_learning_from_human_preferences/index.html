@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -153,28 +152,24 @@
 <p>ビデオクリップは、時刻\(t\)における観察可能な環境の状態\(o_t\in\mathcal{O}\)とエージェントが\(o_t\)が実行した行動\(a_t\in\mathcal{A}\)
 の系列\(\sigma=((o_0, a_0), (o_1, a_1),\dots ,(o_{k-1}, a_{k-1}))\in(\mathcal{O}\times \mathcal{A})^k\)とかく。
 系列\(\sigma^1\)が\(\sigma^2\)よりも好ましい関係を\(\sigma^1\succ\sigma^2\)で表し、報酬関数\(r: \mathcal{O}\times \mathcal{A}\rightarrow \mathbb{R}\)によって
-</p>
 $$
-r(o^1\_0,a^1\_0)+\dots + r(o^1\_{k-1},a^1_{k-1}) > r(a^2\_0,a^2\_0) + \dots + r(o^2\_{k-1}, a^2\_{k-1})
-$$<p>
+r(o^1_0,a^1_0)+\dots + r(o^1_{k-1},a^1_{k-1}) &gt; r(a^2_0,a^2_0) + \dots + r(o^2_{k-1}, a^2_{k-1})
+$$
 であるとき
-</p>
 $$
-r(o^1\_0,a^1\_0)+\dots + r(o^1\_{k-1},a^1\_{k-1}) \succ r(a^2\_0,a^2\_0) + \dots + r(o^2\_{k-1}, a^2\_{k-1})
-$$<p>
+r(o^1_0,a^1_0)+\dots + r(o^1_{k-1},a^1_{k-1}) \succ r(a^2_0,a^2_0) + \dots + r(o^2_{k-1}, a^2_{k-1})
+$$
 である。
 \(\sigma^1\succ \sigma^2\)であれば\(\mu=1\), \(\sigma^2 \succ \sigma^1\)であれば\(\mu=2\)として、訓練データのサンプルを\((\sigma^1, \sigma^2, \mu)\), その集合を\(\mathcal{D}\)とする。</p>
 <p>\(\mathcal{D}\)で、関係\(\sigma^1\succ\sigma^2\)が成立する確率\(\hat{P}[\sigma^1\succ \sigma^2]\)を推定できるように報酬関数のモデル\(\hat{r}\)を学習する。
 <a href="https://www.jstor.org/stable/2334029">Bradley-Terry</a>の確率モデルにしたがい
-</p>
 $$
-\hat{P}[\sigma^1\succ \sigma^2]=\frac{\exp\sum\hat{r}(o^{1}\_{t},a^1\_t)}{\exp\sum\hat{r}(o^1\_t,a^1\_t)+\exp \sum \hat{r}(o^2\_t,a^2\_t)}
-$$<p>
+\hat{P}[\sigma^1\succ \sigma^2]=\frac{\exp\sum\hat{r}(o^{1}_{t},a^1_t)}{\exp\sum\hat{r}(o^1_t,a^1_t)+\exp \sum \hat{r}(o^2_t,a^2_t)}
+$$
 で確率を推定し、交差エントロピーによる損失は
-</p>
 $$
-\textrm{loss}(\hat{r})=-\sum\_{(\sigma^1,\sigma^2,\mu)=\mathcal{D}}\mu(1)\log\hat{P}[\sigma^1\succ\sigma^2]+\mu(2)\log\hat{P}[\sigma^2\succ \sigma^1]
-$$<p>
+\textrm{loss}(\hat{r})=-\sum_{(\sigma^1,\sigma^2,\mu)=\mathcal{D}}\mu(1)\log\hat{P}[\sigma^1\succ\sigma^2]+\mu(2)\log\hat{P}[\sigma^2\succ \sigma^1]
+$$
 になる。</p>
 <p>実験では、以上のアルゴリズムに3つの改良が加えられている。
 まず、アンサンブル学習により、複数のモデルの出力の平均値を報酬にしている。

@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -136,14 +135,15 @@
 <p>\(S\)をプログラムの状態の集合、\(S^{\omega}\)を無限長、\(S^{*}\)を有限長の系列とする。
 また、\(S^{\omega}\)の要素\(\sigma\)が性質\(P\)を満たすことを\(\sigma\vDash P\)とかく。
 このとき活性の定義は</p>
-$$
+<p>$$
 \forall\alpha : \alpha \in S^{*}:(\exists \beta: \beta \in S^\omega : \alpha \beta \vDash P)
-$$<p>
+$$
 である。\(\beta\)は無限長であるため、「よいこと」が常におきるのではなく、いつか起きるという定義になっている。</p>
 <p>なお、\(\sigma_i\)を\(\sigma\)の最初の\(i\)個の状態からなる系列とすると、以下をみたし、かつそのときのみ、\(P\)は安全性であると定義できる。</p>
-$$
-\forall \sigma: \sigma \in S^\omega: \sigma \nvDash P \Rightarrow (\exists i: 0 \leq i:(\forall \beta : \beta \in S^\omega : \sigma\_i \beta \nvDash P))
-$$<p>論文への<a href="https://www.cs.cornell.edu/fbs/publications/DefLiveness.pdf">リンク</a></p>
+<p>$$
+\forall \sigma: \sigma \in S^\omega: \sigma \nvDash P \Rightarrow (\exists i: 0 \leq i:(\forall \beta : \beta \in S^\omega : \sigma_i \beta \nvDash P))
+$$</p>
+<p>論文への<a href="https://www.cs.cornell.edu/fbs/publications/DefLiveness.pdf">リンク</a></p>
   </div>
 </main>
 

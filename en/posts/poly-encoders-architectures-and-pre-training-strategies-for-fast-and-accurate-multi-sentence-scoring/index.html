@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -156,20 +155,18 @@ To resemble the procedure of pre-training, Bi-encoders surround the input and la
 <!-- A Bi-encoder employs the special token `[S]` and the segment token as [BERT](https://arxiv.org/abs/1810.04805). -->
 <!-- To resemble the procedure of pre-training, Bi-encoders surround the input and label by the special token `[S]`, and assign the segment token for features with them. -->
 <p>The Poly-encoder represents an input sequence with \(m\) vectors \((y^1_{\textit{ctxt}}\dots y^m_{\textit{ctxt}})\) using \(m\) attention mechanisms.
-</p>
 $$
 \begin{align*}
-y^i\_{\textit{ctxt}}&=\sum\_jw^{c\_i}\_jh\_j\\\\
-(w\_1^{c\_i},\dots , w\_N^{c\_i})&=\text{softmax}(c\_i\cdot h\_1,\dots , c\_i\cdot h\_N)
+y^i_{\textit{ctxt}}&amp;=\sum_jw^{c_i}_jh_j\\
+(w_1^{c_i},\dots , w_N^{c_i})&amp;=\text{softmax}(c_i\cdot h_1,\dots , c_i\cdot h_N)
 \end{align*}
-$$<p>
+$$
 where \((h_1,\dots, h_N)\) is the output of Context Encoder in the figure, and context codes \((c_1,\dots,c_m)\) function as the query of the QKV attention mechanism.
 The context codes are randomly initialized, and learnt during fine-tuning.
 Finally, the Poly-encoder inputs \((y^1_{\textit{ctxt}}\dots y^m_{\textit{ctxt}})\) and a candidate label \(y_{\textit{cand}_i}\) to the subsequent attention mechanism after the \(m\) ones:
-</p>
 $$
-y\_{\textit{ctxt}}=\sum\_iw\_iy^i\_{\textit{ctxt}}\ \ \ \ \text{where}\ \ \ \ (w\_1,\dots ,w\_m) = \text{softmax}(y\_{\textit{cand}\_i}\cdot y^1\_{\textit{ctxt}}, \dots , y\_{\textit{cand}\_i}\cdot y^m\_{\textit{ctxt}})
-$$
+y_{\textit{ctxt}}=\sum_iw_iy^i_{\textit{ctxt}}\ \ \ \ \text{where}\ \ \ \ (w_1,\dots ,w_m) = \text{softmax}(y_{\textit{cand}_i}\cdot y^1_{\textit{ctxt}}, \dots , y_{\textit{cand}_i}\cdot y^m_{\textit{ctxt}})
+$$</p>
   </div>
 </main>
 

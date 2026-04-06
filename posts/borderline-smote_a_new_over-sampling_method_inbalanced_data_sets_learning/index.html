@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -144,10 +143,9 @@ borderline-SMOTE2は多数クラスのサンプルを選ぶこともある。</p
 \(s\)は\(1\)から\(k\)の間の整数である。
 各\({p&rsquo;}_i\)について\(k\)個からランダムに\(s\)個の近傍を選ぶ。
 次に\({p&rsquo;}_i\)と\(s\)個の間の差\(\textrm{dif}_j(j=1,2,\dots s)\)と\([0,1]\)区間のランダムな値\(r_j (j=1,2,\dots s)\)を計算し、
-</p>
 $$
-\textit{synthetic}\_j = {p'}\_i + r\_j \times \textit{dif}\_j (j=1,2,\dots s)
-$$<p>
+\textit{synthetic}_j = {p&rsquo;}_i + r_j \times \textit{dif}_j (j=1,2,\dots s)
+$$
 によってサンプルを合成する。</p>
 <p>論文への<a href="https://sci2s.ugr.es/keel/pdf/specific/congreso/han_borderline_smote.pdf">リンク</a></p>
 <h2 id="雑記">雑記</h2>

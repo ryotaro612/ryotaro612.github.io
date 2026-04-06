@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -143,36 +142,32 @@ Hartley did not model the source of information probabilistically.
 Shannon modeled the source of information as a random process.</p>
 <p>Hartley stated that information should be proportional to the number of selections for practical engineering value.
 He uses the letter \(H\) to denote the amount of information associated with \(n\) selections.
-</p>
 $$
 H=Kn
-$$<p>
+$$
 where \(K\) is a constant which depends on the number \(s\) of symbols available at each selection.
 Let us consider two systems with \(s_1, s_2, K_1, K_2\).
 We then define \(K_1, K_2\) by the condition that whenever the number of possible sequences is the same for both systems, then the amount of information is also the same for both:
-</p>
 $$
-s\_1^{n\_1} = s\_2^{n\_2}
-$$<p>
-</p>
+s_1^{n_1} = s_2^{n_2}
 $$
-H=K\_1n\_1=K\_2n\_2
-$$<p>
-</p>
 $$
-\frac{K\_1}{\log s\_1}=\frac{K\_2}{\log s\_2}
-$$<p>This relation will hold for any \(s\) only if \(K\) depends on \(s\) where
-</p>
+H=K_1n_1=K_2n_2
 $$
-K=K\_0\log s
-$$<p>
+$$
+\frac{K_1}{\log s_1}=\frac{K_2}{\log s_2}
+$$</p>
+<p>This relation will hold for any \(s\) only if \(K\) depends on \(s\) where
+$$
+K=K_0\log s
+$$
 and \(K_0\) is the same for all systems.</p>
 <p>Since \(K_0\) is arbitrary, we can omit it if we make logarithmic base arbitrary.
 Then we can state that:
-</p>
 $$
 H=n\log s
-$$
+$$</p>
+
   </div>
 </main>
 

@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -148,90 +147,81 @@
 また、行動価値の微小な変化で、選択される行動が変わり、方策が収束しないことがある。
 <a href="https://proceedings.neurips.cc/paper/1999/file/464d828b85b0bed98e80ade0a5c43b0f-Paper.pdf">Policy Gradient Methods for Reinforcement Learning With Function Approximation</a>は、方策勾配法において、関数近似器で近似された目的関数が局所最適解に収束する条件を示した。</p>
 <p>エージェントがマルコフ決定過程とやりとりするとき、\(\theta\)を方策のパラメタ、各ステップごとの平均的な報酬のような目的関数を\(\rho\), 学習率を\(\alpha\)とおくと、方策勾配法は、勾配の比例する値\(\Delta \theta\)のパラメタへの加算をくりかえす。
-</p>
 $$
 \Delta\theta \approx \alpha \frac{\partial \rho}{\partial \theta}
-$$<p>
+$$
 状態数や行動数が多いときは目的関数を近似する必要があり、近似された目的関数が局所最適解に収束するための条件を示す。
 まずは、2種類の目的関数を仮定し、その両方の偏微分の式を求める。</p>
 <p>1つめの目的関数は、方策から報酬の平均値への関数である。
 時刻\(t\)の報酬を\(r_t\), 行動を\(a\), 状態を\(s\), パラメタ\(\theta\)について偏微分できる方策を\(\pi(s, a, \theta) = \textit{Pr}\{a_t=a|s_t=s, \theta\}\), \(\mathcal{R}^a_s=E\{r_{t+1}|s_t=s, a_t = a\}\)として、目的関数を
-</p>
 $$
-\rho(\pi)=\lim\_{t\rightarrow\infty}\frac{1}{t}E\\{r\_1+r\_2+\cdots+r\_t|\pi\\}=\sum\_sd^\pi(s)\sum\_a\pi(s, a)\mathcal{R}^a\_s
-$$<p>
+\rho(\pi)=\lim_{t\rightarrow\infty}\frac{1}{t}E\{r_1+r_2+\cdots+r_t|\pi\}=\sum_sd^\pi(s)\sum_a\pi(s, a)\mathcal{R}^a_s
+$$
 ただし、\(d^\pi(s)\)は定常分布 \(\lim_{t\rightarrow\infty}\textit{Pr}\{s_t=s|s_0, \pi\}\) とし、マルコフ決定過程はエルゴード性をみたすとする。
 また、この目的関数に対する差分価値関数\(Q^\pi(s, a)\)を、\(\forall s\in \mathcal{S}, a\in \mathcal{A}\)として、
-</p>
 $$
-Q^\pi(s, a)=\sum^\infty\_{t=1}E\\{r\_t-\rho(\pi)|s\_0=s, a\_0 = a, \pi\\}
-$$<p>
+Q^\pi(s, a)=\sum^\infty_{t=1}E\{r_t-\rho(\pi)|s_0=s, a_0 = a, \pi\}
+$$
 とおく。</p>
 <p>もうひとつは、割引率\(\gamma\in[0, 1]\)に依存する時間割引ありの目的関数である。
-</p>
 $$
 \begin{align*}
-\rho(\pi) &= E\left\\{\sum^\infty\_{t=1}\gamma^{t-1}r\_t|s\_0,\pi \right\\}\\\\
-Q^\pi(s, a) &= E\left\\{\sum^\infty\_{k=1}\gamma^{k-1}r\_{t+k}|s\_t=s, a\_t=a, \pi\right\\}
+\rho(\pi) &amp;= E\left\{\sum^\infty_{t=1}\gamma^{t-1}r_t|s_0,\pi \right\}\\
+Q^\pi(s, a) &amp;= E\left\{\sum^\infty_{k=1}\gamma^{k-1}r_{t+k}|s_t=s, a_t=a, \pi\right\}
 \end{align*}
-$$<p>任意のマルコフ決定過程において、どちらの目的関数の偏微分も同一の式で表すことができる。
+$$</p>
+<p>任意のマルコフ決定過程において、どちらの目的関数の偏微分も同一の式で表すことができる。
 証明は論文中でも付録にあるため省略するが、2つめの関数で\(d^\pi(s)=\sum^\infty_{t=0}\gamma^tPr\{s_t=s|s_0,\pi\}\)とすると、どちらの偏微分の式も以下のように書き表せる。
-</p>
 $$
 \begin{equation}
-\frac{\partial\rho}{\partial\theta}=\sum\_sd^\pi(s)\sum\_a\frac{\partial\pi(s, a)}{\partial\theta}Q^\pi(s, a)
+\frac{\partial\rho}{\partial\theta}=\sum_sd^\pi(s)\sum_a\frac{\partial\pi(s, a)}{\partial\theta}Q^\pi(s, a)
 \end{equation}
-$$<p>一般的に、差分価値関数\(Q^\pi(s, a)\)は分からないので推定しなければならない。
+$$</p>
+<p>一般的に、差分価値関数\(Q^\pi(s, a)\)は分からないので推定しなければならない。
 ここでは、\(Q^\pi\)をパラメタ\(w\)の関数\(f_w: \mathcal{S}\times \mathcal{A}\rightarrow\mathbb{R}\) で推定する。
 勾配法で\(w\)を更新する場合、\(w\)に以下の\(\Delta w\)を加算する。
-</p>
 $$
-\Delta w\_t\propto\frac{\partial}{\partial w}[\hat{Q}^\pi(s\_t, a\_t)-f\_w(s\_t, a\_t)]^2\propto [\hat{Q}^\pi(s\_t, a\_t)-f\_w(s\_t, a\_t)]\frac{\partial f\_w(s\_t, a\_t)}{\partial w}
-$$<p>
+\Delta w_t\propto\frac{\partial}{\partial w}[\hat{Q}^\pi(s_t, a_t)-f_w(s_t, a_t)]^2\propto [\hat{Q}^\pi(s_t, a_t)-f_w(s_t, a_t)]\frac{\partial f_w(s_t, a_t)}{\partial w}
+$$
 \(\hat{Q}^\pi(s_t, a_t)\)は\(Q^\pi(s_t, a_t)\)の不偏推定量であり、たとえば\(R_t\)が該当する。
 パラメタ\(w\)の更新をくりかえし、局所最適解に収束すると次の式がなりたつ。
-</p>
 $$
 \begin{equation}
-\sum\_s d^\pi(s)\sum\_a\pi(s, a)[Q^\pi(s, a)-f\_w(s, a)]\frac{\partial f\_w(s, a)}{\partial w} = 0
+\sum_s d^\pi(s)\sum_a\pi(s, a)[Q^\pi(s, a)-f_w(s, a)]\frac{\partial f_w(s, a)}{\partial w} = 0
 \end{equation}
-$$<p>次に、\(Q\)のかわりにモデル\(f_w\)をもちいた式で目的関数の偏微分を表し、\(f_w\)をつかっても報酬を増えるように目的関数を更新できることを確認する。
+$$</p>
+<p>次に、\(Q\)のかわりにモデル\(f_w\)をもちいた式で目的関数の偏微分を表し、\(f_w\)をつかっても報酬を増えるように目的関数を更新できることを確認する。
 まず、価値差分関数のモデルと方策モデルのパラメタに以下の(3)の関係がなりたつとする。
-</p>
 $$
 \begin{equation}
-\frac{\partial f\_w(s, a)}{\partial w}=\frac{\partial \pi (s, a)}{\partial \theta}\frac{1}{\pi (s, a)}
+\frac{\partial f_w(s, a)}{\partial w}=\frac{\partial \pi (s, a)}{\partial \theta}\frac{1}{\pi (s, a)}
 \end{equation}
-$$<p>
-さらに、\(f_w\)が局所最適解にあるとき、(2), (3)をあわせると
-</p>
 $$
-\sum\_s d^\pi(s)\sum\_a\frac{\partial\pi(s, a)}{\partial \theta}[Q^\pi(s, a)-f\_w(s, a)] = 0
-$$<p>
+さらに、\(f_w\)が局所最適解にあるとき、(2), (3)をあわせると
+$$
+\sum_s d^\pi(s)\sum_a\frac{\partial\pi(s, a)}{\partial \theta}[Q^\pi(s, a)-f_w(s, a)] = 0
+$$
 この値は\(0\)なので、(1)に加算すると
-</p>
 $$
 \begin{align*}
-\frac{\partial\rho}{\partial\theta}&=\sum\_sd^\pi(s)\sum\_a\frac{\partial\pi(s, a)}{\partial\theta}Q^\pi(s, a) - \sum\_s d^\pi(s)\sum\_a\frac{\partial\pi(s, a)}{\partial \theta}[Q^\pi(s, a)-f\_w(s, a)]\\\\
-&=\sum\_sd^\pi(s)\sum\_a\frac{\partial\pi(s, a)}{\partial\theta}[Q^\pi(s, a)-Q^\pi(s, a)+f\_w(s, a)]
+\frac{\partial\rho}{\partial\theta}&amp;=\sum_sd^\pi(s)\sum_a\frac{\partial\pi(s, a)}{\partial\theta}Q^\pi(s, a) - \sum_s d^\pi(s)\sum_a\frac{\partial\pi(s, a)}{\partial \theta}[Q^\pi(s, a)-f_w(s, a)]\\
+&amp;=\sum_sd^\pi(s)\sum_a\frac{\partial\pi(s, a)}{\partial\theta}[Q^\pi(s, a)-Q^\pi(s, a)+f_w(s, a)]
 \end{align*}
-$$<p>
+$$
 より
-</p>
 $$
 \begin{equation}
-\frac{\partial \rho}{\partial \theta}=\sum\_s d^\pi(s)\sum\_a\frac{\partial \pi(s, a)}{\partial \theta}f\_w(s, a)
+\frac{\partial \rho}{\partial \theta}=\sum_s d^\pi(s)\sum_a\frac{\partial \pi(s, a)}{\partial \theta}f_w(s, a)
 \end{equation}
-$$<p>
+$$
 となる。</p>
 <p>(3)にくわえて、\(\max_{\theta s, a, i, j|\frac{\partial^2 \pi(s, a)}{\partial \theta_i\partial \theta_j}|}&lt;B&lt;\infty\)と有界を設定すると、\(\frac{\partial^2\rho}{\partial \theta_i\partial\theta_j}\)も有界になり、学習率を\(\lim_{k\rightarrow\infty}\alpha_k=0, \sum_k\alpha_k=\infty\)とすれば、
-</p>
 $$
 \begin{align*}
-w\_k&= w\ \text{such that} \sum\_s d^\pi(s)\sum\_a\pi(s, a)[Q^\pi(s, a)-f\_w(s, a)]\frac{\partial f\_w(s, a)}{\partial w} = 0\\\\
-\theta\_{k+1}&=\theta\_k+\alpha\_k\sum\_sd^{\pi\_k}(s)\sum\_a\frac{\partial \pi\_k(s, a)}{\partial\theta}f\_{w\_k}(s, a)
+w_k&amp;= w\ \text{such that} \sum_s d^\pi(s)\sum_a\pi(s, a)[Q^\pi(s, a)-f_w(s, a)]\frac{\partial f_w(s, a)}{\partial w} = 0\\
+\theta_{k+1}&amp;=\theta_k+\alpha_k\sum_sd^{\pi_k}(s)\sum_a\frac{\partial \pi_k(s, a)}{\partial\theta}f_{w_k}(s, a)
 \end{align*}
-$$<p>
+$$
 は\(\lim_{k\rightarrow\infty}\frac{\partial\rho(\pi_k)}{\partial\theta}=0\)のように収束する。</p>
   </div>
 </main>

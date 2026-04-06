@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -131,40 +130,38 @@
     <p>重みつき隣接行列で表した無向グラフを2分割するクラスタリングであり、グラフ間の類似を最小化し、グラフ内のノードの類似の最大化をはかる。
 隣接行列を\(W_{uv}\), \(\text{cut}(A, B)=W(A, B)\), \(W(A, B) = \sum_{u\in A, v\in B}W_{uv}\)として、以下の目的関数を最小化する分割を探索する。
 ノードを2つに分ける最適解はNP完全であるため、近似解をもとめる。
-</p>
 $$
 \text{Mcut} = \frac{\text{cut}(A, B)}{W(A)} + \frac{\text{cut}(A, B)}{W(B)}
-$$<p>\(W_A\)や\(W_B\)をサブグラフ\(A\), \(B\)内の類似度、\(W_{A, B}, W_{B, A}\)をグラフ間の類似度とする。
+$$</p>
+<p>\(W_A\)や\(W_B\)をサブグラフ\(A\), \(B\)内の類似度、\(W_{A, B}, W_{B, A}\)をグラフ間の類似度とする。
 \(W\)を次のようにインデックスを置きかえても一般性は失われない。
-</p>
 $$
 W=
 \begin{pmatrix}
-W\_A & W\_{A, B} \\\\
-W\_{B,A} & W\_B
+W_A &amp; W_{A, B} \\
+W_{B,A} &amp; W_B
 \end{pmatrix}
-$$<p>並びかえた後では、\(D=\text{diag}(W\boldsymbol{e})\), \(\boldsymbol{e}=[1,\dots , 1]^\top\), \(\boldsymbol{\rm x}=(1\dots 1, 0\dots 0)^\top\), \(\boldsymbol{\rm y}=(0\dots 0,1\dots 1)^\top\)
+$$</p>
+<p>並びかえた後では、\(D=\text{diag}(W\boldsymbol{e})\), \(\boldsymbol{e}=[1,\dots , 1]^\top\), \(\boldsymbol{\rm x}=(1\dots 1, 0\dots 0)^\top\), \(\boldsymbol{\rm y}=(0\dots 0,1\dots 1)^\top\)
 とすると、MCutを以下のように表せる。
-</p>
 $$
 \text{Mcut}=\frac{\boldsymbol{\rm x}^\top(D-W)\boldsymbol{\rm x}}{\boldsymbol{\rm x}^\top W\boldsymbol{\rm x}} + \frac{\boldsymbol{\rm y}^\top(D-W)\boldsymbol{\rm y}}{\boldsymbol{\rm y}^\top W\boldsymbol{\rm y}}
-$$<p>Mcutの最適化はNP完全なので、線形緩和問題を考える。
+$$</p>
+<p>Mcutの最適化はNP完全なので、線形緩和問題を考える。
 ノードを\(u\)として、\(u \in A\)であれば\(a\), \(u\in B\)であれば\(-b\)のどちらに属するか示す最適な\(\boldsymbol{\rm q}(q_u=\{a, -b\})\)を見つける。
 このとき、目的関数は
-</p>
 $$
-\min\_{\boldsymbol{\rm q}}\text{Mcut}(A, B)=\min\_{\boldsymbol{\rm q}}\frac{J\_N(A, B)}{1-J\_N(A, B)/2}\Rightarrow \min\_{\boldsymbol{\rm q}}J\_N(A, B)
-$$<p>
+\min_{\boldsymbol{\rm q}}\text{Mcut}(A, B)=\min_{\boldsymbol{\rm q}}\frac{J_N(A, B)}{1-J_N(A, B)/2}\Rightarrow \min_{\boldsymbol{\rm q}}J_N(A, B)
+$$
 ただし
-</p>
 $$
-J\_N(A, B)\equiv J\_N(\boldsymbol{\rm q})=\frac{\boldsymbol{\rm q}^\top (D-W)\boldsymbol{\rm q}}{\boldsymbol{\rm q}^\top D\boldsymbol{\rm q}}
-$$<p>\(q_u\)を区間\([-1, 1]\)の実数とすると、レイリー商\(J_N(\boldsymbol{\rm q})\)を最小化する解は\(\boldsymbol{\rm q}^\top \boldsymbol{\rm e}=0\)
+J_N(A, B)\equiv J_N(\boldsymbol{\rm q})=\frac{\boldsymbol{\rm q}^\top (D-W)\boldsymbol{\rm q}}{\boldsymbol{\rm q}^\top D\boldsymbol{\rm q}}
+$$</p>
+<p>\(q_u\)を区間\([-1, 1]\)の実数とすると、レイリー商\(J_N(\boldsymbol{\rm q})\)を最小化する解は\(\boldsymbol{\rm q}^\top \boldsymbol{\rm e}=0\)
 として
-</p>
 $$
 (D-W)\boldsymbol{\rm q}=\zeta D\boldsymbol{\rm q}
-$$<p>
+$$
 のFiedler vector \(\boldsymbol{\rm q}_2\)とその固有値 Fiedler value \(\zeta_2\)である。
 Fielder vectorをソートし、Mcutを最小値にする分割を線形探索する。</p>
 <p>線形探索で分割した後は、境界に近いノードが所属するサブグラフを他方に移し、Mcutの値をさらに最小化する。

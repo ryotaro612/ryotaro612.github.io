@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -143,14 +142,14 @@ AdaBoostを借りることで、単分類の難しい少数クラスのサンプ
 \(t\in [1,T]\)回目の学習における\(i\)番目のサンプルの重みを\(D_t(i)\)とし、\(D_1(i)\)で\(1/m\)で初期化する。
 \(t\)回目の訓練には、少数クラスの割合が\(N\%\)になるようにアンダーサンプリングしたデータ集合\(S&rsquo;_t\)を使い、弱学習器\(h_t:X\times Y\rightarrow [0, 1]\)を訓練する。
 \(D_t\)で重みづけした\(S\)に\(h_t\)を適用し、疑似損失\(\epsilon_t\)から重みの更新パラメタ\(\alpha_t\)を求め、\(t+1\)回目の重みを計算する。</p>
-$$
+<p>$$
 \begin{align*}
-\epsilon\_t &= \sum\_{(i,y): y\_i\neq y}D\_t(i)(1-h\_t(x\_i, y\_i) + h\_t(x\_i, y))\\\\
-\alpha\_t&=\frac{\epsilon\_t}{1-\epsilon\_t}\\\\
-D\_{t+1}(i)&=D\_t(i)\alpha\_t^{\frac{1}{2}(1+h\_t(x\_i,y\_i)-h\_t(x\_i,y:y\neq y\_i))}\\\\
-D\_{t+1}(i)&:=\frac{D\_{t+1}(i)}{\sum\_iD\_{t+1}(i)}
+\epsilon_t &amp;= \sum_{(i,y): y_i\neq y}D_t(i)(1-h_t(x_i, y_i) + h_t(x_i, y))\\
+\alpha_t&amp;=\frac{\epsilon_t}{1-\epsilon_t}\\
+D_{t+1}(i)&amp;=D_t(i)\alpha_t^{\frac{1}{2}(1+h_t(x_i,y_i)-h_t(x_i,y:y\neq y_i))}\\
+D_{t+1}(i)&amp;:=\frac{D_{t+1}(i)}{\sum_iD_{t+1}(i)}
 \end{align*}
-$$<p>
+$$
 以上により、弱学習器を束ねた学習器\(H(x)=\textrm{argmax}_{y\in Y}\sum^T_{t=1}h_t(x,y)\log\frac{1}{\alpha_t}\)をえる。</p>
 <p>論文への<a href="https://sci2s.ugr.es/keel/pdf/algorithm/articulo/2010-IEEE%20TSMCpartA-RUSBoost%20A%20Hybrid%20Approach%20to%20Alleviating%20Class%20Imbalance.pdf">リンク</a></p>
 <h2 id="所感">所感</h2>

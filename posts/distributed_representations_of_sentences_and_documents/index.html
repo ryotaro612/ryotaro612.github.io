@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -148,17 +147,15 @@ PV-DMだけでも期待できる予測性能をだせるが、両者のモデル
 <img src="/distributed_representations_of_sentences_and_documents/pvdm.png" alt="pvdm">
 \(D\)と\(W\)は、それぞれ、パラグラフや単語と1対1に対応する。
 \(T_i\)をパラグラフ\(d_i\)の単語数、\(N\)をパラグラフの総数、\(w_{i,t}\)を\(d_i\)の\(t\)番目に出現する単語とおくと、最大化すべき目的関数を次の式で表せる。</p>
+<p>$$
+\sum_{i=1}^{N}\sum_{t=k}^{T_i-k}\log p(w_{i,t} \mid d_i, w_{i, t-k}, \dots , w_{i, t+k})
 $$
-\sum\_{i=1}^{N}\sum\_{t=k}^{T\_i-k}\log p(w\_{i,t} \mid d\_i, w\_{i, t-k}, \dots , w\_{i, t+k})
-$$<p>
-</p>
 $$
-p(w\_{i,t} \mid d\_i, w\_{i, t-k}, \dots , w\_{i, t+k})=\frac{e^{w\_{i, t}}}{\sum\_i e^{y\_i}}
-$$<p>
-</p>
+p(w_{i,t} \mid d_i, w_{i, t-k}, \dots , w_{i, t+k})=\frac{e^{w_{i, t}}}{\sum_i e^{y_i}}
 $$
-y = b + Uh(d\_i, w\_{i, t-k}, \dots , w\_{i, t+k}; D, W)
-$$<p>
+$$
+y = b + Uh(d_i, w_{i, t-k}, \dots , w_{i, t+k}; D, W)
+$$
 \(U\)と\(b\)はソフトマックスのパラメタ、\(h\)はベクトルを連結または平均する関数である。
 論文の実験では連結が採用されている。</p>
 <p>ソフトマックスの計算量を減らすために、word2vecのように、階層的ソフトマックスを利用できる。

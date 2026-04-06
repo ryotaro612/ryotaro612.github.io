@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -143,22 +142,19 @@ Howerver it is difficult to learn effective low-dimentional dense embedding vect
 <a href="https://arxiv.org/abs/1606.07792">Wide &amp; Deep Learning for Recommender Systems</a> jointly trains a generalized linear model and a feed-forward neural network (FFN) to combines their benefits.</p>
 <p>A generalized linear model is in the form \(y=\textbf{w}^T\textbf{x}+b\) where \(y\) is the prediction, \(\textbf{x}=[x_1,x_2,\dots,x_d]\) is a vector of \(d\) features, \(\textbf{w}\) are the parameters, and \(b\) is the bias.</p>
 <p>The \(k\)-th interaction or cross-product transformation can be represented as:
-</p>
 $$
-\phi\_k(\textbf{x})=\prod^d\_{i=1}x^{c\_{ki}}\_i\ c\_{ki}\in\\{0, 1\\}
-$$<p>
+\phi_k(\textbf{x})=\prod^d_{i=1}x^{c_{ki}}_i\ c_{ki}\in\{0, 1\}
+$$
 where \(c_{ki}=1\) if the \(i\)-th feature is a part of the \(k\)-th intaction, and 0 otherwise.</p>
 <p>In an FFN, the first layer, often referred to as an embedding layer, converts the high-dimensional features into low-dimensional dense real-valued vectors. The embedding vectors are then fed into the hidden layers in the forward pass:
-</p>
 $$
 a^{(l+l)}=f(W^{(l)}a^{(l)}+b^{(l)})
-$$<p>
+$$
 where \(l\) is the layer number and \(f\) is the activation function.</p>
 <p>The proposed model combines a generalized linear model and an FFN by using a weighted sum of their output log odds that are fed into a logistic loss function:
-</p>
 $$
-P(Y=1|\textbf{x})=\sigma(\textbf{w}^T\_{\textit{wide}}[\textbf{x}, \phi(\textbf{x})]+\textbf{w}^T\_{\textit{deep}}a^{(l\_f)}+b)
-$$
+P(Y=1|\textbf{x})=\sigma(\textbf{w}^T_{\textit{wide}}[\textbf{x}, \phi(\textbf{x})]+\textbf{w}^T_{\textit{deep}}a^{(l_f)}+b)
+$$</p>
   </div>
 </main>
 

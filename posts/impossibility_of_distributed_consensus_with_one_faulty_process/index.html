@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -160,9 +159,9 @@ FLPの帰結のいうところは、totally correctな\(P\)は存在しないこ
 <li>補題2. configuration \(C\)から到達可能なconfigurationのdecision valueが\(0\)と\(1\)どちらもありえるなら、\(C\)はbivalentといい、\(P\)にはbivalentなinitial configurationがある。</li>
 <li>補題3. \(C\)をbivalentなconfiguration, \(e=(p, m)\)を\(C\)に適用可能なイベント、\(\mathcal{F}\)を\(e\)を適用せずに\(C\)から到達可能なconfigurationの集合、\(\mathcal{D}\)を</li>
 </ul>
+<p>$$
+\mathcal{D}=e(\mathcal{F})=\{e(E)\mid E \in \mathcal{F}\text{かつ}e\text{は}E\text{に適用可能}\}
 $$
-\mathcal{D}=e(\mathcal{F})=\\{e(E)\mid E \in \mathcal{F}\text{かつ}e\text{は}E\text{に適用可能}\\}
-$$<p>
 とすると\(\mathcal{D}\)はbivalentなconfigurationを含む。</p>
 <p>ここで、\(C_0\)をbivalentなinitial configurationとする。
 \(C_0\)は補題2より存在する。

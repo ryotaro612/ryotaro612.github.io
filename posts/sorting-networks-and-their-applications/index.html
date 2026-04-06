@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -150,13 +149,12 @@ ODD-MERGEの出力の先頭要素は\(a, b\)の最小値となる。
 ODD-MERGEの\(i (&gt; 1)\)番目の要素とEVEN-MERGEの\(i-1\)番目の要素の前後関係はノードによって振り分けられる。</p>
 <p>昇順の配列と降順の配列を連結してできる配列をバイトニックという。
 バイトニックソートは、長さ\(2n\)のバイトニックな配列\(a\)を受けとり、\(a_i\)と\(a_{n+1}\)を比較し、以下の2つのバイトニックな配列を再帰的に生成する。
-</p>
 $$
 \begin{align*}
-\min(a\_1, a\_{n+1}), \min (a\_2, a\_{n+2}), \dots , \min (a\_n, a\_{2n})\\\\
-\max(a\_1, a\_{n+1}), \max (a\_2, a\_{n+2}), \dots , \max (a\_n, a\_{2n})
+\min(a_1, a_{n+1}), \min (a_2, a_{n+2}), \dots , \min (a_n, a_{2n})\\
+\max(a_1, a_{n+1}), \max (a_2, a_{n+2}), \dots , \max (a_n, a_{2n})
 \end{align*}
-$$<p>
+$$
 任意の\(\min(a_i, a_{n+i})\)は任意の\(\max(a_i, a_{n+i})\)以下になるので、2つの配列にそれぞれバイトニックソートを適用した後、連結すればソートされた長さ\(2n\)の配列になる。
 以下の図はバイトニックソートの様子を示す。
 <img src="/sorting-networks/bitonic.png" alt="bitonic"></p>

@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -143,26 +142,25 @@
 <p>説明を与えたいモデルを\(f\)、解釈可能なモデルを\(g\in G\), \(\pi_x(z)\)を\(z\)の\(x\)への近さ、\(\Omega (g)\)を解釈可能なモデルの複雑さ、
 \(\mathcal{L}\)を\(f\)の予測を\(g\)でどれだけ近似できていないか測る指標とすると、
 LIMEは事例\(x\)の説明を与える解釈可能なモデル\(\xi(x)\)を求める。
-</p>
 $$
-\xi(x) =\underset{g\in G}{\operatorname{argmin}} \mathcal{L}(f, g, \pi\_x)+\Omega (g)
-$$<p>
+\xi(x) =\underset{g\in G}{\operatorname{argmin}} \mathcal{L}(f, g, \pi_x)+\Omega (g)
+$$
 解釈可能なモデルにLasso回帰を採用する場合、\(\pi_x(z)=\exp(-D(x, z)^2/\sigma^2)\)として
 次のアルゴリズムで\(\xi(x)\)を近似する。
 \(\mathcal{L}\)は、次のように、\(x\)に近い事例の誤りにより大きなペナルティを与える。
-</p>
 $$
-\mathcal{L}(f, g,\pi\_x)=\sum\_{z,z'\in\mathcal{Z}}\pi\_x (z)(f(z)-g(z'))^2
-$$<p>
+\mathcal{L}(f, g,\pi_x)=\sum_{z,z&rsquo;\in\mathcal{Z}}\pi_x (z)(f(z)-g(z&rsquo;))^2
+$$
 <img src="/why_should_i_trust_you/lime.png" alt="lime">
 \(g\)は解釈可能なければならないため、\(x&rsquo;\)もまた解釈できるものでなければならない。
 例えばテキスト分類であればbag-of-wordsをもちいる。</p>
 <h3 id="sp-lime">SP-LIME</h3>
 <p>SP-LIMEはモデルをよく説明する事例の集合を見つけだす。\(B\)を求める集合の要素数の上限、\(c(V, \mathcal{W}, I)\)を</p>
-$$
+<p>$$
 \newcommand{\1}{\mbox{1}\hspace{-0.25em}\mbox{l}}
-c(V, \mathcal{W}, I)=\sum^{d'}\_{j=1}\1\_{\exists i\in V:\mathcal{W}\_{i,j>0}}I\_j
-$$<p>として、次のアルゴリズムにより、既に集められた事例にみられない重要な特徴をもつ事例を探索する。
+c(V, \mathcal{W}, I)=\sum^{d&rsquo;}_{j=1}\1_{\exists i\in V:\mathcal{W}_{i,j&gt;0}}I_j
+$$</p>
+<p>として、次のアルゴリズムにより、既に集められた事例にみられない重要な特徴をもつ事例を探索する。
 <img src="/why_should_i_trust_you/sp-lime.png" alt="sp-lime"></p>
 <hr>
 <ul>

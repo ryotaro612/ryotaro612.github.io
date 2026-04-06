@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -133,16 +132,14 @@
 suffix arrayの構築にかかる最悪時間計算量が\(\mathcal{O}(N\log N)\)に対して、suffix treeは\(\mathcal{O}(N)\)しかかからない。</p>
 <p>Suffix Arrayは文字列のすべてのsuffixを辞書順にソートした配列であり、配列には、suffixそのものではなく、その開始位置を格納する。
 長さ\(N\)の文字列を\(A=a_0\ a_1\cdots a_{N-1}\), \(i\)番目から始まる\(A\)のsuffixを\(A_i\), suffixを辞書順にソートしたときの開始位置の配列を\(\textit{POS}\), \(\le\)を辞書順の記号とすると、
-</p>
 $$
-A\_{\text{POS}[0]} \le \dots \le A\_{\text{POS}[N-1]}
-$$<p>
+A_{\text{POS}[0]} \le \dots \le A_{\text{POS}[N-1]}
+$$
 がなりたつ。
 ここで\(\le_p\)を長さ\(p\)のprefixでくらべた辞書順の関係とすると
-</p>
 $$
-A\_{\text{POS}[0]} \le\_p \dots \le\_p A\_{\text{POS}[N-1]}
-$$<p>
+A_{\text{POS}[0]} \le_p \dots \le_p A_{\text{POS}[N-1]}
+$$
 も同時に成立する。ただし、長さが\(u(&lt;p)\)のときは先頭\(u\)文字でくらべる。
 このとき、長さ\(p\)の文字列の\(A\)における全ての開始位置を二分探索で検索できる。</p>
 <p>単純に長さ\(n\)の文字列\(n\)個をソートしてsuffix arrayをつくると、\(\mathcal{O}(n^2\log n)\)時間かかってしまう。

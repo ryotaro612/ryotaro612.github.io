@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -143,37 +142,32 @@
 <a href="http://www.vs.inf.ethz.ch/publ/papers/VirtTimeGlobStates.pdf">Virtual Time and Global States of Distributed Systems</a>は、各プロセスの時刻を、プロセス数とおなじ数の長さの配列で表現する。
 これにより、時刻の前後関係が定義されていることがイベント間に前後関係があることの必要十分条件であることを可能にした。</p>
 <p>イベント\(e\)が\(e&rsquo;\)に先行する関係を\(&lt;\)と書くなら、Lamportのアルゴリズムは、イベントから時刻への関数を\(C\)として
-</p>
 $$
-e<e' \rightarrow C(e) < C(e')
-$$<p>
+e&lt;e&rsquo; \rightarrow C(e) &lt; C(e&rsquo;)
+$$
 が成立するようにイベントに時刻を割りあてられる。
 イベントが発生すると、プロセス\(i\)の時刻\(C_i\)が増加する。
 別のプロセスとやりとりしないイベントが発生すると、時刻が\(d\)増加する。
-</p>
 $$
-C_i:=C_i+d\ (d>0)
-$$<p>
+C_i:=C_i+d\ (d&gt;0)
+$$
 プロセスがメッセージと一緒に送信時刻\(t\)を別のプロセス\(i\)に送ると、メッセージを受信した\(i\)は、送信元や自身の時刻よりも大きい時刻に更新する。
-</p>
 $$
-c_i := \max(C_i,t)+ d\ (d>0)
-$$<p>Virtual Time and Global States of Distributed Systemsでは、\(n\)個のプロセスからなる分散システムのプロセス\(i\)の時刻を長さ\(n\)の配列で定義する。
+c_i := \max(C_i,t)+ d\ (d&gt;0)
+$$</p>
+<p>Virtual Time and Global States of Distributed Systemsでは、\(n\)個のプロセスからなる分散システムのプロセス\(i\)の時刻を長さ\(n\)の配列で定義する。
 \(i\)で別のプロセスと通信しないイベントが発生するとき、\(C_i[i]:= C_i[i]+1\)と時刻を更新する。
 プロセス\(j\)からメッセージと一緒に送信元の時刻\(C_j\)を受信したときは、\(C_i:=\max(C_i, C_j)\)として要素が\(C_j\)より小さくならないように更新する。
 時刻\(u, v\)の前後関係\(\le, &lt;\)と順序関係の未定義\(||\)の定義は、
-</p>
 $$
 u\le v\ \textit{iff}\ \forall i: u[i]\le v[i]
-$$<p>
-</p>
 $$
-u<v\ \textit{iff}\ u \le v\ \textrm{and}\ u\neq v
-$$<p>
-</p>
 $$
-u||v\ \textit{iff}\ \neg(u<v) \textrm{and}\ \neg (v<u)
-$$<p>
+u&lt;v\ \textit{iff}\ u \le v\ \textrm{and}\ u\neq v
+$$
+$$
+u||v\ \textit{iff}\ \neg(u&lt;v) \textrm{and}\ \neg (v&lt;u)
+$$
 である。</p>
 <p>以下に論文中にある実行系列の例を示す。Lamportの手法の場合は、時刻を0で初期化し\(d=1\)とすると\(\begin{pmatrix}0\\1\\0\\0\end{pmatrix}\)と\(\begin{pmatrix}0\\0\\0\\2\end{pmatrix}\)のイベントの時刻はどちらも\(\begin{pmatrix}2\\1\\2\\1\end{pmatrix}\)より小さくなる。
 前者は前後関係があり、後者は未定義である。

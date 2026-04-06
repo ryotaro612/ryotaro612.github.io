@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -133,46 +132,39 @@
 おなじ\(u\)に対して\(Y_t(u)\)と\(Y_c(u)\)を両方観測することはできない。
 因果効果は、観測するものではなく、推定するものになる。</p>
 <p>\(S\)を群の要素から処置への写像とすると、\(E(Y_t)\)や\(E(Y_u)\)を2つとも測定することはできないが、
-</p>
 $$
-E(Y\_s\mid S=t) = E(Y\_t \mid S=t)
-$$<p>
-</p>
+E(Y_s\mid S=t) = E(Y_t \mid S=t)
 $$
-E(Y\_s\mid S=c) = E(Y\_c \mid S=c)
-$$<p>
+$$
+E(Y_s\mid S=c) = E(Y_c \mid S=c)
+$$
 をもとめることはできる。
 ところで、\(S\)が\(u\)にたいして無作為に写像する処置を選ぶのであれば、\(S\)は\(Y_t, Y_c\)に対して独立になり
-</p>
 $$
-E(Y\_t)=E(Y\_t \mid S=t)
-$$<p>
-</p>
+E(Y_t)=E(Y_t \mid S=t)
 $$
-E(Y\_c)=E(Y\_c \mid S=c)
-$$<p>
+$$
+E(Y_c)=E(Y_c \mid S=c)
+$$
 がなりたち、平均因果効果\(T\)を
-</p>
 $$
-T=E(Y\_S\mid S=t) - E(Y\_S \mid S = c)
-$$<p>
+T=E(Y_S\mid S=t) - E(Y_S \mid S = c)
+$$
 によって求めることができる。
 ここで、上の式の右辺を\(T_{PF}\)とおく。</p>
 <p>次に、群\(U\)における各の\(u\)において因果効果が等しい場合、任意の\(u\)について
-</p>
 $$
-T = Y\_t(u) - Y\_c(u)
-$$<p>
+T = Y_t(u) - Y_c(u)
+$$
 になる。
 このとき、
-</p>
 $$
 \begin{align}
-Y\_t(u) &= Y\_c(u) + T \\\\
-E(Y\_t\mid S= t) &= T + E(Y\_c \mid S=t) \\\\
-T\_{PF} &= T + \\{E(Y\_c\mid S=t) - E(Y\_c \mid S=c)\\}
+Y_t(u) &amp;= Y_c(u) + T \\
+E(Y_t\mid S= t) &amp;= T + E(Y_c \mid S=t) \\
+T_{PF} &amp;= T + \{E(Y_c\mid S=t) - E(Y_c \mid S=c)\}
 \end{align}
-$$<p>
+$$
 が成立する。
 通常、括弧の中は先にのべたように\(S\)が独立でなければ0にならない。</p>
 <p>論文を<a href="http://people.umass.edu/~stanek/pdffiles/causal-holland.pdf">こちら</a>からダウンロードできます。</p>

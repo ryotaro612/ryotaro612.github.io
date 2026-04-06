@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -148,16 +147,17 @@ TextRankは、PageRankと違い、辺ごとに重みを設定できる。</p>
 論文では、収束判定の閾値を\(0.001\)、\(d=0.85\)、各スコア\(\textit{WS}\)の初期値を1としている。
 \(w_{ji}\)は点\(i,j\)を結ぶ辺の重み、\(In(V_i)\)は頂点\(V_i\)に入る辺の対向にある頂点の集合、\(Out(V_j)\)は頂点\(V_j\)から出ていく辺の対向にある頂点の集合になる。
 無向グラフの場合、両者の集合は等しい。有向グラフよりも無向グラフの方が実験結果が良かった。
-</p>
 $$
-WS(V\_i) = (1-d) + d * \sum\_{V\_j\in In(V\_i)}\frac{w\_{ji}}{\sum\_{V_k\in Out(V\_j)}w\_{jk}}WS(V\_j)
-$$<h4 id="キーセンテンス抽出">キーセンテンス抽出</h4>
+WS(V_i) = (1-d) + d * \sum_{V_j\in In(V_i)}\frac{w_{ji}}{\sum_{V_k\in Out(V_j)}w_{jk}}WS(V_j)
+$$</p>
+<h4 id="キーセンテンス抽出">キーセンテンス抽出</h4>
 <p>キーセンテンスを抽出する場合、文が頂点となる。
 辺については、文の類似度を示す以下の式により、似ているとみなされた文の間に定義される。
 \(w\)は単語、\(S\)は文に含まれる単語の集合を示す。</p>
-$$
-Similarity(S\_i,S\_j)=\frac{\mid\left\\{ w\_k \mid w_k \in S\_i \\& w_k \in S_j \right\\}\mid }{\log(\mid S\_i\mid) + \log (\mid S\_j\mid)}
-$$<h3 id="感想">感想</h3>
+<p>$$
+Similarity(S_i,S_j)=\frac{\mid\left\{ w_k \mid w_k \in S_i \&amp; w_k \in S_j \right\}\mid }{\log(\mid S_i\mid) + \log (\mid S_j\mid)}
+$$</p>
+<h3 id="感想">感想</h3>
 <p>評価に使われた文書は、コンピュータ科学や情報技術の論文の概要であり、短く重要な単語が頻出するので、簡単なデータで評価しているように思えた。
 もっと長く冗長な文書でどのような結果がえられるのか気になる。</p>
 <hr>

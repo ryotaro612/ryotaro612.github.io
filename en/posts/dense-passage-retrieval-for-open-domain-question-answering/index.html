@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -153,17 +152,15 @@ In experiments, it was found that utilizing both the top passages returned by BM
 Given a question \(q\), the task is to find a span \(s_s^{(i)}, w_{s+1}^{(i)},\dots ,w_{e}^{(i)}\) from one of the passage \(p_i\) that can answer the question.</p>
 <p>The proposed approach employs BERT as an encoder.
 The similarity between the question and passage is computed using the dot product of their vectors:
-</p>
 $$
-\text{sim}(q, p) = E\_Q(q)^{\top} E\_P(p)
-$$<p>
+\text{sim}(q, p) = E_Q(q)^{\top} E_P(p)
+$$
 where \(E_P(\cdot)\) maps any text passage to a \(d\)-dimentional vectors, and \(E_Q(\cdot)\) maps the input question to a vector.</p>
 <p>Each instance consists of one question \(q_i\) and one relevant passage \(p^+\), along with \(n\) irrelevant passages \(p_{i,j}^-\).
 The loss for an instance is defined as \(L(q_i,p^+_i,p^-_{i,1}\dots,p^-_{i,n})\), the negative log likelihood of the positive passage:
-</p>
 $$
-L(q\_i,p^+\_i,p^-\_{i,1}\dots,p^-\_{i,n})=-\log\frac{e^{\text{sim}(q\_i,p^+\_i)}}{e^{\text{sim}(q\_i,p^+\_i)}+\sum^n\_{j=1}e^{\text{sim}(q\_i,p^-\_{i,j})}}
-$$
+L(q_i,p^+_i,p^-_{i,1}\dots,p^-_{i,n})=-\log\frac{e^{\text{sim}(q_i,p^+_i)}}{e^{\text{sim}(q_i,p^+_i)}+\sum^n_{j=1}e^{\text{sim}(q_i,p^-_{i,j})}}
+$$</p>
   </div>
 </main>
 

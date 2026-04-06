@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -145,39 +144,34 @@ Gapが小さいほどズレがないことを意味する。
 LesNetと比べ、ResNetはエラー率が低くてGapが大きく、ズレの拡大を許して精度を上げている。</p>
 <p>ズレ幅と補正は、Expected Calibration Error(ECE)で評価される。
 クラスを\(Y\in\mathcal{Y}=\{1,\dots ,K\}\)、予測されたクラスを\(\hat{Y}\)、予測確率を\(\hat{P}\)とおくと、ズレのない状態は以下のように定義される。
-</p>
 $$
- \mathbb{P}\\left(\hat{Y}=Y\mid \hat{P} = p\\right) = p, \forall p\in [0, 1]
-$$<p>
+\mathbb{P}\left(\hat{Y}=Y\mid \hat{P} = p\right) = p, \forall p\in [0, 1]
+$$
 ECEは、\(p\)からの左辺と右辺の差の期待値を意味する。
-</p>
 $$
-\mathbb{E}\\left[\big|\mathbb{P}\\left(\hat{Y}=Y\mid\hat{P}=p\\right)-p\big|\right]
-$$<p>
+\mathbb{E}\left[\big|\mathbb{P}\left(\hat{Y}=Y\mid\hat{P}=p\right)-p\big|\right]
+$$
 \(p\)は連続量なので、ECEは次のように有限のデータで差を求めるために近似する。
-</p>
 $$
-\textit{ECE}=\sum^{M}\_{m=1}\frac{|B_m|}{n}\big|\textit{acc}(B_m)-\textit{conf}(B_m)\big|
-$$<p>
+\textit{ECE}=\sum^{M}_{m=1}\frac{|B_m|}{n}\big|\textit{acc}(B_m)-\textit{conf}(B_m)\big|
+$$
 ただし
-</p>
 $$
 \textit{acc}(B_m) =\frac{1}{|B_m|}\sum_{i\in B_m}\boldsymbol{1}(\hat{y}_i - y_i)
-$$<p>
-</p>
 $$
-\textit{conf}(B\_m)=\frac{1}{|B\_m|}\sum\_{i\in B\_m}\hat{p_i}
-$$<p>
+$$
+\textit{conf}(B_m)=\frac{1}{|B_m|}\sum_{i\in B_m}\hat{p_i}
+$$
 である。
 補正は、補正の前後でのECEの差で評価できる。</p>
 <p>実験された補正方法の中で最もECEを小さくできたのは、温度つきソフトマックスであった。
 温度つきソフトマックスによる補正では、
 ソフトマックスへの入力を\(\boldsymbol{z}_i\)とすると、
 次のように温度\(T\)によって補正された\(\hat{q}_i\)を予測確率とみなす。
-</p>
 $$
-\hat{q}\_i=\max\_{k} \frac{\exp(z\_i/T^{(k)})}{\sum\_{j=1}^{K}\exp({z_i/T}^{(j)})}
-$$<p>温度\(T\)は、検証データを使い、負の対数尤度を誤差関数とする学習で求められる。</p>
+\hat{q}_i=\max_{k} \frac{\exp(z_i/T^{(k)})}{\sum_{j=1}^{K}\exp({z_i/T}^{(j)})}
+$$</p>
+<p>温度\(T\)は、検証データを使い、負の対数尤度を誤差関数とする学習で求められる。</p>
 <hr>
 <ul>
 <li>論文は<a href="https://arxiv.org/pdf/1706.04599.pdf">こちら</a>からダウンロードできます。</li>

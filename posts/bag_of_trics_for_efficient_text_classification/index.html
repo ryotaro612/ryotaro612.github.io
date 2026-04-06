@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -134,9 +133,9 @@
 <p>モデルは、単語のbag of n-gramsの平均値で文を分散表現に変換し、それを全結合層、ソフトマックス関数へと渡す。
 モデルの図と損失関数を以下に示す。\(A, B\)は重み行列、\(f\)はソフトマックス関数を示す。
 式中の\(x_n\)はベクトルに変換された\(N\)件の文書のうちの\(n\)番目の文書、\(y_n\)は\(n\)番目の文書のラベルに対応する。</p>
+<p>$$
+-\frac{1}{N}\sum^N_{n=1}y_n\log (f(BAx_n))
 $$
--\frac{1}{N}\sum^N\_{n=1}y\_n\log (f(BAx\_n))
-$$<p>
 <img src="/bag_of_tricks.png" alt="bag"></p>
 <p>クラス数が多い場合、階層的ソフトマックスによって計算量を削減することができる。
 このとき、クラス数を\(k\), 分散表現の次元を\(h\)とすると、計算量を\(O(kh)\)から、学習時では\(O(h\log_2(k)\)、推定時は\(O(h\log_2(k))\)に削減できる。</p>

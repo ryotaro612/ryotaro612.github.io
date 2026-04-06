@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -167,10 +166,9 @@ Using the output of the <code>CLS</code>-token, computing the mean of all output
 <p>Sentence-BERT depends on the available training data.
 Three different objective functions are proposed.</p>
 <p>Classification objective function accepts the sentence embeddings \(u\) and \(v\) with the element-wise difference \(|u-v|\), , and multiplies the concatenated embeddings with the trainable weight \(W_t \in \mathbb{R}^{3n\times k}\).
-</p>
 $$
-o = \text{softmax}(W\_t(u, v, |u-v|))
-$$<p>
+o = \text{softmax}(W_t(u, v, |u-v|))
+$$
 where \(n\) is the dimension of the sentence embeddings and \(k\) the number of labels.
 We update the weights to optimize cross-entropy loss.</p>
 <p>Regression objective function computes the cosine similarity between the two sentence embeddings \(u, v\).
@@ -178,10 +176,9 @@ The authors use mean-squared-error loss.</p>
 <p>Triplet objective function takes an anchor sentence embedding \(s_a\),  a positive sentence embedding \(s_p\), and a negative sentence embedding \(n\).
 The function updates the weights such that the distance between \(s_a\) and \(s_p\) is smaller than the distance between \(s_a, s_n\).
 The authors use the following function:
-</p>
 $$
-\max(||s\_a - s\_p|| - ||s\_a - s\_n || + \epsilon, 0)
-$$<p>
+\max(||s_a - s_p|| - ||s_a - s_n || + \epsilon, 0)
+$$
 \(\epsilon\) ensures that \(s_p\) is at least \(\epsilon\) closer to \(s_a\) than \(s_n\).</p>
   </div>
 </main>

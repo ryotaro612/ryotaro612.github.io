@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -148,10 +147,9 @@
 すると、2つのログが同じ\(\textit{reads-from}\)をもつとき、両者を等価とみなせる。</p>
 <p>MVCCのログのなかには単一バージョンの並行制御でおこりえないものがある。
 たとえば、次の逐次実行のログは単一バージョンではおこりえない。
-</p>
 $$
-w\_0[x\_0]w\_0[y\_0]r\_1[x\_0]w\_1[y\_1]r\_2[y\_0]w\_2[x\_2]
-$$<p>
+w_0[x_0]w_0[y_0]r_1[x_0]w_1[y_1]r_2[y_0]w_2[x_2]
+$$
 任意の\(i, j, x\)について\(T_j \textit{ reads-from } x_i\)であるとき\(i=j\)であるか\(T_i\)が任意のバージョンの\(x\)に書き込んだ\(T_j\)に先行する最後のトランザクションならば、MVCC下の逐次実行のログは単一バージョンの並行制御でも起こりえる実行結果をもたらす。
 このようなログをone-copy-serialとよぶ。
 そして、one-copy-serialと等価なログをone-copy serializableでといい、これが単一バージョンの並行実行でも起きえる逐次実行と等価な結果をもたらすログになる。</p>

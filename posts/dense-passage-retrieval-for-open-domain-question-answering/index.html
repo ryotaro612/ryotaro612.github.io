@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -145,24 +144,21 @@
 文章\(p_i\)を、トークン列\(w_1^{(i)}, w_2^{(i)},\dots, w_{|p_i|}^{(i)}\)と表せる。
 このとき、質問応答は、質問\(q\)に対応する区間\(s_s^{(i)}, w_{s+1}^{(i)},\dots ,w_{e}^{(i)}\)を抽出することに等しい。</p>
 <p>質問\(q\)と文章\(p\)のベクトルの生成には、それぞれ別のBERT\(E_Q, E_P\)を利用し、距離\(\text{sim}(q, p)\)を計算する。
-</p>
 $$
-\text{sim}(q, p) = E\_Q(q)^{\top} E\_P(p)
-$$<p>
+\text{sim}(q, p) = E_Q(q)^{\top} E_P(p)
+$$
 内積のほかユークリッド距離などの尺度も実験で評価されたが、結果に大きな差異はなかった。
 結果として最も単純な内積が採用された。
 推論時は、<a href="https://arxiv.org/abs/1702.08734">FAISS</a>で高速に類似度の近似解を求める。</p>
 <p>学習データのサンプルは、1つの質問、1つの解答、複数の負例からなる。
 サンプル数を\(m\), 質問を\(q\), 正例を\(p_i^{+}\), 負例を\(p^-_{i, j}\)とすると、学習データ\(\mathcal{D}\)は
-</p>
 $$
-\mathcal{D}=\\{\langle q\_i, p^+\_i,p^-\_{i,1},\dots,p^-\_{i, n}\rangle\\}^m\_{i=1}
-$$<p>
+\mathcal{D}=\{\langle q_i, p^+_i,p^-_{i,1},\dots,p^-_{i, n}\rangle\}^m_{i=1}
+$$
 であり、損失は
-</p>
 $$
-L(q\_i,p^+\_i,p^-\_{i,1}\dots,p^-\_{i,n})=-\log\frac{e^{\text{sim}(q\_i,p^+\_i)}}{e^{\text{sim}(q\_i,p^+\_i)}+\sum^n\_{j=1}e^{\text{sim}(q\_i,p^-\_{i,j})}}
-$$<p>
+L(q_i,p^+_i,p^-_{i,1}\dots,p^-_{i,n})=-\log\frac{e^{\text{sim}(q_i,p^+_i)}}{e^{\text{sim}(q_i,p^+_i)}+\sum^n_{j=1}e^{\text{sim}(q_i,p^-_{i,j})}}
+$$
 になる。</p>
 <h2 id="雑記">雑記</h2>
 <p>偽陰性のある学習データある場合に、BM25の高い文章で負例を生成するとかえって悪い結果になりそう。</p>

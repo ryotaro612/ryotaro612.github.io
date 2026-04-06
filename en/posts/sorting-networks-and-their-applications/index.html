@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -153,13 +152,12 @@ The lowest output of the odd merge becomes the lowest number of the final list.
 The \(i^{\textit{th}}\) output of the even merge is compared with the \(i+1^{\textit{th}}\) output of the odd merge to form the \(2i^{\textit{th}}\) and \(2i+1^{\textit{th}}\) numberos of the final list.
 A list is bitonic if the first elements are sorted in ascending order and the remaining elements are sorted in descending order.
 When the bitonic sort receives a bitonic list of \(2n\) elements, \(a_1, a_2,\dots ,a_{2n}\), it constructs the following two bitonic lists of \(n\) elements by comparing \(a_i\) with \(a_{n+i}\).
-</p>
 $$
 \begin{align*}
-\min(a\_1, a\_{n+1}), \min (a\_2, a\_{n+2}), \dots , \min (a\_n, a\_{2n})\\\\
-\max(a\_1, a\_{n+1}), \max (a\_2, a\_{n+2}), \dots , \max (a\_n, a\_{2n})
+\min(a_1, a_{n+1}), \min (a_2, a_{n+2}), \dots , \min (a_n, a_{2n})\\
+\max(a_1, a_{n+1}), \max (a_2, a_{n+2}), \dots , \max (a_n, a_{2n})
 \end{align*}
-$$<p>
+$$
 Any \(\min(a_i, a_{n+i})\) is smaller than any \(\max(a_i, a_{n+i})\), and the botonic sorter constructs the final list by concatenating the two smaller lists of \(n\) elements.
 The following figure illustrates a bitonic sorter with \(2n\) elements.
 <img src="/sorting-networks/bitonic.png" alt="bitonic"></p>

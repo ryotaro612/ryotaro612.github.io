@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -160,47 +159,55 @@ TensorFlow implements this method as <a href="https://www.tensorflow.org/api_doc
 <p>In sampled softmax, the task is to predict the correct class from a subset of all possible classes.
 Let the set of all classes be \( L \), the sampling function be \( Q(y|x) \), and the sampled subset of \( L \) at the \( i \)-th iteration be \( S_i \).
 For an input \( x_i \):</p>
-$$
+<p>$$
 P(S_i = S \mid x_i) = \prod_{y \in S} Q(y|x_i) \prod_{y \in (L - S)} (1 - Q(y|x_i)).
-$$<p>Let the correct class of \( x_i \) be \( t_i \).
+$$</p>
+<p>Let the correct class of \( x_i \) be \( t_i \).
 The training procedure updates model parameters to maximize the probability of \( t_i \) within the sampled subset:</p>
-$$
-C_i = S_i \cup \\{t_i\\}.
-$$<p>Applying Bayes’s rule step by step:</p>
-$$
+<p>$$
+C_i = S_i \cup \{t_i\}.
+$$</p>
+<p>Applying Bayes’s rule step by step:</p>
+<p>$$
 \begin{align*}
 P(t_i = y \mid x_i, C_i)
-&= \frac{P(t_i = y, C_i \mid x_i)}{P(C_i \mid x_i)} \\\\
-&= \frac{P(t_i = y \mid x_i) P(C_i \mid t_i = y, x_i)}{P(C_i \mid x_i)} \\\\
-&= \frac{P(y \mid x_i)}{P(C_i \mid x_i)} P(C_i \mid t_i = y, x_i).
+&amp;= \frac{P(t_i = y, C_i \mid x_i)}{P(C_i \mid x_i)} \\
+&amp;= \frac{P(t_i = y \mid x_i) P(C_i \mid t_i = y, x_i)}{P(C_i \mid x_i)} \\
+&amp;= \frac{P(y \mid x_i)}{P(C_i \mid x_i)} P(C_i \mid t_i = y, x_i).
 \end{align*}
-$$<p>Given a constant \( K(x_i, C_i) \) independent of \( y \):</p>
-$$
+$$</p>
+<p>Given a constant \( K(x_i, C_i) \) independent of \( y \):</p>
+<p>$$
 P(C_i \mid t_i = y, x_i)
-= \frac{1}{Q(y|x_i)} 
-\prod_{y' \in C_i} Q(y'|x_i)
-\prod_{y' \in (L - C_i)} (1 - Q(y'|x_i)).
-$$<p>Substituting and simplifying:</p>
-$$
+= \frac{1}{Q(y|x_i)}
+\prod_{y&rsquo; \in C_i} Q(y&rsquo;|x_i)
+\prod_{y&rsquo; \in (L - C_i)} (1 - Q(y&rsquo;|x_i)).
+$$</p>
+<p>Substituting and simplifying:</p>
+<p>$$
 P(t_i = y \mid x_i, C_i)
 = \frac{P(y|x_i)}{Q(y|x_i)} \cdot \frac{1}{K(x_i, C_i)}.
-$$<p>Taking logs gives:</p>
-$$
+$$</p>
+<p>Taking logs gives:</p>
+<p>$$
 \log P(t_i = y \mid x_i, C_i)
-= \log P(y|x_i) - \log Q(y|x_i) + K'(x_i, C_i).
-$$<p>Since \( K&rsquo;(x_i, C_i) \) is independent of \( y \), it is ignored during training.
+= \log P(y|x_i) - \log Q(y|x_i) + K&rsquo;(x_i, C_i).
+$$</p>
+<p>Since \( K&rsquo;(x_i, C_i) \) is independent of \( y \), it is ignored during training.
 Thus, the model effectively learns to predict</p>
-$$
+<p>$$
 \log P(y|x_i) - \log Q(y|x_i).
-$$<p>The weights of the output layer correspond to video embeddings, and the inputs are user embeddings.
+$$</p>
+<p>The weights of the output layer correspond to video embeddings, and the inputs are user embeddings.
 These are later stored in the nearest-neighbor index for serving.</p>
 <p>The ranking model predicts the watch time of videos using weighted logistic regression.
 During training, positive examples (clicked videos) are weighted by their actual watch times.
 Let \( N \) be the total number of examples, \( k \) the number of positive examples, and \( T_i \) the watch time of the \( i \)-th positive example.
 The model’s odds are approximately:</p>
-$$
+<p>$$
 \frac{\sum T_i}{N - k}
-$$<p>Assuming \( \frac{1}{1 - x} \approx 1 + x \), and letting \( P \) denote the probability of an impression, the ranking model predicts \( E[T](1 + P) \).
+$$</p>
+<p>Assuming \( \frac{1}{1 - x} \approx 1 + x \), and letting \( P \) denote the probability of an impression, the ranking model predicts \( E[T](1 + P) \).
 Since \( P \) is small in YouTube’s case, this is effectively \( E[T] \), the expected watch time.</p>
 <!-- [Deep Neural Networks for YouTube Recommendations](https://static.googleusercontent.com/media/research.google.com/ja//pubs/archive/45530.pdf), published in 2016, describes a recommendation system of YouTube. 
 The system consists of two feed-forward neural networks: a candidate generation model and a ranking model.
@@ -284,12 +291,6 @@ Improve clumsy and wrong text because the writer is not a native English speaker
     </a>
   </li>
   
-  
-  <li>
-    <a href="/en/posts/flashattention-fast-and-memory-efficient-exact-attention-with-io-awareness/">
-      <i class="fa-solid fa-xl fa-angle-right"></i>
-    </a>
-  </li>
   
 </ul>
 

@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -171,7 +170,6 @@
 \(Count(x, y)\)を訓練データにおける特徴\(x\)とラベル\(y\)の組の数、\(Count(x)\)を\(x\)の数とすると、以下の\(h(x, y)\)が\(p_{\min}\)以上であるルールを最大\(n\)個選ぶ。
 \(k\)はラベルの数であり、実験で扱うラベルは<code>PERSON</code>, <code>LOCATION</code>, <code>ORGANIZATION</code>であるため\(k=3\)である。
 実験では\(p_{\min}\)は\(0.95\)に設定されている。
-
 $$
 h(x, y) = \frac{Count(x, y)}{Count(x) + k}
 $$</li>
@@ -182,10 +180,10 @@ $$</li>
 <h4 id="推定">推定</h4>
 <p>学習で導出したルールをもとにタグを推定する。
 推定対象のもつ特徴の集合が\(\mathrm{x}\)であり、 タグの集合が\(\mathcal{Y}\)とすると、タグを次の\(f(\mathrm{x})\)で推定する。
-</p>
 $$
 f(\mathrm{x}) = \underset{x\in \mathrm{x}, y\in \mathcal{Y}}{\operatorname{argmax}} h(x, y)
-$$<h3 id="感想">感想</h3>
+$$</p>
+<h3 id="感想">感想</h3>
 <p><em>context</em>のルールは英語を前提にしているので、他言語に応用するときは、別の規則を考える必要がある。</p>
 <hr>
 <ul>

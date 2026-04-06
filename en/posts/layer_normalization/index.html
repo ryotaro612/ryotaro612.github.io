@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -140,27 +139,26 @@
 <p><a href="https://arxiv.org/abs/1502.03167">Batch Normalization</a> uses the mean and the standard deviation of the summed inputs of a neuron in a mini-batch to normalize the summed inputs to it.
 While Batch Normalization can accelerate training, it depends on mini-batch size and is challenging to implement in RNNs.</p>
 <p>Let the bottom-up inputs in the \(l\) th hidden layer of a deep feed-forward neural network be \(h^l\), with \(w_i^l\) representing the incoming weights to the \(i\) th neuron, and \(b^l_i\) as the scalar bias parameter. The weighted sum of inputs \(a_i\) is computed as:
-</p>
 $$
-a^l\_i = {w^l\_i}^{\top}h^l\ \ \ \ h^{l+1}\_i = f(a^l\_i + b^l\_i)
-$$<p>In Layer Normalization, the neurons within the same layer share the same mean and standard deviation.
+a^l_i = {w^l_i}^{\top}h^l\ \ \ \ h^{l+1}_i = f(a^l_i + b^l_i)
+$$</p>
+<p>In Layer Normalization, the neurons within the same layer share the same mean and standard deviation.
 Let \(H\) be the number of the neurons in layer \(l\). The mean \(\mu^l\) and standard deviation \(\sigma^l\) are given as follows.
-</p>
 $$
-\mu^l=\frac{1}{H}\sum^H\_{i=1}a^l\_i\ \ \ \ \sigma^l=\sqrt{\frac{1}{H}\sum^H\_{i=1}(a^l\_i-\mu^l)^2}
-$$<p>Using a scaling hyperparameter \(g^l_i\), Layer Normalization normalizes the summed inputs as follows:
-</p>
+\mu^l=\frac{1}{H}\sum^H_{i=1}a^l_i\ \ \ \ \sigma^l=\sqrt{\frac{1}{H}\sum^H_{i=1}(a^l_i-\mu^l)^2}
+$$</p>
+<p>Using a scaling hyperparameter \(g^l_i\), Layer Normalization normalizes the summed inputs as follows:
 $$
-\bar{a}^l\_i=\frac{g^l\_i}{\sigma^l\_i}(a^l\_i-\mu^l\_i)
-$$<p>In RNNs, consider \({\rm x}^t\) as the input at time \(t\), \({\rm h}^{t-1}\) as the vector of previous hidden states, \(W_{hh}\) as recurrent hidden-to-hidden weights, and \(W_{xh}\) as bottom-up input-to-hidden weights. The summed inputs at time \(t\) are represented as:
-</p>
+\bar{a}^l_i=\frac{g^l_i}{\sigma^l_i}(a^l_i-\mu^l_i)
+$$</p>
+<p>In RNNs, consider \({\rm x}^t\) as the input at time \(t\), \({\rm h}^{t-1}\) as the vector of previous hidden states, \(W_{hh}\) as recurrent hidden-to-hidden weights, and \(W_{xh}\) as bottom-up input-to-hidden weights. The summed inputs at time \(t\) are represented as:
 $$
-\boldsymbol{\rm a}^t=W\_{hh}h^{t-1}+W\_{xh}{\rm x}^t
-$$<p>Finally, the normalized hidden state \({\rm h}^t\) is computed as follows:
-</p>
+\boldsymbol{\rm a}^t=W_{hh}h^{t-1}+W_{xh}{\rm x}^t
+$$</p>
+<p>Finally, the normalized hidden state \({\rm h}^t\) is computed as follows:
 $$
-\boldsymbol{h}^t = f\left[\frac{\boldsymbol{g}}{\sigma^t}\odot  (\boldsymbol{a}^t-\mu^t )+\boldsymbol{b}\right] \ \ \ \ \mu^t=\frac{1}{H}\sum^H\_{i=1}a^t\_i\ \ \ \ \sigma^t=\sqrt{\frac{1}{H}\sum^H\_{i=1}(a^t\_i-\mu^t)^2}
-$$
+\boldsymbol{h}^t = f\left[\frac{\boldsymbol{g}}{\sigma^t}\odot  (\boldsymbol{a}^t-\mu^t )+\boldsymbol{b}\right] \ \ \ \ \mu^t=\frac{1}{H}\sum^H_{i=1}a^t_i\ \ \ \ \sigma^t=\sqrt{\frac{1}{H}\sum^H_{i=1}(a^t_i-\mu^t)^2}
+$$</p>
   </div>
 </main>
 

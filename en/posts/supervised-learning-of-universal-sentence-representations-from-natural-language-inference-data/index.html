@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -140,7 +139,7 @@
 The authors evaluated seven different encoder architectures across twelve NLP tasks and found that a bidirectional LSTM with max pooling achieved the best performance.</p>
 <p>They chose to train on a natural language inference dataset because they hypothesized that NLI requires models to perform high-level semantic reasoning between sentence pairs.
 The SNLI dataset consists of 570,000 sentence pairs, each comprising a <em>premise</em> and a <em>hypothesis</em>, annotated with one of three labels: <em>entailment</em>, <em>neutral</em>, or <em>contradiction</em>.</p>
-<p>While the encoder component varies across the seven architectures, the classification layer is shared. Each model generates two sentence embeddings, \( u \) and \( v \), for the premise and hypothesis, respectively. These embeddings are combined into a single feature vector using concatenation: \( (u, v, |u - v|, u \odot v) \). This vector is then passed through fully connected layers and a softmax classifier to predict the relationship label.</p>
+<p>While the encoder component varies across the seven architectures, the classification layer is shared. Each model generates two sentence embeddings, ( u ) and ( v ), for the premise and hypothesis, respectively. These embeddings are combined into a single feature vector using concatenation: ( (u, v, |u - v|, u \odot v) ). This vector is then passed through fully connected layers and a softmax classifier to predict the relationship label.</p>
 <p>In the best-performing architecture—bidirectional LSTM with max pooling, the sentence is encoded by concatenating the outputs from forward and backward LSTMs. Max pooling is then applied across all token vectors to produce a fixed-size sentence embedding, where each dimension takes the maximum value across the sequence.</p>
   </div>
 </main>

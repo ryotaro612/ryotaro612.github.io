@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -150,22 +149,21 @@ Sparse Transformerは、\(p\)個のパターンを用意し、パターンに該
 パターン\(m\)が\(i\)番目位置にある要素が注意する位置の集合を\(A^{(m)}_{i}\)とする。
 このとき、パターン\(A^{(m)}\)の注意機構が再構成するクエリ\(\text{Attend}(X,A^{(m)})=\left(a({\rm x}_i,A^{(m)}_i)\right)_{i\in\{1,\dots,n\}}\)は、</p>
 <!--\\(S\_i\in \\{S\_1,\dots , S\_n\\}\\)を\\(i\\)にある要素が注意する要素の集合とすると、再構成したクエリ\\(a({\rm x}\_i,S\_i)\\)は、-->
-$$
+<p>$$
 \begin{align}
-a({\rm x}\_i,A^{(m)}\_i)&=\text{softmax} \left(\frac{(W\_q{\rm x}\_i)K^T_{A^{(m)}\_i}}{\sqrt{d}}\right)V\_{A^{(m)}\_i}\\\\
-K\_{A^{(m)}\_i}&=\left(W_k{\rm x}_j\right)\_{j\in A^{(m)}\_i}\\\\
-V\_{A^{(m)}\_i}&=\left(W\_v{\rm x}\_j\right)\_{j\in A^{(m)}\_i}
+a({\rm x}_i,A^{(m)}_i)&amp;=\text{softmax} \left(\frac{(W_q{\rm x}_i)K^T_{A^{(m)}_i}}{\sqrt{d}}\right)V_{A^{(m)}_i}\\
+K_{A^{(m)}_i}&amp;=\left(W_k{\rm x}_j\right)_{j\in A^{(m)}_i}\\
+V_{A^{(m)}_i}&amp;=\left(W_v{\rm x}_j\right)_{j\in A^{(m)}_i}
 \end{align}
-$$<p>
+$$
 である。\(W_q, W_k,W_v\)は\({\rm x}_i\)をクエリ、キー、バリューに変換する重みであり、\(d\)はクエリとキーの次元である。
 実験では、パターンの数は2である。
 パターンを形式的に定義するなら、たとえば、\(A_i^{(1)}=\{t,t+1,\dots,i\}\ \text{for}\ t = \max(0, i-l) \), \(A^{(2)}_i=\{j:(i-j)\ \mod l=0\}\)と示すことができる。</p>
 <p>注意機構がパターン数\(p\)個あるマルチヘッド注意機構であるから、個別の注意機構で生成された注意を合成する。
 2つの合成方法を例示しており、そのうちの一つは、重みを\(W_p\)として
-</p>
 $$
-\text{attention}(X)=W\_p\cdot \text{attend}\left(X,\bigcup^p\_{m=1}A^{(m)}\right)
-$$<p>
+\text{attention}(X)=W_p\cdot \text{attend}\left(X,\bigcup^p_{m=1}A^{(m)}\right)
+$$
 を計算し、注意を生成する。</p>
 <h2 id="雑記">雑記</h2>
 <p>sparse factorizationをみて行列分解を想像したが、factorizationは単にQKV注意機構へ入力する要素を限定することだけを意味しているように読めた。

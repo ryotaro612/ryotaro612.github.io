@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -164,10 +163,10 @@ The $R^2$ denotes the coefficient of determination.
 There was a moderate to very high correlation for all projects except HSQLDB.
 <img src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/test-size.png" alt="test-size"></p>
 <p>They computed <a href="https://www.rdocumentation.org/packages/Kendall/versions/2.2.1/topics/Kendall">Kendall&rsquo;s \(\tau\)</a> to measure how the effectiveness of a test suite correlates with its coverage when ignoring suite size influence. Let \(x_i\) \(i\)th test suite&rsquo;s coverage, \(y_i\) its effectiveness, \(n\) the number of test suites, \(\textit{sgn}\) the signum function:
-</p>
 $$
-\tau = \frac{n\sum\_{i<j}\left(\textit{sgn}(x\_j-x\_i)\textit{sgn}(y\_j-y\_i)\right)}{n(n-1)}
-$$<p>Kendall&rsquo;s \(\tau\) indicated that stronger forms of code coverage did not improve the measurement of effectiveness.
+\tau = \frac{n\sum_{i&lt;j}\left(\textit{sgn}(x_j-x_i)\textit{sgn}(y_j-y_i)\right)}{n(n-1)}
+$$</p>
+<p>Kendall&rsquo;s \(\tau\) indicated that stronger forms of code coverage did not improve the measurement of effectiveness.
 The following two figures show Kendall&rsquo;s \(tau\) for each kind of code coverage. The first figure represents normalized effectiveness, and the second shows raw effectiveness.
 The \(\tau\) values did not vary among the kinds of code coverage.
 <img src="/coverage-is-not-strongly-correlated-with-test-suite-effectiveness/normalized.png" alt="normalized">

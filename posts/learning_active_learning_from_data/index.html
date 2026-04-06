@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -151,14 +150,14 @@
 <li>無作為に\(x\in\mathcal{U}_\tau\)を選び、\(\mathcal{L}_\tau\cup\{x\}\)を\(\mathcal{L}_x\)として新たな訓練データを作成する。</li>
 <li>\(x\)があるクラスである確信度や、\(x\)から最も近いラベル付きデータからの距離など、\(f\)に入力される特徴以外の\(x\)の要素を、\(\{\psi^1_x,\dots,\psi^R_x\}\)として記録する。</li>
 <li>\(\mathcal{L}_x\)で\(f_x\)を学習し、\(D&rsquo;\)をもとに汎化誤差\(\ell_x\)を求める。</li>
-<li>\(
-\[\phi^1\_\tau\ \dots\ \phi^K\_\tau\ \psi^1\_x\ \dots\ \psi^R\_x\]\)を\(\xi_m\)、\(x\)を訓練データに加えたことで減少した汎化誤差\(\ell_\tau - \ell_x\)を\(\delta_m\)として、回帰モデルの訓練データの一つとして記録する。</li>
+<li>\([\phi^1_\tau\ \dots\ \phi^K_\tau\ \psi^1_x\ \dots\ \psi^R_x]\)を\(\xi_m\)、\(x\)を訓練データに加えたことで減少した汎化誤差\(\ell_\tau - \ell_x\)を\(\delta_m\)として、回帰モデルの訓練データの一つとして記録する。</li>
 </ol>
 <p>収集した教師データで学習した回帰モデルを\(g\)とすると、以下の\(x^*\)が最も汎化誤差を小さくするためにアノテーションすべきサンプルの推定値となる。</p>
-$$
+<p>$$
 \newcommand{\argmax}{\mathop{\rm arg~max}\limits}
-x^{*} = \argmax\_{x\in\mathcal{U}\_t} g(\phi\_t,\psi\_x)
-$$<h3 id="感想">感想</h3>
+x^{*} = \argmax_{x\in\mathcal{U}_t} g(\phi_t,\psi_x)
+$$</p>
+<h3 id="感想">感想</h3>
 <p>データの分布が及ぼす性能への影響を分析に人工データを使うところが参考になる。
 分類器の状態\(\phi\)を特徴に含めているので、評価において様々な分類器やハイパーパラメタのモデルの評価をしてほしかった。</p>
 <hr>

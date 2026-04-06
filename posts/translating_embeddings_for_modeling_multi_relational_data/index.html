@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -136,14 +135,16 @@
 ラベル\(l\)のリンクの両端にある上位、下位エンティティを\(h, t\)としてエンティティグラフを\(S=\{(h, l, t)\}\), エンティティの集合を\(E\), ラベルの集合を\(L\), 正則化のためのマージン\(\gamma&gt;0\), 埋め込まれるベクトル空間\(\mathbb{R}^k\)の次元を\(k\)とかく。
 このとき、損失関数\(\mathcal{L}\)は次の式をとる。
 パラメタの更新には確率的勾配降下法がつかえる。</p>
-$$
-\mathcal{L}=\sum\_{(h, l, t)\in S}\sum\_{(h',l,t')\in S'\_{(h, l, t)}}[\gamma+d(\boldsymbol{h}+\boldsymbol{l}, \boldsymbol{t})-d(\boldsymbol{h'}+\boldsymbol{l},\boldsymbol{t'})]\_+
-$$<p>\([x]_+\)は\(x\)の正のとき\(x\), それ以外では\(0\)となる。
+<p>$$
+\mathcal{L}=\sum_{(h, l, t)\in S}\sum_{(h&rsquo;,l,t&rsquo;)\in S&rsquo;_{(h, l, t)}}[\gamma+d(\boldsymbol{h}+\boldsymbol{l}, \boldsymbol{t})-d(\boldsymbol{h&rsquo;}+\boldsymbol{l},\boldsymbol{t&rsquo;})]_+
+$$</p>
+<p>\([x]_+\)は\(x\)の正のとき\(x\), それ以外では\(0\)となる。
 \(S&rsquo;\)はネガティブサンプリングされたサンプルの集合をしめす。
 次の式の\(h&rsquo;, t&rsquo;\)は相手のエンティティとリンク\(l\)で結ばれておらず無作為に選ばれたエンティティをしめす。</p>
-$$
-S'\_{(h, l, t)} = \\{(h',l,t)\mid h'\in E\\}\cup\\{(h,l,t')\mid t'\in E\\}
-$$<hr>
+<p>$$
+S&rsquo;_{(h, l, t)} = \{(h&rsquo;,l,t)\mid h&rsquo;\in E\}\cup\{(h,l,t&rsquo;)\mid t&rsquo;\in E\}
+$$</p>
+<hr>
 <ul>
 <li>論文を<a href="https://papers.nips.cc/paper/2013/file/1cecc7a77928ca8133fa24680a88d2f9-Paper.pdf">こちら</a>からダウンロードできます。</li>
 </ul>

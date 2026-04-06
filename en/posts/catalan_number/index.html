@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -148,10 +147,10 @@ Any \(n(&gt;0)\) valid pairs of parentheses can be represented as &ldquo;(A)B.&r
 A and B are balanced sets of parentheses.
 If A contains \(k\) pairs, then B contains \(n − k − 1\) pairs.
 \(k\) is between \(0\) and \(n-1\), and we conclude that:
-</p>
 $$
-C\_n = C\_{n-1}C\_0 + C\_{n-2}C\_1 + \cdots + C\_1C\_{n-2} + C\_0C\_{n-1}
-$$<p>We will obtain an explicit formula for the Catalan numbers by analyzing the number of the diagonal-avoiding paths.
+C_n = C_{n-1}C_0 + C_{n-2}C_1 + \cdots + C_1C_{n-2} + C_0C_{n-1}
+$$</p>
+<p>We will obtain an explicit formula for the Catalan numbers by analyzing the number of the diagonal-avoiding paths.
 The total number of paths through an \(n\times n\) grid is \(\binom{2n}{n}\) because every path from the upper left corner to the lower right corner contains \(n\) steps to the right and \(n\) steps down.</p>
 <p>We will count the number of diagonal-avoiding paths by counting the total number of paths through the grid and then subtract the number of paths that hit the diagonal.
 The following figure illustrates a path that crosses the dotted diagonal line.
@@ -159,10 +158,10 @@ The following figure illustrates a path that crosses the dotted diagonal line.
 <p>A point \(P\) is the first grid point it touches on the wrong side of the diagonal.
 Every diagonal-avoiding path has the first grid point.
 If you swap steps to the right and steps down that are in a sub path begins at P, the swapped path contains \(n-1\) steps to the right and \(n+1\) steps down:
-</p>
 $$
-C\_n = \binom{2n}{n} - \binom{2n}{n+1}
-$$<h2 id="reference">Reference</h2>
+C_n = \binom{2n}{n} - \binom{2n}{n+1}
+$$</p>
+<h2 id="reference">Reference</h2>
 <p><a href="http://www.geometer.org/mathcircles/catalan.pdf">Tom Davis, Catalan Numbers, 2016</a></p>
 <p>The above figure was cited from the paper.</p>
 

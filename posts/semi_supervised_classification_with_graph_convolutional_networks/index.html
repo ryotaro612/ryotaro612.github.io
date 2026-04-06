@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -134,21 +133,18 @@
 表題の手法では、文書の特徴にくわえ、隣接行列で表現した辺の情報もネットワークにあたえる。
 グラフの辺の数に対して線形にスケールし、隠れ層でグラフの分散表現を獲得できる。</p>
 <p>\(A\)を隣接行列, \(I_{N}\)を単位行列、\(\tilde{A}=A+I_{N}\), \(\tilde{D}_{ii}=\sum_{j}\tilde{A}_{ij}\)とすると、各層の伝搬規則は次の式になる。
-</p>
 $$
 H^{(l+1)}=\sigma \left(\tilde{D}^{-\frac{1}{2}}\tilde{A}\tilde{D}^{-\frac{1}{2}}H^{(l)}W^{(l)}  \right)
-$$<p>
+$$
 \(\sigma\)は\(\text{ReLU}(\cdot)=\max(0, \cdot)\)などの活性化関数、\(H\in\mathbb{R}^{N\times D}\), \(H^{(0)}=X\)である。
 たとえば、2層のネットワークであれば、\(C\)をチャネル数, \(H\)を特徴マップとして\(W^{(0)}\in\mathbb{R}^{C\times H}\)の
-</p>
 $$
 Z=f(X, A)=  \text{softmax}\left(\hat{A} \text{ReLU}\left(\hat{A}XW^{(0)}\right)W^{(1)}\right)
-$$<p>
-で、学習時は\(\mathcal{Y}_L\)をラベルのある点の集合として交差エントロピー
-</p>
 $$
-\mathcal{L}=-\sum\_{l\in \mathcal{Y}\_L}\sum^{F}\_{f=1}Y\_{lf}\ln Z\_{lf}
-$$<p>
+で、学習時は\(\mathcal{Y}_L\)をラベルのある点の集合として交差エントロピー
+$$
+\mathcal{L}=-\sum_{l\in \mathcal{Y}_L}\sum^{F}_{f=1}Y_{lf}\ln Z_{lf}
+$$
 をもちいる。</p>
 <p>論文を<a href="https://arxiv.org/pdf/1609.02907.pdf">こちら</a>からダウンロードできます。</p>
   </div>

@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -133,13 +132,12 @@
 もとのサンプルと選ばれたサンプルの各特徴の差に[0,1]区間のランダムな値を掛け、その値をもとのサンプルに足して、少数クラスのサンプルを合成する。</p>
 <p>SOMTEは、少数クラスの\(T\)個のサンプルのほかに、近傍の大きさ\(k\), 1つのサンプルから合成するサンプルの割合\(N\)を受けつける。このとき、SOMTEは\(N/100 \times T\)個のサンプルを生成する。
 \(N\)が\(T\)より小さければ、
-</p>
 $$
 \begin{align}
-T &= (N/100) \times T\\\\
-N &= 100
+T &amp;= (N/100) \times T\\
+N &amp;= 100
 \end{align}
-$$<p>
+$$
 としてランダムに選んだ\(N/100\times T\)個のサンプルのみを合成につかう。</p>
 <h2 id="雑記">雑記</h2>
 <p>少数クラスに分類されやすくなる手法なので、少数クラスについて偽陽性が高ければ控えたほうがよさそう。

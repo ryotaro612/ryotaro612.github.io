@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -145,35 +144,32 @@
     <p><a href="https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf">Improving Language Understanding by Generative Pre-Training</a> describes the original generative pre-trained transformer model. The paper shows that pre-training on unlabeled text followed by fine-tuning on supervised tasks leads to strong performance. During fine-tuning, the output of the pre-trained model is passed to a linear output layer.</p>
 <p>The model described in the paper is based on a <a href="https://arxiv.org/pdf/1801.10198">multi-layer Transformer decoder</a>. Unlike the architecture in <a href="https://arxiv.org/pdf/1801.10198">Attention Is All You Need</a>, this model uses only the decoder stack. Representations for upstream tasks are constructed so that their format aligns with the unlabeled text used in pre-training. For example, an entailment example is created by concatenating the premise and the hypothesis with a delimiter. A text similarity task also concatenates two texts with a delimiter and feeds the sequence into the pre-trained model.</p>
 <p>Given unlabeled tokens \(\mathcal{U}=\{u_1,\dots , u_n\}\), pre-training maximizes the likelihood:
-</p>
 $$
 L_1(\mathcal{U})=\sum_i\log P(u_i\mid u_{i-k},\dots , u_{i-1};\Theta),
-$$<p>
+$$
 where \(k\) is the context window size, and \(P\) is the conditional probability modeled by the Transformer decoder with parameters \(\Theta\).
 Let \(U=(u_{-k}, \dots, u_{-1})\) be the input tokens, \(W_e\) the token embedding matrix, and \(W_p\) the position embedding matrix.
 The first Transformer block receives the sum of token and position embeddings:
-</p>
 $$
-\begin{align*}
-h_0&=UW_e+W_p\\\\
-h_l&=\mathtt{transformerblock}(h_{l-1})\forall i \in[1,n]\\\\
-P(u)&=\texttt{softmax}(h_nW^{T}_{e})
-\end{align*}
-$$<p>During fine-tuning, for an instance consisting of tokens \(x^1,\dots , x^m\) with label \(y\), a linear output layer reads the final hidden state \(h^m_l\) of the last token:
-</p>
+\begin{align}
+h_0&amp;=UW_e+W_p\\
+h_l&amp;=\mathtt{transformerblock}(h_{l-1})\forall i \in[1,n]\\
+P(u)&amp;=\texttt{softmax}(h_nW^{T}_{e})
+\end{align}
+$$</p>
+<p>During fine-tuning, for an instance consisting of tokens \(x^1,\dots , x^m\) with label \(y\), a linear output layer reads the final hidden state \(h^m_l\) of the last token:
 $$
-\begin{align*}
-P(y\mid x^1 , \dots , x^m) &= \texttt{softmax}(h^m_lW_y) \\\\\
-L_2(\mathcal{C})&=\sum_{(x,y)}\log P(y\mid x^1\dots , x^m)\\\\\
-\end{align*}
-$$<p>
+\begin{align}
+P(y\mid x^1 , \dots , x^m) &amp;= \texttt{softmax}(h^m_lW_y) \\\
+L_2(\mathcal{C})&amp;=\sum_{(x,y)}\log P(y\mid x^1\dots , x^m)\\\
+\end{align}
+$$
 The figure below illustrates the data representations used for upstream tasks.
 <img src="/gpt/arch.png" alt="gpt"></p>
 <p>In addition to \(L_2(\mathcal{C})\), the paper also considers an auxiliary objective \(L_3(\mathcal{C})\) to improve generalization and accelerate convergence:
-</p>
 $$
 L_3(\mathcal{C})=L_2(\mathcal{C})+\lambda * L_1(\mathcal{C})
-$$<p>
+$$
 where \(\lambda\) is a weighting coefficient.</p>
   </div>
 </main>

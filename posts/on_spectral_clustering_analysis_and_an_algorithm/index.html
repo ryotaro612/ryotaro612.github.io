@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -134,20 +133,18 @@
 また、データ分布に確率モデルにあてはめ、どのクラスタにデータを割りあてるか確率的に決めるクラスタリングと違い、データの分布を仮定しなくてよい。</p>
 <p>\(\mathbb{R}^l\)上の\(S=\{s_1,\dots ,s_n\}\)を\(k\)個のクラスタに分ける。
 データの類似度を表すアフィニティ行列\(A\in\mathbb{R}^{n\times n}\)を、
-</p>
 $$
-A\_{ij}=
+A_{ij}=
 \begin{cases}
-\exp(-\mid\mid s\_i - s\_j\mid\mid^2 / 2\sigma^2) & i\neq j\\\\
-0 & i = j\\\\
+\exp(-\mid\mid s_i - s_j\mid\mid^2 / 2\sigma^2) &amp; i\neq j\\
+0 &amp; i = j\\
 \end{cases}
-$$<p>
+$$
 とする。</p>
 <p>\(A\)の\(i\)番目の行の合計を\((i,i)\)番目の値とする対角行列\(D\)をもって
-</p>
 $$
 L=D^{-1/2}AD^{-1/2}
-$$<p>
+$$
 である\(L\)の固有値の大きい順に\(k\)個の直交する固有ベクトル\(x_1,x_2,\dots , x_k\)を求め、\([x_1,x_2,\dots x_k]\in\mathbb{R}^{n\times k}\)をつくる。
 \(X\)を\(Y_{ij}=X_{ij}/(\sum_j X^2_{ij})^{\frac{1}{2}}\)で正規化した\(Y\)にK-meansを適用し、\(Y\)の\(i\)番目の行が所属するクラスタに\(s_i\)を割り当てる。</p>
 <p>論文への<a href="https://proceedings.neurips.cc/paper/2001/file/801272ee79cfde7fa5960571fee36b9b-Paper.pdf">リンク</a></p>

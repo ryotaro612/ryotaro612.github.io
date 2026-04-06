@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -141,31 +140,28 @@
 先行研究の<a href="https://arxiv.org/abs/1502.03167">バッチ正規化</a>は、ミニバッチごとに、各ユニットの入力の重みつき和の平均と分散を計算し、ユニットの総入力を正規化する。
 バッチ正規化でも学習時間を短縮できるが、その効果はミニバッチのサイズに依存する。また、単純にはRNNに適用できない。</p>
 <p>順伝搬ニューラルネットワークのユニットへの重みつき入力の和\(a_i\)は、\(l\)番目の中間層への入力を\(h^l\), 活性化関数を\(f\), \(i\)番目のユニットの重みを\(w^l_i\), バイアス項を\(b^l_i\)とおくと以下の式で表せる。
-</p>
 $$
-a^l\_i = {w^l\_i}^{\top}h^l\ \ \ \ h^{l+1}\_i = f(a^l\_i + b^l\_i)
-$$<p>層正規化では、同じ層のユニットは平均と標準偏差を共有する。
+a^l_i = {w^l_i}^{\top}h^l\ \ \ \ h^{l+1}_i = f(a^l_i + b^l_i)
+$$</p>
+<p>層正規化では、同じ層のユニットは平均と標準偏差を共有する。
 層のユニット数が\(H\)であるとき、層\(l\)の平均\(\mu^l\)と標準偏差\(\sigma^l\)は
-</p>
 $$
-\mu^l=\frac{1}{H}\sum^H\_{i=1}a^l\_i\ \ \ \ \sigma^l=\sqrt{\frac{1}{H}\sum^H\_{i=1}(a^l\_i-\mu^l)^2}
-$$<p>
+\mu^l=\frac{1}{H}\sum^H_{i=1}a^l_i\ \ \ \ \sigma^l=\sqrt{\frac{1}{H}\sum^H_{i=1}(a^l_i-\mu^l)^2}
+$$
 になる。
 層正規化は、スケールを調整するためのハイパーパラメータを\(g^l_i\)として、層正規化は総入力を以下の\(\bar{a}^l_i\)に正規化する。
-</p>
 $$
-\bar{a}^l\_i=\frac{g^l\_i}{\sigma^l\_i}(a^l\_i-\mu^l\_i)
-$$<p>RNNでは、入力の重みつき和\(\boldsymbol{\rm a}^t\)は、時刻\(t\)における入力\({\rm x}^t\), \(t-1\)での隠れ層の状態\({\rm h}^{t-1}\), 中間層から中間への重み\(W_{hh}\), 入力層から中間層への重み\(W_{xh}\)で
-</p>
+\bar{a}^l_i=\frac{g^l_i}{\sigma^l_i}(a^l_i-\mu^l_i)
+$$</p>
+<p>RNNでは、入力の重みつき和\(\boldsymbol{\rm a}^t\)は、時刻\(t\)における入力\({\rm x}^t\), \(t-1\)での隠れ層の状態\({\rm h}^{t-1}\), 中間層から中間への重み\(W_{hh}\), 入力層から中間層への重み\(W_{xh}\)で
 $$
-\boldsymbol{\rm a}^t=W\_{hh}h^{t-1}+W\_{xh}{\rm x}^t
-$$<p>
+\boldsymbol{\rm a}^t=W_{hh}h^{t-1}+W_{xh}{\rm x}^t
+$$
 と表せる。</p>
 <p>このとき、正規化した隠れ層の状態\({\rm h}^t\)は
-</p>
 $$
-\boldsymbol{h}^t = f\left[\frac{\boldsymbol{g}}{\sigma^t}\odot  (\boldsymbol{a}^t-\mu^t )+\boldsymbol{b}\right] \ \ \ \ \mu^t=\frac{1}{H}\sum^H\_{i=1}a^t\_i\ \ \ \ \sigma^t=\sqrt{\frac{1}{H}\sum^H\_{i=1}(a^t\_i-\mu^t)^2}
-$$<p>
+\boldsymbol{h}^t = f\left[\frac{\boldsymbol{g}}{\sigma^t}\odot  (\boldsymbol{a}^t-\mu^t )+\boldsymbol{b}\right] \ \ \ \ \mu^t=\frac{1}{H}\sum^H_{i=1}a^t_i\ \ \ \ \sigma^t=\sqrt{\frac{1}{H}\sum^H_{i=1}(a^t_i-\mu^t)^2}
+$$
 になる。</p>
   </div>
 </main>

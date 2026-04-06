@@ -57,8 +57,7 @@
       delimiters: [
         {left: '\\[', right: '\\]', display: true},  
         {left: '$$', right: '$$', display: true},    
-        {left: '\\(', right: '\\)', display: false},  
-        {left: '$', right: '$', display: false}  
+        {left: '\\(', right: '\\)', display: false}  
       ],
       throwOnError : false
     });
@@ -133,22 +132,19 @@
 このとき、分岐条件の特徴が欠損するサンプルを左右どちらかに無条件にふり分けると利得が大きくなるかを計算する。
 これにより、欠損のないサンプル数の線形オーダまで計算量を削減する。</p>
 <p>訓練データ\(\mathcal{D}=\{(\boldsymbol{\rm x}_i, y_i)\}(\mid \mathcal{D} \mid = n, \boldsymbol{\rm x}_i\in \mathbb{R}^m, y_i\in \mathbb{R})\)があるとき、決定木を弱識別器にするアンサンブルモデルの出力関数は次の式をとる。
-</p>
 $$
-\hat{y}\_i=\phi(\boldsymbol{\rm x}\_i)=\sum^K\_{k=1}f\_k(\mathcal{\rm x}\_i), f\_k \in \mathcal{F}
-$$<p>
+\hat{y}_i=\phi(\boldsymbol{\rm x}_i)=\sum^K_{k=1}f_k(\mathcal{\rm x}_i), f_k \in \mathcal{F}
+$$
 ただし、\(\mathcal{F}=\{f(\boldsymbol{\rm x})=w_{q(\boldsymbol{\rm x})}\}(q: \mathbb{R}^m \rightarrow T, w\in \mathbb{R}^T)\)は決定木の集合、\(T\)は葉の数、\(q\)はサンプルを葉に写像する決定木の関数、\(w\)は葉の重みである。</p>
 <p>この出力関数の正則化項をふくむ損失関数は
-</p>
 $$
-\mathcal{L}(\phi) = \sum\_i l(\hat{y\_i}, y\_i) + \sum\_k  \left(\gamma T + \frac{1}{2}\lambda \mid\mid w \mid\mid^2 \right)
-$$<p>
+\mathcal{L}(\phi) = \sum_i l(\hat{y_i}, y_i) + \sum_k  \left(\gamma T + \frac{1}{2}\lambda \mid\mid w \mid\mid^2 \right)
+$$
 である。\(l\)は微分可能な凸関数である。</p>
 <p>\(t\)をくりかえしの回数として、\(g_i = \partial_{\hat{y}^{(t-1)}}l(y_i, \hat{y}^{(t-1)})\), \(h_i = \partial^2_{\hat{y}^{(t-1)}}l(y_i,\hat{y}^{(t-1)})\)とすると損失関数は、
-</p>
 $$
-\mathcal{\tilde{L}}^{(t)}(q) = -\frac{1}{2}\sum^T\_{j=1}\frac{\left(\sum\_{i\in I\_j}g\_i\right)^2}{\sum\_{i\in I\_j}h\_i + \lambda} + \gamma T
-$$<p>
+\mathcal{\tilde{L}}^{(t)}(q) = -\frac{1}{2}\sum^T_{j=1}\frac{\left(\sum_{i\in I_j}g_i\right)^2}{\sum_{i\in I_j}h_i + \lambda} + \gamma T
+$$
 で近似的にもとめられる。</p>
 <p>損失関数で最適な決定木がわかるが、とりえるすべての決定木を構築し損失関数で評価することは計算量上できない。
 そこで、勾配ブースティングは、以下のアルゴリズムで1つのノードから徐々に枝をのばして決定木を構築する。
